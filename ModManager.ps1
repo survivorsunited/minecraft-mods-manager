@@ -6,7 +6,19 @@ param(
     [switch]$Download,
     [switch]$UseLatestVersion,
     [switch]$ForceDownload,
-    [switch]$Help
+    [switch]$Help,
+    [switch]$ValidateModVersion,
+    [switch]$ValidateAllModVersions,
+    [switch]$DownloadMods,
+    [switch]$GetModList,
+    [switch]$ShowHelp,
+    [switch]$AddMod,
+    [string]$AddModID,
+    [string]$AddModName,
+    [string]$AddModLoader,
+    [string]$AddModGameVersion,
+    [string]$AddModType,
+    [string]$AddModGroup
 )
 
 # Load environment variables from .env file
@@ -184,8 +196,16 @@ function Validate-ModVersion {
         $latestVersion = $filteredResponse.version_number | Select-Object -First 1
         $latestVersionStr = if ($latestVersion) { $latestVersion } else { "No $Loader versions found" }
         
-        # Normalize the expected version for comparison
-        $normalizedExpectedVersion = Normalize-Version -Version $Version
+        # Handle "latest" version parameter
+        if ($Version -eq "latest") {
+            # For "latest" requests, always return the latest version as found
+            $versionExists = $true
+            $matchingVersion = $filteredResponse | Select-Object -First 1
+            $normalizedExpectedVersion = Normalize-Version -Version $latestVersion
+        } else {
+            # Normalize the expected version for comparison
+            $normalizedExpectedVersion = Normalize-Version -Version $Version
+        }
         
         # Check if the specific version exists (in filtered results)
         $versionExists = $false
@@ -195,22 +215,24 @@ function Validate-ModVersion {
         $versionFoundByJar = $false
         
         # Find matching version and extract URL
-        foreach ($ver in $filteredResponse) {
-            $normalizedApiVersion = Normalize-Version -Version $ver.version_number
-            
-            # Try exact match first
-            if ($normalizedApiVersion -eq $normalizedExpectedVersion) {
-                $versionExists = $true
-                $matchingVersion = $ver
-                # Extract download URL
-                if ($ver.files -and $ver.files.Count -gt 0) {
-                    $primaryFile = $ver.files | Where-Object { $_.primary -eq $true } | Select-Object -First 1
-                    if (-not $primaryFile) {
-                        $primaryFile = $ver.files | Select-Object -First 1
+        if ($Version -ne "latest") {
+            foreach ($ver in $filteredResponse) {
+                $normalizedApiVersion = Normalize-Version -Version $ver.version_number
+                
+                # Try exact match first
+                if ($normalizedApiVersion -eq $normalizedExpectedVersion) {
+                    $versionExists = $true
+                    $matchingVersion = $ver
+                    # Extract download URL
+                    if ($ver.files -and $ver.files.Count -gt 0) {
+                        $primaryFile = $ver.files | Where-Object { $_.primary -eq $true } | Select-Object -First 1
+                        if (-not $primaryFile) {
+                            $primaryFile = $ver.files | Select-Object -First 1
+                        }
+                        $versionUrl = $primaryFile.url
                     }
-                    $versionUrl = $primaryFile.url
+                    break
                 }
-                break
             }
         }
         
@@ -232,6 +254,17 @@ function Validate-ModVersion {
                     }
                     if ($versionExists) { break }
                 }
+            }
+        }
+        
+        # Extract download URL for matching version (including "latest")
+        if ($versionExists -and $matchingVersion -and -not $versionUrl) {
+            if ($matchingVersion.files -and $matchingVersion.files.Count -gt 0) {
+                $primaryFile = $matchingVersion.files | Where-Object { $_.primary -eq $true } | Select-Object -First 1
+                if (-not $primaryFile) {
+                    $primaryFile = $matchingVersion.files | Select-Object -First 1
+                }
+                $versionUrl = $primaryFile.url
             }
         }
         
@@ -384,6 +417,8 @@ function Validate-CurseForgeModVersion {
                 LatestVersionUrl = $latestVersionUrl
                 ResponseFile = $responseFile
                 VersionFoundByJar = $versionFoundByJar
+                FileName = $matchingFile.fileName
+                LatestFileName = if ($filteredResponse.Count -gt 0) { $filteredResponse[0].fileName } else { $null }
             }
         } else {
             return [PSCustomObject]@{
@@ -394,6 +429,8 @@ function Validate-CurseForgeModVersion {
                 LatestVersionUrl = $latestVersionUrl
                 ResponseFile = $responseFile
                 VersionFoundByJar = $versionFoundByJar
+                FileName = $null
+                LatestFileName = if ($filteredResponse.Count -gt 0) { $filteredResponse[0].fileName } else { $null }
             }
         }
     } catch {
@@ -690,12 +727,15 @@ function Validate-AllModVersions {
     Write-Host ""
     
     foreach ($mod in $mods) {
-        if (-not [string]::IsNullOrEmpty($mod.ID) -and -not [string]::IsNullOrEmpty($mod.Version)) {
+        if (-not [string]::IsNullOrEmpty($mod.ID)) {
             # Get loader from CSV, default to "fabric" if not specified
             $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
             
             # Get host from CSV, default to "modrinth" if not specified
             $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
+            
+            # Get game version from CSV, default to "1.21.5" if not specified
+            $gameVersion = if (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
             
             # Get JAR filename from CSV
             $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
@@ -704,7 +744,9 @@ function Validate-AllModVersions {
             if ($modHost -eq "curseforge") {
                 $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -ModUrl $mod.URL
             } else {
-                $result = Validate-ModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename
+                # If version is empty, treat as "get latest version" request
+                $versionToCheck = if ([string]::IsNullOrEmpty($mod.Version)) { "latest" } else { $mod.Version }
+                $result = Validate-ModVersion -ModId $mod.ID -Version $versionToCheck -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename
             }
             
             $results += [PSCustomObject]@{
@@ -1066,7 +1108,7 @@ function Download-Mods {
         Write-Host ""
         
         foreach ($mod in $mods) {
-            if (-not [string]::IsNullOrEmpty($mod.ID) -and -not [string]::IsNullOrEmpty($mod.Version)) {
+            if (-not [string]::IsNullOrEmpty($mod.ID)) {
                 # Get loader from CSV, default to "fabric" if not specified
                 $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
                 
@@ -1082,13 +1124,22 @@ function Download-Mods {
                 # Determine which URL to use for download
                 $downloadUrl = $null
                 $downloadVersion = $null
+                $result = $null
                 
                 if ($UseLatestVersion -and $mod.LatestVersionUrl) {
                     $downloadUrl = $mod.LatestVersionUrl
                     $downloadVersion = $mod.LatestVersion
+                    # For CurseForge mods, we still need to get the filename from API
+                    if ($modHost -eq "curseforge") {
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
+                    }
                 } elseif ($mod.VersionUrl) {
                     $downloadUrl = $mod.VersionUrl
                     $downloadVersion = $mod.Version
+                    # For CurseForge mods, we still need to get the filename from API
+                    if ($modHost -eq "curseforge") {
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
+                    }
                 } else {
                     # Need to fetch the URL from API
                     Write-Host "Fetching download URL for $($mod.Name)..." -ForegroundColor Cyan
@@ -1128,6 +1179,11 @@ function Download-Mods {
                     Join-Path $ModsFolder $modGameVersion 
                 }
                 
+                # Create block subfolder if mod is in "block" group
+                if ($mod.Group -eq "block") {
+                    $gameVersionFolder = Join-Path $gameVersionFolder "block"
+                }
+                
                 if (-not (Test-Path $gameVersionFolder)) {
                     New-Item -ItemType Directory -Path $gameVersionFolder -Force | Out-Null
                 }
@@ -1165,6 +1221,13 @@ function Download-Mods {
                 Write-Host "⬇️  $($mod.Name): Downloading $downloadVersion..." -ForegroundColor Cyan
                 
                 try {
+                    # For CurseForge downloads, use the filename from the API response
+                    if ($modHost -eq "curseforge" -and $result.FileName) {
+                        $filename = $result.FileName
+                        $downloadPath = Join-Path $gameVersionFolder $filename
+                        Write-Host "  📝 Using filename from API: $filename" -ForegroundColor Gray
+                    }
+                    
                     # Use Invoke-WebRequest for better error handling
                     $webRequest = Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -UseBasicParsing
                     
@@ -1252,40 +1315,88 @@ if ($MyInvocation.InvocationName -ne '.') {
     Write-Host "Minecraft Mod Manager PowerShell Script" -ForegroundColor Magenta
     Write-Host "Starting automatic validation of all mods..." -ForegroundColor Yellow
     Write-Host "Use Show-Help for usage information" -ForegroundColor Yellow
-    Write-Host "Available functions: Get-ModList, Validate-ModVersion, Validate-AllModVersions, Show-Help, Download-Mods" -ForegroundColor Yellow
+    Write-Host "Available functions: Get-ModList, Validate-ModVersion, Validate-AllModVersions, Show-Help, Download-Mods, Add-Mod" -ForegroundColor Yellow
     Write-Host ""
-    
-    # Show help if requested
-    if ($Help) {
+
+    if ($Help -or $ShowHelp) {
         Show-Help
         return
     }
-    
-    # Run validation by default with modlist update
+    if ($AddMod) {
+        # Add a new mod entry to modlist.csv with minimal info
+        $id = $AddModID
+        $name = $AddModName
+        $loader = if ($AddModLoader) { $AddModLoader } else { $DefaultLoader }
+        $gameVersion = if ($AddModGameVersion) { $AddModGameVersion } else { $DefaultGameVersion }
+        $type = if ($AddModType) { $AddModType } else { $DefaultModType }
+        $group = if ($AddModGroup) { $AddModGroup } else { "required" }
+        if (-not $id -or -not $name) {
+            Write-Host "You must provide at least -AddModID and -AddModName." -ForegroundColor Red
+            return
+        }
+        $newMod = [PSCustomObject]@{
+            Group = $group
+            Type = $type
+            GameVersion = $gameVersion
+            ID = $id
+            Loader = $loader
+            Version = ""
+            Name = $name
+            Description = ""
+            Jar = ""
+            Url = ""
+            Category = ""
+            VersionUrl = ""
+            LatestVersionUrl = ""
+            LatestVersion = ""
+            ApiSource = "modrinth"
+            Host = "modrinth"
+            IconUrl = ""
+            ClientSide = ""
+            ServerSide = ""
+            Title = ""
+            ProjectDescription = ""
+            IssuesUrl = ""
+            SourceUrl = ""
+            WikiUrl = ""
+            LatestGameVersion = ""
+        }
+        $mods = @()
+        if (Test-Path $ModListPath) {
+            $mods = Import-Csv $ModListPath
+        }
+        $mods += $newMod
+        $mods | Export-Csv -Path $ModListPath -NoTypeInformation
+        Write-Host "Added mod $name ($id) to $ModListPath in group '$group'" -ForegroundColor Green
+        return
+    }
+    if ($ValidateModVersion) {
+        # Example: Validate-ModVersion -ModId "fabric-api" -Version "0.91.0+1.20.1"
+        Write-Host "Validating mod version..." -ForegroundColor Cyan
+        # User must provide -ModId and -Version as extra params
+        return
+    }
+    if ($ValidateAllModVersions) {
+        Validate-AllModVersions -UpdateModList
+        return
+    }
+    if ($DownloadMods) {
+        Download-Mods -UseLatestVersion:$UseLatestVersion -ForceDownload:$ForceDownload
+        return
+    }
+    if ($GetModList) {
+        Get-ModList
+        return
+    }
+    # Default: Run validation and update modlist
     Validate-AllModVersions -UpdateModList
-    
-    # Download mods if requested
     if ($Download) {
-        Write-Host ""
-        Write-Host "Starting mod downloads..." -ForegroundColor Yellow
+        Write-Host ""; Write-Host "Starting mod downloads..." -ForegroundColor Yellow
         $downloadParams = @{}
-        
-        if ($UseLatestVersion) {
-            $downloadParams.UseLatestVersion = $true
-            Write-Host "Using latest versions for downloads" -ForegroundColor Cyan
-        }
-        
-        if ($ForceDownload) {
-            $downloadParams.ForceDownload = $true
-            Write-Host "Force downloading (will overwrite existing files)" -ForegroundColor Cyan
-        }
-        
+        if ($UseLatestVersion) { $downloadParams.UseLatestVersion = $true; Write-Host "Using latest versions for downloads" -ForegroundColor Cyan }
+        if ($ForceDownload) { $downloadParams.ForceDownload = $true; Write-Host "Force downloading (will overwrite existing files)" -ForegroundColor Cyan }
         $downloadedCount = Download-Mods @downloadParams
-        
-        if ($downloadedCount -gt 0) {
-            Write-Host ""
-            Write-Host "Successfully downloaded $downloadedCount mods!" -ForegroundColor Green
-        }
+        if ($downloadedCount -gt 0) { Write-Host ""; Write-Host "Successfully downloaded $downloadedCount mods!" -ForegroundColor Green }
     }
 } 
 

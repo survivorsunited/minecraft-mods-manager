@@ -1,3 +1,8 @@
-apiresponse/*.json
+apiresponse/*
+!apiresponse/.gitkeep
 mods/*
 !mods/.gitkeep
+
+# backup files
+modlist-backup.csv
+modlist-columns-backup.csv
