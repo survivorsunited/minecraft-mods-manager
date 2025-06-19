@@ -101,27 +101,43 @@ Show-Help
 
 ## 📊 CSV Format
 
-The `modlist.csv` file should contain these columns:
+The `modlist.csv` file should contain these columns (in order):
 
-| Column | Description | Required |
-|--------|-------------|----------|
-| `Group` | Mod category (required, optional, admin) | Yes |
-| `Type` | Mod type (mod, datapack, etc.) | Yes |
-| `GameVersion` | Target Minecraft version | Yes |
-| `ID` | Mod ID (Modrinth slug or CurseForge ID) | Yes |
-| `Loader` | Mod loader (fabric, forge, etc.) | Yes |
-| `Version` | Expected mod version | Yes |
-| `Name` | Mod display name | Yes |
-| `Description` | Mod description | No |
-| `Jar` | JAR filename | No |
-| `Url` | Mod URL | No |
-| `Category` | Mod category | No |
-| `Host` | API host (modrinth, curseforge) | No |
+| Column              | Description                                                      |
+|---------------------|------------------------------------------------------------------|
+| Group               | Mod category (required, optional, admin)                         |
+| Type                | Mod type (mod, datapack, etc.)                                   |
+| GameVersion         | Target Minecraft version                                         |
+| ID                  | Mod ID (Modrinth slug or CurseForge ID)                         |
+| Loader              | Mod loader (fabric, forge, etc.)                                 |
+| Version             | Expected mod version                                             |
+| Name                | Mod display name                                                 |
+| Description         | Mod description                                                  |
+| Jar                 | JAR filename                                                     |
+| Url                 | Mod URL                                                          |
+| Category            | Mod category                                                     |
+| Version Url         | Download URL for current version                                 |
+| Latest Version Url  | Download URL for latest version                                  |
+| Latest Version      | Latest version string                                            |
+| LatestVersion       | (Alias for Latest Version)                                       |
+| VersionUrl          | (Alias for Version Url)                                          |
+| LatestVersionUrl    | (Alias for Latest Version Url)                                   |
+| ApiSource           | API source (modrinth, curseforge)                                |
+| Host                | API host (modrinth, curseforge)                                  |
+| IconUrl             | Mod icon URL                                                     |
+| ClientSide          | Client-side support info                                         |
+| ServerSide          | Server-side support info                                         |
+| Title               | Project title                                                    |
+| ProjectDescription  | Project description (from API)                                   |
+| IssuesUrl           | Issues/bug tracker URL                                           |
+| SourceUrl           | Source code URL                                                  |
+| WikiUrl             | Wiki/documentation URL                                           |
+| LatestGameVersion   | Highest supported game version (from API)                        |
 
 ### Example CSV Entry
 
 ```csv
-"required","mod","1.21.5","fabric-api","fabric","v0.126.0+1.21.5","Fabric API","Required by most Fabric mods","fabric-api-0.126.0+1.21.5.jar","https://modrinth.com/mod/fabric-api","Core & Utility","modrinth"
+"required","mod","1.21.5","fabric-api","fabric","v0.126.0+1.21.5","Fabric API","Required by most Fabric mods","fabric-api-0.126.0+1.21.5.jar","https://modrinth.com/mod/fabric-api","Core & Utility","https://cdn.modrinth.com/data/P7dR8mSH/versions/B41MB8lb/fabric-api-0.126.0%2B1.21.5.jar","https://cdn.modrinth.com/data/P7dR8mSH/versions/N3z6cNQv/fabric-api-0.127.1%2B1.21.6.jar","0.127.1+1.21.6","0.127.1+1.21.6","https://cdn.modrinth.com/data/P7dR8mSH/versions/B41MB8lb/fabric-api-0.126.0%2B1.21.5.jar","https://cdn.modrinth.com/data/P7dR8mSH/versions/N3z6cNQv/fabric-api-0.127.1%2B1.21.6.jar","modrinth","modrinth","https://cdn.modrinth.com/data/P7dR8mSH/icon.png","optional","optional","Fabric API","Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.","https://github.com/FabricMC/fabric/issues","https://github.com/FabricMC/fabric","https://fabricmc.net/wiki/","1.21.6"
 ```
 
 ## 🔧 Configuration
@@ -222,27 +238,3 @@ Each download creates a detailed README with:
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- **Modrinth Team** for their excellent API
-- **CurseForge Team** for their comprehensive mod database
-- **Minecraft Modding Community** for creating amazing mods
-
-## 📞 Support
-
-If you encounter issues:
-
-1. Check the console output for error messages
-2. Verify your CSV format is correct
-3. Ensure you have internet connectivity
-4. Check if the mod exists on the specified platform
-5. Review the generated README for detailed analysis
-
----
-
-**Happy modding! 🎮**
