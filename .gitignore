@@ -1,12 +1,13 @@
 apiresponse/*
 !apiresponse/.gitkeep
 download/*
-!mods/.gitkeep
 
 test/download
 test/temp
 test/results
 test/modlist.csv
+
+backups/*
 
 # backup files
 modlist-backup.csv
@@ -14,3 +15,5 @@ modlist-columns-backup.csv
 test/Pester5
 
 testResults.xml
+
+!**/.gitkeep
