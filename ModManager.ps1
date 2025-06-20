@@ -1828,8 +1828,6 @@ function Download-Modpack {
 if ($MyInvocation.InvocationName -ne '.') {
     Write-Host "Minecraft Mod Manager PowerShell Script" -ForegroundColor Magenta
     Write-Host "Starting automatic validation of all mods..." -ForegroundColor Yellow
-    Write-Host "Use Show-Help for usage information" -ForegroundColor Yellow
-    Write-Host "Available functions: Get-ModList, Validate-ModVersion, Validate-AllModVersions, Show-Help, Download-Mods, Add-Mod" -ForegroundColor Yellow
     Write-Host ""
 
     if ($Help -or $ShowHelp) {
