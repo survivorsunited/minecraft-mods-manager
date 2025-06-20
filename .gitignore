@@ -3,6 +3,11 @@ apiresponse/*
 download/*
 !mods/.gitkeep
 
+test/download
+test/temp
+test/results
+test/modlist.csv
+
 # backup files
 modlist-backup.csv
 modlist-columns-backup.csv
