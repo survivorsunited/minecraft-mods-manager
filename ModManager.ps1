@@ -780,69 +780,85 @@ function Validate-AllModVersions {
     
     $results = @()
     
-    Write-Host "Validating mod versions and saving API responses..." -ForegroundColor Yellow
-    Write-Host ""
+    # Count total mods to validate (excluding installer, launcher, server types)
+    $modsToValidate = $mods | Where-Object { 
+        -not [string]::IsNullOrEmpty($_.ID) -and 
+        $_.Type -notin @("installer", "launcher", "server") 
+    }
+    $totalMods = $modsToValidate.Count
+    $currentMod = 0
     
-    foreach ($mod in $mods) {
-        if (-not [string]::IsNullOrEmpty($mod.ID)) {
-            Write-Host ("Validating: {0} (ID: {1}, Type: {2}, Host: {3}, Version: {4})" -f $mod.Name, $mod.ID, $mod.Type, $mod.Host, $mod.Version) -ForegroundColor Cyan
-            # Skip validation for installer, launcher, and server types as they don't have API metadata
-            if ($mod.Type -in @("installer", "launcher", "server")) {
-                Write-Host "⏭️  Skipping $($mod.Name) ($($mod.Type) type - no API validation needed)" -ForegroundColor Yellow
-                continue
-            }
-            # Get loader from CSV, default to "fabric" if not specified
-            $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
-            # Get host from CSV, default to "modrinth" if not specified
-            $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
-            # Get game version from CSV, default to "1.21.5" if not specified
-            $gameVersion = if (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
-            # Get JAR filename from CSV
-            $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
-            Write-Host ("  → Calling API for {0}..." -f $modHost) -ForegroundColor DarkGray
-            # Use appropriate API based on host
-            if ($modHost -eq "curseforge") {
-                $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -ModUrl $mod.URL
-            } else {
-                # If version is empty, treat as "get latest version" request
-                $versionToCheck = if ([string]::IsNullOrEmpty($mod.Version)) { "latest" } else { $mod.Version }
-                $result = Validate-ModVersion -ModId $mod.ID -Version $versionToCheck -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename
-            }
-            if ($result.Exists) {
-                Write-Host ("  ✓ Found version: {0}" -f $result.LatestVersion) -ForegroundColor Green
-            } else {
-                Write-Host ("  ❌ Version not found or error: {0}" -f $result.Error) -ForegroundColor Red
-            }
-            $results += [PSCustomObject]@{
-                Name = $mod.Name
-                ID = $mod.ID
-                ExpectedVersion = $mod.Version
-                Loader = $loader
-                Host = $modHost
-                VersionExists = $result.Exists
-                ResponseFile = $result.ResponseFile
-                Error = $result.Error
-                AvailableVersions = if ($result.AvailableVersions) { $result.AvailableVersions -join ', ' } else { $null }
-                LatestVersion = $result.LatestVersion
-                VersionUrl = $result.VersionUrl
-                LatestVersionUrl = $result.LatestVersionUrl
-                IconUrl = $result.IconUrl
-                ClientSide = $result.ClientSide
-                ServerSide = $result.ServerSide
-                Title = $result.Title
-                ProjectDescription = $result.ProjectDescription
-                IssuesUrl = if ($result.IssuesUrl) { $result.IssuesUrl.ToString() } else { "" }
-                SourceUrl = if ($result.SourceUrl) { $result.SourceUrl.ToString() } else { "" }
-                WikiUrl = if ($result.WikiUrl) { $result.WikiUrl.ToString() } else { "" }
-                VersionFoundByJar = $result.VersionFoundByJar
-                LatestGameVersion = $result.LatestGameVersion
-            }
+    Write-Host "Validating mod versions and saving API responses..." -ForegroundColor Yellow
+    Write-Host "Total mods to validate: $totalMods" -ForegroundColor Yellow
+    
+    foreach ($mod in $modsToValidate) {
+        $currentMod++
+        Write-Host ("[{0:D3}/{1:D3}] Validating: {2} (ID: {3}, Type: {4}, Host: {5}, Version: {6})" -f $currentMod, $totalMods, $mod.Name, $mod.ID, $mod.Type, $mod.Host, $mod.Version) -ForegroundColor Cyan
+        
+        # Get loader from CSV, default to "fabric" if not specified
+        $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
+        # Get host from CSV, default to "modrinth" if not specified
+        $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
+        # Get game version from CSV, default to "1.21.5" if not specified
+        $gameVersion = if (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
+        # Get JAR filename from CSV
+        $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
+        
+        Write-Host ("  → Calling API for {0}..." -f $modHost) -ForegroundColor DarkGray
+        
+        # Use appropriate API based on host
+        if ($modHost -eq "curseforge") {
+            $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -ModUrl $mod.URL
+        } else {
+            # If version is empty, treat as "get latest version" request
+            $versionToCheck = if ([string]::IsNullOrEmpty($mod.Version)) { "latest" } else { $mod.Version }
+            $result = Validate-ModVersion -ModId $mod.ID -Version $versionToCheck -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename
+        }
+        
+        if ($result.Exists) {
+            Write-Host ("  ✓ Found version: {0}" -f $result.LatestVersion) -ForegroundColor Green
+        } else {
+            Write-Host ("  ❌ Version not found or error: {0}" -f $result.Error) -ForegroundColor Red
+        }
+        
+        $results += [PSCustomObject]@{
+            Name = $mod.Name
+            ID = $mod.ID
+            ExpectedVersion = $mod.Version
+            Loader = $loader
+            Host = $modHost
+            VersionExists = $result.Exists
+            ResponseFile = $result.ResponseFile
+            Error = $result.Error
+            AvailableVersions = if ($result.AvailableVersions) { $result.AvailableVersions -join ', ' } else { $null }
+            LatestVersion = $result.LatestVersion
+            VersionUrl = $result.VersionUrl
+            LatestVersionUrl = $result.LatestVersionUrl
+            IconUrl = $result.IconUrl
+            ClientSide = $result.ClientSide
+            ServerSide = $result.ServerSide
+            Title = $result.Title
+            ProjectDescription = $result.ProjectDescription
+            IssuesUrl = if ($result.IssuesUrl) { $result.IssuesUrl.ToString() } else { "" }
+            SourceUrl = if ($result.SourceUrl) { $result.SourceUrl.ToString() } else { "" }
+            WikiUrl = if ($result.WikiUrl) { $result.WikiUrl.ToString() } else { "" }
+            VersionFoundByJar = $result.VersionFoundByJar
+            LatestGameVersion = $result.LatestGameVersion
         }
     }
     
     # Save results to CSV
     $resultsFile = Join-Path $ResponseFolder "version-validation-results.csv"
     $results | Export-Csv -Path $resultsFile -NoTypeInformation
+    
+    # Display completion status for each result
+    foreach ($result in $results) {
+        if ($result.VersionExists) {
+            Write-Host ("  ✓ {0}: Found version {1}" -f $result.Name, $result.LatestVersion) -ForegroundColor Green
+        } else {
+            Write-Host ("  ❌ {0}: {1}" -f $result.Name, $result.Error) -ForegroundColor Red
+        }
+    }
     
     # Update modlist with latest versions if requested
     if ($UpdateModList) {
@@ -1256,10 +1272,10 @@ function Download-Mods {
         $errorCount = 0
         
         Write-Host "Starting mod downloads..." -ForegroundColor Yellow
-        Write-Host ""
-        
-        foreach ($mod in $mods) {
-            if (-not [string]::IsNullOrEmpty($mod.ID)) {
+    Write-Host ""
+    
+    foreach ($mod in $mods) {
+        if (-not [string]::IsNullOrEmpty($mod.ID)) {
                 # Get loader from CSV, default to "fabric" if not specified
                 $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
                 
