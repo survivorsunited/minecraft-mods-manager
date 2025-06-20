@@ -2508,35 +2508,22 @@ if ($MyInvocation.InvocationName -ne '.') {
         $resolvedMod = $null
         
         if ($type -eq "installer") {
-            # For installers, we expect the ID to be a direct URL or a special identifier
-            # For the Fabric installer, we'll construct the URL based on the ID
-            $installerUrl = $null
-            $installerVersion = $null
-            
-            if ($id -eq "fabric-installer-1.0.3") {
-                $installerUrl = "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe"
-                $installerVersion = "1.0.3"
-            } else {
-                # Assume it's a direct URL
-                $installerUrl = $id
-                $installerVersion = "1.0.0"  # Default version for direct URLs
-            }
-            
+            # For installers, use the provided URL and parameters
             $resolvedMod = [PSCustomObject]@{
                 Group = $group
                 Type = $type
                 GameVersion = $gameVersion
                 ID = $id
                 Loader = $loader
-                Version = $installerVersion
+                Version = if ($AddModVersion) { $AddModVersion } else { "1.0.0" }
                 Name = $name
                 Description = $description
                 Jar = $jar
-                Url = if ($urlDirect) { $urlDirect } else { $installerUrl }
+                Url = if ($urlDirect) { $urlDirect } else { $url }
                 Category = $category
-                VersionUrl = $installerUrl
-                LatestVersionUrl = $installerUrl
-                LatestVersion = $installerVersion
+                VersionUrl = if ($urlDirect) { $urlDirect } else { $url }
+                LatestVersionUrl = if ($urlDirect) { $urlDirect } else { $url }
+                LatestVersion = if ($AddModVersion) { $AddModVersion } else { "1.0.0" }
                 ApiSource = "direct"
                 Host = "direct"
                 IconUrl = ""
@@ -2550,41 +2537,51 @@ if ($MyInvocation.InvocationName -ne '.') {
                 LatestGameVersion = $gameVersion
             }
         } elseif ($type -eq "launcher") {
-            # For launchers, we expect the ID to be a special identifier
-            $launcherUrl = $null
-            $launcherVersion = $null
-            $launcherFilename = $null
-            
-            if ($id -eq "fabric-server-launcher-1.21.5") {
-                $launcherUrl = "https://meta.fabricmc.net/v2/versions/loader/1.21.5/0.16.14/1.0.3/server/jar"
-                $launcherVersion = "1.0.3"
-                $launcherFilename = "fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar"
-            } elseif ($id -eq "fabric-server-launcher-1.21.6") {
-                $launcherUrl = "https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.16.14/1.0.3/server/jar"
-                $launcherVersion = "1.0.3"
-                $launcherFilename = "fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar"
-            } else {
-                # Assume it's a direct URL
-                $launcherUrl = $id
-                $launcherVersion = "1.0.0"  # Default version for direct URLs
-                $launcherFilename = ""
-            }
-            
+            # For launchers, use the provided URL and parameters
             $resolvedMod = [PSCustomObject]@{
                 Group = $group
                 Type = $type
                 GameVersion = $gameVersion
                 ID = $id
                 Loader = $loader
-                Version = $launcherVersion
+                Version = if ($AddModVersion) { $AddModVersion } else { "1.0.0" }
                 Name = $name
                 Description = $description
-                Jar = $launcherFilename
-                Url = if ($urlDirect) { $urlDirect } else { $launcherUrl }
+                Jar = $jar
+                Url = if ($urlDirect) { $urlDirect } else { $url }
                 Category = $category
-                VersionUrl = $launcherUrl
-                LatestVersionUrl = $launcherUrl
-                LatestVersion = $launcherVersion
+                VersionUrl = if ($urlDirect) { $urlDirect } else { $url }
+                LatestVersionUrl = if ($urlDirect) { $urlDirect } else { $url }
+                LatestVersion = if ($AddModVersion) { $AddModVersion } else { "1.0.0" }
+                ApiSource = "direct"
+                Host = "direct"
+                IconUrl = ""
+                ClientSide = ""
+                ServerSide = ""
+                Title = $name
+                ProjectDescription = ""
+                IssuesUrl = ""
+                SourceUrl = ""
+                WikiUrl = ""
+                LatestGameVersion = $gameVersion
+            }
+        } elseif ($type -eq "server") {
+            # For server JARs, use the provided URL and parameters
+            $resolvedMod = [PSCustomObject]@{
+                Group = $group
+                Type = $type
+                GameVersion = $gameVersion
+                ID = $id
+                Loader = $loader
+                Version = if ($AddModVersion) { $AddModVersion } else { $gameVersion }
+                Name = $name
+                Description = $description
+                Jar = $jar
+                Url = if ($urlDirect) { $urlDirect } else { $url }
+                Category = $category
+                VersionUrl = if ($urlDirect) { $urlDirect } else { $url }
+                LatestVersionUrl = if ($urlDirect) { $urlDirect } else { $url }
+                LatestVersion = if ($AddModVersion) { $AddModVersion } else { $gameVersion }
                 ApiSource = "direct"
                 Host = "direct"
                 IconUrl = ""
@@ -2628,51 +2625,6 @@ if ($MyInvocation.InvocationName -ne '.') {
                     WikiUrl = if ($result.WikiUrl) { $result.WikiUrl.ToString() } else { "" }
                     LatestGameVersion = $result.LatestGameVersion
                 }
-            }
-        } elseif ($type -eq "server") {
-            # For server JARs, use the provided ID to determine the URL and filename
-            $serverUrl = $null
-            $serverVersion = $null
-            $serverFilename = $null
-            if ($id -eq "minecraft-server-1.21.5") {
-                $serverUrl = "https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar"
-                $serverVersion = "1.21.5"
-                $serverFilename = "minecraft_server.1.21.5.jar"
-            } elseif ($id -eq "minecraft-server-1.21.6") {
-                $serverUrl = "https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar"
-                $serverVersion = "1.21.6"
-                $serverFilename = "minecraft_server.1.21.6.jar"
-            } else {
-                $serverUrl = $id
-                $serverVersion = $gameVersion
-                $serverFilename = "minecraft_server.$gameVersion.jar"
-            }
-            $resolvedMod = [PSCustomObject]@{
-                Group = $group
-                Type = $type
-                GameVersion = $gameVersion
-                ID = $id
-                Loader = $loader
-                Version = $serverVersion
-                Name = $name
-                Description = $description
-                Jar = $serverFilename
-                Url = if ($urlDirect) { $urlDirect } else { $serverUrl }
-                Category = $category
-                VersionUrl = $serverUrl
-                LatestVersionUrl = $serverUrl
-                LatestVersion = $serverVersion
-                ApiSource = "direct"
-                Host = "direct"
-                IconUrl = ""
-                ClientSide = ""
-                ServerSide = ""
-                Title = $name
-                ProjectDescription = ""
-                IssuesUrl = ""
-                SourceUrl = ""
-                WikiUrl = ""
-                LatestGameVersion = $gameVersion
             }
         } elseif ($type -eq "modpack") {
             # For Modrinth modpacks, validate with "latest" to get metadata

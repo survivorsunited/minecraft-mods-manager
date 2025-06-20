@@ -9,7 +9,7 @@ param(
 )
 
 # Configuration
-$ScriptPath = "..\ModManager.ps1"
+$ScriptPath = "ModManager.ps1"
 $TestDbPath = "run-test-cli.csv"
 $TestApiResponsePath = "apiresponse"
 $MainApiResponsePath = "..\apiresponse"
@@ -322,6 +322,72 @@ Write-TestHeader "Verify Downloaded File Names"
 $verifyFilesCmd = 'Get-ChildItem "download" -Recurse -File | Where-Object { $_.Name -match "fabric-installer|fabric-server|minecraft_server|astralex|bsl|complementary" } | Select-Object Name, FullName'
 $verifyFilesTestName = "Verify Downloaded File Names"
 Test-Command $verifyFilesCmd $verifyFilesTestName 0
+
+# Test 2.5: Simulate external update to Fabric API version
+Write-TestHeader "Detect External Fabric Version Update"
+# Manually update the Fabric API version in the CSV (simulate external edit)
+$csv = Import-Csv $TestDbPath
+foreach ($row in $csv) {
+    if ($row.ID -eq "fabric-api") {
+        $row.Version = "0.127.1+1.21.5"
+    }
+}
+$csv | Export-Csv $TestDbPath -NoTypeInformation
+# Run GetModList to trigger hash check and warning
+Test-Command ".\$ScriptPath -GetModList -DatabaseFile '$TestDbPath'" "Detect Fabric API Version Hash Mismatch" 1
+
+# Test: Fabric Installer should be downloaded as .exe, not .jar
+Write-TestHeader "Fabric Installer Downloaded as EXE"
+# Add Fabric Installer system entry with .exe URL
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.5' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath'" "Add Fabric Installer EXE" 1
+# Download mods
+Test-Command ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath'" "Download Mods with Installer" 1
+# Check that Fabric Installer was downloaded as .exe
+$installerFile = Get-ChildItem download -Recurse -File | Where-Object { $_.Name -like 'fabric-installer*.exe' }
+if ($installerFile) {
+    Write-Host "✓ PASS: Fabric Installer downloaded as EXE: $($installerFile.FullName)" -ForegroundColor Green
+} else {
+    Write-Host "✗ FAIL: Fabric Installer not downloaded as EXE" -ForegroundColor Red
+    exit 1
+}
+
+# Test: Validate each type download ensures file exists
+Write-TestHeader "Validate System Entry and Mod Downloads"
+
+# Add system entries and a regular mod
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.5' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath'" "Add Fabric Installer" 1
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Server Launcher' -AddModType 'launcher' -AddModGameVersion '1.21.5' -AddModUrl 'https://meta.fabricmc.net/v2/versions/loader/1.21.5/0.16.14/1.0.3/server/jar' -AddModVersion '1.0.3' -AddModJar 'fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar' -DatabaseFile '$TestDbPath'" "Add Fabric Server Launcher" 1
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Minecraft Server' -AddModType 'server' -AddModGameVersion '1.21.5' -AddModUrl 'https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar' -AddModVersion '1.21.5' -AddModJar 'minecraft_server.1.21.5.jar' -DatabaseFile '$TestDbPath'" "Add Minecraft Server" 1
+Test-Command ".\$ScriptPath -AddMod -AddModUrl 'https://modrinth.com/mod/litematica' -DatabaseFile '$TestDbPath' -UseCachedResponses" "Add Litematica Mod" 1
+
+# Download all
+Test-Command ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseCachedResponses" "Download All Types" 4
+
+# Validate files exist
+$expectedFiles = @(
+    "download/1.21.5/installer/fabric-installer-1.0.3.exe",
+    "download/1.21.5/jar",
+    "download/1.21.5/minecraft_server.1.21.5.jar"
+)
+
+$missing = $false
+foreach ($file in $expectedFiles) {
+    if (-not (Test-Path $file)) {
+        Write-Host "✗ FAIL: Missing expected file: $file" -ForegroundColor Red
+        $missing = $true
+    } else {
+        Write-Host "✓ PASS: Found $file" -ForegroundColor Green
+    }
+}
+# Check for at least one mod jar in mods folder
+$modFiles = Get-ChildItem download/1.21.5/mods -File -Filter *.jar -ErrorAction SilentlyContinue
+if ($modFiles.Count -ge 1) {
+    Write-Host "✓ PASS: Found mod jar in mods folder" -ForegroundColor Green
+} else {
+    Write-Host "✗ FAIL: No mod jar found in mods folder" -ForegroundColor Red
+    $missing = $true
+}
+if ($missing) { exit 1 }
 
 Show-TestSummary
 Cleanup-TestEnvironment
