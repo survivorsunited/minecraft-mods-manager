@@ -5,35 +5,63 @@ param(
     [string[]]$TestFiles = @(),
     [switch]$All,
     [switch]$Cleanup,
-    [switch]$Help
+    [switch]$Help,
+    [switch]$NoLog
 )
 
 # Import test framework
 . ".\TestFramework.ps1"
 
+# Setup logging
+$LogTimestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
+$LogFileName = "test-run-$LogTimestamp.log"
+$LogFilePath = Join-Path $PSScriptRoot $LogFileName
+
+function Write-Log {
+    param([string]$Message, [string]$Color = "White")
+    
+    # Write to console with color
+    Write-Host $Message -ForegroundColor $Color
+    
+    # Write to log file (without color codes)
+    if (-not $NoLog) {
+        $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+        "$timestamp - $Message" | Out-File -FilePath $LogFilePath -Append -Encoding UTF8
+    }
+}
+
 function Show-Usage {
-    Write-Host "ModManager CLI Test Runner" -ForegroundColor $Colors.Header
-    Write-Host "=========================" -ForegroundColor $Colors.Header
-    Write-Host ""
-    Write-Host "Usage:" -ForegroundColor White
-    Write-Host "  .\RunAllTests.ps1 -All                    # Run all test files" -ForegroundColor Gray
-    Write-Host "  .\RunAllTests.ps1 -TestFiles '01-BasicFunctionality.ps1'  # Run specific test file" -ForegroundColor Gray
-    Write-Host "  .\RunAllTests.ps1 -TestFiles '01-BasicFunctionality.ps1','02-DownloadFunctionality.ps1'  # Run multiple test files" -ForegroundColor Gray
-    Write-Host "  .\RunAllTests.ps1 -Cleanup                # Clean up test files after completion" -ForegroundColor Gray
-    Write-Host "  .\RunAllTests.ps1 -Help                   # Show this help message" -ForegroundColor Gray
-    Write-Host ""
-    Write-Host "Available Test Files:" -ForegroundColor White
+    Write-Log "ModManager CLI Test Runner" $Colors.Header
+    Write-Log "=========================" $Colors.Header
+    Write-Log ""
+    Write-Log "Usage:" "White"
+    Write-Log "  .\RunAllTests.ps1 -All                    # Run all test files" "Gray"
+    Write-Log "  .\RunAllTests.ps1 -TestFiles '01-BasicFunctionality.ps1'  # Run specific test file" "Gray"
+    Write-Log "  .\RunAllTests.ps1 -TestFiles '01-BasicFunctionality.ps1','02-DownloadFunctionality.ps1'  # Run multiple test files" "Gray"
+    Write-Log "  .\RunAllTests.ps1 -Cleanup                # Clean up test files after completion" "Gray"
+    Write-Log "  .\RunAllTests.ps1 -Help                   # Show this help message" "Gray"
+    Write-Log "  .\RunAllTests.ps1 -NoLog                  # Disable logging to file" "Gray"
+    Write-Log ""
+    Write-Log "Available Test Files:" "White"
     # Dynamically list test files
     $testFiles = Get-ChildItem -Path "tests" -File -Name | Where-Object { $_ -match '^\d{2}-.*\.ps1$' } | Sort-Object
     foreach ($file in $testFiles) {
-        Write-Host "  $file" -ForegroundColor Gray
+        Write-Log "  $file" "Gray"
     }
-    Write-Host ""
+    Write-Log ""
 }
 
 if ($Help) {
     Show-Usage
     exit 0
+}
+
+# Start logging
+if (-not $NoLog) {
+    Write-Log "=== ModManager Test Suite Started ===" $Colors.Header
+    Write-Log "Log file: $LogFilePath" $Colors.Info
+    Write-Log "Timestamp: $LogTimestamp" $Colors.Info
+    Write-Log ""
 }
 
 # Dynamically discover all test files matching '??-*.ps1', sorted
@@ -52,10 +80,10 @@ if ($All) {
     $testFilesToRun = Get-AllTestFiles
 }
 
-Write-Host "Minecraft Mod Manager - Complete Test Suite" -ForegroundColor $Colors.Header
-Write-Host "===========================================" -ForegroundColor $Colors.Header
-Write-Host "Running tests: $($testFilesToRun -join ', ')" -ForegroundColor $Colors.Info
-Write-Host ""
+Write-Log "Minecraft Mod Manager - Complete Test Suite" $Colors.Header
+Write-Log "===========================================" $Colors.Header
+Write-Log "Running tests: $($testFilesToRun -join ', ')" $Colors.Info
+Write-Log ""
 
 # Initialize global test results
 $GlobalTestResults = @{
@@ -70,12 +98,12 @@ foreach ($testFile in $testFilesToRun) {
     $testFilePath = ".\tests\$testFile"
     
     if (-not (Test-Path $testFilePath)) {
-        Write-Host "❌ ERROR: Test file not found: $testFile" -ForegroundColor Red
+        Write-Log "❌ ERROR: Test file not found: $testFile" "Red"
         continue
     }
     
-    Write-Host "🚀 Running test file: $testFile" -ForegroundColor $Colors.Header
-    Write-Host ("─" * 60) -ForegroundColor Gray
+    Write-Log "🚀 Running test file: $testFile" $Colors.Header
+    Write-Log ("─" * 60) "Gray"
     
     try {
         # Reset test results for this file
@@ -83,8 +111,16 @@ foreach ($testFile in $testFilesToRun) {
         $TestResults.Passed = 0
         $TestResults.Failed = 0
         
-        # Run the test file
-        & $testFilePath
+        # Capture output from test file execution
+        $testOutput = & $testFilePath 2>&1 | Tee-Object -Variable capturedOutput
+        
+        # Log the captured output
+        if (-not $NoLog) {
+            $capturedOutput | ForEach-Object {
+                $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+                "$timestamp - $($_)" | Out-File -FilePath $LogFilePath -Append -Encoding UTF8
+            }
+        }
         
         # Add results to global counter
         $GlobalTestResults.Total += $TestResults.Total
@@ -99,12 +135,12 @@ foreach ($testFile in $testFilesToRun) {
             Failed = $TestResults.Failed
         }
         
-        Write-Host ""
-        Write-Host "✅ Completed: $testFile" -ForegroundColor Green
-        Write-Host "   Passed: $($TestResults.Passed), Failed: $($TestResults.Failed), Total: $($TestResults.Total)" -ForegroundColor Gray
+        Write-Log ""
+        Write-Log "✅ Completed: $testFile" "Green"
+        Write-Log "   Passed: $($TestResults.Passed), Failed: $($TestResults.Failed), Total: $($TestResults.Total)" "Gray"
         
     } catch {
-        Write-Host "❌ ERROR running $testFile : $($_.Exception.Message)" -ForegroundColor Red
+        Write-Log "❌ ERROR running $testFile : $($_.Exception.Message)" "Red"
         $GlobalTestResults.TestFiles += @{
             Name = $testFile
             Total = 0
@@ -114,35 +150,35 @@ foreach ($testFile in $testFilesToRun) {
         }
     }
     
-    Write-Host ""
+    Write-Log ""
 }
 
 # Show final summary
-Write-Host ("=" * 80) -ForegroundColor $Colors.Header
-Write-Host "FINAL TEST SUMMARY" -ForegroundColor $Colors.Header
-Write-Host ("=" * 80) -ForegroundColor $Colors.Header
+Write-Log ("=" * 80) $Colors.Header
+Write-Log "FINAL TEST SUMMARY" $Colors.Header
+Write-Log ("=" * 80) $Colors.Header
 
-Write-Host "Overall Results:" -ForegroundColor White
-Write-Host "  Total Tests: $($GlobalTestResults.Total)" -ForegroundColor White
-Write-Host "  Passed: $($GlobalTestResults.Passed)" -ForegroundColor $Colors.Pass
-Write-Host "  Failed: $($GlobalTestResults.Failed)" -ForegroundColor $Colors.Fail
+Write-Log "Overall Results:" "White"
+Write-Log "  Total Tests: $($GlobalTestResults.Total)" "White"
+Write-Log "  Passed: $($GlobalTestResults.Passed)" $Colors.Pass
+Write-Log "  Failed: $($GlobalTestResults.Failed)" $Colors.Fail
 
-Write-Host ""
-Write-Host "Test File Results:" -ForegroundColor White
+Write-Log ""
+Write-Log "Test File Results:" "White"
 foreach ($fileResult in $GlobalTestResults.TestFiles) {
     $status = if ($fileResult.Failed -eq 0) { "✅" } else { "❌" }
-    Write-Host "  $status $($fileResult.Name): $($fileResult.Passed)/$($fileResult.Total) passed" -ForegroundColor $(if ($fileResult.Failed -eq 0) { $Colors.Pass } else { $Colors.Fail })
+    Write-Log "  $status $($fileResult.Name): $($fileResult.Passed)/$($fileResult.Total) passed" $(if ($fileResult.Failed -eq 0) { $Colors.Pass } else { $Colors.Fail })
     if ($fileResult.Error) {
-        Write-Host "    Error: $($fileResult.Error)" -ForegroundColor Red
+        Write-Log "    Error: $($fileResult.Error)" "Red"
     }
 }
 
-Write-Host ""
+Write-Log ""
 if ($GlobalTestResults.Failed -eq 0) {
-    Write-Host "🎉 ALL TESTS PASSED! 🎉" -ForegroundColor $Colors.Pass
+    Write-Log "🎉 ALL TESTS PASSED! 🎉" $Colors.Pass
     $exitCode = 0
 } else {
-    Write-Host "❌ SOME TESTS FAILED! ❌" -ForegroundColor $Colors.Fail
+    Write-Log "❌ SOME TESTS FAILED! ❌" $Colors.Fail
     $exitCode = 1
 }
 
@@ -151,6 +187,13 @@ if ($Cleanup) {
     Cleanup-TestEnvironment -Cleanup
 }
 
-Write-Host ""
-Write-Host "Test suite completed with exit code: $exitCode" -ForegroundColor $Colors.Info
+Write-Log ""
+Write-Log "Test suite completed with exit code: $exitCode" $Colors.Info
+
+# Final log entry
+if (-not $NoLog) {
+    Write-Log "=== ModManager Test Suite Completed ===" $Colors.Header
+    Write-Log "Log file saved to: $LogFilePath" $Colors.Info
+}
+
 exit $exitCode 

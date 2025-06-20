@@ -3,7 +3,7 @@
 
 # Configuration
 $ScriptPath = "..\ModManager.ps1"
-$TestDbPath = "run-test-cli.csv"
+$TestDbPath = "run-test-cli.csv"  # Will be set to output folder path in Initialize-TestEnvironment
 $TestApiResponsePath = "apiresponse"
 $MainApiResponsePath = "apiresponse"
 $TestRoot = Join-Path $PSScriptRoot "tests"
@@ -108,8 +108,12 @@ function Test-Command {
         Push-Location $outputFolder
     }
     try {
-        $result = Invoke-Expression $Command 2>&1
+        # Execute the command and capture all output
+        $result = & pwsh -NoProfile -ExecutionPolicy Bypass -Command $Command 2>&1
         $exitCode = $LASTEXITCODE
+        
+        # Display the captured output
+        $result | ForEach-Object { Write-Host $_ }
         
         # Consider exit code 0 or 1 as success for our tests
         if ($exitCode -eq 0 -or $exitCode -eq 1) {
@@ -135,6 +139,12 @@ function Initialize-TestEnvironment {
     param([string]$TestFileName = $null)
     Write-Host "Initializing test environment..." -ForegroundColor $Colors.Info
     
+    # Set TestDbPath to the output folder if TestFileName is provided
+    if ($TestFileName) {
+        $outputFolder = Get-TestOutputFolder $TestFileName
+        $script:TestDbPath = Join-Path $outputFolder "run-test-cli.csv"
+    }
+    
     # Clean up previous test files
     if (Test-Path $TestDbPath) {
         Remove-Item $TestDbPath -Force
@@ -150,8 +160,13 @@ function Initialize-TestEnvironment {
             New-Item -ItemType Directory -Path $MainApiResponsePath -Force
         }
         
-        Copy-Item "$TestApiResponsePath\*" $MainApiResponsePath -Force
-        Write-Host "Copied API response files for caching" -ForegroundColor $Colors.Info
+        # Only copy if source and destination are different
+        if ($TestApiResponsePath -ne $MainApiResponsePath) {
+            Copy-Item "$TestApiResponsePath\*" $MainApiResponsePath -Force
+            Write-Host "Copied API response files for caching" -ForegroundColor $Colors.Info
+        } else {
+            Write-Host "API response files already in correct location" -ForegroundColor $Colors.Info
+        }
     }
     
     # Create output folder for this test file
