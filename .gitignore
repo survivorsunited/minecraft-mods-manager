@@ -19,3 +19,5 @@ test/Pester5
 testResults.xml
 
 !**/.gitkeep
+
+*.log
