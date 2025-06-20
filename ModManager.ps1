@@ -29,7 +29,8 @@ param(
     [string]$DeleteModType = $null,
     [string]$ModListFile = "modlist.csv",
     [string]$DatabaseFile = $null,
-    [switch]$UseCachedResponses
+    [switch]$UseCachedResponses,
+    [switch]$ValidateWithDownload
 )
 
 # Load environment variables from .env file
@@ -1243,8 +1244,20 @@ function Show-Help {
     Write-Host "  .\ModManager.ps1 -ValidateAllModVersions -UseCachedResponses" -ForegroundColor White
     Write-Host "    - Validates all mods using cached API responses (faster for testing)"
     Write-Host ""
-    Write-Host "  Download-Mods -UseLatestVersion" -ForegroundColor White
-    Write-Host "    - Downloads latest versions of all mods to download/ folder"
+    Write-Host "  .\ModManager.ps1 -DownloadMods" -ForegroundColor White
+    Write-Host "    - Downloads mods using existing URLs in CSV (no validation, fast)"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -DownloadMods -ValidateWithDownload" -ForegroundColor White
+    Write-Host "    - Downloads mods with validation first (updates URLs, slower)"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -DownloadMods -UseLatestVersion" -ForegroundColor White
+    Write-Host "    - Downloads latest versions of all mods to download/ folder (no validation)"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -DownloadMods -UseLatestVersion -ValidateWithDownload" -ForegroundColor White
+    Write-Host "    - Downloads latest versions with validation first"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -Download" -ForegroundColor White
+    Write-Host "    - Validates all mods then downloads (legacy behavior)"
     Write-Host ""
     Write-Host "  Get-ModList" -ForegroundColor White
     Write-Host "    - Shows all mods from modlist.csv"
@@ -2708,6 +2721,13 @@ if ($MyInvocation.InvocationName -ne '.') {
     }
     if ($DownloadMods) {
         $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
+        
+        # Validate first if requested
+        if ($ValidateWithDownload) {
+            Write-Host "Validating mod versions before download..." -ForegroundColor Cyan
+            Validate-AllModVersions -CsvPath $effectiveModListPath -UpdateModList
+        }
+        
         Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion:$UseLatestVersion -ForceDownload:$ForceDownload
         return
     }
