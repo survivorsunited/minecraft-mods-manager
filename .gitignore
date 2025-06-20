@@ -6,3 +6,6 @@ download/*
 # backup files
 modlist-backup.csv
 modlist-columns-backup.csv
+test/Pester5
+
+testResults.xml
