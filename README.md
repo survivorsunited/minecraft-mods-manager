@@ -211,6 +211,9 @@ For `server`, `launcher`, and `installer` types, you **must** provide both the d
 # Validate all mods and update CSV
 .\ModManager.ps1 -ValidateAll
 
+# Validate all mods using cached API responses (faster for testing)
+.\ModManager.ps1 -ValidateAllModVersions -UseCachedResponses
+
 # Download mods with custom settings
 .\ModManager.ps1 -Download -UseLatestVersion -ForceDownload
 
@@ -220,6 +223,47 @@ For `server`, `launcher`, and `installer` types, you **must** provide both the d
 # Show help
 .\ModManager.ps1 -Help
 ```
+
+### Debug Options
+
+#### `-UseCachedResponses`
+
+This debug option speeds up testing and development by using existing API response files instead of making new API calls.
+
+**Benefits:**
+- **🚀 Much faster testing** - No API rate limiting or network delays
+- **🔧 Perfect for development** - Test logic without hitting APIs repeatedly
+- **💰 Cost effective** - Reduces API calls during development
+- **📊 Clear feedback** - Shows "Using cached response" vs "Calling API" messages
+
+**Usage:**
+```powershell
+# Fast validation using cached responses
+.\ModManager.ps1 -ValidateAllModVersions -UseCachedResponses
+
+# Normal validation with fresh API calls
+.\ModManager.ps1 -ValidateAllModVersions
+```
+
+**How it works:**
+- Checks if API response files exist in `apiresponse/` folder
+- Uses cached data when available (Modrinth and CurseForge responses)
+- Only makes API calls for mods without cached responses
+- Provides visual feedback showing cache usage
+
+**Example output:**
+```
+[001/060] Validating: Fabric API (ID: fabric-api, Type: mod, Host: modrinth, Version: 0.97.3+1.20.4)
+  → Using cached response for fabric-api...
+  → Using cached project info for fabric-api...
+  ✓ Found version: 0.97.3+1.20.4
+```
+
+**When to use:**
+- **Development and testing** - Test script logic without API delays
+- **Offline validation** - Validate mods when you have cached responses
+- **CI/CD pipelines** - Speed up automated testing
+- **Debugging** - Isolate issues from API-related problems
 
 ## 📊 CSV Format
 
