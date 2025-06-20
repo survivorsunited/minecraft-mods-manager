@@ -28,6 +28,7 @@ param(
     [string]$DeleteModID = $null,
     [string]$DeleteModType = $null,
     [string]$ModListFile = "modlist.csv",
+    [string]$DatabaseFile = $null,
     [switch]$UseCachedResponses
 )
 
@@ -67,19 +68,31 @@ if (-not (Test-Path $ApiResponseFolder)) {
     Write-Host "Created API response folder: $ApiResponseFolder" -ForegroundColor Green
 }
 
+# Helper: Get the effective modlist file path
+function Get-EffectiveModListPath {
+    param(
+        [string]$DatabaseFile,
+        [string]$ModListFile,
+        [string]$ModListPath = "modlist.csv"
+    )
+    if ($DatabaseFile) { return $DatabaseFile }
+    if ($ModListFile) { return $ModListFile }
+    if ($ModListPath) { return $ModListPath }
+    return "modlist.csv"
+}
+
 # Function to load mod list from CSV
 function Get-ModList {
     param(
-        [string]$CsvPath = $ModListPath
+        [string]$CsvPath
     )
-    
     try {
         if (-not (Test-Path $CsvPath)) {
             throw "Mod list CSV file not found: $CsvPath"
         }
-        
         $mods = Import-Csv -Path $CsvPath
-        Write-Host "Loaded $($mods.Count) mods from $CsvPath" -ForegroundColor Green
+        if ($mods -isnot [System.Collections.IEnumerable]) { $mods = @($mods) }
+        # Write-Host "Loaded $($mods.Count) mods from $CsvPath" -ForegroundColor Green
         return $mods
     }
     catch {
@@ -497,11 +510,11 @@ function Validate-CurseForgeModVersion {
 # Function to ensure CSV has required columns
 function Ensure-CsvColumns {
     param(
-        [string]$CsvPath = $ModListPath
+        [string]$CsvPath
     )
-    
     try {
         $mods = Import-Csv -Path $CsvPath
+        if ($mods -isnot [System.Collections.IEnumerable]) { $mods = @($mods) }
         $headers = $mods[0].PSObject.Properties.Name
         
         $needsUpdate = $false
@@ -588,8 +601,9 @@ function Ensure-CsvColumns {
         
         if ($needsUpdate) {
             # Create backup before updating
-            $backupPath = $CsvPath -replace '\.csv$', '-columns-backup.csv'
+            $backupPath = Get-BackupPath -OriginalPath $CsvPath -BackupType "columns"
             Copy-Item -Path $CsvPath -Destination $backupPath
+            Write-Host "Created backup: $backupPath" -ForegroundColor Yellow
             
             # Save updated CSV
             $mods | Export-Csv -Path $CsvPath -NoTypeInformation
@@ -601,6 +615,34 @@ function Ensure-CsvColumns {
         Write-Error "Failed to ensure CSV columns: $($_.Exception.Message)"
         return $null
     }
+}
+
+# Helper: Get backup path in backups folder
+function Get-BackupPath {
+    param(
+        [string]$OriginalPath,
+        [string]$BackupType = "backup"
+    )
+    
+    # Create backups folder if it doesn't exist
+    if (-not (Test-Path $BackupFolder)) {
+        New-Item -ItemType Directory -Path $BackupFolder -Force | Out-Null
+        Write-Host "Created backups folder: $BackupFolder" -ForegroundColor Green
+    }
+    
+    # Get original filename without path
+    $originalFileName = [System.IO.Path]::GetFileName($OriginalPath)
+    $fileNameWithoutExt = [System.IO.Path]::GetFileNameWithoutExtension($originalFileName)
+    $extension = [System.IO.Path]::GetExtension($originalFileName)
+    
+    # Create timestamp for unique backup names
+    $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
+    
+    # Create backup filename
+    $backupFileName = "${fileNameWithoutExt}-${BackupType}-${timestamp}${extension}"
+    
+    # Return full path in backups folder
+    return Join-Path $BackupFolder $backupFileName
 }
 
 # Function to clean up installer, launcher, and server entries
@@ -634,10 +676,9 @@ function Clean-SystemEntries {
 # Function to update modlist with latest versions
 function Update-ModListWithLatestVersions {
     param(
-        [string]$CsvPath = $ModListPath,
+        [string]$CsvPath,
         [array]$ValidationResults
     )
-    
     try {
         # Ensure CSV has required columns
         $mods = Ensure-CsvColumns -CsvPath $CsvPath
@@ -649,8 +690,9 @@ function Update-ModListWithLatestVersions {
         $mods = Clean-SystemEntries -Mods $mods
         
         # Create a backup of the original file
-        $backupPath = $CsvPath -replace '\.csv$', '-backup.csv'
+        $backupPath = Get-BackupPath -OriginalPath $CsvPath -BackupType "update"
         Copy-Item -Path $CsvPath -Destination $backupPath
+        Write-Host "Created backup: $backupPath" -ForegroundColor Yellow
         
         # Update mods with URLs only (DO NOT UPDATE VERSION COLUMN)
         $updatedCount = 0
@@ -776,13 +818,13 @@ function Update-ModListWithLatestVersions {
         # Save updated modlist
         $mods | Export-Csv -Path $CsvPath -NoTypeInformation
         
-        # Display summary table
-        if ($updateSummary.Count -gt 0) {
-            Write-Host ""
-            Write-Host "Update Summary:" -ForegroundColor Yellow
-            Write-Host "==============" -ForegroundColor Yellow
-            $updateSummary | Format-Table -AutoSize | Out-Host
-        }
+        # Display summary table (hidden for cleaner output)
+        # if ($updateSummary.Count -gt 0) {
+        #     Write-Host ""
+        #     Write-Host "Update Summary:" -ForegroundColor Yellow
+        #     Write-Host "==============" -ForegroundColor Yellow
+        #     $updateSummary | Format-Table -AutoSize | Out-Host
+        # }
         
         return $updatedCount
     }
@@ -800,7 +842,8 @@ function Validate-AllModVersions {
         [switch]$UpdateModList
     )
     
-    $mods = Get-ModList -CsvPath $CsvPath
+    $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $CsvPath
+    $mods = Get-ModList -CsvPath $effectiveModListPath
     if (-not $mods) {
         return
     }
@@ -957,21 +1000,23 @@ function Validate-AllModVersions {
         Write-Host ""
     }
     
-    # Provide upgrade recommendations
+    # Move upgrade recommendations to the very end and make them clearer
+    Write-Host ""
+    Write-Host "💡 Next Steps:" -ForegroundColor Cyan
+    Write-Host "==============" -ForegroundColor Cyan
+    
     if ($modsWithUpdates.Count -gt 0) {
-        Write-Host "💡 Upgrade Recommendations:" -ForegroundColor Cyan
-        Write-Host "===========================" -ForegroundColor Cyan
-        Write-Host "To upgrade to the latest versions, run:" -ForegroundColor White
+        Write-Host "🔄 $($modsWithUpdates.Count) mods have newer versions available!" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "To download the latest versions:" -ForegroundColor White
         Write-Host "  .\ModManager.ps1 -DownloadMods -UseLatestVersion" -ForegroundColor Green
-        Write-Host ""
-        Write-Host "Or to update the modlist with latest versions:" -ForegroundColor White
-        Write-Host "  .\ModManager.ps1 -ValidateAllModVersions -UpdateModList" -ForegroundColor Green
-        Write-Host ""
+        Write-Host "  → Downloads latest mod files to download/ folder" -ForegroundColor Gray
     } elseif ($modsCurrent.Count -gt 0 -and $modsNotFound.Count -eq 0 -and $modsWithErrors.Count -eq 0) {
         Write-Host "🎉 All mods are up to date!" -ForegroundColor Green
         Write-Host "All $($modsCurrent.Count) mods are using their latest available versions." -ForegroundColor Green
-        Write-Host ""
     }
+    
+    Write-Host ""
     
     # Update modlist with latest versions if requested
     if ($UpdateModList) {
@@ -979,7 +1024,7 @@ function Validate-AllModVersions {
         Write-Host ""
         
         # Load current modlist
-        $currentMods = Get-ModList -CsvPath $ModListPath
+        $currentMods = Get-ModList -CsvPath $effectiveModListPath
         if (-not $currentMods) {
             Write-Host "❌ Failed to load current modlist" -ForegroundColor Red
             return
@@ -1008,7 +1053,11 @@ function Validate-AllModVersions {
                 $updatedMod.WikiUrl = $validationResult.WikiUrl
                 $updatedMod.LatestGameVersion = $validationResult.LatestGameVersion
                 
-                $newMods += $updatedMod
+                if ($newMods.Count -eq 0) {
+                    $newMods = @($updatedMod)
+                } else {
+                    $newMods = @($newMods) + $updatedMod
+                }
                 $updatedCount++
             } else {
                 # Keep existing mod as-is
@@ -1017,11 +1066,12 @@ function Validate-AllModVersions {
         }
         
         # Save updated modlist
-        $newMods | Export-Csv -Path $ModListPath -NoTypeInformation
+        $newMods | Export-Csv -Path $effectiveModListPath -NoTypeInformation
         
-        Write-Host "Update Summary:" -ForegroundColor Cyan
-        Write-Host "===============" -ForegroundColor Cyan
-        Write-Host ""
+        # Show what was updated (hidden for cleaner output)
+        # Write-Host "Update Summary:" -ForegroundColor Cyan
+        # Write-Host "===============" -ForegroundColor Cyan
+        # Write-Host ""
         
         # Show what was updated
         $updateTable = @()
@@ -1048,16 +1098,16 @@ function Validate-AllModVersions {
         }
         
         if ($updateTable.Count -gt 0) {
-            $updateTable | Format-Table -AutoSize
-            Write-Host ""
-            Write-Host "Updated $updatedCount mods with latest versions!" -ForegroundColor Green
+            # $updateTable | Format-Table -AutoSize
+            # Write-Host ""
+            Write-Host "✅ Database updated: $updatedCount mods now have latest version information" -ForegroundColor Green
         } else {
-            Write-Host "No updates needed - all mods are already at latest versions." -ForegroundColor Green
+            Write-Host "✅ No updates needed - all mods already have latest version information" -ForegroundColor Green
         }
     }
     
     # Return summary for potential use by other functions
-    return @{
+    $result = @{
         TotalMods = $results.Count
         CurrentVersions = $modsCurrent.Count
         AvailableUpdates = $modsWithUpdates.Count
@@ -1065,6 +1115,9 @@ function Validate-AllModVersions {
         Errors = $modsWithErrors.Count
         Results = $results
     }
+    
+    # Suppress output to avoid showing the object summary
+    $result | Out-Null
 }
 
 # Function to show help information
@@ -1218,8 +1271,7 @@ function Show-Help {
     Write-Host "  Output: $DownloadFolder\GameVersion\installer\*.exe (installers)" -ForegroundColor White
     Write-Host "  Output: $DownloadFolder\GameVersion\minecraft_server.*.jar (server JARs)" -ForegroundColor White
     Write-Host "  Output: $DownloadFolder\GameVersion\fabric-server-*.jar (Fabric launchers)" -ForegroundColor White
-    Write-Host "  Backup: modlist-backup.csv (created before updates)" -ForegroundColor White
-    Write-Host "  Backup: modlist-columns-backup.csv (created when adding new columns)" -ForegroundColor White
+    Write-Host "  Backup: $BackupFolder\*.csv (timestamped backups created before updates)" -ForegroundColor White
     Write-Host ""
     Write-Host "  Delete a mod by Modrinth URL or ID/type:" -ForegroundColor White
     Write-Host "    .\\ModManager.ps1 -DeleteModID 'https://modrinth.com/mod/phosphor'" -ForegroundColor White
@@ -1396,6 +1448,18 @@ Generated on: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
     Write-Host "Created README.md in: $FolderPath" -ForegroundColor Green
 }
 
+# Helper function to clean filenames (decode URL, remove Minecraft formatting codes, and non-printable characters)
+function Clean-Filename {
+    param([string]$filename)
+    # Decode URL-encoded characters
+    $decoded = [System.Uri]::UnescapeDataString($filename)
+    # Remove Minecraft formatting codes (e.g., §r, §l, etc.)
+    $cleaned = $decoded -replace "§[0-9a-fl-or]", ""
+    # Remove any non-printable or control characters
+    $cleaned = -join ($cleaned.ToCharArray() | Where-Object { [int]$_ -ge 32 -and [int]$_ -le 126 })
+    return $cleaned
+}
+
 # Function to download mods to local mods folder
 function Download-Mods {
     param(
@@ -1453,12 +1517,65 @@ function Download-Mods {
         $downloadResults = @()
         $successCount = 0
         $errorCount = 0
+        $missingSystemFiles = @()
         
         Write-Host "Starting mod downloads..." -ForegroundColor Yellow
-    Write-Host ""
-    
-    foreach ($mod in $mods) {
-        if (-not [string]::IsNullOrEmpty($mod.ID)) {
+        Write-Host ""
+        
+        # Track files that existed before the download loop
+        $preExistingFiles = @{}
+        $downloadedThisRun = @{}
+        foreach ($mod in $mods) {
+            # Determine filename as in the main loop
+            $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
+            $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
+            $gameVersion = if (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
+            $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
+            $downloadUrl = $mod.Url
+            $filename = $null
+            if ($mod.Type -in @("installer", "launcher", "server")) {
+                if ($jarFilename) {
+                    $filename = $jarFilename
+                } else {
+                    $filename = [System.IO.Path]::GetFileName($downloadUrl)
+                    if (-not $filename -or $filename -eq "") {
+                        $filename = "$($mod.ID)-$($mod.Version).jar"
+                    }
+                }
+            } elseif ($jarFilename -and -not $UseLatestVersion) {
+                $filename = $jarFilename
+            } else {
+                $filename = [System.IO.Path]::GetFileName($downloadUrl)
+                if (-not $filename -or $filename -eq "") {
+                    $filename = "$($mod.ID)-$($mod.Version).jar"
+                }
+            }
+            if ($mod.Type -eq "shaderpack") {
+                $filename = Clean-Filename $filename
+            }
+            $gameVersionFolder = if ($UseLatestVersion) { Join-Path $DownloadFolder $targetGameVersion } else { Join-Path $DownloadFolder $gameVersion }
+            if ($mod.Type -eq "shaderpack") {
+                $gameVersionFolder = Join-Path $gameVersionFolder "shaderpacks"
+            } elseif ($mod.Type -eq "installer") {
+                $gameVersionFolder = Join-Path $gameVersionFolder "installer"
+            } elseif ($mod.Type -eq "modpack") {
+                $gameVersionFolder = Join-Path $gameVersionFolder "modpacks"
+            } elseif ($mod.Type -eq "launcher" -or $mod.Type -eq "server") {
+                # No subfolder
+            } else {
+                $gameVersionFolder = Join-Path $gameVersionFolder "mods"
+                if ($mod.Group -eq "block") {
+                    $gameVersionFolder = Join-Path $gameVersionFolder "block"
+                }
+            }
+            $downloadPath = Join-Path $gameVersionFolder $filename
+            if (Test-Path $downloadPath) {
+                $preExistingFiles[$downloadPath] = $true
+            }
+        }
+        
+        foreach ($mod in $mods) {
+            if (-not [string]::IsNullOrEmpty($mod.ID)) {
                 # Get loader from CSV, default to "fabric" if not specified
                 $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
                 
@@ -1476,7 +1593,43 @@ function Download-Mods {
                 $downloadVersion = $null
                 $result = $null
                 
-                if ($UseLatestVersion -and $mod.LatestVersionUrl) {
+                # For system entries (installer, launcher, server), handle differently based on UseLatestVersion
+                if ($mod.Type -in @("installer", "launcher", "server")) {
+                    if ($UseLatestVersion) {
+                        # When using latest version, find system entry that matches target game version
+                        $matchingSystemEntry = $mods | Where-Object { 
+                            $_.Type -eq $mod.Type -and 
+                            $_.GameVersion -eq $targetGameVersion -and
+                            $_.Name -eq $mod.Name 
+                        } | Select-Object -First 1
+                        
+                        if ($matchingSystemEntry) {
+                            $downloadUrl = $matchingSystemEntry.Url
+                            $downloadVersion = $matchingSystemEntry.Version
+                            $jarFilename = $matchingSystemEntry.Jar
+                        } else {
+                            Write-Host "❌ $($mod.Name): No $($mod.Type) found for game version $targetGameVersion" -ForegroundColor Red
+                            $missingSystemFiles += [PSCustomObject]@{
+                                Name = $mod.Name
+                                Type = $mod.Type
+                                RequiredVersion = $targetGameVersion
+                                AvailableVersions = ($mods | Where-Object { $_.Type -eq $mod.Type -and $_.Name -eq $mod.Name } | Select-Object -ExpandProperty GameVersion) -join ", "
+                            }
+                            $errorCount++
+                            continue
+                        }
+                    } else {
+                        # For current versions, use the direct URL from the current entry
+                        if ($mod.Url) {
+                            $downloadUrl = $mod.Url
+                            $downloadVersion = $mod.Version
+                        } else {
+                            Write-Host "❌ $($mod.Name): No direct URL available for system entry" -ForegroundColor Red
+                            $errorCount++
+                            continue
+                        }
+                    }
+                } elseif ($UseLatestVersion -and $mod.LatestVersionUrl) {
                     $downloadUrl = $mod.LatestVersionUrl
                     $downloadVersion = $mod.LatestVersion
                     # For CurseForge mods, we still need to get the filename from API
@@ -1586,7 +1739,16 @@ function Download-Mods {
                 
                 # Determine filename for download
                 $filename = $null
-                if ($jarFilename -and -not $UseLatestVersion) {
+                if ($mod.Type -in @("installer", "launcher", "server")) {
+                    if ($jarFilename) {
+                        $filename = $jarFilename
+                    } else {
+                        $filename = [System.IO.Path]::GetFileName($downloadUrl)
+                        if (-not $filename -or $filename -eq "") {
+                            $filename = "$($mod.ID)-$downloadVersion.jar"
+                        }
+                    }
+                } elseif ($jarFilename -and -not $UseLatestVersion) {
                     # Use the JAR filename from CSV if available and not using latest version
                     $filename = $jarFilename
                 } else {
@@ -1596,19 +1758,25 @@ function Download-Mods {
                         $filename = "$($mod.ID)-$downloadVersion.jar"
                     }
                 }
+                # Clean filename for shaderpacks
+                if ($mod.Type -eq "shaderpack") {
+                    $filename = Clean-Filename $filename
+                }
                 
                 $downloadPath = Join-Path $gameVersionFolder $filename
                 
                 # Check if file already exists
                 if ((Test-Path $downloadPath) -and -not $ForceDownload) {
-                    Write-Host "⏭️  $($mod.Name): Already exists ($filename)" -ForegroundColor Yellow
-                    $downloadResults += [PSCustomObject]@{
-                        Name = $mod.Name
-                        Status = "Skipped"
-                        Version = $downloadVersion
-                        File = $filename
-                        Path = $downloadPath
-                        Error = "File already exists"
+                    if ($preExistingFiles[$downloadPath] -and -not $downloadedThisRun[$downloadPath]) {
+                        Write-Host "⏭️  $($mod.Name): Already exists ($filename)" -ForegroundColor Yellow
+                        $downloadResults += [PSCustomObject]@{
+                            Name = $mod.Name
+                            Status = "Skipped"
+                            Version = $downloadVersion
+                            File = $filename
+                            Path = $downloadPath
+                            Error = "File already exists"
+                        }
                     }
                     continue
                 }
@@ -1643,6 +1811,8 @@ function Download-Mods {
                             Error = $null
                         }
                         $successCount++
+                        $preExistingFiles[$downloadPath] = $true
+                        $downloadedThisRun[$downloadPath] = $true
                     } else {
                         throw "File was not created"
                     }
@@ -1683,6 +1853,20 @@ function Download-Mods {
         Write-Host ""
         Write-Host "Download results saved to: $downloadResultsFile" -ForegroundColor Cyan
         
+        # Show missing system files if using latest version
+        if ($UseLatestVersion -and $missingSystemFiles.Count -gt 0) {
+            Write-Host ""
+            Write-Host "Missing System Files for ${targetGameVersion}:" -ForegroundColor Red
+            Write-Host "=============================================" -ForegroundColor Red
+            foreach ($missing in $missingSystemFiles) {
+                Write-Host "❌ $($missing.Name) ($($missing.Type))" -ForegroundColor Red
+                Write-Host "   Required version: $($missing.RequiredVersion)" -ForegroundColor Yellow
+                Write-Host "   Available versions: $($missing.AvailableVersions)" -ForegroundColor Yellow
+                Write-Host "   Please add missing $($missing.Type) for $($missing.RequiredVersion)" -ForegroundColor Cyan
+                Write-Host ""
+            }
+        }
+        
         # Show failed downloads
         if ($errorCount -gt 0) {
             Write-Host ""
@@ -1698,7 +1882,7 @@ function Download-Mods {
             Write-DownloadReadme -FolderPath $versionFolder -Analysis $versionAnalysis -DownloadResults $downloadResults -TargetVersion $targetGameVersion -UseLatestVersion $UseLatestVersion
         }
         
-        return $successCount
+        return
     }
     catch {
         Write-Error "Failed to download mods: $($_.Exception.Message)"
@@ -2031,6 +2215,19 @@ if ($MyInvocation.InvocationName -ne '.') {
     }
     
     if ($AddMod) {
+        $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
+        $mods = @()
+        if (Test-Path $effectiveModListPath) {
+            $mods = Import-Csv $effectiveModListPath
+            if ($mods -isnot [System.Collections.IEnumerable]) { $mods = @($mods) }
+            if ($mods.Count -eq 1 -and ($mods[0].PSObject.Properties.Name -contains 'Group')) {
+                $allEmpty = $true
+                foreach ($prop in $mods[0].PSObject.Properties) {
+                    if ($prop.Value) { $allEmpty = $false; break }
+                }
+                if ($allEmpty) { $mods = @() }
+            }
+        }
         # Add a new mod entry to modlist.csv with minimal info and auto-resolve details
         $id = $AddModId
         $url = $AddModUrl
@@ -2355,9 +2552,10 @@ if ($MyInvocation.InvocationName -ne '.') {
         
         if ($resolvedMod) {
             # Check for existing record before adding
+            $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
             $mods = @()
-            if (Test-Path $ModListPath) {
-                $mods = Import-Csv $ModListPath
+            if (Test-Path $effectiveModListPath) {
+                $mods = Import-Csv $effectiveModListPath
             }
             
             # Look for existing record with same ID and type
@@ -2382,9 +2580,9 @@ if ($MyInvocation.InvocationName -ne '.') {
                     # Update existing record with new information
                     Write-Host "🔄 Updating existing record with new information..." -ForegroundColor Yellow
                     $mods[$existingIndex] = $resolvedMod
-                    $mods | Export-Csv -Path $ModListPath -NoTypeInformation
+                    $mods | Export-Csv -Path $effectiveModListPath -NoTypeInformation
                     
-                    Write-Host "✅ Successfully updated $($resolvedMod.Name) in $ModListPath" -ForegroundColor Green
+                    Write-Host "✅ Successfully updated $($resolvedMod.Name) in $effectiveModListPath" -ForegroundColor Green
                     Write-Host "📋 Updated information:" -ForegroundColor Cyan
                     Write-Host "   Version: $($existingMod.Version) → $($resolvedMod.Version)" -ForegroundColor Gray
                     Write-Host "   Title: $($resolvedMod.Title)" -ForegroundColor Gray
@@ -2393,10 +2591,14 @@ if ($MyInvocation.InvocationName -ne '.') {
                 }
             } else {
                 # Add new record
-                $mods += $resolvedMod
-                $mods | Export-Csv -Path $ModListPath -NoTypeInformation
+                if ($mods.Count -eq 0) {
+                    $mods = @($resolvedMod)
+                } else {
+                    $mods = @($mods) + $resolvedMod
+                }
+                $mods | Export-Csv -Path $effectiveModListPath -NoTypeInformation
                 
-                Write-Host "✅ Successfully added $($resolvedMod.Name) to $ModListPath in group '$($resolvedMod.Group)'" -ForegroundColor Green
+                Write-Host "✅ Successfully added $($resolvedMod.Name) to $effectiveModListPath in group '$($resolvedMod.Group)'" -ForegroundColor Green
                 Write-Host "📋 Resolved information:" -ForegroundColor Cyan
                 Write-Host "   Latest Version: $($resolvedMod.LatestVersion)" -ForegroundColor Gray
                 Write-Host "   Title: $($resolvedMod.Title)" -ForegroundColor Gray
@@ -2409,6 +2611,7 @@ if ($MyInvocation.InvocationName -ne '.') {
                 Write-Host ""
                 Write-Host "Auto-downloading the mod..." -ForegroundColor Yellow
                 $downloadParams = @{
+                    CsvPath = $effectiveModListPath
                     UseLatestVersion = $true
                     ForceDownload = $true
                 }
@@ -2466,9 +2669,10 @@ if ($MyInvocation.InvocationName -ne '.') {
         Write-Host "🗑️  Deleting mod: $deleteId ($deleteType)" -ForegroundColor Cyan
         
         # Load and filter mods
+        $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
         $mods = @()
-        if (Test-Path $ModListPath) {
-            $mods = Import-Csv $ModListPath
+        if (Test-Path $effectiveModListPath) {
+            $mods = Import-Csv $effectiveModListPath
         }
         
         $originalCount = $mods.Count
@@ -2483,10 +2687,10 @@ if ($MyInvocation.InvocationName -ne '.') {
         # Check if any mods were removed
         if ($mods.Count -lt $originalCount) {
             $removedCount = $originalCount - $mods.Count
-            $mods | Export-Csv -Path $ModListPath -NoTypeInformation
-            Write-Host "✅ Successfully deleted $removedCount mod(s) with ID '$deleteId' ($deleteType) from $ModListPath" -ForegroundColor Green
+            $mods | Export-Csv -Path $effectiveModListPath -NoTypeInformation
+            Write-Host "✅ Successfully deleted $removedCount mod(s) with ID '$deleteId' ($deleteType) from $effectiveModListPath" -ForegroundColor Green
         } else {
-            Write-Host "ℹ️  No matching mod found for '$deleteId' ($deleteType) in $ModListPath" -ForegroundColor Yellow
+            Write-Host "ℹ️  No matching mod found for '$deleteId' ($deleteType) in $effectiveModListPath" -ForegroundColor Yellow
         }
         return
     }
@@ -2498,15 +2702,18 @@ if ($MyInvocation.InvocationName -ne '.') {
         return
     }
     if ($ValidateAllModVersions) {
-        Validate-AllModVersions -UpdateModList
+        $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
+        Validate-AllModVersions -CsvPath $effectiveModListPath -UpdateModList
         return
     }
     if ($DownloadMods) {
-        Download-Mods -UseLatestVersion:$UseLatestVersion -ForceDownload:$ForceDownload
+        $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
+        Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion:$UseLatestVersion -ForceDownload:$ForceDownload
         return
     }
     if ($GetModList) {
-        Get-ModList
+        $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
+        Get-ModList -CsvPath $effectiveModListPath
         return
     }
     if ($DownloadServer) {
@@ -2514,10 +2721,13 @@ if ($MyInvocation.InvocationName -ne '.') {
         return
     }
     # Default: Run validation and update modlist
-    Validate-AllModVersions -UpdateModList
+    $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
+    Validate-AllModVersions -CsvPath $effectiveModListPath -UpdateModList
     if ($Download) {
         Write-Host ""; Write-Host "Starting mod downloads..." -ForegroundColor Yellow
-        $downloadParams = @{}
+        $downloadParams = @{
+            CsvPath = $effectiveModListPath
+        }
         if ($UseLatestVersion) { $downloadParams.UseLatestVersion = $true; Write-Host "Using latest versions for downloads" -ForegroundColor Cyan }
         if ($ForceDownload) { $downloadParams.ForceDownload = $true; Write-Host "Force downloading (will overwrite existing files)" -ForegroundColor Cyan }
         $downloadedCount = Download-Mods @downloadParams
