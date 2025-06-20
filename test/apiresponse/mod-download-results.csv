@@ -1,13 +1,12 @@
 "Name","Status","Version","File","Path","Size","Error"
-"Fabric API","Success","0.97.3+1.20.4","fabric-api-0.97.3%2B1.20.4.jar","download\1.21.5\mods\fabric-api-0.97.3%2B1.20.4.jar","2.09 MB",
+"Fabric API","Success","0.127.1+1.21.5","fabric-api-0.127.1%2B1.21.5.jar","download\1.21.5\mods\fabric-api-0.127.1%2B1.21.5.jar","2.14 MB",
 "Complementary Shaders - Reimagined","Success","r5.5.1","ComplementaryReimagined_r5.5.1.zip","download\1.21.5\shaderpacks\ComplementaryReimagined_r5.5.1.zip","0.44 MB",
 "No Chat Reports","Success","Fabric-1.21.5-v2.12.0","NoChatReports-FABRIC-1.21.5-v2.12.0.jar","download\1.21.5\mods\block\NoChatReports-FABRIC-1.21.5-v2.12.0.jar","0.3 MB",
 "Litematica","Success","0.22.1","litematica-fabric-1.21.5-0.22.1.jar","download\1.21.5\mods\litematica-fabric-1.21.5-0.22.1.jar","1.34 MB",
-"Fabulously Optimized","Failed","10.0.0-alpha.2","modpack","download\1.21.5\modpacks\Fabulously Optimized",,"Modpack download failed"
 "Fabric Installer","Success","1.0.0","fabric-installer-1.0.3.exe","download\1.21.5\installer\fabric-installer-1.0.3.exe","0.44 MB",
-"Fabric Server Launcher","Success","1.0.0","jar","download\1.21.5\jar","0.17 MB",
+"Fabric Server Launcher","Success","1.0.0","fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar","download\1.21.5\fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar","0.17 MB",
 "Minecraft Server","Success","1.21.5","minecraft_server.1.21.5.jar","download\1.21.5\minecraft_server.1.21.5.jar","54.62 MB",
 "AstraLex Shaders","Success","93.0","AstraLex_By_LexBoosT_V93.0.zip","download\1.21.5\shaderpacks\AstraLex_By_LexBoosT_V93.0.zip","3.04 MB",
-"Test Server","Failed","1.21.6","minecraft_server.1.21.6.jar","download\1.21.6\minecraft_server.1.21.6.jar",,"Response status code does not indicate success: 404 (Not Found)."
-"Fabric Server Launcher","Success","1.0.0","jar","download\1.21.6\jar","0.17 MB",
+"Test Server","Failed","1.21.6","test_server_1.21.6.jar","download\1.21.6\test_server_1.21.6.jar",,"Response status code does not indicate success: 404 (Not Found)."
+"Fabric Server Launcher","Success","1.0.0","fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar","download\1.21.6\fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar","0.17 MB",
 "Minecraft Server","Success","1.21.6","minecraft_server.1.21.6.jar","download\1.21.6\minecraft_server.1.21.6.jar","54.89 MB",
