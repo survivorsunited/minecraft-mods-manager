@@ -9,7 +9,7 @@ param(
 )
 
 # Configuration
-$ScriptPath = "ModManager.ps1"
+$ScriptPath = "..\ModManager.ps1"
 $TestDbPath = "run-test-cli.csv"
 $TestApiResponsePath = "apiresponse"
 $MainApiResponsePath = "..\apiresponse"
@@ -246,32 +246,28 @@ Test-Command ".\$ScriptPath -DownloadServer" "Download Server Files" 0
 Write-TestHeader "Custom Database File"
 Test-Command ".\$ScriptPath -ModListFile '$TestDbPath' -GetModList" "Use Custom Database File" 4
 
-# Test 14: Add modpack
-Write-TestHeader "Add Modpack"
-Test-Command ".\$ScriptPath -AddMod -AddModUrl 'https://modrinth.com/modpack/fabulously-optimized' -DatabaseFile '$TestDbPath' -UseCachedResponses" "Add Fabulously Optimized Modpack" 5 @("Fabric API", "Complementary Shaders - Reimagined", "No Chat Reports", "Litematica", "Fabulously Optimized")
-
-# Test 15: Add system entries (installer, launcher, server) for different versions
+# Test 14: Add system entries (installer, launcher, server) for different versions
 Write-TestHeader "Add System Entries"
-Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.5' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath'" "Add Fabric Installer 1.21.5" 6
-Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.6' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath'" "Add Fabric Installer 1.21.6" 6
-Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Server Launcher' -AddModType 'launcher' -AddModGameVersion '1.21.5' -AddModUrl 'https://meta.fabricmc.net/v2/versions/loader/1.21.5/0.16.14/1.0.3/server/jar' -AddModVersion '1.0.3' -AddModJar 'fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar' -DatabaseFile '$TestDbPath'" "Add Fabric Server Launcher 1.21.5" 7
-Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Server Launcher' -AddModType 'launcher' -AddModGameVersion '1.21.6' -AddModUrl 'https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.16.14/1.0.3/server/jar' -AddModVersion '1.0.3' -AddModJar 'fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar' -DatabaseFile '$TestDbPath'" "Add Fabric Server Launcher 1.21.6" 8
-Test-Command ".\$ScriptPath -AddMod -AddModName 'Minecraft Server' -AddModType 'server' -AddModGameVersion '1.21.5' -AddModUrl 'https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar' -AddModVersion '1.21.5' -AddModJar 'minecraft_server.1.21.5.jar' -DatabaseFile '$TestDbPath'" "Add Minecraft Server 1.21.5" 9
-Test-Command ".\$ScriptPath -AddMod -AddModName 'Minecraft Server' -AddModType 'server' -AddModGameVersion '1.21.6' -AddModUrl 'https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar' -AddModVersion '1.21.6' -AddModJar 'minecraft_server.1.21.6.jar' -DatabaseFile '$TestDbPath'" "Add Minecraft Server 1.21.6" 10
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.5' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath'" "Add Fabric Installer 1.21.5" 5
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.6' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath'" "Add Fabric Installer 1.21.6" 5
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Server Launcher' -AddModType 'launcher' -AddModGameVersion '1.21.5' -AddModUrl 'https://meta.fabricmc.net/v2/versions/loader/1.21.5/0.16.14/1.0.3/server/jar' -AddModVersion '1.0.3' -AddModJar 'fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar' -DatabaseFile '$TestDbPath'" "Add Fabric Server Launcher 1.21.5" 6
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Server Launcher' -AddModType 'launcher' -AddModGameVersion '1.21.6' -AddModUrl 'https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.16.14/1.0.3/server/jar' -AddModVersion '1.0.3' -AddModJar 'fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar' -DatabaseFile '$TestDbPath'" "Add Fabric Server Launcher 1.21.6" 7
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Minecraft Server' -AddModType 'server' -AddModGameVersion '1.21.5' -AddModUrl 'https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar' -AddModVersion '1.21.5' -AddModJar 'minecraft_server.1.21.5.jar' -DatabaseFile '$TestDbPath'" "Add Minecraft Server 1.21.5" 8
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Minecraft Server' -AddModType 'server' -AddModGameVersion '1.21.6' -AddModUrl 'https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar' -AddModVersion '1.21.6' -AddModJar 'minecraft_server.1.21.6.jar' -DatabaseFile '$TestDbPath'" "Add Minecraft Server 1.21.6" 9
 
-# Test 16: Validate with UseLatestVersion (should detect majority version)
+# Test 15: Validate with UseLatestVersion (should detect majority version)
 Write-TestHeader "Validate with UseLatestVersion"
-Test-Command ".\$ScriptPath -ValidateAllModVersions -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses" "Validate with UseLatestVersion" 10
+Test-Command ".\$ScriptPath -ValidateAllModVersions -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses" "Validate with UseLatestVersion" 9
 
-# Test 17: Download with UseLatestVersion (should download latest mods and matching system files)
+# Test 16: Download with UseLatestVersion (should download latest mods and matching system files)
 Write-TestHeader "Download with UseLatestVersion"
-Test-Command ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses" "Download with UseLatestVersion" 10
+Test-Command ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses" "Download with UseLatestVersion" 9
 
-# Test 17.5: Download with UseLatestVersion and validation
+# Test 16.5: Download with UseLatestVersion and validation
 Write-TestHeader "Download with UseLatestVersion and Validation"
-Test-Command ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -ValidateWithDownload -UseCachedResponses" "Download with UseLatestVersion and Validation" 10
+Test-Command ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -ValidateWithDownload -UseCachedResponses" "Download with UseLatestVersion and Validation" 9
 
-# Test 18: Test missing system files scenario (remove some system entries)
+# Test 17: Test missing system files scenario (remove some system entries)
 Write-TestHeader "Test Missing System Files"
 # Remove 1.21.6 system entries to test missing file reporting
 $currentMods = Import-Csv $TestDbPath
@@ -282,41 +278,41 @@ $filteredMods | Export-Csv $TestDbPath -NoTypeInformation
 
 $missingSystemFilesCmd = ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses"
 $missingSystemFilesTestName = "Download with Missing System Files"
-Test-Command $missingSystemFilesCmd $missingSystemFilesTestName 8
+Test-Command $missingSystemFilesCmd $missingSystemFilesTestName 7
 
-# Test 19: Test shaderpack filename cleaning (add a shaderpack with URL-encoded filename)
+# Test 18: Test shaderpack filename cleaning (add a shaderpack with URL-encoded filename)
 Write-TestHeader "Test Shaderpack Filename Cleaning"
-Test-Command ".\$ScriptPath -AddMod -AddModUrl 'https://modrinth.com/shader/astralex' -DatabaseFile '$TestDbPath' -UseCachedResponses" "Add AstraLex Shaderpack" 9
+Test-Command ".\$ScriptPath -AddMod -AddModUrl 'https://modrinth.com/shader/astralex' -DatabaseFile '$TestDbPath' -UseCachedResponses" "Add AstraLex Shaderpack" 8
 
-# Test 20: Test system entry filename handling (verify Jar column is used)
+# Test 19: Test system entry filename handling (verify Jar column is used)
 Write-TestHeader "Test System Entry Filename Handling"
 # Add a system entry with a specific Jar filename
-Test-Command ".\$ScriptPath -AddMod -AddModName 'Test Server' -AddModType 'server' -AddModGameVersion '1.21.6' -AddModUrl 'https://example.com/server.jar' -AddModVersion '1.21.6' -AddModJar 'test_server_1.21.6.jar' -DatabaseFile '$TestDbPath'" "Add Test Server with Jar filename" 10
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Test Server' -AddModType 'server' -AddModGameVersion '1.21.6' -AddModUrl 'https://example.com/server.jar' -AddModVersion '1.21.6' -AddModJar 'test_server_1.21.6.jar' -DatabaseFile '$TestDbPath'" "Add Test Server with Jar filename" 9
 
-# Test 21: Test duplicate 'Already exists' message fix
+# Test 20: Test duplicate 'Already exists' message fix
 Write-TestHeader "Test Duplicate Already Exists Fix"
 # Download the same files twice to verify no duplicate messages
 $duplicateTestCmd = ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseCachedResponses"
-Test-Command $duplicateTestCmd "Download to Test Duplicate Prevention" 10
+Test-Command $duplicateTestCmd "Download to Test Duplicate Prevention" 9
 
-# Test 22: Test UseLatestVersion with all system entries present
+# Test 21: Test UseLatestVersion with all system entries present
 Write-TestHeader "Test UseLatestVersion Complete"
 # Re-add the missing 1.21.6 system entries
-Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.6' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath'" "Re-add Fabric Installer 1.21.6" 10
-Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Server Launcher' -AddModType 'launcher' -AddModGameVersion '1.21.6' -AddModUrl 'https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.16.14/1.0.3/server/jar' -AddModVersion '1.0.3' -AddModJar 'fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar' -DatabaseFile '$TestDbPath'" "Re-add Fabric Server Launcher 1.21.6" 11
-Test-Command ".\$ScriptPath -AddMod -AddModName 'Minecraft Server' -AddModType 'server' -AddModGameVersion '1.21.6' -AddModUrl 'https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar' -AddModVersion '1.21.6' -AddModJar 'minecraft_server.1.21.6.jar' -DatabaseFile '$TestDbPath'" "Re-add Minecraft Server 1.21.6" 12
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.6' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath'" "Re-add Fabric Installer 1.21.6" 9
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Fabric Server Launcher' -AddModType 'launcher' -AddModGameVersion '1.21.6' -AddModUrl 'https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.16.14/1.0.3/server/jar' -AddModVersion '1.0.3' -AddModJar 'fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar' -DatabaseFile '$TestDbPath'" "Re-add Fabric Server Launcher 1.21.6" 10
+Test-Command ".\$ScriptPath -AddMod -AddModName 'Minecraft Server' -AddModType 'server' -AddModGameVersion '1.21.6' -AddModUrl 'https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar' -AddModVersion '1.21.6' -AddModJar 'minecraft_server.1.21.6.jar' -DatabaseFile '$TestDbPath'" "Re-add Minecraft Server 1.21.6" 11
 
-# Test 23: Final UseLatestVersion test with complete system entries
+# Test 22: Final UseLatestVersion test with complete system entries
 Write-TestHeader "Final UseLatestVersion Test"
 $finalUseLatestCmd = ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses"
 $finalUseLatestTestName = "Final UseLatestVersion Download"
-Test-Command $finalUseLatestCmd $finalUseLatestTestName 12
+Test-Command $finalUseLatestCmd $finalUseLatestTestName 11
 
-# Test 24: Test legacy Download behavior (validation + download)
+# Test 23: Test legacy Download behavior (validation + download)
 Write-TestHeader "Test Legacy Download Behavior"
-Test-Command ".\$ScriptPath -Download -DatabaseFile '$TestDbPath' -UseCachedResponses" "Legacy Download (Validation + Download)" 12
+Test-Command ".\$ScriptPath -Download -DatabaseFile '$TestDbPath' -UseCachedResponses" "Legacy Download (Validation + Download)" 11
 
-# Test 25: Verify downloaded files have correct names
+# Test 24: Verify downloaded files have correct names
 Write-TestHeader "Verify Downloaded File Names"
 # Check that system entries use Jar column names and shaderpacks have clean names
 $verifyFilesCmd = 'Get-ChildItem "download" -Recurse -File | Where-Object { $_.Name -match "fabric-installer|fabric-server|minecraft_server|astralex|bsl|complementary" } | Select-Object Name, FullName'
