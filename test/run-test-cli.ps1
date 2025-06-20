@@ -234,6 +234,10 @@ Test-Command ".\$ScriptPath -AddMod -AddModId 'litematica' -AddModName 'Litemati
 Write-TestHeader "Download Mods"
 Test-Command ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseCachedResponses" "Download Mods" 4
 
+# Test 11.5: Download mods with validation
+Write-TestHeader "Download Mods with Validation"
+Test-Command ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -ValidateWithDownload -UseCachedResponses" "Download Mods with Validation" 4
+
 # Test 12: Download server files
 Write-TestHeader "Download Server Files"
 Test-Command ".\$ScriptPath -DownloadServer" "Download Server Files" 0
@@ -262,6 +266,10 @@ Test-Command ".\$ScriptPath -ValidateAllModVersions -DatabaseFile '$TestDbPath' 
 # Test 17: Download with UseLatestVersion (should download latest mods and matching system files)
 Write-TestHeader "Download with UseLatestVersion"
 Test-Command ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses" "Download with UseLatestVersion" 10
+
+# Test 17.5: Download with UseLatestVersion and validation
+Write-TestHeader "Download with UseLatestVersion and Validation"
+Test-Command ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -ValidateWithDownload -UseCachedResponses" "Download with UseLatestVersion and Validation" 10
 
 # Test 18: Test missing system files scenario (remove some system entries)
 Write-TestHeader "Test Missing System Files"
@@ -304,7 +312,11 @@ $finalUseLatestCmd = ".\$ScriptPath -DownloadMods -DatabaseFile '$TestDbPath' -U
 $finalUseLatestTestName = "Final UseLatestVersion Download"
 Test-Command $finalUseLatestCmd $finalUseLatestTestName 12
 
-# Test 24: Verify downloaded files have correct names
+# Test 24: Test legacy Download behavior (validation + download)
+Write-TestHeader "Test Legacy Download Behavior"
+Test-Command ".\$ScriptPath -Download -DatabaseFile '$TestDbPath' -UseCachedResponses" "Legacy Download (Validation + Download)" 12
+
+# Test 25: Verify downloaded files have correct names
 Write-TestHeader "Verify Downloaded File Names"
 # Check that system entries use Jar column names and shaderpacks have clean names
 $verifyFilesCmd = 'Get-ChildItem "download" -Recurse -File | Where-Object { $_.Name -match "fabric-installer|fabric-server|minecraft_server|astralex|bsl|complementary" } | Select-Object Name, FullName'
