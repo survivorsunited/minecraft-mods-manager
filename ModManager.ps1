@@ -201,6 +201,7 @@ function Get-ModList {
         
         # Add RecordHash to records that don't have it and verify integrity
         $modifiedRecords = @()
+        $externalChanges = @()
         foreach ($mod in $mods) {
             # Add RecordHash property if it doesn't exist
             if (-not $mod.PSObject.Properties.Match('RecordHash').Count) {
@@ -212,19 +213,74 @@ function Get-ModList {
             # Check if record has been modified externally
             if ($mod.RecordHash -and $mod.RecordHash -ne $recordHash) {
                 Write-Host "⚠️  Warning: Record for '$($mod.Name)' has been modified externally" -ForegroundColor Yellow
+                Write-Host "   Verifying and updating record..." -ForegroundColor Cyan
+                $externalChanges += $mod
             }
             
-            # Add or update RecordHash
-            $mod.RecordHash = $recordHash
-            $modifiedRecords += $mod
+            # Update hash if missing or if external change detected
+            if (-not $mod.RecordHash -or $mod.RecordHash -ne $recordHash) {
+                $mod.RecordHash = $recordHash
+                $modifiedRecords += $mod
+            }
         }
         
-        # Write-Host "Loaded $($mods.Count) mods from $CsvPath" -ForegroundColor Green
-        return $modifiedRecords
+        # If external changes were detected, verify and update those records
+        if ($externalChanges.Count -gt 0) {
+            Write-Host "🔄 Verifying $($externalChanges.Count) externally modified records..." -ForegroundColor Cyan
+            
+            foreach ($changedMod in $externalChanges) {
+                # For externally modified records, we should verify them
+                if ($changedMod.Type -eq "mod" -or $changedMod.Type -eq "shaderpack" -or $changedMod.Type -eq "datapack") {
+                    Write-Host "   Verifying: $($changedMod.Name) (ID: $($changedMod.ID))" -ForegroundColor Gray
+                    
+                    # Make API call to get current data for externally modified records
+                    try {
+                        Write-Host "   🔍 Fetching current data from API..." -ForegroundColor Cyan
+                        
+                        # Use the existing Validate-ModVersion function to get current data
+                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $changedMod.Version -Loader $changedMod.Loader -Jar $changedMod.Jar
+                        
+                        if ($validationResult -and $validationResult.Exists) {
+                            # Update the record with current API data
+                            $changedMod.VersionUrl = $validationResult.VersionUrl
+                            $changedMod.LatestVersionUrl = $validationResult.LatestVersionUrl
+                            $changedMod.LatestVersion = $validationResult.LatestVersion
+                            $changedMod.LatestGameVersion = $validationResult.LatestGameVersion
+                            $changedMod.IconUrl = $validationResult.IconUrl
+                            $changedMod.ClientSide = $validationResult.ClientSide
+                            $changedMod.ServerSide = $validationResult.ServerSide
+                            $changedMod.Title = $validationResult.Title
+                            $changedMod.ProjectDescription = $validationResult.ProjectDescription
+                            $changedMod.IssuesUrl = $validationResult.IssuesUrl
+                            $changedMod.SourceUrl = $validationResult.SourceUrl
+                            $changedMod.WikiUrl = $validationResult.WikiUrl
+                            Write-Host "   ✅ Record updated with current API data" -ForegroundColor Green
+                        } else {
+                            Write-Host "   ⚠️  API validation failed - using existing data" -ForegroundColor Yellow
+                        }
+                    }
+                    catch {
+                        Write-Host "   ⚠️  API verification error - using existing data: $($_.Exception.Message)" -ForegroundColor Yellow
+                    }
+                } else {
+                    Write-Host "   ✅ System entry '$($changedMod.Name)' updated" -ForegroundColor Green
+                }
+            }
+            
+            Write-Host "✅ All externally modified records have been verified and updated" -ForegroundColor Green
+        }
+        
+        # Save updated records if any were modified
+        if ($modifiedRecords.Count -gt 0) {
+            $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+            Write-Host "💾 Updated $($modifiedRecords.Count) records with new hash values" -ForegroundColor Cyan
+        }
+        
+        return $mods
     }
     catch {
-        Write-Error "Failed to load mod list: $($_.Exception.Message)"
-        return $null
+        Write-Error "Failed to load mod list from $CsvPath : $($_.Exception.Message)"
+        return @()
     }
 }
 
