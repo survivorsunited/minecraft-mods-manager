@@ -82,6 +82,111 @@ function Get-EffectiveModListPath {
     return "modlist.csv"
 }
 
+# Function to calculate SHA256 hash of a file
+function Calculate-FileHash {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$FilePath
+    )
+    
+    try {
+        if (-not (Test-Path $FilePath)) {
+            return $null
+        }
+        
+        $hash = Get-FileHash -Path $FilePath -Algorithm SHA256
+        return $hash.Hash
+    }
+    catch {
+        Write-Warning "Failed to calculate hash for $FilePath : $($_.Exception.Message)"
+        return $null
+    }
+}
+
+# Function to calculate hash of a CSV record
+function Calculate-RecordHash {
+    param(
+        [Parameter(Mandatory=$true)]
+        [PSCustomObject]$Record
+    )
+    
+    try {
+        # Create a string representation of all record fields (excluding RecordHash itself)
+        $recordData = @()
+        $record.PSObject.Properties | Where-Object { $_.Name -ne "RecordHash" } | ForEach-Object {
+            $recordData += "$($_.Name)=$($_.Value)"
+        }
+        
+        # Sort the data to ensure consistent hashing
+        $recordData = $recordData | Sort-Object
+        
+        # Create the hash
+        $recordString = $recordData -join "|"
+        $bytes = [System.Text.Encoding]::UTF8.GetBytes($recordString)
+        $sha256 = [System.Security.Cryptography.SHA256]::Create()
+        $hashBytes = $sha256.ComputeHash($bytes)
+        $hash = [System.BitConverter]::ToString($hashBytes) -replace "-", ""
+        
+        return $hash.ToLower()
+    }
+    catch {
+        Write-Warning "Failed to calculate record hash: $($_.Exception.Message)"
+        return $null
+    }
+}
+
+# Function to verify file hash
+function Test-FileHash {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$FilePath,
+        [Parameter(Mandatory=$true)]
+        [string]$ExpectedHash
+    )
+    
+    try {
+        if (-not (Test-Path $FilePath)) {
+            return $false
+        }
+        
+        $actualHash = Calculate-FileHash -FilePath $FilePath
+        if (-not $actualHash) {
+            return $false
+        }
+        
+        return $actualHash -eq $ExpectedHash
+    }
+    catch {
+        Write-Warning "Failed to verify hash for $FilePath : $($_.Exception.Message)"
+        return $false
+    }
+}
+
+# Function to verify CSV record hash
+function Test-RecordHash {
+    param(
+        [Parameter(Mandatory=$true)]
+        [PSCustomObject]$Record
+    )
+    
+    try {
+        if (-not $Record.RecordHash) {
+            return $false
+        }
+        
+        $calculatedHash = Calculate-RecordHash -Record $Record
+        if (-not $calculatedHash) {
+            return $false
+        }
+        
+        return $calculatedHash -eq $Record.RecordHash
+    }
+    catch {
+        Write-Warning "Failed to verify record hash: $($_.Exception.Message)"
+        return $false
+    }
+}
+
 # Function to load mod list from CSV
 function Get-ModList {
     param(
@@ -93,8 +198,29 @@ function Get-ModList {
         }
         $mods = Import-Csv -Path $CsvPath
         if ($mods -isnot [System.Collections.IEnumerable]) { $mods = @($mods) }
+        
+        # Add RecordHash to records that don't have it and verify integrity
+        $modifiedRecords = @()
+        foreach ($mod in $mods) {
+            # Add RecordHash property if it doesn't exist
+            if (-not $mod.PSObject.Properties.Match('RecordHash').Count) {
+                $mod | Add-Member -MemberType NoteProperty -Name 'RecordHash' -Value $null
+            }
+            
+            $recordHash = Calculate-RecordHash -Record $mod
+            
+            # Check if record has been modified externally
+            if ($mod.RecordHash -and $mod.RecordHash -ne $recordHash) {
+                Write-Host "⚠️  Warning: Record for '$($mod.Name)' has been modified externally" -ForegroundColor Yellow
+            }
+            
+            # Add or update RecordHash
+            $mod.RecordHash = $recordHash
+            $modifiedRecords += $mod
+        }
+        
         # Write-Host "Loaded $($mods.Count) mods from $CsvPath" -ForegroundColor Green
-        return $mods
+        return $modifiedRecords
     }
     catch {
         Write-Error "Failed to load mod list: $($_.Exception.Message)"
@@ -1267,11 +1393,12 @@ function Show-Help {
     Write-Host "  ✗ ModID | Expected: version | Latest (loader): latest_version" -ForegroundColor Red
     Write-Host ""
     Write-Host "CSV COLUMNS:" -ForegroundColor Yellow
-    Write-Host "  Group, Type, GameVersion, ID, Loader, Version, Name, Description, Jar, Url, Category, VersionUrl, LatestVersionUrl, LatestVersion, ApiSource, Host, IconUrl, ClientSide, ServerSide, Title, ProjectDescription, IssuesUrl, SourceUrl, WikiUrl, LatestGameVersion" -ForegroundColor White
+    Write-Host "  Group, Type, GameVersion, ID, Loader, Version, Name, Description, Jar, Url, Category, VersionUrl, LatestVersionUrl, LatestVersion, ApiSource, Host, IconUrl, ClientSide, ServerSide, Title, ProjectDescription, IssuesUrl, SourceUrl, WikiUrl, LatestGameVersion, RecordHash" -ForegroundColor White
     Write-Host "  - VersionUrl: Direct download URL for the current version" -ForegroundColor Gray
     Write-Host "  - LatestVersionUrl: Direct download URL for the latest available version" -ForegroundColor Gray
     Write-Host "  - Group: Mod category (required, optional, admin, block)" -ForegroundColor Gray
     Write-Host "  - Type: Mod type (mod, datapack, shaderpack, installer, server, launcher)" -ForegroundColor Gray
+    Write-Host "  - RecordHash: SHA256 hash of the record data for integrity verification" -ForegroundColor Gray
     Write-Host ""
     Write-Host "FILES:" -ForegroundColor Yellow
     Write-Host "  Input:  $ModListPath" -ForegroundColor White
