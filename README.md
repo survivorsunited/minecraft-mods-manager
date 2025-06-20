@@ -10,6 +10,7 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
 - **Smart Download Management**: Downloads mods organized by game version
 - **Majority Version Targeting**: Automatically determines the most compatible game version
 - **Comprehensive Reporting**: Generates detailed README files with analysis and mod lists
+- **Easy Mod Addition**: Add new mods with minimal information and auto-resolve details
 
 ### Advanced Features
 - **Icon URL Extraction**: Automatically fetches mod icons and metadata
@@ -18,6 +19,9 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
 - **JAR Filename Matching**: Fallback matching when version strings don't match exactly
 - **CurseForge Direct API Downloads**: Uses direct API endpoints for reliable downloads
 - **Git Integration**: Includes minecraft-mod-hash tool as a submodule for mod validation
+- **Shaderpack Support**: Download shaderpacks with iris loader support
+- **Server Downloads**: Download Minecraft server JARs and Fabric launchers
+- **Installer Support**: Download installers (including predefined Fabric installer) to dedicated folders
 
 ## 📋 Requirements
 
@@ -53,7 +57,23 @@ minecraft-mods-manager/
 ├── .gitignore                  # Git ignore rules
 ├── .gitmodules                 # Git submodules
 ├── apiresponse/                # API response cache
-├── mods/                       # Downloaded mods (created automatically)
+├── download/                   # Downloaded content (created automatically)
+│   ├── 1.21.5/
+│   │   ├── mods/              # Mods for this version
+│   │   │   ├── block/         # Block group mods
+│   │   │   └── *.jar          # Other mods
+│   │   ├── shaderpacks/       # Shaderpacks
+│   │   ├── installer/         # Installers
+│   │   ├── minecraft_server.1.21.5.jar
+│   │   └── fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar
+│   └── 1.21.6/
+│       ├── mods/              # Mods for this version
+│       │   ├── block/         # Block group mods
+│       │   └── *.jar          # Other mods
+│       ├── shaderpacks/       # Shaderpacks
+│       ├── installer/         # Installers
+│       ├── minecraft_server.1.21.6.jar
+│       └── fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar
 ├── tools/
 │   └── minecraft-mod-hash/     # Mod validation tool (submodule)
 └── backups/                    # Automatic backups
@@ -67,7 +87,7 @@ minecraft-mods-manager/
 # Run validation and update modlist
 .\ModManager.ps1
 
-# Download all mods to mods/ folder
+# Download all mods to download/ folder
 .\ModManager.ps1 -Download
 
 # Download latest versions instead of current versions
@@ -76,27 +96,129 @@ minecraft-mods-manager/
 # Force download (overwrite existing files)
 .\ModManager.ps1 -Download -ForceDownload
 
+# Quick add mods using Modrinth URLs
+.\ModManager.ps1 -AddModID "https://modrinth.com/mod/fabric-api"
+.\ModManager.ps1 -AddModID "https://modrinth.com/shader/complementary-reimagined"
+
 # Show help
 .\ModManager.ps1 -Help
 ```
+
+### Adding New Mods
+
+The script supports adding mods with minimal information and automatically resolves all details from the APIs.
+
+#### Quick Add with Modrinth URLs (Recommended)
+
+The simplest way to add mods is to just provide the Modrinth URL:
+
+```powershell
+# Add any Modrinth mod, shaderpack, datapack, etc. with just the URL
+.\ModManager.ps1 -AddModID "https://modrinth.com/mod/fabric-api"
+.\ModManager.ps1 -AddModID "https://modrinth.com/shader/complementary-reimagined"
+.\ModManager.ps1 -AddModID "https://modrinth.com/datapack/example-datapack"
+```
+
+**Features:**
+- **Auto-detects type** (mod, shaderpack, datapack, resourcepack, plugin)
+- **Auto-detects mod ID** from the URL
+- **Fetches all metadata** (name, version, icon, description, etc.)
+- **Defaults to "optional" group** (can be overridden with `-AddModGroup`)
+- **Auto-uses "iris" loader** for shaderpacks
+- **Error handling** for unsupported Modrinth types
+
+#### Adding Modrinth Mods (Traditional Method)
+
+```powershell
+# Add a Modrinth mod with minimal info (auto-resolves latest version)
+.\ModManager.ps1 -AddMod -AddModID "fabric-api" -AddModName "Fabric API"
+
+# Add with specific loader and game version
+.\ModManager.ps1 -AddMod -AddModID "sodium" -AddModName "Sodium" -AddModLoader "fabric" -AddModGameVersion "1.21.6"
+
+# Add to a specific group (required, optional, admin, block)
+.\ModManager.ps1 -AddMod -AddModID "no-chat-reports" -AddModName "No Chat Reports" -AddModGroup "block"
+```
+
+#### Adding CurseForge Mods
+
+```powershell
+# Add a CurseForge mod (requires CurseForge ID)
+.\ModManager.ps1 -AddMod -AddModID "238222" -AddModName "Inventory HUD+" -AddModType "curseforge"
+
+# Add with specific loader and game version
+.\ModManager.ps1 -AddMod -AddModID "238222" -AddModName "Inventory HUD+" -AddModLoader "fabric" -AddModGameVersion "1.21.6" -AddModType "curseforge"
+```
+
+#### Adding Shaderpacks
+
+```powershell
+# Add a shaderpack (uses "iris" loader automatically)
+.\ModManager.ps1 -AddMod -AddModID "complementary-reimagined" -AddModName "Complementary Reimagined" -AddModType "shaderpack"
+```
+
+#### Adding Installers
+
+```powershell
+# Add the Fabric installer (predefined URL)
+.\ModManager.ps1 -AddMod -AddModID "fabric-installer-1.0.3" -AddModName "Fabric Installer" -AddModType "installer" -AddModGameVersion "1.21.5"
+
+# Add a custom installer with direct URL
+.\ModManager.ps1 -AddMod -AddModID "https://example.com/installer.exe" -AddModName "Custom Installer" -AddModType "installer" -AddModGameVersion "1.21.5"
+```
+
+**Note**: Installers are downloaded to the `installer/` subfolder within each game version folder.
+
+#### Auto-Resolution Features
+
+When adding mods with minimal information, the script automatically:
+
+1. **Fetches latest version** from the appropriate API
+2. **Downloads all metadata** (description, icon, links, etc.)
+3. **Determines compatibility** (client/server side support)
+4. **Extracts download URLs** for both current and latest versions
+5. **Adds complete record** to modlist.csv with all information
+
+#### Adding Server, Launcher, and Installer Mods
+
+For `server`, `launcher`, and `installer` types, you **must** provide both the direct download URL and the filename to save as. These are stored in the `Url` and `Jar` columns in the CSV.
+
+**Example: Add a Minecraft Server JAR**
+```powershell
+.\ModManager.ps1 -AddMod -AddModID "minecraft-server-1.21.5" -AddModName "Minecraft Server" -AddModType "server" -AddModGameVersion "1.21.5" -AddModUrl "https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar" -AddModJar "minecraft_server.1.21.5.jar"
+```
+
+**Example: Add a Fabric Server Launcher**
+```powershell
+.\ModManager.ps1 -AddMod -AddModID "fabric-server-launcher-1.21.5" -AddModName "Fabric Server Launcher" -AddModType "launcher" -AddModGameVersion "1.21.5" -AddModUrl "https://meta.fabricmc.net/v2/versions/loader/1.21.5/0.16.14/1.0.3/server/jar" -AddModJar "fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar"
+```
+
+**Example: Add a Fabric Installer**
+```powershell
+.\ModManager.ps1 -AddMod -AddModID "fabric-installer-1.0.3" -AddModName "Fabric Installer" -AddModType "installer" -AddModGameVersion "1.21.5" -AddModUrl "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe" -AddModJar "fabric-installer-1.0.3.exe"
+```
+
+**Note:**
+- The script will error if you do not provide both `-AddModUrl` and `-AddModJar` for these types.
+- These values are stored in the CSV and used for all future downloads.
 
 ### Advanced Functions
 
 ```powershell
 # Validate a specific mod
-Validate-ModVersion -ModId "fabric-api" -Version "0.91.0+1.20.1"
+.\ModManager.ps1 -ValidateMod -ModID "fabric-api"
 
 # Validate all mods and update CSV
-Validate-AllModVersions -UpdateModList
+.\ModManager.ps1 -ValidateAll
 
 # Download mods with custom settings
-Download-Mods -UseLatestVersion -ForceDownload
+.\ModManager.ps1 -Download -UseLatestVersion -ForceDownload
 
 # Get mod list
-Get-ModList
+.\ModManager.ps1 -ListMods
 
 # Show help
-Show-Help
+.\ModManager.ps1 -Help
 ```
 
 ## 📊 CSV Format
@@ -105,16 +227,16 @@ The `modlist.csv` file should contain these columns (in order):
 
 | Column              | Description                                                      |
 |---------------------|------------------------------------------------------------------|
-| Group               | Mod category (required, optional, admin)                         |
-| Type                | Mod type (mod, datapack, etc.)                                   |
+| Group               | Mod category (required, optional, admin, block)                  |
+| Type                | Mod type (mod, datapack, shaderpack, installer, server, launcher) |
 | GameVersion         | Target Minecraft version                                         |
 | ID                  | Mod ID (Modrinth slug or CurseForge ID)                         |
-| Loader              | Mod loader (fabric, forge, etc.)                                 |
+| Loader              | Mod loader (fabric, forge, iris, etc.)                          |
 | Version             | Expected mod version                                             |
 | Name                | Mod display name                                                 |
 | Description         | Mod description                                                  |
-| Jar                 | JAR filename                                                     |
-| Url                 | Mod URL                                                          |
+| Jar                 | JAR/EXE filename (for server, launcher, installer: required)                        |
+| Url                 | Mod URL (for server, launcher, installer: direct download URL, required)            |
 | Category            | Mod category                                                     |
 | Version Url         | Download URL for current version                                 |
 | Latest Version Url  | Download URL for latest version                                  |
@@ -134,10 +256,21 @@ The `modlist.csv` file should contain these columns (in order):
 | WikiUrl             | Wiki/documentation URL                                           |
 | LatestGameVersion   | Highest supported game version (from API)                        |
 
-### Example CSV Entry
+### Example CSV Entries
 
+#### Modrinth Mod
 ```csv
 "required","mod","1.21.5","fabric-api","fabric","v0.126.0+1.21.5","Fabric API","Required by most Fabric mods","fabric-api-0.126.0+1.21.5.jar","https://modrinth.com/mod/fabric-api","Core & Utility","https://cdn.modrinth.com/data/P7dR8mSH/versions/B41MB8lb/fabric-api-0.126.0%2B1.21.5.jar","https://cdn.modrinth.com/data/P7dR8mSH/versions/N3z6cNQv/fabric-api-0.127.1%2B1.21.6.jar","0.127.1+1.21.6","0.127.1+1.21.6","https://cdn.modrinth.com/data/P7dR8mSH/versions/B41MB8lb/fabric-api-0.126.0%2B1.21.5.jar","https://cdn.modrinth.com/data/P7dR8mSH/versions/N3z6cNQv/fabric-api-0.127.1%2B1.21.6.jar","modrinth","modrinth","https://cdn.modrinth.com/data/P7dR8mSH/icon.png","optional","optional","Fabric API","Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.","https://github.com/FabricMC/fabric/issues","https://github.com/FabricMC/fabric","https://fabricmc.net/wiki/","1.21.6"
+```
+
+#### CurseForge Mod
+```csv
+"required","mod","1.21.5","238222","fabric","3.4.6","Inventory HUD+","Enhanced inventory display","inventory-hud-3.4.6.jar","https://www.curseforge.com/minecraft/mc-mods/inventory-hud","Interface","https://www.curseforge.com/api/v1/mods/238222/files/1234567/download","https://www.curseforge.com/api/v1/mods/238222/files/1234568/download","3.4.7","3.4.7","https://www.curseforge.com/api/v1/mods/238222/files/1234567/download","https://www.curseforge.com/api/v1/mods/238222/files/1234568/download","curseforge","curseforge","https://media.forgecdn.net/avatars/thumbnails/123/456/256/256/6361234567890.png","required","optional","Inventory HUD+","Enhanced inventory display with customizable HUD","https://github.com/example/inventory-hud/issues","https://github.com/example/inventory-hud","","1.21.6"
+```
+
+#### Shaderpack
+```csv
+"optional","shaderpack","1.21.6","complementary-reimagined","iris","","Complementary Reimagined","Beautiful shaderpack","complementary-reimagined.zip","https://modrinth.com/shader/complementary-reimagined","Shaders","","","","","","","modrinth","modrinth","https://cdn.modrinth.com/data/123456/icon.png","required","unsupported","Complementary Reimagined","A beautiful shaderpack","","","","1.21.6"
 ```
 
 ## 🔧 Configuration
@@ -162,8 +295,9 @@ DEFAULT_MOD_TYPE=mod
 
 - **Default Loader**: `fabric`
 - **Default Game Version**: `1.21.5`
+- **Default Mod Type**: `mod`
 - **API Response Folder**: `apiresponse/`
-- **Mods Folder**: `mods/`
+- **Download Folder**: `download/`
 
 ## 📈 Features in Detail
 
@@ -173,7 +307,7 @@ When using `-UseLatestVersion`, the script:
 
 1. **Analyzes all mods** to find the most common `LatestGameVersion`
 2. **Targets the majority version** for maximum compatibility
-3. **Downloads all mods** to a single version folder (e.g., `mods/1.21.6/`)
+3. **Downloads all mods** to a single version folder (e.g., `download/1.21.6/mods/`)
 4. **Generates comprehensive README** with version distribution analysis
 
 ### CurseForge Integration
@@ -181,6 +315,19 @@ When using `-UseLatestVersion`, the script:
 - **Direct API Downloads**: Uses `https://www.curseforge.com/api/v1/mods/{modId}/files/{fileId}/download`
 - **Automatic URL Construction**: Builds download URLs when direct URLs are missing
 - **File ID Extraction**: Extracts file IDs from API responses for reliable downloads
+- **ID Requirements**: CurseForge mods require numeric IDs (found in mod URLs)
+
+### Shaderpack Support
+
+- **Iris Loader**: Automatically uses "iris" loader for shaderpacks
+- **Separate Folder**: Downloads to `download/[version]/shaderpacks/` folder
+- **Modrinth Shaders**: Supports Modrinth shader downloads
+
+### Server and Launcher Downloads
+
+- **Minecraft Server JARs**: Downloads official server JARs for specific versions
+- **Fabric Launchers**: Downloads Fabric server launchers with proper naming
+- **Version-Specific**: Each download is tied to a specific game version
 
 ### Comprehensive README Generation
 
@@ -198,9 +345,6 @@ Each download creates a detailed README with:
 
 - **`apiresponse/version-validation-results.csv`**: Validation results
 - **`apiresponse/mod-download-results.csv`**: Download results
-- **`apiresponse/*.json`**: API response cache
-- **`mods/{version}/README.md`**: Comprehensive modpack documentation
-- **`modlist-backup.csv`**: Automatic backup before updates
 
 ### Backup Files
 

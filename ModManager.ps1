@@ -18,7 +18,12 @@ param(
     [string]$AddModLoader,
     [string]$AddModGameVersion,
     [string]$AddModType,
-    [string]$AddModGroup
+    [string]$AddModGroup,
+    [string]$AddModUrl,
+    [string]$AddModJar,
+    [switch]$DownloadServer,
+    [string]$DeleteModID = $null,
+    [string]$DeleteModType = $null
 )
 
 # Load environment variables from .env file
@@ -40,16 +45,16 @@ Load-EnvironmentVariables
 # Configuration
 $ModListPath = "modlist.csv"
 $ApiResponseFolder = "apiresponse"
+$DownloadFolder = "download"
+$BackupFolder = "backups"
+$DefaultLoader = "fabric"
+$DefaultGameVersion = "1.21.5"
+$DefaultModType = "mod"
 
 # API URLs from environment variables or defaults
 $ModrinthApiBaseUrl = if ($env:MODRINTH_API_BASE_URL) { $env:MODRINTH_API_BASE_URL } else { "https://api.modrinth.com/v2" }
 $CurseForgeApiBaseUrl = if ($env:CURSEFORGE_API_BASE_URL) { $env:CURSEFORGE_API_BASE_URL } else { "https://www.curseforge.com/api/v1" }
 $CurseForgeApiKey = $env:CURSEFORGE_API_KEY
-
-# Default settings from environment variables
-$DefaultLoader = if ($env:DEFAULT_LOADER) { $env:DEFAULT_LOADER } else { "fabric" }
-$DefaultGameVersion = if ($env:DEFAULT_GAME_VERSION) { $env:DEFAULT_GAME_VERSION } else { "1.21.5" }
-$DefaultModType = if ($env:DEFAULT_MOD_TYPE) { $env:DEFAULT_MOD_TYPE } else { "mod" }
 
 # Create API response folder if it doesn't exist
 if (-not (Test-Path $ApiResponseFolder)) {
@@ -208,14 +213,14 @@ function Validate-ModVersion {
         }
         
         # Check if the specific version exists (in filtered results)
-        $versionExists = $false
-        $matchingVersion = $null
-        $versionUrl = $null
-        $latestVersionUrl = $null
-        $versionFoundByJar = $false
-        
-        # Find matching version and extract URL
         if ($Version -ne "latest") {
+            $versionExists = $false
+            $matchingVersion = $null
+            $versionUrl = $null
+            $latestVersionUrl = $null
+            $versionFoundByJar = $false
+            
+            # Find matching version and extract URL
             foreach ($ver in $filteredResponse) {
                 $normalizedApiVersion = Normalize-Version -Version $ver.version_number
                 
@@ -234,27 +239,32 @@ function Validate-ModVersion {
                     break
                 }
             }
-        }
-        
-        # If exact version match failed, try matching by JAR filename
-        if (-not $versionExists -and -not [string]::IsNullOrEmpty($Jar)) {
-            $jarToMatch = $Jar.ToLower().Trim()
-            foreach ($ver in $filteredResponse) {
-                if ($ver.files -and $ver.files.Count -gt 0) {
-                    foreach ($file in $ver.files) {
-                        if ($file.filename.ToLower().Trim() -eq $jarToMatch) {
-                            $versionExists = $true
-                            $matchingVersion = $ver
-                            $versionUrl = $file.url
-                            $versionFoundByJar = $true
-                            # Update the expected version to match what we found
-                            $normalizedExpectedVersion = Normalize-Version -Version $ver.version_number
-                            break
+            
+            # If exact version match failed, try matching by JAR filename
+            if (-not $versionExists -and -not [string]::IsNullOrEmpty($Jar)) {
+                $jarToMatch = $Jar.ToLower().Trim()
+                foreach ($ver in $filteredResponse) {
+                    if ($ver.files -and $ver.files.Count -gt 0) {
+                        foreach ($file in $ver.files) {
+                            if ($file.filename.ToLower().Trim() -eq $jarToMatch) {
+                                $versionExists = $true
+                                $matchingVersion = $ver
+                                $versionUrl = $file.url
+                                $versionFoundByJar = $true
+                                # Update the expected version to match what we found
+                                $normalizedExpectedVersion = Normalize-Version -Version $ver.version_number
+                                break
+                            }
                         }
+                        if ($versionExists) { break }
                     }
-                    if ($versionExists) { break }
                 }
             }
+        } else {
+            # For "latest" requests, initialize variables
+            $versionUrl = $null
+            $latestVersionUrl = $null
+            $versionFoundByJar = $false
         }
         
         # Extract download URL for matching version (including "latest")
@@ -838,14 +848,40 @@ function Show-Help {
     Write-Host "    - -UpdateModList: Updates modlist.csv with download URLs (preserves Version column)"
     Write-Host "    - Creates backup before updating modlist"
     Write-Host ""
-    Write-Host "  Download-Mods [-CsvPath <path>] [-ModsFolder <path>] [-UseLatestVersion] [-ForceDownload]" -ForegroundColor White
-    Write-Host "    - Downloads mods to local mods folder organized by GameVersion"
-    Write-Host "    - Creates subfolders for each GameVersion (e.g., mods/1.21.5/)"
+    Write-Host "  Download-Mods [-CsvPath <path>] [-DownloadFolder <path>] [-UseLatestVersion] [-ForceDownload]" -ForegroundColor White
+    Write-Host "    - Downloads mods to local download folder organized by GameVersion"
+    Write-Host "    - Creates subfolders for each GameVersion (e.g., download/1.21.5/mods/)"
+    Write-Host "    - Creates block subfolder for mods in 'block' group (e.g., download/1.21.5/mods/block/)"
+    Write-Host "    - Creates shaderpacks subfolder for shaderpacks (e.g., download/1.21.5/shaderpacks/)"
     Write-Host "    - Uses VersionUrl by default, or LatestVersionUrl with -UseLatestVersion"
     Write-Host "    - Skips existing files unless -ForceDownload is used"
     Write-Host "    - Saves download results to CSV"
-    Write-Host "    - Default mods folder: mods"
+    Write-Host "    - Default download folder: $DownloadFolder"
     Write-Host ""
+    Write-Host "  Download-ServerFiles [-ForceDownload]" -ForegroundColor White
+    Write-Host "    - Downloads Minecraft server JARs and Fabric launchers"
+    Write-Host "    - Downloads to download/[version]/ folder"
+    Write-Host "    - Includes server JARs for 1.21.5 and 1.21.6"
+    Write-Host "    - Includes Fabric launchers for 1.21.5 and 1.21.6"
+    Write-Host "    - Skips existing files unless -ForceDownload is used"
+    Write-Host ""
+    Write-Host "  Add-Mod [-AddModID <id|url>] [-AddModName <name>] [-AddModLoader <loader>] [-AddModGameVersion <version>] [-AddModType <type>] [-AddModGroup <group>] [-ForceDownload]" -ForegroundColor White
+    Write-Host "    - Adds a new mod to modlist.csv with minimal information"
+    Write-Host "    - Auto-resolves latest version and metadata from APIs"
+    Write-Host "    - Supports Modrinth URLs (e.g., https://modrinth.com/mod/fabric-api)"
+    Write-Host "    - Supports Modrinth and CurseForge mods"
+    Write-Host "    - Supports shaderpacks (auto-uses 'iris' loader)"
+    Write-Host "    - Supports installers (direct URL downloads)"
+    Write-Host "    - Auto-downloads if -ForceDownload is specified"
+    Write-Host "    - Default loader: fabric (or iris for shaderpacks)"
+    Write-Host "    - Default game version: $DefaultGameVersion"
+    Write-Host "    - Default type: mod"
+    Write-Host "    - Default group: optional"
+    Write-Host ""
+    Write-Host "  [-AddModID <url>] (without -AddMod flag)" -ForegroundColor White
+    Write-Host "    - Shortcut: Just provide a Modrinth URL as -AddModID"
+    Write-Host "    - Automatically detects and adds the mod"
+    Write-Host "    - Example: .\ModManager.ps1 -AddModID 'https://modrinth.com/mod/sodium'"
     Write-Host "  Show-Help" -ForegroundColor White
     Write-Host "    - Shows this help information"
     Write-Host ""
@@ -854,13 +890,40 @@ function Show-Help {
     Write-Host "    - Runs automatic validation of all mods and updates modlist with download URLs"
     Write-Host ""
     Write-Host "  .\ModManager.ps1 -Download" -ForegroundColor White
-    Write-Host "    - Validates all mods and downloads them to mods/ folder organized by GameVersion"
+    Write-Host "    - Validates all mods and downloads them to download/ folder organized by GameVersion"
     Write-Host ""
     Write-Host "  .\ModManager.ps1 -Download -UseLatestVersion" -ForegroundColor White
     Write-Host "    - Downloads latest versions of all mods instead of current versions"
     Write-Host ""
     Write-Host "  .\ModManager.ps1 -Download -ForceDownload" -ForegroundColor White
     Write-Host "    - Downloads all mods, overwriting existing files"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -DownloadServer" -ForegroundColor White
+    Write-Host "    - Downloads Minecraft server JARs and Fabric launchers"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'fabric-api' -AddModName 'Fabric API'" -ForegroundColor White
+    Write-Host "    - Adds Fabric API with auto-resolved latest version and metadata"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'https://modrinth.com/mod/fabric-api'" -ForegroundColor White
+    Write-Host "    - Adds Fabric API using Modrinth URL (auto-detects type and ID)"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -AddModID 'https://modrinth.com/mod/sodium'" -ForegroundColor White
+    Write-Host "    - Shortcut: Adds Sodium using just the Modrinth URL"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'https://modrinth.com/shader/complementary-reimagined'" -ForegroundColor White
+    Write-Host "    - Adds shaderpack using Modrinth URL (auto-detects as shaderpack)"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModID '238222' -AddModName 'Inventory HUD+' -AddModType 'curseforge'" -ForegroundColor White
+    Write-Host "    - Adds CurseForge mod with auto-resolved latest version and metadata"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'complementary-reimagined' -AddModName 'Complementary Reimagined' -AddModType 'shaderpack'" -ForegroundColor White
+    Write-Host "    - Adds shaderpack with auto-resolved latest version and metadata"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'no-chat-reports' -AddModName 'No Chat Reports' -AddModGroup 'block'" -ForegroundColor White
+    Write-Host "    - Adds mod to 'block' group (downloads to block subfolder)"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'fabric-installer-1.0.3' -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.5'" -ForegroundColor White
+    Write-Host "    - Adds installer with direct URL download (downloads to installer subfolder)"
     Write-Host ""
     Write-Host "  Validate-ModVersion -ModId 'fabric-api' -Version '0.91.0+1.20.1'" -ForegroundColor White
     Write-Host "    - Validates Fabric API version 0.91.0+1.20.1 and extracts download URLs"
@@ -869,7 +932,7 @@ function Show-Help {
     Write-Host "    - Validates all mods and updates modlist.csv with download URLs (preserves Version column)"
     Write-Host ""
     Write-Host "  Download-Mods -UseLatestVersion" -ForegroundColor White
-    Write-Host "    - Downloads latest versions of all mods to mods/ folder"
+    Write-Host "    - Downloads latest versions of all mods to download/ folder"
     Write-Host ""
     Write-Host "  Get-ModList" -ForegroundColor White
     Write-Host "    - Shows all mods from modlist.csv"
@@ -879,19 +942,29 @@ function Show-Help {
     Write-Host "  ✗ ModID | Expected: version | Latest (loader): latest_version" -ForegroundColor Red
     Write-Host ""
     Write-Host "CSV COLUMNS:" -ForegroundColor Yellow
-    Write-Host "  Name, Version, URL, Description, Group, Category, Jar, ID, Loader, VersionUrl, LatestVersionUrl" -ForegroundColor White
+    Write-Host "  Group, Type, GameVersion, ID, Loader, Version, Name, Description, Jar, Url, Category, VersionUrl, LatestVersionUrl, LatestVersion, ApiSource, Host, IconUrl, ClientSide, ServerSide, Title, ProjectDescription, IssuesUrl, SourceUrl, WikiUrl, LatestGameVersion" -ForegroundColor White
     Write-Host "  - VersionUrl: Direct download URL for the current version" -ForegroundColor Gray
     Write-Host "  - LatestVersionUrl: Direct download URL for the latest available version" -ForegroundColor Gray
+    Write-Host "  - Group: Mod category (required, optional, admin, block)" -ForegroundColor Gray
+    Write-Host "  - Type: Mod type (mod, datapack, shaderpack, installer, server, launcher)" -ForegroundColor Gray
     Write-Host ""
     Write-Host "FILES:" -ForegroundColor Yellow
     Write-Host "  Input:  $ModListPath" -ForegroundColor White
     Write-Host "  Output: $ApiResponseFolder\*.json (API responses)" -ForegroundColor White
     Write-Host "  Output: $ApiResponseFolder\version-validation-results.csv (validation results)" -ForegroundColor White
     Write-Host "  Output: $ApiResponseFolder\mod-download-results.csv (download results)" -ForegroundColor White
-    Write-Host "  Output: mods\GameVersion\*.jar (downloaded mods)" -ForegroundColor White
+    Write-Host "  Output: $DownloadFolder\GameVersion\mods\*.jar (downloaded mods)" -ForegroundColor White
+    Write-Host "  Output: $DownloadFolder\GameVersion\mods\block\*.jar (block group mods)" -ForegroundColor White
+    Write-Host "  Output: $DownloadFolder\GameVersion\shaderpacks\*.zip (shaderpacks)" -ForegroundColor White
+    Write-Host "  Output: $DownloadFolder\GameVersion\installer\*.exe (installers)" -ForegroundColor White
+    Write-Host "  Output: $DownloadFolder\GameVersion\minecraft_server.*.jar (server JARs)" -ForegroundColor White
+    Write-Host "  Output: $DownloadFolder\GameVersion\fabric-server-*.jar (Fabric launchers)" -ForegroundColor White
     Write-Host "  Backup: modlist-backup.csv (created before updates)" -ForegroundColor White
     Write-Host "  Backup: modlist-columns-backup.csv (created when adding new columns)" -ForegroundColor White
     Write-Host ""
+    Write-Host "  Delete a mod by Modrinth URL or ID/type:" -ForegroundColor White
+    Write-Host "    .\\ModManager.ps1 -DeleteModID 'https://modrinth.com/mod/phosphor'" -ForegroundColor White
+    Write-Host "    .\\ModManager.ps1 -DeleteModID 'phosphor' -DeleteModType 'mod'" -ForegroundColor White
 }
 
 # Function to determine the majority game version from modlist
@@ -1068,7 +1141,7 @@ Generated on: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
 function Download-Mods {
     param(
         [string]$CsvPath = $ModListPath,
-        [string]$ModsFolder = "mods",
+        [string]$DownloadFolder = "download",
         [switch]$UseLatestVersion,
         [switch]$ForceDownload
     )
@@ -1091,13 +1164,31 @@ function Download-Mods {
         }
         
         # Create mods folder if it doesn't exist
-        if (-not (Test-Path $ModsFolder)) {
-            New-Item -ItemType Directory -Path $ModsFolder -Force | Out-Null
-            Write-Host "Created mods folder: $ModsFolder" -ForegroundColor Green
+        if (-not (Test-Path $DownloadFolder)) {
+            New-Item -ItemType Directory -Path $DownloadFolder -Force | Out-Null
+            Write-Host "Created mods folder: $DownloadFolder" -ForegroundColor Green
+        }
+        
+        # Determine which version folders need to be cleared
+        $versionsToClear = @()
+        if ($UseLatestVersion) {
+            # For latest versions, only clear the majority version folder
+            $versionsToClear = @($targetGameVersion)
+            Write-Host "Will clear version folder: $targetGameVersion" -ForegroundColor Yellow
         } else {
-            # Clear only subfolders and their contents, preserve .gitkeep file
-            Get-ChildItem -Path $ModsFolder -Directory | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
-            Write-Host "Cleared all subfolders in: $ModsFolder" -ForegroundColor Yellow
+            # For current versions, clear all version folders that will be written to
+            $versionsToClear = $mods | Where-Object { -not [string]::IsNullOrEmpty($_.GameVersion) } | 
+                              Select-Object -ExpandProperty GameVersion | Sort-Object -Unique
+            Write-Host "Will clear version folders: $($versionsToClear -join ', ')" -ForegroundColor Yellow
+        }
+        
+        # Clear the specific version folders
+        foreach ($version in $versionsToClear) {
+            $versionFolder = Join-Path $DownloadFolder $version
+            if (Test-Path $versionFolder) {
+                Remove-Item -Recurse -Force $versionFolder -ErrorAction SilentlyContinue
+                Write-Host "Cleared version folder: $version" -ForegroundColor Yellow
+            }
         }
         
         $downloadResults = @()
@@ -1173,15 +1264,31 @@ function Download-Mods {
                 
                 # Create game version subfolder
                 $gameVersionFolder = if ($UseLatestVersion) { 
-                    Join-Path $ModsFolder $targetGameVersion 
+                    # For latest versions, use majority version for migration
+                    Join-Path $DownloadFolder $targetGameVersion 
                 } else { 
-                    $modGameVersion = if ($mod.LatestGameVersion) { $mod.LatestGameVersion } else { $gameVersion }
-                    Join-Path $ModsFolder $modGameVersion 
+                    # For current versions, use the GameVersion column from CSV
+                    Join-Path $DownloadFolder $gameVersion 
                 }
                 
-                # Create block subfolder if mod is in "block" group
-                if ($mod.Group -eq "block") {
-                    $gameVersionFolder = Join-Path $gameVersionFolder "block"
+                # Create appropriate subfolder based on mod type and group
+                if ($mod.Type -eq "shaderpack") {
+                    # Shaderpacks go directly in the game version folder
+                    $gameVersionFolder = Join-Path $gameVersionFolder "shaderpacks"
+                } elseif ($mod.Type -eq "installer") {
+                    # Installers go in the installer subfolder
+                    $gameVersionFolder = Join-Path $gameVersionFolder "installer"
+                } elseif ($mod.Type -eq "launcher" -or $mod.Type -eq "server") {
+                    # Launchers and server JARs go directly in the game version folder (root)
+                    # No subfolder needed
+                } else {
+                    # Mods go in the mods subfolder
+                    $gameVersionFolder = Join-Path $gameVersionFolder "mods"
+                    
+                    # Create block subfolder if mod is in "block" group
+                    if ($mod.Group -eq "block") {
+                        $gameVersionFolder = Join-Path $gameVersionFolder "block"
+                    }
                 }
                 
                 if (-not (Test-Path $gameVersionFolder)) {
@@ -1298,7 +1405,7 @@ function Download-Mods {
         
         # Create README file with download analysis
         if ($versionAnalysis) {
-            $versionFolder = Join-Path $ModsFolder $targetGameVersion
+            $versionFolder = Join-Path $DownloadFolder $targetGameVersion
             Write-DownloadReadme -FolderPath $versionFolder -Analysis $versionAnalysis -DownloadResults $downloadResults -TargetVersion $targetGameVersion -UseLatestVersion $UseLatestVersion
         }
         
@@ -1306,6 +1413,217 @@ function Download-Mods {
     }
     catch {
         Write-Error "Failed to download mods: $($_.Exception.Message)"
+        return 0
+    }
+}
+
+# Function to download server JARs and Fabric launchers
+function Download-ServerFiles {
+    param(
+        [switch]$ForceDownload
+    )
+    
+    try {
+        Write-Host "Downloading server files..." -ForegroundColor Yellow
+        
+        # Create download folder if it doesn't exist
+        if (-not (Test-Path $DownloadFolder)) {
+            New-Item -ItemType Directory -Path $DownloadFolder -Force | Out-Null
+        }
+        
+        $downloadResults = @()
+        $successCount = 0
+        $errorCount = 0
+        
+        # Server JARs to download
+        $serverFiles = @(
+            @{
+                Version = "1.21.5"
+                Url = "https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar"
+                Filename = "minecraft_server.1.21.5.jar"
+            },
+            @{
+                Version = "1.21.6"
+                Url = "https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar"
+                Filename = "minecraft_server.1.21.6.jar"
+            }
+        )
+        
+        # Fabric launchers to download
+        $launcherFiles = @(
+            @{
+                Version = "1.21.5"
+                Url = "https://meta.fabricmc.net/v2/versions/loader/1.21.5/0.16.14/1.0.3/server/jar"
+                Filename = "fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar"
+            },
+            @{
+                Version = "1.21.6"
+                Url = "https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.16.14/1.0.3/server/jar"
+                Filename = "fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar"
+            }
+        )
+        
+        # Download server JARs
+        foreach ($server in $serverFiles) {
+            $versionFolder = Join-Path $DownloadFolder $server.Version
+            if (-not (Test-Path $versionFolder)) {
+                New-Item -ItemType Directory -Path $versionFolder -Force | Out-Null
+            }
+            
+            $downloadPath = Join-Path $versionFolder $server.Filename
+            
+            # Check if file already exists
+            if ((Test-Path $downloadPath) -and -not $ForceDownload) {
+                Write-Host "⏭️  $($server.Filename): Already exists" -ForegroundColor Yellow
+                $downloadResults += [PSCustomObject]@{
+                    Name = $server.Filename
+                    Status = "Skipped"
+                    Version = $server.Version
+                    File = $server.Filename
+                    Path = $downloadPath
+                    Error = "File already exists"
+                }
+                continue
+            }
+            
+            # Download the file
+            Write-Host "⬇️  $($server.Filename): Downloading..." -ForegroundColor Cyan
+            
+            try {
+                $webRequest = Invoke-WebRequest -Uri $server.Url -OutFile $downloadPath -UseBasicParsing
+                
+                if (Test-Path $downloadPath) {
+                    $fileSize = (Get-Item $downloadPath).Length
+                    $fileSizeMB = [math]::Round($fileSize / 1MB, 2)
+                    
+                    Write-Host "✅ $($server.Filename): Downloaded successfully ($fileSizeMB MB)" -ForegroundColor Green
+                    
+                    $downloadResults += [PSCustomObject]@{
+                        Name = $server.Filename
+                        Status = "Success"
+                        Version = $server.Version
+                        File = $server.Filename
+                        Path = $downloadPath
+                        Size = "$fileSizeMB MB"
+                        Error = $null
+                    }
+                    $successCount++
+                } else {
+                    throw "File was not created"
+                }
+            }
+            catch {
+                Write-Host "❌ $($server.Filename): Download failed - $($_.Exception.Message)" -ForegroundColor Red
+                
+                # Clean up partial download if it exists
+                if (Test-Path $downloadPath) {
+                    Remove-Item $downloadPath -Force
+                }
+                
+                $downloadResults += [PSCustomObject]@{
+                    Name = $server.Filename
+                    Status = "Failed"
+                    Version = $server.Version
+                    File = $server.Filename
+                    Path = $downloadPath
+                    Size = $null
+                    Error = $_.Exception.Message
+                }
+                $errorCount++
+            }
+        }
+        
+        # Download Fabric launchers
+        foreach ($launcher in $launcherFiles) {
+            $versionFolder = Join-Path $DownloadFolder $launcher.Version
+            if (-not (Test-Path $versionFolder)) {
+                New-Item -ItemType Directory -Path $versionFolder -Force | Out-Null
+            }
+            
+            $downloadPath = Join-Path $versionFolder $launcher.Filename
+            
+            # Check if file already exists
+            if ((Test-Path $downloadPath) -and -not $ForceDownload) {
+                Write-Host "⏭️  $($launcher.Filename): Already exists" -ForegroundColor Yellow
+                $downloadResults += [PSCustomObject]@{
+                    Name = $launcher.Filename
+                    Status = "Skipped"
+                    Version = $launcher.Version
+                    File = $launcher.Filename
+                    Path = $downloadPath
+                    Error = "File already exists"
+                }
+                continue
+            }
+            
+            # Download the file
+            Write-Host "⬇️  $($launcher.Filename): Downloading..." -ForegroundColor Cyan
+            
+            try {
+                $webRequest = Invoke-WebRequest -Uri $launcher.Url -OutFile $downloadPath -UseBasicParsing
+                
+                if (Test-Path $downloadPath) {
+                    $fileSize = (Get-Item $downloadPath).Length
+                    $fileSizeMB = [math]::Round($fileSize / 1MB, 2)
+                    
+                    Write-Host "✅ $($launcher.Filename): Downloaded successfully ($fileSizeMB MB)" -ForegroundColor Green
+                    
+                    $downloadResults += [PSCustomObject]@{
+                        Name = $launcher.Filename
+                        Status = "Success"
+                        Version = $launcher.Version
+                        File = $launcher.Filename
+                        Path = $downloadPath
+                        Size = "$fileSizeMB MB"
+                        Error = $null
+                    }
+                    $successCount++
+                } else {
+                    throw "File was not created"
+                }
+            }
+            catch {
+                Write-Host "❌ $($launcher.Filename): Download failed - $($_.Exception.Message)" -ForegroundColor Red
+                
+                # Clean up partial download if it exists
+                if (Test-Path $downloadPath) {
+                    Remove-Item $downloadPath -Force
+                }
+                
+                $downloadResults += [PSCustomObject]@{
+                    Name = $launcher.Filename
+                    Status = "Failed"
+                    Version = $launcher.Version
+                    File = $launcher.Filename
+                    Path = $downloadPath
+                    Size = $null
+                    Error = $_.Exception.Message
+                }
+                $errorCount++
+            }
+        }
+        
+        # Display summary
+        Write-Host ""
+        Write-Host "Server Files Download Summary:" -ForegroundColor Yellow
+        Write-Host "=============================" -ForegroundColor Yellow
+        Write-Host "✅ Successfully downloaded: $successCount" -ForegroundColor Green
+        Write-Host "⏭️  Skipped (already exists): $(($downloadResults | Where-Object { $_.Status -eq "Skipped" }).Count)" -ForegroundColor Yellow
+        Write-Host "❌ Failed: $errorCount" -ForegroundColor Red
+        
+        # Show failed downloads
+        if ($errorCount -gt 0) {
+            Write-Host ""
+            Write-Host "Failed downloads:" -ForegroundColor Red
+            foreach ($result in $downloadResults | Where-Object { $_.Status -eq "Failed" }) {
+                Write-Host "  ❌ $($result.Name): $($result.Error)" -ForegroundColor Red
+            }
+        }
+        
+        return $successCount
+    }
+    catch {
+        Write-Error "Failed to download server files: $($_.Exception.Message)"
         return 0
     }
 }
@@ -1322,54 +1640,418 @@ if ($MyInvocation.InvocationName -ne '.') {
         Show-Help
         return
     }
+    
+    # Auto-detect Modrinth URLs and treat them as AddMod commands
+    if ($AddModID -and $AddModID -match "^https://modrinth\.com/([^/]+)/([^/]+)$") {
+        $AddMod = $true
+        Write-Host "🔍 Auto-detected Modrinth URL, treating as AddMod command" -ForegroundColor Cyan
+    }
+    
     if ($AddMod) {
-        # Add a new mod entry to modlist.csv with minimal info
+        # Add a new mod entry to modlist.csv with minimal info and auto-resolve details
         $id = $AddModID
         $name = $AddModName
-        $loader = if ($AddModLoader) { $AddModLoader } else { $DefaultLoader }
-        $gameVersion = if ($AddModGameVersion) { $AddModGameVersion } else { $DefaultGameVersion }
         $type = if ($AddModType) { $AddModType } else { $DefaultModType }
-        $group = if ($AddModGroup) { $AddModGroup } else { "required" }
-        if (-not $id -or -not $name) {
-            Write-Host "You must provide at least -AddModID and -AddModName." -ForegroundColor Red
+        $loader = if ($AddModLoader) { $AddModLoader } else { 
+            # Auto-detect loader based on type
+            if ($type -eq "shaderpack") { "iris" } else { $DefaultLoader }
+        }
+        $gameVersion = if ($AddModGameVersion) { $AddModGameVersion } else { $DefaultGameVersion }
+        $group = if ($AddModGroup) { $AddModGroup } else { "optional" }  # Changed default to optional
+        
+        # Check if the ID is a Modrinth URL and parse it
+        $parsedModrinth = $null
+        if ($id -match "^https://modrinth\.com/([^/]+)/([^/]+)$") {
+            $modrinthType = $matches[1]
+            $modrinthId = $matches[2]
+            
+            # Map Modrinth types to our types
+            $typeMapping = @{
+                "mod" = "mod"
+                "shader" = "shaderpack"
+                "datapack" = "datapack"
+                "resourcepack" = "resourcepack"
+                "plugin" = "plugin"
+            }
+            
+            if ($typeMapping.ContainsKey($modrinthType)) {
+                $parsedModrinth = @{
+                    Type = $typeMapping[$modrinthType]
+                    ID = $modrinthId
+                    Url = $id
+                }
+                Write-Host "🔍 Detected Modrinth URL: $modrinthType/$modrinthId" -ForegroundColor Cyan
+            } else {
+                Write-Host "❌ Unsupported Modrinth type: $modrinthType" -ForegroundColor Red
+                Write-Host "   Supported types: $($typeMapping.Keys -join ', ')" -ForegroundColor Yellow
+                return
+            }
+        }
+        
+        # Use parsed Modrinth data if available
+        if ($parsedModrinth) {
+            $id = $parsedModrinth.ID
+            $type = $parsedModrinth.Type
+            $loader = if ($type -eq "shaderpack") { "iris" } else { $DefaultLoader }
+            
+            # If no name provided, we'll get it from the API
+            if (-not $name) {
+                $name = "Loading..."  # Placeholder, will be updated from API
+            }
+        }
+        
+        if (-not $id) {
+            Write-Host "You must provide at least -AddModID (or a Modrinth URL)." -ForegroundColor Red
             return
         }
-        $newMod = [PSCustomObject]@{
-            Group = $group
-            Type = $type
-            GameVersion = $gameVersion
-            ID = $id
-            Loader = $loader
-            Version = ""
-            Name = $name
-            Description = ""
-            Jar = ""
-            Url = ""
-            Category = ""
-            VersionUrl = ""
-            LatestVersionUrl = ""
-            LatestVersion = ""
-            ApiSource = "modrinth"
-            Host = "modrinth"
-            IconUrl = ""
-            ClientSide = ""
-            ServerSide = ""
-            Title = ""
-            ProjectDescription = ""
-            IssuesUrl = ""
-            SourceUrl = ""
-            WikiUrl = ""
-            LatestGameVersion = ""
+        
+        Write-Host "Adding mod: $name ($id)" -ForegroundColor Cyan
+        Write-Host "Auto-resolving latest version and metadata..." -ForegroundColor Yellow
+        
+        # Auto-resolve latest version and metadata based on type
+        $resolvedMod = $null
+        
+        if ($type -eq "installer") {
+            # For installers, we expect the ID to be a direct URL or a special identifier
+            # For the Fabric installer, we'll construct the URL based on the ID
+            $installerUrl = $null
+            $installerVersion = $null
+            
+            if ($id -eq "fabric-installer-1.0.3") {
+                $installerUrl = "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe"
+                $installerVersion = "1.0.3"
+            } else {
+                # Assume it's a direct URL
+                $installerUrl = $id
+                $installerVersion = "1.0.0"  # Default version for direct URLs
+            }
+            
+            $resolvedMod = [PSCustomObject]@{
+                Group = $group
+                Type = $type
+                GameVersion = $gameVersion
+                ID = $id
+                Loader = $loader
+                Version = $installerVersion
+                Name = $name
+                Description = ""
+                Jar = ""
+                Url = $installerUrl
+                Category = ""
+                VersionUrl = $installerUrl
+                LatestVersionUrl = $installerUrl
+                LatestVersion = $installerVersion
+                ApiSource = "direct"
+                Host = "direct"
+                IconUrl = $null
+                ClientSide = $null
+                ServerSide = $null
+                Title = $name
+                ProjectDescription = ""
+                IssuesUrl = $null
+                SourceUrl = $null
+                WikiUrl = $null
+                LatestGameVersion = $gameVersion
+            }
+        } elseif ($type -eq "launcher") {
+            # For launchers, we expect the ID to be a special identifier
+            $launcherUrl = $null
+            $launcherVersion = $null
+            $launcherFilename = $null
+            
+            if ($id -eq "fabric-server-launcher-1.21.5") {
+                $launcherUrl = "https://meta.fabricmc.net/v2/versions/loader/1.21.5/0.16.14/1.0.3/server/jar"
+                $launcherVersion = "1.0.3"
+                $launcherFilename = "fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar"
+            } elseif ($id -eq "fabric-server-launcher-1.21.6") {
+                $launcherUrl = "https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.16.14/1.0.3/server/jar"
+                $launcherVersion = "1.0.3"
+                $launcherFilename = "fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar"
+            } else {
+                # Assume it's a direct URL
+                $launcherUrl = $id
+                $launcherVersion = "1.0.0"  # Default version for direct URLs
+                $launcherFilename = ""
+            }
+            
+            $resolvedMod = [PSCustomObject]@{
+                Group = $group
+                Type = $type
+                GameVersion = $gameVersion
+                ID = $id
+                Loader = $loader
+                Version = $launcherVersion
+                Name = $name
+                Description = ""
+                Jar = $launcherFilename
+                Url = $launcherUrl
+                Category = ""
+                VersionUrl = $launcherUrl
+                LatestVersionUrl = $launcherUrl
+                LatestVersion = $launcherVersion
+                ApiSource = "direct"
+                Host = "direct"
+                IconUrl = $null
+                ClientSide = $null
+                ServerSide = $null
+                Title = $name
+                ProjectDescription = ""
+                IssuesUrl = $null
+                SourceUrl = $null
+                WikiUrl = $null
+                LatestGameVersion = $gameVersion
+            }
+        } elseif ($type -eq "curseforge") {
+            # For CurseForge mods, we need to validate with "latest" to get metadata
+            $result = Validate-CurseForgeModVersion -ModId $id -Version "latest" -Loader $loader -ResponseFolder $ApiResponseFolder
+            if ($result.Exists) {
+                $resolvedMod = [PSCustomObject]@{
+                    Group = $group
+                    Type = $type
+                    GameVersion = $gameVersion
+                    ID = $id
+                    Loader = $loader
+                    Version = $result.LatestVersion
+                    Name = $name
+                    Description = ""
+                    Jar = ""
+                    Url = "https://www.curseforge.com/minecraft/mc-mods/$id"
+                    Category = ""
+                    VersionUrl = $result.VersionUrl
+                    LatestVersionUrl = $result.LatestVersionUrl
+                    LatestVersion = $result.LatestVersion
+                    ApiSource = "curseforge"
+                    Host = "curseforge"
+                    IconUrl = $result.IconUrl
+                    ClientSide = $result.ClientSide
+                    ServerSide = $result.ServerSide
+                    Title = $result.Title
+                    ProjectDescription = $result.ProjectDescription
+                    IssuesUrl = $result.IssuesUrl
+                    SourceUrl = $result.SourceUrl
+                    WikiUrl = $result.WikiUrl
+                    LatestGameVersion = $result.LatestGameVersion
+                }
+            }
+        } elseif ($type -eq "server") {
+            # For server JARs, use the provided ID to determine the URL and filename
+            $serverUrl = $null
+            $serverVersion = $null
+            $serverFilename = $null
+            if ($id -eq "minecraft-server-1.21.5") {
+                $serverUrl = "https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar"
+                $serverVersion = "1.21.5"
+                $serverFilename = "minecraft_server.1.21.5.jar"
+            } elseif ($id -eq "minecraft-server-1.21.6") {
+                $serverUrl = "https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar"
+                $serverVersion = "1.21.6"
+                $serverFilename = "minecraft_server.1.21.6.jar"
+            } else {
+                $serverUrl = $id
+                $serverVersion = $gameVersion
+                $serverFilename = "minecraft_server.$gameVersion.jar"
+            }
+            $resolvedMod = [PSCustomObject]@{
+                Group = $group
+                Type = $type
+                GameVersion = $gameVersion
+                ID = $id
+                Loader = $loader
+                Version = $serverVersion
+                Name = $name
+                Description = ""
+                Jar = $serverFilename
+                Url = $serverUrl
+                Category = ""
+                VersionUrl = $serverUrl
+                LatestVersionUrl = $serverUrl
+                LatestVersion = $serverVersion
+                ApiSource = "direct"
+                Host = "direct"
+                IconUrl = $null
+                ClientSide = $null
+                ServerSide = $null
+                Title = $name
+                ProjectDescription = ""
+                IssuesUrl = $null
+                SourceUrl = $null
+                WikiUrl = $null
+                LatestGameVersion = $gameVersion
+            }
+        } else {
+            # For Modrinth mods (including shaderpacks), validate with "latest"
+            $result = Validate-ModVersion -ModId $id -Version "latest" -Loader $loader -ResponseFolder $ApiResponseFolder
+            if ($result.Exists) {
+                # Use API data for name if we have a placeholder
+                $finalName = if ($name -eq "Loading...") { $result.Title } else { $name }
+                
+                $resolvedMod = [PSCustomObject]@{
+                    Group = $group
+                    Type = $type
+                    GameVersion = $gameVersion
+                    ID = $id
+                    Loader = $loader
+                    Version = $result.LatestVersion
+                    Name = $finalName
+                    Description = ""
+                    Jar = ""
+                    Url = if ($parsedModrinth) { $parsedModrinth.Url } else { if ($type -eq "shaderpack") { "https://modrinth.com/shader/$id" } else { "https://modrinth.com/mod/$id" } }
+                    Category = ""
+                    VersionUrl = $result.VersionUrl
+                    LatestVersionUrl = $result.LatestVersionUrl
+                    LatestVersion = $result.LatestVersion
+                    ApiSource = "modrinth"
+                    Host = "modrinth"
+                    IconUrl = $result.IconUrl
+                    ClientSide = $result.ClientSide
+                    ServerSide = $result.ServerSide
+                    Title = $result.Title
+                    ProjectDescription = $result.ProjectDescription
+                    IssuesUrl = $result.IssuesUrl
+                    SourceUrl = $result.SourceUrl
+                    WikiUrl = $result.WikiUrl
+                    LatestGameVersion = $result.LatestGameVersion
+                }
+            }
         }
+        
+        if ($resolvedMod) {
+            # Check for existing record before adding
+            $mods = @()
+            if (Test-Path $ModListPath) {
+                $mods = Import-Csv $ModListPath
+            }
+            
+            # Look for existing record with same ID and type
+            $existingIndex = -1
+            for ($i = 0; $i -lt $mods.Count; $i++) {
+                if ($mods[$i].ID -eq $resolvedMod.ID -and $mods[$i].Type -eq $resolvedMod.Type) {
+                    $existingIndex = $i
+                    break
+                }
+            }
+            
+            if ($existingIndex -ne -1) {
+                $existingMod = $mods[$existingIndex]
+                Write-Host "🔍 Found existing record for $($resolvedMod.ID) ($($resolvedMod.Type))" -ForegroundColor Yellow
+                
+                # Check if version and JAR are the same
+                if ($existingMod.Version -eq $resolvedMod.Version -and $existingMod.Jar -eq $resolvedMod.Jar) {
+                    Write-Host "ℹ️  Mod already exists with same version and JAR. Skipping addition." -ForegroundColor Cyan
+                    Write-Host "   Existing: $($existingMod.Name) v$($existingMod.Version) in group '$($existingMod.Group)'" -ForegroundColor Gray
+                    return
+                } else {
+                    # Update existing record with new information
+                    Write-Host "🔄 Updating existing record with new information..." -ForegroundColor Yellow
+                    $mods[$existingIndex] = $resolvedMod
+                    $mods | Export-Csv -Path $ModListPath -NoTypeInformation
+                    
+                    Write-Host "✅ Successfully updated $($resolvedMod.Name) in $ModListPath" -ForegroundColor Green
+                    Write-Host "📋 Updated information:" -ForegroundColor Cyan
+                    Write-Host "   Version: $($existingMod.Version) → $($resolvedMod.Version)" -ForegroundColor Gray
+                    Write-Host "   Title: $($resolvedMod.Title)" -ForegroundColor Gray
+                    Write-Host "   Latest Game Version: $($resolvedMod.LatestGameVersion)" -ForegroundColor Gray
+                    Write-Host "   Icon URL: $($resolvedMod.IconUrl)" -ForegroundColor Gray
+                }
+            } else {
+                # Add new record
+                $mods += $resolvedMod
+                $mods | Export-Csv -Path $ModListPath -NoTypeInformation
+                
+                Write-Host "✅ Successfully added $($resolvedMod.Name) to $ModListPath in group '$($resolvedMod.Group)'" -ForegroundColor Green
+                Write-Host "📋 Resolved information:" -ForegroundColor Cyan
+                Write-Host "   Latest Version: $($resolvedMod.LatestVersion)" -ForegroundColor Gray
+                Write-Host "   Title: $($resolvedMod.Title)" -ForegroundColor Gray
+                Write-Host "   Latest Game Version: $($resolvedMod.LatestGameVersion)" -ForegroundColor Gray
+                Write-Host "   Icon URL: $($resolvedMod.IconUrl)" -ForegroundColor Gray
+            }
+            
+            # Auto-download if requested
+            if ($ForceDownload) {
+                Write-Host ""
+                Write-Host "Auto-downloading the mod..." -ForegroundColor Yellow
+                $downloadParams = @{
+                    UseLatestVersion = $true
+                    ForceDownload = $true
+                }
+                $downloadedCount = Download-Mods @downloadParams
+                if ($downloadedCount -gt 0) {
+                    Write-Host "✅ Successfully downloaded $downloadedCount mods!" -ForegroundColor Green
+                }
+            }
+        } else {
+            Write-Host "❌ Failed to resolve mod information for $name ($id)" -ForegroundColor Red
+            Write-Host "   Check if the mod ID is correct and the mod exists on $type" -ForegroundColor Yellow
+        }
+        return
+    }
+    
+    # Delete mod logic
+    if ($DeleteModID) {
+        $deleteId = $DeleteModID
+        $deleteType = $DeleteModType
+        $parsedDelete = $null
+        
+        # Parse Modrinth URL if provided
+        if ($deleteId -match "^https://modrinth\.com/([^/]+)/([^/]+)$") {
+            $modrinthType = $matches[1]
+            $modrinthId = $matches[2]
+            $typeMapping = @{ 
+                "mod" = "mod"; 
+                "shader" = "shaderpack"; 
+                "datapack" = "datapack"; 
+                "resourcepack" = "resourcepack"; 
+                "plugin" = "plugin" 
+            }
+            if ($typeMapping.ContainsKey($modrinthType)) {
+                $parsedDelete = @{ Type = $typeMapping[$modrinthType]; ID = $modrinthId }
+                Write-Host "🔍 Parsed Modrinth URL: $modrinthType/$modrinthId" -ForegroundColor Cyan
+            } else {
+                Write-Host "❌ Unsupported Modrinth type: $modrinthType" -ForegroundColor Red
+                Write-Host "   Supported types: $($typeMapping.Keys -join ', ')" -ForegroundColor Yellow
+                return
+            }
+        }
+        
+        # Use parsed data if available
+        if ($parsedDelete) {
+            $deleteId = $parsedDelete.ID
+            $deleteType = $parsedDelete.Type
+        }
+        
+        if (-not $deleteId) {
+            Write-Host "❌ You must provide a mod ID or a valid Modrinth URL." -ForegroundColor Red
+            return
+        }
+        
+        Write-Host "🗑️  Deleting mod: $deleteId ($deleteType)" -ForegroundColor Cyan
+        
+        # Load and filter mods
         $mods = @()
         if (Test-Path $ModListPath) {
             $mods = Import-Csv $ModListPath
         }
-        $mods += $newMod
-        $mods | Export-Csv -Path $ModListPath -NoTypeInformation
-        Write-Host "Added mod $name ($id) to $ModListPath in group '$group'" -ForegroundColor Green
+        
+        $originalCount = $mods.Count
+        
+        # Filter out the matching mod(s)
+        if ($deleteType) {
+            $mods = $mods | Where-Object { $_.ID -ne $deleteId -or $_.Type -ne $deleteType }
+        } else {
+            $mods = $mods | Where-Object { $_.ID -ne $deleteId }
+        }
+        
+        # Check if any mods were removed
+        if ($mods.Count -lt $originalCount) {
+            $removedCount = $originalCount - $mods.Count
+            $mods | Export-Csv -Path $ModListPath -NoTypeInformation
+            Write-Host "✅ Successfully deleted $removedCount mod(s) with ID '$deleteId' ($deleteType) from $ModListPath" -ForegroundColor Green
+        } else {
+            Write-Host "ℹ️  No matching mod found for '$deleteId' ($deleteType) in $ModListPath" -ForegroundColor Yellow
+        }
         return
     }
+    
     if ($ValidateModVersion) {
         # Example: Validate-ModVersion -ModId "fabric-api" -Version "0.91.0+1.20.1"
         Write-Host "Validating mod version..." -ForegroundColor Cyan
@@ -1386,6 +2068,10 @@ if ($MyInvocation.InvocationName -ne '.') {
     }
     if ($GetModList) {
         Get-ModList
+        return
+    }
+    if ($DownloadServer) {
+        Download-ServerFiles -ForceDownload:$ForceDownload
         return
     }
     # Default: Run validation and update modlist

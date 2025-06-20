@@ -1,6 +1,6 @@
 apiresponse/*
 !apiresponse/.gitkeep
-mods/*
+download/*
 !mods/.gitkeep
 
 # backup files
