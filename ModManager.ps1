@@ -13,17 +13,21 @@ param(
     [switch]$GetModList,
     [switch]$ShowHelp,
     [switch]$AddMod,
-    [string]$AddModID,
+    [string]$AddModId,
+    [string]$AddModUrl,
     [string]$AddModName,
     [string]$AddModLoader,
     [string]$AddModGameVersion,
     [string]$AddModType,
     [string]$AddModGroup,
-    [string]$AddModUrl,
+    [string]$AddModDescription,
     [string]$AddModJar,
+    [string]$AddModUrlDirect,
+    [string]$AddModCategory,
     [switch]$DownloadServer,
     [string]$DeleteModID = $null,
-    [string]$DeleteModType = $null
+    [string]$DeleteModType = $null,
+    [string]$ModListFile = "modlist.csv"
 )
 
 # Load environment variables from .env file
@@ -43,7 +47,7 @@ function Load-EnvironmentVariables {
 Load-EnvironmentVariables
 
 # Configuration
-$ModListPath = "modlist.csv"
+$ModListPath = $ModListFile
 $ApiResponseFolder = "apiresponse"
 $DownloadFolder = "download"
 $BackupFolder = "backups"
@@ -128,15 +132,19 @@ function Get-ModrinthProjectInfo {
         # Save full response to file
         $response | ConvertTo-Json -Depth 10 | Out-File -FilePath $responseFile -Encoding UTF8
         
-        # Extract fields
-        $iconUrl = $response.icon_url
-        $clientSide = $response.client_side
-        $serverSide = $response.server_side
-        $title = $response.title
-        $projectDescription = $response.description
-        $issuesUrl = $response.issues_url
-        $sourceUrl = $response.source_url
-        $wikiUrl = $response.wiki_url
+        # Extract fields and ensure null values are converted to empty strings
+        function Flatten-String($str) {
+            if ($null -eq $str) { return "" }
+            return ($str -replace "[\r\n]+", " " -replace "\s+", " ").Trim()
+        }
+        $iconUrl = Flatten-String $response.icon_url
+        $clientSide = Flatten-String $response.client_side
+        $serverSide = Flatten-String $response.server_side
+        $title = Flatten-String $response.title
+        $projectDescription = Flatten-String $response.description
+        $issuesUrl = Flatten-String $response.issues_url
+        $sourceUrl = Flatten-String $response.source_url
+        $wikiUrl = Flatten-String $response.wiki_url
         
         return [PSCustomObject]@{
             IconUrl = $iconUrl
@@ -153,14 +161,14 @@ function Get-ModrinthProjectInfo {
     }
     catch {
         return [PSCustomObject]@{
-            IconUrl = $null
-            ClientSide = $null
-            ServerSide = $null
-            Title = $null
-            ProjectDescription = $null
-            IssuesUrl = $null
-            SourceUrl = $null
-            WikiUrl = $null
+            IconUrl = ""
+            ClientSide = ""
+            ServerSide = ""
+            Title = ""
+            ProjectDescription = ""
+            IssuesUrl = ""
+            SourceUrl = ""
+            WikiUrl = ""
             ProjectInfo = $null
             ResponseFile = $null
             Error = $_.Exception.Message
@@ -198,7 +206,11 @@ function Validate-ModVersion {
         $response | ConvertTo-Json -Depth 10 | Out-File -FilePath $responseFile -Encoding UTF8
         
         # Get latest version for display (filtered by loader)
-        $latestVersion = $filteredResponse.version_number | Select-Object -First 1
+        $latestVersion = if ($filteredResponse.Count -gt 0) { 
+            $filteredResponse[0].version_number 
+        } else { 
+            "No $Loader versions found" 
+        }
         $latestVersionStr = if ($latestVersion) { $latestVersion } else { "No $Loader versions found" }
         
         # Handle "latest" version parameter
@@ -304,7 +316,7 @@ function Validate-ModVersion {
 
             return [PSCustomObject]@{
                 Exists = $true
-                AvailableVersions = $filteredResponse.version_number
+                AvailableVersions = ($filteredResponse.version_number -join ", ")
                 LatestVersion = $latestVersion
                 VersionUrl = $versionUrl
                 LatestVersionUrl = $latestVersionUrl
@@ -313,17 +325,16 @@ function Validate-ModVersion {
                 ServerSide = $projectInfo.ServerSide
                 Title = $projectInfo.Title
                 ProjectDescription = $projectInfo.ProjectDescription
-                IssuesUrl = $projectInfo.IssuesUrl
-                SourceUrl = $projectInfo.SourceUrl
-                WikiUrl = $projectInfo.WikiUrl
-                ResponseFile = $responseFile
+                IssuesUrl = if ($projectInfo.IssuesUrl) { $projectInfo.IssuesUrl.ToString() } else { "" }
+                SourceUrl = if ($projectInfo.SourceUrl) { $projectInfo.SourceUrl.ToString() } else { "" }
+                WikiUrl = if ($projectInfo.WikiUrl) { $projectInfo.WikiUrl.ToString() } else { "" }
                 VersionFoundByJar = $versionFoundByJar
                 LatestGameVersion = $latestGameVersion
             }
         } else {
             return [PSCustomObject]@{
                 Exists = $false
-                AvailableVersions = $filteredResponse.version_number
+                AvailableVersions = ($filteredResponse.version_number -join ", ")
                 LatestVersion = $latestVersion
                 VersionUrl = $null
                 LatestVersionUrl = $latestVersionUrl
@@ -332,10 +343,9 @@ function Validate-ModVersion {
                 ServerSide = $projectInfo.ServerSide
                 Title = $projectInfo.Title
                 ProjectDescription = $projectInfo.ProjectDescription
-                IssuesUrl = $projectInfo.IssuesUrl
-                SourceUrl = $projectInfo.SourceUrl
-                WikiUrl = $projectInfo.WikiUrl
-                ResponseFile = $responseFile
+                IssuesUrl = if ($projectInfo.IssuesUrl) { $projectInfo.IssuesUrl.ToString() } else { "" }
+                SourceUrl = if ($projectInfo.SourceUrl) { $projectInfo.SourceUrl.ToString() } else { "" }
+                WikiUrl = if ($projectInfo.WikiUrl) { $projectInfo.WikiUrl.ToString() } else { "" }
                 VersionFoundByJar = $false
                 LatestGameVersion = $null
             }
@@ -421,7 +431,7 @@ function Validate-CurseForgeModVersion {
         if ($versionExists) {
             return [PSCustomObject]@{
                 Exists = $true
-                AvailableVersions = $filteredResponse.displayName
+                AvailableVersions = ($filteredResponse.displayName -join ", ")
                 LatestVersion = $latestVersion
                 VersionUrl = $versionUrl
                 LatestVersionUrl = $latestVersionUrl
@@ -433,7 +443,7 @@ function Validate-CurseForgeModVersion {
         } else {
             return [PSCustomObject]@{
                 Exists = $false
-                AvailableVersions = $filteredResponse.displayName
+                AvailableVersions = ($filteredResponse.displayName -join ", ")
                 LatestVersion = $latestVersion
                 VersionUrl = $null
                 LatestVersionUrl = $latestVersionUrl
@@ -566,6 +576,34 @@ function Ensure-CsvColumns {
     }
 }
 
+# Function to clean up installer, launcher, and server entries
+function Clean-SystemEntries {
+    param(
+        [array]$Mods
+    )
+    
+    foreach ($mod in $Mods) {
+        if ($mod.Type -in @("installer", "launcher", "server")) {
+            # Ensure all API-related fields are empty strings for system entries
+            $mod.IconUrl = ""
+            $mod.ClientSide = ""
+            $mod.ServerSide = ""
+            $mod.Title = if ($mod.Title) { $mod.Title } else { $mod.Name }
+            $mod.ProjectDescription = ""
+            $mod.IssuesUrl = ""
+            $mod.SourceUrl = ""
+            $mod.WikiUrl = ""
+            $mod.LatestGameVersion = ""
+            
+            # Ensure ApiSource and Host are set correctly
+            $mod.ApiSource = "direct"
+            $mod.Host = "direct"
+        }
+    }
+    
+    return $Mods
+}
+
 # Function to update modlist with latest versions
 function Update-ModListWithLatestVersions {
     param(
@@ -579,6 +617,9 @@ function Update-ModListWithLatestVersions {
         if (-not $mods) {
             return 0
         }
+        
+        # Clean up system entries (installer, launcher, server) to ensure proper empty strings
+        $mods = Clean-SystemEntries -Mods $mods
         
         # Create a backup of the original file
         $backupPath = $CsvPath -replace '\.csv$', '-backup.csv'
@@ -649,16 +690,22 @@ function Update-ModListWithLatestVersions {
                     $mod.ProjectDescription = $result.ProjectDescription
                     $updatedFields.ProjectDescription = $true
                 }
-                if ($result.IssuesUrl -and $result.IssuesUrl -ne $mod.IssuesUrl) {
-                    $mod.IssuesUrl = $result.IssuesUrl
+                # Handle IssuesUrl - ensure it's a string, not null or array
+                $issuesUrlValue = if ($result.IssuesUrl) { $result.IssuesUrl.ToString() } else { "" }
+                if ($issuesUrlValue -ne $mod.IssuesUrl) {
+                    $mod.IssuesUrl = $issuesUrlValue
                     $updatedFields.IssuesUrl = $true
                 }
-                if ($result.SourceUrl -and $result.SourceUrl -ne $mod.SourceUrl) {
-                    $mod.SourceUrl = $result.SourceUrl
+                # Handle SourceUrl - ensure it's a string, not null or array
+                $sourceUrlValue = if ($result.SourceUrl) { $result.SourceUrl.ToString() } else { "" }
+                if ($sourceUrlValue -ne $mod.SourceUrl) {
+                    $mod.SourceUrl = $sourceUrlValue
                     $updatedFields.SourceUrl = $true
                 }
-                if ($result.WikiUrl -and $result.WikiUrl -ne $mod.WikiUrl) {
-                    $mod.WikiUrl = $result.WikiUrl
+                # Handle WikiUrl - ensure it's a string, not null or array
+                $wikiUrlValue = if ($result.WikiUrl) { $result.WikiUrl.ToString() } else { "" }
+                if ($wikiUrlValue -ne $mod.WikiUrl) {
+                    $mod.WikiUrl = $wikiUrlValue
                     $updatedFields.WikiUrl = $true
                 }
                 
@@ -738,18 +785,21 @@ function Validate-AllModVersions {
     
     foreach ($mod in $mods) {
         if (-not [string]::IsNullOrEmpty($mod.ID)) {
+            Write-Host ("Validating: {0} (ID: {1}, Type: {2}, Host: {3}, Version: {4})" -f $mod.Name, $mod.ID, $mod.Type, $mod.Host, $mod.Version) -ForegroundColor Cyan
+            # Skip validation for installer, launcher, and server types as they don't have API metadata
+            if ($mod.Type -in @("installer", "launcher", "server")) {
+                Write-Host "⏭️  Skipping $($mod.Name) ($($mod.Type) type - no API validation needed)" -ForegroundColor Yellow
+                continue
+            }
             # Get loader from CSV, default to "fabric" if not specified
             $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
-            
             # Get host from CSV, default to "modrinth" if not specified
             $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
-            
             # Get game version from CSV, default to "1.21.5" if not specified
             $gameVersion = if (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
-            
             # Get JAR filename from CSV
             $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
-            
+            Write-Host ("  → Calling API for {0}..." -f $modHost) -ForegroundColor DarkGray
             # Use appropriate API based on host
             if ($modHost -eq "curseforge") {
                 $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -ModUrl $mod.URL
@@ -758,7 +808,11 @@ function Validate-AllModVersions {
                 $versionToCheck = if ([string]::IsNullOrEmpty($mod.Version)) { "latest" } else { $mod.Version }
                 $result = Validate-ModVersion -ModId $mod.ID -Version $versionToCheck -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename
             }
-            
+            if ($result.Exists) {
+                Write-Host ("  ✓ Found version: {0}" -f $result.LatestVersion) -ForegroundColor Green
+            } else {
+                Write-Host ("  ❌ Version not found or error: {0}" -f $result.Error) -ForegroundColor Red
+            }
             $results += [PSCustomObject]@{
                 Name = $mod.Name
                 ID = $mod.ID
@@ -777,9 +831,9 @@ function Validate-AllModVersions {
                 ServerSide = $result.ServerSide
                 Title = $result.Title
                 ProjectDescription = $result.ProjectDescription
-                IssuesUrl = $result.IssuesUrl
-                SourceUrl = $result.SourceUrl
-                WikiUrl = $result.WikiUrl
+                IssuesUrl = if ($result.IssuesUrl) { $result.IssuesUrl.ToString() } else { "" }
+                SourceUrl = if ($result.SourceUrl) { $result.SourceUrl.ToString() } else { "" }
+                WikiUrl = if ($result.WikiUrl) { $result.WikiUrl.ToString() } else { "" }
                 VersionFoundByJar = $result.VersionFoundByJar
                 LatestGameVersion = $result.LatestGameVersion
             }
@@ -865,7 +919,7 @@ function Show-Help {
     Write-Host "    - Includes Fabric launchers for 1.21.5 and 1.21.6"
     Write-Host "    - Skips existing files unless -ForceDownload is used"
     Write-Host ""
-    Write-Host "  Add-Mod [-AddModID <id|url>] [-AddModName <name>] [-AddModLoader <loader>] [-AddModGameVersion <version>] [-AddModType <type>] [-AddModGroup <group>] [-ForceDownload]" -ForegroundColor White
+    Write-Host "  Add-Mod [-AddModId <id>] [-AddModUrl <url>] [-AddModName <name>] [-AddModLoader <loader>] [-AddModGameVersion <version>] [-AddModType <type>] [-AddModGroup <group>] [-AddModDescription <description>] [-AddModJar <jar>] [-AddModUrlDirect <url>] [-AddModCategory <category>] [-ForceDownload]" -ForegroundColor White
     Write-Host "    - Adds a new mod to modlist.csv with minimal information"
     Write-Host "    - Auto-resolves latest version and metadata from APIs"
     Write-Host "    - Supports Modrinth URLs (e.g., https://modrinth.com/mod/fabric-api)"
@@ -878,16 +932,19 @@ function Show-Help {
     Write-Host "    - Default type: mod"
     Write-Host "    - Default group: optional"
     Write-Host ""
-    Write-Host "  [-AddModID <url>] (without -AddMod flag)" -ForegroundColor White
-    Write-Host "    - Shortcut: Just provide a Modrinth URL as -AddModID"
+    Write-Host "  [-AddModId <id>] (without -AddMod flag)" -ForegroundColor White
+    Write-Host "    - Shortcut: Just provide a Modrinth URL as -AddModUrl"
     Write-Host "    - Automatically detects and adds the mod"
-    Write-Host "    - Example: .\ModManager.ps1 -AddModID 'https://modrinth.com/mod/sodium'"
+    Write-Host "    - Example: .\ModManager.ps1 -AddModUrl 'https://modrinth.com/mod/sodium'"
     Write-Host "  Show-Help" -ForegroundColor White
     Write-Host "    - Shows this help information"
     Write-Host ""
     Write-Host "USAGE EXAMPLES:" -ForegroundColor Yellow
     Write-Host "  .\ModManager.ps1" -ForegroundColor White
     Write-Host "    - Runs automatic validation of all mods and updates modlist with download URLs"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -ModListFile 'my-mods.csv'" -ForegroundColor White
+    Write-Host "    - Uses custom CSV file 'my-mods.csv' instead of default 'modlist.csv'"
     Write-Host ""
     Write-Host "  .\ModManager.ps1 -Download" -ForegroundColor White
     Write-Host "    - Validates all mods and downloads them to download/ folder organized by GameVersion"
@@ -901,28 +958,31 @@ function Show-Help {
     Write-Host "  .\ModManager.ps1 -DownloadServer" -ForegroundColor White
     Write-Host "    - Downloads Minecraft server JARs and Fabric launchers"
     Write-Host ""
-    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'fabric-api' -AddModName 'Fabric API'" -ForegroundColor White
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModId 'fabric-api' -AddModName 'Fabric API'" -ForegroundColor White
     Write-Host "    - Adds Fabric API with auto-resolved latest version and metadata"
     Write-Host ""
-    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'https://modrinth.com/mod/fabric-api'" -ForegroundColor White
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModUrl 'https://modrinth.com/mod/fabric-api'" -ForegroundColor White
     Write-Host "    - Adds Fabric API using Modrinth URL (auto-detects type and ID)"
     Write-Host ""
-    Write-Host "  .\ModManager.ps1 -AddModID 'https://modrinth.com/mod/sodium'" -ForegroundColor White
-    Write-Host "    - Shortcut: Adds Sodium using just the Modrinth URL"
+    Write-Host "  .\ModManager.ps1 -AddModUrl 'https://modrinth.com/mod/sodium'" -ForegroundColor White
+    Write-Host "    - Shortcut: Adds Sodium using Modrinth URL"
     Write-Host ""
-    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'https://modrinth.com/shader/complementary-reimagined'" -ForegroundColor White
-    Write-Host "    - Adds shaderpack using Modrinth URL (auto-detects as shaderpack)"
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModUrl 'https://modrinth.com/shader/complementary-reimagined'" -ForegroundColor White
+    Write-Host "    - Adds shaderpack with auto-detected type and iris loader"
     Write-Host ""
-    Write-Host "  .\ModManager.ps1 -AddMod -AddModID '238222' -AddModName 'Inventory HUD+' -AddModType 'curseforge'" -ForegroundColor White
-    Write-Host "    - Adds CurseForge mod with auto-resolved latest version and metadata"
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModUrl 'https://modrinth.com/modpack/fabulously-optimized'" -ForegroundColor White
+    Write-Host "    - Adds modpack with auto-detected type"
     Write-Host ""
-    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'complementary-reimagined' -AddModName 'Complementary Reimagined' -AddModType 'shaderpack'" -ForegroundColor White
-    Write-Host "    - Adds shaderpack with auto-resolved latest version and metadata"
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModId '238222' -AddModName 'Inventory HUD+' -AddModType 'curseforge'" -ForegroundColor White
+    Write-Host "    - Adds CurseForge mod with project ID"
     Write-Host ""
-    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'no-chat-reports' -AddModName 'No Chat Reports' -AddModGroup 'block'" -ForegroundColor White
-    Write-Host "    - Adds mod to 'block' group (downloads to block subfolder)"
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModUrl 'complementary-reimagined' -AddModName 'Complementary Reimagined' -AddModType 'shaderpack'" -ForegroundColor White
+    Write-Host "    - Adds shaderpack with Modrinth ID"
     Write-Host ""
-    Write-Host "  .\ModManager.ps1 -AddMod -AddModID 'fabric-installer-1.0.3' -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.5'" -ForegroundColor White
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModUrl 'no-chat-reports' -AddModName 'No Chat Reports' -AddModGroup 'block'" -ForegroundColor White
+    Write-Host "    - Adds mod to 'block' group (won't be downloaded)"
+    Write-Host ""
+    Write-Host "  .\ModManager.ps1 -AddMod -AddModUrl 'fabric-installer-1.0.3' -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.5'" -ForegroundColor White
     Write-Host "    - Adds installer with direct URL download (downloads to installer subfolder)"
     Write-Host ""
     Write-Host "  Validate-ModVersion -ModId 'fabric-api' -Version '0.91.0+1.20.1'" -ForegroundColor White
@@ -1278,6 +1338,36 @@ function Download-Mods {
                 } elseif ($mod.Type -eq "installer") {
                     # Installers go in the installer subfolder
                     $gameVersionFolder = Join-Path $gameVersionFolder "installer"
+                } elseif ($mod.Type -eq "modpack") {
+                    # Modpacks use special download process - call Download-Modpack function
+                    Write-Host "📦 $($mod.Name): Processing modpack..." -ForegroundColor Cyan
+                    
+                    $modpackResult = Download-Modpack -ModId $mod.ID -VersionUrl $downloadUrl -ModName $mod.Name -GameVersion $gameVersion -ForceDownload:$ForceDownload
+                    
+                    if ($modpackResult -gt 0) {
+                        $downloadResults += [PSCustomObject]@{
+                            Name = $mod.Name
+                            Status = "Success"
+                            Version = $downloadVersion
+                            File = "modpack"
+                            Path = "$gameVersionFolder\modpacks\$($mod.Name)"
+                            Size = "modpack"
+                            Error = $null
+                        }
+                        $successCount++
+                    } else {
+                        $downloadResults += [PSCustomObject]@{
+                            Name = $mod.Name
+                            Status = "Failed"
+                            Version = $downloadVersion
+                            File = "modpack"
+                            Path = "$gameVersionFolder\modpacks\$($mod.Name)"
+                            Size = $null
+                            Error = "Modpack download failed"
+                        }
+                        $errorCount++
+                    }
+                    continue  # Skip normal download process for modpacks
                 } elseif ($mod.Type -eq "launcher" -or $mod.Type -eq "server") {
                     # Launchers and server JARs go directly in the game version folder (root)
                     # No subfolder needed
@@ -1628,6 +1718,96 @@ function Download-ServerFiles {
     }
 }
 
+# Place Download-Modpack function before main execution
+function Download-Modpack {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModId,
+        [Parameter(Mandatory=$true)]
+        [string]$VersionUrl,
+        [Parameter(Mandatory=$true)]
+        [string]$ModName,
+        [Parameter(Mandatory=$true)]
+        [string]$GameVersion,
+        [bool]$ForceDownload = $false
+    )
+    try {
+        Write-Host "📦 Downloading modpack: $ModName" -ForegroundColor Cyan
+        # Create download directory structure
+        $downloadDir = "download\$GameVersion"
+        $modpackDir = "$downloadDir\modpacks\$ModName"
+        if (-not (Test-Path $downloadDir)) {
+            New-Item -ItemType Directory -Path $downloadDir -Force | Out-Null
+        }
+        if (-not (Test-Path $modpackDir)) {
+            New-Item -ItemType Directory -Path $modpackDir -Force | Out-Null
+        }
+        # Download the .mrpack file
+        $mrpackFileName = "$ModName.mrpack"
+        $mrpackPath = "$modpackDir\$mrpackFileName"
+        if (Test-Path $mrpackPath -and -not $ForceDownload) {
+            Write-Host "⏭️  Modpack file already exists, skipping download" -ForegroundColor Yellow
+        } else {
+            Write-Host "⬇️  Downloading modpack file..." -ForegroundColor Yellow
+            Invoke-WebRequest -Uri $VersionUrl -OutFile $mrpackPath -UseBasicParsing
+            Write-Host "✅ Downloaded modpack file" -ForegroundColor Green
+        }
+        # Extract the .mrpack file (it's just a zip file)
+        Write-Host "📂 Extracting modpack..." -ForegroundColor Yellow
+        Expand-Archive -Path $mrpackPath -DestinationPath $modpackDir -Force
+        # Find and process modrinth.index.json
+        $indexPath = "$modpackDir\modrinth.index.json"
+        if (-not (Test-Path $indexPath)) {
+            Write-Host "❌ modrinth.index.json not found in extracted modpack" -ForegroundColor Red
+            return 0
+        }
+        $indexContent = Get-Content $indexPath | ConvertFrom-Json
+        Write-Host "📋 Processing modpack index with $($indexContent.files.Count) files..." -ForegroundColor Cyan
+        # Download files from the index
+        $successCount = 0
+        $errorCount = 0
+        foreach ($file in $indexContent.files) {
+            $filePath = $file.path
+            $downloadUrl = $file.downloads[0]  # Use first download URL
+            # Create the target directory
+            $targetDir = Split-Path -Path "$downloadDir\$filePath" -Parent
+            if (-not (Test-Path $targetDir)) {
+                New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+            }
+            $targetPath = "$downloadDir\$filePath"
+            # Download the file
+            try {
+                if (Test-Path $targetPath -and -not $ForceDownload) {
+                    Write-Host "  ⏭️  Skipped: $filePath (already exists)" -ForegroundColor Gray
+                } else {
+                    Invoke-WebRequest -Uri $downloadUrl -OutFile $targetPath -UseBasicParsing
+                    Write-Host "  ✅ Downloaded: $filePath" -ForegroundColor Green
+                    $successCount++
+                }
+            } catch {
+                Write-Host "  ❌ Failed: $filePath - $($_.Exception.Message)" -ForegroundColor Red
+                $errorCount++
+            }
+        }
+        # Handle overrides folder
+        $overridesPath = "$modpackDir\overrides"
+        if (Test-Path $overridesPath) {
+            Write-Host "📁 Copying overrides folder contents..." -ForegroundColor Yellow
+            Copy-Item -Path "$overridesPath\*" -Destination $downloadDir -Recurse -Force
+            Write-Host "✅ Copied overrides to $downloadDir" -ForegroundColor Green
+        }
+        Write-Host ""
+        Write-Host "📦 Modpack installation complete!" -ForegroundColor Green
+        Write-Host "✅ Successfully downloaded: $successCount files" -ForegroundColor Green
+        Write-Host "⏭️  Skipped (already exists): $(($indexContent.files.Count - $successCount - $errorCount))" -ForegroundColor Yellow
+        Write-Host "❌ Failed: $errorCount files" -ForegroundColor Red
+        return $successCount
+    } catch {
+        Write-Error "Failed to download modpack: $($_.Exception.Message)"
+        return 0
+    }
+}
+
 # Main execution
 if ($MyInvocation.InvocationName -ne '.') {
     Write-Host "Minecraft Mod Manager PowerShell Script" -ForegroundColor Magenta
@@ -1642,14 +1822,21 @@ if ($MyInvocation.InvocationName -ne '.') {
     }
     
     # Auto-detect Modrinth URLs and treat them as AddMod commands
-    if ($AddModID -and $AddModID -match "^https://modrinth\.com/([^/]+)/([^/]+)$") {
+    if ($AddModUrl -and $AddModUrl -match "^https://modrinth\.com/([^/]+)/([^/]+)$") {
         $AddMod = $true
         Write-Host "🔍 Auto-detected Modrinth URL, treating as AddMod command" -ForegroundColor Cyan
     }
     
+    # Auto-detect if AddModId is provided without AddMod flag
+    if ($AddModId -and -not $AddMod) {
+        $AddMod = $true
+        Write-Host "🔍 Auto-detected Modrinth ID, treating as AddMod command" -ForegroundColor Cyan
+    }
+    
     if ($AddMod) {
         # Add a new mod entry to modlist.csv with minimal info and auto-resolve details
-        $id = $AddModID
+        $id = $AddModId
+        $url = $AddModUrl
         $name = $AddModName
         $type = if ($AddModType) { $AddModType } else { $DefaultModType }
         $loader = if ($AddModLoader) { $AddModLoader } else { 
@@ -1658,10 +1845,28 @@ if ($MyInvocation.InvocationName -ne '.') {
         }
         $gameVersion = if ($AddModGameVersion) { $AddModGameVersion } else { $DefaultGameVersion }
         $group = if ($AddModGroup) { $AddModGroup } else { "optional" }  # Changed default to optional
+        $description = if ($AddModDescription) { $AddModDescription } else { "" }
+        $jar = if ($AddModJar) { $AddModJar } else { "" }
+        $urlDirect = if ($AddModUrlDirect) { $AddModUrlDirect } else { "" }
+        $category = if ($AddModCategory) { $AddModCategory } else { "" }
         
-        # Check if the ID is a Modrinth URL and parse it
+        # If AddModId is not provided but AddModUrl is, try to extract ID from URL
+        if (-not $id -and $url) {
+            if ($url -match "^https://modrinth\.com/([^/]+)/([^/]+)$") {
+                $modrinthType = $matches[1]
+                $modrinthId = $matches[2]
+                $id = $modrinthId
+                Write-Host "🔍 Extracted Modrinth ID '$id' from URL" -ForegroundColor Cyan
+            } else {
+                # Assume the URL itself is the ID
+                $id = $url
+                Write-Host "🔍 Using URL as ID: $id" -ForegroundColor Cyan
+            }
+        }
+        
+        # Check if the URL is a Modrinth URL and parse it
         $parsedModrinth = $null
-        if ($id -match "^https://modrinth\.com/([^/]+)/([^/]+)$") {
+        if ($url -and $url -match "^https://modrinth\.com/([^/]+)/([^/]+)$") {
             $modrinthType = $matches[1]
             $modrinthId = $matches[2]
             
@@ -1672,13 +1877,14 @@ if ($MyInvocation.InvocationName -ne '.') {
                 "datapack" = "datapack"
                 "resourcepack" = "resourcepack"
                 "plugin" = "plugin"
+                "modpack" = "modpack"
             }
             
             if ($typeMapping.ContainsKey($modrinthType)) {
                 $parsedModrinth = @{
                     Type = $typeMapping[$modrinthType]
                     ID = $modrinthId
-                    Url = $id
+                    Url = $url
                 }
                 Write-Host "🔍 Detected Modrinth URL: $modrinthType/$modrinthId" -ForegroundColor Cyan
             } else {
@@ -1701,7 +1907,7 @@ if ($MyInvocation.InvocationName -ne '.') {
         }
         
         if (-not $id) {
-            Write-Host "You must provide at least -AddModID (or a Modrinth URL)." -ForegroundColor Red
+            Write-Host "You must provide at least -AddModId or -AddModUrl." -ForegroundColor Red
             return
         }
         
@@ -1734,23 +1940,23 @@ if ($MyInvocation.InvocationName -ne '.') {
                 Loader = $loader
                 Version = $installerVersion
                 Name = $name
-                Description = ""
-                Jar = ""
-                Url = $installerUrl
-                Category = ""
+                Description = $description
+                Jar = $jar
+                Url = if ($urlDirect) { $urlDirect } else { $installerUrl }
+                Category = $category
                 VersionUrl = $installerUrl
                 LatestVersionUrl = $installerUrl
                 LatestVersion = $installerVersion
                 ApiSource = "direct"
                 Host = "direct"
-                IconUrl = $null
-                ClientSide = $null
-                ServerSide = $null
+                IconUrl = ""
+                ClientSide = ""
+                ServerSide = ""
                 Title = $name
                 ProjectDescription = ""
-                IssuesUrl = $null
-                SourceUrl = $null
-                WikiUrl = $null
+                IssuesUrl = ""
+                SourceUrl = ""
+                WikiUrl = ""
                 LatestGameVersion = $gameVersion
             }
         } elseif ($type -eq "launcher") {
@@ -1782,28 +1988,28 @@ if ($MyInvocation.InvocationName -ne '.') {
                 Loader = $loader
                 Version = $launcherVersion
                 Name = $name
-                Description = ""
+                Description = $description
                 Jar = $launcherFilename
-                Url = $launcherUrl
-                Category = ""
+                Url = if ($urlDirect) { $urlDirect } else { $launcherUrl }
+                Category = $category
                 VersionUrl = $launcherUrl
                 LatestVersionUrl = $launcherUrl
                 LatestVersion = $launcherVersion
                 ApiSource = "direct"
                 Host = "direct"
-                IconUrl = $null
-                ClientSide = $null
-                ServerSide = $null
+                IconUrl = ""
+                ClientSide = ""
+                ServerSide = ""
                 Title = $name
                 ProjectDescription = ""
-                IssuesUrl = $null
-                SourceUrl = $null
-                WikiUrl = $null
+                IssuesUrl = ""
+                SourceUrl = ""
+                WikiUrl = ""
                 LatestGameVersion = $gameVersion
             }
         } elseif ($type -eq "curseforge") {
             # For CurseForge mods, we need to validate with "latest" to get metadata
-            $result = Validate-CurseForgeModVersion -ModId $id -Version "latest" -Loader $loader -ResponseFolder $ApiResponseFolder
+            $result = Validate-CurseForgeModVersion -ModId $id -Version "latest" -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jar -ModUrl $urlDirect
             if ($result.Exists) {
                 $resolvedMod = [PSCustomObject]@{
                     Group = $group
@@ -1813,10 +2019,10 @@ if ($MyInvocation.InvocationName -ne '.') {
                     Loader = $loader
                     Version = $result.LatestVersion
                     Name = $name
-                    Description = ""
-                    Jar = ""
-                    Url = "https://www.curseforge.com/minecraft/mc-mods/$id"
-                    Category = ""
+                    Description = $description
+                    Jar = $jar
+                    Url = if ($urlDirect) { $urlDirect } else { "https://www.curseforge.com/minecraft/mc-mods/$id" }
+                    Category = $category
                     VersionUrl = $result.VersionUrl
                     LatestVersionUrl = $result.LatestVersionUrl
                     LatestVersion = $result.LatestVersion
@@ -1827,9 +2033,9 @@ if ($MyInvocation.InvocationName -ne '.') {
                     ServerSide = $result.ServerSide
                     Title = $result.Title
                     ProjectDescription = $result.ProjectDescription
-                    IssuesUrl = $result.IssuesUrl
-                    SourceUrl = $result.SourceUrl
-                    WikiUrl = $result.WikiUrl
+                    IssuesUrl = if ($result.IssuesUrl) { $result.IssuesUrl.ToString() } else { "" }
+                    SourceUrl = if ($result.SourceUrl) { $result.SourceUrl.ToString() } else { "" }
+                    WikiUrl = if ($result.WikiUrl) { $result.WikiUrl.ToString() } else { "" }
                     LatestGameVersion = $result.LatestGameVersion
                 }
             }
@@ -1859,24 +2065,59 @@ if ($MyInvocation.InvocationName -ne '.') {
                 Loader = $loader
                 Version = $serverVersion
                 Name = $name
-                Description = ""
+                Description = $description
                 Jar = $serverFilename
-                Url = $serverUrl
-                Category = ""
+                Url = if ($urlDirect) { $urlDirect } else { $serverUrl }
+                Category = $category
                 VersionUrl = $serverUrl
                 LatestVersionUrl = $serverUrl
                 LatestVersion = $serverVersion
                 ApiSource = "direct"
                 Host = "direct"
-                IconUrl = $null
-                ClientSide = $null
-                ServerSide = $null
+                IconUrl = ""
+                ClientSide = ""
+                ServerSide = ""
                 Title = $name
                 ProjectDescription = ""
-                IssuesUrl = $null
-                SourceUrl = $null
-                WikiUrl = $null
+                IssuesUrl = ""
+                SourceUrl = ""
+                WikiUrl = ""
                 LatestGameVersion = $gameVersion
+            }
+        } elseif ($type -eq "modpack") {
+            # For Modrinth modpacks, validate with "latest" to get metadata
+            $result = Validate-ModVersion -ModId $id -Version "latest" -Loader $loader -ResponseFolder $ApiResponseFolder
+            if ($result.Exists) {
+                # Use API data for name if we have a placeholder
+                $finalName = if ($name -eq "Loading...") { $result.Title } else { $name }
+                
+                $resolvedMod = [PSCustomObject]@{
+                    Group = $group
+                    Type = $type
+                    GameVersion = $gameVersion
+                    ID = $id
+                    Loader = $loader
+                    Version = $result.LatestVersion
+                    Name = $finalName
+                    Description = $description
+                    Jar = $jar
+                    Url = if ($urlDirect) { $urlDirect } else { if ($parsedModrinth) { $parsedModrinth.Url } else { "https://modrinth.com/modpack/$id" } }
+                    Category = $category
+                    VersionUrl = $result.VersionUrl
+                    LatestVersionUrl = $result.LatestVersionUrl
+                    LatestVersion = $result.LatestVersion
+                    ApiSource = "modrinth"
+                    Host = "modrinth"
+                    IconUrl = $result.IconUrl
+                    ClientSide = $result.ClientSide
+                    ServerSide = $result.ServerSide
+                    Title = $result.Title
+                    ProjectDescription = $result.ProjectDescription
+                    IssuesUrl = if ($result.IssuesUrl) { $result.IssuesUrl.ToString() } else { "" }
+                    SourceUrl = if ($result.SourceUrl) { $result.SourceUrl.ToString() } else { "" }
+                    WikiUrl = if ($result.WikiUrl) { $result.WikiUrl.ToString() } else { "" }
+                    LatestGameVersion = $result.LatestGameVersion
+                }
             }
         } else {
             # For Modrinth mods (including shaderpacks), validate with "latest"
@@ -1893,10 +2134,10 @@ if ($MyInvocation.InvocationName -ne '.') {
                     Loader = $loader
                     Version = $result.LatestVersion
                     Name = $finalName
-                    Description = ""
-                    Jar = ""
-                    Url = if ($parsedModrinth) { $parsedModrinth.Url } else { if ($type -eq "shaderpack") { "https://modrinth.com/shader/$id" } else { "https://modrinth.com/mod/$id" } }
-                    Category = ""
+                    Description = $description
+                    Jar = $jar
+                    Url = if ($urlDirect) { $urlDirect } else { if ($parsedModrinth) { $parsedModrinth.Url } else { "https://modrinth.com/modpack/$id" } }
+                    Category = $category
                     VersionUrl = $result.VersionUrl
                     LatestVersionUrl = $result.LatestVersionUrl
                     LatestVersion = $result.LatestVersion
@@ -1907,9 +2148,9 @@ if ($MyInvocation.InvocationName -ne '.') {
                     ServerSide = $result.ServerSide
                     Title = $result.Title
                     ProjectDescription = $result.ProjectDescription
-                    IssuesUrl = $result.IssuesUrl
-                    SourceUrl = $result.SourceUrl
-                    WikiUrl = $result.WikiUrl
+                    IssuesUrl = if ($result.IssuesUrl) { $result.IssuesUrl.ToString() } else { "" }
+                    SourceUrl = if ($result.SourceUrl) { $result.SourceUrl.ToString() } else { "" }
+                    WikiUrl = if ($result.WikiUrl) { $result.WikiUrl.ToString() } else { "" }
                     LatestGameVersion = $result.LatestGameVersion
                 }
             }
@@ -2001,7 +2242,8 @@ if ($MyInvocation.InvocationName -ne '.') {
                 "shader" = "shaderpack"; 
                 "datapack" = "datapack"; 
                 "resourcepack" = "resourcepack"; 
-                "plugin" = "plugin" 
+                "plugin" = "plugin";
+                "modpack" = "modpack"
             }
             if ($typeMapping.ContainsKey($modrinthType)) {
                 $parsedDelete = @{ Type = $typeMapping[$modrinthType]; ID = $modrinthId }
