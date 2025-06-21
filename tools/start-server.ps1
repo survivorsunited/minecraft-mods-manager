@@ -59,21 +59,27 @@ while ($true) {
     $LogFile = "$LogDir/console-$Timestamp.log"
     $LaunchCmd = "java " + ($JavaOpts -join " ") + " -jar `"$JarFile`" nogui"
 
+    # Write header to log file
     @"
 === Fabric Server Start: $Timestamp ===
 === JAR File: $JarFile ===
 === Launch Command: $LaunchCmd ===
 === Java Options: $($JavaOpts -join ' ') ===
+=== Log File: $LogFile ===
 
 "@ | Out-File -FilePath $LogFile -Encoding utf8
 
     Write-Host "`n🔄 Starting server... (Log: $LogFile)" -ForegroundColor Cyan
     
-    pwsh -NoProfile -Command @"
+    # Set console encoding for proper character handling
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    
+    # Run the server command and capture ALL output (stdout and stderr) to both console and log file
+    $result = pwsh -NoProfile -Command @"
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-& $LaunchCmd | Tee-Object -FilePath '$LogFile' -Append
+& $LaunchCmd 2>&1 | Tee-Object -FilePath '$LogFile' -Append
 "@
-
+    
     $exitCode = $LASTEXITCODE
     $restartMsg = "`n--- Server exited with code $exitCode. Restarting in 10 seconds... ---`n"
     
