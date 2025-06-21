@@ -173,7 +173,7 @@ Test-LatestWithServer -TestName "Server Startup with Latest Mods" -TestScript {
     
     try {
         # Start server with timeout to prevent hanging
-        $startServerPath = Join-Path $TestRoot "tools\start-server.ps1"
+        $startServerPath = Join-Path (Join-Path $PSScriptRoot '../..') 'tools/start-server.ps1'
         $job = Start-Job -ScriptBlock {
             param($ServerDir, $StartServerPath)
             Set-Location $ServerDir
