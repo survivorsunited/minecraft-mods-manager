@@ -25,6 +25,7 @@ param(
     [string]$AddModUrlDirect,
     [string]$AddModCategory,
     [switch]$DownloadServer,
+    [switch]$StartServer,
     [string]$DeleteModID = $null,
     [string]$DeleteModType = $null,
     [string]$ModListFile = "modlist.csv",
@@ -1390,6 +1391,9 @@ function Show-Help {
     Write-Host "  .\ModManager.ps1 -DownloadServer" -ForegroundColor White
     Write-Host "    - Downloads Minecraft server JARs and Fabric launchers"
     Write-Host ""
+    Write-Host "  .\ModManager.ps1 -StartServer" -ForegroundColor White
+    Write-Host "    - Starts Minecraft server with error checking and log monitoring"
+    Write-Host ""
     Write-Host "  .\ModManager.ps1 -AddMod -AddModId 'fabric-api' -AddModName 'Fabric API'" -ForegroundColor White
     Write-Host "    - Adds Fabric API with auto-resolved latest version and metadata"
     Write-Host ""
@@ -2411,6 +2415,142 @@ function Download-ServerFiles {
     }
 }
 
+# Function to start Minecraft server with error checking
+function Start-MinecraftServer {
+    param(
+        [string]$DownloadFolder = "download",
+        [string]$ScriptSource = "tools/start-server.ps1"
+    )
+    
+    Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
+    
+    # Check if download folder exists
+    if (-not (Test-Path $DownloadFolder)) {
+        Write-Host "❌ Download folder not found: $DownloadFolder" -ForegroundColor Red
+        Write-Host "💡 Run -DownloadMods first to create the download folder" -ForegroundColor Yellow
+        return $false
+    }
+    
+    # Check if start-server script exists
+    if (-not (Test-Path $ScriptSource)) {
+        Write-Host "❌ Start server script not found: $ScriptSource" -ForegroundColor Red
+        return $false
+    }
+    
+    # Find the most recent version folder
+    $versionFolders = Get-ChildItem -Path $DownloadFolder -Directory -ErrorAction SilentlyContinue | 
+                     Where-Object { $_.Name -match "^\d+\.\d+\.\d+" } |
+                     Sort-Object Name -Descending
+    
+    if ($versionFolders.Count -eq 0) {
+        Write-Host "❌ No version folders found in $DownloadFolder" -ForegroundColor Red
+        Write-Host "💡 Run -DownloadMods first to download server files" -ForegroundColor Yellow
+        return $false
+    }
+    
+    $targetVersion = $versionFolders[0].Name
+    $targetFolder = Join-Path $DownloadFolder $targetVersion
+    
+    Write-Host "📁 Using version folder: $targetFolder" -ForegroundColor Cyan
+    
+    # Copy start-server script to target folder
+    $serverScript = Join-Path $targetFolder "start-server.ps1"
+    try {
+        Copy-Item -Path $ScriptSource -Destination $serverScript -Force
+        Write-Host "✅ Copied start-server script to: $serverScript" -ForegroundColor Green
+    }
+    catch {
+        Write-Host "❌ Failed to copy start-server script: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+    
+    # Check for Fabric server JAR in target folder
+    $fabricJars = Get-ChildItem -Path $targetFolder -Filter "fabric-server*.jar" -ErrorAction SilentlyContinue
+    if ($fabricJars.Count -eq 0) {
+        Write-Host "❌ No Fabric server JAR found in $targetFolder" -ForegroundColor Red
+        Write-Host "💡 Make sure you have downloaded the Fabric server launcher" -ForegroundColor Yellow
+        return $false
+    }
+    
+    Write-Host "✅ Found Fabric server JAR: $($fabricJars[0].Name)" -ForegroundColor Green
+    
+    # Create logs directory
+    $logsDir = Join-Path $targetFolder "logs"
+    if (-not (Test-Path $logsDir)) {
+        New-Item -ItemType Directory -Path $logsDir -Force | Out-Null
+        Write-Host "📁 Created logs directory: $logsDir" -ForegroundColor Green
+    }
+    
+    # Start the server
+    Write-Host "🔄 Starting server in background..." -ForegroundColor Cyan
+    Write-Host "📋 Server logs will be saved to: $logsDir" -ForegroundColor Gray
+    
+    try {
+        # Start the server process in background
+        $process = Start-Process -FilePath "pwsh" -ArgumentList "-NoProfile", "-File", $serverScript -PassThru -WorkingDirectory $targetFolder
+        
+        Write-Host "✅ Server started successfully (PID: $($process.Id))" -ForegroundColor Green
+        Write-Host "🔄 Monitoring server logs for errors..." -ForegroundColor Cyan
+        
+        # Monitor logs for errors
+        $logFile = $null
+        $startTime = Get-Date
+        $timeout = 60  # Wait up to 60 seconds for log file to appear
+        
+        # Wait for log file to be created
+        while ((Get-Date) -lt ($startTime.AddSeconds($timeout))) {
+            $logFiles = Get-ChildItem -Path $logsDir -Filter "console-*.log" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending
+            if ($logFiles.Count -gt 0) {
+                $logFile = $logFiles[0].FullName
+                break
+            }
+            Start-Sleep -Seconds 1
+        }
+        
+        if (-not $logFile) {
+            Write-Host "⚠️  No log file found after $timeout seconds" -ForegroundColor Yellow
+            return $true
+        }
+        
+        Write-Host "📄 Monitoring log file: $logFile" -ForegroundColor Gray
+        
+        # Monitor for errors for a short period
+        $monitorTime = 30  # Monitor for 30 seconds
+        $monitorStart = Get-Date
+        $errorFound = $false
+        
+        while ((Get-Date) -lt ($monitorStart.AddSeconds($monitorTime)) -and -not $errorFound) {
+            if (Test-Path $logFile) {
+                $recentLines = Get-Content $logFile -Tail 20 -ErrorAction SilentlyContinue
+                foreach ($line in $recentLines) {
+                    if ($line -match "(ERROR|FATAL|Exception|Failed|Error)" -and $line -notmatch "Server exited") {
+                        Write-Host "❌ Error detected in logs: $line" -ForegroundColor Red
+                        $errorFound = $true
+                        break
+                    }
+                }
+            }
+            Start-Sleep -Seconds 2
+        }
+        
+        if (-not $errorFound) {
+            Write-Host "✅ No errors detected in server startup" -ForegroundColor Green
+            Write-Host "🎮 Server appears to be running successfully" -ForegroundColor Green
+            Write-Host "💡 Use 'Get-Process -Id $($process.Id)' to check server status" -ForegroundColor Gray
+            Write-Host "💡 Use 'Stop-Process -Id $($process.Id)' to stop the server" -ForegroundColor Gray
+        } else {
+            Write-Host "⚠️  Errors detected during server startup" -ForegroundColor Yellow
+            Write-Host "📄 Check the log file for details: $logFile" -ForegroundColor Gray
+        }
+        
+        return $true
+    }
+    catch {
+        Write-Host "❌ Failed to start server: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
 # Main execution
 if ($MyInvocation.InvocationName -ne '.') {
     Write-Host "Minecraft Mod Manager PowerShell Script" -ForegroundColor Magenta
@@ -2897,6 +3037,10 @@ if ($MyInvocation.InvocationName -ne '.') {
     }
     if ($DownloadServer) {
         Download-ServerFiles -ForceDownload:$ForceDownload
+        return
+    }
+    if ($StartServer) {
+        Start-MinecraftServer -DownloadFolder $DownloadFolder
         return
     }
     # Default: Run validation and update modlist
