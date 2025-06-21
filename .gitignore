@@ -21,3 +21,6 @@ testResults.xml
 !**/.gitkeep
 
 *.log
+
+.cursor/
+@instructions.md
