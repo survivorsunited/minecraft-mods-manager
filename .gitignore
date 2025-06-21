@@ -7,7 +7,7 @@ test/temp/
 test/results
 test/modlist.csv
 test/run-test-cli.csv
-test/output-*
+test/test-output/*
  
 backups/*
 

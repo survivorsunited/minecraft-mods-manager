@@ -14,6 +14,8 @@ Initialize-TestEnvironment -TestFileName $TestFileName
 
 # Helper to get the full path to ModManager.ps1
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+$TestOutputDir = Get-TestOutputFolder $TestFileName
+$TestDownloadDir = Join-Path $TestOutputDir "download/1.21.5"
 
 # Test 1: Validate each type download ensures file exists
 Write-TestHeader "Validate System Entry and Mod Downloads"
@@ -25,12 +27,12 @@ Test-Command "& '$ModManagerPath' -AddMod -AddModName 'Minecraft Server' -AddMod
 Test-Command "& '$ModManagerPath' -AddMod -AddModUrl 'https://modrinth.com/mod/litematica' -DatabaseFile '$TestDbPath' -UseCachedResponses" "Add Litematica Mod" 4 $null $TestFileName
 
 # Download all
-Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseCachedResponses" "Download All Types" 4 $null $TestFileName
+Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -DownloadFolder '$TestDownloadDir' -UseCachedResponses" "Download All Types" 4 $null $TestFileName
 
 # Validate files exist
 $expectedFiles = @(
-    "download/1.21.5/installer/fabric-installer-1.0.3.exe",
-    "download/1.21.5/minecraft_server.1.21.5.jar"
+    "$TestDownloadDir/installer/fabric-installer-1.0.3.exe",
+    "$TestDownloadDir/minecraft_server.1.21.5.jar"
 )
 
 $missing = $false
@@ -44,7 +46,7 @@ foreach ($file in $expectedFiles) {
 }
 
 # Check for at least one mod jar in mods folder
-$modFiles = Get-ChildItem download/1.21.5/mods -File -Filter *.jar -ErrorAction SilentlyContinue
+$modFiles = Get-ChildItem "$TestDownloadDir/mods" -File -Filter *.jar -ErrorAction SilentlyContinue
 if ($modFiles.Count -ge 1) {
     Write-Host "✓ PASS: Found mod jar in mods folder" -ForegroundColor Green
 } else {

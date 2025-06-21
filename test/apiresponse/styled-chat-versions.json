@@ -1,0 +1,1604 @@
+[
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "4iEiOcnO",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.9.0+1.21.6",
+    "version_number": "2.9.0+1.21.6",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.8.0+1.21.5...2.9.0+1.21.6",
+    "changelog_url": null,
+    "date_published": "2025-06-18T15:27:59.959979Z",
+    "downloads": 153,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "bab9a4e6e07cf2b5f8097bbac372d9b8fe5cf34d",
+          "sha512": "3f3b6757fdec090cdbe205d9ed90dc45b7501c1d0d6f3165cabbf9eff79b1836be472daf73c635713441fe5ca4ac9d77abd5bd582aaf495ae6c84dafc2ad5648"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/4iEiOcnO/styled-chat-2.9.0%2B1.21.6.jar",
+        "filename": "styled-chat-2.9.0+1.21.6.jar",
+        "primary": true,
+        "size": 515380,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5-rc1",
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "E1RdcKyb",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.8.0+1.21.5",
+    "version_number": "2.8.0+1.21.5",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.7.2+1.21.3...2.8.0+1.21.5",
+    "changelog_url": null,
+    "date_published": "2025-03-24T11:05:32.24238Z",
+    "downloads": 2513,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "60bcd6541ec408241f5e2fd3711afd3b7b572c8fbe6dbdbea3c7486288f7e5424a37e07bad0dee355d0cf2d7b13933ed8b9b7904807c8e26146611b1ec3fcca9",
+          "sha1": "c63c7a435a73cfc8cf1ff79691dd0a4b26672b03"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/E1RdcKyb/styled-chat-2.8.0%2B1.21.5.jar",
+        "filename": "styled-chat-2.8.0+1.21.5.jar",
+        "primary": true,
+        "size": 508034,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "LIG1Fs95",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.7+1.19.4",
+    "version_number": "2.1.7+1.19.4",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.1.6+1.19.4...2.1.7+1.19.4",
+    "changelog_url": null,
+    "date_published": "2025-01-27T20:06:47.587797Z",
+    "downloads": 64,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ee10e1fd931af4b91e894056c44f4e2d6f694452",
+          "sha512": "c60603626a9edabfd50828306813203b2a4268c5b50fa79c71068cd6fa3580a465202ca7e504ac37202780d27e75ce209b7565de8c8737bd8314b366c59b71f2"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/LIG1Fs95/styled-chat-2.1.7%2B1.19.4.jar",
+        "filename": "styled-chat-2.1.7+1.19.4.jar",
+        "primary": true,
+        "size": 314948,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2-rc2",
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "9k3L1PEs",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.3.1+1.20.2",
+    "version_number": "2.3.1+1.20.2",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.3.0+1.20.2...2.3.1+1.20.2",
+    "changelog_url": null,
+    "date_published": "2025-01-27T19:56:53.436879Z",
+    "downloads": 52,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1eaed0ffa1524d623e4b8156cffd87428c1d8a6f6a827524bcc509b58639c7c602970be6ff8aaa05549fe469cbe91aa6cc68ff4d2bd137f0e9dcfb5233a9685b",
+          "sha1": "ab6933272ba5726756f81fe3af1a3d9b19782340"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/9k3L1PEs/styled-chat-2.3.1%2B1.20.2.jar",
+        "filename": "styled-chat-2.3.1+1.20.2.jar",
+        "primary": true,
+        "size": 398121,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "kLvkSdyR",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.4.2+1.20.4",
+    "version_number": "2.4.2+1.20.4",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.4.0+1.20.3...2.4.2+1.20.4",
+    "changelog_url": null,
+    "date_published": "2025-01-27T19:54:56.364439Z",
+    "downloads": 213,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "4d0d941da264516656ac006b711d1139ed06dcf2225cdd047c1caf85f01725d6f08466e8c0d79955f47cab50519182df653f85d01e78fd3625a9d7df6d4651cd",
+          "sha1": "2ea967300425e230ad462a8b68e760f7a8d2654f"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/kLvkSdyR/styled-chat-2.4.2%2B1.20.4.jar",
+        "filename": "styled-chat-2.4.2+1.20.4.jar",
+        "primary": true,
+        "size": 477774,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.3",
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "AQ0JW3y8",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.7.2+1.21.3",
+    "version_number": "2.7.2+1.21.3",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.7.1+1.21.3...2.7.2+1.21.3",
+    "changelog_url": null,
+    "date_published": "2025-01-27T19:49:28.798623Z",
+    "downloads": 2496,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ab0b044912861ca5159d9c55592668113e8b74b3",
+          "sha512": "bf4c4f1996d6f4fc4f74a2d2648fd2ecaf7048d627fe352c0bcd7f389460702503722c043f0dabfca4d5501516647dba921739bbc4fb37fa0bc1fa4c228fc476"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/AQ0JW3y8/styled-chat-2.7.2%2B1.21.3.jar",
+        "filename": "styled-chat-2.7.2+1.21.3.jar",
+        "primary": true,
+        "size": 492523,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21-rc1",
+      "1.21",
+      "1.21.1",
+      "1.21.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "4e1xZSk3",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.6.1+1.21",
+    "version_number": "2.6.1+1.21",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.7.0+1.21.2...2.6.1+1.21",
+    "changelog_url": null,
+    "date_published": "2025-01-27T19:47:47.726899Z",
+    "downloads": 9032,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "cf46ed692a18396c12deb5842c9b04287d8127ba8d3e3604743dc774bf22cd860a5bba3d00377ad671c2e54942394ea99359b20e802e021802e8ab0491bec94c",
+          "sha1": "e6ab5db7b89994cb23e55de7f868731b22770a0b"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/4e1xZSk3/styled-chat-2.6.1%2B1.21.jar",
+        "filename": "styled-chat-2.6.1+1.21.jar",
+        "primary": true,
+        "size": 487791,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "pwr7uYCH",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.2.4+1.20.1",
+    "version_number": "2.2.4+1.20.1",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.2.3+1.20.1...2.2.4+1.20.1",
+    "changelog_url": null,
+    "date_published": "2025-01-27T19:47:19.203839Z",
+    "downloads": 9049,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ce0c1b16bb22f90b23b1b9b63f2b334fc56f0d52",
+          "sha512": "ca8374e69d10a38e11359851380f5fc5873bd97b06fb0940db752b89331605e3e7edd57d419f994f0da6df8dabe360cf979466bef6d934de0170303c6db2106a"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/pwr7uYCH/styled-chat-2.2.4%2B1.20.1.jar",
+        "filename": "styled-chat-2.2.4+1.20.1.jar",
+        "primary": true,
+        "size": 392005,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.3",
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "b7ivf9W5",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.7.1+1.21.3",
+    "version_number": "2.7.1+1.21.3",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.7.0+1.21.2...2.7.1+1.21.3",
+    "changelog_url": null,
+    "date_published": "2024-11-28T19:32:47.898148Z",
+    "downloads": 1623,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "dbe8744f80880be0f933979b94510b627871eff7a2eae8b5ac3781cb95e3a2741549b5831ac952fe5c608b97f96decf49a0fd51e03ce07ffe49bdaef5d6e1f4f",
+          "sha1": "c53e5a2f9da74fa01b8927d3ddd45b4663d21404"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/b7ivf9W5/styled-chat-2.7.1%2B1.21.3.jar",
+        "filename": "styled-chat-2.7.1+1.21.3.jar",
+        "primary": true,
+        "size": 492528,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.2-rc1",
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "5jN44RUy",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.7.0+1.21.2",
+    "version_number": "2.7.0+1.21.2",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.6.0+1.21...2.7.0+1.21.2",
+    "changelog_url": null,
+    "date_published": "2024-10-19T20:03:13.26585Z",
+    "downloads": 562,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b092ed1fd52415ab57d5519bf24e6dbecbc5e608",
+          "sha512": "ff8aca75799c42969e647ea4a4f228ee4a2dfa022ed01bee37bd4169cefdad473dd9150923df4e7b105a7034c9e5b80a4505af027df099c1c893ca615070627a"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/5jN44RUy/styled-chat-2.7.0%2B1.21.2.jar",
+        "filename": "styled-chat-2.7.0+1.21.2.jar",
+        "primary": true,
+        "size": 489136,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21-rc1",
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "EoTTJkqS",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.6.0+1.21",
+    "version_number": "2.6.0+1.21",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.5.0+1.20.5...2.6.0+1.21",
+    "changelog_url": null,
+    "date_published": "2024-06-12T07:41:56.975747Z",
+    "downloads": 30894,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2cdaf5c9709b59ad6033e13d4bfd26f8c8cfaaf148088ffe2b751ce4b5fa8c47b6e8a042666bee09085ba1d148632a68d55d2d06997680b1dee1bd35a1cf6dcf",
+          "sha1": "52fef2d722ba8aa3e9556ce9b287fdfc34387405"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/EoTTJkqS/styled-chat-2.6.0%2B1.21.jar",
+        "filename": "styled-chat-2.6.0+1.21.jar",
+        "primary": true,
+        "size": 486110,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5-rc2",
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "OQeEfRIi",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.5.0+1.20.5",
+    "version_number": "2.5.0+1.20.5",
+    "changelog": "## What's Changed\n* Retrieve normal message content for mod compatibility by @Variadicism in https://github.com/Patbox/StyledChat/pull/48\n* Update to 1.20.5 by @DrexHD in https://github.com/Patbox/StyledChat/pull/47\n\n## New Contributors\n* @Variadicism made their first contribution in https://github.com/Patbox/StyledChat/pull/48\n\n**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.4.0+1.20.3...2.5.0+1.20.5",
+    "changelog_url": null,
+    "date_published": "2024-04-21T09:02:08.24853Z",
+    "downloads": 3958,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "8f81816a317e85bfcacf712525237af3e5fa96c5",
+          "sha512": "a980d6447704bad82a255eefa1696740b4f993922f62b02676d90f41b398de98d03ecc357532c4244517fd3a3f08cbe6a3342bfa0dc9f4d3e7265915c0bd6afd"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/OQeEfRIi/styled-chat-2.5.0%2B1.20.5.jar",
+        "filename": "styled-chat-2.5.0+1.20.5.jar",
+        "primary": true,
+        "size": 480271,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3-rc1",
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "hPPTz9OM",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.4.0+1.20.3",
+    "version_number": "2.4.0+1.20.3",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-03T19:21:19.551335Z",
+    "downloads": 7718,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2132ffaaaaed0a6864cf4ae1aeac651441c1eb40",
+          "sha512": "8d4b8ab1ee925d2565df01716f7be50da1058c88997230125a79b8a59ba89aacfc5d58258a56a2f597989ed9d14d843b7d6b59afe366e103044a921ff0fbd1b6"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/hPPTz9OM/styled-chat-2.4.0%2B1.20.3.jar",
+        "filename": "styled-chat-2.4.0+1.20.3.jar",
+        "primary": true,
+        "size": 399854,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2-rc2",
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "J9nCzhiG",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.3.0+1.20.2",
+    "version_number": "2.3.0+1.20.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-09-19T14:01:36.482897Z",
+    "downloads": 6731,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a6401354c9d393914930556827abe01e090d33df",
+          "sha512": "17acfd5508e7b60a659cde64c1f13b5df0fe9979f500a394d9a6486303c4d8a58b258b808cf1c545dcfbc492ad413e5803d14013fba87b60be1e43fef8da36db"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/J9nCzhiG/styled-chat-2.3.0%2B1.20.2.jar",
+        "filename": "styled-chat-2.3.0+1.20.2.jar",
+        "primary": true,
+        "size": 397740,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "7dmapSQA",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.2.3+1.20.1",
+    "version_number": "2.2.3+1.20.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-09-10T07:05:38.876614Z",
+    "downloads": 81635,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "13987a5e2d0e3cdd5994b562d448356ab5dac30d",
+          "sha512": "8f9396389c6d30befb7986c72ca22c92373c9c6d856af1544f62a13ced437657b8f5371adb916f83f0521c8d606e2f8839106c2d60b6b8acaea39f4df912a17b"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/7dmapSQA/styled-chat-2.2.3%2B1.20.1.jar",
+        "filename": "styled-chat-2.2.3+1.20.1.jar",
+        "primary": true,
+        "size": 391719,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "2DkBIhFd",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.4+1.19.2",
+    "version_number": "2.0.4+1.19.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-08-28T07:50:15.683358Z",
+    "downloads": 4399,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "be6bf99fd473b8228cb00766fec6eb1817c6492669f051313f0172f253f9f1c9414ced0ae14a303a84b9b70751fe50e16bfa6c6494225c4d5c974d115f16deca",
+          "sha1": "dbded0d6fe5816aaffdbd0d556da966a9b361ea2"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/2DkBIhFd/styled-chat-2.0.4%2B1.19.2.jar",
+        "filename": "styled-chat-2.0.4+1.19.2.jar",
+        "primary": true,
+        "size": 281097,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "axLlTgG5",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.2.2+1.20.1",
+    "version_number": "2.2.2+1.20.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-17T12:20:56.067836Z",
+    "downloads": 3347,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5c2cb74f1a35ac6e6827dfeb5cd53d57fadb8634d33de5234bae70d1184a7e1870567be87a3ec5f8a76d4a3be7d31f4d5e23b3fe3c255129dbd9e306cb75269d",
+          "sha1": "f92d0932b40cdf93ca281eb1eca136846ffca4e5"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/axLlTgG5/styled-chat-2.2.2%2B1.20.1.jar",
+        "filename": "styled-chat-2.2.2+1.20.1.jar",
+        "primary": true,
+        "size": 385251,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "duQRhm80",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.2.1+1.20.1",
+    "version_number": "2.2.1+1.20.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-06T09:25:14.818532Z",
+    "downloads": 422,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "055a88efd26357ecf50a8e2f1f1bf0b55586d56e",
+          "sha512": "f21812cd8a0518dbe903b50a129657aa16a159891f6166296432fd1d918733f9eef909e4b8d21ff65c9e12dc972a021495741aa529cd3d62bce11ffe7cf9aa02"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/duQRhm80/styled-chat-2.2.1%2B1.20.1.jar",
+        "filename": "styled-chat-2.2.1+1.20.1.jar",
+        "primary": true,
+        "size": 382955,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20-rc1",
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "9oVLuNZf",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.2.0+1.20",
+    "version_number": "2.2.0+1.20",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-06-04T17:10:36.224396Z",
+    "downloads": 3061,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ec31e87212111890954a47b69d3521c0b21c48c0",
+          "sha512": "e57cdb0cc07efb8763636db7c0134bf4b54a05a82d5fe0e42d2e3ffcad0b8b0b908e95e963e0439b6a5e4e313f816271f908a79941a7b76bbb381818619b62ec"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/9oVLuNZf/styled-chat-2.2.0%2B1.20.jar",
+        "filename": "styled-chat-2.2.0+1.20.jar",
+        "primary": true,
+        "size": 317744,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "WSgVV9CL",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.6+1.19.4",
+    "version_number": "2.1.6+1.19.4",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-04-17T16:16:35.805508Z",
+    "downloads": 3704,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "bf2b65d9c4b798cef684b0384513693fc3be57cc",
+          "sha512": "f75e5bb395f93aabe3c28792bc4e3e94dc041d836b8444f1938d203f3586d99f3b68d10767558d1cd24891757925a17dfa486f93dcec691093396ed3d9ea9472"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/WSgVV9CL/styled-chat-2.1.6%2B1.19.4.jar",
+        "filename": "styled-chat-2.1.6+1.19.4.jar",
+        "primary": true,
+        "size": 314698,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "krxsLfUl",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.5+1.19.4",
+    "version_number": "2.1.5+1.19.4",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-04-11T19:31:25.013804Z",
+    "downloads": 225,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "71a662638fe9d2d02e71c4c5d1a6d32fe88e056e",
+          "sha512": "47a38cf63a9941ca6f2346b1da7abe3f2e9805642e50a67500cc06c51ecc1aeb33b6e6aac864078320ce5226c15336f792ce1e7919e3d097a3e242ca03dabd49"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/krxsLfUl/styled-chat-2.1.5%2B1.19.4.jar",
+        "filename": "styled-chat-2.1.5+1.19.4.jar",
+        "primary": true,
+        "size": 314423,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "1uSSPGsu",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.4+1.19.3",
+    "version_number": "2.1.4+1.19.3",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-04-09T17:59:49.598619Z",
+    "downloads": 291,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b1762832fdca3dd9a4de0ddb2610f77f899b4d87",
+          "sha512": "fd67d04977a648e03153d41ed9bede9a4c835a290ce677b71444d98d58b80f20aa7b1deb101c22d3af9d257b91fcf7800dc86bda65b3966c25022b2f65978b62"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1uSSPGsu/styled-chat-2.1.4%2B1.19.3.jar",
+        "filename": "styled-chat-2.1.4+1.19.3.jar",
+        "primary": true,
+        "size": 298210,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "RRZC8TnY",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.3+1.19.2",
+    "version_number": "2.0.3+1.19.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-04-09T17:54:03.079963Z",
+    "downloads": 45350,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7ae43311d06fcdb646eb1345ad40a0b817e8de304c6504286f12b25b33f2f5ca0fd8c319aefafdca8cb3a289dc4ab98db9f8fb9d2ec6e038b6523e7b9458a2f3",
+          "sha1": "570a1f41971a644e66117ed7bc229b59ef553e0f"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/RRZC8TnY/styled-chat-2.0.3%2B1.19.2.jar",
+        "filename": "styled-chat-2.0.3+1.19.2.jar",
+        "primary": true,
+        "size": 280979,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3",
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "9eDWeAQo",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.3+1.19.3",
+    "version_number": "2.1.3+1.19.3",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-03-07T21:26:07.176203Z",
+    "downloads": 462,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "35de08307398b32c8fb05870bef036ddd325ff211fcc3f1ab85d1bb8e827ff61e535329ac2e771a399e647c6731ea5707fa358154bb64c2310689363c070bd3b",
+          "sha1": "e75f310ef1e10172ce9752ffe54047af2fc3614b"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/9eDWeAQo/styled-chat-2.1.3%2B1.19.3.jar",
+        "filename": "styled-chat-2.1.3+1.19.3.jar",
+        "primary": true,
+        "size": 298013,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "BriPIjGV",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.2+1.19.3",
+    "version_number": "2.1.2+1.19.3",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-01-14T10:11:56.067184Z",
+    "downloads": 1441,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "19b333810fb12ac7b3bd1794e9dc5dc75a530ffa10f9b4859a953b16b941a36c4513ba87ba9153ec45dc6ae20f4cdf0540c8f7bc824419a73bfa2cb56a93fc04",
+          "sha1": "f54c649adb0b4cfccdfca71ddd0a2f4afe761947"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/BriPIjGV/styled-chat-2.1.2%2B1.19.3.jar",
+        "filename": "styled-chat-2.1.2+1.19.3.jar",
+        "primary": true,
+        "size": 289878,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "LRKHMAeS",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.1+1.19.3",
+    "version_number": "2.1.1+1.19.3",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-01-13T21:34:37.448264Z",
+    "downloads": 139,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "71b1cc840fdab0ce452fbdb95cbd4411ec6c5e16",
+          "sha512": "0cdc32763e0f74f8dddb00b9eca655c62e2a1943f95471006da724abca7269d8527058911f7dff648091f322498dd293332667389ffdf3cc4763f6dd4d651419"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/LRKHMAeS/styled-chat-2.1.1%2B1.19.3.jar",
+        "filename": "styled-chat-2.1.1+1.19.3.jar",
+        "primary": true,
+        "size": 289899,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3-rc1",
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "aABVYx7R",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.0+1.19.3",
+    "version_number": "2.1.0+1.19.3",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-12-04T19:16:45.284283Z",
+    "downloads": 342,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0df7179fb75c28faa81ab83ad46b6d74d130630f7bf1c48096d146e98f313618d08b21ad0e4e8709b32c28c87145fe58c27e80cd12401bf3500746b3d1d5b174",
+          "sha1": "cb2b2c17253fca58cebb58f28a6d78b791168369"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/aABVYx7R/styled-chat-2.1.0%2B1.19.3.jar",
+        "filename": "styled-chat-2.1.0+1.19.3.jar",
+        "primary": true,
+        "size": 282591,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "K2V8LYPT",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.2+1.19.2",
+    "version_number": "2.0.2+1.19.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-11-02T15:09:33.436193Z",
+    "downloads": 2961,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "079e1b58b9367cd42c65b45b101d4613119a35bf4ed3ff3c495b602854abca4aa068cd01171d17c1c836975abb31f93f738a397ac89825e0f546804d5b167905",
+          "sha1": "e15ef2af958853f2a5d928df799f2bbf69216356"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/K2V8LYPT/styled-chat-2.0.2%2B1.19.2.jar",
+        "filename": "styled-chat-2.0.2+1.19.2.jar",
+        "primary": true,
+        "size": 280777,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "itzoW5yD",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.1+1.19.2",
+    "version_number": "2.0.1+1.19.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-10-17T17:16:01.570852Z",
+    "downloads": 297,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "075db35eef7d0d278165898d1fd56c958ea8ca1a",
+          "sha512": "d224ddc44778e4eabe71fa0a79a8d9379b64ef237a349e8b6ddfe0e7e1df433a322f5e52124e88b1161ed634672949f38328a398542ea7ce4bb5f9fb14bf506f"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/itzoW5yD/styled-chat-2.0.1%2B1.19.2.jar",
+        "filename": "styled-chat-2.0.1+1.19.2.jar",
+        "primary": true,
+        "size": 279184,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ShQVp6As",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0+1.19.2",
+    "version_number": "2.0.0+1.19.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-10-16T21:36:50.305453Z",
+    "downloads": 111,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c12bc3a2f9ed634559cd9ce9b309a93350c3f37e",
+          "sha512": "5571a78ed9cba06fa52406615c4bdf1df8ba79852d1d709b7e7fd5f587c3414cba6a4012741b975901281d18a70363676178af7048db2917396590f0a283e45b"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/ShQVp6As/styled-chat-2.0.0%2B1.19.2.jar",
+        "filename": "styled-chat-2.0.0+1.19.2.jar",
+        "primary": true,
+        "size": 279076,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "iUp0COVy",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.4.1+1.19.2",
+    "version_number": "1.4.1+1.19.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-08-14T05:42:36.985907Z",
+    "downloads": 861,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0fdbc0774cea996fb46f4a56c5963d87625375e332242fae57fdb5998498c5c3e9938584b4aacaefba36fd12960c8dd652a6a8c1b44a97685e9202ff4a9e3c6b",
+          "sha1": "f6b5bae450b922d4e2516386a69977ce82e7c345"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.4.1%2B1.19.2/styled-chat-1.4.1%2B1.19.2.jar",
+        "filename": "styled-chat-1.4.1+1.19.2.jar",
+        "primary": true,
+        "size": 169613,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "hRwDsZke",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.4.0+1.19.1",
+    "version_number": "1.4.0+1.19.1",
+    "changelog": "**Styled Chat 1.4.0 for 1.19.1**:\n- Updated to 1.19.1\n- Added option to require Chat Preview for formatting (disabled by default, you might want it if you don't like orange ring of ~~death~~server modified text)\n- Added support for suggestion of emotes/tags in chat\n- Compatible with reporting system (through still should work with mods blocking it, if you really want them, but never tested).\n\n**Modrinth**: <https://modrinth.com/mod/styled-chat>\n**CurseForge**: <https://www.curseforge.com/minecraft/mc-mods/styled-chat>\n**Github**: <https://github.com/Patbox/StyledChat>\n**Discord**: <https://pb4.eu/discord>",
+    "changelog_url": null,
+    "date_published": "2022-07-27T17:24:07.75351Z",
+    "downloads": 311,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e88a3ebfe06ecac0231211d44d1303e0c1713ca51ad9cf75cd51606dc4e8e3a5c7a69764e25ad0df672587c6cedbddb0603161447656c96c50642e90f3f8515f",
+          "sha1": "9c80f3ddacd5b3c105a365875bfa36ca42f89fb5"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.4.0%2B1.19.1/styled-chat-1.4.0%2B1.19.1.jar",
+        "filename": "styled-chat-1.4.0+1.19.1.jar",
+        "primary": true,
+        "size": 168542,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "nl6vW6F2",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.3.3+1.19",
+    "version_number": "1.3.3+1.19",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-06-30T19:38:36.874665Z",
+    "downloads": 791,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "32bf6b7ef0fb6313b38f12337a514fae52be0f9f",
+          "sha512": "6818bf1c15e7c1e2d5cf0b75a18e79e28cb3f247adcb82d32685141d7808d98beca60cb4a204785afa3d7d737c4577c8d07964466369ab454d6fee7af9fa865a"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.3.3%2B1.19/styled-chat-1.3.3%2B1.19.jar",
+        "filename": "styled-chat-1.3.3+1.19.jar",
+        "primary": true,
+        "size": 165106,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "TomiOF52",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.3.2+1.19",
+    "version_number": "1.3.2+1.19",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-06-13T13:39:52.419762Z",
+    "downloads": 259,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b42eef0774194f5329c5e3e63c104e768afe40bb5235db637ab2f191a806988ab97decd3c2daf731ff367b21fea48b6375a09c1785b2c17141b4728ab2015e1e",
+          "sha1": "e62ed1ae3628e0626566db9e9596cd4e657b6729"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.3.2%2B1.19/styled-chat-1.3.2%2B1.19.jar",
+        "filename": "styled-chat-1.3.2+1.19.jar",
+        "primary": true,
+        "size": 160607,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "Imh6rj9g",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.3.1+1.19",
+    "version_number": "1.3.1+1.19",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-06-07T20:43:22.413199Z",
+    "downloads": 170,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "58d1e5430a23236ae7d018614d2d789cf97ef764",
+          "sha512": "15fb0c3a5a1f19fc271ace6bc99074817e2b8c184f1177355ce66beb081761558eaa26118074923c21aba5001d09adbc3f216ad7be31b9ff9ae0892b6963ecc4"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.3.1%2B1.19/styled-chat-1.3.1%2B1.19.jar",
+        "filename": "styled-chat-1.3.1+1.19.jar",
+        "primary": true,
+        "size": 158290,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19-rc2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "XiyDiGXF",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.3.0+1.19",
+    "version_number": "1.3.0+1.19",
+    "changelog": "**Styled Chat 1.3.0**:\n- Updated to 1.19 (rc2)\n- Updated Placeholder API to version 2.0.0-beta.2! This means improved parsing and support for placeholders in gradients!\n- Added support for 1.19's Chat Preview\n- Keep in mind this release still might have some issues so please report them if you find any!\n\n**Modrinth**: <https://modrinth.com/mod/styled-chat>\n**CurseForge**: <https://www.curseforge.com/minecraft/mc-mods/styled-chat>\n**Github**: <https://github.com/Patbox/StyledChat>",
+    "changelog_url": null,
+    "date_published": "2022-06-07T07:09:40.69024Z",
+    "downloads": 89,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7d29155cf74c233caf127760267f7fc5550c5a58",
+          "sha512": "d94016abd0c321e67b7a7802bb65f2f7a70d5eea47e232a2af7eff8235ec8e5c946abd68b45ccc5212db24a21d54023d290266e802f996c21e596ae480a197a7"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.3.0%2B1.19/styled-chat-1.3.0%2B1.19.jar",
+        "filename": "styled-chat-1.3.0+1.19.jar",
+        "primary": true,
+        "size": 157489,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1",
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "6Ar8kSQ4",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.2.3+1.18.1",
+    "version_number": "1.2.3+1.18.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-01-01T16:39:36.959201Z",
+    "downloads": 5372,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "352fc10abf0b43aa330128e26c61b88ae03f4605",
+          "sha512": "47c2da19ba1ece9b6150ed475e8615b15706cc23937157683cdde5505a659cb885daf2be93a687b2afba56c6d734a5593539c26c4851e79480bfdc4a778d4893"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.2.3%2B1.18.1/styled-chat-1.2.3%2B1.18.jar",
+        "filename": "styled-chat-1.2.3+1.18.jar",
+        "primary": true,
+        "size": 202111,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "3rv0U8rI",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.2.2+1.18",
+    "version_number": "1.2.2+1.18",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-11-30T21:10:13.072414Z",
+    "downloads": 376,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1ba8e68c90511caba8382a9f521b9c63fcf6d08c",
+          "sha512": "3e75b46006d75b7da6e1d2989bfe2db211bfaa919310d59d2d1a4d7a21cd90d31943c2f34e8b22d339d263af75e6620f3d3b25432940fa0419e568ce1ea5763c"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.2.2%2B1.18/styled-chat-1.2.2%2B1.18.jar",
+        "filename": "styled-chat-1.2.2+1.18.jar",
+        "primary": false,
+        "size": 194084,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "BU3iHBsn",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.2.1+1.18",
+    "version_number": "1.2.1+1.18",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-11-26T15:35:14.804315Z",
+    "downloads": 110,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "03d044c13e408dad8eadb7839fb64e700dbd823a",
+          "sha512": "987475af8c81da417134d019a07d8327ab7bb2755d2a58ce66b29df2c594c1970c09b9c27198cc0774d53d5d09240b3aa3cd51dd8ae77b4146fe69d86482873f"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.2.1%2B1.18/styled-chat-1.2.1%2B1.18.jar",
+        "filename": "styled-chat-1.2.1+1.18.jar",
+        "primary": false,
+        "size": 193851,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "wGVIf3X1",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.2.0",
+    "version_number": "1.2.0",
+    "changelog": "Styled Chat 1.2.0:\n- Added support for some basic markdown syntax\n- Added support for emotes, you can add custom ones in config and use them by typing `:emote_name:`\n- Added <spoiler> chat tag\n- Added support for /msg, /teammsg, /say and /me\n- Added /tellform command - It's like tellraw, but you use same formatting as StyledChat\n- You can now style pets death message\n- Enabled more tags by default\n- You can enable formatting in /msg and /teammsg\n- You can now hide some messages by empting their value (without removing them), example: `\"join\": \"\"`\n- Updated bundled Placeholder API\n- Changed default URL color\n- Bundled required parts of fabric api so it's no longer required dependency\n- Exposed some new events/methods for better mod compatibility",
+    "changelog_url": null,
+    "date_published": "2021-10-18T14:24:27.089623Z",
+    "downloads": 483,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "03da92d1a1e0c40828a0691b0c240eabbe560ed0bf7c99a8ba069ee6a89457cf441b06e12b04b889703a6fe8a37108d9f561902031376e619ff52f9336df3b9d",
+          "sha1": "55d408c33e588d652501a4756ee0364f4b6e3cd7"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.2.0/styled-chat-1.2.0.jar",
+        "filename": "styled-chat-1.2.0.jar",
+        "primary": false,
+        "size": 178813,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "a9Rqo8cl",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.1.0",
+    "version_number": "1.1.0",
+    "changelog": "- Removed click tag from parsing on chat\n- Added <pos> tag to chat parsing. It displays players current position\n- Added support for clickable links\n- You can now change first time join message",
+    "changelog_url": null,
+    "date_published": "2021-06-29T10:07:23.089736Z",
+    "downloads": 355,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f3019cc443feee18a3adfc2d0b6d485943f48766",
+          "sha512": "52b98efbf553b774d4ae9de5e8892ec475da9713c8048aa5edc818bf77713d23e6a8dfae19c7b81ea59d2f0b5df7403a1b1aa47843022c97d1e0a850743a1bc7"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.1.0/styled-chat-1.1.0.jar",
+        "filename": "styled-chat-1.1.0.jar",
+        "primary": false,
+        "size": 65084,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ZToMovGV",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.2",
+    "version_number": "1.0.2",
+    "changelog": "- Fixed `permissionStyle` order not being respected\n- Changed config version to 2, old configs should autoupdate",
+    "changelog_url": null,
+    "date_published": "2021-06-18T14:50:48.964897Z",
+    "downloads": 131,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "8bbd9bb8e2e83b02885701eabd631eff43ccb8c17ddcfde4c04b66fc91cf7ec92fb5ac5832e7fffda117e95fdb86a16c6d48fd9a69b116591fc7f13f80f1a666",
+          "sha1": "7ef26d529e736e2fe12aec27faee5e5718df28be"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.0.2/styled-chat-1.0.2.jar",
+        "filename": "styled-chat-1.0.2.jar",
+        "primary": false,
+        "size": 63615,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "AsTzH7Oz",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.1",
+    "version_number": "1.0.1",
+    "changelog": "- Added support for using legacy (&X) codes in chat (they are converted internally to tags). It's toggled off by default\n- You can now change which formatting is available for players by default",
+    "changelog_url": null,
+    "date_published": "2021-06-16T19:25:13.190336Z",
+    "downloads": 106,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "6aae2fb92e46aeb9e868e9a4c7d7b0df1f0f3162",
+          "sha512": "951b8d86407d8f1d2ca8ededfe2d9d04f82328904baf9f77caa1476d80d40dce701443e715b3e8c2c32d880546969832af3c4a39be244a685df35d059ec21423"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.0.1/styled-chat-1.0.1.jar",
+        "filename": "styled-chat-1.0.1.jar",
+        "primary": false,
+        "size": 60003,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "HwotiUn2",
+    "project_id": "doqSKB0e",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.0",
+    "version_number": "1.0.0",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-06-12T09:49:58.776495Z",
+    "downloads": 159,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "de8b091f0f33c16032384ee4d3fef46e66bb5048173c232d77958fd5bad23fd69c6f70b91418bbe632c9b3172b68deb3d46f2fb7ed19286f7f23cef86a146784",
+          "sha1": "ffda301bafd332b39120a867161e4ce70b110fef"
+        },
+        "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.0.0/styled-chat-1.0.0.jar",
+        "filename": "styled-chat-1.0.0.jar",
+        "primary": false,
+        "size": 56889,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  }
+]

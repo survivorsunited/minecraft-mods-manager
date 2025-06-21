@@ -1,0 +1,169 @@
+{
+  "client_side": "required",
+  "server_side": "required",
+  "game_versions": [
+    "1.18.2",
+    "1.19",
+    "1.19.1",
+    "1.19.2",
+    "1.19.3",
+    "1.19.4",
+    "1.20",
+    "1.20.1",
+    "1.20.2",
+    "1.20.3",
+    "1.20.4",
+    "1.20.5",
+    "1.20.6",
+    "1.21",
+    "1.21.1",
+    "1.21.2",
+    "1.21.3",
+    "1.21.4",
+    "1.21.5"
+  ],
+  "id": "F7wXag4i",
+  "slug": "inventory-management",
+  "project_type": "mod",
+  "team": "b0SruxO4",
+  "organization": null,
+  "title": "Inventory Management",
+  "description": "Sort and transfer items with the click of a button.",
+  "body": "# Inventory Management\n\n![](https://img.shields.io/badge/Loader-Fabric-%23313e51?style=for-the-badge)\n![](https://img.shields.io/badge/MC-1.21--1.21.5%20|%201.20%20|%201.19%20|%201.18.2-%23313e51?style=for-the-badge)\n![](https://img.shields.io/badge/Side-Client%20+%20Server-%23313e51?style=for-the-badge)\n\n<a href=\"https://ko-fi.com/roundaround\">\n  <img alt=\"kofi-singular-alt\" height=\"40\" src=\"https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/donate/kofi-singular-alt_vector.svg\">\n</a>\n\n---\n\nSort and transfer items with the click of a button. Adds several buttons to your inventory and containers that let you sort, transfer, and automatically stack your items! Works in single player by installing on your client, and in multiplayer by installing on both your client AND the server.\n\n<img src=\"https://i.imgur.com/GadzOcM.png\" alt=\"\" />\n\n---\n\n### Configuration\n\n_* Configuration capabilities added in 1.1.0 for 1.19. The version for 1.18.2 does not allow configuration. Sorry!_\n\nYou can configure the behavior of the mod from the `inventorymanagement.toml` file within your config folder. If you have ModMenu installed, you can also access the configuration through the UI in ModMenu's mod list!\n\n`modEnabled`: `true|false` - Simple toggle for the mod! Set to `false` to disable.\n\n`showSort`: `true|false` - Whether or not to show sort buttons in the UI.\n\n`showTransfer`: `true|false` - Whether or not to show transfer buttons in the UI.\n\n`showStack`: `true|false` - Whether or not to show autostack buttons in the UI.\n\n`guiTheme`: `\"light\"|\"dark\"|\"auto\"` - Whether the buttons should use light theme (vanilla), dark theme (VanillaTweaks dark UI), or automatically choose based on whether you have VanillaTweaks dark UI enabled.\n\n`defaultPosition`: `\"(<Integer>,<Integer>)\"` - Customize a default for button position.\n\n`screenPositions`: `{\"ID\": \"(<Integer>,<Integer>)\"}` - Customize button position on a per-screen basis. While this can be modified manually in the config file, the recommended way to modify this is through the configuration UI. See below!\n\n### Modifying the button positions\n\nIn order to maintain compatibility with other mods, you can now adjust the positions of your inventory management buttons! To adjust the position for all buttons, check out the option in the config for `defaultPosition` or if you have ModMenu installed, in the config UI. If you have a particular screen that needs adjusted (maybe another mod added more inventory space, for example), you can hold `Ctrl/Cmd` and click on one of the UI buttons to open up the per-screen position editor! This editor will adjust the button positions for the current screen only, so you can tweak the positions all you want to get it aligned with your shiny backpack mod's UI! ;)\n\n---\n\n## Sort\n\n<img src=\"https://i.imgur.com/Vcy2WL1.png\" alt=\"\" />\n\nA sort button will now appear in all containers (that are large enough) and your inventory. Clicking this button will sort the inventory automatically! For the most part this sorting is alphabetical, with a few manually-entered exceptions. Sorting ignores your hotbar, so you don't have to worry about it messing up your main items!\n\n### Before\n\n<img src=\"https://i.imgur.com/jt2uAGJ.png\" alt=\"\" />\n\n### After\n\n<img src=\"https://i.imgur.com/0nwOaRO.png\" alt=\"\" />\n\n## Transfer all\n\n<img src=\"https://i.imgur.com/hM52cuQ.png\" alt=\"\" />\n\nThe place/take all buttons will transfer one entire inventory into the other! It starts at the top-left slot and works its way through the items until the other inventory is full. Similar to sorting, this mechanism will ignore your hotbar (and equipped items).\n\n## Automatically stack\n\n<img src=\"https://i.imgur.com/mpt6Ycz.png\" alt=\"\" />\n\nSimilar to the transfer all buttons, there will also be buttons for stacking into/from a container. When clicked, this button will take all the items in the source inventory and stack them into any non-full stacks in the other, transferring only items required to fill up the stacks!\n\n### Before\n\n<img src=\"https://i.imgur.com/xG5e1ZW.png\" alt=\"\" />\n\n### After\n\n<img src=\"https://i.imgur.com/yXyvZO6.png\" alt=\"\" />",
+  "body_url": null,
+  "published": "2022-06-10T20:23:48.426303Z",
+  "updated": "2025-04-02T13:32:59.028295Z",
+  "approved": "2022-06-10T20:23:48.426303Z",
+  "queued": null,
+  "status": "approved",
+  "requested_status": null,
+  "moderator_message": null,
+  "license": {
+    "id": "MIT",
+    "name": "MIT License",
+    "url": null
+  },
+  "downloads": 1393097,
+  "followers": 762,
+  "categories": [
+    "storage",
+    "utility"
+  ],
+  "additional_categories": [],
+  "loaders": [
+    "fabric",
+    "quilt"
+  ],
+  "versions": [
+    "2Aap97V6",
+    "FAyOlqbz",
+    "MqpshoGZ",
+    "9z3Hm7JJ",
+    "3MKlFwlL",
+    "VbljnA0a",
+    "gtDsKAc7",
+    "WAiOItc4",
+    "9icniB3S",
+    "r4z4a5NO",
+    "n346fNoi",
+    "5Y9NDAXU",
+    "k3od5tUH",
+    "iYujfjuN",
+    "pjIlCcVy",
+    "rgYqJTY6",
+    "aFeI4bne",
+    "QKR8TF01",
+    "psva40MN",
+    "5iIFTNQz",
+    "pJMFRd1Z"
+  ],
+  "icon_url": "https://cdn.modrinth.com/data/F7wXag4i/952573630299e4f7b3a5458a1cde25d8d52f5cb1_96.webp",
+  "issues_url": "https://github.com/Roundaround/mc-fabric-inventory-management/issues",
+  "source_url": "https://github.com/Roundaround/mc-fabric-inventory-management",
+  "wiki_url": null,
+  "discord_url": null,
+  "donation_urls": [
+    {
+      "id": "ko-fi",
+      "platform": "Ko-fi",
+      "url": "https://ko-fi.com/roundaround"
+    }
+  ],
+  "gallery": [
+    {
+      "url": "https://cdn.modrinth.com/data/F7wXag4i/images/1d2eb2426743ee498ab0b8c5efa0426917fc5d04_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/F7wXag4i/images/1d2eb2426743ee498ab0b8c5efa0426917fc5d04.png",
+      "featured": false,
+      "title": "Automatically stack items before",
+      "description": null,
+      "created": "2022-06-10T20:23:43.768407Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/F7wXag4i/images/3b18e00e1151394c45db8d4d31bd1c5120fc7cae_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/F7wXag4i/images/3b18e00e1151394c45db8d4d31bd1c5120fc7cae.png",
+      "featured": false,
+      "title": "Sort",
+      "description": null,
+      "created": "2022-06-10T20:23:43.768407Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/F7wXag4i/images/696e2a027f6603927f64609db9d7e087f9202c78_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/F7wXag4i/images/d1d07b36f2c2ad41307ab0516b1131f5c059df51.png",
+      "featured": false,
+      "title": "All buttons",
+      "description": null,
+      "created": "2022-06-10T20:23:43.768407Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/F7wXag4i/images/84aad641327a522b13b099f47575cb8623e349d4_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/F7wXag4i/images/84aad641327a522b13b099f47575cb8623e349d4.png",
+      "featured": false,
+      "title": "Automatically stack items",
+      "description": null,
+      "created": "2022-06-10T20:23:43.768407Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/F7wXag4i/images/87b4b1f0af3934cd1d42f864215ba29db5f088f3_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/F7wXag4i/images/87b4b1f0af3934cd1d42f864215ba29db5f088f3.png",
+      "featured": false,
+      "title": "Sort example after",
+      "description": null,
+      "created": "2022-06-10T20:23:43.768407Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/F7wXag4i/images/bb321472638383139e7540a33fc227109b05246d_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/F7wXag4i/images/bb321472638383139e7540a33fc227109b05246d.png",
+      "featured": false,
+      "title": "Transfer all items",
+      "description": null,
+      "created": "2022-06-10T20:23:43.768407Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/F7wXag4i/images/de9fba32e0df3b39fdff3ce647c32b07d8079171_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/F7wXag4i/images/de9fba32e0df3b39fdff3ce647c32b07d8079171.png",
+      "featured": false,
+      "title": "Automatically stack items after",
+      "description": null,
+      "created": "2022-06-10T20:23:43.768407Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/F7wXag4i/images/fe1ff7cf784e71de1a148d8dd69f337c44d53369_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/F7wXag4i/images/fe1ff7cf784e71de1a148d8dd69f337c44d53369.png",
+      "featured": false,
+      "title": "Sort example before",
+      "description": null,
+      "created": "2022-06-10T20:23:43.768407Z",
+      "ordering": 0
+    }
+  ],
+  "color": 14803346,
+  "thread_id": "F7wXag4i",
+  "monetization_status": "monetized"
+}

@@ -81,10 +81,36 @@ while ($true) {
 "@
     
     $exitCode = $LASTEXITCODE
-    $restartMsg = "`n--- Server exited with code $exitCode. Restarting in 10 seconds... ---`n"
     
-    Write-Host $restartMsg -ForegroundColor Yellow
-    $restartMsg | Out-File -FilePath $LogFile -Encoding utf8 -Append
-    
-    Start-Sleep -Seconds 10
+    if ($exitCode -eq 1) {
+        # Read the log file to extract error information
+        $logContent = Get-Content -Path $LogFile -Raw -ErrorAction SilentlyContinue
+        
+        # Look for the solution message
+        $solutionPattern = "A potential solution has been determined, this may resolve your problem:(.*?)--- Server exited with code"
+        $solutionMatch = [regex]::Match($logContent, $solutionPattern, [System.Text.RegularExpressions.RegexOptions]::Singleline)
+        
+        $terminateMsg = "`n--- Server exited with code $exitCode. Terminating due to error exit code. ---`n"
+        Write-Host $terminateMsg -ForegroundColor Red
+        $terminateMsg | Out-File -FilePath $LogFile -Encoding utf8 -Append
+        
+        if ($solutionMatch.Success) {
+            $solutionText = $solutionMatch.Groups[1].Value.Trim()
+            Write-Host "❌ SERVER ERROR DETECTED:" -ForegroundColor Red
+            Write-Host "🔍 Potential Solution:" -ForegroundColor Yellow
+            Write-Host $solutionText -ForegroundColor White
+            Write-Host ""
+            Write-Host "💡 This typically indicates that server mods are not compatible with the current version." -ForegroundColor Cyan
+            Write-Host "   Check your mod versions and ensure they support the target Minecraft version." -ForegroundColor Cyan
+        } else {
+            Write-Host "❌ Server terminated due to exit code 1. Check logs for details." -ForegroundColor Red
+        }
+        
+        exit 1
+    } else {
+        $restartMsg = "`n--- Server exited with code $exitCode. Restarting in 10 seconds... ---`n"
+        Write-Host $restartMsg -ForegroundColor Yellow
+        $restartMsg | Out-File -FilePath $LogFile -Encoding utf8 -Append
+        Start-Sleep -Seconds 10
+    }
 }

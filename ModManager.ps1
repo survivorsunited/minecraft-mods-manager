@@ -8,6 +8,8 @@ param(
     [switch]$ForceDownload,
     [switch]$Help,
     [switch]$ValidateModVersion,
+    [switch]$ValidateMod,
+    [string]$ModID,
     [switch]$ValidateAllModVersions,
     [switch]$DownloadMods,
     [switch]$GetModList,
@@ -30,6 +32,7 @@ param(
     [string]$DeleteModType = $null,
     [string]$ModListFile = "modlist.csv",
     [string]$DatabaseFile = $null,
+    [string]$DownloadFolder = "download",
     [switch]$UseCachedResponses,
     [switch]$ValidateWithDownload
 )
@@ -53,7 +56,6 @@ Load-EnvironmentVariables
 # Configuration
 $ModListPath = $ModListFile
 $ApiResponseFolder = "apiresponse"
-$DownloadFolder = "download"
 $BackupFolder = "backups"
 $DefaultLoader = "fabric"
 $DefaultGameVersion = "1.21.5"
@@ -417,19 +419,42 @@ function Validate-ModVersion {
         # Filter versions by loader
         $filteredResponse = $response | Where-Object { $_.loaders -contains $Loader.Trim() }
         
-        # Get latest version for display (filtered by loader)
-        $latestVersion = if ($filteredResponse.Count -gt 0) { 
-            $filteredResponse[0].version_number 
-        } else { 
-            "No $Loader versions found" 
+        # Get project information to access game_versions field
+        $projectInfo = Get-ModrinthProjectInfo -ModId $ModId -ResponseFolder $ResponseFolder
+        
+        # Determine the latest version using project API response game_versions field
+        $latestVersion = "No $Loader versions found"
+        $latestVerObj = $null
+        
+        if ($projectInfo.ProjectInfo -and $projectInfo.ProjectInfo.game_versions -and $projectInfo.ProjectInfo.game_versions.Count -gt 0) {
+            # Get the last entry in the game_versions array as the latest
+            $latestGameVersion = $projectInfo.ProjectInfo.game_versions[-1]
+            
+            # Find the version object that supports this game version
+            $latestVerObj = $filteredResponse | Where-Object { 
+                $_.game_versions -and $_.game_versions -contains $latestGameVersion 
+            } | Select-Object -First 1
+            
+            if ($latestVerObj) {
+                $latestVersion = $latestVerObj.version_number
+            } elseif ($filteredResponse.Count -gt 0) {
+                # Fallback: if no version matches the latest game version, use the first filtered version
+                $latestVerObj = $filteredResponse[0]
+                $latestVersion = $latestVerObj.version_number
+            }
+        } elseif ($filteredResponse.Count -gt 0) {
+            # Fallback: if no project info or game_versions, use the first filtered version
+            $latestVerObj = $filteredResponse[0]
+            $latestVersion = $latestVerObj.version_number
         }
-        $latestVersionStr = if ($latestVersion) { $latestVersion } else { "No $Loader versions found" }
+        
+        $latestVersionStr = if ($latestVersion -ne "No $Loader versions found") { $latestVersion } else { "No $Loader versions found" }
         
         # Handle "latest" version parameter
         if ($Version -eq "latest") {
-            # For "latest" requests, always return the latest version as found
+            # For "latest" requests, use the determined latest version
             $versionExists = $true
-            $matchingVersion = $filteredResponse | Select-Object -First 1
+            $matchingVersion = $latestVerObj
             $normalizedExpectedVersion = Normalize-Version -Version $latestVersion
         } else {
             # Normalize the expected version for comparison
@@ -502,28 +527,18 @@ function Validate-ModVersion {
             }
         }
         
-        # Extract latest version URL
-        if ($filteredResponse.Count -gt 0) {
-            $latestVer = $filteredResponse[0]  # First one is latest
-            if ($latestVer.files -and $latestVer.files.Count -gt 0) {
-                $latestVersionUrl = $latestVer.files[0].url
-            }
+        # Extract latest version URL using the determined latest version
+        if ($latestVerObj -and $latestVerObj.files -and $latestVerObj.files.Count -gt 0) {
+            $latestVersionUrl = $latestVerObj.files[0].url
         }
-        
-        # Fetch project information including icon URL
-        $projectInfo = Get-ModrinthProjectInfo -ModId $ModId -ResponseFolder $ResponseFolder
         
         # Display mod and latest version
         if ($versionExists) {
             # Get latest game version for the latest version
             $latestGameVersion = $null
-            if ($response -and $response.Count -gt 0) {
-                # Always use the first entry (latest version) for LatestGameVersion
-                $latestVerObj = $response | Select-Object -First 1
-                if ($latestVerObj -and $latestVerObj.game_versions -and $latestVerObj.game_versions.Count -gt 0) {
-                    # Get the last (highest) game version from the array
-                    $latestGameVersion = $latestVerObj.game_versions[-1]
-                }
+            if ($latestVerObj -and $latestVerObj.game_versions -and $latestVerObj.game_versions.Count -gt 0) {
+                # Get the last (highest) game version from the array
+                $latestGameVersion = $latestVerObj.game_versions[-1]
             }
 
             return [PSCustomObject]@{
@@ -1335,7 +1350,7 @@ function Show-Help {
     Write-Host "    - Only makes API calls for mods that don't have cached responses"
     Write-Host "    - Useful for development and testing scenarios"
     Write-Host ""
-    Write-Host "  Download-Mods [-CsvPath <path>] [-DownloadFolder <path>] [-UseLatestVersion] [-ForceDownload]" -ForegroundColor White
+    Write-Host "  Download-Mods [-CsvPath <path>] [-UseLatestVersion] [-ForceDownload]" -ForegroundColor White
     Write-Host "    - Downloads mods to local download folder organized by GameVersion"
     Write-Host "    - Creates subfolders for each GameVersion (e.g., download/1.21.5/mods/)"
     Write-Host "    - Creates block subfolder for mods in 'block' group (e.g., download/1.21.5/mods/block/)"
@@ -1343,7 +1358,6 @@ function Show-Help {
     Write-Host "    - Uses VersionUrl by default, or LatestVersionUrl with -UseLatestVersion"
     Write-Host "    - Skips existing files unless -ForceDownload is used"
     Write-Host "    - Saves download results to CSV"
-    Write-Host "    - Default download folder: $DownloadFolder"
     Write-Host ""
     Write-Host "  Download-ServerFiles [-ForceDownload]" -ForegroundColor White
     Write-Host "    - Downloads Minecraft server JARs and Fabric launchers"
@@ -2207,6 +2221,7 @@ function Download-Mods {
 # Function to download server JARs and Fabric launchers
 function Download-ServerFiles {
     param(
+        [string]$DownloadFolder = "download",
         [switch]$ForceDownload
     )
     
@@ -3086,6 +3101,81 @@ if ($MyInvocation.InvocationName -ne '.') {
         return
     }
     
+    if ($ValidateMod) {
+        if (-not $ModID) {
+            Write-Host "❌ Error: -ValidateMod requires -ModID parameter" -ForegroundColor Red
+            Write-Host "   Example: .\ModManager.ps1 -ValidateMod -ModID 'fabric-api'" -ForegroundColor White
+            return
+        }
+        
+        Write-Host "🔍 Validating mod: $ModID" -ForegroundColor Cyan
+        
+        # Load the mod list
+        $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
+        if (-not (Test-Path $effectiveModListPath)) {
+            Write-Host "❌ Error: Mod list file not found: $effectiveModListPath" -ForegroundColor Red
+            return
+        }
+        
+        $mods = Import-Csv $effectiveModListPath
+        $targetMod = $mods | Where-Object { $_.ID -eq $ModID } | Select-Object -First 1
+        
+        if (-not $targetMod) {
+            Write-Host "❌ Error: Mod with ID '$ModID' not found in the database" -ForegroundColor Red
+            return
+        }
+        
+        Write-Host "📋 Current mod information:" -ForegroundColor Yellow
+        Write-Host "   Name: $($targetMod.Name)" -ForegroundColor Gray
+        Write-Host "   Current Version: $($targetMod.Version)" -ForegroundColor Gray
+        Write-Host "   Latest Version: $($targetMod.LatestVersion)" -ForegroundColor Gray
+        Write-Host "   Latest Game Version: $($targetMod.LatestGameVersion)" -ForegroundColor Gray
+        
+        # Validate the mod and get latest information
+        $loader = if ($targetMod.Loader) { $targetMod.Loader } else { $DefaultLoader }
+        $result = Validate-ModVersion -ModId $ModID -Version "latest" -Loader $loader -ResponseFolder $ApiResponseFolder
+        
+        if ($result.Exists) {
+            Write-Host ""
+            Write-Host "✅ Validation successful!" -ForegroundColor Green
+            Write-Host "📋 Latest information:" -ForegroundColor Yellow
+            Write-Host "   Latest Version: $($result.LatestVersion)" -ForegroundColor Gray
+            Write-Host "   Latest Game Version: $($result.LatestGameVersion)" -ForegroundColor Gray
+            Write-Host "   Title: $($result.Title)" -ForegroundColor Gray
+            
+            # Update the mod in the database
+            $updated = $false
+            for ($i = 0; $i -lt $mods.Count; $i++) {
+                if ($mods[$i].ID -eq $ModID) {
+                    $mods[$i].LatestVersion = $result.LatestVersion
+                    $mods[$i].LatestVersionUrl = $result.LatestVersionUrl
+                    $mods[$i].LatestGameVersion = $result.LatestGameVersion
+                    $mods[$i].Title = $result.Title
+                    $mods[$i].ProjectDescription = $result.ProjectDescription
+                    $mods[$i].IconUrl = $result.IconUrl
+                    $mods[$i].IssuesUrl = $result.IssuesUrl
+                    $mods[$i].SourceUrl = $result.SourceUrl
+                    $mods[$i].WikiUrl = $result.WikiUrl
+                    $updated = $true
+                    break
+                }
+            }
+            
+            if ($updated) {
+                $mods | Export-Csv -Path $effectiveModListPath -NoTypeInformation
+                Write-Host ""
+                Write-Host "✅ Successfully updated mod information in database!" -ForegroundColor Green
+                Write-Host "   Latest Version: $($result.LatestVersion)" -ForegroundColor Gray
+                Write-Host "   Latest Game Version: $($result.LatestGameVersion)" -ForegroundColor Gray
+            } else {
+                Write-Host "❌ Failed to update mod in database" -ForegroundColor Red
+            }
+        } else {
+            Write-Host "❌ Validation failed: $($result.Error)" -ForegroundColor Red
+        }
+        return
+    }
+    
     if ($ValidateModVersion) {
         # Example: Validate-ModVersion -ModId "fabric-api" -Version "0.91.0+1.20.1"
         Write-Host "Validating mod version..." -ForegroundColor Cyan
@@ -3106,7 +3196,7 @@ if ($MyInvocation.InvocationName -ne '.') {
             Validate-AllModVersions -CsvPath $effectiveModListPath -UpdateModList
         }
         
-        Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion:$UseLatestVersion -ForceDownload:$ForceDownload
+        Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -UseLatestVersion:$UseLatestVersion -ForceDownload:$ForceDownload
         return
     }
     if ($GetModList) {
@@ -3115,7 +3205,7 @@ if ($MyInvocation.InvocationName -ne '.') {
         return
     }
     if ($DownloadServer) {
-        Download-ServerFiles -ForceDownload:$ForceDownload
+        Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload
         return
     }
     if ($StartServer) {
@@ -3129,6 +3219,7 @@ if ($MyInvocation.InvocationName -ne '.') {
         Write-Host ""; Write-Host "Starting mod downloads..." -ForegroundColor Yellow
         $downloadParams = @{
             CsvPath = $effectiveModListPath
+            DownloadFolder = $DownloadFolder
         }
         if ($UseLatestVersion) { $downloadParams.UseLatestVersion = $true; Write-Host "Using latest versions for downloads" -ForegroundColor Cyan }
         if ($ForceDownload) { $downloadParams.ForceDownload = $true; Write-Host "Force downloading (will overwrite existing files)" -ForegroundColor Cyan }

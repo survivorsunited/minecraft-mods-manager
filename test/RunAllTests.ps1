@@ -15,13 +15,32 @@ param(
 # Setup logging
 $LogTimestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
 $LogFileName = "test-run-$LogTimestamp.log"
-$LogFilePath = Join-Path $PSScriptRoot $LogFileName
+$TestOutputDir = "test-output"
+$LogFilePath = Join-Path $TestOutputDir $LogFileName
+
+# Create test output directory if it doesn't exist
+if (-not (Test-Path $TestOutputDir)) {
+    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
+}
+
+# Colors for output
+$Colors = @{
+    Pass = "Green"
+    Fail = "Red"
+    Info = "Cyan"
+    Warning = "Yellow"
+    Header = "Magenta"
+}
 
 function Write-Log {
     param([string]$Message, [string]$Color = "White")
     
     # Write to console with color
-    Write-Host $Message -ForegroundColor $Color
+    if ($Color -and $Color -ne "") {
+        Write-Host $Message -ForegroundColor $Color
+    } else {
+        Write-Host $Message
+    }
     
     # Write to log file (without color codes)
     if (-not $NoLog) {
@@ -44,7 +63,7 @@ function Show-Usage {
     Write-Log ""
     Write-Log "Available Test Files:" "White"
     # Dynamically list test files
-    $testFiles = Get-ChildItem -Path "tests" -File -Name | Where-Object { $_ -match '^\d{2}-.*\.ps1$' } | Sort-Object
+    $testFiles = Get-ChildItem -Path ".\tests" -File -Name | Where-Object { $_ -match '^\d{2}-.*\.ps1$' } | Sort-Object
     foreach ($file in $testFiles) {
         Write-Log "  $file" "Gray"
     }
@@ -66,7 +85,7 @@ if (-not $NoLog) {
 
 # Dynamically discover all test files matching '??-*.ps1', sorted
 function Get-AllTestFiles {
-    return Get-ChildItem -Path "tests" -File -Name | Where-Object { $_ -match '^\d{2}-.*\.ps1$' } | Sort-Object
+    return Get-ChildItem -Path ".\tests" -File -Name | Where-Object { $_ -match '^\d{2}-.*\.ps1$' } | Sort-Object
 }
 
 # Determine which test files to run
@@ -120,6 +139,23 @@ foreach ($testFile in $testFilesToRun) {
             
             # Dot-source the test file
             . $testFilePath
+            
+            # Explicitly call the main test function based on the test file name
+            if ($testFile -eq "07-StartServerTests.ps1") {
+                Invoke-StartServerTests -TestFileName $testFile
+            } elseif ($testFile -eq "08-StartServerUnitTests.ps1") {
+                Invoke-StartServerUnitTests -TestFileName $testFile
+            } elseif ($testFile -eq "09-TestCurrent.ps1") {
+                Invoke-TestCurrent -TestFileName $testFile
+            } elseif ($testFile -eq "10-TestLatest.ps1") {
+                Invoke-TestLatest -TestFileName $testFile
+            } elseif ($testFile -eq "11-ParameterValidation.ps1") {
+                # Parameter validation test runs independently
+                & $testFilePath
+            } elseif ($testFile -eq "12-TestLatestWithServer.ps1") {
+                # Latest mods with server test runs independently
+                & $testFilePath
+            }
         } 2>&1
         
         # Display the captured output
@@ -203,6 +239,13 @@ if ($GlobalTestResults.Failed -eq 0) {
 # Cleanup if requested
 if ($Cleanup) {
     Cleanup-TestEnvironment -Cleanup
+}
+
+# Clean up old test run log files (keep only the last 5)
+$oldLogFiles = Get-ChildItem -Path $TestOutputDir -Filter "test-run-*.log" | Sort-Object LastWriteTime -Descending | Select-Object -Skip 5
+if ($oldLogFiles) {
+    $oldLogFiles | Remove-Item -Force
+    Write-Log "Cleaned up $($oldLogFiles.Count) old test run log files" $Colors.Info
 }
 
 Write-Log ""

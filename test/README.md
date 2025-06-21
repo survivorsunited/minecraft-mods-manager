@@ -234,4 +234,116 @@ function Test-NewFeature {
         return $false
     }
 }
-``` 
+```
+
+# Test Suite Documentation
+
+## Overview
+This test suite validates the Minecraft Mod Manager PowerShell script with comprehensive coverage of all functionality, including isolated testing environments to prevent interference with production data.
+
+## Test Isolation
+All tests use isolated download folders to ensure they never write to the main `download/` directory or interfere with each other.
+
+### Isolation Features
+- **Isolated Download Folders**: Each test creates its own download directory in `test-output/{TestName}/`
+- **Parameter-Based Downloads**: All tests pass explicit `-DownloadFolder` parameters
+- **Automatic Cleanup**: Test artifacts are cleaned up after completion
+- **No Global State**: Tests don't rely on or modify global script state
+
+### Test Output Structure
+```
+test/
+├── test-output/
+│   ├── 01-BasicFunctionality/
+│   │   └── download/          # Isolated download folder
+│   ├── 02-DownloadFunctionality/
+│   │   └── download/          # Isolated download folder
+│   ├── 12-TestLatestWithServer/
+│   │   ├── download-latest-mods/    # Isolated mod downloads
+│   │   ├── download-server-files/   # Isolated server downloads
+│   │   └── temp-server/             # Temporary server directory
+│   └── ...
+└── tests/
+    ├── 01-BasicFunctionality.ps1
+    ├── 02-DownloadFunctionality.ps1
+    └── ...
+```
+
+## Running Tests
+
+### Run All Tests
+```powershell
+.\RunAllTests.ps1
+```
+
+### Run Individual Tests
+```powershell
+# From test directory
+.\tests\01-BasicFunctionality.ps1
+.\tests\02-DownloadFunctionality.ps1
+.\tests\12-TestLatestWithServer.ps1
+
+# From project root
+cd test
+.\tests\01-BasicFunctionality.ps1
+```
+
+### Test Categories
+
+#### Core Functionality Tests
+- **01-BasicFunctionality.ps1**: Basic script operations and parameter handling
+- **02-DownloadFunctionality.ps1**: Mod and server file downloads with isolation verification
+- **03-SystemEntries.ps1**: Installer, launcher, and server file management
+- **04-FilenameHandling.ps1**: Complex filename resolution and validation
+
+#### Validation Tests
+- **05-ValidationTests.ps1**: API validation and version checking workflows
+- **06-ModpackTests.ps1**: Modpack download and extraction workflows
+
+#### Server Tests
+- **07-StartServerTests.ps1**: Server startup and log monitoring
+- **08-StartServerUnitTests.ps1**: Detailed server startup unit tests
+
+#### E2E Workflow Tests
+- **09-TestCurrent.ps1**: Complete workflow with current version downloads
+- **10-TestLatest.ps1**: Complete workflow with latest version downloads
+- **11-ParameterValidation.ps1**: Comprehensive parameter validation
+- **12-TestLatestWithServer.ps1**: Complete E2E test including server startup and mod compatibility detection
+
+## Test Framework
+
+### TestFramework.ps1
+Provides common testing utilities and ensures consistent test isolation:
+- `Initialize-TestEnvironment`: Sets up isolated test directories
+- `Test-Command`: Executes commands with proper isolation
+- `Write-TestResult`: Standardized test result reporting
+- `Show-TestSummary`: Comprehensive test summary generation
+
+### Test Output
+Each test generates:
+- **Test Report**: Summary of all test results
+- **Individual Logs**: Detailed logs for each test step
+- **Isolated Downloads**: Test-specific download folders
+- **Cleanup**: Automatic cleanup of test artifacts
+
+## Verification
+
+### Download Isolation Verification
+Tests include verification steps to ensure the main `download/` directory is untouched:
+```powershell
+# Final check in tests
+$testDownloadPath = Join-Path $TestRoot "test\download"
+if (Test-Path $testDownloadPath) {
+    $downloadContents = Get-ChildItem -Path $testDownloadPath -Recurse -File
+    if ($downloadContents.Count -gt 0) {
+        Write-TestResult "test/download isolation" $false "test/download is not empty!"
+    }
+}
+```
+
+### Expected Results
+- ✅ All tests pass with isolated environments
+- ✅ No files written to main `download/` directory
+- ✅ Each test has its own isolated download folder
+- ✅ Automatic cleanup of test artifacts
+- ✅ Comprehensive test coverage of all functionality 

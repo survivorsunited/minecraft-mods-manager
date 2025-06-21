@@ -10,11 +10,15 @@ $TestFrameworkPath = Join-Path $PSScriptRoot "..\TestFramework.ps1"
 # Test configuration
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 $TestOutputDir = Join-Path $PSScriptRoot "..\test-output\07-StartServerTests"
+$TestDownloadDir = Join-Path $TestOutputDir "download"
 $TestLogFile = Join-Path $TestOutputDir "startserver-test.log"
 
 # Ensure test output directory exists
 if (-not (Test-Path $TestOutputDir)) {
     New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
+}
+if (-not (Test-Path $TestDownloadDir)) {
+    New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
 }
 
 # Test data
@@ -53,14 +57,13 @@ function Test-StartServerWithoutDownloads {
     
     Write-TestHeader "Testing StartServer Without Downloads"
     
-    # Clean up any existing download folders
-    $downloadDir = Join-Path $PSScriptRoot "..\..\download"
-    if (Test-Path $downloadDir) {
-        Remove-Item -Path $downloadDir -Recurse -Force -ErrorAction SilentlyContinue
+    # Clean up any existing test download folders
+    if (Test-Path $TestDownloadDir) {
+        Remove-Item -Path $TestDownloadDir -Recurse -Force -ErrorAction SilentlyContinue
     }
     
     # Test 1: StartServer should fail when no download folder exists
-    $result = & $ModManagerPath -StartServer 2>&1
+    $result = & $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir 2>&1
     $output = $result -join "`n"
     
     if ($output -match "Download folder not found") {
@@ -79,7 +82,7 @@ function Test-StartServerWithDownloads {
     Write-TestHeader "Testing StartServer With Downloads"
     
     # Setup: Download server files first
-    $downloadResult = & $ModManagerPath -DownloadServer 2>&1
+    $downloadResult = & $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir 2>&1
     $downloadOutput = $downloadResult -join "`n"
     
     if ($downloadOutput -match "Successfully downloaded") {
@@ -91,7 +94,7 @@ function Test-StartServerWithDownloads {
     }
     
     # Test 1: StartServer should detect Java version
-    $result = & $ModManagerPath -StartServer 2>&1
+    $result = & $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir 2>&1
     $output = $result -join "`n"
     
     if ($output -match "Checking Java version") {

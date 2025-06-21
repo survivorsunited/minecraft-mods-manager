@@ -1,0 +1,3680 @@
+[
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "3mety6Nz",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.10+1.21.6",
+    "version_number": "1.4.10+1.21.6",
+    "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
+    "changelog_url": null,
+    "date_published": "2025-06-17T23:25:33.137419Z",
+    "downloads": 44,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1c048c43ce2d5db0ca77e15ac1b05c32b7b8f2ac0f677d06489b802c2d227b8eb779700193fd97690be30403b17edef7f492ac87aa2376627bcca31700815331",
+          "sha1": "966f9bd15694d93ebc207211c28b234845d0a07c"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/3mety6Nz/antixray-neoforge-1.4.10%2B1.21.6.jar",
+        "filename": "antixray-neoforge-1.4.10+1.21.6.jar",
+        "primary": true,
+        "size": 130182,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "8oiUayeD",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.10+1.21.6",
+    "version_number": "1.4.10+1.21.6",
+    "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
+    "changelog_url": null,
+    "date_published": "2025-06-17T23:25:32.311081Z",
+    "downloads": 437,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "cff7041317024066e91f68eabd9e8c60e40c7e10",
+          "sha512": "e62a530c286c67f7221871609760896740261444172d941d958af892eb7ccb2d659318ed1352eb7805a1f858039ebc6ad6d5f83eb0b75632a61109aff9178bcb"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/8oiUayeD/antixray-fabric-1.4.10%2B1.21.6.jar",
+        "filename": "antixray-fabric-1.4.10+1.21.6.jar",
+        "primary": true,
+        "size": 144781,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.6-rc1",
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "FtfPO1wP",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.10+1.21.6-rc1",
+    "version_number": "1.4.10+1.21.6-rc1",
+    "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
+    "changelog_url": null,
+    "date_published": "2025-06-12T19:26:47.906627Z",
+    "downloads": 132,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ff8a6e3c0901402c67117ed674a8d3357f5cb72d79b5b97d7b73a574826a63cd8d58861e4fc5e683f006de085728763982d656e95ba9cefd3105dbae200125af",
+          "sha1": "b193a65c596779a1a79c8ae810ec8b99341adfba"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/FtfPO1wP/antixray-fabric-1.4.10%2B1.21.6-rc1.jar",
+        "filename": "antixray-fabric-1.4.10+1.21.6-rc1.jar",
+        "primary": true,
+        "size": 144546,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "4aSnPwdj",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.10+1.21.4",
+    "version_number": "1.4.10+1.21.4",
+    "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
+    "changelog_url": null,
+    "date_published": "2025-05-22T15:22:02.981565Z",
+    "downloads": 187,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3753c485c5f180b2fb53868b38b10a914f850974cc6d99821f2d2b7b11a3a1edae312edc52fce6c9bc5fe73a11986798f33f46661b915684ce1e490e01af9b9a",
+          "sha1": "5e92e7991475d3141dd3547545e971edce2aba58"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/4aSnPwdj/antixray-neoforge-1.4.10%2B1.21.4.jar",
+        "filename": "antixray-neoforge-1.4.10+1.21.4.jar",
+        "primary": true,
+        "size": 129386,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "jihdVQXH",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.10+1.21.4",
+    "version_number": "1.4.10+1.21.4",
+    "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
+    "changelog_url": null,
+    "date_published": "2025-05-22T15:22:02.089371Z",
+    "downloads": 1007,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d61a5790a65b45cf65b062ea57812e1137595184a6426f9bb9377b91e73a1f7a0798b84be1e2c30230fbb74e1fdb6f35850b3c54b09c94bfa37799b4fc67d7f6",
+          "sha1": "0d4c9b87e5907c9d277d769d04b150825022326c"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/jihdVQXH/antixray-fabric-1.4.10%2B1.21.4.jar",
+        "filename": "antixray-fabric-1.4.10+1.21.4.jar",
+        "primary": true,
+        "size": 143734,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "beD7Km4F",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.10+1.21.5",
+    "version_number": "1.4.10+1.21.5",
+    "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
+    "changelog_url": null,
+    "date_published": "2025-05-21T10:05:23.805246Z",
+    "downloads": 275,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e4358572a376193baedd49788b5ec571bb59d028",
+          "sha512": "71292c43b26cb3ba695d5698ff7ecc49b75474f6782302e5a43c7f09ce8892d3b7b6360a049b2d8bf34fe17d079de2d32a3b21c37c4859a812e2d6b5e92ca02f"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/beD7Km4F/antixray-neoforge-1.4.10%2B1.21.5.jar",
+        "filename": "antixray-neoforge-1.4.10+1.21.5.jar",
+        "primary": true,
+        "size": 130173,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "C9S9COlG",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.10+1.21.5",
+    "version_number": "1.4.10+1.21.5",
+    "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
+    "changelog_url": null,
+    "date_published": "2025-05-21T10:05:23.224052Z",
+    "downloads": 3507,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a92399ad5e9a770d1cbb866c2970dc5822d1cc80",
+          "sha512": "bc537541c77dfcadb92f305d4163ff4a1c32ce306a9c014ebacf252f367676a8d7b4faf09e4cbdaedff3c03b871a581ad9f41160bdb14e952f77207576111350"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/C9S9COlG/antixray-fabric-1.4.10%2B1.21.5.jar",
+        "filename": "antixray-fabric-1.4.10+1.21.5.jar",
+        "primary": true,
+        "size": 144519,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "fulDuKw5",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.9+1.21.5",
+    "version_number": "1.4.9+1.21.5",
+    "changelog": "### Fixed\n\n- Potential networking issues\n- Incompatibility with ServerReplay (@senseiwells)\n",
+    "changelog_url": null,
+    "date_published": "2025-03-26T22:40:13.655643Z",
+    "downloads": 938,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "5edb980c21c92cad42458f99cd366fdd502ae8f6",
+          "sha512": "9bbebb67890b1cd5337382701d64c6fb6c2ab86c11a5f13aa6e60c8e43fbc6671065fd53f3561083b1859f9891047e35f04a28df796a4b257cee56b69e61c33b"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/fulDuKw5/antixray-neoforge-1.4.9%2B1.21.5.jar",
+        "filename": "antixray-neoforge-1.4.9+1.21.5.jar",
+        "primary": true,
+        "size": 129343,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "XoOIWqhL",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.9+1.21.5",
+    "version_number": "1.4.9+1.21.5",
+    "changelog": "### Fixed\n\n- Potential networking issues\n- Incompatibility with ServerReplay (@senseiwells)\n",
+    "changelog_url": null,
+    "date_published": "2025-03-26T22:40:12.877567Z",
+    "downloads": 5857,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "690baf015313aaba0542dbdb04c7c3ce1016f9bd",
+          "sha512": "d8e4f8b5151879049b232d104486742d3ae3130a1b986e14d2b697638197dbdc72883b6a9c25c1c6458b72d94c7e2f25a91de5060c20b41936ef42095ae81b4f"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/XoOIWqhL/antixray-fabric-1.4.9%2B1.21.5.jar",
+        "filename": "antixray-fabric-1.4.9+1.21.5.jar",
+        "primary": true,
+        "size": 143688,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5-pre2",
+      "1.21.5-rc1",
+      "1.21.5-rc2",
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "t6ICcny3",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.9+1.21.5-pre2",
+    "version_number": "1.4.9+1.21.5-pre2",
+    "changelog": "### Fixed\n\n- Potential networking issues\n- Incompatibility with ServerReplay (@senseiwells)\n",
+    "changelog_url": null,
+    "date_published": "2025-03-13T22:28:18.709381Z",
+    "downloads": 266,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "dabc39250dd897ddc6a0e43fbfdb0c030998ac87",
+          "sha512": "520a180c06aa32ededf2c4cf5a425ab945e77eac084adc1255409a753990e6625aa864583f406a7d0df9772730291164e7628f41832e9d161ebf7e4d4c4a294f"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/t6ICcny3/antixray-fabric-1.4.9%2B1.21.5-pre2.jar",
+        "filename": "antixray-fabric-1.4.9+1.21.5-pre2.jar",
+        "primary": true,
+        "size": 143710,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "sLYtgk4C",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.9+1.21.4",
+    "version_number": "1.4.9+1.21.4",
+    "changelog": "### Fixed\n\n- Potential networking issues\n- Incompatibility with ServerReplay (@senseiwells)\n",
+    "changelog_url": null,
+    "date_published": "2025-02-11T14:47:42.13026Z",
+    "downloads": 589,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6db72fc07443313063243e85c12aef627e94813c08342d07ea9ba5f031c15f75b8a940ab9bb66d5cd9c952a10fbafbbada74d01ab5ef3e0dd0c44bcc99954095",
+          "sha1": "8c08bfa40b7c25db06e08cfe37e07bfaaec71e57"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/sLYtgk4C/antixray-neoforge-1.4.9%2B1.21.4.jar",
+        "filename": "antixray-neoforge-1.4.9+1.21.4.jar",
+        "primary": true,
+        "size": 128561,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "dwTZzfS4",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.9+1.21.4",
+    "version_number": "1.4.9+1.21.4",
+    "changelog": "### Fixed\n\n- Potential networking issues\n- Incompatibility with ServerReplay (@senseiwells)\n",
+    "changelog_url": null,
+    "date_published": "2025-02-11T14:47:41.495771Z",
+    "downloads": 8061,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ecca085b749ba738c6a687ef88d61cefb966fe848f7571f7f5e0e55140cc182d0b35face0171b2b96bb3d733c504c191b80152c72e4a8ed81970c553fba8e33f",
+          "sha1": "dca6a74278cf9dd6f046909809d1ac858d0dbbbd"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/dwTZzfS4/antixray-fabric-1.4.9%2B1.21.4.jar",
+        "filename": "antixray-fabric-1.4.9+1.21.4.jar",
+        "primary": true,
+        "size": 142905,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "5ihATFTB",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.8+1.21.4",
+    "version_number": "1.4.8+1.21.4",
+    "changelog": "### Changed\n\n- Mark stable\n",
+    "changelog_url": null,
+    "date_published": "2024-12-28T11:58:11.416669Z",
+    "downloads": 3714,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "43b7b1f130dc23026d6dc9330c2ac7369ab835a8",
+          "sha512": "a3d910140f8728511018cc4a27fdb9ed71043325c7812969309323751c637e181061898260cf957658ee133dc03cfdb9016ed84dacd0baa9eeec9085ead8de07"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/5ihATFTB/antixray-fabric-1.4.8%2B1.21.4.jar",
+        "filename": "antixray-fabric-1.4.8+1.21.4.jar",
+        "primary": true,
+        "size": 142410,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "Y6h7HwJo",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.8+1.21.4",
+    "version_number": "1.4.8+1.21.4",
+    "changelog": "### Changed\n\n- Mark stable\n",
+    "changelog_url": null,
+    "date_published": "2024-12-28T11:58:10.105001Z",
+    "downloads": 208,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7092d9b003a2971c6397eb52012dca8fbadce2449b3e6a39381f46a975766dc9672cd23eed640a5a057acfae507b72e87bc86b2cf1c22fae85ec3d8c2efc8caf",
+          "sha1": "ce8cf39377d4da8871e8c21982d8d4167194cee2"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/Y6h7HwJo/antixray-neoforge-1.4.8%2B1.21.4.jar",
+        "filename": "antixray-neoforge-1.4.8+1.21.4.jar",
+        "primary": true,
+        "size": 128076,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "XYsqemKP",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.7+1.21.4",
+    "version_number": "1.4.7+1.21.4",
+    "changelog": "### Added\n\n- Bypass permission\n",
+    "changelog_url": null,
+    "date_published": "2024-12-11T18:17:50.074255Z",
+    "downloads": 1117,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9e6c4cfb4e565349d918b71250900c046dcae78f",
+          "sha512": "e76568661d77f864fc453fa6f91325b68b5071d47ac1d14d7d8db3c128bb0267df679c810a95677cbc2251dc3e3288d8de376a54f90ee9e934ebcd607b54763a"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/XYsqemKP/antixray-fabric-1.4.7%2B1.21.4.jar",
+        "filename": "antixray-fabric-1.4.7+1.21.4.jar",
+        "primary": true,
+        "size": 142410,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "6zq0K3Ma",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.7+1.21.4",
+    "version_number": "1.4.7+1.21.4",
+    "changelog": "### Added\n\n- Bypass permission\n",
+    "changelog_url": null,
+    "date_published": "2024-12-11T18:17:49.754337Z",
+    "downloads": 79,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6144685a807c29af57e36cdee7d09f5b7afc70f6296afe87900e374cbb078c3d1e4707aa3afbec9981c957f01c4fe4af2b97f89987393fc89cab891dd56d2980",
+          "sha1": "962d7d41df4f27bcea01280f2362c9a92925adc4"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/6zq0K3Ma/antixray-neoforge-1.4.7%2B1.21.4.jar",
+        "filename": "antixray-neoforge-1.4.7+1.21.4.jar",
+        "primary": true,
+        "size": 128076,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.3",
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "Vt0JGBfQ",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.6+1.21.3",
+    "version_number": "1.4.6+1.21.3",
+    "changelog": "### Fixed\n\n- Wrong argument\n",
+    "changelog_url": null,
+    "date_published": "2024-10-23T19:25:24.811557Z",
+    "downloads": 373,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f98d6adc32c2f78ad63666cab04d34d5e4a29594c489f5fba7487f7565df4c762c6daef0313fe8bfd163255575a59a52d3b996384ceb858b3deb0a6b0115086b",
+          "sha1": "560b320e3ebc50ec40bee524b83e1beedceba6f7"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/Vt0JGBfQ/antixray-neoforge-1.4.6%2B1.21.3.jar",
+        "filename": "antixray-neoforge-1.4.6+1.21.3.jar",
+        "primary": true,
+        "size": 126029,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.3",
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ccmxUAZ2",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.6+1.21.3",
+    "version_number": "1.4.6+1.21.3",
+    "changelog": "### Fixed\n\n- Wrong argument\n",
+    "changelog_url": null,
+    "date_published": "2024-10-23T19:25:24.23976Z",
+    "downloads": 3882,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d61e1ba5634bd554fec3952111284ad87942f6fe",
+          "sha512": "dbb26fe97100c346dec036e580d7bf52558f99dec93648368338a105248f4177bd61b9eb11ababde981212e63fa72cf8e67b1365e0d140c965c85c338b5e8f03"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/ccmxUAZ2/antixray-fabric-1.4.6%2B1.21.3.jar",
+        "filename": "antixray-fabric-1.4.6+1.21.3.jar",
+        "primary": true,
+        "size": 129232,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.2-rc2",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "KKKsvazM",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.6+1.21.2-rc2",
+    "version_number": "1.4.6+1.21.2-rc2",
+    "changelog": "### Fixed\n\n- Wrong argument\n",
+    "changelog_url": null,
+    "date_published": "2024-10-22T12:13:33.978914Z",
+    "downloads": 274,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "fe1d6371739d01d4fbe39ba597e78ade34a74b21",
+          "sha512": "3547d8fa0d88817829504604dd68c0f9f79bc0f8257049fc5f4de1be69a4da348fc012c3aa38d3a1aa212383cad4b054495de78a7dbdd74e09ea6829745f3023"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/KKKsvazM/antixray-fabric-1.4.6%2B1.21.2-rc2.jar",
+        "filename": "antixray-fabric-1.4.6+1.21.2-rc2.jar",
+        "primary": true,
+        "size": 129248,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "IVxZW0NC",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.6+1.20.4",
+    "version_number": "1.4.6+1.20.4",
+    "changelog": "### Fixed\n\n- Wrong argument\n",
+    "changelog_url": null,
+    "date_published": "2024-08-16T10:58:34.467076Z",
+    "downloads": 183,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "25f418829ce1d88faeb0a3fc83bc60376812317e48a05c56fd22b1d8daffd760dec9eda97c839dea038f44236e5088f39bc7d1fe33f1386354eea6f916694e96",
+          "sha1": "f1f3a9cda1e97a0a7c5ba5d8ddda8eedfb25f2bc"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/IVxZW0NC/antixray-neoforge-1.4.6%2B1.20.4.jar",
+        "filename": "antixray-neoforge-1.4.6+1.20.4.jar",
+        "primary": true,
+        "size": 123867,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "4bruXE7D",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.6+1.20.4",
+    "version_number": "1.4.6+1.20.4",
+    "changelog": "### Fixed\n\n- Wrong argument\n",
+    "changelog_url": null,
+    "date_published": "2024-08-16T10:58:29.38565Z",
+    "downloads": 1341,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b5ace8971388177f89649d975109d81ec068ff3a",
+          "sha512": "22ed231e02e4659e61b5854ab1f4085509d2e573441e0bc6a6dab9777acb7b99be93431ac0650f79cb55ad0dc222af87c0f2b25c0461af26d5e757efbd7586bf"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/4bruXE7D/antixray-fabric-1.4.6%2B1.20.4.jar",
+        "filename": "antixray-fabric-1.4.6+1.20.4.jar",
+        "primary": true,
+        "size": 127065,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "ruAUEszF",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Forge 1.4.6+1.20.1",
+    "version_number": "1.4.6+1.20.1",
+    "changelog": "### Fixed\n\n- Wrong argument\n",
+    "changelog_url": null,
+    "date_published": "2024-08-16T10:57:59.471955Z",
+    "downloads": 18727,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "91837b95ac75e6365813a9fdc76c1f9a5d83f26a277901f7268f9063b6b16bb15513bc5e9b135f2ab161bc0cee9f1e16f1ff4cd2d17f34f2b4c4cdc15a7ce601",
+          "sha1": "06d5dad3c1c96bdb8e3498d1330ac59c01eb744e"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/ruAUEszF/antixray-forge-1.4.6%2B1.20.1.jar",
+        "filename": "antixray-forge-1.4.6+1.20.1.jar",
+        "primary": true,
+        "size": 304769,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "6vxHsVZq",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.6+1.20.1",
+    "version_number": "1.4.6+1.20.1",
+    "changelog": "### Fixed\n\n- Wrong argument\n",
+    "changelog_url": null,
+    "date_published": "2024-08-16T10:57:57.957909Z",
+    "downloads": 16367,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "57a48f285530096e10185756e10c62804a8def92",
+          "sha512": "ec46ca0c5c4c10caac1a12983cb675e133f092f8a1bf61567b23c955adc78c98a15921c214f0533718a93217fea796641741d3b476f6115249f9031d59e3aba4"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/6vxHsVZq/antixray-fabric-1.4.6%2B1.20.1.jar",
+        "filename": "antixray-fabric-1.4.6+1.20.1.jar",
+        "primary": true,
+        "size": 121516,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "XgQWQ2Hj",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.6+1.21.1",
+    "version_number": "1.4.6+1.21.1",
+    "changelog": "### Fixed\n\n- Wrong argument\n",
+    "changelog_url": null,
+    "date_published": "2024-08-16T10:57:36.507708Z",
+    "downloads": 3693,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1d9364fcb99b1728d8599b59c3c6e3727c805951",
+          "sha512": "2d07bd5bf73940180fdf6e7316e7a61fbb0c9a1a6677435c073cc85277fba2e9c5d93df5d47e10f5c85bf5597d67a740271b3cbfc9688e322225ea7513b9bad4"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/XgQWQ2Hj/antixray-neoforge-1.4.6%2B1.21.1.jar",
+        "filename": "antixray-neoforge-1.4.6+1.21.1.jar",
+        "primary": true,
+        "size": 125936,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "9Fb0twuI",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.6+1.21.1",
+    "version_number": "1.4.6+1.21.1",
+    "changelog": "### Fixed\n\n- Wrong argument\n",
+    "changelog_url": null,
+    "date_published": "2024-08-16T10:57:35.128027Z",
+    "downloads": 26842,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1b8548052cc7df877054b6d624fa0b6279559912b4e019d386524417f16413bfbceb66e070ee5923593807932120e79e583cc06e4793b4083917cb55e34ac7f8",
+          "sha1": "3207a21650c715fc46b44d22f551874663c5e434"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/9Fb0twuI/antixray-fabric-1.4.6%2B1.21.1.jar",
+        "filename": "antixray-fabric-1.4.6+1.21.1.jar",
+        "primary": true,
+        "size": 129080,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "b1epMuSp",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Forge 1.4.5+1.20.1",
+    "version_number": "1.4.5+1.20.1",
+    "changelog": "### Fixed\n\n- Incorrect mixin target\n",
+    "changelog_url": null,
+    "date_published": "2024-08-15T17:34:04.372549Z",
+    "downloads": 240,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "19a6779160793a6b459b403e99844fe03174439d",
+          "sha512": "26e8156d4986caa63dcc8b970db7c8f73ad1ae1d084ac57567ddb53b1dd9e850e33f4c98c49b17f54a2397fb061a8df3c28b0210ea8ccca714f8981fd5255874"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/b1epMuSp/antixray-forge-1.4.5%2B1.20.1.jar",
+        "filename": "antixray-forge-1.4.5+1.20.1.jar",
+        "primary": true,
+        "size": 304773,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "uzdtKupD",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.5+1.20.1",
+    "version_number": "1.4.5+1.20.1",
+    "changelog": "### Fixed\n\n- Incorrect mixin target\n",
+    "changelog_url": null,
+    "date_published": "2024-08-15T17:34:01.519377Z",
+    "downloads": 108,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "8b930b26a63540ed2584b1226f2acaacf95a6c31",
+          "sha512": "1c1183d5f49a8bd4ac60808b6df48ee15c54197852ae01e31aa5ac9265e003d96ab9b5af01afd9a070594270067b496ba96a70d2fd0c54ab06767e8d28ebfe16"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/uzdtKupD/antixray-fabric-1.4.5%2B1.20.1.jar",
+        "filename": "antixray-fabric-1.4.5+1.20.1.jar",
+        "primary": true,
+        "size": 121520,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "BMogEFA0",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.5+1.20.4",
+    "version_number": "1.4.5+1.20.4",
+    "changelog": "### Fixed\n\n- Incorrect mixin target\n",
+    "changelog_url": null,
+    "date_published": "2024-08-15T17:33:15.203527Z",
+    "downloads": 47,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "555153d42b3b0640a978c06cd85ed414233fbc5962fb6e97aa8d6d4039318e2abb9666ba31d39f04ea06c61009f4aa8c76c26d42b491127af3beec584bc79503",
+          "sha1": "1cc5bc6047d1ed5a5ba6155518541f024af1ca3a"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/BMogEFA0/antixray-neoforge-1.4.5%2B1.20.4.jar",
+        "filename": "antixray-neoforge-1.4.5+1.20.4.jar",
+        "primary": true,
+        "size": 123872,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "p3FUjHFc",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.5+1.20.4",
+    "version_number": "1.4.5+1.20.4",
+    "changelog": "### Fixed\n\n- Incorrect mixin target\n",
+    "changelog_url": null,
+    "date_published": "2024-08-15T17:33:13.960516Z",
+    "downloads": 73,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d5e49ae151bf9d85079f8ff7ac9495cbacce4243cd85f9b9ff969a74ee81fdb18a97a426727ec419bb45c70c64106a2be52c5632337e4fa5aa6cd62ece67261a",
+          "sha1": "1a0747ea0a1df1afd01b48372262635561b376e8"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/p3FUjHFc/antixray-fabric-1.4.5%2B1.20.4.jar",
+        "filename": "antixray-fabric-1.4.5+1.20.4.jar",
+        "primary": true,
+        "size": 127068,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "6KJ9AtBW",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.5+1.21",
+    "version_number": "1.4.5+1.21",
+    "changelog": "### Fixed\n\n- Incorrect mixin target\n",
+    "changelog_url": null,
+    "date_published": "2024-08-15T17:30:54.284582Z",
+    "downloads": 156,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9178f4c918ddb4f8e1f29895e15d5f7b3289e9a3",
+          "sha512": "13428b0b9990281d9eb99fd7742259cc576b9d369b8b747407879f299fe72f5abd75af7d7d2da3c160f0ccd175c24a357f35cd6fa90a15deb90fc240cfb74ee1"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/6KJ9AtBW/antixray-neoforge-1.4.5%2B1.21.jar",
+        "filename": "antixray-neoforge-1.4.5+1.21.jar",
+        "primary": true,
+        "size": 125933,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "Cf0ucFhP",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.5+1.21",
+    "version_number": "1.4.5+1.21",
+    "changelog": "### Fixed\n\n- Incorrect mixin target\n",
+    "changelog_url": null,
+    "date_published": "2024-08-15T17:30:53.622553Z",
+    "downloads": 1436,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "12d16f07fa8bd9208fb6317c8912558aa456d1f6",
+          "sha512": "a242ceb431ecd2c427d0cfbca8559f774325fe8d0aaa46e8400a965c93469c5fb8e03983b3b7794aa0bae751bd8f2f019329ff885932ec0de1f3d6471f35ddf2"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/Cf0ucFhP/antixray-fabric-1.4.5%2B1.21.jar",
+        "filename": "antixray-fabric-1.4.5+1.21.jar",
+        "primary": true,
+        "size": 129077,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "OtLW8fwr",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.4+1.21",
+    "version_number": "1.4.4+1.21",
+    "changelog": "### Fixed\n\n- Client side mixin issues\n- Incompatibility with Flywheel / Create\n",
+    "changelog_url": null,
+    "date_published": "2024-07-27T17:22:49.888301Z",
+    "downloads": 295,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0f20050f9231d71a1d79dbabb703eecff637df0bc0841203f46fd55456f3a341e7e81b5b93b0d026f01ea689cdb3e9299a905094fbdc4c438af3e4f2b18893c1",
+          "sha1": "dfe4b0344f357fe5ca9561450ab1f81f3a484bad"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/OtLW8fwr/antixray-neoforge-1.4.4%2B1.21.jar",
+        "filename": "antixray-neoforge-1.4.4+1.21.jar",
+        "primary": true,
+        "size": 125753,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ygME0nWQ",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.4+1.21",
+    "version_number": "1.4.4+1.21",
+    "changelog": "### Fixed\n\n- Client side mixin issues\n- Incompatibility with Flywheel / Create\n",
+    "changelog_url": null,
+    "date_published": "2024-07-27T17:22:49.179457Z",
+    "downloads": 2516,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "218b9dd9940df2b51d23ab774c4e7f78c52e68b6",
+          "sha512": "9456a6a468283d7b4a0f6d03e6a184bcd9d58c839d0eb65c535b130ae0fd1311b9baa51b713da408e667cbbb7e1bfb4e6d631c878a217ea71405c3e6d6463385"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/ygME0nWQ/antixray-fabric-1.4.4%2B1.21.jar",
+        "filename": "antixray-fabric-1.4.4+1.21.jar",
+        "primary": true,
+        "size": 128906,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "9Bkk5q2B",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.4+1.20.4",
+    "version_number": "1.4.4+1.20.4",
+    "changelog": "### Fixed\n\n- Client side mixin issues\n- Incompatibility with Flywheel / Create\n",
+    "changelog_url": null,
+    "date_published": "2024-07-27T17:21:47.334422Z",
+    "downloads": 53,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2f69e468ab1bbe4f55081f7fe5839259806e9f9422d6843788d700601d35aaeabef2658915c88e88d3d8f4f3cfa4368d6248dfc226fa4d9f4b051d1b16cd0ce9",
+          "sha1": "237b9a12686e39d7a3c05588643266bc826d233b"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/9Bkk5q2B/antixray-neoforge-1.4.4%2B1.20.4.jar",
+        "filename": "antixray-neoforge-1.4.4+1.20.4.jar",
+        "primary": true,
+        "size": 123686,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "grpQ94SA",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.4+1.20.4",
+    "version_number": "1.4.4+1.20.4",
+    "changelog": "### Fixed\n\n- Client side mixin issues\n- Incompatibility with Flywheel / Create\n",
+    "changelog_url": null,
+    "date_published": "2024-07-27T17:21:47.004079Z",
+    "downloads": 254,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "4ac527a54f6c26ad53cba0e185e0b3fe8a7f998f9760c9cf2463337b491c97040f0cec638245fb7ead6411f1cffb4290512fd529be49cff44946480be7db307b",
+          "sha1": "c53a559381d1d905788679e443b374a0565be535"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/grpQ94SA/antixray-fabric-1.4.4%2B1.20.4.jar",
+        "filename": "antixray-fabric-1.4.4+1.20.4.jar",
+        "primary": true,
+        "size": 126894,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "EeNwYcrS",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Forge 1.4.4+1.20.1",
+    "version_number": "1.4.4+1.20.1",
+    "changelog": "### Fixed\n\n- Client side mixin issues\n- Incompatibility with Flywheel / Create\n",
+    "changelog_url": null,
+    "date_published": "2024-07-27T17:21:06.663013Z",
+    "downloads": 1386,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1153115026540778e8ea747825cb2eec95d6f5c29dabd4f093afd2478ce9d36c1ce7f8c4cc3f63aa60d07db64061efc9ca52a589350eedab3ae111efa5b805ab",
+          "sha1": "272122d1cb1006a9fdb78fc3969d01133fe485d7"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/EeNwYcrS/antixray-forge-1.4.4%2B1.20.1.jar",
+        "filename": "antixray-forge-1.4.4+1.20.1.jar",
+        "primary": true,
+        "size": 304599,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "k3fEOyRx",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.4+1.20.1",
+    "version_number": "1.4.4+1.20.1",
+    "changelog": "### Fixed\n\n- Client side mixin issues\n- Incompatibility with Flywheel / Create\n",
+    "changelog_url": null,
+    "date_published": "2024-07-27T17:21:05.901213Z",
+    "downloads": 1093,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d4e6a641ff4e9ad44fc87b67785a570829a5ca8513e1cd153553810f598d0743d7b45e68b05fd591ed6d83bae11230893d538789f5dd1d63309777c30f855de5",
+          "sha1": "7f77b1d52ee89fa72f5d072eb92c98287279c565"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/k3fEOyRx/antixray-fabric-1.4.4%2B1.20.1.jar",
+        "filename": "antixray-fabric-1.4.4+1.20.1.jar",
+        "primary": true,
+        "size": 121349,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "hxfWXdxl",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.3+1.21",
+    "version_number": "1.4.3+1.21",
+    "changelog": "### Changed\n\n- Improve solid block check for modded blocks\n- Improve mod compatibility\n\n### Fixed\n\n- Class not found warnings at startup\n",
+    "changelog_url": null,
+    "date_published": "2024-07-20T09:29:58.542818Z",
+    "downloads": 113,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "61aadea6db6c1695009a5ed4a2e8b2b682a0c3ba",
+          "sha512": "029a72b2a279e89b190d1bf0f2953cabf297ad16036f0cb531c5c7975a882e05563fcb52d7c208cc290474019d370fb30a8a84c3e53b9198bacfc5cfa89435ee"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/hxfWXdxl/antixray-neoforge-1.4.3%2B1.21.jar",
+        "filename": "antixray-neoforge-1.4.3+1.21.jar",
+        "primary": true,
+        "size": 125712,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "NwKKZrHh",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.3+1.21",
+    "version_number": "1.4.3+1.21",
+    "changelog": "### Changed\n\n- Improve solid block check for modded blocks\n- Improve mod compatibility\n\n### Fixed\n\n- Class not found warnings at startup\n",
+    "changelog_url": null,
+    "date_published": "2024-07-20T09:29:58.498038Z",
+    "downloads": 1210,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "8bc471f80168ac2f8f3650e3ff24d931f636a20b",
+          "sha512": "c37daa08da61d70f09e34a76d7df6fa955bca0b8e73d45c3810b1f44247dc2d658ee47b1c5235411f24c5a716baf46a6083d5db60241ee427147745122a0a062"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/NwKKZrHh/antixray-fabric-1.4.3%2B1.21.jar",
+        "filename": "antixray-fabric-1.4.3+1.21.jar",
+        "primary": true,
+        "size": 128859,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "NliZkudh",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.2+1.20.4",
+    "version_number": "1.4.2+1.20.4",
+    "changelog": "### Fixed\n\n- Client side crash\n- Use Java 17\n",
+    "changelog_url": null,
+    "date_published": "2024-06-17T11:02:36.00051Z",
+    "downloads": 138,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7d512b7f727337425e0cfc5ecbeffe1707b71784aca234881a39fad1a0a3b6c852c3b2abf1b14c43084cd2c5198d5421df6d5b652395b2739a109ace7d39d039",
+          "sha1": "8dcd1ad398a1183dca8f949ef1a75ce56148a696"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/NliZkudh/antixray-neoforge-1.4.2%2B1.20.4.jar",
+        "filename": "antixray-neoforge-1.4.2+1.20.4.jar",
+        "primary": true,
+        "size": 120115,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "UkV7pG4h",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Forge 1.4.2+1.20.4",
+    "version_number": "1.4.2+1.20.4",
+    "changelog": "### Fixed\n\n- Client side crash\n- Use Java 17\n",
+    "changelog_url": null,
+    "date_published": "2024-06-17T11:02:35.47031Z",
+    "downloads": 1121,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ba2c04ce1fe95e587342d64cb74705b5ef3b67f15e76121727d674269e058687b1fdb5c6a260e31ac523b972f8cfcba7310dc4f1f8ef5ee15d2745e4b0ca4f3c",
+          "sha1": "065cd38011225ee6087e92c9f96d58c983dcbf07"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/UkV7pG4h/antixray-forge-1.4.2%2B1.20.4.jar",
+        "filename": "antixray-forge-1.4.2+1.20.4.jar",
+        "primary": true,
+        "size": 278818,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "h4gHhlmO",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.2+1.20.4",
+    "version_number": "1.4.2+1.20.4",
+    "changelog": "### Fixed\n\n- Client side crash\n- Use Java 17\n",
+    "changelog_url": null,
+    "date_published": "2024-06-17T11:02:34.898969Z",
+    "downloads": 560,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c425d003d21ca5204ccacb9e354a7a371c0f0c91fd3dd8a9105b23c507634b9293fd888d6edb1aaa4c30a03dabbde1bfb39af3054affe5d23e170811577b7aa1",
+          "sha1": "5002081a93a4c627fa4a618b2304d19104e7fdbb"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/h4gHhlmO/antixray-fabric-1.4.2%2B1.20.4.jar",
+        "filename": "antixray-fabric-1.4.2+1.20.4.jar",
+        "primary": true,
+        "size": 123475,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "UsmGWuEO",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.2+1.21",
+    "version_number": "1.4.2+1.21",
+    "changelog": "### Fixed\n\n- Client side crash\n",
+    "changelog_url": null,
+    "date_published": "2024-06-17T11:00:28.62678Z",
+    "downloads": 5085,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3356eea791efb916c88aeb35c7a27109bba99396d2011f23bf7d341e90ac6b65e6a514769ac0c3d6d6b0c4442732ab1ed8463aa6a6ffda79315e9a33cdb4bb16",
+          "sha1": "0b77f963d3fcf4eb475491b94c15d1c57890d2fc"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/UsmGWuEO/antixray-fabric-1.4.2%2B1.21.jar",
+        "filename": "antixray-fabric-1.4.2+1.21.jar",
+        "primary": true,
+        "size": 125532,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "QSfxY8qe",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.2+1.21",
+    "version_number": "1.4.2+1.21",
+    "changelog": "### Fixed\n\n- Client side crash\n",
+    "changelog_url": null,
+    "date_published": "2024-06-17T11:00:27.191102Z",
+    "downloads": 188,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f854614da4071e2ad71fae2d3adfc0f6a83a93f8",
+          "sha512": "2d99dedb573233ce1b879de3ce92ce76ee075c5299cf1c3aaad95d1539a3b7e932f7b30a7c858ae9bceed9d94be56e4ab04c6aca9e77d111914360d5d74ae966"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/QSfxY8qe/antixray-neoforge-1.4.2%2B1.21.jar",
+        "filename": "antixray-neoforge-1.4.2+1.21.jar",
+        "primary": true,
+        "size": 122212,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.6"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "rMeoWwJK",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.2+1.20.6",
+    "version_number": "1.4.2+1.20.6",
+    "changelog": "### Fixed\n\n- Client side crash\n",
+    "changelog_url": null,
+    "date_published": "2024-06-17T10:59:49.355443Z",
+    "downloads": 170,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "771321029902604807a0c276749623e34ecf727d25618e662b14c220ed3ff46b7beaab3b61d72ccd8486b1cdb2fd4a00dc1b216b3f5dea4dfbb40bc286d65d19",
+          "sha1": "867c237c8556c1972ad31216f20be714d072f375"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/rMeoWwJK/antixray-neoforge-1.4.2%2B1.20.6.jar",
+        "filename": "antixray-neoforge-1.4.2+1.20.6.jar",
+        "primary": true,
+        "size": 122190,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "57hscdp9",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.2+1.20.6",
+    "version_number": "1.4.2+1.20.6",
+    "changelog": "### Fixed\n\n- Client side crash\n",
+    "changelog_url": null,
+    "date_published": "2024-06-17T10:59:48.823104Z",
+    "downloads": 681,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a80da39b297ddff318da9c94474b075878c98d43",
+          "sha512": "6d68f3b0a0a21df4bed104a5998b13afd6eccb7d91be0b4f11995781dc908e897f9cb08d5c40e6a60cb0d46942d48fe729f661e5c6c7532bcaeb11844c1ff857"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/57hscdp9/antixray-fabric-1.4.2%2B1.20.6.jar",
+        "filename": "antixray-fabric-1.4.2+1.20.6.jar",
+        "primary": true,
+        "size": 125504,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "m7eWlGmy",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.1+1.21",
+    "version_number": "1.4.1+1.21",
+    "changelog": "### Changed\n\n- Improved chunk batch sending\n",
+    "changelog_url": null,
+    "date_published": "2024-06-13T22:13:01.832906Z",
+    "downloads": 103,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "8ca7e15c5939dc69c1b72d235cf5f8665af9cb52",
+          "sha512": "d2356c85e4e47bdce04c2cecabc2b1b4300b9e7bf55462daa7b8c9607935c7b02d0211e3b78da99c39bb5d039e151069fe784183bf89639597135ee4c0dbebf2"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/m7eWlGmy/antixray-neoforge-1.4.1%2B1.21.jar",
+        "filename": "antixray-neoforge-1.4.1+1.21.jar",
+        "primary": true,
+        "size": 122213,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "HO7QKrmz",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.1+1.21",
+    "version_number": "1.4.1+1.21",
+    "changelog": "### Changed\n\n- Improved chunk batch sending\n",
+    "changelog_url": null,
+    "date_published": "2024-06-13T19:48:58.398551Z",
+    "downloads": 754,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "82e8846fa25a34d3d6b6f4749cb9705160a66de130a8eb09fc18e4f2c37e17171bc44c8ebab659039b770434979cb7a93d9a52f8b289eb1437b51b5ab722e4cd",
+          "sha1": "80b7dedd375fa0f9f26beab01281cb8b7d908ac3"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/HO7QKrmz/antixray-fabric-1.4.1%2B1.21.jar",
+        "filename": "antixray-fabric-1.4.1+1.21.jar",
+        "primary": true,
+        "size": 125535,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "YsXC2SPT",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Forge 1.4.1+1.20.4",
+    "version_number": "1.4.1+1.20.4",
+    "changelog": "### Changed\n\n- Improved chunk batch sending\n",
+    "changelog_url": null,
+    "date_published": "2024-06-10T11:39:37.347646Z",
+    "downloads": 158,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "602275ff4cf47dd42aafca4eaff5a166ff71866b72e273f52580984f05b2d05be836b2d535a9f874e3c946a43ad24d56987412bddd08986d21d0f939e1d1b1f7",
+          "sha1": "917cd1cbd750269a625423cbc465fd99fd8eb2f9"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/YsXC2SPT/antixray-forge-1.4.1%2B1.20.4.jar",
+        "filename": "antixray-forge-1.4.1+1.20.4.jar",
+        "primary": true,
+        "size": 278916,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "aHc1OjIS",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.1+1.20.4",
+    "version_number": "1.4.1+1.20.4",
+    "changelog": "### Changed\n\n- Improved chunk batch sending\n",
+    "changelog_url": null,
+    "date_published": "2024-06-10T11:39:37.341939Z",
+    "downloads": 191,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5c43cd80a27a2200576f330ffa2bdc036c1363c1f0961b94a3e94b1bc413f8d0a13e60e414110c2b2776afe0b6d2bd9afedecd4c6859c993687e6afae1317e24",
+          "sha1": "3e7cb3c06a4cd75c4486a56ee7fd83a63047a703"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/aHc1OjIS/antixray-fabric-1.4.1%2B1.20.4.jar",
+        "filename": "antixray-fabric-1.4.1+1.20.4.jar",
+        "primary": true,
+        "size": 123583,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "upXTJtYZ",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.1+1.20.4",
+    "version_number": "1.4.1+1.20.4",
+    "changelog": "### Changed\n\n- Improved chunk batch sending\n",
+    "changelog_url": null,
+    "date_published": "2024-06-10T11:39:37.341617Z",
+    "downloads": 47,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d5886540121a78ef483a1247d036cfea8aa24828",
+          "sha512": "ae4861b293f6f6c005458c927b9b73e0fec5ad851d7df664761fbf52f1193d20861a7ad9c2658390eddb9f600f66e81e6643ea6c238c07c0487e8f86f3657063"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/upXTJtYZ/antixray-neoforge-1.4.1%2B1.20.4.jar",
+        "filename": "antixray-neoforge-1.4.1+1.20.4.jar",
+        "primary": true,
+        "size": 120220,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.6"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "RRduoABN",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.1+1.20.6",
+    "version_number": "1.4.1+1.20.6",
+    "changelog": "### Changed\n\n- Improved chunk batch sending\n",
+    "changelog_url": null,
+    "date_published": "2024-06-03T21:21:45.275614Z",
+    "downloads": 75,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "210b477013906a19292bab0ea9bb7552f8db1432",
+          "sha512": "18ea94d1a23507655a38844f1a59377b98646aed479e22d95709bf7e74430463d361784243dfc387d2a81a79c2ddd4b87692e788d64896ba11798effea8db6d1"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/RRduoABN/antixray-neoforge-1.4.1%2B1.20.6.jar",
+        "filename": "antixray-neoforge-1.4.1+1.20.6.jar",
+        "primary": true,
+        "size": 122213,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "JbK68pTv",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.1+1.20.6",
+    "version_number": "1.4.1+1.20.6",
+    "changelog": "### Changed\n\n- Improved chunk batch sending\n",
+    "changelog_url": null,
+    "date_published": "2024-06-03T21:21:44.113311Z",
+    "downloads": 395,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f25ccf2d4260bbd0568162100ee1395195949186c94d71662ee0f3a74b03f4e9752b1841cfa831bc0bbb35364d7ec92a25ad42e7d9713989cee7ed27f073854f",
+          "sha1": "4e50a57a5c448c69649d5452d73bd161236b35d3"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/JbK68pTv/antixray-fabric-1.4.1%2B1.20.6.jar",
+        "filename": "antixray-fabric-1.4.1+1.20.6.jar",
+        "primary": true,
+        "size": 125524,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.6"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "OJ12w3S6",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray NeoForge 1.4.0+1.20.6",
+    "version_number": "1.4.0+1.20.6",
+    "changelog": "### Added\n\n- Neoforge support\n\n### Changed\n\n- Mod publishing\n- Multiloader setup\n\n### Fixed\n\n- Packet delaying causing packet order issues\n\n### Removed\n\n- Forge support (temporary)\n",
+    "changelog_url": null,
+    "date_published": "2024-05-30T18:42:44.591934Z",
+    "downloads": 74,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "834efd38af0c6ff1613c87f2ecc6d7f8fe27b59cfd62844bb0e311721e43eced2b4b168791b36750e8d1ba4808ce2045c08b69269bc3d86b7c5b2004cbb8d0f0",
+          "sha1": "713e36791b31a0671db75065b87003fa01a6e8be"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/OJ12w3S6/antixray-neoforge-1.4.0%2B1.20.6.jar",
+        "filename": "antixray-neoforge-1.4.0+1.20.6.jar",
+        "primary": true,
+        "size": 116767,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "kgfD6HSX",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray Fabric 1.4.0+1.20.6",
+    "version_number": "1.4.0+1.20.6",
+    "changelog": "### Added\n\n- Neoforge support\n\n### Changed\n\n- Mod publishing\n- Multiloader setup\n\n### Fixed\n\n- Packet delaying causing packet order issues\n\n### Removed\n\n- Forge support (temporary)\n",
+    "changelog_url": null,
+    "date_published": "2024-05-30T18:42:43.57578Z",
+    "downloads": 196,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "111b984d598b7a7093838efa5acdbcb95f50ac29",
+          "sha512": "9dcddda8dd2a8e4b5f6e7579ecb7e438d6c9faf1d2ec46d8a5ecee0d15b65711bcb5029de32eea7f8f9d24e0f39c4286b19588378a33d9eee60b87cc13dc66e1"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/kgfD6HSX/antixray-fabric-1.4.0%2B1.20.6.jar",
+        "filename": "antixray-fabric-1.4.0+1.20.6.jar",
+        "primary": true,
+        "size": 120093,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2",
+      "1.20.3",
+      "1.20.4",
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "R561af8w",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.3",
+    "version_number": "1.3.3-1.20.4",
+    "changelog": "### Added\n- Antixray can now be used client-side (useful for LAN)\n",
+    "changelog_url": null,
+    "date_published": "2024-02-18T18:20:38.132862Z",
+    "downloads": 7103,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "73636aee07292598d2108d7b9cf6e72c36f413fd88a69b907aa88ef47c36c09d8d2e374271e18c07a7e43ac8ee5e11e61ba7beeaef1f17a5cc0aec43d86a4ce6",
+          "sha1": "0dc591d81a576d426f123d7c28a9d143ce6a5eaf"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/R561af8w/anti-xray-1.3.3-Fabric-1.20.4.jar",
+        "filename": "anti-xray-1.3.3-Fabric-1.20.4.jar",
+        "primary": true,
+        "size": 118536,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2",
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "At8kEg0O",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.3",
+    "version_number": "1.3.3-1.20.4",
+    "changelog": "### Added\n- Antixray can now be used client-side (useful for LAN)\n",
+    "changelog_url": null,
+    "date_published": "2024-02-18T18:20:32.533938Z",
+    "downloads": 1101,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5556a654604adca8f83000f777a722fc7e4076041798c01d1f5ac32a5914904ed16c1de5bebb850aeb5ba7076d95dc0d9ee60a7b0064d2725fa183dbf767e7a9",
+          "sha1": "330254935c2261d2011a15b093903eb036af8421"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/At8kEg0O/anti-xray-1.3.3-Forge-1.20.4.jar",
+        "filename": "anti-xray-1.3.3-Forge-1.20.4.jar",
+        "primary": true,
+        "size": 107599,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2",
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "cHgHOCDB",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.2",
+    "version_number": "1.3.2-1.20.4",
+    "changelog": "### Fixed\n- Incompatibility with Immersive Portals (Fabric only)\n",
+    "changelog_url": null,
+    "date_published": "2024-02-08T16:43:32.426773Z",
+    "downloads": 597,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e01206d437e64fd777053e6f55fc7bb389cf3bc5",
+          "sha512": "a4b0a2a5872f8db59b945fcf2b10571b422fc7d5e35f050d8220510d1f69ae213642a6a014e51f749f8bd4fedc784b59b5a0121b6eea007f37124684365ee3c3"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/cHgHOCDB/anti-xray-1.3.2-Fabric-1.20.4.jar",
+        "filename": "anti-xray-1.3.2-Fabric-1.20.4.jar",
+        "primary": true,
+        "size": 118577,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2",
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "SGOXEFXO",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.2",
+    "version_number": "1.3.2-1.20.4",
+    "changelog": "### Fixed\n- Incompatibility with Immersive Portals (Fabric only)\n",
+    "changelog_url": null,
+    "date_published": "2024-02-08T16:43:29.152463Z",
+    "downloads": 141,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1ba402cc9d6b35f765bcc6fc5fd45f1a60d1885a",
+          "sha512": "0f1db9ddbf0a08fb0098836b851789e48dd5c2fd64b6161f85e47079ac73f23e441a65850d0cbc4b18748ded575d09e1de29900a8eb837670345f93d5bb2aac9"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/SGOXEFXO/anti-xray-1.3.2-Forge-1.20.4.jar",
+        "filename": "anti-xray-1.3.2-Forge-1.20.4.jar",
+        "primary": true,
+        "size": 107561,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2",
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "asevPA28",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.1",
+    "version_number": "1.3.1",
+    "changelog": "### Added\n- Allow custom dimension id's to be specified in the config\n",
+    "changelog_url": null,
+    "date_published": "2023-09-25T23:39:59.494901Z",
+    "downloads": 6472,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9af6c8fe101e9a44500661078386c20cb68c92a4",
+          "sha512": "0494d890d7b8209075b1f8afba3a4fc3f034b250cd7e8894d819e08984223cd501eb7b49f5031158af921c0dcb1ed6aa448244321962ab2f385e21c97e2265f0"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/asevPA28/anti-xray-1.3.1-Fabric-1.20.2.jar",
+        "filename": "anti-xray-1.3.1-Fabric-1.20.2.jar",
+        "primary": true,
+        "size": 114141,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2",
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "4NjDLu7z",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.1",
+    "version_number": "1.3.1",
+    "changelog": "### Added\n- Allow custom dimension id's to be specified in the config\n",
+    "changelog_url": null,
+    "date_published": "2023-09-25T23:39:56.479408Z",
+    "downloads": 598,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "be18d7961f530cdaec3438fa81a4b1bff4ed276b",
+          "sha512": "0a025bc69abbbea154ccd734a4240dfdd91d0999b6e71677453cda924bd57bdf0c79475d3754f30d8e3757a969e5117c434daa8d685b2786f70ed9de06196a1a"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/4NjDLu7z/anti-xray-1.3.1-Forge-1.20.2.jar",
+        "filename": "anti-xray-1.3.1-Forge-1.20.2.jar",
+        "primary": true,
+        "size": 107230,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "uZuiksRa",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.1",
+    "version_number": "1.3.1+fabric+1.20.1",
+    "changelog": "### Added\n- Allow custom dimension id's to be specified in the config\n",
+    "changelog_url": null,
+    "date_published": "2023-07-15T21:52:44.329754Z",
+    "downloads": 20767,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "87935c3aad7518a4f2631922cf033af8e4562746",
+          "sha512": "db470b24e9ddfca59c24bdabdc98b88ffbdc4987cc625850475e12a2c1b9572873286e14c3f5967c3f5c80cd02f230a66f707c4c5577fd0772e18d5cddc82fb2"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/uZuiksRa/anti-xray-1.3.1-Fabric-1.20.1.jar",
+        "filename": "anti-xray-1.3.1-Fabric-1.20.1.jar",
+        "primary": true,
+        "size": 114037,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "gXqiC7kT",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.1",
+    "version_number": "1.3.1+forge+1.20.1",
+    "changelog": "### Added\n- Allow custom dimension id's to be specified in the config\n",
+    "changelog_url": null,
+    "date_published": "2023-07-15T21:52:39.99588Z",
+    "downloads": 9157,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "51e0783920da16c0671d0a2dcf8c2e9da3a1bfd5",
+          "sha512": "63697ee9a909d067d7fd2e1470f3ba48efb5d1590b8e9427f1bcfca05712d5b07f6372497c6d9bab1c9d817741bd2612278493772189847d7a7715296d30939e"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/gXqiC7kT/anti-xray-1.3.1-Forge-1.20.1.jar",
+        "filename": "anti-xray-1.3.1-Forge-1.20.1.jar",
+        "primary": true,
+        "size": 107144,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "SVvP2EFy",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.0",
+    "version_number": "1.3.0+fabric+1.20",
+    "changelog": "### Added\n- Block tag support (in configs)\n- Layer obfuscation (Engine Mode 3)\n\n### Removed\n- Bypass permission: \"antixray.bypass\"\n\n### Changed\n- Relocate forge dependencies\n- Improved default config\n",
+    "changelog_url": null,
+    "date_published": "2023-06-07T15:43:24.294684Z",
+    "downloads": 2310,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "8606cc2c9e94ad96c917c31ab34db8c1039011e0",
+          "sha512": "0563b24035a92c02dfc4d9bc38aded4f19bf994b55d506d4250b5fdef730d6dec78c554a21c3654dfded2acc56e65d426758444cd18d9209f9aa6b1028e99ea7"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/SVvP2EFy/anti-xray-1.3.0-Fabric-1.20.jar",
+        "filename": "anti-xray-1.3.0-Fabric-1.20.jar",
+        "primary": true,
+        "size": 113823,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3",
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "PaGVeomJ",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.0",
+    "version_number": "1.3.0+fabric+1.19.4",
+    "changelog": "### Added\n- Block tag support (in configs)\n- Layer obfuscation (Engine Mode 3)\n\n### Removed\n- Bypass permission: \"antixray.bypass\"\n\n### Changed\n- Relocate forge dependencies\n- Improved default config\n",
+    "changelog_url": null,
+    "date_published": "2023-03-16T10:47:43.627929Z",
+    "downloads": 2113,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "af0d84f379b06fb12e40a4a57e21e27c763205f1",
+          "sha512": "83d723bbffd3eb9956edf5dc54dd2de3a7628523cebed5594e8625222fd1c54e8280c000511237774abac9c8df49bf1508947998e632cf93f8c99f5f66d08e58"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/PaGVeomJ/anti-xray-1.3.0-Fabric-1.19.4.jar",
+        "filename": "anti-xray-1.3.0-Fabric-1.19.4.jar",
+        "primary": true,
+        "size": 113386,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3",
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "BdSkkfRk",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.0",
+    "version_number": "1.3.0+forge+1.19.4",
+    "changelog": "### Added\n- Block tag support (in configs)\n- Layer obfuscation (Engine Mode 3)\n\n### Removed\n- Bypass permission: \"antixray.bypass\"\n\n### Changed\n- Relocate forge dependencies\n- Improved default config\n",
+    "changelog_url": null,
+    "date_published": "2023-03-16T10:47:40.538556Z",
+    "downloads": 1430,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a4b30e3ba6c38b9a664996e1b50c7401ad7a7d1a",
+          "sha512": "984d3d8ec961410eb6cb1c2db1b113428ac58b970437f306eafce3f6e6e44a30590c0e4fda08685e3a90a440856d5c9bd68064cf31a40f3eb1cb7be9103041af"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/BdSkkfRk/anti-xray-1.3.0-Forge-1.19.4.jar",
+        "filename": "anti-xray-1.3.0-Forge-1.19.4.jar",
+        "primary": true,
+        "size": 106527,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "WPaK6kfx",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.0",
+    "version_number": "1.3.0+fabric+1.19.3",
+    "changelog": "### Added\n- Block tag support (in configs)\n- Layer obfuscation (Engine Mode 3)\n\n### Removed\n- Bypass permission: \"antixray.bypass\"\n\n### Changed\n- Relocate forge dependencies\n- Improved default config\n",
+    "changelog_url": null,
+    "date_published": "2023-01-13T23:27:41.390514Z",
+    "downloads": 823,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d9dd5410aeda398f173661e7af9b0ff1400f1a9689b493ce593d4a6b7bcfb370e7b77bc6bbe4f3dee2bb14450538d67042b73e0eff5b017dc51f9d96a8342d34",
+          "sha1": "a7cdba2fd9a2801cba56e74bedf6c6ee63a461a1"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/WPaK6kfx/anti-xray-1.3.0-Fabric-1.19.3.jar",
+        "filename": "anti-xray-1.3.0-Fabric-1.19.3.jar",
+        "primary": true,
+        "size": 113256,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "j7m0dghK",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.0",
+    "version_number": "1.3.0+forge+1.19.3",
+    "changelog": "### Added\n- Block tag support (in configs)\n- Layer obfuscation (Engine Mode 3)\n\n### Removed\n- Bypass permission: \"antixray.bypass\"\n\n### Changed\n- Relocate forge dependencies\n- Improved default config\n",
+    "changelog_url": null,
+    "date_published": "2023-01-13T23:27:39.243326Z",
+    "downloads": 357,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "908012dd475bc8f0fdf85bd6872220eb403a3e411fd737db8f880b00af889bd7bf4b67dc621d8f4b5592e015599c151f07f146c93575dd397313d607d456d745",
+          "sha1": "b93b85e550553377f2812a72c48bc3ca56562c28"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/j7m0dghK/anti-xray-1.3.0-Forge-1.19.3.jar",
+        "filename": "anti-xray-1.3.0-Forge-1.19.3.jar",
+        "primary": true,
+        "size": 106495,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "lF8RlPuL",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.0",
+    "version_number": "1.3.0+fabric+1.19.2",
+    "changelog": "### Added\n- Block tag support (in configs)\n- Layer obfuscation (Engine Mode 3)\n\n### Removed\n- Bypass permission: \"antixray.bypass\"\n\n### Changed\n- Relocate forge dependencies\n- Improved default config\n",
+    "changelog_url": null,
+    "date_published": "2023-01-13T23:21:42.734458Z",
+    "downloads": 14078,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "122ffb40e3aa382b3cd11300ef211195dc070ead373f49ff579d5bdb9bbbb89971d749517538b675f2a01a4b4e187df611dd6a42d645faaf3f06f737b068bed1",
+          "sha1": "011a139d1179ff311222220ba70f4e6a7ffc47fa"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/lF8RlPuL/anti-xray-1.3.0-Fabric-1.19.2.jar",
+        "filename": "anti-xray-1.3.0-Fabric-1.19.2.jar",
+        "primary": true,
+        "size": 113225,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "IqzGIQQ2",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.3.0",
+    "version_number": "1.3.0+forge+1.19.2",
+    "changelog": "### Added\n- Block tag support (in configs)\n- Layer obfuscation (Engine Mode 3)\n\n### Removed\n- Bypass permission: \"antixray.bypass\"\n\n### Changed\n- Relocate forge dependencies\n- Improved default config\n",
+    "changelog_url": null,
+    "date_published": "2023-01-13T23:21:40.530109Z",
+    "downloads": 6946,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "59bb96c3959e86f3df48fc9f844ee743596e6ed27f74cda08a44f6b5028ff568434bba4f0cd26e9a729a4fb9b607bf87025e4513c8f6ab51d687d5e83c9341f7",
+          "sha1": "6d270fe37d6fa66586a5161d5c50cfcd2bf9da7e"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/IqzGIQQ2/anti-xray-1.3.0-Forge-1.19.2.jar",
+        "filename": "anti-xray-1.3.0-Forge-1.19.2.jar",
+        "primary": true,
+        "size": 106430,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "HvgRdt2n",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.2.8",
+    "version_number": "1.2.8+fabric+1.19.3",
+    "changelog": "### Fixed\n- NPE server crash\n",
+    "changelog_url": null,
+    "date_published": "2022-12-19T17:30:16.92046Z",
+    "downloads": 323,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b2a3501bd5878b91a2cebc2dab15dd9ed4501693",
+          "sha512": "4b456528c3e981b7172206cd4e7ab1b77004eeee4c3b9a2e7c23a52faa6c8c138dc0d281c111b496e8e22587f81ffcbcc0052602de5b6c1fcd059a76b5663519"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/HvgRdt2n/anti-xray-1.2.8-Fabric-1.19.3.jar",
+        "filename": "anti-xray-1.2.8-Fabric-1.19.3.jar",
+        "primary": true,
+        "size": 118699,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "zRxrm7eb",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.2.8",
+    "version_number": "1.2.8+forge+1.19.3",
+    "changelog": "### Fixed\n- NPE server crash\n",
+    "changelog_url": null,
+    "date_published": "2022-12-19T17:30:14.371162Z",
+    "downloads": 110,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "dc7b98100bd7480d0e2a5263e44faee8e3e2ed7bbacf957e8f9afd601031311ee7532953b6768e90d07294825179d671156af39ae01b7fd70a9cbbcd0bd12b23",
+          "sha1": "8b4069dda799caa661641958991b6c96dc901485"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/zRxrm7eb/anti-xray-1.2.8-Forge-1.19.3.jar",
+        "filename": "anti-xray-1.2.8-Forge-1.19.3.jar",
+        "primary": true,
+        "size": 102174,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "M70mW30r",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.2.8",
+    "version_number": "1.2.8+fabric+1.19.2",
+    "changelog": "### Fixed\n- NPE server crash\n",
+    "changelog_url": null,
+    "date_published": "2022-12-19T15:17:59.507684Z",
+    "downloads": 409,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "efedb3a47274a4860038eb164639a5fe80c71a68",
+          "sha512": "afd4a4182c8a4f7805bb04a9dd4d29dc08d24c4cba6dc76be62ce96051e357ff13ec3830e1b0aeb9a904548afe17b80072399d3b046249a7bcef15a51f8386d4"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/M70mW30r/anti-xray-1.2.8-Fabric-1.19.2.jar",
+        "filename": "anti-xray-1.2.8-Fabric-1.19.2.jar",
+        "primary": true,
+        "size": 118181,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "WkriyZVg",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.2.8",
+    "version_number": "1.2.8+forge+1.19.2",
+    "changelog": "### Fixed\n- NPE server crash\n",
+    "changelog_url": null,
+    "date_published": "2022-12-19T15:17:30.700221Z",
+    "downloads": 193,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "99ffd5ef5de36cd0abeaba5691c3f1eed72edde69b5091302b93117be89420d78e32cd1447b1f9ac470b22a7e4c5fdd327c1aa225ca259919ccec1c20c84dc46",
+          "sha1": "fa1693fe55f254d91138e09c47ac12dfc675a971"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/WkriyZVg/anti-xray-1.2.8-Forge-1.19.2.jar",
+        "filename": "anti-xray-1.2.8-Forge-1.19.2.jar",
+        "primary": true,
+        "size": 101634,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "SOx7L7Nn",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.2.7",
+    "version_number": "1.2.7+fabric+1.19.3",
+    "changelog": "### Added\n- Bypass permission: \"antixray.bypass\"\n\n### Fixed\n- Typo in forge release names\n",
+    "changelog_url": null,
+    "date_published": "2022-12-14T11:00:26.175514Z",
+    "downloads": 168,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "000bc431e720e4933c58d5910db63bf15ce0c4e0",
+          "sha512": "631ad6a1fd3466cca5652ea61c03f994cd0f5f2ab4178688ce579de17e4ac708a7647a1c001b679df83e529aa77b5b596fb9032ebc8bbd3d9009b2f93dd2bd21"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/SOx7L7Nn/anti-xray-1.2.7-Fabric-1.19.3.jar",
+        "filename": "anti-xray-1.2.7-Fabric-1.19.3.jar",
+        "primary": true,
+        "size": 117422,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "qM7FI7Qe",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.2.7",
+    "version_number": "1.2.7+forge+1.19.3",
+    "changelog": "### Added\n- Bypass permission: \"antixray.bypass\"\n\n### Fixed\n- Typo in forge release names\n",
+    "changelog_url": null,
+    "date_published": "2022-12-14T11:00:23.416325Z",
+    "downloads": 80,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "31272f4eb838489b9f3aaa31fd6696a33e195474",
+          "sha512": "e605cafe0d521f5e995fe766bdd507bf88f938b30f4f79e1341ac7c170fa76d80560e98e11c039e572ff5f34ed6b5bb6f23538f21dc117b8710a5f1b78fa697a"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/qM7FI7Qe/anti-xray-1.2.7-Forge-1.19.3.jar",
+        "filename": "anti-xray-1.2.7-Forge-1.19.3.jar",
+        "primary": true,
+        "size": 100902,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "yDpLA0x2",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.2.7",
+    "version_number": "1.2.7+fabric+1.19.2",
+    "changelog": "### Added\n- Bypass permission: \"antixray.bypass\"\n\n### Fixed\n- Typo in forge release names\n",
+    "changelog_url": null,
+    "date_published": "2022-12-10T16:45:38.889206Z",
+    "downloads": 261,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f1d3395ad025c9599c536bb03f00c87eeaad8d31cc3ad8d76b2bc56434129d2bed417b0cd1d4a2a2bb9f69c9ea12a0aba5db208a361b054467946bbce7e611f4",
+          "sha1": "5179f851248806acf554082c61eb48c2f7ea845a"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/yDpLA0x2/anti-xray-1.2.7-Fabric-1.19.2.jar",
+        "filename": "anti-xray-1.2.7-Fabric-1.19.2.jar",
+        "primary": true,
+        "size": 117371,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "cYPaZx5a",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.2.7",
+    "version_number": "1.2.7+forge+1.19.2",
+    "changelog": "### Added\n- Bypass permission: \"antixray.bypass\"\n\n### Fixed\n- Typo in forge release names\n",
+    "changelog_url": null,
+    "date_published": "2022-12-10T16:45:36.355278Z",
+    "downloads": 123,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "bc0680c1a316b5dab20af6b34bb516c793cd1e96cb99ac964ecd9f7831e12db9be39adf9028a73608ab0623758574da095139b308762949d39f67051839d883e",
+          "sha1": "7ee7d635ae66fa46c655c7bcace3b0f7c091eace"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/cYPaZx5a/anti-xray-1.2.7-Forge-1.19.2.jar",
+        "filename": "anti-xray-1.2.7-Forge-1.19.2.jar",
+        "primary": true,
+        "size": 100814,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "N18tpAGy",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.2.6",
+    "version_number": "1.2.6+fabric+1.19.2",
+    "changelog": "### Added\n- Automatic Modrinth, CurseForge and GitHub releases\n\n### Changed\n- Update to 1.19.2\n",
+    "changelog_url": null,
+    "date_published": "2022-09-08T21:25:01.9983Z",
+    "downloads": 1064,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "5688147388cc9347c7b38f439bc3391de45f85e4",
+          "sha512": "d7ddecf70c7ca6335fe5edebd226242982f5984b783d0d403abcdd723b55f2fc81d0a969c9a214acced96daa42834e4a50676b830fdda62098d82b85b91a880f"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/N18tpAGy/anti-xray-1.2.6-Fabric-1.19.2.jar",
+        "filename": "anti-xray-1.2.6-Fabric-1.19.2.jar",
+        "primary": true,
+        "size": 108762,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "LDxMRJpI",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "AntiXray 1.2.6",
+    "version_number": "1.2.6+forge+1.19.2",
+    "changelog": "### Added\n- Automatic Modrinth, CurseForge and GitHub releases\n\n### Changed\n- Update to 1.19.2\n",
+    "changelog_url": null,
+    "date_published": "2022-09-08T21:22:11.494164Z",
+    "downloads": 538,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "73f0b99435f301a2fd65b89f9dd2b4533a3706f197e4484273f6d376bcfd092055d3149880a095369d23efb52e704e87621af13fc53e7a2f815bd8ef748d2af9",
+          "sha1": "b2d50437c23e8c1687fa92cad5631ce83b486f88"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/LDxMRJpI/anti-xray-1.2.6-Forge-1.19.2.jar",
+        "filename": "anti-xray-1.2.6-Forge-1.19.2.jar",
+        "primary": true,
+        "size": 98299,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ZQyebdJn",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.5",
+    "version_number": "1.2.5+fabric+1.19.1",
+    "changelog": "Updated to 1.19.1",
+    "changelog_url": null,
+    "date_published": "2022-08-02T12:49:23.849771Z",
+    "downloads": 423,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "dd4af0824818f41f36fb06afb06e7c217f2d704f31d5f91666aeebd293d5616024b23f045a6946250a4c58416e3206cb8f75d414812a19ada54dd36dfa2a9660",
+          "sha1": "6280debe05d7d9c92584b4d5028df14efa7872e5"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.19.1-1.2.5-fabric/anti-xray-1.2.5-Fabric-1.19.1.jar",
+        "filename": "anti-xray-1.2.5-Fabric-1.19.1.jar",
+        "primary": true,
+        "size": 106401,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "J44zGobk",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.5",
+    "version_number": "1.2.5+forge+1.19.1",
+    "changelog": "Updated to 1.19.1",
+    "changelog_url": null,
+    "date_published": "2022-08-02T12:48:32.808105Z",
+    "downloads": 369,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "205aef531d729dc74e002a84420f2615e898c90f",
+          "sha512": "ac7b4821f3120daab83b9abda4fea824bddc4abebe238a2cee04e95d1a300010c84460a675addd1cde7a7a7be2775d58e96cdcc969666d64de82d067548684f9"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.19.1-1.2.5-forge/anti-xray-1.2.5-Forge-1.19.1.jar",
+        "filename": "anti-xray-1.2.5-Forge-1.19.1.jar",
+        "primary": true,
+        "size": 98259,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "zqrzHPSR",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.4",
+    "version_number": "1.2.4+fabric+1.19",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-07-19T21:09:36.804773Z",
+    "downloads": 629,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f0a90d8f8dde816334c2b04a41edd1db057991ba4b5e7b36e2a29667a57084d4fddad91ad62f9e34fe398dd7f8ce5e143ef0fb1f5176f41f15eab274f62cfd0c",
+          "sha1": "32de2ebd439e6b93996e33a632197aa703569100"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.19-1.2.4-fabric/anti-xray-1.2.4-Fabric-1.19.jar",
+        "filename": "anti-xray-1.2.4-Fabric-1.19.jar",
+        "primary": true,
+        "size": 106508,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "EwI2hkSZ",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.4",
+    "version_number": "1.2.4+forge+1.19",
+    "changelog": "Fixed mod compatibility with C2ME",
+    "changelog_url": null,
+    "date_published": "2022-07-19T21:09:26.898117Z",
+    "downloads": 742,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b194aab8bb05d96b1fef0faf7809b9b7ba08024acc8375a48b94174048662ffbe8b545e917606f6c1b7cc062b8296e15db5ddbde2c6c2e1d937b8862898d30e2",
+          "sha1": "ecb510237f67aa03e4afc2d1a43dd9da77068558"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.19-1.2.4-forge/anti-xray-1.2.4-Forge-1.19.jar",
+        "filename": "anti-xray-1.2.4-Forge-1.19.jar",
+        "primary": true,
+        "size": 98365,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "r37CK2e8",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.3",
+    "version_number": "1.2.3+fabric+1.19",
+    "changelog": "Updated dependencies",
+    "changelog_url": null,
+    "date_published": "2022-07-15T19:39:56.240973Z",
+    "downloads": 202,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ae9d9b5ea801b0bfe84e53c0975c491e3373db94cf3c7bdc2c712d2887af0a303b81c039a700bb98f036a869003a9a6d9f78476813bd1c0e748305d5ad485716",
+          "sha1": "237f360e568dbd22b398280cab8cfc235f50ead4"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.19-1.2.3-fabric/anti-xray-1.2.3-Fabric-1.19.jar",
+        "filename": "anti-xray-1.2.3-Fabric-1.19.jar",
+        "primary": true,
+        "size": 105936,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "5UoHSQkK",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.3",
+    "version_number": "1.2.3+forge+1.19",
+    "changelog": "Updated dependencies",
+    "changelog_url": null,
+    "date_published": "2022-07-15T19:39:06.397646Z",
+    "downloads": 65,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "74f0f622052bb2261fe62a5d16ec8b2b008dbd4542d65f6286344569cff1ae13fe0cf91bb97647ace83fae13e491791c8e32090f2448b2da40734405676e19d0",
+          "sha1": "757a89527bb2aebf42b94715da804ce35bc12b3f"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.2.3/anti-xray-1.2.3-Forge-1.19.jar",
+        "filename": "anti-xray-1.2.3-Forge-1.19.jar",
+        "primary": true,
+        "size": 97765,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "Sfmque19",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.2",
+    "version_number": "1.2.2+fabric+1.19",
+    "changelog": "Updated to 1.19",
+    "changelog_url": null,
+    "date_published": "2022-06-08T21:34:08.035386Z",
+    "downloads": 638,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a535ddd4dee2823e9eb3564d638356381221111a",
+          "sha512": "cbc5dfd139166ca14a2b93e52205d3ce299796448f804f9cc48c67ecc9ec3078cdc13879144728fb9e60d5d48188a8ea7f05dfdecf839db5c1b1ffbc451c5b60"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.19-1.2.2-fabric/anti-xray-1.2.2-Fabric-1.19.jar",
+        "filename": "anti-xray-1.2.2-Fabric-1.19.jar",
+        "primary": true,
+        "size": 108219,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "Or1lh0U9",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.2",
+    "version_number": "1.2.2+forge+1.19",
+    "changelog": "Updated to 1.19",
+    "changelog_url": null,
+    "date_published": "2022-06-08T21:33:07.699395Z",
+    "downloads": 322,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6c6aaad53bde8ef973355cdb5106a63eebb4142ef00452c383d4f086451c336b7565152b0de5853649447c8d863134a3bbd2985e0ee642c4fa4691c8df748508",
+          "sha1": "8840e2bddad28a678321e1e352f161b4f4f1ad28"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.19-1.2.2-forge/anti-xray-1.2.2-Forge-1.19.jar",
+        "filename": "anti-xray-1.2.2-Forge-1.19.jar",
+        "primary": true,
+        "size": 97782,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "22w11a",
+      "22w12a",
+      "22w13a",
+      "22w14a",
+      "22w15a",
+      "22w16a",
+      "22w16b",
+      "22w17a",
+      "22w18a",
+      "22w19a",
+      "1.19-pre1",
+      "1.19-pre2",
+      "1.19-pre3",
+      "1.19-pre4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "As2iIy8I",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.2",
+    "version_number": "1.2.2+fabric+22w11a",
+    "changelog": "Updated to 1.19 snapshots",
+    "changelog_url": null,
+    "date_published": "2022-05-03T21:56:13.454246Z",
+    "downloads": 78,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "eb5d10d0e1b25e9c7a327a5714a6c03b6b21cf29c0ee439067ff6e3252ea50eedc00fcbc2c4676d8b11423751afb0d43388e236436388eb927c1c65c8d44912c",
+          "sha1": "a8bb1ee541e5dd6f6679a67dd413d9a8dae068d8"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.19-snapshots-1.2.2-fabric/anti-xray-1.2.2-Fabric-22w11a.jar",
+        "filename": "anti-xray-1.2.2-Fabric-22w11a.jar",
+        "primary": true,
+        "size": 108189,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "tR9T8qrt",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.1",
+    "version_number": "1.2.1+forge+1.18.2",
+    "changelog": "Updated to 1.18.2",
+    "changelog_url": null,
+    "date_published": "2022-03-02T13:23:59.150138Z",
+    "downloads": 4233,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2336bb9610c9d86fb6999e4332baa7ecc280a5bd",
+          "sha512": "2ed3d4549acf7694a3088133eeec2899042dfdab0a926bcbfbbf6898d9e114e50f729f29c9644bf6097ac3dcb593d34354b54a7f5272a4283c13c1b580254a13"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.18.2-1.2.1-forge/anti-xray-1.2.1-Forge-1.18.2.jar",
+        "filename": "anti-xray-1.2.1-Forge-1.18.2.jar",
+        "primary": true,
+        "size": 120141,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "BQ2KA7UJ",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.1",
+    "version_number": "1.2.1+fabric+1.18.2",
+    "changelog": "Updated to 1.18.2",
+    "changelog_url": null,
+    "date_published": "2022-03-01T17:38:27.383565Z",
+    "downloads": 2422,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "701ec63eee51ef20783985acbadd3e48157bf942",
+          "sha512": "0ffe502d7315211aacfdf9d756133d4fbf240192790a59d4a6bac251c2b5abd6b4326371a92a9f1857aa49b8f4f9df2b7e9f65daf63735c73fb2a299c87d1b87"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.18.2-1.2.1-fabric/anti-xray-1.2.1-Fabric-1.18.2.jar",
+        "filename": "anti-xray-1.2.1-Fabric-1.18.2.jar",
+        "primary": true,
+        "size": 119223,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "Pnc9TD42",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.0",
+    "version_number": "1.2.0+fabric+1.18.1",
+    "changelog": "- Use Architectury\n\n- Fix compatibility with Archtictury API\n\n- Minor changes",
+    "changelog_url": null,
+    "date_published": "2021-12-27T13:05:35.17992Z",
+    "downloads": 880,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7fa7962dcaeb26dbf7044e02b04f86251e12e8c3703b60387f44feadaa231a4996336db34030af1d93e41e6b27ef8f5ae684c923146eef16a2c7d8c1853fbf6d",
+          "sha1": "4748704891626775ea3971945c622a31c2dcd0ad"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.18-1.2.0-fabric/anti-xray-1.2.0-Fabric-1.18.jar",
+        "filename": "anti-xray-1.2.0-Fabric-1.18.jar",
+        "primary": true,
+        "size": 114522,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "BXWR3yn8",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.2.0",
+    "version_number": "1.2.0+forge+1.18.1",
+    "changelog": "- Use Architectury\n\n- Add Forge mod jar\n\n- Fix compatibility with Archtictury API\n\n- Minor changes",
+    "changelog_url": null,
+    "date_published": "2021-12-27T13:03:54.991079Z",
+    "downloads": 297,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7fc465e7cb3adaa70af60cdd2ed06fa90a73ef63",
+          "sha512": "a4ab51921614eaf50f1688db43029edaed94a7f5ba06aeaaa4fdd40d270b8a091a6dd9a165f3c49b1ef4536b8f66084fbbf1166588c8771249a1a2161fbb1288"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.18-1.2.0/anti-xray-1.2.0-Forge-1.18.jar",
+        "filename": "anti-xray-1.2.0-Forge-1.18.jar",
+        "primary": true,
+        "size": 115371,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "W4fgm9Lm",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.1.2",
+    "version_number": "1.1.2+1.18",
+    "changelog": "* Both EngineMode's are now stable - most notably, EngineMode 2.\n\n* Re-add polymer mod compatibility\n\n* Clean up code\n\n* Enable mixins on server environment only\n\n* Fixed: anti-xray failing to obfuscate blocks next to chunk borders.\n\n* Adjust default nether config\n\n- Special Thanks to Wesley1808, who did the majority of this update",
+    "changelog_url": null,
+    "date_published": "2021-12-04T16:13:07.103596Z",
+    "downloads": 336,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "502c4e0175f21d86376e1c783fd235bd8aa85a06e1e8db8852ce9c9ce4df30b7ba40d377d33e5c566bf10e96f5767ff5470cc089bcb13c16adedc7a8b2f5126f",
+          "sha1": "2a86a55ee6c8ff4c321a03ad7eab6b048fd95de6"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.1.2/anti-xray-mc1.18-1.1.2.jar",
+        "filename": "anti-xray-mc1.18-1.1.2.jar",
+        "primary": true,
+        "size": 105764,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "iywUdPlI",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.1.1",
+    "version_number": "1.1.1+1.18",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-12-01T19:43:02.25979Z",
+    "downloads": 164,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "cd507f2942e0b04169d26aec97ed55eabd7bc015",
+          "sha512": "04c3d4708e9eec8c7bd71bd6aaf9e2ef2986979c0dfdbea72dfc29156c6d5376bb7b805f3d1abe07b246f0e2e6a1ac557d1360308feb6164b8acee2e9c41de2e"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.18-1.1.1/anti-xray-mc1.18-1.1.1.jar",
+        "filename": "anti-xray-mc1.18-1.1.1.jar",
+        "primary": true,
+        "size": 104645,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "EQCo3Df0",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.1.0",
+    "version_number": "1.1.0+1.17",
+    "changelog": "First stable release!\n- Removed slimjar and netty updated\n- Added default config options",
+    "changelog_url": null,
+    "date_published": "2021-09-05T09:26:01.154836Z",
+    "downloads": 678,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0f289f975c6b82604157d436e931068923e783f8f331eef5903c7d974190ab82426987d61e3b82c0857e476f03cdfeea646b223212c543ad87d7f362772f49ef",
+          "sha1": "6f6efa647656b07111fff571f1748d1af6d181b7"
+        },
+        "url": "https://cdn.modrinth.com//data/sml2FMaA/versions/1.1.0/anti-xray-mc1.17.1-1.1.0.jar",
+        "filename": "anti-xray-mc1.17.1-1.1.0.jar",
+        "primary": true,
+        "size": 104223,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "RI3CvrQa",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.1.0",
+    "version_number": "1.1.0+1.16.5",
+    "changelog": "First stable release!\n- Removed slimjar and netty update\n- Added default config options",
+    "changelog_url": null,
+    "date_published": "2021-09-05T09:24:59.846709Z",
+    "downloads": 984,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "90845c80e17b1cff79d32b345f9da0d83637e575dc0035326a15096bee960996a87e5fd435f146fb99dac38ab0341f47285b562f02000cf7f5e6c9d676fd0bb9",
+          "sha1": "f7f45caf4d46380f3e360a23ca5ab9f4adcee55e"
+        },
+        "url": "https://cdn.modrinth.com//data/sml2FMaA/versions/mc1.16.5-1.1.0/anti-xray-mc1.16.5-1.1.0.jar",
+        "filename": "anti-xray-mc1.16.5-1.1.0.jar",
+        "primary": true,
+        "size": 106719,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "TrphEGfM",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.0.2",
+    "version_number": "1.0.2+1.17.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-08-26T20:34:03.537957Z",
+    "downloads": 127,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "dc36f9950fa53efe8f605d65bf5a0c911a986a1f8b43c83c5998bcbf95783d94c1cd4d7bc1443da1e3a61672d60ec164f7612ba6ddc5230987dd78a11ed3e4e4",
+          "sha1": "f346e1d564a6c2dc264832f137addc2e0f3c82a6"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.0.2/anti-xray-mc1.17.1-1.0.2.jar",
+        "filename": "anti-xray-mc1.17.1-1.0.2.jar",
+        "primary": true,
+        "size": 184665,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "gtBPCQef",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.0.2",
+    "version_number": "1.0.2+1.16.5",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-08-26T20:32:35.35302Z",
+    "downloads": 181,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "8bf2e8fd39b645c0abe23089a827c1ad1e10d7c2",
+          "sha512": "b967c3d1a5987ede6c8ed08ed907f39047fa7dd172b052088af9375375da2816a590c6e924cca6aa7994aafbc41a3d0fe53d233031781b2afa83c0bc3e011675"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.16.5-1.0.2/anti-xray-mc1.16.5-1.0.2.jar",
+        "filename": "anti-xray-mc1.16.5-1.0.2.jar",
+        "primary": true,
+        "size": 186489,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "S6rjqRoC",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.0.1",
+    "version_number": "1.0.1+1.17.1",
+    "changelog": "Code cleanup\n\nIncreased stability",
+    "changelog_url": null,
+    "date_published": "2021-08-17T19:12:43.17143Z",
+    "downloads": 107,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "04571bc7a17814a3243661d812b2114a791f9a5b",
+          "sha512": "0ad9ea462851ca0ca32f79e5a39e5caa21d77336442b115c05950ac1a43434e68d6ee39759a1cce09b09da4e0661088ea7644d0e546a5d26b0249d47da1e2a23"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.0.1/anti-xray-1.0.1.jar",
+        "filename": "anti-xray-1.0.1.jar",
+        "primary": true,
+        "size": 103879,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "rbkHv5Pp",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.0.1",
+    "version_number": "1.0.1+1.16.5",
+    "changelog": "- Code cleanup\n\n- Increased stability",
+    "changelog_url": null,
+    "date_published": "2021-08-13T21:40:59.898379Z",
+    "downloads": 143,
+    "version_type": "alpha",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "5da3729aaf2f4796a2367d012ad8de6444a5b823",
+          "sha512": "7c198c5b971493b73d6e16bfe5401922af6e583bf44900c6f7417d2d76bea08f196ac18bcf2efbdf6af4d0b4a80b986bee4cd0d4b651dca02246efb3437dd802"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.0.1b/anti-xray-1.0.1.jar",
+        "filename": "anti-xray-1.0.1.jar",
+        "primary": true,
+        "size": 105590,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "sDpRud8H",
+    "project_id": "sml2FMaA",
+    "author_id": "IiPQziqF",
+    "featured": false,
+    "name": "1.0.0",
+    "version_number": "1.0.0+1.17.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-08-10T16:37:08.59617Z",
+    "downloads": 88,
+    "version_type": "alpha",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "fac8a155d8c3bd90ddc94e974a312c6bc92750bd",
+          "sha512": "757d44d0dff4253fd92c6c34e63ce49c9b8f51bb576566e97bf762451af6df9755d3c3f94f2baf2660049228a61415cace2257261f15a4fa0e3cc71cf7ee650d"
+        },
+        "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.0.0/anti-xray-1.0.0.jar",
+        "filename": "anti-xray-1.0.0.jar",
+        "primary": true,
+        "size": 108895,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  }
+]

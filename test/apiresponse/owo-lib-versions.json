@@ -1,0 +1,4175 @@
+[
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "FpKmEpQ5",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.5] oωo - neo - 0.12.21",
+    "version_number": "0.12.21-beta.1+1.21.5",
+    "changelog": "Initial port of owolib 0.12.21 for Neoforge",
+    "changelog_url": null,
+    "date_published": "2025-05-11T22:55:35.598636Z",
+    "downloads": 814,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "df4e0ead0b4c2cd20fdcbdbf034e661a4014aa1a",
+          "sha512": "53f14a593e255ac477e28f4ccd845089a261bf6b6240ce8f3fed63b2363f43b0b2e8dbbc98c6ad8cbe41daba01f61ffa682264d3cd1e1990a73b07428abe0133"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/FpKmEpQ5/owo-lib-neoforge-0.12.21-beta.1%2B1.21.5.jar",
+        "filename": "owo-lib-neoforge-0.12.21-beta.1+1.21.5.jar",
+        "primary": true,
+        "size": 1236569,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "8fc17233b093894f0a150ce2800a31c2554988afbd308c0316d12cb33d7591a7432841dbde803979850babd3dd0c2c965871ffe965432ad940f2506e5c43ecc0",
+          "sha1": "6bad5d1894cab10f2765712813d02079aa6ee76e"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/FpKmEpQ5/owo-lib-neoforge-0.12.21-beta.1%2B1.21.5-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.21-beta.1+1.21.5-sources.jar",
+        "primary": false,
+        "size": 471029,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "xQbRMeoS",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21.5] oωo - 0.12.21",
+    "version_number": "0.12.21+1.21.5",
+    "changelog": "## Fixes\n- The blur pipeline now uses a custom vertex shader to avoid a random fog code dependency\n- `OwoBlurRenderer` now uses the depth buffer in its render pass to fix blur rendering issues on some drivers\n- owo no longer accidentally overwrites the vanilla `gui_textured` render pipeline",
+    "changelog_url": null,
+    "date_published": "2025-05-11T22:38:45.950606Z",
+    "downloads": 60439,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "4e45d79f950cd23cf9bfc4c2827579c54cee09196e8a6293bfeb8036dc8205d9cb9f5207b45c8267f24f0b6df24dfdd8ffd9b103c96007950dd578ee3f10f71f",
+          "sha1": "a0d0f5ba69fe67524931009bd72f4941d5f5d1b0"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/xQbRMeoS/owo-lib-0.12.21%2B1.21.5.jar",
+        "filename": "owo-lib-0.12.21+1.21.5.jar",
+        "primary": true,
+        "size": 1196597,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "0d37b0204f04d0c07bda47cfc17d2abc1e528905",
+          "sha512": "c4472dd4399c8b37e73e495935d196c0faf9719f98f11226f2db6cbe81fd56410813c8bd2964bb0243dd1ea7ded676b7fbd92fb965c49d58b7cae579f089ff49"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/xQbRMeoS/owo-lib-0.12.21%2B1.21.5-sources.jar",
+        "filename": "owo-lib-0.12.21+1.21.5-sources.jar",
+        "primary": false,
+        "size": 440161,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "JB1fLQnc",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21+] oωo - 0.12.15.4+1.21",
+    "version_number": "0.12.15.4+1.21",
+    "changelog": "## Fixes\n- Fixed the optional flattening implementation introduced in the last build\n- Decoding of sequence elements in NBT has been made idempotent",
+    "changelog_url": null,
+    "date_published": "2025-04-20T23:53:15.614454Z",
+    "downloads": 383706,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "45725e6d33b624e565a7a6e5d3627af40814288d",
+          "sha512": "b9c79035c912ef043722f2a1f0bc0166e0ca047ea5237a86f23198dea487289e0a0f92a96e46bd683ffc39e4190b95450d13456b14f6280587635b51c9393a1b"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/JB1fLQnc/owo-lib-0.12.15.4%2B1.21.jar",
+        "filename": "owo-lib-0.12.15.4+1.21.jar",
+        "primary": true,
+        "size": 1183559,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "14d1d9eb595e4cde1835b9c3ee3f265190cf51e64078a62c886dba89f2a1e7c1f5cdf39ec086734a43398f5047e1ae4b179d725609fde5469aedf1cbe2036a6d",
+          "sha1": "f37f4f4b31c64fd5ed9e83166b654372f45fd64f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/JB1fLQnc/owo-lib-0.12.15.4%2B1.21-sources.jar",
+        "filename": "owo-lib-0.12.15.4+1.21-sources.jar",
+        "primary": false,
+        "size": 439644,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "bXKMgjI3",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21.5] oωo - 0.12.20",
+    "version_number": "0.12.20+1.21.5",
+    "changelog": "## Changes\n- Updated to 1.21.5\n- As a consequence of the changes to Minecraft's rendering backend, the `GlProgram` API has been removed since it is no longer necessary\n- As a further consequence of the above change, owo's built-in programs have changed API:\n  - `OwoClient.HSV_PROGRAM` has been superseded by `OwoUIPipelines.GUI_HSV`\n  - `OwoClient.BLUR_PROGRAM` has been replaced with the `OwoBlurRenderer`, which uses the same shader and parameters under the hood",
+    "changelog_url": null,
+    "date_published": "2025-04-18T17:34:19.918293Z",
+    "downloads": 45073,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "52df64152f6a382c88037c5f0b0e32902f4840bc",
+          "sha512": "b38eb0ef054c3234ba8d99e23bd15d6a5b4a67f47cd38e41dd1022f0eeac2ea89210da97bc8687fe1dbf824f8841183186951944a552e8a0a34792ecefd8e8e6"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/bXKMgjI3/owo-lib-0.12.20%2B1.21.5.jar",
+        "filename": "owo-lib-0.12.20+1.21.5.jar",
+        "primary": true,
+        "size": 1196288,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "fe094a227ea465621c8dcc2271026876dd92c2f9",
+          "sha512": "fbb724260ce8102f67f2e71a36bf8b9303c74710fb4b6c454d9461b1165a5820c6672358463019642be303bbac6bf2bc68e1cc5b4575a1503eb6a4a3d17ccb73"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/bXKMgjI3/owo-lib-0.12.20%2B1.21.5-sources.jar",
+        "filename": "owo-lib-0.12.20+1.21.5-sources.jar",
+        "primary": false,
+        "size": 439872,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "MufQflLZ",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21+] oωo - 0.12.15.2+1.21",
+    "version_number": "0.12.15.2+1.21",
+    "changelog": "## Fixes\n- Backport optional flattening fixes from 0.12.17",
+    "changelog_url": null,
+    "date_published": "2025-04-17T21:15:14.011193Z",
+    "downloads": 17909,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "851ac7c8596f3b56c2978c438affb141ad2caba15135c3f4cd1791261eae4b93e10b5c76c85ea13584a74e6dd217408d73f9bb694149713fdaa0e71493111290",
+          "sha1": "d9c7f424e0a6ed77a713ddb5c24d9fa18fa4ac1a"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/MufQflLZ/owo-lib-0.12.15.2%2B1.21.jar",
+        "filename": "owo-lib-0.12.15.2+1.21.jar",
+        "primary": true,
+        "size": 1183397,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "fd948b5acbda38a6285d4f9d24e756aa092fb744cfe34fcaa200853ba98faf89f837b0e428f7bc9dd9906135220441bc5243e0c259b5a61946f9ae0d4ea595d2",
+          "sha1": "540f5f767e6f97e7fd301dfe53ac8a369b5f5fa4"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/MufQflLZ/owo-lib-0.12.15.2%2B1.21-sources.jar",
+        "filename": "owo-lib-0.12.15.2+1.21-sources.jar",
+        "primary": false,
+        "size": 439593,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "HD3e3YKK",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.15.1-beta.3+1.21",
+    "version_number": "0.12.15.1-beta.3+1.21",
+    "changelog": "Fixes:\n- Fix issues with errors relating to texture identifier being null\n- Fix issue involved with ModDataLoader on Connector not being able to get any mod list",
+    "changelog_url": null,
+    "date_published": "2025-04-12T23:12:18.802898Z",
+    "downloads": 85453,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "58b30bcc4922b38e79e4f2d710544367891f01ef",
+          "sha512": "581f0f3fa733bc5d110407839159d19864de0310022d07dd8c513d03f4a6213f8b1769773d8b847a909c42da6c71c20be1e685d366ee0586eb8a42eef19f3fca"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HD3e3YKK/owo-lib-neoforge-0.12.15.1-beta.3%2B1.21.jar",
+        "filename": "owo-lib-neoforge-0.12.15.1-beta.3+1.21.jar",
+        "primary": true,
+        "size": 4800048,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "ce74d2b24f85b63347c289d7ca7cadd5f3eae0c7c16cec058474e644f5ff99b26dd7f399d960163dc3c8e14bb24fe377c855f5c6512d4930e2c027a8ff3b2cb8",
+          "sha1": "dcd2b80e5166fe34dd900d9d1a946ddf93ce654d"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HD3e3YKK/owo-lib-neoforge-0.12.15.1-beta.3%2B1.21-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.15.1-beta.3+1.21-sources.jar",
+        "primary": false,
+        "size": 463766,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "xGZcfBtJ",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.15.1-beta.2+1.21",
+    "version_number": "0.12.15.1-beta.2+1.21",
+    "changelog": "Fixes issues for devs due to improper declaration of Access Widner",
+    "changelog_url": null,
+    "date_published": "2025-03-17T01:53:17.671684Z",
+    "downloads": 24559,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "539f578fc983d60113e2490ad22b2331b91e563fd41a43c09d014a4e199b7272bd847d7034dfc18077ea91dfff6f94b5a40a30d330b3af6c8d8083da2bb08490",
+          "sha1": "d73f342e468deb88ff9e3a0d8c2ca7cbf1d4e0f4"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/xGZcfBtJ/owo-lib-neoforge-0.12.15.1-beta.2%2B1.21.jar",
+        "filename": "owo-lib-neoforge-0.12.15.1-beta.2+1.21.jar",
+        "primary": true,
+        "size": 4799998,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "9fa9769b31f096d18e2b78881bb7fc2d5dc624fd52351fbc49f4b0cac3863ab492ca8697671d48139306600459d4cf3a9f011f19a7638fd06f8e4c60ad36a7ba",
+          "sha1": "c8c093be97b2e8ceb5a6ce684e937c694994e5e0"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/xGZcfBtJ/owo-lib-neoforge-0.12.15.1-beta.2%2B1.21-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.15.1-beta.2+1.21-sources.jar",
+        "primary": false,
+        "size": 463765,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "ZHGf6RkT",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.15.1-beta.1+1.21",
+    "version_number": "0.12.15.1-beta.1+1.21",
+    "changelog": "## Fixes: \n- Aggressively specialize lists generated by NbtSerializer.Sequence to fix deserialization of types like UUID which expect a specialized NBT array type (#363, Blodhgarm)",
+    "changelog_url": null,
+    "date_published": "2025-03-16T21:09:28.46114Z",
+    "downloads": 321,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1075f910b75cd38a8e1a497118747467de85aa2d",
+          "sha512": "a4b2e86577f95b2d9ceaf9d6f11026cc3fbf2999705a5be8e27c481db8d0adafa3edea075adca149e84a817b69ae6464292f90531c4c6cca9f72122527ac05b9"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/ZHGf6RkT/owo-lib-neoforge-0.12.15.1-beta.1%2B1.21.jar",
+        "filename": "owo-lib-neoforge-0.12.15.1-beta.1+1.21.jar",
+        "primary": true,
+        "size": 4800028,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "b79e0b542c739835be0a268b0e15338cfb5ff10d55022e3b557229c6715ecd1dc22342b5c2ed5900f2fa85819fc8e6025ac83947b83325035743a63766138493",
+          "sha1": "c2b039c3eeb50aa3513b1f91abbe24335ea72a4b"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/ZHGf6RkT/owo-lib-neoforge-0.12.15.1-beta.1%2B1.21-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.15.1-beta.1+1.21-sources.jar",
+        "primary": false,
+        "size": 463786,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "WMGDnJhl",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21+] oωo - 0.12.15.1+1.21",
+    "version_number": "0.12.15.1+1.21",
+    "changelog": "## Fixes\n- Aggressively specialize lists generated by `NbtSerializer.Sequence` to fix deserialization of types like `UUID` which expect a specialized NBT array type (#363, Blodhgarm)",
+    "changelog_url": null,
+    "date_published": "2025-03-12T22:10:53.655993Z",
+    "downloads": 339937,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "14781b7426f95b96bf1d677c04af15b8704373d9",
+          "sha512": "61a7d77a76b1180890bcc3a391c0e4424e3e9e9808844831af2a42e38e190072bc3b15d6debbbdb276239b4f32d05dc1c995a3a5e6ba90c72f1f954629d52a75"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/WMGDnJhl/owo-lib-0.12.15.1%2B1.21.jar",
+        "filename": "owo-lib-0.12.15.1+1.21.jar",
+        "primary": true,
+        "size": 1179014,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "228b062d2052c0597a2c23dd6f684cba0b89e4d3f05b8cb7e279053d6b6926de3719854ca4d652ab6e036fee858b1cd930d3b081444b44c998e97900480829d7",
+          "sha1": "e0df34ccdab0fb263ee1461fc0cb4001e4a84ea5"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/WMGDnJhl/owo-lib-0.12.15.1%2B1.21-sources.jar",
+        "filename": "owo-lib-0.12.15.1+1.21-sources.jar",
+        "primary": false,
+        "size": 438709,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "p9vm8HDx",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.4] oωo - neo - 0.12.19",
+    "version_number": "0.12.19-beta.2+1.21.4",
+    "changelog": "Deal with issues involving recent changes to neos reload listeners changes",
+    "changelog_url": null,
+    "date_published": "2025-02-18T00:02:53.251188Z",
+    "downloads": 2491,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "4203bafacf79d2f20225019a0177a07542cd4901",
+          "sha512": "312b73e8a15dcc0b4a3b7eaff0401ebd027c6c5beefc934ce0ce6281033ea1a7963da208596eadac36c72b7dfbbfe001cf93cf0404886ef205dbd483af5c73af"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/p9vm8HDx/owo-lib-neoforge-0.12.19-beta.2%2B1.21.4.jar",
+        "filename": "owo-lib-neoforge-0.12.19-beta.2+1.21.4.jar",
+        "primary": true,
+        "size": 1236478,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "6bb0355c36dc40001297e8911402878a6891c35b",
+          "sha512": "ebc70900f7e8eb7f03f81543e250e1c0ef789171bde603ef3e82175133c8332d86a2812e83b4f051776c2bc137188b227d685cbc939c155ac779e74f30112f05"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/p9vm8HDx/owo-lib-neoforge-0.12.19-beta.2%2B1.21.4-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.19-beta.2+1.21.4-sources.jar",
+        "primary": false,
+        "size": 473479,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "kNCPPFb2",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21.4] oωo - 0.12.20",
+    "version_number": "0.12.20+1.21.4",
+    "changelog": "## Changes\n- Tooltip rendering on the owo-ui screen template classes can now be customized by overriding `drawComponentTooltip`\n\n## Fixes\n- owo-ui screens built using the provided template classes no longer stop rendering their tooltip after reinitializing (#314, Blodhgarm)",
+    "changelog_url": null,
+    "date_published": "2024-12-29T16:46:31.266988Z",
+    "downloads": 423734,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "60851f1d8a82b5ebff193259ad9c8f908daec3c4",
+          "sha512": "c813aeb8153d3401f3e67224f4c620c084a55c9342617edbbd7118d30191faa0202f71bca96eeddf81db6ef0d2e090d53dc35980be5662b7f4f2297f47593300"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/kNCPPFb2/owo-lib-0.12.20%2B1.21.4.jar",
+        "filename": "owo-lib-0.12.20+1.21.4.jar",
+        "primary": true,
+        "size": 1199998,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "93eb0b846383b6d3f996f50feea988bc84cf1cb7",
+          "sha512": "bfd66f7b326c51b7dc4eeee6fd75f1b3f9950adfceca04e75df1181cd21f2a69979dea472dd451f14cdb2191803709c7db9a6e07c2402ec72af3792e2c15e79b"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/kNCPPFb2/owo-lib-0.12.20%2B1.21.4-sources.jar",
+        "filename": "owo-lib-0.12.20+1.21.4-sources.jar",
+        "primary": false,
+        "size": 443154,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "hKuP4ZWy",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.4] oωo - neo - 0.12.19",
+    "version_number": "0.12.19-beta.1+1.21.4",
+    "changelog": "# Changes\n- Updated to 1.21.4\n- The tooltip of the UI managed by an OwoUIAdapter is no longer drawn directly inside the adapter's render method. Instead, the separate drawTooltip method must be invoked after rendering, allowing tooltips to be rendered definitively after all main UI\n\n# Fixes\n- owo-ui tooltips in screens with layers should no longer stack with main UI incorrectly\n- Endec encoding and decoding of optional fields in NBT has been fixed",
+    "changelog_url": null,
+    "date_published": "2024-12-16T00:14:45.770797Z",
+    "downloads": 1044,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c3f4cd05a95bef842f86f0ac00d025bd5415238bd618d67400d5831561122a1415271e908b925d78e9698e9b1ff056d04b75e70a382339da1aae115ed75e85e2",
+          "sha1": "3fad62ee5c2be76366d248655915d9e3837f40e6"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/hKuP4ZWy/owo-lib-neoforge-0.12.19-beta.1%2B1.21.4.jar",
+        "filename": "owo-lib-neoforge-0.12.19-beta.1+1.21.4.jar",
+        "primary": true,
+        "size": 1236108,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "07d31b795d19e161df250a5d984b2f4e1dea9102b269e5009237dde686e0414b313c2e3a2441df6dca823cfff2f7ddaf402c7a67e6d629dd009aeec2e2c6d0a6",
+          "sha1": "4ffe4163260bbcc7b2370c9e7a822263445ba29d"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/hKuP4ZWy/owo-lib-neoforge-0.12.19-beta.1%2B1.21.4-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.19-beta.1+1.21.4-sources.jar",
+        "primary": false,
+        "size": 473278,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "u6nBP9Dt",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21.4] oωo - 0.12.19",
+    "version_number": "0.12.19+1.21.4",
+    "changelog": "## Changes\n- Updated to 1.21.4\n- The tooltip of the UI managed by an `OwoUIAdapter` is no longer drawn directly inside the adapter's render method. Instead, the separate `drawTooltip` method must be invoked after rendering, allowing tooltips to be rendered definitively after all main UI\n\n## Fixes\n- owo-ui tooltips in screens with layers should no longer stack with main UI incorrectly\n- Endec encoding and decoding of optional fields in NBT has been fixed",
+    "changelog_url": null,
+    "date_published": "2024-12-12T00:30:50.836969Z",
+    "downloads": 73441,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "9e691cd7f97fedfa1f26b75ad600f237e1d9b5e53a5d75a4bdb15633176a3e94cc2baf955336b35d676dc8b9e1b8601a7d9424723708eeb5f98359d2232ffe0c",
+          "sha1": "25cabdee4ab9818c45959be719dda790144faf9a"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/u6nBP9Dt/owo-lib-0.12.19%2B1.21.4.jar",
+        "filename": "owo-lib-0.12.19+1.21.4.jar",
+        "primary": true,
+        "size": 1199852,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "0338196b02ce69addc4d3d0171327f167b97a16a2977639ad7a03790acb02e5e7af41e0fbe0731d183b2142223e3c1f670303eb0f62027faabbc94ed8a0c9fc6",
+          "sha1": "67c0e80ce5a72340ede1dacd71c3f27418363e9f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/u6nBP9Dt/owo-lib-0.12.19%2B1.21.4-sources.jar",
+        "filename": "owo-lib-0.12.19+1.21.4-sources.jar",
+        "primary": false,
+        "size": 442994,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "tqu96AJU",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.18",
+    "version_number": "0.12.18-beta.6+1.21.2",
+    "changelog": "Update to fix issues where networking would only register within debug environment.",
+    "changelog_url": null,
+    "date_published": "2024-12-11T20:27:59.644632Z",
+    "downloads": 374,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "186115d494a6898ce6b1c19db6161029ffe91c30dc2c4678effa9260ad5566a45861aed1fe65f329768c6c79a58f3247412530eed70e57a2a3478b2f61afcddd",
+          "sha1": "5637d15f0b7702b94e13e895c21daaeec3c749fc"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/tqu96AJU/owo-lib-neoforge-0.12.18-beta.6%2B1.21.2.jar",
+        "filename": "owo-lib-neoforge-0.12.18-beta.6+1.21.2.jar",
+        "primary": true,
+        "size": 1228687,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "1f6edad6300fb3bf4275f818f85a6f9ab091178a",
+          "sha512": "72779d358f50b7ef62ae04e0ff16928c6ae2175b40a8cc0351fa9539bce10a9ac25c255446f04d5eae7f8222c32d58c5d2c76c41a962d6089afc2fd6ae1afa57"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/tqu96AJU/owo-lib-neoforge-0.12.18-beta.6%2B1.21.2-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.18-beta.6+1.21.2-sources.jar",
+        "primary": false,
+        "size": 470105,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "DQKZGF41",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.18",
+    "version_number": "0.12.18-beta.5+1.21.2",
+    "changelog": "Removes final bit of renderdoc code",
+    "changelog_url": null,
+    "date_published": "2024-11-29T00:28:27.463928Z",
+    "downloads": 403,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "0808cfd79763698de81227de5e89b45a5b2ad744",
+          "sha512": "0555a3ccca2f2a1f36c95db7e1426098bb2b7bb5c07e09157d11766f3fe5147b62671b18bd6774b4dec691c0647a4767d2288085aacf9795bd82572040f06127"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/DQKZGF41/owo-lib-neoforge-0.12.18-beta.5%2B1.21.2.jar",
+        "filename": "owo-lib-neoforge-0.12.18-beta.5+1.21.2.jar",
+        "primary": true,
+        "size": 1228682,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "93c371fdc7183cad2eb0403d822d63fbbe211171",
+          "sha512": "27dd3f76c17dcea35032a2e7fdf87b1ccf5032bbb013cde684bdb95e8f296cd46a4f0990d2a9c13f0367aca04c58404884af3b497ebe78aa94aa3f5b8ed1945d"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/DQKZGF41/owo-lib-neoforge-0.12.18-beta.5%2B1.21.2-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.18-beta.5+1.21.2-sources.jar",
+        "primary": false,
+        "size": 470101,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "qm96mQBh",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.15",
+    "version_number": "0.12.15-beta.12+1.21",
+    "changelog": "Removes final bit of renderdoc code",
+    "changelog_url": null,
+    "date_published": "2024-11-29T00:17:19.054481Z",
+    "downloads": 53657,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f58392fa41845f377084be3e34f9818a5f672179",
+          "sha512": "23decbf1a13c5233f5c6eee6e0f259672cbf4c34d28d7368e6ee67f91bfbf63345577c7f7acfd97684f706d4a6c672eaafb2ada85de9650da6aed840584958bc"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/qm96mQBh/owo-lib-neoforge-0.12.15-beta.12%2B1.21.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.12+1.21.jar",
+        "primary": true,
+        "size": 4795294,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "a701168cc462f0b85be12eb46778e0aff368e6b0aff7a59d256506f709eba16e5dc47da91ccb66235571d76ba5c991ba76d6aab4edb5a28e9079695071b30b09",
+          "sha1": "ea0a4d78c63358b04400e2648c8f86c265a59e0f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/qm96mQBh/owo-lib-neoforge-0.12.15-beta.12%2B1.21-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.12+1.21-sources.jar",
+        "primary": false,
+        "size": 463722,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "HIysrC5H",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.18",
+    "version_number": "0.12.18-beta.4+1.21.2",
+    "changelog": "Update to 1.21.3 which brings less of a reliance on FFAPI and disabled RenderDoc utility to use neos RenderNurse within the future",
+    "changelog_url": null,
+    "date_published": "2024-11-20T23:07:34.624271Z",
+    "downloads": 211,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f8cd6dfc097973e1daa3ccfcc50f21f0e4c2a0d2",
+          "sha512": "4f6fffbfea71d85981bbb3542114311ab39854bc7f25bd02f7fb4292e6132d4b6860a40ef25745f346c63d83444f1fe1c244c0f01a81280b76e6b6ef776b9b6b"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HIysrC5H/owo-lib-neoforge-0.12.18-beta.4%2B1.21.2.jar",
+        "filename": "owo-lib-neoforge-0.12.18-beta.4+1.21.2.jar",
+        "primary": true,
+        "size": 1229730,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "6de9fbf575aab4b76527dc74b4cfd9671a2d7dfbf8d0ce4a351de6877cc7546a0015aefc70ec4b55ce581d9d00511f47593fd729be92756f9a032cf1dc29dd35",
+          "sha1": "243d7082454107874009c4ad0a302883d4b96bef"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HIysrC5H/owo-lib-neoforge-0.12.18-beta.4%2B1.21.2-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.18-beta.4+1.21.2-sources.jar",
+        "primary": false,
+        "size": 470087,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "nu1XnBPU",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.15",
+    "version_number": "0.12.15-beta.11+1.21",
+    "changelog": "Disable RenderDoc Utils to be replaced with Neos RenderNurse",
+    "changelog_url": null,
+    "date_published": "2024-11-20T22:44:05.426806Z",
+    "downloads": 2377,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b9ac3040cb32e22292709eb3358628c0dc7865fa",
+          "sha512": "06257f16a66671b2134eac64b00959f4e56c4cb2d2266c0f8d8dba783daa713832e9c594dfab3ddc30c7960ea39efd26d36c8378d1b5919ae8c2e5dfb2d5486a"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/nu1XnBPU/owo-lib-neoforge-0.12.15-beta.11%2B1.21.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.11+1.21.jar",
+        "primary": true,
+        "size": 4796362,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "0e19ba1261482da51572cfa1b7b79903f0d835ab769d361ccc2bda9f436132f2eac4949171f1a30acfb6569113f6b537e7fa65ab4c32a4443003e24b68dd0733",
+          "sha1": "1fdd71951826f458c84944a080f438695dbbd61f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/nu1XnBPU/owo-lib-neoforge-0.12.15-beta.11%2B1.21-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.11+1.21-sources.jar",
+        "primary": false,
+        "size": 463710,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "nQeQz7rx",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.15",
+    "version_number": "0.12.15-beta.10+1.21",
+    "changelog": "Fix issues with config screens being non existant though mod info screen",
+    "changelog_url": null,
+    "date_published": "2024-11-13T19:17:20.835984Z",
+    "downloads": 1695,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "3a8e55669715edd8d09829a22d7b209c72fffeb5",
+          "sha512": "1036e344980c548b64a3970dd775d0d46e2792a83076e8eca6c0518fc7643149b780230ea40f07fa7250cc42a140a09c87726aa2397ff8f1a12f64c9ca0bd908"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/nQeQz7rx/owo-lib-neoforge-0.12.15-beta.10%2B1.21.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.10+1.21.jar",
+        "primary": true,
+        "size": 4799077,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "cb118bc785d6bd8c2bad1d6dae042a061f686709",
+          "sha512": "36313dd2200ad6d12715777d4a9948098411387218c214093355292a945c542e9cef4599f08a847e7210dd7020459f490e0ac6148a21143b66a28da186898d9f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/nQeQz7rx/owo-lib-neoforge-0.12.15-beta.10%2B1.21-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.10+1.21-sources.jar",
+        "primary": false,
+        "size": 463465,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "3Q7oLImc",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21.2+] oωo - 0.12.18",
+    "version_number": "0.12.18+1.21.2",
+    "changelog": "## Fixes\n- `TextureComponent` rendering now works properly again",
+    "changelog_url": null,
+    "date_published": "2024-11-08T21:08:59.452175Z",
+    "downloads": 48222,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "846a0c8b7b077b3b991fa14fa3e3cdd8558fc071b433f75e183696b8acaea2dec3b3bccfb2f2427553c7ef53cb52d210a140bfb2830706ea66f0590ceca80e28",
+          "sha1": "5c4d100209bc25755e4202820049bb5a591515ed"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/3Q7oLImc/owo-lib-0.12.18%2B1.21.2.jar",
+        "filename": "owo-lib-0.12.18+1.21.2.jar",
+        "primary": true,
+        "size": 1193247,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "7d5fc5fe32aa8e632c203c763ec4d09146b1ed74fb462c0901038c4766ff100a1e4e992ebdccea984f3bcf94bb7d1156c2f2167a46580bb153ffcf3e1d850b0a",
+          "sha1": "d447466643c390ad002e9394d7a6cbe1d7a441a7"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/3Q7oLImc/owo-lib-0.12.18%2B1.21.2-sources.jar",
+        "filename": "owo-lib-0.12.18+1.21.2-sources.jar",
+        "primary": false,
+        "size": 440150,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "afVTNeT0",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.15",
+    "version_number": "0.12.15-beta.9+1.21",
+    "changelog": "Fix issues where during a ModLoading error, owolib would be blamed for Shader loading issues due to neos continuation of general asset loading",
+    "changelog_url": null,
+    "date_published": "2024-11-03T21:34:58.462712Z",
+    "downloads": 2724,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "663e8d809a9012a59c721ba7ba2f5d366ff70e6e2555d9fa995a991512a963619414eafdf642ade8bb026cf29447f8d25227600d8c14e11c37b65868d880f12b",
+          "sha1": "8b8d9571d8e5ba7bea1b8c4c23db7901a1d79e30"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/afVTNeT0/owo-lib-neoforge-0.12.15-beta.9%2B1.21.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.9+1.21.jar",
+        "primary": true,
+        "size": 4799083,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "6041f8695f96fc6f307c61de5e2c5d77c5aa9740",
+          "sha512": "1f9f9c9a667f6111ec2a772e5c7cb4dde72270ece33d335d467b47555bae1eaf18a273ec68ded476fa52b68e757b303a6618a5cd25933cab1df0134588d0f2e0"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/afVTNeT0/owo-lib-neoforge-0.12.15-beta.9%2B1.21-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.9+1.21-sources.jar",
+        "primary": false,
+        "size": 463469,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "Doig2v73",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21.2+] oωo - 0.12.17",
+    "version_number": "0.12.17+1.21.2",
+    "changelog": "## Changes\n- As a consequence of updating the endec library, the signatures of the `field(...)` methods on `(De)Serializer.Struct` have changed to accomodate\nthe new optional flattening methodology. If this causes trouble, contact us and we'll try to help\n\n## Fixes\n- Optional struct fields should now always encode properly in self-described formats (namely JSON and NBT)",
+    "changelog_url": null,
+    "date_published": "2024-10-28T18:54:36.029815Z",
+    "downloads": 4556,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "589123d1d21cbe8ab42c507de528dd9b0c891dd24c44aefcc42cafbe3b879f3919a002b3c3593e877dddaf37970eef14e1e4efd013c15d23a8b0e999059fec65",
+          "sha1": "12164e646ac6c311a4c19b0992048b2debfadea1"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/Doig2v73/owo-lib-0.12.17%2B1.21.2.jar",
+        "filename": "owo-lib-0.12.17+1.21.2.jar",
+        "primary": true,
+        "size": 1193246,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "5338537916e65bb96be31de4215375c1605c8c52",
+          "sha512": "9c12ff3144e466b37bd6fa299079806773784579d03065d8e763b6c57dc1a4503c63d3ad041199689d17875f185109f061d636be841dffc6eac3bb7b66249198"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/Doig2v73/owo-lib-0.12.17%2B1.21.2-sources.jar",
+        "filename": "owo-lib-0.12.17+1.21.2-sources.jar",
+        "primary": false,
+        "size": 440153,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "EitNCRux",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.15",
+    "version_number": "0.12.15-beta.6+1.21",
+    "changelog": "Update version to be consistent with maven",
+    "changelog_url": null,
+    "date_published": "2024-10-24T21:11:41.142353Z",
+    "downloads": 1182,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d21fc759736e3346c7c0fe268af4f240981dd104",
+          "sha512": "59b203ee8b848685974838a29cce34906f53d0f757c82ee7b495752193feee1ebef0f05d642ef3a57cad54b5d078e8bf4d09e504106d5f9b58b8ccb4dfd4ec21"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/EitNCRux/owo-lib-neoforge-0.12.15-beta.6%2B1.21.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.6+1.21.jar",
+        "primary": true,
+        "size": 4799013,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "9cc037f8e33734583a698743765b7a5b17f340fd1a108cc5a1489ffdfe63d880e967a45c7c80e384b852c42d1db18353030ba5813c022a0d15e750cd7cb06c42",
+          "sha1": "89a89117c5cf432b18d18dc491d62917f1e9f675"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/EitNCRux/owo-lib-neoforge-0.12.15-beta.6%2B1.21-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.6+1.21-sources.jar",
+        "primary": false,
+        "size": 463440,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "j81y0n5S",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21.2+] oωo - 0.12.16",
+    "version_number": "0.12.16+1.21.2",
+    "changelog": "Primarily, this release constitutes the first port of owo-lib to 1.21.2/3. There were however also a number of other changes:\n\n## Additions\n- `CodecUtils` now offers the `eitherStructEndec(...)` and `xorStructEndec(...)` methods for creating either/xor endecs which conform to the `StructEndec` interface\n- The endec builder used for serializing owo-config options over the network can now be customized in the `ConfigWrapper` constructor\n\n## Changes\n- As a consequence of the vanilla changes to item and block registration, the `AutoRegistryContainer` API is deprecated for the moment and might be (partially) removed in a future release. We're investigating potential alternatives\n- Which owo-ui components are used for the exclusion areas provided to REI and EMI can now be customized by overriding `BaseOwoHandledScreen#componentsForExclusionAreas()`\n\n## Fixes\n- `BaseOwoHandledScreen#enableSlot(Slot)` no longer incorrectly disables the slot",
+    "changelog_url": null,
+    "date_published": "2024-10-23T20:52:22.960454Z",
+    "downloads": 9507,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b256b583c6b998fac68e47d6461226305d2869da",
+          "sha512": "0df68a572ea199656d0acbda0631a130d5d79774e979bfa22d2ed6518f415aaba463210cdb50300d75a27f9caf2631f66de79c0c0c9067ec8cd97f9824ecf61f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/j81y0n5S/owo-lib-0.12.16%2B1.21.2.jar",
+        "filename": "owo-lib-0.12.16+1.21.2.jar",
+        "primary": true,
+        "size": 1184369,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "c110f965ecc8a69b2a438a7ad6dca036b8039456",
+          "sha512": "50ab312d164bd960592db6e8ee7971910c4fccaee6eb60e6f63a08d567b55f4b2474d154401900d998ef1727683de3896c1230e86356af8bf56ce52de5168eb7"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/j81y0n5S/owo-lib-0.12.16%2B1.21.2-sources.jar",
+        "filename": "owo-lib-0.12.16+1.21.2-sources.jar",
+        "primary": false,
+        "size": 439829,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "W20aY40r",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.15",
+    "version_number": "0.12.15-beta.5+1.21",
+    "changelog": "Fixes issues with Concurrent Modification Exception with FFAPI networking",
+    "changelog_url": null,
+    "date_published": "2024-10-23T04:59:31.205516Z",
+    "downloads": 179,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e7c0b95ffccb4c66a76b3bd9e84f33259560e06b7ad839db7faab8960533281fbb24a9a98b6b5f54e2b49efb63fc13d6e82b1453810bf7c552cc95a4f017d71a",
+          "sha1": "8254969d5e03003c45a728498392a982ca4b28f7"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/W20aY40r/owo-lib-neoforge-0.12.15-beta.5%2B1.21.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.5+1.21.jar",
+        "primary": true,
+        "size": 4799012,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "f75d6e6de8548ce205a6dd961feeb0696af98320",
+          "sha512": "65fde387e59b373740615a8a469951abaf4f0238de802477000955faf8bd61123cab52eb86847354832d7a1006310d7397a28746e5ab358cfd0ba878bf2809d6"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/W20aY40r/owo-lib-neoforge-0.12.15-beta.5%2B1.21-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.5+1.21-sources.jar",
+        "primary": false,
+        "size": 463484,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "etV6oiTP",
+    "project_id": "ccKDOlHs",
+    "author_id": "7DNYExCh",
+    "featured": false,
+    "name": "[1.21.1] oωo - neo - 0.12.15",
+    "version_number": "0.12.15-beta.4+1.21",
+    "changelog": "Initial Release of owo for Neoforge. Yippie!",
+    "changelog_url": null,
+    "date_published": "2024-10-22T23:42:47.994566Z",
+    "downloads": 209,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "043c9253e10793bc25f4a683acd77fa1b508939e",
+          "sha512": "1be55838d0dfa8de09629d5f22690fccc8cd5d9efc59160fa8d3948e7fee7b63f00c6c149b8f9da7c7fcf84f51f369f162cade9c98eb019cae04af30522ab878"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/etV6oiTP/owo-lib-neoforge-0.12.15-beta.4%2B1.21.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.4+1.21.jar",
+        "primary": true,
+        "size": 4797874,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "9b79b5b06b57825a3103c48f5dadb8f52fd91590f54abbd9d5759715b83bf13fa51263d3e614de823e1d7f80daa5c041b03ae21172603de054eb92e83397447d",
+          "sha1": "bd76854918a448c93d237027c48c8ae7c4b762dd"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/etV6oiTP/owo-lib-neoforge-0.12.15-beta.4%2B1.21-sources.jar",
+        "filename": "owo-lib-neoforge-0.12.15-beta.4+1.21-sources.jar",
+        "primary": false,
+        "size": 462515,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "vCCHsvEa",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21+] oωo - 0.12.15",
+    "version_number": "0.12.15+1.21",
+    "changelog": "## Changes / Fixes\nThis release fundamentally changes the implementation used for Endec/Codec interop. Instead of always using EDM as the intermediary format, the framework will now try to determine if a format-appropriate `(De)Serializer`/`DynamicOps` implementation is available and use it if so. This means that the serialized representation of all data structures should now be both consistent and preserved correctly when in complex nested scenarios, something we hope will alleviate an entire class of bugs. Most of these are related to serialized EDM which turns out unrepresentable in NBT, but other formats might have been affected too",
+    "changelog_url": null,
+    "date_published": "2024-10-08T20:16:08.259884Z",
+    "downloads": 1582692,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "6360554402859113fdd72abdb8ff9fd5d6c731ca",
+          "sha512": "faa86df062ec4fa58b653455deb1307a778e4307392f51a29c5a87de78da7173bb6f77a5ed239306226f2bf972aa9221fbd946a2c07232ecfa09f798ae381924"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/vCCHsvEa/owo-lib-0.12.15%2B1.21.jar",
+        "filename": "owo-lib-0.12.15+1.21.jar",
+        "primary": true,
+        "size": 1177861,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "2e2c4edd08b02447d6a4162d5d8dd2428d825b2b37a1f2b5f542caddb971afe35da9227ba83b123fa4bfa585328bd13638747dd4be2dc697030e9204ca97d4d0",
+          "sha1": "c790b04bb6c0b4eb70a7fe82d46d9205e8dc343a"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/vCCHsvEa/owo-lib-0.12.15%2B1.21-sources.jar",
+        "filename": "owo-lib-0.12.15+1.21-sources.jar",
+        "primary": false,
+        "size": 438025,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "HegQGu0K",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21+] oωo - 0.12.14",
+    "version_number": "0.12.14+1.21",
+    "changelog": "## Additions\n- `CursorStyle` now includes the whole range of standard cursors implemented by GLFW (#296, chyzman)\n\n## Fixes\n- Scissor coordinates are now clamped before passing them to OpenGL in the `ScissorStack` utility - this fixes a bunch of edge-cases with mods like Ok Boomer\n- Using a cursor style which is unsupported by the host OS no longer causes a crash when trying to dispose the screen (#301)",
+    "changelog_url": null,
+    "date_published": "2024-09-15T12:06:47.701855Z",
+    "downloads": 176693,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "140f5b91274f57dfdff8f9df3f2378f1a6d8514e",
+          "sha512": "c89bf107592b1dc2d29f505c42de290fef1575e68cc8d3f4e910cfcd4a89fe956f0e9668243de142d9574f2965adbf9268c4d6e1bb532cc94ea33727fab6929d"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HegQGu0K/owo-lib-0.12.14%2B1.21.jar",
+        "filename": "owo-lib-0.12.14+1.21.jar",
+        "primary": true,
+        "size": 1163722,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "a6310c3962c8440b11c6325923296963c528d10f",
+          "sha512": "4345b342a8b155e995ac40092d1944b415171933c543d3e8e64448ce6d6e72b5f10fcf723ae62f422203a24d48e80ab4d0c841988c713af350f9d17c5b548a20"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HegQGu0K/owo-lib-0.12.14%2B1.21-sources.jar",
+        "filename": "owo-lib-0.12.14+1.21-sources.jar",
+        "primary": false,
+        "size": 434461,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "8emxtz6T",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21+] oωo - 0.12.13",
+    "version_number": "0.12.13+1.21",
+    "changelog": "## Fixes\n- Modifying the message of a `CheckboxComponent` now functions correctly again\n- The experimental derived components API, which breaks stack equality in 0.12.12, should now work without crashes and without that bug (#298)",
+    "changelog_url": null,
+    "date_published": "2024-09-13T21:28:20.667951Z",
+    "downloads": 9407,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7e1bb5637955bee980e62c4a5567c278f0f6b8e0e507c7a7a5cff2fbdffee0e13086d2485277f2dae42909d61ba9bb8a1ec23e1fa642e9b0a414a03ebcf3cb8a",
+          "sha1": "82dcf55e4b0e0c7fc0f888b264127584ff690417"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/8emxtz6T/owo-lib-0.12.13%2B1.21.jar",
+        "filename": "owo-lib-0.12.13+1.21.jar",
+        "primary": true,
+        "size": 1163235,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "aa27f36aed6cf68814522cbd05da1ecdc43b7c48412e8a86414c5efb1064f1106aca20ea6f9c0ae13eb1500a6781b2cf1102c29731ecea11e284092dff55a0d8",
+          "sha1": "71eb88c14b76582e36d5ff2e26e1831f69e3852d"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/8emxtz6T/owo-lib-0.12.13%2B1.21-sources.jar",
+        "filename": "owo-lib-0.12.13+1.21-sources.jar",
+        "primary": false,
+        "size": 434120,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "7F2C3HCI",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21+] oωo - 0.12.12",
+    "version_number": "0.12.12+1.21",
+    "changelog": "## Additions\n- An experimental API for deriving item stack components based on the user-provided components has been added (check `OwoItem#deriveStackComponents`). The current implementation only re-derives components when `Item#postProcessComponents` gets invoked and is subject to change\n\n## Changes\n- Config screen providers are now registered through the new `ConfigScreenProviders` class to avoid classloading issues (the old methods on `ConfigScreen` remain but are deprecated for removal). Along with this change, the config screen generated by a provider no longer needs to extend owo's `ConfigScreen`\n\n## Fixes\n- The `SyncedProperty` and screen handler messages APIs now properly pass registry context when serializing over the network\n- Recipe-specific remainders, which were not properly ported to 1.21, work again",
+    "changelog_url": null,
+    "date_published": "2024-09-03T17:26:40.696448Z",
+    "downloads": 47350,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6969daf7173d180e0b2b2e963480cdad804cb0876e7137da4336e20f2867b41b4efc80e370ef54058fc2d47254692dbac894b9de40b4245efe22c75bbef24ac6",
+          "sha1": "17861fdda30174d5e4d714b028bc71f5df78dca7"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/7F2C3HCI/owo-lib-0.12.12%2B1.21.jar",
+        "filename": "owo-lib-0.12.12+1.21.jar",
+        "primary": true,
+        "size": 1163228,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "5bd3e17c78fe37d20c178f3b0e5e59e5345ef354",
+          "sha512": "f0d935b6d53a4dec7654768b8ffe42268e1a8ec3f377c815c2318c778364e3a54cd143fce76fab15adfe8a820212caeba24c4b1d13f7a12a9375b21899087387"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/7F2C3HCI/owo-lib-0.12.12%2B1.21-sources.jar",
+        "filename": "owo-lib-0.12.12+1.21-sources.jar",
+        "primary": false,
+        "size": 434110,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "AVkXApBi",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21] oωo - 0.12.11",
+    "version_number": "0.12.11+1.21",
+    "changelog": "## Additions\n- Minecraft's `ComponentType`s can now have both their codec and packet codec populated by calling `.endec(...)`\n- A new overload for `CodecUtils.toEndec` along with `CodecUtils.toEndecWithRegistries` allow creating endecs from both a codec *and* packetcodec (where the latter one uses a packetcodec of `RegistryByteBuf`)\n- The new `Surface.panorama(...)` allows using Minecraft's main menu panorama as an owo-ui surface\n- `Sizing.Random`\n\n## Changes\n- The `OwoItemSettings`-specific methods are now interface-injected onto all item settings and the previous class deprecated\n- `EndecRecipeSerializer` is no longer abstract, making subclassing unnecessary in most cases\n\n## Fixes\n- A number of changes were made to the endec library and owo's `EdmOps` to alleviate most (hopefully all) problems related to codec <-> endec interop when NBT is involved (Blodhgarm)\n- Wrapper item groups (which broke during the port 1.21) now work again\n- `MinecraftEndecs.PACKET_BYTE_BUF` no longer moves the reader index when encoding a buffer\n- A rare crash that could occur when causing input on a screen which failed loading its UI model has been fixed (#263, Zailer43)\n- Pressing ctrl+delete in a text field in owo-ui debug mode no longer crashes (#264, Zailer43)\n- `Color.ofDye`, which was improperly ported, now produces correct colors again (#273, Blodhgarm)\n- `OverlayContainer` no longer mounts its children incorrectly if it has a non-zero position (#278, kikugie)",
+    "changelog_url": null,
+    "date_published": "2024-07-28T22:46:20.870644Z",
+    "downloads": 196293,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7b684e43dd6f9fc4e0b7eec1ae74afb630286ffb25c0ef87d89d2474549eb7e98ae357383a751a63fc720a7cefffe5973b98a8a935fe49225cc7f0e8964b138f",
+          "sha1": "fdd29fa21091896f11de75f30591f62df7213175"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/AVkXApBi/owo-lib-0.12.11%2B1.21.jar",
+        "filename": "owo-lib-0.12.11+1.21.jar",
+        "primary": true,
+        "size": 1154103,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "c71310be1c70593eacfa3b554a9a3aaeb21aec62",
+          "sha512": "43526f510566980186854826d8eeb131ca4f7981e2824d451af32ef78c01ecdbef59b68c66056a5fb0e873358e43383daf78cd043ce0d2f91f99f6ea47e9255f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/AVkXApBi/owo-lib-0.12.11%2B1.21-sources.jar",
+        "filename": "owo-lib-0.12.11+1.21-sources.jar",
+        "primary": false,
+        "size": 427973,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "1fKeD2p9",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.21] oωo - 0.12.10",
+    "version_number": "0.12.10+1.21",
+    "changelog": "This build is primarily a port of [0.12.9](https://modrinth.com/mod/owo-lib/version/0.12.9+1.20.5) to 1.21. This mandated a few other changes:\n\n### Endec changes\nThe `Endec` API is no longer built into owo-lib. Instead, owo now uses and ships the standalone [endec](https://github.com/wisp-forest/endec) library. This entails four major changes:\n- Endecs for Minecraft's types are no longer found on `BuiltInEndecs` but instead on `MinecraftEndecs`\n- DFU interop (namely, converting between codecs and endecs) is now handled through `CodecUtils.toCodec/toEndec` and related functions\n- A number of package changes, primarily `io.wispforest.owo.serialization` -> `io.wispforest.endec`\n- All JSON-related implementations are now named after the JSON library they use. In consequence, the previous `JsonSerializer` is now `GsonSerializer` and so on\n\n### Further Fixes\n- `EdmOps` no longer uses `null` as its empty value, fixing a number of edge cases with particular types of DFU codecs when doing interop\n- owo's `ScreenHandler` extensions don't require a `HandledScreen` anymore and now also support other screens which implement `ScreenHandlerProvider",
+    "changelog_url": null,
+    "date_published": "2024-06-15T21:22:14.416329Z",
+    "downloads": 257937,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b2922b4a85e87a2c6cd2fc9f4b0e6a6ea802bcf517217a050e65b274093a4a54cc4893a2f35e70c18c3db4181f928e3f780049c89ca422e888d1379ab14ba9b2",
+          "sha1": "858bad410c22e96a863e6f76d8a14966bf53fc9c"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/1fKeD2p9/owo-lib-0.12.10%2B1.21.jar",
+        "filename": "owo-lib-0.12.10+1.21.jar",
+        "primary": true,
+        "size": 1130416,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "4afca634ed36ea57a176a8308084a312a8a89d60dc6eb63cf5b43c9a7341fa10e631031db9471d2a3bde707ff69f1d1e586311d84c6d64d4cbaeb1749557c783",
+          "sha1": "1c274c7aaf6dbc6fefb481564ad50b1e84023fcb"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/1fKeD2p9/owo-lib-0.12.10%2B1.21-sources.jar",
+        "filename": "owo-lib-0.12.10+1.21-sources.jar",
+        "primary": false,
+        "size": 418726,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "gizS7nlP",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.5+] oωo - 0.12.9",
+    "version_number": "0.12.9+1.20.5",
+    "changelog": "### Additions\n- `SpriteComponent` now supports sprites in the GUI atlas\n- `SpriteComponent` can now enable blending, using the same API as `TextureComponent`\n\n### Changes\n- When hovering selectable areas in a `ColorPickerComponent`, the curses now uses the `MOVE` style\n- The owo-config screen has been updated to Minecraft's new design language for option screens\n- owo-ui errors which occur during the game's initial loading phase are now logged verbosely to hopefully aid in discovering how they are caused\n\n### Fixes\n- owo-lib now works with (and requires) Fabric API 0.100.0+ \n- The owo-config search field now also searches when pressing the numpad's enter key",
+    "changelog_url": null,
+    "date_published": "2024-06-11T20:09:56.716235Z",
+    "downloads": 20332,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b2b6a8ca4aa1facbfe8ee17506a52ff2551294da",
+          "sha512": "f44e3e992fb0095fe638a0df9a217bcada9bbd1cfa83db830345afe073b487fa74812e0c1a05efbbef8d85ce5396a13ae366fae8fd7c52ab0d66941cee0f909d"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/gizS7nlP/owo-lib-0.12.9%2B1.20.5.jar",
+        "filename": "owo-lib-0.12.9+1.20.5.jar",
+        "primary": true,
+        "size": 1107912,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "d2c0a4535e781cb521b01b0e81e756976014167c",
+          "sha512": "3c453599314fd96d776d8f272c8a49c8a972030fc02f7104c0384dfd075a2481f191b0e92cb2f3bae42fc95aef2f8db7c1a6da6fe8d9eba386f3e79d6983ea61"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/gizS7nlP/owo-lib-0.12.9%2B1.20.5-sources.jar",
+        "filename": "owo-lib-0.12.9+1.20.5-sources.jar",
+        "primary": false,
+        "size": 459269,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "5qH0boef",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.5+] oωo - 0.12.8",
+    "version_number": "0.12.8+1.20.5",
+    "changelog": "### Fixes\n- Joining a singleplayer world in an instance where no owo networking features are used no longer fails on the first attempt (#230)",
+    "changelog_url": null,
+    "date_published": "2024-05-01T20:01:05.087886Z",
+    "downloads": 10639,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "14ed2fc5839dc98ca16f2b459542b4ff98396c259e08c4f1fbd76695df75683162cf619afec6541a7b042e3a7b1633014b85bcdcb2a1835aa22738562393515a",
+          "sha1": "aeee33fcf461bba450c34eb7271d5132671bf273"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/5qH0boef/owo-lib-0.12.8%2B1.20.5.jar",
+        "filename": "owo-lib-0.12.8+1.20.5.jar",
+        "primary": true,
+        "size": 1106004,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "cc3c066683af35bf26faa85541f9dd66c1ea6131",
+          "sha512": "896f48242a41cb27c38e2be10da3b6385f58af00a75be16c20cbb1804c6a8ed4ab212adb34e8635e398e339cbe414faad4ff6391ed711b9784d89605c8054cee"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/5qH0boef/owo-lib-0.12.8%2B1.20.5-sources.jar",
+        "filename": "owo-lib-0.12.8+1.20.5-sources.jar",
+        "primary": false,
+        "size": 458286,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "cFeG2MJS",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.5+] oωo - 0.12.7",
+    "version_number": "0.12.7+1.20.5",
+    "changelog": "This build fixes a crash (#229) that would occur either on boot or when joining a server (depending on other context) with 0.12.6 for 1.20.5",
+    "changelog_url": null,
+    "date_published": "2024-04-29T21:11:16.773055Z",
+    "downloads": 715,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1057efb57032106d7f2e3c5db3023311781c5426",
+          "sha512": "a638a58d8015ed93a77972e83490a5bda7df2237229c5bc9066bc4fae28ec6f534071323cfea7272de104d74dcfa33124faead7293aecb2a1019726e1aa7dbb1"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/cFeG2MJS/owo-lib-0.12.7%2B1.20.5.jar",
+        "filename": "owo-lib-0.12.7+1.20.5.jar",
+        "primary": true,
+        "size": 1105365,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "ca7b412bfa1a62d7d4c7283d23c30fc8f4a001d0cff6656e2ff90a583501dae1d8677575ea9959bdcd26933f84cf0aa50d485730cf290e437017e266b04c8c84",
+          "sha1": "6867256fb8a5d50f6be8195dc6407cd78a7cf142"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/cFeG2MJS/owo-lib-0.12.7%2B1.20.5-sources.jar",
+        "filename": "owo-lib-0.12.7+1.20.5-sources.jar",
+        "primary": false,
+        "size": 457855,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ueejHgQH",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.5] oωo - 0.12.6",
+    "version_number": "0.12.6+1.20.5",
+    "changelog": "This release is primarily a (preliminary, hence beta) port of 0.12.6. However, prompted by the game's networking changes and further reliance on attaching registry references to serialization infrastructure, there have been major internal reworks to **both the Networking API and Endec**. The majority of these changes are **transparent to users**, with the exception of the occasional requirement to pass a `SerializationContext` into Endec methods (the documentation will be updated accordingly).",
+    "changelog_url": null,
+    "date_published": "2024-04-28T22:23:10.288692Z",
+    "downloads": 306,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ca9c4e25efb7cc703e80efb8c229b0348aad73e8",
+          "sha512": "fbc10e5d74907b68c9aa4535648aed090e0081e746425f5e7a51ee45314ec790cbbb1d0078c05bd0344c2f9bb2e587b1b584b4cfacd46caa5dfe243a6730821b"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/ueejHgQH/owo-lib-0.12.6%2B1.20.5.jar",
+        "filename": "owo-lib-0.12.6+1.20.5.jar",
+        "primary": true,
+        "size": 1105316,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "b7918aa628f712eb8a603061fc5154d97651f17e8efbc8be272d43560c6befa9ce2adfe67a05f2999e6c29e0d5d45764dbd3adf2286ae33c36681b5c2e9720e4",
+          "sha1": "628d6a37a34b8162f20e17e8640a55ba17d3c34e"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/ueejHgQH/owo-lib-0.12.6%2B1.20.5-sources.jar",
+        "filename": "owo-lib-0.12.6+1.20.5-sources.jar",
+        "primary": false,
+        "size": 457835,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "Her7Z3CG",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.3+] oωo - 0.12.6",
+    "version_number": "0.12.6+1.20.3",
+    "changelog": "## Additions\n- The new `Endec#flatFieldOf` function creates special struct fields which enable merging the fields of a `StructEndec` into another one through `StructEndecBuilder.of`\n\n## Fixes\n- Optionals now get serialized properly by the EdmSerializer\n- The `EXPAND` sizing method now works correctly in presence of a non-zero `gap` when used inside a `FlowLayout` (#219)",
+    "changelog_url": null,
+    "date_published": "2024-04-03T22:39:30.075133Z",
+    "downloads": 187217,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "abf097faf0fc485dcd8566a120a8de254d417d5b",
+          "sha512": "e47b9367ff84435c7043c21c58720c1e7049766dedaa305c6380a8cc6bab4f8ae49d781ecea533e00ebad9ba278372bc4cb8dd8d6eea7fd79244628aeba74e13"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/Her7Z3CG/owo-lib-0.12.6%2B1.20.3.jar",
+        "filename": "owo-lib-0.12.6+1.20.3.jar",
+        "primary": true,
+        "size": 1080159,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "a204d9bebfe37f5f0ec2c2f89de119a32693f842f9c5ba48cd54f4b8d346fdfaef18e9258276543eb6df74c0044127bc5e4badada05051b044e003d0d72c24bc",
+          "sha1": "c0f73a96535519c15cc957e6de0cf1c3a74226fb"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/Her7Z3CG/owo-lib-0.12.6%2B1.20.3-sources.jar",
+        "filename": "owo-lib-0.12.6+1.20.3-sources.jar",
+        "primary": false,
+        "size": 453064,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "CJ29u2GJ",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.3+] oωo - 0.12.5",
+    "version_number": "0.12.5+1.20.3",
+    "changelog": "## Additions\n- `EdmElement` instances which hold a `MAP` type can now be represented as an `EdmMap` (which, importantly, implements `MapCarrier` and can thus be used with `KeyedEndec`) using `EdmElement#asMap` (#209, Blodhgarm)\n- The components of a record used for owo networking (or, more specifically, for which an instance of `RecordEndec` is made) can now be annotated `@NullableComponent` to support null serialization (#216, Blodhgarm)\n\n## Fixes\n- When text with a click event of type `OPEN_URL` is clicked in an owo-ui label component, the resulting link confirmation screen now properly returns to the screen with label on it after the link has been confirmed/rejected by the user (#214)\n- The error message logged when an owo UI model hot reload fails no longer has mismatched format specifiers\n- Hud addition/removal requests are now processed in invocation order at the beginning of every frame rendered while in a world (this solves weird ordering problems with addition/removal and fixes requests not being processed while the Hud is hidden) (#213)",
+    "changelog_url": null,
+    "date_published": "2024-02-17T13:41:44.407371Z",
+    "downloads": 60183,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2a5ba2bffaec382033dbef4c62e08ca631a8ddf7a125e88bd91c54ff621a1317e5b6bd7a02bb9bb5092bc17e0e725c1d36eaba215389f10f26828cb8634e7d6e",
+          "sha1": "3f184a84379ccfbeb21b7b4a75bde22f21faf06e"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/CJ29u2GJ/owo-lib-0.12.5%2B1.20.3.jar",
+        "filename": "owo-lib-0.12.5+1.20.3.jar",
+        "primary": true,
+        "size": 1077239,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "8ee526a03109eba152e09ccd3448debd80b5c238",
+          "sha512": "5958e029eab3d43ad99e92dece7eb4ad3b2abbdae66943b4e0ba0f9e37febb8d5de5065c236417fec05cf5f25071cb3b07dc940be1bed3f63e9b63ddab012422"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/CJ29u2GJ/owo-lib-0.12.5%2B1.20.3-sources.jar",
+        "filename": "owo-lib-0.12.5+1.20.3-sources.jar",
+        "primary": false,
+        "size": 452558,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "HEZ55HbJ",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.3+] oωo - 0.12.4",
+    "version_number": "0.12.4+1.20.3",
+    "changelog": "## Additions\n- The line spacing applied to text rendered by owo-ui's label component is now configurable\n\n## Fixes\n- The previously broken `BlockHitResult` endec now encodes correctly and has been made publicly available as `BuiltInEndecs.BLOCK_HIT_RESULT`",
+    "changelog_url": null,
+    "date_published": "2024-02-13T21:51:41.154608Z",
+    "downloads": 6609,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e4acbdb2b780d624e1ad81078b2c7f9a4c3c57b6",
+          "sha512": "cbff72995af33ed0d50a056bdd90634523586fc7539260146aa90c46d1fb386438609ae801779183152cdd7a76d2188be03e296ec0608dab1a175104f9347bab"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HEZ55HbJ/owo-lib-0.12.4%2B1.20.3.jar",
+        "filename": "owo-lib-0.12.4+1.20.3.jar",
+        "primary": true,
+        "size": 1071069,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "bdc1d12c36b1e9ebf969101d1ddacf47a8b16d2632c1e8669fa34e27078f305675f9f1455887fb340ca1e12fac63ad02a69f97aff88884a9624caebbc02082ae",
+          "sha1": "4f553898a9974bd132db276faa0be210184efc4e"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HEZ55HbJ/owo-lib-0.12.4%2B1.20.3-sources.jar",
+        "filename": "owo-lib-0.12.4+1.20.3-sources.jar",
+        "primary": false,
+        "size": 449054,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "HYGIKGSR",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.3+] oωo - 0.12.3",
+    "version_number": "0.12.3+1.20.3",
+    "changelog": "## Fixes\n- Tooltips of stacked sibling components now render properly again\n- A label which does not have an owo-ui tooltip but contains text with a hover event now renders that hover event again",
+    "changelog_url": null,
+    "date_published": "2024-01-18T15:37:18.180961Z",
+    "downloads": 31882,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "efb4191d1a24a077c2f1187e768a49419e8cb47b",
+          "sha512": "0d3834085e46175284c78f7161b87efed78b6d1ad409d0ccbe0c6628a9522cb90272eb3465ac04c8311938e1589ba92cfa21c6820e73e62840d24be973c7c424"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HYGIKGSR/owo-lib-0.12.3%2B1.20.3.jar",
+        "filename": "owo-lib-0.12.3+1.20.3.jar",
+        "primary": true,
+        "size": 1071777,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "50727ce57d1d9746a878278dfeac80d66b95d2c2b2cc3f7731c7e49d4cb31e0a4ccfe41397024d9f9b92e16375d4dac4f459153eb1d3571c371359c110752579",
+          "sha1": "031a52e8eea8d7b8958cf0eca433d3ad7a1fa88d"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HYGIKGSR/owo-lib-0.12.3%2B1.20.3-sources.jar",
+        "filename": "owo-lib-0.12.3+1.20.3-sources.jar",
+        "primary": false,
+        "size": 449107,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "LWhxwhvI",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.3+] oωo - 0.12.2",
+    "version_number": "0.12.2+1.20.3",
+    "changelog": "## Fixes\n- EdmIo now writes the type of each element in a sequence individually, since in general not all elements will have the same type - making some sequences that are valid at runtime unserializable",
+    "changelog_url": null,
+    "date_published": "2024-01-17T14:46:26.675689Z",
+    "downloads": 658,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "97980f19bae976badc6577ff1c51bde447d40c400195ed61121a01a1fc79e2cefe90e9b06e99e4ed1357c5bc11cfacb29d16b6b8c865929e0f1eed0ab0963e1a",
+          "sha1": "0ab10bfd47f91fce76737f4423f75c9b3509eb24"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/LWhxwhvI/owo-lib-0.12.2%2B1.20.3.jar",
+        "filename": "owo-lib-0.12.2+1.20.3.jar",
+        "primary": true,
+        "size": 1071524,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "4f8fd33526545423fee3a821c834ae9500a916de6192b757d54a3727250331f03cff4629bdee90fb65ddb70456d9f63056cf7caa85fd29d7e2e2e8d4dc7fd0fa",
+          "sha1": "d1dafdadf31159cda6a549bdc4b90d9a72effb76"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/LWhxwhvI/owo-lib-0.12.2%2B1.20.3-sources.jar",
+        "filename": "owo-lib-0.12.2+1.20.3-sources.jar",
+        "primary": false,
+        "size": 448981,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "9NFjhCIH",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.3+] oωo - 0.12.1",
+    "version_number": "0.12.1+1.20.3",
+    "changelog": "## Additions\nA new sizing method joins the owo-ui framework - `Sizing.expand`. It works mostly the same as `Sizing.fill` (and indeed identically in a few cases) with the important difference that it applies after all other sizing types and only takes into account the space that remains after all other components have been inflated according to their sizing. \n\nAlong with this, the new `Components.spacer` can be used to, for example, easily push two components to opposite ends of their parent\n\n## Changes\n- The `OverlayContainer` no longer closes itself when its child is clicked inbounds but doesn't consume the event. Further, it prevents the screen from closing when ESC is pressed and instead only closes itself *and* it consumes all scroll events to avoid scrolling through the overlay(#199)\n- owo-ui component trees inside one of the screen implementations provided by owo (`BaseOwoScreen` and `BaseOwoHandledScreen`) can now process and consume ESC keypresses\n\n## Fixes\n- Only the most specific tooltip at a given mouse pointer location is now rendered by an owo-ui tree, fixing overlapping tooltips in the config screen (#95) and preventing tooltips from showing on components that are hidden by an overlay (like a color picker)\n- `EntityComponent.RenderablePlayerEntity` now correctly loads skins again\n- `BaseComponent.hovered` is now only set to `true` when the component is not obscured by another one (#199)\n- When moving around the handles of a color picker, which one is affected no longer depends on the cursor position but only on which one was clicked",
+    "changelog_url": null,
+    "date_published": "2024-01-15T23:37:37.437197Z",
+    "downloads": 1126,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "afe0203030d829d797e8cf0af42dccc628767003b6ca51b881c919951dc2d296a1c88f61706e17291793082e7c80e6395ffe04a4842c345c6cdd1ec8ae015623",
+          "sha1": "896ec56b41fd406512720ff9a1b0451ec1fa2196"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/9NFjhCIH/owo-lib-0.12.1%2B1.20.3.jar",
+        "filename": "owo-lib-0.12.1+1.20.3.jar",
+        "primary": true,
+        "size": 1071097,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "e57085b563b912211f3874590060c9ea1de7fbce",
+          "sha512": "51ae3fe8ce3a612a5ef9ee1121e203bd6142bc8a5e6452e0d6c6283d1b15a0ad1fc4522c91a0a8a1bb6ce7bacf385e4dbe5523e0afc34b1cc4abaa5f5cb69954"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/9NFjhCIH/owo-lib-0.12.1%2B1.20.3-sources.jar",
+        "filename": "owo-lib-0.12.1+1.20.3-sources.jar",
+        "primary": false,
+        "size": 448791,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "rGwQL6vN",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.3+] oωo - 0.12.0",
+    "version_number": "0.12.0+1.20.3",
+    "changelog": "## Additions\nThe major addition this time around is the Endec serialization framework, an interoperable alternative to Mojang's own Codec. As outlined in the changes section, this supersedes a bunch of older owo APIs as well - notably networking. To get started with endec, check out the newly written documentation: https://docs.wispforest.io/owo/endec/\n\n## Changes\n- `NbtKey` and all associated API has been removed entirely in favor of the new, Endec-based and functionally extremely similar `KeyedEndec` used in conjunction with `MapCarrier` (which is interface-injected onto the same classes as `NbtCarrier` used to be)\n- `PacketBufSerializer` has been removed in its entirety and all dependent API updated to use Endecs instead. For writing data directly to a network buffer like the old API used to allow, use the equivalent Endec (potentially obtained from the `ReflectiveEndecBuilder`) together with the interface-injected `PacketByteBuf#write(Endec, Object)` and `PacketByteBuf#read(Endec)`\n- As a consequence of the update to 1.20.3+, the custom text API has been simplified. Because the vanilla changes make them redundant, `CustomTextContent` along with `CustomTextContentSerializer` no longer exist - instead, simply implement the vanilla `TextContent` interface, create a `TextContent.Type` with the appropriate codec and register said type in the `CustomTextRegistry` as before\n\n## Fixes\n- `ScissorStack` now clamps the width/height passed to `glScissor` to prevent causing OpenGL errors in contexts with funky transformations\n- All buffers in the draw context used for layers are now forcefully flushed before the layer is rendered to stop tooltips going missing due to scissoring in the layer\n- Forcefully flush all buffers after drawing an owo-ui tooltip (similar issues as above)\n\n---\n\nFinally, the following previously deprecated API elements have been removed:\n- `BaseParentComponent#mountChild`, use the new two-argument version instead to prevent unnecessary inflations\n- `ParentComponent#collectChildren`, replaced by the more appropriately named but functionally identical `ParentComponent#collectDescendants`\n- `OwoItemGroup#setSelectedTab`, `OwoItemGroup#getSelectedTab` and `OwoItemGroup#getSelectedTabIndex` - use the new equivalents which are aware that multiple tabs can be selected\n- `NinePatchRenderer` and `OwoNinePatchRenderers`, long-replaced by `NinePatchTexture` and `OwoNinePatchTextures`",
+    "changelog_url": null,
+    "date_published": "2024-01-01T18:11:56.861942Z",
+    "downloads": 17119,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "4997dfd14d4f2622e26fc7dbe5f545032da12484565746afb3fad5f6f024c610e9558053411d78f8f93469f535f338ddb17d6b29a8ed97fd3ee587d7008bf32a",
+          "sha1": "30a27015e67b985f58b0dce423ea884618cd1912"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/rGwQL6vN/owo-lib-0.12.0%2B1.20.3.jar",
+        "filename": "owo-lib-0.12.0+1.20.3.jar",
+        "primary": true,
+        "size": 1065470,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "7b977c88bd6a54cf4b84ec5c233e292d041791e2",
+          "sha512": "b3cc0a6044afd3da3ae3ccadec8b6a44e58545f8ba5a314f0075dc0f74d9635664278429c36d7ec1c22029e617a439529cbcf4e43158a371ea48c87aed3dc6ac"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/rGwQL6vN/owo-lib-0.12.0%2B1.20.3-sources.jar",
+        "filename": "owo-lib-0.12.0+1.20.3-sources.jar",
+        "primary": false,
+        "size": 446478,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "DYgDdRtg",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.2] oωo - 0.11.4",
+    "version_number": "0.11.4+1.20.2",
+    "changelog": "### Fixes\n - Having `librenderdoc` available system-wide on Linux no longer causes a JVM crash due to a bug in JNA which we now circumvent (#197)",
+    "changelog_url": null,
+    "date_published": "2023-12-09T21:41:23.539246Z",
+    "downloads": 69737,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b992ac6909d9443bdf4383caf0bd868735f375e5",
+          "sha512": "023f3a57ae17bcf4c828e88d92a85bce894cd5d28b44ab69973f9617094d4434c5e4059dcc2772d904456cce0e059723640307406a0c63802de21ffc3b58a8a4"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/DYgDdRtg/owo-lib-0.11.4%2B1.20.2.jar",
+        "filename": "owo-lib-0.11.4+1.20.2.jar",
+        "primary": true,
+        "size": 914419,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "99926702025d227ef370142973e1873c95705486",
+          "sha512": "3b036616c21ea31649836fbf19df892b3c0936cf665ddbc97ebfd80a1373951a9cc8bd904ccb0bd2b7f451c1f42bdf7b70e22143c681533ebe8617a1eee4a26d"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/DYgDdRtg/owo-lib-0.11.4%2B1.20.2-sources.jar",
+        "filename": "owo-lib-0.11.4+1.20.2-sources.jar",
+        "primary": false,
+        "size": 404075,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "oLoJCrky",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.2] oωo - 0.11.3",
+    "version_number": "0.11.3+1.20.2",
+    "changelog": "### Additions\n - Multiple tabs can now be selected simultaneously in a single OwoItemGroup (this behavior can be disabled for each group individually if not desired)\n - The new `panelWithInset(...)` surface allows building interfaces in the style of the Social Interactions screen\n - Sizing with different methods (for instance, content and fixed sizing) can now be animated between (there are no immediate API changes as a result of this, merely one less runtime warning and a new feature)\n - The base point (for layout calculations) and visual position (for rendering and interaction) of an owo-ui cmponent are now two separate concepts (this again comes without any breaking API changes, merely two new methods that should be called in the appropriate places)\n - Items can now automatically have their usage statistic tracked by owo through setting `OwoItemSettings#trackUsageStat()`\n - [Experimental] Screens can now implement the `DisposableScreen` interface if they need to be notified when the player actually closes all screens (that is, returns to the game) instead of immediately when navigating to a different screen (which might then later navigate back to the first screen)\n\n### Changes\n - Methods on owo-ui components which accept a collection of components now use upper-bounded generics instead of an explicit type to allow more specific collections at the call site\n - `Sizing.fill()` can now be called with zero arguments to indicate 100% fill\n - `UIParsing.registerFactory(...)` can *and should* now be called with an indentifier instead of a plain string for the element name\n - `ParentComponent#childById(...)` is no longer @Nullable, as it is generally expected to return a component in its most common use-case (querying the constituents of a UI model)\n\n### Fixes\n - Trimmed armor in an ItemComponent now renders properly (#152, Zailer43)\n - Explicitly positioned owo-ui components are no longer inflated twice for each single layout pass",
+    "changelog_url": null,
+    "date_published": "2023-10-02T16:10:25.130501Z",
+    "downloads": 51786,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "952015082a930b95aadd991bd7c79b2442ea00317da3c34434eb95052ddc7ef5056f61a7e8188e530246872bbabc9e0ea27d4f7745afbe3d0caa0f80541998cc",
+          "sha1": "2e4c9987c3d82336780bbf3fb4b283c8723a14ee"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/oLoJCrky/owo-lib-0.11.3%2B1.20.2.jar",
+        "filename": "owo-lib-0.11.3+1.20.2.jar",
+        "primary": true,
+        "size": 913817,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "zyOBB7J4",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.1] oωo - 0.11.2",
+    "version_number": "0.11.2+1.20",
+    "changelog": "### Fixes\n - Component stacking is now properly undone to prevent messing with the global z-offset (#142)\n - owo-ui HUD components are now rendered with a z-offset of 100 by default to prevent overdraw by the chat overlay (#143)\n - The EULA reader now properly works in conjunction with YesCheat (#138)",
+    "changelog_url": null,
+    "date_published": "2023-09-12T10:39:30.503498Z",
+    "downloads": 6481796,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "be88938ca5df78271e64bc9f85c3575754f33e2a",
+          "sha512": "807e4a3daf493e92c5ff0d5657efbba2a4e0cd2a9b753f2d6f153422629415f189345842a6dd258c87d4c02ebf38950a517bcd8a7ed929af6ed6485ae46cf77e"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/zyOBB7J4/owo-lib-0.11.2%2B1.20.jar",
+        "filename": "owo-lib-0.11.2+1.20.jar",
+        "primary": true,
+        "size": 905421,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "m23n3uIM",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20.1] oωo - 0.11.1",
+    "version_number": "0.11.1+1.20",
+    "changelog": "## Fixes\n - The `ltr-text-flow` algorithm for flow layouts no longer miscalculates its columns in some situations (#137)\n - Clearing the text field of a color config option no longer crashes the game (#128)\n - The owo-config annotation processor should now generate type interfaces in a deterministic order every time its ran (#139)\n\n## Changes\n - `OwoUIDrawContext.of(...)` now inherits the matrix- and scissor-stacks of the source context - this is more intuitive given how the method is named and used & fixes a few transform-related problems in owo-ui\n - The `ReiUIAdapter` now flushes the draw buffer when its finished rendering to prevent mysteriously empty tooltips\n - Item insertion order when transferring container->player inventory using `ScreenUtils.handleSlotTransfer(...)` has been reversed to match vanilla behavior\n\n## Additions\n - A set of new interface-injected methods on `DrawContext` enable easy, fluent matrix-stack manipulation directly on the associated draw context (#136, Blodhgarm)\n - owo-ui now also provides exclusion zones to EMI (#103, Abbie5)\n - `ItemOps.decrementPlayerHandItem(...)` and `.emptyAwareDecrement(...)` gained new overloads which accept a count instead of always decrementing by 1 (#141, chyzman)",
+    "changelog_url": null,
+    "date_published": "2023-07-03T22:23:51.466764Z",
+    "downloads": 151794,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7b1250bec079bd2a116fcdd453f42f5929b8cfe4",
+          "sha512": "efd542dab1dddaad79b56a352842b1e2e352c221d2f1312f8028168a7ac2a3139c5c9b8c98503720c477e4491c46131effd3e55a7f466c1793f9f37f45cb6110"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/m23n3uIM/owo-lib-0.11.1%2B1.20.jar",
+        "filename": "owo-lib-0.11.1+1.20.jar",
+        "primary": true,
+        "size": 905257,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "DgIYuFEF",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.20+] oωo - 0.11.0",
+    "version_number": "0.11.0+1.20",
+    "changelog": "## Additions\n\n### Cross-referencing in UI models\nWhen instantiating templates in a UI model, you can use the new `<template-name>@<ui-model-id>` syntax to reference a template from a different UI model. This allows much greater flexibility than before in modularizing and re-using templates across different screens.\n\nAlong with this change, the `<components>` element in UI model definitions is no longer required.\n\n### UI\n - The `blur()` surface now supports parsing from UI models\n - `BaseOwo*Screen` implementations now provide the `component(...)` shorthand for `this.adapter.rootComponent.childById(...)`\n - Layers can now align their components relative to Minecraft's handled screen coordinates using `alignComponentToHandledScreenCoordinates(...)` on the instance\n - `Surface.PANEL_INSET` was added, which renders an inset area to be used inside `Surface.PANEL` - this looks very similar to the vanilla recipe book panel\n - Two new components, `smallCheckbox(...)` and `slimSlider(...)`, were added - they function mostly identically to the already existing counterparts, but (as the name implies) take up less space and offer more customizability\n - `TextAreaComponent`, a third new component, is an extension of vanilla's new `EditBoxWidget` for general-purpose use and optimized to play nicely within an owo-ui context\n - `ItemComponent` offers a new property, `setTooltipFromStack`, which always keeps the component's tooltip in sync with the item stack it's displaying\n - The height of each line a `LabelComponent` can now be configured using the new `lineHeight` property, which allows properly supporting non-standard fonts\n - Components can now be placed at fixed percentage across their parent without respecting the components own size using `Positioning.across()`\n - `StackLayout` respects much the same layout rules as `FlowLayout`, but doesn't place components next to each other - instead it places them on top of each other, thus creating a stack of components\n - `Containers.ltrTextFlow(...)` creates a new type of FlowLayout, which works just like `Components.horizontalFlow(...)` but wraps when it exceeds its own width - just like how left-to-right text is laid out in a document\n - Block, item, and entity components now support NBT (and in the case of blocks, block state data) when being parsed from a UI model\n\n### Config\nServer-sided retrieval of a client's config options has been made more ergonomic. For this purpose, the generated config wrapper now exposes the key of each individual option through the `.keys` object. Further, `ConfigSynchronizer.getClientOptions` received a new override which directly accepts the config wrapper, enabling the following API:\n\n```java\nvar optionValue = ConfigSynchronizer.getClientOptions(player, MyMod.CONFIG).get(MyMod.CONFIG.keys.someOption);\n```\n\n### Misc\n - owo-sentinel now lists the mod which included it in addition to all mods that depend on owo, in an effort to reduce confusion when mod authors don't declare their dependency (BasiqueEvangelist, #123)\n - `AutoRegistryContainer` provides two new convenience functions:\n    - `.register(...)`, which is simply an alias for `FieldRegistrationHandler.register(...)`\n    - `.conform(...)`, which forcefully casts a `Class<?>` to a `Class<T>` for implementing `getTargetFieldType()` for parametrized classes\n\n## Changes\n\n### UI\n - `HUD` now processes removal requests before add requests, allowing HUD components to be properly reloaded within the same frame\n - When the inspector draws slot indices in a handled screen, it now uses `H:` to denote the slot index in the handler and `I:` to indicate that slot's index into its respective inventory\n  - The `file(...)` UI model data source is now deprecated in favor of a new, configurable hot reload system which is only active in development. This way, you cannot accidentally ship your mod with the file data source enabled, causing it to crash in production\n  - `NinePatchRenderer` was renamed to `NinePatchTexture` and reworked to function in a data-driven manner. No old functionality has been removed yet, it was however deprecated. More details on how to use the new implementation will be added to the documentation shortly\n\n## Fixes\n\n### UI\n - `ItemComponent`s once again use correct lighting on side-lit models *and* apply lighting properly when non-side-lit models are scaled down\n - `LabelComponent` now properly fetches the text style under the cursor when determining which hover and click events to execute\n - `TextFieldWidget` and `EditBoxWidget` now have their `tick()` function called when wrapped by owo-ui, making their cursors blink properly\n - `ScrollContainer.scrollTo(...)` now works properly on horizontal containers and has a new overload for directly specifying the target scroll offset without supplying a component\n\n### Config\n - owo-config screen providers are now once again properly listed in Mod Menu\n\n### Misc\n - `ParticleSystemController`s no longer forcefully require handshaking when merely mentioned, fixing optional handshaking (BasiqueEvangelist, #123)\n - By utilizing new API within Roughly Enough Items, handled screens built with owo-ui now properly layer with the REI overlay - there should be no more over- and underdraw\n\n---\n\nFinally, the following previously deprecated API elements have been removed:\n - `VerticalFlowLayout` and `HorizontalFlowLayout`, which have been replaced by instantiating `FlowLayout` with the respective Algorithm\n - `OptionComponent` and `OptionComponents.createSlider`, which were replaced by `OptionValueProvider` and `OptionComponents.createRangeControls` respectivel\n - `SliderComponent#onChanged`, replaced by the respective event stream",
+    "changelog_url": null,
+    "date_published": "2023-06-08T12:12:49.389267Z",
+    "downloads": 126894,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f7405909180eef5d903ebf0cb7ed19007a166247",
+          "sha512": "98c478c31a530ca2a2e0f071a3bac00e5cb95f9f46f638d180ecf921bf4e312fe2fd69b6705d3b84f0c8f5b5d5084ec9c8c773377252164fd718147814a327ff"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/DgIYuFEF/owo-lib-0.11.0%2B1.20.jar",
+        "filename": "owo-lib-0.11.0+1.20.jar",
+        "primary": true,
+        "size": 895864,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "beTZr7PG",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19.4] oωo - 0.10.6",
+    "version_number": "0.10.6+1.19.4",
+    "changelog": "Continuing the spirit of the last two releases, this build brings another very important fix - this time to config synchronization. The previous implementation had a bug where all synced options would be lost upon death of the player, which caused crashes specifically in conjunction with [YIGD](https://modrinth.com/mod/yigd) and [Numismatic Overhaul](https://modrinth.com/mod/numismatic-overhaul)\n\nThis should ideally be the last build that backports fixes from the 0.11 prereleases and therefor the last release for 1.19.4 before we move onto 1.20",
+    "changelog_url": null,
+    "date_published": "2023-05-30T17:28:29.434216Z",
+    "downloads": 31494,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "48e5136cc8c5113deeb72d8468050a12bd54ebf7",
+          "sha512": "2325f03be34a519e3fb5a159f529435813648feafca97b0332d84196b2a16eaa600712565e2cac0de5a7f0249fc08298c1d566ada37762b6de5c22b46d405748"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/beTZr7PG/owo-lib-0.10.6%2B1.19.4.jar",
+        "filename": "owo-lib-0.10.6+1.19.4.jar",
+        "primary": true,
+        "size": 839684,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "5QgPEzLH",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19.4] oωo - 0.10.5",
+    "version_number": "0.10.5+1.19.4",
+    "changelog": "Just like [0.10.4](https://modrinth.com/mod/owo-lib/version/0.10.4+1.19.4), this is another round of small fixes:\n - Fabric API fixed their implementation of the screen render event, leading to owo's workaround now breaking rendering of owo-ui layers\n - Lighting orientation on owo-ui item components was fixed, as proposed in #119",
+    "changelog_url": null,
+    "date_published": "2023-05-25T21:00:17.37778Z",
+    "downloads": 794,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "16eb8431a5e79232049a07c1cf6305b9f777b9237793b80c88efdadcb2d3a639c06b988160b8549dcbf0862cf6e6b5b508f4bfc349f1e7d4e780437cf414af3c",
+          "sha1": "3424270ea36bdcf2567fa786c70099a63967e987"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/5QgPEzLH/owo-lib-0.10.5%2B1.19.4.jar",
+        "filename": "owo-lib-0.10.5+1.19.4.jar",
+        "primary": true,
+        "size": 840117,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "T8DsELMD",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19.4] oωo - 0.10.4",
+    "version_number": "0.10.4+1.19.4",
+    "changelog": "Similarly to [0.10.3](https://modrinth.com/mod/owo-lib/version/0.10.3+1.19.4), this build contains more changes to the core shader loading system.\n\nThe immediate effect of this is proper compatibility with the QSL implementation of Fabric's Core Shader API, although it should also make such incompatibilities much more unlikely to occur in the future",
+    "changelog_url": null,
+    "date_published": "2023-05-19T09:23:50.495697Z",
+    "downloads": 1810,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ff9bbb58b21012fa4c344c60e39daefabda4de63",
+          "sha512": "ae31b3548a02a048c95f07e8a58d46c9ed07a023e8985042e2d310270561df681638b6cf4eab26232f08c6836271a8c4292d3175df3a2beacd8cdecb68845dfd"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/T8DsELMD/owo-lib-0.10.4%2B1.19.4.jar",
+        "filename": "owo-lib-0.10.4+1.19.4.jar",
+        "primary": true,
+        "size": 840098,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ORA8RfoA",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19.4] oωo - 0.10.3",
+    "version_number": "0.10.3+1.19.4",
+    "changelog": "This build is indentical feature-wise to [0.10.3 for 1.19.3](https://modrinth.com/mod/owo-lib/version/0.10.3+1.19.3)",
+    "changelog_url": null,
+    "date_published": "2023-03-20T22:13:06.805261Z",
+    "downloads": 33228,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a17decd63e9da0f5e0bc818645dbe592220c1d90",
+          "sha512": "fac5162b28082efeb416a4583b73809a14a505f1f15f9d7a05cd3657259eaab8b010cd7018c9e60b719ce1b28aaeee8142cb98109a66420e7c626d289128c91f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/ORA8RfoA/owo-lib-0.10.3%2B1.19.4.jar",
+        "filename": "owo-lib-0.10.3+1.19.4.jar",
+        "primary": true,
+        "size": 839526,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "gmwB5dLB",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19.3] oωo - 0.10.3",
+    "version_number": "0.10.3+1.19.3",
+    "changelog": "This release primarily fixes compatibility with Fabric API's latest core shader registry addition. As such, Fabric API >=0.76.0 is now required.\n\nAlong with this, parsing order in owo-ui's `text-box` has been corrected to set `max-length` before reading `text` (#110)",
+    "changelog_url": null,
+    "date_published": "2023-03-16T00:06:21.032379Z",
+    "downloads": 15089,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "491cc4939c60e4f8321abb55be81498fb91e2cd9",
+          "sha512": "a3ec2556e32b76f64f3d1252dbc2e08bd6f26cb6d3fb06377d0c09b7de4f98a48895f4da49b5d4eac170975f4d92cd9f4111c97922f705df54ddfa3e12377e62"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/gmwB5dLB/owo-lib-0.10.3%2B1.19.3.jar",
+        "filename": "owo-lib-0.10.3+1.19.3.jar",
+        "primary": true,
+        "size": 843024,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "KMwbSA7v",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19.3] oωo - 0.10.2",
+    "version_number": "0.10.2+1.19.3",
+    "changelog": "### Changes\nThe vertical and horizontal layout algorithms that were previously implemented in the respective subclasses of `FlowLayout` have been factored out into two implementations of the new `Algorithm` interface. The subclasses are temporarily preserved for backwards-compatibility but are deprecated and will be removed in the next major version.\n\nIdeally you should already migrate your code to use the generic `FlowLayout` class to prepare for the move\n\n### Fixes\n - The injections into `ShaderProgram` are no longer required, which should fix compatibility with Satin on Quilt (#83)\n - Entity name tags are now rendered by default again, whereas before they would only appear after seeing an owo-ui entity component for the first time (#84)\n - Vanilla text fields (and thereby owo text boxes) are once again `GreedyInputComponent`s\n - Yet another situation in which a scroll container could achieve a scroll value of `NaN` has been resolved",
+    "changelog_url": null,
+    "date_published": "2023-01-31T22:48:24.689794Z",
+    "downloads": 4302,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2d6b8bd43a0be84495957406b3a88bf2b871bbc50ccdb1424c5456028a9b7508df7f709888f7b152c8aab2154aa3838e910cf809edd54f20659d33a934291164",
+          "sha1": "e2dcd88e87a3a0ade66d99348cd19eddccf696fb"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/KMwbSA7v/owo-lib-0.10.2%2B1.19.3.jar",
+        "filename": "owo-lib-0.10.2+1.19.3.jar",
+        "primary": true,
+        "size": 841171,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "LI7k719Y",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19.3] oωo - 0.10.1",
+    "version_number": "0.10.1+1.19.3",
+    "changelog": "This build fixes a crash that would occur when Satin is installed alongside owo by allowing Satin's shader identifier fixin to take precedence of owo's very similar implementation",
+    "changelog_url": null,
+    "date_published": "2023-01-18T21:45:34.222678Z",
+    "downloads": 3180,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "84681d2381fcbc4e00c4c44e1813d5658c10578e5229f6729abc94ea5163a7e41b27e583710be9041074a46ccd9511483a46c36cb9d6efb719bb45a7ce914e84",
+          "sha1": "6a1527169cde0184db95f5984e3fb6312723dafa"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/LI7k719Y/owo-lib-0.10.1%2B1.19.3.jar",
+        "filename": "owo-lib-0.10.1+1.19.3.jar",
+        "primary": true,
+        "size": 840515,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "gsbvHClE",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19.3] oωo - 0.10.0",
+    "version_number": "0.10.0+1.19.3",
+    "changelog": "## Additions\n\n### UI\n - The new `ColorPickerComponent` presents an easy-to-use, self-contained way to choose a color. It visually presents a standard HSV picker, with a hue (and optionally alpha) slider and picker for value and saturation. The picker itself shows neither a color preview nor hex field - these can easily be added externally via the color selection event stream supplied by the picker\n - UI overlays like popup dialogs can now be easily realized via the new `OverlayContainer`, accessible via `Containers.overlay(...)`. This component, when added to some parent (in most cases the root), renders an overlay covering the entire parent and places its child in the center. By default, it automatically closes itself when a click event is received outside the child\n - `ItemComponent` features the new `tooltipFromItem` utility method, which can be used to gather the full tooltip of an item stack, including extra tooltip data\n - Rendering of nametags in `EntityComponent` can now be toggled on a per-component basis\n - The new `openAsContextMenu` function on `DropdownComponent` enables easy integration of context menus into any screen\n - Animations on component properties now provide the `finished()` event stream which emits every time the animation finishes a full run in either direction\n - `RenderEffectWrapper`, accessible via `Containers.renderEffect` offers a hassle-free way to apply arbitrary rendering effects to its children. Check out the [component's javadoc](https://github.com/wisp-forest/owo-lib/blob/1.19.3/src/main/java/io/wispforest/owo/ui/container/RenderEffectWrapper.java) for a more complete overview\n\n### Config\n - owo-ui's `Color` type is now supported in configs. This means it will be properly serialized as a string representing the color in `#AARRGGBB` format and displayed that way in the config screen. With this also comes an optional color picker, allowing your users to easily pick a color (optionally with alpha as well)\n - The Jankson serializer instance used by any given config wrapper can now be customized through the new, optional constructor parameter. This enables non-standard serialization of existing types and also allows serializing completely custom types\n - The `@RangeConstraint` annotation has gained the new `decimalPlaces` parameter which controls how many decimal places are shown when this option is edited as a slider\n\n### Rendering\nThe `Drawer` class has gained a few new rendering functions to fill in missing functionality:\n - **drawCircle** and **drawRing** can be used to draw either a filled circle or ring with specific inner and outer radius respectively\n - **drawLine** draws an arbitrary line as a quad instead of using OpenGL's line mode, which allows more correct control over thickness\n\nAdditionally, the new `GlProgram` class and corresponding infrastructure enables usage of custom core shaders from mod namespaces. Two default programs are provided, although they are not currently part of stable public API:\n - **OwoClient.BLUR_PROGRAM** applies an approximate gaussian blur to the area it draws over\n - **OwoClient.HSV_PROGRAM** works much the same as the standard position-color program, but accepts the color attribute in HSVA format instead of RGBA\n\n## Changes\n\n### UI\n - The HSV interface of `Color` has been improved: Constructing a color with a hue of 1 no longer causes it to become yellow instead of red and the new `hsv()` getter can be used to convert from RGB to HSV easily\n - The REI exclusion zone provider now gathers the components directly from the UI adapter instead of simply assuming that it's available as the first drawable child of the screen - this should fix some edge cases in which the exclusion zones were broken due to a different widget somehow being inserted into the screen before the UI adapter\n - The `RenderablePlayerEntity` inner class of `EntityComponent` is now publically accessible - this makes it easier to call methods on such entities and allows easily extending the class if so desired\n - `DropdownComponent.requiresHover` has been renamed to `closeWhenNotHovered` to more clearly communicate its purpose. The entire dropdown system has been slightly overhauled in general to be more visually pleasing and easier to use \n\n### Config\n - `OptionComponentFactory.Result` now features two type parameters to more cleanly carry information about the contained components\n - All numeric, range-constrained config options can now be edited with either a slider *or* text field, at the discretion of the user\n\n## Fixes\n\n### UI\n - Sprite components with ticked sprites should now properly animate with Sodium's \"Only animate visible textures\" option enabled (BasiqueEvangelist, #78)\n - When cycling UI component focus with the Tab key, the first component no longer get skipped and the children of a grid layout are no longer focused in reverse order (#77)\n - Fire and the nametags of entities are now properly aligned in `EntityComponent`\n - Buttons and checkboxes in dropdown can now be properly clicked on the entire width of the dropdown\n - Layers now handle event parameters in a different way that works around a memory present in Fabric API's event system. This previously caused owo screen instances to be leaked, which is no longer the case (#81)\n\n### Misc\n - Items from `OwoItemGroup` sub-tabs which are not the first one are now properly indexed for search in the creative inventory\n - owo-sentinel now one again has full functionality when running on the Quilt Loader",
+    "changelog_url": null,
+    "date_published": "2023-01-17T22:32:22.725841Z",
+    "downloads": 181,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "25981bd2eee20585219842fe15c13920879d1188",
+          "sha512": "2bb66ac286e76987b59b657e4ddcc648e273b74964dfc87589ca1b83a59d8114c82c7f940611d0173def327543bf3212c21523c71570009d0f73ab623f86d81e"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/gsbvHClE/owo-lib-0.10.0%2B1.19.3.jar",
+        "filename": "owo-lib-0.10.0+1.19.3.jar",
+        "primary": true,
+        "size": 840344,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "yGLYmVnT",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19] oωo - 0.9.3",
+    "version_number": "0.9.3+1.19",
+    "changelog": "Refer to 0.9.3+1.19.3",
+    "changelog_url": null,
+    "date_published": "2022-12-09T00:04:46.996605Z",
+    "downloads": 541946,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b9b5d047e1e71fb47d459198194e2e53b10db10a3ecec52db8922f821fc2465d58e0d91e2ba2c9d13a3fabbdb2d9df113200e517ed87f76ea284d4cda017fc3e",
+          "sha1": "86a14dfac6a05d8ee78a331a2ce2a06382e1a271"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/yGLYmVnT/owo-lib-0.9.3%2B1.19.jar",
+        "filename": "owo-lib-0.9.3+1.19.jar",
+        "primary": true,
+        "size": 780597,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "2yMO9WGE",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19.3] oωo - 0.9.3",
+    "version_number": "0.9.3+1.19.3",
+    "changelog": "This build primarily constitutes the first public release for 1.19.3. It also fixes a bug introduced in 0.9 which caused text field event listeners to break in production.",
+    "changelog_url": null,
+    "date_published": "2022-12-09T00:02:43.896607Z",
+    "downloads": 9407,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5f7c995423120cd5d1843cd5f8739f88bc970732661914312fcda9e95e9b7ac548d7043034f7fecec165fe95fbb6b259c482bc600beaadac878f86a25bbeef2f",
+          "sha1": "aa1110653ab4cc95bfe94913405b3fb52caa0bba"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/2yMO9WGE/owo-lib-0.9.3%2B1.19.3.jar",
+        "filename": "owo-lib-0.9.3+1.19.3.jar",
+        "primary": true,
+        "size": 785492,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "JX2OM2ED",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19] oωo - 0.9.2",
+    "version_number": "0.9.2+1.19",
+    "changelog": "This build reverts a change made to the Item Group API when porting to 1.19.3 which caused the creative tabs of mods which use an owo Item Group without owo item settings to be empty. This affected primarily Conjuring (for which a separate update was released) and Numismatic Overhaul",
+    "changelog_url": null,
+    "date_published": "2022-11-28T22:27:30.393897Z",
+    "downloads": 987,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f1d51def6867d69d9aebfb63ed8a6fc770514c85790fc26cc0293acd73c1cfad485668ed298c051acf2df8e85f17d06899ab841dfcb38174b534b36b12ed30a0",
+          "sha1": "823082751a39e7f8a9b7f5a06b2a7d25cea99618"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/JX2OM2ED/owo-lib-0.9.2%2B1.19.jar",
+        "filename": "owo-lib-0.9.2+1.19.jar",
+        "primary": true,
+        "size": 779146,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "fr6mJFIx",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19] oωo - 0.9.1",
+    "version_number": "0.9.1+1.19",
+    "changelog": "This build fixes an NPE that would occur when config search focuses an option inside 2+ collapsed containers",
+    "changelog_url": null,
+    "date_published": "2022-11-27T23:19:01.260792Z",
+    "downloads": 1214,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "29b4bba8fcc21dd3e02290932cb8b4ba771f98796b05fc14d44cf3091e34a60f8814478b879075a80e0f382176eab4f2c6306e50bb22f78ffb6f2bd7dd1ec4eb",
+          "sha1": "9aba998fb9c206c551bcb7ced0ce8a7293dcf370"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/fr6mJFIx/owo-lib-0.9.1%2B1.19.jar",
+        "filename": "owo-lib-0.9.1+1.19.jar",
+        "primary": true,
+        "size": 779146,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "lEVNuJ3B",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19] oωo - 0.9.0",
+    "version_number": "0.9.0+1.19",
+    "changelog": "## Additions\n### UI\n - Cursor styling functionality from `OwoUIAdapter` is now available globally via the new **CursorAdapter** abstraction, which also provides the implementation for owo-ui\n - The new **configure** method on `Component` enables inline configuration of component properties which don't return the component itself. Due to limitations with Java's generic parameters, it is required to manually specify the type of component you're configuring when calling this method, like so: `Components.label(...).<LabelComponent>configure(label -> label.mouseDown().subscribe(...))`. <br> Additionally, any state change events emitted during execution of such a configuration closure are delayed until the closure has completed - this enables large performance improvements when configuring multiple properties of a mounted component, including adding/removing children, as everything is consolidated into a single layout pass\n - The flow layout has gained the new **gap** property, which adds the specified amount of dead space between each child\n - Collapsible containers now expose the `onToggled` event stream as well as their current state\n - All components can now easily look up the root component in their respective tree using the new `root()` method\n - Text box max length can now be defined in XML with the `max-length` element\n - The new **popFramesAndDraw** method on `ScissorStack`, allows escaping up to the given amount of clipping frames and execute the supplied draw call\n - owo-ui colors can now generate a hex color string via the **asHexString** method\n - Entity components can now have an additional **dynamic transform** applied before rendering the entity\n - `Components#textBox(...)` no longer creates and returns a `TextFieldWidget`, instead it creates a **TextBoxComponent**. This is owo-ui's extension of the vanilla text field, which properly sizes itself if the background is disabled and provides the **onChanged** event stream. This stream only emits events when the text in the box *actually changes*, unlike the vanilla change listener\n\n### Config\n - The config screen now includes a search bar which allows searching through all options and sections by name and value. This search function acts like search in a text editor - you enter your query, then press enter, after which you can inspect all matches individually by pressing enter again\n - The new client-side `/owo-config` command can open all config screens for which a provider is registered, even when modmenu is not installed\n - `Set<T>` is now a supported type for config options\n\n### UI - Layers\nBuilt on top of owo-ui, a new system called **Layers** has been introduced. This generic API allows adding, or layering if you will, owo-ui components onto arbitrary existing screens. It comes with a helper system that allows easily locating existing vanilla widgets on the screen, as well as the option to align your own components relative to them\n\n### Screen Handler Properties and Messages\nThe new `createProperty` along with `addServerboundMessage` and `addClientboundMessage` methods injected into `ScreenHandler` allow for a significant simplification of screen networking. Everything owo can serialize by default is supported out of the box for properties, which automatically get synchronized to the client, and for messages the same rules apply as for standard packets in an `OwoNetChannel`. As always, if a serializer is missing you can add your own via `PacketBufSerializer.register(...)`\n\nThis system should completely eliminate the need for externally defined networking, everything can be done directly inside the screen handler\n\n## Changes\n### ItemGroup API\n - Existing item groups can now be extended with additional sub-tabs and buttons via mod data\n - The name of a sub-tab is now displayed after the name of the item group, given that the tab does not have the new `primary` attribute\n - Each sub-tab can now declare its contained items more rigorously, as they now define a callback which gets executed to populate the group\n - [1.19.3 only] `OwoItemGroup`s now define their icon in terms of an owo `Icon`, meaning you are no longer restricted to just item stacks\n\n### UI\n - Sliders have been migrated to use event streams just like other input events and gained the new `slideEnd` event stream which gets invoked when the user releases the slider handle\n - `apply_ContentSizing` in `BaseComponent` has been replaced by `determnine_ContentSizing` which now returns the content size instead of applying it directly\n\nMoreover, the layout algorithm has received a major optimization that improves layout times in complex screens **by up to 560%**\n\n### Config\n - Additionally to the existing method, enum config options can now be translated on a per-config instead of a per-option level \n - When adding a new entry to a list config option while it isn't expanded, the list now opens itself and focuses the new entry (#68)\n - The previously private mechanism for registering config screen providers used by the `@Modmenu` annotation has been made public as `ConfigScreen#registerProvider`. This means that any potential custom config screen implementations can now be easily registered without needing an additional dependency on modmenu\n\n### Misc\n - The `owo.forceDisableDebug` system property is now deprecated and superseded by simply setting `owo.debug` to `false`\n\n## Fixes\n### UI\n - Scrollbars can no longer exceed the size of the container\n - When dragging the scrollbar in a precisely filled scroll container, the content no longer becomes invisible\n - All button renderers now properly draw with depth testing enabled\n - Text boxes, more specifically `TextFieldWidget`, now properly respond to focus events\n - The UI Interaction sound event is no longer added to the respective registry, which means that client-side mods which use owo no longer cause registry sync to fail (#72)\n - Animations on parent components no longer update twice per frame\n\n### Config\n - Section headers applied to `@Nest` options now show up properly\n - The config screen no longer attempts to apply constraints placed on `List` config options to that lists elements (#69)\n - owo is inherently funny\n\n### Misc\n - owo no longer crashes when run on a dev server\n\n### Removed deprecated elements\n - `TexturedButtonComponent`, superseded by `ButtonComponent.Renderer#texture(...)`\n - All methods in `Components` which returned `ButtonWidget`, superseded by `ButtonComponent`\n - `ScreenUtils#generateSlotGrid` and `ScreenUtils#generatePlayerSlots`, superseded by `SlotGenerator`\n - `ScrollContainer.scrollbarColor`, superseded by `ScrollContainer.Scrollbar#color(...)`",
+    "changelog_url": null,
+    "date_published": "2022-11-22T21:22:11.17653Z",
+    "downloads": 690,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "4e617cfa796a1567affc30109ea6f56d32928b77",
+          "sha512": "6ca8c421cb3bc95b366b1fae73928ffbc493a703997c6bfa2e04cb427d58b10a64ac63ffe0ce99bd125ce59a96db8dcb8e5889a97475c48a2b039dd929eadcff"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/lEVNuJ3B/owo-lib-0.9.0%2B1.19.jar",
+        "filename": "owo-lib-0.9.0+1.19.jar",
+        "primary": true,
+        "size": 779029,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "bJtMgK25",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19+] oωo - 0.8.5",
+    "version_number": "0.8.5+1.19",
+    "changelog": "### Changes\n - The slot management methods on `BaseOwoHandledScreen` now have overloads which directly accept a slot instance instead of just and ID\n - The Z-Offset of the inspector can now be customized in OwoUIAdapter\n - The new ReiUIAdapter#wrap(WidgetWithBounds) allows embedding most if not all of REI's existing Widgets in an owo-ui-based REI display category\n\n### Fixes\n - Mouse coordinates are now passed with proper offsets when propagating mouse events to the focused component",
+    "changelog_url": null,
+    "date_published": "2022-10-14T20:36:38.154534Z",
+    "downloads": 43609,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d2d1077c77e7c375aa3c29f7dd80efcad9d4a8af5a3091c4e06f8b569bafbb77a8625e9cde108e4e056045049a558a7bd4520a15a2198b5c52b39938829937f5",
+          "sha1": "4d774bf7803ac83efdecb8528afa289c3b193d74"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/bJtMgK25/owo-lib-0.8.5%2B1.19.jar",
+        "filename": "owo-lib-0.8.5+1.19.jar",
+        "primary": true,
+        "size": 715280,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "Dmqb8GqA",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19+] oωo - 0.8.4",
+    "version_number": "0.8.4+1.19",
+    "changelog": "### Changes\n - Texture components have a new property  - `blend`. When this is enabled, OpenGL alpha blending is properly set up and you can use translucent textures\n - All synced config options are now synced in `INFORM_SERVER` fashion even when playing singleplayer\n\n### Fixes\n - The client-only `renderdoc` command is no longer registered on the server, allowing you to start servers with owo in debug mode again\n - The `visible-area` declaration in the UI Model XML schema no longer requires all values to be specified\n - The intersection comparisons used for mouse events and component visibility checks no longer over-account by one pixel\n - String config options can now contain backslashes (#59)",
+    "changelog_url": null,
+    "date_published": "2022-10-10T20:47:50.598456Z",
+    "downloads": 249,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "19a9597eaa02bbb6762836ed5816b74cfe82eb9f57eaef2f396c89f2085bd05aa7b6b6bc07b0a271c28df1ebbd3f6721d4db306c89687a545c5570bb02de2283",
+          "sha1": "378de6cce4a19671b179c02834fb15c4295c065c"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/Dmqb8GqA/owo-lib-0.8.4%2B1.19.jar",
+        "filename": "owo-lib-0.8.4+1.19.jar",
+        "primary": true,
+        "size": 708879,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "RV8F1iab",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19+] oωo - 0.8.3",
+    "version_number": "0.8.3+1.19",
+    "changelog": "## Changes\n\n### Component customization \n - Button rendering can now be completely customized, with a new flat renderer available among the defaults. This also means `TexturedButtonComponent` is now deprecated and superseded by the `texture` button renderer\n - Scrollbar rendering is now fully customizable as well. By default, this includes the two types of vanilla scrollbar used in game menus and the creative inventory screen as well as the default flat owo-ui scrollbar. Scroll containers can now also define an increment by which they are scrolled and the length of the scrollbar can be set to a fixed value\n - owo-ui now features the `NinePatchRenderer` utility, which can draw a nine-patch style texture in both tiled and stretched mode with next to no performance impact. This is used to enable the new scrollbar rendering and also allows buttons to scale to arbitrary sizes, contrary to the vanilla implementation. As it is also used to draw the panel surface, performance on all screens that use panels should be improved\n\n### RenderDoc integration\nWhen RenderDoc is injected into a game instance with owo installed, you can now take advantage of comprehensive bindings to RenderDoc API. In-game this enables the new `/renderdoc` client command which opens a screen that lets you configure the RenderDoc overlay as well as take captures and launch the Replay UI. Additionally, when in an owo screen, CTRL+ALT+R can create a capture of only the draw calls relevant to screen - check out the docs over at https://docs.wispforest.io/owo/renderdoc/\n\n## Fixes\n\n### owo-ui\n - Scroll containers now properly account for their child's margins and mount it with the current scroll position already applied\n - Named text colors no longer need to be intentionally misspelled to get parsed properly\n - The inspector can no longer go offscreen\n - Vanilla widgets now properly propagate the focus events\n - Component visiblity is now checked with the model view transform applied\n - Labels no longer cause unnecessary state updates\n - Tooltips now properly respect overflow clipping and component visibility\n - Checkboxes now properly emit all checked/unchecked events\n\n### Other\n - `@Nest` config entries can now have the same name as their class (#52)\n - sentinel now always runs in console-mode on macOS (#51)",
+    "changelog_url": null,
+    "date_published": "2022-10-03T17:52:10.401726Z",
+    "downloads": 430,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "09a967db63e9ab4fbb9de485646976d2a498b590",
+          "sha512": "73ecc505e9ea75defedc9a0b585abe342cf1c9a9a0a8f6a1a949450df2f0e94a953324a77414f69871c91366fd1692093da027f5e29c77d3263cd5318462ea3f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/RV8F1iab/owo-lib-0.8.3%2B1.19.jar",
+        "filename": "owo-lib-0.8.3+1.19.jar",
+        "primary": true,
+        "size": 708045,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "NzQ8iAeC",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19+] oωo - 0.8.2",
+    "version_number": "0.8.2+1.19",
+    "changelog": "### Changes\n - The biggest change in this release is the addition of the SlotComponent, a simple wrapper for handled screen slots. You can obtain the instance for a given slot via the `slotAsComponent(int)` method on `BaseOwoHandledScreen`. It will then always move the linked slot to where the component gets placed by the layout and apply clipping properly\n - Config wrappers now create the full file path of a config - this allows properly grouping multiple configs in a directory\n\n### Fixes\n - The Modrinth item group icon now matches current branding\n - Status effects in the creative inventory now properly shift when there are item group buttons in the way\n - Pressing tab in an owo item group with buttons or tabs no longer renders a tooltip whereever the cursor is",
+    "changelog_url": null,
+    "date_published": "2022-09-11T00:06:40.740401Z",
+    "downloads": 21233,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7b14b2b8f1e7b71fd5ac7a41d2a20c7c8694dbdd36134bfa46d6d45e42dc88dc66236223cbe1741d3590a1cb5fb7e88544f2d19f46a287bf6863da726995955b",
+          "sha1": "4fb70075624fe7364632ecfca68ae8d1678a32b4"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/NzQ8iAeC/owo-lib-0.8.2%2B1.19.jar",
+        "filename": "owo-lib-0.8.2+1.19.jar",
+        "primary": true,
+        "size": 649188,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "HqAtE0un",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19+] oωo - 0.8.1",
+    "version_number": "0.8.1+1.19",
+    "changelog": "## Fixes\n - The config Annotation Processor no longer crashes when you have a config model without any nested objects",
+    "changelog_url": null,
+    "date_published": "2022-09-07T15:42:01.943948Z",
+    "downloads": 707,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "3d63c9ebdfe1f1f80571ff3662bc13a887cab49e",
+          "sha512": "ef43c158dcfa4b398c28c327f3ade9c3c0c2515a1472a5c13ab6b52367132922604c76718f897f9ed77ad4b9887546c26a00f1bb09119c32a718a5979aef7e45"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/HqAtE0un/owo-lib-0.8.1%2B1.19.jar",
+        "filename": "owo-lib-0.8.1+1.19.jar",
+        "primary": true,
+        "size": 644131,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "C46ht027",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19+] oωo - 0.8.0",
+    "version_number": "0.8.0+1.19",
+    "changelog": "### The 0.8 Update\nThis release marks the first public beta of owo-lib 0.8, the UI and Config update. As that name suggests the primary new features in this release are the owo-ui GUI framework and the owo-config configuration and screen generation library. You can find their respective documentation here:\n - owo-ui: https://docs.wispforest.io/owo/ui/\n - owo-config: https://docs.wispforest.io/owo/config/\n\nBoth of these additions are highly complex and introduce potential bugs. There has been extensive testing to try and ensure a smooth start, but of course we cannot guarantee that everything has been squashed. So while we consider it more than safe enough to use, keep this in mind and please report any bugs you may find.\n\n### Other changes\nThere have also been a number of smaller refactors and new deprecations across the entire library, notably ScreenUtils#generatePlayerSlots has been deprecated and replaced with the more flexible and powerful SlotGenerator utility. owo-sentinel has finally been fixed to work properly in 1.19 environments and the rich translations feature is now fully compatible with Server Translations API. \n\nAnother small new feature, courtesy of [Blodhgarm](https://github.com/Dragon-Seeker), is the Recipe-specific Remainders API which, as the name suggests, enables recipe remainders to be defined and applied on a per-recipe level instead of globally.\n\n### Deprecated APIs\nAs this is a large release, the majority if not all previously deprecated APIs have been stripped and/or partly refactored. The majority of mods should be fine, although if you haven't updated in a while there's potential you need to fix some things.",
+    "changelog_url": null,
+    "date_published": "2022-09-06T22:44:07.596314Z",
+    "downloads": 836,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "abc6fd8fc6e71c3edfdc902ece53d0d913bc4fbbc8b214e345566e3e32b6c45b008e76c10b1f2b18294827534c99ed74f1f15bc2947c9c1904faa8f4d745aaba",
+          "sha1": "7d38b83945c8f53b17f75e2016bbc46c1d19af9a"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/C46ht027/owo-lib-0.8.0%2B1.19.jar",
+        "filename": "owo-lib-0.8.0+1.19.jar",
+        "primary": true,
+        "size": 644175,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "uAXx21D1",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18.2] oωo - 0.7.2",
+    "version_number": "0.7.2-no-cme+1.18",
+    "changelog": "## Changes\n - Refer to changelog for [0.7.3+1.19](https://modrinth.com/mod/owo-lib/version/0.7.3+1.19)\n\n## Fixes\n - CME during oregen should be fixed",
+    "changelog_url": null,
+    "date_published": "2022-06-09T11:10:15.546285Z",
+    "downloads": 19733,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d6d82ce6e88446adba46d686e6a71cd127eb5c3a6ef55919007d02beb8555ee214921eecf28d9b1fa463ddd05786f04497d082e3af4797c5cb45397a262ec378",
+          "sha1": "592c404a4a01608990abab9841279276267ae1fc"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.7.2-no-cme%2B1.18/owo-lib-0.7.2-no-cme%2B1.18.jar",
+        "filename": "owo-lib-0.7.2-no-cme+1.18.jar",
+        "primary": true,
+        "size": 228510,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "aXMVV7gj",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.19] oωo - 0.7.3",
+    "version_number": "0.7.3+1.19",
+    "changelog": "## Changes\n - /heal and /damage now report the effective HP change\n - Argument order in VectorSerializer now matches convention, store and storef have been renamed to put and putf\n - sentinel is now intialized in a mixin plugin\n - owo.text has been added - an experimental, currently undocumented API for making custom TextContent types\n\n## Fixes\n - Copenhagen now uses a ThreadLocal map to avoid concurrency issues in worldgen\n - WorldOps.teleportToDimension no longer swaps yaw and pitch",
+    "changelog_url": null,
+    "date_published": "2022-06-07T23:19:38.229345Z",
+    "downloads": 2428,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9d3215744db953485f1a9b8fbbd46be48e68cff0",
+          "sha512": "8dc0a7479f705cba5a1dfc2d322b6b12c21794da99407ea385d153e0c035de42d563dad4eca49897ad7d4eed84cff86857a641296ac8471cc9b6cae85b82f7ee"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.7.3%2B1.19/owo-lib-0.7.3%2B1.19.jar",
+        "filename": "owo-lib-0.7.3+1.19.jar",
+        "primary": true,
+        "size": 244031,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "F4LqV8lu",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18.2] oωo - 0.7.2",
+    "version_number": "0.7.2+1.18",
+    "changelog": "Allow using custom stack generators with owo item groups",
+    "changelog_url": null,
+    "date_published": "2022-05-05T21:54:23.301193Z",
+    "downloads": 13382,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "429d3ecf46e70d2c1f73364e772684656874f490",
+          "sha512": "2ed81e8cd549c74a1ecdf68e776e8bb53244b516f5f3b7a3e2d9255b7f8646711f02997761510effce1c8a123c97c3f2fabf2b030e0c39b211fc3416cb3a3271"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.7.2%2B1.18/owo-lib-0.7.2%2B1.18.jar",
+        "filename": "owo-lib-0.7.2+1.18.jar",
+        "primary": true,
+        "size": 222505,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "WJsP5KWE",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18.2] oωo - 0.7.1",
+    "version_number": "0.7.1+1.18",
+    "changelog": "NbtKey API for basic NBT serialization duties like in Item implementations and improved debug commands",
+    "changelog_url": null,
+    "date_published": "2022-05-02T11:54:24.349157Z",
+    "downloads": 1872,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d28904b3cb8d5f9a389d9ebdae1d3f4ccc144db6",
+          "sha512": "21ab681ddd2fdbc7dcb1156a6649de18e6e06daac28446c7b349c49d3ffcf8061ae8aa06ca3e9dd815d28de3e19f4ecea9a4e4bf27c7af5392832e36f0d3b620"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.7.1%2B1.18/owo-lib-0.7.1%2B1.18.jar",
+        "filename": "owo-lib-0.7.1+1.18.jar",
+        "primary": true,
+        "size": 221505,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "zVhs4uLj",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18.2] oωo - 0.7.0",
+    "version_number": "0.7.0+1.18",
+    "changelog": "Headless environment support for sentinel, updated TagInjector framework, fix compatibility with Quilt Loader, add RegistryAccess, allow ClientParticles to randomize velocity on only one axis, deprecate @ElementType and @MapTypes, relocate RegistryHelper creation, add deferred packet and particle system handlers, add dispatched and polymorphic packet serializer framework, freeze particle systems",
+    "changelog_url": null,
+    "date_published": "2022-04-20T16:53:24.364897Z",
+    "downloads": 777,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "cef12ddbc4c9817e0fd9843be14418f0195df76c",
+          "sha512": "ce8d1c1fed2af2fbf0c049d2baeea9d5d9354f8a90169b044800bd5b5d10ddb75e02b7556840eba55af5cbafb02cf76c19c72bda0ec50ed4c3fccd8950f73baa"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.7.0%2B1.18/owo-lib-0.7.0%2B1.18.jar",
+        "filename": "owo-lib-0.7.0+1.18.jar",
+        "primary": true,
+        "size": 199000,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "aWqxWaL7",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18.2] oωo - 0.6.0",
+    "version_number": "0.6.0+1.18",
+    "changelog": "Optional channels, automatic generics extraction, removed deprecated ServerParticles and field processing api",
+    "changelog_url": null,
+    "date_published": "2022-03-22T21:23:15.525286Z",
+    "downloads": 1236,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b3a07429257c236ccde11d0f14ea635ade270e94",
+          "sha512": "62f20f674ad7e72d170961f04ca5388d7a8571d710714a22b823257da35088446f8e22db18bac81b5098cd9522fed134c981fd67f5630109fedec5a716a44eb7"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.6.0%2B1.18/owo-lib-0.6.0%2B1.18.jar",
+        "filename": "owo-lib-0.6.0+1.18.jar",
+        "primary": true,
+        "size": 186958,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "GqwSx15g",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18.2] owo - 0.5.4",
+    "version_number": "0.5.4+1.18",
+    "changelog": "First public release for 1.18.2",
+    "changelog_url": null,
+    "date_published": "2022-02-28T16:24:04.669927Z",
+    "downloads": 299,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b0bb5c215b9278bf2f1233ab660a0c0343b0c2cef2b15b2358ddfa7d113dd329fe12e40bb64eac88beaab01b38faa4b3400b56f77afd5778b020fb4209b2c4ab",
+          "sha1": "60517e67fc8245082cf8eb73a4e798e6090dc218"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.5.4%2B1.18/owo-lib-0.5.4%2B1.18.jar",
+        "filename": "owo-lib-0.5.4+1.18.jar",
+        "primary": true,
+        "size": 196192,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "i8cpzMnQ",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18+] oωo - 0.5.2",
+    "version_number": "0.5.2+1.18",
+    "changelog": "Update to loom 0.11, add default serializers for ChunkPos and ParticleEffect, add 'query_poi' debug command, make text field injection trert didgts as word characters",
+    "changelog_url": null,
+    "date_published": "2022-02-13T01:21:08.781583Z",
+    "downloads": 2523,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c6d33383b134f4e9663328599fc7706cc0b0730b2d8d33a9d24c5c015e3c9f53482d9d894f716327eee8312c87b25b41d1f3dbb24267dc0bb549fa18a43bd34c",
+          "sha1": "b8d0a93e93f5d627625ebf020402552828e6f344"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.5.2%2B1.18/owo-lib-0.5.2%2B1.18.jar",
+        "filename": "owo-lib-0.5.2+1.18.jar",
+        "primary": false,
+        "size": 189618,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "q3Sxg4SA",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18+] oωo - 0.5.1",
+    "version_number": "0.5.1+1.18",
+    "changelog": "Fix handshake stalling the client when the server is incompatible, freeze channels after mod init, rename particle system exectute method to spawn, fix namespace of enum argument type",
+    "changelog_url": null,
+    "date_published": "2022-01-29T23:51:43.059184Z",
+    "downloads": 633,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "868bf4fc75e382d5a44614282820867c0298cb8a",
+          "sha512": "a7988467a4c48a0e14b67f7d290fb528f781b6e7b02bd4611397dfcdd4ca3f4c641734bc7a4d2368163c0829b5d9d5d4126efb3df1ff675587305f05e34ceda9"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.5.1%2B1.18/owo-lib-0.5.1%2B1.18.jar",
+        "filename": "owo-lib-0.5.1+1.18.jar",
+        "primary": false,
+        "size": 186928,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "2QnmkZKc",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18+] oωo - 0.5.0",
+    "version_number": "0.5.0+1.18",
+    "changelog": "Add handshake support to avoid joining incompatible servers, add offline data api, add new particle api, fix primitive array serialization",
+    "changelog_url": null,
+    "date_published": "2022-01-23T23:22:50.132192Z",
+    "downloads": 242,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6ec33f5683d72e815bde8b12e61bedb085a5a597058c9402128f7a99216c5dd65555afe254bf2c78441ec1b53f780e69fbd997b5f4df4f2330cacf23f5cbfad0",
+          "sha1": "cdb4507ad86677cdcdf243b0e99005b016b254b5"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.5.0%2B1.18/owo-lib-0.5.0%2B1.18.jar",
+        "filename": "owo-lib-0.5.0+1.18.jar",
+        "primary": false,
+        "size": 184038,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "vnSwwEYV",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18+] oωo - 0.4.0",
+    "version_number": "0.4.0+1.18",
+    "changelog": "Added networking API, some additions to ReflectionUtils",
+    "changelog_url": null,
+    "date_published": "2022-01-20T17:15:38.536836Z",
+    "downloads": 137,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "68fddd0447cf1ba7b585d3a21bb84d0175b032bb9186f35082d30198d2871bd41f961ea88667c4dbb76c30013421412013a4ee573bdc4fbfcaef20b494094631",
+          "sha1": "21f0deb71a31c697b4aca14d430035bae841bb71"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.4.0%2B1.18/owo-lib-0.4.0%2B1.18.jar",
+        "filename": "owo-lib-0.4.0+1.18.jar",
+        "primary": false,
+        "size": 153058,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "6LkUrYRt",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18+] oωo - 0.3.14",
+    "version_number": "0.3.14+1.18",
+    "changelog": "Fix crash caused by an action registered via the RegistryHelper registering a new entry into its registry, make KawaiiUtil part of the public API",
+    "changelog_url": null,
+    "date_published": "2022-01-03T01:30:20.819052Z",
+    "downloads": 183,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f80e057724c08a3fbd999a7be963cf7fb3997430b70e8bd5480797a9a3b5b4adbde81e7e35a54829015e6d2fe615946ef081039bf92625519751055745780c46",
+          "sha1": "090f4c1b3bbb2d8863d5ca52c8bb16e268dacf8f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.14%2B1.18/owo-lib-0.3.14%2B1.18.jar",
+        "filename": "owo-lib-0.3.14+1.18.jar",
+        "primary": false,
+        "size": 126246,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "lT5Mm5fS",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18+] oωo - 0.3.13",
+    "version_number": "0.3.13+1.18",
+    "changelog": "API change in FieldProcessingSubject and its dependents - all methods that got passed ID and value now also get passed the field object",
+    "changelog_url": null,
+    "date_published": "2022-01-01T12:18:27.961925Z",
+    "downloads": 104,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "bd88c4bdfe30019ed228c378318ec3f3612c12abb2957f479964883c4e044552b68fd8019cfe82ba50a4d7d750f988a392133d95277ccd2479f04818eabad2bc",
+          "sha1": "9f075b51272e54ec80ef3503cdd410af1a6fb4e6"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.13%2B1.18/owo-lib-0.3.13%2B1.18.jar",
+        "filename": "owo-lib-0.3.13+1.18.jar",
+        "primary": false,
+        "size": 126051,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "3Qzf5TkU",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18+] oωo - 0.3.12",
+    "version_number": "0.3.12+1.18",
+    "changelog": "Fix compat crash on servers if \"OperatingSystem\" was classloaded",
+    "changelog_url": null,
+    "date_published": "2021-12-29T11:28:23.587494Z",
+    "downloads": 123,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "593f75a761435ba57384c4c0672a3207c973415c",
+          "sha512": "076aec673000cdc5a6ada89951a4046381717fd3b7a05f6e9cc0d55f2f0b0810d2df2b2f04f3bd5b574fb033367f185a4156995590a81b57a0ecd26078067f73"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.12%2B1.18/owo-lib-0.3.12%2B1.18.jar",
+        "filename": "owo-lib-0.3.12+1.18.jar",
+        "primary": false,
+        "size": 123824,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "Jfd8qbEF",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18+] oωo - 0.3.11",
+    "version_number": "0.3.11+1.18",
+    "changelog": "Fix crashing servers through item group init, allow agreeing to the eula in the server console",
+    "changelog_url": null,
+    "date_published": "2021-12-27T14:57:04.694506Z",
+    "downloads": 110,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7dc53e51d204352c0486d5d58f93f46db1c5e351bf68c23f50a5b8509ead69b17a5c866e2c32ffec1755b4f4da9dd66092c47562f090967788d26258b0c703e8",
+          "sha1": "dde9956ac7193f22b1f2a128dac9f959401946bc"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.11%2B1.18/owo-lib-0.3.11%2B1.18.jar",
+        "filename": "owo-lib-0.3.11+1.18.jar",
+        "primary": false,
+        "size": 123823,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "eAlYR8cf",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18+] oωo - 0.3.10",
+    "version_number": "0.3.10+1.18",
+    "changelog": "Fix crash when using auto registry on a class with null fields, add /logger debug command for changing the global logging level at runtime, make opening links and files be handled off-thread to avoid stalling the client, make it possible for owo item groups to display only one tab, use the slider from the custom texture",
+    "changelog_url": null,
+    "date_published": "2021-12-23T17:14:28.757948Z",
+    "downloads": 119,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "3d216245c9a0e46cb20132508f17691b8700fbe7",
+          "sha512": "9ba33e74d7bae9d44497035da472dc10228014d35597165c6fd6e1b27131ee4c7d7400585f2c2b884a200ea868ed05aefb75d3cfa9fa07d7562f0c5c0399ff58"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.10%2B1.18/owo-lib-0.3.10%2B1.18.jar",
+        "filename": "owo-lib-0.3.10+1.18.jar",
+        "primary": false,
+        "size": 120338,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "1E69wiMJ",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18] oωo - 0.3.8",
+    "version_number": "0.3.8+1.18",
+    "changelog": "Port to 1.18 proper, fix hard-requiring REI in dev",
+    "changelog_url": null,
+    "date_published": "2021-12-02T20:23:15.042994Z",
+    "downloads": 239,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9392a4eff23927d44333fcf43cf71952c241dbcd",
+          "sha512": "5d0fca007cf43448f4b051a112d937279fd5a727e30f83962861b372b43330ac8689d41650a69ff06253e0d3540cd6aedbf68fb381f2f0fa8654445c63ad7afd"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.8%2B1.18/owo-lib-0.3.8%2B1.18.jar",
+        "filename": "owo-lib-0.3.8+1.18.jar",
+        "primary": false,
+        "size": 0,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18-pre8"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "F6DR79FV",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18-pre8] oωo - 0.3.7",
+    "version_number": "0.3.7+1.18",
+    "changelog": "Fix TagInjector affecting all tag types",
+    "changelog_url": null,
+    "date_published": "2021-11-25T20:48:55.796641Z",
+    "downloads": 102,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d02b587e54182e5e2ac4cc6c0fcfeb3097e1bb0a",
+          "sha512": "062caa80b1a58accedc957b243a06a5c7920b4766f24caa205d14b25ce149366ad7a6b6f58dad07c8b78104f02360e70333e2a4027e4239590a0f51a61280eb3"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.7%2B1.18/owo-lib-0.3.7%2B1.18.jar",
+        "filename": "owo-lib-0.3.7+1.18.jar",
+        "primary": false,
+        "size": 108564,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18-pre8"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "1WqSpJvo",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18-pre8] oωo - 0.3.6",
+    "version_number": "0.3.6+1.18",
+    "changelog": "Added TagInjector util",
+    "changelog_url": null,
+    "date_published": "2021-11-25T17:25:02.837849Z",
+    "downloads": 106,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "6a9f3a960f0fcb27e845d8cb90c37babf18b931c",
+          "sha512": "4aeab81b6558746a2f6631866188165496a9dc11df25bc9fbdcfef814a58d1167e1461c450c433de9e227b53a7b3e19838b580b4edfbef2e558ae852dd7aba5f"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.6%2B1.18/owo-lib-0.3.6%2B1.18.jar",
+        "filename": "owo-lib-0.3.6+1.18.jar",
+        "primary": false,
+        "size": 106960,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18-pre8"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "PptbPV7y",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.18-pre8] oωo - 0.3.5",
+    "version_number": "0.3.5+1.18",
+    "changelog": "I had to fix so many stupid mistakes while porting it's actually amazing",
+    "changelog_url": null,
+    "date_published": "2021-11-24T20:22:38.159758Z",
+    "downloads": 108,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2f8378d605fe8a9076adea4ebf9a15b6aa19ac2a46f8bc7ddd357336277fa683ca396cc10172dd5274b3a3848bdbb708d37218800a82daa9424334cca228912c",
+          "sha1": "5523308b38050bc1a1ddf5f87bb17f2a95d87877"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.5%2B1.18/owo-lib-0.3.5%2B1.18.jar",
+        "filename": "owo-lib-0.3.5+1.18.jar",
+        "primary": false,
+        "size": 103655,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "flVS3RS0",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.17+] oωo - 0.3.2",
+    "version_number": "0.3.2+1.17",
+    "changelog": "Added teleport util",
+    "changelog_url": null,
+    "date_published": "2021-11-15T15:58:58.953211Z",
+    "downloads": 1756,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7860e68658d282f26efdf45845920b923490022c",
+          "sha512": "b06bb6be1b1e627219b3139f51ea11172cc88cd8a20b4775b293c6f8a7c2b0554f4836a4d7ce2cacf061b8d44802489a784db92ec7423b2f6ae2b884df6951b6"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.2%2B1.17/owo-lib-0.3.2%2B1.17.jar",
+        "filename": "owo-lib-0.3.2+1.17.jar",
+        "primary": false,
+        "size": 99139,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "21w43a"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "LmWOyXVW",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[21w43a] oωo - 0.3.0",
+    "version_number": "0.3.0+1.18",
+    "changelog": "First 1.18 port",
+    "changelog_url": null,
+    "date_published": "2021-10-27T23:10:02.164083Z",
+    "downloads": 223,
+    "version_type": "alpha",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7ed3f8b31d1ae9fe9652981eda43eb1de2d682c0",
+          "sha512": "dd02cc5324e58a6c22f39cf4c7837ef4f8648fce05a34167a7a860fede284f6769c463cfaceec74171b3c3797f914ff45831d3eb6db48db8a30e220fba29c773"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.0%2B1.18/owo-0.3.0%2B1.18.jar",
+        "filename": "owo-0.3.0+1.18.jar",
+        "primary": false,
+        "size": 101157,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "IPVeGmcd",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.17+] oωo - 0.3.1",
+    "version_number": "0.3.1",
+    "changelog": "Added animated texture support for tab icons, added support for loading mod data from \"moddata\"",
+    "changelog_url": null,
+    "date_published": "2021-10-27T21:10:41.54Z",
+    "downloads": 132,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c0cbb55f5da69532597dbe826dcdaa3141be6075",
+          "sha512": "5380e83d367cbc7cb047565cd9127a69f42223309a4ffc9ee44fbec8df43324891a923c626c98357ff187dc7ca91daedd9ccd302953589119033dbb580573297"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.1/owo-0.3.1.jar",
+        "filename": "owo-0.3.1.jar",
+        "primary": false,
+        "size": 98378,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ERFRuuW5",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.17+] oωo - 0.3.0",
+    "version_number": "0.3.0",
+    "changelog": "Mid-sized feature update with breaking changes, for changelog see https://github.com/glisco03/owo-lib/releases/tag/0.3.0-fixed-rei",
+    "changelog_url": null,
+    "date_published": "2021-10-11T21:03:06.670646Z",
+    "downloads": 355,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "62dca8d8ec6e6931f5a5bcab862fb5174a1e1b1440520cadc444c9a9bbed2246ff9145171c6f1e78ec2303c5b373379ee8693c288a0143cecba96ea21ccf7070",
+          "sha1": "947419d9cacc1f5908c3df6e3993a4ed71e958a6"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.0/owo-0.3.0.jar",
+        "filename": "owo-0.3.0.jar",
+        "primary": true,
+        "size": 93670,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "3e233bdf023c1f84b9313c46ec169f14112f3609347576fc376da3e5b953c585700c3cd886b40a46ae2df0d990d0e1d90fc7b3d331dc6d33044664d38f051b1c",
+          "sha1": "dfb7ba3e399201ec7974b0f95b6a0ef4640d0e2b"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.0/owo-0.3.0-dev.jar",
+        "filename": "owo-0.3.0-dev.jar",
+        "primary": false,
+        "size": 91863,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "ee570c3d39f705619a4dab27c0f43eef87b6094d2746aec9e5e6ddbfa2f1505c06811d071673a6dc80acb2c182dd1caf8dc68cf05bfbfb7a01c2a8bbef56e6e3",
+          "sha1": "01c412f255d342935e5d9194438e831d8f63684e"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.0/owo-0.3.0-sources-dev.jar",
+        "filename": "owo-0.3.0-sources-dev.jar",
+        "primary": false,
+        "size": 59922,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "ed9f3d105c4892e86729f6eb144a2958271bca90557e9a66f7ac6af253326639c17035ef633f1327bf38db33fbe41e341fc7e68e8118b8a60dc48e6abec94080",
+          "sha1": "184b201a188378da99b2ea6e6c5ded792ba8d5e0"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.3.0/owo-0.3.0-sources.jar",
+        "filename": "owo-0.3.0-sources.jar",
+        "primary": false,
+        "size": 62819,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "4NeTD3y0",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.17+] oωo - 0.2.1",
+    "version_number": "0.2.1",
+    "changelog": "Don't break when someone tries to use json groups",
+    "changelog_url": null,
+    "date_published": "2021-10-06T17:45:05.566971Z",
+    "downloads": 102,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ce7c814b92f547120d936cce34a7b87810f944b6",
+          "sha512": "ee0b60b9c6e9e232b047a33994b5d6bf4e7516726188d9d6d2233368f02820fb119a29b7303a3f2e7cc70d5d89ac75cd42359fab91467206ce15e4ade469d33c"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.2.1/owo-0.2.1.jar",
+        "filename": "owo-0.2.1.jar",
+        "primary": false,
+        "size": 70933,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "HyvkCi1L",
+    "project_id": "ccKDOlHs",
+    "author_id": "qGOpk8Hs",
+    "featured": false,
+    "name": "[1.17+] oωo 0.2.0",
+    "version_number": "0.2.0",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-09-30T20:46:31.669324Z",
+    "downloads": 987,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5c2966f11e9aa2ca3cf9e672736e8db8be0a106da5a25bee6a890addc3e8c648a46a250de52661ef17c84c19b72c0c00cefce487924d9bf48cea1caaa381503b",
+          "sha1": "ab5866a1c844f76f028347104cfdb072768dcdea"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.2.0/owo-0.2.0.jar",
+        "filename": "owo-0.2.0.jar",
+        "primary": true,
+        "size": 116922,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "dcb0b36f68701a72ef279c4f1c74451944a8c518492f414d1c93dd06f772cbd6a5722717437cf74bf4dea0c67b075256b737b13c792edcaf0b77a87ad4a2ba3a",
+          "sha1": "4543dfa9ea66a3897eee5e0a11d5c1dbc1fe8c89"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.2.0/owo-0.2.0-dev.jar",
+        "filename": "owo-0.2.0-dev.jar",
+        "primary": false,
+        "size": 69209,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "8afd5d47430ceecc9ac1a23f8146eb341ea23542b6f643c5b601ffa3195271441408e17e98b9356244c82475533038ae65c9eb6a1502c4716ef018a19054b0e0",
+          "sha1": "c9296a458db4f325841fbcd34a61af32a2730440"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.2.0/owo-0.2.0-sources-dev.jar",
+        "filename": "owo-0.2.0-sources-dev.jar",
+        "primary": false,
+        "size": 45706,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "60c7693d7b404ac0387124867c1a9aa9a52719111ef18a0d4221a1e003c28ca5054b610d9dbd2a645bb1682cf54627bb362dc15a002df9c899f8e67a935314fd",
+          "sha1": "4a7854306059751b81935c911072b925a7f75cc4"
+        },
+        "url": "https://cdn.modrinth.com/data/ccKDOlHs/versions/0.2.0/owo-0.2.0-sources.jar",
+        "filename": "owo-0.2.0-sources.jar",
+        "primary": false,
+        "size": 48095,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  }
+]

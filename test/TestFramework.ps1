@@ -26,9 +26,10 @@ $script:TestResults = @{
 
 function Get-TestOutputFolder {
     param([string]$TestFileName)
-    $folder = Join-Path $PSScriptRoot ("output-" + [IO.Path]::GetFileNameWithoutExtension($TestFileName))
+    $testName = [IO.Path]::GetFileNameWithoutExtension($TestFileName)
+    $folder = Join-Path $PSScriptRoot "test-output" $testName
     if (-not (Test-Path $folder)) {
-        New-Item -ItemType Directory -Path $folder | Out-Null
+        New-Item -ItemType Directory -Path $folder -Force | Out-Null
     }
     return $folder
 }
@@ -58,6 +59,31 @@ function Write-TestResult {
         Write-Host "✗ FAIL: $TestName" -ForegroundColor $Colors.Fail
         if ($Message) { Write-Host "  $Message" -ForegroundColor Gray }
     }
+}
+
+function Write-TestStep {
+    param([string]$StepName)
+    Write-Host "  → $StepName" -ForegroundColor $Colors.Info
+}
+
+function Write-TestSuiteHeader {
+    param([string]$SuiteName, [string]$TestFileName = $null)
+    Write-Host ""
+    Write-Host "StartServer Unit Tests" -ForegroundColor $Colors.Header
+    Write-Host "=====================" -ForegroundColor $Colors.Header
+    if ($TestFileName) {
+        Write-Host "Test File: $TestFileName" -ForegroundColor $Colors.Info
+    }
+    Write-Host ""
+}
+
+function Write-TestSuiteFooter {
+    param([string]$SuiteName, [int]$Passed, [int]$Total)
+    Write-Host ""
+    Write-Host ("=" * 80) -ForegroundColor $Colors.Header
+    Write-Host "$SuiteName Summary" -ForegroundColor $Colors.Header
+    Write-Host ("=" * 80) -ForegroundColor $Colors.Header
+    Write-Host "Passed: $Passed/$Total tests" -ForegroundColor $(if ($Passed -eq $Total) { $Colors.Pass } else { $Colors.Fail })
 }
 
 function Test-DatabaseState {
@@ -231,5 +257,24 @@ function Cleanup-TestEnvironment {
         }
         
         Write-Host "Cleanup completed" -ForegroundColor $Colors.Info
+    }
+}
+
+function Write-TestSuiteSummary {
+    param([string]$SuiteName)
+    
+    $passedTests = $script:TestResults.Passed
+    $totalTests = $script:TestResults.Total
+    
+    Write-Host ""
+    Write-Host ("=" * 80) -ForegroundColor $Colors.Header
+    Write-Host "$SuiteName Summary" -ForegroundColor $Colors.Header
+    Write-Host ("=" * 80) -ForegroundColor $Colors.Header
+    Write-Host "Passed: $passedTests/$totalTests tests" -ForegroundColor $(if ($passedTests -eq $totalTests) { $Colors.Pass } else { $Colors.Fail })
+    
+    if ($passedTests -eq $totalTests) {
+        Write-Host "True" -ForegroundColor $Colors.Pass
+    } else {
+        Write-Host "False" -ForegroundColor $Colors.Fail
     }
 } 

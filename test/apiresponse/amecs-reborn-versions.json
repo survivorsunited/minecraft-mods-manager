@@ -1,0 +1,483 @@
+[
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "j16OyjKh",
+    "project_id": "IjgEpZeq",
+    "author_id": "EalyDvh1",
+    "featured": false,
+    "name": "Amecs Reborn 2.0.2+mc1.21.6",
+    "version_number": "2.0.2+mc1.21.6",
+    "changelog": "- Fix handling of the escape key in the keybinds menu\n- Marked mod as providing AmecsAPI to fix issues with mods not detecting Amecs Reborn as Amecs.\n  - This should fix issues with JourneyMap or other mods that have their own bespoke keybind handling with Amecs support\n- Updated MixinConstraints",
+    "changelog_url": null,
+    "date_published": "2025-06-18T17:50:17.173744Z",
+    "downloads": 86,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "02a7a07d32d0e83d1341f1375aa7c96cf52d1830",
+          "sha512": "b2055c29ac89db3124b1006f4182793275e8c1308ddf68ec3502971fc8b4be920b3877d7589e31063449eef876765818cb14cbec982d9e536c7ceb922e0e352d"
+        },
+        "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/j16OyjKh/Amecs-Reborn-2.0.2%2Bmc1.21.6.jar",
+        "filename": "Amecs-Reborn-2.0.2+mc1.21.6.jar",
+        "primary": true,
+        "size": 206052,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "wxtqhcW6",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "HnQJNS8B",
+    "project_id": "IjgEpZeq",
+    "author_id": "EalyDvh1",
+    "featured": false,
+    "name": "Amecs Reborn 2.0.2+mc1.21.5",
+    "version_number": "2.0.2+mc1.21.5",
+    "changelog": "- Fix handling of the escape key in the keybinds menu\n- Marked mod as providing AmecsAPI to fix issues with mods not detecting Amecs Reborn as Amecs.\n  - This should fix issues with JourneyMap or other mods that have their own bespoke keybind handling with Amecs support\n- Updated MixinConstraints",
+    "changelog_url": null,
+    "date_published": "2025-05-02T15:24:38.843837Z",
+    "downloads": 1251,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b2055c29ac89db3124b1006f4182793275e8c1308ddf68ec3502971fc8b4be920b3877d7589e31063449eef876765818cb14cbec982d9e536c7ceb922e0e352d",
+          "sha1": "02a7a07d32d0e83d1341f1375aa7c96cf52d1830"
+        },
+        "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/HnQJNS8B/Amecs-Reborn-2.0.2%2Bmc1.21.5.jar",
+        "filename": "Amecs-Reborn-2.0.2+mc1.21.5.jar",
+        "primary": true,
+        "size": 206052,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "wxtqhcW6",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "aOTRQQF8",
+    "project_id": "IjgEpZeq",
+    "author_id": "EalyDvh1",
+    "featured": false,
+    "name": "Amecs Reborn 2.0.2+mc1.21.4",
+    "version_number": "2.0.2+mc1.21.4",
+    "changelog": "- Fix handling of the escape key in the keybinds menu\n- Marked mod as providing AmecsAPI to fix issues with mods not detecting Amecs Reborn as Amecs.\n  - This should fix issues with JourneyMap or other mods that have their own bespoke keybind handling with Amecs support\n- Updated MixinConstraints",
+    "changelog_url": null,
+    "date_published": "2025-05-02T15:24:06.067559Z",
+    "downloads": 229,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "0d1a41940630d4657e01041622e554b0c569c956",
+          "sha512": "5c7aa26cf08bf5989a71e30c301673f7734862f1c7d842b224692e375f5928a771d5835b389a9685af587368734ce7ad6636f7fa18d5c2129e2b852b9af238a0"
+        },
+        "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/aOTRQQF8/Amecs-Reborn-2.0.2%2Bmc1.21.4.jar",
+        "filename": "Amecs-Reborn-2.0.2+mc1.21.4.jar",
+        "primary": true,
+        "size": 206055,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "wxtqhcW6",
+        "file_name": null,
+        "dependency_type": "embedded"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "JCB7Q5BZ",
+    "project_id": "IjgEpZeq",
+    "author_id": "EalyDvh1",
+    "featured": false,
+    "name": "Amecs Reborn 2.0.2+mc1.21.3",
+    "version_number": "2.0.2+mc1.21.3",
+    "changelog": "- Fix handling of the escape key in the keybinds menu\n- Marked mod as providing AmecsAPI to fix issues with mods not detecting Amecs Reborn as Amecs.\n  - This should fix issues with JourneyMap or other mods that have their own bespoke keybind handling with Amecs support\n- Updated MixinConstraints",
+    "changelog_url": null,
+    "date_published": "2025-05-02T15:23:42.7308Z",
+    "downloads": 16,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "a7513e20c506917c9100783df9c2ee3a6b753b11d1174a3bc517f327e1ccd75cbd37746fbaa3ef18d3ae0fdfa7d11e146b8410b08c6d6262bd86d911eafaec73",
+          "sha1": "ecc398b1f160a870e0cd62a97f94cc7e4d37ab22"
+        },
+        "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/JCB7Q5BZ/Amecs-Reborn-2.0.2%2Bmc1.21.3.jar",
+        "filename": "Amecs-Reborn-2.0.2+mc1.21.3.jar",
+        "primary": true,
+        "size": 206052,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "wxtqhcW6",
+        "file_name": null,
+        "dependency_type": "embedded"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "Npsjy3PD",
+    "project_id": "IjgEpZeq",
+    "author_id": "EalyDvh1",
+    "featured": false,
+    "name": "Amecs Reborn 2.0.2+mc1.21.1",
+    "version_number": "2.0.2+mc1.21.1",
+    "changelog": "- Fix handling of the escape key in the keybinds menu\n- Marked mod as providing AmecsAPI to fix issues with mods not detecting Amecs Reborn as Amecs.\n  - This should fix issues with JourneyMap or other mods that have their own bespoke keybind handling with Amecs support\n- Updated MixinConstraints",
+    "changelog_url": null,
+    "date_published": "2025-05-02T15:23:18.929974Z",
+    "downloads": 595,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b16e33c09ce89a8d8424deae472a6f2b5dcb719d",
+          "sha512": "1ccb2227b78984acf9796957be983fae44dd942e3e3f2992ebe420bcf3440a661c80a429a33e8f509552580f59ede38827542c2eafab4a0c5c7a7bafb058b435"
+        },
+        "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/Npsjy3PD/Amecs-Reborn-2.0.2%2Bmc1.21.1.jar",
+        "filename": "Amecs-Reborn-2.0.2+mc1.21.1.jar",
+        "primary": true,
+        "size": 206106,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "wxtqhcW6",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "FMcZhMKM",
+    "project_id": "IjgEpZeq",
+    "author_id": "EalyDvh1",
+    "featured": false,
+    "name": "Amecs Reborn 2.0.1+mc1.21.5",
+    "version_number": "2.0.1+mc1.21.5",
+    "changelog": "- Multiversion Support\n- Adjusted some log messages\n- Some internal cleanup",
+    "changelog_url": null,
+    "date_published": "2025-04-12T23:49:17.571527Z",
+    "downloads": 206,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "cfe2e1d7a62211865229007717ff16fa9f1ebf7e",
+          "sha512": "71a7757a108d4b52b97105e6065c13f703ccdc5bc5a3b2c8630b9c595545d3860ecad9f8d6b50b3acb2798396a1a0b1c1fce995c9f6523995077fa5be5961ed7"
+        },
+        "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/FMcZhMKM/Amecs-Reborn-2.0.1%2Bmc1.21.5.jar",
+        "filename": "Amecs-Reborn-2.0.1+mc1.21.5.jar",
+        "primary": true,
+        "size": 206184,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "wxtqhcW6",
+        "file_name": null,
+        "dependency_type": "embedded"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "XwSSOfns",
+    "project_id": "IjgEpZeq",
+    "author_id": "EalyDvh1",
+    "featured": false,
+    "name": "Amecs Reborn 2.0.1+mc1.21.4",
+    "version_number": "2.0.1+mc1.21.4",
+    "changelog": "- Multiversion Support\n- Adjusted some log messages\n- Some internal cleanup",
+    "changelog_url": null,
+    "date_published": "2025-04-12T23:48:51.783025Z",
+    "downloads": 123,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1576844ef42324101b8a9b29ad17213089588e72676968ba7bcbed89ae64799826d01d2843d8db1e06d3daaafdeaaa5b50d991773155f5d7722b2e8cfe9da890",
+          "sha1": "f7f8f9bd9e4e481d94df2d40eeacbc6885200009"
+        },
+        "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/XwSSOfns/Amecs-Reborn-2.0.1%2Bmc1.21.4.jar",
+        "filename": "Amecs-Reborn-2.0.1+mc1.21.4.jar",
+        "primary": true,
+        "size": 206184,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "wxtqhcW6",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "8j4QBS0t",
+    "project_id": "IjgEpZeq",
+    "author_id": "EalyDvh1",
+    "featured": false,
+    "name": "Amecs Reborn 2.0.1+mc1.21.3",
+    "version_number": "2.0.1+mc1.21.3",
+    "changelog": "- Multiversion Support\n- Adjusted some log messages\n- Some internal cleanup",
+    "changelog_url": null,
+    "date_published": "2025-04-12T23:48:25.236203Z",
+    "downloads": 20,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7fac4219f0c4d56527eb67774024bab638f4d209b84cd3ab6d5a1881366035e9e7c4193eed078a843b8b65c07d72142621ab5cb2e972ddd0fb5cbc369dbe0dbe",
+          "sha1": "13c907c406bdf67931234f0eb5045ece3bdee590"
+        },
+        "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/8j4QBS0t/Amecs-Reborn-2.0.1%2Bmc1.21.3.jar",
+        "filename": "Amecs-Reborn-2.0.1+mc1.21.3.jar",
+        "primary": true,
+        "size": 206183,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "wxtqhcW6",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "kqaYgPZJ",
+    "project_id": "IjgEpZeq",
+    "author_id": "EalyDvh1",
+    "featured": false,
+    "name": "Amecs Reborn 2.0.1+mc1.21.1",
+    "version_number": "2.0.1+mc1.21.1",
+    "changelog": "- Multiversion Support\n- Adjusted some log messages\n- Some internal cleanup",
+    "changelog_url": null,
+    "date_published": "2025-04-12T23:47:34.285679Z",
+    "downloads": 323,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a84210d70384c72aabdc5e21645cefc9ca098cbb",
+          "sha512": "2127754846e6b2fc916cfd31132738fc52e721bc88efbba95413571fc9fa7127c3824eb78fe922f424c7b66aaf1fec575b43dc421aeee185538fa5526f2cc0dd"
+        },
+        "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/kqaYgPZJ/Amecs-Reborn-2.0.1%2Bmc1.21.1.jar",
+        "filename": "Amecs-Reborn-2.0.1+mc1.21.1.jar",
+        "primary": true,
+        "size": 206236,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "wxtqhcW6",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4",
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "YMq9Iom8",
+    "project_id": "IjgEpZeq",
+    "author_id": "EalyDvh1",
+    "featured": false,
+    "name": "Amecs Reborn 2.0.0 for 1.21.4",
+    "version_number": "2.0.0",
+    "changelog": "Initial Releaes of Amecs Reborn. Below are the changes from the most recent Amecs version before the fork:\n\n- Port to 1.21.4\n- Merged Amecs and Amecs-API\n- Add support for the Windows/Command/Super Key\n- Add Controlling Support\n- Add platform specific key translations\n- Add toggles for the search bar and added keybinds",
+    "changelog_url": null,
+    "date_published": "2025-03-29T03:50:08.549586Z",
+    "downloads": 165,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "791219da2d9ab70ad2c9ad028ff6b6bc9ed92eac",
+          "sha512": "e0748eba403dd1c8a13a38572fdc9d6f9f04fe92caad52a5ce231ccf9b7e6ee03aa47085cc6a313c7f2a32d2232eb4ac948b776e2ae51400a6a797db45002809"
+        },
+        "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/YMq9Iom8/Amecs-Reborn-2.0.0%2Bmc1.21.4.jar",
+        "filename": "Amecs-Reborn-2.0.0+mc1.21.4.jar",
+        "primary": true,
+        "size": 210070,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "wxtqhcW6",
+        "file_name": null,
+        "dependency_type": "embedded"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1110 @@
+[
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ugOKAN0o",
+    "project_id": "hrVBD9fd",
+    "author_id": "VylMiU5U",
+    "featured": false,
+    "name": "1.13.3-1.21.5",
+    "version_number": "1.13.3-1.21.5",
+    "changelog": "BLAST 1.13.3 - 1.21.5:\n\n- Fix bundles kicking the player when viewing their items\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.13.3-1.21.5/changelog.md \"Changelog\")",
+    "changelog_url": null,
+    "date_published": "2025-04-28T01:40:48.196903Z",
+    "downloads": 1602,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2565001517499fe40a3dddb34eb4c65f3ceaf999",
+          "sha512": "6b11c5814b93912a53c265129bbcacd727ff4875670dfc162143829ff80a14830241057351751608a1548d310674a019ea071f87c02f0a073c15bf315f6e80c6"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/ugOKAN0o/blast-1.13.3-1.21.5.jar",
+        "filename": "blast-1.13.3-1.21.5.jar",
+        "primary": true,
+        "size": 1181130,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "9Ya7Yyre",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "fuAYWWr7",
+    "project_id": "hrVBD9fd",
+    "author_id": "VylMiU5U",
+    "featured": false,
+    "name": "1.13.2-1.21.5",
+    "version_number": "1.13.2-1.21.5",
+    "changelog": "BLAST 1.13.2 - 1.21.5:\n\nUpdate all thanks to MoriyaShiine!\n- Update to 1.21.5\n- Fix Icicles not incrementing frozen ticks properly\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.13.2-1.21.5/changelog.md \"Changelog\")",
+    "changelog_url": null,
+    "date_published": "2025-04-27T11:24:58.540049Z",
+    "downloads": 50,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "40a6fb8702c707db90f834e19fb2def3af282d292088eb4931db47e9edc4e336edf06460ac6182fd6720c1819d9789c6e965458878ef794791a41251a0e5bf4e",
+          "sha1": "7c220bdf5584e7300200258711095151fa3d2638"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/fuAYWWr7/blast-1.13.2-1.21.5.jar",
+        "filename": "blast-1.13.2-1.21.5.jar",
+        "primary": true,
+        "size": 1181079,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "9Ya7Yyre",
+        "file_name": null,
+        "dependency_type": "embedded"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "EAEEXEF7",
+    "project_id": "hrVBD9fd",
+    "author_id": "wbAGDjBN",
+    "featured": false,
+    "name": "1.13.1-1.21.1",
+    "version_number": "1.13.1-1.21.1",
+    "changelog": "BLAST 1.13.1 - 1.21.1:\n\n- Fixed Bonesburrier dupe bug\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.13.1-1.21.1/changelog.md \"Changelog\")",
+    "changelog_url": null,
+    "date_published": "2024-11-02T22:16:30.39297Z",
+    "downloads": 6274,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2e04b9205e230e3f3cf89f4148ac3ab3315ddc0cabb1e4865a224caefb1e29433341386720e28d1bc117b0eb542581c57a957951345fb08bbdbd3f1a0e2924fe",
+          "sha1": "8d0f50c48a49da1b43ad4c1083b5ded476e75292"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/EAEEXEF7/blast-1.13.1-1.21.1.jar",
+        "filename": "blast-1.13.1-1.21.1.jar",
+        "primary": true,
+        "size": 264836,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "Kt8owOWP",
+    "project_id": "hrVBD9fd",
+    "author_id": "wbAGDjBN",
+    "featured": false,
+    "name": "1.13-1.21.1",
+    "version_number": "1.13-1.21.1",
+    "changelog": "BLAST 1.13 - 1.21.1:\n\nUpdate all thanks to MoriyaShiine!\n- Updated to Minecraft 1.21.1\n- Added pipe bomb functionality and recipe\n- Moved amethyst bombs from tools tab to combat tab\n- Added custom bomb fuse time component\n- Massive code cleanup\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.13-1.21.1/changelog.md \"Changelog\")",
+    "changelog_url": null,
+    "date_published": "2024-10-20T21:50:43.970233Z",
+    "downloads": 318,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d9c933d823c38429cfa04384bcf0a61e573eb435",
+          "sha512": "9e3e7e2a74bdb01fcebac8fe1b1bbd17c7dc518e53a816b30e5979fbc21c5fc223ebbeb97eea6f94a54581acb0fec4a23274bbb86cec2bd4b89f58517eb42a5a"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/Kt8owOWP/blast-1.13-1.21.1.jar",
+        "filename": "blast-1.13-1.21.1.jar",
+        "primary": true,
+        "size": 265769,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "tifNCUFN",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.10",
+    "version_number": "1.10",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:35:16.942763Z",
+    "downloads": 16456,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "929fb0d1aa847768fa5b30c9e0fbe9b9d4b26053e77d08856539ab4f973d9a74ed33b9ba2a873b930819979a30076a0fb56dc729842a74e31d1f2438e4fe3f45",
+          "sha1": "78d89b59e987858397de5db0dcbb58e8c94e1a20"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/tifNCUFN/blast-1.10.jar",
+        "filename": "blast-1.10.jar",
+        "primary": true,
+        "size": 218266,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "LdtrjDL5",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.9.1",
+    "version_number": "1.9.1",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:34:50.273304Z",
+    "downloads": 475,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "9c4fc8f5dadd2df86575080371fbb35334310d5eab3a75c5fff95fe7e30790d4e28d1787028b19a97fbb3f049b1a8f5831471e46c259a73bc7f1a4c5715898f8",
+          "sha1": "4cfd2cc08aba261fa63c1c8774f13fb23d0eca95"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/LdtrjDL5/blast-1.9.1.jar",
+        "filename": "blast-1.9.1.jar",
+        "primary": true,
+        "size": 168073,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "UzsHxOcG",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.8.5",
+    "version_number": "1.8.5",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:34:38.404743Z",
+    "downloads": 44,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "aa0cea66ef9b85f112a917e124c7d7c36946bf8f7b214a568dde491feb58c7233566e2ca34f41bb4a72ea270e6855b6e90ba377c44ce15465952a3c3afb2f175",
+          "sha1": "877d97219d5fc1af8e1a9319e3c2c1c5dbef1c2e"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/UzsHxOcG/blast-1.8.5.jar",
+        "filename": "blast-1.8.5.jar",
+        "primary": true,
+        "size": 165753,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "CBwEPM7D",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.8.4",
+    "version_number": "1.8.4",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:34:27.761248Z",
+    "downloads": 51,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "262f2c86bfd714f4df7b263ef6d454cf1d674786",
+          "sha512": "939c60264bd161f9b3bf657ecdbb3ecd0dc086f7e0a689fa86dad3e753e75990c2621ddc67cae364597b40341d5a85b1e3f878324c7baa18c99d71a35f7b0070"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/CBwEPM7D/blast-1.8.4.jar",
+        "filename": "blast-1.8.4.jar",
+        "primary": true,
+        "size": 165618,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "mgIXEGy8",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.8.3",
+    "version_number": "1.8.3",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:34:06.259473Z",
+    "downloads": 109,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "33291b53d83cc93af0c234932e30ee254e399efe449f84147c32e5440462463ecef79a695c4e9ae71297473a89b758e8d956c4e47ef18401f26631466cc419a1",
+          "sha1": "7f189820d89af995d5aecce4645c6f0d0a015e32"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/mgIXEGy8/blast-1.8.3.jar",
+        "filename": "blast-1.8.3.jar",
+        "primary": true,
+        "size": 164008,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "mxLgd6MS",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.8.2",
+    "version_number": "1.8.2",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:33:44.886099Z",
+    "downloads": 63,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "dfc79a69acfd6580b31e6ad02662de537fbc54a7",
+          "sha512": "32436234a87e0d73396665f90ce2bbb9ab8ee247ff410abe455fe6e3f4b05e637c7f7edac89463362e05d1c31c528857ddb7733e053c44625a4a662b4a384ad1"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/mxLgd6MS/blast-1.8.2.jar",
+        "filename": "blast-1.8.2.jar",
+        "primary": true,
+        "size": 163546,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "YgNNrLrS",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.8.1",
+    "version_number": "1.8.1",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:33:05.863379Z",
+    "downloads": 192,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d31fe99bdc8669599cda51408748856f3797d26edcb8ae78aee7ee2427adbaa8604ad8cc31fbb571823ccc09b1d6656fd295bed1dc7a329e5045e247186c0045",
+          "sha1": "c179edd7911b6b1a7511b4d99ea171f699d67bb9"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/YgNNrLrS/blast-1.8.1.jar",
+        "filename": "blast-1.8.1.jar",
+        "primary": true,
+        "size": 161524,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ItzKfRfg",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.8",
+    "version_number": "1.8",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:32:51.164964Z",
+    "downloads": 51,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "a0c8ef5a7310a090b22d0bdd54fa975238907739d0d525b6f84d85265a8f5c8eca49fba0d2aae909fb40d3ad4097d1f29273fa29fb43374760b17704d4e8568c",
+          "sha1": "778bed1174e7555fd3bb3cd58f08321854902cc6"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/ItzKfRfg/blast-1.8.jar",
+        "filename": "blast-1.8.jar",
+        "primary": true,
+        "size": 159916,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "mNCrfDRs",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.7.1",
+    "version_number": "1.7.1",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:32:28.609139Z",
+    "downloads": 40,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e791570175eb6b62ab3b32b3b901ff0bee52674cc647413ac195947c8a20b79f7b8d729e9f9d5dc1c4275dbb4d733cbbed28609b336af57417397d0710746bf3",
+          "sha1": "36aff651161bd481d205679c3b8b1e6f9aece0ae"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/mNCrfDRs/blast-1.7.1.jar",
+        "filename": "blast-1.7.1.jar",
+        "primary": true,
+        "size": 120182,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "suZNu4Le",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.6.2",
+    "version_number": "1.6.2",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:32:03.255553Z",
+    "downloads": 44,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "8e1c52cf45acd833b046a6ad5a51a409cdab1964a5927698ae8bdac85d18ce2d5e21b0ed1a5bd45a064e90445c5a58b25ae1a15132bdf8859b096bb85e7d4eb4",
+          "sha1": "ea16f50dff940c405c1d72280adb9c7063d539d7"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/suZNu4Le/blast-1.6.2.jar",
+        "filename": "blast-1.6.2.jar",
+        "primary": true,
+        "size": 101918,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "21w14a"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "w2XSdhsL",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.6.1",
+    "version_number": "1.6.1",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:31:34.033564Z",
+    "downloads": 50,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ab8979b7bbb8fb554b9eeb8a487a7192b8719b90",
+          "sha512": "5820dbf6b5f76b22bc5fd1d74b42b1b400d982b7d916307f6e2e9f4daa922d6f9d32fc5993ca5e96fb6d4047fc285e7edb751a0ab17bc19c83f9c35b003c37bc"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/w2XSdhsL/blast-1.6.1.jar",
+        "filename": "blast-1.6.1.jar",
+        "primary": true,
+        "size": 100222,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "21w14a"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "FsW9893N",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.6",
+    "version_number": "1.6",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:31:08.240731Z",
+    "downloads": 52,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "837ed034c8d06e03bb26975323f109f3fc148170bfe569bb5563defc4ca6a0aec4592b1bcdbb1692178f549e9797680294e61e6d5bf4d385c4fef6b00f82d0f5",
+          "sha1": "3ec5ae3f3d7f1331c40d2dc88ad4ad42aa394e30"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/FsW9893N/blast-1.6.jar",
+        "filename": "blast-1.6.jar",
+        "primary": true,
+        "size": 100194,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "5VpykvbV",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.5.2",
+    "version_number": "1.5.2",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:30:18.580956Z",
+    "downloads": 271,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e4d5796bbd762bdb450a3cdc35d73528ee37a815",
+          "sha512": "9f10db744a3f8f10e277647808361c5df4dbcca086858a8399b854e2f25518bae05a8c1f83decd77fc4ede1bea760672a68cf1fdef523c58402f80e956966ebf"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/5VpykvbV/blast-1.5.2.jar",
+        "filename": "blast-1.5.2.jar",
+        "primary": true,
+        "size": 88438,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "L5HvEArb",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.5.1",
+    "version_number": "1.5.1",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:30:00.931073Z",
+    "downloads": 49,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2854d8e7846a398a6156cd7df23dd8764c6110e6ca33311385775e4322db714944686052430e0b8f7996e4c9e68fbadd799cb0a5b79604ebce30ddc2812b4ba5",
+          "sha1": "bd26c461bdd1c80fb35f4dddce7e6c65c8239a85"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/L5HvEArb/blast-1.5.1.jar",
+        "filename": "blast-1.5.1.jar",
+        "primary": true,
+        "size": 88451,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "f5VnRWF5",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.5",
+    "version_number": "1.5",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:29:35.685218Z",
+    "downloads": 55,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "4ee54912cdd21a472c3d22b20e2bc860ce4a3aca1e20657467ef62e45d58fcfdca1a7a86e5b2ac808f99797a06ac1723239d8e8c407aa236e11a99de25e58cee",
+          "sha1": "e1de082cc45ca688b6dfff0585e0c0bc9bcc2dca"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/f5VnRWF5/blast-1.5.jar",
+        "filename": "blast-1.5.jar",
+        "primary": true,
+        "size": 88374,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "vCIVWLbL",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.4",
+    "version_number": "1.4",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:28:46.237473Z",
+    "downloads": 52,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "8e44af9680d5fcd5089866dd9e30efdbb0be9b5c",
+          "sha512": "90cc3b4948de5a66f90cb014642c3676ba223fc8d2d887692db66a6e0f4a23b546c8f5fe4b37f72d83e5a0f81c4f973e098ea71f7a3ba6908223d30b6a5aa1d8"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/vCIVWLbL/blast-1.4.jar",
+        "filename": "blast-1.4.jar",
+        "primary": true,
+        "size": 77015,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "9YVsndjU",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.3.2",
+    "version_number": "1.3.2",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:27:53.480133Z",
+    "downloads": 60,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "583071b0298580142ff046c59f0c704f3048b003",
+          "sha512": "205bef210f1a667eb553c72f9e8390e2dc05c6fd22f09a3cdfc4e79e7d9e72c7bb3f460f5ce13de0c332eabfbdc6c3cee589bcb1d1d0443bf787652c17c33437"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/9YVsndjU/blast-1.3.2.jar",
+        "filename": "blast-1.3.2.jar",
+        "primary": true,
+        "size": 58122,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "20w17a"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "NqeNW5iK",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.3",
+    "version_number": "1.3",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:27:20.824173Z",
+    "downloads": 58,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f24244fef3bcc94f0650e4739f520f388e080762069ec0fea27bcaaace25513dfbe3a1e1edbbdb571c4358b23fe98d3fcfd91db36a4245fa66b2978c8b9babbb",
+          "sha1": "09956236724fb4642d391d200c1eb4eac0e747ce"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/NqeNW5iK/blast-1.3.jar",
+        "filename": "blast-1.3.jar",
+        "primary": true,
+        "size": 58299,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "20w13b"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ZGBWgu69",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.2.1",
+    "version_number": "1.2.1",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:26:37.291597Z",
+    "downloads": 48,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "26c70d0402195bd051277579cbde7f909c5a9427e890e7df2ec85e44d1e9445ac7391268429562262f10baa4bfe9f4b6f4756dc5a931e050d68ec8dd160483da",
+          "sha1": "b5635c251896444ca7e2fceef69ea89e7b784233"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/ZGBWgu69/blast-1.2.1.jar",
+        "filename": "blast-1.2.1.jar",
+        "primary": true,
+        "size": 43412,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "20w06a"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "S2i6qW5b",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.2",
+    "version_number": "1.2",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:26:15.198067Z",
+    "downloads": 41,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f4eec3eeb4c152eeb41f6179fd6c5ccd0fa17d6a10fc5a48d7f34c8eb3e8ed139ff2272a4171dcca3e9218bc3b19ba24840c407a589f1af018c6de8ac0350d12",
+          "sha1": "838e39d66bc91b83cbf0b7d374edb165e671fbf2"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/S2i6qW5b/blast-1.2.jar",
+        "filename": "blast-1.2.jar",
+        "primary": true,
+        "size": 43406,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.15.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "r0xueyn0",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.1.1",
+    "version_number": "1.1.1",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:25:03.476608Z",
+    "downloads": 45,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "8e83627635664ba7319ffbdab1b1f55caba705b88951ad2cce8fdb78a8f77378e233c6eed8fc4d0dc22c43d62f90b5bd20b21b68362a9d10ccd85183697b8c92",
+          "sha1": "174a40115b0ffba789acdae297342bf6a8ea4e28"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/r0xueyn0/blast-1.1.1.jar",
+        "filename": "blast-1.1.1.jar",
+        "primary": true,
+        "size": 43402,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.14.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "j8wupN18",
+    "project_id": "hrVBD9fd",
+    "author_id": "IOLegUML",
+    "featured": false,
+    "name": "BLAST 1.0.0",
+    "version_number": "1.0.0",
+    "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
+    "changelog_url": null,
+    "date_published": "2024-06-01T10:23:43.54392Z",
+    "downloads": 50,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "501c49441fde8b58b39b3a960b4c7a50e8f1fa8a",
+          "sha512": "fffb513e0e1bb1ac562f478c74d47822728522d4b4ac448393ef3ee07cc8fef8c13a586f8c10cd101a5b0f5129123f682940343d2ea59a6e08a13621c6d69362"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/j8wupN18/blast-1.0.0-1.14.4.jar",
+        "filename": "blast-1.0.0-1.14.4.jar",
+        "primary": true,
+        "size": 43919,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "quilt"
+    ],
+    "id": "vRxBeYJI",
+    "project_id": "hrVBD9fd",
+    "author_id": "wbAGDjBN",
+    "featured": true,
+    "name": "BLAST 1.14",
+    "version_number": "1.14",
+    "changelog": "------------------------------------------------------\nBLAST 1.14 - 1.19.2\n------------------------------------------------------\n- Added Pipe Bombs\n  - Combine a regular bomb with up to eight fireworks to create a pipe bomb\n  - When detonating, pipe bombs will gradually release all fireworks inside it and explode them\n  - Can be stored in a bundle\n    - When stored in a bundle, pipe bombs will disguise as a random item in the game\n    - When opening the bundle in the inventory or releasing it in the world, pipe bombs will automatically set off\n\n------------------------------------------------------\nBLAST 1.10 - 1.19\n------------------------------------------------------\n- Added the Bonesburrier, a new deadly explosive block for a powerful display!\n- Added the Remote Detonator; triggered by aiming in its direction with an ender eye, it allows you to remotely and instantly detonate Blast explosive blocks and TNT adjacent to the detonator\n  - When triggered, the ender eye wil then be placed inside the detonator. If a hopper with a free slot is located below the detonator it will remove it so the detonator can be triggered again\n- Added Folly Red Paint; resulting from the explosion of the Bonesburrier\n  - It will dry over time into Dried Folly Red Paint\n  - Honey bottles can be used on (or crafted with) Folly Red Paint and Dried Folly Red Paint to turn them into Fresh Folly Red Pain, which will not dry up\n  - Folly Red Paint and Fresh Folly Red Paint can be smelted into a furnace to give Dried Folly Red Paint\n\n------------------------------------------------------\nBLAST 1.9.1 - 1.18.2\n------------------------------------------------------\n- Fixed Blast projectiles and other entities not rendering from further than 8 blocks away\n\n------------------------------------------------------\nBLAST 1.9 - 1.18.2\n------------------------------------------------------\n- Removed bombards\n- Added amethyst, frost and slime bombs, replacing the uses of the removed bombards\n- Bombs now have a 1 second cooldown when used in gamemodes other than creative, the cooldown applies to all bomb items\n- Reduced bomb maximum stack size to 16\n- Reduced amethyst and frost bomb shrapnel count from 250 to 70\n- Increased amethyst and frost bomb shrapnel speed from 0.6 to 1.4\n- Removed amethyst shards bypassing invulnerability ticks\n- Increased amethyst shard damage from 2 to 8\n- Divided utility explosion damage (bombs, diamond bombs, golden bombs, etc...) by 3\n- Reduced damage of icicles from 0.5 to 0.01\n- Icicles bypass armor and no longer damage it\n\n------------------------------------------------------\nBLAST 1.8.5 - 1.18.2\n------------------------------------------------------\n- Added compatibility with Enchancement and other mods that may remove the Fortune enchantment from the registry\n\n------------------------------------------------------\nBLAST 1.8.4 - 1.18.2\n------------------------------------------------------\n- Updated to Minecraft 1.18.2\n\n------------------------------------------------------\nBLAST 1.8.3 - 1.18.1\n------------------------------------------------------\n- Added a recipe to allow crafting stripminers with TNT\n\n------------------------------------------------------\nBLAST 1.8.2 - 1.18\n------------------------------------------------------\n- Updated to Minecraft 1.18\n\n------------------------------------------------------\nBLAST 1.8.1 - 1.17.1\n------------------------------------------------------\n- Made the bombard recipe cheaper, now requiring iron ingots instead of iron blocks\n- Made the bombard upgrade to amethyst bombard more expensive, now requiring an amethyst block instead of a single amethyst shard\n- Fixed normal bombs and dirt bombs having inverted names\n- Added a Romanian translation thanks to WindRat\n- Added a Russian translation thanks to V972\n\n------------------------------------------------------\nBLAST 1.8 - 1.17.1\n------------------------------------------------------\n- Added a new item class, the bombards! These new weapons allow you to launch bombs and trigger bombs further, at the cost of disabling their destructive nature. Each bombard type is unique and will transform your bombs into something different!\n    - Bombard: The normal bombard, throws bombs and trigger bombs but disables their block destruction. Crafted from 6 iron blocks on the side, with a cauldron, a piston and a lever in the middle respectively from top to bottom.\n    - Slime Bombard: Obtained by smithing a Bombard with a slime block, this bombard covers the launched bombs in slime that will result in no damage being dealt to the entities in the explosion radius of the bombs, while giving the explosion a stronger knockback. Great for elytra and chicken launching!\n    - Amethyst Bombard: Obtained by smithing a Bombard with an amethyst shard, this bombard will not cause any explosion damage, but will spurt out amethyst shards with cumulative damage.\n    - Frost Bombard: Obtained by smithing an Amethyst Bombard with blue ice, this bombard will act similar to the amethyst bombard but will instead shatter your bombs into icicles. These icicles deal significantly less damage than amethyst shards (a quarter of a heart compared to 2 for the amethyst shard) but will cumulatively apply freezing to the hit entities!\n- Added Dirt Bombs. Crafted by surrounding a bomb or trigger bomb in dirt blocks, this bomb will help you fill holes with dirt or terraform your land!\n- Added Pearl Bombs. Crafted like other bombs with an ender pearl as the material, this bomb will have a silk touch effects on blocks it destroys. It doesn't explode, but still respects the same logic. All living entities inside the bomb's radius will be randomly teleported.\n- Explosions from Blast will now properly be attributed to the player or entity who threw the bomb, meaning entities affected by the explosion will retaliate, and death messages will no longer hide your true intentions, like that one time when you threw a trigger bomb at your friend voluntarily and justified it as a misclick.\n- Fixed an issue that caused stripminers and colddiggers to crash game clients\n\n------------------------------------------------------\nBLAST 1.7.1 - 1.17.1\n------------------------------------------------------\n- Fixed an issue that caused trigger bombs to explode with the player right after throwing them while running or flying\n- Fixed an issue that caused bomb explosions to not always affect entities with the knockback they should\n\n------------------------------------------------------\nBLAST 1.7 - 1.17.1\n------------------------------------------------------\n- Added confetti bombs, exists in fuse and trigger variants\n    - Explodes into a burst of confetti! Perfect for all your festive needs!\n    - Crafted shapelessly from 7 paper, 1 gunpowder and 1 string / dust (fuse / trigger)\n- Added a fuse smoking particle effect to fuse bombs\n- Updated to 1.17.1\n\n------------------------------------------------------\nBLAST 1.6.2 - 1.17\n------------------------------------------------------\n- Fixed an issue that would cause the dry ice particles to not display properly\n- Updated to 1.17, thanks to Spiralhalo!\n\n------------------------------------------------------\nBLAST 1.6.1 - 21w14a\n------------------------------------------------------\n- Fixed an issue that caused naval mines to make freezing explosions\n- Naval mines no longer suffer negative drag underwater\n- Trigger bombs no longer require stone buttons in order to be crafted\n\n------------------------------------------------------\nBLAST 1.6 - 21w14a\n------------------------------------------------------\n- Added the Cold Digger, a cool stripminer upgrade allowing to quickly create tunnels by freezing the water around into ice, turning the lava into basalt and chill the air into dry ice!\n- Added Dry Ice, identical to ice except it doesn't melt and doesn't create water. Can be obtained when using the Cold Digger and can be picked up with a Silk Touch pickaxe.\n\n------------------------------------------------------\nBLAST 1.5.2 - 1.16.5\n------------------------------------------------------\n- Tweaked the Stripminer recipe to be more in line with the other recipes of the mod\n\n------------------------------------------------------\nBLAST 1.5.1 - 1.16.5\n------------------------------------------------------\n- Diamond bombs no longer destroy undestroyable blocks like command blocks, barriers or end portal frames\n- Fixed an issue that caused stripminers to disappear and drop a bomb when submerged in water\n\n------------------------------------------------------\nBLAST 1.5 - 1.16.4\n------------------------------------------------------\n- Added trigger bombs: bombs that explode on impact, available in iron, gold and diamond variants\n- Added French translation (courtesy of Lykrast)\n- Stripminers now have a random decreased fuse timer when triggered by an explosion\n- Fixed an incompatibility with Applied Energistics 2 that caused the stripminer to disappear when ignited\n- Fixed an issue that would cause a dedicated server crash upon igniting a gunpowder block\n- Removed Pulveris\n\n------------------------------------------------------\nBLAST 1.4 - 1.16.3\n------------------------------------------------------\n- Added the gunpowder block, instantly explodes when catching fire\n- Added the Stripminer, a directional explosive that can be triggered like a normal TNT\n- Updated to Minecraft 1.16.3\n\n------------------------------------------------------\nBLAST 1.3.2 - 1.16.1\n------------------------------------------------------\n- Fixed an issue where the server would crash upon explosions\n\n------------------------------------------------------\nBLAST 1.3.1 - 1.16.1\n------------------------------------------------------\n- Updated to Minecraft 1.16.1\n\n------------------------------------------------------\nBLAST 1.3 - 20w17a\n------------------------------------------------------\n- Removed boompowder\n- Changed crafting recipes to only require iron / diamond / gold / prismarine for the naval mine, gunpowder and string / redstone for the naval mine\n- Updated to Minecraft snapshot 20w17a\n\n------------------------------------------------------\nBLAST 1.2.1 - 20w13b\n------------------------------------------------------\n\n- Updated to Minecraft snapshot 20w13b\n\n------------------------------------------------------\nBLAST 1.2 - 20w06a\n------------------------------------------------------\n\n- Updated to Minecraft snapshot 20w06a\n\n------------------------------------------------------\nBLAST 1.1.1 - 1.15.1\n------------------------------------------------------\n\n- Fixed a bug that made the server crash on startup\n- Fixed a bug where thrown pulveris bottles were invisible and didn't have explosion visual effects\n\n------------------------------------------------------\nBLAST 1.1.0 - 1.15.1\n------------------------------------------------------\n\n- Updated to Minecraft 1.15.1\n",
+    "changelog_url": null,
+    "date_published": "2024-02-13T19:04:34.244358Z",
+    "downloads": 19042,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "22c2fa0141397101a48abddcaea2c5396617544b",
+          "sha512": "5c90b71eba01f694a164074ec0e2bd3baede2f290b48af382ff424fbedc7f3361d77e61b16f9393d4d73ecdf551cc9da151fac45b671bcbeb0c26d2ef8b27430"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/vRxBeYJI/blast-1.14.jar",
+        "filename": "blast-1.14.jar",
+        "primary": true,
+        "size": 233956,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ojB3W9Gs",
+    "project_id": "hrVBD9fd",
+    "author_id": "GDgeVWgK",
+    "featured": true,
+    "name": "BLAST 1.13",
+    "version_number": "1.13",
+    "changelog": "BLAST 1.13 - 1.20:\n\n- Added Chinese localization (thanks Rad586 !)\n- Fixed confetti particles' broken physics (thanks WillBL !)\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.13/changelog.md \"Changelog\")",
+    "changelog_url": null,
+    "date_published": "2024-01-01T15:19:09.289746Z",
+    "downloads": 75153,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "10d7ebefb9cd465a6577397f2cb51e529693aef5",
+          "sha512": "cc144be01386031379c4b20a844087e6f096d834a06e617a968ca65df659ec75621860963004210ce384423118adef5dfe610b04c03a96c34c14aa5a55786551"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/ojB3W9Gs/blast-1.13.jar",
+        "filename": "blast-1.13.jar",
+        "primary": true,
+        "size": 244978,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "pSmVu2ni",
+    "project_id": "hrVBD9fd",
+    "author_id": "GDgeVWgK",
+    "featured": true,
+    "name": "BLAST 1.12",
+    "version_number": "1.12",
+    "changelog": "BLAST 1.12 - 1.20:\n\nAn update by Evelyn and WillBL 💙\n\n- Added common protection API support\n- Piglins now treat golden bombs as golden items\n- Fixed gunpowder blocks causing floating fire blocks\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.12/changelog.md \"Changelog\")",
+    "changelog_url": null,
+    "date_published": "2023-10-25T21:00:43.821698Z",
+    "downloads": 3636,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b63c6d7c91f8535261280e95a48b6ff719bb051e",
+          "sha512": "f6622cd65d5925b6e6a081bf42863b6296141a50a4a7bf08a160ec7b5f214a29646f8591b5f25800a1b551491e153e5513fd78ccf89e94d5797c4c0e01963681"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/pSmVu2ni/blast-1.12.jar",
+        "filename": "blast-1.12.jar",
+        "primary": true,
+        "size": 243704,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "4vi59LgI",
+    "project_id": "hrVBD9fd",
+    "author_id": "GDgeVWgK",
+    "featured": true,
+    "name": "BLAST 1.11",
+    "version_number": "1.11",
+    "changelog": "BLAST 1.11 - 1.20:\n\nAn update powered by our community !\n\n- Updated to 1.20.1 (thanks Evelyn !)\n- Un-hardcoded explosion size, so you can summon customized blasts (thanks Amy !)\n- Added Ukrainian localization (thanks Cube !)\n- Added Italian localization (thanks CapoFantasma97 !)\n- Added Turkish localization (thanks Hexasan !)\n- Added Spanish localization (thanks Boxadactle !)\n\n*Also, first version on [Modrinth](https://modrinth.com/mod/blast)*\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.11/changelog.md \"Changelog\")",
+    "changelog_url": null,
+    "date_published": "2023-10-07T23:25:34.721321Z",
+    "downloads": 952,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "fee3eda77b04d04f9bb0d175dd2dc4250090fb4f",
+          "sha512": "35117a792a3c595c0033eb40b1a14c535ab993b76701065661effeaff2039243febc4bdc2b052aeee37ba46eb2022382eaf10c97432cd26842ef6d6ffd119276"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/4vi59LgI/blast-1.11.jar",
+        "filename": "blast-1.11.jar",
+        "primary": true,
+        "size": 230228,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  }
+]

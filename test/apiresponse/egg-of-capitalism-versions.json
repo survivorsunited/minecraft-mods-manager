@@ -1,0 +1,484 @@
+[
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "S5qEeVFl",
+    "project_id": "llThBwQo",
+    "author_id": "GCrw5dng",
+    "featured": true,
+    "name": "mc1.20.5-4.0",
+    "version_number": "mc1.20.5-4.0",
+    "changelog": "## Features\n\n - Minecraft 1.20.5+ support\n\n## New Contributors\n\n - @magicus made their first contribution in [#5](https://github.com/Kir-Antipov/egg-of-capitalism/pull/5)\n\n**Full Changelog**: [`mc1.20-4.0...mc1.20.5-4.0`](https://github.com/Kir-Antipov/egg-of-capitalism/compare/mc1.20-4.0...mc1.20.5-4.0)",
+    "changelog_url": null,
+    "date_published": "2024-05-14T17:44:57.59284Z",
+    "downloads": 249,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "3c7a947eb331fde89bc8c1a8f8fb2c4c7bd45d31",
+          "sha512": "15af61f2d7366ea8ed3c23e1e97d2c8a736457ea8b701f4b37685c1658c84d5087d8f0ed589e6bbefda125e63fecc1096fcb83c732b346fec9c6229a2289d988"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/S5qEeVFl/egg-of-capitalism-mc1.20.5-4.0.jar",
+        "filename": "egg-of-capitalism-mc1.20.5-4.0.jar",
+        "primary": true,
+        "size": 38705,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "e818433c2b3bc904cd2257da6dbe7c561df8a7af8ae6744b010ac976658a23f57250c2cf008298a4d3a73c83524756c5066a180dbc389362db17841a2273dc95",
+          "sha1": "33cc08dde0488c82e2ee73cf1b201e5a813bba8a"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/S5qEeVFl/egg-of-capitalism-mc1.20.5-4.0-sources.jar",
+        "filename": "egg-of-capitalism-mc1.20.5-4.0-sources.jar",
+        "primary": false,
+        "size": 32900,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1",
+      "1.20.2",
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "eHqlCCvB",
+    "project_id": "llThBwQo",
+    "author_id": "GCrw5dng",
+    "featured": false,
+    "name": "mc1.20-4.0",
+    "version_number": "mc1.20-4.0",
+    "changelog": "### Features:\r\n\r\n - Minecraft 1.20.x support",
+    "changelog_url": null,
+    "date_published": "2023-12-16T15:08:34.965417Z",
+    "downloads": 2890,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "88df5bad2f940fb6f943ee522a16a6e92d8e15d4",
+          "sha512": "09606fce2dd1ed0e439dc25aed3ebd674e25b1a6ab08c11adedf4705bc280ec1e6765a2eaaa2eaf7c82bbe1d38e2f1114a1c19a1fa9b889c6903ebe6309b8c13"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/eHqlCCvB/egg-of-capitalism-mc1.20-4.0.jar",
+        "filename": "egg-of-capitalism-mc1.20-4.0.jar",
+        "primary": true,
+        "size": 38669,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "a1c107de95fd98515bceeb67d2ab9a0c0f8b567a",
+          "sha512": "b1e83ecc84dff064c336cce371a7d0fc2c3e12b68fa51ec87c7821bb027b99932c4ca144c627eb6ce3ac4e92e0d70e360bbd8d9aae166baec24164353391951c"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/eHqlCCvB/egg-of-capitalism-mc1.20-4.0-sources.jar",
+        "filename": "egg-of-capitalism-mc1.20-4.0-sources.jar",
+        "primary": false,
+        "size": 32890,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.3",
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "UO9OcDT8",
+    "project_id": "llThBwQo",
+    "author_id": "GCrw5dng",
+    "featured": true,
+    "name": "mc1.19-4.0",
+    "version_number": "mc1.19-4.0",
+    "changelog": "### Features:\r\n\r\n- Refactoring & optimizations\r\n\r\n### Breaking Changes:\r\n\r\n - The mod no longer scans advancement data to identify a player who has already killed the dragon. This process was costly, unportable, and error-prone, as it produced lots of unwanted false positives",
+    "changelog_url": null,
+    "date_published": "2023-12-16T00:48:48.3804Z",
+    "downloads": 932,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c591fbe8949837b18cc44d576156693ce83cb0770815974cc1533df097b8d04dc9f486430928f3e8e736d493c1206f744a3611c0c4a69a879daf106e65bb024e",
+          "sha1": "0ab460f9846088103b437c29fbb36d90b7f91df1"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/UO9OcDT8/egg-of-capitalism-mc1.19-4.0.jar",
+        "filename": "egg-of-capitalism-mc1.19-4.0.jar",
+        "primary": true,
+        "size": 34114,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "5a91a5ea62d6773c999b1b43510d6491ecae2c2c",
+          "sha512": "22967a0cb4e90ec6c240f4a33f652027a8520731befb2fab8acd002b1e9eaefbd83017a7b06f826a164d5054b9ca92a587cb7146f69aa3aca39c7d1e6caf2dde"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/UO9OcDT8/egg-of-capitalism-mc1.19-4.0-sources.jar",
+        "filename": "egg-of-capitalism-mc1.19-4.0-sources.jar",
+        "primary": false,
+        "size": 31408,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "5LhWeVWt",
+    "project_id": "llThBwQo",
+    "author_id": "GCrw5dng",
+    "featured": false,
+    "name": "mc1.19-3.1",
+    "version_number": "mc1.19-3.1",
+    "changelog": "### Features:\r\n\r\n - Minecraft 1.19 support",
+    "changelog_url": null,
+    "date_published": "2022-06-09T15:13:15.208275Z",
+    "downloads": 483,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5f7d790cd280189a333044d8b30849a9c2aaef94515ddc68a1b5a87385cba5fde6206ce691a815fcd603476726689d27f6086b9550ebf1ba59a46f795a89f432",
+          "sha1": "459a11ff734a7edbdf8dcc82a30ea8c80e982c91"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.19-3.1/egg-of-capitalism-mc1.19-3.1.jar",
+        "filename": "egg-of-capitalism-mc1.19-3.1.jar",
+        "primary": true,
+        "size": 37078,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "3a53056734c7b20f592e6cd8576fc4c194329fc1",
+          "sha512": "f8da8d922b47949ce5adb6bc81a0ee1a8cf981d0150c9c1afce21c44db0ae698735c116febb08b2502196f0464a83336343ac4b0897f0c495621b3f83ca137b2"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.19-3.1/egg-of-capitalism-mc1.19-3.1-sources.jar",
+        "filename": "egg-of-capitalism-mc1.19-3.1-sources.jar",
+        "primary": false,
+        "size": 33024,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "qifF1c4Y",
+    "project_id": "llThBwQo",
+    "author_id": "GCrw5dng",
+    "featured": true,
+    "name": "mc1.18-3.1",
+    "version_number": "mc1.18-3.1",
+    "changelog": "### Features:\r\n\r\n - Minecraft 1.18.2 support",
+    "changelog_url": null,
+    "date_published": "2022-05-31T19:00:52.401303Z",
+    "downloads": 481,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "94e1fc02e829880612f9a48ebb00e2cdafdb25c3ba482a8eee4f47c73a22701e4ff433bfb907e69420cfec6b85db22d7c184abc74472b0cc661666a59a40a3c8",
+          "sha1": "937d35405ab979ac5b9b35e8aa002dfb29abd7a2"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.1/egg-of-capitalism-mc1.18.2-3.1.jar",
+        "filename": "egg-of-capitalism-mc1.18.2-3.1.jar",
+        "primary": true,
+        "size": 37127,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "7162e19c8590ddf0e2945f03fb933b3745861618",
+          "sha512": "2f08fef086d076e4e95c0645fde833c4479a6858a1822a4b928df5aa9a712bad5853a3487a9ba0fdcfea8703f8fd78abe86576579192f61f06e07699389d7750"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.1/egg-of-capitalism-mc1.18.2-3.1-dev.jar",
+        "filename": "egg-of-capitalism-mc1.18.2-3.1-dev.jar",
+        "primary": false,
+        "size": 36271,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "93d8182dd64a92a334a8cbeab9a25a1d2ea0db4a4cb0b6731827a667c9707d8bc1363581301b6bbf6345c53b3f2c3fd6d1a8a821597de7b5154826b975292095",
+          "sha1": "393573ad809aba8be8695d2a9bd162e672df124f"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.1/egg-of-capitalism-mc1.18.2-3.1-sources-dev.jar",
+        "filename": "egg-of-capitalism-mc1.18.2-3.1-sources-dev.jar",
+        "primary": false,
+        "size": 32419,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha1": "22f5e6f3f31f267128e0b5519365e70c07e0d2c9",
+          "sha512": "04cd6501e36af695150578f439fd87934083297b9ddd192984292016902b962ddd2916cc5f5c5c019bb98254d30fee296445e5339e9d397586e3a87a318902dc"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.1/egg-of-capitalism-mc1.18.2-3.1-sources.jar",
+        "filename": "egg-of-capitalism-mc1.18.2-3.1-sources.jar",
+        "primary": false,
+        "size": 33028,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "mwt75pjt",
+    "project_id": "llThBwQo",
+    "author_id": "GCrw5dng",
+    "featured": false,
+    "name": "mc1.18-3.0",
+    "version_number": "mc1.18-3.0",
+    "changelog": "### Features:\r\n\r\n - Minecraft 1.18 support\r\n - ModManager integration\r\n\r\n### Breaking Changes:\r\n\r\n - Name of the root package was changed",
+    "changelog_url": null,
+    "date_published": "2021-12-18T14:45:06.467578Z",
+    "downloads": 568,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "23a8b8b271801ebabf69d8444e4f32f7d3411fabb1c7cc2b529a1ac886c9ea0863bc2eb38b348a5a176b85e437500d7e5aebf1f7e0a00f0c9cdef1f02e75b865",
+          "sha1": "138e2ea327fbe2b2a115ecf81aff65380cbbc7df"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.0/egg-of-capitalism-mc1.18-3.0.jar",
+        "filename": "egg-of-capitalism-mc1.18-3.0.jar",
+        "primary": true,
+        "size": 37119,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "7a6020c1398d42a91f045aa45ebd98b58db90982bb8fbfc060115bba550e3143c46ec2be2a778adc881130b0e3861310ae678dde3e92ceca575572cd9c0d8ceb",
+          "sha1": "1803713e48be4120caa5e979cd193c7a308bad5d"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.0/egg-of-capitalism-mc1.18-3.0-dev.jar",
+        "filename": "egg-of-capitalism-mc1.18-3.0-dev.jar",
+        "primary": false,
+        "size": 36264,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "dfbf45e5340cd554268f907823e0efbba7edd012aa77b728b8a7fd2e6101f218baaa535d98ad9ef481b8016b8ab0af2153773e31e1898d9b19ee624bda35a106",
+          "sha1": "5ccd669459d213d32bcad99ef6cbb076cad75172"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.0/egg-of-capitalism-mc1.18-3.0-sources-dev.jar",
+        "filename": "egg-of-capitalism-mc1.18-3.0-sources-dev.jar",
+        "primary": false,
+        "size": 32419,
+        "file_type": null
+      },
+      {
+        "hashes": {
+          "sha512": "6fa4ae8e43a25086e2ed242ab0884a0f09d5e5053c251ddf515224636b0096504061f00be163707f8fe8913f91f53bb29f30f21e971339c17b4af3d47a17a182",
+          "sha1": "2483c86be205783f9e4ed3fc2de8714cc4388df5"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.0/egg-of-capitalism-mc1.18-3.0-sources.jar",
+        "filename": "egg-of-capitalism-mc1.18-3.0-sources.jar",
+        "primary": false,
+        "size": 33028,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "XuuVmwnH",
+    "project_id": "llThBwQo",
+    "author_id": "GCrw5dng",
+    "featured": true,
+    "name": "mc1.17-2.1",
+    "version_number": "mc1.17.x-2.1",
+    "changelog": "### Features:\n - Initial release for Minecraft 1.17",
+    "changelog_url": null,
+    "date_published": "2021-06-11T17:53:14.519251Z",
+    "downloads": 297,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "3ff36a2fe6465fe716f772be0b797a6d6bd7da18",
+          "sha512": "49ef5a82ee3ce077f66afcd370aa338010262dfdbc8ded7eb1ab8541c8ca56e8e33e3117365720b3f6d525b0a353f1c0c4cd2fa8c1296ad2c52203bacd9c4539"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.17.x-2.1/eggofcapitalism-mc1.17.x-2.1.jar",
+        "filename": "eggofcapitalism-mc1.17.x-2.1.jar",
+        "primary": true,
+        "size": 37080,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.1",
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "KUSCMfPz",
+    "project_id": "llThBwQo",
+    "author_id": "GCrw5dng",
+    "featured": true,
+    "name": "mc1.16-2.1",
+    "version_number": "mc1.16.x-2.1",
+    "changelog": "### Fixes:\n - Dragon can be killed with a projectile",
+    "changelog_url": null,
+    "date_published": "2021-06-09T21:59:42.963421Z",
+    "downloads": 269,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "33626ce4563a958203a0e038bb7e51f240f8dd7335cfbceba93536305adaf2d0652f4606f7f5369c266591538d56cfce840e67511083d971291f3147d0382cd5",
+          "sha1": "a37fa81d98715596a9eaa73034565d48ce6151c1"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.16.x-2.1/eggofcapitalism-mc1.16.x-2.1.jar",
+        "filename": "eggofcapitalism-mc1.16.x-2.1.jar",
+        "primary": true,
+        "size": 37089,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.1",
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "T5Xz4KPx",
+    "project_id": "llThBwQo",
+    "author_id": "GCrw5dng",
+    "featured": false,
+    "name": "Egg Of Capitalism 2.0",
+    "version_number": "mc1.16.x-2.0",
+    "changelog": "### New Features:\n - Now mod can get the necessary data about the past victories of players over the dragon\n\n### Fixes\n - Gave up `@Overwrite` in favor of `@Inject`. Now `Egg Of Capitalism` should be compatible with other mods that change logic of the end fight",
+    "changelog_url": null,
+    "date_published": "2021-06-09T14:26:06.311978Z",
+    "downloads": 122,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "952f4930e177bb9b1feddbf593719b618639b906",
+          "sha512": "dc92109459619dc68e21334267010c271e936df65974b606e1fd6c4f9948532184e85507a0d8fa18795b115665af9b9610dda01b1b3844f9ef7233a1be42bbc3"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.16.x-2.0/eggofcapitalism-mc1.16.x-2.0.jar",
+        "filename": "eggofcapitalism-mc1.16.x-2.0.jar",
+        "primary": false,
+        "size": 37046,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.1",
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "FoFUG1wO",
+    "project_id": "llThBwQo",
+    "author_id": "GCrw5dng",
+    "featured": false,
+    "name": "Egg Of Capitalism 1.0",
+    "version_number": "mc1.16.1-1.0",
+    "changelog": "### New Features:\n- Initial release",
+    "changelog_url": null,
+    "date_published": "2021-06-02T14:51:26.069817Z",
+    "downloads": 129,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7a61758761b383c8eb1a7df78402f62b1448daaa",
+          "sha512": "9e61a018175237c0a059758c5aa1bf92747463fa0a962b3af93813257f4bcbf1afcfbac03e1664290b7fd984ca6c75373fe94c1ff406986e73ed62e46a163028"
+        },
+        "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.16.1-1.0/eggofcapitalism-mc1.16.1-1.0%2Bbuild.1.jar",
+        "filename": "eggofcapitalism-mc1.16.1-1.0+build.1.jar",
+        "primary": false,
+        "size": 33564,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  }
+]

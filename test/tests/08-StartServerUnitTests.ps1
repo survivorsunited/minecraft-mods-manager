@@ -69,17 +69,17 @@ function Test-JavaVersionDetection {
         if ($extractedVersion -match "^(\d+)") {
             $majorVersion = [int]$matches[1]
             if ($majorVersion -eq 22) {
-                Write-TestResult "PASS" "Java 22 version correctly parsed"
+                Write-TestResult "Java 22 Version Detection" $true "Java 22 version correctly parsed"
             } else {
-                Write-TestResult "FAIL" "Java 22 version incorrectly parsed as $majorVersion"
+                Write-TestResult "Java 22 Version Detection" $false "Java 22 version incorrectly parsed as $majorVersion"
                 return $false
             }
         } else {
-            Write-TestResult "FAIL" "Could not extract major version from $extractedVersion"
+            Write-TestResult "Java 22 Version Detection" $false "Could not extract major version from $extractedVersion"
             return $false
         }
     } else {
-        Write-TestResult "FAIL" "Could not extract version from $versionString"
+        Write-TestResult "Java 22 Version Detection" $false "Could not extract version from $versionString"
         return $false
     }
     
@@ -93,17 +93,17 @@ function Test-JavaVersionDetection {
         if ($extractedVersion -match "^(\d+)") {
             $majorVersion = [int]$matches[1]
             if ($majorVersion -lt 22) {
-                Write-TestResult "PASS" "Java 11 version correctly identified as incompatible"
+                Write-TestResult "Java 11 Version Detection" $true "Java 11 version correctly identified as incompatible"
             } else {
-                Write-TestResult "FAIL" "Java 11 version incorrectly identified as compatible"
+                Write-TestResult "Java 11 Version Detection" $false "Java 11 version incorrectly identified as compatible"
                 return $false
             }
         } else {
-            Write-TestResult "FAIL" "Could not extract major version from $extractedVersion"
+            Write-TestResult "Java 11 Version Detection" $false "Could not extract major version from $extractedVersion"
             return $false
         }
     } else {
-        Write-TestResult "FAIL" "Could not extract version from $versionString"
+        Write-TestResult "Java 11 Version Detection" $false "Could not extract version from $versionString"
         return $false
     }
     
@@ -132,9 +132,9 @@ function Test-ErrorDetectionLogic {
     }
     
     if (-not $errorFound) {
-        Write-TestResult "PASS" "Normal log lines correctly identified as error-free"
+        Write-TestResult "Normal Log Lines" $true "Normal log lines correctly identified as error-free"
     } else {
-        Write-TestResult "FAIL" "Normal log lines incorrectly flagged as having errors"
+        Write-TestResult "Normal Log Lines" $false "Normal log lines incorrectly flagged as having errors"
         return $false
     }
     
@@ -156,9 +156,9 @@ function Test-ErrorDetectionLogic {
     }
     
     if ($errorFound) {
-        Write-TestResult "PASS" "Error log lines correctly identified as having errors"
+        Write-TestResult "Error Log Lines" $true "Error log lines correctly identified as having errors"
     } else {
-        Write-TestResult "FAIL" "Error log lines incorrectly flagged as error-free"
+        Write-TestResult "Error Log Lines" $false "Error log lines incorrectly flagged as error-free"
         return $false
     }
     
@@ -180,32 +180,32 @@ function Test-JobManagement {
     }
     
     if ($testJob) {
-        Write-TestResult "PASS" "Job creation successful"
+        Write-TestResult "Job Creation" $true "Job creation successful"
         
         # Wait for job to complete
         Wait-Job -Id $testJob.Id -Timeout 10 | Out-Null
         $jobStatus = Get-Job -Id $testJob.Id
         
         if ($jobStatus.State -eq "Completed") {
-            Write-TestResult "PASS" "Job monitoring successful"
+            Write-TestResult "Job Monitoring" $true "Job monitoring successful"
             
             # Get job output
             $jobOutput = Receive-Job -Id $testJob.Id
             if ($jobOutput -contains "Test completed") {
-                Write-TestResult "PASS" "Job output retrieval successful"
+                Write-TestResult "Job Output Retrieval" $true "Job output retrieval successful"
             } else {
-                Write-TestResult "FAIL" "Job output retrieval failed"
+                Write-TestResult "Job Output Retrieval" $false "Job output retrieval failed"
                 return $false
             }
         } else {
-            Write-TestResult "FAIL" "Job monitoring failed - State: $($jobStatus.State)"
+            Write-TestResult "Job Monitoring" $false "Job monitoring failed - State: $($jobStatus.State)"
             return $false
         }
         
         # Clean up
         Remove-Job -Id $testJob.Id -ErrorAction SilentlyContinue
     } else {
-        Write-TestResult "FAIL" "Job creation failed"
+        Write-TestResult "Job Creation" $false "Job creation failed"
         return $false
     }
     
@@ -234,9 +234,9 @@ function Test-LogFileMonitoring {
     $newSize = (Get-Item $testLogFile).Length
     
     if ($newSize -gt $initialSize) {
-        Write-TestResult "PASS" "Log file growth detection successful"
+        Write-TestResult "Log File Growth Detection" $true "Log file growth detection successful"
     } else {
-        Write-TestResult "FAIL" "Log file growth detection failed"
+        Write-TestResult "Log File Growth Detection" $false "Log file growth detection failed"
         return $false
     }
     
@@ -247,9 +247,9 @@ function Test-LogFileMonitoring {
     $newLines = $allContent | Select-Object -Last 2
     
     if ($newLines.Count -eq 2 -and $newLines[0] -eq "New line 1" -and $newLines[1] -eq "New line 2") {
-        Write-TestResult "PASS" "New content detection successful"
+        Write-TestResult "New Content Detection" $true "New content detection successful"
     } else {
-        Write-TestResult "FAIL" "New content detection failed"
+        Write-TestResult "New Content Detection" $false "New content detection failed"
         return $false
     }
     
@@ -274,9 +274,9 @@ function Test-FileSystemValidation {
     Write-TestStep "Testing directory existence check"
     
     if (-not (Test-Path $testBase)) {
-        Write-TestResult "PASS" "Non-existent directory correctly identified"
+        Write-TestResult "Directory Existence Check" $true "Non-existent directory correctly identified"
     } else {
-        Write-TestResult "FAIL" "Non-existent directory incorrectly identified as existing"
+        Write-TestResult "Directory Existence Check" $false "Non-existent directory incorrectly identified as existing"
         return $false
     }
     
@@ -284,9 +284,9 @@ function Test-FileSystemValidation {
     New-Item -ItemType Directory -Path $testBase -Force | Out-Null
     
     if (Test-Path $testBase) {
-        Write-TestResult "PASS" "Existent directory correctly identified"
+        Write-TestResult "Directory Existence Check" $true "Existent directory correctly identified"
     } else {
-        Write-TestResult "FAIL" "Existent directory incorrectly identified as non-existent"
+        Write-TestResult "Directory Existence Check" $false "Existent directory incorrectly identified as non-existent"
         return $false
     }
     
@@ -295,9 +295,9 @@ function Test-FileSystemValidation {
     
     $testFile = Join-Path $testBase "test.txt"
     if (-not (Test-Path $testFile)) {
-        Write-TestResult "PASS" "Non-existent file correctly identified"
+        Write-TestResult "File Existence Check" $true "Non-existent file correctly identified"
     } else {
-        Write-TestResult "FAIL" "Non-existent file incorrectly identified as existing"
+        Write-TestResult "File Existence Check" $false "Non-existent file incorrectly identified as existing"
         return $false
     }
     
@@ -305,9 +305,9 @@ function Test-FileSystemValidation {
     "Test content" | Out-File -FilePath $testFile -Encoding UTF8
     
     if (Test-Path $testFile) {
-        Write-TestResult "PASS" "Existent file correctly identified"
+        Write-TestResult "File Existence Check" $true "Existent file correctly identified"
     } else {
-        Write-TestResult "FAIL" "Existent file incorrectly identified as non-existent"
+        Write-TestResult "File Existence Check" $false "Existent file incorrectly identified as non-existent"
         return $false
     }
     
@@ -337,9 +337,9 @@ function Test-VersionFolderDetection {
                      Sort-Object Name -Descending
     
     if ($versionFolders.Count -eq 0) {
-        Write-TestResult "PASS" "No version folders correctly detected"
+        Write-TestResult "No Version Folders" $true "No version folders correctly detected"
     } else {
-        Write-TestResult "FAIL" "No version folders incorrectly detected"
+        Write-TestResult "No Version Folders" $false "No version folders incorrectly detected"
         return $false
     }
     
@@ -356,17 +356,17 @@ function Test-VersionFolderDetection {
                      Sort-Object Name -Descending
     
     if ($versionFolders.Count -eq 3) {
-        Write-TestResult "PASS" "Multiple version folders correctly detected"
+        Write-TestResult "Multiple Version Folders" $true "Multiple version folders correctly detected"
         
         # Check sorting (should be descending)
         if ($versionFolders[0].Name -eq "1.21.6") {
-            Write-TestResult "PASS" "Version folders correctly sorted in descending order"
+            Write-TestResult "Version Folder Sorting" $true "Version folders correctly sorted in descending order"
         } else {
-            Write-TestResult "FAIL" "Version folders incorrectly sorted"
+            Write-TestResult "Version Folder Sorting" $false "Version folders incorrectly sorted"
             return $false
         }
     } else {
-        Write-TestResult "FAIL" "Multiple version folders incorrectly detected"
+        Write-TestResult "Multiple Version Folders" $false "Multiple version folders incorrectly detected"
         return $false
     }
     
@@ -382,9 +382,9 @@ function Test-VersionFolderDetection {
                      Sort-Object Name -Descending
     
     if ($versionFolders.Count -eq 3) {
-        Write-TestResult "PASS" "Non-version folders correctly ignored"
+        Write-TestResult "Non-Version Folders Ignored" $true "Non-version folders correctly ignored"
     } else {
-        Write-TestResult "FAIL" "Non-version folders incorrectly included"
+        Write-TestResult "Non-Version Folders Ignored" $false "Non-version folders incorrectly included"
         return $false
     }
     

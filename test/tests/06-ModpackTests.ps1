@@ -17,8 +17,8 @@ $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 
 # Use the test output download directory (from framework)
 $TestOutputDir = Get-TestOutputFolder $TestFileName
-$TestOutputDownloadDir = Join-Path $TestOutputDir "download/1.21.5"
-$ModpackDir = Join-Path $TestOutputDownloadDir "modpacks/Fabulously Optimized"
+$TestDownloadDir = Join-Path $TestOutputDir "download/1.21.5"
+$ModpackDir = Join-Path $TestDownloadDir "modpacks/Fabulously Optimized"
 
 # Test 1: Add modpack by URL
 Write-TestHeader "Add Modpack by URL"
@@ -30,7 +30,7 @@ Test-Command "& '$ModManagerPath' -AddMod -AddModId '1KVo5zza' -AddModName 'Fabu
 
 # Test 3: Download modpack
 Write-TestHeader "Download Modpack"
-Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseCachedResponses" "Download Modpack" 2 $null $TestFileName
+Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -DownloadFolder '$TestDownloadDir' -UseCachedResponses" "Download Modpack" 2 $null $TestFileName
 
 # Test 4: Verify modpack extraction
 Write-TestHeader "Verify Modpack Extraction"
@@ -78,7 +78,7 @@ Test-Command "& '$ModManagerPath' -AddMod -AddModId '1KVo5zza' -AddModName 'Fabu
 
 # Test 6: Download modpack with version
 Write-TestHeader "Download Modpack with Version"
-Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseCachedResponses" "Download Modpack with Version" 2 $null $TestFileName
+Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -DownloadFolder '$TestDownloadDir' -UseCachedResponses" "Download Modpack with Version" 2 $null $TestFileName
 
 # Test 7: Verify modpack structure
 Write-TestHeader "Verify Modpack Structure"

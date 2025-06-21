@@ -14,6 +14,8 @@ Initialize-TestEnvironment -TestFileName $TestFileName
 
 # Helper to get the full path to ModManager.ps1
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+$TestOutputDir = Get-TestOutputFolder $TestFileName
+$TestDownloadDir = Join-Path $TestOutputDir "download"
 
 # Test 1: Test shaderpack filename cleaning (add a shaderpack with URL-encoded filename)
 Write-TestHeader "Test Shaderpack Filename Cleaning"
@@ -26,8 +28,7 @@ Test-Command "& '$ModManagerPath' -AddMod -AddModName 'Test Server' -AddModType 
 
 # Test 3: Verify downloaded files have correct names
 Write-TestHeader "Verify Downloaded File Names"
-# Check that system entries use Jar column names and shaderpacks have clean names
-$verifyFilesCmd = 'Get-ChildItem "download" -Recurse -File | Where-Object { $_.Name -match "fabric-installer|fabric-server|minecraft_server|astralex|bsl|complementary" } | Select-Object Name, FullName'
+$verifyFilesCmd = 'Get-ChildItem "' + $TestDownloadDir + '" -Recurse -File | Where-Object { $_.Name -match "fabric-installer|fabric-server|minecraft_server|astralex|bsl|complementary" } | Select-Object Name, FullName'
 $verifyFilesTestName = "Verify Downloaded File Names"
 Test-Command $verifyFilesCmd $verifyFilesTestName 0 $null $TestFileName
 
@@ -54,10 +55,10 @@ Write-TestHeader "Fabric Installer Downloaded as EXE"
 Test-Command "& '$ModManagerPath' -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.5' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath'" "Add Fabric Installer EXE" 4 $null $TestFileName
 
 # Download mods
-Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath'" "Download Mods with Installer" 4 $null $TestFileName
+Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -DownloadFolder '$TestDownloadDir'" "Download Mods with Installer" 4 $null $TestFileName
 
 # Check that Fabric Installer was downloaded as .exe
-$installerFile = Get-ChildItem download -Recurse -File | Where-Object { $_.Name -like 'fabric-installer*.exe' }
+$installerFile = Get-ChildItem $TestDownloadDir -Recurse -File | Where-Object { $_.Name -like 'fabric-installer*.exe' }
 if ($installerFile) {
     Write-Host "✓ PASS: Fabric Installer downloaded as EXE: $($installerFile.FullName)" -ForegroundColor Green
 } else {
