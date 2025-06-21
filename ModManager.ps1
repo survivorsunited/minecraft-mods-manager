@@ -2424,6 +2424,47 @@ function Start-MinecraftServer {
     
     Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
     
+    # Check Java version first
+    Write-Host "🔍 Checking Java version..." -ForegroundColor Cyan
+    try {
+        $javaVersion = java -version 2>&1 | Select-String "version" | Select-Object -First 1
+        if (-not $javaVersion) {
+            Write-Host "❌ Java is not installed or not in PATH" -ForegroundColor Red
+            Write-Host "💡 Please install Java 22+ and ensure it's in your PATH" -ForegroundColor Yellow
+            return $false
+        }
+        
+        # Extract version number
+        if ($javaVersion -match '"([^"]+)"') {
+            $versionString = $matches[1]
+            Write-Host "📋 Found Java version: $versionString" -ForegroundColor Gray
+            
+            # Parse version to check if it's 22+
+            if ($versionString -match "^(\d+)") {
+                $majorVersion = [int]$matches[1]
+                if ($majorVersion -lt 22) {
+                    Write-Host "❌ Java version $majorVersion is too old" -ForegroundColor Red
+                    Write-Host "💡 Minecraft server requires Java 22+ (found version $majorVersion)" -ForegroundColor Yellow
+                    Write-Host "💡 Please upgrade to Java 22 or later" -ForegroundColor Yellow
+                    return $false
+                } else {
+                    Write-Host "✅ Java version $majorVersion is compatible" -ForegroundColor Green
+                }
+            } else {
+                Write-Host "⚠️  Could not parse Java version: $versionString" -ForegroundColor Yellow
+                Write-Host "💡 Please ensure you have Java 22+ installed" -ForegroundColor Yellow
+            }
+        } else {
+            Write-Host "⚠️  Could not determine Java version" -ForegroundColor Yellow
+            Write-Host "💡 Please ensure you have Java 22+ installed" -ForegroundColor Yellow
+        }
+    }
+    catch {
+        Write-Host "❌ Error checking Java version: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "💡 Please ensure Java 22+ is installed and in PATH" -ForegroundColor Yellow
+        return $false
+    }
+    
     # Check if download folder exists
     if (-not (Test-Path $DownloadFolder)) {
         Write-Host "❌ Download folder not found: $DownloadFolder" -ForegroundColor Red
@@ -2481,15 +2522,19 @@ function Start-MinecraftServer {
         Write-Host "📁 Created logs directory: $logsDir" -ForegroundColor Green
     }
     
-    # Start the server
-    Write-Host "🔄 Starting server in background..." -ForegroundColor Cyan
+    # Start the server as a background job
+    Write-Host "🔄 Starting server as background job..." -ForegroundColor Cyan
     Write-Host "📋 Server logs will be saved to: $logsDir" -ForegroundColor Gray
     
     try {
-        # Start the server process in background
-        $process = Start-Process -FilePath "pwsh" -ArgumentList "-NoProfile", "-File", $serverScript -PassThru -WorkingDirectory $targetFolder
+        # Start the server as a background job
+        $job = Start-Job -ScriptBlock {
+            param($ScriptPath, $WorkingDir)
+            Set-Location $WorkingDir
+            & $ScriptPath
+        } -ArgumentList $serverScript, $targetFolder
         
-        Write-Host "✅ Server started successfully (PID: $($process.Id))" -ForegroundColor Green
+        Write-Host "✅ Server job started successfully (Job ID: $($job.Id))" -ForegroundColor Green
         Write-Host "🔄 Monitoring server logs for errors..." -ForegroundColor Cyan
         
         # Monitor logs for errors
@@ -2509,41 +2554,75 @@ function Start-MinecraftServer {
         
         if (-not $logFile) {
             Write-Host "⚠️  No log file found after $timeout seconds" -ForegroundColor Yellow
-            return $true
+            Write-Host "💡 Checking job status..." -ForegroundColor Cyan
+            
+            # Check job status
+            $jobStatus = Get-Job -Id $job.Id
+            if ($jobStatus.State -eq "Failed") {
+                Write-Host "❌ Server job failed: $($jobStatus.JobStateInfo.Reason)" -ForegroundColor Red
+                $jobOutput = Receive-Job -Id $job.Id -ErrorAction SilentlyContinue
+                if ($jobOutput) {
+                    Write-Host "📄 Job output: $jobOutput" -ForegroundColor Gray
+                }
+            }
+            return $false
         }
         
         Write-Host "📄 Monitoring log file: $logFile" -ForegroundColor Gray
         
-        # Monitor for errors for a short period
-        $monitorTime = 30  # Monitor for 30 seconds
+        # Monitor for errors for a longer period
+        $monitorTime = 60  # Monitor for 60 seconds
         $monitorStart = Get-Date
         $errorFound = $false
+        $lastLogSize = 0
         
         while ((Get-Date) -lt ($monitorStart.AddSeconds($monitorTime)) -and -not $errorFound) {
+            # Check if job is still running
+            $jobStatus = Get-Job -Id $job.Id
+            if ($jobStatus.State -eq "Failed" -or $jobStatus.State -eq "Completed") {
+                Write-Host "❌ Server job stopped unexpectedly (State: $($jobStatus.State))" -ForegroundColor Red
+                $jobOutput = Receive-Job -Id $job.Id -ErrorAction SilentlyContinue
+                if ($jobOutput) {
+                    Write-Host "📄 Job output: $jobOutput" -ForegroundColor Gray
+                }
+                $errorFound = $true
+                break
+            }
+            
+            # Check log file for errors
             if (Test-Path $logFile) {
-                $recentLines = Get-Content $logFile -Tail 20 -ErrorAction SilentlyContinue
-                foreach ($line in $recentLines) {
-                    if ($line -match "(ERROR|FATAL|Exception|Failed|Error)" -and $line -notmatch "Server exited") {
-                        Write-Host "❌ Error detected in logs: $line" -ForegroundColor Red
-                        $errorFound = $true
-                        break
+                $currentLogSize = (Get-Item $logFile).Length
+                if ($currentLogSize -gt $lastLogSize) {
+                    $newLines = Get-Content $logFile -Tail 10 -ErrorAction SilentlyContinue
+                    foreach ($line in $newLines) {
+                        if ($line -match "(ERROR|FATAL|Exception|Failed|Error)" -and $line -notmatch "Server exited") {
+                            Write-Host "❌ Error detected in logs: $line" -ForegroundColor Red
+                            $errorFound = $true
+                            break
+                        }
                     }
+                    $lastLogSize = $currentLogSize
                 }
             }
+            
             Start-Sleep -Seconds 2
         }
         
-        if (-not $errorFound) {
+        if ($errorFound) {
+            Write-Host "⚠️  Errors detected during server startup" -ForegroundColor Yellow
+            Write-Host "🛑 Stopping server job..." -ForegroundColor Cyan
+            Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
+            Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
+            Write-Host "📄 Check the log file for details: $logFile" -ForegroundColor Gray
+            return $false
+        } else {
             Write-Host "✅ No errors detected in server startup" -ForegroundColor Green
             Write-Host "🎮 Server appears to be running successfully" -ForegroundColor Green
-            Write-Host "💡 Use 'Get-Process -Id $($process.Id)' to check server status" -ForegroundColor Gray
-            Write-Host "💡 Use 'Stop-Process -Id $($process.Id)' to stop the server" -ForegroundColor Gray
-        } else {
-            Write-Host "⚠️  Errors detected during server startup" -ForegroundColor Yellow
-            Write-Host "📄 Check the log file for details: $logFile" -ForegroundColor Gray
+            Write-Host "💡 Use 'Get-Job -Id $($job.Id)' to check server status" -ForegroundColor Gray
+            Write-Host "💡 Use 'Stop-Job -Id $($job.Id)' to stop the server" -ForegroundColor Gray
+            Write-Host "💡 Use 'Remove-Job -Id $($job.Id)' to clean up the job" -ForegroundColor Gray
+            return $true
         }
-        
-        return $true
     }
     catch {
         Write-Host "❌ Failed to start server: $($_.Exception.Message)" -ForegroundColor Red
