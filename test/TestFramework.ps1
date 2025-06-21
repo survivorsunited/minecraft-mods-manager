@@ -17,8 +17,8 @@ $Colors = @{
     Header = "Magenta"
 }
 
-# Test counter (shared across all test files)
-$TestResults = @{
+# Test counter (shared across all test files) - Use script scope
+$script:TestResults = @{
     Total = 0
     Passed = 0
     Failed = 0
@@ -48,13 +48,13 @@ function Write-TestResult {
         [string]$Message = ""
     )
     
-    $TestResults.Total++
+    $script:TestResults.Total++
     if ($Passed) {
-        $TestResults.Passed++
+        $script:TestResults.Passed++
         Write-Host "✓ PASS: $TestName" -ForegroundColor $Colors.Pass
         if ($Message) { Write-Host "  $Message" -ForegroundColor Gray }
     } else {
-        $TestResults.Failed++
+        $script:TestResults.Failed++
         Write-Host "✗ FAIL: $TestName" -ForegroundColor $Colors.Fail
         if ($Message) { Write-Host "  $Message" -ForegroundColor Gray }
     }
@@ -102,11 +102,20 @@ function Test-Command {
     )
     
     Write-Host "`nRunning: $Command" -ForegroundColor $Colors.Info
+    
+    # Get the output folder and database path
     $outputFolder = $null
+    $dbPath = $TestDbPath
     if ($TestFileName) {
         $outputFolder = Get-TestOutputFolder $TestFileName
+        $dbPath = Join-Path $outputFolder "run-test-cli.csv"
+    }
+    
+    # Change to output folder if specified
+    if ($outputFolder) {
         Push-Location $outputFolder
     }
+    
     try {
         # Execute the command and capture all output
         $result = & pwsh -NoProfile -ExecutionPolicy Bypass -Command $Command 2>&1
@@ -121,7 +130,11 @@ function Test-Command {
             
             # Test database state if expected values provided
             if ($ExpectedModCount -gt 0 -or $ExpectedMods.Count -gt 0) {
+                # Use the correct database path for testing
+                $originalTestDbPath = $script:TestDbPath
+                $script:TestDbPath = $dbPath
                 Test-DatabaseState $ExpectedModCount $ExpectedMods
+                $script:TestDbPath = $originalTestDbPath
             }
         } else {
             Write-TestResult $TestName $false "Command failed with exit code $exitCode"
@@ -142,17 +155,26 @@ function Initialize-TestEnvironment {
     # Set TestDbPath to the output folder if TestFileName is provided
     if ($TestFileName) {
         $outputFolder = Get-TestOutputFolder $TestFileName
+        # Remove the entire output folder if it exists
+        if (Test-Path $outputFolder) {
+            Remove-Item $outputFolder -Recurse -Force
+            Write-Host "Removed existing output folder: $outputFolder" -ForegroundColor $Colors.Info
+        }
+        # Recreate the output folder
+        New-Item -ItemType Directory -Path $outputFolder | Out-Null
         $script:TestDbPath = Join-Path $outputFolder "run-test-cli.csv"
     }
     
     # Clean up previous test files
     if (Test-Path $TestDbPath) {
         Remove-Item $TestDbPath -Force
+        Write-Host "Removed existing database: $TestDbPath" -ForegroundColor $Colors.Info
     }
     
     # Create blank database with headers only
     $headers = @("Group", "Type", "GameVersion", "ID", "Loader", "Version", "Name", "Description", "Jar", "Url", "Category", "VersionUrl", "LatestVersionUrl", "LatestVersion", "ApiSource", "Host", "IconUrl", "ClientSide", "ServerSide", "Title", "ProjectDescription", "IssuesUrl", "SourceUrl", "WikiUrl", "LatestGameVersion", "RecordHash")
     $headers -join "," | Out-File $TestDbPath -Encoding UTF8
+    Write-Host "Created new database: $TestDbPath" -ForegroundColor $Colors.Info
     
     # Copy API response files to main apiresponse folder for caching
     if (Test-Path $TestApiResponsePath) {
@@ -182,11 +204,11 @@ function Show-TestSummary {
     Write-Host "TEST SUMMARY" -ForegroundColor $Colors.Header
     Write-Host ("=" * 80) -ForegroundColor $Colors.Header
     
-    Write-Host "Total Tests: $($TestResults.Total)" -ForegroundColor White
-    Write-Host "Passed: $($TestResults.Passed)" -ForegroundColor $Colors.Pass
-    Write-Host "Failed: $($TestResults.Failed)" -ForegroundColor $Colors.Fail
+    Write-Host "Total Tests: $($script:TestResults.Total)" -ForegroundColor White
+    Write-Host "Passed: $($script:TestResults.Passed)" -ForegroundColor $Colors.Pass
+    Write-Host "Failed: $($script:TestResults.Failed)" -ForegroundColor $Colors.Fail
     
-    if ($TestResults.Failed -eq 0) {
+    if ($script:TestResults.Failed -eq 0) {
         Write-Host "`n🎉 ALL TESTS PASSED! 🎉" -ForegroundColor $Colors.Pass
     } else {
         Write-Host "`n❌ SOME TESTS FAILED! ❌" -ForegroundColor $Colors.Fail

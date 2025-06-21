@@ -57,4 +57,7 @@ Test-Command "& '$ModManagerPath' -AddMod -AddModId 'litematica' -AddModName 'Li
 Write-TestHeader "Custom Database File"
 Test-Command "& '$ModManagerPath' -ModListFile '$TestDbPath' -GetModList" "Use Custom Database File" 4 $null $TestFileName
 
-Write-Host "`nBasic Functionality Tests Complete" -ForegroundColor $Colors.Info 
+Write-Host "`nBasic Functionality Tests Complete" -ForegroundColor $Colors.Info
+
+# Show test summary
+Show-TestSummary 

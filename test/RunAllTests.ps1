@@ -107,37 +107,55 @@ foreach ($testFile in $testFilesToRun) {
     
     try {
         # Reset test results for this file
-        $TestResults.Total = 0
-        $TestResults.Passed = 0
-        $TestResults.Failed = 0
+        $script:TestResults = @{
+            Total = 0
+            Passed = 0
+            Failed = 0
+        }
         
-        # Capture output from test file execution
-        $testOutput = & $testFilePath 2>&1 | Tee-Object -Variable capturedOutput
+        # Capture output from test file execution using dot-sourcing
+        $testOutput = & {
+            # Set the correct PSScriptRoot for the test file
+            $script:PSScriptRoot = Join-Path $PWD "tests"
+            
+            # Dot-source the test file
+            . $testFilePath
+        } 2>&1
+        
+        # Display the captured output
+        $testOutput | ForEach-Object { Write-Host $_ }
         
         # Log the captured output
         if (-not $NoLog) {
-            $capturedOutput | ForEach-Object {
+            $testOutput | ForEach-Object {
                 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
                 "$timestamp - $($_)" | Out-File -FilePath $LogFilePath -Append -Encoding UTF8
             }
         }
         
+        # Get the test results from the script-scoped variable
+        $fileResults = @{
+            Total = $script:TestResults.Total
+            Passed = $script:TestResults.Passed
+            Failed = $script:TestResults.Failed
+        }
+        
         # Add results to global counter
-        $GlobalTestResults.Total += $TestResults.Total
-        $GlobalTestResults.Passed += $TestResults.Passed
-        $GlobalTestResults.Failed += $TestResults.Failed
+        $GlobalTestResults.Total += $fileResults.Total
+        $GlobalTestResults.Passed += $fileResults.Passed
+        $GlobalTestResults.Failed += $fileResults.Failed
         
         # Record test file result
         $GlobalTestResults.TestFiles += @{
             Name = $testFile
-            Total = $TestResults.Total
-            Passed = $TestResults.Passed
-            Failed = $TestResults.Failed
+            Total = $fileResults.Total
+            Passed = $fileResults.Passed
+            Failed = $fileResults.Failed
         }
         
         Write-Log ""
         Write-Log "✅ Completed: $testFile" "Green"
-        Write-Log "   Passed: $($TestResults.Passed), Failed: $($TestResults.Failed), Total: $($TestResults.Total)" "Gray"
+        Write-Log "   Passed: $($fileResults.Passed), Failed: $($fileResults.Failed), Total: $($fileResults.Total)" "Gray"
         
     } catch {
         Write-Log "❌ ERROR running $testFile : $($_.Exception.Message)" "Red"

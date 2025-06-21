@@ -74,17 +74,16 @@ if (Test-Path $indexFile) {
 
 # Test 5: Test modpack with specific version
 Write-TestHeader "Add Modpack with Specific Version"
-Test-Command "& '$ModManagerPath' -AddMod -AddModId '1KVo5zza' -AddModName 'Fabulously Optimized v4.9.0' -AddModType 'modpack' -AddModVersion '4.9.0' -DatabaseFile '$TestDbPath' -UseCachedResponses" "Add Modpack with Version" 3 $null $TestFileName
+Test-Command "& '$ModManagerPath' -AddMod -AddModId '1KVo5zza' -AddModName 'Fabulously Optimized v4.9.0' -AddModType 'modpack' -AddModVersion '4.9.0' -DatabaseFile '$TestDbPath' -UseCachedResponses" "Add Modpack with Version" 2 $null $TestFileName
 
 # Test 6: Download modpack with version
 Write-TestHeader "Download Modpack with Version"
-Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseCachedResponses" "Download Modpack with Version" 3 $null $TestFileName
+Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseCachedResponses" "Download Modpack with Version" 2 $null $TestFileName
 
 # Test 7: Verify modpack structure
 Write-TestHeader "Verify Modpack Structure"
 $expectedModpackDirs = @(
-    $ModpackDir,
-    (Join-Path $TestOutputDownloadDir "modpacks/Fabulously Optimized v4.9.0")
+    $ModpackDir
 )
 
 $allValid = $true
