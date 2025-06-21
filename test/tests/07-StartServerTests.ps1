@@ -1,5 +1,5 @@
-# StartServer E2E Tests
-# Tests the complete StartServer feature workflow including error monitoring and log analysis
+# Test Server Startup Functionality
+# Tests the server startup process and error handling
 
 param([string]$TestFileName = $null)
 
@@ -11,357 +11,207 @@ $TestFrameworkPath = Join-Path $PSScriptRoot "..\TestFramework.ps1"
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 $TestOutputDir = Join-Path $PSScriptRoot "..\test-output\07-StartServerTests"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
-$TestLogFile = Join-Path $TestOutputDir "startserver-test.log"
 
 # Ensure test output directory exists
 if (-not (Test-Path $TestOutputDir)) {
     New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
 }
-if (-not (Test-Path $TestDownloadDir)) {
-    New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
-}
 
-# Test data
-$TestMods = @(
-    @{ ID = "fabric-api"; Name = "Fabric API"; Type = "mod"; Group = "required" },
-    @{ ID = "sodium"; Name = "Sodium"; Type = "mod"; Group = "required" }
-)
+# Test variables
+$TotalTests = 0
+$PassedTests = 0
+$FailedTests = 0
+$TestReport = @()
 
-function Test-StartServerPrerequisites {
-    param([string]$TestName)
-    
-    Write-TestHeader "Testing StartServer Prerequisites"
-    
-    # Test 1: Check Java version detection
-    $javaVersion = java -version 2>&1 | Select-String "version" | Select-Object -First 1
-    if ($javaVersion -match '"([^"]+)"') {
-        $versionString = $matches[1]
-        if ($versionString -match "^(\d+)") {
-            $majorVersion = [int]$matches[1]
-            if ($majorVersion -ge 22) {
-                Write-TestResult "Java Version Check" $true "Java version $majorVersion is compatible"
-                return $true
-            } else {
-                Write-TestResult "Java Version Check" $false "Java version $majorVersion is too old (requires 22+)"
-                return $false
-            }
-        }
-    }
-    
-    Write-TestResult "Java Version Check" $false "Could not determine Java version"
-    return $false
-}
+# Test report file
+$TestReportPath = Join-Path $TestOutputDir "start-server-test-report.txt"
 
-function Test-StartServerWithoutDownloads {
-    param([string]$TestName)
-    
-    Write-TestHeader "Testing StartServer Without Downloads"
-    
-    # Clean up any existing test download folders
-    if (Test-Path $TestDownloadDir) {
-        Remove-Item -Path $TestDownloadDir -Recurse -Force -ErrorAction SilentlyContinue
-    }
-    
-    # Test 1: StartServer should fail when no download folder exists
-    $result = & $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir 2>&1
-    $output = $result -join "`n"
-    
-    if ($output -match "Download folder not found") {
-        Write-TestResult "Missing Download Folder Detection" $true "Correctly detected missing download folder"
-        return $true
-    } else {
-        Write-TestResult "Missing Download Folder Detection" $false "Did not detect missing download folder"
-        Write-TestResult "Missing Download Folder Detection" $false "Output: $output"
-        return $false
-    }
-}
-
-function Test-StartServerWithDownloads {
-    param([string]$TestName)
-    
-    Write-TestHeader "Testing StartServer With Downloads"
-    
-    # Setup: Download server files first
-    $downloadResult = & $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir 2>&1
-    $downloadOutput = $downloadResult -join "`n"
-    
-    if ($downloadOutput -match "Successfully downloaded") {
-        Write-TestResult "Server Files Download" $true "Server files downloaded successfully"
-    } else {
-        Write-TestResult "Server Files Download" $false "Failed to download server files"
-        Write-TestResult "Server Files Download" $false "Output: $downloadOutput"
-        return $false
-    }
-    
-    # Test 1: StartServer should detect Java version
-    $result = & $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir 2>&1
-    $output = $result -join "`n"
-    
-    if ($output -match "Checking Java version") {
-        Write-TestResult "Java Version Detection" $true "Java version checking is working"
-    } else {
-        Write-TestResult "Java Version Detection" $false "Java version checking not working"
-        Write-TestResult "Java Version Detection" $false "Output: $output"
-        return $false
-    }
-    
-    # Check if Java version is compatible
-    if ($output -match "Java version \d+ is too old") {
-        Write-TestResult "Java Version Compatibility" $true "Java version is incompatible (expected for test environment)"
-        return $true  # This is expected in test environment
-    } elseif ($output -match "Java version \d+ is compatible") {
-        Write-TestResult "Java Version Compatibility" $true "Java version is compatible"
-    } else {
-        Write-TestResult "Java Version Compatibility" $false "Could not determine Java compatibility"
-        Write-TestResult "Java Version Compatibility" $false "Output: $output"
-        return $false
-    }
-}
-
-function Test-StartServerErrorMonitoring {
-    param([string]$TestName)
-    
-    Write-TestHeader "Testing StartServer Error Monitoring"
-    
-    # This test requires Java 22+ to actually start the server
-    # For now, we'll test the error monitoring framework
-    
-    # Create a mock log file with errors
-    $testLogDir = Join-Path $TestOutputDir "mock-logs"
-    if (-not (Test-Path $testLogDir)) {
-        New-Item -ItemType Directory -Path $testLogDir -Force | Out-Null
-    }
-    
-    $mockLogFile = Join-Path $testLogDir "console-test.log"
-    @"
-[12:00:00] [main/INFO]: Starting server...
-[12:00:01] [main/ERROR]: Failed to load mod: fabric-api
-[12:00:02] [main/FATAL]: Server startup failed
-[12:00:03] [main/INFO]: Server exited with code 1
-"@ | Out-File -FilePath $mockLogFile -Encoding UTF8
-    
-    # Test error detection logic
-    $logContent = Get-Content $mockLogFile
-    $errorFound = $false
-    
-    foreach ($line in $logContent) {
-        if ($line -match "(ERROR|FATAL|Exception|Failed|Error)" -and $line -notmatch "Server exited") {
-            $errorFound = $true
-            break
-        }
-    }
-    
-    if ($errorFound) {
-        Write-TestResult "Error Detection Logic" $true "Error detection logic is working"
-        return $true
-    } else {
-        Write-TestResult "Error Detection Logic" $false "Error detection logic failed"
-        return $false
-    }
-}
-
-function Test-StartServerJobManagement {
-    param([string]$TestName)
-    
-    Write-TestHeader "Testing StartServer Job Management"
-    
-    # Create a simple test job to verify job management works
-    $testJob = Start-Job -ScriptBlock {
-        Start-Sleep -Seconds 2
-        Write-Output "Test job completed"
-    }
-    
-    if ($testJob) {
-        Write-TestResult "Background Job Creation" $true "Background job creation works"
-        
-        # Wait for job to complete
-        Wait-Job -Id $testJob.Id -Timeout 10 | Out-Null
-        $jobStatus = Get-Job -Id $testJob.Id
-        
-        if ($jobStatus.State -eq "Completed") {
-            Write-TestResult "Job Monitoring" $true "Job monitoring works correctly"
-        } else {
-            Write-TestResult "Job Monitoring" $false "Job monitoring failed - State: $($jobStatus.State)"
-            return $false
-        }
-        
-        # Clean up
-        Remove-Job -Id $testJob.Id -ErrorAction SilentlyContinue
-        return $true
-    } else {
-        Write-TestResult "Background Job Creation" $false "Background job creation failed"
-        return $false
-    }
-}
-
-function Test-StartServerLogAnalysis {
-    param([string]$TestName)
-    
-    Write-TestHeader "Testing StartServer Log Analysis"
-    
-    # Create test log scenarios
-    $testLogDir = Join-Path $TestOutputDir "log-analysis"
-    if (-not (Test-Path $testLogDir)) {
-        New-Item -ItemType Directory -Path $testLogDir -Force | Out-Null
-    }
-    
-    # Test 1: Normal startup log
-    $normalLog = Join-Path $testLogDir "normal-startup.log"
-    @"
-[12:00:00] [main/INFO]: Starting server...
-[12:00:01] [main/INFO]: Loading mods...
-[12:00:02] [main/INFO]: Server started successfully
-"@ | Out-File -FilePath $normalLog -Encoding UTF8
-    
-    $normalContent = Get-Content $normalLog
-    $normalErrors = $normalContent | Where-Object { $_ -match "(ERROR|FATAL|Exception|Failed|Error)" -and $_ -notmatch "Server exited" }
-    
-    if ($normalErrors.Count -eq 0) {
-        Write-TestResult "Normal Log Analysis" $true "Normal startup log correctly identified as error-free"
-    } else {
-        Write-TestResult "Normal Log Analysis" $false "Normal startup log incorrectly flagged as having errors"
-        return $false
-    }
-    
-    # Test 2: Error startup log
-    $errorLog = Join-Path $testLogDir "error-startup.log"
-    @"
-[12:00:00] [main/INFO]: Starting server...
-[12:00:01] [main/ERROR]: Failed to load mod: fabric-api
-[12:00:02] [main/FATAL]: Server startup failed
-"@ | Out-File -FilePath $errorLog -Encoding UTF8
-    
-    $errorContent = Get-Content $errorLog
-    $errorDetected = $errorContent | Where-Object { $_ -match "(ERROR|FATAL|Exception|Failed|Error)" -and $_ -notmatch "Server exited" }
-    
-    if ($errorDetected.Count -gt 0) {
-        Write-TestResult "Error Log Analysis" $true "Error startup log correctly identified as having errors"
-        return $true
-    } else {
-        Write-TestResult "Error Log Analysis" $false "Error startup log incorrectly flagged as error-free"
-        return $false
-    }
-}
-
-function Test-StartServerIntegration {
-    param([string]$TestName)
-    
-    Write-TestHeader "Testing StartServer Integration"
-    
-    # Test the complete workflow (without actually starting server due to Java requirements)
-    $workflowSteps = @(
-        "Java version checking",
-        "Download folder validation", 
-        "Script copying",
-        "Fabric JAR detection",
-        "Log directory creation",
-        "Background job management",
-        "Error monitoring"
+function Test-ServerStartup {
+    param(
+        [string]$TestName,
+        [scriptblock]$TestScript,
+        [string]$ExpectedOutput = "",
+        [int]$ExpectedExitCode = $null
     )
     
-    $passedSteps = 0
-    foreach ($step in $workflowSteps) {
-        # For integration test, we'll verify the function exists and can be called
-        try {
-            # Test that the function can be called (even if it fails due to Java version)
-            $result = & $ModManagerPath -StartServer 2>&1
-            $output = $result -join "`n"
-            
-            if ($output -match "Starting Minecraft server") {
-                $passedSteps++
-                Write-TestResult "Integration Step: $step" $true "Integration step '$step' is working"
-            } else {
-                Write-TestResult "Integration Step: $step" $false "Integration step '$step' failed"
-            }
+    $script:TotalTests++
+    Write-Host "Testing: $TestName" -ForegroundColor Yellow
+    
+    try {
+        $result = & $TestScript 2>&1
+        $exitCode = $LASTEXITCODE
+        $output = $result -join "`n"
+        
+        # Save individual test log
+        $logFile = Join-Path $TestOutputDir "$($TestName.Replace(' ', '_')).log"
+        $output | Out-File -FilePath $logFile -Encoding UTF8
+        
+        # Check if test passed
+        $passed = $true
+        $errorMessage = ""
+        
+        if ($ExpectedExitCode -ne $null -and $exitCode -ne $ExpectedExitCode) {
+            $passed = $false
+            $errorMessage = "Expected exit code $ExpectedExitCode, got $exitCode"
         }
-        catch {
-            Write-TestResult "Integration Step: $step" $false "Integration step '$step' threw exception: $($_.Exception.Message)"
+        
+        if ($ExpectedOutput -and $output -notmatch $ExpectedOutput) {
+            $passed = $false
+            $errorMessage = "Expected output pattern '$ExpectedOutput' not found"
         }
+        
+        if ($passed) {
+            Write-Host "  ✅ PASS" -ForegroundColor Green
+            $script:PassedTests++
+            $script:TestReport += "✅ PASS: $TestName`n"
+        } else {
+            Write-Host "  ❌ FAIL: $errorMessage" -ForegroundColor Red
+            $script:FailedTests++
+            $script:TestReport += "❌ FAIL: $TestName - $errorMessage`n"
+        }
+        
+    } catch {
+        Write-Host "  ❌ ERROR: $($_.Exception.Message)" -ForegroundColor Red
+        $script:FailedTests++
+        $script:TestReport += "❌ ERROR: $TestName - $($_.Exception.Message)`n"
     }
     
-    if ($passedSteps -eq $workflowSteps.Count) {
-        Write-TestResult "Complete Integration" $true "All integration steps passed"
-        return $true
-    } else {
-        Write-TestResult "Complete Integration" $false "Only $passedSteps of $($workflowSteps.Count) integration steps passed"
-        return $false
-    }
+    Write-Host ""
 }
 
-# Main test execution
 function Invoke-StartServerTests {
     param([string]$TestFileName = $null)
     
+    Write-Host "Starting Server Startup Tests" -ForegroundColor Yellow
+    Write-Host "Test Output Directory: $TestOutputDir" -ForegroundColor Gray
     Write-Host ""
-    Write-Host "StartServer E2E Tests" -ForegroundColor Magenta
-    Write-Host "====================" -ForegroundColor Magenta
-    if ($TestFileName) {
-        Write-Host "Test File: $TestFileName" -ForegroundColor Cyan
-    }
-    Write-Host ""
-    
-    $testResults = @()
-    
-    # Test 1: Prerequisites
-    $testResults += Test-StartServerPrerequisites "Prerequisites"
-    
-    # Test 2: Without Downloads
-    $testResults += Test-StartServerWithoutDownloads "Without Downloads"
-    
-    # Test 3: With Downloads
-    $testResults += Test-StartServerWithDownloads "With Downloads"
-    
-    # Test 4: Error Monitoring
-    $testResults += Test-StartServerErrorMonitoring "Error Monitoring"
-    
-    # Test 5: Job Management
-    $testResults += Test-StartServerJobManagement "Job Management"
-    
-    # Test 6: Log Analysis
-    $testResults += Test-StartServerLogAnalysis "Log Analysis"
-    
-    # Test 7: Integration
-    $testResults += Test-StartServerIntegration "Integration"
-    
-    # Generate test report
-    $passedTests = ($testResults | Where-Object { $_ -eq $true }).Count
-    $totalTests = $testResults.Count
-    
-    Write-Host ""
-    Write-Host ("=" * 80) -ForegroundColor Magenta
-    Write-Host "StartServer E2E Tests Summary" -ForegroundColor Magenta
-    Write-Host ("=" * 80) -ForegroundColor Magenta
-    Write-Host "Passed: $passedTests/$totalTests tests" -ForegroundColor $(if ($passedTests -eq $totalTests) { "Green" } else { "Red" })
-    
-    # Save detailed test report
-    $reportPath = Join-Path $TestOutputDir "startserver-test-report.txt"
-    $reportContent = @"
-StartServer E2E Test Report
-==========================
-Generated: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
-Test File: $TestFileName
 
-Test Results:
--------------
-Prerequisites: $(if ($testResults[0]) { "PASS" } else { "FAIL" })
-Without Downloads: $(if ($testResults[1]) { "PASS" } else { "FAIL" })
-With Downloads: $(if ($testResults[2]) { "PASS" } else { "FAIL" })
-Error Monitoring: $(if ($testResults[3]) { "PASS" } else { "FAIL" })
-Job Management: $(if ($testResults[4]) { "PASS" } else { "FAIL" })
-Log Analysis: $(if ($testResults[5]) { "PASS" } else { "FAIL" })
-Integration: $(if ($testResults[6]) { "PASS" } else { "FAIL" })
+    # Test 1: Server startup with missing files
+    Write-Host "=== Test 1: Server Startup with Missing Files ===" -ForegroundColor Magenta
+    Test-ServerStartup -TestName "Server Startup Missing Files" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
+    } -ExpectedOutput "Download folder not found" -ExpectedExitCode 1
 
-Summary: $passedTests/$totalTests tests passed
+    # Test 2: Server startup with invalid Java
+    Write-Host "=== Test 2: Server Startup with Invalid Java ===" -ForegroundColor Magenta
+    Test-ServerStartup -TestName "Server Startup Invalid Java" -TestScript {
+        # Create a mock server folder with invalid Java
+        $serverFolder = Join-Path $TestDownloadDir "1.21.6"
+        if (-not (Test-Path $serverFolder)) {
+            New-Item -ItemType Directory -Path $serverFolder -Force | Out-Null
+        }
+        
+        # Create a mock server jar
+        $serverJar = Join-Path $serverFolder "minecraft_server.1.21.6.jar"
+        "Mock server jar" | Out-File -FilePath $serverJar -Encoding UTF8
+        
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
+    } -ExpectedOutput "Java version" -ExpectedExitCode 1
 
-Environment Notes:
-- Java Version: $(java -version 2>&1 | Select-String "version" | Select-Object -First 1)
-- PowerShell Version: $($PSVersionTable.PSVersion)
-- ModManager Path: $ModManagerPath
+    # Test 3: Server startup with missing mods folder
+    Write-Host "=== Test 3: Server Startup with Missing Mods Folder ===" -ForegroundColor Magenta
+    Test-ServerStartup -TestName "Server Startup Missing Mods" -TestScript {
+        # Create server folder without mods
+        $serverFolder = Join-Path $TestDownloadDir "1.21.6"
+        if (-not (Test-Path $serverFolder)) {
+            New-Item -ItemType Directory -Path $serverFolder -Force | Out-Null
+        }
+        
+        # Create a mock server jar
+        $serverJar = Join-Path $serverFolder "minecraft_server.1.21.6.jar"
+        "Mock server jar" | Out-File -FilePath $serverJar -Encoding UTF8
+        
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
+    } -ExpectedOutput "Java version" -ExpectedExitCode 1
+
+    # Test 4: Server startup with empty mods folder
+    Write-Host "=== Test 4: Server Startup with Empty Mods Folder ===" -ForegroundColor Magenta
+    Test-ServerStartup -TestName "Server Startup Empty Mods" -TestScript {
+        # Create server folder with empty mods
+        $serverFolder = Join-Path $TestDownloadDir "1.21.6"
+        $modsFolder = Join-Path $serverFolder "mods"
+        
+        if (-not (Test-Path $serverFolder)) {
+            New-Item -ItemType Directory -Path $serverFolder -Force | Out-Null
+        }
+        if (-not (Test-Path $modsFolder)) {
+            New-Item -ItemType Directory -Path $modsFolder -Force | Out-Null
+        }
+        
+        # Create a mock server jar
+        $serverJar = Join-Path $serverFolder "minecraft_server.1.21.6.jar"
+        "Mock server jar" | Out-File -FilePath $serverJar -Encoding UTF8
+        
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
+    } -ExpectedOutput "Java version" -ExpectedExitCode 1
+
+    # Test 5: Server startup with incompatible mods
+    Write-Host "=== Test 5: Server Startup with Incompatible Mods ===" -ForegroundColor Magenta
+    Test-ServerStartup -TestName "Server Startup Incompatible Mods" -TestScript {
+        # Create server folder with mock incompatible mods
+        $serverFolder = Join-Path $TestDownloadDir "1.21.6"
+        $modsFolder = Join-Path $serverFolder "mods"
+        
+        if (-not (Test-Path $serverFolder)) {
+            New-Item -ItemType Directory -Path $serverFolder -Force | Out-Null
+        }
+        if (-not (Test-Path $modsFolder)) {
+            New-Item -ItemType Directory -Path $modsFolder -Force | Out-Null
+        }
+        
+        # Create mock incompatible mods
+        $incompatibleMod1 = Join-Path $modsFolder "incompatible-mod-1.jar"
+        $incompatibleMod2 = Join-Path $modsFolder "incompatible-mod-2.jar"
+        "Mock incompatible mod 1" | Out-File -FilePath $incompatibleMod1 -Encoding UTF8
+        "Mock incompatible mod 2" | Out-File -FilePath $incompatibleMod2 -Encoding UTF8
+        
+        # Create a mock server jar
+        $serverJar = Join-Path $serverFolder "minecraft_server.1.21.6.jar"
+        "Mock server jar" | Out-File -FilePath $serverJar -Encoding UTF8
+        
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
+    } -ExpectedOutput "Java version" -ExpectedExitCode 1
+
+    # Generate final report
+    $TestReport += @"
+
+Test Summary:
+=============
+Total Tests: $TotalTests
+Passed: $PassedTests
+Failed: $FailedTests
+Success Rate: $(if ($TotalTests -gt 0) { [math]::Round(($PassedTests / $TotalTests) * 100, 2) } else { 0 })%
+
+Test Details:
+=============
+This test validates server startup functionality and error handling.
+
+Expected Behavior:
+- Server startup should handle missing files gracefully
+- Invalid Java should be detected
+- Missing mods should be handled
+- Incompatible mods should be detected
+- Error messages should be clear and helpful
 "@
-    
-    $reportContent | Out-File -FilePath $reportPath -Encoding UTF8
-    
-    return $passedTests -eq $totalTests
+
+    # Set global test results for the test runner
+    $script:TestResults = @{
+        Total = $TotalTests
+        Passed = $PassedTests
+        Failed = $FailedTests
+    }
+
+    # Save test report
+    $TestReport | Out-File -FilePath $TestReportPath -Encoding UTF8
+
+    Write-Host "Test completed!" -ForegroundColor Green
+    Write-Host "Total Tests: $TotalTests" -ForegroundColor Cyan
+    Write-Host "Passed: $PassedTests" -ForegroundColor Green
+    Write-Host "Failed: $FailedTests" -ForegroundColor Red
+    Write-Host "Success Rate: $(if ($TotalTests -gt 0) { [math]::Round(($PassedTests / $TotalTests) * 100, 2) } else { 0 })%" -ForegroundColor Green
+    Write-Host "Test report saved to: $TestReportPath" -ForegroundColor Gray
+
+    return ($FailedTests -eq 0)
 }
 
 # Execute tests if run directly

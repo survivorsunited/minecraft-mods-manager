@@ -1,235 +1,249 @@
 # Parameter Validation Tests
-# Tests all parameters and their combinations for the ModManager.ps1 script
+# Tests various parameter combinations and edge cases
 
-param(
-    [string]$TestOutputPath = "test-output/11-ParameterValidation",
-    [switch]$Verbose
-)
+param([string]$TestFileName = $null)
 
 # Import test framework
-. "$PSScriptRoot/../TestFramework.ps1"
+$TestFrameworkPath = Join-Path $PSScriptRoot "..\TestFramework.ps1"
+. $TestFrameworkPath
 
 # Test configuration
-$TestName = "Parameter Validation Tests"
-$TestDescription = "Comprehensive tests for all ModManager.ps1 parameters and their combinations"
-$TestOutputDir = $TestOutputPath
-$TestReportPath = Join-Path $TestOutputDir "parameter-validation-test-report.txt"
+$ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+$TestOutputDir = Join-Path $PSScriptRoot "..\test-output\11-ParameterValidation"
+$TestDownloadDir = Join-Path $TestOutputDir "download"
+$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
 
-# Create test output directory
+# Ensure test output directory exists
 if (-not (Test-Path $TestOutputDir)) {
     New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
 }
 
-# Initialize test report
-$TestReport = @"
-Parameter Validation Test Report
-Generated: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
-Test Output Directory: $TestOutputDir
+# Create test modlist with minimal test data
+$testMods = @(
+    @{
+        Group = "test"
+        Type = "mod"
+        GameVersion = "1.21.5"
+        ID = "fabric-api"
+        Loader = "fabric"
+        Version = "0.91.0+1.21.5"
+        Name = "Fabric API"
+        Description = "Test Fabric API"
+        Jar = "fabric-api-0.91.0+1.21.5.jar"
+        Url = "https://modrinth.com/mod/fabric-api"
+        Category = "API"
+        VersionUrl = "https://modrinth.com/mod/fabric-api/version/0.91.0+1.21.5"
+        LatestVersionUrl = "https://modrinth.com/mod/fabric-api/version/0.91.0+1.21.5"
+        LatestVersion = "0.91.0+1.21.5"
+        ApiSource = "modrinth"
+        Host = "modrinth.com"
+        IconUrl = "https://cdn.modrinth.com/data/P7dR8mSH/icon.png"
+        ClientSide = "required"
+        ServerSide = "required"
+        Title = "Fabric API"
+        ProjectDescription = "Test Fabric API"
+        IssuesUrl = "https://github.com/FabricMC/fabric/issues"
+        SourceUrl = "https://github.com/FabricMC/fabric"
+        WikiUrl = "https://fabricmc.net/wiki"
+        LatestGameVersion = "1.21.5"
+        RecordHash = "test-hash"
+    }
+)
 
-"@
+# Create test modlist.csv
+$testMods | Export-Csv -Path $TestModListPath -NoTypeInformation
 
-# Test counter
+# Test variables
 $TotalTests = 0
 $PassedTests = 0
 $FailedTests = 0
+$TestReport = @()
 
-# Helper function to run parameter test
-function Test-Parameter {
+# Test report file
+$TestReportPath = Join-Path $TestOutputDir "parameter-validation-test-report.txt"
+
+function Test-ParameterValidation {
     param(
         [string]$TestName,
-        [string]$Parameters,
-        [string]$ExpectedOutput,
-        [string]$ExpectedError = $null,
-        [int]$ExpectedExitCode = 0
+        [scriptblock]$TestScript,
+        [string]$ExpectedOutput = "",
+        [int]$ExpectedExitCode = $null
     )
     
-    $TotalTests++
-    Write-Host "Testing: $TestName" -ForegroundColor Cyan
+    $script:TotalTests++
+    Write-Host "Testing: $TestName" -ForegroundColor Yellow
     
     try {
-        $command = ".\ModManager.ps1 $Parameters"
-        Write-Host "  Command: $command" -ForegroundColor Gray
-        
-        $result = Invoke-Expression $command 2>&1
+        $result = & $TestScript 2>&1
         $exitCode = $LASTEXITCODE
+        $output = $result -join "`n"
         
-        $success = $true
+        # Save individual test log
+        $logFile = Join-Path $TestOutputDir "$($TestName.Replace(' ', '_')).log"
+        $output | Out-File -FilePath $logFile -Encoding UTF8
+        
+        # Check if test passed
+        $passed = $true
         $errorMessage = ""
         
-        # Check exit code
-        if ($exitCode -ne $ExpectedExitCode) {
-            $success = $false
-            $errorMessage = "Exit code mismatch. Expected: $ExpectedExitCode, Got: $exitCode"
+        if ($ExpectedExitCode -ne $null -and $exitCode -ne $ExpectedExitCode) {
+            $passed = $false
+            $errorMessage = "Expected exit code $ExpectedExitCode, got $exitCode"
         }
         
-        # Check for expected output
-        if ($ExpectedOutput -and $result -notmatch $ExpectedOutput) {
-            $success = $false
-            $errorMessage = "Expected output not found: $ExpectedOutput"
+        if ($ExpectedOutput -and $output -notmatch $ExpectedOutput) {
+            $passed = $false
+            $errorMessage = "Expected output pattern '$ExpectedOutput' not found"
         }
         
-        # Check for expected error
-        if ($ExpectedError -and $result -notmatch $ExpectedError) {
-            $success = $false
-            $errorMessage = "Expected error not found: $ExpectedError"
-        }
-        
-        if ($success) {
+        if ($passed) {
             Write-Host "  ✅ PASS" -ForegroundColor Green
-            $PassedTests++
-            $TestReport += "✅ PASS: $TestName`n"
+            $script:PassedTests++
+            $script:TestReport += "✅ PASS: $TestName`n"
         } else {
             Write-Host "  ❌ FAIL: $errorMessage" -ForegroundColor Red
-            $FailedTests++
-            $TestReport += "❌ FAIL: $TestName - $errorMessage`n"
+            $script:FailedTests++
+            $script:TestReport += "❌ FAIL: $TestName - $errorMessage`n"
         }
-        
-        # Log output for debugging
-        $outputLogPath = Join-Path $TestOutputDir "$($TestName -replace '[^a-zA-Z0-9]', '_').log"
-        $result | Out-File -FilePath $outputLogPath -Encoding UTF8
         
     } catch {
         Write-Host "  ❌ ERROR: $($_.Exception.Message)" -ForegroundColor Red
-        $FailedTests++
-        $TestReport += "❌ ERROR: $TestName - $($_.Exception.Message)`n"
+        $script:FailedTests++
+        $script:TestReport += "❌ ERROR: $TestName - $($_.Exception.Message)`n"
     }
     
     Write-Host ""
 }
 
-# Helper function to test parameter validation
-function Test-ParameterValidation {
-    param(
-        [string]$TestName,
-        [string]$Parameters,
-        [string]$ExpectedError
-    )
+function Invoke-ParameterValidation {
+    param([string]$TestFileName = $null)
     
-    Test-Parameter -TestName $TestName -Parameters $Parameters -ExpectedError $ExpectedError -ExpectedExitCode 1
-}
+    Write-Host "Starting Parameter Validation Tests" -ForegroundColor Yellow
+    Write-Host "Test Output Directory: $TestOutputDir" -ForegroundColor Gray
+    Write-Host "Test ModList: $TestModListPath" -ForegroundColor Gray
+    Write-Host ""
 
-# Helper function to test parameter success
-function Test-ParameterSuccess {
-    param(
-        [string]$TestName,
-        [string]$Parameters,
-        [string]$ExpectedOutput
-    )
-    
-    Test-Parameter -TestName $TestName -Parameters $Parameters -ExpectedOutput $ExpectedOutput -ExpectedExitCode 0
-}
+    # Test 1: No parameters (should show help)
+    Write-Host "=== Test 1: No Parameters (Help) ===" -ForegroundColor Magenta
+    Test-ParameterValidation -TestName "No Parameters Help" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath
+    } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
-Write-Host "Starting $TestName" -ForegroundColor Yellow
-Write-Host "Test Output Directory: $TestOutputDir" -ForegroundColor Gray
-Write-Host ""
+    # Test 2: Invalid parameter
+    Write-Host "=== Test 2: Invalid Parameter ===" -ForegroundColor Magenta
+    Test-ParameterValidation -TestName "Invalid Parameter" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -InvalidParam
+    } -ExpectedOutput "error|Error|ERROR|Invalid|invalid" -ExpectedExitCode 1
 
-# Test 1: Help parameters
-Write-Host "=== Testing Help Parameters ===" -ForegroundColor Magenta
-Test-ParameterSuccess -TestName "Help Parameter" -Parameters "-Help" -ExpectedOutput "Usage:"
-Test-ParameterSuccess -TestName "ShowHelp Parameter" -Parameters "-ShowHelp" -ExpectedOutput "Usage:"
+    # Test 3: Missing required parameter (DatabaseFile)
+    Write-Host "=== Test 3: Missing DatabaseFile Parameter ===" -ForegroundColor Magenta
+    Test-ParameterValidation -TestName "Missing DatabaseFile" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download
+    } -ExpectedOutput "error|Error|ERROR|DatabaseFile|database" -ExpectedExitCode 1
 
-# Test 2: Core parameters
-Write-Host "=== Testing Core Parameters ===" -ForegroundColor Magenta
-Test-ParameterSuccess -TestName "Download Parameter" -Parameters "-Download" -ExpectedOutput "Starting mod downloads"
-Test-ParameterSuccess -TestName "UseLatestVersion Parameter" -Parameters "-Download -UseLatestVersion" -ExpectedOutput "Using latest versions"
-Test-ParameterSuccess -TestName "ForceDownload Parameter" -Parameters "-Download -ForceDownload" -ExpectedOutput "Force downloading"
+    # Test 4: Invalid database file path
+    Write-Host "=== Test 4: Invalid Database File Path ===" -ForegroundColor Magenta
+    Test-ParameterValidation -TestName "Invalid Database Path" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -DatabaseFile "C:\Invalid\modlist.csv"
+    } -ExpectedOutput "error|Error|ERROR|not found|does not exist" -ExpectedExitCode 1
 
-# Test 3: Validation parameters
-Write-Host "=== Testing Validation Parameters ===" -ForegroundColor Magenta
-Test-ParameterValidation -TestName "ValidateMod without ModID" -Parameters "-ValidateMod" -ExpectedError "requires -ModID parameter"
-Test-ParameterSuccess -TestName "ValidateMod with ModID" -Parameters "-ValidateMod -ModID fabric-api" -ExpectedOutput "Validating mod: fabric-api"
-Test-ParameterSuccess -TestName "ValidateAllModVersions" -Parameters "-ValidateAllModVersions" -ExpectedOutput "Starting automatic validation"
-Test-ParameterSuccess -TestName "ValidateWithDownload" -Parameters "-DownloadMods -ValidateWithDownload" -ExpectedOutput "Validating mod versions before download"
+    # Test 5: Invalid download folder path
+    Write-Host "=== Test 5: Invalid Download Folder Path ===" -ForegroundColor Magenta
+    Test-ParameterValidation -TestName "Invalid Download Folder" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -DatabaseFile $TestModListPath -DownloadFolder "C:\Invalid\Download\Path"
+    } -ExpectedOutput "error|Error|ERROR|not found|does not exist|cannot create" -ExpectedExitCode 1
 
-# Test 4: Download parameters
-Write-Host "=== Testing Download Parameters ===" -ForegroundColor Magenta
-Test-ParameterSuccess -TestName "DownloadMods" -Parameters "-DownloadMods" -ExpectedOutput "Starting mod downloads"
-Test-ParameterSuccess -TestName "DownloadServer" -Parameters "-DownloadServer" -ExpectedOutput "Downloading server files"
-Test-ParameterSuccess -TestName "StartServer" -Parameters "-StartServer" -ExpectedOutput "Starting Minecraft server"
+    # Test 6: Conflicting parameters (Download and DownloadMods)
+    Write-Host "=== Test 6: Conflicting Parameters ===" -ForegroundColor Magenta
+    Test-ParameterValidation -TestName "Conflicting Parameters" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -DownloadMods -DatabaseFile $TestModListPath
+    } -ExpectedOutput "error|Error|ERROR|conflict|Conflicting|mutually exclusive" -ExpectedExitCode 1
 
-# Test 5: Mod management parameters
-Write-Host "=== Testing Mod Management Parameters ===" -ForegroundColor Magenta
-Test-ParameterValidation -TestName "AddMod without AddModId" -Parameters "-AddMod" -ExpectedError "You must provide a mod ID"
-Test-ParameterSuccess -TestName "AddMod with AddModId" -Parameters "-AddMod -AddModId fabric-api -AddModName 'Fabric API'" -ExpectedOutput "Resolving mod information"
-Test-ParameterSuccess -TestName "AddMod with URL" -Parameters "-AddModId 'https://modrinth.com/mod/fabric-api'" -ExpectedOutput "Resolving mod information"
-Test-ParameterValidation -TestName "DeleteModID without ID" -Parameters "-DeleteModID" -ExpectedError "You must provide a mod ID"
+    # Test 7: Valid parameter combination
+    Write-Host "=== Test 7: Valid Parameter Combination ===" -ForegroundColor Magenta
+    Test-ParameterValidation -TestName "Valid Parameters" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -DatabaseFile $TestModListPath -UseCachedResponses
+    } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
-# Test 6: Information parameters
-Write-Host "=== Testing Information Parameters ===" -ForegroundColor Magenta
-Test-ParameterSuccess -TestName "GetModList" -Parameters "-GetModList" -ExpectedOutput "Mod List"
+    # Test 8: Test with valid test modlist.csv
+    Write-Host "=== Test 8: Valid Test ModList ===" -ForegroundColor Magenta
+    Test-ParameterValidation -TestName "Valid Test ModList" -TestScript {
+        if (Test-Path $TestModListPath) {
+            $mods = Import-Csv $TestModListPath
+            "Test modlist.csv found with $($mods.Count) mods"
+            $mods | ForEach-Object { "  - $($_.Name): $($_.Version)" }
+        } else {
+            "Test modlist.csv not found"
+        }
+    } -ExpectedOutput "Test modlist.csv found" -ExpectedExitCode 0
 
-# Test 7: Configuration parameters
-Write-Host "=== Testing Configuration Parameters ===" -ForegroundColor Magenta
-Test-ParameterSuccess -TestName "ModListFile" -Parameters "-ModListFile modlist.csv" -ExpectedOutput "Starting automatic validation"
-Test-ParameterSuccess -TestName "DatabaseFile" -Parameters "-DatabaseFile modlist.csv" -ExpectedOutput "Starting automatic validation"
-Test-ParameterSuccess -TestName "UseCachedResponses" -Parameters "-ValidateAllModVersions -UseCachedResponses" -ExpectedOutput "Starting automatic validation"
+    # Final check: Ensure test/download is empty or does not exist
+    Write-Host "=== Final Step: Verifying test/download is untouched ===" -ForegroundColor Magenta
+    $TotalTests++  # Increment total test count for this check
+    $mainTestDownloadPath = Join-Path $PSScriptRoot "..\download"
+    if (Test-Path $mainTestDownloadPath) {
+        $downloadContents = Get-ChildItem -Path $mainTestDownloadPath -Recurse -File -ErrorAction SilentlyContinue
+        if ($downloadContents.Count -gt 0) {
+            Write-Host "  ❌ FAIL: main test/download is not empty!" -ForegroundColor Red
+            $FailedTests++
+            $TestReport += "❌ FAIL: main test/download is not empty!`n"
+        } else {
+            Write-Host "  ✅ PASS: main test/download is empty" -ForegroundColor Green
+            $PassedTests++
+            $TestReport += "✅ PASS: main test/download is empty`n"
+        }
+    } else {
+        Write-Host "  ✅ PASS: main test/download does not exist" -ForegroundColor Green
+        $PassedTests++
+        $TestReport += "✅ PASS: main test/download does not exist`n"
+    }
 
-# Test 8: Parameter combinations
-Write-Host "=== Testing Parameter Combinations ===" -ForegroundColor Magenta
-Test-ParameterSuccess -TestName "Download with Latest and Force" -Parameters "-Download -UseLatestVersion -ForceDownload" -ExpectedOutput "Using latest versions"
-Test-ParameterSuccess -TestName "DownloadMods with Validation" -Parameters "-DownloadMods -ValidateWithDownload" -ExpectedOutput "Validating mod versions before download"
-Test-ParameterSuccess -TestName "AddMod with All Parameters" -Parameters "-AddMod -AddModId sodium -AddModName Sodium -AddModLoader fabric -AddModGameVersion 1.21.6 -AddModGroup optional" -ExpectedOutput "Resolving mod information"
-
-# Test 9: Error handling
-Write-Host "=== Testing Error Handling ===" -ForegroundColor Magenta
-Test-ParameterValidation -TestName "Invalid ModID" -Parameters "-ValidateMod -ModID invalid-mod-id" -ExpectedError "not found in the database"
-Test-ParameterValidation -TestName "Invalid ModListFile" -Parameters "-ModListFile nonexistent.csv" -ExpectedError "Mod list CSV file not found"
-
-# Test 10: Default behavior
-Write-Host "=== Testing Default Behavior ===" -ForegroundColor Magenta
-Test-ParameterSuccess -TestName "No Parameters" -Parameters "" -ExpectedOutput "Starting automatic validation"
-
-# Test 11: Parameter validation edge cases
-Write-Host "=== Testing Edge Cases ===" -ForegroundColor Magenta
-Test-ParameterValidation -TestName "Empty ModID" -Parameters "-ValidateMod -ModID ''" -ExpectedError "requires -ModID parameter"
-Test-ParameterValidation -TestName "Whitespace ModID" -Parameters "-ValidateMod -ModID '   '" -ExpectedError "requires -ModID parameter"
-
-# Test 12: URL parsing
-Write-Host "=== Testing URL Parsing ===" -ForegroundColor Magenta
-Test-ParameterSuccess -TestName "Modrinth Mod URL" -Parameters "-AddModId 'https://modrinth.com/mod/fabric-api'" -ExpectedOutput "Resolving mod information"
-Test-ParameterSuccess -TestName "Modrinth Shader URL" -Parameters "-AddModId 'https://modrinth.com/shader/complementary-reimagined'" -ExpectedOutput "Resolving mod information"
-Test-ParameterValidation -TestName "Invalid URL" -Parameters "-AddModId 'https://invalid-url.com'" -ExpectedError "Failed to resolve mod information"
-
-# Test 13: Delete functionality
-Write-Host "=== Testing Delete Functionality ===" -ForegroundColor Magenta
-Test-ParameterSuccess -TestName "Delete with Modrinth URL" -Parameters "-DeleteModID 'https://modrinth.com/mod/fabric-api'" -ExpectedOutput "Deleting mod: fabric-api"
-Test-ParameterSuccess -TestName "Delete with Type" -Parameters "-DeleteModID fabric-api -DeleteModType mod" -ExpectedOutput "Deleting mod: fabric-api"
-
-# Generate final report
-$TestReport += @"
+    # Generate final report
+    $TestReport += @"
 
 Test Summary:
 =============
 Total Tests: $TotalTests
 Passed: $PassedTests
 Failed: $FailedTests
-Success Rate: $([math]::Round(($PassedTests / $TotalTests) * 100, 2))%
+Success Rate: $(if ($TotalTests -gt 0) { [math]::Round(($PassedTests / $TotalTests) * 100, 2) } else { 0 })%
 
 Test Details:
 =============
-All test outputs have been saved to individual log files in: $TestOutputDir
+This test validates parameter handling and edge cases.
+It uses a test-specific modlist.csv to avoid interfering with the main modlist.csv.
 
+Expected Behavior:
+- Help should display with no parameters
+- Invalid parameters should be rejected
+- Missing required parameters should be detected
+- Invalid file paths should be handled gracefully
+- Conflicting parameters should be detected
+- Valid parameters should work correctly
+- test/download should remain untouched
 "@
 
-# Save test report
-$TestReport | Out-File -FilePath $TestReportPath -Encoding UTF8
+    # Set global test results for the test runner
+    $script:TestResults = @{
+        Total = $TotalTests
+        Passed = $PassedTests
+        Failed = $FailedTests
+    }
 
-# Display summary
-Write-Host ""
-Write-Host "=== Test Summary ===" -ForegroundColor Yellow
-Write-Host "Total Tests: $TotalTests" -ForegroundColor White
-Write-Host "Passed: $PassedTests" -ForegroundColor Green
-Write-Host "Failed: $FailedTests" -ForegroundColor Red
-Write-Host "Success Rate: $([math]::Round(($PassedTests / $TotalTests) * 100, 2))%" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "Test report saved to: $TestReportPath" -ForegroundColor Gray
-Write-Host "Individual test logs saved to: $TestOutputDir" -ForegroundColor Gray
+    # Save test report
+    $TestReport | Out-File -FilePath $TestReportPath -Encoding UTF8
 
-# Return exit code based on test results
-if ($FailedTests -eq 0) {
-    Write-Host "All parameter validation tests passed! 🎉" -ForegroundColor Green
-    exit 0
-} else {
-    Write-Host "Some parameter validation tests failed! ❌" -ForegroundColor Red
-    exit 1
+    Write-Host "Test completed!" -ForegroundColor Green
+    Write-Host "Total Tests: $TotalTests" -ForegroundColor Cyan
+    Write-Host "Passed: $PassedTests" -ForegroundColor Green
+    Write-Host "Failed: $FailedTests" -ForegroundColor Red
+    Write-Host "Success Rate: $(if ($TotalTests -gt 0) { [math]::Round(($PassedTests / $TotalTests) * 100, 2) } else { 0 })%" -ForegroundColor Green
+    Write-Host "Test report saved to: $TestReportPath" -ForegroundColor Gray
+
+    return ($FailedTests -eq 0)
+}
+
+# Execute tests if run directly
+if ($MyInvocation.InvocationName -ne ".") {
+    Invoke-ParameterValidation -TestFileName $TestFileName
 } 

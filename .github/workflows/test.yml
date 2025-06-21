@@ -114,28 +114,149 @@ jobs:
         
         Write-Host "Test suite completed successfully!"
         
+    - name: Generate test summary report
+      if: always()
+      shell: pwsh
+      run: |
+        # Change to test directory and generate summary
+        Set-Location test
+        .\GenerateTestSummary.ps1 -OS "${{ matrix.os }}" -OutputFile "../test-summary-${{ matrix.os }}.md"
+        
+    - name: Generate comprehensive test results
+      if: always()
+      shell: pwsh
+      run: |
+        # Change to test directory and generate comprehensive results
+        Set-Location test
+        .\GenerateTestResults.ps1 -OS "${{ matrix.os }}" -OutputDir "../test-results-${{ matrix.os }}"
+        
     - name: Upload test logs
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: test-logs-${{ matrix.os }}
-        path: test/test-run-*.log
-        retention-days: 7
+        path: |
+          test/test-output/test-run-*.log
+          test/test-output/*/*.log
+        retention-days: 30
         
-    - name: Upload test output
+    - name: Upload test output directories
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: test-output-${{ matrix.os }}
-        path: test/output-*/
-        retention-days: 7
+        path: |
+          test/test-output/
+          test/output-*/
+        retention-days: 30
         
-    - name: Upload test results summary
+    - name: Upload test summary report
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: test-summary-${{ matrix.os }}
         path: |
-          test/test-run-*.log
+          test-summary-${{ matrix.os }}.md
+          test-results-${{ matrix.os }}/
+          test/test-output/*/test-report.txt
+          test/test-output/*/*-test-report.txt
+        retention-days: 30
+        
+    - name: Upload test results CSV
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-csv-${{ matrix.os }}
+        path: |
+          test-results-${{ matrix.os }}/*.csv
+          test/test-output/*/run-test-cli.csv
           test/output-*/run-test-cli.csv
-        retention-days: 7 
+        retention-days: 30
+        
+    - name: Upload test results JSON
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-json-${{ matrix.os }}
+        path: |
+          test-results-${{ matrix.os }}/*.json
+        retention-days: 30
+        
+    - name: Upload mod download results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: mod-download-results-${{ matrix.os }}
+        path: |
+          test/apiresponse/mod-download-results.csv
+          test/test-output/*/modlist.csv
+        retention-days: 30
+        
+    - name: Upload server startup logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: server-logs-${{ matrix.os }}
+        path: |
+          test/test-output/*/Server_*.log
+          test/test-output/*/server.log
+          test/test-output/*/logs/
+        retention-days: 30
+        
+    - name: Upload test artifacts (comprehensive)
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: all-test-artifacts-${{ matrix.os }}
+        path: |
+          test/test-output/
+          test/output-*/
+          test/apiresponse/
+          test-summary-${{ matrix.os }}.md
+          test-results-${{ matrix.os }}/
+        retention-days: 30
+        if-no-files-found: warn
+        
+    - name: Create test completion report
+      if: always()
+      shell: pwsh
+      run: |
+        # Create a simple completion report
+        Set-Location test
+        .\CreateCompletionReport.ps1 -OS "${{ matrix.os }}" -OutputFile "../test-completion-${{ matrix.os }}.txt"
+
+  release:
+    name: Create Release
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && needs.test.result == 'success'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Download all test artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: artifacts
+        
+    - name: Generate release notes
+      shell: pwsh
+      run: |
+        # Generate comprehensive release notes from actual test results
+        Set-Location test
+        .\GenerateReleaseNotes.ps1 -OutputFile "../RELEASE_NOTES.md" -ArtifactsPath "../artifacts"
+        
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: test-release-${{ github.run_number }}
+        name: Test Release ${{ github.run_number }}
+        body_path: RELEASE_NOTES.md
+        draft: false
+        prerelease: true
+        files: |
+          artifacts/**/*
+        generate_release_notes: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 

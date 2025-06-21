@@ -9,20 +9,62 @@ $TestFrameworkPath = Join-Path $PSScriptRoot "..\TestFramework.ps1"
 
 # Test configuration
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
-$ModListPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
 $TestOutputDir = Join-Path $PSScriptRoot "..\test-output\12-TestLatestWithServer"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
+$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
 
 # Ensure test output directory exists
 if (-not (Test-Path $TestOutputDir)) {
     New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
 }
 
-# Test variables
-$TotalTests = 0
-$PassedTests = 0
-$FailedTests = 0
-$TestReport = @()
+# Create test modlist with minimal test data
+$testMods = @(
+    @{
+        Group = "test"
+        Type = "mod"
+        GameVersion = "1.21.5"
+        ID = "fabric-api"
+        Loader = "fabric"
+        Version = "0.91.0+1.21.5"
+        Name = "Fabric API"
+        Description = "Test Fabric API"
+        Jar = "fabric-api-0.91.0+1.21.5.jar"
+        Url = "https://modrinth.com/mod/fabric-api"
+        Category = "API"
+        VersionUrl = "https://modrinth.com/mod/fabric-api/version/0.91.0+1.21.5"
+        LatestVersionUrl = "https://modrinth.com/mod/fabric-api/version/0.91.0+1.21.5"
+        LatestVersion = "0.91.0+1.21.5"
+        ApiSource = "modrinth"
+        Host = "modrinth.com"
+        IconUrl = "https://cdn.modrinth.com/data/P7dR8mSH/icon.png"
+        ClientSide = "required"
+        ServerSide = "required"
+        Title = "Fabric API"
+        ProjectDescription = "Test Fabric API"
+        IssuesUrl = "https://github.com/FabricMC/fabric/issues"
+        SourceUrl = "https://github.com/FabricMC/fabric"
+        WikiUrl = "https://fabricmc.net/wiki"
+        LatestGameVersion = "1.21.5"
+        RecordHash = "test-hash"
+    }
+)
+
+# Create test modlist.csv
+$testMods | Export-Csv -Path $TestModListPath -NoTypeInformation
+
+# Initialize test results at script level
+$script:TestResults = @{
+    Total = 0
+    Passed = 0
+    Failed = 0
+}
+
+# Initialize test counters
+$script:TotalTests = 0
+$script:PassedTests = 0
+$script:FailedTests = 0
+$script:TestReport = @()
 
 # Test report file
 $TestReportPath = Join-Path $TestOutputDir "latest-with-server-test-report.txt"
@@ -64,159 +106,191 @@ function Test-LatestWithServer {
         if ($passed) {
             Write-Host "  ✅ PASS" -ForegroundColor Green
             $script:PassedTests++
+            $script:TestResults.Passed++
             $script:TestReport += "✅ PASS: $TestName`n"
         } else {
             Write-Host "  ❌ FAIL: $errorMessage" -ForegroundColor Red
             $script:FailedTests++
+            $script:TestResults.Failed++
             $script:TestReport += "❌ FAIL: $TestName - $errorMessage`n"
         }
         
     } catch {
         Write-Host "  ❌ ERROR: $($_.Exception.Message)" -ForegroundColor Red
         $script:FailedTests++
+        $script:TestResults.Failed++
         $script:TestReport += "❌ ERROR: $TestName - $($_.Exception.Message)`n"
     }
     
     Write-Host ""
 }
 
-Write-Host "Starting Test Latest Mods with Server Startup" -ForegroundColor Yellow
-Write-Host "Test Output Directory: $TestOutputDir" -ForegroundColor Gray
-Write-Host ""
+function Invoke-TestLatestWithServer {
+    param([string]$TestFileName = $null)
+    
+    Write-Host "Starting Test Latest Mods with Server Startup" -ForegroundColor Yellow
+    Write-Host "Test Output Directory: $TestOutputDir" -ForegroundColor Gray
+    Write-Host "Test ModList: $TestModListPath" -ForegroundColor Gray
+    Write-Host ""
 
-# Test 1: Validate all mods first
-Write-Host "=== Step 1: Validating All Mods ===" -ForegroundColor Magenta
-Test-LatestWithServer -TestName "Validate All Mods" -TestScript {
-    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -UseCachedResponses -DatabaseFile $ModListPath
-} -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
+    # Test 1: Validate all mods first
+    Write-Host "=== Step 1: Validating All Mods ===" -ForegroundColor Magenta
+    Test-LatestWithServer -TestName "Validate All Mods" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -UseCachedResponses -DatabaseFile $TestModListPath
+    } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
-# Test 2: Download latest mods to isolated folder
-Write-Host "=== Step 2: Downloading Latest Mods ===" -ForegroundColor Magenta
-Test-LatestWithServer -TestName "Download Latest Mods" -TestScript {
-    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $ModListPath -DownloadFolder $TestDownloadDir -UseCachedResponses
-} -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
+    # Test 2: Update mods to latest versions
+    Write-Host "=== Step 2: Updating Mods to Latest Versions ===" -ForegroundColor Magenta
+    Test-LatestWithServer -TestName "Update Mods to Latest" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestModListPath -UseCachedResponses
+    } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
-# Test 3: Download server files to the same isolated folder
-Write-Host "=== Step 3: Downloading Server Files ===" -ForegroundColor Magenta
-Test-LatestWithServer -TestName "Download Server Files" -TestScript {
-    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses
-} -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
+    # Test 3: Download everything (mods and server files) to the same folder
+    Write-Host "=== Step 3: Downloading Everything to Same Folder ===" -ForegroundColor Magenta
+    Test-LatestWithServer -TestName "Download Everything" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -UseLatestVersion -DownloadFolder $TestDownloadDir -DatabaseFile $TestModListPath -UseCachedResponses
+    } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
-# Test 4: Add server start script to the download folder
-Write-Host "=== Step 4: Adding Server Start Script ===" -ForegroundColor Magenta
-Test-LatestWithServer -TestName "Add Server Start Script" -TestScript {
-    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddServerStartScript -DownloadFolder $TestDownloadDir
-} -ExpectedOutput "Successfully copied start-server script" -ExpectedExitCode 0
+    # Test 4: Download server files to the same folder (in case they weren't included)
+    Write-Host "=== Step 4: Downloading Server Files ===" -ForegroundColor Magenta
+    Test-LatestWithServer -TestName "Download Server Files" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses
+    } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
-# Test 5: Attempt to start server (this should fail with mod compatibility issues)
-Write-Host "=== Step 5: Attempting Server Startup (Expected to Fail) ===" -ForegroundColor Magenta
-Test-LatestWithServer -TestName "Server Startup with Latest Mods" -TestScript {
-    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
-} -ExpectedOutput "Errors detected|Server job failed|Java version" -ExpectedExitCode 1
+    # Test 5: Add server start script to the download folder
+    Write-Host "=== Step 5: Adding Server Start Script ===" -ForegroundColor Magenta
+    Test-LatestWithServer -TestName "Add Server Start Script" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddServerStartScript -DownloadFolder $TestDownloadDir
+    } -ExpectedOutput "Successfully copied start-server script" -ExpectedExitCode 0
 
-# Test 6: Verify mod compatibility issues
-Write-Host "=== Step 6: Verifying Mod Compatibility Issues ===" -ForegroundColor Magenta
-Test-LatestWithServer -TestName "Mod Compatibility Verification" -TestScript {
-    # Run in separate PowerShell process to isolate exit codes
-    $script = {
-        param($ModListPath)
-        # Check the modlist.csv for potential compatibility issues
-        if (Test-Path $ModListPath) {
-            $mods = Import-Csv $ModListPath
-            $issues = @()
+    # Test 6: Attempt to start server (this should succeed if mods are compatible)
+    Write-Host "=== Step 6: Attempting Server Startup ===" -ForegroundColor Magenta
+    Test-LatestWithServer -TestName "Server Startup with Latest Mods" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
+    } -ExpectedOutput "Server started successfully|Server is running" -ExpectedExitCode 0
+
+    # Test 7: Analyze and report mod compatibility issues as errors
+    Write-Host "=== Step 7: Analyzing Mod Compatibility Issues ===" -ForegroundColor Magenta
+    Test-LatestWithServer -TestName "Mod Compatibility Analysis" -TestScript {
+        # Check the server logs for actual compatibility errors
+        $serverLogPath = Join-Path $TestDownloadDir "1.21.6\logs\console-*.log"
+        $logFiles = Get-ChildItem -Path $serverLogPath -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending
+        
+        if ($logFiles.Count -gt 0) {
+            $latestLog = $logFiles[0]
+            $logContent = Get-Content $latestLog.FullName -Raw
             
-            foreach ($mod in $mods) {
-                # Check for version mismatches
-                if ($mod.Version -and $mod.LatestVersion -and $mod.Version -ne $mod.LatestVersion) {
-                    $issues += "Version mismatch for $($mod.Name): Current=$($mod.Version), Latest=$($mod.LatestVersion)"
-                }
-                
-                # Check for game version mismatches
-                if ($mod.GameVersion -and $mod.LatestGameVersion -and $mod.GameVersion -ne $mod.LatestGameVersion) {
-                    $issues += "Game version mismatch for $($mod.Name): Current=$($mod.GameVersion), Latest=$($mod.LatestGameVersion)"
-                }
+            # Extract specific compatibility issues
+            $compatibilityIssues = @()
+            $missingFabricApi = @()
+            $versionMismatches = @()
+            $specificModIssues = @()
+            
+            # Check for missing Fabric API
+            if ($logContent -match "requires.*fabric-api.*which is missing") {
+                $missingFabricApi += "Fabric API is missing but required by multiple mods"
             }
             
-            if ($issues.Count -gt 0) {
-                $issues -join "`n"
+            # Check for Minecraft version mismatches
+            if ($logContent -match "requires.*minecraft.*but only the wrong version is present") {
+                $versionMismatches += "Minecraft version mismatches detected"
+            }
+            
+            # Extract specific mod issues
+            if ($logContent -match "Remove mod '([^']+)'") {
+                $specificModIssues += "Mod should be removed: $($matches[1])"
+            }
+            
+            if ($logContent -match "Replace mod '([^']+)'") {
+                $specificModIssues += "Mod should be replaced: $($matches[1])"
+            }
+            
+            # Compile comprehensive error report
+            $errorReport = @()
+            if ($missingFabricApi.Count -gt 0) { $errorReport += $missingFabricApi }
+            if ($versionMismatches.Count -gt 0) { $errorReport += $versionMismatches }
+            if ($specificModIssues.Count -gt 0) { $errorReport += $specificModIssues }
+            
+            if ($errorReport.Count -gt 0) {
+                "COMPATIBILITY ERRORS FOUND: " + ($errorReport -join "; ")
             } else {
-                "No obvious compatibility issues found in modlist.csv"
+                "No compatibility issues found - server should start successfully"
             }
         } else {
-            "modlist.csv not found"
+            "No server log files found - cannot analyze compatibility"
         }
-    }
-    
-    & pwsh -NoProfile -ExecutionPolicy Bypass -Command $script -args $ModListPath
-} -ExpectedOutput "Version mismatch|Game version mismatch" -ExpectedExitCode 0
+    } -ExpectedOutput "No compatibility issues found" -ExpectedExitCode 0
 
-# Final check: Ensure test/download is empty or does not exist
-Write-Host "=== Final Step: Verifying test/download is untouched ===" -ForegroundColor Magenta
-$TotalTests++  # Increment total test count for this check
-$testDownloadPath = Join-Path $PSScriptRoot "..\download"
-if (Test-Path $testDownloadPath) {
-    $downloadContents = Get-ChildItem -Path $testDownloadPath -Recurse -File -ErrorAction SilentlyContinue
-    if ($downloadContents.Count -gt 0) {
-        Write-Host "  ❌ FAIL: test/download is not empty!" -ForegroundColor Red
-        $FailedTests++
-        $TestReport += "❌ FAIL: test/download is not empty!`n"
+    # Final check: Ensure test/download is empty or does not exist
+    Write-Host "=== Final Step: Verifying test/download is untouched ===" -ForegroundColor Magenta
+    $script:TotalTests++  # Increment total test count for this check
+    $mainTestDownloadPath = Join-Path $PSScriptRoot "..\download"
+    if (Test-Path $mainTestDownloadPath) {
+        $downloadContents = Get-ChildItem -Path $mainTestDownloadPath -Recurse -File -ErrorAction SilentlyContinue
+        if ($downloadContents.Count -gt 0) {
+            Write-Host "  ❌ FAIL: main test/download is not empty!" -ForegroundColor Red
+            $script:FailedTests++
+            $script:TestResults.Failed++
+            $script:TestReport += "❌ FAIL: main test/download is not empty!`n"
+        } else {
+            Write-Host "  ✅ PASS: main test/download is empty" -ForegroundColor Green
+            $script:PassedTests++
+            $script:TestResults.Passed++
+            $script:TestReport += "✅ PASS: main test/download is empty`n"
+        }
     } else {
-        Write-Host "  ✅ PASS: test/download is empty" -ForegroundColor Green
-        $PassedTests++
-        $TestReport += "✅ PASS: test/download is empty`n"
+        Write-Host "  ✅ PASS: main test/download does not exist" -ForegroundColor Green
+        $script:PassedTests++
+        $script:TestResults.Passed++
+        $script:TestReport += "✅ PASS: main test/download does not exist`n"
     }
-} else {
-    Write-Host "  ✅ PASS: test/download does not exist" -ForegroundColor Green
-    $PassedTests++
-    $TestReport += "✅ PASS: test/download does not exist`n"
-}
 
-# Generate final report
-$TestReport += @"
+    # Generate final report
+    $script:TestReport += @"
 
 Test Summary:
 =============
-Total Tests: $TotalTests
-Passed: $PassedTests
-Failed: $FailedTests
-Success Rate: $(if ($TotalTests -gt 0) { [math]::Round(($PassedTests / $TotalTests) * 100, 2) } else { 0 })%
+Total Tests: $($script:TotalTests)
+Passed: $($script:PassedTests)
+Failed: $($script:FailedTests)
+Success Rate: $(if ($script:TotalTests -gt 0) { [math]::Round(($script:PassedTests / $script:TotalTests) * 100, 2) } else { 0 })%
 
 Test Details:
 =============
 This test validates the complete workflow of downloading latest mods and attempting server startup.
-The server startup is expected to fail due to mod compatibility issues, which validates our error detection.
+The test will identify and report any mod compatibility issues that prevent successful server startup.
 
 Expected Behavior:
 - Mod validation should succeed
 - Latest mod downloads should succeed  
 - Server file downloads should succeed
 - Server start script should be added successfully
-- Server startup should fail with compatibility errors
-- Mod compatibility issues should be identified
+- Server startup should succeed if mods are compatible
+- Any compatibility issues should be identified and reported as errors
 
+Known Issues to Fix:
+- Missing Fabric API dependencies
+- Minecraft version mismatches (mods built for 1.21.5 running on 1.21.6)
+- Specific mods that need to be removed or replaced
 "@
 
-# Save test report
-$TestReport | Out-File -FilePath $TestReportPath -Encoding UTF8
+    # Set global test results for the test runner
+    $script:TestResults.Total = $script:TotalTests
+    $script:TestResults.Passed = $script:PassedTests
+    $script:TestResults.Failed = $script:FailedTests
 
-# Display summary
-Write-Host ""
-Write-Host "=== Test Summary ===" -ForegroundColor Yellow
-Write-Host "Total Tests: $TotalTests" -ForegroundColor White
-Write-Host "Passed: $PassedTests" -ForegroundColor Green
-Write-Host "Failed: $FailedTests" -ForegroundColor Red
-Write-Host "Success Rate: $(if ($TotalTests -gt 0) { [math]::Round(($PassedTests / $TotalTests) * 100, 2) } else { 0 })%" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "Test report saved to: $TestReportPath" -ForegroundColor Gray
-Write-Host "Individual test logs saved to: $TestOutputDir" -ForegroundColor Gray
+    # Save test report
+    $script:TestReport | Out-File -FilePath $TestReportPath -Encoding UTF8
 
-# NOTE: Download folders are intentionally preserved for post-test validation.
+    Write-Host "Test completed!" -ForegroundColor Green
+    Write-Host "Total Tests: $script:TotalTests" -ForegroundColor Cyan
+    Write-Host "Passed: $script:PassedTests" -ForegroundColor Green
+    Write-Host "Failed: $script:FailedTests" -ForegroundColor Red
+    Write-Host "Success Rate: $(if ($script:TotalTests -gt 0) { [math]::Round(($script:PassedTests / $script:TotalTests) * 100, 2) } else { 0 })%" -ForegroundColor Green
+    Write-Host "Test report saved to: $TestReportPath" -ForegroundColor Gray
 
-# Return exit code based on test results
-if ($FailedTests -eq 0) {
-    Write-Host "All latest mods with server tests passed! 🎉" -ForegroundColor Green
-    exit 0
-} else {
-    Write-Host "Some latest mods with server tests failed! ❌" -ForegroundColor Red
-    exit 1
-} 
+    return ($script:FailedTests -eq 0)
+}
+
+# Always execute tests when this file is run
+Invoke-TestLatestWithServer -TestFileName $TestFileName 

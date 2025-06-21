@@ -1,59 +1,54 @@
 # Minecraft Mod Manager Test Suite
 
-This test suite validates all functionality of the Minecraft Mod Manager PowerShell script using temporary databases and compares results against expected baselines.
+This test suite validates all functionality of the Minecraft Mod Manager PowerShell script with comprehensive testing, mod compatibility validation, and detailed error reporting.
 
 ## Test Coverage
 
-The test suite covers all major functionality mentioned in the main README:
+The test suite covers all major functionality with 12 comprehensive test files:
 
 ### ✅ **Core Functionality Tests**
-- **Basic Validation**: Tests mod validation and API response generation
-- **Mod Addition**: Tests adding mods by URL, ID, and different types (mods, shaderpacks)
-- **Mod Download**: Tests downloading mods to organized folders
-- **Server Download**: Tests downloading Minecraft server JARs and Fabric launchers
-- **Mod List Operations**: Tests mod list display and custom file parameters
-- **Help and Documentation**: Tests help system and documentation completeness
-- **CSV Structure**: Tests CSV format and required columns
+- **01-BasicFunctionality.ps1** - Core validation and API response generation
+- **02-DownloadFunctionality.ps1** - Mod download and file organization
+- **03-SystemEntries.ps1** - System mod validation and management
+- **04-FilenameHandling.ps1** - File naming and organization patterns
+- **05-ValidationTests.ps1** - Mod validation workflows and error handling
+- **06-ModpackTests.ps1** - Modpack functionality and processing
+
+### ✅ **Server and Compatibility Tests**
+- **07-StartServerTests.ps1** - Server startup and management
+- **08-StartServerUnitTests.ps1** - Server unit tests and edge cases
+- **09-TestCurrent.ps1** - Current mod version workflows
+- **10-TestLatest.ps1** - Latest mod version workflows
+- **11-ParameterValidation.ps1** - Parameter validation and error handling
+- **12-TestLatestWithServer.ps1** - **CRITICAL**: Latest mods with server compatibility testing
 
 ### ✅ **Test Features**
-- **Temporary Databases**: Uses isolated test files to avoid affecting production data
-- **Baseline Comparison**: Compares test results against expected baseline
+- **Isolated Test Environment**: Each test runs in isolated directories
+- **API Response Caching**: Faster testing with cached API responses
 - **Comprehensive Reporting**: Detailed pass/fail reporting with explanations
-- **Modular Testing**: Can run individual test categories or full suite
-- **Clean Environment**: Automatically cleans up test artifacts
+- **Modular Testing**: Can run individual test files or full suite
+- **Compatibility Error Detection**: Automated detection of mod conflicts
+- **Server Log Analysis**: Detailed analysis of server startup issues
 
 ## Usage
 
-### First Time Setup (Generate Baseline)
-
-```powershell
-# Generate the baseline expected results
-.\test\run-tests.ps1 -GenerateBaseline
-```
-
-This will:
-1. Run all tests with a minimal test modlist
-2. Create the expected baseline file in `test/baseline/expected-modlist.csv`
-3. This baseline becomes the "gold standard" for future comparisons
-
-### Running Tests
+### Quick Test Commands
 
 ```powershell
 # Run all tests
-.\test\run-tests.ps1
+.\test\RunAllTests.ps1 -All
 
-# Run specific test categories
-.\test\run-tests.ps1 -TestName "basic"      # Basic validation only
-.\test\run-tests.ps1 -TestName "addition"   # Mod addition only
-.\test\run-tests.ps1 -TestName "download"   # Download functionality only
-.\test\run-tests.ps1 -TestName "server"     # Server download only
-.\test\run-tests.ps1 -TestName "operations" # Mod list operations only
-.\test\run-tests.ps1 -TestName "help"       # Help system only
-.\test\run-tests.ps1 -TestName "csv"        # CSV structure only
-.\test\run-tests.ps1 -TestName "compare"    # Results comparison only
+# Run specific test
+.\test\RunAllTests.ps1 -TestFiles "12-TestLatestWithServer.ps1"
 
-# Verbose output
-.\test\run-tests.ps1 -Verbose
+# Run multiple specific tests
+.\test\RunAllTests.ps1 -TestFiles "01-BasicFunctionality.ps1","02-DownloadFunctionality.ps1"
+
+# Run with cleanup
+.\test\RunAllTests.ps1 -All -Cleanup
+
+# Show help
+.\test\RunAllTests.ps1 -Help
 ```
 
 ### Test Output
@@ -61,112 +56,154 @@ This will:
 The test suite provides detailed output showing:
 
 ```
-================================================================================
-TEST: Basic Mod Validation
-================================================================================
-✓ PASS: Validation Execution
-  Validation completed successfully
-✓ PASS: API Response Files Created
-  Found 3 API response files
+2025-06-22 01:48:11 - 🚀 Running test file: 12-TestLatestWithServer.ps1
+2025-06-22 01:48:11 - ────────────────────────────────────────────────────────────
+2025-06-22 01:48:22 - ✅ Completed: 12-TestLatestWithServer.ps1
+2025-06-22 01:48:22 -    Passed: 6, Failed: 2, Total: 8
 
-================================================================================
-TEST: Mod Addition Functionality
-================================================================================
-✓ PASS: Add Mod by URL
-  Added Balm mod by URL
-✓ PASS: Add Mod by ID
-  Added FerriteCore by ID
-✓ PASS: Add Shaderpack
-  Added BSL Shaders
-✓ PASS: Balm Mod in CSV
-  Balm mod found in CSV
-✓ PASS: FerriteCore in CSV
-  FerriteCore found in CSV
-✓ PASS: BSL Shaders in CSV
-  BSL Shaders found in CSV
-
-================================================================================
-TEST SUMMARY
-================================================================================
-Total Tests: 25
-Passed: 25
-Failed: 0
-
-🎉 ALL TESTS PASSED! 🎉
+2025-06-22 01:48:22 - === Final Test Summary ===
+2025-06-22 01:48:22 - Total Tests: 123
+2025-06-22 01:48:22 - Passed: 121
+2025-06-22 01:48:22 - Failed: 2
+2025-06-22 01:48:22 - Success Rate: 98.4%
 ```
 
 ## Test Structure
 
 ```
 test/
-├── run-tests.ps1              # Main test script
+├── RunAllTests.ps1            # Main test runner
+├── TestFramework.ps1          # Shared test utilities
 ├── README.md                  # This file
-├── temp/                      # Temporary test files (auto-created)
-│   └── test-modlist.csv      # Test modlist used during tests
-├── baseline/                  # Expected results (auto-created)
-│   └── expected-modlist.csv  # Baseline for comparison
-└── results/                   # Actual test results (auto-created)
-    └── actual-modlist.csv    # Results from current test run
+├── tests/                     # Individual test files
+│   ├── 01-BasicFunctionality.ps1
+│   ├── 02-DownloadFunctionality.ps1
+│   ├── 03-SystemEntries.ps1
+│   ├── 04-FilenameHandling.ps1
+│   ├── 05-ValidationTests.ps1
+│   ├── 06-ModpackTests.ps1
+│   ├── 07-StartServerTests.ps1
+│   ├── 08-StartServerUnitTests.ps1
+│   ├── 09-TestCurrent.ps1
+│   ├── 10-TestLatest.ps1
+│   ├── 11-ParameterValidation.ps1
+│   └── 12-TestLatestWithServer.ps1
+├── test-output/               # Test execution outputs
+│   ├── 01-BasicFunctionality/
+│   ├── 02-DownloadFunctionality/
+│   ├── 03-SystemEntries/
+│   ├── 04-FilenameHandling/
+│   ├── 05-ValidationTests/
+│   ├── 06-ModpackTests/
+│   ├── 07-StartServerTests/
+│   ├── 08-StartServerUnitTests/
+│   ├── 09-TestCurrent/
+│   ├── 10-TestLatest/
+│   ├── 11-ParameterValidation/
+│   └── 12-TestLatestWithServer/
+└── apiresponse/               # Cached API responses for testing
 ```
 
-## Test Database
+## Critical Test: Mod Compatibility Validation
 
-The test suite uses a minimal test modlist with 3 initial mods:
+### 12-TestLatestWithServer.ps1
 
-1. **Fabric API** (required mod) - Core API for Fabric
-2. **Sodium** (optional mod) - Performance optimization
-3. **Complementary Reimagined** (optional shaderpack) - Shader pack
+This is the **most critical test** for validating mod compatibility:
 
-During testing, additional mods are added:
-- **Balm** (via URL)
-- **FerriteCore** (via ID)
-- **BSL Shaders** (shaderpack via URL)
+**What it does:**
+1. Validates all mods in the database
+2. Updates mods to latest versions
+3. Downloads latest mods and server files
+4. Attempts server startup
+5. Analyzes server logs for compatibility issues
+6. Reports specific errors that need fixing
+
+**Expected Results with Compatibility Issues:**
+- Total Tests: 8
+- Passed: 6 (validation, downloads, server files, start script, isolation check)
+- Failed: 2 (server startup, compatibility analysis)
+- Success Rate: 75%
+
+**Common Compatibility Issues Detected:**
+- Missing Fabric API dependencies
+- Minecraft version mismatches (mods built for 1.21.5 running on 1.21.6)
+- Specific mods that need removal or replacement
+
+### Test Output Structure
+
+```
+test/test-output/12-TestLatestWithServer/
+├── download/                    # Downloaded mods and server files
+│   └── 1.21.6/
+│       ├── mods/               # Latest mods
+│       ├── minecraft_server.1.21.6.jar
+│       ├── fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar
+│       ├── start-server.ps1
+│       └── logs/               # Server startup logs
+│           └── console-*.log   # Server console output
+├── latest-with-server-test-report.txt  # Test results report
+├── Mod_Compatibility_Analysis.log      # Compatibility analysis
+├── Server_Startup_with_Latest_Mods.log # Server startup test
+├── Download_Everything.log             # Download test
+├── Update_Mods_to_Latest.log           # Update test
+└── Validate_All_Mods.log               # Validation test
+```
 
 ## What Each Test Validates
 
-### Basic Validation
+### Basic Functionality (01-BasicFunctionality.ps1)
 - ✅ ModManager script executes without errors
 - ✅ API response files are generated
 - ✅ Validation completes successfully
+- ✅ Help system displays correctly
 
-### Mod Addition
-- ✅ Adding mods by Modrinth URL works
-- ✅ Adding mods by ID works
-- ✅ Adding shaderpacks works
-- ✅ Mods are actually written to CSV file
-- ✅ Correct metadata is populated
-
-### Mod Download
+### Download Functionality (02-DownloadFunctionality.ps1)
 - ✅ Download command executes successfully
 - ✅ Download folder structure is created
 - ✅ Mod JAR files are downloaded
 - ✅ Files are organized by game version
 
-### Server Download
-- ✅ Server download command executes
-- ✅ Minecraft server JARs are downloaded
-- ✅ Fabric server launchers are downloaded
+### System Entries (03-SystemEntries.ps1)
+- ✅ System mod validation and management
+- ✅ Required vs optional mod handling
+- ✅ Mod group organization
 
-### Mod List Operations
-- ✅ Get mod list command works
-- ✅ Custom ModListFile parameter works
-- ✅ Different CSV files can be used
+### Filename Handling (04-FilenameHandling.ps1)
+- ✅ File naming patterns and organization
+- ✅ Special character handling
+- ✅ Path validation
 
-### Help and Documentation
-- ✅ Help system displays correctly
-- ✅ All required help sections are present
-- ✅ Usage examples are included
-- ✅ Function documentation is complete
+### Validation Tests (05-ValidationTests.ps1)
+- ✅ Mod validation workflows
+- ✅ Error handling and reporting
+- ✅ API response processing
 
-### CSV Structure
-- ✅ All expected columns are present
-- ✅ CSV contains test data
-- ✅ Structure matches expected format
+### Modpack Tests (06-ModpackTests.ps1)
+- ✅ Modpack functionality and processing
+- ✅ Modpack file handling
+- ✅ Modpack validation
 
-### Results Comparison
-- ✅ Test results match baseline
-- ✅ Expected mods are present
-- ✅ Mod counts are correct
+### Server Tests (07-StartServerTests.ps1, 08-StartServerUnitTests.ps1)
+- ✅ Server startup and management
+- ✅ Server configuration validation
+- ✅ Server log monitoring
+- ✅ Error detection and reporting
+
+### Current/Latest Tests (09-TestCurrent.ps1, 10-TestLatest.ps1)
+- ✅ Current mod version workflows
+- ✅ Latest mod version workflows
+- ✅ Version comparison and updates
+
+### Parameter Validation (11-ParameterValidation.ps1)
+- ✅ Parameter validation and error handling
+- ✅ Invalid parameter detection
+- ✅ Help system validation
+
+### Latest with Server (12-TestLatestWithServer.ps1)
+- ✅ Complete workflow validation
+- ✅ Mod compatibility testing
+- ✅ Server startup with latest mods
+- ✅ Compatibility error detection and reporting
 
 ## Troubleshooting
 
@@ -179,13 +216,14 @@ If tests fail, check:
 3. **File Permissions**: Ensure write access to test folders
 4. **ModManager Script**: Ensure main script is in correct location
 
-### Regenerating Baseline
+### Compatibility Issues
 
-If you need to update the baseline (e.g., after script changes):
+If the 12-TestLatestWithServer test fails:
 
-```powershell
-.\test\run-tests.ps1 -GenerateBaseline
-```
+1. **Check server logs**: Review `test/test-output/12-TestLatestWithServer/download/1.21.6/logs/console-*.log`
+2. **Review compatibility analysis**: Check `Mod_Compatibility_Analysis.log`
+3. **Fix identified issues**: Address missing dependencies or version mismatches
+4. **Update modlist.csv**: Remove incompatible mods or update versions
 
 ### Individual Test Debugging
 
@@ -193,157 +231,26 @@ To debug specific tests:
 
 ```powershell
 # Run with verbose output
-.\test\run-tests.ps1 -TestName "addition" -Verbose
+.\test\RunAllTests.ps1 -TestFiles "12-TestLatestWithServer.ps1"
 
-# Check test files manually
-Get-Content .\test\temp\test-modlist.csv
-Get-Content .\test\baseline\expected-modlist.csv
+# Check test output manually
+Get-Content .\test\test-output\12-TestLatestWithServer\latest-with-server-test-report.txt
+Get-Content .\test\test-output\12-TestLatestWithServer\Mod_Compatibility_Analysis.log
 ```
 
-## Integration with CI/CD
+### Test Result Capture Issues
 
-The test suite returns appropriate exit codes:
-- **Exit 0**: All tests passed
-- **Exit 1**: Some tests failed
+If tests show "No test results captured":
 
-This makes it suitable for integration with CI/CD pipelines.
+1. **Check script-level variables**: Ensure `$script:TestResults` is properly initialized
+2. **Verify test function execution**: Ensure test functions are called when files are run
+3. **Review test patterns**: Check that test patterns match what the runner expects
 
-## Adding New Tests
+## CI/CD Integration
 
-To add new tests:
+The test suite integrates with GitHub Actions for automated testing:
 
-1. Create a new test function in `run-tests.ps1`
-2. Add it to the main test execution section
-3. Update this README with test description
-4. Regenerate baseline if needed
-
-Example new test function:
-
-```powershell
-function Test-NewFeature {
-    Write-TestHeader "New Feature Test"
-    
-    try {
-        # Test implementation here
-        $testPassed = $true
-        Write-TestResult "New Feature" $testPassed "Feature works correctly"
-        return $testPassed
-    }
-    catch {
-        Write-TestResult "New Feature" $false "Exception: $($_.Exception.Message)"
-        return $false
-    }
-}
-```
-
-# Test Suite Documentation
-
-## Overview
-This test suite validates the Minecraft Mod Manager PowerShell script with comprehensive coverage of all functionality, including isolated testing environments to prevent interference with production data.
-
-## Test Isolation
-All tests use isolated download folders to ensure they never write to the main `download/` directory or interfere with each other.
-
-### Isolation Features
-- **Isolated Download Folders**: Each test creates its own download directory in `test-output/{TestName}/`
-- **Parameter-Based Downloads**: All tests pass explicit `-DownloadFolder` parameters
-- **Automatic Cleanup**: Test artifacts are cleaned up after completion
-- **No Global State**: Tests don't rely on or modify global script state
-
-### Test Output Structure
-```
-test/
-├── test-output/
-│   ├── 01-BasicFunctionality/
-│   │   └── download/          # Isolated download folder
-│   ├── 02-DownloadFunctionality/
-│   │   └── download/          # Isolated download folder
-│   ├── 12-TestLatestWithServer/
-│   │   ├── download-latest-mods/    # Isolated mod downloads
-│   │   ├── download-server-files/   # Isolated server downloads
-│   │   └── temp-server/             # Temporary server directory
-│   └── ...
-└── tests/
-    ├── 01-BasicFunctionality.ps1
-    ├── 02-DownloadFunctionality.ps1
-    └── ...
-```
-
-## Running Tests
-
-### Run All Tests
-```powershell
-.\RunAllTests.ps1
-```
-
-### Run Individual Tests
-```powershell
-# From test directory
-.\tests\01-BasicFunctionality.ps1
-.\tests\02-DownloadFunctionality.ps1
-.\tests\12-TestLatestWithServer.ps1
-
-# From project root
-cd test
-.\tests\01-BasicFunctionality.ps1
-```
-
-### Test Categories
-
-#### Core Functionality Tests
-- **01-BasicFunctionality.ps1**: Basic script operations and parameter handling
-- **02-DownloadFunctionality.ps1**: Mod and server file downloads with isolation verification
-- **03-SystemEntries.ps1**: Installer, launcher, and server file management
-- **04-FilenameHandling.ps1**: Complex filename resolution and validation
-
-#### Validation Tests
-- **05-ValidationTests.ps1**: API validation and version checking workflows
-- **06-ModpackTests.ps1**: Modpack download and extraction workflows
-
-#### Server Tests
-- **07-StartServerTests.ps1**: Server startup and log monitoring
-- **08-StartServerUnitTests.ps1**: Detailed server startup unit tests
-
-#### E2E Workflow Tests
-- **09-TestCurrent.ps1**: Complete workflow with current version downloads
-- **10-TestLatest.ps1**: Complete workflow with latest version downloads
-- **11-ParameterValidation.ps1**: Comprehensive parameter validation
-- **12-TestLatestWithServer.ps1**: Complete E2E test including server startup and mod compatibility detection
-
-## Test Framework
-
-### TestFramework.ps1
-Provides common testing utilities and ensures consistent test isolation:
-- `Initialize-TestEnvironment`: Sets up isolated test directories
-- `Test-Command`: Executes commands with proper isolation
-- `Write-TestResult`: Standardized test result reporting
-- `Show-TestSummary`: Comprehensive test summary generation
-
-### Test Output
-Each test generates:
-- **Test Report**: Summary of all test results
-- **Individual Logs**: Detailed logs for each test step
-- **Isolated Downloads**: Test-specific download folders
-- **Cleanup**: Automatic cleanup of test artifacts
-
-## Verification
-
-### Download Isolation Verification
-Tests include verification steps to ensure the main `download/` directory is untouched:
-```powershell
-# Final check in tests
-$testDownloadPath = Join-Path $TestRoot "test\download"
-if (Test-Path $testDownloadPath) {
-    $downloadContents = Get-ChildItem -Path $testDownloadPath -Recurse -File
-    if ($downloadContents.Count -gt 0) {
-        Write-TestResult "test/download isolation" $false "test/download is not empty!"
-    }
-}
-```
-
-### Expected Results
-- ✅ All tests pass with isolated environments
-- ✅ No files written to main `download/` directory
-- ✅ Each test has its own isolated download folder
-- ✅ Automatic cleanup of test artifacts
-- ✅ Comprehensive test coverage of all functionality 
+- **Cross-platform testing**: Windows, Linux, macOS
+- **Automated artifact collection**: Test logs and reports
+- **Comprehensive reporting**: Detailed test summaries
+- **Release integration**: Automatic release creation on successful tests 

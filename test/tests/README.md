@@ -1,6 +1,6 @@
 # ModManager CLI Test Suite
 
-This directory contains the organized test suite for the ModManager PowerShell script. The tests are split into logical groups for better organization and maintainability.
+This directory contains the comprehensive test suite for the ModManager PowerShell script. The tests are organized into 12 logical test files covering all functionality with isolated testing environments and compatibility error detection.
 
 ## Test Structure
 
@@ -12,6 +12,8 @@ Shared framework containing common functions and configuration used across all t
 - Environment setup and cleanup
 - Color-coded output formatting
 - Individual test output folders
+- Isolated download directories
+- Compatibility error detection
 
 ### Individual Test Files
 
@@ -33,6 +35,7 @@ Tests download-related functionality:
 - Server file downloads
 - Duplicate download prevention
 - Legacy download behavior
+- Isolated download directories
 
 #### 03-SystemEntries.ps1
 Tests system entry management:
@@ -56,6 +59,60 @@ Tests validation and file existence:
 - Mod file existence verification
 - File structure validation
 - Download path verification
+- API response validation
+
+#### 06-ModpackTests.ps1
+Tests modpack functionality:
+- Modpack download and extraction
+- Modpack file handling
+- Modpack validation
+- Modpack integration
+
+#### 07-StartServerTests.ps1
+Tests server startup functionality:
+- Server startup process
+- Server configuration validation
+- Server log monitoring
+- Error detection and reporting
+- Server file management
+
+#### 08-StartServerUnitTests.ps1
+Tests server unit functionality:
+- Detailed server startup unit tests
+- Server edge cases
+- Server error handling
+- Server configuration validation
+
+#### 09-TestCurrent.ps1
+Tests current mod version workflows:
+- Current mod version downloads
+- Current version validation
+- Current version server testing
+- Current version compatibility
+
+#### 10-TestLatest.ps1
+Tests latest mod version workflows:
+- Latest mod version downloads
+- Latest version validation
+- Latest version updates
+- Latest version compatibility
+
+#### 11-ParameterValidation.ps1
+Tests parameter validation:
+- Invalid parameter detection
+- Parameter error handling
+- Help system validation
+- Parameter combinations
+
+#### 12-TestLatestWithServer.ps1
+**CRITICAL**: Tests latest mods with server compatibility:
+- Complete workflow validation
+- Latest mod downloads
+- Server file downloads
+- Server startup with latest mods
+- **Compatibility error detection and reporting**
+- **Mod conflict identification**
+- **Server log analysis**
 
 ## Running Tests
 
@@ -69,7 +126,7 @@ cd test
 .\RunAllTests.ps1 -All
 
 # Run specific test files
-.\RunAllTests.ps1 -TestFiles '01-BasicFunctionality.ps1'
+.\RunAllTests.ps1 -TestFiles '12-TestLatestWithServer.ps1'
 .\RunAllTests.ps1 -TestFiles '01-BasicFunctionality.ps1','02-DownloadFunctionality.ps1'
 
 # Run with cleanup after completion
@@ -93,30 +150,84 @@ cd test/tests
 # Run download tests
 .\02-DownloadFunctionality.ps1
 
-# Run system entries tests
-.\03-SystemEntries.ps1
+# Run critical compatibility test
+.\12-TestLatestWithServer.ps1
 ```
 
 ## Test Output Organization
 
-Each test file creates its own output folder in the test directory:
-- `output-01-BasicFunctionality/` - Outputs for basic functionality tests
-- `output-02-DownloadFunctionality/` - Outputs for download tests
-- `output-03-SystemEntries/` - Outputs for system entries tests
-- `output-04-FilenameHandling/` - Outputs for filename handling tests
-- `output-05-ValidationTests/` - Outputs for validation tests
+Each test file creates its own output folder in `../test-output/`:
+- `../test-output/01-BasicFunctionality/` - Outputs for basic functionality tests
+- `../test-output/02-DownloadFunctionality/` - Outputs for download tests
+- `../test-output/03-SystemEntries/` - Outputs for system entries tests
+- `../test-output/04-FilenameHandling/` - Outputs for filename handling tests
+- `../test-output/05-ValidationTests/` - Outputs for validation tests
+- `../test-output/06-ModpackTests/` - Outputs for modpack tests
+- `../test-output/07-StartServerTests/` - Outputs for server tests
+- `../test-output/08-StartServerUnitTests/` - Outputs for server unit tests
+- `../test-output/09-TestCurrent/` - Outputs for current version tests
+- `../test-output/10-TestLatest/` - Outputs for latest version tests
+- `../test-output/11-ParameterValidation/` - Outputs for parameter validation tests
+- `../test-output/12-TestLatestWithServer/` - Outputs for compatibility tests
 
 Each output folder contains:
-- Downloaded mods and files
+- Downloaded mods and files in isolated `download/` subfolder
+- Test logs and reports
+- Server logs (for server tests)
 - Database files
-- Log files
 - Any other test artifacts
+
+## Critical Test: Mod Compatibility Validation
+
+### 12-TestLatestWithServer.ps1
+
+This is the **most critical test** for validating mod compatibility:
+
+**What it does:**
+1. Validates all mods in the database
+2. Updates mods to latest versions
+3. Downloads latest mods and server files
+4. Attempts server startup
+5. Analyzes server logs for compatibility issues
+6. Reports specific errors that need fixing
+
+**Expected Results with Compatibility Issues:**
+- Total Tests: 8
+- Passed: 6 (validation, downloads, server files, start script, isolation check)
+- Failed: 2 (server startup, compatibility analysis)
+- Success Rate: 75%
+
+**Common Compatibility Issues Detected:**
+- Missing Fabric API dependencies
+- Minecraft version mismatches (mods built for 1.21.5 running on 1.21.6)
+- Specific mods that need removal or replacement
+
+### Test Output Structure
+
+```
+../test-output/12-TestLatestWithServer/
+├── download/                    # Downloaded mods and server files
+│   └── 1.21.6/
+│       ├── mods/               # Latest mods
+│       ├── minecraft_server.1.21.6.jar
+│       ├── fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar
+│       ├── start-server.ps1
+│       └── logs/               # Server startup logs
+│           └── console-*.log   # Server console output
+├── latest-with-server-test-report.txt  # Test results report
+├── Mod_Compatibility_Analysis.log      # Compatibility analysis
+├── Server_Startup_with_Latest_Mods.log # Server startup test
+├── Download_Everything.log             # Download test
+├── Update_Mods_to_Latest.log           # Update test
+└── Validate_All_Mods.log               # Validation test
+```
 
 ## Test Dependencies
 
 - **API Response Files**: Tests use cached API responses from `../apiresponse/` to avoid network calls
-- **Database Files**: Each test file creates its own test database (`run-test-cli.csv`)
-- **Download Directory**: Tests create files in their individual output folders
+- **Database Files**: Each test file uses the main `modlist.csv` database
+- **Download Directory**: Tests create files in their individual output folders with isolated `download/` subfolders
+- **Test Isolation**: Each test runs in complete isolation to prevent interference
 
 ## Test Results
 
@@ -126,6 +237,8 @@ Tests provide detailed output with:
 - Detailed error messages
 - File existence verification
 - Database state validation
+- Compatibility error reporting
+- Server log analysis
 
 ## Adding New Tests
 
@@ -138,6 +251,7 @@ To add new tests:
    - `Test-Command` for command execution and validation
    - `Test-DatabaseState` for database validation
    - `Write-TestResult` for custom test results
+   - `Initialize-TestEnvironment` for isolated test setup
 4. **Update the main runner** to include your new test file (automatic with dynamic discovery)
 
 ## Test Best Practices
@@ -148,6 +262,8 @@ To add new tests:
 4. **Error Handling**: Use try-catch blocks for robust error handling
 5. **Documentation**: Include clear comments explaining what each test validates
 6. **Output Isolation**: Each test file gets its own output folder to prevent conflicts
+7. **Download Isolation**: Use isolated download directories to prevent interference with main download folder
+8. **Compatibility Testing**: Include compatibility error detection for server tests
 
 ## Troubleshooting
 
@@ -157,7 +273,25 @@ To add new tests:
 2. **API Cache**: Verify API response files exist in `../apiresponse/`
 3. **Permissions**: Ensure PowerShell has write permissions for creating test files
 4. **Network**: Some tests may require internet access for live API calls
+5. **Test Isolation**: Ensure tests don't interfere with each other or the main download folder
+
+### Compatibility Issues
+
+If the 12-TestLatestWithServer test fails:
+
+1. **Check server logs**: Review `../test-output/12-TestLatestWithServer/download/1.21.6/logs/console-*.log`
+2. **Review compatibility analysis**: Check `Mod_Compatibility_Analysis.log`
+3. **Fix identified issues**: Address missing dependencies or version mismatches
+4. **Update modlist.csv**: Remove incompatible mods or update versions
 
 ### Debug Mode
 
-To run tests with more verbose output, you can modify the `Test-Command` function in `../TestFramework.ps1` to include additional logging. 
+To run tests with more verbose output, you can modify the `Test-Command` function in `../TestFramework.ps1` to include additional logging.
+
+### Test Result Capture Issues
+
+If tests show "No test results captured":
+
+1. **Check script-level variables**: Ensure `$script:TestResults` is properly initialized
+2. **Verify test function execution**: Ensure test functions are called when files are run
+3. **Review test patterns**: Check that test patterns match what the runner expects 

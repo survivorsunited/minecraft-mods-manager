@@ -1,6 +1,6 @@
 # Minecraft Mod Manager
 
-A powerful PowerShell script for managing Minecraft mods across multiple platforms (Modrinth and CurseForge) with automatic version validation, download management, and comprehensive reporting.
+A powerful PowerShell script for managing Minecraft mods across multiple platforms (Modrinth and CurseForge) with automatic version validation, download management, comprehensive testing, and compatibility error reporting.
 
 ## 🚀 Features
 
@@ -22,6 +22,15 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
 - **Shaderpack Support**: Download shaderpacks with iris loader support
 - **Server Downloads**: Download Minecraft server JARs and Fabric launchers
 - **Installer Support**: Download installers (including predefined Fabric installer) to dedicated folders
+
+### Testing & Quality Assurance
+- **Comprehensive Test Suite**: Full test coverage with 12+ test files
+- **Mod Compatibility Testing**: Automated detection of mod compatibility issues
+- **Server Startup Validation**: Tests server startup with downloaded mods
+- **Isolated Test Environment**: Each test runs in isolated directories
+- **API Response Caching**: Faster testing with cached API responses
+- **CI/CD Pipeline**: Automated testing across Windows/Linux/macOS
+- **Compatibility Error Reporting**: Detailed reporting of mod conflicts and issues
 
 ## 📋 Requirements
 
@@ -46,6 +55,68 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
    ```
    CURSEFORGE_API_KEY=your_api_key_here
    ```
+
+## 🧪 Testing
+
+### Quick Test Commands
+
+```powershell
+# Run all tests
+.\test\RunAllTests.ps1 -All
+
+# Run specific test
+.\test\RunAllTests.ps1 -TestFiles "12-TestLatestWithServer.ps1"
+
+# Run multiple specific tests
+.\test\RunAllTests.ps1 -TestFiles "01-BasicFunctionality.ps1","02-DownloadFunctionality.ps1"
+```
+
+### Test Coverage
+
+The project includes comprehensive testing with the following test files:
+
+- **01-BasicFunctionality.ps1** - Core functionality validation
+- **02-DownloadFunctionality.ps1** - Download system testing
+- **03-SystemEntries.ps1** - System mod validation
+- **04-FilenameHandling.ps1** - File naming and organization
+- **05-ValidationTests.ps1** - Mod validation workflows
+- **06-ModpackTests.ps1** - Modpack functionality
+- **07-StartServerTests.ps1** - Server startup testing
+- **08-StartServerUnitTests.ps1** - Server unit tests
+- **09-TestCurrent.ps1** - Current mod version workflows
+- **10-TestLatest.ps1** - Latest mod version workflows
+- **11-ParameterValidation.ps1** - Parameter validation
+- **12-TestLatestWithServer.ps1** - **CRITICAL**: Latest mods with server compatibility testing
+
+### Mod Compatibility Testing
+
+The **12-TestLatestWithServer.ps1** test is critical for validating mod compatibility:
+
+- Downloads latest mods and server files
+- Attempts server startup
+- Detects compatibility issues (missing dependencies, version mismatches)
+- Reports specific errors that need fixing
+
+**Expected Test Results with Compatibility Issues:**
+- Total Tests: 8
+- Passed: 6 (validation, downloads, server files, start script, isolation check)
+- Failed: 2 (server startup, compatibility analysis)
+- Success Rate: 75%
+
+**Common Compatibility Issues Detected:**
+- Missing Fabric API dependencies
+- Minecraft version mismatches (mods built for 1.21.5 running on 1.21.6)
+- Specific mods that need removal or replacement
+
+### Test Output Structure
+
+```
+test/test-output/{TestName}/
+├── download/                    # Downloaded mods and server files
+├── {TestName}.log              # Individual test logs
+├── {TestName}-test-report.txt  # Test results report
+└── Server_*.log                # Server startup logs
+```
 
 ## 📁 File Structure
 
@@ -74,6 +145,12 @@ minecraft-mods-manager/
 │       ├── installer/         # Installers
 │       ├── minecraft_server.1.21.6.jar
 │       └── fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar
+├── test/                       # Test framework
+│   ├── RunAllTests.ps1        # Main test runner
+│   ├── TestFramework.ps1      # Shared test utilities
+│   ├── tests/                 # Individual test files
+│   ├── test-output/           # Test execution outputs
+│   └── apiresponse/           # Cached API responses for testing
 ├── tools/
 │   └── minecraft-mod-hash/     # Mod validation tool (submodule)
 └── backups/                    # Automatic backups

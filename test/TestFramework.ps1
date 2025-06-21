@@ -183,10 +183,11 @@ function Initialize-TestEnvironment {
         $outputFolder = Get-TestOutputFolder $TestFileName
         # Remove the entire output folder if it exists
         if (Test-Path $outputFolder) {
+            Remove-Item -Path $outputFolder -Recurse -Force
             Write-Host "Removed existing output folder: $outputFolder" -ForegroundColor $Colors.Info
         }
         # Recreate the output folder
-        New-Item -ItemType Directory -Path $outputFolder | Out-Null
+        New-Item -ItemType Directory -Path $outputFolder -Force | Out-Null
         $script:TestDbPath = Join-Path $outputFolder "run-test-cli.csv"
     }
     

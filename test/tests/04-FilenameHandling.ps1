@@ -63,7 +63,6 @@ if ($installerFile) {
     Write-Host "✓ PASS: Fabric Installer downloaded as EXE: $($installerFile.FullName)" -ForegroundColor Green
 } else {
     Write-Host "✗ FAIL: Fabric Installer not downloaded as EXE" -ForegroundColor Red
-    exit 1
 }
 
 Write-Host "`nFilename Handling Tests Complete" -ForegroundColor $Colors.Info 

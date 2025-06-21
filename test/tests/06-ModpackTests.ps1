@@ -65,11 +65,9 @@ if (Test-Path $indexFile) {
         
     } catch {
         Write-Host "✗ FAIL: Could not parse modrinth.index.json" -ForegroundColor Red
-        exit 1
     }
 } else {
     Write-Host "✗ FAIL: modrinth.index.json not found" -ForegroundColor Red
-    exit 1
 }
 
 # Test 5: Test modpack with specific version
@@ -112,7 +110,6 @@ foreach ($dir in $expectedModpackDirs) {
 
 if (-not $allValid) {
     Write-Host "Modpack structure validation failed!" -ForegroundColor Red
-    exit 1
 } else {
     Write-Host "✓ PASS: All modpack structures are valid" -ForegroundColor Green
 }

@@ -3,6 +3,7 @@ apiresponse/*
 download/*
 
 test/download/
+test/apiresponse/*.csv
 test/temp/
 test/results
 test/modlist.csv

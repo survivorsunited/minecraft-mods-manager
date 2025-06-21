@@ -1,5 +1,4 @@
-# Test Latest Version Workflow
-# Tests the complete workflow: use modlist.csv, download latest versions, start server, monitor logs
+# Tests the complete workflow: use test modlist, download latest versions, start server, monitor logs
 
 param([string]$TestFileName = $null)
 
@@ -9,237 +8,318 @@ $TestFrameworkPath = Join-Path $PSScriptRoot "..\TestFramework.ps1"
 
 # Test configuration
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
-$ModListPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
 $TestOutputDir = Join-Path $PSScriptRoot "..\test-output\10-TestLatest"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
+$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
 
-# Ensure test output and download directories exist
+# Ensure test output directory exists
 if (-not (Test-Path $TestOutputDir)) {
     New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
 }
-if (-not (Test-Path $TestDownloadDir)) {
-    New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
-}
 
-function Test-LatestVersionWorkflow {
-    param([string]$TestName)
-    
-    Write-TestHeader "Testing Latest Version Workflow"
-    
-    # Step 1: Verify modlist.csv exists
-    Write-TestStep "Checking modlist.csv exists"
-    if (-not (Test-Path $ModListPath)) {
-        Write-TestResult "ModList Existence" $false "modlist.csv not found at $ModListPath"
-        return $false
+# Create test modlist with minimal test data
+$testMods = @(
+    @{
+        Group = "test"
+        Type = "mod"
+        GameVersion = "1.21.5"
+        ID = "fabric-api"
+        Loader = "fabric"
+        Version = "0.91.0+1.21.5"
+        Name = "Fabric API"
+        Description = "Test Fabric API"
+        Jar = "fabric-api-0.91.0+1.21.5.jar"
+        Url = "https://modrinth.com/mod/fabric-api"
+        Category = "API"
+        VersionUrl = "https://modrinth.com/mod/fabric-api/version/0.91.0+1.21.5"
+        LatestVersionUrl = "https://modrinth.com/mod/fabric-api/version/0.91.0+1.21.5"
+        LatestVersion = "0.91.0+1.21.5"
+        ApiSource = "modrinth"
+        Host = "modrinth.com"
+        IconUrl = "https://cdn.modrinth.com/data/P7dR8mSH/icon.png"
+        ClientSide = "required"
+        ServerSide = "required"
+        Title = "Fabric API"
+        ProjectDescription = "Test Fabric API"
+        IssuesUrl = "https://github.com/FabricMC/fabric/issues"
+        SourceUrl = "https://github.com/FabricMC/fabric"
+        WikiUrl = "https://fabricmc.net/wiki"
+        LatestGameVersion = "1.21.5"
+        RecordHash = "test-hash"
     }
-    Write-TestResult "ModList Existence" $true "modlist.csv found"
-    
-    # Step 2: Read modlist.csv to see what mods we have
-    Write-TestStep "Reading modlist.csv"
-    try {
-        $modList = Import-Csv -Path $ModListPath
-        Write-TestResult "ModList Reading" $true "Successfully read modlist.csv with $($modList.Count) mods"
-    } catch {
-        Write-TestResult "ModList Reading" $false "Failed to read modlist.csv: $($_.Exception.Message)"
-        return $false
-    }
-    
-    # Step 3: Update mods to latest versions
-    Write-TestStep "Updating mods to latest versions"
-    $updateResult = & $ModManagerPath -UpdateMods -DatabaseFile $ModListPath -UseCachedResponses 2>&1
-    $updateOutput = $updateResult -join "`n"
-    
-    # Check if updates succeeded by looking for success indicators or absence of failure indicators
-    if ($updateOutput -match "✅ Database updated: \d+ mods" -or $updateOutput -match "Database updated: \d+ mods" -or 
-        $updateOutput -match "Successfully updated" -or $updateOutput -match "Already at latest version") {
-        Write-TestResult "Latest Version Update" $true "Mods updated to latest versions successfully"
-    } else {
-        Write-TestResult "Latest Version Update" $false "Failed to update mods to latest versions: $updateOutput"
-        return $false
-    }
-    
-    # Step 4: Download latest versions
-    Write-TestStep "Downloading latest versions"
-    $downloadResult = & $ModManagerPath -DownloadMods -DatabaseFile $ModListPath -DownloadFolder $TestDownloadDir -UseCachedResponses 2>&1
-    $downloadOutput = $downloadResult -join "`n"
-    
-    # Check if downloads succeeded by looking for success indicators or absence of failure indicators
-    if ($downloadOutput -match "✅ Successfully downloaded" -or $downloadOutput -match "Successfully downloaded" -or 
-        ($downloadOutput -match "Download Summary" -and $downloadOutput -notmatch "Failed: [1-9]")) {
-        Write-TestResult "Latest Version Download" $true "Latest versions downloaded successfully"
-    } else {
-        Write-TestResult "Latest Version Download" $false "Failed to download latest versions: $downloadOutput"
-        return $false
-    }
-    
-    # Step 5: Verify downloads exist in output folder
-    Write-TestStep "Verifying downloads in output folder"
-    if (Test-Path $TestDownloadDir) {
-        $downloadContents = Get-ChildItem -Path $TestDownloadDir -Recurse -File | Measure-Object
-        Write-TestResult "Download Verification" $true "Found $($downloadContents.Count) files in download directory"
-    } else {
-        Write-TestResult "Download Verification" $false "Download directory not found"
-        return $false
-    }
-    
-    # Step 6: Test server startup process
-    Write-TestStep "Testing server startup process"
-    $startServerResult = & $ModManagerPath -StartServer -DatabaseFile $ModListPath 2>&1
-    $startServerOutput = $startServerResult -join "`n"
-    
-    # Check if server startup process works (may fail due to Java version, but should get past initial checks)
-    if ($startServerOutput -match "Checking Java version" -or $startServerOutput -match "Java version") {
-        Write-TestResult "Server Startup Process" $true "Server startup process initiated successfully"
-    } else {
-        Write-TestResult "Server Startup Process" $false "Server startup process failed: $startServerOutput"
-        return $false
-    }
-    
-    # Step 7: Test log monitoring (create mock logs)
-    Write-TestStep "Testing log monitoring"
-    $logDir = Join-Path $TestOutputDir "logs"
-    if (-not (Test-Path $logDir)) {
-        New-Item -ItemType Directory -Path $logDir -Force | Out-Null
-    }
-    
-    $mockLogFile = Join-Path $logDir "server.log"
-    @"
-[12:00:00] [main/INFO]: Starting server...
-[12:00:01] [main/INFO]: Loading mods...
-[12:00:02] [main/INFO]: Server started successfully
-[12:00:03] [main/INFO]: Server running on port 25565
-"@ | Out-File -FilePath $mockLogFile -Encoding UTF8
-    
-    # Test log analysis
-    $logContent = Get-Content $mockLogFile
-    $errorLines = $logContent | Where-Object { $_ -match "(ERROR|FATAL|Exception|Failed|Error)" }
-    
-    if ($errorLines.Count -eq 0) {
-        Write-TestResult "Log Monitoring" $true "Log monitoring correctly identified error-free logs"
-    } else {
-        Write-TestResult "Log Monitoring" $false "Log monitoring incorrectly flagged logs as having errors"
-        return $false
-    }
-    
-    # Step 8: Test error detection (create error logs)
-    Write-TestStep "Testing error detection"
-    $errorLogFile = Join-Path $logDir "error.log"
-    @"
-[12:00:00] [main/INFO]: Starting server...
-[12:00:01] [main/ERROR]: Failed to load mod: fabric-api
-[12:00:02] [main/FATAL]: Server startup failed
-"@ | Out-File -FilePath $errorLogFile -Encoding UTF8
-    
-    $errorLogContent = Get-Content $errorLogFile
-    $errorDetected = $errorLogContent | Where-Object { $_ -match "(ERROR|FATAL|Exception|Failed|Error)" }
-    
-    if ($errorDetected.Count -gt 0) {
-        Write-TestResult "Error Detection" $true "Error detection correctly identified errors in logs"
-    } else {
-        Write-TestResult "Error Detection" $false "Error detection failed to identify errors in logs"
-        return $false
-    }
-    
-    return $true
-}
+)
 
-function Test-LatestVersionDatabaseState {
-    param([string]$TestName)
-    
-    Write-TestHeader "Testing Latest Version Database State"
-    
-    # Verify modlist.csv still exists and is readable
-    if (-not (Test-Path $ModListPath)) {
-        Write-TestResult "Database Existence" $false "modlist.csv not found after workflow"
-        return $false
-    }
-    
-    # Read the database
-    try {
-        $modList = Import-Csv -Path $ModListPath
-        Write-TestResult "Database Reading" $true "Successfully read modlist.csv with $($modList.Count) mods"
-    } catch {
-        Write-TestResult "Database Reading" $false "Failed to read modlist.csv: $($_.Exception.Message)"
-        return $false
-    }
-    
-    # Check that we have mods in the database
-    $modCount = $modList.Count
-    if ($modCount -gt 0) {
-        Write-TestResult "Mod Count" $true "Found $modCount mods in database"
-    } else {
-        Write-TestResult "Mod Count" $false "No mods found in database"
-        return $false
-    }
-    
-    # Check for specific mod types
-    $mods = $modList | Where-Object { $_.Type -eq "mod" }
-    $modpacks = $modList | Where-Object { $_.Type -eq "modpack" }
-    $servers = $modList | Where-Object { $_.Type -eq "server" }
-    
-    Write-TestResult "Mod Types" $true "Found: $($mods.Count) mods, $($modpacks.Count) modpacks, $($servers.Count) servers"
-    
-    return $true
-}
+# Create test modlist.csv
+$testMods | Export-Csv -Path $TestModListPath -NoTypeInformation
 
-function Test-VersionComparison {
-    param([string]$TestName)
+# Test variables
+$TotalTests = 0
+$PassedTests = 0
+$FailedTests = 0
+$TestReport = @()
+
+# Test report file
+$TestReportPath = Join-Path $TestOutputDir "test-latest-test-report.txt"
+
+function Test-Latest {
+    param(
+        [string]$TestName,
+        [scriptblock]$TestScript,
+        [string]$ExpectedOutput = "",
+        [int]$ExpectedExitCode = $null
+    )
     
-    Write-TestHeader "Testing Version Comparison"
+    $script:TotalTests++
+    Write-Host "Testing: $TestName" -ForegroundColor Yellow
     
-    # Read the database again to check version updates
     try {
-        $modList = Import-Csv -Path $ModListPath
-    } catch {
-        Write-TestResult "Database Reading" $false "Failed to read modlist.csv for version comparison"
-        return $false
-    }
-    
-    # Check that mods are at their latest versions
-    $currentMods = $modList | Where-Object { $_.Type -eq "mod" }
-    $versionComparisonPassed = $true
-    
-    foreach ($mod in $currentMods) {
-        if ($mod.Version -and $mod.LatestVersion) {
-            if ($mod.Version -eq $mod.LatestVersion) {
-                Write-TestResult "Version Comparison: $($mod.Name)" $true "Using latest version: $($mod.Version)"
-            } else {
-                Write-TestResult "Version Comparison: $($mod.Name)" $true "Current: $($mod.Version), Latest: $($mod.LatestVersion)"
-            }
-        } else {
-            Write-TestResult "Version Comparison: $($mod.Name)" $true "Version information available"
+        $result = & $TestScript 2>&1
+        $exitCode = $LASTEXITCODE
+        $output = $result -join "`n"
+        
+        # Save individual test log
+        $logFile = Join-Path $TestOutputDir "$($TestName.Replace(' ', '_')).log"
+        $output | Out-File -FilePath $logFile -Encoding UTF8
+        
+        # Check if test passed
+        $passed = $true
+        $errorMessage = ""
+        
+        if ($ExpectedExitCode -ne $null -and $exitCode -ne $ExpectedExitCode) {
+            $passed = $false
+            $errorMessage = "Expected exit code $ExpectedExitCode, got $exitCode"
         }
+        
+        if ($ExpectedOutput -and $output -notmatch $ExpectedOutput) {
+            $passed = $false
+            $errorMessage = "Expected output pattern '$ExpectedOutput' not found"
+        }
+        
+        if ($passed) {
+            Write-Host "  ✅ PASS" -ForegroundColor Green
+            $script:PassedTests++
+            $script:TestReport += "✅ PASS: $TestName`n"
+        } else {
+            Write-Host "  ❌ FAIL: $errorMessage" -ForegroundColor Red
+            $script:FailedTests++
+            $script:TestReport += "❌ FAIL: $TestName - $errorMessage`n"
+        }
+        
+    } catch {
+        Write-Host "  ❌ ERROR: $($_.Exception.Message)" -ForegroundColor Red
+        $script:FailedTests++
+        $script:TestReport += "❌ ERROR: $TestName - $($_.Exception.Message)`n"
     }
     
-    Write-TestResult "Version Comparison Complete" $true "All mod version comparisons completed"
-    
-    return $true
+    Write-Host ""
 }
 
-# Main test execution function
 function Invoke-TestLatest {
     param([string]$TestFileName = $null)
     
-    Write-TestSuiteHeader "Test Latest Version Workflow" $TestFileName
-    
-    # Run the main workflow test
-    $workflowResult = Test-LatestVersionWorkflow -TestName "Latest Version Workflow"
-    
-    # Run the database state test
-    $databaseResult = Test-LatestVersionDatabaseState -TestName "Latest Version Database State"
-    
-    # Run the version comparison test
-    $versionResult = Test-VersionComparison -TestName "Version Comparison"
-    
-    # Summary
-    Write-TestSuiteSummary "Test Latest Version Workflow"
-    
-    return ($workflowResult -and $databaseResult -and $versionResult)
+    Write-Host "Starting Test Latest Mods Workflow" -ForegroundColor Yellow
+    Write-Host "Test Output Directory: $TestOutputDir" -ForegroundColor Gray
+    Write-Host "Test ModList: $TestModListPath" -ForegroundColor Gray
+    Write-Host ""
+
+    # Step 1: Verify test modlist.csv exists
+    Write-TestStep "Checking test modlist.csv exists"
+    if (Test-Path $TestModListPath) {
+        Write-TestResult "ModList Existence" $true "test modlist.csv found"
+    } else {
+        Write-TestResult "ModList Existence" $false "test modlist.csv not found at $TestModListPath"
+        return $false
+    }
+
+    # Step 2: Read test modlist.csv to see what mods we have
+    Write-TestStep "Reading test modlist.csv"
+    try {
+        $modList = Import-Csv $TestModListPath
+        Write-TestResult "ModList Reading" $true "Successfully read test modlist.csv with $($modList.Count) mods"
+    } catch {
+        Write-TestResult "ModList Reading" $false "Failed to read test modlist.csv: $($_.Exception.Message)"
+        return $false
+    }
+
+    # Step 3: Validate all mods first
+    Write-Host "=== Step 3: Validating All Mods ===" -ForegroundColor Magenta
+    Test-Latest -TestName "Validate All Mods" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -UseCachedResponses -DatabaseFile $TestModListPath
+    } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
+
+    # Step 4: Update mods to latest versions
+    Write-Host "=== Step 4: Updating Mods to Latest Versions ===" -ForegroundColor Magenta
+    Test-Latest -TestName "Update Mods to Latest" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestModListPath -UseCachedResponses
+    } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
+
+    # Step 5: Download latest mods
+    Write-Host "=== Step 5: Downloading Latest Mods ===" -ForegroundColor Magenta
+    Test-Latest -TestName "Download Latest Mods" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -UseLatestVersion -DownloadFolder $TestDownloadDir -DatabaseFile $TestModListPath -UseCachedResponses
+    } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
+
+    # Step 6: Verify downloads exist
+    Write-Host "=== Step 6: Verifying Downloads ===" -ForegroundColor Magenta
+    Test-Latest -TestName "Verify Downloads" -TestScript {
+        $modFiles = Get-ChildItem -Path $TestDownloadDir -Recurse -File -Filter "*.jar" -ErrorAction SilentlyContinue
+        if ($modFiles.Count -gt 0) {
+            "Found $($modFiles.Count) mod files in $TestDownloadDir"
+            $modFiles | ForEach-Object { "  - $($_.Name)" }
+        } else {
+            "No mod files found in $TestDownloadDir"
+        }
+    } -ExpectedOutput "Found.*mod files" -ExpectedExitCode 0
+
+    # Step 7: Download server files
+    Write-Host "=== Step 7: Downloading Server Files ===" -ForegroundColor Magenta
+    Test-Latest -TestName "Download Server Files" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses
+    } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
+
+    # Step 8: Verify server files exist
+    Write-Host "=== Step 8: Verifying Server Files ===" -ForegroundColor Magenta
+    Test-Latest -TestName "Verify Server Files" -TestScript {
+        $serverFiles = Get-ChildItem -Path $TestDownloadDir -File -Filter "minecraft_server*.jar" -ErrorAction SilentlyContinue
+        if ($serverFiles.Count -gt 0) {
+            "Found $($serverFiles.Count) server files in $TestDownloadDir"
+            $serverFiles | ForEach-Object { "  - $($_.Name)" }
+        } else {
+            "No server files found in $TestDownloadDir"
+        }
+    } -ExpectedOutput "Found.*server files" -ExpectedExitCode 0
+
+    # Step 9: Add server start script
+    Write-Host "=== Step 9: Adding Server Start Script ===" -ForegroundColor Magenta
+    Test-Latest -TestName "Add Server Start Script" -TestScript {
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddServerStartScript -DownloadFolder $TestDownloadDir
+    } -ExpectedOutput "Successfully copied start-server script" -ExpectedExitCode 0
+
+    # Step 10: Verify start script exists
+    Write-Host "=== Step 10: Verifying Start Script ===" -ForegroundColor Magenta
+    Test-Latest -TestName "Verify Start Script" -TestScript {
+        $startScript = Join-Path $TestDownloadDir "start-server.ps1"
+        if (Test-Path $startScript) {
+            "Start script found at $startScript"
+            $scriptContent = Get-Content $startScript -Raw
+            if ($scriptContent -match "Start-MinecraftServer") {
+                "Start script contains Start-MinecraftServer function"
+            } else {
+                "Start script does not contain Start-MinecraftServer function"
+            }
+        } else {
+            "Start script not found at $startScript"
+        }
+    } -ExpectedOutput "Start script found" -ExpectedExitCode 0
+
+    # Step 11: Verify test modlist.csv still exists and is readable
+    Write-TestStep "Verifying test modlist.csv still exists after workflow"
+    if (Test-Path $TestModListPath) {
+        Write-TestResult "Database Existence" $true "test modlist.csv still exists after workflow"
+    } else {
+        Write-TestResult "Database Existence" $false "test modlist.csv not found after workflow"
+        return $false
+    }
+
+    try {
+        $modList = Import-Csv $TestModListPath
+        Write-TestResult "Database Reading" $true "Successfully read test modlist.csv with $($modList.Count) mods"
+    } catch {
+        Write-TestResult "Database Reading" $false "Failed to read test modlist.csv: $($_.Exception.Message)"
+        return $false
+    }
+
+    # Step 12: Check for version updates
+    Write-Host "=== Step 12: Checking for Version Updates ===" -ForegroundColor Magenta
+    Test-Latest -TestName "Check Version Updates" -TestScript {
+        try {
+            $modList = Import-Csv $TestModListPath
+            $updates = @()
+            
+            foreach ($mod in $modList) {
+                if ($mod.Version -and $mod.LatestVersion -and $mod.Version -ne $mod.LatestVersion) {
+                    $updates += "$($mod.Name): $($mod.Version) -> $($mod.LatestVersion)"
+                }
+            }
+            
+            if ($updates.Count -gt 0) {
+                "Found $($updates.Count) version updates:"
+                $updates | ForEach-Object { "  - $_" }
+            } else {
+                "No version updates found - all mods are at latest versions"
+            }
+        } catch {
+            Write-TestResult "Database Reading" $false "Failed to read test modlist.csv for version comparison"
+        }
+    } -ExpectedOutput "Found.*version updates|No version updates found" -ExpectedExitCode 0
+
+    # Final check: Ensure test/download is empty or does not exist
+    Write-Host "=== Final Step: Verifying test/download is untouched ===" -ForegroundColor Magenta
+    $TotalTests++  # Increment total test count for this check
+    $mainTestDownloadPath = Join-Path $PSScriptRoot "..\download"
+    if (Test-Path $mainTestDownloadPath) {
+        $downloadContents = Get-ChildItem -Path $mainTestDownloadPath -Recurse -File -ErrorAction SilentlyContinue
+        if ($downloadContents.Count -gt 0) {
+            Write-Host "  ❌ FAIL: main test/download is not empty!" -ForegroundColor Red
+            $FailedTests++
+            $TestReport += "❌ FAIL: main test/download is not empty!`n"
+        } else {
+            Write-Host "  ✅ PASS: main test/download is empty" -ForegroundColor Green
+            $PassedTests++
+            $TestReport += "✅ PASS: main test/download is empty`n"
+        }
+    } else {
+        Write-Host "  ✅ PASS: main test/download does not exist" -ForegroundColor Green
+        $PassedTests++
+        $TestReport += "✅ PASS: main test/download does not exist`n"
+    }
+
+    # Generate final report
+    $TestReport += @"
+
+Test Summary:
+=============
+Total Tests: $TotalTests
+Passed: $PassedTests
+Failed: $FailedTests
+Success Rate: $(if ($TotalTests -gt 0) { [math]::Round(($PassedTests / $TotalTests) * 100, 2) } else { 0 })%
+
+Test Details:
+=============
+This test validates the complete workflow of downloading latest mod versions.
+It uses a test-specific modlist.csv to avoid interfering with the main modlist.csv.
+
+Expected Behavior:
+- Test modlist.csv should be created and readable
+- Mod validation should succeed
+- Latest mod downloads should succeed
+- Server file downloads should succeed
+- Start script should be added successfully
+- Version updates should be detected
+- test/download should remain untouched
+"@
+
+    # Set global test results for the test runner
+    $script:TestResults = @{
+        Total = $TotalTests
+        Passed = $PassedTests
+        Failed = $FailedTests
+    }
+
+    # Save test report
+    $TestReport | Out-File -FilePath $TestReportPath -Encoding UTF8
+
+    Write-Host "Test completed!" -ForegroundColor Green
+    Write-Host "Total Tests: $TotalTests" -ForegroundColor Cyan
+    Write-Host "Passed: $PassedTests" -ForegroundColor Green
+    Write-Host "Failed: $FailedTests" -ForegroundColor Red
+    Write-Host "Success Rate: $(if ($TotalTests -gt 0) { [math]::Round(($PassedTests / $TotalTests) * 100, 2) } else { 0 })%" -ForegroundColor Green
+    Write-Host "Test report saved to: $TestReportPath" -ForegroundColor Gray
+
+    return ($FailedTests -eq 0)
 }
 
 # Execute tests if run directly
 if ($MyInvocation.InvocationName -ne ".") {
     Invoke-TestLatest -TestFileName $TestFileName
-}
-
-# NOTE: Download folder is intentionally preserved for post-test validation. 
+} 
