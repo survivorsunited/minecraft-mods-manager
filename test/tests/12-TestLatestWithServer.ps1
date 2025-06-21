@@ -152,6 +152,7 @@ Test-LatestWithServer -TestName "Mod Compatibility Verification" -TestScript {
 
 # Final check: Ensure test/download is empty or does not exist
 Write-Host "=== Final Step: Verifying test/download is untouched ===" -ForegroundColor Magenta
+$TotalTests++  # Increment total test count for this check
 $testDownloadPath = Join-Path $PSScriptRoot "..\download"
 if (Test-Path $testDownloadPath) {
     $downloadContents = Get-ChildItem -Path $testDownloadPath -Recurse -File -ErrorAction SilentlyContinue
