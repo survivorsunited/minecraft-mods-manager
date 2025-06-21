@@ -204,4 +204,6 @@ function Invoke-TestCurrent {
 # Execute tests if run directly
 if ($MyInvocation.InvocationName -ne ".") {
     Invoke-TestCurrent -TestFileName $TestFileName
-} 
+}
+
+# NOTE: Download folder is intentionally preserved for post-test validation. 

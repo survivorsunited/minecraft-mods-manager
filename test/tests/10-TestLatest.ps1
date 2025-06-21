@@ -240,4 +240,6 @@ function Invoke-TestLatest {
 # Execute tests if run directly
 if ($MyInvocation.InvocationName -ne ".") {
     Invoke-TestLatest -TestFileName $TestFileName
-} 
+}
+
+# NOTE: Download folder is intentionally preserved for post-test validation. 

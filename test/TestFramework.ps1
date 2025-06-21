@@ -183,7 +183,6 @@ function Initialize-TestEnvironment {
         $outputFolder = Get-TestOutputFolder $TestFileName
         # Remove the entire output folder if it exists
         if (Test-Path $outputFolder) {
-            Remove-Item $outputFolder -Recurse -Force
             Write-Host "Removed existing output folder: $outputFolder" -ForegroundColor $Colors.Info
         }
         # Recreate the output folder
@@ -193,7 +192,6 @@ function Initialize-TestEnvironment {
     
     # Clean up previous test files
     if (Test-Path $TestDbPath) {
-        Remove-Item $TestDbPath -Force
         Write-Host "Removed existing database: $TestDbPath" -ForegroundColor $Colors.Info
     }
     
@@ -248,7 +246,7 @@ function Cleanup-TestEnvironment {
         Write-Host "`nCleaning up test environment..." -ForegroundColor $Colors.Info
         
         if (Test-Path $TestDbPath) {
-            Remove-Item $TestDbPath -Force
+            Write-Host "Removed existing database: $TestDbPath" -ForegroundColor $Colors.Info
         }
         
         # Remove copied API files
@@ -277,4 +275,7 @@ function Write-TestSuiteSummary {
     } else {
         Write-Host "False" -ForegroundColor $Colors.Fail
     }
-} 
+}
+
+# NOTE: Download folders are intentionally preserved for post-test validation.
+# Remove any Remove-Item calls that delete download folders. 

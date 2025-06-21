@@ -62,3 +62,5 @@ Write-Host "`nDownload Functionality Tests Complete" -ForegroundColor $Colors.In
 
 # Show test summary
 Show-TestSummary 
+
+# NOTE: Download folder is intentionally preserved for post-test validation. 

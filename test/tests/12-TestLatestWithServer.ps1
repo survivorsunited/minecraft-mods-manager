@@ -335,18 +335,13 @@ Write-Host ""
 Write-Host "Test report saved to: $TestReportPath" -ForegroundColor Gray
 Write-Host "Individual test logs saved to: $TestOutputDir" -ForegroundColor Gray
 
-# Cleanup temp server directory and isolated folders
+# Cleanup temp server directory only (preserve downloads for validation)
 $tempServerDir = Join-Path $TestOutputDir "temp-server"
-$modsDownloadDir = Join-Path $TestOutputDir "download-latest-mods"
-$serverDownloadDir = Join-Path $TestOutputDir "download-server-files"
-
-$foldersToCleanup = @($tempServerDir, $modsDownloadDir, $serverDownloadDir)
-foreach ($folder in $foldersToCleanup) {
-    if (Test-Path $folder) {
-        Write-Host "Cleaning up: $folder" -ForegroundColor Gray
-        Remove-Item -Path $folder -Recurse -Force -ErrorAction SilentlyContinue
-    }
+if (Test-Path $tempServerDir) {
+    Write-Host "Cleaning up: $tempServerDir" -ForegroundColor Gray
+    Remove-Item -Path $tempServerDir -Recurse -Force -ErrorAction SilentlyContinue
 }
+# NOTE: Download folders are intentionally preserved for post-test validation.
 
 # Return exit code based on test results
 if ($FailedTests -eq 0) {
