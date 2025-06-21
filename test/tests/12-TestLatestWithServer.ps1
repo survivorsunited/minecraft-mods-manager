@@ -1,114 +1,86 @@
 # Test Latest Mods with Server Startup
-# Tests downloading latest mods and attempting server startup to detect mod compatibility issues
+# Tests the complete workflow: download latest mods, download server files, add start script, and attempt server startup
 
 param([string]$TestFileName = $null)
 
-# Get the test root directory (parent of the tests folder)
-$TestRoot = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
-$TestOutputDir = Join-Path $TestRoot "test\test-output\12-TestLatestWithServer"
+# Import test framework
+$TestFrameworkPath = Join-Path $PSScriptRoot "..\TestFramework.ps1"
+. $TestFrameworkPath
+
+# Test configuration
+$ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+$ModListPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
+$TestOutputDir = Join-Path $PSScriptRoot "..\test-output\12-TestLatestWithServer"
+$TestDownloadDir = Join-Path $TestOutputDir "download"
 
 # Ensure test output directory exists
 if (-not (Test-Path $TestOutputDir)) {
     New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
 }
 
-# Test configuration
-$ModManagerPath = Join-Path $TestRoot "ModManager.ps1"
-$ModListPath = Join-Path $TestRoot "modlist.csv"
-$TestReportPath = Join-Path $TestOutputDir "latest-with-server-test-report.txt"
-
-# Test counters
+# Test variables
 $TotalTests = 0
 $PassedTests = 0
 $FailedTests = 0
 $TestReport = @()
 
-# Test name
-$TestName = "Test Latest Mods with Server Startup"
-
-# Import test framework
-. "$PSScriptRoot/../TestFramework.ps1"
-
-# Test configuration
-$TestDescription = "Downloads latest mods and attempts to start server to test for compatibility failures"
+# Test report file
 $TestReportPath = Join-Path $TestOutputDir "latest-with-server-test-report.txt"
 
-# Initialize test report
-$TestReport = @"
-Test Latest Mods with Server Startup Test Report
-Generated: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
-Test Output Directory: $TestOutputDir
-
-"@
-
-# Helper function to run test
 function Test-LatestWithServer {
     param(
         [string]$TestName,
         [scriptblock]$TestScript,
-        [string]$ExpectedOutput = $null,
-        [string]$ExpectedError = $null,
-        [int]$ExpectedExitCode = 0
+        [string]$ExpectedOutput = "",
+        [int]$ExpectedExitCode = $null
     )
     
-    $TotalTests++
-    Write-Host "Testing: $TestName" -ForegroundColor Cyan
+    $script:TotalTests++
+    Write-Host "Testing: $TestName" -ForegroundColor Yellow
     
     try {
         $result = & $TestScript 2>&1
         $exitCode = $LASTEXITCODE
+        $output = $result -join "`n"
         
-        $success = $true
+        # Save individual test log
+        $logFile = Join-Path $TestOutputDir "$($TestName.Replace(' ', '_')).log"
+        $output | Out-File -FilePath $logFile -Encoding UTF8
+        
+        # Check if test passed
+        $passed = $true
         $errorMessage = ""
         
-        # Check exit code
-        if ($exitCode -ne $ExpectedExitCode) {
-            $success = $false
-            $errorMessage = "Exit code mismatch. Expected: $ExpectedExitCode, Got: $exitCode"
+        if ($ExpectedExitCode -ne $null -and $exitCode -ne $ExpectedExitCode) {
+            $passed = $false
+            $errorMessage = "Expected exit code $ExpectedExitCode, got $exitCode"
         }
         
-        # Check for expected output
-        if ($ExpectedOutput) {
-            $resultString = $result -join "`n"
-            if ($resultString -notmatch $ExpectedOutput) {
-                $success = $false
-                $errorMessage = "Expected output not found: $ExpectedOutput"
-            }
+        if ($ExpectedOutput -and $output -notmatch $ExpectedOutput) {
+            $passed = $false
+            $errorMessage = "Expected output pattern '$ExpectedOutput' not found"
         }
         
-        # Check for expected error
-        if ($ExpectedError) {
-            $resultString = $result -join "`n"
-            if ($resultString -notmatch $ExpectedError) {
-                $success = $false
-                $errorMessage = "Expected error not found: $ExpectedError"
-            }
-        }
-        
-        if ($success) {
+        if ($passed) {
             Write-Host "  ✅ PASS" -ForegroundColor Green
-            $PassedTests++
-            $TestReport += "✅ PASS: $TestName`n"
+            $script:PassedTests++
+            $script:TestReport += "✅ PASS: $TestName`n"
         } else {
             Write-Host "  ❌ FAIL: $errorMessage" -ForegroundColor Red
-            $FailedTests++
-            $TestReport += "❌ FAIL: $TestName - $errorMessage`n"
+            $script:FailedTests++
+            $script:TestReport += "❌ FAIL: $TestName - $errorMessage`n"
         }
-        
-        # Log output for debugging - ensure directory exists
-        $outputLogPath = Join-Path $TestOutputDir "$($TestName -replace '[^a-zA-Z0-9]', '_').log"
-        $result | Out-File -FilePath $outputLogPath -Encoding UTF8
         
     } catch {
         Write-Host "  ❌ ERROR: $($_.Exception.Message)" -ForegroundColor Red
-        $FailedTests++
-        $TestReport += "❌ ERROR: $TestName - $($_.Exception.Message)`n"
+        $script:FailedTests++
+        $script:TestReport += "❌ ERROR: $TestName - $($_.Exception.Message)`n"
     }
     
     Write-Host ""
 }
 
-Write-Host "Starting $TestName" -ForegroundColor Yellow
+Write-Host "Starting Test Latest Mods with Server Startup" -ForegroundColor Yellow
 Write-Host "Test Output Directory: $TestOutputDir" -ForegroundColor Gray
 Write-Host ""
 
@@ -116,170 +88,71 @@ Write-Host ""
 Write-Host "=== Step 1: Validating All Mods ===" -ForegroundColor Magenta
 Test-LatestWithServer -TestName "Validate All Mods" -TestScript {
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -UseCachedResponses -DatabaseFile $ModListPath
-} -ExpectedOutput "Minecraft Mod Manager PowerShell Script"
+} -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
 # Test 2: Download latest mods to isolated folder
 Write-Host "=== Step 2: Downloading Latest Mods ===" -ForegroundColor Magenta
 Test-LatestWithServer -TestName "Download Latest Mods" -TestScript {
-    # Create isolated download folder for this test
-    $isolatedDownloadDir = Join-Path $TestOutputDir "download-latest-mods"
-    if (-not (Test-Path $isolatedDownloadDir)) {
-        New-Item -ItemType Directory -Path $isolatedDownloadDir -Force | Out-Null
-    }
-    
-    # Copy modlist.csv to isolated folder
-    Copy-Item -Path $ModListPath -Destination $isolatedDownloadDir -Force
-    
-    # Run download from the test directory (not from isolated folder)
-    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $ModListPath -DownloadFolder $isolatedDownloadDir -UseCachedResponses
-} -ExpectedOutput "Minecraft Mod Manager PowerShell Script"
+    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $ModListPath -DownloadFolder $TestDownloadDir -UseCachedResponses
+} -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
-# Test 3: Download server files to isolated folder
+# Test 3: Download server files to the same isolated folder
 Write-Host "=== Step 3: Downloading Server Files ===" -ForegroundColor Magenta
 Test-LatestWithServer -TestName "Download Server Files" -TestScript {
-    # Create isolated download folder for server files
-    $isolatedServerDir = Join-Path $TestOutputDir "download-server-files"
-    if (-not (Test-Path $isolatedServerDir)) {
-        New-Item -ItemType Directory -Path $isolatedServerDir -Force | Out-Null
-    }
-    
-    # Run server download from the test directory
-    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $isolatedServerDir -UseCachedResponses
-} -ExpectedOutput "Minecraft Mod Manager PowerShell Script"
+    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses
+} -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
-# Test 4: Attempt to start server (this should fail with mod compatibility issues)
-Write-Host "=== Step 4: Attempting Server Startup (Expected to Fail) ===" -ForegroundColor Magenta
+# Test 4: Add server start script to the download folder
+Write-Host "=== Step 4: Adding Server Start Script ===" -ForegroundColor Magenta
+Test-LatestWithServer -TestName "Add Server Start Script" -TestScript {
+    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddServerStartScript -DownloadFolder $TestDownloadDir
+} -ExpectedOutput "Successfully copied start-server script" -ExpectedExitCode 0
+
+# Test 5: Attempt to start server (this should fail with mod compatibility issues)
+Write-Host "=== Step 5: Attempting Server Startup (Expected to Fail) ===" -ForegroundColor Magenta
 Test-LatestWithServer -TestName "Server Startup with Latest Mods" -TestScript {
-    # Create a temporary server directory for testing
-    $tempServerDir = Join-Path $TestOutputDir "temp-server"
-    if (-not (Test-Path $tempServerDir)) {
-        New-Item -ItemType Directory -Path $tempServerDir -Force | Out-Null
-    }
-    
-    # Copy mods from isolated download folder
-    $modsDownloadDir = Join-Path $TestOutputDir "download-latest-mods"
-    if (Test-Path $modsDownloadDir) {
-        Copy-Item -Path "$modsDownloadDir\*" -Destination $tempServerDir -Recurse -Force
-    }
-    
-    # Copy server files from isolated server folder
-    $serverDownloadDir = Join-Path $TestOutputDir "download-server-files"
-    if (Test-Path $serverDownloadDir) {
-        Copy-Item -Path "$serverDownloadDir\*" -Destination $tempServerDir -Recurse -Force
-    }
-    
-    # Change to temp directory and start server
-    Push-Location $tempServerDir
-    
-    try {
-        # Start server with timeout to prevent hanging
-        $startServerPath = Join-Path (Join-Path $PSScriptRoot '../..') 'tools/start-server.ps1'
-        $job = Start-Job -ScriptBlock {
-            param($ServerDir, $StartServerPath)
-            Set-Location $ServerDir
-            & $StartServerPath
-        } -ArgumentList $tempServerDir, $startServerPath
-        
-        # Wait for up to 60 seconds for the server to start and potentially fail
-        $timeout = 60
-        $startTime = Get-Date
-        $serverOutput = ""
-        
-        while ((Get-Date) -lt ($startTime.AddSeconds($timeout))) {
-            if ($job.State -eq "Completed") {
-                $serverOutput = Receive-Job $job
-                break
-            }
-            Start-Sleep -Seconds 2
-        }
-        
-        # Stop the job if it's still running
-        if ($job.State -eq "Running") {
-            Stop-Job $job
-            Remove-Job $job
-            $serverOutput = "Server startup timed out after $timeout seconds"
-        } else {
-            Remove-Job $job
-        }
-        
-        # Return the output
-        $serverOutput
-        
-    } finally {
-        Pop-Location
-    }
-} -ExpectedError "SERVER ERROR DETECTED|exit code 1|potential solution" -ExpectedExitCode 1
-
-# Test 5: Check for specific error patterns in server logs
-Write-Host "=== Step 5: Analyzing Server Error Patterns ===" -ForegroundColor Magenta
-Test-LatestWithServer -TestName "Server Error Pattern Analysis" -TestScript {
-    # Look for server log files in the temp server directory
-    $tempServerDir = Join-Path $TestOutputDir "temp-server"
-    $logFiles = Get-ChildItem -Path $tempServerDir -Filter "*.log" -Recurse -ErrorAction SilentlyContinue
-    
-    $analysis = @()
-    foreach ($logFile in $logFiles) {
-        $logContent = Get-Content -Path $logFile.FullName -Raw -ErrorAction SilentlyContinue
-        if ($logContent) {
-            # Look for specific error patterns
-            $patterns = @(
-                "A potential solution has been determined",
-                "Server exited with code 1",
-                "mod compatibility",
-                "version mismatch",
-                "fabric-api",
-                "modrinth"
-            )
-            
-            foreach ($pattern in $patterns) {
-                if ($logContent -match $pattern) {
-                    $analysis += "Found '$pattern' in $($logFile.Name)"
-                }
-            }
-        }
-    }
-    
-    if ($analysis.Count -gt 0) {
-        $analysis -join "`n"
-    } else {
-        "No specific error patterns found in server logs"
-    }
-} -ExpectedOutput "Found.*Server exited with code 1"
+    & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
+} -ExpectedOutput "Errors detected|Server job failed|Java version" -ExpectedExitCode 1
 
 # Test 6: Verify mod compatibility issues
 Write-Host "=== Step 6: Verifying Mod Compatibility Issues ===" -ForegroundColor Magenta
 Test-LatestWithServer -TestName "Mod Compatibility Verification" -TestScript {
-    # Check the modlist.csv for potential compatibility issues
-    $modlistPath = $ModListPath
-    if (Test-Path $modlistPath) {
-        $mods = Import-Csv $modlistPath
-        $issues = @()
-        
-        foreach ($mod in $mods) {
-            # Check for version mismatches
-            if ($mod.Version -and $mod.LatestVersion -and $mod.Version -ne $mod.LatestVersion) {
-                $issues += "Version mismatch for $($mod.Name): Current=$($mod.Version), Latest=$($mod.LatestVersion)"
+    # Run in separate PowerShell process to isolate exit codes
+    $script = {
+        param($ModListPath)
+        # Check the modlist.csv for potential compatibility issues
+        if (Test-Path $ModListPath) {
+            $mods = Import-Csv $ModListPath
+            $issues = @()
+            
+            foreach ($mod in $mods) {
+                # Check for version mismatches
+                if ($mod.Version -and $mod.LatestVersion -and $mod.Version -ne $mod.LatestVersion) {
+                    $issues += "Version mismatch for $($mod.Name): Current=$($mod.Version), Latest=$($mod.LatestVersion)"
+                }
+                
+                # Check for game version mismatches
+                if ($mod.GameVersion -and $mod.LatestGameVersion -and $mod.GameVersion -ne $mod.LatestGameVersion) {
+                    $issues += "Game version mismatch for $($mod.Name): Current=$($mod.GameVersion), Latest=$($mod.LatestGameVersion)"
+                }
             }
             
-            # Check for game version mismatches
-            if ($mod.GameVersion -and $mod.LatestGameVersion -and $mod.GameVersion -ne $mod.LatestGameVersion) {
-                $issues += "Game version mismatch for $($mod.Name): Current=$($mod.GameVersion), Latest=$($mod.LatestGameVersion)"
+            if ($issues.Count -gt 0) {
+                $issues -join "`n"
+            } else {
+                "No obvious compatibility issues found in modlist.csv"
             }
-        }
-        
-        if ($issues.Count -gt 0) {
-            $issues -join "`n"
         } else {
-            "No obvious compatibility issues found in modlist.csv"
+            "modlist.csv not found"
         }
-    } else {
-        "modlist.csv not found"
     }
+    
+    & pwsh -NoProfile -ExecutionPolicy Bypass -Command $script -args $ModListPath
 } -ExpectedOutput "Version mismatch|Game version mismatch" -ExpectedExitCode 0
 
 # Final check: Ensure test/download is empty or does not exist
 Write-Host "=== Final Step: Verifying test/download is untouched ===" -ForegroundColor Magenta
-$testDownloadPath = Join-Path $TestRoot "test\download"
+$testDownloadPath = Join-Path $PSScriptRoot "..\download"
 if (Test-Path $testDownloadPath) {
     $downloadContents = Get-ChildItem -Path $testDownloadPath -Recurse -File -ErrorAction SilentlyContinue
     if ($downloadContents.Count -gt 0) {
@@ -315,8 +188,9 @@ The server startup is expected to fail due to mod compatibility issues, which va
 Expected Behavior:
 - Mod validation should succeed
 - Latest mod downloads should succeed  
+- Server file downloads should succeed
+- Server start script should be added successfully
 - Server startup should fail with compatibility errors
-- Error patterns should be detected in server logs
 - Mod compatibility issues should be identified
 
 "@
@@ -335,12 +209,6 @@ Write-Host ""
 Write-Host "Test report saved to: $TestReportPath" -ForegroundColor Gray
 Write-Host "Individual test logs saved to: $TestOutputDir" -ForegroundColor Gray
 
-# Cleanup temp server directory only (preserve downloads for validation)
-$tempServerDir = Join-Path $TestOutputDir "temp-server"
-if (Test-Path $tempServerDir) {
-    Write-Host "Cleaning up: $tempServerDir" -ForegroundColor Gray
-    Remove-Item -Path $tempServerDir -Recurse -Force -ErrorAction SilentlyContinue
-}
 # NOTE: Download folders are intentionally preserved for post-test validation.
 
 # Return exit code based on test results

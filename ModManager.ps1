@@ -28,6 +28,7 @@ param(
     [string]$AddModCategory,
     [switch]$DownloadServer,
     [switch]$StartServer,
+    [switch]$AddServerStartScript,
     [string]$DeleteModID = $null,
     [string]$DeleteModType = $null,
     [string]$ModListFile = "modlist.csv",
@@ -2434,7 +2435,7 @@ function Download-ServerFiles {
 function Start-MinecraftServer {
     param(
         [string]$DownloadFolder = "download",
-        [string]$ScriptSource = "tools/start-server.ps1"
+        [string]$ScriptSource = (Join-Path $PSScriptRoot "tools/start-server.ps1")
     )
     
     Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
@@ -2629,7 +2630,7 @@ function Start-MinecraftServer {
             Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
             Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
             Write-Host "📄 Check the log file for details: $logFile" -ForegroundColor Gray
-            return $false
+            exit 1
         } else {
             Write-Host "✅ No errors detected in server startup" -ForegroundColor Green
             Write-Host "🎮 Server appears to be running successfully" -ForegroundColor Green
@@ -3210,6 +3211,52 @@ if ($MyInvocation.InvocationName -ne '.') {
     }
     if ($StartServer) {
         Start-MinecraftServer -DownloadFolder $DownloadFolder
+        return
+    }
+    if ($AddServerStartScript) {
+        Write-Host "🔧 Adding server start script to download folder..." -ForegroundColor Cyan
+        
+        # Check if download folder exists
+        if (-not (Test-Path $DownloadFolder)) {
+            Write-Host "❌ Download folder not found: $DownloadFolder" -ForegroundColor Red
+            Write-Host "💡 Run -DownloadMods or -DownloadServer first to create the download folder" -ForegroundColor Yellow
+            return
+        }
+        
+        # Find the most recent version folder
+        $versionFolders = Get-ChildItem -Path $DownloadFolder -Directory -ErrorAction SilentlyContinue | 
+                         Where-Object { $_.Name -match "^\d+\.\d+\.\d+" } |
+                         Sort-Object Name -Descending
+        
+        if ($versionFolders.Count -eq 0) {
+            Write-Host "❌ No version folders found in $DownloadFolder" -ForegroundColor Red
+            Write-Host "💡 Run -DownloadMods or -DownloadServer first to download server files" -ForegroundColor Yellow
+            return
+        }
+        
+        $targetVersion = $versionFolders[0].Name
+        $targetFolder = Join-Path $DownloadFolder $targetVersion
+        
+        Write-Host "📁 Using version folder: $targetFolder" -ForegroundColor Cyan
+        
+        # Copy start-server script to target folder
+        $scriptSource = Join-Path $PSScriptRoot "tools/start-server.ps1"
+        $serverScript = Join-Path $targetFolder "start-server.ps1"
+        
+        if (-not (Test-Path $scriptSource)) {
+            Write-Host "❌ Start server script not found: $scriptSource" -ForegroundColor Red
+            return
+        }
+        
+        try {
+            Copy-Item -Path $scriptSource -Destination $serverScript -Force
+            Write-Host "✅ Successfully copied start-server script to: $serverScript" -ForegroundColor Green
+            Write-Host "💡 You can now run the server from: $targetFolder" -ForegroundColor Yellow
+        }
+        catch {
+            Write-Host "❌ Failed to copy start-server script: $($_.Exception.Message)" -ForegroundColor Red
+            return
+        }
         return
     }
     # Default: Run validation and update modlist
