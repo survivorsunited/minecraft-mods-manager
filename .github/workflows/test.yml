@@ -1,0 +1,141 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  test:
+    name: Run Test Suite
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+      fail-fast: false # Continue running other OS tests even if one fails
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install PowerShell (Linux)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        # Download the Microsoft repository GPG keys
+        wget -q "https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb"
+        sudo dpkg -i packages-microsoft-prod.deb
+        rm packages-microsoft-prod.deb
+        
+        # Update the list of packages
+        sudo apt-get update
+        
+        # Install PowerShell
+        sudo apt-get install -y powershell
+        
+    - name: Install PowerShell (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        # Install PowerShell using Homebrew
+        brew install --cask powershell
+        
+    - name: Display environment info
+      shell: pwsh
+      run: |
+        Write-Host "PowerShell Version:"
+        $PSVersionTable.PSVersion
+        
+        Write-Host "`nOperating System:"
+        if ($IsWindows) { "Windows" }
+        elseif ($IsLinux) { "Linux" }
+        elseif ($IsMacOS) { "macOS" }
+        
+        Write-Host "`nCurrent Directory:"
+        Get-Location
+        
+    - name: Install dependencies (Windows)
+      if: matrix.os == 'windows-latest'
+      shell: pwsh
+      run: |
+        # Windows-specific setup
+        Write-Host "Setting up Windows environment..."
+        
+        # Ensure PowerShell execution policy allows script execution
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+        
+        Write-Host "Windows environment setup complete"
+        
+    - name: Install dependencies (Linux)
+      if: matrix.os == 'ubuntu-latest'
+      shell: pwsh
+      run: |
+        # Linux-specific setup
+        Write-Host "Setting up Linux environment..."
+        
+        # Install any required packages
+        sudo apt-get update
+        sudo apt-get install -y curl wget unzip
+        
+        Write-Host "Linux environment setup complete"
+        
+    - name: Install dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      shell: pwsh
+      run: |
+        # macOS-specific setup
+        Write-Host "Setting up macOS environment..."
+        
+        # Install any required packages via Homebrew if needed
+        if (Get-Command brew -ErrorAction SilentlyContinue) {
+          Write-Host "Homebrew is available"
+        } else {
+          Write-Host "Homebrew not found, skipping package installation"
+        }
+        
+        Write-Host "macOS environment setup complete"
+        
+    - name: Run test suite
+      shell: pwsh
+      run: |
+        # Change to test directory
+        Set-Location test
+        
+        # Run all tests with detailed output
+        Write-Host "Starting test suite execution..."
+        $result = .\RunAllTests.ps1 -All
+        
+        # Check exit code
+        if ($LASTEXITCODE -ne 0) {
+          Write-Host "Test suite failed with exit code: $LASTEXITCODE"
+          exit $LASTEXITCODE
+        }
+        
+        Write-Host "Test suite completed successfully!"
+        
+    - name: Upload test logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-logs-${{ matrix.os }}
+        path: test/test-run-*.log
+        retention-days: 7
+        
+    - name: Upload test output
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-output-${{ matrix.os }}
+        path: test/output-*/
+        retention-days: 7
+        
+    - name: Upload test results summary
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-summary-${{ matrix.os }}
+        path: |
+          test/test-run-*.log
+          test/output-*/run-test-cli.csv
+        retention-days: 7 

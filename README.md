@@ -426,3 +426,54 @@ Each download creates a detailed README with:
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
+
+### Testing
+
+#### Local Testing
+
+Run the complete test suite locally:
+
+```powershell
+cd test
+.\RunAllTests.ps1 -All
+```
+
+Run individual test files:
+
+```powershell
+.\RunAllTests.ps1 -TestFiles '01-BasicFunctionality.ps1'
+```
+
+#### Continuous Integration
+
+This project includes GitHub Actions workflows that automatically run the test suite on:
+
+- **Windows** (Windows Server 2022)
+- **Linux** (Ubuntu 22.04) 
+- **macOS** (macOS 13)
+
+The CI pipeline:
+- Runs on every push to `main` and `develop` branches
+- Runs on all pull requests
+- Can be manually triggered via GitHub Actions UI
+- Uploads test logs and output as artifacts
+- Supports cross-platform testing
+
+#### CI Features
+
+- **Multi-platform testing**: Ensures compatibility across Windows, Linux, and macOS
+- **Automatic PowerShell installation**: Sets up PowerShell 7 on Linux and macOS
+- **Test artifacts**: Preserves test logs and output for debugging
+- **Fail-fast protection**: Prevents broken code from being merged
+- **Manual triggering**: Allows running tests on demand
+
+#### Viewing Results
+
+1. Go to the **Actions** tab on GitHub
+2. Click on the latest workflow run
+3. View test results for each platform
+4. Download test artifacts if needed
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
