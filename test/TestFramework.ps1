@@ -3,7 +3,7 @@
 
 # Configuration
 $ScriptPath = "..\ModManager.ps1"
-$TestDbPath = "run-test-cli.csv"  # Will be set to output folder path in Initialize-TestEnvironment
+$TestDbPath = "test-output\run-test-cli.csv"  # Will be set to output folder path in Initialize-TestEnvironment
 $TestApiResponsePath = "apiresponse"
 $MainApiResponsePath = "apiresponse"
 $TestRoot = Join-Path $PSScriptRoot "tests"
@@ -22,6 +22,34 @@ $script:TestResults = @{
     Total = 0
     Passed = 0
     Failed = 0
+}
+
+# Console logging variables
+$script:ConsoleLogPath = $null
+$script:IsLogging = $false
+
+function Start-TestLogging {
+    param([string]$TestOutputDir)
+    
+    # Extract test name from the output directory path
+    $testName = Split-Path $TestOutputDir -Leaf
+    $script:ConsoleLogPath = Join-Path (Split-Path $TestOutputDir -Parent) "$testName.log"
+    Start-Transcript -Path $script:ConsoleLogPath -Append -Force
+    $script:IsLogging = $true
+    
+    Write-Host "Transcript started, output file is $script:ConsoleLogPath" -ForegroundColor $Colors.Info
+}
+
+function Stop-TestLogging {
+    if ($script:IsLogging) {
+        Stop-Transcript
+        $script:IsLogging = $false
+        Write-Host "Console logging stopped. Log saved to: $script:ConsoleLogPath" -ForegroundColor $Colors.Info
+    }
+}
+
+function Get-TestConsoleLogPath {
+    return $script:ConsoleLogPath
 }
 
 function Get-TestOutputFolder {
@@ -178,6 +206,12 @@ function Initialize-TestEnvironment {
     param([string]$TestFileName = $null)
     Write-Host "Initializing test environment..." -ForegroundColor $Colors.Info
     
+    # Auto-detect test name from calling script if not provided
+    if (-not $TestFileName) {
+        $TestFileName = Split-Path $MyInvocation.ScriptName -Leaf
+        Write-Host "Auto-detected test name: $TestFileName" -ForegroundColor $Colors.Info
+    }
+    
     # Set TestDbPath to the output folder if TestFileName is provided
     if ($TestFileName) {
         $outputFolder = Get-TestOutputFolder $TestFileName
@@ -189,6 +223,9 @@ function Initialize-TestEnvironment {
         # Recreate the output folder
         New-Item -ItemType Directory -Path $outputFolder -Force | Out-Null
         $script:TestDbPath = Join-Path $outputFolder "run-test-cli.csv"
+        
+        # Start console logging for this test
+        Start-TestLogging -TestOutputDir $outputFolder
     }
     
     # Clean up previous test files
@@ -242,6 +279,9 @@ function Show-TestSummary {
 
 function Cleanup-TestEnvironment {
     param([switch]$Cleanup)
+    
+    # Stop console logging
+    Stop-TestLogging
     
     if ($Cleanup) {
         Write-Host "`nCleaning up test environment..." -ForegroundColor $Colors.Info
