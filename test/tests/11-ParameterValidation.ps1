@@ -4,8 +4,12 @@
 param([string]$TestFileName = $null)
 
 # Import test framework
-$TestFrameworkPath = Join-Path $PSScriptRoot "..\TestFramework.ps1"
-. $TestFrameworkPath
+. "$PSScriptRoot\..\TestFramework.ps1"
+
+Write-Host "Minecraft Mod Manager - Parameter Validation Tests" -ForegroundColor $Colors.Header
+Write-Host "==================================================" -ForegroundColor $Colors.Header
+
+Initialize-TestEnvironment
 
 # Test configuration
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"

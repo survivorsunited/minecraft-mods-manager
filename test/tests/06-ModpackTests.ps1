@@ -4,13 +4,12 @@
 # Import test framework
 . "$PSScriptRoot\..\TestFramework.ps1"
 
-$TestFileName = $MyInvocation.MyCommand.Name
 Write-Host "Minecraft Mod Manager - Modpack Tests" -ForegroundColor $Colors.Header
 Write-Host "=====================================" -ForegroundColor $Colors.Header
 
 # Note: This test file can be run independently as it sets up its own database
 
-Initialize-TestEnvironment -TestFileName $TestFileName
+Initialize-TestEnvironment
 
 # Helper to get the full path to ModManager.ps1
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
