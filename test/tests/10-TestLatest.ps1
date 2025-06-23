@@ -5,10 +5,13 @@ param([string]$TestFileName = $null)
 # Import test framework
 . "$PSScriptRoot\..\TestFramework.ps1"
 
+# Set the test file name for use throughout the script
+$TestFileName = "10-TestLatest.ps1"
+
 Write-Host "Minecraft Mod Manager - Test Latest Mods Workflow" -ForegroundColor $Colors.Header
 Write-Host "=================================================" -ForegroundColor $Colors.Header
 
-Initialize-TestEnvironment
+Initialize-TestEnvironment $TestFileName
 
 # Test configuration
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"

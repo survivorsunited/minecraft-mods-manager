@@ -6,10 +6,13 @@ param([string]$TestFileName = $null)
 # Import test framework
 . "$PSScriptRoot\..\TestFramework.ps1"
 
+# Set the test file name for use throughout the script
+$TestFileName = "08-StartServerUnitTests.ps1"
+
 Write-Host "Minecraft Mod Manager - StartServer Unit Tests" -ForegroundColor $Colors.Header
 Write-Host "==============================================" -ForegroundColor $Colors.Header
 
-Initialize-TestEnvironment
+Initialize-TestEnvironment $TestFileName
 
 # Test configuration
 $TestOutputDir = Join-Path $PSScriptRoot "..\test-output\08-StartServerUnitTests"

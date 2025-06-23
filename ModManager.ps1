@@ -34,6 +34,7 @@ param(
     [string]$ModListFile = "modlist.csv",
     [string]$DatabaseFile = $null,
     [string]$DownloadFolder = "download",
+    [string]$ApiResponseFolder = "apiresponse",
     [switch]$UseCachedResponses,
     [switch]$ValidateWithDownload
 )
@@ -56,7 +57,6 @@ Load-EnvironmentVariables
 
 # Configuration
 $ModListPath = $ModListFile
-$ApiResponseFolder = "apiresponse"
 $BackupFolder = "backups"
 $DefaultLoader = "fabric"
 $DefaultGameVersion = "1.21.5"
@@ -67,10 +67,31 @@ $ModrinthApiBaseUrl = if ($env:MODRINTH_API_BASE_URL) { $env:MODRINTH_API_BASE_U
 $CurseForgeApiBaseUrl = if ($env:CURSEFORGE_API_BASE_URL) { $env:CURSEFORGE_API_BASE_URL } else { "https://www.curseforge.com/api/v1" }
 $CurseForgeApiKey = $env:CURSEFORGE_API_KEY
 
-# Create API response folder if it doesn't exist
-if (-not (Test-Path $ApiResponseFolder)) {
-    New-Item -ItemType Directory -Path $ApiResponseFolder -Force | Out-Null
-    Write-Host "Created API response folder: $ApiResponseFolder" -ForegroundColor Green
+# API Response Subfolder Configuration
+$ModrinthApiResponseSubfolder = if ($env:APIRESPONSE_MODRINTH_SUBFOLDER) { $env:APIRESPONSE_MODRINTH_SUBFOLDER } else { "modrinth" }
+$CurseForgeApiResponseSubfolder = if ($env:APIRESPONSE_CURSEFORGE_SUBFOLDER) { $env:APIRESPONSE_CURSEFORGE_SUBFOLDER } else { "curseforge" }
+
+# Helper: Get API response path for a given domain and type
+function Get-ApiResponsePath {
+    param(
+        [string]$ModId,
+        [string]$ResponseType = "project", # or "versions"
+        [string]$Domain = "modrinth", # or "curseforge"
+        [string]$BaseResponseFolder = $ApiResponseFolder
+    )
+    $subfolder = if ($Domain -eq "curseforge") { $CurseForgeApiResponseSubfolder } else { $ModrinthApiResponseSubfolder }
+    $domainFolder = Join-Path $BaseResponseFolder $subfolder
+    if (-not (Test-Path $domainFolder)) {
+        New-Item -ItemType Directory -Path $domainFolder -Force | Out-Null
+    }
+    $filename = if ($Domain -eq "curseforge" -and $ResponseType -eq "versions") {
+        "$ModId-curseforge-versions.json"
+    } elseif ($ResponseType -eq "project") {
+        "$ModId-project.json"
+    } else {
+        "$ModId-versions.json"
+    }
+    return Join-Path $domainFolder $filename
 }
 
 # Helper: Get the effective modlist file path
@@ -319,13 +340,12 @@ function Get-ModrinthProjectInfo {
     param(
         [Parameter(Mandatory=$true)]
         [string]$ModId,
-        
         [string]$ResponseFolder = $ApiResponseFolder
     )
     
     try {
         $apiUrl = "$ModrinthApiBaseUrl/project/$ModId"
-        $responseFile = Join-Path $ResponseFolder "$ModId-project.json"
+        $responseFile = Get-ApiResponsePath -ModId $ModId -ResponseType "project" -Domain "modrinth" -BaseResponseFolder $ResponseFolder
         
         # Check if we should use cached responses
         if ($UseCachedResponses -and (Test-Path $responseFile)) {
@@ -402,7 +422,7 @@ function Validate-ModVersion {
     
     try {
         $apiUrl = "$ModrinthApiBaseUrl/project/$ModId/version"
-        $responseFile = Join-Path $ResponseFolder "$ModId-versions.json"
+        $responseFile = Get-ApiResponsePath -ModId $ModId -ResponseType "versions" -Domain "modrinth" -BaseResponseFolder $ResponseFolder
         
         # Check if we should use cached responses
         if ($UseCachedResponses -and (Test-Path $responseFile)) {
@@ -609,7 +629,7 @@ function Validate-CurseForgeModVersion {
     )
     try {
         $apiUrl = "$CurseForgeApiBaseUrl/mods/$ModId/files"
-        $responseFile = Join-Path $ResponseFolder "$ModId-curseforge-versions.json"
+        $responseFile = Get-ApiResponsePath -ModId $ModId -ResponseType "versions" -Domain "curseforge" -BaseResponseFolder $ResponseFolder
         
         # Check if we should use cached responses
         if ($UseCachedResponses -and (Test-Path $responseFile)) {
@@ -1686,15 +1706,17 @@ function Download-Modpack {
         [string]$ModName,
         [Parameter(Mandatory=$true)]
         [string]$GameVersion,
+        [Parameter(Mandatory=$true)]
+        [string]$DownloadFolder,
         [bool]$ForceDownload = $false
     )
     try {
         Write-Host "📦 Downloading modpack: $ModName" -ForegroundColor Cyan
         Write-Host "   URL: $VersionUrl" -ForegroundColor Gray
         
-        # Create download directory structure
-        $downloadDir = "download\$GameVersion"
-        $modpackDir = "$downloadDir\modpacks\$ModName"
+        # Create download directory structure using the passed DownloadFolder parameter
+        $downloadDir = Join-Path $DownloadFolder $GameVersion
+        $modpackDir = Join-Path $downloadDir "modpacks\$ModName"
         if (-not (Test-Path $downloadDir)) {
             New-Item -ItemType Directory -Path $downloadDir -Force | Out-Null
         }
@@ -1704,7 +1726,7 @@ function Download-Modpack {
         
         # Download the .mrpack file
         $mrpackFileName = "$ModName.mrpack"
-        $mrpackPath = "$modpackDir\$mrpackFileName"
+        $mrpackPath = Join-Path $modpackDir $mrpackFileName
         if ((Test-Path $mrpackPath) -and (-not $ForceDownload)) {
             Write-Host "⏭️  Modpack file already exists, skipping download" -ForegroundColor Yellow
         } else {
@@ -1728,7 +1750,7 @@ function Download-Modpack {
         }
         
         # Find and process modrinth.index.json
-        $indexPath = "$modpackDir\modrinth.index.json"
+        $indexPath = Join-Path $modpackDir "modrinth.index.json"
         if (-not (Test-Path $indexPath)) {
             Write-Host "❌ modrinth.index.json not found in extracted modpack" -ForegroundColor Red
             Write-Host "   Expected path: $indexPath" -ForegroundColor Gray
@@ -1748,11 +1770,11 @@ function Download-Modpack {
             $downloadUrl = $file.downloads[0]  # Use first download URL
             
             # Create the target directory
-            $targetDir = Split-Path -Path "$downloadDir\$filePath" -Parent
+            $targetDir = Split-Path -Path (Join-Path $downloadDir $filePath) -Parent
             if (-not (Test-Path $targetDir)) {
                 New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
             }
-            $targetPath = "$downloadDir\$filePath"
+            $targetPath = Join-Path $downloadDir $filePath
             
             # Download the file
             try {
@@ -1770,7 +1792,7 @@ function Download-Modpack {
         }
         
         # Handle overrides folder
-        $overridesPath = "$modpackDir\overrides"
+        $overridesPath = Join-Path $modpackDir "overrides"
         if (Test-Path $overridesPath) {
             Write-Host "📁 Copying overrides folder contents..." -ForegroundColor Yellow
             Copy-Item -Path "$overridesPath\*" -Destination $downloadDir -Recurse -Force
@@ -2023,7 +2045,7 @@ function Download-Mods {
                     # Modpacks use special download process - call Download-Modpack function
                     Write-Host "📦 $($mod.Name): Processing modpack..." -ForegroundColor Cyan
                     
-                    $modpackResult = Download-Modpack -ModId $mod.ID -VersionUrl $downloadUrl -ModName $mod.Name -GameVersion $gameVersion -ForceDownload:$ForceDownload
+                    $modpackResult = Download-Modpack -ModId $mod.ID -VersionUrl $downloadUrl -ModName $mod.Name -GameVersion $gameVersion -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload
                     
                     if ($modpackResult -gt 0) {
                         $downloadResults += [PSCustomObject]@{
@@ -3019,6 +3041,7 @@ if ($MyInvocation.InvocationName -ne '.') {
                 Write-Host "Auto-downloading the mod..." -ForegroundColor Yellow
                 $downloadParams = @{
                     CsvPath = $effectiveModListPath
+                    DownloadFolder = $DownloadFolder
                     UseLatestVersion = $true
                     ForceDownload = $true
                 }

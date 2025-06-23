@@ -4,8 +4,10 @@
 param([string]$TestFileName = $null)
 
 # Import test framework
-$TestFrameworkPath = Join-Path $PSScriptRoot "..\TestFramework.ps1"
-. $TestFrameworkPath
+. "$PSScriptRoot\..\TestFramework.ps1"
+
+# Set the test file name for use throughout the script
+$TestFileName = "12-TestLatestWithServer.ps1"
 
 # Test configuration
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
@@ -20,7 +22,7 @@ if (-not (Test-Path $TestOutputDir)) {
 }
 
 # Initialize test environment with logging
-Initialize-TestEnvironment
+Initialize-TestEnvironment $TestFileName
 
 # Copy the root modlist to the test directory AFTER environment initialization
 if (Test-Path $RootModListPath) {

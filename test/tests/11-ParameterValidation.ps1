@@ -6,10 +6,13 @@ param([string]$TestFileName = $null)
 # Import test framework
 . "$PSScriptRoot\..\TestFramework.ps1"
 
+# Set the test file name for use throughout the script
+$TestFileName = "11-ParameterValidation.ps1"
+
+Initialize-TestEnvironment $TestFileName
+
 Write-Host "Minecraft Mod Manager - Parameter Validation Tests" -ForegroundColor $Colors.Header
 Write-Host "==================================================" -ForegroundColor $Colors.Header
-
-Initialize-TestEnvironment
 
 # Test configuration
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
@@ -142,13 +145,13 @@ function Invoke-ParameterValidation {
     # Test 3: Missing required parameter (DatabaseFile)
     Write-Host "=== Test 3: Missing DatabaseFile Parameter ===" -ForegroundColor Magenta
     Test-ParameterValidation -TestName "Missing DatabaseFile" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -DownloadFolder $TestDownloadDir
     } -ExpectedOutput "error|Error|ERROR|DatabaseFile|database" -ExpectedExitCode 1
 
     # Test 4: Invalid database file path
     Write-Host "=== Test 4: Invalid Database File Path ===" -ForegroundColor Magenta
     Test-ParameterValidation -TestName "Invalid Database Path" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -DatabaseFile "C:\Invalid\modlist.csv"
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -DatabaseFile "C:\Invalid\modlist.csv" -DownloadFolder $TestDownloadDir
     } -ExpectedOutput "error|Error|ERROR|not found|does not exist" -ExpectedExitCode 1
 
     # Test 5: Invalid download folder path
@@ -160,7 +163,7 @@ function Invoke-ParameterValidation {
     # Test 6: Conflicting parameters (Download and DownloadMods)
     Write-Host "=== Test 6: Conflicting Parameters ===" -ForegroundColor Magenta
     Test-ParameterValidation -TestName "Conflicting Parameters" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -DownloadMods -DatabaseFile $TestModListPath
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -DownloadMods -DatabaseFile $TestModListPath -DownloadFolder $TestDownloadDir
     } -ExpectedOutput "error|Error|ERROR|conflict|Conflicting|mutually exclusive" -ExpectedExitCode 1
 
     # Test 7: Valid parameter combination

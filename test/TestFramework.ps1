@@ -1,45 +1,131 @@
-# Shared Test Framework for ModManager CLI Tests
-# Contains common functions and configuration used across all test files
+# Test Framework for Minecraft Mod Manager
+# Provides shared utilities and functions for all tests
+#
+# This framework ensures:
+# - Test isolation: Each test runs in its own output directory
+# - Proper logging: All test output is captured and saved
+# - Consistent results: Standardized test result reporting
+# - Database management: Isolated database files for each test
+# - API response caching: Organized API responses per test
 
-# Configuration
-$ScriptPath = "..\ModManager.ps1"
-$TestDbPath = "test-output\run-test-cli.csv"  # Will be set to output folder path in Initialize-TestEnvironment
-$TestApiResponsePath = "apiresponse"
-$MainApiResponsePath = "apiresponse"
-$TestRoot = Join-Path $PSScriptRoot "tests"
-
-# Colors for output
+# Colors for output formatting
 $Colors = @{
-    Pass = "Green"
-    Fail = "Red"
-    Info = "Cyan"
-    Warning = "Yellow"
-    Header = "Magenta"
+    Header = "Cyan"      # Test headers and section titles
+    Success = "Green"    # Passed tests and success messages
+    Error = "Red"        # Failed tests and error messages
+    Warning = "Yellow"   # Warnings and important notices
+    Info = "Gray"        # Informational messages
 }
 
-# Test counter (shared across all test files) - Use script scope
+# API Response subfolder configuration for organized caching
+$ModrinthApiResponseSubfolder = if ($env:APIRESPONSE_MODRINTH_SUBFOLDER) { $env:APIRESPONSE_MODRINTH_SUBFOLDER } else { "modrinth" }
+$CurseForgeApiResponseSubfolder = if ($env:APIRESPONSE_CURSEFORGE_SUBFOLDER) { $env:APIRESPONSE_CURSEFORGE_SUBFOLDER } else { "curseforge" }
+
+<#
+.SYNOPSIS
+    Gets the API response path for a specific test and domain.
+
+.DESCRIPTION
+    Constructs the full path to the API response folder for a specific test and API domain.
+    This ensures API responses are organized by test and by API provider (Modrinth/CurseForge).
+
+.PARAMETER TestOutputDir
+    The base output directory for the test.
+
+.PARAMETER Domain
+    The API domain to get the response path for. Defaults to "modrinth".
+
+.EXAMPLE
+    Get-ApiResponsePath -TestOutputDir "C:\test\output\01-BasicFunctionality" -Domain "modrinth"
+    Returns: "C:\test\output\01-BasicFunctionality\apiresponse\modrinth"
+
+.EXAMPLE
+    Get-ApiResponsePath -TestOutputDir "C:\test\output\02-DownloadFunctionality" -Domain "curseforge"
+    Returns: "C:\test\output\02-DownloadFunctionality\apiresponse\curseforge"
+
+.OUTPUTS
+    [string] The full path to the API response folder for the specified domain.
+#>
+function Get-ApiResponsePath {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$TestOutputDir,
+        
+        [Parameter(Mandatory=$false)]
+        [ValidateSet("modrinth", "curseforge")]
+        [string]$Domain = "modrinth"
+    )
+    
+    $BaseResponseFolder = Join-Path $TestOutputDir "apiresponse"
+    $subfolder = if ($Domain -eq "curseforge") { $CurseForgeApiResponseSubfolder } else { $ModrinthApiResponseSubfolder }
+    return Join-Path $BaseResponseFolder $subfolder
+}
+
+# Configuration constants
+$ScriptPath = "..\ModManager.ps1"
+$TestDbPath = "test-output\run-test-cli.csv"  # Will be set to output folder path in Initialize-TestEnvironment
+$TestRoot = Join-Path $PSScriptRoot "tests"
+
+# Test counter (shared across all test files) - Use script scope for persistence
 $script:TestResults = @{
     Total = 0
     Passed = 0
     Failed = 0
 }
 
-# Console logging variables
+# Console logging variables for transcript management
 $script:ConsoleLogPath = $null
 $script:IsLogging = $false
 
+<#
+.SYNOPSIS
+    Starts console logging for a test.
+
+.DESCRIPTION
+    Begins a PowerShell transcript to capture all console output for the test.
+    The log file is created inside the test's own output directory to maintain isolation.
+
+.PARAMETER TestOutputDir
+    The output directory for the test where the log file will be created.
+
+.EXAMPLE
+    Start-TestLogging -TestOutputDir "C:\test\output\01-BasicFunctionality"
+    Creates: "C:\test\output\01-BasicFunctionality\01-BasicFunctionality.log"
+
+.NOTES
+    This function sets the global $script:ConsoleLogPath and $script:IsLogging variables.
+    Call Stop-TestLogging to end the transcript.
+#>
 function Start-TestLogging {
-    param([string]$TestOutputDir)
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$TestOutputDir
+    )
     
-    # Extract test name from the output directory path
-    $testName = Split-Path $TestOutputDir -Leaf
-    $script:ConsoleLogPath = Join-Path (Split-Path $TestOutputDir -Parent) "$testName.log"
+    # Create log file inside the test's own output directory
+    $script:ConsoleLogPath = Join-Path $TestOutputDir "$(Split-Path $TestOutputDir -Leaf).log"
     Start-Transcript -Path $script:ConsoleLogPath -Append -Force
     $script:IsLogging = $true
     
     Write-Host "Transcript started, output file is $script:ConsoleLogPath" -ForegroundColor $Colors.Info
 }
 
+<#
+.SYNOPSIS
+    Stops console logging for a test.
+
+.DESCRIPTION
+    Ends the PowerShell transcript and cleans up logging variables.
+    Should be called after Start-TestLogging to properly close the log file.
+
+.EXAMPLE
+    Stop-TestLogging
+    Stops the transcript and displays the log file location.
+
+.NOTES
+    This function checks if logging is active before attempting to stop the transcript.
+    It also resets the global $script:IsLogging variable.
+#>
 function Stop-TestLogging {
     if ($script:IsLogging) {
         Stop-Transcript
@@ -48,54 +134,210 @@ function Stop-TestLogging {
     }
 }
 
+<#
+.SYNOPSIS
+    Gets the path to the current test's console log file.
+
+.DESCRIPTION
+    Returns the full path to the console log file for the currently running test.
+    Useful for debugging or referencing the log file in test results.
+
+.EXAMPLE
+    $logPath = Get-TestConsoleLogPath
+    Write-Host "Test log available at: $logPath"
+
+.OUTPUTS
+    [string] The full path to the current test's console log file, or $null if no logging is active.
+#>
 function Get-TestConsoleLogPath {
     return $script:ConsoleLogPath
 }
 
+<#
+.SYNOPSIS
+    Gets the output folder path for a specific test.
+
+.DESCRIPTION
+    Creates and returns the output folder path for a test based on its filename.
+    This ensures each test has its own isolated output directory.
+    
+    The folder structure follows the pattern:
+    test/test-output/{TestName}/
+    where {TestName} is the filename without extension.
+
+.PARAMETER TestFileName
+    The filename of the test (e.g., "01-BasicFunctionality.ps1")
+
+.EXAMPLE
+    Get-TestOutputFolder "01-BasicFunctionality.ps1"
+    Returns: "C:\projects\minecraft\minecraft-mods-manager\test\test-output\01-BasicFunctionality"
+
+.EXAMPLE
+    Get-TestOutputFolder "12-TestLatestWithServer.ps1"
+    Returns: "C:\projects\minecraft\minecraft-mods-manager\test\test-output\12-TestLatestWithServer"
+
+.OUTPUTS
+    [string] The full path to the test's output directory. The directory is created if it doesn't exist.
+
+.NOTES
+    This function is critical for test isolation. Each test should use this function
+    to get its own output directory, preventing interference between tests.
+#>
 function Get-TestOutputFolder {
-    param([string]$TestFileName)
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$TestFileName
+    )
+    
     $testName = [IO.Path]::GetFileNameWithoutExtension($TestFileName)
     $folder = Join-Path $PSScriptRoot "test-output" $testName
+    
     if (-not (Test-Path $folder)) {
         New-Item -ItemType Directory -Path $folder -Force | Out-Null
     }
+    
     return $folder
 }
 
+<#
+.SYNOPSIS
+    Writes a formatted test header to the console.
+
+.DESCRIPTION
+    Displays a visually distinct header for a test section with consistent formatting.
+    Uses the Header color and creates a clear visual separator.
+
+.PARAMETER Title
+    The title text to display in the header.
+
+.EXAMPLE
+    Write-TestHeader "Download Mods"
+    Displays:
+    ================================================================================
+    TEST: Download Mods
+    ================================================================================
+#>
 function Write-TestHeader {
-    param([string]$Title)
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$Title
+    )
+    
     Write-Host ""
     Write-Host ("=" * 80) -ForegroundColor $Colors.Header
     Write-Host "TEST: $Title" -ForegroundColor $Colors.Header
     Write-Host ("=" * 80) -ForegroundColor $Colors.Header
 }
 
+<#
+.SYNOPSIS
+    Records and displays a test result.
+
+.DESCRIPTION
+    Records a test result in the global test counter and displays it with appropriate formatting.
+    Updates the total, passed, and failed counts automatically.
+
+.PARAMETER TestName
+    The name of the test that was executed.
+
+.PARAMETER Passed
+    Whether the test passed (true) or failed (false).
+
+.PARAMETER Message
+    Optional additional message to display with the result.
+
+.EXAMPLE
+    Write-TestResult "Database Creation" $true "Database file created successfully"
+    Displays: ✓ PASS: Database Creation
+              Database file created successfully
+
+.EXAMPLE
+    Write-TestResult "API Call" $false "Connection timeout after 30 seconds"
+    Displays: ✗ FAIL: API Call
+              Connection timeout after 30 seconds
+
+.NOTES
+    This function automatically updates the global test statistics.
+    Use this for all test result reporting to maintain consistent formatting and counting.
+#>
 function Write-TestResult {
     param(
+        [Parameter(Mandatory=$true)]
         [string]$TestName,
+        
+        [Parameter(Mandatory=$true)]
         [bool]$Passed,
+        
+        [Parameter(Mandatory=$false)]
         [string]$Message = ""
     )
     
     $script:TestResults.Total++
     if ($Passed) {
         $script:TestResults.Passed++
-        Write-Host "✓ PASS: $TestName" -ForegroundColor $Colors.Pass
+        Write-Host "✓ PASS: $TestName" -ForegroundColor $Colors.Success
         if ($Message) { Write-Host "  $Message" -ForegroundColor Gray }
     } else {
         $script:TestResults.Failed++
-        Write-Host "✗ FAIL: $TestName" -ForegroundColor $Colors.Fail
+        Write-Host "✗ FAIL: $TestName" -ForegroundColor $Colors.Error
         if ($Message) { Write-Host "  $Message" -ForegroundColor Gray }
     }
 }
 
+<#
+.SYNOPSIS
+    Writes a test step indicator to the console.
+
+.DESCRIPTION
+    Displays a step indicator for multi-step tests with consistent formatting.
+    Uses the Info color to distinguish from test results.
+
+.PARAMETER StepName
+    The name of the step being executed.
+
+.EXAMPLE
+    Write-TestStep "Validating mod versions"
+    Displays: → Validating mod versions
+#>
 function Write-TestStep {
-    param([string]$StepName)
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$StepName
+    )
+    
     Write-Host "  → $StepName" -ForegroundColor $Colors.Info
 }
 
+<#
+.SYNOPSIS
+    Writes a test suite header.
+
+.DESCRIPTION
+    Displays a header for a test suite with optional test file information.
+    Used at the beginning of test files to identify the test suite.
+
+.PARAMETER SuiteName
+    The name of the test suite.
+
+.PARAMETER TestFileName
+    Optional test file name to display.
+
+.EXAMPLE
+    Write-TestSuiteHeader "StartServer Unit Tests" "08-StartServerUnitTests.ps1"
+    Displays:
+    StartServer Unit Tests
+    =====================
+    Test File: 08-StartServerUnitTests.ps1
+#>
 function Write-TestSuiteHeader {
-    param([string]$SuiteName, [string]$TestFileName = $null)
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$SuiteName,
+        
+        [Parameter(Mandatory=$false)]
+        [string]$TestFileName = $null
+    )
+    
     Write-Host ""
     Write-Host "StartServer Unit Tests" -ForegroundColor $Colors.Header
     Write-Host "=====================" -ForegroundColor $Colors.Header
@@ -105,19 +347,88 @@ function Write-TestSuiteHeader {
     Write-Host ""
 }
 
+<#
+.SYNOPSIS
+    Writes a test suite footer with summary statistics.
+
+.DESCRIPTION
+    Displays a footer for a test suite with passed/total test counts.
+    Uses color coding to indicate success (all passed) or failure (some failed).
+
+.PARAMETER SuiteName
+    The name of the test suite.
+
+.PARAMETER Passed
+    The number of tests that passed.
+
+.PARAMETER Total
+    The total number of tests executed.
+
+.EXAMPLE
+    Write-TestSuiteFooter "Basic Functionality" 10 12
+    Displays:
+    ================================================================================
+    Basic Functionality Summary
+    ================================================================================
+    Passed: 10/12 tests (in red because not all passed)
+#>
 function Write-TestSuiteFooter {
-    param([string]$SuiteName, [int]$Passed, [int]$Total)
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$SuiteName,
+        
+        [Parameter(Mandatory=$true)]
+        [int]$Passed,
+        
+        [Parameter(Mandatory=$true)]
+        [int]$Total
+    )
+    
     Write-Host ""
     Write-Host ("=" * 80) -ForegroundColor $Colors.Header
     Write-Host "$SuiteName Summary" -ForegroundColor $Colors.Header
     Write-Host ("=" * 80) -ForegroundColor $Colors.Header
-    Write-Host "Passed: $Passed/$Total tests" -ForegroundColor $(if ($Passed -eq $Total) { $Colors.Pass } else { $Colors.Fail })
+    Write-Host "Passed: $Passed/$Total tests" -ForegroundColor $(if ($Passed -eq $Total) { $Colors.Success } else { $Colors.Error })
 }
 
+<#
+.SYNOPSIS
+    Validates the state of a test database.
+
+.DESCRIPTION
+    Checks if a database file exists and contains the expected number of mods.
+    Optionally validates that specific mod names are present in the database.
+
+.PARAMETER ExpectedModCount
+    The expected number of mods in the database.
+
+.PARAMETER ExpectedMods
+    Optional array of mod names that should be present in the database.
+
+.PARAMETER TestName
+    The name for this validation test. Defaults to "Database State".
+
+.EXAMPLE
+    Test-DatabaseState -ExpectedModCount 3 -ExpectedMods @("Fabric API", "Sodium")
+    Validates that the database contains exactly 3 mods and includes "Fabric API" and "Sodium".
+
+.EXAMPLE
+    Test-DatabaseState -ExpectedModCount 0
+    Validates that the database is empty (0 mods).
+
+.NOTES
+    This function uses the global $TestDbPath variable for the database file location.
+    It automatically calls Write-TestResult to record the validation results.
+#>
 function Test-DatabaseState {
     param(
+        [Parameter(Mandatory=$true)]
         [int]$ExpectedModCount,
+        
+        [Parameter(Mandatory=$false)]
         [string[]]$ExpectedMods = @(),
+        
+        [Parameter(Mandatory=$false)]
         [string]$TestName = "Database State"
     )
     
@@ -146,12 +457,62 @@ function Test-DatabaseState {
     }
 }
 
+<#
+.SYNOPSIS
+    Executes a command and validates its results.
+
+.DESCRIPTION
+    Runs a PowerShell command and captures its output and exit code.
+    Validates the command execution and optionally checks database state.
+    Provides comprehensive logging and error handling.
+
+.PARAMETER Command
+    The PowerShell command to execute (as a string).
+
+.PARAMETER TestName
+    The name of the test being executed.
+
+.PARAMETER ExpectedModCount
+    Optional expected number of mods in the database after command execution.
+
+.PARAMETER ExpectedMods
+    Optional array of mod names that should be present in the database.
+
+.PARAMETER TestFileName
+    Optional test file name for isolated database testing.
+
+.EXAMPLE
+    Test-Command "& 'ModManager.ps1' -AddMod -AddModId 'fabric-api'" "Add Fabric API" 1 @("Fabric API")
+    Executes the command and validates that exactly 1 mod named "Fabric API" exists in the database.
+
+.EXAMPLE
+    Test-Command "& 'ModManager.ps1' -ShowHelp" "Help Display" 0
+    Executes the help command and validates that the database is unchanged (0 mods).
+
+.NOTES
+    This function:
+    - Captures all command output (stdout and stderr)
+    - Considers exit codes 0 and 1 as success (common for validation commands)
+    - Changes to the test's output directory during execution
+    - Uses isolated database files when TestFileName is provided
+    - Automatically calls Write-TestResult to record results
+    - Provides detailed error information on failure
+#>
 function Test-Command {
     param(
+        [Parameter(Mandatory=$true)]
         [string]$Command,
+        
+        [Parameter(Mandatory=$true)]
         [string]$TestName,
+        
+        [Parameter(Mandatory=$false)]
         [int]$ExpectedModCount = 0,
+        
+        [Parameter(Mandatory=$false)]
         [string[]]$ExpectedMods = @(),
+        
+        [Parameter(Mandatory=$false)]
         [string]$TestFileName = $null
     )
     
@@ -202,8 +563,43 @@ function Test-Command {
     }
 }
 
+<#
+.SYNOPSIS
+    Initializes the test environment for a test file.
+
+.DESCRIPTION
+    Sets up the complete test environment including:
+    - Auto-detection of test file name if not provided
+    - Creation of isolated output directory
+    - Database file setup with proper headers
+    - Console logging initialization
+    - Cleanup of previous test artifacts
+
+.PARAMETER TestFileName
+    Optional test file name. If not provided, auto-detects from calling script.
+
+.EXAMPLE
+    Initialize-TestEnvironment "01-BasicFunctionality.ps1"
+    Sets up environment for the Basic Functionality test.
+
+.EXAMPLE
+    Initialize-TestEnvironment
+    Auto-detects test file name and sets up environment.
+
+.NOTES
+    This function is typically called at the beginning of each test file.
+    It ensures complete isolation between tests by:
+    - Removing any existing output directory
+    - Creating a fresh database with proper headers
+    - Starting console logging to the test's output directory
+    - Setting up all necessary paths and variables
+#>
 function Initialize-TestEnvironment {
-    param([string]$TestFileName = $null)
+    param(
+        [Parameter(Mandatory=$false)]
+        [string]$TestFileName = $null
+    )
+    
     Write-Host "Initializing test environment..." -ForegroundColor $Colors.Info
     
     # Auto-detect test name from calling script if not provided
@@ -223,6 +619,7 @@ function Initialize-TestEnvironment {
         # Recreate the output folder
         New-Item -ItemType Directory -Path $outputFolder -Force | Out-Null
         $script:TestDbPath = Join-Path $outputFolder "run-test-cli.csv"
+        $script:TestApiResponseDir = Join-Path $outputFolder "apiresponse"
         
         # Start console logging for this test
         Start-TestLogging -TestOutputDir $outputFolder
@@ -238,42 +635,50 @@ function Initialize-TestEnvironment {
     $headers -join "," | Out-File $TestDbPath -Encoding UTF8
     Write-Host "Created new database: $TestDbPath" -ForegroundColor $Colors.Info
     
-    # Copy API response files to main apiresponse folder for caching
-    if (Test-Path $TestApiResponsePath) {
-        if (-not (Test-Path $MainApiResponsePath)) {
-            New-Item -ItemType Directory -Path $MainApiResponsePath -Force
-        }
-        
-        # Only copy if source and destination are different
-        if ($TestApiResponsePath -ne $MainApiResponsePath) {
-            Copy-Item "$TestApiResponsePath\*" $MainApiResponsePath -Force
-            Write-Host "Copied API response files for caching" -ForegroundColor $Colors.Info
-        } else {
-            Write-Host "API response files already in correct location" -ForegroundColor $Colors.Info
-        }
-    }
-    
     # Create output folder for this test file
     if ($TestFileName) {
         $outputFolder = Get-TestOutputFolder $TestFileName
         Write-Host "Test output folder: $outputFolder" -ForegroundColor $Colors.Info
     }
-    Write-TestResult "Environment Setup" $true "Test database created and API files copied"
+    Write-TestResult "Environment Setup" $true "Test database created"
 }
 
+<#
+.SYNOPSIS
+    Displays a comprehensive test summary.
+
+.DESCRIPTION
+    Shows the final test results including total tests, passed tests, and failed tests.
+    Provides a visual summary with color coding and success/failure indicators.
+
+.EXAMPLE
+    Show-TestSummary
+    Displays:
+    ================================================================================
+    TEST SUMMARY
+    ================================================================================
+    Total Tests: 42
+    Passed: 42
+    Failed: 0
+    🎉 ALL TESTS PASSED! 🎉
+
+.NOTES
+    This function should be called at the end of each test file to provide
+    a clear summary of all test results. It uses the global $script:TestResults
+    variable to gather statistics from all Write-TestResult calls.
+#>
 function Show-TestSummary {
     Write-Host "`n" + ("=" * 80) -ForegroundColor $Colors.Header
     Write-Host "TEST SUMMARY" -ForegroundColor $Colors.Header
     Write-Host ("=" * 80) -ForegroundColor $Colors.Header
-    
-    Write-Host "Total Tests: $($script:TestResults.Total)" -ForegroundColor White
-    Write-Host "Passed: $($script:TestResults.Passed)" -ForegroundColor $Colors.Pass
-    Write-Host "Failed: $($script:TestResults.Failed)" -ForegroundColor $Colors.Fail
+    Write-Host "Total Tests: $($script:TestResults.Total)" -ForegroundColor $Colors.Info
+    Write-Host "Passed: $($script:TestResults.Passed)" -ForegroundColor $Colors.Success
+    Write-Host "Failed: $($script:TestResults.Failed)" -ForegroundColor $(if ($script:TestResults.Failed -eq 0) { $Colors.Success } else { $Colors.Error })
     
     if ($script:TestResults.Failed -eq 0) {
-        Write-Host "`n🎉 ALL TESTS PASSED! 🎉" -ForegroundColor $Colors.Pass
+        Write-Host "`n🎉 ALL TESTS PASSED! 🎉" -ForegroundColor $Colors.Success
     } else {
-        Write-Host "`n❌ SOME TESTS FAILED! ❌" -ForegroundColor $Colors.Fail
+        Write-Host "`n❌ SOME TESTS FAILED! ❌" -ForegroundColor $Colors.Error
     }
 }
 
@@ -309,12 +714,12 @@ function Write-TestSuiteSummary {
     Write-Host ("=" * 80) -ForegroundColor $Colors.Header
     Write-Host "$SuiteName Summary" -ForegroundColor $Colors.Header
     Write-Host ("=" * 80) -ForegroundColor $Colors.Header
-    Write-Host "Passed: $passedTests/$totalTests tests" -ForegroundColor $(if ($passedTests -eq $totalTests) { $Colors.Pass } else { $Colors.Fail })
+    Write-Host "Passed: $passedTests/$totalTests tests" -ForegroundColor $(if ($passedTests -eq $totalTests) { $Colors.Success } else { $Colors.Error })
     
     if ($passedTests -eq $totalTests) {
-        Write-Host "True" -ForegroundColor $Colors.Pass
+        Write-Host "True" -ForegroundColor $Colors.Success
     } else {
-        Write-Host "False" -ForegroundColor $Colors.Fail
+        Write-Host "False" -ForegroundColor $Colors.Error
     }
 }
 
