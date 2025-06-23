@@ -11,6 +11,7 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
 - **Majority Version Targeting**: Automatically determines the most compatible game version
 - **Comprehensive Reporting**: Generates detailed README files with analysis and mod lists
 - **Easy Mod Addition**: Add new mods with minimal information and auto-resolve details
+- **Organized API Responses**: API responses are organized by domain in subfolders for better management
 
 ### Advanced Features
 - **Icon URL Extraction**: Automatically fetches mod icons and metadata
@@ -51,9 +52,21 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
    git submodule update --init --recursive
    ```
 
-3. **Optional**: Create a `.env` file for API keys:
-   ```
+3. **Optional**: Create a `.env` file for API keys and configuration:
+   ```env
+   # API Configuration
+   MODRINTH_API_BASE_URL=https://api.modrinth.com/v2
+   CURSEFORGE_API_BASE_URL=https://www.curseforge.com/api/v1
    CURSEFORGE_API_KEY=your_api_key_here
+   
+   # API Response Subfolder Configuration
+   APIRESPONSE_MODRINTH_SUBFOLDER=modrinth
+   APIRESPONSE_CURSEFORGE_SUBFOLDER=curseforge
+   
+   # Default settings
+   DEFAULT_LOADER=fabric
+   DEFAULT_GAME_VERSION=1.21.5
+   DEFAULT_MOD_TYPE=mod
    ```
 
 ## 🧪 Testing
@@ -69,6 +82,9 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
 
 # Run multiple specific tests
 .\test\RunAllTests.ps1 -TestFiles "01-BasicFunctionality.ps1","02-DownloadFunctionality.ps1"
+
+# Test API response organization
+.\test\RunAllTests.ps1 -TestFiles "13-TestApiResponseOrganization.ps1"
 ```
 
 ### Test Coverage
@@ -87,6 +103,7 @@ The project includes comprehensive testing with the following test files:
 - **10-TestLatest.ps1** - Latest mod version workflows
 - **11-ParameterValidation.ps1** - Parameter validation
 - **12-TestLatestWithServer.ps1** - **CRITICAL**: Latest mods with server compatibility testing
+- **13-TestApiResponseOrganization.ps1** - API response organization and environment variable testing
 
 ### Mod Compatibility Testing
 
@@ -127,7 +144,18 @@ minecraft-mods-manager/
 ├── README.md                   # This file
 ├── .gitignore                  # Git ignore rules
 ├── .gitmodules                 # Git submodules
-├── apiresponse/                # API response cache
+├── .env                        # Environment configuration (optional)
+├── apiresponse/                # API response cache (organized by domain)
+│   ├── modrinth/              # Modrinth API responses
+│   │   ├── fabric-api-project.json
+│   │   ├── fabric-api-versions.json
+│   │   ├── sodium-project.json
+│   │   └── sodium-versions.json
+│   ├── curseforge/            # CurseForge API responses
+│   │   ├── 357540-curseforge-versions.json
+│   │   └── other-mod-curseforge-versions.json
+│   ├── version-validation-results.csv
+│   └── mod-download-results.csv
 ├── download/                   # Downloaded content (created automatically)
 │   ├── 1.21.5/
 │   │   ├── mods/              # Mods for this version
@@ -150,7 +178,7 @@ minecraft-mods-manager/
 │   ├── TestFramework.ps1      # Shared test utilities
 │   ├── tests/                 # Individual test files
 │   ├── test-output/           # Test execution outputs
-│   └── apiresponse/           # Cached API responses for testing
+│   └── apiresponse/           # Cached API responses for testing (same structure)
 ├── tools/
 │   └── minecraft-mod-hash/     # Mod validation tool (submodule)
 └── backups/                    # Automatic backups
@@ -526,27 +554,37 @@ The `modlist.csv` file should contain these columns (in order):
 
 ### Environment Variables
 
-Create a `.env` file in the project root:
+The script supports several environment variables for configuration. Create a `.env` file in the project root:
 
-```env
-# API Configuration
-MODRINTH_API_BASE_URL=https://api.modrinth.com/v2
-CURSEFORGE_API_BASE_URL=https://www.curseforge.com/api/v1
-CURSEFORGE_API_KEY=your_api_key_here
+#### API Response Organization
+- **`APIRESPONSE_MODRINTH_SUBFOLDER`**: Subfolder name for Modrinth API responses (default: `modrinth`)
+- **`APIRESPONSE_CURSEFORGE_SUBFOLDER`**: Subfolder name for CurseForge API responses (default: `curseforge`)
 
-# Default Settings
-DEFAULT_LOADER=fabric
-DEFAULT_GAME_VERSION=1.21.5
-DEFAULT_MOD_TYPE=mod
-```
+#### API Configuration
+- **`MODRINTH_API_BASE_URL`**: Modrinth API base URL (default: `https://api.modrinth.com/v2`)
+- **`CURSEFORGE_API_BASE_URL`**: CurseForge API base URL (default: `https://www.curseforge.com/api/v1`)
+- **`CURSEFORGE_API_KEY`**: CurseForge API key for enhanced rate limits (optional)
 
-### Default Settings
+#### Default Settings
+- **`DEFAULT_LOADER`**: Default mod loader (default: `fabric`)
+- **`DEFAULT_GAME_VERSION`**: Default game version (default: `1.21.5`)
+- **`DEFAULT_MOD_TYPE`**: Default mod type (default: `mod`)
 
-- **Default Loader**: `fabric`
-- **Default Game Version**: `1.21.5`
-- **Default Mod Type**: `mod`
-- **API Response Folder**: `apiresponse/`
-- **Download Folder**: `download/`
+### API Response Organization
+
+API responses are automatically organized into subfolders by domain:
+
+- **Modrinth responses**: Stored in `apiresponse/modrinth/`
+  - Project info: `{modid}-project.json`
+  - Version info: `{modid}-versions.json`
+- **CurseForge responses**: Stored in `apiresponse/curseforge/`
+  - Version info: `{modid}-curseforge-versions.json`
+
+This organization:
+- **Improves performance**: Faster file lookups in smaller directories
+- **Enhances maintainability**: Clear separation between API sources
+- **Reduces conflicts**: No filename collisions between different APIs
+- **Enables customization**: Subfolder names can be configured via environment variables
 
 ## 📈 Features in Detail
 
