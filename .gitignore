@@ -1,6 +1,5 @@
 # apiresponse/*
 !apiresponse/.gitkeep
-test/test-output/*
 
 # backup files
 modlist-backup.csv
@@ -10,8 +9,6 @@ test/Pester5
 testResults.xml
 
 !**/.gitkeep
-
-*.log
 
 .cursor/
 @instructions.md
