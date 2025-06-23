@@ -2,12 +2,6 @@
 !apiresponse/.gitkeep
 download/*
 
-test/download/
-test/apiresponse/*.csv
-test/temp/
-test/results
-test/modlist.csv
-test/run-test-cli.csv
 test/test-output/*
  
 backups/*
