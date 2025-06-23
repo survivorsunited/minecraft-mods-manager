@@ -1,10 +1,6 @@
 # apiresponse/*
 !apiresponse/.gitkeep
-download/*
-
 test/test-output/*
- 
-backups/*
 
 # backup files
 modlist-backup.csv
