@@ -2192,6 +2192,13 @@ function Download-Mods {
         
         # Save download results to CSV
         $downloadResultsFile = Join-Path $ApiResponseFolder "mod-download-results.csv"
+        
+        # Ensure the ApiResponseFolder directory exists
+        if (-not (Test-Path $ApiResponseFolder)) {
+            New-Item -ItemType Directory -Path $ApiResponseFolder -Force | Out-Null
+            Write-Host "Created API response directory: $ApiResponseFolder" -ForegroundColor Cyan
+        }
+        
         $downloadResults | Export-Csv -Path $downloadResultsFile -NoTypeInformation
         
         # Display summary
