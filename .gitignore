@@ -7,4 +7,6 @@ backup/*.csv
 # all cursor related content
 .cursor/
 @instructions.md
+
+# task list
 TASK_LIST.md
