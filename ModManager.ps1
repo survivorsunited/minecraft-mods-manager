@@ -24,6 +24,7 @@ param(
     [string]$AddModGroup,
     [string]$AddModDescription,
     [string]$AddModJar,
+    [string]$AddModVersion,
     [string]$AddModUrlDirect,
     [string]$AddModCategory,
     [switch]$DownloadServer,
@@ -215,7 +216,8 @@ function Test-RecordHash {
 # Function to load mod list from CSV
 function Get-ModList {
     param(
-        [string]$CsvPath
+        [string]$CsvPath,
+        [string]$ApiResponseFolder = $ApiResponseFolder
     )
     try {
         if (-not (Test-Path $CsvPath)) {
@@ -263,7 +265,7 @@ function Get-ModList {
                         Write-Host "   🔍 Fetching current data from API..." -ForegroundColor Cyan
                         
                         # Use the existing Validate-ModVersion function to get current data
-                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $changedMod.Version -Loader $changedMod.Loader -Jar $changedMod.Jar
+                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $changedMod.Version -Loader $changedMod.Loader -Jar $changedMod.Jar -ResponseFolder $ApiResponseFolder
                         
                         if ($validationResult -and $validationResult.Exists) {
                             # Update the record with current API data
@@ -1974,6 +1976,7 @@ function Download-Mods {
                         if ($mod.Url) {
                             $downloadUrl = $mod.Url
                             $downloadVersion = $mod.Version
+                            # Keep the original jarFilename for system entries when not using latest version
                         } else {
                             Write-Host "❌ $($mod.Name): No direct URL available for system entry" -ForegroundColor Red
                             $errorCount++
@@ -3232,7 +3235,7 @@ if ($MyInvocation.InvocationName -ne '.') {
     }
     if ($GetModList) {
         $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
-        Get-ModList -CsvPath $effectiveModListPath
+        Get-ModList -CsvPath $effectiveModListPath -ApiResponseFolder $ApiResponseFolder
         return
     }
     if ($DownloadServer) {
