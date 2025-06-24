@@ -1,11 +1,10 @@
 
 # backup files
-modlist-backup.csv
-modlist-columns-backup.csv
-
-testResults.xml
+backup/*.csv
 
 !**/.gitkeep
 
+# all cursor related content
 .cursor/
 @instructions.md
+TASK_LIST.md
