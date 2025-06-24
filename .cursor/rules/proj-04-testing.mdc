@@ -1,0 +1,232 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project: Minecraft Mods Manager Testing Patterns
+
+## Test Structure
+
+### Test File Naming Convention
+- Test files follow the pattern: `{number}-{Description}.ps1`
+- Examples: [01-BasicFunctionality.ps1](mdc:test/tests/01-BasicFunctionality.ps1), [12-TestLatestWithServer.ps1](mdc:test/tests/12-TestLatestWithServer.ps1)
+
+### Test Framework Integration
+- All tests use [test/TestFramework.ps1](mdc:test/TestFramework.ps1) for shared utilities
+- Tests are executed through [test/RunAllTests.ps1](mdc:test/RunAllTests.ps1)
+- Individual test functions follow the pattern: `Invoke-{TestName}`
+
+## Test Isolation Principles
+
+### Directory Structure
+- Each test uses isolated directories in `test/test-output/{TestName}/`
+- Never use the main `test/download/` folder for individual tests
+- Always clean up test artifacts after completion
+- Use `$TestDownloadDir` parameter for isolated testing
+
+### Test Output Organization
+```
+test/test-output/{TestName}/
+├── download/                    # Isolated download directory
+│   ├── 1.21.6/                # Minecraft version folder
+│   │   ├── mods/              # Downloaded mods
+│   │   ├── minecraft_server.1.21.6.jar
+│   │   └── start-server.ps1
+├── {TestName}.log             # Test execution log
+├── {TestName}-test-report.txt # Test results report
+└── Server_*.log               # Server startup logs
+```
+
+## Cleanup Workflow
+
+### Before Each Test
+```powershell
+# Clean previous test artifacts
+if (Test-Path $TestOutputDir) {
+    Remove-Item -Path $TestOutputDir -Recurse -Force
+}
+
+# Ensure clean state
+New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
+New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
+```
+
+### After Each Test
+```powershell
+# Clean up test artifacts
+if (Test-Path $TestOutputDir) {
+    Remove-Item -Path $TestOutputDir -Recurse -Force
+}
+```
+
+## Critical Testing Patterns
+
+### Test Isolation
+```powershell
+# Always use isolated download directories
+$TestOutputDir = Join-Path $PSScriptRoot "..\test-output\{TestName}"
+$TestDownloadDir = Join-Path $TestOutputDir "download"
+
+# Ensure test/download is untouched
+$testDownloadPath = Join-Path $PSScriptRoot "..\download"
+```
+
+### ModManager Parameter Usage
+```powershell
+# For latest mods testing
+& pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $ModListPath -UseCachedResponses
+& pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -UseLatestVersion -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses
+
+# For server testing
+& pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses
+& pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
+```
+
+### Expected Test Outcomes
+- **Server Startup Tests**: Expect exit code 1 for compatibility failures
+- **Download Tests**: Expect exit code 0 for successful downloads
+- **Validation Tests**: Expect exit code 0 for successful validation
+
+## Mod Compatibility Error Reporting
+
+### Expected Test Behavior
+- **Server startup should succeed** (exit code 0) if mods are compatible
+- **Compatibility issues should be reported as test failures**, not expected behavior
+- **Test failures indicate errors that need fixing**
+
+### Compatibility Error Detection
+The [12-TestLatestWithServer.ps1](mdc:test/tests/12-TestLatestWithServer.ps1) test checks server logs for:
+
+1. **Missing Dependencies:**
+   - `requires.*fabric-api.*which is missing`
+   - `requires.*fabric.*which is missing`
+
+2. **Version Mismatches:**
+   - `requires.*minecraft.*but only the wrong version is present`
+
+3. **Specific Mod Issues:**
+   - `Remove mod '([^']+)'`
+   - `Replace mod '([^']+)'`
+
+### Expected Test Results
+With compatibility issues present:
+- **Total Tests: 8**
+- **Passed: 6** (validation, downloads, server files, start script, isolation check)
+- **Failed: 2** (server startup, compatibility analysis)
+- **Success Rate: 75%**
+
+## Test Result Capture Patterns
+
+### Script-Level Test Results
+All test files must properly set script-level test results for the test runner to capture:
+
+```powershell
+# Initialize at script level
+$script:TestResults = @{
+    Total = 0
+    Passed = 0
+    Failed = 0
+}
+
+# Update during test execution
+$script:TestResults.Total++
+$script:TestResults.Passed++  # or Failed++
+```
+
+### Test Function Execution
+Test functions must always execute when the file is run:
+
+```powershell
+# Always execute tests when this file is run
+Invoke-TestLatestWithServer -TestFileName $TestFileName
+```
+
+### Test Pattern Detection
+The test runner detects tests using these patterns:
+- `Test-LatestWithServer -TestName "Test Name"`
+- `Test-Command "Command"`
+- `Write-TestResult "Test Name"`
+- `function Invoke-{TestName}`
+
+## Common Testing Scenarios
+
+### Latest Mods with Server Testing
+Reference: [test/tests/12-TestLatestWithServer.ps1](mdc:test/tests/12-TestLatestWithServer.ps1)
+1. Validate all mods
+2. Update mods to latest versions
+3. Download latest mods to isolated folder
+4. Download server files to same folder
+5. Add server start script
+6. Attempt server startup (expected to fail)
+7. Verify mod compatibility issues
+
+### Current Mods Testing
+Reference: [test/tests/09-TestCurrent.ps1](mdc:test/tests/09-TestCurrent.ps1)
+1. Download current mods
+2. Verify downloads exist
+3. Test server startup process
+
+### Server Testing
+Reference: [test/tests/07-StartServerTests.ps1](mdc:test/tests/07-StartServerTests.ps1)
+1. Test server startup process
+2. Test log monitoring
+3. Test error detection
+4. Verify server configuration
+
+## Test Execution Commands
+
+### Run All Tests
+```powershell
+.\test\RunAllTests.ps1 -All
+```
+
+### Run Specific Test
+```powershell
+.\test\RunAllTests.ps1 -TestFiles "12-TestLatestWithServer.ps1"
+```
+
+### Run Multiple Tests
+```powershell
+.\test\RunAllTests.ps1 -TestFiles "01-BasicFunctionality.ps1","02-DownloadFunctionality.ps1"
+```
+
+## Debugging Test Failures
+
+### Common Issues
+1. **Folder Structure**: Ensure mods are in the correct server folder
+2. **Exit Codes**: Verify expected exit codes match actual behavior
+3. **API Responses**: Check [test/apiresponse/](mdc:test/apiresponse) for cached data
+4. **Test Isolation**: Ensure tests don't interfere with each other
+
+### Investigation Steps
+1. Check test logs in `test/test-output/{TestName}/`
+2. Review server logs for error messages
+3. Verify mod downloads in download folders
+4. Check API response cache for issues
+5. Review pipeline artifacts for comprehensive analysis
+
+## Performance Considerations
+
+### API Caching
+- Use `-UseCachedResponses` for faster testing
+- API responses are cached in [test/apiresponse/](mdc:test/apiresponse)
+- Download results tracked in [test/apiresponse/mod-download-results.csv](mdc:test/apiresponse/mod-download-results.csv)
+
+### Test Execution
+- Run individual tests for faster iteration
+- Use `test/RunAllTests.ps1 -TestFiles` for specific test execution
+- Pipeline runs tests in parallel across different OS platforms
+
+## CI/CD Integration
+
+### Pipeline Artifacts
+The [.github/workflows/test.yml](mdc:.github/workflows/test.yml) captures:
+- Test logs: `test/test-output/test-run-*.log`
+- Test outputs: `test/test-output/`
+- Generated reports: `test-results-{os}/`
+- Mod downloads: `test/apiresponse/mod-download-results.csv`
+
+### Test Result Generation
+- [test/GenerateTestSummary.ps1](mdc:test/GenerateTestSummary.ps1) - Creates markdown summaries
+- [test/GenerateTestResults.ps1](mdc:test/GenerateTestResults.ps1) - Generates JSON/CSV reports
+- [test/CreateCompletionReport.ps1](mdc:test/CreateCompletionReport.ps1) - Pipeline notifications

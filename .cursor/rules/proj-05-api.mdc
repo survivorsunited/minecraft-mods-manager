@@ -1,0 +1,196 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project: API Integration Patterns
+
+## External API Services
+
+### Modrinth API
+- **Purpose**: Primary mod information and downloads
+- **Base URL**: `https://api.modrinth.com/v2`
+- **Rate Limits**: Respect API rate limits
+- **Caching**: Use cached responses for testing
+
+### CurseForge API
+- **Purpose**: Alternative mod source and downloads
+- **Base URL**: `https://api.curseforge.com/v1`
+- **Authentication**: Requires API key
+- **Fallback**: Use when Modrinth doesn't have mod
+
+### Mojang API
+- **Purpose**: Minecraft server file downloads
+- **Base URL**: `https://launchermeta.mojang.com`
+- **Version Info**: Get latest Minecraft versions
+- **Server JARs**: Download official server files
+
+### Fabric API
+- **Purpose**: Fabric loader and launcher files
+- **Base URL**: `https://meta.fabricmc.net`
+- **Loader Versions**: Get compatible loader versions
+- **Launcher Files**: Download Fabric launcher
+
+## API Response Caching
+
+### Cache Structure
+```
+test/apiresponse/
+├── modrinth/                    # Modrinth API responses
+├── curseforge/                  # CurseForge API responses
+├── mojang/                      # Mojang API responses
+├── fabric/                      # Fabric API responses
+└── mod-download-results.csv     # Download statistics
+```
+
+### Caching Strategy
+- **Use `-UseCachedResponses`** for faster testing
+- **Cache API responses** to avoid rate limits
+- **Organize by domain** for better management
+- **Track download results** for analysis
+
+### Cache Management
+```powershell
+# Use cached responses for testing
+$result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
+    -Parameter -Value `
+    -UseCachedResponses
+
+# Check cache directory
+$cacheDir = Join-Path $PSScriptRoot "test\apiresponse"
+if (Test-Path $cacheDir) {
+    Write-Host "Cache directory exists: $cacheDir"
+}
+```
+
+## API Error Handling
+
+### Common API Issues
+1. **Rate Limiting**: Respect API rate limits
+2. **Network Failures**: Handle temporary network issues
+3. **Authentication**: Manage API keys securely
+4. **Response Validation**: Validate API responses
+
+### Error Recovery
+```powershell
+try {
+    $response = Invoke-RestMethod -Uri $apiUrl -Method Get
+    return $response
+} catch {
+    if ($_.Exception.Response.StatusCode -eq 429) {
+        Write-Host "Rate limited, using cached response"
+        return Get-CachedResponse $apiUrl
+    }
+    Write-Host "API Error: $($_.Exception.Message)"
+    return $null
+}
+```
+
+## API Integration Patterns
+
+### Mod Information Retrieval
+```powershell
+# Get mod information from Modrinth
+$modInfo = Get-ModrinthModInfo -ModId $modId
+
+# Fallback to CurseForge if needed
+if (-not $modInfo) {
+    $modInfo = Get-CurseForgeModInfo -ModId $modId
+}
+```
+
+### Version Compatibility
+```powershell
+# Check Minecraft version compatibility
+$compatibleVersions = Get-CompatibleVersions -ModId $modId
+
+# Find best matching version
+$targetVersion = Select-BestVersion -AvailableVersions $compatibleVersions -TargetVersion $minecraftVersion
+```
+
+### Download Management
+```powershell
+# Download mod file
+$downloadResult = Download-ModFile -ModId $modId -Version $version -Platform $platform
+
+# Verify download
+if (Test-ModFileIntegrity -FilePath $downloadResult.Path -ExpectedHash $downloadResult.Hash) {
+    Write-Host "Download verified successfully"
+}
+```
+
+## API Response Processing
+
+### Response Validation
+- **Check response structure** before processing
+- **Validate required fields** are present
+- **Handle missing data** gracefully
+- **Log API responses** for debugging
+
+### Data Transformation
+```powershell
+# Transform API response to internal format
+function Convert-ModrinthResponse {
+    param($response)
+    
+    return @{
+        Id = $response.project_id
+        Name = $response.title
+        Version = $response.version_number
+        Description = $response.description
+        Downloads = $response.downloads
+        DatePublished = $response.date_published
+    }
+}
+```
+
+## Performance Optimization
+
+### Request Optimization
+- **Batch requests** when possible
+- **Use appropriate HTTP methods** (GET, POST, etc.)
+- **Implement request caching** to reduce API calls
+- **Handle pagination** efficiently
+
+### Response Caching
+- **Cache successful responses** for reuse
+- **Set appropriate cache expiration** times
+- **Invalidate cache** when data changes
+- **Use cache headers** when available
+
+## Security Considerations
+
+### API Key Management
+- **Store API keys securely** (environment variables)
+- **Rotate keys regularly** for security
+- **Use minimal permissions** for API keys
+- **Monitor API usage** for anomalies
+
+### Data Privacy
+- **Minimize data collection** to what's necessary
+- **Handle user data** according to privacy policies
+- **Secure data transmission** (HTTPS)
+- **Log sensitive data** appropriately
+
+## Testing API Integration
+
+### Mock API Responses
+```powershell
+# Use cached responses for testing
+if ($UseCachedResponses -and (Test-Path $cachedResponsePath)) {
+    $response = Get-Content $cachedResponsePath | ConvertFrom-Json
+    return $response
+}
+```
+
+### API Testing Patterns
+- **Test with real APIs** in integration tests
+- **Use cached responses** for unit tests
+- **Mock API failures** to test error handling
+- **Validate response processing** thoroughly
+
+### Test Data Management
+- **Maintain test API responses** in cache
+- **Update test data** when APIs change
+- **Document API changes** that affect tests
+- **Version control** test API responses
