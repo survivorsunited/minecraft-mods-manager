@@ -18,46 +18,46 @@ $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 $TestOutputDir = Join-Path $PSScriptRoot "..\test-output\09-TestCurrent"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
 $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
+$TestApiResponseFolder = Join-Path $TestOutputDir "apiresponse"
 
 # Ensure test output directory exists
 if (-not (Test-Path $TestOutputDir)) {
     New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
 }
 
-# Create test modlist with minimal test data
-$testMods = @(
-    @{
-        Group = "test"
+# Create a test modlist with a simple mod for testing
+$testModList = @(
+    [PSCustomObject]@{
+        Name = "Fabric API"
+        ID = "fabric-api"
         Type = "mod"
         GameVersion = "1.21.5"
-        ID = "fabric-api"
+        Version = "0.127.1+1.21.6"
+        LatestVersion = "0.127.1+1.21.6"
         Loader = "fabric"
-        Version = "0.91.0+1.21.5"
-        Name = "Fabric API"
-        Description = "Test Fabric API"
-        Jar = "fabric-api-0.91.0+1.21.5.jar"
+        Group = "test"
         Url = "https://modrinth.com/mod/fabric-api"
-        Category = "API"
-        VersionUrl = "https://modrinth.com/mod/fabric-api/version/0.91.0+1.21.5"
-        LatestVersionUrl = "https://modrinth.com/mod/fabric-api/version/0.91.0+1.21.5"
-        LatestVersion = "0.91.0+1.21.5"
+        VersionUrl = "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.127.1%2B1.21.6/fabric-api-0.127.1%2B1.21.6.jar"
+        LatestVersionUrl = "https://cdn.modrinth.com/data/P7dR8mSH/versions/0.127.1%2B1.21.6/fabric-api-0.127.1%2B1.21.6.jar"
         ApiSource = "modrinth"
         Host = "modrinth.com"
+        Title = "Fabric API"
+        Description = "Test Fabric API"
+        Jar = "fabric-api-0.127.1+1.21.6.jar"
         IconUrl = "https://cdn.modrinth.com/data/P7dR8mSH/icon.png"
         ClientSide = "required"
         ServerSide = "required"
-        Title = "Fabric API"
-        ProjectDescription = "Test Fabric API"
+        Category = "API"
         IssuesUrl = "https://github.com/FabricMC/fabric/issues"
         SourceUrl = "https://github.com/FabricMC/fabric"
         WikiUrl = "https://fabricmc.net/wiki"
-        LatestGameVersion = "1.21.5"
+        LatestGameVersion = "1.21.6"
         RecordHash = "test-hash"
     }
 )
 
 # Create test modlist.csv
-$testMods | Export-Csv -Path $TestModListPath -NoTypeInformation
+$testModList | Export-Csv -Path $TestModListPath -NoTypeInformation
 
 # Test variables
 $TotalTests = 0
@@ -151,13 +151,13 @@ function Invoke-TestCurrent {
     # Step 3: Validate all mods first
     Write-Host "=== Step 3: Validating All Mods ===" -ForegroundColor Magenta
     Test-Current -TestName "Validate All Mods" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -UseCachedResponses -DatabaseFile $TestModListPath
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -UseCachedResponses -DatabaseFile $TestModListPath -ApiResponseFolder $TestApiResponseFolder
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Step 4: Download current mods
     Write-Host "=== Step 4: Downloading Current Mods ===" -ForegroundColor Magenta
     Test-Current -TestName "Download Current Mods" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -DownloadFolder $TestDownloadDir -DatabaseFile $TestModListPath -UseCachedResponses
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -DownloadFolder $TestDownloadDir -DatabaseFile $TestModListPath -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Step 5: Verify downloads exist
@@ -175,13 +175,13 @@ function Invoke-TestCurrent {
     # Step 6: Download server files
     Write-Host "=== Step 6: Downloading Server Files ===" -ForegroundColor Magenta
     Test-Current -TestName "Download Server Files" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Step 7: Verify server files exist
     Write-Host "=== Step 7: Verifying Server Files ===" -ForegroundColor Magenta
     Test-Current -TestName "Verify Server Files" -TestScript {
-        $serverFiles = Get-ChildItem -Path $TestDownloadDir -File -Filter "minecraft_server*.jar" -ErrorAction SilentlyContinue
+        $serverFiles = Get-ChildItem -Path $TestDownloadDir -Recurse -File -Filter "minecraft_server*.jar" -ErrorAction SilentlyContinue
         if ($serverFiles.Count -gt 0) {
             "Found $($serverFiles.Count) server files in $TestDownloadDir"
             $serverFiles | ForEach-Object { "  - $($_.Name)" }
@@ -199,7 +199,7 @@ function Invoke-TestCurrent {
     # Step 9: Verify start script exists
     Write-Host "=== Step 9: Verifying Start Script ===" -ForegroundColor Magenta
     Test-Current -TestName "Verify Start Script" -TestScript {
-        $startScript = Join-Path $TestDownloadDir "start-server.ps1"
+        $startScript = Join-Path $TestDownloadDir "1.21.6/start-server.ps1"
         if (Test-Path $startScript) {
             "Start script found at $startScript"
             $scriptContent = Get-Content $startScript -Raw

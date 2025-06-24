@@ -18,6 +18,7 @@ $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 $TestOutputDir = Join-Path $PSScriptRoot "..\test-output\10-TestLatest"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
 $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
+$TestApiResponseFolder = Join-Path $TestOutputDir "apiresponse"
 
 # Ensure test output directory exists
 if (-not (Test-Path $TestOutputDir)) {
@@ -151,19 +152,19 @@ function Invoke-TestLatest {
     # Step 3: Validate all mods first
     Write-Host "=== Step 3: Validating All Mods ===" -ForegroundColor Magenta
     Test-Latest -TestName "Validate All Mods" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -UseCachedResponses -DatabaseFile $TestModListPath
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -UseCachedResponses -DatabaseFile $TestModListPath -ApiResponseFolder $TestApiResponseFolder
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Step 4: Update mods to latest versions
     Write-Host "=== Step 4: Updating Mods to Latest Versions ===" -ForegroundColor Magenta
     Test-Latest -TestName "Update Mods to Latest" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestModListPath -UseCachedResponses
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestModListPath -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Step 5: Download latest mods
     Write-Host "=== Step 5: Downloading Latest Mods ===" -ForegroundColor Magenta
     Test-Latest -TestName "Download Latest Mods" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -UseLatestVersion -DownloadFolder $TestDownloadDir -DatabaseFile $TestModListPath -UseCachedResponses
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -UseLatestVersion -DownloadFolder $TestDownloadDir -DatabaseFile $TestModListPath -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Step 6: Verify downloads exist
@@ -181,7 +182,7 @@ function Invoke-TestLatest {
     # Step 7: Download server files
     Write-Host "=== Step 7: Downloading Server Files ===" -ForegroundColor Magenta
     Test-Latest -TestName "Download Server Files" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Step 8: Verify server files exist
