@@ -1,0 +1,164 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project: PowerShell Console and Execution Patterns
+
+## Common Console Problems
+
+### PSReadLine Issues
+- **Problem**: PSReadLine module conflicts with script execution
+- **Symptoms**: Hanging, unexpected behavior, script termination
+- **Solution**: Use `-NoProfile` flag when executing scripts
+
+### Execution Policy Issues
+- **Problem**: Scripts blocked by execution policy
+- **Symptoms**: "Execution policy" errors
+- **Solution**: Use `-ExecutionPolicy Bypass` flag
+
+### Console Buffer Issues
+- **Problem**: Large output causing console buffer overflow
+- **Symptoms**: Truncated output, missing information
+- **Solution**: Redirect output to files or use paging
+
+## Recommended Script Execution Patterns
+
+### Standard ModManager Execution
+```powershell
+# Recommended pattern for ModManager execution
+& pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
+    -Parameter1 -Parameter2 `
+    -DatabaseFile $ModListPath `
+    -DownloadFolder $TestDownloadDir `
+    -UseCachedResponses
+```
+
+### Test Execution Patterns
+```powershell
+# Run individual test files
+& pwsh -NoProfile -ExecutionPolicy Bypass -File ".\test\tests\01-BasicFunctionality.ps1"
+
+# Run test runner
+& pwsh -NoProfile -ExecutionPolicy Bypass -File ".\test\RunAllTests.ps1" -All
+```
+
+### Output Handling
+```powershell
+# Capture output to file
+& pwsh -NoProfile -ExecutionPolicy Bypass -File $scriptPath -Parameter $value | 
+    Tee-Object -FilePath "output.log"
+
+# Suppress verbose output
+& pwsh -NoProfile -ExecutionPolicy Bypass -File $scriptPath -Parameter $value 2>$null
+```
+
+## Environment Configuration
+
+### PowerShell Version Requirements
+- **Minimum**: PowerShell 5.1
+- **Recommended**: PowerShell 7.0+
+- **Check Version**: `$PSVersionTable.PSVersion`
+
+### Execution Policy Setup
+```powershell
+# Set execution policy for current user
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+# Verify execution policy
+Get-ExecutionPolicy -List
+```
+
+### Profile Management
+```powershell
+# Check if profile exists
+Test-Path $PROFILE
+
+# View profile content
+Get-Content $PROFILE
+
+# Disable profile loading for scripts
+# Use -NoProfile flag in script execution
+```
+
+## Debugging Console Issues
+
+### Common Error Messages
+- **"File cannot be loaded"**: Execution policy issue
+- **"Cannot be loaded because running scripts is disabled"**: Execution policy issue
+- **"The term is not recognized"**: Path or module issue
+- **"Access is denied"**: Permission issue
+
+### Troubleshooting Steps
+1. Check PowerShell version: `$PSVersionTable.PSVersion`
+2. Verify execution policy: `Get-ExecutionPolicy -List`
+3. Test script path: `Test-Path $scriptPath`
+4. Check file permissions: `Get-Acl $scriptPath`
+5. Try with different execution flags
+
+### Alternative Execution Methods
+```powershell
+# Method 1: Direct execution (may have profile issues)
+.\ModManager.ps1 -Parameter $value
+
+# Method 2: PowerShell with flags (recommended)
+& pwsh -NoProfile -ExecutionPolicy Bypass -File ModManager.ps1 -Parameter $value
+
+# Method 3: Command line execution
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File ModManager.ps1 -Parameter $value
+```
+
+## Test-Specific Console Handling
+
+### Test Framework Integration
+- [test/TestFramework.ps1](mdc:test/TestFramework.ps1) handles console setup
+- Use consistent execution patterns across all tests
+- Capture and log console output for debugging
+
+### Test Output Management
+```powershell
+# Capture test output
+$testOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $testPath 2>&1
+
+# Log test results
+$testOutput | Out-File -FilePath $logPath -Append
+
+# Check exit codes
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Test failed with exit code: $LASTEXITCODE"
+}
+```
+
+### Batch Test Execution
+```powershell
+# Run multiple tests with consistent console handling
+$testFiles = @("01-BasicFunctionality.ps1", "02-DownloadFunctionality.ps1")
+foreach ($testFile in $testFiles) {
+    $testPath = Join-Path $testDir $testFile
+    & pwsh -NoProfile -ExecutionPolicy Bypass -File $testPath
+}
+```
+
+## Performance Considerations
+
+### Console Performance
+- Use `-NoProfile` to avoid profile loading overhead
+- Redirect output to files for large operations
+- Use `-WindowStyle Hidden` for background execution
+
+### Memory Management
+- Clear console buffer for long-running operations
+- Use streaming output for large datasets
+- Monitor memory usage during script execution
+
+## Integration with CI/CD
+
+### Pipeline Console Handling
+- [.github/workflows/test.yml](mdc:.github/workflows/test.yml) uses consistent execution patterns
+- Console output captured as workflow artifacts
+- Error handling for console-specific issues
+
+### Cross-Platform Considerations
+- Windows: PowerShell Core or Windows PowerShell
+- Linux/macOS: PowerShell Core
+- Use platform-agnostic execution patterns
