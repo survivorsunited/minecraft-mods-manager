@@ -16,6 +16,94 @@ alwaysApply: true
 - Tests are executed through [test/RunAllTests.ps1](mdc:test/RunAllTests.ps1)
 - Individual test functions follow the pattern: `Invoke-{TestName}`
 
+## MANDATORY TEST ARCHETYPE CHECKLIST
+
+**CRITICAL**: Every test file MUST follow this exact archetype. This is a mandatory checklist that will be verified for every test creation.
+
+### 1. Test Framework Import
+```powershell
+# Import test framework
+. "$PSScriptRoot\..\TestFramework.ps1"
+```
+
+### 2. Test File Name Variable
+```powershell
+# Set the test file name for use throughout the script
+$TestFileName = "XX-Description.ps1"
+```
+
+### 3. Test Environment Initialization
+```powershell
+Initialize-TestEnvironment $TestFileName
+```
+**NOTE**: This automatically starts console logging to `{TestName}.log` in the test's output directory.
+
+### 4. Define Isolated Paths
+```powershell
+# Helper to get the full path to ModManager.ps1
+$ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+
+# Set up isolated paths
+$TestOutputDir = Get-TestOutputFolder $TestFileName
+$script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
+$TestDownloadDir = Join-Path $TestOutputDir "download"
+```
+
+### 5. Test Header and Description
+```powershell
+Write-Host "Minecraft Mod Manager - [Test Description] Tests" -ForegroundColor $Colors.Header
+Write-Host "=================================================" -ForegroundColor $Colors.Header
+```
+
+### 6. Test Steps Structure
+- Use `Write-TestHeader` for major sections
+- Use `Test-Command` for CLI validation
+- Use direct PowerShell checks for files/directories/CSV content
+- Each test step must be clearly labeled
+
+### 7. Result Reporting
+- Use `Write-TestResult` for pass/fail reporting
+- Always call `Show-TestSummary` at the end
+
+### 8. Console Logging (CRITICAL)
+- **MANDATORY**: Console logging is automatically started by `Initialize-TestEnvironment`
+- **MANDATORY**: Console log is saved to `{TestOutputDir}/{TestName}.log`
+- **MANDATORY**: All console output during test execution is captured
+- **MANDATORY**: Log file must be preserved for debugging and CI/CD analysis
+- **VERIFICATION**: After test runs, verify log file exists and contains test output
+
+### 9. NO END-OF-TEST CLEANUP
+- **CRITICAL RULE**: Never delete `$TestOutputDir` at the end of the test
+- **CRITICAL RULE**: Never delete the console log file
+- All logs and artifacts must be preserved for post-test analysis
+- Cleanup only happens at the start via `Initialize-TestEnvironment`
+
+### 10. Test Function Structure
+```powershell
+function Invoke-{TestName} {
+    param([string]$TestFileName = $null)
+    
+    # Test implementation following archetype above
+    
+    return ($script:TestResults.Failed -eq 0)
+}
+
+# Always execute tests when this file is run
+Invoke-{TestName}
+```
+
+### 11. Log File Verification
+After test execution, verify the console log exists:
+```powershell
+# Log file should be at: test/test-output/{TestName}/{TestName}.log
+$expectedLogPath = Join-Path $TestOutputDir "$([IO.Path]::GetFileNameWithoutExtension($TestFileName)).log"
+if (Test-Path $expectedLogPath) {
+    Write-Host "✓ Console log created: $expectedLogPath" -ForegroundColor Green
+} else {
+    Write-Host "✗ Console log missing: $expectedLogPath" -ForegroundColor Red
+}
+```
+
 ## Test Isolation Principles
 
 ### Directory Structure
@@ -53,10 +141,8 @@ New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
 
 ### After Each Test
 ```powershell
-# Clean up test artifacts
-if (Test-Path $TestOutputDir) {
-    Remove-Item -Path $TestOutputDir -Recurse -Force
-}
+# NO CLEANUP - preserve all artifacts for analysis
+# All logs and test outputs must remain available
 ```
 
 ## Critical Testing Patterns
