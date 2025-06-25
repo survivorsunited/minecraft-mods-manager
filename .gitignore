@@ -4,3 +4,5 @@ backup/*.csv
 
 !**/.gitkeep
 
+# ignore all sub folders in test that start with number and -
+test/test-output/[0-9]*-*/
