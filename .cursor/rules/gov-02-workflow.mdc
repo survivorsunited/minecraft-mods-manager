@@ -25,7 +25,7 @@ When working on any task, you MUST complete the full issue lifecycle:
 
 1. **Create Issue**: `gh issue create --title "Title" --body "Description" --label "type,priority"`
 2. **Implement Solution**: Write code, tests, and documentation
-3. **Commit Changes**: `git commit -m "type(scope): description\n\nFixes #[issue-number]"`
+3. **Commit Changes**: `git commit -m "#[issue-number] type(scope): description"`
 4. **Push Code**: `git push`
 5. **Close Issue**: `gh issue close #[issue-number] --reason completed`
 
@@ -41,20 +41,20 @@ When working on any task, you MUST complete the full issue lifecycle:
 
 ### Commit Message Format:
 ```
-<type>(<scope>): brief description
+#[issue-number] <type>(<scope>): brief description
 
 - Detailed description of changes made
 - Files modified: list of key files
 - Tests added: list of new test files
 - Breaking changes: if any
-- Related issues: #[issue-number]
-
-Fixes #[issue-number]
 ```
 
+**CRITICAL**: Issue number MUST be at the START of the commit message for GitHub auto-linking.
+
 ### Commit Rules:
+- **Issue ID First**: Issue number must be at the beginning: `#[issue-number]`
 - **One Issue Per Commit**: Each commit must address exactly one GitHub issue
-- **Issue Reference Required**: Every commit message must include `Fixes #[issue-number]`
+- **Issue Reference Required**: Every commit message must start with `#[issue-number]`
 - **Create New Issues**: If code changes don't relate to existing issues, create new GitHub issues first
 - **No Mixed Commits**: Never commit code for multiple issues in a single commit
 - **Immediate Commits**: Commit code immediately after completing work on an issue
@@ -62,7 +62,7 @@ Fixes #[issue-number]
 - **Automatic Push**: Push immediately after commit without waiting for user instruction
 
 ### Enforcement:
-- **Pre-commit Check**: Verify commit relates to specific issue before committing
+- **Pre-commit Check**: Verify commit starts with issue number before committing
 - **Issue Validation**: Confirm issue exists and is open before referencing
 - **Traceability**: Every code change must be traceable to a GitHub issue
 - **Automatic Execution**: Complete full workflow without user prompts

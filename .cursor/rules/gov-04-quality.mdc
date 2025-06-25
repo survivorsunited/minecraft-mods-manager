@@ -14,7 +14,7 @@ alwaysApply: true
 4. **Run New Tests**: Execute the specific test file for the feature
 5. **Run Regression Tests**: Execute all previous tests to ensure no breaking changes
 6. **Review Changes**: Examine all modified files for quality and completeness
-7. **Commit Changes**: Use descriptive commit messages with conventional format and issue references
+7. **Commit Changes**: Use descriptive commit messages with issue ID at start
 8. **Document Updates**: Update relevant documentation and README files
 
 ### Regression Test Strategy:
@@ -26,19 +26,18 @@ alwaysApply: true
 
 ### Commit Message Format:
 ```
-<type>(<scope>): brief description
+#[issue-number] <type>(<scope>): brief description
 
 - Detailed description of changes made
 - Files modified: list of key files
 - Tests added: list of new test files
 - Breaking changes: if any
-- Related issues: #[issue-number]
-
-Fixes #[issue-number]
 ```
 
+**CRITICAL**: Issue number MUST be at the START of the commit message for GitHub auto-linking.
+
 ### Commit Discipline Requirements:
-- **Issue Reference Required**: Every commit must reference a specific GitHub issue
+- **Issue ID First**: Issue number must be at the beginning: `#[issue-number]`
 - **One Issue Per Commit**: Each commit must address exactly one GitHub issue
 - **Pre-commit Validation**: Verify all tests pass before committing
 - **Traceability**: Every code change must be traceable to a GitHub issue
@@ -51,9 +50,9 @@ Fixes #[issue-number]
 - [ ] Code follows existing patterns and conventions
 - [ ] Documentation updated
 - [ ] README.md reflects new functionality
-- [ ] Commit message follows conventional format with issue reference
+- [ ] Commit message starts with issue number: `#[issue-number]`
 - [ ] All modified files reviewed for quality
-- [ ] GitHub issue referenced in commit message
+- [ ] GitHub issue referenced at start of commit message
 
 ## Code Quality Standards
 
