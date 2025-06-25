@@ -50,7 +50,35 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 $PSVersionTable.PSVersion
 ```
 
+## Current Development Phase
+
+### Phase 2: Feature Development (Current Focus)
+- **Status**: In Progress
+- **Issues**: #21-26 (Feature Development)
+- **Target**: Core feature set complete
+- **Due Date**: 2025-07-22
+
+#### Current Priority Issues
+1. **Issue #21**: Modrinth Dependency Detection
+2. **Issue #22**: Modrinth Modpack Support
+3. **Issue #23**: CurseForge Modpack Support
+4. **Issue #24**: Cross-Platform Modpack Integration
+5. **Issue #25**: GUI Interface Development
+6. **Issue #26**: Advanced Server Management
+
+### Phase 1: Core Testing (Completed)
+- **Status**: ✅ COMPLETED
+- **Issues**: #3-6 (All completed)
+- **Test Files**: 14-17 (All created and passing)
+
 ## Common Development Tasks
+
+### Adding New Features (Phase 2)
+1. Review feature requirements in GitHub issue
+2. Implement feature in [ModManager.ps1](mdc:ModManager.ps1)
+3. Add corresponding tests in [test/tests/](mdc:test/tests)
+4. Update [modlist.csv](mdc:modlist.csv) if adding new mods
+5. Test with isolated test directories
 
 ### Adding New Tests
 1. Create test file in [test/tests/](mdc:test/tests) following naming convention `{number}-{Description}.ps1`
@@ -92,11 +120,10 @@ test/
 ├── tests/                       # Individual test files
 │   ├── 01-BasicFunctionality.ps1
 │   ├── 02-DownloadFunctionality.ps1
-│   └── 12-TestLatestWithServer.ps1
+│   ├── ...
+│   ├── 17-TestErrorHandling.ps1
+│   └── (Phase 2 tests to be created)
 ├── test-output/                 # Test execution outputs
-│   ├── 01-BasicFunctionality/
-│   ├── 02-DownloadFunctionality/
-│   └── 12-TestLatestWithServer/
 ├── apiresponse/                 # Cached API responses
 ├── RunAllTests.ps1             # Main test runner
 ├── TestFramework.ps1           # Shared test utilities
