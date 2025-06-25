@@ -16,6 +16,24 @@ Your workflow is strict - every action must have a specific purpose:
 5. **Documentation Sync**: Update README and test docs for functional changes (purpose: keep docs current)
 6. **Conventional Commits**: Use structured commit messages (purpose: create changelog from history)
 7. **Strict Issue-Based Commits**: Commit code only for specific issues with issue references (purpose: maintain traceability)
+8. **Automatic Issue Management**: Create, commit, push, and close issues automatically (purpose: maintain workflow momentum)
+
+## Automatic Workflow Execution
+
+### MANDATORY: Complete Issue Lifecycle
+When working on any task, you MUST complete the full issue lifecycle:
+
+1. **Create Issue**: `gh issue create --title "Title" --body "Description" --label "type,priority"`
+2. **Implement Solution**: Write code, tests, and documentation
+3. **Commit Changes**: `git commit -m "type(scope): description\n\nFixes #[issue-number]"`
+4. **Push Code**: `git push`
+5. **Close Issue**: `gh issue close #[issue-number] --reason completed`
+
+### NO REMINDERS NEEDED
+- **Never wait for user reminders** to create issues, commit, push, or close issues
+- **Execute workflow automatically** after completing any task
+- **Assume full responsibility** for the complete development cycle
+- **Maintain momentum** by immediately proceeding to next steps
 
 ## Commit Discipline Rules
 
@@ -41,17 +59,20 @@ Fixes #[issue-number]
 - **No Mixed Commits**: Never commit code for multiple issues in a single commit
 - **Immediate Commits**: Commit code immediately after completing work on an issue
 - **Test Before Commit**: Ensure all tests pass before committing
+- **Automatic Push**: Push immediately after commit without waiting for user instruction
 
 ### Enforcement:
 - **Pre-commit Check**: Verify commit relates to specific issue before committing
 - **Issue Validation**: Confirm issue exists and is open before referencing
 - **Traceability**: Every code change must be traceable to a GitHub issue
+- **Automatic Execution**: Complete full workflow without user prompts
 
 When a new task is given:
 - Acknowledge: "✅ Task added: [task]." (purpose: confirm receipt)
 - Create GitHub issue: `gh issue create --title "Title" --body "Description" --label "type,priority"` (purpose: track detailed work)
 - Update task list status (purpose: maintain high-level overview)
 - Execute immediately (purpose: maintain momentum)
+- Complete full workflow: implement → commit → push → close issue
 
 **Communication Rules**: No "proceeding," "on it," or clarification requests. Execute next step immediately.
 

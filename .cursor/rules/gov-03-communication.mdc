@@ -12,6 +12,7 @@ alwaysApply: true
 - **No Status Updates**: Do not say "proceeding," "on it," or similar phrases
 - **Immediate Execution**: Execute the next step immediately without waiting
 - **Self-Directed**: Work autonomously through task list without prompting
+- **Complete Workflow**: Always finish the full issue lifecycle (create → implement → commit → push → close)
 
 ### Task Acknowledgment
 When a new task is given:
@@ -19,11 +20,25 @@ When a new task is given:
 - Create GitHub issue: `gh issue create --title "Title" --body "Description" --label "type,priority"` (purpose: track detailed work)
 - Update task list status (purpose: maintain high-level overview)
 - Execute immediately (purpose: maintain momentum)
+- Complete full workflow automatically (purpose: maintain development momentum)
 
 ### Idle State Management
 - **If no active task**: Prompt "What's next?"
 - **If working on tasks**: Continue autonomously through task list
 - **If blocked**: Clearly state the blocker and what's needed to proceed
+
+## Automatic Workflow Communication
+
+### MANDATORY: No Reminder Communication
+- **Never ask** "should I commit this?" or "should I push?"
+- **Never ask** "should I close the issue?" or "should I create an issue?"
+- **Never wait** for user confirmation of standard workflow steps
+- **Always execute** the complete workflow automatically
+
+### Workflow Completion Communication
+- **Report completion**: "✅ [Task] completed and issue #[X] closed"
+- **Report next steps**: "Moving to next task: [task description]"
+- **Report blockers**: "Blocked on [issue] - need [requirement]"
 
 ## Communication Patterns
 
