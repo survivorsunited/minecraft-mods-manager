@@ -15,6 +15,37 @@ Your workflow is strict - every action must have a specific purpose:
 4. **Test Maintenance**: Update existing tests for changed behavior (purpose: maintain test integrity)
 5. **Documentation Sync**: Update README and test docs for functional changes (purpose: keep docs current)
 6. **Conventional Commits**: Use structured commit messages (purpose: create changelog from history)
+7. **Strict Issue-Based Commits**: Commit code only for specific issues with issue references (purpose: maintain traceability)
+
+## Commit Discipline Rules
+
+**MANDATORY**: Every commit must reference a specific GitHub issue number.
+
+### Commit Message Format:
+```
+<type>(<scope>): brief description
+
+- Detailed description of changes made
+- Files modified: list of key files
+- Tests added: list of new test files
+- Breaking changes: if any
+- Related issues: #[issue-number]
+
+Fixes #[issue-number]
+```
+
+### Commit Rules:
+- **One Issue Per Commit**: Each commit must address exactly one GitHub issue
+- **Issue Reference Required**: Every commit message must include `Fixes #[issue-number]`
+- **Create New Issues**: If code changes don't relate to existing issues, create new GitHub issues first
+- **No Mixed Commits**: Never commit code for multiple issues in a single commit
+- **Immediate Commits**: Commit code immediately after completing work on an issue
+- **Test Before Commit**: Ensure all tests pass before committing
+
+### Enforcement:
+- **Pre-commit Check**: Verify commit relates to specific issue before committing
+- **Issue Validation**: Confirm issue exists and is open before referencing
+- **Traceability**: Every code change must be traceable to a GitHub issue
 
 When a new task is given:
 - Acknowledge: "✅ Task added: [task]." (purpose: confirm receipt)
@@ -30,17 +61,17 @@ When a new task is given:
 All project-specific rules, patterns, and requirements are defined in the Cursor rules (.mdc files).
 
 **Governance Rules (Universal):**
-- [gov-communication.mdc](mdc:.cursor/rules/gov-communication.mdc) - Communication patterns
-- [gov-quality.mdc](mdc:.cursor/rules/gov-quality.mdc) - Quality assurance standards
-- [gov-testing.mdc](mdc:.cursor/rules/gov-testing.mdc) - Universal testing principles
-- [gov-issues.mdc](mdc:.cursor/rules/gov-issues.mdc) - Issue management workflow
-- [gov-tasks.mdc](mdc:.cursor/rules/gov-tasks.mdc) - Task management principles
+- [gov-03-communication.mdc](mdc:.cursor/rules/gov-03-communication.mdc) - Communication patterns
+- [gov-04-quality.mdc](mdc:.cursor/rules/gov-04-quality.mdc) - Quality assurance standards
+- [gov-05-testing.mdc](mdc:.cursor/rules/gov-05-testing.mdc) - Universal testing principles
+- [gov-06-issues.mdc](mdc:.cursor/rules/gov-06-issues.mdc) - Issue management workflow
+- [gov-07-tasks.mdc](mdc:.cursor/rules/gov-07-tasks.mdc) - Task management principles
 
 **Project Rules (Minecraft-Specific):**
-- [proj-minecraft.mdc](mdc:.cursor/rules/proj-minecraft.mdc) - Project overview and architecture
-- [proj-powershell.mdc](mdc:.cursor/rules/proj-powershell.mdc) - PowerShell-specific patterns
-- [proj-testing.mdc](mdc:.cursor/rules/proj-testing.mdc) - Project-specific testing patterns
-- [proj-development.mdc](mdc:.cursor/rules/proj-development.mdc) - Project development workflow
-- [proj-api.mdc](mdc:.cursor/rules/proj-api.mdc) - API integration patterns
+- [proj-01-minecraft.mdc](mdc:.cursor/rules/proj-01-minecraft.mdc) - Project overview and architecture
+- [proj-02-powershell.mdc](mdc:.cursor/rules/proj-02-powershell.mdc) - PowerShell-specific patterns
+- [proj-03-development.mdc](mdc:.cursor/rules/proj-03-development.mdc) - Project development workflow
+- [proj-04-testing.mdc](mdc:.cursor/rules/proj-04-testing.mdc) - Project-specific testing patterns
+- [proj-05-api.mdc](mdc:.cursor/rules/proj-05-api.mdc) - API integration patterns
 
 **Always consult the appropriate Cursor rule for detailed guidance before implementing any feature or test.**

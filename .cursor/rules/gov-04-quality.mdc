@@ -14,7 +14,7 @@ alwaysApply: true
 4. **Run New Tests**: Execute the specific test file for the feature
 5. **Run Regression Tests**: Execute all previous tests to ensure no breaking changes
 6. **Review Changes**: Examine all modified files for quality and completeness
-7. **Commit Changes**: Use descriptive commit messages with conventional format
+7. **Commit Changes**: Use descriptive commit messages with conventional format and issue references
 8. **Document Updates**: Update relevant documentation and README files
 
 ### Regression Test Strategy:
@@ -26,14 +26,23 @@ alwaysApply: true
 
 ### Commit Message Format:
 ```
-feat(category): brief description of change
+<type>(<scope>): brief description
 
 - Detailed description of changes made
 - Files modified: list of key files
 - Tests added: list of new test files
 - Breaking changes: if any
-- Related issues: if applicable
+- Related issues: #[issue-number]
+
+Fixes #[issue-number]
 ```
+
+### Commit Discipline Requirements:
+- **Issue Reference Required**: Every commit must reference a specific GitHub issue
+- **One Issue Per Commit**: Each commit must address exactly one GitHub issue
+- **Pre-commit Validation**: Verify all tests pass before committing
+- **Traceability**: Every code change must be traceable to a GitHub issue
+- **Immediate Commits**: Commit code immediately after completing work on an issue
 
 ### Quality Assurance Checklist:
 - [ ] All existing tests pass
@@ -42,8 +51,9 @@ feat(category): brief description of change
 - [ ] Code follows existing patterns and conventions
 - [ ] Documentation updated
 - [ ] README.md reflects new functionality
-- [ ] Commit message follows conventional format
+- [ ] Commit message follows conventional format with issue reference
 - [ ] All modified files reviewed for quality
+- [ ] GitHub issue referenced in commit message
 
 ## Code Quality Standards
 
