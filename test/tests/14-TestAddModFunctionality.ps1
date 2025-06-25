@@ -4,7 +4,7 @@
 param([string]$TestFileName = $null)
 
 # Import test framework
-. "$PSScriptRoot\..\TestFramework.ps1"
+. (Join-Path $PSScriptRoot "..\TestFramework.ps1")
 
 # Set the test file name for use throughout the script
 $TestFileName = "14-TestAddModFunctionality.ps1"
@@ -12,38 +12,39 @@ $TestFileName = "14-TestAddModFunctionality.ps1"
 Write-Host "Minecraft Mod Manager - Add Mod Functionality Tests" -ForegroundColor $Colors.Header
 Write-Host "===================================================" -ForegroundColor $Colors.Header
 
-Initialize-TestEnvironment $TestFileName
-
-# Test configuration
-$ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
-$TestOutputDir = Join-Path $PSScriptRoot "..\test-output\14-TestAddModFunctionality"
-$TestDownloadDir = Join-Path $TestOutputDir "download"
-$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
-$TestApiResponseFolder = Join-Path $TestOutputDir "apiresponse"
-
-# Ensure test output directory exists
-if (-not (Test-Path $TestOutputDir)) {
-    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
-}
-
-# Initialize test results at script level
-$script:TestResults = @{
-    Total = 0
-    Passed = 0
-    Failed = 0
-}
-
 function Invoke-TestAddModFunctionality {
-    param([string]$TestFileName = $null)
     
-    Write-TestSuiteHeader "Add Mod Functionality Tests" $TestFileName
+    Write-TestSuiteHeader "Test Add Mod Functionality" $TestFileName
+    
+    # Initialize test results
+    $script:TestResults = @{
+        Total = 0
+        Passed = 0
+        Failed = 0
+    }
+    
+    # Test setup - PROPER ISOLATION (like Test 13)
+    $TestOutputDir = Get-TestOutputFolder $TestFileName
+    $TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
+    $TestDownloadDir = Join-Path $TestOutputDir "download"
+    $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
+    $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+    
+    # Clean previous test artifacts
+    if (Test-Path $TestOutputDir) {
+        Remove-Item -Path $TestOutputDir -Recurse -Force
+    }
+    
+    # Ensure clean state
+    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
+    New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
     
     # Test 1: -AddModId parameter validation
     Write-TestStep "Testing -AddModId parameter"
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "fabric-api" -AddModName "Fabric API" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModId Parameter" $true "Successfully added mod with AddModId"
@@ -59,7 +60,7 @@ function Invoke-TestAddModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModUrl "https://modrinth.com/mod/sodium" -AddModName "Sodium" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModUrl Parameter" $true "Successfully added mod with AddModUrl"
@@ -75,7 +76,7 @@ function Invoke-TestAddModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "lithium" -AddModName "Lithium Performance Mod" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModName Parameter" $true "Successfully added mod with AddModName"
@@ -91,7 +92,7 @@ function Invoke-TestAddModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "phosphor" -AddModName "Phosphor" -AddModLoader "fabric" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModLoader Parameter" $true "Successfully added mod with AddModLoader"
@@ -107,7 +108,7 @@ function Invoke-TestAddModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "starlight" -AddModName "Starlight" -AddModGameVersion "1.21.6" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModGameVersion Parameter" $true "Successfully added mod with AddModGameVersion"
@@ -124,7 +125,7 @@ function Invoke-TestAddModFunctionality {
         -AddMod -AddModUrl "https://modrinth.com/shader/complementary-reimagined" `
         -AddModName "Complementary Shaders" -AddModType "shaderpack" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModType Parameter" $true "Successfully added mod with AddModType"
@@ -140,7 +141,7 @@ function Invoke-TestAddModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "no-chat-reports" -AddModName "No Chat Reports" -AddModGroup "block" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModGroup Parameter" $true "Successfully added mod with AddModGroup"
@@ -157,7 +158,7 @@ function Invoke-TestAddModFunctionality {
         -AddMod -AddModId "lazydfu" -AddModName "LazyDFU" `
         -AddModDescription "Makes the game boot faster by deferring non-essential initialization" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModDescription Parameter" $true "Successfully added mod with AddModDescription"
@@ -174,7 +175,7 @@ function Invoke-TestAddModFunctionality {
         -AddMod -AddModName "Fabric Installer" -AddModType "installer" `
         -AddModJar "fabric-installer-1.0.3.exe" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModJar Parameter" $true "Successfully added mod with AddModJar"
@@ -190,7 +191,7 @@ function Invoke-TestAddModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "ferritecore" -AddModName "FerriteCore" -AddModVersion "6.0.0" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModVersion Parameter" $true "Successfully added mod with AddModVersion"
@@ -207,7 +208,7 @@ function Invoke-TestAddModFunctionality {
         -AddMod -AddModName "Direct Download Mod" -AddModType "mod" `
         -AddModUrlDirect "https://example.com/mod.jar" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModUrlDirect Parameter" $true "Successfully added mod with AddModUrlDirect"
@@ -223,7 +224,7 @@ function Invoke-TestAddModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "smoothboot" -AddModName "Smooth Boot" -AddModCategory "performance" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "AddModCategory Parameter" $true "Successfully added mod with AddModCategory"
@@ -239,7 +240,7 @@ function Invoke-TestAddModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "invalid-mod-id-that-does-not-exist" -AddModName "Invalid Mod" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     # This should fail gracefully, not crash
     if ($LASTEXITCODE -eq 0 -or $LASTEXITCODE -eq 1) {
@@ -270,7 +271,7 @@ function Invoke-TestAddModFunctionality {
         -AddModGameVersion "1.21.6" -AddModType "mod" -AddModGroup "optional" `
         -AddModDescription "Reduces memory usage" -AddModCategory "performance" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
     
     if ($LASTEXITCODE -eq 0) {
         Write-TestResult "Parameter Combinations" $true "Successfully added mod with multiple parameters"
@@ -281,10 +282,10 @@ function Invoke-TestAddModFunctionality {
     }
     $script:TestResults.Total++
     
-    Write-TestSuiteSummary "Add Mod Functionality Tests"
+    Write-TestSuiteSummary "Test Add Mod Functionality"
     
     return ($script:TestResults.Failed -eq 0)
 }
 
 # Always execute tests when this file is run
-Invoke-TestAddModFunctionality -TestFileName $TestFileName 
+Invoke-TestAddModFunctionality 

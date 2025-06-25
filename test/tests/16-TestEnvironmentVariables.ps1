@@ -1,42 +1,40 @@
-# Test Environment Variables
-# Tests .env file loading and environment variable configuration
+# Test Environment Variables Support
+# Tests the new environment variable support for configuration
 
 param([string]$TestFileName = $null)
 
 # Import test framework
-. "$PSScriptRoot\..\TestFramework.ps1"
+. (Join-Path $PSScriptRoot "..\TestFramework.ps1")
 
 # Set the test file name for use throughout the script
 $TestFileName = "16-TestEnvironmentVariables.ps1"
 
-Write-Host "Minecraft Mod Manager - Environment Variables Tests" -ForegroundColor $Colors.Header
-Write-Host "==================================================" -ForegroundColor $Colors.Header
-
-Initialize-TestEnvironment $TestFileName
-
-# Test configuration
-$ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
-$TestOutputDir = Join-Path $PSScriptRoot "..\test-output\16-TestEnvironmentVariables"
-$TestDownloadDir = Join-Path $TestOutputDir "download"
-$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
-$TestApiResponseFolder = Join-Path $TestOutputDir "apiresponse"
-
-# Ensure test output directory exists
-if (-not (Test-Path $TestOutputDir)) {
-    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
-}
-
-# Initialize test results at script level
-$script:TestResults = @{
-    Total = 0
-    Passed = 0
-    Failed = 0
-}
-
 function Invoke-TestEnvironmentVariables {
-    param([string]$TestFileName = $null)
     
-    Write-TestSuiteHeader "Environment Variables Tests" $TestFileName
+    Write-TestSuiteHeader "Test Environment Variables Support" $TestFileName
+    
+    # Initialize test results
+    $script:TestResults = @{
+        Total = 0
+        Passed = 0
+        Failed = 0
+    }
+    
+    # Test setup - PROPER ISOLATION (like Test 13)
+    $TestOutputDir = Get-TestOutputFolder $TestFileName
+    $TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
+    $TestDownloadDir = Join-Path $TestOutputDir "download"
+    $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
+    $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+    
+    # Clean previous test artifacts
+    if (Test-Path $TestOutputDir) {
+        Remove-Item -Path $TestOutputDir -Recurse -Force
+    }
+    
+    # Ensure clean state
+    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
+    New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
     
     # Test 1: .env file loading functionality
     Write-TestStep "Testing .env file loading"
@@ -242,7 +240,7 @@ Write-Output "Configured CurseForge subfolder: `$CurseForgeApiResponseSubfolder"
         # Test ModManager with environment variables
         $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
             -ShowHelp `
-            -ApiResponseFolder $TestApiResponseFolder
+            -ApiResponseFolder $TestApiResponseDir
         
         if ($LASTEXITCODE -eq 0) {
             Write-TestResult "ModManager Integration" $true "ModManager successfully loaded and used environment variables"
@@ -343,7 +341,7 @@ Load-EnvironmentVariables
 `$CurseForgeApiResponseSubfolder = if (`$APIRESPONSE_CURSEFORGE_SUBFOLDER) { `$APIRESPONSE_CURSEFORGE_SUBFOLDER } else { "curseforge" }
 
 # Test subfolder creation
-`$testBaseFolder = "$TestApiResponseFolder"
+`$testBaseFolder = "$TestApiResponseDir"
 `$modrinthFolder = Join-Path `$testBaseFolder `$ModrinthApiResponseSubfolder
 `$curseforgeFolder = Join-Path `$testBaseFolder `$CurseForgeApiResponseSubfolder
 
@@ -381,10 +379,10 @@ Write-Output "CurseForge folder exists: `$(Test-Path `$curseforgeFolder)"
     }
     $script:TestResults.Total++
     
-    Write-TestSuiteSummary "Environment Variables Tests"
+    Write-TestSuiteSummary "Test Environment Variables Support"
     
     return ($script:TestResults.Failed -eq 0)
 }
 
 # Always execute tests when this file is run
-Invoke-TestEnvironmentVariables -TestFileName $TestFileName 
+Invoke-TestEnvironmentVariables 

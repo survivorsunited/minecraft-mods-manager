@@ -6,8 +6,10 @@ param([string]$TestFileName = $null)
 # Import test framework
 . (Join-Path $PSScriptRoot "..\TestFramework.ps1")
 
+# Set the test file name for use throughout the script
+$TestFileName = "18-TestDependencyDetection.ps1"
+
 function Invoke-TestDependencyDetection {
-    param([string]$TestFileName = $null)
     
     Write-TestSuiteHeader "Test Dependency Detection Functionality" $TestFileName
     
@@ -18,13 +20,13 @@ function Invoke-TestDependencyDetection {
         Failed = 0
     }
     
-    # Test setup - PROPER ISOLATION
-    $TestOutputDir = Join-Path $PSScriptRoot "..\test-output\18-TestDependencyDetection"
+    # Test setup - PROPER ISOLATION (like Test 13)
+    $TestOutputDir = Get-TestOutputFolder $TestFileName
+    $TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
     $TestDownloadDir = Join-Path $TestOutputDir "download"
-    $TestApiResponseDir = Join-Path $PSScriptRoot "..\apiresponse"
+    $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
     $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
     $ModListPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
-    $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
     
     # Clean previous test artifacts
     if (Test-Path $TestOutputDir) {
@@ -229,4 +231,4 @@ function Invoke-TestDependencyDetection {
 }
 
 # Always execute tests when this file is run
-Invoke-TestDependencyDetection -TestFileName $TestFileName
+Invoke-TestDependencyDetection

@@ -1,42 +1,40 @@
 # Test Delete Mod Functionality
-# Tests mod deletion features to ensure proper removal from database
+# Tests the new DeleteMod functionality with proper parameter validation and CSV updates
 
 param([string]$TestFileName = $null)
 
 # Import test framework
-. "$PSScriptRoot\..\TestFramework.ps1"
+. (Join-Path $PSScriptRoot "..\TestFramework.ps1")
 
 # Set the test file name for use throughout the script
 $TestFileName = "15-TestDeleteModFunctionality.ps1"
 
-Write-Host "Minecraft Mod Manager - Delete Mod Functionality Tests" -ForegroundColor $Colors.Header
-Write-Host "=====================================================" -ForegroundColor $Colors.Header
-
-Initialize-TestEnvironment $TestFileName
-
-# Test configuration
-$ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
-$TestOutputDir = Join-Path $PSScriptRoot "..\test-output\15-TestDeleteModFunctionality"
-$TestDownloadDir = Join-Path $TestOutputDir "download"
-$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
-$TestApiResponseFolder = Join-Path $TestOutputDir "apiresponse"
-
-# Ensure test output directory exists
-if (-not (Test-Path $TestOutputDir)) {
-    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
-}
-
-# Initialize test results at script level
-$script:TestResults = @{
-    Total = 0
-    Passed = 0
-    Failed = 0
-}
-
 function Invoke-TestDeleteModFunctionality {
-    param([string]$TestFileName = $null)
     
-    Write-TestSuiteHeader "Delete Mod Functionality Tests" $TestFileName
+    Write-TestSuiteHeader "Test Delete Mod Functionality" $TestFileName
+    
+    # Initialize test results
+    $script:TestResults = @{
+        Total = 0
+        Passed = 0
+        Failed = 0
+    }
+    
+    # Test setup - PROPER ISOLATION (like Test 13)
+    $TestOutputDir = Get-TestOutputFolder $TestFileName
+    $TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
+    $TestDownloadDir = Join-Path $TestOutputDir "download"
+    $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
+    $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+    
+    # Clean previous test artifacts
+    if (Test-Path $TestOutputDir) {
+        Remove-Item -Path $TestOutputDir -Recurse -Force
+    }
+    
+    # Ensure clean state
+    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
+    New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
     
     # Setup: Add some test mods to the database
     Write-TestStep "Setting up test database with mods"
@@ -45,22 +43,22 @@ function Invoke-TestDeleteModFunctionality {
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "fabric-api" -AddModName "Fabric API" -AddModType "mod" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder | Out-Null
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir | Out-Null
     
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "sodium" -AddModName "Sodium" -AddModType "mod" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder | Out-Null
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir | Out-Null
     
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "fabric-api" -AddModName "Fabric API Installer" -AddModType "installer" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder | Out-Null
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir | Out-Null
     
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "lithium" -AddModName "Lithium" -AddModType "mod" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder | Out-Null
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir | Out-Null
     
     $initialCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     Write-TestResult "Database Setup" $true "Added $initialCount test mods to database"
@@ -74,7 +72,7 @@ function Invoke-TestDeleteModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -DeleteModID "fabric-api" `
         -DatabaseFile $TestModListPath `
-        -ApiResponseFolder $TestApiResponseFolder
+        -ApiResponseFolder $TestApiResponseDir
     
     $afterCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     $deletedCount = $beforeCount - $afterCount
@@ -95,7 +93,7 @@ function Invoke-TestDeleteModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -DeleteModID "sodium" -DeleteModType "mod" `
         -DatabaseFile $TestModListPath `
-        -ApiResponseFolder $TestApiResponseFolder
+        -ApiResponseFolder $TestApiResponseDir
     
     $afterCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     $deletedCount = $beforeCount - $afterCount
@@ -116,7 +114,7 @@ function Invoke-TestDeleteModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -DeleteModID "non-existent-mod" `
         -DatabaseFile $TestModListPath `
-        -ApiResponseFolder $TestApiResponseFolder
+        -ApiResponseFolder $TestApiResponseDir
     
     $afterCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     
@@ -136,7 +134,7 @@ function Invoke-TestDeleteModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -DeleteModID "lithium" -DeleteModType "installer" `
         -DatabaseFile $TestModListPath `
-        -ApiResponseFolder $TestApiResponseFolder
+        -ApiResponseFolder $TestApiResponseDir
     
     $afterCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     
@@ -156,7 +154,7 @@ function Invoke-TestDeleteModFunctionality {
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -DeleteModID "https://modrinth.com/mod/lithium" `
         -DatabaseFile $TestModListPath `
-        -ApiResponseFolder $TestApiResponseFolder
+        -ApiResponseFolder $TestApiResponseDir
     
     $afterCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     $deletedCount = $beforeCount - $afterCount
@@ -176,14 +174,14 @@ function Invoke-TestDeleteModFunctionality {
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "357540" -AddModName "Inventory HUD+" -AddModType "curseforge" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder | Out-Null
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir | Out-Null
     
     $beforeCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -DeleteModID "https://www.curseforge.com/minecraft/mc-mods/inventory-hud-forge" `
         -DatabaseFile $TestModListPath `
-        -ApiResponseFolder $TestApiResponseFolder
+        -ApiResponseFolder $TestApiResponseDir
     
     $afterCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     $deletedCount = $beforeCount - $afterCount
@@ -227,12 +225,12 @@ function Invoke-TestDeleteModFunctionality {
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "phosphor" -AddModName "Phosphor" -AddModType "mod" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder | Out-Null
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir | Out-Null
     
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "hydrogen" -AddModName "Hydrogen" -AddModType "mod" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder | Out-Null
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir | Out-Null
     
     $beforeCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     
@@ -240,12 +238,12 @@ function Invoke-TestDeleteModFunctionality {
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -DeleteModID "phosphor" `
         -DatabaseFile $TestModListPath `
-        -ApiResponseFolder $TestApiResponseFolder | Out-Null
+        -ApiResponseFolder $TestApiResponseDir | Out-Null
     
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -DeleteModID "hydrogen" `
         -DatabaseFile $TestModListPath `
-        -ApiResponseFolder $TestApiResponseFolder | Out-Null
+        -ApiResponseFolder $TestApiResponseDir | Out-Null
     
     $afterCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     $deletedCount = $beforeCount - $afterCount
@@ -266,14 +264,14 @@ function Invoke-TestDeleteModFunctionality {
     & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -AddMod -AddModId "no-chat-reports" -AddModName "No Chat Reports" -AddModType "mod" `
         -DatabaseFile $TestModListPath `
-        -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder | Out-Null
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir | Out-Null
     
     $beforeCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     
     $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -DeleteModID "no-chat-reports" `
         -DatabaseFile $TestModListPath `
-        -ApiResponseFolder $TestApiResponseFolder
+        -ApiResponseFolder $TestApiResponseDir
     
     $afterCount = (Import-Csv $TestModListPath -ErrorAction SilentlyContinue | Measure-Object).Count
     $deletedCount = $beforeCount - $afterCount
@@ -287,10 +285,10 @@ function Invoke-TestDeleteModFunctionality {
     }
     $script:TestResults.Total++
     
-    Write-TestSuiteSummary "Delete Mod Functionality Tests"
+    Write-TestSuiteSummary "Test Delete Mod Functionality"
     
     return ($script:TestResults.Failed -eq 0)
 }
 
 # Always execute tests when this file is run
-Invoke-TestDeleteModFunctionality -TestFileName $TestFileName 
+Invoke-TestDeleteModFunctionality 

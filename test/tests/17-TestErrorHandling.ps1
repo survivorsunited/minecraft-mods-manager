@@ -1,43 +1,49 @@
 # Test Error Handling
-# Tests parameter validation and error scenarios to ensure robust error handling
+# Tests comprehensive error handling across all ModManager functions
 
 param([string]$TestFileName = $null)
 
 # Import test framework
-. "$PSScriptRoot\..\TestFramework.ps1"
+. (Join-Path $PSScriptRoot "..\TestFramework.ps1")
 
 # Set the test file name for use throughout the script
 $TestFileName = "17-TestErrorHandling.ps1"
 
-Write-Host "Minecraft Mod Manager - Error Handling Tests" -ForegroundColor $Colors.Header
-Write-Host "============================================" -ForegroundColor $Colors.Header
-
-Initialize-TestEnvironment $TestFileName
-
-# Test configuration
-$ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
-$TestOutputDir = Join-Path $PSScriptRoot "..\test-output\17-TestErrorHandling"
-$TestDownloadDir = Join-Path $TestOutputDir "download"
-$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
-$TestApiResponseFolder = Join-Path $TestOutputDir "apiresponse"
-
-# Ensure test output directory exists
-if (-not (Test-Path $TestOutputDir)) {
-    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
-}
-
-# Initialize test results at script level
-$script:TestResults = @{
-    Total = 0
-    Passed = 0
-    Failed = 0
-}
-
 function Invoke-TestErrorHandling {
-    param([string]$TestFileName = $null)
     
-    Write-TestSuiteHeader "Error Handling Tests" $TestFileName
+    Write-TestSuiteHeader "Test Error Handling" $TestFileName
     
+    # Initialize test results
+    $script:TestResults = @{
+        Total = 0
+        Passed = 0
+        Failed = 0
+    }
+    
+    # Test setup - PROPER ISOLATION (like Test 13)
+    $TestOutputDir = Get-TestOutputFolder $TestFileName
+    $TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
+    $TestDownloadDir = Join-Path $TestOutputDir "download"
+    $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
+    $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+    
+    # Clean previous test artifacts
+    if (Test-Path $TestOutputDir) {
+        Remove-Item -Path $TestOutputDir -Recurse -Force
+    }
+    
+    # Ensure clean state
+    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
+    New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
+    
+    # Test configuration
+    $TestApiResponseFolder = Join-Path $TestOutputDir "apiresponse"
+
+    Write-Host "Minecraft Mod Manager - Error Handling Tests" -ForegroundColor $Colors.Header
+    Write-Host "============================================" -ForegroundColor $Colors.Header
+
+    Initialize-TestEnvironment $TestFileName
+
     # Test 1: Missing required parameters for AddMod
     Write-TestStep "Testing missing required parameters for AddMod"
     
@@ -379,4 +385,4 @@ try {
 }
 
 # Always execute tests when this file is run
-Invoke-TestErrorHandling -TestFileName $TestFileName 
+Invoke-TestErrorHandling 
