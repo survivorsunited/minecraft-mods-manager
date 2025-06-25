@@ -15,7 +15,7 @@
     "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
     "changelog_url": null,
     "date_published": "2025-06-17T23:25:33.137419Z",
-    "downloads": 83,
+    "downloads": 85,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -51,15 +51,15 @@
     "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
     "changelog_url": null,
     "date_published": "2025-06-17T23:25:32.311081Z",
-    "downloads": 909,
+    "downloads": 937,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "cff7041317024066e91f68eabd9e8c60e40c7e10",
-          "sha512": "e62a530c286c67f7221871609760896740261444172d941d958af892eb7ccb2d659318ed1352eb7805a1f858039ebc6ad6d5f83eb0b75632a61109aff9178bcb"
+          "sha512": "e62a530c286c67f7221871609760896740261444172d941d958af892eb7ccb2d659318ed1352eb7805a1f858039ebc6ad6d5f83eb0b75632a61109aff9178bcb",
+          "sha1": "cff7041317024066e91f68eabd9e8c60e40c7e10"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/8oiUayeD/antixray-fabric-1.4.10%2B1.21.6.jar",
         "filename": "antixray-fabric-1.4.10+1.21.6.jar",
@@ -130,8 +130,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5e92e7991475d3141dd3547545e971edce2aba58",
-          "sha512": "3753c485c5f180b2fb53868b38b10a914f850974cc6d99821f2d2b7b11a3a1edae312edc52fce6c9bc5fe73a11986798f33f46661b915684ce1e490e01af9b9a"
+          "sha512": "3753c485c5f180b2fb53868b38b10a914f850974cc6d99821f2d2b7b11a3a1edae312edc52fce6c9bc5fe73a11986798f33f46661b915684ce1e490e01af9b9a",
+          "sha1": "5e92e7991475d3141dd3547545e971edce2aba58"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/4aSnPwdj/antixray-neoforge-1.4.10%2B1.21.4.jar",
         "filename": "antixray-neoforge-1.4.10+1.21.4.jar",
@@ -159,7 +159,7 @@
     "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
     "changelog_url": null,
     "date_published": "2025-05-22T15:22:02.089371Z",
-    "downloads": 1142,
+    "downloads": 1145,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -194,15 +194,15 @@
     "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
     "changelog_url": null,
     "date_published": "2025-05-21T10:05:23.805246Z",
-    "downloads": 297,
+    "downloads": 299,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e4358572a376193baedd49788b5ec571bb59d028",
-          "sha512": "71292c43b26cb3ba695d5698ff7ecc49b75474f6782302e5a43c7f09ce8892d3b7b6360a049b2d8bf34fe17d079de2d32a3b21c37c4859a812e2d6b5e92ca02f"
+          "sha512": "71292c43b26cb3ba695d5698ff7ecc49b75474f6782302e5a43c7f09ce8892d3b7b6360a049b2d8bf34fe17d079de2d32a3b21c37c4859a812e2d6b5e92ca02f",
+          "sha1": "e4358572a376193baedd49788b5ec571bb59d028"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/beD7Km4F/antixray-neoforge-1.4.10%2B1.21.5.jar",
         "filename": "antixray-neoforge-1.4.10+1.21.5.jar",
@@ -230,7 +230,7 @@
     "changelog": "### Added\n\n- `#antixray:hidden_only_ores` block tag for mod developers\n\n### Changed\n\n- Allow negating blocks / block tags in the config\n",
     "changelog_url": null,
     "date_published": "2025-05-21T10:05:23.224052Z",
-    "downloads": 3817,
+    "downloads": 3830,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -272,8 +272,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9bbebb67890b1cd5337382701d64c6fb6c2ab86c11a5f13aa6e60c8e43fbc6671065fd53f3561083b1859f9891047e35f04a28df796a4b257cee56b69e61c33b",
-          "sha1": "5edb980c21c92cad42458f99cd366fdd502ae8f6"
+          "sha1": "5edb980c21c92cad42458f99cd366fdd502ae8f6",
+          "sha512": "9bbebb67890b1cd5337382701d64c6fb6c2ab86c11a5f13aa6e60c8e43fbc6671065fd53f3561083b1859f9891047e35f04a28df796a4b257cee56b69e61c33b"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/fulDuKw5/antixray-neoforge-1.4.9%2B1.21.5.jar",
         "filename": "antixray-neoforge-1.4.9+1.21.5.jar",
@@ -418,8 +418,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ecca085b749ba738c6a687ef88d61cefb966fe848f7571f7f5e0e55140cc182d0b35face0171b2b96bb3d733c504c191b80152c72e4a8ed81970c553fba8e33f",
-          "sha1": "dca6a74278cf9dd6f046909809d1ac858d0dbbbd"
+          "sha1": "dca6a74278cf9dd6f046909809d1ac858d0dbbbd",
+          "sha512": "ecca085b749ba738c6a687ef88d61cefb966fe848f7571f7f5e0e55140cc182d0b35face0171b2b96bb3d733c504c191b80152c72e4a8ed81970c553fba8e33f"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/dwTZzfS4/antixray-fabric-1.4.9%2B1.21.4.jar",
         "filename": "antixray-fabric-1.4.9+1.21.4.jar",
@@ -454,8 +454,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "43b7b1f130dc23026d6dc9330c2ac7369ab835a8",
-          "sha512": "a3d910140f8728511018cc4a27fdb9ed71043325c7812969309323751c637e181061898260cf957658ee133dc03cfdb9016ed84dacd0baa9eeec9085ead8de07"
+          "sha512": "a3d910140f8728511018cc4a27fdb9ed71043325c7812969309323751c637e181061898260cf957658ee133dc03cfdb9016ed84dacd0baa9eeec9085ead8de07",
+          "sha1": "43b7b1f130dc23026d6dc9330c2ac7369ab835a8"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/5ihATFTB/antixray-fabric-1.4.8%2B1.21.4.jar",
         "filename": "antixray-fabric-1.4.8+1.21.4.jar",
@@ -489,8 +489,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7092d9b003a2971c6397eb52012dca8fbadce2449b3e6a39381f46a975766dc9672cd23eed640a5a057acfae507b72e87bc86b2cf1c22fae85ec3d8c2efc8caf",
-          "sha1": "ce8cf39377d4da8871e8c21982d8d4167194cee2"
+          "sha1": "ce8cf39377d4da8871e8c21982d8d4167194cee2",
+          "sha512": "7092d9b003a2971c6397eb52012dca8fbadce2449b3e6a39381f46a975766dc9672cd23eed640a5a057acfae507b72e87bc86b2cf1c22fae85ec3d8c2efc8caf"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/Y6h7HwJo/antixray-neoforge-1.4.8%2B1.21.4.jar",
         "filename": "antixray-neoforge-1.4.8+1.21.4.jar",
@@ -525,8 +525,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e76568661d77f864fc453fa6f91325b68b5071d47ac1d14d7d8db3c128bb0267df679c810a95677cbc2251dc3e3288d8de376a54f90ee9e934ebcd607b54763a",
-          "sha1": "9e6c4cfb4e565349d918b71250900c046dcae78f"
+          "sha1": "9e6c4cfb4e565349d918b71250900c046dcae78f",
+          "sha512": "e76568661d77f864fc453fa6f91325b68b5071d47ac1d14d7d8db3c128bb0267df679c810a95677cbc2251dc3e3288d8de376a54f90ee9e934ebcd607b54763a"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/XYsqemKP/antixray-fabric-1.4.7%2B1.21.4.jar",
         "filename": "antixray-fabric-1.4.7+1.21.4.jar",
@@ -626,15 +626,15 @@
     "changelog": "### Fixed\n\n- Wrong argument\n",
     "changelog_url": null,
     "date_published": "2024-10-23T19:25:24.23976Z",
-    "downloads": 3903,
+    "downloads": 3905,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d61e1ba5634bd554fec3952111284ad87942f6fe",
-          "sha512": "dbb26fe97100c346dec036e580d7bf52558f99dec93648368338a105248f4177bd61b9eb11ababde981212e63fa72cf8e67b1365e0d140c965c85c338b5e8f03"
+          "sha512": "dbb26fe97100c346dec036e580d7bf52558f99dec93648368338a105248f4177bd61b9eb11ababde981212e63fa72cf8e67b1365e0d140c965c85c338b5e8f03",
+          "sha1": "d61e1ba5634bd554fec3952111284ad87942f6fe"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/ccmxUAZ2/antixray-fabric-1.4.6%2B1.21.3.jar",
         "filename": "antixray-fabric-1.4.6+1.21.3.jar",
@@ -672,8 +672,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fe1d6371739d01d4fbe39ba597e78ade34a74b21",
-          "sha512": "3547d8fa0d88817829504604dd68c0f9f79bc0f8257049fc5f4de1be69a4da348fc012c3aa38d3a1aa212383cad4b054495de78a7dbdd74e09ea6829745f3023"
+          "sha512": "3547d8fa0d88817829504604dd68c0f9f79bc0f8257049fc5f4de1be69a4da348fc012c3aa38d3a1aa212383cad4b054495de78a7dbdd74e09ea6829745f3023",
+          "sha1": "fe1d6371739d01d4fbe39ba597e78ade34a74b21"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/KKKsvazM/antixray-fabric-1.4.6%2B1.21.2-rc2.jar",
         "filename": "antixray-fabric-1.4.6+1.21.2-rc2.jar",
@@ -707,8 +707,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f1f3a9cda1e97a0a7c5ba5d8ddda8eedfb25f2bc",
-          "sha512": "25f418829ce1d88faeb0a3fc83bc60376812317e48a05c56fd22b1d8daffd760dec9eda97c839dea038f44236e5088f39bc7d1fe33f1386354eea6f916694e96"
+          "sha512": "25f418829ce1d88faeb0a3fc83bc60376812317e48a05c56fd22b1d8daffd760dec9eda97c839dea038f44236e5088f39bc7d1fe33f1386354eea6f916694e96",
+          "sha1": "f1f3a9cda1e97a0a7c5ba5d8ddda8eedfb25f2bc"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/IVxZW0NC/antixray-neoforge-1.4.6%2B1.20.4.jar",
         "filename": "antixray-neoforge-1.4.6+1.20.4.jar",
@@ -771,15 +771,15 @@
     "changelog": "### Fixed\n\n- Wrong argument\n",
     "changelog_url": null,
     "date_published": "2024-08-16T10:57:59.471955Z",
-    "downloads": 19198,
+    "downloads": 19232,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "91837b95ac75e6365813a9fdc76c1f9a5d83f26a277901f7268f9063b6b16bb15513bc5e9b135f2ab161bc0cee9f1e16f1ff4cd2d17f34f2b4c4cdc15a7ce601",
-          "sha1": "06d5dad3c1c96bdb8e3498d1330ac59c01eb744e"
+          "sha1": "06d5dad3c1c96bdb8e3498d1330ac59c01eb744e",
+          "sha512": "91837b95ac75e6365813a9fdc76c1f9a5d83f26a277901f7268f9063b6b16bb15513bc5e9b135f2ab161bc0cee9f1e16f1ff4cd2d17f34f2b4c4cdc15a7ce601"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/ruAUEszF/antixray-forge-1.4.6%2B1.20.1.jar",
         "filename": "antixray-forge-1.4.6+1.20.1.jar",
@@ -807,7 +807,7 @@
     "changelog": "### Fixed\n\n- Wrong argument\n",
     "changelog_url": null,
     "date_published": "2024-08-16T10:57:57.957909Z",
-    "downloads": 16637,
+    "downloads": 16650,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -843,7 +843,7 @@
     "changelog": "### Fixed\n\n- Wrong argument\n",
     "changelog_url": null,
     "date_published": "2024-08-16T10:57:36.507708Z",
-    "downloads": 3832,
+    "downloads": 3850,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -880,15 +880,15 @@
     "changelog": "### Fixed\n\n- Wrong argument\n",
     "changelog_url": null,
     "date_published": "2024-08-16T10:57:35.128027Z",
-    "downloads": 27303,
+    "downloads": 27317,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1b8548052cc7df877054b6d624fa0b6279559912b4e019d386524417f16413bfbceb66e070ee5923593807932120e79e583cc06e4793b4083917cb55e34ac7f8",
-          "sha1": "3207a21650c715fc46b44d22f551874663c5e434"
+          "sha1": "3207a21650c715fc46b44d22f551874663c5e434",
+          "sha512": "1b8548052cc7df877054b6d624fa0b6279559912b4e019d386524417f16413bfbceb66e070ee5923593807932120e79e583cc06e4793b4083917cb55e34ac7f8"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/9Fb0twuI/antixray-fabric-1.4.6%2B1.21.1.jar",
         "filename": "antixray-fabric-1.4.6+1.21.1.jar",
@@ -922,8 +922,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "19a6779160793a6b459b403e99844fe03174439d",
-          "sha512": "26e8156d4986caa63dcc8b970db7c8f73ad1ae1d084ac57567ddb53b1dd9e850e33f4c98c49b17f54a2397fb061a8df3c28b0210ea8ccca714f8981fd5255874"
+          "sha512": "26e8156d4986caa63dcc8b970db7c8f73ad1ae1d084ac57567ddb53b1dd9e850e33f4c98c49b17f54a2397fb061a8df3c28b0210ea8ccca714f8981fd5255874",
+          "sha1": "19a6779160793a6b459b403e99844fe03174439d"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/b1epMuSp/antixray-forge-1.4.5%2B1.20.1.jar",
         "filename": "antixray-forge-1.4.5+1.20.1.jar",
@@ -958,8 +958,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8b930b26a63540ed2584b1226f2acaacf95a6c31",
-          "sha512": "1c1183d5f49a8bd4ac60808b6df48ee15c54197852ae01e31aa5ac9265e003d96ab9b5af01afd9a070594270067b496ba96a70d2fd0c54ab06767e8d28ebfe16"
+          "sha512": "1c1183d5f49a8bd4ac60808b6df48ee15c54197852ae01e31aa5ac9265e003d96ab9b5af01afd9a070594270067b496ba96a70d2fd0c54ab06767e8d28ebfe16",
+          "sha1": "8b930b26a63540ed2584b1226f2acaacf95a6c31"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/uzdtKupD/antixray-fabric-1.4.5%2B1.20.1.jar",
         "filename": "antixray-fabric-1.4.5+1.20.1.jar",
@@ -1065,8 +1065,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "13428b0b9990281d9eb99fd7742259cc576b9d369b8b747407879f299fe72f5abd75af7d7d2da3c160f0ccd175c24a357f35cd6fa90a15deb90fc240cfb74ee1",
-          "sha1": "9178f4c918ddb4f8e1f29895e15d5f7b3289e9a3"
+          "sha1": "9178f4c918ddb4f8e1f29895e15d5f7b3289e9a3",
+          "sha512": "13428b0b9990281d9eb99fd7742259cc576b9d369b8b747407879f299fe72f5abd75af7d7d2da3c160f0ccd175c24a357f35cd6fa90a15deb90fc240cfb74ee1"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/6KJ9AtBW/antixray-neoforge-1.4.5%2B1.21.jar",
         "filename": "antixray-neoforge-1.4.5+1.21.jar",
@@ -1102,8 +1102,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "12d16f07fa8bd9208fb6317c8912558aa456d1f6",
-          "sha512": "a242ceb431ecd2c427d0cfbca8559f774325fe8d0aaa46e8400a965c93469c5fb8e03983b3b7794aa0bae751bd8f2f019329ff885932ec0de1f3d6471f35ddf2"
+          "sha512": "a242ceb431ecd2c427d0cfbca8559f774325fe8d0aaa46e8400a965c93469c5fb8e03983b3b7794aa0bae751bd8f2f019329ff885932ec0de1f3d6471f35ddf2",
+          "sha1": "12d16f07fa8bd9208fb6317c8912558aa456d1f6"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/Cf0ucFhP/antixray-fabric-1.4.5%2B1.21.jar",
         "filename": "antixray-fabric-1.4.5+1.21.jar",
@@ -1168,7 +1168,7 @@
     "changelog": "### Fixed\n\n- Client side mixin issues\n- Incompatibility with Flywheel / Create\n",
     "changelog_url": null,
     "date_published": "2024-07-27T17:22:49.179457Z",
-    "downloads": 2520,
+    "downloads": 2521,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1246,8 +1246,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4ac527a54f6c26ad53cba0e185e0b3fe8a7f998f9760c9cf2463337b491c97040f0cec638245fb7ead6411f1cffb4290512fd529be49cff44946480be7db307b",
-          "sha1": "c53a559381d1d905788679e443b374a0565be535"
+          "sha1": "c53a559381d1d905788679e443b374a0565be535",
+          "sha512": "4ac527a54f6c26ad53cba0e185e0b3fe8a7f998f9760c9cf2463337b491c97040f0cec638245fb7ead6411f1cffb4290512fd529be49cff44946480be7db307b"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/grpQ94SA/antixray-fabric-1.4.4%2B1.20.4.jar",
         "filename": "antixray-fabric-1.4.4+1.20.4.jar",
@@ -1274,15 +1274,15 @@
     "changelog": "### Fixed\n\n- Client side mixin issues\n- Incompatibility with Flywheel / Create\n",
     "changelog_url": null,
     "date_published": "2024-07-27T17:21:06.663013Z",
-    "downloads": 1394,
+    "downloads": 1395,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1153115026540778e8ea747825cb2eec95d6f5c29dabd4f093afd2478ce9d36c1ce7f8c4cc3f63aa60d07db64061efc9ca52a589350eedab3ae111efa5b805ab",
-          "sha1": "272122d1cb1006a9fdb78fc3969d01133fe485d7"
+          "sha1": "272122d1cb1006a9fdb78fc3969d01133fe485d7",
+          "sha512": "1153115026540778e8ea747825cb2eec95d6f5c29dabd4f093afd2478ce9d36c1ce7f8c4cc3f63aa60d07db64061efc9ca52a589350eedab3ae111efa5b805ab"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/EeNwYcrS/antixray-forge-1.4.4%2B1.20.1.jar",
         "filename": "antixray-forge-1.4.4+1.20.1.jar",
@@ -1352,8 +1352,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "029a72b2a279e89b190d1bf0f2953cabf297ad16036f0cb531c5c7975a882e05563fcb52d7c208cc290474019d370fb30a8a84c3e53b9198bacfc5cfa89435ee",
-          "sha1": "61aadea6db6c1695009a5ed4a2e8b2b682a0c3ba"
+          "sha1": "61aadea6db6c1695009a5ed4a2e8b2b682a0c3ba",
+          "sha512": "029a72b2a279e89b190d1bf0f2953cabf297ad16036f0cb531c5c7975a882e05563fcb52d7c208cc290474019d370fb30a8a84c3e53b9198bacfc5cfa89435ee"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/hxfWXdxl/antixray-neoforge-1.4.3%2B1.21.jar",
         "filename": "antixray-neoforge-1.4.3+1.21.jar",
@@ -1423,8 +1423,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8dcd1ad398a1183dca8f949ef1a75ce56148a696",
-          "sha512": "7d512b7f727337425e0cfc5ecbeffe1707b71784aca234881a39fad1a0a3b6c852c3b2abf1b14c43084cd2c5198d5421df6d5b652395b2739a109ace7d39d039"
+          "sha512": "7d512b7f727337425e0cfc5ecbeffe1707b71784aca234881a39fad1a0a3b6c852c3b2abf1b14c43084cd2c5198d5421df6d5b652395b2739a109ace7d39d039",
+          "sha1": "8dcd1ad398a1183dca8f949ef1a75ce56148a696"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/NliZkudh/antixray-neoforge-1.4.2%2B1.20.4.jar",
         "filename": "antixray-neoforge-1.4.2+1.20.4.jar",
@@ -1494,8 +1494,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5002081a93a4c627fa4a618b2304d19104e7fdbb",
-          "sha512": "c425d003d21ca5204ccacb9e354a7a371c0f0c91fd3dd8a9105b23c507634b9293fd888d6edb1aaa4c30a03dabbde1bfb39af3054affe5d23e170811577b7aa1"
+          "sha512": "c425d003d21ca5204ccacb9e354a7a371c0f0c91fd3dd8a9105b23c507634b9293fd888d6edb1aaa4c30a03dabbde1bfb39af3054affe5d23e170811577b7aa1",
+          "sha1": "5002081a93a4c627fa4a618b2304d19104e7fdbb"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/h4gHhlmO/antixray-fabric-1.4.2%2B1.20.4.jar",
         "filename": "antixray-fabric-1.4.2+1.20.4.jar",
@@ -1530,8 +1530,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0b77f963d3fcf4eb475491b94c15d1c57890d2fc",
-          "sha512": "3356eea791efb916c88aeb35c7a27109bba99396d2011f23bf7d341e90ac6b65e6a514769ac0c3d6d6b0c4442732ab1ed8463aa6a6ffda79315e9a33cdb4bb16"
+          "sha512": "3356eea791efb916c88aeb35c7a27109bba99396d2011f23bf7d341e90ac6b65e6a514769ac0c3d6d6b0c4442732ab1ed8463aa6a6ffda79315e9a33cdb4bb16",
+          "sha1": "0b77f963d3fcf4eb475491b94c15d1c57890d2fc"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/UsmGWuEO/antixray-fabric-1.4.2%2B1.21.jar",
         "filename": "antixray-fabric-1.4.2+1.21.jar",
@@ -1742,8 +1742,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "917cd1cbd750269a625423cbc465fd99fd8eb2f9",
-          "sha512": "602275ff4cf47dd42aafca4eaff5a166ff71866b72e273f52580984f05b2d05be836b2d535a9f874e3c946a43ad24d56987412bddd08986d21d0f939e1d1b1f7"
+          "sha512": "602275ff4cf47dd42aafca4eaff5a166ff71866b72e273f52580984f05b2d05be836b2d535a9f874e3c946a43ad24d56987412bddd08986d21d0f939e1d1b1f7",
+          "sha1": "917cd1cbd750269a625423cbc465fd99fd8eb2f9"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/YsXC2SPT/antixray-forge-1.4.1%2B1.20.4.jar",
         "filename": "antixray-forge-1.4.1+1.20.4.jar",
@@ -1778,8 +1778,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5c43cd80a27a2200576f330ffa2bdc036c1363c1f0961b94a3e94b1bc413f8d0a13e60e414110c2b2776afe0b6d2bd9afedecd4c6859c993687e6afae1317e24",
-          "sha1": "3e7cb3c06a4cd75c4486a56ee7fd83a63047a703"
+          "sha1": "3e7cb3c06a4cd75c4486a56ee7fd83a63047a703",
+          "sha512": "5c43cd80a27a2200576f330ffa2bdc036c1363c1f0961b94a3e94b1bc413f8d0a13e60e414110c2b2776afe0b6d2bd9afedecd4c6859c993687e6afae1317e24"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/aHc1OjIS/antixray-fabric-1.4.1%2B1.20.4.jar",
         "filename": "antixray-fabric-1.4.1+1.20.4.jar",
@@ -1848,8 +1848,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "210b477013906a19292bab0ea9bb7552f8db1432",
-          "sha512": "18ea94d1a23507655a38844f1a59377b98646aed479e22d95709bf7e74430463d361784243dfc387d2a81a79c2ddd4b87692e788d64896ba11798effea8db6d1"
+          "sha512": "18ea94d1a23507655a38844f1a59377b98646aed479e22d95709bf7e74430463d361784243dfc387d2a81a79c2ddd4b87692e788d64896ba11798effea8db6d1",
+          "sha1": "210b477013906a19292bab0ea9bb7552f8db1432"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/RRduoABN/antixray-neoforge-1.4.1%2B1.20.6.jar",
         "filename": "antixray-neoforge-1.4.1+1.20.6.jar",
@@ -1884,8 +1884,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4e50a57a5c448c69649d5452d73bd161236b35d3",
-          "sha512": "f25ccf2d4260bbd0568162100ee1395195949186c94d71662ee0f3a74b03f4e9752b1841cfa831bc0bbb35364d7ec92a25ad42e7d9713989cee7ed27f073854f"
+          "sha512": "f25ccf2d4260bbd0568162100ee1395195949186c94d71662ee0f3a74b03f4e9752b1841cfa831bc0bbb35364d7ec92a25ad42e7d9713989cee7ed27f073854f",
+          "sha1": "4e50a57a5c448c69649d5452d73bd161236b35d3"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/JbK68pTv/antixray-fabric-1.4.1%2B1.20.6.jar",
         "filename": "antixray-fabric-1.4.1+1.20.6.jar",
@@ -1919,8 +1919,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "834efd38af0c6ff1613c87f2ecc6d7f8fe27b59cfd62844bb0e311721e43eced2b4b168791b36750e8d1ba4808ce2045c08b69269bc3d86b7c5b2004cbb8d0f0",
-          "sha1": "713e36791b31a0671db75065b87003fa01a6e8be"
+          "sha1": "713e36791b31a0671db75065b87003fa01a6e8be",
+          "sha512": "834efd38af0c6ff1613c87f2ecc6d7f8fe27b59cfd62844bb0e311721e43eced2b4b168791b36750e8d1ba4808ce2045c08b69269bc3d86b7c5b2004cbb8d0f0"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/OJ12w3S6/antixray-neoforge-1.4.0%2B1.20.6.jar",
         "filename": "antixray-neoforge-1.4.0+1.20.6.jar",
@@ -1955,8 +1955,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "111b984d598b7a7093838efa5acdbcb95f50ac29",
-          "sha512": "9dcddda8dd2a8e4b5f6e7579ecb7e438d6c9faf1d2ec46d8a5ecee0d15b65711bcb5029de32eea7f8f9d24e0f39c4286b19588378a33d9eee60b87cc13dc66e1"
+          "sha512": "9dcddda8dd2a8e4b5f6e7579ecb7e438d6c9faf1d2ec46d8a5ecee0d15b65711bcb5029de32eea7f8f9d24e0f39c4286b19588378a33d9eee60b87cc13dc66e1",
+          "sha1": "111b984d598b7a7093838efa5acdbcb95f50ac29"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/kgfD6HSX/antixray-fabric-1.4.0%2B1.20.6.jar",
         "filename": "antixray-fabric-1.4.0+1.20.6.jar",
@@ -2070,8 +2070,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e01206d437e64fd777053e6f55fc7bb389cf3bc5",
-          "sha512": "a4b0a2a5872f8db59b945fcf2b10571b422fc7d5e35f050d8220510d1f69ae213642a6a014e51f749f8bd4fedc784b59b5a0121b6eea007f37124684365ee3c3"
+          "sha512": "a4b0a2a5872f8db59b945fcf2b10571b422fc7d5e35f050d8220510d1f69ae213642a6a014e51f749f8bd4fedc784b59b5a0121b6eea007f37124684365ee3c3",
+          "sha1": "e01206d437e64fd777053e6f55fc7bb389cf3bc5"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/cHgHOCDB/anti-xray-1.3.2-Fabric-1.20.4.jar",
         "filename": "anti-xray-1.3.2-Fabric-1.20.4.jar",
@@ -2182,8 +2182,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0a025bc69abbbea154ccd734a4240dfdd91d0999b6e71677453cda924bd57bdf0c79475d3754f30d8e3757a969e5117c434daa8d685b2786f70ed9de06196a1a",
-          "sha1": "be18d7961f530cdaec3438fa81a4b1bff4ed276b"
+          "sha1": "be18d7961f530cdaec3438fa81a4b1bff4ed276b",
+          "sha512": "0a025bc69abbbea154ccd734a4240dfdd91d0999b6e71677453cda924bd57bdf0c79475d3754f30d8e3757a969e5117c434daa8d685b2786f70ed9de06196a1a"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/4NjDLu7z/anti-xray-1.3.1-Forge-1.20.2.jar",
         "filename": "anti-xray-1.3.1-Forge-1.20.2.jar",
@@ -2212,15 +2212,15 @@
     "changelog": "### Added\n- Allow custom dimension id's to be specified in the config\n",
     "changelog_url": null,
     "date_published": "2023-07-15T21:52:44.329754Z",
-    "downloads": 20823,
+    "downloads": 20825,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "87935c3aad7518a4f2631922cf033af8e4562746",
-          "sha512": "db470b24e9ddfca59c24bdabdc98b88ffbdc4987cc625850475e12a2c1b9572873286e14c3f5967c3f5c80cd02f230a66f707c4c5577fd0772e18d5cddc82fb2"
+          "sha512": "db470b24e9ddfca59c24bdabdc98b88ffbdc4987cc625850475e12a2c1b9572873286e14c3f5967c3f5c80cd02f230a66f707c4c5577fd0772e18d5cddc82fb2",
+          "sha1": "87935c3aad7518a4f2631922cf033af8e4562746"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/uZuiksRa/anti-xray-1.3.1-Fabric-1.20.1.jar",
         "filename": "anti-xray-1.3.1-Fabric-1.20.1.jar",
@@ -2329,8 +2329,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "83d723bbffd3eb9956edf5dc54dd2de3a7628523cebed5594e8625222fd1c54e8280c000511237774abac9c8df49bf1508947998e632cf93f8c99f5f66d08e58",
-          "sha1": "af0d84f379b06fb12e40a4a57e21e27c763205f1"
+          "sha1": "af0d84f379b06fb12e40a4a57e21e27c763205f1",
+          "sha512": "83d723bbffd3eb9956edf5dc54dd2de3a7628523cebed5594e8625222fd1c54e8280c000511237774abac9c8df49bf1508947998e632cf93f8c99f5f66d08e58"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/PaGVeomJ/anti-xray-1.3.0-Fabric-1.19.4.jar",
         "filename": "anti-xray-1.3.0-Fabric-1.19.4.jar",
@@ -2365,8 +2365,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "984d3d8ec961410eb6cb1c2db1b113428ac58b970437f306eafce3f6e6e44a30590c0e4fda08685e3a90a440856d5c9bd68064cf31a40f3eb1cb7be9103041af",
-          "sha1": "a4b30e3ba6c38b9a664996e1b50c7401ad7a7d1a"
+          "sha1": "a4b30e3ba6c38b9a664996e1b50c7401ad7a7d1a",
+          "sha512": "984d3d8ec961410eb6cb1c2db1b113428ac58b970437f306eafce3f6e6e44a30590c0e4fda08685e3a90a440856d5c9bd68064cf31a40f3eb1cb7be9103041af"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/BdSkkfRk/anti-xray-1.3.0-Forge-1.19.4.jar",
         "filename": "anti-xray-1.3.0-Forge-1.19.4.jar",
@@ -2401,8 +2401,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a7cdba2fd9a2801cba56e74bedf6c6ee63a461a1",
-          "sha512": "d9dd5410aeda398f173661e7af9b0ff1400f1a9689b493ce593d4a6b7bcfb370e7b77bc6bbe4f3dee2bb14450538d67042b73e0eff5b017dc51f9d96a8342d34"
+          "sha512": "d9dd5410aeda398f173661e7af9b0ff1400f1a9689b493ce593d4a6b7bcfb370e7b77bc6bbe4f3dee2bb14450538d67042b73e0eff5b017dc51f9d96a8342d34",
+          "sha1": "a7cdba2fd9a2801cba56e74bedf6c6ee63a461a1"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/WPaK6kfx/anti-xray-1.3.0-Fabric-1.19.3.jar",
         "filename": "anti-xray-1.3.0-Fabric-1.19.3.jar",
@@ -2466,7 +2466,7 @@
     "changelog": "### Added\n- Block tag support (in configs)\n- Layer obfuscation (Engine Mode 3)\n\n### Removed\n- Bypass permission: \"antixray.bypass\"\n\n### Changed\n- Relocate forge dependencies\n- Improved default config\n",
     "changelog_url": null,
     "date_published": "2023-01-13T23:21:42.734458Z",
-    "downloads": 14113,
+    "downloads": 14115,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2502,15 +2502,15 @@
     "changelog": "### Added\n- Block tag support (in configs)\n- Layer obfuscation (Engine Mode 3)\n\n### Removed\n- Bypass permission: \"antixray.bypass\"\n\n### Changed\n- Relocate forge dependencies\n- Improved default config\n",
     "changelog_url": null,
     "date_published": "2023-01-13T23:21:40.530109Z",
-    "downloads": 6999,
+    "downloads": 7002,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "59bb96c3959e86f3df48fc9f844ee743596e6ed27f74cda08a44f6b5028ff568434bba4f0cd26e9a729a4fb9b607bf87025e4513c8f6ab51d687d5e83c9341f7",
-          "sha1": "6d270fe37d6fa66586a5161d5c50cfcd2bf9da7e"
+          "sha1": "6d270fe37d6fa66586a5161d5c50cfcd2bf9da7e",
+          "sha512": "59bb96c3959e86f3df48fc9f844ee743596e6ed27f74cda08a44f6b5028ff568434bba4f0cd26e9a729a4fb9b607bf87025e4513c8f6ab51d687d5e83c9341f7"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/IqzGIQQ2/anti-xray-1.3.0-Forge-1.19.2.jar",
         "filename": "anti-xray-1.3.0-Forge-1.19.2.jar",
@@ -2545,8 +2545,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4b456528c3e981b7172206cd4e7ab1b77004eeee4c3b9a2e7c23a52faa6c8c138dc0d281c111b496e8e22587f81ffcbcc0052602de5b6c1fcd059a76b5663519",
-          "sha1": "b2a3501bd5878b91a2cebc2dab15dd9ed4501693"
+          "sha1": "b2a3501bd5878b91a2cebc2dab15dd9ed4501693",
+          "sha512": "4b456528c3e981b7172206cd4e7ab1b77004eeee4c3b9a2e7c23a52faa6c8c138dc0d281c111b496e8e22587f81ffcbcc0052602de5b6c1fcd059a76b5663519"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/HvgRdt2n/anti-xray-1.2.8-Fabric-1.19.3.jar",
         "filename": "anti-xray-1.2.8-Fabric-1.19.3.jar",
@@ -2580,8 +2580,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "dc7b98100bd7480d0e2a5263e44faee8e3e2ed7bbacf957e8f9afd601031311ee7532953b6768e90d07294825179d671156af39ae01b7fd70a9cbbcd0bd12b23",
-          "sha1": "8b4069dda799caa661641958991b6c96dc901485"
+          "sha1": "8b4069dda799caa661641958991b6c96dc901485",
+          "sha512": "dc7b98100bd7480d0e2a5263e44faee8e3e2ed7bbacf957e8f9afd601031311ee7532953b6768e90d07294825179d671156af39ae01b7fd70a9cbbcd0bd12b23"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/zRxrm7eb/anti-xray-1.2.8-Forge-1.19.3.jar",
         "filename": "anti-xray-1.2.8-Forge-1.19.3.jar",
@@ -2653,8 +2653,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fa1693fe55f254d91138e09c47ac12dfc675a971",
-          "sha512": "99ffd5ef5de36cd0abeaba5691c3f1eed72edde69b5091302b93117be89420d78e32cd1447b1f9ac470b22a7e4c5fdd327c1aa225ca259919ccec1c20c84dc46"
+          "sha512": "99ffd5ef5de36cd0abeaba5691c3f1eed72edde69b5091302b93117be89420d78e32cd1447b1f9ac470b22a7e4c5fdd327c1aa225ca259919ccec1c20c84dc46",
+          "sha1": "fa1693fe55f254d91138e09c47ac12dfc675a971"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/WkriyZVg/anti-xray-1.2.8-Forge-1.19.2.jar",
         "filename": "anti-xray-1.2.8-Forge-1.19.2.jar",
@@ -2689,8 +2689,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "000bc431e720e4933c58d5910db63bf15ce0c4e0",
-          "sha512": "631ad6a1fd3466cca5652ea61c03f994cd0f5f2ab4178688ce579de17e4ac708a7647a1c001b679df83e529aa77b5b596fb9032ebc8bbd3d9009b2f93dd2bd21"
+          "sha512": "631ad6a1fd3466cca5652ea61c03f994cd0f5f2ab4178688ce579de17e4ac708a7647a1c001b679df83e529aa77b5b596fb9032ebc8bbd3d9009b2f93dd2bd21",
+          "sha1": "000bc431e720e4933c58d5910db63bf15ce0c4e0"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/SOx7L7Nn/anti-xray-1.2.7-Fabric-1.19.3.jar",
         "filename": "anti-xray-1.2.7-Fabric-1.19.3.jar",
@@ -2724,8 +2724,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "31272f4eb838489b9f3aaa31fd6696a33e195474",
-          "sha512": "e605cafe0d521f5e995fe766bdd507bf88f938b30f4f79e1341ac7c170fa76d80560e98e11c039e572ff5f34ed6b5bb6f23538f21dc117b8710a5f1b78fa697a"
+          "sha512": "e605cafe0d521f5e995fe766bdd507bf88f938b30f4f79e1341ac7c170fa76d80560e98e11c039e572ff5f34ed6b5bb6f23538f21dc117b8710a5f1b78fa697a",
+          "sha1": "31272f4eb838489b9f3aaa31fd6696a33e195474"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/qM7FI7Qe/anti-xray-1.2.7-Forge-1.19.3.jar",
         "filename": "anti-xray-1.2.7-Forge-1.19.3.jar",
@@ -2834,8 +2834,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d7ddecf70c7ca6335fe5edebd226242982f5984b783d0d403abcdd723b55f2fc81d0a969c9a214acced96daa42834e4a50676b830fdda62098d82b85b91a880f",
-          "sha1": "5688147388cc9347c7b38f439bc3391de45f85e4"
+          "sha1": "5688147388cc9347c7b38f439bc3391de45f85e4",
+          "sha512": "d7ddecf70c7ca6335fe5edebd226242982f5984b783d0d403abcdd723b55f2fc81d0a969c9a214acced96daa42834e4a50676b830fdda62098d82b85b91a880f"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/N18tpAGy/anti-xray-1.2.6-Fabric-1.19.2.jar",
         "filename": "anti-xray-1.2.6-Fabric-1.19.2.jar",
@@ -2870,8 +2870,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "73f0b99435f301a2fd65b89f9dd2b4533a3706f197e4484273f6d376bcfd092055d3149880a095369d23efb52e704e87621af13fc53e7a2f815bd8ef748d2af9",
-          "sha1": "b2d50437c23e8c1687fa92cad5631ce83b486f88"
+          "sha1": "b2d50437c23e8c1687fa92cad5631ce83b486f88",
+          "sha512": "73f0b99435f301a2fd65b89f9dd2b4533a3706f197e4484273f6d376bcfd092055d3149880a095369d23efb52e704e87621af13fc53e7a2f815bd8ef748d2af9"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/LDxMRJpI/anti-xray-1.2.6-Forge-1.19.2.jar",
         "filename": "anti-xray-1.2.6-Forge-1.19.2.jar",
@@ -2979,8 +2979,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "32de2ebd439e6b93996e33a632197aa703569100",
-          "sha512": "f0a90d8f8dde816334c2b04a41edd1db057991ba4b5e7b36e2a29667a57084d4fddad91ad62f9e34fe398dd7f8ce5e143ef0fb1f5176f41f15eab274f62cfd0c"
+          "sha512": "f0a90d8f8dde816334c2b04a41edd1db057991ba4b5e7b36e2a29667a57084d4fddad91ad62f9e34fe398dd7f8ce5e143ef0fb1f5176f41f15eab274f62cfd0c",
+          "sha1": "32de2ebd439e6b93996e33a632197aa703569100"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.19-1.2.4-fabric/anti-xray-1.2.4-Fabric-1.19.jar",
         "filename": "anti-xray-1.2.4-Fabric-1.19.jar",
@@ -3120,8 +3120,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cbc5dfd139166ca14a2b93e52205d3ce299796448f804f9cc48c67ecc9ec3078cdc13879144728fb9e60d5d48188a8ea7f05dfdecf839db5c1b1ffbc451c5b60",
-          "sha1": "a535ddd4dee2823e9eb3564d638356381221111a"
+          "sha1": "a535ddd4dee2823e9eb3564d638356381221111a",
+          "sha512": "cbc5dfd139166ca14a2b93e52205d3ce299796448f804f9cc48c67ecc9ec3078cdc13879144728fb9e60d5d48188a8ea7f05dfdecf839db5c1b1ffbc451c5b60"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.19-1.2.2-fabric/anti-xray-1.2.2-Fabric-1.19.jar",
         "filename": "anti-xray-1.2.2-Fabric-1.19.jar",
@@ -3231,7 +3231,7 @@
     "changelog": "Updated to 1.18.2",
     "changelog_url": null,
     "date_published": "2022-03-02T13:23:59.150138Z",
-    "downloads": 4249,
+    "downloads": 4250,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3273,8 +3273,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0ffe502d7315211aacfdf9d756133d4fbf240192790a59d4a6bac251c2b5abd6b4326371a92a9f1857aa49b8f4f9df2b7e9f65daf63735c73fb2a299c87d1b87",
-          "sha1": "701ec63eee51ef20783985acbadd3e48157bf942"
+          "sha1": "701ec63eee51ef20783985acbadd3e48157bf942",
+          "sha512": "0ffe502d7315211aacfdf9d756133d4fbf240192790a59d4a6bac251c2b5abd6b4326371a92a9f1857aa49b8f4f9df2b7e9f65daf63735c73fb2a299c87d1b87"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.18.2-1.2.1-fabric/anti-xray-1.2.1-Fabric-1.18.2.jar",
         "filename": "anti-xray-1.2.1-Fabric-1.18.2.jar",
@@ -3309,8 +3309,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7fa7962dcaeb26dbf7044e02b04f86251e12e8c3703b60387f44feadaa231a4996336db34030af1d93e41e6b27ef8f5ae684c923146eef16a2c7d8c1853fbf6d",
-          "sha1": "4748704891626775ea3971945c622a31c2dcd0ad"
+          "sha1": "4748704891626775ea3971945c622a31c2dcd0ad",
+          "sha512": "7fa7962dcaeb26dbf7044e02b04f86251e12e8c3703b60387f44feadaa231a4996336db34030af1d93e41e6b27ef8f5ae684c923146eef16a2c7d8c1853fbf6d"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.18-1.2.0-fabric/anti-xray-1.2.0-Fabric-1.18.jar",
         "filename": "anti-xray-1.2.0-Fabric-1.18.jar",
@@ -3345,8 +3345,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a4ab51921614eaf50f1688db43029edaed94a7f5ba06aeaaa4fdd40d270b8a091a6dd9a165f3c49b1ef4536b8f66084fbbf1166588c8771249a1a2161fbb1288",
-          "sha1": "7fc465e7cb3adaa70af60cdd2ed06fa90a73ef63"
+          "sha1": "7fc465e7cb3adaa70af60cdd2ed06fa90a73ef63",
+          "sha512": "a4ab51921614eaf50f1688db43029edaed94a7f5ba06aeaaa4fdd40d270b8a091a6dd9a165f3c49b1ef4536b8f66084fbbf1166588c8771249a1a2161fbb1288"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.18-1.2.0/anti-xray-1.2.0-Forge-1.18.jar",
         "filename": "anti-xray-1.2.0-Forge-1.18.jar",
@@ -3380,8 +3380,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2a86a55ee6c8ff4c321a03ad7eab6b048fd95de6",
-          "sha512": "502c4e0175f21d86376e1c783fd235bd8aa85a06e1e8db8852ce9c9ce4df30b7ba40d377d33e5c566bf10e96f5767ff5470cc089bcb13c16adedc7a8b2f5126f"
+          "sha512": "502c4e0175f21d86376e1c783fd235bd8aa85a06e1e8db8852ce9c9ce4df30b7ba40d377d33e5c566bf10e96f5767ff5470cc089bcb13c16adedc7a8b2f5126f",
+          "sha1": "2a86a55ee6c8ff4c321a03ad7eab6b048fd95de6"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.1.2/anti-xray-mc1.18-1.1.2.jar",
         "filename": "anti-xray-mc1.18-1.1.2.jar",
@@ -3487,8 +3487,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "90845c80e17b1cff79d32b345f9da0d83637e575dc0035326a15096bee960996a87e5fd435f146fb99dac38ab0341f47285b562f02000cf7f5e6c9d676fd0bb9",
-          "sha1": "f7f45caf4d46380f3e360a23ca5ab9f4adcee55e"
+          "sha1": "f7f45caf4d46380f3e360a23ca5ab9f4adcee55e",
+          "sha512": "90845c80e17b1cff79d32b345f9da0d83637e575dc0035326a15096bee960996a87e5fd435f146fb99dac38ab0341f47285b562f02000cf7f5e6c9d676fd0bb9"
         },
         "url": "https://cdn.modrinth.com//data/sml2FMaA/versions/mc1.16.5-1.1.0/anti-xray-mc1.16.5-1.1.0.jar",
         "filename": "anti-xray-mc1.16.5-1.1.0.jar",
@@ -3523,8 +3523,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "dc36f9950fa53efe8f605d65bf5a0c911a986a1f8b43c83c5998bcbf95783d94c1cd4d7bc1443da1e3a61672d60ec164f7612ba6ddc5230987dd78a11ed3e4e4",
-          "sha1": "f346e1d564a6c2dc264832f137addc2e0f3c82a6"
+          "sha1": "f346e1d564a6c2dc264832f137addc2e0f3c82a6",
+          "sha512": "dc36f9950fa53efe8f605d65bf5a0c911a986a1f8b43c83c5998bcbf95783d94c1cd4d7bc1443da1e3a61672d60ec164f7612ba6ddc5230987dd78a11ed3e4e4"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.0.2/anti-xray-mc1.17.1-1.0.2.jar",
         "filename": "anti-xray-mc1.17.1-1.0.2.jar",
@@ -3558,8 +3558,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8bf2e8fd39b645c0abe23089a827c1ad1e10d7c2",
-          "sha512": "b967c3d1a5987ede6c8ed08ed907f39047fa7dd172b052088af9375375da2816a590c6e924cca6aa7994aafbc41a3d0fe53d233031781b2afa83c0bc3e011675"
+          "sha512": "b967c3d1a5987ede6c8ed08ed907f39047fa7dd172b052088af9375375da2816a590c6e924cca6aa7994aafbc41a3d0fe53d233031781b2afa83c0bc3e011675",
+          "sha1": "8bf2e8fd39b645c0abe23089a827c1ad1e10d7c2"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/mc1.16.5-1.0.2/anti-xray-mc1.16.5-1.0.2.jar",
         "filename": "anti-xray-mc1.16.5-1.0.2.jar",
@@ -3594,8 +3594,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0ad9ea462851ca0ca32f79e5a39e5caa21d77336442b115c05950ac1a43434e68d6ee39759a1cce09b09da4e0661088ea7644d0e546a5d26b0249d47da1e2a23",
-          "sha1": "04571bc7a17814a3243661d812b2114a791f9a5b"
+          "sha1": "04571bc7a17814a3243661d812b2114a791f9a5b",
+          "sha512": "0ad9ea462851ca0ca32f79e5a39e5caa21d77336442b115c05950ac1a43434e68d6ee39759a1cce09b09da4e0661088ea7644d0e546a5d26b0249d47da1e2a23"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.0.1/anti-xray-1.0.1.jar",
         "filename": "anti-xray-1.0.1.jar",
@@ -3665,8 +3665,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fac8a155d8c3bd90ddc94e974a312c6bc92750bd",
-          "sha512": "757d44d0dff4253fd92c6c34e63ce49c9b8f51bb576566e97bf762451af6df9755d3c3f94f2baf2660049228a61415cace2257261f15a4fa0e3cc71cf7ee650d"
+          "sha512": "757d44d0dff4253fd92c6c34e63ce49c9b8f51bb576566e97bf762451af6df9755d3c3f94f2baf2660049228a61415cace2257261f15a4fa0e3cc71cf7ee650d",
+          "sha1": "fac8a155d8c3bd90ddc94e974a312c6bc92750bd"
         },
         "url": "https://cdn.modrinth.com/data/sml2FMaA/versions/1.0.0/anti-xray-1.0.0.jar",
         "filename": "anti-xray-1.0.0.jar",

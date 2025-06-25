@@ -16,15 +16,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/StyledPlayerList/compare/3.7.0+1.21.5...3.8.0+1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-18T15:48:59.076405Z",
-    "downloads": 286,
+    "downloads": 299,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "dd1a40150dcdf019ae71fe6567c018cba4a5513d",
-          "sha512": "846944aaf07bd8c71a2f226e0bb7efdcdcd59b9d5163dce9094f67271b8fe0e751283768c2d49d155f6324af90e934edf7af66eaa2cfee4212ab7bf762b0440a"
+          "sha512": "846944aaf07bd8c71a2f226e0bb7efdcdcd59b9d5163dce9094f67271b8fe0e751283768c2d49d155f6324af90e934edf7af66eaa2cfee4212ab7bf762b0440a",
+          "sha1": "dd1a40150dcdf019ae71fe6567c018cba4a5513d"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/roni2qRY/styledplayerlist-3.8.0%2B1.21.6.jar",
         "filename": "styledplayerlist-3.8.0+1.21.6.jar",
@@ -53,15 +53,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/StyledPlayerList/compare/3.6.0+1.21.2...3.7.0+1.21.5",
     "changelog_url": null,
     "date_published": "2025-03-24T11:39:03.173298Z",
-    "downloads": 2262,
+    "downloads": 2265,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "740e9d1b298dafa03894f016d6709c93abd9faee",
-          "sha512": "ae293e1696aac2927d5620a24b97b369fc5af8a15e2eadd247eba3e905ba708fc7acb7275dc9722ec5cad75af536221d1c635b4956c1d594bd17f528d27a70aa"
+          "sha512": "ae293e1696aac2927d5620a24b97b369fc5af8a15e2eadd247eba3e905ba708fc7acb7275dc9722ec5cad75af536221d1c635b4956c1d594bd17f528d27a70aa",
+          "sha1": "740e9d1b298dafa03894f016d6709c93abd9faee"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/VQ4VhTvm/styledplayerlist-3.7.0%2B1.21.5.jar",
         "filename": "styledplayerlist-3.7.0+1.21.5.jar",
@@ -99,8 +99,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "aa3c18646d0b34f56ae0a3ee24bfbb6026f0c6ce99217586cea02a5218946fc467d7ddd38960dd24e7b392ad0511f30b85cbeee57c00fe4e8bb8850f3d5658dc",
-          "sha1": "d396518172e86317ed71b3406bbddcf5b88f3b27"
+          "sha1": "d396518172e86317ed71b3406bbddcf5b88f3b27",
+          "sha512": "aa3c18646d0b34f56ae0a3ee24bfbb6026f0c6ce99217586cea02a5218946fc467d7ddd38960dd24e7b392ad0511f30b85cbeee57c00fe4e8bb8850f3d5658dc"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/gyvLcVPF/styledplayerlist-3.6.0%2B1.21.2.jar",
         "filename": "styledplayerlist-3.6.0+1.21.2.jar",
@@ -129,15 +129,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/StyledPlayerList/compare/3.5.0+1.21...3.5.1+1.21",
     "changelog_url": null,
     "date_published": "2024-06-25T19:34:06.225075Z",
-    "downloads": 16845,
+    "downloads": 16854,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6976dbc5dafff329aea18b2a7fc20436640271511d9fc1714b77620382e4e46754c91400964d3fc729c62d78bd7b204521ebda904e59e9192b2866c024918004",
-          "sha1": "f33770ba71d3e24b46591cefee106cf0e18d9eb7"
+          "sha1": "f33770ba71d3e24b46591cefee106cf0e18d9eb7",
+          "sha512": "6976dbc5dafff329aea18b2a7fc20436640271511d9fc1714b77620382e4e46754c91400964d3fc729c62d78bd7b204521ebda904e59e9192b2866c024918004"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/Ui7MOgqG/styledplayerlist-3.5.1%2B1.21.jar",
         "filename": "styledplayerlist-3.5.1+1.21.jar",
@@ -286,8 +286,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "82895d8776b10b927e503c3f79ece0d8a12eb839",
-          "sha512": "db4b0d17af6c7c635c9b4f54d8f069698d9652b184d5a45035e8836ce65f4fe47077285d14a3c4b8a83d1fe6226d1481aa7f2cefc0834a6d8280ed50ff00c761"
+          "sha512": "db4b0d17af6c7c635c9b4f54d8f069698d9652b184d5a45035e8836ce65f4fe47077285d14a3c4b8a83d1fe6226d1481aa7f2cefc0834a6d8280ed50ff00c761",
+          "sha1": "82895d8776b10b927e503c3f79ece0d8a12eb839"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/8c1ZipKd/styledplayerlist-3.2.0%2B1.20.2.jar",
         "filename": "styledplayerlist-3.2.0+1.20.2.jar",
@@ -315,15 +315,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-06-20T20:20:38.445091Z",
-    "downloads": 40505,
+    "downloads": 40513,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "8c6db42ea55444208010920547fa8cc2cb2f29d2",
-          "sha512": "b8258b3d54cc22a9b9203f176f5c2c4e88168cbbcf9654094acb870ccb30c6bc2849b2c7c4bfee87e7c02aec87e7903b437f19ef68c87b874178ac88394ec2dd"
+          "sha512": "b8258b3d54cc22a9b9203f176f5c2c4e88168cbbcf9654094acb870ccb30c6bc2849b2c7c4bfee87e7c02aec87e7903b437f19ef68c87b874178ac88394ec2dd",
+          "sha1": "8c6db42ea55444208010920547fa8cc2cb2f29d2"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/4FqvobxB/styledplayerlist-3.1.1%2B1.20.1.jar",
         "filename": "styledplayerlist-3.1.1+1.20.1.jar",
@@ -360,8 +360,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e0d20536044b1d0597c46fe5b3966aee9113067d",
-          "sha512": "a5a5b1843979bb09cd802a51315837e16ab0bc317ecb32da48476c14c9f6b8ad0213e7a1bbf25767dfd79e153dc9cb92fc12dec2b593d3584b32ed46ef6e90d1"
+          "sha512": "a5a5b1843979bb09cd802a51315837e16ab0bc317ecb32da48476c14c9f6b8ad0213e7a1bbf25767dfd79e153dc9cb92fc12dec2b593d3584b32ed46ef6e90d1",
+          "sha1": "e0d20536044b1d0597c46fe5b3966aee9113067d"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/GCohbJZB/styledplayerlist-3.1.0%2B1.20.jar",
         "filename": "styledplayerlist-3.1.0+1.20.jar",
@@ -581,8 +581,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c5b64a69b0dd69638d2247e09c0967b086c6b2c7",
-          "sha512": "482b1c1c7d73397d93d3bedbc1eec5ce745019e7b4a313420f17f6152810951318abfe259f7e9edd0de41633c0597a596406a2b8f9892a96e8c02df87600060a"
+          "sha512": "482b1c1c7d73397d93d3bedbc1eec5ce745019e7b4a313420f17f6152810951318abfe259f7e9edd0de41633c0597a596406a2b8f9892a96e8c02df87600060a",
+          "sha1": "c5b64a69b0dd69638d2247e09c0967b086c6b2c7"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/2.1.3%2B1.18/styledplayerlist-2.1.3%2B1.18.jar",
         "filename": "styledplayerlist-2.1.3+1.18.jar",
@@ -651,8 +651,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "60c0cda0e1f5b42bd5f572ba04f761c4857ba3de",
-          "sha512": "81964b6287287d6660b5c98628b6331b656a891f8fff5ad6a61446b682230ad51e34fd3efed300c5bfe6ef4b4f58ca5c8ccaa0688de4f4187a8ff1592d987f9e"
+          "sha512": "81964b6287287d6660b5c98628b6331b656a891f8fff5ad6a61446b682230ad51e34fd3efed300c5bfe6ef4b4f58ca5c8ccaa0688de4f4187a8ff1592d987f9e",
+          "sha1": "60c0cda0e1f5b42bd5f572ba04f761c4857ba3de"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/2.1.1/styledplayerlist-2.1.1.jar",
         "filename": "styledplayerlist-2.1.1.jar",
@@ -686,8 +686,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "44738bb89a94bef8049a91a406fe239de95c6033764648593a0b1e5f8657739202fb3b281f66d830f178ac07ad5b0db692a3f353b9882c3889f27e2574dbcccc",
-          "sha1": "4d75c4732d271f522c8ec95b3109dc4886e3448a"
+          "sha1": "4d75c4732d271f522c8ec95b3109dc4886e3448a",
+          "sha512": "44738bb89a94bef8049a91a406fe239de95c6033764648593a0b1e5f8657739202fb3b281f66d830f178ac07ad5b0db692a3f353b9882c3889f27e2574dbcccc"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/2.1.0/styledplayerlist-2.1.0.jar",
         "filename": "styledplayerlist-2.1.0.jar",
@@ -721,8 +721,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "bd1789cc61715848d7ab2b1878ddef0eefc8070f96d6e991d22997a6261431d3d9fcc55c25e4df6e782b6816a458fa6d209231a2fed59e90b20d4a530d2a25ba",
-          "sha1": "a9f9b799c882c422baae207fb8eb3f9932e9e375"
+          "sha1": "a9f9b799c882c422baae207fb8eb3f9932e9e375",
+          "sha512": "bd1789cc61715848d7ab2b1878ddef0eefc8070f96d6e991d22997a6261431d3d9fcc55c25e4df6e782b6816a458fa6d209231a2fed59e90b20d4a530d2a25ba"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/2.0.1/styledplayerlist-2.0.1.jar",
         "filename": "styledplayerlist-2.0.1.jar",
@@ -827,8 +827,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9faf835f40beac852b983e35bd0bdda127756ed47cd883e43f867d8a7fd00d14c5b0d43d8369f8291d6878d7e0323b7a1ef057d7e8eaa495851b8c5d66f103b1",
-          "sha1": "e970b43e666f1ab9b5ab5613baf20b1d44f17be8"
+          "sha1": "e970b43e666f1ab9b5ab5613baf20b1d44f17be8",
+          "sha512": "9faf835f40beac852b983e35bd0bdda127756ed47cd883e43f867d8a7fd00d14c5b0d43d8369f8291d6878d7e0323b7a1ef057d7e8eaa495851b8c5d66f103b1"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/1.2.1/styledplayerlist-1.2.1.jar",
         "filename": "styledplayerlist-1.2.1.jar",
@@ -1055,8 +1055,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ddcf7126a32565acf19f72b0789771d112a9dae3ba062ade733e344d35e3767a331db6f024edf06e6edf87d89db44e140255c42238fe0c9136fe6c20543a0998",
-          "sha1": "64e136c81142c6170d99679feb11bdadc1c2dffd"
+          "sha1": "64e136c81142c6170d99679feb11bdadc1c2dffd",
+          "sha512": "ddcf7126a32565acf19f72b0789771d112a9dae3ba062ade733e344d35e3767a331db6f024edf06e6edf87d89db44e140255c42238fe0c9136fe6c20543a0998"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/1.1.0/styledplayerlist-1.1.0.jar",
         "filename": "styledplayerlist-1.1.0.jar",
@@ -1093,8 +1093,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "053c1ae6c3e8ff58726398aa888533e167b4c9d0",
-          "sha512": "f4ce0a581bd6a9a1a6934374f742094ca7866d9cccc2217aac1ea2b446d48a944c81904d0afe64a15886b48096cabdc1cc8f1d26e7e2d69bf4c0ef6e4f07a5a7"
+          "sha512": "f4ce0a581bd6a9a1a6934374f742094ca7866d9cccc2217aac1ea2b446d48a944c81904d0afe64a15886b48096cabdc1cc8f1d26e7e2d69bf4c0ef6e4f07a5a7",
+          "sha1": "053c1ae6c3e8ff58726398aa888533e167b4c9d0"
         },
         "url": "https://cdn.modrinth.com/data/DQIfKUHf/versions/1.0.0/styledplayerlist-1.0.0.jar",
         "filename": "styledplayerlist-1.0.0.jar",

@@ -16,15 +16,15 @@
     "changelog": "## Features\n\n - Minecraft 1.20.5+ support\n\n## New Contributors\n\n - @magicus made their first contribution in [#5](https://github.com/Kir-Antipov/egg-of-capitalism/pull/5)\n\n**Full Changelog**: [`mc1.20-4.0...mc1.20.5-4.0`](https://github.com/Kir-Antipov/egg-of-capitalism/compare/mc1.20-4.0...mc1.20.5-4.0)",
     "changelog_url": null,
     "date_published": "2024-05-14T17:44:57.59284Z",
-    "downloads": 315,
+    "downloads": 319,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "15af61f2d7366ea8ed3c23e1e97d2c8a736457ea8b701f4b37685c1658c84d5087d8f0ed589e6bbefda125e63fecc1096fcb83c732b346fec9c6229a2289d988",
-          "sha1": "3c7a947eb331fde89bc8c1a8f8fb2c4c7bd45d31"
+          "sha1": "3c7a947eb331fde89bc8c1a8f8fb2c4c7bd45d31",
+          "sha512": "15af61f2d7366ea8ed3c23e1e97d2c8a736457ea8b701f4b37685c1658c84d5087d8f0ed589e6bbefda125e63fecc1096fcb83c732b346fec9c6229a2289d988"
         },
         "url": "https://cdn.modrinth.com/data/llThBwQo/versions/S5qEeVFl/egg-of-capitalism-mc1.20.5-4.0.jar",
         "filename": "egg-of-capitalism-mc1.20.5-4.0.jar",
@@ -66,7 +66,7 @@
     "changelog": "### Features:\r\n\r\n - Minecraft 1.20.x support",
     "changelog_url": null,
     "date_published": "2023-12-16T15:08:34.965417Z",
-    "downloads": 2894,
+    "downloads": 2896,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -116,7 +116,7 @@
     "changelog": "### Features:\r\n\r\n- Refactoring & optimizations\r\n\r\n### Breaking Changes:\r\n\r\n - The mod no longer scans advancement data to identify a player who has already killed the dragon. This process was costly, unportable, and error-prone, as it produced lots of unwanted false positives",
     "changelog_url": null,
     "date_published": "2023-12-16T00:48:48.3804Z",
-    "downloads": 939,
+    "downloads": 941,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -134,8 +134,8 @@
       },
       {
         "hashes": {
-          "sha1": "5a91a5ea62d6773c999b1b43510d6491ecae2c2c",
-          "sha512": "22967a0cb4e90ec6c240f4a33f652027a8520731befb2fab8acd002b1e9eaefbd83017a7b06f826a164d5054b9ca92a587cb7146f69aa3aca39c7d1e6caf2dde"
+          "sha512": "22967a0cb4e90ec6c240f4a33f652027a8520731befb2fab8acd002b1e9eaefbd83017a7b06f826a164d5054b9ca92a587cb7146f69aa3aca39c7d1e6caf2dde",
+          "sha1": "5a91a5ea62d6773c999b1b43510d6491ecae2c2c"
         },
         "url": "https://cdn.modrinth.com/data/llThBwQo/versions/UO9OcDT8/egg-of-capitalism-mc1.19-4.0-sources.jar",
         "filename": "egg-of-capitalism-mc1.19-4.0-sources.jar",
@@ -248,8 +248,8 @@
       },
       {
         "hashes": {
-          "sha1": "22f5e6f3f31f267128e0b5519365e70c07e0d2c9",
-          "sha512": "04cd6501e36af695150578f439fd87934083297b9ddd192984292016902b962ddd2916cc5f5c5c019bb98254d30fee296445e5339e9d397586e3a87a318902dc"
+          "sha512": "04cd6501e36af695150578f439fd87934083297b9ddd192984292016902b962ddd2916cc5f5c5c019bb98254d30fee296445e5339e9d397586e3a87a318902dc",
+          "sha1": "22f5e6f3f31f267128e0b5519365e70c07e0d2c9"
         },
         "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.1/egg-of-capitalism-mc1.18.2-3.1-sources.jar",
         "filename": "egg-of-capitalism-mc1.18.2-3.1-sources.jar",
@@ -284,8 +284,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "138e2ea327fbe2b2a115ecf81aff65380cbbc7df",
-          "sha512": "23a8b8b271801ebabf69d8444e4f32f7d3411fabb1c7cc2b529a1ac886c9ea0863bc2eb38b348a5a176b85e437500d7e5aebf1f7e0a00f0c9cdef1f02e75b865"
+          "sha512": "23a8b8b271801ebabf69d8444e4f32f7d3411fabb1c7cc2b529a1ac886c9ea0863bc2eb38b348a5a176b85e437500d7e5aebf1f7e0a00f0c9cdef1f02e75b865",
+          "sha1": "138e2ea327fbe2b2a115ecf81aff65380cbbc7df"
         },
         "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.0/egg-of-capitalism-mc1.18-3.0.jar",
         "filename": "egg-of-capitalism-mc1.18-3.0.jar",
@@ -295,8 +295,8 @@
       },
       {
         "hashes": {
-          "sha1": "1803713e48be4120caa5e979cd193c7a308bad5d",
-          "sha512": "7a6020c1398d42a91f045aa45ebd98b58db90982bb8fbfc060115bba550e3143c46ec2be2a778adc881130b0e3861310ae678dde3e92ceca575572cd9c0d8ceb"
+          "sha512": "7a6020c1398d42a91f045aa45ebd98b58db90982bb8fbfc060115bba550e3143c46ec2be2a778adc881130b0e3861310ae678dde3e92ceca575572cd9c0d8ceb",
+          "sha1": "1803713e48be4120caa5e979cd193c7a308bad5d"
         },
         "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.0/egg-of-capitalism-mc1.18-3.0-dev.jar",
         "filename": "egg-of-capitalism-mc1.18-3.0-dev.jar",
@@ -306,8 +306,8 @@
       },
       {
         "hashes": {
-          "sha512": "dfbf45e5340cd554268f907823e0efbba7edd012aa77b728b8a7fd2e6101f218baaa535d98ad9ef481b8016b8ab0af2153773e31e1898d9b19ee624bda35a106",
-          "sha1": "5ccd669459d213d32bcad99ef6cbb076cad75172"
+          "sha1": "5ccd669459d213d32bcad99ef6cbb076cad75172",
+          "sha512": "dfbf45e5340cd554268f907823e0efbba7edd012aa77b728b8a7fd2e6101f218baaa535d98ad9ef481b8016b8ab0af2153773e31e1898d9b19ee624bda35a106"
         },
         "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.0/egg-of-capitalism-mc1.18-3.0-sources-dev.jar",
         "filename": "egg-of-capitalism-mc1.18-3.0-sources-dev.jar",
@@ -317,8 +317,8 @@
       },
       {
         "hashes": {
-          "sha1": "2483c86be205783f9e4ed3fc2de8714cc4388df5",
-          "sha512": "6fa4ae8e43a25086e2ed242ab0884a0f09d5e5053c251ddf515224636b0096504061f00be163707f8fe8913f91f53bb29f30f21e971339c17b4af3d47a17a182"
+          "sha512": "6fa4ae8e43a25086e2ed242ab0884a0f09d5e5053c251ddf515224636b0096504061f00be163707f8fe8913f91f53bb29f30f21e971339c17b4af3d47a17a182",
+          "sha1": "2483c86be205783f9e4ed3fc2de8714cc4388df5"
         },
         "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.18-3.0/egg-of-capitalism-mc1.18-3.0-sources.jar",
         "filename": "egg-of-capitalism-mc1.18-3.0-sources.jar",
@@ -352,8 +352,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "49ef5a82ee3ce077f66afcd370aa338010262dfdbc8ded7eb1ab8541c8ca56e8e33e3117365720b3f6d525b0a353f1c0c4cd2fa8c1296ad2c52203bacd9c4539",
-          "sha1": "3ff36a2fe6465fe716f772be0b797a6d6bd7da18"
+          "sha1": "3ff36a2fe6465fe716f772be0b797a6d6bd7da18",
+          "sha512": "49ef5a82ee3ce077f66afcd370aa338010262dfdbc8ded7eb1ab8541c8ca56e8e33e3117365720b3f6d525b0a353f1c0c4cd2fa8c1296ad2c52203bacd9c4539"
         },
         "url": "https://cdn.modrinth.com/data/llThBwQo/versions/mc1.17.x-2.1/eggofcapitalism-mc1.17.x-2.1.jar",
         "filename": "eggofcapitalism-mc1.17.x-2.1.jar",

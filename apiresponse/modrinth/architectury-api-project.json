@@ -77,8 +77,8 @@
     "name": "GNU Lesser General Public License v3.0 only",
     "url": null
   },
-  "downloads": 28294610,
-  "followers": 4906,
+  "downloads": 28313494,
+  "followers": 4909,
   "categories": [
     "library"
   ],
@@ -439,14 +439,14 @@
   "discord_url": null,
   "donation_urls": [
     {
-      "id": "patreon",
-      "platform": "Patreon",
-      "url": "https://patreon.com/shedaniel"
-    },
-    {
       "id": "github",
       "platform": "Github",
       "url": "https://github.com/sponsors/MaxNeedsSnacks"
+    },
+    {
+      "id": "patreon",
+      "platform": "Patreon",
+      "url": "https://patreon.com/shedaniel"
     }
   ],
   "gallery": [],

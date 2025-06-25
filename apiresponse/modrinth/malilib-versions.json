@@ -15,15 +15,15 @@
     "changelog": "- 1.21.6 Release\n- Vanilla Gui changes\n- NbtInventory / NbtView Vanilla Wrappers & RenderContext improvements.\n- Add: TickUtils (Management for Server tick health)\n- Add support for Happy Ghast Inventory Overlay Type & home_pos NBT displays",
     "changelog_url": null,
     "date_published": "2025-06-22T02:55:03.453809Z",
-    "downloads": 28950,
+    "downloads": 30497,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c9393f50e76deaceb9aa13fe33afa295e9412b69e95a535da8d60868a35461be742e1f14fb73b6ed635bd1363ba17aa8f015071d3a7b787b8e43bae8f2f6f5fb",
-          "sha1": "409a89e9d630dea8009b4d40e60e7356cd3ea496"
+          "sha1": "409a89e9d630dea8009b4d40e60e7356cd3ea496",
+          "sha512": "c9393f50e76deaceb9aa13fe33afa295e9412b69e95a535da8d60868a35461be742e1f14fb73b6ed635bd1363ba17aa8f015071d3a7b787b8e43bae8f2f6f5fb"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/SbIommhX/malilib-fabric-1.21.6-0.25.0.jar",
         "filename": "malilib-fabric-1.21.6-0.25.0.jar",
@@ -50,7 +50,7 @@
     "changelog": "- RayTraceUtils work flow updates\n- Various Lang updates",
     "changelog_url": null,
     "date_published": "2025-06-22T02:51:58.568051Z",
-    "downloads": 21538,
+    "downloads": 22670,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -85,7 +85,7 @@
     "changelog": "- RayTraceUtils work flow updates\n- Various Lang updates",
     "changelog_url": null,
     "date_published": "2025-06-22T02:51:45.270874Z",
-    "downloads": 15818,
+    "downloads": 16595,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -121,15 +121,15 @@
     "changelog": "- RayTraceUtils work flow updates\n- Various Lang updates",
     "changelog_url": null,
     "date_published": "2025-06-22T02:51:23.297047Z",
-    "downloads": 1011,
+    "downloads": 1054,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "391580ad23df01c67f8326efaead24bf1dfe940f00614791a4b38f07fdf88a1f754c4e02d5a9adf2b71190099b688e44f775da13fc4e99fe2dcf5b8ccc6e6890",
-          "sha1": "1f215154e0808e2baa0413703ed91befdc0616fe"
+          "sha1": "1f215154e0808e2baa0413703ed91befdc0616fe",
+          "sha512": "391580ad23df01c67f8326efaead24bf1dfe940f00614791a4b38f07fdf88a1f754c4e02d5a9adf2b71190099b688e44f775da13fc4e99fe2dcf5b8ccc6e6890"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/F0kdxPzY/malilib-fabric-1.21.3-0.22.7.jar",
         "filename": "malilib-fabric-1.21.3-0.22.7.jar",
@@ -157,7 +157,7 @@
     "changelog": "- RayTraceUtils work flow updates\n- Various Lang updates",
     "changelog_url": null,
     "date_published": "2025-06-22T02:50:44.732097Z",
-    "downloads": 18483,
+    "downloads": 19236,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -192,7 +192,7 @@
     "changelog": "- fix: EquipmentUtils for Silk Touch First (Tweakeroo)\n- add: `#malilib:ore_blocks` tag\n",
     "changelog_url": null,
     "date_published": "2025-05-04T16:43:34.358616Z",
-    "downloads": 375783,
+    "downloads": 376384,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -227,15 +227,15 @@
     "changelog": "- fix: EquipmentUtils for Silk Touch First (Tweakeroo)\n- add: `#malilib:ore_blocks` tag; and verify `#malilib:needs_silk_touch` is accurate, according to 1.21.5's standards.\n- Various other bug fixes & language updates since 0.23.2 (See Github Changelogs for details)",
     "changelog_url": null,
     "date_published": "2025-05-04T16:43:04.551146Z",
-    "downloads": 168941,
+    "downloads": 168989,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "00ff21fcecd4bf5a1ec59dc9534883245edbe4fd",
-          "sha512": "649b0990904daf09b4d480adecd1a0c76f0ffbf67f623f5fdb1706ad5b2d57877bedf6043c54ca356daa383c0789ea3734932e9e48d28395c61a7b1daca03790"
+          "sha512": "649b0990904daf09b4d480adecd1a0c76f0ffbf67f623f5fdb1706ad5b2d57877bedf6043c54ca356daa383c0789ea3734932e9e48d28395c61a7b1daca03790",
+          "sha1": "00ff21fcecd4bf5a1ec59dc9534883245edbe4fd"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/MZcHwIU7/malilib-fabric-1.21.4-0.23.3.jar",
         "filename": "malilib-fabric-1.21.4-0.23.3.jar",
@@ -263,15 +263,15 @@
     "changelog": "- fix: EquipmentUtils for Silk Touch First (Tweakeroo)\n- add: `#malilib:ore_blocks` tag; and verify `#malilib:needs_silk_touch` is accurate, according to 1.21.5's standards.\n- Various other bug fixes & language updates since 0.22.5 (See Github Changelogs for details)",
     "changelog_url": null,
     "date_published": "2025-05-04T16:42:47.407388Z",
-    "downloads": 12366,
+    "downloads": 12372,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "af86e755f555f7370e0532d8b4439a20c6947f6f39d82f4c66e10c167d716584a038c8f5d28de3137036c2d0f630a84336a82d5bbd4b721981a6149a45ccf84f",
-          "sha1": "02e16b593ac665d4632643ca2145771c541cc2ac"
+          "sha1": "02e16b593ac665d4632643ca2145771c541cc2ac",
+          "sha512": "af86e755f555f7370e0532d8b4439a20c6947f6f39d82f4c66e10c167d716584a038c8f5d28de3137036c2d0f630a84336a82d5bbd4b721981a6149a45ccf84f"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/MmlUfq9s/malilib-fabric-1.21.3-0.22.6.jar",
         "filename": "malilib-fabric-1.21.3-0.22.6.jar",
@@ -299,15 +299,15 @@
     "changelog": "- fix: EquipmentUtils for Silk Touch First (Tweakeroo)\n- add: `#malilib:ore_blocks` tag; and verify `#malilib:needs_silk_touch` is accurate, according to 1.21.5's standards.\n- Various other bug fixes & language updates since 0.21.7 (See Github Changelogs for details)",
     "changelog_url": null,
     "date_published": "2025-05-04T16:42:30.850507Z",
-    "downloads": 190118,
+    "downloads": 190210,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "39f09ab67d0051f8920978680fcb9d97dbd7334c",
-          "sha512": "d3c117ddee012de18025c64aa68e4721be9f70d7cac268e31258e75dde6232d0cd6d5cd09d2928e9796d704f6fc87d426de75c79dcee793e7ed6a4693b7cc4fc"
+          "sha512": "d3c117ddee012de18025c64aa68e4721be9f70d7cac268e31258e75dde6232d0cd6d5cd09d2928e9796d704f6fc87d426de75c79dcee793e7ed6a4693b7cc4fc",
+          "sha1": "39f09ab67d0051f8920978680fcb9d97dbd7334c"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/dhYkRfSJ/malilib-fabric-1.21-0.21.8.jar",
         "filename": "malilib-fabric-1.21-0.21.8.jar",
@@ -334,7 +334,7 @@
     "changelog": "- Port to 1.21.5\n- See Sakura's Github / JavaDocs for Changelogs; a lot has changed, particularly with Rendering Topics.",
     "changelog_url": null,
     "date_published": "2025-04-22T12:49:25.29719Z",
-    "downloads": 192638,
+    "downloads": 192713,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -413,7 +413,7 @@
     "changelog": "- various lang file updates (For contributing, see [Sakura Ryoko Translate](https://translate.sakuraryoko.com/))\n- add: inventoryOverlayScreen function for displaying Villager Trades List below a Villager; which can also have a BG color, based on the Villager profession; if configured to do so.\n- Cleanup Config Switcher code a bit (Hopefully it will be higher up and less \"Behind\" other objects)\n- various build system updates\n- various code cleanups related to NbtUtils/Vec3d/Vec3i/Color4f and staged a few Deprecated tags\n- various fixes for getNbtInventory workflows with Villagers, etc\n- add: Dolphin Treasure Pos, Fox Variant, & Salmon Variant Nbt Helpers\n- add: Time/Duration Formatter system; which allows this system to be a Configurable Option.\n- add: new versions of the NbtUtils.readNbtFile and writeCompressed; Deprecate the \"File\" object types of all File Reading / Writing for Config files\n- fix: the creating / reading of non-US character sets for config file names; such as for World Names using Chinese.\n- add: Block Tags Data Gen & block tag 'Groups' matching functions.\n- various minor DataDump, FileUtils, and FileNameUtils function fixes\n- fix: GuiColorEditorHSV Outlines\n- fix: memory leaks in RenderUtils.java by @Toon\n",
     "changelog_url": null,
     "date_published": "2025-03-02T18:02:37.088006Z",
-    "downloads": 511410,
+    "downloads": 511495,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -449,7 +449,7 @@
     "changelog": "- various lang file updates (For contributing, see [Sakura Ryoko Translate](https://translate.sakuraryoko.com/))\n- add: inventoryOverlayScreen function for displaying Villager Trades List below a Villager; which can also have a BG color, based on the Villager profession; if configured to do so.\n- Cleanup Config Switcher code a bit (Hopefully it will be higher up and less \"Behind\" other objects)\n- various build system updates\n- various code cleanups related to NbtUtils/Vec3d/Vec3i/Color4f and staged a few Deprecated tags\n- various fixes for getNbtInventory workflows with Villagers, etc\n- add: Dolphin Treasure Pos, Fox Variant, & Salmon Variant Nbt Helpers\n- add: Time/Duration Formatter system; which allows this system to be a Configurable Option.\n- add: new versions of the NbtUtils.readNbtFile and writeCompressed; Deprecate the \"File\" object types of all File Reading / Writing for Config files\n- fix: the creating / reading of non-US character sets for config file names; such as for World Names using Chinese.\n- add: Block Tags Data Gen & block tag 'Groups' matching functions.\n- various minor DataDump, FileUtils, and FileNameUtils function fixes\n- fix: GuiColorEditorHSV Outlines\n- fix: memory leaks in RenderUtils.java by @Toon\n\n**_NOTE:  This will be the last feature build for 1.21.3, as I will referr it as being LTS_**",
     "changelog_url": null,
     "date_published": "2025-03-02T18:02:13.291964Z",
-    "downloads": 22908,
+    "downloads": 22910,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -485,7 +485,7 @@
     "changelog": "- various lang file updates (For contributing, see [Sakura Ryoko Translate](https://translate.sakuraryoko.com/))\n- add: inventoryOverlayScreen function for displaying Villager Trades List below a Villager; which can also have a BG color, based on the Villager profession; if configured to do so.\n- Cleanup Config Switcher code a bit (Hopefully it will be higher up and less \"Behind\" other objects)\n- various build system updates\n- various code cleanups related to NbtUtils/Vec3d/Vec3i/Color4f and staged a few Deprecated tags\n- various fixes for getNbtInventory workflows with Villagers, etc\n- add: Dolphin Treasure Pos, Fox Variant, & Salmon Variant Nbt Helpers\n- add: Time/Duration Formatter system; which allows this system to be a Configurable Option.\n- add: new versions of the NbtUtils.readNbtFile and writeCompressed; Deprecate the \"File\" object types of all File Reading / Writing for Config files\n- fix: the creating / reading of non-US character sets for config file names; such as for World Names using Chinese.\n- add: Block Tags Data Gen & block tag 'Groups' matching functions.\n- various minor DataDump, FileUtils, and FileNameUtils function fixes\n- fix: GuiColorEditorHSV Outlines\n- fix: memory leaks in RenderUtils.java by @Toon\n\n**_NOTE:  This will be the last feature build for 1.21, as I will referr it as being LTS_**",
     "changelog_url": null,
     "date_published": "2025-03-02T17:59:54.402033Z",
-    "downloads": 261751,
+    "downloads": 261795,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -520,15 +520,15 @@
     "changelog": "- Replace the wrong `Pair` system with the Apache Commons versions across the Mod Ecosystem.\n- fix: Missing InventoryPreview tooltips allow you use the `IRender.onRenderTooltip()` system; such as viewing Shulker Boxes while using the `shulkerPreview` while inside of the `InventoryOverlayScreen`.\n- feat:  Adds three new callbacks to the `IRender` tooltip rendering system for a more seamless way to inject Text into the Vanilla Tooltips for Items.  One is for 'Below the Item Name' (First), another for after the 'additional item tooltips' (Middle), and finally the 'after all of the extra lines, but before the item durability / item ID' (Last).  The new Bundle Item Count in MiniHUD would be the `Middle` callback position.\n- New `InventoryOverlayScreen` system partially cloned from MiniHUD into MaLiLib.\n- New Interface: `IInventoryOverlayHandler` - This acts as the `Screen Handler` interface for the `InventoryOverlayScreen`; which also adds a `Refresher` interface under `InventoryOverlay.Refresher`; and the related `IDataSyncer` interface.  These all work in tandem to create a more seamless Inventory Preview experience that can be used by all downstream mods; in theory.  The `IDataSyncer` interface has enough default interfaces to be a simple Data Broker for the Single Player's Server World; and can then be added upon; and then simply 'plugged in' to the Screen Handler; basically.",
     "changelog_url": null,
     "date_published": "2024-12-30T09:41:13.421277Z",
-    "downloads": 446468,
+    "downloads": 446532,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a081a5fa7ac5611fa4aef340aee4f32c3104aaf6",
-          "sha512": "71e62075ca794e2f4ac33d1890c7b7f0e9a091fbd1bc31705c3d02a5ee9e2e56ef0a247318d731aeefc4e591ce2cef64331ce8ecac242d6a053c35f5440faf6b"
+          "sha512": "71e62075ca794e2f4ac33d1890c7b7f0e9a091fbd1bc31705c3d02a5ee9e2e56ef0a247318d731aeefc4e591ce2cef64331ce8ecac242d6a053c35f5440faf6b",
+          "sha1": "a081a5fa7ac5611fa4aef340aee4f32c3104aaf6"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/bWdPm0zw/malilib-fabric-1.21.4-0.23.1.jar",
         "filename": "malilib-fabric-1.21.4-0.23.1.jar",
@@ -556,15 +556,15 @@
     "changelog": "- Replace the wrong `Pair` system with the Apache Commons versions across the Mod Ecosystem.\n- fix: Missing InventoryPreview tooltips allow you use the `IRender.onRenderTooltip()` system; such as viewing Shulker Boxes while using the `shulkerPreview` while inside of the `InventoryOverlayScreen`.\n- feat:  Adds three new callbacks to the `IRender` tooltip rendering system for a more seamless way to inject Text into the Vanilla Tooltips for Items.  One is for 'Below the Item Name' (First), another for after the 'additional item tooltips' (Middle), and finally the 'after all of the extra lines, but before the item durability / item ID' (Last).  The new Bundle Item Count in MiniHUD would be the `Middle` callback position.\n- New `InventoryOverlayScreen` system partially cloned from MiniHUD into MaLiLib.\n- New Interface: `IInventoryOverlayHandler` - This acts as the `Screen Handler` interface for the `InventoryOverlayScreen`; which also adds a `Refresher` interface under `InventoryOverlay.Refresher`; and the related `IDataSyncer` interface.  These all work in tandem to create a more seamless Inventory Preview experience that can be used by all downstream mods; in theory.  The `IDataSyncer` interface has enough default interfaces to be a simple Data Broker for the Single Player's Server World; and can then be added upon; and then simply 'plugged in' to the Screen Handler; basically.",
     "changelog_url": null,
     "date_published": "2024-12-30T09:40:56.728602Z",
-    "downloads": 38889,
+    "downloads": 38890,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "575f4895b18921605b85406ab85f2b705d07fb6a",
-          "sha512": "75d01729c8a96e7de0c6ffb6bca2697de1ad550fb3898cd1b530b0128410f8453ce038a9581e6fdae1b93db5f212d669427b26c4680382ec2d36853d0855e0cf"
+          "sha512": "75d01729c8a96e7de0c6ffb6bca2697de1ad550fb3898cd1b530b0128410f8453ce038a9581e6fdae1b93db5f212d669427b26c4680382ec2d36853d0855e0cf",
+          "sha1": "575f4895b18921605b85406ab85f2b705d07fb6a"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/tcM53z78/malilib-fabric-1.21.3-0.22.4.jar",
         "filename": "malilib-fabric-1.21.3-0.22.4.jar",
@@ -592,15 +592,15 @@
     "changelog": "- Replace the wrong `Pair` system with the Apache Commons versions across the Mod Ecosystem.\n- fix: Missing InventoryPreview tooltips allow you use the `IRender.onRenderTooltip()` system; such as viewing Shulker Boxes while using the `shulkerPreview` while inside of the `InventoryOverlayScreen`.\n- feat:  Adds three new callbacks to the `IRender` tooltip rendering system for a more seamless way to inject Text into the Vanilla Tooltips for Items.  One is for 'Below the Item Name' (First), another for after the 'additional item tooltips' (Middle), and finally the 'after all of the extra lines, but before the item durability / item ID' (Last).  The new Bundle Item Count in MiniHUD would be the `Middle` callback position.\n- New `InventoryOverlayScreen` system partially cloned from MiniHUD into MaLiLib.\n- New Interface: `IInventoryOverlayHandler` - This acts as the `Screen Handler` interface for the `InventoryOverlayScreen`; which also adds a `Refresher` interface under `InventoryOverlay.Refresher`; and the related `IDataSyncer` interface.  These all work in tandem to create a more seamless Inventory Preview experience that can be used by all downstream mods; in theory.  The `IDataSyncer` interface has enough default interfaces to be a simple Data Broker for the Single Player's Server World; and can then be added upon; and then simply 'plugged in' to the Screen Handler; basically.",
     "changelog_url": null,
     "date_published": "2024-12-30T09:40:36.941755Z",
-    "downloads": 303284,
+    "downloads": 303404,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4cc75d707ec4d93be43874a7d89e07eb18b2112f",
-          "sha512": "78e47347eb02a5a2b801d1be2f1ecf429f6b3815094c62f3ec15cc7a8159b36cc35ba8f8e9809a935c43239270783e222a5fbbbe310980c8619e8bfc92dbdc8b"
+          "sha512": "78e47347eb02a5a2b801d1be2f1ecf429f6b3815094c62f3ec15cc7a8159b36cc35ba8f8e9809a935c43239270783e222a5fbbbe310980c8619e8bfc92dbdc8b",
+          "sha1": "4cc75d707ec4d93be43874a7d89e07eb18b2112f"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/f8wE52F5/malilib-fabric-1.21-0.21.6.jar",
         "filename": "malilib-fabric-1.21-0.21.6.jar",
@@ -627,15 +627,15 @@
     "changelog": "- fix: Missing Textures from Horse Armor, etc\n- fix: add support for other Generic Entity Types, such as Armor Stands using Inventory Overlay\n- fix Visibility of renderInventoryBackgroundSlots\n- add printTranslationKeys Debug from Post ReWrite\n- Add additional translations from Humans; such as Ukranian, and Korean.\n- Refactored various util functions with their Post-ReWrite variants.\n- Added Config Menu Registry from Post-Re-Write. Your Mods should Register with MaLiLib for each of your GuiConfigBase screens (And MaLiLib will attempt to register non-compliant mods automatically)\n- fix: NbtWrap (getType) for NbtUtils.getEntityPosFromTag()\n- fix: Item Tooltips using InventoryOverlay from MiniHUD to show full Enchantments, etc. The Tooltips should look exactly like Vanilla tool tips.\n- feat: add support for variable Bundle Previews from 6-9 slots wide. Anything More or less causes Texture glitches.",
     "changelog_url": null,
     "date_published": "2024-12-22T04:06:00.889351Z",
-    "downloads": 70631,
+    "downloads": 70652,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8612a9be88e56011e62d11ae961ece58401001d7d384da997d0556ed5e437c6018a5496a2f823283e983ec380998fd1f0f05f4b1de7a977dea70147da0aae6ed",
-          "sha1": "56316d09e4cd186c38e634cd41926b7d5b1dbdc4"
+          "sha1": "56316d09e4cd186c38e634cd41926b7d5b1dbdc4",
+          "sha512": "8612a9be88e56011e62d11ae961ece58401001d7d384da997d0556ed5e437c6018a5496a2f823283e983ec380998fd1f0f05f4b1de7a977dea70147da0aae6ed"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/KsUV4RUr/malilib-fabric-1.21.4-0.23.0.jar",
         "filename": "malilib-fabric-1.21.4-0.23.0.jar",
@@ -663,15 +663,15 @@
     "changelog": "- fix: Missing Textures from Horse Armor, etc\n- fix: add support for other Generic Entity Types, such as Armor Stands using Inventory Overlay\n- fix Visibility of renderInventoryBackgroundSlots\n- add printTranslationKeys Debug from Post ReWrite\n- Add additional translations from Humans; such as Ukranian, and Korean.\n- Refactored various util functions with their Post-ReWrite variants.\n- Added Config Menu Registry from Post-Re-Write. Your Mods should Register with MaLiLib for each of your GuiConfigBase screens (And MaLiLib will attempt to register non-compliant mods automatically)\n- fix: NbtWrap (getType) for NbtUtils.getEntityPosFromTag()\n- fix: Item Tooltips using InventoryOverlay from MiniHUD to show full Enchantments, etc. The Tooltips should look exactly like Vanilla tool tips.\n- feat: add support for variable Bundle Previews from 6-9 slots wide. Anything More or less causes Texture glitches.",
     "changelog_url": null,
     "date_published": "2024-12-22T04:05:20.452689Z",
-    "downloads": 11123,
+    "downloads": 11125,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c93a4cc98a367371ea811051a0b3202c028ae0d1d4342f8daa6d70a2c252a0ff857ab43c9f15529a23e4ce8a942b8df4a0c6d824ea5ff6c03bdedf987a2cf47f",
-          "sha1": "7820bf3fa279af8c8326ae3520c04ac38b499f10"
+          "sha1": "7820bf3fa279af8c8326ae3520c04ac38b499f10",
+          "sha512": "c93a4cc98a367371ea811051a0b3202c028ae0d1d4342f8daa6d70a2c252a0ff857ab43c9f15529a23e4ce8a942b8df4a0c6d824ea5ff6c03bdedf987a2cf47f"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/em3JWRUe/malilib-fabric-1.21.3-0.22.3.jar",
         "filename": "malilib-fabric-1.21.3-0.22.3.jar",
@@ -699,15 +699,15 @@
     "changelog": "- fix: Missing Textures from Horse Armor, etc\n- fix: add support for other Generic Entity Types, such as Armor Stands using Inventory Overlay\n- fix Visibility of renderInventoryBackgroundSlots\n- add printTranslationKeys Debug from Post ReWrite\n- Add additional translations from Humans; such as Ukranian, and Korean.\n- Refactored various util functions with their Post-ReWrite variants.\n- Added Config Menu Registry from Post-Re-Write. Your Mods should Register with MaLiLib for each of your GuiConfigBase screens (And MaLiLib will attempt to register non-compliant mods automatically)\n- fix: NbtWrap (getType) for NbtUtils.getEntityPosFromTag()\n- fix: Item Tooltips using InventoryOverlay from MiniHUD to show full Enchantments, etc. The Tooltips should look exactly like Vanilla tool tips.\n- feat: add support for variable Bundle Previews from 6-9 slots wide. Anything More or less causes Texture glitches.",
     "changelog_url": null,
     "date_published": "2024-12-22T04:03:13.619356Z",
-    "downloads": 51550,
+    "downloads": 51558,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "9355de1b10d5e96cf243023060fd729746dd6324e242cc7b9c408515324338806ac0210116d59addc40ec3d4d0c1e6b4e0448199ee423cb361c129a85603b6e1",
-          "sha1": "6b60b9b64a78089a6b8d697576567d7a3ad1442d"
+          "sha1": "6b60b9b64a78089a6b8d697576567d7a3ad1442d",
+          "sha512": "9355de1b10d5e96cf243023060fd729746dd6324e242cc7b9c408515324338806ac0210116d59addc40ec3d4d0c1e6b4e0448199ee423cb361c129a85603b6e1"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/k4FBa5Bu/malilib-fabric-1.21-0.21.5.jar",
         "filename": "malilib-fabric-1.21-0.21.5.jar",
@@ -771,15 +771,15 @@
     "changelog": "- fix: when `prettyName`, `comment`, or `translatedName` entries are outdated, or not being applied with `apply()`, such as if the mod wasn't updated to use `apply()`.\n",
     "changelog_url": null,
     "date_published": "2024-12-01T00:13:30.030167Z",
-    "downloads": 103350,
+    "downloads": 103374,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8e41244a9bcb844906ac353260d1e4f39fb11630b6ce1ebc963442dc95875140d016def3a49a217a4eca8889d773a5856c9fc4776e7d91a499655c55bb566e12",
-          "sha1": "e0ae2c2da37df667c578aab12ab13f6272ab44e8"
+          "sha1": "e0ae2c2da37df667c578aab12ab13f6272ab44e8",
+          "sha512": "8e41244a9bcb844906ac353260d1e4f39fb11630b6ce1ebc963442dc95875140d016def3a49a217a4eca8889d773a5856c9fc4776e7d91a499655c55bb566e12"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Gz4O8EpV/malilib-fabric-1.21-0.21.4.jar",
         "filename": "malilib-fabric-1.21-0.21.4.jar",
@@ -807,15 +807,15 @@
     "changelog": "- Removed Crowdin files\n\nThis is due to the unpopularity of Machine Translations.  If you want a language supported, translate it and post under [Sakura's MaLiLib Issues](https://github.com/sakura-ryoko/malilib/issues) -- With that said, if you wish to become more of a permanent language translator for these mods, I can invite you to my crowdin account.  Until then, any Machine translations that I could find / recall from recent memory have been removed; which will also revert some existing lang files, such as various additions under Chinese to English until I can gain that support more consistantly.  Note that as various configs get added to the mod, this will also mean that languages without a proper human maintainer **WILL NOT BE FULLY TRANSLATED**.  I have tried and spent my own money on these Crowdin projects in order to be more open for more of the top 30 languages to be represented, only for this to be the result due to the poor quality of Machine Translations.  I assume that you understand that it's better to have NO translation instead of a poor translation.\n",
     "changelog_url": null,
     "date_published": "2024-11-30T19:39:25.035558Z",
-    "downloads": 5681,
+    "downloads": 5682,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b016c166851dc743dd5cb62c63802ea1a831a91b",
-          "sha512": "6020ce755cd463f35c1952cea7c6079ad4538df07c197d7f5c1753f8587e638ea60c167e653e9d6cbfd3a092f3de548b02280714cfecffed9ebbf3b235d13f8d"
+          "sha512": "6020ce755cd463f35c1952cea7c6079ad4538df07c197d7f5c1753f8587e638ea60c167e653e9d6cbfd3a092f3de548b02280714cfecffed9ebbf3b235d13f8d",
+          "sha1": "b016c166851dc743dd5cb62c63802ea1a831a91b"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/fVqmxrpX/malilib-fabric-1.21-0.21.3.jar",
         "filename": "malilib-fabric-1.21-0.21.3.jar",
@@ -843,7 +843,7 @@
     "changelog": "- Port to 1.21.3.\n- Most new features have been added to 1.21 already.\n- Many changes under the hood for various rendering tasks, especially Shaders and Gui Texture rendering.  Note that many GUI / RenderUtils now should be used with DrawContent.\n- Near rewrite of how the `IRender` interface works by building MaLiLib's own `RenderPass` system.  Adds 'Advanced' versions of the 'onRenderWorld' hooks with values such as `Frustum`, `Fog` and `Profiler`.  Adds `onRenderWorldPreWeather` where `onRenderWorldLastAdvanced` / `onRenderWorldLast` are ran just before the `DebugPost` rendering, and are executed long after the classic RenderWeather hooks.  This is mainly due to World Rendering / Tranclucency issues, particularly in `Fabulous!` graphics mode, and Vanilla changes.  Pick which Interface works best for your situation, as my 1.21.2+ ports use both across the mods.",
     "changelog_url": null,
     "date_published": "2024-11-22T02:55:31.327645Z",
-    "downloads": 37282,
+    "downloads": 37285,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -879,15 +879,15 @@
     "changelog": "- fix Horse Attributes and Health Attributes from NBT workflow.\n- fix ItemsFromNbt for EnderChests\n- Add LLAMA, WOLF, PLAYER and ENDER_CHEST InventoryOverlay Types.\n- Add ConfigFloat type from 1.21.2+\n- Add new `apply()` Config handling from 1.21.2+ for i18n translation.\n- Adds various Crowdin-based language translations, with many not yet activate.  Please report translation errors on my GitHub, and offer fixes.\n- 1.21/.1 versions are now considered LTS.\n",
     "changelog_url": null,
     "date_published": "2024-11-22T02:46:31.498332Z",
-    "downloads": 48211,
+    "downloads": 48213,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8d64b8c753889ab32069bc20010a58247c7c9d2b873e7e9b5b0d395afd4174462ba53d996b9f3a1ffbbd407716889f533b9b6fdc86bef5ecb74d2a1fb8deddde",
-          "sha1": "9c0d2588d1820f0ff51634b5cfc1ff7334bf6ab6"
+          "sha1": "9c0d2588d1820f0ff51634b5cfc1ff7334bf6ab6",
+          "sha512": "8d64b8c753889ab32069bc20010a58247c7c9d2b873e7e9b5b0d395afd4174462ba53d996b9f3a1ffbbd407716889f533b9b6fdc86bef5ecb74d2a1fb8deddde"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/TMIwi2Ws/malilib-fabric-1.21-0.21.2.jar",
         "filename": "malilib-fabric-1.21-0.21.2.jar",
@@ -915,15 +915,15 @@
     "changelog": "- Merge code from Development branches (1.21.3+)\n- Overhaul of InventoryOverlay code to include items such as Crafter Locked Slots.\n- Helper functions added for nearly every type of NBT data related to Block Entities, and Entities. They are used for directly reading various Nbt Tags into Inventory objects using the new InventoryOverlay Context system, or various Info Lines, such as `infoLookingAtEntityVariant`.\n- Adds support for the Bundle Preview from MiniHUD and Tweakeroo.",
     "changelog_url": null,
     "date_published": "2024-11-08T01:00:09.610533Z",
-    "downloads": 83869,
+    "downloads": 83873,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "26da64471c66bf9df7ea4de51e3da02c32b6fe07",
-          "sha512": "4cda650bb61679e2b5382b49dbaa81623f47a3d7903f856851e031f86ef4f055fd8c3bb49f8b4edd323fd304050bec23c58a4ffc20f1cf663ebc01206898ebf2"
+          "sha512": "4cda650bb61679e2b5382b49dbaa81623f47a3d7903f856851e031f86ef4f055fd8c3bb49f8b4edd323fd304050bec23c58a4ffc20f1cf663ebc01206898ebf2",
+          "sha1": "26da64471c66bf9df7ea4de51e3da02c32b6fe07"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/HImqbizS/malilib-fabric-1.21-0.21.1.jar",
         "filename": "malilib-fabric-1.21-0.21.1.jar",
@@ -951,15 +951,15 @@
     "changelog": "- Update to MC 1.21.1 (just version bumps)\n\n**Original build time:** 2024-08-20 20:34:00 +0300",
     "changelog_url": null,
     "date_published": "2024-08-20T18:10:05.298204Z",
-    "downloads": 557354,
+    "downloads": 557458,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4428fd358b35757a410ba90ba2704a24ffb5a140106cc8223c4f77ef078216ad2969e2e4df164d3a0b6946978d7407219dd4c83ab1755746e968f4244c24275c",
-          "sha1": "a7e5ef8d924bb810557d98bae5b615dfc38bab38"
+          "sha1": "a7e5ef8d924bb810557d98bae5b615dfc38bab38",
+          "sha512": "4428fd358b35757a410ba90ba2704a24ffb5a140106cc8223c4f77ef078216ad2969e2e4df164d3a0b6946978d7407219dd4c83ab1755746e968f4244c24275c"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/CQI1MTlR/malilib-fabric-1.21.1-0.21.0.jar",
         "filename": "malilib-fabric-1.21.1-0.21.0.jar",
@@ -986,15 +986,15 @@
     "changelog": "- Restore some of the lang files\n- Fix config saving/loading issue on servers connected via BungeeCord\n\n**Original build time:** 2024-07-27 05:13:58 +0300",
     "changelog_url": null,
     "date_published": "2024-07-27T02:14:12.590484Z",
-    "downloads": 228644,
+    "downloads": 228693,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e964501db1837c1ec97d7953a468e0926645dc7d",
-          "sha512": "8c1339f93f90ec183c5dabc67dfc15aabf9f67113094eedad07ffdf9c661fe32bcd48b4a743f52110cdbd12cd5e3c03a2ba30fa29b0eba8636f33506ccc5103c"
+          "sha512": "8c1339f93f90ec183c5dabc67dfc15aabf9f67113094eedad07ffdf9c661fe32bcd48b4a743f52110cdbd12cd5e3c03a2ba30fa29b0eba8636f33506ccc5103c",
+          "sha1": "e964501db1837c1ec97d7953a468e0926645dc7d"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/oExLoQk8/malilib-fabric-1.21.0-0.20.2.jar",
         "filename": "malilib-fabric-1.21.0-0.20.2.jar",
@@ -1028,8 +1028,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b6e11729cce0ec71813c4ceafb8a071ad8272d47",
-          "sha512": "094cc1fb2ba2223bc86cff63af921d7481eff85831354208fec536f50b8b2c6693879b546315300287fcbe082813253704ab3e5cecff2b97a6a0270b04798ec3"
+          "sha512": "094cc1fb2ba2223bc86cff63af921d7481eff85831354208fec536f50b8b2c6693879b546315300287fcbe082813253704ab3e5cecff2b97a6a0270b04798ec3",
+          "sha1": "b6e11729cce0ec71813c4ceafb8a071ad8272d47"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/4HqQ3ANl/malilib-fabric-1.21.0-0.20.1.jar",
         "filename": "malilib-fabric-1.21.0-0.20.1.jar",
@@ -1056,7 +1056,7 @@
     "changelog": "- Update to MC 1.21 (by Sakura-Ryoko and zly2006)\n- Add better language translations infrastructure (should be backwards compatible)\n- Update `zh_cn` language by s-yh-china\n- Add `es_es` language from typo_mc\n- Fix translations needing to contain a `\\\\n` for line breaks\n\n**Original build time:** 2024-07-23 10:35:46 +0300",
     "changelog_url": null,
     "date_published": "2024-07-23T07:44:38.14898Z",
-    "downloads": 37666,
+    "downloads": 37677,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1136,15 +1136,15 @@
     "changelog": "- Update to Minecraft 1.20.5 and 1.20.6 (by Sakura-Ryoko)\n- Various changes due to vanilla code changes. See the git commit history or diff against 1.20.4 if you want more details: https://github.com/sakura-ryoko/malilib/commits/pre-rewrite/fabric/1.20.6-DEV/\n\nNote: This update is entirely the work of Sakura-Ryoko. I don't currently have any plans to update my mods anymore from the old \"pre-rewrite\" code for any MC versions after 1.20.4. And there is currently no ETA for if/when the \"new code\" might be ready, if ever.\n\n**Original build time:** 2024-06-13 22:32:44 +0300",
     "changelog_url": null,
     "date_published": "2024-06-13T19:49:05.023618Z",
-    "downloads": 89412,
+    "downloads": 89462,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1c62c96b4d6bdaef7d65a986a32cca1f047f9a26008fe74e1828b10ddb9dd54b0e253cec3f8f752bb874cbaa341923c0577f5bada4828e7e84e6bb7fde459f1a",
-          "sha1": "8ea072ce557f070c602231037d233ec88d13833d"
+          "sha1": "8ea072ce557f070c602231037d233ec88d13833d",
+          "sha512": "1c62c96b4d6bdaef7d65a986a32cca1f047f9a26008fe74e1828b10ddb9dd54b0e253cec3f8f752bb874cbaa341923c0577f5bada4828e7e84e6bb7fde459f1a"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/QMD2DLj9/malilib-fabric-1.20.6-0.19.0.jar",
         "filename": "malilib-fabric-1.20.6-0.19.0.jar",
@@ -1172,7 +1172,7 @@
     "changelog": "- `GuiTextFieldGeneric`: Remove the set/get cursor position methods entirely\n  - Note: This change will crash at least Litematica versions older than 0.17.3\n\nNote: There is no need to update to this version (or 0.18.3) unless you use for example the Lunar launcher, where any malilib-based screen that has a text field will crash due to a method name conflict with Mojmap names in versions before 0.18.3.\n\n**Original build time:** 2024-06-04 23:39:36 +0300\n\n# TL;DR; Don't update to this version unless you use the Lunar launcher. Or if you have also updated Litematica to 0.17.3 or later (if you use it).",
     "changelog_url": null,
     "date_published": "2024-06-13T19:42:55.197429Z",
-    "downloads": 127203,
+    "downloads": 127247,
     "version_type": "alpha",
     "status": "listed",
     "requested_status": null,
@@ -1208,7 +1208,7 @@
     "changelog": "### 0.18.2:\n- `GuiTextFieldGeneric`: Deprecate a few of the custom cursor position setter methods\n  - At least `setCursorPositionEnd()` conflicts with a Mojmap name, leading to a recursive call induced crash when running in a Mojmap names environment\n  - This change alone doesn't fix the issue entirely, but just prevents the crash, but then also possibly breaks the text field behavior with mods that still use these methods.\n  - If these methods are called, they won't do their task anymore, but instead they will just print a warning message for the user to update the dependent mods to a version that doesn't use these methods anymore.\n  - Notably you need to use Litematica 0.17.3+ if you use malilib 0.18.2+\n    - (0.18.2 was not released for the end users, but it did go to the maven, so I bumped the version again to 0.18.3 instead of overwriting 0.18.2 with the final release version)\n\n### 0.18.3:\n- Set an explicit MC version upper limit to 1.20.4, as this version won't work in 1.20.5 snapshots or later anymore\n\n**Original build time:** 2024-06-02 23:25:46 +0300",
     "changelog_url": null,
     "date_published": "2024-06-02T20:39:42.401489Z",
-    "downloads": 61583,
+    "downloads": 61607,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1244,7 +1244,7 @@
     "changelog": "- Add a new variant of the `RenderUtils.renderMapPreview()` method\n  - This is required for MiniHUD `0.30.2+` and Tweakeroo `0.19.2+`\n\n**Original build time:** 2024-02-10 20:08:48 UTC+2",
     "changelog_url": null,
     "date_published": "2024-02-10T18:22:27.842073Z",
-    "downloads": 191646,
+    "downloads": 191657,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1324,7 +1324,7 @@
     "changelog": "- Update to MC 1.20.4 (should also work on 1.20.3)\n\n**Original build time:** 2023-12-09 20:42:17 UTC+2",
     "changelog_url": null,
     "date_published": "2024-01-03T22:34:38.146406Z",
-    "downloads": 57628,
+    "downloads": 57636,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1394,15 +1394,15 @@
     "changelog": "- Update to MC 1.20.2 (by Hendrix-Shen)\n- Change the network stuff to be more or less the way it was before the 1.20.2 update\n\n**Original build time:** 2023-10-08 21:52:29 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T22:31:42.910598Z",
-    "downloads": 38981,
+    "downloads": 38986,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "900208a65b867e44a0b952f1a1694c0ade5a738d9e39d1bfe281ee137fe7e002e21ad21f88fdd88286c296c71657326e9d0601fd9dfdf3f259e0aba09b6ef44b",
-          "sha1": "2b17cf879d747487d59a72f088dd68cc0e5dc526"
+          "sha1": "2b17cf879d747487d59a72f088dd68cc0e5dc526",
+          "sha512": "900208a65b867e44a0b952f1a1694c0ade5a738d9e39d1bfe281ee137fe7e002e21ad21f88fdd88286c296c71657326e9d0601fd9dfdf3f259e0aba09b6ef44b"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/wzI0QkCv/malilib-fabric-1.20.2-0.17.0.jar",
         "filename": "malilib-fabric-1.20.2-0.17.0.jar",
@@ -1430,15 +1430,15 @@
     "changelog": "- Add a (hack?) fix for text field unfocus issues on click\n\n**Original build time:** 2023-10-03 19:47:34 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T22:27:31.897856Z",
-    "downloads": 1704462,
+    "downloads": 1705336,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "94d4dd8a82e493d956b423019134d8c48ee737be",
-          "sha512": "2c16a64cf9af03569618c6bd0359797bbaecec854ac8e8197e9180b1739eb74b6157a9c389a4f8dd8b4aabe52227aafb8d2a6b6b72732ed3c450ff9a0849234c"
+          "sha512": "2c16a64cf9af03569618c6bd0359797bbaecec854ac8e8197e9180b1739eb74b6157a9c389a4f8dd8b4aabe52227aafb8d2a6b6b72732ed3c450ff9a0849234c",
+          "sha1": "94d4dd8a82e493d956b423019134d8c48ee737be"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/V7yLDtJV/malilib-fabric-1.20.1-0.16.3.jar",
         "filename": "malilib-fabric-1.20.1-0.16.3.jar",
@@ -1466,15 +1466,15 @@
     "changelog": "- Add `hashCode()` and `equals()` to `Color4f` (by Axia)\n  - Fixes `ConfigColorList` falsely prompting resets for values that haven't changed\n- Fix `keybindDebugging` message printing before the pressed keys being updated\n- Add modifiers to the keybind debug messages\n- Pass the action value to the mouse and keyboard handling methods\n\n**Original build time:** 2023-08-26 13:53:59 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T22:25:22.057752Z",
-    "downloads": 11808,
+    "downloads": 11809,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e68382cb8065919026b47090491bab92be13ee78",
-          "sha512": "abb1aa7e36bc30e5831cfa1f3355a2d7e5c01d222864252e86945003e2facf67d7de96cf317c8e1b762891099a64df5c41aba03c04060c3c7afd044549ea2dfa"
+          "sha512": "abb1aa7e36bc30e5831cfa1f3355a2d7e5c01d222864252e86945003e2facf67d7de96cf317c8e1b762891099a64df5c41aba03c04060c3c7afd044549ea2dfa",
+          "sha1": "e68382cb8065919026b47090491bab92be13ee78"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/qOW15k2e/malilib-fabric-1.20.1-0.16.2.jar",
         "filename": "malilib-fabric-1.20.1-0.16.2.jar",
@@ -1502,15 +1502,15 @@
     "changelog": "- `InventoryUtils`: Fix the `areStacksEqualIgnoreDurability()` method\n- Add a workaround for the GUI text render leaks that returned in 1.20 again...\n\n**Original build time:** 2023-07-03 22:24:09 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T22:21:00.820736Z",
-    "downloads": 106582,
+    "downloads": 106593,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "21136f084a6b3710a33fe982a73cdd10621595b5",
-          "sha512": "d0db107447edfdd3918ab0af209acc02581fdcd49cd8ccf3a86d2c13264340f4116a5a8fecdf0087f246713739062438d18db887856b7e7b354040857f25f6bf"
+          "sha512": "d0db107447edfdd3918ab0af209acc02581fdcd49cd8ccf3a86d2c13264340f4116a5a8fecdf0087f246713739062438d18db887856b7e7b354040857f25f6bf",
+          "sha1": "21136f084a6b3710a33fe982a73cdd10621595b5"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/OEchuJwf/malilib-fabric-1.20.1-0.16.1.jar",
         "filename": "malilib-fabric-1.20.1-0.16.1.jar",
@@ -1538,7 +1538,7 @@
     "changelog": "- Add a `ConfigColorList` (by fantahund)\n- Update to MC 1.20 (by Hendrix-Shen)\n- Fix some item and inventory util methods from the 1.20 update\n- Update the color list config edit screen and widget to 1.20 render stuff\n- Fix the text field focus on left click not working (1.20 stuff)\n- Update to MC 1.20.1 (just version bumps)\n\n**Original build time:** 2023-06-17 01:51:29 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T22:19:40.983323Z",
-    "downloads": 29628,
+    "downloads": 29637,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1573,7 +1573,7 @@
     "changelog": "- `GuiConfigsBase`: Fix using the wrong parent screen when closing the screen\n  - Also add some missing annotations and remove an unused list\n- Fix warning spam in console/log from unsupported key presses\n- `GuiColorEditorHSV`: Remove the unused shader program (see GH #82)\n- Partially fix some long-standing screen render bugs\n  - The hover text rendering is still buggy with pop-up screens,\nbut it's too much time and effort to hack fix that in the old code, as it's already properly handled in the new code base...\n- Add a fallback multiplayer world name (non-Mixin hack fix for GH #107)\n- Screens: Fix hover text rendering: It doesn't render on background screens now\n\n**Original build time:** 2023-05-03 17:26:23 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T22:12:15.613115Z",
-    "downloads": 34985,
+    "downloads": 34996,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1615,8 +1615,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "557ad3dfbb1599a77a9570b441e0466316521e41",
-          "sha512": "95e05de13ac3a3986097476141ca22986e0d3cae6b34e3e1f0fd1085a319c390aa2d7bab2dbd5ab20567c2c69a3b558c6725c5f4457a2b019ade5d49ada1024a"
+          "sha512": "95e05de13ac3a3986097476141ca22986e0d3cae6b34e3e1f0fd1085a319c390aa2d7bab2dbd5ab20567c2c69a3b558c6725c5f4457a2b019ade5d49ada1024a",
+          "sha1": "557ad3dfbb1599a77a9570b441e0466316521e41"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/k7Vm0Wka/malilib-fabric-1.19.4-0.15.3.jar",
         "filename": "malilib-fabric-1.19.4-0.15.3.jar",
@@ -1685,8 +1685,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ea54bd6e8bb9d32d35831eca3d2b3d6fde43d552eb04798410e02be6527bc732ef3b3055d4630bc866b2f2777ad21f517258a05266da30474acb2be925f15a96",
-          "sha1": "6f523f51fa7af8c9a4b44ae2f9654082700b0469"
+          "sha1": "6f523f51fa7af8c9a4b44ae2f9654082700b0469",
+          "sha512": "ea54bd6e8bb9d32d35831eca3d2b3d6fde43d552eb04798410e02be6527bc732ef3b3055d4630bc866b2f2777ad21f517258a05266da30474acb2be925f15a96"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/vEQ2PjZV/malilib-fabric-1.19.3-0.14.1-pre.1.jar",
         "filename": "malilib-fabric-1.19.3-0.14.1-pre.1.jar",
@@ -1720,8 +1720,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "73edef1b9a1b6af8a60c253135b8de50c9efe126f907d1c32e9ae57c1fa9583e040f93099b6338e1d962a868861ec7f88e372382dd76e20cddb7ec54da087509",
-          "sha1": "a46313e2c551c52005d6dc7eef7c53adf4c483f5"
+          "sha1": "a46313e2c551c52005d6dc7eef7c53adf4c483f5",
+          "sha512": "73edef1b9a1b6af8a60c253135b8de50c9efe126f907d1c32e9ae57c1fa9583e040f93099b6338e1d962a868861ec7f88e372382dd76e20cddb7ec54da087509"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/HXBBAweZ/malilib-fabric-1.19.3-0.14.0.jar",
         "filename": "malilib-fabric-1.19.3-0.14.0.jar",
@@ -1748,15 +1748,15 @@
     "changelog": "- Add a debug config for showing the handler that requested input cancellation\n- `HotkeyManagerImpl`: Replace the CME hack fix with a better fix\n- Add a `sendChatMessage` Action, make `runCommand` Action prefix the arg with `/`\n- Add input cancellation by hotkeys to the `Input Cancellation Debug` feature\n\n**Original build time:** 2022-08-12 22:32:01 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T21:55:43.894288Z",
-    "downloads": 5721,
+    "downloads": 5722,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2860d58af9a692b3c69a489613d0d96722a8c2cb",
-          "sha512": "7d8104d85eebfcfb5e2d3e599c9aa0e2465ee027549d686be38f817fe788a57964fbfdf9f69fb4f1a55b420c8dfb82e17551ab5d0287d6574317e3fcc3288e0c"
+          "sha512": "7d8104d85eebfcfb5e2d3e599c9aa0e2465ee027549d686be38f817fe788a57964fbfdf9f69fb4f1a55b420c8dfb82e17551ab5d0287d6574317e3fcc3288e0c",
+          "sha1": "2860d58af9a692b3c69a489613d0d96722a8c2cb"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/3zGlToR7/malilib-liteloader-1.12.2-0.54.0.litemod",
         "filename": "malilib-liteloader-1.12.2-0.54.0.litemod",
@@ -1784,7 +1784,7 @@
     "changelog": "- Update to MC 1.19.2 (just version bumps)\n\n**Original build time:** 2022-08-07 16:39:26 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T21:51:50.301901Z",
-    "downloads": 86610,
+    "downloads": 86661,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1826,8 +1826,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8703e38dae7b8673d0f68e99e6ebabc9c5055ab3",
-          "sha512": "996229be14b7b438bb149446aff5c204804c64c30f97f4a0d88da8e51dccea2e6a3b38080f08108b180908c3daccc0f5703f73c54938930f8ee49c322e80457e"
+          "sha512": "996229be14b7b438bb149446aff5c204804c64c30f97f4a0d88da8e51dccea2e6a3b38080f08108b180908c3daccc0f5703f73c54938930f8ee49c322e80457e",
+          "sha1": "8703e38dae7b8673d0f68e99e6ebabc9c5055ab3"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/AxTFzVcz/malilib-liteloader-1.12.2-0.53.0.litemod",
         "filename": "malilib-liteloader-1.12.2-0.53.0.litemod",
@@ -1861,8 +1861,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "288cb0558ec4d7334b1c10a76d317551cf7c884a",
-          "sha512": "b2f0ae1d41183f69f415ba0fedbc916d4a6015e39c86ad173e529230e052a5ed90cbc1c37311b5906c38bed60dd99582e9ae89e26ce6f2a44414873731bbea33"
+          "sha512": "b2f0ae1d41183f69f415ba0fedbc916d4a6015e39c86ad173e529230e052a5ed90cbc1c37311b5906c38bed60dd99582e9ae89e26ce6f2a44414873731bbea33",
+          "sha1": "288cb0558ec4d7334b1c10a76d317551cf7c884a"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/o041qH7e/malilib-fabric-1.19.1-0.13.0.jar",
         "filename": "malilib-fabric-1.19.1-0.13.0.jar",
@@ -1889,15 +1889,15 @@
     "changelog": "- Update to MC 1.19\n\n**Original build time:** 2022-07-11 21:41:00 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T21:43:55.871504Z",
-    "downloads": 8044,
+    "downloads": 8046,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1b91615e6814a1c73429750294322138d4d6bbe442728e9252fd3465797caedef1aa8bd1b53dffeb34bb14e7b667a6078ab071e823c348791e95ce1719e2e1d0",
-          "sha1": "25fdb0f1b25a53109faa63f17dcb6568f4ab8c3a"
+          "sha1": "25fdb0f1b25a53109faa63f17dcb6568f4ab8c3a",
+          "sha512": "1b91615e6814a1c73429750294322138d4d6bbe442728e9252fd3465797caedef1aa8bd1b53dffeb34bb14e7b667a6078ab071e823c348791e95ce1719e2e1d0"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/FYMVqf2J/malilib-fabric-1.19.0-0.13.0.jar",
         "filename": "malilib-fabric-1.19.0-0.13.0.jar",
@@ -1931,8 +1931,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "26a3de9de356cc4433d9bf2c42a57b0157600ce65f3f725c5e3d39177c4358fa8174d9a613953fa410a2aa2f075c42b39feee6b6f6971d41afc9d5a18252c925",
-          "sha1": "19a27e56f0dc7d7e39dbbfe830fc3f9ed436567f"
+          "sha1": "19a27e56f0dc7d7e39dbbfe830fc3f9ed436567f",
+          "sha512": "26a3de9de356cc4433d9bf2c42a57b0157600ce65f3f725c5e3d39177c4358fa8174d9a613953fa410a2aa2f075c42b39feee6b6f6971d41afc9d5a18252c925"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/WHsimdn0/malilib-liteloader-1.12.2-0.52.1.litemod",
         "filename": "malilib-liteloader-1.12.2-0.52.1.litemod",
@@ -1966,8 +1966,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ce5860049436d04cddd9f13b75831795be93e7e76883ec2699b4aa621f0267411eef7514751580d437816bc1c3c2b6132e9692c0f653a09efe9a3c8fb0ca23e4",
-          "sha1": "cbcf5c614848fface9e27c48d59be90508f94504"
+          "sha1": "cbcf5c614848fface9e27c48d59be90508f94504",
+          "sha512": "ce5860049436d04cddd9f13b75831795be93e7e76883ec2699b4aa621f0267411eef7514751580d437816bc1c3c2b6132e9692c0f653a09efe9a3c8fb0ca23e4"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/dQTgVbDe/malilib-liteloader-1.12.2-0.52.0.litemod",
         "filename": "malilib-liteloader-1.12.2-0.52.0.litemod",
@@ -2001,8 +2001,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0af664122acfb6c7e95771ff204f6716adbf42fd",
-          "sha512": "9a3293a5a02a146c1de049d5ec78874f7adf4ea841e04c0c71758ac1c5df4c79bab10ee5bd0ff4c84d4d4bef8abbc371ca49d674d3b96edc4f8a2d3f7d570138"
+          "sha512": "9a3293a5a02a146c1de049d5ec78874f7adf4ea841e04c0c71758ac1c5df4c79bab10ee5bd0ff4c84d4d4bef8abbc371ca49d674d3b96edc4f8a2d3f7d570138",
+          "sha1": "0af664122acfb6c7e95771ff204f6716adbf42fd"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/AJhIEGVJ/malilib-liteloader-1.12.2-0.51.1.litemod",
         "filename": "malilib-liteloader-1.12.2-0.51.1.litemod",
@@ -2029,7 +2029,7 @@
     "changelog": "- `TextRenderer`: Fix broken Glyph generation at non-128x128 font sheet sizes\n- Maintain config handler registration order to have malilib read its cfg first\n- Fix config files failing to get renamed to their final name (on Windows)\n- Add an in-game error message for failing to read a config override packet\n- `FileSelectorScreen`: Fix bad widget positioning, add missing error messages\n- `DropDownListWidget`: Fix the search bar and the search tip text positioning\n  - They were able to go off-screen on the top, if the dropdown was near the top of the screen\n- Add a value change listener to the cfg widget bg option to re-init the screen\n- Use compact JSON format for macro actions and custom hotkeys exports\n- Fix the value list and the edit button not updating properly\n  - The value list did not refresh properly when adding the first entry using the plus button in the header widget\n  - The `BaseValueListEditButton`'s display string did not refresh properly when clicking on the reset button\n- `KeyBindConfigButton`: Allow clicking outside to un-focus\n  - The previous behavior didn't allow for example clicking on the empty config widget space on the right side to un-focus the button, as the button itself didn't allow clicking to un-focus, only the screen would handle that case\n- Add the mod config screen switch dropdown to all the relevant config screens\n- Add several simple common utility Actions\n- `JsonUtils`: Log a warning in the console if `writeJsonToFile()` fails\n- Add some new `NbtUtils` methods and a new utility method to `IntBoundingBox`\n\n**Original build time:** 2022-04-12 19:29:08 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T21:24:03.898868Z",
-    "downloads": 403,
+    "downloads": 404,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2071,8 +2071,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d9ea90ff1d9a417cc102a039fd07db799724524ce14c92fc823dbf47c8e6a71c85edc85e5e9ddbaa9b887155809e2b04af8924a19147115a601fdec6f8c6c312",
-          "sha1": "db44ce4a3933a5539b09cec1708d04f539b5f2c4"
+          "sha1": "db44ce4a3933a5539b09cec1708d04f539b5f2c4",
+          "sha512": "d9ea90ff1d9a417cc102a039fd07db799724524ce14c92fc823dbf47c8e6a71c85edc85e5e9ddbaa9b887155809e2b04af8924a19147115a601fdec6f8c6c312"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/ForaIThv/malilib-liteloader-1.12.2-0.50.1.litemod",
         "filename": "malilib-liteloader-1.12.2-0.50.1.litemod",
@@ -2134,15 +2134,15 @@
     "changelog": "- Cancel handled custom payload packets\n- `ConfigBooleanHotkeyed`: Add backwards compatibility with the old save format\n  - It's kinda late at this point for many people, but it can still help the users who haven't yet updated to `0.11.5` or later\n\n**Original build time:** 2022-03-13 19:14:03 UTC+2",
     "changelog_url": null,
     "date_published": "2024-01-03T20:37:59.092907Z",
-    "downloads": 31801,
+    "downloads": 31814,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e2f437b340d6b0710e9b62a18a4dbe9d9caaf1b93fb6eb2eff5d06f388c2792d68a1a35a5602527a9f43831851787091b1251087a2b98fb89d082add2c8c7589",
-          "sha1": "a810cf1f28751ac2681ab94a1f00b58c49884649"
+          "sha1": "a810cf1f28751ac2681ab94a1f00b58c49884649",
+          "sha512": "e2f437b340d6b0710e9b62a18a4dbe9d9caaf1b93fb6eb2eff5d06f388c2792d68a1a35a5602527a9f43831851787091b1251087a2b98fb89d082add2c8c7589"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/V21ryIsV/malilib-fabric-1.18.2-0.12.1.jar",
         "filename": "malilib-fabric-1.18.2-0.12.1.jar",
@@ -2176,8 +2176,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e4e09d5cf6865eee29818b9ec3d5f05899a926a8726a9b26372c855f65fbd81c91fd0cb3a3feadedfdc15a45d1a84c286b5bc8b6d533c82c261ade9b053fc6ee",
-          "sha1": "f883729cfbab284bf778d424ad92e283b19b9bf4"
+          "sha1": "f883729cfbab284bf778d424ad92e283b19b9bf4",
+          "sha512": "e4e09d5cf6865eee29818b9ec3d5f05899a926a8726a9b26372c855f65fbd81c91fd0cb3a3feadedfdc15a45d1a84c286b5bc8b6d533c82c261ade9b053fc6ee"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/HXSuzGfa/malilib-fabric-1.18.2-0.12.1-nopotionhudshift.1.jar",
         "filename": "malilib-fabric-1.18.2-0.12.1-nopotionhudshift.1.jar",
@@ -2211,8 +2211,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d99e0c633f06a806ff056e71654c11258951d92576988ce756de58f995922ef1bbbbe91a282257ae07eb7105198b916a6a7018f5335ef5745b3d1c41f98e5011",
-          "sha1": "275be1053e547da04bcd684d05304be4787b86fa"
+          "sha1": "275be1053e547da04bcd684d05304be4787b86fa",
+          "sha512": "d99e0c633f06a806ff056e71654c11258951d92576988ce756de58f995922ef1bbbbe91a282257ae07eb7105198b916a6a7018f5335ef5745b3d1c41f98e5011"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/QXOpZ38S/malilib-fabric-1.18.2-0.12.0.jar",
         "filename": "malilib-fabric-1.18.2-0.12.0.jar",
@@ -2247,8 +2247,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f4240f64638e03dc71389f4c4c2e6a9b2036ae3bc618aa39787baadde87414a9846a958f22752d0849b3d7eefc81186de87850ad2865eae34f4e078b24c79242",
-          "sha1": "dc1a23b28bbcd3786d887356ff519f99c12d0906"
+          "sha1": "dc1a23b28bbcd3786d887356ff519f99c12d0906",
+          "sha512": "f4240f64638e03dc71389f4c4c2e6a9b2036ae3bc618aa39787baadde87414a9846a958f22752d0849b3d7eefc81186de87850ad2865eae34f4e078b24c79242"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Bg19XPU7/malilib-fabric-1.18.1-0.11.8.jar",
         "filename": "malilib-fabric-1.18.1-0.11.8.jar",
@@ -2319,8 +2319,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a6df0978dab44b6374f71664a6bec4610b38bd2f71b46d4b3bc7af9e25a17d90050ff378c06555afbcf93b6a4ca40773b13dc26670c309ae04f2ca442a041700",
-          "sha1": "769ea7c5f0d1e153feb68dc7e15dcb6b482b82d0"
+          "sha1": "769ea7c5f0d1e153feb68dc7e15dcb6b482b82d0",
+          "sha512": "a6df0978dab44b6374f71664a6bec4610b38bd2f71b46d4b3bc7af9e25a17d90050ff378c06555afbcf93b6a4ca40773b13dc26670c309ae04f2ca442a041700"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Frx9MtJc/malilib-fabric-1.18.1-0.11.6.jar",
         "filename": "malilib-fabric-1.18.1-0.11.6.jar",
@@ -2355,8 +2355,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3467955977ecc6bf3c93c1f3453e87606fef170af598974cfa73b4f87407079ed36e88f04c9438ea5feb86372248538ce9cde3c83adc8160dbb58bc960e7d4d5",
-          "sha1": "72a7b37f4e290edaaae1741009315e1783fbd737"
+          "sha1": "72a7b37f4e290edaaae1741009315e1783fbd737",
+          "sha512": "3467955977ecc6bf3c93c1f3453e87606fef170af598974cfa73b4f87407079ed36e88f04c9438ea5feb86372248538ce9cde3c83adc8160dbb58bc960e7d4d5"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/o0AtO0eq/malilib-fabric-1.18.1-0.11.5.jar",
         "filename": "malilib-fabric-1.18.1-0.11.5.jar",
@@ -2534,8 +2534,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "cc24d8680cb7e380056a6a113d95aaab0da12cd9",
-          "sha512": "d2477133da3aea3dde1a07b2d46e1dd4bc79a257eca79ffdda99a95f393f610982ce6a7e12698a763b8379122dd06c5acc4d854e3269f3f4439ee4c9154e94eb"
+          "sha512": "d2477133da3aea3dde1a07b2d46e1dd4bc79a257eca79ffdda99a95f393f610982ce6a7e12698a763b8379122dd06c5acc4d854e3269f3f4439ee4c9154e94eb",
+          "sha1": "cc24d8680cb7e380056a6a113d95aaab0da12cd9"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/C5EHWwTF/malilib-fabric-1.18.0-0.11.0-pre.1.jar",
         "filename": "malilib-fabric-1.18.0-0.11.0-pre.1.jar",
@@ -2569,8 +2569,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "dddd708c76ed5bcb79a8147cd7b0a46fa8091ab0",
-          "sha512": "69127c8a9409c6d47e144c8c71faac50683454b76660eb5fcaa32dec44407f78ca71fa0bfab1924f3c6bd985e219014ea06a02f838a1cbd903d45aaaaabe727f"
+          "sha512": "69127c8a9409c6d47e144c8c71faac50683454b76660eb5fcaa32dec44407f78ca71fa0bfab1924f3c6bd985e219014ea06a02f838a1cbd903d45aaaaabe727f",
+          "sha1": "dddd708c76ed5bcb79a8147cd7b0a46fa8091ab0"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/LhSZt6EF/malilib-fabric-1.18.0-0.10.0-dev.26.jar",
         "filename": "malilib-fabric-1.18.0-0.10.0-dev.26.jar",
@@ -2597,7 +2597,7 @@
     "changelog": "- Update `ru_ru.json` (by Felix14-v2)\n- `WidgetListStringSelection`: Support searching/filtering (by Arnevdl29)\n- Optimize assets (by K0RR)\n  - Lossless compression by `oxipng`\n- Fix accidentally using Litematica's translation keys for a couple of buttons\n- Fix a crash if resizing the window while on the string list edit screen\n- Build script clean-up, update mappings, set a MC version dependency\n- `JsonUtils`: Always read the file using the UTF-8 charset. Also small clean-up.\n\n**Original build time:** 2021-10-22 12:41:27 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T19:50:46.151011Z",
-    "downloads": 11226,
+    "downloads": 11236,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2632,7 +2632,7 @@
     "changelog": "- Update to MC 1.16.5 and Yarn build.10\n\n**Original build time:** 2021-09-17 19:16:51 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T19:41:09.115152Z",
-    "downloads": 33402,
+    "downloads": 33425,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2667,7 +2667,7 @@
     "changelog": "- Port to the MC 1.18 experimental snapshot 7\n\n**NOTE: The correct version is not available in the list of versions as of uploading this... so it's temporarily set to 1.17.1**\n\n**Original build time:** 2021-09-09 20:42:53 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T19:27:06.933553Z",
-    "downloads": 113,
+    "downloads": 114,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -2709,8 +2709,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "883b6b3c44499541063b18854ea5b5ce4e591883",
-          "sha512": "23e006b30145497ad6529839ee53bcd3c3e951e1d9f73e887246f843fa5e901f6c21b5742494a52a262b1c7eaf084b2f953c76e2e846ca4211e955687a95bdf6"
+          "sha512": "23e006b30145497ad6529839ee53bcd3c3e951e1d9f73e887246f843fa5e901f6c21b5742494a52a262b1c7eaf084b2f953c76e2e846ca4211e955687a95bdf6",
+          "sha1": "883b6b3c44499541063b18854ea5b5ce4e591883"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/isJt6rth/malilib-fabric-1.17.1-0.10.0-dev.25.jar",
         "filename": "malilib-fabric-1.17.1-0.10.0-dev.25.jar",
@@ -2744,8 +2744,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "55eb6daf7c72bd31ac9e7e306a5e06d283cece5c7c4aa4f682b1dc3f18d31ed2204655e99ff1aebde69a7411ee200b7f00b3871bba151b2be96ec668039aac08",
-          "sha1": "3fedb6b695a67db5076db5f1af21528268551f94"
+          "sha1": "3fedb6b695a67db5076db5f1af21528268551f94",
+          "sha512": "55eb6daf7c72bd31ac9e7e306a5e06d283cece5c7c4aa4f682b1dc3f18d31ed2204655e99ff1aebde69a7411ee200b7f00b3871bba151b2be96ec668039aac08"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Afp8AWEJ/malilib-fabric-1.17.1-0.10.0-dev.24.jar",
         "filename": "malilib-fabric-1.17.1-0.10.0-dev.24.jar",
@@ -2849,8 +2849,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7f3b0b3cb69b0c844f7eb1d52789e9fb5de09bcb",
-          "sha512": "fd04bc83e31c214930e4aa1a7a3b38a58c3157b2e11a306db180dfe1d22deb1d19b398281aa09ed847f1c274b0d9200e0940116b162726e203bd7c621a330856"
+          "sha512": "fd04bc83e31c214930e4aa1a7a3b38a58c3157b2e11a306db180dfe1d22deb1d19b398281aa09ed847f1c274b0d9200e0940116b162726e203bd7c621a330856",
+          "sha1": "7f3b0b3cb69b0c844f7eb1d52789e9fb5de09bcb"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/xENxlGYG/malilib-fabric-1.17-snap-21w14a-0.10.0-dev.22%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.17-snap-21w14a-0.10.0-dev.22+beta.1.jar",
@@ -2919,8 +2919,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6990e397f9533832f99c316b707130b353160816a69eb5e640dd9d0f761e9de30780de7b4a328873465daa93a5a8cae8257b02881c5c62b34a079fcf8597d5ec",
-          "sha1": "3daf2efa72bf7220fb8c1b6481126bd8b87b9d5e"
+          "sha1": "3daf2efa72bf7220fb8c1b6481126bd8b87b9d5e",
+          "sha512": "6990e397f9533832f99c316b707130b353160816a69eb5e640dd9d0f761e9de30780de7b4a328873465daa93a5a8cae8257b02881c5c62b34a079fcf8597d5ec"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/5SAYCyFk/malilib-fabric-1.17.0-0.10.0-dev.22%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.17.0-0.10.0-dev.22+beta.1.jar",
@@ -2947,7 +2947,7 @@
     "changelog": "- \"Unofficial\" Forge port to 1.16.5, made by ZacSharp\n  - See: https://github.com/ZacSharp/malilib-forge\n- **Note:** This version has a bug that any hotkey changes you make will not take effect before you either log out of the world and back in, or use a portal to travel between dimensions (the configs get loaded and applied on joining any dimension)\n\n**Original build time:** 2021-06-06 14:21:44 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T17:08:20.535918Z",
-    "downloads": 16773,
+    "downloads": 16790,
     "version_type": "alpha",
     "status": "listed",
     "requested_status": null,
@@ -3059,8 +3059,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "844a27dc84092baafee533c5d06df7c7be5cd5d585b1eba48564ba35be29c431092aec66f1aaf965ef07fa0f3475fe43327cfbbf92b23d1f99acd27ea1b4b19a",
-          "sha1": "101f69b2f6299b2919a75f646b1e003c15f9efb6"
+          "sha1": "101f69b2f6299b2919a75f646b1e003c15f9efb6",
+          "sha512": "844a27dc84092baafee533c5d06df7c7be5cd5d585b1eba48564ba35be29c431092aec66f1aaf965ef07fa0f3475fe43327cfbbf92b23d1f99acd27ea1b4b19a"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/EKza0MGW/malilib-fabric-1.17-snap-21w18a-0.10.0-dev.22%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.17-snap-21w18a-0.10.0-dev.22+beta.1.jar",
@@ -3094,8 +3094,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7a3d7ab5fc0e999705e34bab5d26d63ffce3e93a",
-          "sha512": "4dc892c276a0847d73a2d2ba9a8a25b3fca97d4e269bd1ba16394498c43e040de275915eae90c245ec0984cd25f7e152222a17f68b47c3872eba9d7053474baf"
+          "sha512": "4dc892c276a0847d73a2d2ba9a8a25b3fca97d4e269bd1ba16394498c43e040de275915eae90c245ec0984cd25f7e152222a17f68b47c3872eba9d7053474baf",
+          "sha1": "7a3d7ab5fc0e999705e34bab5d26d63ffce3e93a"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/5AHE21Q9/malilib-fabric-1.16.4-0.10.0-dev.21%2Barne.7.jar",
         "filename": "malilib-fabric-1.16.4-0.10.0-dev.21+arne.7.jar",
@@ -3129,8 +3129,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1595ece96b1c4abff4bb0bce6103a6c1b7560d2b",
-          "sha512": "ceeefeb3f09d6211b8b2206ab7dd06ae0eb58ff245f45abd4b61dabda0a8aa3b0cc1868e7876151cdc1be7138f4ea28e97f24c3fc117fe296d19dc39f9ab5e33"
+          "sha512": "ceeefeb3f09d6211b8b2206ab7dd06ae0eb58ff245f45abd4b61dabda0a8aa3b0cc1868e7876151cdc1be7138f4ea28e97f24c3fc117fe296d19dc39f9ab5e33",
+          "sha1": "1595ece96b1c4abff4bb0bce6103a6c1b7560d2b"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Uxcq4Jeh/malilib-fabric-1.16.4-0.10.0-dev.21%2Barne.6.jar",
         "filename": "malilib-fabric-1.16.4-0.10.0-dev.21+arne.6.jar",
@@ -3164,8 +3164,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e62362baa6819a2ce06ad6209eaaebe66f1d27f6",
-          "sha512": "80a477103f3bdcc2b479d683e2633be161e15222ad4947b34f173fe28aa6073dc4314eda633a7d4ff425c5daa5d5901b787f9b75f4028dfcdb884d9bab17b7fe"
+          "sha512": "80a477103f3bdcc2b479d683e2633be161e15222ad4947b34f173fe28aa6073dc4314eda633a7d4ff425c5daa5d5901b787f9b75f4028dfcdb884d9bab17b7fe",
+          "sha1": "e62362baa6819a2ce06ad6209eaaebe66f1d27f6"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/cHOCOOv8/malilib-fabric-1.17-snap-21w13a-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.17-snap-21w13a-0.10.0-dev.21+beta.1.jar",
@@ -3192,15 +3192,15 @@
     "changelog": "- Make a build of the previous `0.10.0-dev.23` version without the Mixin library embedded\n  - You'll probably need to use this version if you have other mods that have the Mixin library already\n  - This is a workaround hack since I don't know what is the correct way to deal with the Mixin library in 1.12.2 under Forge... :pain:\n\n**Original build time:** 2021-03-30 21:48:13 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T16:42:34.465414Z",
-    "downloads": 29315,
+    "downloads": 29336,
     "version_type": "alpha",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "628d6423b8592095113694d3bb6f39ae9dff5b1709d4cceee71ecc121315b35c01353c3003321e734c7c98b770d62b27b14eecbf98553d49bff134b463567f7d",
-          "sha1": "897ceddb0f32583d1c004f37213e19e58b1106f5"
+          "sha1": "897ceddb0f32583d1c004f37213e19e58b1106f5",
+          "sha512": "628d6423b8592095113694d3bb6f39ae9dff5b1709d4cceee71ecc121315b35c01353c3003321e734c7c98b770d62b27b14eecbf98553d49bff134b463567f7d"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/6PDV12GO/malilib-forge-1.12.2-0.10.0-dev.23.nomixin.jar",
         "filename": "malilib-forge-1.12.2-0.10.0-dev.23.nomixin.jar",
@@ -3234,8 +3234,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "091c7f021045ce866699eec8791657e4ee29e8dc",
-          "sha512": "ae97c152adabfd16c6525ef3880f28be553653e1d43a35daf7b930d1c423e296ceaa4dae6517abdf2f24bc240476380da41998965cd9b7c091ceaf69c32a90b8"
+          "sha512": "ae97c152adabfd16c6525ef3880f28be553653e1d43a35daf7b930d1c423e296ceaa4dae6517abdf2f24bc240476380da41998965cd9b7c091ceaf69c32a90b8",
+          "sha1": "091c7f021045ce866699eec8791657e4ee29e8dc"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Ylo1pzZT/malilib-fabric-1.17-snap-21w08b-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.17-snap-21w08b-0.10.0-dev.21+beta.1.jar",
@@ -3269,8 +3269,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "46f84fede3dc596f6d1fd8e0548a7c5e5b69ea91",
-          "sha512": "2d7fa2d14aac630c0c25b0bf26329b952dd035e8f8bc633276db8bab27ca16b3ee904cf5730d3fa776d30242899623b4ddd7bfc03f9473c7a84be63c5104c968"
+          "sha512": "2d7fa2d14aac630c0c25b0bf26329b952dd035e8f8bc633276db8bab27ca16b3ee904cf5730d3fa776d30242899623b4ddd7bfc03f9473c7a84be63c5104c968",
+          "sha1": "46f84fede3dc596f6d1fd8e0548a7c5e5b69ea91"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/IQkidUS4/malilib-fabric-1.16.4-0.10.0-dev.21%2Barne.5.jar",
         "filename": "malilib-fabric-1.16.4-0.10.0-dev.21+arne.5.jar",
@@ -3304,8 +3304,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a55c3b0571f2a1f56646894ab8c403dcd8a5073bdb535f2d9ad7e5dbc4d5631bd6f053e95a1246ddf041f0c2677cc81b09397307431ac31a3f757a9c1569818e",
-          "sha1": "465e1ece9600d9acbce3a48ff37aae3ced0a121b"
+          "sha1": "465e1ece9600d9acbce3a48ff37aae3ced0a121b",
+          "sha512": "a55c3b0571f2a1f56646894ab8c403dcd8a5073bdb535f2d9ad7e5dbc4d5631bd6f053e95a1246ddf041f0c2677cc81b09397307431ac31a3f757a9c1569818e"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/dBwOdoCw/malilib-fabric-1.16.4-0.10.0-dev.21%2Barne.4.jar",
         "filename": "malilib-fabric-1.16.4-0.10.0-dev.21+arne.4.jar",
@@ -3374,8 +3374,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8609e3608d205bb3f4e87ec356e4385b3834baca793c02367800c4b8ca913d06e741d38a7281c7db5f0672394698f52bd46652f0ee064efee677359db050d5cd",
-          "sha1": "19e28d49ed69cd5b90ac4d3385b19f41598b576d"
+          "sha1": "19e28d49ed69cd5b90ac4d3385b19f41598b576d",
+          "sha512": "8609e3608d205bb3f4e87ec356e4385b3834baca793c02367800c4b8ca913d06e741d38a7281c7db5f0672394698f52bd46652f0ee064efee677359db050d5cd"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/BYZbkbtD/malilib-fabric-1.16.4-0.10.0-dev.21%2Barne.3.jar",
         "filename": "malilib-fabric-1.16.4-0.10.0-dev.21+arne.3.jar",
@@ -3409,8 +3409,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6b45469e146432634918ce3c40f69d1928b5613b193881227a86bd13b16ba345387c63e8943a0d864dd75ff01d1662760506ef4360f50af4c1ac4d54c1400a34",
-          "sha1": "1a20881a5fff1ddac00cddca3656fc45aaebc292"
+          "sha1": "1a20881a5fff1ddac00cddca3656fc45aaebc292",
+          "sha512": "6b45469e146432634918ce3c40f69d1928b5613b193881227a86bd13b16ba345387c63e8943a0d864dd75ff01d1662760506ef4360f50af4c1ac4d54c1400a34"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/5oaVbc3m/malilib-fabric-1.17-snap-20w51a-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.17-snap-20w51a-0.10.0-dev.21+beta.1.jar",
@@ -3514,8 +3514,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "eb9257206ebefa2c9f889a46a3e7f69cb90b8051",
-          "sha512": "2dc29794a9c1e2ece15d4f303c3429157867dc2509d6252995859c0bb8b20ced850bd39d6a61d7db9e6518c4f769872418d3a047dd63201bcd338bbf8e255d85"
+          "sha512": "2dc29794a9c1e2ece15d4f303c3429157867dc2509d6252995859c0bb8b20ced850bd39d6a61d7db9e6518c4f769872418d3a047dd63201bcd338bbf8e255d85",
+          "sha1": "eb9257206ebefa2c9f889a46a3e7f69cb90b8051"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/2lJvqczS/malilib-fabric-1.16.4-0.10.0-dev.21%2Barne.2.jar",
         "filename": "malilib-fabric-1.16.4-0.10.0-dev.21+arne.2.jar",
@@ -3584,8 +3584,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "11d0651cc3a85828025500a1f41e45b9436fc48f81172c6ec482b061149dabe75ca8ad00458dbe58ab62160abe8ee8d8487b79c762212aa286ad2f19a680340d",
-          "sha1": "bc25f735825d24e1dfc3c479f6d6345435ab437a"
+          "sha1": "bc25f735825d24e1dfc3c479f6d6345435ab437a",
+          "sha512": "11d0651cc3a85828025500a1f41e45b9436fc48f81172c6ec482b061149dabe75ca8ad00458dbe58ab62160abe8ee8d8487b79c762212aa286ad2f19a680340d"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/zKgKuVqX/malilib-fabric-1.17-snap-20w45a-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.17-snap-20w45a-0.10.0-dev.21+beta.1.jar",
@@ -3724,8 +3724,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4727958e49449925424a489610846d55153a7721808cb5393749567fd4db7d93eeb561c24851792c7794892d9d5a8dc0cdf23aec5115e76576c44b3681145dbb",
-          "sha1": "6b1acdc2010a55363ad9dbee4787744b476363be"
+          "sha1": "6b1acdc2010a55363ad9dbee4787744b476363be",
+          "sha512": "4727958e49449925424a489610846d55153a7721808cb5393749567fd4db7d93eeb561c24851792c7794892d9d5a8dc0cdf23aec5115e76576c44b3681145dbb"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/1lxRNCyB/malilib-fabric-1.16.2-0.10.0-dev.21%2Barne.2.jar",
         "filename": "malilib-fabric-1.16.2-0.10.0-dev.21+arne.2.jar",
@@ -3759,8 +3759,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "581e21e8856dfc0a688b03b9cedd942b33ffc868bb1167b4e129041153b3afb726d74664f32075125e90c185ebc9dc9ef816cec60fd1d2a80469de81364baba9",
-          "sha1": "c8e6a34c6df330e8c3cf3dd4d5c2810c86095807"
+          "sha1": "c8e6a34c6df330e8c3cf3dd4d5c2810c86095807",
+          "sha512": "581e21e8856dfc0a688b03b9cedd942b33ffc868bb1167b4e129041153b3afb726d74664f32075125e90c185ebc9dc9ef816cec60fd1d2a80469de81364baba9"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/f7KQvBvd/malilib-fabric-1.16.2-0.10.0-dev.21%2Barne.1.jar",
         "filename": "malilib-fabric-1.16.2-0.10.0-dev.21+arne.1.jar",
@@ -3787,7 +3787,7 @@
     "changelog": "- Bump the GUI text field max length from 256 to 65k\n\n**Original build time:** 2020-07-29 00:30:18 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-03T02:14:02.857635Z",
-    "downloads": 1357,
+    "downloads": 1359,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3829,8 +3829,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1a301d068a74cdab53bf9c5a9d0b1b74819148cc623025adb7956744b14bb0178a413fe96448a6ea5840fd91c787f2956bd5a6957000851108d5e59bab479b9f",
-          "sha1": "ea89170bb3367ceaca9b142c779760e530cbb45e"
+          "sha1": "ea89170bb3367ceaca9b142c779760e530cbb45e",
+          "sha512": "1a301d068a74cdab53bf9c5a9d0b1b74819148cc623025adb7956744b14bb0178a413fe96448a6ea5840fd91c787f2956bd5a6957000851108d5e59bab479b9f"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/7U8phHVA/malilib-fabric-1.16.1-0.10.0-dev.21%2Barne.1.jar",
         "filename": "malilib-fabric-1.16.1-0.10.0-dev.21+arne.1.jar",
@@ -3899,8 +3899,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "47086af9a91adc44eccda5c59d13ccbc0e99fe00e3ab4e48db7c57ff50d49bb4f83fccf1e9363edabb25c57b2e167bfd9ac9ca9002757df8c4ff3b678ee3966a",
-          "sha1": "5ba574e204792c78cf82e7c4553c14141d3f4928"
+          "sha1": "5ba574e204792c78cf82e7c4553c14141d3f4928",
+          "sha512": "47086af9a91adc44eccda5c59d13ccbc0e99fe00e3ab4e48db7c57ff50d49bb4f83fccf1e9363edabb25c57b2e167bfd9ac9ca9002757df8c4ff3b678ee3966a"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/bie47ObU/malilib-fabric-1.16.0-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16.0-0.10.0-dev.21+beta.1.jar",
@@ -3969,8 +3969,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "bcd005397818a26b4849c4cf26a164fad9b0dfbc",
-          "sha512": "b3f91e2e1e5bd0040aecdc2fcaca1c3df3b5d92f02399c610d5f9208a2819b6d1e2627dcd57cba2abeb1913b5643412e9bb7defbb90d4583a5a89a179f9f29bf"
+          "sha512": "b3f91e2e1e5bd0040aecdc2fcaca1c3df3b5d92f02399c610d5f9208a2819b6d1e2627dcd57cba2abeb1913b5643412e9bb7defbb90d4583a5a89a179f9f29bf",
+          "sha1": "bcd005397818a26b4849c4cf26a164fad9b0dfbc"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/goJg4U99/malilib-fabric-1.16-pre3-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-pre3-0.10.0-dev.21+beta.1.jar",
@@ -4004,8 +4004,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4a48f002f113f56c608ede4557e10aea149f60ed",
-          "sha512": "67174889a2ee1216e7dacd91c62a95279ca111dfa5f29389cf1f90f11c2b9d75b76030be5a8b29371c021c55c3e90a5b9253cd39ed6be904e04dea979de1a746"
+          "sha512": "67174889a2ee1216e7dacd91c62a95279ca111dfa5f29389cf1f90f11c2b9d75b76030be5a8b29371c021c55c3e90a5b9253cd39ed6be904e04dea979de1a746",
+          "sha1": "4a48f002f113f56c608ede4557e10aea149f60ed"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/CsKg2NQk/malilib-fabric-1.16-pre2-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-pre2-0.10.0-dev.21+beta.1.jar",
@@ -4074,8 +4074,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "490ce264726c2a1fac89c53143a6c6e02420d45f71f2bfddd449be2bd701b495b974eb8c79ad8cc36d38cb5f4ffb92eb1d870ee80b4626b89ca99276e43c06c9",
-          "sha1": "acb79c260d9ed9a11bd4abc4b608a6bbb43de09e"
+          "sha1": "acb79c260d9ed9a11bd4abc4b608a6bbb43de09e",
+          "sha512": "490ce264726c2a1fac89c53143a6c6e02420d45f71f2bfddd449be2bd701b495b974eb8c79ad8cc36d38cb5f4ffb92eb1d870ee80b4626b89ca99276e43c06c9"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/zVs7aEp7/malilib-fabric-1.16-snap-20w22a-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w22a-0.10.0-dev.21+beta.1.jar",
@@ -4109,8 +4109,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5ef855dc0c0af0a7e3a920c990140d4d9bb4dea8",
-          "sha512": "1cbc50fe492fb5f9c929aba320c1539639e7c43fea799421d5b357dbd84b1e5f90a9da646808ebdfb4d5a865d771b888c9b48d5896a0229ed9332a6b31d2f84b"
+          "sha512": "1cbc50fe492fb5f9c929aba320c1539639e7c43fea799421d5b357dbd84b1e5f90a9da646808ebdfb4d5a865d771b888c9b48d5896a0229ed9332a6b31d2f84b",
+          "sha1": "5ef855dc0c0af0a7e3a920c990140d4d9bb4dea8"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/8dni8zmd/malilib-fabric-1.16-snap-20w21a-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w21a-0.10.0-dev.21+beta.1.jar",
@@ -4144,8 +4144,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7a2036fd323c2f92db7ac79707a356eaed82e636",
-          "sha512": "c47771d76a55db8b750f14c60e7c2f485f2fb3dc862ec88e4159a487cd915da4f15620d0d0546bbaaf93a2d9075b79074375218e32b18fa52c830bfbb0a6a92a"
+          "sha512": "c47771d76a55db8b750f14c60e7c2f485f2fb3dc862ec88e4159a487cd915da4f15620d0d0546bbaaf93a2d9075b79074375218e32b18fa52c830bfbb0a6a92a",
+          "sha1": "7a2036fd323c2f92db7ac79707a356eaed82e636"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/SB7tiPti/malilib-fabric-1.16-snap-20w20b-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w20b-0.10.0-dev.21+beta.1.jar",
@@ -4214,8 +4214,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c8080975cee281583fc03a6dd78532ca10106e2c080320a4fbbbdaeb3735dd5ffbed258dc89a36e646cada42dc61a037ac53e7b244bffc9e40b573bed4e12ff0",
-          "sha1": "6ac5b21a4f495bd3b74e0efa52acb546c2c525d6"
+          "sha1": "6ac5b21a4f495bd3b74e0efa52acb546c2c525d6",
+          "sha512": "c8080975cee281583fc03a6dd78532ca10106e2c080320a4fbbbdaeb3735dd5ffbed258dc89a36e646cada42dc61a037ac53e7b244bffc9e40b573bed4e12ff0"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/sEdTPERW/malilib-fabric-1.16-snap-20w18a-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w18a-0.10.0-dev.21+beta.1.jar",
@@ -4284,8 +4284,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "94460164a59078ed14392ad232d93c4f2a1f26e8c78becbce95c2c08e812052839bf0f6cdc21c074c5ac0f6cfc6a85d14e6de2b2558fee7074c5e53f7d4304f1",
-          "sha1": "f362e54a5b954ee9ea11590f23f19cb0626b3d7f"
+          "sha1": "f362e54a5b954ee9ea11590f23f19cb0626b3d7f",
+          "sha512": "94460164a59078ed14392ad232d93c4f2a1f26e8c78becbce95c2c08e812052839bf0f6cdc21c074c5ac0f6cfc6a85d14e6de2b2558fee7074c5e53f7d4304f1"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/ONcFAEMd/malilib-1.12.2-0.10.0-dev.28.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.28.litemod",
@@ -4319,8 +4319,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e4f1338cc93ac993214cdd7b6f27c1e6df6efe0bd3ad160d1993ea8857156cf3c182cf58ccd20f5aceb6cca8881c3af6b9aca548be33e5af1a45382231b84617",
-          "sha1": "4ea9a257dc49c4b66c03452034ca4e4e2fd9c09e"
+          "sha1": "4ea9a257dc49c4b66c03452034ca4e4e2fd9c09e",
+          "sha512": "e4f1338cc93ac993214cdd7b6f27c1e6df6efe0bd3ad160d1993ea8857156cf3c182cf58ccd20f5aceb6cca8881c3af6b9aca548be33e5af1a45382231b84617"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/EJD0sMRf/malilib-fabric-1.16-snap-20w17a-0.10.0-dev.21%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w17a-0.10.0-dev.21+beta.1.jar",
@@ -4354,8 +4354,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7ade2fd3869cebdfd019d0b2520791447255e8d7",
-          "sha512": "0a5a6d0fb31d1700a923deaf0de59342962205c3bb6fdf90e3d90bcd2f0baaec7248ad36dd1477fecc9834de0378c70052973158ac743fc9801ac5b16032edad"
+          "sha512": "0a5a6d0fb31d1700a923deaf0de59342962205c3bb6fdf90e3d90bcd2f0baaec7248ad36dd1477fecc9834de0378c70052973158ac743fc9801ac5b16032edad",
+          "sha1": "7ade2fd3869cebdfd019d0b2520791447255e8d7"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/LUDJmeQ8/malilib-fabric-1.15.2-0.10.0-dev.21%2Barne.1.jar",
         "filename": "malilib-fabric-1.15.2-0.10.0-dev.21+arne.1.jar",
@@ -4389,8 +4389,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5cae8d089e1e87b9e0504da811dc324010061c06",
-          "sha512": "478244ecc5b91272cfcc1197511d11f17d91982c4140d20045dde6c135972ed90f2a9d12bfe6dbadd4cb0a4235efbc2df2dfd4d8e5517d6ba40a226842ff092e"
+          "sha512": "478244ecc5b91272cfcc1197511d11f17d91982c4140d20045dde6c135972ed90f2a9d12bfe6dbadd4cb0a4235efbc2df2dfd4d8e5517d6ba40a226842ff092e",
+          "sha1": "5cae8d089e1e87b9e0504da811dc324010061c06"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/LXxCKsbO/malilib-fabric-1.16-snap-20w16a-0.10.0-dev.20%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w16a-0.10.0-dev.20+beta.1.jar",
@@ -4494,8 +4494,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6b754c45240d12aa3c9212271afc771a7e52f2776366e32b5c4cd79e46d5f3edfd35436b181963b814efcba079afd1ed82ce973aaa7efdf3bcb3deb9e39b6f22",
-          "sha1": "015b6cc510a26ed5e6572dc220f78199c7afe80a"
+          "sha1": "015b6cc510a26ed5e6572dc220f78199c7afe80a",
+          "sha512": "6b754c45240d12aa3c9212271afc771a7e52f2776366e32b5c4cd79e46d5f3edfd35436b181963b814efcba079afd1ed82ce973aaa7efdf3bcb3deb9e39b6f22"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/nVIcj6u9/malilib-forge-1.14.4-0.10.0-dev.20%2Bbeta.1.jar",
         "filename": "malilib-forge-1.14.4-0.10.0-dev.20+beta.1.jar",
@@ -4529,8 +4529,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "55311857ee26f88c4a085c7ef3e00d3f668d1967761330483469cfacb709019b19adcd4e05d3b9abb0d848f49f0d9155d2327d1bdbaee7f6c1f85a31f7e8fe94",
-          "sha1": "2421faddbf62a99a38ce9434e5c3841aa9dac78c"
+          "sha1": "2421faddbf62a99a38ce9434e5c3841aa9dac78c",
+          "sha512": "55311857ee26f88c4a085c7ef3e00d3f668d1967761330483469cfacb709019b19adcd4e05d3b9abb0d848f49f0d9155d2327d1bdbaee7f6c1f85a31f7e8fe94"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/CSZC7Kg8/malilib-fabric-1.16-snap-20w15a-0.10.0-dev.20%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w15a-0.10.0-dev.20+beta.1.jar",
@@ -4564,8 +4564,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "74fcddf96dd215b5899dd3fa6eb856c3c1a2b6aae0e96a32cf4abc35b182d65d4f634d9b2ce195b260e1c51cdc854d061f44c001ad6b054f3e9822f0401cb3fc",
-          "sha1": "ce89de055c3859536cf2adfb0019ebf8a1618eca"
+          "sha1": "ce89de055c3859536cf2adfb0019ebf8a1618eca",
+          "sha512": "74fcddf96dd215b5899dd3fa6eb856c3c1a2b6aae0e96a32cf4abc35b182d65d4f634d9b2ce195b260e1c51cdc854d061f44c001ad6b054f3e9822f0401cb3fc"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/SEgBLVXp/malilib-fabric-1.16-snap-20w14a-0.10.0-dev.20%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w14a-0.10.0-dev.20+beta.1.jar",
@@ -4634,8 +4634,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1d6a01a9aba6c7909a33dd43574bedae22f5db2c",
-          "sha512": "368096bc748d4695b29e88034dc7c7aec67ad0251d12995ae9ffc0a7272b43d96e9a4a525d45bf8d705244b5cdd932a555f7c572563e0ce3455d2dc44e43a31a"
+          "sha512": "368096bc748d4695b29e88034dc7c7aec67ad0251d12995ae9ffc0a7272b43d96e9a4a525d45bf8d705244b5cdd932a555f7c572563e0ce3455d2dc44e43a31a",
+          "sha1": "1d6a01a9aba6c7909a33dd43574bedae22f5db2c"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/h3zHTglb/malilib-fabric-1.16-snap-20w13a-0.10.0-dev.20%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w13a-0.10.0-dev.20+beta.1.jar",
@@ -4669,8 +4669,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8008d68113bae6b116ae500d42f9541317a0ccce983d9902174516e096e522c7f927d6b5970a7630776a80adb818576b7e3fac1d81289267af34ef6862ab15c3",
-          "sha1": "48776c347b328e20bec9ddc2fc2d8899a1058127"
+          "sha1": "48776c347b328e20bec9ddc2fc2d8899a1058127",
+          "sha512": "8008d68113bae6b116ae500d42f9541317a0ccce983d9902174516e096e522c7f927d6b5970a7630776a80adb818576b7e3fac1d81289267af34ef6862ab15c3"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/5ZOdZvFB/malilib-fabric-1.15.2-0.10.0-dev.20%2Barne.6.jar",
         "filename": "malilib-fabric-1.15.2-0.10.0-dev.20+arne.6.jar",
@@ -4739,8 +4739,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d491f61f7b190df6bf44051ea96709d85cf9c841",
-          "sha512": "26a18522f8912f63eaafc4dfe587e619fd3f051e47df046cfd69da94d46999a4b3e7e98102918e459d7a0e22b264aa81dce147889040c35de45711097966a7d9"
+          "sha512": "26a18522f8912f63eaafc4dfe587e619fd3f051e47df046cfd69da94d46999a4b3e7e98102918e459d7a0e22b264aa81dce147889040c35de45711097966a7d9",
+          "sha1": "d491f61f7b190df6bf44051ea96709d85cf9c841"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/t9ow8DR1/malilib-fabric-1.16-snap-20w12a-0.10.0-dev.20%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w12a-0.10.0-dev.20+beta.1.jar",
@@ -4774,8 +4774,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "3dffca558f61b6c1352e1a8b1b067dd5fe6682c3",
-          "sha512": "b202914802418c66d100218d488d2ecc14104406223e940494863b8df0f092c4e9ebd06d63afa27dca573754e1709f15498eeedfccbec4d3fb082e65df7c4e58"
+          "sha512": "b202914802418c66d100218d488d2ecc14104406223e940494863b8df0f092c4e9ebd06d63afa27dca573754e1709f15498eeedfccbec4d3fb082e65df7c4e58",
+          "sha1": "3dffca558f61b6c1352e1a8b1b067dd5fe6682c3"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/KT0odK2H/malilib-1.12.2-0.10.0-dev.25.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.25.litemod",
@@ -4809,8 +4809,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b5b2e95bd59fd25871dabb6b0a4379ddd0f0de10",
-          "sha512": "70517d6a0e443783343c8c23eb8be1a01a240496e7d6e34147a3f0754478819949e97a329b7ef5582b01569cd47bb5e93e63060a6917f4dd237b594105a72b5f"
+          "sha512": "70517d6a0e443783343c8c23eb8be1a01a240496e7d6e34147a3f0754478819949e97a329b7ef5582b01569cd47bb5e93e63060a6917f4dd237b594105a72b5f",
+          "sha1": "b5b2e95bd59fd25871dabb6b0a4379ddd0f0de10"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/lUVomngZ/malilib-rift-1.13.2-0.10.0-dev.19%2Barne.1.jar",
         "filename": "malilib-rift-1.13.2-0.10.0-dev.19+arne.1.jar",
@@ -4872,15 +4872,15 @@
     "changelog": "- Add a `MathUtils` class\n- `IntBoundingBox`: Override `equals()` and `hashCode()`\n- Add a `DyeColorCode` enum\n- Add a few methods to `MathUtils`\n- `DataDump`: Also account the header/footer lengths\n- Add some `NBTUtils` methods\n- `WidgetDirectoryEntry`: Cache the icon in the constructor\n- Add a few util methods to `BlockUtils`, `InfoUtils`, `NBTUtils`\n- Various GUI changes and improvements and some class moves\n  - Added a `GuiIconBase` class, moved the malilib icon definitions there\n  - Added a `getIconForEntry()` method to the `IFileBrowserIconProvider` interface and made all the methods default methods\n  - Added a `getIconProvider()` method to the `WidgetFileBrowserBase` class\n  - Added/moved the file browser icons from Litematica to malilib\n  - Moved a few GUI util classes\n- Add a `getEntryIconWidth()` method to the `IFileBrowserIconProvider` interface\n- Add `FileRenamer` and `FileDeleter` classes\n- `StringUtils`: Add a `stripExtensionIfMatches()` method\n- Add icon support to the dropdown widget\n- Use the getter methods for the list widget position on creation\n- Add a `NBTUtils.removeBlockPosFromTag()` method\n- Add a `MathUtils.roundUp()` method for longs\n- `NBTUtils`: Add and modify/rename some methods\n- Fix configs not calling the value change callback when reset\n- Add a `Messages` class for common simple conditional strings\n- Add a new blend util method\n- `ButtonGeneric`: Some icon rendering alignment improvements\n- Improve the hover text renderer positioning a bit\n- `WidgetCheckBox`: Translate the hover strings\n- Fix clearing the search bar with a right click didn't refresh the entries\n- Some `WidgetListBase` and `WidgetFileBrowserBase` changes to allow custom sorting\n- Add `toJson()` and `fromJson()` methods to `IntBoundingBox`\n- Allow `Vec3i` argument in `JsonUtils.blockPosToJson()`\n- Add a bit more margin to the dropdown widget\n- `FileUtils`: Add a `getFileNameExtension()` util method\n- Buttons: Allow outlines, right align improvements, width/rendering fixes\n- Add a new render util method for batched rectangles/quads\n- Add an accessor Mixin and util methods for inventory screens\n- Improve the text plate render util method a bit\n- Move the right align stuff and hover strings from `ButtonBase` to `WidgetBase`\n- Add a new `WidgetRadioButton` widget\n- Add a system for mods to indicate block placement position changes/overrides\n- Add a convenience method `isHeld()` to the `IHotkey` interface\n- `GuiTextFieldGeneric`: Add a `getHeight()` method\n- `ButtonBase`: Add an option to disable the click sound\n- Clean-up and small changes to widget hover text handling\n- Add GUI debug options, plus some GUI refactoring and clean-up\n- Make the file browser navigation widget actually navigatable\n  - To achieve this, the dropdown widget and the navigation widget and also a bunch of other GUI widget classes were refactored and improved and cleaned up\n- `WidgetLabel` changes and clean-up and fixes for the previous commit's changes\n- GUI z-level refactor. The GUI widgets are now stacked on z levels.\n  - Note: Some things are still broken, most notably the text fields on any popup GUIs currently render behind the popup GUI. This will be fixed when the text fields are added as malilib widgets in the coming commits.\n- Some more Z-level handling improvements and clean-up\n- Widget fixes and improvements and clean-up\n- Add a `WidgetItemStack` for rendering item stacks\n- Add `WidgetTextFieldBase` - a custom text field widget\n  - Most of the base functionality works, but it's currently missing the callback and the validator and the segmented/colorized rendering\n- Change all the old text fields into the new text field widget\n  - Also some related changes and fixes to make (hopefully) everything work correctly\n- Fix and clean up the popup GUIs/dialogs. Fix a `WidgetLabel` constructor.\n- Refactor the `MessageRenderer`. Add text field error messages.\n  - The `MessageRenderer` is now used for the text field error messages\n  - Add integer and double text fields and use them where appropriate (there is no real difference, they just set the validator by default).\n  - Also fix an issue with setting the text field focus clearing the keyboard repeat status, depending on the order of the text fields\n  - Changed some of the widget methods a bit\n  - Prevent a crash from the translation method\n- Add a util method for getting a color integer from a hue value\n- Text Fields: Reverse the `Ctrl + (Alt +) arrow key` word skipping behavior\n- Add new util methods to `Color4f`, `PositionUtils` and `RenderUtils`\n- Refactor the GUIs to take advantage of the proper z-ordering for hovering\n- Add a couple of `JsonUtils` methods\n- `FileUtils.generateSimpleSafeFileName()`: Strip repeated and trailing underscores\n\n**Original build time:** 2020-03-08 02:15:31 UTC+2",
     "changelog_url": null,
     "date_published": "2024-01-03T00:16:17.964328Z",
-    "downloads": 201,
+    "downloads": 202,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a9c9e3dcb6447d689b976b81242bb55fb35ed528",
-          "sha512": "1fd22a889fa5d97a3c6342c47271c32e86b179b0cce333734b07bcfe95abeab0115ca66e6478b646d4f932948b2d43838ad98a37eab88c67cadf85042d53dd19"
+          "sha512": "1fd22a889fa5d97a3c6342c47271c32e86b179b0cce333734b07bcfe95abeab0115ca66e6478b646d4f932948b2d43838ad98a37eab88c67cadf85042d53dd19",
+          "sha1": "a9c9e3dcb6447d689b976b81242bb55fb35ed528"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/y7pWcuvN/malilib-1.12.2-0.10.0-dev.24.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.24.litemod",
@@ -4914,8 +4914,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0a7802c631a6a4e467425a4a5c8b0577e6e7bf969f381057a01e9977a8a6b058d92fc64151948304ecf19edfa57844e7070f495b2311e4eb92a7a1b4d4da0aad",
-          "sha1": "c49dedb0688871d62fb7390161db2ebb246afd73"
+          "sha1": "c49dedb0688871d62fb7390161db2ebb246afd73",
+          "sha512": "0a7802c631a6a4e467425a4a5c8b0577e6e7bf969f381057a01e9977a8a6b058d92fc64151948304ecf19edfa57844e7070f495b2311e4eb92a7a1b4d4da0aad"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/SjGToM73/malilib-1.12.1-0.10.0-dev.24%2Bpre.1.litemod",
         "filename": "malilib-1.12.1-0.10.0-dev.24+pre.1.litemod",
@@ -4949,8 +4949,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "eb919085141ba29f77eb736618b45f0343e4787e",
-          "sha512": "6b150a4ddd7826c2c232ec653bb91fcc8de395233db86052e81bc2bfbb91ea8927aff228c6a5f30474dceefc1d9b279b978e307d20bfb07f5725fa4e023d2d3a"
+          "sha512": "6b150a4ddd7826c2c232ec653bb91fcc8de395233db86052e81bc2bfbb91ea8927aff228c6a5f30474dceefc1d9b279b978e307d20bfb07f5725fa4e023d2d3a",
+          "sha1": "eb919085141ba29f77eb736618b45f0343e4787e"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Gis19l54/malilib-fabric-1.16-snap-20w10a-0.10.0-dev.20%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.16-snap-20w10a-0.10.0-dev.20+beta.1.jar",
@@ -5019,8 +5019,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2009969a437376ce07f1a59ed217ce35e95e7652010f6fe5363843fa7dcc0f931af8d54f19a29a130086c8c57ec50db03419830abf002f59a917ad6f47ad5316",
-          "sha1": "1083c2ae3448f03dc901907da7be2570961438e0"
+          "sha1": "1083c2ae3448f03dc901907da7be2570961438e0",
+          "sha512": "2009969a437376ce07f1a59ed217ce35e95e7652010f6fe5363843fa7dcc0f931af8d54f19a29a130086c8c57ec50db03419830abf002f59a917ad6f47ad5316"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/ROauLEoP/malilib-fabric-1.14.4-0.10.0-dev.20%2Barne.2.jar",
         "filename": "malilib-fabric-1.14.4-0.10.0-dev.20+arne.2.jar",
@@ -5089,8 +5089,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cfa3993b98cfc23079e861244990a45963ac0278ed3821dff9c947b692f46ef61f7a08c4e8ac16cb815aa9e3add6b8199027fc954633a1acb1a137c8cf8d7ca0",
-          "sha1": "8e51c6483241ffbc8574f8c51fb424c36c6984b9"
+          "sha1": "8e51c6483241ffbc8574f8c51fb424c36c6984b9",
+          "sha512": "cfa3993b98cfc23079e861244990a45963ac0278ed3821dff9c947b692f46ef61f7a08c4e8ac16cb815aa9e3add6b8199027fc954633a1acb1a137c8cf8d7ca0"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/QDVOYcD0/malilib-fabric-1.15.2-0.10.0-dev.20%2Bbeta.2.jar",
         "filename": "malilib-fabric-1.15.2-0.10.0-dev.20+beta.2.jar",
@@ -5159,8 +5159,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c109e96dfe91f71dab6075dd6aa12b72cccbf33b",
-          "sha512": "b7b619cec2152d22a44605013e6dd0ee531cbd2715315462f14eb49619918f1403958eafdcd355924c3aee16d954e9a920653b62779d9ee89992005a4151c4db"
+          "sha512": "b7b619cec2152d22a44605013e6dd0ee531cbd2715315462f14eb49619918f1403958eafdcd355924c3aee16d954e9a920653b62779d9ee89992005a4151c4db",
+          "sha1": "c109e96dfe91f71dab6075dd6aa12b72cccbf33b"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/ChcwwPSb/malilib-1.12.2-0.10.0-dev.24%2Bpre.1.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.24+pre.1.litemod",
@@ -5257,7 +5257,7 @@
     "changelog": "- Merge the LiteLoader 1.12.2 branch to the Forge 1.12.2 branch\n\nThis brings in the following changes since the previous Forge version `0.10.0-dev.21+pre2`:\n\n- Move the `IConfigOptionListEntry` enums to their own package\n- Add a `getModName()` method to the `IConfigHandler` interface\n- Add `getModName()` and `setModName()` methods to the `IConfigBase` interface\n- Add a util method to draw 9-sliced textures\n- Add a `ToastRenderer` and a keybind display popup/toast\n- Fix editing or resetting string list configs not calling `onValueChanged()`\n- Fix the `WidgetToast` life time argument not being used\n- Allow hotkeys without callbacks to cancel further processing when triggered\n- Minor GUI fixes and clean-up\n- Only show the keybind toast when an action triggered successfully (cancels further processing)\n- Add a `setModName()` method to the `IKeybind` interface\n- Add the `PacketPlitter` class from Carpet mod, needed for structure bounding boxes in recent Carpet mod versions\n- `WidgetDropDown`: Fix the `setPosition()` method not moving the scroll bar\n- Add an `EntityUtils` util class\n- Don't tint the 1.13+ uncolored Shulker Box preview background\n- `LayerRange`: Add a `copy()` method, plus some clean-up\n- `LayerRange`: Fix the \"closest limit to player\" layer range movement being derpy\n- `GuiBase#addLabel()`: Translate the passed label for the width calculation\n- Add a new render util method, rename a couple of old methods\n- `PositionUtils`: Add some new util methods\n- Some small button refactoring/cleanup\n- Add Int and Double value modifier button listeners\n- Add a `WidgetColorIndicator`, and use that in the config GUIs\n- Color Editor: Add an alpha slider, fix the other values affecting the alpha channel\n- Small fix to Render Layer edit GUI positioning, plus change one button label\n- Add a `ConfigOptionListEntryBase` class\n- Modify the `KeyCallbackAdjustable` callback class to be a bit more flexible\n- Move `WidgetScrollBar` to the widgets package\n- Reset the color after drawing in some util methods\n- Make the `JsonUtils.writejsonToFile()` method a bit more flexible\n\n**Original build time:** 2019-12-17 19:47:03 UTC+2",
     "changelog_url": null,
     "date_published": "2024-01-02T21:44:39.221753Z",
-    "downloads": 7825,
+    "downloads": 7828,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5334,8 +5334,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "bf24f39cfe9e52b89c0169a9bbc98efbf189070e1a1ebe87b9ed20c1eb66f3ac76903f9cb009458b629da61efcc5ae2e509d50b846e2d404e2941c6c50983a38",
-          "sha1": "1779a21faa2fcb92de9be177a36569fcc02180f6"
+          "sha1": "1779a21faa2fcb92de9be177a36569fcc02180f6",
+          "sha512": "bf24f39cfe9e52b89c0169a9bbc98efbf189070e1a1ebe87b9ed20c1eb66f3ac76903f9cb009458b629da61efcc5ae2e509d50b846e2d404e2941c6c50983a38"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/1h3OFjd5/malilib-fabric-1.15.0-0.10.0-dev.20%2Bbeta.2.jar",
         "filename": "malilib-fabric-1.15.0-0.10.0-dev.20+beta.2.jar",
@@ -5369,8 +5369,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9f9fafdb75e5e16565d67df354636bbc921cc939434ead977b5c69782efdd3797f48a8eeab6a4ef10609a0fefc5e7c69d9d4550fabd64b58cfacab6104057eef",
-          "sha1": "a350acebb14b81f5b94db11b50a2c0f82199c03e"
+          "sha1": "a350acebb14b81f5b94db11b50a2c0f82199c03e",
+          "sha512": "9f9fafdb75e5e16565d67df354636bbc921cc939434ead977b5c69782efdd3797f48a8eeab6a4ef10609a0fefc5e7c69d9d4550fabd64b58cfacab6104057eef"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/g7hz9tre/malilib-fabric-1.15.0-0.10.0-dev.20%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.15.0-0.10.0-dev.20+beta.1.jar",
@@ -5404,8 +5404,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "efe316b19b96e2f4a6e3d9f0193fdb1a0afd7bea65b090a9a0d425998f5f13343f19118d3e5ef7f2e56454835a90add1601dc452d8c00ab8268ef7fde0758fe4",
-          "sha1": "5a942bad65ccc7e9e259ba264a02e901e52177ba"
+          "sha1": "5a942bad65ccc7e9e259ba264a02e901e52177ba",
+          "sha512": "efe316b19b96e2f4a6e3d9f0193fdb1a0afd7bea65b090a9a0d425998f5f13343f19118d3e5ef7f2e56454835a90add1601dc452d8c00ab8268ef7fde0758fe4"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/SdX6LDeV/malilib-forge-1.14.4-0.10.0-dev.19%2Balpha.2.jar",
         "filename": "malilib-forge-1.14.4-0.10.0-dev.19+alpha.2.jar",
@@ -5439,8 +5439,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "19631d6171f4ae2eff88a64f6424af3b7163a2e85aadd15746bad70909a3b9662b2e2b17755911dfdee238907882ba4e09d9873046b62f43febcdb09208c1efa",
-          "sha1": "5a4e33e12d895c908ddf08890517dd476af39c3b"
+          "sha1": "5a4e33e12d895c908ddf08890517dd476af39c3b",
+          "sha512": "19631d6171f4ae2eff88a64f6424af3b7163a2e85aadd15746bad70909a3b9662b2e2b17755911dfdee238907882ba4e09d9873046b62f43febcdb09208c1efa"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/xvOB7EFh/malilib-fabric-1.15-pre6-0.10.0-dev.20%2Bbeta.1.jar",
         "filename": "malilib-fabric-1.15-pre6-0.10.0-dev.20+beta.1.jar",
@@ -5509,8 +5509,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "443344b0b35118ce82321ab2608cdf381b386afb",
-          "sha512": "82869f7d989e5d1dbd953071d95667f0f1204c8b634ceb5d7a339d720381b48c6539412a07779c53b7b76a3472babc16fcb2c0bd616f0535e779d9a28c2f4e6b"
+          "sha512": "82869f7d989e5d1dbd953071d95667f0f1204c8b634ceb5d7a339d720381b48c6539412a07779c53b7b76a3472babc16fcb2c0bd616f0535e779d9a28c2f4e6b",
+          "sha1": "443344b0b35118ce82321ab2608cdf381b386afb"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/HiREfjem/malilib-fabric-1.15-pre3-0.10.0-dev.20%2Bbeta.3.jar",
         "filename": "malilib-fabric-1.15-pre3-0.10.0-dev.20+beta.3.jar",
@@ -5614,8 +5614,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9d4082ccc11c5acd5451a8b01ae8b17cbff919ee",
-          "sha512": "dbbd4e22917d8fb1f8dcfaba07fc67b98fbab1c6b8689a120ad019ef958d6b9ae23f658fd8cb8445974bf907d0a2f8f02320e6275a592ee31142303d0f7a6bb3"
+          "sha512": "dbbd4e22917d8fb1f8dcfaba07fc67b98fbab1c6b8689a120ad019ef958d6b9ae23f658fd8cb8445974bf907d0a2f8f02320e6275a592ee31142303d0f7a6bb3",
+          "sha1": "9d4082ccc11c5acd5451a8b01ae8b17cbff919ee"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/u2QfMTCe/malilib-fabric-1.15-snap-19w46b-0.10.0-dev.20%2Balpha.1.jar",
         "filename": "malilib-fabric-1.15-snap-19w46b-0.10.0-dev.20+alpha.1.jar",
@@ -5649,8 +5649,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c86d18b208b32d65ad53aa9d26cb78f846019e9ccd78debb974ef20da725be81705a1fa1a66ef59007532e6d39a0db14a76760cfc0def441e0bbebee7e445eee",
-          "sha1": "53b7e96b449a8c7d39a004c290969b1164a63929"
+          "sha1": "53b7e96b449a8c7d39a004c290969b1164a63929",
+          "sha512": "c86d18b208b32d65ad53aa9d26cb78f846019e9ccd78debb974ef20da725be81705a1fa1a66ef59007532e6d39a0db14a76760cfc0def441e0bbebee7e445eee"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/irVc8BCb/malilib-1.12.2-0.10.0-dev.23.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.23.litemod",
@@ -5684,8 +5684,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "87e8ddd7df61c43a40a041b73057443021d92810",
-          "sha512": "75c8f3065404051d27a4ac9d6b8ed099e549fd65d00b827a9790d54ead8eb48b788352004cd09a15f6f9c82e08df43d5158bd6cea7eaf920088bf54ae3c8004d"
+          "sha512": "75c8f3065404051d27a4ac9d6b8ed099e549fd65d00b827a9790d54ead8eb48b788352004cd09a15f6f9c82e08df43d5158bd6cea7eaf920088bf54ae3c8004d",
+          "sha1": "87e8ddd7df61c43a40a041b73057443021d92810"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/BU2oeYjc/malilib-1.12.0-0.10.0-dev.23.litemod",
         "filename": "malilib-1.12.0-0.10.0-dev.23.litemod",
@@ -5789,8 +5789,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "bc60ec43f5560e358884f9d2237b24953004d104",
-          "sha512": "57dd3905dd2c9d0cf111489fa1b33978511460f41b2544cf1526c3cda3f6ce47069e00ef2d596bb7bafa2b671e4c25793c6f0ef97730175b555cbd5c974dada6"
+          "sha512": "57dd3905dd2c9d0cf111489fa1b33978511460f41b2544cf1526c3cda3f6ce47069e00ef2d596bb7bafa2b671e4c25793c6f0ef97730175b555cbd5c974dada6",
+          "sha1": "bc60ec43f5560e358884f9d2237b24953004d104"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/RXunrjdh/malilib-fabric-1.15-snap-19w41a-0.10.0-dev.20%2Balpha.1.jar",
         "filename": "malilib-fabric-1.15-snap-19w41a-0.10.0-dev.20+alpha.1.jar",
@@ -5859,8 +5859,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cddbe38a86bed46abe3d938868fda62e5b59ee8c922c0e9fac4429174f4289a037dd38c642aa96d3b521358ac2552e52bf7c46901b90b755c538f02e628a5977",
-          "sha1": "9e0d77ab4e8d71c69d3f82d7456d53ca9c8ba605"
+          "sha1": "9e0d77ab4e8d71c69d3f82d7456d53ca9c8ba605",
+          "sha512": "cddbe38a86bed46abe3d938868fda62e5b59ee8c922c0e9fac4429174f4289a037dd38c642aa96d3b521358ac2552e52bf7c46901b90b755c538f02e628a5977"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/ujZacei2/malilib-fabric-1.15-snap-19w39a-0.10.0-dev.20%2Balpha.1.jar",
         "filename": "malilib-fabric-1.15-snap-19w39a-0.10.0-dev.20+alpha.1.jar",
@@ -5894,8 +5894,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "649885616d5c0bc39989055270c0c173763b1c61",
-          "sha512": "9a3f7c8ff644fe54200b3e30513910e9b7c7a4c7812c9f66d14194042fbfb0fad0381c38c3b330b422c15e6f3163260051c1856670ddf2e44f132fdbb8e8422d"
+          "sha512": "9a3f7c8ff644fe54200b3e30513910e9b7c7a4c7812c9f66d14194042fbfb0fad0381c38c3b330b422c15e6f3163260051c1856670ddf2e44f132fdbb8e8422d",
+          "sha1": "649885616d5c0bc39989055270c0c173763b1c61"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/CDu87Ijx/malilib-fabric-1.15-snap-19w38b-0.10.0-dev.20.jar",
         "filename": "malilib-fabric-1.15-snap-19w38b-0.10.0-dev.20.jar",
@@ -5999,8 +5999,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a2da5636fbf5a6fd616fb238639b8f9dbdc744cf",
-          "sha512": "713b6a65893d807ca2d463969ec605d4f293e2234b90945792b11d0eae493c71180b8464981a072868802cd4d767885e98161247a7306d592decc469b2157409"
+          "sha512": "713b6a65893d807ca2d463969ec605d4f293e2234b90945792b11d0eae493c71180b8464981a072868802cd4d767885e98161247a7306d592decc469b2157409",
+          "sha1": "a2da5636fbf5a6fd616fb238639b8f9dbdc744cf"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/GGSCI6GP/malilib-fabric-1.15-snap-19w37a-0.10.0-dev.20.jar",
         "filename": "malilib-fabric-1.15-snap-19w37a-0.10.0-dev.20.jar",
@@ -6069,8 +6069,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "eeff37005ba999ae19f0881897590e42750a7c5c",
-          "sha512": "de5101206773ffa19989853c895a21bda64af1005f557143918e1724fe62352cc8ddd6af5d2eaa1cb86f76506f5232b3173652f7fa7e53984716c750d99e993f"
+          "sha512": "de5101206773ffa19989853c895a21bda64af1005f557143918e1724fe62352cc8ddd6af5d2eaa1cb86f76506f5232b3173652f7fa7e53984716c750d99e993f",
+          "sha1": "eeff37005ba999ae19f0881897590e42750a7c5c"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/f02CW9Kn/malilib-1.12.2-0.10.0-dev.21.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.21.litemod",
@@ -6104,8 +6104,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "27f484a1f221b0bf9b09ef56d9884e802ed86fea4b1a5f47743149f9b8ffb59be82a16bf0f2506f27f6ef100e030bfb9b5d61922a1f4098839af2253f8437d05",
-          "sha1": "ce17409b0741da36b2b81835e8610cb761b8b9f6"
+          "sha1": "ce17409b0741da36b2b81835e8610cb761b8b9f6",
+          "sha512": "27f484a1f221b0bf9b09ef56d9884e802ed86fea4b1a5f47743149f9b8ffb59be82a16bf0f2506f27f6ef100e030bfb9b5d61922a1f4098839af2253f8437d05"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/EKNDFW3Q/malilib-1.12.0-0.10.0-dev.21.litemod",
         "filename": "malilib-1.12.0-0.10.0-dev.21.litemod",
@@ -6174,8 +6174,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2e73f1e2d9b9c59b4254e466ce7109e0a74f4619c505728ec0ebf9434f9ac37459f1352807930195c6edb7371df574fcd68ff71219936a392360c0faff8c5993",
-          "sha1": "aecc25b2b1d4eb23eb7a0234b565df6382b8eb20"
+          "sha1": "aecc25b2b1d4eb23eb7a0234b565df6382b8eb20",
+          "sha512": "2e73f1e2d9b9c59b4254e466ce7109e0a74f4619c505728ec0ebf9434f9ac37459f1352807930195c6edb7371df574fcd68ff71219936a392360c0faff8c5993"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/ofNjwck3/malilib-forge-1.12.2-0.10.0-dev.21.pre2.jar",
         "filename": "malilib-forge-1.12.2-0.10.0-dev.21.pre2.jar",
@@ -6237,7 +6237,7 @@
     "changelog": "- 1.14.0 version of the `0.10.0-dev.19` version from 1.14.2\n\n**Original build time:** 2019-07-06 21:34:51 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-02T17:13:24.373032Z",
-    "downloads": 839,
+    "downloads": 840,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6279,8 +6279,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e2e8e9636238a49738d28abc7557896b8f1afb27",
-          "sha512": "ab67286d8321df62a5de70cb49e189222b4b39bce9a12587dcbb663d4d7c61de778830a6b0638eec47c6bbde284668283658ea8145ba608ec8bf82362e812639"
+          "sha512": "ab67286d8321df62a5de70cb49e189222b4b39bce9a12587dcbb663d4d7c61de778830a6b0638eec47c6bbde284668283658ea8145ba608ec8bf82362e812639",
+          "sha1": "e2e8e9636238a49738d28abc7557896b8f1afb27"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/adfbrE2r/malilib-fabric-1.14.3-0.10.0-dev.20.jar",
         "filename": "malilib-fabric-1.14.3-0.10.0-dev.20.jar",
@@ -6307,7 +6307,7 @@
     "changelog": "- Update build scripts and versions\n- Embed the Fabric Resource Loader module of the Fabric API in the malilib jar\n  - Fabric API is thus no longer required for malilib (or my other client mods that depend on malilib)\n- Add a plugin channel handler system and a `PacketSplitter` class (from QuickCarpet)\n- Implement `hashCode()` and `equals()` in `IntBoundingBox`\nDisable/comment out the server-side `PacketSplitter` receive code\n- World load handler fixes\n  - Fixes data loading/saving not working on Realms\n\n**Original build time:** 2019-06-24 22:09:34 UTC+3",
     "changelog_url": null,
     "date_published": "2024-01-02T17:06:06.69178Z",
-    "downloads": 742,
+    "downloads": 743,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6384,8 +6384,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "034536ba503b2df17d6fec74762958fb8262bbe8d0043439be79fa598682eb6bac73f7fa0ab8cbd421d781ba110fa89ae74b8c8131ffab671203f99e720fdf47",
-          "sha1": "f0c29dbe73f26f8419a5fe1b4b5f570943de1333"
+          "sha1": "f0c29dbe73f26f8419a5fe1b4b5f570943de1333",
+          "sha512": "034536ba503b2df17d6fec74762958fb8262bbe8d0043439be79fa598682eb6bac73f7fa0ab8cbd421d781ba110fa89ae74b8c8131ffab671203f99e720fdf47"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/rJuXJGbq/malilib-rift-1.13.2-0.10.0-dev.19.jar",
         "filename": "malilib-rift-1.13.2-0.10.0-dev.19.jar",
@@ -6524,8 +6524,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f54b6b22cb45bafe0675171acff47383e22c97696a3eab03256449c11ecf79a929e4bcfbf7715570751589eda2bc5a7f0a8cd549af35c22a0497eed2dda8e790",
-          "sha1": "061f90d31a12bfbe428af924afdeafbb1775062f"
+          "sha1": "061f90d31a12bfbe428af924afdeafbb1775062f",
+          "sha512": "f54b6b22cb45bafe0675171acff47383e22c97696a3eab03256449c11ecf79a929e4bcfbf7715570751589eda2bc5a7f0a8cd549af35c22a0497eed2dda8e790"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Z1z9d50i/malilib-1.12.0-0.10.0-dev.18.litemod",
         "filename": "malilib-1.12.0-0.10.0-dev.18.litemod",
@@ -6559,8 +6559,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ee465f804a3e9288a268d342cd347b38331546b8f8ba7d01f6832035ca6b77ecb6630a9b3da9b8dc61260b2390e93e75dc00d80734ec402b6818effeece8969f",
-          "sha1": "b0591f54a952b33d5b9d0ad66d7b93460089aed5"
+          "sha1": "b0591f54a952b33d5b9d0ad66d7b93460089aed5",
+          "sha512": "ee465f804a3e9288a268d342cd347b38331546b8f8ba7d01f6832035ca6b77ecb6630a9b3da9b8dc61260b2390e93e75dc00d80734ec402b6818effeece8969f"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/UCs9tZPz/malilib-rift-1.13.2-0.10.0-dev.18.jar",
         "filename": "malilib-rift-1.13.2-0.10.0-dev.18.jar",
@@ -6594,8 +6594,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ba04c111aea2971b2cf1f3f19f6e60bddafb3475",
-          "sha512": "f53936af57d9fd53419fd736c53a53f9628aae26167f7a33ef612c80ccec82a4a69f792b83862c666ab416b0f91ad79184960f87c56e9a66db93aeb00438380c"
+          "sha512": "f53936af57d9fd53419fd736c53a53f9628aae26167f7a33ef612c80ccec82a4a69f792b83862c666ab416b0f91ad79184960f87c56e9a66db93aeb00438380c",
+          "sha1": "ba04c111aea2971b2cf1f3f19f6e60bddafb3475"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/M7H0THrh/malilib-rift-1.13.2-0.10.0-dev.17.jar",
         "filename": "malilib-rift-1.13.2-0.10.0-dev.17.jar",
@@ -6629,8 +6629,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0dad08c909f0e3fa2659abb76ab1916894660beb14b3fdd7c4764b6f725e5913b0b98569077aeabc3957a7cb938744e0263fdcc68eb06da9b0bce7661038522a",
-          "sha1": "c48b6ca84b63609fb6c568f694d82c3c53ea410d"
+          "sha1": "c48b6ca84b63609fb6c568f694d82c3c53ea410d",
+          "sha512": "0dad08c909f0e3fa2659abb76ab1916894660beb14b3fdd7c4764b6f725e5913b0b98569077aeabc3957a7cb938744e0263fdcc68eb06da9b0bce7661038522a"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/pQ04F8DK/malilib-1.12.2-0.10.0-dev.16.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.16.litemod",
@@ -6699,8 +6699,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f8483885e9eba37c644347f7720ac922bf3ac00e",
-          "sha512": "fafc81044ecfbd8fc0d0aacc51dd6427799f8237996802b4701104033ac9f2f6bf4cbe327120fa1492ef8fcd1cdfc7df0a775a48ab79dd3d7e8ab9ef481846cf"
+          "sha512": "fafc81044ecfbd8fc0d0aacc51dd6427799f8237996802b4701104033ac9f2f6bf4cbe327120fa1492ef8fcd1cdfc7df0a775a48ab79dd3d7e8ab9ef481846cf",
+          "sha1": "f8483885e9eba37c644347f7720ac922bf3ac00e"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Est0iV5r/malilib-fabric-1.14.2-0.9.6.jar",
         "filename": "malilib-fabric-1.14.2-0.9.6.jar",
@@ -6734,8 +6734,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d78459ead466dfa72d37af74fef4cbd95bf1f98e",
-          "sha512": "fcc7bfc4fdf518ee21c655b2f48bc44ebe27591e7f19594855056a03592c1af18ff75cb6246b8e06372ba4bb05634cf9c95aa3303ba2ed11a02b0719a1651ef0"
+          "sha512": "fcc7bfc4fdf518ee21c655b2f48bc44ebe27591e7f19594855056a03592c1af18ff75cb6246b8e06372ba4bb05634cf9c95aa3303ba2ed11a02b0719a1651ef0",
+          "sha1": "d78459ead466dfa72d37af74fef4cbd95bf1f98e"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/dR5rKVuL/malilib-rift-1.13.2-0.9.5.jar",
         "filename": "malilib-rift-1.13.2-0.9.5.jar",
@@ -6944,8 +6944,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cc0b3e9a96c7c470595b60e34d5ea4ac664f5c73a0dbe342b3bda166038fee12881f1fb4723c0f5cf8dc0c822d83f66ac884470348b82e882f7d9f9873a5fda3",
-          "sha1": "cc9ebb3bdc155088fd2859b55724afc4cabbda2c"
+          "sha1": "cc9ebb3bdc155088fd2859b55724afc4cabbda2c",
+          "sha512": "cc0b3e9a96c7c470595b60e34d5ea4ac664f5c73a0dbe342b3bda166038fee12881f1fb4723c0f5cf8dc0c822d83f66ac884470348b82e882f7d9f9873a5fda3"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/4R0Gqncy/malilib-1.12.0-0.10.0-dev.13.litemod",
         "filename": "malilib-1.12.0-0.10.0-dev.13.litemod",
@@ -6979,8 +6979,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ecb47b406c183070fd00ef8c2a6697819df41d36",
-          "sha512": "797732e8734d2fea94c31a139d2abf1355339ddac46d1b7fbc01d66112d92efa11776937ddbf7baae9b003c19e117ff25d5e0609c1f36784b284c68e32f4d104"
+          "sha512": "797732e8734d2fea94c31a139d2abf1355339ddac46d1b7fbc01d66112d92efa11776937ddbf7baae9b003c19e117ff25d5e0609c1f36784b284c68e32f4d104",
+          "sha1": "ecb47b406c183070fd00ef8c2a6697819df41d36"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/sLRwmtuK/malilib-fabric-1.14.0-0.9.5.jar",
         "filename": "malilib-fabric-1.14.0-0.9.5.jar",
@@ -7049,8 +7049,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4d9f48e98640d7b8c789117854486815af6a49ad62a3130ef71c72dcde89ac8c0c619bcafb955864648948b12a5e74d94c3d1c3399d293dce7188b1deab78e5b",
-          "sha1": "0c46f54e23621c5362673105c26d84bec5241ffb"
+          "sha1": "0c46f54e23621c5362673105c26d84bec5241ffb",
+          "sha512": "4d9f48e98640d7b8c789117854486815af6a49ad62a3130ef71c72dcde89ac8c0c619bcafb955864648948b12a5e74d94c3d1c3399d293dce7188b1deab78e5b"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/X8dJ9Bm8/malilib-1.12.2-0.10.0-dev.12.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.12.litemod",
@@ -7084,8 +7084,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "db61f09ca98a506b5525fa45a374e8a72a2f5b1b0ea1a816de9a539af7efe292e223a94938dcf3325ae6b7403b8768bc6e263063c10fa70fb18c7df632f90db8",
-          "sha1": "9acbc15df1579813e574e127ffdd4dc0b5fb4889"
+          "sha1": "9acbc15df1579813e574e127ffdd4dc0b5fb4889",
+          "sha512": "db61f09ca98a506b5525fa45a374e8a72a2f5b1b0ea1a816de9a539af7efe292e223a94938dcf3325ae6b7403b8768bc6e263063c10fa70fb18c7df632f90db8"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/re5ZP4ae/malilib-1.12.2-0.10.0-dev.11.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.11.litemod",
@@ -7119,8 +7119,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cc9aa5bd4a599414e4e0c0a239395aaecae3092aeb8ceecf116a9dd748e73426c070fb941b36faec42569c3ec5b2d1f7b96771f11c560b10c49d669d764cdb0b",
-          "sha1": "a363f86bcdc24018dc15bbd869bbac3b11e1a9cd"
+          "sha1": "a363f86bcdc24018dc15bbd869bbac3b11e1a9cd",
+          "sha512": "cc9aa5bd4a599414e4e0c0a239395aaecae3092aeb8ceecf116a9dd748e73426c070fb941b36faec42569c3ec5b2d1f7b96771f11c560b10c49d669d764cdb0b"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/brInzMZZ/malilib-1.12.0-0.10.0-dev.11.litemod",
         "filename": "malilib-1.12.0-0.10.0-dev.11.litemod",
@@ -7154,8 +7154,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "450e8ab751009cf78945f5eda6f96afaeb1b7f236184b3d766ad4995db7d5659e5a421a95f7aa6b2c8528b810f9f3233cb02dff5893e1647e8b9296c57e99970",
-          "sha1": "1b93261f80eae8fe7c1076c08179e59eab29421d"
+          "sha1": "1b93261f80eae8fe7c1076c08179e59eab29421d",
+          "sha512": "450e8ab751009cf78945f5eda6f96afaeb1b7f236184b3d766ad4995db7d5659e5a421a95f7aa6b2c8528b810f9f3233cb02dff5893e1647e8b9296c57e99970"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/3LX4TUEJ/malilib-1.12.2-0.10.0-dev.10.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.10.litemod",
@@ -7189,8 +7189,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "373d63f2a1a5b881763f4253a0d20aca91c6208bc78c0c8e160069507904af688cdb6aa49937aa78f26c49fdc0ea3fdd4cea8afd619efcba25ba92691bf6ed63",
-          "sha1": "68e3da3ec6e0855989e28377dc9a89776222c754"
+          "sha1": "68e3da3ec6e0855989e28377dc9a89776222c754",
+          "sha512": "373d63f2a1a5b881763f4253a0d20aca91c6208bc78c0c8e160069507904af688cdb6aa49937aa78f26c49fdc0ea3fdd4cea8afd619efcba25ba92691bf6ed63"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/RFbJZzkP/malilib-1.12.0-0.10.0-dev.10.litemod",
         "filename": "malilib-1.12.0-0.10.0-dev.10.litemod",
@@ -7224,8 +7224,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3a85966c2f0c0064e38266cdb41675ee486532a86cdcce7f258346bfef09fb67a447c5834c2cccbcbcb7d57247bd87a73b53fbbd72be1d9037495b3fdd732b7d",
-          "sha1": "35f468c26aa01ed83e74053ff5f45cf2995dd103"
+          "sha1": "35f468c26aa01ed83e74053ff5f45cf2995dd103",
+          "sha512": "3a85966c2f0c0064e38266cdb41675ee486532a86cdcce7f258346bfef09fb67a447c5834c2cccbcbcb7d57247bd87a73b53fbbd72be1d9037495b3fdd732b7d"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/CnyXjyOO/malilib-1.12.2-0.10.0-dev.9.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.9.litemod",
@@ -7294,8 +7294,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "22ceb415e4be2524c8072767d0e61a1332473e83d05c7db636f64ee13908593f3b9cbb5401eb2fd78c50eac897ef4a85265325c620707f920c72b2516c863bb4",
-          "sha1": "a5514b1eb724a908ff7fece93945a9cbf2b2467f"
+          "sha1": "a5514b1eb724a908ff7fece93945a9cbf2b2467f",
+          "sha512": "22ceb415e4be2524c8072767d0e61a1332473e83d05c7db636f64ee13908593f3b9cbb5401eb2fd78c50eac897ef4a85265325c620707f920c72b2516c863bb4"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/PanSzHVC/malilib-1.12.2-0.10.0-dev.8.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.8.litemod",
@@ -7329,8 +7329,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c9e65197c17b67daae29ee13999189a27e6fb4980107ed3dd4045a33720d84c6c5daa74510dc4a37ee729709e610e172dd090c449a1c020946245e5744cb720f",
-          "sha1": "c05d35f3cb821b13984ff4c8de2777f36b62d7c4"
+          "sha1": "c05d35f3cb821b13984ff4c8de2777f36b62d7c4",
+          "sha512": "c9e65197c17b67daae29ee13999189a27e6fb4980107ed3dd4045a33720d84c6c5daa74510dc4a37ee729709e610e172dd090c449a1c020946245e5744cb720f"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/9iSCpGAD/malilib-1.12.0-0.10.0-dev.8.litemod",
         "filename": "malilib-1.12.0-0.10.0-dev.8.litemod",
@@ -7399,8 +7399,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a38515e409aaaaac016b77708e75627b3bdc692088ff1f9bbc1e06c9e5a89a8bd8bc53b72b52243852f1be7fb8035714767743f0bd3732d575fac479c560b32a",
-          "sha1": "9d165802b16a0f0775673f6d56487020b3e826aa"
+          "sha1": "9d165802b16a0f0775673f6d56487020b3e826aa",
+          "sha512": "a38515e409aaaaac016b77708e75627b3bdc692088ff1f9bbc1e06c9e5a89a8bd8bc53b72b52243852f1be7fb8035714767743f0bd3732d575fac479c560b32a"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/vDRdBvPr/malilib-1.12.0-0.10.0-dev.7.litemod",
         "filename": "malilib-1.12.0-0.10.0-dev.7.litemod",
@@ -7434,8 +7434,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "81204f4e2c768f14bb973c0a4642ae461de67dc5",
-          "sha512": "b7de410e4c24279b611770cd3d700d034bfe5a8618f2a556905e8f069d7a2cf919d507102a95dee60df9962042ef80763158d1d052bc66d6feaa396951346b05"
+          "sha512": "b7de410e4c24279b611770cd3d700d034bfe5a8618f2a556905e8f069d7a2cf919d507102a95dee60df9962042ef80763158d1d052bc66d6feaa396951346b05",
+          "sha1": "81204f4e2c768f14bb973c0a4642ae461de67dc5"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/xl3PIS2V/malilib-1.12.2-0.10.0-dev.6.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.6.litemod",
@@ -7574,8 +7574,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "91cd515a5854b8e1b83338970d8d16b831180891f1a3e401b538f6487bc57f7fe95e01b9889021f2be252bd530aa2d0356eb7ec51c4db6627214085c169eeb42",
-          "sha1": "c673420bf4c8f25c3b7b69f71d4a75ff3012ef79"
+          "sha1": "c673420bf4c8f25c3b7b69f71d4a75ff3012ef79",
+          "sha512": "91cd515a5854b8e1b83338970d8d16b831180891f1a3e401b538f6487bc57f7fe95e01b9889021f2be252bd530aa2d0356eb7ec51c4db6627214085c169eeb42"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/VBJVQr5k/malilib-1.12.2-0.10.0-dev.3.litemod",
         "filename": "malilib-1.12.2-0.10.0-dev.3.litemod",
@@ -7714,8 +7714,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "256b03687ae1e57c9e9da4b0dc7b1e6af5c88c2c",
-          "sha512": "468fe33cbe9902a5794777d6afad75bf0b3ac407cad22582beb1cc4f4789b090cca5c6b4deaf1fca32326ba851b4d229acc11d801ad3562b9560a43cdc1175dc"
+          "sha512": "468fe33cbe9902a5794777d6afad75bf0b3ac407cad22582beb1cc4f4789b090cca5c6b4deaf1fca32326ba851b4d229acc11d801ad3562b9560a43cdc1175dc",
+          "sha1": "256b03687ae1e57c9e9da4b0dc7b1e6af5c88c2c"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/jzx8nfNF/malilib-1.12.0-0.10.0-dev.1.litemod",
         "filename": "malilib-1.12.0-0.10.0-dev.1.litemod",
@@ -7784,8 +7784,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d75f193f6878f2d6a42061733e0e61a13e96b55b5bc6c7cc78120aa57b7106bc8b4183a4e31ee97bf271a7c5947abb9d98bc3a7f6de372b6f89cb342a483107a",
-          "sha1": "b9be6035295f907cdc4381d2bdc0d3983f8b23a0"
+          "sha1": "b9be6035295f907cdc4381d2bdc0d3983f8b23a0",
+          "sha512": "d75f193f6878f2d6a42061733e0e61a13e96b55b5bc6c7cc78120aa57b7106bc8b4183a4e31ee97bf271a7c5947abb9d98bc3a7f6de372b6f89cb342a483107a"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/jMXcLH4A/malilib-rift-1.13.2-0.9.3.jar",
         "filename": "malilib-rift-1.13.2-0.9.3.jar",
@@ -7819,8 +7819,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2dc3638401324bb10be348ee534aa879271351b7",
-          "sha512": "ad5d1b46e41cb58fb4e228fae93687a72fdbb1b1838a4bf46a05c5331f38fdb1d334620621504c42166f472e444f89b4ca450e545e275554c2280ed657bc7eba"
+          "sha512": "ad5d1b46e41cb58fb4e228fae93687a72fdbb1b1838a4bf46a05c5331f38fdb1d334620621504c42166f472e444f89b4ca450e545e275554c2280ed657bc7eba",
+          "sha1": "2dc3638401324bb10be348ee534aa879271351b7"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/dBC9mwZ1/malilib-1.12.2-0.9.3.litemod",
         "filename": "malilib-1.12.2-0.9.3.litemod",
@@ -7847,15 +7847,15 @@
     "changelog": "- Add a field to disable the title hierachy for GUIs\n- Minor HUD rendering offset fixes\n\n**Original build time:** 2018-12-12 15:18:03 UTC+2",
     "changelog_url": null,
     "date_published": "2023-12-07T20:54:38.642679Z",
-    "downloads": 380,
+    "downloads": 381,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "84aabfbfc55105285373697844e45290afcefe1b4bf5258f1e1b52871038cb690b3f656cc5d7159d2188884c2bce5f7aed690db1a0a15777c2dbdee46549e8ce",
-          "sha1": "aef4ec9f87b032027ab9ad6c3ee85819875fa94a"
+          "sha1": "aef4ec9f87b032027ab9ad6c3ee85819875fa94a",
+          "sha512": "84aabfbfc55105285373697844e45290afcefe1b4bf5258f1e1b52871038cb690b3f656cc5d7159d2188884c2bce5f7aed690db1a0a15777c2dbdee46549e8ce"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/EWs7FsDt/malilib-1.12.0-0.9.3.litemod",
         "filename": "malilib-1.12.0-0.9.3.litemod",
@@ -7889,8 +7889,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a3ec0969f10077d33bcde76a7b8cdd2468d9d2d8",
-          "sha512": "7ed71e0ad0b88cbae19db52bb6456cdfea1eab986034e559940ba9a3c84a8321dca8fea6ce1366c914bbd8f06f752ff7340aaeb02e9994295cbb4bd6447f6c59"
+          "sha512": "7ed71e0ad0b88cbae19db52bb6456cdfea1eab986034e559940ba9a3c84a8321dca8fea6ce1366c914bbd8f06f752ff7340aaeb02e9994295cbb4bd6447f6c59",
+          "sha1": "a3ec0969f10077d33bcde76a7b8cdd2468d9d2d8"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/jwGlbCV3/malilib-1.12.2-0.9.2.litemod",
         "filename": "malilib-1.12.2-0.9.2.litemod",
@@ -7959,8 +7959,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8bfbc3da7ebffdee21779e305e280da6312b7860d3945c2b3d050acc86ee79aac2beadbb966f1c52aba621efa65577dcb4d87279c0253e70525c72267d17a55b",
-          "sha1": "23cb20d928c6f25fd29d4113881638b4c39c5f3a"
+          "sha1": "23cb20d928c6f25fd29d4113881638b4c39c5f3a",
+          "sha512": "8bfbc3da7ebffdee21779e305e280da6312b7860d3945c2b3d050acc86ee79aac2beadbb966f1c52aba621efa65577dcb4d87279c0253e70525c72267d17a55b"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/8tPQJhzV/malilib-1.12.2-0.9.1.litemod",
         "filename": "malilib-1.12.2-0.9.1.litemod",
@@ -7994,8 +7994,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6b6750eea1166497bf446e80a0dfa5e33cf075ffb1415ccb97a0b1c2add8c5de6c4c9c265a691539b0a9fbf5d8f7985d227a14af4ff967c2e8abecab10433b2d",
-          "sha1": "840f90da1578292f50d8a4bf41116a0b08181e44"
+          "sha1": "840f90da1578292f50d8a4bf41116a0b08181e44",
+          "sha512": "6b6750eea1166497bf446e80a0dfa5e33cf075ffb1415ccb97a0b1c2add8c5de6c4c9c265a691539b0a9fbf5d8f7985d227a14af4ff967c2e8abecab10433b2d"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Kspglts1/malilib-1.12.0-0.9.1.litemod",
         "filename": "malilib-1.12.0-0.9.1.litemod",
@@ -8029,8 +8029,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8452031c41d283a0dc69a44ac03212b27fb0b293",
-          "sha512": "17afccf9c1d7db524b0ef409dd22f9756d54674fe6180c4c2ae94d4344778632bfb66fad74a0e74bc86cf8f5a62724e0a3e69c068cafa1e7b3ac9acd944d239a"
+          "sha512": "17afccf9c1d7db524b0ef409dd22f9756d54674fe6180c4c2ae94d4344778632bfb66fad74a0e74bc86cf8f5a62724e0a3e69c068cafa1e7b3ac9acd944d239a",
+          "sha1": "8452031c41d283a0dc69a44ac03212b27fb0b293"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/SZbR4R54/malilib-1.12.2-0.9.0.litemod",
         "filename": "malilib-1.12.2-0.9.0.litemod",
@@ -8099,8 +8099,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8c4fcc854ba5885344b0bf352df96f5dad7fe8b6c90b3e98d6f8eed8560ed9af3aaecf33a05be76e339ffa721d8818c23f0387959876dba7dc52dd5de5c2cdf9",
-          "sha1": "cdd98f1a7b800650666f798dd30267396ab4202c"
+          "sha1": "cdd98f1a7b800650666f798dd30267396ab4202c",
+          "sha512": "8c4fcc854ba5885344b0bf352df96f5dad7fe8b6c90b3e98d6f8eed8560ed9af3aaecf33a05be76e339ffa721d8818c23f0387959876dba7dc52dd5de5c2cdf9"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/oLSTbZXM/malilib-1.12.2-0.9.0-dev.4.litemod",
         "filename": "malilib-1.12.2-0.9.0-dev.4.litemod",
@@ -8134,8 +8134,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "80a90ba6703f0f46eb7e68ec8e7497466827d45b",
-          "sha512": "f0ebbe064afa0f327d18d3628622880b2f92964de96128361e543d426b33692a5d873a32009ec4f394f36d623152c363b8e9c28d8205dca3ee20a4af43840e96"
+          "sha512": "f0ebbe064afa0f327d18d3628622880b2f92964de96128361e543d426b33692a5d873a32009ec4f394f36d623152c363b8e9c28d8205dca3ee20a4af43840e96",
+          "sha1": "80a90ba6703f0f46eb7e68ec8e7497466827d45b"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/OA4srdXJ/malilib-1.12.0-0.9.0-dev.4.litemod",
         "filename": "malilib-1.12.0-0.9.0-dev.4.litemod",
@@ -8169,8 +8169,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "248b24bb367fd5a591ec1aa13374b17050b238c85e317ae2b08b348237ebbda391f7ac4827b760a97d057f1fa4cc66551a7c6e5454184ceda3ac2a9f8dd6f1c1",
-          "sha1": "92335f9437c85796d33f38dbe136c699f0845d05"
+          "sha1": "92335f9437c85796d33f38dbe136c699f0845d05",
+          "sha512": "248b24bb367fd5a591ec1aa13374b17050b238c85e317ae2b08b348237ebbda391f7ac4827b760a97d057f1fa4cc66551a7c6e5454184ceda3ac2a9f8dd6f1c1"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/65EmNeSo/malilib-1.12.0-0.9.0-dev.3.litemod",
         "filename": "malilib-1.12.0-0.9.0-dev.3.litemod",
@@ -8204,8 +8204,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "065649b282a871061327d8df9f9c160b9e0417ecf82b8692e62159e4cc23444a1991907d8130790f6f119438bd675b28ca097f64bdc81b877edb719325ae948e",
-          "sha1": "b4b5f5b9d664ca1d523a84f9ed71cf7ddc603095"
+          "sha1": "b4b5f5b9d664ca1d523a84f9ed71cf7ddc603095",
+          "sha512": "065649b282a871061327d8df9f9c160b9e0417ecf82b8692e62159e4cc23444a1991907d8130790f6f119438bd675b28ca097f64bdc81b877edb719325ae948e"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/WkYufsBv/malilib-1.12.2-0.9.0-dev.2.litemod",
         "filename": "malilib-1.12.2-0.9.0-dev.2.litemod",
@@ -8239,8 +8239,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "671d6407d5b246a17268b1da2070a0103c22a7b6",
-          "sha512": "475208bfd3df6f27fa40bc68339bb84c988bee7fc131a714938f69cd2eca638f5d34da73104b06b832e1f00602a3499734a441d5a6e14ee7af9d54f25c791495"
+          "sha512": "475208bfd3df6f27fa40bc68339bb84c988bee7fc131a714938f69cd2eca638f5d34da73104b06b832e1f00602a3499734a441d5a6e14ee7af9d54f25c791495",
+          "sha1": "671d6407d5b246a17268b1da2070a0103c22a7b6"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/AUMrKDpf/malilib-1.12.0-0.9.0-dev.2.litemod",
         "filename": "malilib-1.12.0-0.9.0-dev.2.litemod",
@@ -8274,8 +8274,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "33fdb58ef2192d6839d3a25225a7445f21faf69f",
-          "sha512": "7985f0b33b75d2cb95dc6eaf314d4abc235fa1e325c2a4fdada2ade985729a839276391c1d138d71635500b2ee333a693cd5d8f9fd15407e8abce9ac217af735"
+          "sha512": "7985f0b33b75d2cb95dc6eaf314d4abc235fa1e325c2a4fdada2ade985729a839276391c1d138d71635500b2ee333a693cd5d8f9fd15407e8abce9ac217af735",
+          "sha1": "33fdb58ef2192d6839d3a25225a7445f21faf69f"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/nzayf0vT/malilib-1.12.0-0.9.0-dev.1.litemod",
         "filename": "malilib-1.12.0-0.9.0-dev.1.litemod",
@@ -8414,8 +8414,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "85cea7b0ea674eadedc09e1f56e051ab65cc5777bd5a8c3322a9baf6ab7f57e6bd1d01c5e6b4d5abc9928dd56021243ca5790a0cbcbe0a0a702fdd0f368913fc",
-          "sha1": "2661708f8e9049b824393073d3e315a3b5f3d60f"
+          "sha1": "2661708f8e9049b824393073d3e315a3b5f3d60f",
+          "sha512": "85cea7b0ea674eadedc09e1f56e051ab65cc5777bd5a8c3322a9baf6ab7f57e6bd1d01c5e6b4d5abc9928dd56021243ca5790a0cbcbe0a0a702fdd0f368913fc"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/CLKlpHV8/malilib-1.12.0-0.8.4.litemod",
         "filename": "malilib-1.12.0-0.8.4.litemod",
@@ -8449,8 +8449,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8e1326d8ae9d77fa59cac115d9d89401f59e59e7",
-          "sha512": "6565d93a902df085fd1f0e48dc8e5dc4d265ac26702320c23a3359e9beede6bbd9aa7d6522332c2838884a9b765e2c7bb765cd0157ed5875265d1d4e7127fe06"
+          "sha512": "6565d93a902df085fd1f0e48dc8e5dc4d265ac26702320c23a3359e9beede6bbd9aa7d6522332c2838884a9b765e2c7bb765cd0157ed5875265d1d4e7127fe06",
+          "sha1": "8e1326d8ae9d77fa59cac115d9d89401f59e59e7"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/aCdCLN9a/malilib-1.12.2-0.8.3.litemod",
         "filename": "malilib-1.12.2-0.8.3.litemod",
@@ -8484,8 +8484,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "99c931599478dc662882f091213d3341006a89c6",
-          "sha512": "6e312d382b8642a70606a3b9330c456008dd6386a77a48695e16cba65baf21ba8aeaa3ee5bfb6ad65206569fd23337085f4d29d3827484ebd0e89b66da9ade65"
+          "sha512": "6e312d382b8642a70606a3b9330c456008dd6386a77a48695e16cba65baf21ba8aeaa3ee5bfb6ad65206569fd23337085f4d29d3827484ebd0e89b66da9ade65",
+          "sha1": "99c931599478dc662882f091213d3341006a89c6"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/DQfN3nYw/malilib-1.12.0-0.8.3.litemod",
         "filename": "malilib-1.12.0-0.8.3.litemod",
@@ -8554,8 +8554,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8eb1e7bd8455360b496ebb9d2bf9916ac56e0e1da83860e1725b70e60ec7edda94504232704e02a1c8eada0afe73d7a321f2ba69eebce46e8b6c6e2116eb095f",
-          "sha1": "efa7346a5d6fca48752e93db4535ba998a6a44ba"
+          "sha1": "efa7346a5d6fca48752e93db4535ba998a6a44ba",
+          "sha512": "8eb1e7bd8455360b496ebb9d2bf9916ac56e0e1da83860e1725b70e60ec7edda94504232704e02a1c8eada0afe73d7a321f2ba69eebce46e8b6c6e2116eb095f"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/T88fw3Go/malilib-1.12.0-0.8.2.litemod",
         "filename": "malilib-1.12.0-0.8.2.litemod",
@@ -8589,8 +8589,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "dc10f58453273606012e29a5d2834e3ddae2af78e9e3c8e208b107da4203615207ac7b91dd802be34019f7d9c35052f092624ff37de4b9bc2b12012c5ac7292c",
-          "sha1": "db54d841dcd376825aa2232e3481a353c5bbd100"
+          "sha1": "db54d841dcd376825aa2232e3481a353c5bbd100",
+          "sha512": "dc10f58453273606012e29a5d2834e3ddae2af78e9e3c8e208b107da4203615207ac7b91dd802be34019f7d9c35052f092624ff37de4b9bc2b12012c5ac7292c"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/YCivjDgJ/malilib-1.12.2-0.8.1.litemod",
         "filename": "malilib-1.12.2-0.8.1.litemod",
@@ -8617,15 +8617,15 @@
     "changelog": "- Update `Reference` class in `build.gradle`\n- Improve the inventory overlay rendering\n- Fix config defaults/reset stuff being broken in the `ConfigTypeWrapper`\n  - Apparently I changed the `ConfigTypeWrapper` to a completely broken version during the config refactoring... >_>\n\n**Original build time:** 2018-09-19 00:49:16 UTC+3",
     "changelog_url": null,
     "date_published": "2023-11-22T16:50:53.900174Z",
-    "downloads": 250,
+    "downloads": 251,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4a7e7f368374ab93330327d7cf369e165f2305db37676674be5b54ca4163f03eb662950e32b16cbcd66cb006018ff199eb3b378725093d04673e5503a4c2c92e",
-          "sha1": "c525fdf780312d293c6642fdf13f5f820bbd3db7"
+          "sha1": "c525fdf780312d293c6642fdf13f5f820bbd3db7",
+          "sha512": "4a7e7f368374ab93330327d7cf369e165f2305db37676674be5b54ca4163f03eb662950e32b16cbcd66cb006018ff199eb3b378725093d04673e5503a4c2c92e"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/sJ0vpGQ4/malilib-1.12.0-0.8.1.litemod",
         "filename": "malilib-1.12.0-0.8.1.litemod",
@@ -8659,8 +8659,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1240ae89aed2692a434b8391a072e4833e11d731",
-          "sha512": "1c20911bc01e66e8c2e8390e3b98011c062d6ad11eaff7899fac2a93f84a7a28d66bd4d416daa4116545f9b18ad0d768f08394c4cb93a4787d6f28f2fe245b47"
+          "sha512": "1c20911bc01e66e8c2e8390e3b98011c062d6ad11eaff7899fac2a93f84a7a28d66bd4d416daa4116545f9b18ad0d768f08394c4cb93a4787d6f28f2fe245b47",
+          "sha1": "1240ae89aed2692a434b8391a072e4833e11d731"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/SKRFcsuu/malilib-1.12.2-0.8.0.litemod",
         "filename": "malilib-1.12.2-0.8.0.litemod",
@@ -8729,8 +8729,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0260228e44de8eca94c727c4285845a62f3f1f5755c253ce735c5737b849e64c2af8518e86258b5df8e04ebeccc6909d7369a47adf1db25270bcb3b633835c2f",
-          "sha1": "b4b563723da12f4577de32aaf0b32fd014063bbd"
+          "sha1": "b4b563723da12f4577de32aaf0b32fd014063bbd",
+          "sha512": "0260228e44de8eca94c727c4285845a62f3f1f5755c253ce735c5737b849e64c2af8518e86258b5df8e04ebeccc6909d7369a47adf1db25270bcb3b633835c2f"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Euau0Egw/malilib-1.12.0-0.8.0.litemod",
         "filename": "malilib-1.12.0-0.8.0.litemod",
@@ -8799,8 +8799,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "868f46609711b746dbb364a4cd4c359788332612760a3c748b15976dc74e7e4611c581f60c86780aa95b13459f5f39f79b50d6ec1640ff70b2e54c79a289ad66",
-          "sha1": "a31068e951b61a4dd4eb0dd360cb022bd6c1cab7"
+          "sha1": "a31068e951b61a4dd4eb0dd360cb022bd6c1cab7",
+          "sha512": "868f46609711b746dbb364a4cd4c359788332612760a3c748b15976dc74e7e4611c581f60c86780aa95b13459f5f39f79b50d6ec1640ff70b2e54c79a289ad66"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/T1D4pEXT/malilib-1.12.2-0.7.0.litemod",
         "filename": "malilib-1.12.2-0.7.0.litemod",
@@ -8869,8 +8869,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "aa17dd860df71390fa091f224df1fd5e8b9613d4",
-          "sha512": "60e6a1062a9964d4553d9142a8d186bd1b0a0e219277e60a194c1b7db39043b85379144d53ce59c936576d50f1b755e5e2489bbb5766bd4bdeeef335c011a153"
+          "sha512": "60e6a1062a9964d4553d9142a8d186bd1b0a0e219277e60a194c1b7db39043b85379144d53ce59c936576d50f1b755e5e2489bbb5766bd4bdeeef335c011a153",
+          "sha1": "aa17dd860df71390fa091f224df1fd5e8b9613d4"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/9EvFBimR/malilib-1.12.2-0.6.1.litemod",
         "filename": "malilib-1.12.2-0.6.1.litemod",
@@ -8939,8 +8939,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "51bd9db868616224780711f33eeba77d2fa6919a",
-          "sha512": "5fd0b702a0b2bcf4c5c1203b8803865839174aac5a925da9f8605067b22e1a85d72997d5edbd1c0097f8152184d1fe3113d23318243677953fdf0c650ff0a844"
+          "sha512": "5fd0b702a0b2bcf4c5c1203b8803865839174aac5a925da9f8605067b22e1a85d72997d5edbd1c0097f8152184d1fe3113d23318243677953fdf0c650ff0a844",
+          "sha1": "51bd9db868616224780711f33eeba77d2fa6919a"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/Pu8xDtD1/malilib-1.12.2-0.6.0.litemod",
         "filename": "malilib-1.12.2-0.6.0.litemod",
@@ -8974,8 +8974,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0055d9b7e4fe435580336a72aab0d2937ee986b1de9447bc861541a955b01d50987c93cdbc278eb869270845dabd67764c031981ef066f522efc24e8f0b30aac",
-          "sha1": "60044e81f0cbff293330c77e4e6b64fd927b2425"
+          "sha1": "60044e81f0cbff293330c77e4e6b64fd927b2425",
+          "sha512": "0055d9b7e4fe435580336a72aab0d2937ee986b1de9447bc861541a955b01d50987c93cdbc278eb869270845dabd67764c031981ef066f522efc24e8f0b30aac"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/vgDmDfUm/malilib-1.12.0-0.6.0.litemod",
         "filename": "malilib-1.12.0-0.6.0.litemod",
@@ -9044,8 +9044,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e87d90efea3255d526811ecff5d1d8fa1f4f31ecd6e7879873f034874995d424a7bc02e9f9085253c7513b514729f60e53dd33c16c874fd4762916d72aeb6aff",
-          "sha1": "452590db2a8900dd7af67c5342415522983b82d6"
+          "sha1": "452590db2a8900dd7af67c5342415522983b82d6",
+          "sha512": "e87d90efea3255d526811ecff5d1d8fa1f4f31ecd6e7879873f034874995d424a7bc02e9f9085253c7513b514729f60e53dd33c16c874fd4762916d72aeb6aff"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/246Md9Ry/malilib-1.12.0-0.5.1.litemod",
         "filename": "malilib-1.12.0-0.5.1.litemod",
@@ -9149,8 +9149,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4d0274385a9b3c1770abac85f3643825dc06caa1d0c507c9bd40841822dd4e35bb8a0d466f1c7e3f6a8910de77e124d87d06cad6621b1b6fd17163362d3e4c67",
-          "sha1": "6491b145e24e55b99b95bec001c1ba3bd110b4e4"
+          "sha1": "6491b145e24e55b99b95bec001c1ba3bd110b4e4",
+          "sha512": "4d0274385a9b3c1770abac85f3643825dc06caa1d0c507c9bd40841822dd4e35bb8a0d466f1c7e3f6a8910de77e124d87d06cad6621b1b6fd17163362d3e4c67"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/eIuMPvKJ/malilib-1.12.0-0.4.1.litemod",
         "filename": "malilib-1.12.0-0.4.1.litemod",
@@ -9184,8 +9184,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7b046008aa4345ad9c2747ea1de594f11c9348cb64f5fc2124a2a3000678719fb2bed65f605553034fece84476fb73afa0926a49c1b1bcc1f8a2905753129202",
-          "sha1": "e03c8760b179919e0dde9425b0b9f662a5fe04a6"
+          "sha1": "e03c8760b179919e0dde9425b0b9f662a5fe04a6",
+          "sha512": "7b046008aa4345ad9c2747ea1de594f11c9348cb64f5fc2124a2a3000678719fb2bed65f605553034fece84476fb73afa0926a49c1b1bcc1f8a2905753129202"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/DCEIIABn/malilib-1.12.2-0.4.0.litemod",
         "filename": "malilib-1.12.2-0.4.0.litemod",
@@ -9254,8 +9254,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4127e23262a92b9dd41d348b9223e03fb09d7c58",
-          "sha512": "78a015872870c2f57282d9ae53e36d038089ef64d32edfed12eea8f8854b88709a5bec55daec0b572ba24b3e25354338a2e784df088fda5452d30514eb687358"
+          "sha512": "78a015872870c2f57282d9ae53e36d038089ef64d32edfed12eea8f8854b88709a5bec55daec0b572ba24b3e25354338a2e784df088fda5452d30514eb687358",
+          "sha1": "4127e23262a92b9dd41d348b9223e03fb09d7c58"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/pEa77F0R/malilib-1.12.2-0.3.1.litemod",
         "filename": "malilib-1.12.2-0.3.1.litemod",
@@ -9359,8 +9359,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "eae6ba3486d880aa709b472a1652ec5feb599ef8212cc443195e8de4f9a5987c6b8cbe40dd1107476756b24237f8ca64ed8c881bdefc0cd4a36a993c12ec5f21",
-          "sha1": "a05cb23d109d6b011560b271bab9d2867b343afd"
+          "sha1": "a05cb23d109d6b011560b271bab9d2867b343afd",
+          "sha512": "eae6ba3486d880aa709b472a1652ec5feb599ef8212cc443195e8de4f9a5987c6b8cbe40dd1107476756b24237f8ca64ed8c881bdefc0cd4a36a993c12ec5f21"
         },
         "url": "https://cdn.modrinth.com/data/GcWjdA9I/versions/JOreljE2/malilib-1.12.0-0.2.0.litemod",
         "filename": "malilib-1.12.0-0.2.0.litemod",

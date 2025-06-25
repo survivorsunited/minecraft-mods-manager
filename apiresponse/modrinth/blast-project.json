@@ -21,7 +21,8 @@
     "1.19.2",
     "1.20.1",
     "1.21.1",
-    "1.21.5"
+    "1.21.5",
+    "1.21.6"
   ],
   "id": "hrVBD9fd",
   "slug": "blast",
@@ -33,7 +34,7 @@
   "body": "BLAST is a Quilt, previously Fabric, mod about bombs.\n\nThat's it, just bombs. But why? Because:\n\n- Blowing stuff up is probably one of the most entertaining things in Minecraft.\n- TNT is way too expensive, and gets boring quickly.\n- Mining with explosives takes less time, is more enjoyable, and allows you to roleplay a dwarf demolitionist.\n \n\n**[MORE INFORMATION HERE](https://ladysnake.org/wiki/blast)**\n\n## FAQs\n*Please, before posting a comment, take a gander at this section.*\n\n**Forge?**\n\nNope, sorry, no Forge, so don't bother asking.\n",
   "body_url": null,
   "published": "2023-10-07T23:00:20.877686Z",
-  "updated": "2025-04-28T01:40:48.196903Z",
+  "updated": "2025-06-25T17:23:50.248016Z",
   "approved": "2023-10-08T15:16:42.691774Z",
   "queued": "2023-10-07T23:27:26.606926Z",
   "status": "approved",
@@ -44,7 +45,7 @@
     "name": "",
     "url": null
   },
-  "downloads": 126656,
+  "downloads": 126757,
   "followers": 247,
   "categories": [
     "equipment"
@@ -84,7 +85,8 @@
     "Kt8owOWP",
     "EAEEXEF7",
     "fuAYWWr7",
-    "ugOKAN0o"
+    "ugOKAN0o",
+    "NkAIcuHs"
   ],
   "icon_url": "https://cdn.modrinth.com/data/hrVBD9fd/a5c52019acfdf497b795c85b2e0510ce1f6b5601.png",
   "issues_url": "https://github.com/Ladysnake/BLAST/issues",

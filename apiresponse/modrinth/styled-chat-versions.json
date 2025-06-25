@@ -16,7 +16,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.8.0+1.21.5...2.9.0+1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-18T15:27:59.959979Z",
-    "downloads": 360,
+    "downloads": 376,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -53,7 +53,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.7.2+1.21.3...2.8.0+1.21.5",
     "changelog_url": null,
     "date_published": "2025-03-24T11:05:32.24238Z",
-    "downloads": 2653,
+    "downloads": 2660,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -96,8 +96,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c60603626a9edabfd50828306813203b2a4268c5b50fa79c71068cd6fa3580a465202ca7e504ac37202780d27e75ce209b7565de8c8737bd8314b366c59b71f2",
-          "sha1": "ee10e1fd931af4b91e894056c44f4e2d6f694452"
+          "sha1": "ee10e1fd931af4b91e894056c44f4e2d6f694452",
+          "sha512": "c60603626a9edabfd50828306813203b2a4268c5b50fa79c71068cd6fa3580a465202ca7e504ac37202780d27e75ce209b7565de8c8737bd8314b366c59b71f2"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/LIG1Fs95/styled-chat-2.1.7%2B1.19.4.jar",
         "filename": "styled-chat-2.1.7+1.19.4.jar",
@@ -133,8 +133,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1eaed0ffa1524d623e4b8156cffd87428c1d8a6f6a827524bcc509b58639c7c602970be6ff8aaa05549fe469cbe91aa6cc68ff4d2bd137f0e9dcfb5233a9685b",
-          "sha1": "ab6933272ba5726756f81fe3af1a3d9b19782340"
+          "sha1": "ab6933272ba5726756f81fe3af1a3d9b19782340",
+          "sha512": "1eaed0ffa1524d623e4b8156cffd87428c1d8a6f6a827524bcc509b58639c7c602970be6ff8aaa05549fe469cbe91aa6cc68ff4d2bd137f0e9dcfb5233a9685b"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/9k3L1PEs/styled-chat-2.3.1%2B1.20.2.jar",
         "filename": "styled-chat-2.3.1+1.20.2.jar",
@@ -163,7 +163,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.4.0+1.20.3...2.4.2+1.20.4",
     "changelog_url": null,
     "date_published": "2025-01-27T19:54:56.364439Z",
-    "downloads": 229,
+    "downloads": 231,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -200,15 +200,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.7.1+1.21.3...2.7.2+1.21.3",
     "changelog_url": null,
     "date_published": "2025-01-27T19:49:28.798623Z",
-    "downloads": 2519,
+    "downloads": 2520,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ab0b044912861ca5159d9c55592668113e8b74b3",
-          "sha512": "bf4c4f1996d6f4fc4f74a2d2648fd2ecaf7048d627fe352c0bcd7f389460702503722c043f0dabfca4d5501516647dba921739bbc4fb37fa0bc1fa4c228fc476"
+          "sha512": "bf4c4f1996d6f4fc4f74a2d2648fd2ecaf7048d627fe352c0bcd7f389460702503722c043f0dabfca4d5501516647dba921739bbc4fb37fa0bc1fa4c228fc476",
+          "sha1": "ab0b044912861ca5159d9c55592668113e8b74b3"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/AQ0JW3y8/styled-chat-2.7.2%2B1.21.3.jar",
         "filename": "styled-chat-2.7.2+1.21.3.jar",
@@ -239,7 +239,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.7.0+1.21.2...2.6.1+1.21",
     "changelog_url": null,
     "date_published": "2025-01-27T19:47:47.726899Z",
-    "downloads": 9166,
+    "downloads": 9170,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -275,7 +275,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.2.3+1.20.1...2.2.4+1.20.1",
     "changelog_url": null,
     "date_published": "2025-01-27T19:47:19.203839Z",
-    "downloads": 9218,
+    "downloads": 9229,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -388,7 +388,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/StyledChat/compare/2.5.0+1.20.5...2.6.0+1.21",
     "changelog_url": null,
     "date_published": "2024-06-12T07:41:56.975747Z",
-    "downloads": 30939,
+    "downloads": 30940,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -471,8 +471,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2132ffaaaaed0a6864cf4ae1aeac651441c1eb40",
-          "sha512": "8d4b8ab1ee925d2565df01716f7be50da1058c88997230125a79b8a59ba89aacfc5d58258a56a2f597989ed9d14d843b7d6b59afe366e103044a921ff0fbd1b6"
+          "sha512": "8d4b8ab1ee925d2565df01716f7be50da1058c88997230125a79b8a59ba89aacfc5d58258a56a2f597989ed9d14d843b7d6b59afe366e103044a921ff0fbd1b6",
+          "sha1": "2132ffaaaaed0a6864cf4ae1aeac651441c1eb40"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/hPPTz9OM/styled-chat-2.4.0%2B1.20.3.jar",
         "filename": "styled-chat-2.4.0+1.20.3.jar",
@@ -537,15 +537,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-09-10T07:05:38.876614Z",
-    "downloads": 82230,
+    "downloads": 82261,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "13987a5e2d0e3cdd5994b562d448356ab5dac30d",
-          "sha512": "8f9396389c6d30befb7986c72ca22c92373c9c6d856af1544f62a13ced437657b8f5371adb916f83f0521c8d606e2f8839106c2d60b6b8acaea39f4df912a17b"
+          "sha512": "8f9396389c6d30befb7986c72ca22c92373c9c6d856af1544f62a13ced437657b8f5371adb916f83f0521c8d606e2f8839106c2d60b6b8acaea39f4df912a17b",
+          "sha1": "13987a5e2d0e3cdd5994b562d448356ab5dac30d"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/7dmapSQA/styled-chat-2.2.3%2B1.20.1.jar",
         "filename": "styled-chat-2.2.3+1.20.1.jar",
@@ -573,15 +573,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-08-28T07:50:15.683358Z",
-    "downloads": 4411,
+    "downloads": 4412,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "be6bf99fd473b8228cb00766fec6eb1817c6492669f051313f0172f253f9f1c9414ced0ae14a303a84b9b70751fe50e16bfa6c6494225c4d5c974d115f16deca",
-          "sha1": "dbded0d6fe5816aaffdbd0d556da966a9b361ea2"
+          "sha1": "dbded0d6fe5816aaffdbd0d556da966a9b361ea2",
+          "sha512": "be6bf99fd473b8228cb00766fec6eb1817c6492669f051313f0172f253f9f1c9414ced0ae14a303a84b9b70751fe50e16bfa6c6494225c4d5c974d115f16deca"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/2DkBIhFd/styled-chat-2.0.4%2B1.19.2.jar",
         "filename": "styled-chat-2.0.4+1.19.2.jar",
@@ -616,8 +616,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f92d0932b40cdf93ca281eb1eca136846ffca4e5",
-          "sha512": "5c2cb74f1a35ac6e6827dfeb5cd53d57fadb8634d33de5234bae70d1184a7e1870567be87a3ec5f8a76d4a3be7d31f4d5e23b3fe3c255129dbd9e306cb75269d"
+          "sha512": "5c2cb74f1a35ac6e6827dfeb5cd53d57fadb8634d33de5234bae70d1184a7e1870567be87a3ec5f8a76d4a3be7d31f4d5e23b3fe3c255129dbd9e306cb75269d",
+          "sha1": "f92d0932b40cdf93ca281eb1eca136846ffca4e5"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/axLlTgG5/styled-chat-2.2.2%2B1.20.1.jar",
         "filename": "styled-chat-2.2.2+1.20.1.jar",
@@ -690,8 +690,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e57cdb0cc07efb8763636db7c0134bf4b54a05a82d5fe0e42d2e3ffcad0b8b0b908e95e963e0439b6a5e4e313f816271f908a79941a7b76bbb381818619b62ec",
-          "sha1": "ec31e87212111890954a47b69d3521c0b21c48c0"
+          "sha1": "ec31e87212111890954a47b69d3521c0b21c48c0",
+          "sha512": "e57cdb0cc07efb8763636db7c0134bf4b54a05a82d5fe0e42d2e3ffcad0b8b0b908e95e963e0439b6a5e4e313f816271f908a79941a7b76bbb381818619b62ec"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/9oVLuNZf/styled-chat-2.2.0%2B1.20.jar",
         "filename": "styled-chat-2.2.0+1.20.jar",
@@ -726,8 +726,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f75e5bb395f93aabe3c28792bc4e3e94dc041d836b8444f1938d203f3586d99f3b68d10767558d1cd24891757925a17dfa486f93dcec691093396ed3d9ea9472",
-          "sha1": "bf2b65d9c4b798cef684b0384513693fc3be57cc"
+          "sha1": "bf2b65d9c4b798cef684b0384513693fc3be57cc",
+          "sha512": "f75e5bb395f93aabe3c28792bc4e3e94dc041d836b8444f1938d203f3586d99f3b68d10767558d1cd24891757925a17dfa486f93dcec691093396ed3d9ea9472"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/WSgVV9CL/styled-chat-2.1.6%2B1.19.4.jar",
         "filename": "styled-chat-2.1.6+1.19.4.jar",
@@ -798,8 +798,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b1762832fdca3dd9a4de0ddb2610f77f899b4d87",
-          "sha512": "fd67d04977a648e03153d41ed9bede9a4c835a290ce677b71444d98d58b80f20aa7b1deb101c22d3af9d257b91fcf7800dc86bda65b3966c25022b2f65978b62"
+          "sha512": "fd67d04977a648e03153d41ed9bede9a4c835a290ce677b71444d98d58b80f20aa7b1deb101c22d3af9d257b91fcf7800dc86bda65b3966c25022b2f65978b62",
+          "sha1": "b1762832fdca3dd9a4de0ddb2610f77f899b4d87"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1uSSPGsu/styled-chat-2.1.4%2B1.19.3.jar",
         "filename": "styled-chat-2.1.4+1.19.3.jar",
@@ -827,15 +827,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-04-09T17:54:03.079963Z",
-    "downloads": 45635,
+    "downloads": 45639,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "570a1f41971a644e66117ed7bc229b59ef553e0f",
-          "sha512": "7ae43311d06fcdb646eb1345ad40a0b817e8de304c6504286f12b25b33f2f5ca0fd8c319aefafdca8cb3a289dc4ab98db9f8fb9d2ec6e038b6523e7b9458a2f3"
+          "sha512": "7ae43311d06fcdb646eb1345ad40a0b817e8de304c6504286f12b25b33f2f5ca0fd8c319aefafdca8cb3a289dc4ab98db9f8fb9d2ec6e038b6523e7b9458a2f3",
+          "sha1": "570a1f41971a644e66117ed7bc229b59ef553e0f"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/RRZC8TnY/styled-chat-2.0.3%2B1.19.2.jar",
         "filename": "styled-chat-2.0.3+1.19.2.jar",
@@ -943,8 +943,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "71b1cc840fdab0ce452fbdb95cbd4411ec6c5e16",
-          "sha512": "0cdc32763e0f74f8dddb00b9eca655c62e2a1943f95471006da724abca7269d8527058911f7dff648091f322498dd293332667389ffdf3cc4763f6dd4d651419"
+          "sha512": "0cdc32763e0f74f8dddb00b9eca655c62e2a1943f95471006da724abca7269d8527058911f7dff648091f322498dd293332667389ffdf3cc4763f6dd4d651419",
+          "sha1": "71b1cc840fdab0ce452fbdb95cbd4411ec6c5e16"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/LRKHMAeS/styled-chat-2.1.1%2B1.19.3.jar",
         "filename": "styled-chat-2.1.1+1.19.3.jar",
@@ -980,8 +980,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "cb2b2c17253fca58cebb58f28a6d78b791168369",
-          "sha512": "0df7179fb75c28faa81ab83ad46b6d74d130630f7bf1c48096d146e98f313618d08b21ad0e4e8709b32c28c87145fe58c27e80cd12401bf3500746b3d1d5b174"
+          "sha512": "0df7179fb75c28faa81ab83ad46b6d74d130630f7bf1c48096d146e98f313618d08b21ad0e4e8709b32c28c87145fe58c27e80cd12401bf3500746b3d1d5b174",
+          "sha1": "cb2b2c17253fca58cebb58f28a6d78b791168369"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/aABVYx7R/styled-chat-2.1.0%2B1.19.3.jar",
         "filename": "styled-chat-2.1.0+1.19.3.jar",
@@ -1009,15 +1009,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-11-02T15:09:33.436193Z",
-    "downloads": 2971,
+    "downloads": 2972,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e15ef2af958853f2a5d928df799f2bbf69216356",
-          "sha512": "079e1b58b9367cd42c65b45b101d4613119a35bf4ed3ff3c495b602854abca4aa068cd01171d17c1c836975abb31f93f738a397ac89825e0f546804d5b167905"
+          "sha512": "079e1b58b9367cd42c65b45b101d4613119a35bf4ed3ff3c495b602854abca4aa068cd01171d17c1c836975abb31f93f738a397ac89825e0f546804d5b167905",
+          "sha1": "e15ef2af958853f2a5d928df799f2bbf69216356"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/K2V8LYPT/styled-chat-2.0.2%2B1.19.2.jar",
         "filename": "styled-chat-2.0.2+1.19.2.jar",
@@ -1161,8 +1161,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e88a3ebfe06ecac0231211d44d1303e0c1713ca51ad9cf75cd51606dc4e8e3a5c7a69764e25ad0df672587c6cedbddb0603161447656c96c50642e90f3f8515f",
-          "sha1": "9c80f3ddacd5b3c105a365875bfa36ca42f89fb5"
+          "sha1": "9c80f3ddacd5b3c105a365875bfa36ca42f89fb5",
+          "sha512": "e88a3ebfe06ecac0231211d44d1303e0c1713ca51ad9cf75cd51606dc4e8e3a5c7a69764e25ad0df672587c6cedbddb0603161447656c96c50642e90f3f8515f"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.4.0%2B1.19.1/styled-chat-1.4.0%2B1.19.1.jar",
         "filename": "styled-chat-1.4.0+1.19.1.jar",
@@ -1197,8 +1197,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "32bf6b7ef0fb6313b38f12337a514fae52be0f9f",
-          "sha512": "6818bf1c15e7c1e2d5cf0b75a18e79e28cb3f247adcb82d32685141d7808d98beca60cb4a204785afa3d7d737c4577c8d07964466369ab454d6fee7af9fa865a"
+          "sha512": "6818bf1c15e7c1e2d5cf0b75a18e79e28cb3f247adcb82d32685141d7808d98beca60cb4a204785afa3d7d737c4577c8d07964466369ab454d6fee7af9fa865a",
+          "sha1": "32bf6b7ef0fb6313b38f12337a514fae52be0f9f"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.3.3%2B1.19/styled-chat-1.3.3%2B1.19.jar",
         "filename": "styled-chat-1.3.3+1.19.jar",
@@ -1305,8 +1305,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7d29155cf74c233caf127760267f7fc5550c5a58",
-          "sha512": "d94016abd0c321e67b7a7802bb65f2f7a70d5eea47e232a2af7eff8235ec8e5c946abd68b45ccc5212db24a21d54023d290266e802f996c21e596ae480a197a7"
+          "sha512": "d94016abd0c321e67b7a7802bb65f2f7a70d5eea47e232a2af7eff8235ec8e5c946abd68b45ccc5212db24a21d54023d290266e802f996c21e596ae480a197a7",
+          "sha1": "7d29155cf74c233caf127760267f7fc5550c5a58"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.3.0%2B1.19/styled-chat-1.3.0%2B1.19.jar",
         "filename": "styled-chat-1.3.0+1.19.jar",
@@ -1414,8 +1414,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "03d044c13e408dad8eadb7839fb64e700dbd823a",
-          "sha512": "987475af8c81da417134d019a07d8327ab7bb2755d2a58ce66b29df2c594c1970c09b9c27198cc0774d53d5d09240b3aa3cd51dd8ae77b4146fe69d86482873f"
+          "sha512": "987475af8c81da417134d019a07d8327ab7bb2755d2a58ce66b29df2c594c1970c09b9c27198cc0774d53d5d09240b3aa3cd51dd8ae77b4146fe69d86482873f",
+          "sha1": "03d044c13e408dad8eadb7839fb64e700dbd823a"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.2.1%2B1.18/styled-chat-1.2.1%2B1.18.jar",
         "filename": "styled-chat-1.2.1+1.18.jar",
@@ -1484,8 +1484,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "52b98efbf553b774d4ae9de5e8892ec475da9713c8048aa5edc818bf77713d23e6a8dfae19c7b81ea59d2f0b5df7403a1b1aa47843022c97d1e0a850743a1bc7",
-          "sha1": "f3019cc443feee18a3adfc2d0b6d485943f48766"
+          "sha1": "f3019cc443feee18a3adfc2d0b6d485943f48766",
+          "sha512": "52b98efbf553b774d4ae9de5e8892ec475da9713c8048aa5edc818bf77713d23e6a8dfae19c7b81ea59d2f0b5df7403a1b1aa47843022c97d1e0a850743a1bc7"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.1.0/styled-chat-1.1.0.jar",
         "filename": "styled-chat-1.1.0.jar",
@@ -1519,8 +1519,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8bbd9bb8e2e83b02885701eabd631eff43ccb8c17ddcfde4c04b66fc91cf7ec92fb5ac5832e7fffda117e95fdb86a16c6d48fd9a69b116591fc7f13f80f1a666",
-          "sha1": "7ef26d529e736e2fe12aec27faee5e5718df28be"
+          "sha1": "7ef26d529e736e2fe12aec27faee5e5718df28be",
+          "sha512": "8bbd9bb8e2e83b02885701eabd631eff43ccb8c17ddcfde4c04b66fc91cf7ec92fb5ac5832e7fffda117e95fdb86a16c6d48fd9a69b116591fc7f13f80f1a666"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.0.2/styled-chat-1.0.2.jar",
         "filename": "styled-chat-1.0.2.jar",
@@ -1554,8 +1554,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "951b8d86407d8f1d2ca8ededfe2d9d04f82328904baf9f77caa1476d80d40dce701443e715b3e8c2c32d880546969832af3c4a39be244a685df35d059ec21423",
-          "sha1": "6aae2fb92e46aeb9e868e9a4c7d7b0df1f0f3162"
+          "sha1": "6aae2fb92e46aeb9e868e9a4c7d7b0df1f0f3162",
+          "sha512": "951b8d86407d8f1d2ca8ededfe2d9d04f82328904baf9f77caa1476d80d40dce701443e715b3e8c2c32d880546969832af3c4a39be244a685df35d059ec21423"
         },
         "url": "https://cdn.modrinth.com/data/doqSKB0e/versions/1.0.1/styled-chat-1.0.1.jar",
         "filename": "styled-chat-1.0.1.jar",

@@ -15,7 +15,7 @@
     "changelog": "- Updated to Minecraft 1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-19T09:11:39.592038Z",
-    "downloads": 635,
+    "downloads": 649,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -57,7 +57,7 @@
     "changelog": "- Updated to Minecraft 1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-18T05:40:30.912459Z",
-    "downloads": 448,
+    "downloads": 465,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -99,15 +99,15 @@
     "changelog": "- Updated to Minecraft 1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-18T05:36:28.87502Z",
-    "downloads": 4225,
+    "downloads": 4385,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "73861df9f160b7dc7fb2b2c8d3d3e168fd746c30",
-          "sha512": "d5e085f2f5552dfee7ba7f207a020b715d05ce5f8dca99d3e2868fd9abf410851cc65fb4a12951b9f0b9315f0eb59521e243440b7ca7e3607be5abd2693212fc"
+          "sha512": "d5e085f2f5552dfee7ba7f207a020b715d05ce5f8dca99d3e2868fd9abf410851cc65fb4a12951b9f0b9315f0eb59521e243440b7ca7e3607be5abd2693212fc",
+          "sha1": "73861df9f160b7dc7fb2b2c8d3d3e168fd746c30"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/MXoEdE8m/waystones-fabric-1.21.6-21.6.1.jar",
         "filename": "waystones-fabric-1.21.6-21.6.1.jar",
@@ -147,7 +147,7 @@
     "changelog": "- Fixed chunks failing to save if they contain a generated waystone that was never activated",
     "changelog_url": null,
     "date_published": "2025-05-29T16:50:22.032664Z",
-    "downloads": 2371,
+    "downloads": 2379,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -189,15 +189,15 @@
     "changelog": "- Fixed chunks failing to save if they contain a generated waystone that was never activated",
     "changelog_url": null,
     "date_published": "2025-05-29T16:49:55.768035Z",
-    "downloads": 2217,
+    "downloads": 2227,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "58785895aaf6f445c52ab8be86f922515b596449",
-          "sha512": "377aaf7199e632423dff6449a700205d938b4feb144809f29f0dbd2674c4f5e46aefd60bebb6745b18c525ece73b7ec3667e4625fe9bef197a424db1bce12d8d"
+          "sha512": "377aaf7199e632423dff6449a700205d938b4feb144809f29f0dbd2674c4f5e46aefd60bebb6745b18c525ece73b7ec3667e4625fe9bef197a424db1bce12d8d",
+          "sha1": "58785895aaf6f445c52ab8be86f922515b596449"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/ykhGfKuh/waystones-forge-1.21.5-21.5.7.jar",
         "filename": "waystones-forge-1.21.5-21.5.7.jar",
@@ -231,15 +231,15 @@
     "changelog": "- Fixed chunks failing to save if they contain a generated waystone that was never activated",
     "changelog_url": null,
     "date_published": "2025-05-29T16:49:02.457731Z",
-    "downloads": 19831,
+    "downloads": 19961,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "17bf71dcbb25aa54fd12f84b5dbab11d18daba7f0cfe9f1f7051fb7af7c3a1de966daf2f0ae7359b98687b8b67870850cc7481febe72a88c79b976890dd37cf4",
-          "sha1": "89d3221b42701952ef01201b24c9c9e7dba22007"
+          "sha1": "89d3221b42701952ef01201b24c9c9e7dba22007",
+          "sha512": "17bf71dcbb25aa54fd12f84b5dbab11d18daba7f0cfe9f1f7051fb7af7c3a1de966daf2f0ae7359b98687b8b67870850cc7481febe72a88c79b976890dd37cf4"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/kL2KV02Y/waystones-fabric-1.21.5-21.5.7.jar",
         "filename": "waystones-fabric-1.21.5-21.5.7.jar",
@@ -279,15 +279,15 @@
     "changelog": "- Fixed fake bound scroll being created on client when binding a scroll\n- Fixed `source_is_portstone` condition not working right\n- Fixed inventory button xp costs not previewing correctly\n- Fixed crash when more than one nameGenerationPresets are defined",
     "changelog_url": null,
     "date_published": "2025-05-21T11:03:32.929704Z",
-    "downloads": 915,
+    "downloads": 921,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5d1fda00b013043ef1b419c46773d0acac254bb1",
-          "sha512": "b35ead5cdba9f4e1693e7e8a318c63f7fd484f8f7d630f04b0cbeaa7b4257188b65eb4acb4ac5dfa8899db6701affb5eb3bb542ece64d3dfdadb29ccf07ee2d4"
+          "sha512": "b35ead5cdba9f4e1693e7e8a318c63f7fd484f8f7d630f04b0cbeaa7b4257188b65eb4acb4ac5dfa8899db6701affb5eb3bb542ece64d3dfdadb29ccf07ee2d4",
+          "sha1": "5d1fda00b013043ef1b419c46773d0acac254bb1"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/r7qJAipW/waystones-neoforge-1.21.4-21.4.15.jar",
         "filename": "waystones-neoforge-1.21.4-21.4.15.jar",
@@ -322,7 +322,7 @@
     "changelog": "- Fixed fake bound scroll being created on client when binding a scroll\n- Fixed `source_is_portstone` condition not working right\n- Fixed inventory button xp costs not previewing correctly\n- Fixed crash when more than one nameGenerationPresets are defined",
     "changelog_url": null,
     "date_published": "2025-05-21T11:02:46.263496Z",
-    "downloads": 47626,
+    "downloads": 47968,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -364,7 +364,7 @@
     "changelog": "- Fixed fake bound scroll being created on client when binding a scroll\n- Fixed `source_is_portstone` condition not working right\n- Fixed inventory button xp costs not previewing correctly\n- Fixed crash when more than one nameGenerationPresets are defined",
     "changelog_url": null,
     "date_published": "2025-05-21T11:02:29.353565Z",
-    "downloads": 1146,
+    "downloads": 1153,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -406,7 +406,7 @@
     "changelog": "- Fixed fake bound scroll being created on client when binding a scroll\n- Fixed `source_is_portstone` condition not working right\n- Fixed inventory button xp costs not previewing correctly\n- Fixed crash when more than one nameGenerationPresets are defined",
     "changelog_url": null,
     "date_published": "2025-05-21T11:01:34.532495Z",
-    "downloads": 9001,
+    "downloads": 9044,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -455,15 +455,15 @@
     "changelog": "- Fixed fake bound scroll being created on client when binding a scroll\n- Fixed `source_is_portstone` condition not working right\n- Fixed inventory button xp costs not previewing correctly\n- Fixed crash when more than one nameGenerationPresets are defined",
     "changelog_url": null,
     "date_published": "2025-05-21T11:01:31.785743Z",
-    "downloads": 141497,
+    "downloads": 143065,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f04bfb5e4add07195df6c908c318a09c326024cc",
-          "sha512": "2777b9af6ebcaebffd6a0bbe1143d1aaca90b379a8bf4d198255069d17d20e4ee0a1e08dbea380fc3994d37848cd21366b50e852e596385190f5db6f8f3f4ecb"
+          "sha512": "2777b9af6ebcaebffd6a0bbe1143d1aaca90b379a8bf4d198255069d17d20e4ee0a1e08dbea380fc3994d37848cd21366b50e852e596385190f5db6f8f3f4ecb",
+          "sha1": "f04bfb5e4add07195df6c908c318a09c326024cc"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/5QbmQMeD/waystones-fabric-1.21.1-21.1.19.jar",
         "filename": "waystones-fabric-1.21.1-21.1.19.jar",
@@ -546,15 +546,15 @@
     "changelog": "- Fixed fake bound scroll being created on client when binding a scroll\n- Fixed `source_is_portstone` condition not working right\n- Fixed inventory button xp costs not previewing correctly\n- Fixed crash when more than one nameGenerationPresets are defined",
     "changelog_url": null,
     "date_published": "2025-05-21T11:00:51.714748Z",
-    "downloads": 2900,
+    "downloads": 2921,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0e6e236dad7a346f93b91ab384980d15d4e368f234fee127e8fe799016b75e484cddd538826f3e3fce9cacb69e2256ad74b01cb560441729e0bb96bbb5588c76",
-          "sha1": "74b4050a23dd71de2228d262257b4e0d0a8c23a7"
+          "sha1": "74b4050a23dd71de2228d262257b4e0d0a8c23a7",
+          "sha512": "0e6e236dad7a346f93b91ab384980d15d4e368f234fee127e8fe799016b75e484cddd538826f3e3fce9cacb69e2256ad74b01cb560441729e0bb96bbb5588c76"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/KLMZ7UQT/waystones-forge-1.21.1-21.1.19.jar",
         "filename": "waystones-forge-1.21.1-21.1.19.jar",
@@ -589,7 +589,7 @@
     "changelog": "- Fixed crash when more than one nameGenerationPresets are defined",
     "changelog_url": null,
     "date_published": "2025-05-21T11:00:47.117016Z",
-    "downloads": 92620,
+    "downloads": 93372,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -638,8 +638,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9cfd4417b5d98bb1f961b1240b833a085b9bf0124c4d012282d691ed5e6e83ed8c3390d19c475780cababcdf662b17a099c02fbac3cc2f187f8464546c880ccd",
-          "sha1": "d531d6b6d70a1082d773e1ad9f9befdf0ee2afe6"
+          "sha1": "d531d6b6d70a1082d773e1ad9f9befdf0ee2afe6",
+          "sha512": "9cfd4417b5d98bb1f961b1240b833a085b9bf0124c4d012282d691ed5e6e83ed8c3390d19c475780cababcdf662b17a099c02fbac3cc2f187f8464546c880ccd"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/RYe9tkpA/waystones-forge-1.21.5-21.5.6.jar",
         "filename": "waystones-forge-1.21.5-21.5.6.jar",
@@ -722,15 +722,15 @@
     "changelog": "- Fixed crash when more than one nameGenerationPresets are defined",
     "changelog_url": null,
     "date_published": "2025-05-21T10:59:23.323229Z",
-    "downloads": 53986,
+    "downloads": 54281,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8fc675a1f6a6abc97a085aa977529fca6ce97ff4f62687b0c4792132fa04b7566428c9e11d1c8e1ff0c58b76f1ab9b9e3de3ccd0fe840a34c2582dfbb43706d6",
-          "sha1": "84efcbadf846981a02157c9e5b3ba1ec49208aea"
+          "sha1": "84efcbadf846981a02157c9e5b3ba1ec49208aea",
+          "sha512": "8fc675a1f6a6abc97a085aa977529fca6ce97ff4f62687b0c4792132fa04b7566428c9e11d1c8e1ff0c58b76f1ab9b9e3de3ccd0fe840a34c2582dfbb43706d6"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Q7vns7oI/waystones-fabric-1.20.1-14.1.13.jar",
         "filename": "waystones-fabric-1.20.1-14.1.13.jar",
@@ -764,7 +764,7 @@
     "changelog": "- Added `add_soft_cooldown`, `multiply_soft_cooldown`, `scaled_add_soft_cooldown`, `scaled_multiply_soft_cooldown`, `min_soft_cooldown`, `max_soft_cooldown` modifier for adding a cooldown without refusing teleports\n- Added `has_cooldown` and `has_cooldown_above` conditions\n- Added access to variables for cooldowns in modifiers\n- Added permissions for waystones command for when a permission manager is installed\n- Added `waystones:edit_all` permission for when a permission manager is installed\n- Fixed requirement modifiers not parsing if they have a namespace in front",
     "changelog_url": null,
     "date_published": "2025-05-12T07:36:20.79478Z",
-    "downloads": 9239,
+    "downloads": 9241,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -784,13 +784,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -819,8 +819,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "595120c1916d1622c5e26f297c3b4626de290c914054f87f80f181587cb5abe4cd59954248f20916950cedeb39094b386e6f95d802c26aa02043e3147ccc9219",
-          "sha1": "a32417fed4026d2d4e1d5a7d1d38fae183ebc26c"
+          "sha1": "a32417fed4026d2d4e1d5a7d1d38fae183ebc26c",
+          "sha512": "595120c1916d1622c5e26f297c3b4626de290c914054f87f80f181587cb5abe4cd59954248f20916950cedeb39094b386e6f95d802c26aa02043e3147ccc9219"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Gaf6mZoV/waystones-neoforge-1.21.5-21.5.5.jar",
         "filename": "waystones-neoforge-1.21.5-21.5.5.jar",
@@ -861,8 +861,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f4a4eac98fdfa17bad342eddea79fcc1cdd9b9f3",
-          "sha512": "0108ac1708e9e2c56938cb7140b87bc2d1fa830b9a312f06591eaa15ac3e902b0eb241eac883333612fc4caeb8f77080ef707a4f9e32b8ebb2d0b3a6d6b4551d"
+          "sha512": "0108ac1708e9e2c56938cb7140b87bc2d1fa830b9a312f06591eaa15ac3e902b0eb241eac883333612fc4caeb8f77080ef707a4f9e32b8ebb2d0b3a6d6b4551d",
+          "sha1": "f4a4eac98fdfa17bad342eddea79fcc1cdd9b9f3"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/xM39c6kc/waystones-forge-1.21.5-21.5.5.jar",
         "filename": "waystones-forge-1.21.5-21.5.5.jar",
@@ -896,15 +896,15 @@
     "changelog": "- Added `add_soft_cooldown`, `multiply_soft_cooldown`, `scaled_add_soft_cooldown`, `scaled_multiply_soft_cooldown`, `min_soft_cooldown`, `max_soft_cooldown` modifier for adding a cooldown without refusing teleports\n- Added `has_cooldown` and `has_cooldown_above` conditions\n- Added access to variables for cooldowns in modifiers\n- Added permissions for waystones command for when a permission manager is installed\n- Added `waystones:edit_all` permission for when a permission manager is installed\n- Fixed requirement modifiers not parsing if they have a namespace in front",
     "changelog_url": null,
     "date_published": "2025-05-11T12:33:17.084409Z",
-    "downloads": 1395,
+    "downloads": 1400,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "04074f0d450460aebc22b7be9a1a54eaea8a3f70a0ada2a3a348a6700e223aee3ba50321eef6740bd19a0925bb49369cade3d69db875419f2335ca25295a1fd0",
-          "sha1": "855524aaca80be71496e94c8af16dbd921358f81"
+          "sha1": "855524aaca80be71496e94c8af16dbd921358f81",
+          "sha512": "04074f0d450460aebc22b7be9a1a54eaea8a3f70a0ada2a3a348a6700e223aee3ba50321eef6740bd19a0925bb49369cade3d69db875419f2335ca25295a1fd0"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/BPaqp9Mq/waystones-fabric-1.21.5-21.5.5.jar",
         "filename": "waystones-fabric-1.21.5-21.5.5.jar",
@@ -945,7 +945,7 @@
     "changelog": "- Added `add_soft_cooldown`, `multiply_soft_cooldown`, `scaled_add_soft_cooldown`, `scaled_multiply_soft_cooldown`, `min_soft_cooldown`, `max_soft_cooldown` modifier for adding a cooldown without refusing teleports\n- Added `has_cooldown` and `has_cooldown_above` conditions\n- Added access to variables for cooldowns in modifiers\n- Added permissions for waystones command for when a permission manager is installed\n- Added `waystones:edit_all` permission for when a permission manager is installed\n- Fixed requirement modifiers not parsing if they have a namespace in front",
     "changelog_url": null,
     "date_published": "2025-05-11T12:12:31.434401Z",
-    "downloads": 13111,
+    "downloads": 13114,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -995,8 +995,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f2a79c90b7dbfe299aeb388e4b34be2b98c4788c",
-          "sha512": "4c2de96e9e9019e7109f027afa0f7f3f7de3e4e795ebe6a699aba965dc55f9679afb83a8e4a1e46b365952a3bb87f4b77512da34a823c6f7118abbb66ebea694"
+          "sha512": "4c2de96e9e9019e7109f027afa0f7f3f7de3e4e795ebe6a699aba965dc55f9679afb83a8e4a1e46b365952a3bb87f4b77512da34a823c6f7118abbb66ebea694",
+          "sha1": "f2a79c90b7dbfe299aeb388e4b34be2b98c4788c"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/7dlwkMTn/waystones-forge-1.21.1-21.1.18.jar",
         "filename": "waystones-forge-1.21.1-21.1.18.jar",
@@ -1079,8 +1079,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "3e60e2f89f442a4c8cee41be079397f2235e0a48",
-          "sha512": "16fab21ab3728f5495e5553e232ae2815733495ec1131ef3cd6a07d24a677b48e182e3a310b9c1fffb7f821b2ea08a7784d194a891d33222177ea1fbd8d17a41"
+          "sha512": "16fab21ab3728f5495e5553e232ae2815733495ec1131ef3cd6a07d24a677b48e182e3a310b9c1fffb7f821b2ea08a7784d194a891d33222177ea1fbd8d17a41",
+          "sha1": "3e60e2f89f442a4c8cee41be079397f2235e0a48"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/srmrxRaz/waystones-forge-1.21.4-21.4.14.jar",
         "filename": "waystones-forge-1.21.4-21.4.14.jar",
@@ -1115,15 +1115,15 @@
     "changelog": "- Added `add_soft_cooldown`, `multiply_soft_cooldown`, `scaled_add_soft_cooldown`, `scaled_multiply_soft_cooldown`, `min_soft_cooldown`, `max_soft_cooldown` modifier for adding a cooldown without refusing teleports\n- Added `has_cooldown` and `has_cooldown_above` conditions\n- Added access to variables for cooldowns in modifiers\n- Added permissions for waystones command for when a permission manager is installed\n- Added `waystones:edit_all` permission for when a permission manager is installed\n- Fixed requirement modifiers not parsing if they have a namespace in front",
     "changelog_url": null,
     "date_published": "2025-05-11T12:11:09.091014Z",
-    "downloads": 44173,
+    "downloads": 44188,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "19d17e9a33ef86340c0038f5f9955bcb1c09c66e622b109e167c92ba109d1dba956c01714795c56d09c64a49797f4b7cf2f636646abbac2b56037e108eab33f9",
-          "sha1": "4d34e3e7b92e8d1086699dc25a14542c3812fc48"
+          "sha1": "4d34e3e7b92e8d1086699dc25a14542c3812fc48",
+          "sha512": "19d17e9a33ef86340c0038f5f9955bcb1c09c66e622b109e167c92ba109d1dba956c01714795c56d09c64a49797f4b7cf2f636646abbac2b56037e108eab33f9"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/nIcT6ztO/waystones-fabric-1.21.1-21.1.18.jar",
         "filename": "waystones-fabric-1.21.1-21.1.18.jar",
@@ -1170,8 +1170,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "355093a7bdcf858b9614066f56a75db871b2db77",
-          "sha512": "0186143605c084f47eeede4d540acf5d01eaa5586465f1b70f6ef0a9004a9df463cec3b18d4dc1278c59371b4a1426239972b1bb3af9473070fc10b988478580"
+          "sha512": "0186143605c084f47eeede4d540acf5d01eaa5586465f1b70f6ef0a9004a9df463cec3b18d4dc1278c59371b4a1426239972b1bb3af9473070fc10b988478580",
+          "sha1": "355093a7bdcf858b9614066f56a75db871b2db77"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/qIIDi9oK/waystones-fabric-1.21.4-21.4.14.jar",
         "filename": "waystones-fabric-1.21.4-21.4.14.jar",
@@ -1212,15 +1212,15 @@
     "changelog": "- Fixed configs being accessed too early, causing defaults to be used\n- Fixed waystones not generating with Lithostitched installed.\n- Fixed sharestones not being limited to Vanilla colors. Waystones does not support custom colored sharestones.\n",
     "changelog_url": null,
     "date_published": "2025-05-09T10:38:51.034215Z",
-    "downloads": 27260,
+    "downloads": 27272,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4ac7a5ed83e9a14488dd4978f2294582cb0181c4d8cce4306dbe1850c65a39a2066b153e415d29526a0cf49b22d2b7ee048745d1bf0ce46209461edc9a70b998",
-          "sha1": "67d9909b9baec092291bb00d11caaccf0c200069"
+          "sha1": "67d9909b9baec092291bb00d11caaccf0c200069",
+          "sha512": "4ac7a5ed83e9a14488dd4978f2294582cb0181c4d8cce4306dbe1850c65a39a2066b153e415d29526a0cf49b22d2b7ee048745d1bf0ce46209461edc9a70b998"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/rxfQI36N/waystones-forge-1.20.1-14.1.12.jar",
         "filename": "waystones-forge-1.20.1-14.1.12.jar",
@@ -1255,15 +1255,15 @@
     "changelog": "- Fixed configs being accessed too early, causing defaults to be used\n- Fixed waystones not generating with Lithostitched installed.\n- Fixed sharestones not being limited to Vanilla colors. Waystones does not support custom colored sharestones.\n",
     "changelog_url": null,
     "date_published": "2025-05-09T10:37:44.3951Z",
-    "downloads": 20465,
+    "downloads": 20470,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "eceeb13469edbcd30fb564b1ca79a94e059d3e60bb46780d62e711337cd937467b6f8d025463971433ae4a7df367c76750b0aecce2f9f09746f1f0462073fe87",
-          "sha1": "48412a295fb60a052ed13d5fd21815587f9f9ed7"
+          "sha1": "48412a295fb60a052ed13d5fd21815587f9f9ed7",
+          "sha512": "eceeb13469edbcd30fb564b1ca79a94e059d3e60bb46780d62e711337cd937467b6f8d025463971433ae4a7df367c76750b0aecce2f9f09746f1f0462073fe87"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/C58OV2js/waystones-fabric-1.20.1-14.1.12.jar",
         "filename": "waystones-fabric-1.20.1-14.1.12.jar",
@@ -1304,8 +1304,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e18dd640ae97a2473ad3fcca4ac1d395f51c2f8b",
-          "sha512": "dc5f57c9cf8e9c2457c8807e0dbfdbf602d9d85418ec1a841751bf6501a1ab3a4c8a3bc86c941e6f3fceaa77d0b4ea2137f1e930c105dfe69845cf7a21adbc01"
+          "sha512": "dc5f57c9cf8e9c2457c8807e0dbfdbf602d9d85418ec1a841751bf6501a1ab3a4c8a3bc86c941e6f3fceaa77d0b4ea2137f1e930c105dfe69845cf7a21adbc01",
+          "sha1": "e18dd640ae97a2473ad3fcca4ac1d395f51c2f8b"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/rCxvFaNM/waystones-neoforge-1.21.5-21.5.4.jar",
         "filename": "waystones-neoforge-1.21.5-21.5.4.jar",
@@ -1346,8 +1346,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b18ab9043f47c3f0633341730dbd1518f9a998d8524112f6cdc4939544c522e9f88227efd81c490141205ff99a2fed6113f1b8a4d2355f5ed00c919268d7589a",
-          "sha1": "021e68d3baae9ab30c7d4f555177151a809c224a"
+          "sha1": "021e68d3baae9ab30c7d4f555177151a809c224a",
+          "sha512": "b18ab9043f47c3f0633341730dbd1518f9a998d8524112f6cdc4939544c522e9f88227efd81c490141205ff99a2fed6113f1b8a4d2355f5ed00c919268d7589a"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/2Xrgb0p2/waystones-forge-1.21.5-21.5.4.jar",
         "filename": "waystones-forge-1.21.5-21.5.4.jar",
@@ -1388,8 +1388,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "af4fbf9e200cae5b8db63225ee1b73c18dc3f5ab",
-          "sha512": "aa118a0062280cf65e8f6286c199a82a50d2aa21329bea52839d79f4b0cdd2e4434960fc142de10e0da87b989f71425cdd2a31a5d2ad98b117fdaebb60bb7db1"
+          "sha512": "aa118a0062280cf65e8f6286c199a82a50d2aa21329bea52839d79f4b0cdd2e4434960fc142de10e0da87b989f71425cdd2a31a5d2ad98b117fdaebb60bb7db1",
+          "sha1": "af4fbf9e200cae5b8db63225ee1b73c18dc3f5ab"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/dpBFBSht/waystones-neoforge-1.21.4-21.4.13.jar",
         "filename": "waystones-neoforge-1.21.4-21.4.13.jar",
@@ -1423,15 +1423,15 @@
     "changelog": "- Fixed disconnect when using inventory button",
     "changelog_url": null,
     "date_published": "2025-04-21T08:40:07.612702Z",
-    "downloads": 18060,
+    "downloads": 18061,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b37f3be3792dafff9e07e96162181ccf367d381c",
-          "sha512": "6a8ce36033b071232c4ea28078ccfeac66b527de7ddf985037d5cb8b88c5ddcf2df6095daa5a3851362d7520e817f92e9738de014d6ebab4687dd75405207134"
+          "sha512": "6a8ce36033b071232c4ea28078ccfeac66b527de7ddf985037d5cb8b88c5ddcf2df6095daa5a3851362d7520e817f92e9738de014d6ebab4687dd75405207134",
+          "sha1": "b37f3be3792dafff9e07e96162181ccf367d381c"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Ilo10X66/waystones-fabric-1.21.5-21.5.4.jar",
         "filename": "waystones-fabric-1.21.5-21.5.4.jar",
@@ -1443,13 +1443,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -1520,8 +1520,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b39fa83735cb991707fb1c473dfca5af83fe6cc7",
-          "sha512": "9831c2420dd869f31975452b7d2ee15fb4e30d822f02bc6c612a5d1bf9845ae0c2c3b44ad07ac96471eb46d32920f8db3ed1f92be576129a77877751871e5e9b"
+          "sha512": "9831c2420dd869f31975452b7d2ee15fb4e30d822f02bc6c612a5d1bf9845ae0c2c3b44ad07ac96471eb46d32920f8db3ed1f92be576129a77877751871e5e9b",
+          "sha1": "b39fa83735cb991707fb1c473dfca5af83fe6cc7"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/o7junfFC/waystones-fabric-1.21.4-21.4.13.jar",
         "filename": "waystones-fabric-1.21.4-21.4.13.jar",
@@ -1533,13 +1533,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -1569,8 +1569,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ff785e5640ef4fd92df05ddf91fe3888190d6f4a",
-          "sha512": "082306592e2dfe910ba7e132cfa352ff8a278f538d99ad2daad76ebb6d73cf40fe87e146a8a2aeb605959337192242c10bef191072ab8309e4c4f0cc801be9c6"
+          "sha512": "082306592e2dfe910ba7e132cfa352ff8a278f538d99ad2daad76ebb6d73cf40fe87e146a8a2aeb605959337192242c10bef191072ab8309e4c4f0cc801be9c6",
+          "sha1": "ff785e5640ef4fd92df05ddf91fe3888190d6f4a"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/URfsQU4U/waystones-forge-1.21.1-21.1.17.jar",
         "filename": "waystones-forge-1.21.1-21.1.17.jar",
@@ -1605,15 +1605,15 @@
     "changelog": "- Fixed inventory button not working for named targets",
     "changelog_url": null,
     "date_published": "2025-04-21T08:38:39.789378Z",
-    "downloads": 26024,
+    "downloads": 26045,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f75f623f342cc765ef6a0c5ffb5b1a6052841809",
-          "sha512": "97fe7f624ea9f67536f335694ee15e8f3c724aa9eae5fcac1b633ba335a4e133a4aa46951f835cdbd25eab40af1f2b08413a6dbd7ad93a4e282eb10b5a299655"
+          "sha512": "97fe7f624ea9f67536f335694ee15e8f3c724aa9eae5fcac1b633ba335a4e133a4aa46951f835cdbd25eab40af1f2b08413a6dbd7ad93a4e282eb10b5a299655",
+          "sha1": "f75f623f342cc765ef6a0c5ffb5b1a6052841809"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/PV22OGX5/waystones-neoforge-1.21.1-21.1.17.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.17.jar",
@@ -1648,15 +1648,15 @@
     "changelog": "- Fixed inventory button not working for named targets",
     "changelog_url": null,
     "date_published": "2025-04-21T08:38:25.142049Z",
-    "downloads": 65048,
+    "downloads": 65081,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "29c1bafdd263689eb7e4b6bbf910379c2fca6d5f",
-          "sha512": "d1ef47e30f6350e9399baad4188b05e6073c8388cb47208874ff1f25cbcfdbb5eee98c4d043d64e9c803918bc1be3997f5d02edaa96d36a64cc979e802730796"
+          "sha512": "d1ef47e30f6350e9399baad4188b05e6073c8388cb47208874ff1f25cbcfdbb5eee98c4d043d64e9c803918bc1be3997f5d02edaa96d36a64cc979e802730796",
+          "sha1": "29c1bafdd263689eb7e4b6bbf910379c2fca6d5f"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/YjMVj2aI/waystones-fabric-1.21.1-21.1.17.jar",
         "filename": "waystones-fabric-1.21.1-21.1.17.jar",
@@ -1704,8 +1704,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7134e6318ab17018211035956949ada55bdb93c5",
-          "sha512": "94e645aa91f17ba1c6240c3b0b6493c689b41eb2479591b48406f82d9ff18d5b6b9774ac6df9acc7f8ba0a22e9766cb5e635ce216241c20f17bb3148e2c4a751"
+          "sha512": "94e645aa91f17ba1c6240c3b0b6493c689b41eb2479591b48406f82d9ff18d5b6b9774ac6df9acc7f8ba0a22e9766cb5e635ce216241c20f17bb3148e2c4a751",
+          "sha1": "7134e6318ab17018211035956949ada55bdb93c5"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/754pSuws/waystones-fabric-1.21.1-21.1.16.jar",
         "filename": "waystones-fabric-1.21.1-21.1.16.jar",
@@ -1717,13 +1717,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -1800,8 +1800,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5146e7230dafe7e2fe5c50aa11eefbb100d1b54181cec82f5ba86676bbc4156bc7a8030f79bd302c532c835e788fb9b1073148cda61f37202ffdec8db10f5d7c",
-          "sha1": "5724061a756d38c399e07b057b7d30a7382f89e9"
+          "sha1": "5724061a756d38c399e07b057b7d30a7382f89e9",
+          "sha512": "5146e7230dafe7e2fe5c50aa11eefbb100d1b54181cec82f5ba86676bbc4156bc7a8030f79bd302c532c835e788fb9b1073148cda61f37202ffdec8db10f5d7c"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Fj4AuLMh/waystones-fabric-1.21.5-21.5.3.jar",
         "filename": "waystones-fabric-1.21.5-21.5.3.jar",
@@ -1885,15 +1885,15 @@
     "changelog": "- Fixed configs being accessed too early, causing defaults to be used\n- Added compatibility for Lithostitched (by Apollo)",
     "changelog_url": null,
     "date_published": "2025-04-12T08:06:40.71881Z",
-    "downloads": 23240,
+    "downloads": 23245,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fc428b2c5fd08ace4ef860dc1c79a2b4eb3f76d50e04c3e653f11034565179599021cfcd88858239625427f74f4685d1186079e89c7faf8a10b7113a09a3a4d6",
-          "sha1": "1dbfbc09543af98dee05c17ec4200bc51847ebce"
+          "sha1": "1dbfbc09543af98dee05c17ec4200bc51847ebce",
+          "sha512": "fc428b2c5fd08ace4ef860dc1c79a2b4eb3f76d50e04c3e653f11034565179599021cfcd88858239625427f74f4685d1186079e89c7faf8a10b7113a09a3a4d6"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/S7CoS4PM/waystones-neoforge-1.21.1-21.1.15.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.15.jar",
@@ -1928,15 +1928,15 @@
     "changelog": "- Fixed configs being accessed too early, causing defaults to be used\n- Added compatibility for Lithostitched (by Apollo)",
     "changelog_url": null,
     "date_published": "2025-04-12T08:02:19.082566Z",
-    "downloads": 64836,
+    "downloads": 64841,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "740287e5856a9ce2826a391d994a12b5434ecf587668e52ca2564617898a9581114a873b5aa1cb06ab0b7e333272951b3e34e6e2f4387934c3adc1972d2dfcdb",
-          "sha1": "b5350bd7d37710d4eedd67929152900a59043e60"
+          "sha1": "b5350bd7d37710d4eedd67929152900a59043e60",
+          "sha512": "740287e5856a9ce2826a391d994a12b5434ecf587668e52ca2564617898a9581114a873b5aa1cb06ab0b7e333272951b3e34e6e2f4387934c3adc1972d2dfcdb"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/1ocFYaTS/waystones-fabric-1.21.1-21.1.15.jar",
         "filename": "waystones-fabric-1.21.1-21.1.15.jar",
@@ -2025,8 +2025,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1fb07e72528ecf44e155568e15242bf1d287d376",
-          "sha512": "17b23dc34fc5f10f5f3886feb87f110ee98a82eda057a4630c99fbe30be49d2c7eb96f08573e6818f47ce4bc2b714f540af3373982f7551770e5460e8fe75da2"
+          "sha512": "17b23dc34fc5f10f5f3886feb87f110ee98a82eda057a4630c99fbe30be49d2c7eb96f08573e6818f47ce4bc2b714f540af3373982f7551770e5460e8fe75da2",
+          "sha1": "1fb07e72528ecf44e155568e15242bf1d287d376"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/P25etPEE/waystones-forge-1.21.4-21.4.11.jar",
         "filename": "waystones-forge-1.21.4-21.4.11.jar",
@@ -2060,15 +2060,15 @@
     "changelog": "- Fixed configs being accessed too early, causing defaults to be used \n- Added compatibility for Lithostitched (by Apollo)",
     "changelog_url": null,
     "date_published": "2025-03-31T13:03:24.503227Z",
-    "downloads": 12595,
+    "downloads": 12600,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a51ffd76ae68102be08c17fe27cc1f2b85b95625ed2e55d6a83b717d69e77609bca8e2911294152d6399b1927710a56e63260e6225a57759de385186b2857e41",
-          "sha1": "ef78f95fcc2143e679b43597dc341352dd834e13"
+          "sha1": "ef78f95fcc2143e679b43597dc341352dd834e13",
+          "sha512": "a51ffd76ae68102be08c17fe27cc1f2b85b95625ed2e55d6a83b717d69e77609bca8e2911294152d6399b1927710a56e63260e6225a57759de385186b2857e41"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/wIhaBXAv/waystones-fabric-1.21.4-21.4.11.jar",
         "filename": "waystones-fabric-1.21.4-21.4.11.jar",
@@ -2150,15 +2150,15 @@
     "changelog": "- Updated to Minecraft 1.21.5",
     "changelog_url": null,
     "date_published": "2025-03-25T19:27:39.342299Z",
-    "downloads": 16251,
+    "downloads": 16252,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d39e8398b518331cfaacfb0b6254de0d95ee193e",
-          "sha512": "56659c8a6c1aec90261b423ac5709d8b22b203e8e806f7659bf3ca4c85ba1d9ae217fe3aa47ac345071678783eedeed208da9220567d24cf79e0bb3321d9810c"
+          "sha512": "56659c8a6c1aec90261b423ac5709d8b22b203e8e806f7659bf3ca4c85ba1d9ae217fe3aa47ac345071678783eedeed208da9220567d24cf79e0bb3321d9810c",
+          "sha1": "d39e8398b518331cfaacfb0b6254de0d95ee193e"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/ca46XnXg/waystones-fabric-1.21.5-21.5.1.jar",
         "filename": "waystones-fabric-1.21.5-21.5.1.jar",
@@ -2205,8 +2205,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d68a6b3fada5cda29a1a7e13a01e0acc73c7191e",
-          "sha512": "6d898e46a79d18938e06cde8f8d85301329b871e097ee3628a6d79aa835a3c7f60c576f1ce82e5cb163c141055c64dbcfea61680478c951e15c415037bac98c8"
+          "sha512": "6d898e46a79d18938e06cde8f8d85301329b871e097ee3628a6d79aa835a3c7f60c576f1ce82e5cb163c141055c64dbcfea61680478c951e15c415037bac98c8",
+          "sha1": "d68a6b3fada5cda29a1a7e13a01e0acc73c7191e"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/MwbnNrEP/waystones-neoforge-1.21.5-21.5.1.jar",
         "filename": "waystones-neoforge-1.21.5-21.5.1.jar",
@@ -2247,8 +2247,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5574e9804fe8115e3fa5a6588cb962f6c0366dcdfc3abb8d0994017d8bd15f58bdf22a278ca48a9a7b6b3607218c0f94448c711c2986af9828449d24bb96a558",
-          "sha1": "129a22a3ac775b7ecfbdef3a7f21f4c9cf83b6fb"
+          "sha1": "129a22a3ac775b7ecfbdef3a7f21f4c9cf83b6fb",
+          "sha512": "5574e9804fe8115e3fa5a6588cb962f6c0366dcdfc3abb8d0994017d8bd15f58bdf22a278ca48a9a7b6b3607218c0f94448c711c2986af9828449d24bb96a558"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/c3nKFqHe/waystones-neoforge-1.21.4-21.4.10.jar",
         "filename": "waystones-neoforge-1.21.4-21.4.10.jar",
@@ -2379,8 +2379,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "73094760f404e3afae34d7e1d86557067f5de1f4bbf5af57f8b6517b6e2458e40f6948ccaf90fc39538bb34430eb3267581848d0b9d05d44bb9b4f7a5107e9f0",
-          "sha1": "b38d7cd550ce7eb83d83936288b35eb6d0866920"
+          "sha1": "b38d7cd550ce7eb83d83936288b35eb6d0866920",
+          "sha512": "73094760f404e3afae34d7e1d86557067f5de1f4bbf5af57f8b6517b6e2458e40f6948ccaf90fc39538bb34430eb3267581848d0b9d05d44bb9b4f7a5107e9f0"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/6jWoYgVJ/waystones-neoforge-1.21.4-21.4.9.jar",
         "filename": "waystones-neoforge-1.21.4-21.4.9.jar",
@@ -2458,15 +2458,15 @@
     "changelog": "- Added missing `chat.waystones.cannot_break_waystone` message",
     "changelog_url": null,
     "date_published": "2025-03-15T17:17:49.458808Z",
-    "downloads": 49334,
+    "downloads": 49353,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ce83308e55d622672fd41b4fc60610f80f88f109",
-          "sha512": "d7746bbae1f5f0e3b243f5213453fcca8731aca69910e77e074e3d175de76b5b0a153e9ff57d56a9383428e13d78a423fdc6710a9e7a6ee516d4e4bf43db9407"
+          "sha512": "d7746bbae1f5f0e3b243f5213453fcca8731aca69910e77e074e3d175de76b5b0a153e9ff57d56a9383428e13d78a423fdc6710a9e7a6ee516d4e4bf43db9407",
+          "sha1": "ce83308e55d622672fd41b4fc60610f80f88f109"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/UsjWHpLD/waystones-neoforge-1.21.1-21.1.13.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.13.jar",
@@ -2520,13 +2520,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -2555,8 +2555,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8e9f8ed02c73a4540a01020f2dae141131a0de1e4ddf8498abfb58fe22b86da0255570e4154e07d0d6026f1184d68a92a73ce8a7f2700388629fc1ed8578d809",
-          "sha1": "78669bfd91e6db5db89993a3b51698bfa86da879"
+          "sha1": "78669bfd91e6db5db89993a3b51698bfa86da879",
+          "sha512": "8e9f8ed02c73a4540a01020f2dae141131a0de1e4ddf8498abfb58fe22b86da0255570e4154e07d0d6026f1184d68a92a73ce8a7f2700388629fc1ed8578d809"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/AC5Poa21/waystones-forge-1.21.4-21.4.9.jar",
         "filename": "waystones-forge-1.21.4-21.4.9.jar",
@@ -2591,15 +2591,15 @@
     "changelog": "- Added missing `chat.waystones.cannot_break_waystone` message",
     "changelog_url": null,
     "date_published": "2025-03-15T17:12:51.871911Z",
-    "downloads": 194515,
+    "downloads": 194641,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "1c053561ec5b1bbff027b096dcceb1d35fdeb78a",
-          "sha512": "be99201d622b53593b558903f4bf3eea4aac54f1ffc691dd6fc277a6010384d3fbdcb824670d2e6dad207d436e68ba928966ab91161ad479c51136aca09584ad"
+          "sha512": "be99201d622b53593b558903f4bf3eea4aac54f1ffc691dd6fc277a6010384d3fbdcb824670d2e6dad207d436e68ba928966ab91161ad479c51136aca09584ad",
+          "sha1": "1c053561ec5b1bbff027b096dcceb1d35fdeb78a"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/bUmXVpBV/waystones-fabric-1.21.1-21.1.13.jar",
         "filename": "waystones-fabric-1.21.1-21.1.13.jar",
@@ -2640,15 +2640,15 @@
     "changelog": "- Moved JourneyMap waypoints two blocks up so you don't end up inside the waystone if you use JourneyMap's teleport feature\n- Fixed sorting not working correctly when you have more than 128 waystones activated",
     "changelog_url": null,
     "date_published": "2025-03-06T10:38:21.704692Z",
-    "downloads": 176041,
+    "downloads": 176122,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "aa67546933253a1e72159fa45e7ccbe84fac548080aee303c4f11199754d878164ee74a113302e2bd2be3503b69262ed49419bfbfc88685833b2bb071689dd0e",
-          "sha1": "e7b648a3e77ce809dfd470200af1d1baadb4cb87"
+          "sha1": "e7b648a3e77ce809dfd470200af1d1baadb4cb87",
+          "sha512": "aa67546933253a1e72159fa45e7ccbe84fac548080aee303c4f11199754d878164ee74a113302e2bd2be3503b69262ed49419bfbfc88685833b2bb071689dd0e"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/WKyfSzs9/waystones-forge-1.20.1-14.1.11.jar",
         "filename": "waystones-forge-1.20.1-14.1.11.jar",
@@ -2683,7 +2683,7 @@
     "changelog": "- Moved JourneyMap waypoints two blocks up so you don't end up inside the waystone if you use JourneyMap's teleport feature\n- Fixed sorting not working correctly when you have more than 128 waystones activated",
     "changelog_url": null,
     "date_published": "2025-03-06T10:36:10.091716Z",
-    "downloads": 121176,
+    "downloads": 121201,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2858,15 +2858,15 @@
     "changelog": "- Moved JourneyMap waypoints two blocks up so you don't end up inside the waystone if you use JourneyMap's teleport feature\n- Fixed delete button on sharestones not deleting the sharestone (for corrupt entries)\n- Fixed missing translations for NeoForge default config screen\n- Changed allowedVisibilities to always implicitly contain the configured defaultVisibility",
     "changelog_url": null,
     "date_published": "2025-03-06T10:31:37.273968Z",
-    "downloads": 9743,
+    "downloads": 9744,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "70d18618e2e6551528dae0a9c8211d2983b609ef",
-          "sha512": "6ec03a8d49139c8d756c6aa59be54ee98fd42bb08e2ac1d9fba526ce986c981c445d738e96fd1801973ec5fed9e2ca51da45a1bd6936da67c90a72d7e2cdc2c8"
+          "sha512": "6ec03a8d49139c8d756c6aa59be54ee98fd42bb08e2ac1d9fba526ce986c981c445d738e96fd1801973ec5fed9e2ca51da45a1bd6936da67c90a72d7e2cdc2c8",
+          "sha1": "70d18618e2e6551528dae0a9c8211d2983b609ef"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/dxBDkAjl/waystones-neoforge-1.21.1-21.1.12.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.12.jar",
@@ -2908,8 +2908,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a5f89d517481aaef06848c4138567ca7bd735ad1",
-          "sha512": "930663023ebc3c8276c4bbf5c096a80d5cde62794c4b9605781fffe7de437844bd03cc28a0de1cdb4083510c89a459504749a5d2393a638aa00bf2cc8e12e10a"
+          "sha512": "930663023ebc3c8276c4bbf5c096a80d5cde62794c4b9605781fffe7de437844bd03cc28a0de1cdb4083510c89a459504749a5d2393a638aa00bf2cc8e12e10a",
+          "sha1": "a5f89d517481aaef06848c4138567ca7bd735ad1"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/ik3uPwV7/waystones-forge-1.21.1-21.1.12.jar",
         "filename": "waystones-forge-1.21.1-21.1.12.jar",
@@ -2944,7 +2944,7 @@
     "changelog": "- Moved JourneyMap waypoints two blocks up so you don't end up inside the waystone if you use JourneyMap's teleport feature\n- Fixed delete button on sharestones not deleting the sharestone (for corrupt entries)\n- Fixed missing translations for NeoForge default config screen\n- Changed allowedVisibilities to always implicitly contain the configured defaultVisibility",
     "changelog_url": null,
     "date_published": "2025-03-06T10:29:52.103357Z",
-    "downloads": 18411,
+    "downloads": 18412,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2993,7 +2993,7 @@
     "changelog": "- Added `is_with_passengers` and `is_not_with_passengers` conditions for warp requirements, for vehicle passengers\n- Added `passengers` variable for warp requirements\n- Added support for multiple warp modifiers on a single line to avoid duplicate conditions\n- Added `removeWaystoneFromDatabase`, `getAllWaystones`, `getWaystonesByType` methods to API\n- Added `is_waystone_owner` and `is_waystone_global` conditions for Unbreakables integration",
     "changelog_url": null,
     "date_published": "2025-02-23T10:50:04.212643Z",
-    "downloads": 25699,
+    "downloads": 25701,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3084,8 +3084,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7df3f86f4ecea6b983738b851b8247f0bb18e516",
-          "sha512": "f83fedf156ade2ef8a44fcd6532e7d3a8f10fa5a188fa622ad8cd53ab908eb649b5479aef10f599ed392bb7b2a27205264500441821f721d88ff26dbde89232d"
+          "sha512": "f83fedf156ade2ef8a44fcd6532e7d3a8f10fa5a188fa622ad8cd53ab908eb649b5479aef10f599ed392bb7b2a27205264500441821f721d88ff26dbde89232d",
+          "sha1": "7df3f86f4ecea6b983738b851b8247f0bb18e516"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/XXYZUzLR/waystones-neoforge-1.21.4-21.4.7.jar",
         "filename": "waystones-neoforge-1.21.4-21.4.7.jar",
@@ -3168,7 +3168,7 @@
     "changelog": "- Added `is_with_passengers` and `is_not_with_passengers` conditions for warp requirements, for vehicle passengers\n- Added `passengers` variable for warp requirements\n- Added support for multiple warp modifiers on a single line to avoid duplicate conditions\n- Added `removeWaystoneFromDatabase`, `getAllWaystones`, `getWaystonesByType` methods to API\n- Added `is_waystone_owner` and `is_waystone_global` conditions for Unbreakables integration",
     "changelog_url": null,
     "date_published": "2025-02-23T10:48:44.695491Z",
-    "downloads": 16370,
+    "downloads": 16374,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3211,15 +3211,15 @@
     "changelog": "- Added `is_with_passengers` and `is_not_with_passengers` conditions for warp requirements, for vehicle passengers\n- Added `passengers` variable for warp requirements\n- Added support for multiple warp modifiers on a single line to avoid duplicate conditions\n- Added `removeWaystoneFromDatabase`, `getAllWaystones`, `getWaystonesByType` methods to API\n- Added `is_waystone_owner` and `is_waystone_global` conditions for Unbreakables integration",
     "changelog_url": null,
     "date_published": "2025-02-23T10:46:21.14389Z",
-    "downloads": 53386,
+    "downloads": 53392,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "977b6521404a6d3ba4ee3462fd95c7e15fc3bc84",
-          "sha512": "24ce8a2cd1da7fa41141a780bcac793937f6433d32c7523b702e53e753346542ff0ed540660597caa053f2671396f9327d395642288b896078095c67fde803a7"
+          "sha512": "24ce8a2cd1da7fa41141a780bcac793937f6433d32c7523b702e53e753346542ff0ed540660597caa053f2671396f9327d395642288b896078095c67fde803a7",
+          "sha1": "977b6521404a6d3ba4ee3462fd95c7e15fc3bc84"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/7DbUmANa/waystones-fabric-1.21.1-21.1.11.jar",
         "filename": "waystones-fabric-1.21.1-21.1.11.jar",
@@ -3310,8 +3310,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3d091ce062b0cd9e58a2a45e51f6187aaf1a81e27ecb1995ee5ca68737c92d6067534bdfa1ee22f6c1a922f536ea8fabb23aca71c2ca4bd778aa58d12e75f4c8",
-          "sha1": "fd771d7f4e689749225e4ca280f9e58600dac863"
+          "sha1": "fd771d7f4e689749225e4ca280f9e58600dac863",
+          "sha512": "3d091ce062b0cd9e58a2a45e51f6187aaf1a81e27ecb1995ee5ca68737c92d6067534bdfa1ee22f6c1a922f536ea8fabb23aca71c2ca4bd778aa58d12e75f4c8"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/rCEDThbK/waystones-neoforge-1.21.1-21.1.11.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.11.jar",
@@ -3345,7 +3345,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-02-06T11:12:38.123427Z",
-    "downloads": 35665,
+    "downloads": 35728,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3381,15 +3381,15 @@
     "changelog": "- Fixed potential crash when opening waystone menus",
     "changelog_url": null,
     "date_published": "2025-02-04T09:04:58.94157Z",
-    "downloads": 45135,
+    "downloads": 45143,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "64931c9520983e56ed2d18605e554d03639c5c449459548f01c9a7156f3065a2780957e33b1c61f5f3ffba23c69af3711b2c21f1ce76052df8a8f6f09b77e001",
-          "sha1": "5d89c05eb224758451446b301b333d54ee71b4a1"
+          "sha1": "5d89c05eb224758451446b301b333d54ee71b4a1",
+          "sha512": "64931c9520983e56ed2d18605e554d03639c5c449459548f01c9a7156f3065a2780957e33b1c61f5f3ffba23c69af3711b2c21f1ce76052df8a8f6f09b77e001"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/uP3VU7si/waystones-fabric-1.20.1-14.1.9.jar",
         "filename": "waystones-fabric-1.20.1-14.1.9.jar",
@@ -3472,8 +3472,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "769ae7c3fddd722947d7da59218c8f024643cba5b2d0d8eb6fdd2b22fc3575f4a8e275bc57c3a7d5a2a07c3be55386549bfc2efaeec5d224daa0490a3edc5e81",
-          "sha1": "3a4027280f300f00aa7110b26d1ea979d7e03325"
+          "sha1": "3a4027280f300f00aa7110b26d1ea979d7e03325",
+          "sha512": "769ae7c3fddd722947d7da59218c8f024643cba5b2d0d8eb6fdd2b22fc3575f4a8e275bc57c3a7d5a2a07c3be55386549bfc2efaeec5d224daa0490a3edc5e81"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/cQXiCVOu/waystones-forge-1.21.4-21.4.6.jar",
         "filename": "waystones-forge-1.21.4-21.4.6.jar",
@@ -3599,15 +3599,15 @@
     "changelog": "- Fixed potential crash when opening waystone menus",
     "changelog_url": null,
     "date_published": "2025-02-04T08:51:44.910702Z",
-    "downloads": 42978,
+    "downloads": 42988,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "177c64358ec58b7971eb0281e3a89464121ecc36",
-          "sha512": "01b157f4e8a64b842ee4bb6c6dd1b0d8d31e7505c4bd31ecd430e4c8872111f58e8efd8f36699aa138768b38afb9628f9625dac7e139aa731311ee4b759c7458"
+          "sha512": "01b157f4e8a64b842ee4bb6c6dd1b0d8d31e7505c4bd31ecd430e4c8872111f58e8efd8f36699aa138768b38afb9628f9625dac7e139aa731311ee4b759c7458",
+          "sha1": "177c64358ec58b7971eb0281e3a89464121ecc36"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/AMfhjBey/waystones-forge-1.20.1-14.1.9.jar",
         "filename": "waystones-forge-1.20.1-14.1.9.jar",
@@ -3649,8 +3649,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d32a95bc2ba4695bc650c2b4fff920a1bf5d40657f44b2483308049124da2526c8cc18ddba1217a7da4a665f9e2cddb3a75e9ccc0f7a4b0989569bf3d856e9ce",
-          "sha1": "0bae8538ca5b1c6ddb70db5699cd5d4b0a60ba5b"
+          "sha1": "0bae8538ca5b1c6ddb70db5699cd5d4b0a60ba5b",
+          "sha512": "d32a95bc2ba4695bc650c2b4fff920a1bf5d40657f44b2483308049124da2526c8cc18ddba1217a7da4a665f9e2cddb3a75e9ccc0f7a4b0989569bf3d856e9ce"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/d5GesLwT/waystones-forge-1.21.1-21.1.10.jar",
         "filename": "waystones-forge-1.21.1-21.1.10.jar",
@@ -3685,15 +3685,15 @@
     "changelog": "- Fixed potential crash when opening waystone menus",
     "changelog_url": null,
     "date_published": "2025-02-04T08:49:49.881794Z",
-    "downloads": 9243,
+    "downloads": 9245,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a3abd672848066e2bd2e6e261de0a5ff50791607",
-          "sha512": "3a286a301f356f13e83c638587038778bb27a396ca022ac104dcb4d9304218aad1aad154613bc2c2dac11f96c73bbe2100159da5c89323275a85ae6502996ea2"
+          "sha512": "3a286a301f356f13e83c638587038778bb27a396ca022ac104dcb4d9304218aad1aad154613bc2c2dac11f96c73bbe2100159da5c89323275a85ae6502996ea2",
+          "sha1": "a3abd672848066e2bd2e6e261de0a5ff50791607"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/26cksoyV/waystones-neoforge-1.21.1-21.1.10.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.10.jar",
@@ -3728,15 +3728,15 @@
     "changelog": "- Fixed potential crash when opening waystone menus",
     "changelog_url": null,
     "date_published": "2025-02-04T08:48:54.946389Z",
-    "downloads": 90896,
+    "downloads": 90927,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a9ea20ad306196759b282c25c5acb3dfa482e9d8",
-          "sha512": "15849410e95e8e64163df9e573dea7a2236d9dd2ae4ada6f9c22b64bc7269da41ef4245a53dcd40b3e1bf89ca774a4fc367bcb4f72c85ecd3f844350b002538e"
+          "sha512": "15849410e95e8e64163df9e573dea7a2236d9dd2ae4ada6f9c22b64bc7269da41ef4245a53dcd40b3e1bf89ca774a4fc367bcb4f72c85ecd3f844350b002538e",
+          "sha1": "a9ea20ad306196759b282c25c5acb3dfa482e9d8"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/WD41KfAF/waystones-fabric-1.21.1-21.1.10.jar",
         "filename": "waystones-fabric-1.21.1-21.1.10.jar",
@@ -3860,15 +3860,15 @@
     "changelog": "- Fixed warp scroll and warp stone conditions not working in warp requirements\n- Fixed warp modifiers screen not closing when no longer valid",
     "changelog_url": null,
     "date_published": "2025-02-02T14:34:49.713307Z",
-    "downloads": 1877,
+    "downloads": 1878,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "77fb4157135d67b5132411e60f8fd370b06aed7125e4537ff8f6f6b61e266177732a96bf68008e47c971c8640042344e24503c70af9da7bb570e4153d9f605fe",
-          "sha1": "c615066f0ad46ecb3767b2d3a5f5ba71dc6c8cd3"
+          "sha1": "c615066f0ad46ecb3767b2d3a5f5ba71dc6c8cd3",
+          "sha512": "77fb4157135d67b5132411e60f8fd370b06aed7125e4537ff8f6f6b61e266177732a96bf68008e47c971c8640042344e24503c70af9da7bb570e4153d9f605fe"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Fy2nGHlF/waystones-fabric-1.21.4-21.4.5.jar",
         "filename": "waystones-fabric-1.21.4-21.4.5.jar",
@@ -3880,13 +3880,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -3916,8 +3916,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6bbdd4a7407678c972acfaeb19204b91e3bf7d98",
-          "sha512": "033dc8398d89237ad243cc63a535c6134d8b72844d4a2127943fc7df838f6ddf2af2ebf6d0771549904715efa450f370f95f0f318ce658ccfae59089dc24c93f"
+          "sha512": "033dc8398d89237ad243cc63a535c6134d8b72844d4a2127943fc7df838f6ddf2af2ebf6d0771549904715efa450f370f95f0f318ce658ccfae59089dc24c93f",
+          "sha1": "6bbdd4a7407678c972acfaeb19204b91e3bf7d98"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/c6GG0MrN/waystones-neoforge-1.21.1-21.1.9.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.9.jar",
@@ -3959,8 +3959,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "601ada064086fb4203982a499a8ece6de4e3ed20",
-          "sha512": "1f04a3f5a56791183fe8190625ea5e467512d26e06126419ceba484a6d7577aef74b421a93a71555b27f8e8fd38b4d6c6474f5bd09bca87d824fd34988db77e7"
+          "sha512": "1f04a3f5a56791183fe8190625ea5e467512d26e06126419ceba484a6d7577aef74b421a93a71555b27f8e8fd38b4d6c6474f5bd09bca87d824fd34988db77e7",
+          "sha1": "601ada064086fb4203982a499a8ece6de4e3ed20"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/P8BaYqDc/waystones-forge-1.21.1-21.1.9.jar",
         "filename": "waystones-forge-1.21.1-21.1.9.jar",
@@ -4051,8 +4051,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a11953f2e92d1c4d0bad9e199720dad41595b015",
-          "sha512": "317900c42c5e056a6f892e4f32e53676df23dc081a5a399caca2753d60d8f455bac02a8cd48741e749145850d964644fe0d250a142d209a0f86acdb9d7e9f84b"
+          "sha512": "317900c42c5e056a6f892e4f32e53676df23dc081a5a399caca2753d60d8f455bac02a8cd48741e749145850d964644fe0d250a142d209a0f86acdb9d7e9f84b",
+          "sha1": "a11953f2e92d1c4d0bad9e199720dad41595b015"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/HHr3VvKP/waystones-forge-1.20-14.1.8.jar",
         "filename": "waystones-forge-1.20-14.1.8.jar",
@@ -4087,7 +4087,7 @@
     "changelog": "- Fixed warp modifiers screen not closing when no longer valid",
     "changelog_url": null,
     "date_published": "2025-02-02T14:31:03.434053Z",
-    "downloads": 3933,
+    "downloads": 3935,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4136,8 +4136,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "551474da722d5967174b26c3879324a9bcc033467e450c539fd4a9dab0401d878f6f42498a1aa99118368e467c172a1f5f6861987df68a7ea063a5f6acab2238",
-          "sha1": "d9aa35999a8dcab975ee06985ecaa1bd92d75457"
+          "sha1": "d9aa35999a8dcab975ee06985ecaa1bd92d75457",
+          "sha512": "551474da722d5967174b26c3879324a9bcc033467e450c539fd4a9dab0401d878f6f42498a1aa99118368e467c172a1f5f6861987df68a7ea063a5f6acab2238"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/nJeLuf20/waystones-forge-1.21.4-21.4.4.jar",
         "filename": "waystones-forge-1.21.4-21.4.4.jar",
@@ -4221,8 +4221,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "50ef443d866100b42ae0e2798ce4e73cb0d847f2",
-          "sha512": "8de4f1dfd2241c36e9eac37bafc5867b3ad03f269cb0f92d10285ff1d16e2137640ada05f3c282b0d8c4f1ed7e7955c0635161dea06c001b54c4f21744ed2e9a"
+          "sha512": "8de4f1dfd2241c36e9eac37bafc5867b3ad03f269cb0f92d10285ff1d16e2137640ada05f3c282b0d8c4f1ed7e7955c0635161dea06c001b54c4f21744ed2e9a",
+          "sha1": "50ef443d866100b42ae0e2798ce4e73cb0d847f2"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/JMXOTWUp/waystones-neoforge-1.21.1-21.1.8.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.8.jar",
@@ -4263,8 +4263,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c9e1e873fbfbcb764a5e16d20f604f1aaf80dc58",
-          "sha512": "3b4391b2493703d24b1f37b51bc745ebab900c679a9cf47d57e34e37501d5d315e8c18ccd57efe9dd06268be861f98d5f88f53e6e6566c2f863d11e7c972babf"
+          "sha512": "3b4391b2493703d24b1f37b51bc745ebab900c679a9cf47d57e34e37501d5d315e8c18ccd57efe9dd06268be861f98d5f88f53e6e6566c2f863d11e7c972babf",
+          "sha1": "c9e1e873fbfbcb764a5e16d20f604f1aaf80dc58"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/YNMHQoX0/waystones-fabric-1.21.4-21.4.4.jar",
         "filename": "waystones-fabric-1.21.4-21.4.4.jar",
@@ -4355,8 +4355,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "352941e1268e3b1d3c5de334923a73aa5936a4ac",
-          "sha512": "8eb09f60b2431529557fe8df9c77431a48c47e7120f970cbcd76261012224be5dfa4d61934a8870f73d9ef28da65505eb839432a59ceee3b1cb0d8e2ce6f0b59"
+          "sha512": "8eb09f60b2431529557fe8df9c77431a48c47e7120f970cbcd76261012224be5dfa4d61934a8870f73d9ef28da65505eb839432a59ceee3b1cb0d8e2ce6f0b59",
+          "sha1": "352941e1268e3b1d3c5de334923a73aa5936a4ac"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/5UhD1YSy/waystones-fabric-1.21.1-21.1.8.jar",
         "filename": "waystones-fabric-1.21.1-21.1.8.jar",
@@ -4404,8 +4404,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4b8d3a99bc6365882996b2b1dab7a9d47a9030630f0b34d681e8b184c2af82d214b5e260a34057ff1f392bac6eb3eed9b76a7fdeba9f6d71b3e7090087438b4d",
-          "sha1": "9907f35e7007d41b2a9a74c70a0180386f283047"
+          "sha1": "9907f35e7007d41b2a9a74c70a0180386f283047",
+          "sha512": "4b8d3a99bc6365882996b2b1dab7a9d47a9030630f0b34d681e8b184c2af82d214b5e260a34057ff1f392bac6eb3eed9b76a7fdeba9f6d71b3e7090087438b4d"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/7P5PVCXN/waystones-forge-1.20-14.1.7.jar",
         "filename": "waystones-forge-1.20-14.1.7.jar",
@@ -4440,15 +4440,15 @@
     "changelog": "- Added ruleset to prevent generated waystones being broken (if enabled in Unbreakables mod)",
     "changelog_url": null,
     "date_published": "2025-01-31T15:53:18.762054Z",
-    "downloads": 3321,
+    "downloads": 3324,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "651a0fd7c7b28e3b6224b91cbbb971726c4a885a351d4d83b3c98452c2093f7b84ae2996b4c9cd09085494603a3bf1131cc54b4ab7d645110e7e33e0e792cffe",
-          "sha1": "280508b51bd97d9736cb3230d47409a45e38fb57"
+          "sha1": "280508b51bd97d9736cb3230d47409a45e38fb57",
+          "sha512": "651a0fd7c7b28e3b6224b91cbbb971726c4a885a351d4d83b3c98452c2093f7b84ae2996b4c9cd09085494603a3bf1131cc54b4ab7d645110e7e33e0e792cffe"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/4XzAgKUk/waystones-fabric-1.20-14.1.7.jar",
         "filename": "waystones-fabric-1.20-14.1.7.jar",
@@ -4533,8 +4533,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "70e1c3b8d8f917828c76928efdeb8392169a847374903452bf3ec7b8d0d8f72864f24822f50a80b36d459da91e7662e6f30058fdde9e1ddae859249c580d3416",
-          "sha1": "d4f577c7c461f316caefc8914ffeddea95b07d64"
+          "sha1": "d4f577c7c461f316caefc8914ffeddea95b07d64",
+          "sha512": "70e1c3b8d8f917828c76928efdeb8392169a847374903452bf3ec7b8d0d8f72864f24822f50a80b36d459da91e7662e6f30058fdde9e1ddae859249c580d3416"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/V9L8Yh0Y/waystones-neoforge-1.21.1-21.1.7.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.7.jar",
@@ -4569,15 +4569,15 @@
     "changelog": "- Added (source|target)_is_(color)_sharestone conditions for warp requirements\n- Added (source|target)_name_equals and not_(source|target)_name_equals conditions for warp requirements\n- Added (source|target)_name_contains and not_(source|target)_name_contains conditions for warp requirements\n",
     "changelog_url": null,
     "date_published": "2025-01-29T09:06:31.640271Z",
-    "downloads": 5182,
+    "downloads": 5183,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "3f6d0a7b4ddecf8d686e18868b1459fc68fff24b8153f501a00f396029505ae8a6ce6db82ffdb10eb68515b918afc1eebe3497b4f157757502d860956503f5c7",
-          "sha1": "9a250cb6125773d501501303c1b2cfe685963325"
+          "sha1": "9a250cb6125773d501501303c1b2cfe685963325",
+          "sha512": "3f6d0a7b4ddecf8d686e18868b1459fc68fff24b8153f501a00f396029505ae8a6ce6db82ffdb10eb68515b918afc1eebe3497b4f157757502d860956503f5c7"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/28vIQSsa/waystones-fabric-1.21.1-21.1.7.jar",
         "filename": "waystones-fabric-1.21.1-21.1.7.jar",
@@ -4721,13 +4721,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -4756,8 +4756,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0a5ae580ce6efc0779ab71fc761ce63a1acde6b4",
-          "sha512": "46d115490e30e9d0fa303d0c23a7e26cc9a450b94b396c7847b06dff3439e765a37cd7d939acda315bf9ee5a31cfbc3193060f734e30575d7b8a92b41120b469"
+          "sha512": "46d115490e30e9d0fa303d0c23a7e26cc9a450b94b396c7847b06dff3439e765a37cd7d939acda315bf9ee5a31cfbc3193060f734e30575d7b8a92b41120b469",
+          "sha1": "0a5ae580ce6efc0779ab71fc761ce63a1acde6b4"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/vtzMp7zf/waystones-forge-1.21.4-21.4.2.jar",
         "filename": "waystones-forge-1.21.4-21.4.2.jar",
@@ -4798,8 +4798,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e1a7c6a177304aba4b406bc9ba6d121987ba254d",
-          "sha512": "4031de8e5819c2e0bd67b9954074662e7dd1e59e90c39ad8c1e2b5ab0a6e6fca00dbf0f9ec11272ad8244043c7df0b26e0fe91761c90f63531545f284891e9df"
+          "sha512": "4031de8e5819c2e0bd67b9954074662e7dd1e59e90c39ad8c1e2b5ab0a6e6fca00dbf0f9ec11272ad8244043c7df0b26e0fe91761c90f63531545f284891e9df",
+          "sha1": "e1a7c6a177304aba4b406bc9ba6d121987ba254d"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/AIWsfylA/waystones-neoforge-1.21.4-21.4.1.jar",
         "filename": "waystones-neoforge-1.21.4-21.4.1.jar",
@@ -4833,7 +4833,7 @@
     "changelog": "- Updated to Minecraft 1.21.4\n",
     "changelog_url": null,
     "date_published": "2024-12-04T09:09:58.814834Z",
-    "downloads": 25198,
+    "downloads": 25199,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4889,8 +4889,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c78331e5cc59f40d2194387b5b2a34e1b96e10c9dd858376374e26512ef23e8e739c8c73a333b74bc28af25f7c4a93f431239cb711de52b2c0fd335006fb5d1c",
-          "sha1": "ca986766e015804ebec4af12752072a11cffc792"
+          "sha1": "ca986766e015804ebec4af12752072a11cffc792",
+          "sha512": "c78331e5cc59f40d2194387b5b2a34e1b96e10c9dd858376374e26512ef23e8e739c8c73a333b74bc28af25f7c4a93f431239cb711de52b2c0fd335006fb5d1c"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/ro1oNjVL/waystones-neoforge-1.21.3-21.3.3.jar",
         "filename": "waystones-neoforge-1.21.3-21.3.3.jar",
@@ -4925,7 +4925,7 @@
     "changelog": "- Added Blank Scroll to re-add bound scroll functionality\n- Added defaultVisibility option that can be set to \"GLOBAL\" to have newly placed and found waystones start out as global (default: ACTIVATION)\n- Added /waystones activate <targets> <pos> and /waystones forget <targets> <pos|all> commands\n- Added display of reason why editing is disabled to waystone edit screen\n- Made wild waystones and village waystones register as POIs\n- Changed wild waystone spawns to use waystones:has_structure/*_waystone tags to allow for more control\n- Fixed shift-clicking to sort a waystone to front or back not being saved\n- Technical: Added \"Transient\" state to waystones that indicates whether the waystone was picked up with silk touch and is in an unknown state of existence",
     "changelog_url": null,
     "date_published": "2024-10-24T14:19:45.628825Z",
-    "downloads": 16818,
+    "downloads": 16825,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4945,13 +4945,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -4974,15 +4974,15 @@
     "changelog": "- Fixed crash when generating wild waystones due to incorrect default state",
     "changelog_url": null,
     "date_published": "2024-10-24T14:15:49.639185Z",
-    "downloads": 362467,
+    "downloads": 362516,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5e79f9cd7a8c324250df16199e62a5c633a27247",
-          "sha512": "bc1779174b758ea26abd6858626595f3a5362605bc9cbf5d101f626bff9bff5e92f89ef05266cd5ebebe1ab0ef5f0d9af18e385e280237c116a02010c298e2c7"
+          "sha512": "bc1779174b758ea26abd6858626595f3a5362605bc9cbf5d101f626bff9bff5e92f89ef05266cd5ebebe1ab0ef5f0d9af18e385e280237c116a02010c298e2c7",
+          "sha1": "5e79f9cd7a8c324250df16199e62a5c633a27247"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/5LARDzDl/waystones-forge-1.20-14.1.6.jar",
         "filename": "waystones-forge-1.20-14.1.6.jar",
@@ -5024,8 +5024,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4aba48ae202dfb73f4ad233337c0c1e04cecf6b0",
-          "sha512": "a86ddc23b31316782a18a3e3c9318ebe5700a327603947c90c3de6aa6cee6a09d29b53e5cdf1c55e218ba241807ce2537c201c1a7088bb8330cd79bd90bf5afd"
+          "sha512": "a86ddc23b31316782a18a3e3c9318ebe5700a327603947c90c3de6aa6cee6a09d29b53e5cdf1c55e218ba241807ce2537c201c1a7088bb8330cd79bd90bf5afd",
+          "sha1": "4aba48ae202dfb73f4ad233337c0c1e04cecf6b0"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/VrKoSRzq/waystones-forge-1.21.1-21.1.5.jar",
         "filename": "waystones-forge-1.21.1-21.1.5.jar",
@@ -5067,8 +5067,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "816961c9241d1bd6a43074fc9949a99443b3194f",
-          "sha512": "07a298933f87bab34668134a99183feb711bc0755c72c0611177d83a303c42e4bfb93a3604e771f7256e3e3254c3d57e96ad4b5e53449562f2be1bb4031cf17c"
+          "sha512": "07a298933f87bab34668134a99183feb711bc0755c72c0611177d83a303c42e4bfb93a3604e771f7256e3e3254c3d57e96ad4b5e53449562f2be1bb4031cf17c",
+          "sha1": "816961c9241d1bd6a43074fc9949a99443b3194f"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/rdM0bu9h/waystones-neoforge-1.21.1-21.1.5.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.5.jar",
@@ -5103,7 +5103,7 @@
     "changelog": "- Added Blank Scroll to re-add bound scroll functionality\n- Added defaultVisibility option that can be set to \"GLOBAL\" to have newly placed and found waystones start out as global (default: ACTIVATION)\n- Added /waystones activate <targets> <pos> and /waystones forget <targets> <pos|all> commands\n- Added display of reason why editing is disabled to waystone edit screen\n- Changed wild waystone spawns to use waystones:has_structure/*_waystone tags to allow for more control\n- Fixed shift-clicking to sort a waystone to front or back not being saved\n- Technical: Added \"Transient\" state to waystones that indicates whether the waystone was picked up with silk touch and is in an unknown state of existence",
     "changelog_url": null,
     "date_published": "2024-10-24T14:14:15.76754Z",
-    "downloads": 136178,
+    "downloads": 136190,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5152,7 +5152,7 @@
     "changelog": "- Fixed crash when generating wild waystones due to incorrect default state",
     "changelog_url": null,
     "date_published": "2024-10-24T14:14:14.659954Z",
-    "downloads": 165788,
+    "downloads": 165840,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5202,8 +5202,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7f924a29c0bd5ea54af320f7608244dba87e2414cadabf09d93540907e449b12bbc322401dba2613152222040efaae17600f219c119b7ab920578b6fdadc923b",
-          "sha1": "e4d2a5df1aa31b57ba69154020c628dd213dd83f"
+          "sha1": "e4d2a5df1aa31b57ba69154020c628dd213dd83f",
+          "sha512": "7f924a29c0bd5ea54af320f7608244dba87e2414cadabf09d93540907e449b12bbc322401dba2613152222040efaae17600f219c119b7ab920578b6fdadc923b"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/yqvPCLkk/waystones-neoforge-1.21.3-21.3.2.jar",
         "filename": "waystones-neoforge-1.21.3-21.3.2.jar",
@@ -5245,8 +5245,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "739b2a071777bda36908422b840ce9f97f1a541def3fc08f98c616d940b20f5336d05731760dc8fbb4df089ca5d3fad0e72fd5320ee7f0a5d4d94fb788eb8746",
-          "sha1": "46b71cdf047281d827dc0471d10dffd1f07d0e14"
+          "sha1": "46b71cdf047281d827dc0471d10dffd1f07d0e14",
+          "sha512": "739b2a071777bda36908422b840ce9f97f1a541def3fc08f98c616d940b20f5336d05731760dc8fbb4df089ca5d3fad0e72fd5320ee7f0a5d4d94fb788eb8746"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/5Mp1PzMM/waystones-fabric-1.21.3-21.3.2.jar",
         "filename": "waystones-fabric-1.21.3-21.3.2.jar",
@@ -5258,13 +5258,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -5386,8 +5386,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "68bb7d217932fda3ea35fde9a417c5bb6205cb2473f78890abe39998f04f82a72732dc8fb6f9edb078e4b07b14b912a7d2cd7af1c49c5ab7e40a7142789f2646",
-          "sha1": "4fa4b3756ed849df2774878aeb0ea19443962391"
+          "sha1": "4fa4b3756ed849df2774878aeb0ea19443962391",
+          "sha512": "68bb7d217932fda3ea35fde9a417c5bb6205cb2473f78890abe39998f04f82a72732dc8fb6f9edb078e4b07b14b912a7d2cd7af1c49c5ab7e40a7142789f2646"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/zIH2OLc3/waystones-forge-1.21.1-21.1.4.jar",
         "filename": "waystones-forge-1.21.1-21.1.4.jar",
@@ -5429,8 +5429,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1e43c4ba4955a3ceef64bd4e7a4925c6a588732a09dc60d34c7dfa297f80b752bd216996e2c08f73d5311701a1e4f2947fabeb4f86f3df14428cfd0a6e872422",
-          "sha1": "50ff47b4bf12ed2cf4bdca63a0cf7859420b7e59"
+          "sha1": "50ff47b4bf12ed2cf4bdca63a0cf7859420b7e59",
+          "sha512": "1e43c4ba4955a3ceef64bd4e7a4925c6a588732a09dc60d34c7dfa297f80b752bd216996e2c08f73d5311701a1e4f2947fabeb4f86f3df14428cfd0a6e872422"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/so930FNB/waystones-neoforge-1.21.1-21.1.4.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.4.jar",
@@ -5564,8 +5564,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f433c68dfe2a5c09ae20ef3972045f25cfd721b2cbda74e36e4d35bdbfec4d26364660ecf5f0598d81b2f29889f78270ee167e08dd99f5d60345dc67d7d8186d",
-          "sha1": "2994de9c129e2f739e737ba81fc8984a7cb7c846"
+          "sha1": "2994de9c129e2f739e737ba81fc8984a7cb7c846",
+          "sha512": "f433c68dfe2a5c09ae20ef3972045f25cfd721b2cbda74e36e4d35bdbfec4d26364660ecf5f0598d81b2f29889f78270ee167e08dd99f5d60345dc67d7d8186d"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/LSofciCD/waystones-forge-1.21.1-21.1.3.jar",
         "filename": "waystones-forge-1.21.1-21.1.3.jar",
@@ -5656,8 +5656,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "67365f1e82bb1a0c97209a92644013ed7853f491244a54893758639940ad21dec0e5dd883f7f6730d4539ecd05c03e72750c450b3c8f00f9a53b1d737ff28378",
-          "sha1": "6f17db4590c844d654f5f5a319a2ff648f042f7b"
+          "sha1": "6f17db4590c844d654f5f5a319a2ff648f042f7b",
+          "sha512": "67365f1e82bb1a0c97209a92644013ed7853f491244a54893758639940ad21dec0e5dd883f7f6730d4539ecd05c03e72750c450b3c8f00f9a53b1d737ff28378"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/5LYADmRZ/waystones-neoforge-1.21.1-21.1.2.jar",
         "filename": "waystones-neoforge-1.21.1-21.1.2.jar",
@@ -5742,8 +5742,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "03a88fee62da8cd1ec43e1f0fce56bbc13c3be4e9eba9d0c77219167d35f3501883c93c4d4420cb7f07190bfc48d0551bcfb37793ae84466a742e51b706581c1",
-          "sha1": "da46590ce63ebc6de393e47e8b4c2206faceb71e"
+          "sha1": "da46590ce63ebc6de393e47e8b4c2206faceb71e",
+          "sha512": "03a88fee62da8cd1ec43e1f0fce56bbc13c3be4e9eba9d0c77219167d35f3501883c93c4d4420cb7f07190bfc48d0551bcfb37793ae84466a742e51b706581c1"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/12MRAK1g/waystones-fabric-1.21.1-21.1.2.jar",
         "filename": "waystones-fabric-1.21.1-21.1.2.jar",
@@ -5784,7 +5784,7 @@
     "changelog": "- Fixed crash when generating wild waystones due to incorrect default state",
     "changelog_url": null,
     "date_published": "2024-08-25T05:50:23.492202Z",
-    "downloads": 134902,
+    "downloads": 134942,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5827,7 +5827,7 @@
     "changelog": "- Fixed crash when generating wild waystones due to incorrect default state",
     "changelog_url": null,
     "date_published": "2024-08-25T05:47:29.724132Z",
-    "downloads": 157041,
+    "downloads": 157066,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5962,8 +5962,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b038953c0b63ed8317164fcc996272c43c43d00ea7a6d4c783af02e364ee7b315d5f5daf063df8e588db671c949ffc8ff3b0d114b2e6722a46ce246e7d8e89bd",
-          "sha1": "4d84d5387b0ced08db5b6db32fa00b42b763962a"
+          "sha1": "4d84d5387b0ced08db5b6db32fa00b42b763962a",
+          "sha512": "b038953c0b63ed8317164fcc996272c43c43d00ea7a6d4c783af02e364ee7b315d5f5daf063df8e588db671c949ffc8ff3b0d114b2e6722a46ce246e7d8e89bd"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/pCpQ1Jxr/waystones-fabric-1.21.1-21.1.1.jar",
         "filename": "waystones-fabric-1.21.1-21.1.1.jar",
@@ -5975,13 +5975,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -6052,8 +6052,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1598ecb08ff1ee04c31cc6d08ae8d94311df26bb",
-          "sha512": "395e69ee5762ed579f1545cfc00efd6e7f34255a2cf9d0e5d3751cfcdcebfd305ad98b5cadf5b2d4d2367710658a5dccb0f0e68713927b5c71ecd0fd583eb83e"
+          "sha512": "395e69ee5762ed579f1545cfc00efd6e7f34255a2cf9d0e5d3751cfcdcebfd305ad98b5cadf5b2d4d2367710658a5dccb0f0e68713927b5c71ecd0fd583eb83e",
+          "sha1": "1598ecb08ff1ee04c31cc6d08ae8d94311df26bb"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/LChb7xqe/waystones-forge-1.21-21.0.8.jar",
         "filename": "waystones-forge-1.21-21.0.8.jar",
@@ -6087,15 +6087,15 @@
     "changelog": "- Added scaled_multiply_* requirement functions for warp requirements\n- Fixed crash when warp requirements failed to parse due to invalid formats\n- Fixed waystone removals not being sent to clients\n- Fixed JourneyMap waypoints disappearing when switching dimensions",
     "changelog_url": null,
     "date_published": "2024-07-09T11:31:00.671772Z",
-    "downloads": 50620,
+    "downloads": 50621,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "aef53cb2c2c085f060e0fce4915a466fe102eb52",
-          "sha512": "00c6a65da36b8085078d302397feb123d7c7b5c0decc2e858f35b7e038d48f8fea0a67d5f7a01ef6a6597cabf67f4a4220b090cb173a6bbb002778914db29408"
+          "sha512": "00c6a65da36b8085078d302397feb123d7c7b5c0decc2e858f35b7e038d48f8fea0a67d5f7a01ef6a6597cabf67f4a4220b090cb173a6bbb002778914db29408",
+          "sha1": "aef53cb2c2c085f060e0fce4915a466fe102eb52"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/xvvdZQUn/waystones-fabric-1.21-21.0.8.jar",
         "filename": "waystones-fabric-1.21-21.0.8.jar",
@@ -6142,8 +6142,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d10a49b4e227daea86ff964bcb820f547ee18fdb",
-          "sha512": "716df06041dea1cf6c4a95f2a3d2237f576e8dbcb973f1b0fa502a14ccf1e361a284c63ba305122374762e29aff634bdbb7ea4769ba7eb001d3139def4ae55ff"
+          "sha512": "716df06041dea1cf6c4a95f2a3d2237f576e8dbcb973f1b0fa502a14ccf1e361a284c63ba305122374762e29aff634bdbb7ea4769ba7eb001d3139def4ae55ff",
+          "sha1": "d10a49b4e227daea86ff964bcb820f547ee18fdb"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/PDbJMKhA/waystones-neoforge-1.21-21.0.7.jar",
         "filename": "waystones-neoforge-1.21-21.0.7.jar",
@@ -6178,15 +6178,15 @@
     "changelog": "- Fixed Waystones sometimes restricting structure parts containing the word \"waystone\" from spawning (which caused the top of Towers of the Wild to sometimes be missing)",
     "changelog_url": null,
     "date_published": "2024-07-04T06:36:53.238107Z",
-    "downloads": 114695,
+    "downloads": 114707,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "56b276e12145740ef7a59f5429cd9bead3c385c63f03450b539bde3b4b1b4ffbdd8054dd20f4bdc5e8790352bd53de5aef688357d182683a89f2b8b589c0d94c",
-          "sha1": "f7ff479f1b6b3a404110e0b95cfff5acb5612aca"
+          "sha1": "f7ff479f1b6b3a404110e0b95cfff5acb5612aca",
+          "sha512": "56b276e12145740ef7a59f5429cd9bead3c385c63f03450b539bde3b4b1b4ffbdd8054dd20f4bdc5e8790352bd53de5aef688357d182683a89f2b8b589c0d94c"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Rbp8Hzck/waystones-forge-1.20-14.1.4.jar",
         "filename": "waystones-forge-1.20-14.1.4.jar",
@@ -6221,15 +6221,15 @@
     "changelog": "- Fixed Waystones sometimes restricting structure parts containing the word \"waystone\" from spawning (which caused the top of Towers of the Wild to sometimes be missing)",
     "changelog_url": null,
     "date_published": "2024-07-04T06:36:39.823679Z",
-    "downloads": 272404,
+    "downloads": 272500,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "6f318ab37fe1353ef0ce5bd97e03548505d3f7ad",
-          "sha512": "5e921791dbdb29baa56bf9d33b7f0288872533e37ca27596946a7c36befb94bcf737d4db68e8eab2667d2d1d4957a6208d437873e9289b28922afdee515fa8eb"
+          "sha512": "5e921791dbdb29baa56bf9d33b7f0288872533e37ca27596946a7c36befb94bcf737d4db68e8eab2667d2d1d4957a6208d437873e9289b28922afdee515fa8eb",
+          "sha1": "6f318ab37fe1353ef0ce5bd97e03548505d3f7ad"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/wgUtWmqB/waystones-fabric-1.20-14.1.4.jar",
         "filename": "waystones-fabric-1.20-14.1.4.jar",
@@ -6270,8 +6270,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7ae384d37b2cb5da98b2b6ab5e1119545bba0f97",
-          "sha512": "8c2789ea3186e3e3609f39a9767a73d3c6aa7f05d5825f94e9d25f756b1a41c5dfacb760c272c6daa6ad9b257fe9d909fd860964a4d96b52726aa8fa34080e52"
+          "sha512": "8c2789ea3186e3e3609f39a9767a73d3c6aa7f05d5825f94e9d25f756b1a41c5dfacb760c272c6daa6ad9b257fe9d909fd860964a4d96b52726aa8fa34080e52",
+          "sha1": "7ae384d37b2cb5da98b2b6ab5e1119545bba0f97"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/c8iZDVS3/waystones-forge-1.21-21.0.7.jar",
         "filename": "waystones-forge-1.21-21.0.7.jar",
@@ -6305,7 +6305,7 @@
     "changelog": "- Fixed Waystones sometimes restricting structure parts containing the word \"waystone\" from spawning (which caused the top of Towers of the Wild to sometimes be missing)\n\n- Fixed modifier screen accepting more than one dormant shard, resulting in all others being consumed\n\n- Fixed crash when DynMap integration is used\n\n- Fixed waystones from pre-1.21 worlds not migrating correctly to 1.21\n\n- Re-added JourneyMap support\n- Fixed missing particle texture in mossy waystones\n\n- Fixed sharestones not being right-clickable\n- Fixed crash with JEI on Fabric\n\n- Updated to Minecraft 1.21\n- Updated Mossy Waystone Texture \n- Changed scroll recipes to use ink instead of purple dye\n- Added colored portstone that allow teleporting to colored sharestones\n- Removed white and colorless sharestones\n- Removed Landing Plate (use a Warp Plate with Deepslate Shard instead)\n- Made warp plates rename-able like regular waystones\n- Added Dormant Shard, which can be plugged into a Warp Plate to attune it\n- Added Deepslate Shard, which can be plugged into a Warp Plate to fill in the hole\n- Changed shard placement to happen in-world for warp plates\n- Changed auxiliary warp items (warp modifiers) to be applied on arrival rather than departure\n- Made auxiliary warp items (warp modifiers) apply on regular waystones as well\n- Removed the slot UI for waystones and warp plates\n- Added new modifiers UI for waystones and warp plates for placing auxiliary warp items\n- Changed the waystone edit screen to be more intuitive\n- Removed Crumbling Attuned Shard for now because it doesn't have a crafting recipe yet\n- Removed Bound Scrolls for now because there is no way of obtaining them yet",
     "changelog_url": null,
     "date_published": "2024-07-04T06:34:46.529886Z",
-    "downloads": 5364,
+    "downloads": 5365,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6492,8 +6492,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "51f017965abb4c38a3b548dbda0c8119a7dc1bf4ec00ca13ddb8ab0836e73079cca19244e0bb3575d4e804ea067168161fb3c10c9d02a30b26feda95f5589ddd",
-          "sha1": "823886ca191d3bfb342d11a20967183cc0fba744"
+          "sha1": "823886ca191d3bfb342d11a20967183cc0fba744",
+          "sha512": "51f017965abb4c38a3b548dbda0c8119a7dc1bf4ec00ca13ddb8ab0836e73079cca19244e0bb3575d4e804ea067168161fb3c10c9d02a30b26feda95f5589ddd"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/O5RNeh44/waystones-neoforge-1.21-21.0.5.jar",
         "filename": "waystones-neoforge-1.21-21.0.5.jar",
@@ -6534,8 +6534,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a6f17181b9f12e1ead053d6b6bca3da720b85864010563607f1603ff85839dbf2d5b3b5cc09d17d4a65f234eb314f3c162b656041169bb222313aa3d60a9e341",
-          "sha1": "b8ed6ff731de7f50d90c6cb6f3029f02e3f9c972"
+          "sha1": "b8ed6ff731de7f50d90c6cb6f3029f02e3f9c972",
+          "sha512": "a6f17181b9f12e1ead053d6b6bca3da720b85864010563607f1603ff85839dbf2d5b3b5cc09d17d4a65f234eb314f3c162b656041169bb222313aa3d60a9e341"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/BBqcgWtN/waystones-forge-1.21-21.0.5.jar",
         "filename": "waystones-forge-1.21-21.0.5.jar",
@@ -6576,8 +6576,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a79906a1d3ac3ef9b195f8d58757616ffb41ef0d9f2303403255f85104bc552da032c162b45c94c6001609192d6f569100691f2aa1f7384dc299f841f868340d",
-          "sha1": "9a9d936d2be470df078dc7a5f3da0d6bbc784ab8"
+          "sha1": "9a9d936d2be470df078dc7a5f3da0d6bbc784ab8",
+          "sha512": "a79906a1d3ac3ef9b195f8d58757616ffb41ef0d9f2303403255f85104bc552da032c162b45c94c6001609192d6f569100691f2aa1f7384dc299f841f868340d"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/nvyptV1m/waystones-fabric-1.21-21.0.5.jar",
         "filename": "waystones-fabric-1.21-21.0.5.jar",
@@ -6589,13 +6589,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -6624,8 +6624,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c5431292e964675a87c315341576b9608065db152929a39d8ae750afceecdfa3acc2b91149cbcc21610f5b80d0192b578e13480ed223d80084f32801710f889a",
-          "sha1": "9072a3c4851e180394867cae441441402dc7e625"
+          "sha1": "9072a3c4851e180394867cae441441402dc7e625",
+          "sha512": "c5431292e964675a87c315341576b9608065db152929a39d8ae750afceecdfa3acc2b91149cbcc21610f5b80d0192b578e13480ed223d80084f32801710f889a"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/jdBXVE2O/waystones-neoforge-1.21-21.0.4.jar",
         "filename": "waystones-neoforge-1.21-21.0.4.jar",
@@ -6708,8 +6708,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f81153b04b672a9ee83e512064412805fa39576d",
-          "sha512": "8e8a3fbcf642ebb2b2b9da6bdd8b8af2168f48dc2c0c6dd2cd4a7e20302c59ebd9af9502001de06a938f56c84fd0799e08dfbe07e29a5dafec5ce6dfd455f3b3"
+          "sha512": "8e8a3fbcf642ebb2b2b9da6bdd8b8af2168f48dc2c0c6dd2cd4a7e20302c59ebd9af9502001de06a938f56c84fd0799e08dfbe07e29a5dafec5ce6dfd455f3b3",
+          "sha1": "f81153b04b672a9ee83e512064412805fa39576d"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/YyhO1yXN/waystones-fabric-1.21-21.0.4.jar",
         "filename": "waystones-fabric-1.21-21.0.4.jar",
@@ -6798,8 +6798,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "426dd70773685731c3fd0e1af275af3592b36c2f",
-          "sha512": "f4d321261bb4c43b7456d491d0761c65e11406a9b5d540e47fb0ab52bd0433e9d1a4526316b8ad53f78ce85623472751a2a0c2f15c59f8c141036564c58c5652"
+          "sha512": "f4d321261bb4c43b7456d491d0761c65e11406a9b5d540e47fb0ab52bd0433e9d1a4526316b8ad53f78ce85623472751a2a0c2f15c59f8c141036564c58c5652",
+          "sha1": "426dd70773685731c3fd0e1af275af3592b36c2f"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/SPkXt74c/waystones-forge-1.21-21.0.3.jar",
         "filename": "waystones-forge-1.21-21.0.3.jar",
@@ -6853,13 +6853,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -6888,8 +6888,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c3cefe53570fbc356469560a82f1a5b27cb265846f4412085a6381dd8519990f7fafade599dae4992386c93a5b8afbe4f32abec1dbb12769e27ec7ddcd779d21",
-          "sha1": "fd69f9f59ce3f87791f59cc96f1b4e220f6f3045"
+          "sha1": "fd69f9f59ce3f87791f59cc96f1b4e220f6f3045",
+          "sha512": "c3cefe53570fbc356469560a82f1a5b27cb265846f4412085a6381dd8519990f7fafade599dae4992386c93a5b8afbe4f32abec1dbb12769e27ec7ddcd779d21"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/uSWmR65D/waystones-neoforge-1.21-21.0.2.jar",
         "filename": "waystones-neoforge-1.21-21.0.2.jar",
@@ -6930,8 +6930,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "22e939de4bb034ee0718c30e565a189a2a364c2f",
-          "sha512": "294d3eaf83363d3aaaa3322230ae0277684e8bd83699caeb05f39a81e023be8c2cea38c61f1bf53ff637d6f983742f1cd348081eea01c1939099bbe39b25b8fd"
+          "sha512": "294d3eaf83363d3aaaa3322230ae0277684e8bd83699caeb05f39a81e023be8c2cea38c61f1bf53ff637d6f983742f1cd348081eea01c1939099bbe39b25b8fd",
+          "sha1": "22e939de4bb034ee0718c30e565a189a2a364c2f"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/dCTmnsnv/waystones-fabric-1.21-21.0.2.jar",
         "filename": "waystones-fabric-1.21-21.0.2.jar",
@@ -6978,8 +6978,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e1603613a94bf5742d69c8871bb9061d37b2d0c1",
-          "sha512": "85f4b14d41f810c45b720d928ba9defddb19b43e50c62a43b793596b8a2e5d3462f929046eb006dc0b7b6997a8e53cfe638c601ea4e1dd942e365421b7394548"
+          "sha512": "85f4b14d41f810c45b720d928ba9defddb19b43e50c62a43b793596b8a2e5d3462f929046eb006dc0b7b6997a8e53cfe638c601ea4e1dd942e365421b7394548",
+          "sha1": "e1603613a94bf5742d69c8871bb9061d37b2d0c1"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/ziGshm6R/waystones-forge-1.21-21.0.2.jar",
         "filename": "waystones-forge-1.21-21.0.2.jar",
@@ -7020,8 +7020,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "aaf0328bbe3bbfc9624d8dc3f7d0b571fa89810a0a5757af7bfe01aac45f1464bafa450a555a383fa26f449ba32d12f789bc9ae7584881b89f4ccc0647edf606",
-          "sha1": "6b1845a677918a5e9901cfaafdeb9118cbd6d01a"
+          "sha1": "6b1845a677918a5e9901cfaafdeb9118cbd6d01a",
+          "sha512": "aaf0328bbe3bbfc9624d8dc3f7d0b571fa89810a0a5757af7bfe01aac45f1464bafa450a555a383fa26f449ba32d12f789bc9ae7584881b89f4ccc0647edf606"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/59eTyqOw/waystones-neoforge-1.21-21.0.1.jar",
         "filename": "waystones-neoforge-1.21-21.0.1.jar",
@@ -7104,8 +7104,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7723269d13942084c7031bac415757cd2c6af45a",
-          "sha512": "af0d4a91d663c399103e974d87f9387430433c7d7c943084741421f6aa2c87864858954dc7b5d590935273a27676d531e26ee5a2a1c03ce2e0f9d57ef18a151e"
+          "sha512": "af0d4a91d663c399103e974d87f9387430433c7d7c943084741421f6aa2c87864858954dc7b5d590935273a27676d531e26ee5a2a1c03ce2e0f9d57ef18a151e",
+          "sha1": "7723269d13942084c7031bac415757cd2c6af45a"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/tFOFXxNF/waystones-fabric-1.21-21.0.1.jar",
         "filename": "waystones-fabric-1.21-21.0.1.jar",
@@ -7152,8 +7152,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "89df3a2f6d2f204caf2cdd08f79c5f433fc53fbb40db91a272152dcf0167a5a326056d5bf9ca8f7ef520dc9c19a916ab63eabc6ebdb368460a221356fb2f2cc2",
-          "sha1": "7632b0ccaddf49a7aa0458727f34a6736019d468"
+          "sha1": "7632b0ccaddf49a7aa0458727f34a6736019d468",
+          "sha512": "89df3a2f6d2f204caf2cdd08f79c5f433fc53fbb40db91a272152dcf0167a5a326056d5bf9ca8f7ef520dc9c19a916ab63eabc6ebdb368460a221356fb2f2cc2"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/3s7K7RYp/waystones-neoforge-1.20.6-17.0.2.jar",
         "filename": "waystones-neoforge-1.20.6-17.0.2.jar",
@@ -7187,15 +7187,15 @@
     "changelog": "- Fixed warp plate contents not saving\n\n- Updated to Minecraft 1.20.6\n- Updated Mossy Waystone Texture\n- Changed scroll recipes to use ink instead of purple dye\n- Added colored portstone that allow teleporting to colored sharestones\n- Removed white and colorless sharestones",
     "changelog_url": null,
     "date_published": "2024-06-12T18:26:17.890899Z",
-    "downloads": 11073,
+    "downloads": 11074,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ae74c8c4381fde67976e1ff5de468f484ebc8a1e",
-          "sha512": "00b810d3ad06342dd4b434a3291e37ade2273f2fbb5fa0b386530589b36cf41b9531555917c1207bacf5acdf8b13a2fadcd01da1cecc02562a26403f27e23479"
+          "sha512": "00b810d3ad06342dd4b434a3291e37ade2273f2fbb5fa0b386530589b36cf41b9531555917c1207bacf5acdf8b13a2fadcd01da1cecc02562a26403f27e23479",
+          "sha1": "ae74c8c4381fde67976e1ff5de468f484ebc8a1e"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/RJZj1nlX/waystones-fabric-1.20.6-17.0.2.jar",
         "filename": "waystones-fabric-1.20.6-17.0.2.jar",
@@ -7235,7 +7235,7 @@
     "changelog": "- Fixed warp plate contents not saving\n\n- Updated to Minecraft 1.20.6\n- Updated Mossy Waystone Texture\n- Changed scroll recipes to use ink instead of purple dye\n- Added colored portstone that allow teleporting to colored sharestones\n- Removed white and colorless sharestones",
     "changelog_url": null,
     "date_published": "2024-06-12T18:26:01.060715Z",
-    "downloads": 2237,
+    "downloads": 2238,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7284,8 +7284,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ebb74e60a82ef8683c86e1a3591468d5238130f2a65967e0fae851f512965c0c301fb1772dd67246970e67b5ac2d9ecf280263804d620c7e1690871fed8cebad",
-          "sha1": "29d9fcfc9b476675e9443cad0977d2df2fbbb3ae"
+          "sha1": "29d9fcfc9b476675e9443cad0977d2df2fbbb3ae",
+          "sha512": "ebb74e60a82ef8683c86e1a3591468d5238130f2a65967e0fae851f512965c0c301fb1772dd67246970e67b5ac2d9ecf280263804d620c7e1690871fed8cebad"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/6sITwJwf/waystones-neoforge-1.20.6-17.0.1.jar",
         "filename": "waystones-neoforge-1.20.6-17.0.1.jar",
@@ -7451,7 +7451,7 @@
     "changelog": "- Fixed deepslate waystones using wrong sounds\n- Fixed error when breaking portstones\n- Fixed error in JEI compatibility\n- Updated Spanish Translation (by TheLegendofSaram)",
     "changelog_url": null,
     "date_published": "2024-04-14T20:32:54.450159Z",
-    "downloads": 5426,
+    "downloads": 5428,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7493,7 +7493,7 @@
     "changelog": "- Fixed deepslate waystones using wrong sounds\n- Fixed error when breaking portstones\n- Fixed error in JEI compatibility\n- Updated Spanish Translation (by TheLegendofSaram)",
     "changelog_url": null,
     "date_published": "2024-04-14T20:30:53.937125Z",
-    "downloads": 48034,
+    "downloads": 48047,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7590,8 +7590,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f57386d15219e037b0d8a719c23c0d204fdee71c",
-          "sha512": "fee65c0fc29babaa0806793ea8692fa8143456f12264090b625db0f41ae0175dc4be040e1906eacc38490f06f42b2f1fb5c92e19b6acb99d491cc019f3044880"
+          "sha512": "fee65c0fc29babaa0806793ea8692fa8143456f12264090b625db0f41ae0175dc4be040e1906eacc38490f06f42b2f1fb5c92e19b6acb99d491cc019f3044880",
+          "sha1": "f57386d15219e037b0d8a719c23c0d204fdee71c"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/SrRi70Ff/waystones-forge-1.20.4-16.0.4.jar",
         "filename": "waystones-forge-1.20.4-16.0.4.jar",
@@ -7680,8 +7680,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "20f99438b60dc733c97f2c2b34acd56e87b463bb",
-          "sha512": "da3b3b2203721346a5214d304ff119f35103f5c7393f5c3ea32b06fcf9498c1ffc00ecd0cf6e649871aa8ac4ad5be67747e27e51fa9821ca290b02b1f22ea8a5"
+          "sha512": "da3b3b2203721346a5214d304ff119f35103f5c7393f5c3ea32b06fcf9498c1ffc00ecd0cf6e649871aa8ac4ad5be67747e27e51fa9821ca290b02b1f22ea8a5",
+          "sha1": "20f99438b60dc733c97f2c2b34acd56e87b463bb"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/swsqwuVk/waystones-neoforge-1.20.4-16.0.3.jar",
         "filename": "waystones-neoforge-1.20.4-16.0.3.jar",
@@ -7854,8 +7854,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4b2fca9497b16e18bc444b66a42f89939928a5683a270f8c8413fb0265e22ccf1c2c7b0eea7267f9c7da96edd69dad7e2bcf108014bf4ea5b08442649abbb7e4",
-          "sha1": "bccdc2bd306ce41c2730d9e859c8a46cd6b133a4"
+          "sha1": "bccdc2bd306ce41c2730d9e859c8a46cd6b133a4",
+          "sha512": "4b2fca9497b16e18bc444b66a42f89939928a5683a270f8c8413fb0265e22ccf1c2c7b0eea7267f9c7da96edd69dad7e2bcf108014bf4ea5b08442649abbb7e4"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Ngl77qPr/waystones-forge-1.20.4-16.0.2.jar",
         "filename": "waystones-forge-1.20.4-16.0.2.jar",
@@ -7896,8 +7896,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ced22264333ec5aa3b1efe476816cf6005dca4e7056ed40164b334780ac43c05243f48d66d9d4fe1eef65941de5e946fe6e8de160161f2a9f38722485e6797ed",
-          "sha1": "94eefebd28194c64206f5c811df7e0e7120b0054"
+          "sha1": "94eefebd28194c64206f5c811df7e0e7120b0054",
+          "sha512": "ced22264333ec5aa3b1efe476816cf6005dca4e7056ed40164b334780ac43c05243f48d66d9d4fe1eef65941de5e946fe6e8de160161f2a9f38722485e6797ed"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/47OSNJ6k/waystones-fabric-1.20.4-16.0.2.jar",
         "filename": "waystones-fabric-1.20.4-16.0.2.jar",
@@ -7909,13 +7909,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -7944,8 +7944,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "27a6faf6ed44323842572f667e0b315192fb5a6f54baafdf6690cecedbfe746f75323618b9e9d28cfca59d9883b7bf53b6e0a5ccc019dcfac4ec3761f6aec758",
-          "sha1": "03cbe1a92ee6140b41bdee397edb652affba5c54"
+          "sha1": "03cbe1a92ee6140b41bdee397edb652affba5c54",
+          "sha512": "27a6faf6ed44323842572f667e0b315192fb5a6f54baafdf6690cecedbfe746f75323618b9e9d28cfca59d9883b7bf53b6e0a5ccc019dcfac4ec3761f6aec758"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/LDHHWfww/waystones-neoforge-1.20.4-16.0.1.jar",
         "filename": "waystones-neoforge-1.20.4-16.0.1.jar",
@@ -7986,8 +7986,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "435d569149a544db72ce0a7e43d665dfd9d72c33",
-          "sha512": "bf2f395ef9aa8078b2b2dc09d5b293dbf4a33f9aee362dfdcc385285a2dbac76e9c57f24ee80ebf8d486b86f33b06810fe1eda495c3912391cfea083b110f091"
+          "sha512": "bf2f395ef9aa8078b2b2dc09d5b293dbf4a33f9aee362dfdcc385285a2dbac76e9c57f24ee80ebf8d486b86f33b06810fe1eda495c3912391cfea083b110f091",
+          "sha1": "435d569149a544db72ce0a7e43d665dfd9d72c33"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/2LW0jpoR/waystones-forge-1.20.4-16.0.1.jar",
         "filename": "waystones-forge-1.20.4-16.0.1.jar",
@@ -8028,8 +8028,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "19ea9ce4304db6bcfa515c0bb8832705cacc2391",
-          "sha512": "ea9252e643dd8dc49847be80e75bb0963fb3a226df94b91c1502a9da3b25846ea19c5c179c2813154b8499eb77023c5673dd33e0f358537cbc1d837719feaa79"
+          "sha512": "ea9252e643dd8dc49847be80e75bb0963fb3a226df94b91c1502a9da3b25846ea19c5c179c2813154b8499eb77023c5673dd33e0f358537cbc1d837719feaa79",
+          "sha1": "19ea9ce4304db6bcfa515c0bb8832705cacc2391"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/kGaPUdUw/waystones-fabric-1.20.4-16.0.1.jar",
         "filename": "waystones-fabric-1.20.4-16.0.1.jar",
@@ -8041,13 +8041,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -8153,15 +8153,15 @@
     "changelog": "- Added Blackstone, Deepslate and Endstone Waystones\n- Added Landing Stone, a warp plate you can teleport to but not from\n- Added a new settings screen for all types of waystones that allows attuned shards to be created for every type\n- Added the ability to sort Sharestones the same way that waystones can be sorted\n- Added the ability to insert an attuned shard into a waystone to have it available for teleportation\n- Added display of Sharestones as waypoints in JourneyMap\n- Added transportPets option to teleport nearby pets with player\n- Added ability to name a warp plate in an anvil (mostly just useful for Jade/TOP/WTHIT)\n- Added nameGenerationTemplate option for slightly more control over waystone name generation\n- Added display of Waystones and Sharestones in BlueMap and Dynmap\n- Fixed warp plates refusing teleports with missing xp without any user feedback\n- Fixed xpCostsFullLevels=false not working reliably depending on where xp was gained from\n- Fixed crash on teleport when xp cost was unexpectedly empty\n- Fixed JEI, Jade, REI, JourneyMap and WTHIT compatibility no longer working on Fabric\n- Fixed JourneyMap compatibility creating waypoints for waystone types it shouldn't\n- Fixed JourneyMap waypoints not immediately being removed when breaking a waystone\n- Fixed regression that caused warp plates to no longer work on dedicated servers\n\n- Added commands to investigate waystones of any player as OP (by edralzar)\n- Added xpCostsFullLevels option to charge xp points instead of levels\n- Fixed warp plate recipes breaking after a single shard was crafted\n- Fixed warp plate showing dust instead of warp particles even if the target is valid\n- Changed newly activated waystones to be added to the end of the list rather than the start\n- Added norwegian bokmål translation (by Bloodaxe95)\n- Added WaystonesListReceivedEvent which gets fired for activated waystones, sharestones and warp plates\n- Deprecated KnownWaystonesEvent\n\n- Fixed being unable to join multiplayer server\n- Fixed crash on world load when using Forge\n\n- Added Crumbling Attuned Shard, an attuned shard that is used up when teleporting (by edralzar)\n- Added waystones:warp_plate recipe type, allowing to define new recipes for the Warp Plate (by edralzar)\n- Fixed buckets not having any effect on waterlogged waystones\n- Fixed warp stone cooldown getting corrupted into millions of seconds",
     "changelog_url": null,
     "date_published": "2023-12-17T16:35:57.437673Z",
-    "downloads": 14438,
+    "downloads": 14445,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "abeeb770cf6beb79cb444b69b404e9ab23a8e09a",
-          "sha512": "8241a51419d591fd43d58ca1bb79144968995ebe4fd686141ef6a378d59b192d36b62358dc618ab86f44409534fe93563f5413686388e82ff3008b33163e29f0"
+          "sha512": "8241a51419d591fd43d58ca1bb79144968995ebe4fd686141ef6a378d59b192d36b62358dc618ab86f44409534fe93563f5413686388e82ff3008b33163e29f0",
+          "sha1": "abeeb770cf6beb79cb444b69b404e9ab23a8e09a"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/BNUeKNMq/waystones-fabric-1.20.2-15.2.0.jar",
         "filename": "waystones-fabric-1.20.2-15.2.0.jar",
@@ -8202,15 +8202,15 @@
     "changelog": "- Fixed warp plates claiming to have lost attunement on dedicated servers \n\n- Fixed warp plate recipes breaking after a single shard was crafted\n- Fixed warp plate showing dust instead of warp particles even if the target is valid\n- Fixed being unable to join multiplayer server\n- Changed newly activated waystones to be added to the end of the list rather than the start\n\n- Added Crumbling Attuned Shard, an attuned shard that is used up when teleporting (by edralzar)\n- Added waystones:warp_plate recipe type, allowing to define new recipes for the Warp Plate (by edralzar)\n- Fixed buckets not having any effect on waterlogged waystones\n- Fixed warp stone cooldown getting corrupted into millions of seconds\n- Restricted the warp plate's center slot to a single item to prevent item loss when crafting attuned shards (by edralzar)\n- Added Waystones to Cherry and Bamboo Repurposed Structures villages (by TelepathicGrunt)\n- Inject waystone pieces into Repurposed Structures zombie village variants (by TelepathicGrunt)",
     "changelog_url": null,
     "date_published": "2023-12-17T08:31:57.612239Z",
-    "downloads": 339948,
+    "downloads": 339994,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "33ba7e244f032ccc0a54763ba89f1c95177dadf45ff4f5547a52912804c17673e85f73d8a197871cd4ea209801d3f45cc121bb5c269b31258dbb822aa8620ec4",
-          "sha1": "b85d0fb174e544a025d4db86282773f8cc43b1e8"
+          "sha1": "b85d0fb174e544a025d4db86282773f8cc43b1e8",
+          "sha512": "33ba7e244f032ccc0a54763ba89f1c95177dadf45ff4f5547a52912804c17673e85f73d8a197871cd4ea209801d3f45cc121bb5c269b31258dbb822aa8620ec4"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/TlRV5nuf/waystones-forge-1.20-14.1.3.jar",
         "filename": "waystones-forge-1.20-14.1.3.jar",
@@ -8245,15 +8245,15 @@
     "changelog": "- Fixed warp plates claiming to have lost attunement on dedicated servers \n\n- Fixed warp plate recipes breaking after a single shard was crafted\n- Fixed warp plate showing dust instead of warp particles even if the target is valid\n- Fixed being unable to join multiplayer server\n- Changed newly activated waystones to be added to the end of the list rather than the start\n\n- Added Crumbling Attuned Shard, an attuned shard that is used up when teleporting (by edralzar)\n- Added waystones:warp_plate recipe type, allowing to define new recipes for the Warp Plate (by edralzar)\n- Fixed buckets not having any effect on waterlogged waystones\n- Fixed warp stone cooldown getting corrupted into millions of seconds\n- Restricted the warp plate's center slot to a single item to prevent item loss when crafting attuned shards (by edralzar)\n- Added Waystones to Cherry and Bamboo Repurposed Structures villages (by TelepathicGrunt)\n- Inject waystone pieces into Repurposed Structures zombie village variants (by TelepathicGrunt)",
     "changelog_url": null,
     "date_published": "2023-12-17T08:29:59.729095Z",
-    "downloads": 747074,
+    "downloads": 747242,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "7dedab899bf8887527eb5b9c5548aefb8845d98b",
-          "sha512": "e89524a4ff449b4fcc8c4ee1538e060545d813160de77a700e7bd9ff4f1fb6cdda83828d29a8efdeb34bf12ce628d5ccc56c8e69e5b2ee5daff91462dfd1d929"
+          "sha512": "e89524a4ff449b4fcc8c4ee1538e060545d813160de77a700e7bd9ff4f1fb6cdda83828d29a8efdeb34bf12ce628d5ccc56c8e69e5b2ee5daff91462dfd1d929",
+          "sha1": "7dedab899bf8887527eb5b9c5548aefb8845d98b"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/36jYwMdH/waystones-fabric-1.20-14.1.3.jar",
         "filename": "waystones-fabric-1.20-14.1.3.jar",
@@ -8427,8 +8427,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5b1053c019b8b0e31245db507a22ad9e3ee6ac7b",
-          "sha512": "0a8c031b5674bac6b9318ffa3624d26b2f7d5ceb5290958fbbb639edcfc444e5b734e39faeb6794497c1c026d594dfe1736d3f4ddad9096e46e947cfa9778ab4"
+          "sha512": "0a8c031b5674bac6b9318ffa3624d26b2f7d5ceb5290958fbbb639edcfc444e5b734e39faeb6794497c1c026d594dfe1736d3f4ddad9096e46e947cfa9778ab4",
+          "sha1": "5b1053c019b8b0e31245db507a22ad9e3ee6ac7b"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/njEqTb5j/waystones-forge-1.20-14.1.2.jar",
         "filename": "waystones-forge-1.20-14.1.2.jar",
@@ -8506,7 +8506,7 @@
     "changelog": "- Fixed being unable to join multiplayer server\n\n- Added Crumbling Attuned Shard, an attuned shard that is used up when teleporting (by edralzar)\n- Added waystones:warp_plate recipe type, allowing to define new recipes for the Warp Plate (by edralzar)\n- Fixed buckets not having any effect on waterlogged waystones\n- Fixed warp stone cooldown getting corrupted into millions of seconds\n- Restricted the warp plate's center slot to a single item to prevent item loss when crafting attuned shards (by edralzar)\n- Added Waystones to Cherry and Bamboo Repurposed Structures villages (by TelepathicGrunt)\n- Inject waystone pieces into Repurposed Structures zombie village variants (by TelepathicGrunt)",
     "changelog_url": null,
     "date_published": "2023-12-11T00:13:03.219918Z",
-    "downloads": 25504,
+    "downloads": 25507,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -8556,8 +8556,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5df712bf749b6d9cd339b6e44e61581d470b10e84a4048637a71ccb1b86ccf92bf1fac47d182a19cdb9c8407b4bb11d7dccc453ee6ef19ef228a44526bae60f7",
-          "sha1": "8787c3f2a2cadbf55ecc39f930b7286d75e03cd6"
+          "sha1": "8787c3f2a2cadbf55ecc39f930b7286d75e03cd6",
+          "sha512": "5df712bf749b6d9cd339b6e44e61581d470b10e84a4048637a71ccb1b86ccf92bf1fac47d182a19cdb9c8407b4bb11d7dccc453ee6ef19ef228a44526bae60f7"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/4xRwUuNG/waystones-fabric-1.20-14.1.1.jar",
         "filename": "waystones-fabric-1.20-14.1.1.jar",
@@ -8682,8 +8682,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "abdaf3c9bf87c161847b578d703954fbe953c3ae",
-          "sha512": "b2fddc2ad5a5cf9730357d111562dc4bf4dd38a2eca6540dd1ca31182dbcc46efc21195a187c6ab7ba084332cd20ecabc1b071f6458a0dedd4e2f6d94b860a32"
+          "sha512": "b2fddc2ad5a5cf9730357d111562dc4bf4dd38a2eca6540dd1ca31182dbcc46efc21195a187c6ab7ba084332cd20ecabc1b071f6458a0dedd4e2f6d94b860a32",
+          "sha1": "abdaf3c9bf87c161847b578d703954fbe953c3ae"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/vdwOnxQR/waystones-fabric-1.20.2-15.1.2.jar",
         "filename": "waystones-fabric-1.20.2-15.1.2.jar",
@@ -8730,8 +8730,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3da9d92ce4a5f4bea62e07dc9f4e23d9a18cc42771de13d96e60436e26f5d8d1ab3763a1a52f12baf30ee2991fa8bced57c507079c7c2dfb0af1f195426c68b7",
-          "sha1": "15eeccb80de0f0662e1501d19d864b031c679ef4"
+          "sha1": "15eeccb80de0f0662e1501d19d864b031c679ef4",
+          "sha512": "3da9d92ce4a5f4bea62e07dc9f4e23d9a18cc42771de13d96e60436e26f5d8d1ab3763a1a52f12baf30ee2991fa8bced57c507079c7c2dfb0af1f195426c68b7"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/3FP3tS79/waystones-neoforge-1.20.2-15.1.1.jar",
         "filename": "waystones-neoforge-1.20.2-15.1.1.jar",
@@ -8814,8 +8814,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7deede6bf599f1b4e41b9e8506fef4929932f4f9118773384e87c446277f1c63a25eaf7b9d26669795506da3c313c0f8ed8f8e3cbb452662440eea734de29094",
-          "sha1": "0bb5092b4edce053d84aa974822796a6df006f82"
+          "sha1": "0bb5092b4edce053d84aa974822796a6df006f82",
+          "sha512": "7deede6bf599f1b4e41b9e8506fef4929932f4f9118773384e87c446277f1c63a25eaf7b9d26669795506da3c313c0f8ed8f8e3cbb452662440eea734de29094"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/jn8WNtFs/waystones-fabric-1.20.2-15.1.1.jar",
         "filename": "waystones-fabric-1.20.2-15.1.1.jar",
@@ -8946,8 +8946,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "233e24e2b6b0a42d96aa0891ff856c9dd57aee89",
-          "sha512": "4fe0b3e75fee35101a9769a960bd2701ca4405aeca461d596a84106457c0c7722d828e11e2beff9222aca13dc6041bd4556cb78e6929ecca8c2270c5fd3e1ac5"
+          "sha512": "4fe0b3e75fee35101a9769a960bd2701ca4405aeca461d596a84106457c0c7722d828e11e2beff9222aca13dc6041bd4556cb78e6929ecca8c2270c5fd3e1ac5",
+          "sha1": "233e24e2b6b0a42d96aa0891ff856c9dd57aee89"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/p9hLeMWG/waystones-fabric-1.20.2-15.1.0.jar",
         "filename": "waystones-fabric-1.20.2-15.1.0.jar",
@@ -8959,13 +8959,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -8995,8 +8995,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "41be065a609fef6087929eda4968c8d1464d8c16e10f79a3dd676097c73256b0c9f6b6af272e3e92b03b722e8eb31825b8f55889c9bfdcd9cfaedf8baa794825",
-          "sha1": "3b0d7ed7a25207fe92a89a426c4a7377433968da"
+          "sha1": "3b0d7ed7a25207fe92a89a426c4a7377433968da",
+          "sha512": "41be065a609fef6087929eda4968c8d1464d8c16e10f79a3dd676097c73256b0c9f6b6af272e3e92b03b722e8eb31825b8f55889c9bfdcd9cfaedf8baa794825"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/hmpUhm6u/waystones-forge-1.20-14.1.0.jar",
         "filename": "waystones-forge-1.20-14.1.0.jar",
@@ -9075,7 +9075,7 @@
     "changelog": "- Fixed warp stone cooldown getting corrupted into millions of seconds\n- Fixed crash when setting scroll charge time to 0\n- Fixed buckets not having any effect on waterlogged waystones",
     "changelog_url": null,
     "date_published": "2023-12-09T15:35:54.878106Z",
-    "downloads": 259195,
+    "downloads": 259364,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9119,7 +9119,7 @@
     "changelog": "- Fixed warp stone cooldown getting corrupted into millions of seconds\n- Fixed crash when setting scroll charge time to 0\n- Fixed buckets not having any effect on waterlogged waystones",
     "changelog_url": null,
     "date_published": "2023-12-09T15:34:41.194708Z",
-    "downloads": 53520,
+    "downloads": 53548,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9169,7 +9169,7 @@
     "changelog": "- Fixed warp stone cooldown getting corrupted into millions of seconds\n- Fixed crash when setting scroll charge time to 0\n- Fixed buckets not having any effect on waterlogged waystones",
     "changelog_url": null,
     "date_published": "2023-12-09T15:33:42.561326Z",
-    "downloads": 10314,
+    "downloads": 10319,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9189,13 +9189,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -9219,15 +9219,15 @@
     "changelog": "- Fixed warp stone cooldown getting corrupted into millions of seconds\n- Fixed crash when setting scroll charge time to 0\n- Fixed buckets not having any effect on waterlogged waystones",
     "changelog_url": null,
     "date_published": "2023-12-09T15:33:39.310171Z",
-    "downloads": 42940,
+    "downloads": 42981,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f8bb8aa4c2f208ae3512e159648c6213ced708fdebe64781d7323660b9a072fbc22f3be2b18ea6dafd66f7ba770ebaed552cf3b49235dec1e662fc772c36b05b",
-          "sha1": "0151cb68b9cb4bc9b4b4abceab7bb8cdef27c88d"
+          "sha1": "0151cb68b9cb4bc9b4b4abceab7bb8cdef27c88d",
+          "sha512": "f8bb8aa4c2f208ae3512e159648c6213ced708fdebe64781d7323660b9a072fbc22f3be2b18ea6dafd66f7ba770ebaed552cf3b49235dec1e662fc772c36b05b"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/tITxj58V/waystones-forge-1.18.2-10.2.2.jar",
         "filename": "waystones-forge-1.18.2-10.2.2.jar",
@@ -9310,8 +9310,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7d6d3ad89ec3d46445ba065929483d07ede164a8",
-          "sha512": "d1e0639b76125641c291b33c043cb4a56e4e5c189f47edd2bfd6ec505b0b669df363520c9ba00756a282a12ed70ed616dce456765e71f75ecf4f8c2009fe8cea"
+          "sha512": "d1e0639b76125641c291b33c043cb4a56e4e5c189f47edd2bfd6ec505b0b669df363520c9ba00756a282a12ed70ed616dce456765e71f75ecf4f8c2009fe8cea",
+          "sha1": "7d6d3ad89ec3d46445ba065929483d07ede164a8"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/CxAeBEK9/waystones-forge-1.20.2-15.0.1.jar",
         "filename": "waystones-forge-1.20.2-15.0.1.jar",
@@ -9430,7 +9430,7 @@
     "changelog": "- Added display of distance between waystones in the selection screen (by iTrooz)\n- Added some more tags for Waystones items\n- Fixed TheOneProbe integration not being loaded\n- Fixed sandy and mossy waystones not retaining their name when broken with silk touch\n- Updated French Translation (by ChokoJoestar)\n- Removed disableParticles option",
     "changelog_url": null,
     "date_published": "2023-09-12T19:14:58.925198Z",
-    "downloads": 88072,
+    "downloads": 88080,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9473,7 +9473,7 @@
     "changelog": "- Added display of distance between waystones in the selection screen (by iTrooz)\n- Added some more tags for Waystones items\n- Fixed TheOneProbe integration not being loaded\n- Fixed sandy and mossy waystones not retaining their name when broken with silk touch\n- Updated French Translation (by ChokoJoestar)\n- Removed disableParticles option",
     "changelog_url": null,
     "date_published": "2023-09-12T19:14:21.516683Z",
-    "downloads": 128805,
+    "downloads": 128813,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9517,7 +9517,7 @@
     "changelog": "- Fixed massive performance issues in world generation, particularly in the Nether\n- Improved forceSpawnInVillages option and one-per-village limitation to be more reliable\n- Fixed incorrect WTHIT plugin definition",
     "changelog_url": null,
     "date_published": "2023-07-10T16:15:27.548652Z",
-    "downloads": 12020,
+    "downloads": 12021,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9561,7 +9561,7 @@
     "changelog": "- Fixed massive performance issues in world generation, particularly in the Nether\n- Improved forceSpawnInVillages option and one-per-village limitation to be more reliable\n- Fixed incorrect WTHIT plugin definition",
     "changelog_url": null,
     "date_published": "2023-07-10T16:06:10.812898Z",
-    "downloads": 38682,
+    "downloads": 38692,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9581,13 +9581,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "MBAkmtvl",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -9610,7 +9610,7 @@
     "changelog": "- Fixed massive performance issues in world generation, particularly in the Nether\n- Improved forceSpawnInVillages option and one-per-village limitation to be more reliable\n- Fixed incorrect WTHIT plugin definition\n- Updated Ukrainian Translation (by unroman)",
     "changelog_url": null,
     "date_published": "2023-07-10T15:14:38.124618Z",
-    "downloads": 13631,
+    "downloads": 13632,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9653,7 +9653,7 @@
     "changelog": "- Fixed massive performance issues in world generation, particularly in the Nether\n- Improved forceSpawnInVillages option and one-per-village limitation to be more reliable\n- Fixed incorrect WTHIT plugin definition\n- Updated Ukrainian Translation (by unroman)",
     "changelog_url": null,
     "date_published": "2023-07-10T15:12:38.64712Z",
-    "downloads": 16907,
+    "downloads": 16911,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9703,8 +9703,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e538f8c4e333f57a7b59acbd2ac5a7163969c3d7",
-          "sha512": "f45dbf14ecb97bdd70d151bf372df3103628aeb7dc5bcb64d4c759c60359bec0f1449f604281cbfc013e8a6b679575415ffd7011f8b99d21c6c1e3c88ab10e0a"
+          "sha512": "f45dbf14ecb97bdd70d151bf372df3103628aeb7dc5bcb64d4c759c60359bec0f1449f604281cbfc013e8a6b679575415ffd7011f8b99d21c6c1e3c88ab10e0a",
+          "sha1": "e538f8c4e333f57a7b59acbd2ac5a7163969c3d7"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/hnALd7fL/waystones-forge-1.20-14.0.0.jar",
         "filename": "waystones-forge-1.20-14.0.0.jar",
@@ -9746,8 +9746,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "aef859b3bbe1a7cb44469c30369f9befc976b5c3",
-          "sha512": "45002e73970faa8d297f7e77da7f0b54a2e3ea3f6214658835a1ccbe3f4d820a0361f74a3f15cc867cf67ab2f5ccd26f9fee887f8cd0f44dbb788da0a0a7620d"
+          "sha512": "45002e73970faa8d297f7e77da7f0b54a2e3ea3f6214658835a1ccbe3f4d820a0361f74a3f15cc867cf67ab2f5ccd26f9fee887f8cd0f44dbb788da0a0a7620d",
+          "sha1": "aef859b3bbe1a7cb44469c30369f9befc976b5c3"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/cpUETBLi/waystones-fabric-1.20-14.0.0.jar",
         "filename": "waystones-fabric-1.20-14.0.0.jar",
@@ -9790,8 +9790,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "525cd420140e8e909a91c512025971346f5e35ad0d9e428989b87f2b1f41e887ce1f7cd4068f234401fc2a26d9a51d58d7425cb994f301e449243c5eba526982",
-          "sha1": "65f145f36122b6ad718e6b55105a7533f8ef0108"
+          "sha1": "65f145f36122b6ad718e6b55105a7533f8ef0108",
+          "sha512": "525cd420140e8e909a91c512025971346f5e35ad0d9e428989b87f2b1f41e887ce1f7cd4068f234401fc2a26d9a51d58d7425cb994f301e449243c5eba526982"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/VQwfrkis/waystones-forge-1.18.2-10.2.1.jar",
         "filename": "waystones-forge-1.18.2-10.2.1.jar",
@@ -9877,7 +9877,7 @@
     "changelog": "- Added some API methods for placing waystones and creating attuned shards and bound scrolls\n- Fixed desync when teleporting while riding a horse. For now, teleporting will teleport both, but always dismount you.\n- Fixed the book icon not showing up in the correct place when hovering over the waystone name in the selection screen\n- Fixed crash when setting scroll / warp stone charge time to 0",
     "changelog_url": null,
     "date_published": "2023-04-30T15:18:24.431887Z",
-    "downloads": 45701,
+    "downloads": 45705,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9969,15 +9969,15 @@
     "changelog": "- Fixed desync when teleporting while riding a horse. For now, teleporting will teleport both, but always dismount you.\n- Fixed the book icon not showing up in the correct place when hovering over the waystone name in the selection screen\n- Fixed crash when setting scroll / warp stone charge time to 0\n- Added some API methods for placing waystones and creating attuned shards and bound scrolls\n- Added Portuguese Translation (by An12854)\n- Added Turkish Translation (by isocuk)\n- Updated Simplified Chinese Translation (by GodGun968)",
     "changelog_url": null,
     "date_published": "2023-04-30T15:13:54.76246Z",
-    "downloads": 14164,
+    "downloads": 14165,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "cdabaa2a968ae65a8a63debd25259f2ac838b8e1",
-          "sha512": "ecb145c97d872319d0450c72d53d2f885c75407db500899185b13741204e87e6f79164a03a54a62060d0d2a910af5af10efa5fd362df217d08779023ca677174"
+          "sha512": "ecb145c97d872319d0450c72d53d2f885c75407db500899185b13741204e87e6f79164a03a54a62060d0d2a910af5af10efa5fd362df217d08779023ca677174",
+          "sha1": "cdabaa2a968ae65a8a63debd25259f2ac838b8e1"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/TFB8MtxI/waystones-forge-1.19.4-13.1.0.jar",
         "filename": "waystones-forge-1.19.4-13.1.0.jar",
@@ -10011,7 +10011,7 @@
     "changelog": "- Fixed desync when teleporting while riding a horse. For now, teleporting will teleport both, but always dismount you.\n- Fixed the book icon not showing up in the correct place when hovering over the waystone name in the selection screen\n- Fixed crash when setting scroll / warp stone charge time to 0\n- Added some API methods for placing waystones and creating attuned shards and bound scrolls\n- Added Portuguese Translation (by An12854)\n- Added Turkish Translation (by isocuk)\n- Updated Simplified Chinese Translation (by GodGun968)",
     "changelog_url": null,
     "date_published": "2023-04-30T15:10:09.019042Z",
-    "downloads": 11208,
+    "downloads": 11210,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -10030,14 +10030,14 @@
     ],
     "dependencies": [
       {
-        "version_id": null,
-        "project_id": "MBAkmtvl",
+        "version_id": "uIYkhRbX",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
-        "version_id": "uIYkhRbX",
-        "project_id": "P7dR8mSH",
+        "version_id": null,
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -10066,8 +10066,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1f4be7f5839a197a8edbe05bc667204b80fe8140f143ca8a1036d6fa959cac532a33077bf2c4deb8dfabe046df08a46d11514618970b6ee47740870c7c2d378c",
-          "sha1": "b9eed6794c8ec3e1404ec2a9a55c339fef49f413"
+          "sha1": "b9eed6794c8ec3e1404ec2a9a55c339fef49f413",
+          "sha512": "1f4be7f5839a197a8edbe05bc667204b80fe8140f143ca8a1036d6fa959cac532a33077bf2c4deb8dfabe046df08a46d11514618970b6ee47740870c7c2d378c"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/N2Kh0K77/waystones-forge-1.19.4-13.0.1.jar",
         "filename": "waystones-forge-1.19.4-13.0.1.jar",
@@ -10108,8 +10108,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "24e8a7678e351d4eec2398053290b8ad31f0c1ef",
-          "sha512": "3d1fc432a3e3d5bd468b15aa1fcf0c9d2e717b94848fd3b667f558506676eca588a6662ec53050787544f7bd1b3eec39afdca5557506ffd2c0c7dfeaee5c7c29"
+          "sha512": "3d1fc432a3e3d5bd468b15aa1fcf0c9d2e717b94848fd3b667f558506676eca588a6662ec53050787544f7bd1b3eec39afdca5557506ffd2c0c7dfeaee5c7c29",
+          "sha1": "24e8a7678e351d4eec2398053290b8ad31f0c1ef"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/wmNKAOHo/waystones-fabric-1.19.4-13.0.1.jar",
         "filename": "waystones-fabric-1.19.4-13.0.1.jar",
@@ -10151,7 +10151,7 @@
     "changelog": "- Fixed leashed entities no longer being teleported with the player",
     "changelog_url": null,
     "date_published": "2023-03-17T12:46:37.305069Z",
-    "downloads": 2880,
+    "downloads": 2881,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -10170,14 +10170,14 @@
     ],
     "dependencies": [
       {
-        "version_id": null,
-        "project_id": "P7dR8mSH",
+        "version_id": "XYqAzGqP",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
-        "version_id": "XYqAzGqP",
-        "project_id": "MBAkmtvl",
+        "version_id": null,
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -10250,8 +10250,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5fb14564ece55f65448a51e8b5672cbaddaaf369",
-          "sha512": "0a4596826641dccec64b96896fab2791ffe75a9753b83d95a050145419ae2da1e06f32a80fb822b841348b146c041dee3f4a5b24e7690d443c0544e8a34057c5"
+          "sha512": "0a4596826641dccec64b96896fab2791ffe75a9753b83d95a050145419ae2da1e06f32a80fb822b841348b146c041dee3f4a5b24e7690d443c0544e8a34057c5",
+          "sha1": "5fb14564ece55f65448a51e8b5672cbaddaaf369"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/MFrd9BCS/waystones-forge-1.19.4-13.0.1.jar",
         "filename": "waystones-forge-1.19.4-13.0.1.jar",
@@ -10292,8 +10292,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a85baad7f79adbcc85c92f330a26c0075cd227c8",
-          "sha512": "e912750fdf18e7ae4639f5c9b384e7af94060146e434bc64227d5bee299d8fa89bc7a90509995acce70f111971dff1485e8f7e812e57765ebf942f36210c5e33"
+          "sha512": "e912750fdf18e7ae4639f5c9b384e7af94060146e434bc64227d5bee299d8fa89bc7a90509995acce70f111971dff1485e8f7e812e57765ebf942f36210c5e33",
+          "sha1": "a85baad7f79adbcc85c92f330a26c0075cd227c8"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Ub2DxkkF/waystones-forge-1.19.3-12.2.0.jar",
         "filename": "waystones-forge-1.19.3-12.2.0.jar",
@@ -10327,7 +10327,7 @@
     "changelog": "- Added WaystoneTeleportEvent to allow other mods to hook into teleportation\n- Added particle effects to scroll and warp stone charge-up\n- Added a way to speed up or slow down warp plate activation through amethyst shards or slime balls inside\n- Fixed deleting a waystone not removing it from the list until search updates\n- Removed FOV effect on warp scroll",
     "changelog_url": null,
     "date_published": "2023-03-02T20:36:08.21921Z",
-    "downloads": 2615,
+    "downloads": 2617,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -10346,14 +10346,14 @@
     ],
     "dependencies": [
       {
-        "version_id": "ONL5pq9r",
-        "project_id": "MBAkmtvl",
+        "version_id": "jyKnHEDY",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
-        "version_id": "jyKnHEDY",
-        "project_id": "P7dR8mSH",
+        "version_id": "ONL5pq9r",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -10384,8 +10384,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f7893d57bcad62f171e78a61d82f1fb9f4980b8cc542ecf37dc817e3eb447b72152b6a85f7da3ab10cd019b3372a7491e4bc1f0fc71461638c9382f8bb74de34",
-          "sha1": "bf2e75a6519f8b63e05637f07c2b397ade7df266"
+          "sha1": "bf2e75a6519f8b63e05637f07c2b397ade7df266",
+          "sha512": "f7893d57bcad62f171e78a61d82f1fb9f4980b8cc542ecf37dc817e3eb447b72152b6a85f7da3ab10cd019b3372a7491e4bc1f0fc71461638c9382f8bb74de34"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/tNtnCHKB/waystones-forge-1.19.2-11.3.0.jar",
         "filename": "waystones-forge-1.19.2-11.3.0.jar",
@@ -10428,8 +10428,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7c0e5ab1aaee704352c84a3f6951e3aebfe0c47f6eb5653de700a890251d0fcc9de0bee7f9a0858ddb12c9607e4c02f5a4e0de27fddbdbcbcd90bf62e1ba07f5",
-          "sha1": "7b310f712b39008b1c35ad9ccd921501986a16e8"
+          "sha1": "7b310f712b39008b1c35ad9ccd921501986a16e8",
+          "sha512": "7c0e5ab1aaee704352c84a3f6951e3aebfe0c47f6eb5653de700a890251d0fcc9de0bee7f9a0858ddb12c9607e4c02f5a4e0de27fddbdbcbcd90bf62e1ba07f5"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/fMwJEadA/waystones-fabric-1.19.2-11.3.0.jar",
         "filename": "waystones-fabric-1.19.2-11.3.0.jar",
@@ -10478,8 +10478,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9862ce6bf5e967cefcf68345e9e06c3f5ceb45f8bfc9ffbe747cb4b676b2e85a47403a324e78deb8b4c1461d4bfc961c7956ee87cdf87c08225f0f17b0c62684",
-          "sha1": "78d8f721998e560138458603ccdaf10cf0a0e3b9"
+          "sha1": "78d8f721998e560138458603ccdaf10cf0a0e3b9",
+          "sha512": "9862ce6bf5e967cefcf68345e9e06c3f5ceb45f8bfc9ffbe747cb4b676b2e85a47403a324e78deb8b4c1461d4bfc961c7956ee87cdf87c08225f0f17b0c62684"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Vmeejp4H/waystones-forge-1.18.2-10.2.0.jar",
         "filename": "waystones-forge-1.18.2-10.2.0.jar",
@@ -10584,14 +10584,14 @@
     ],
     "dependencies": [
       {
-        "version_id": "hfsU4hXq",
-        "project_id": "P7dR8mSH",
+        "version_id": "XYqAzGqP",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
-        "version_id": "XYqAzGqP",
-        "project_id": "MBAkmtvl",
+        "version_id": "hfsU4hXq",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -10620,8 +10620,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e70a2613f102bc3391f54d610f653f9a52dd2218",
-          "sha512": "98333cde6021fc21bda8519e784c7569cdb21d6a6e74c08ff350fa299f542de3b7b021a9cffee43dca454372a1da8bce6637e3bafb3e49ce9df408349da28844"
+          "sha512": "98333cde6021fc21bda8519e784c7569cdb21d6a6e74c08ff350fa299f542de3b7b021a9cffee43dca454372a1da8bce6637e3bafb3e49ce9df408349da28844",
+          "sha1": "e70a2613f102bc3391f54d610f653f9a52dd2218"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/LiB6TXSF/waystones-fabric-1.19.3-12.1.0.jar",
         "filename": "waystones-fabric-1.19.3-12.1.0.jar",
@@ -10632,14 +10632,14 @@
     ],
     "dependencies": [
       {
-        "version_id": "jyKnHEDY",
-        "project_id": "P7dR8mSH",
+        "version_id": "ONL5pq9r",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
-        "version_id": "ONL5pq9r",
-        "project_id": "MBAkmtvl",
+        "version_id": "jyKnHEDY",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -10670,8 +10670,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d8c850f661124fcc85dad3031aebd3225b4d9ef3f33ea35745db58a2ffb5a92f39247f3011f3729d63d435493e8a34a4dbecc76a874ca62c7513c5b4b70de5f2",
-          "sha1": "8e93433a6b2d44d0660c0fbc9e66524dce3fa7e8"
+          "sha1": "8e93433a6b2d44d0660c0fbc9e66524dce3fa7e8",
+          "sha512": "d8c850f661124fcc85dad3031aebd3225b4d9ef3f33ea35745db58a2ffb5a92f39247f3011f3729d63d435493e8a34a4dbecc76a874ca62c7513c5b4b70de5f2"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/i9hvXXGQ/waystones-forge-1.19.1-11.2.0.jar",
         "filename": "waystones-forge-1.19.1-11.2.0.jar",
@@ -10712,8 +10712,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9232c544b092c05a86e562c4c501c029a16be229",
-          "sha512": "d7b1f618bf2bec32121581ea26c62df5ab98b479cd05d24b492f6482679c7c4b30cc54db05391b59ae0050b92dd135b77d5bed3cd1a513db57275a58fb617a3c"
+          "sha512": "d7b1f618bf2bec32121581ea26c62df5ab98b479cd05d24b492f6482679c7c4b30cc54db05391b59ae0050b92dd135b77d5bed3cd1a513db57275a58fb617a3c",
+          "sha1": "9232c544b092c05a86e562c4c501c029a16be229"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Cg9HRa9l/waystones-forge-1.19.3-12.1.0.jar",
         "filename": "waystones-forge-1.19.3-12.1.0.jar",
@@ -10756,8 +10756,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f7cc59a1d820824dc435ff20dc8e842c689d3a56f97f7b60562b72f7bd29b1e8197329754782eda147de8d9a2c9724fe43536a2e474d393346d83cc94d16e9a0",
-          "sha1": "05189c801ab6d49479a56d3f1e43d102361549c9"
+          "sha1": "05189c801ab6d49479a56d3f1e43d102361549c9",
+          "sha512": "f7cc59a1d820824dc435ff20dc8e842c689d3a56f97f7b60562b72f7bd29b1e8197329754782eda147de8d9a2c9724fe43536a2e474d393346d83cc94d16e9a0"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/u5nEY4VM/waystones-fabric-1.18.2-10.1.1.jar",
         "filename": "waystones-fabric-1.18.2-10.1.1.jar",
@@ -10800,8 +10800,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9c7182751304dd08641ad533b19d0300ccb986a40e7f4054502c6381c8bfb96f754c89bae0b7e3c764a4a209e978d2877371e2e86ffc06f0d37716d3aa8ec395",
-          "sha1": "7995c4e6b9c63e3603f24639497e4bb6761cb4fd"
+          "sha1": "7995c4e6b9c63e3603f24639497e4bb6761cb4fd",
+          "sha512": "9c7182751304dd08641ad533b19d0300ccb986a40e7f4054502c6381c8bfb96f754c89bae0b7e3c764a4a209e978d2877371e2e86ffc06f0d37716d3aa8ec395"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/WFGUxsrx/waystones-forge-1.18.2-10.1.1.jar",
         "filename": "waystones-forge-1.18.2-10.1.1.jar",
@@ -10844,8 +10844,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4bc3aa982d98313baaaecc48ade6c67b42f8d609",
-          "sha512": "523eb3f7e207a7a9111bd6edd4b83db560a8aaf2d5b543945e180d901445282d97e9989b50d675dce59c72a3270b346aac9edbd70d01f478cbd3783c569e7e51"
+          "sha512": "523eb3f7e207a7a9111bd6edd4b83db560a8aaf2d5b543945e180d901445282d97e9989b50d675dce59c72a3270b346aac9edbd70d01f478cbd3783c569e7e51",
+          "sha1": "4bc3aa982d98313baaaecc48ade6c67b42f8d609"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/G44v2WcK/waystones-fabric-1.19.1-11.1.1.jar",
         "filename": "waystones-fabric-1.19.1-11.1.1.jar",
@@ -10856,14 +10856,14 @@
     ],
     "dependencies": [
       {
-        "version_id": "hfsU4hXq",
-        "project_id": "P7dR8mSH",
+        "version_id": "XYqAzGqP",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
-        "version_id": "XYqAzGqP",
-        "project_id": "MBAkmtvl",
+        "version_id": "hfsU4hXq",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -10936,8 +10936,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fb48287ae27ce9f550eba1bfa6166508e3e4cb50",
-          "sha512": "1dfe20d1d9edf7a8220fdcf020cdfe64e1c4799cf4d1580ce55780c2a56819ad3640de9ba29cdbb1f2ec3576d185a20ae20552be323101e19f396fa0323b3917"
+          "sha512": "1dfe20d1d9edf7a8220fdcf020cdfe64e1c4799cf4d1580ce55780c2a56819ad3640de9ba29cdbb1f2ec3576d185a20ae20552be323101e19f396fa0323b3917",
+          "sha1": "fb48287ae27ce9f550eba1bfa6166508e3e4cb50"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/t0xPX5FT/waystones-forge-1.19.3-12.0.2.jar",
         "filename": "waystones-forge-1.19.3-12.0.2.jar",
@@ -11028,8 +11028,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "3118fb51713aac4c3cb8997cdfa74113434bb4bb",
-          "sha512": "a27de0190b4d3269e13ea2b20f01d7742a383d0f31e0a5fca99a9f4a60304500f9dce6afd99faaa40c1dff784c227aaf67f57c4c2774aab02dfc956dddc2d049"
+          "sha512": "a27de0190b4d3269e13ea2b20f01d7742a383d0f31e0a5fca99a9f4a60304500f9dce6afd99faaa40c1dff784c227aaf67f57c4c2774aab02dfc956dddc2d049",
+          "sha1": "3118fb51713aac4c3cb8997cdfa74113434bb4bb"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/sS8WHVk5/waystones-fabric-1.18.2-10.1.0.jar",
         "filename": "waystones-fabric-1.18.2-10.1.0.jar",
@@ -11065,7 +11065,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-18T11:19:52.65957Z",
-    "downloads": 5150,
+    "downloads": 5151,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -11156,8 +11156,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "89d17c816a2cc51e3ca192e9db81548c47a8a41fbcac6a926cdd21077bbd051f1d1be5375d3e841514cd229f33bdc5d3d0935db235873fe06e01294537f2e997",
-          "sha1": "bd77299fe10551a8005f40a0537fd19977a018a0"
+          "sha1": "bd77299fe10551a8005f40a0537fd19977a018a0",
+          "sha512": "89d17c816a2cc51e3ca192e9db81548c47a8a41fbcac6a926cdd21077bbd051f1d1be5375d3e841514cd229f33bdc5d3d0935db235873fe06e01294537f2e997"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/h0yESaEd/waystones-fabric-1.19.3-12.0.1.jar",
         "filename": "waystones-fabric-1.19.3-12.0.1.jar",
@@ -11168,14 +11168,14 @@
     ],
     "dependencies": [
       {
-        "version_id": "jyKnHEDY",
-        "project_id": "P7dR8mSH",
+        "version_id": "ONL5pq9r",
+        "project_id": "MBAkmtvl",
         "file_name": null,
         "dependency_type": "required"
       },
       {
-        "version_id": "ONL5pq9r",
-        "project_id": "MBAkmtvl",
+        "version_id": "jyKnHEDY",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -11206,8 +11206,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "24c5403c1d5791f977a0ba69f08cf7959169c685",
-          "sha512": "ae3f5cd589c785962e01ef8c8d4ef38451bdca17869e292b1c351a4e159761c28b726f3d6cb88d217a029424a5eafd872d7d6d2fb929e91a3eeac70d7f4b28e6"
+          "sha512": "ae3f5cd589c785962e01ef8c8d4ef38451bdca17869e292b1c351a4e159761c28b726f3d6cb88d217a029424a5eafd872d7d6d2fb929e91a3eeac70d7f4b28e6",
+          "sha1": "24c5403c1d5791f977a0ba69f08cf7959169c685"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/11.1.0%2Bforge-1.19/waystones-forge-1.19-11.1.0.jar",
         "filename": "waystones-forge-1.19-11.1.0.jar",
@@ -11243,15 +11243,15 @@
     "changelog": "### Version 11.1.0 for Minecraft 1.19.x\n\n- Changed recipe of warp dust to use Amethyst Shards instead of Purple Dye\n- Fixed Jade / WTHIT compatibility\n- Added Vietnamese translation (by baooduy)\n\n### Version 11.0.1 for Minecraft 1.19.x\n\n- Fix crash on dedicated server\n\n### Version 11.0.0 for Minecraft 1.19.x\n\n- Updated to Minecraft 1.19",
     "changelog_url": null,
     "date_published": "2022-07-27T10:43:06.149225Z",
-    "downloads": 3759,
+    "downloads": 3760,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "564ae689e3b4bff246d8151d273456dbb91104b9c1e3d9b82bd53df7593ca6480f3c3bf801d7fc0970d97958b623316969fabe7a01b9470111bd2511221c2644",
-          "sha1": "498f67f619e31b272dcda9f3b1db545d5b860c19"
+          "sha1": "498f67f619e31b272dcda9f3b1db545d5b860c19",
+          "sha512": "564ae689e3b4bff246d8151d273456dbb91104b9c1e3d9b82bd53df7593ca6480f3c3bf801d7fc0970d97958b623316969fabe7a01b9470111bd2511221c2644"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/11.1.0%2Bfabric-1.19/waystones-fabric-1.19-11.1.0.jar",
         "filename": "waystones-fabric-1.19-11.1.0.jar",
@@ -11298,8 +11298,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "13c9be5a23e6ddf5084c26fb6f9be0c228bbe28248b17066f6f232729dbe832071120f06df25f9c6a376e7db12d651dbc6243cddc3db5c5d5fc0040b219d3a6f",
-          "sha1": "f6e51f7bf3b1751217e3db726b88c59c5d7e14ca"
+          "sha1": "f6e51f7bf3b1751217e3db726b88c59c5d7e14ca",
+          "sha512": "13c9be5a23e6ddf5084c26fb6f9be0c228bbe28248b17066f6f232729dbe832071120f06df25f9c6a376e7db12d651dbc6243cddc3db5c5d5fc0040b219d3a6f"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/11.0.1%2Bfabric-1.19/waystones-fabric-1.19-11.0.1.jar",
         "filename": "waystones-fabric-1.19-11.0.1.jar",
@@ -11346,8 +11346,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9c3a233da058ad4c6146c8ee82ac30dea5255779",
-          "sha512": "e0829ff471a1d35ba982aed192f5094e63c91be515205cc351241c3db93fc120772bc93744655a3bd666e45dc24b35d01486a75f24ca7f2c0c1deed1fb545825"
+          "sha512": "e0829ff471a1d35ba982aed192f5094e63c91be515205cc351241c3db93fc120772bc93744655a3bd666e45dc24b35d01486a75f24ca7f2c0c1deed1fb545825",
+          "sha1": "9c3a233da058ad4c6146c8ee82ac30dea5255779"
         },
         "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/11.0.0%2Bforge-1.19/waystones-forge-1.19-11.0.0.jar",
         "filename": "waystones-forge-1.19-11.0.0.jar",

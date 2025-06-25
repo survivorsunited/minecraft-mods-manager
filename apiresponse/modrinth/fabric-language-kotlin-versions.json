@@ -52,7 +52,7 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#167) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2025-06-23T19:01:07.393175Z",
-    "downloads": 93037,
+    "downloads": 105562,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -124,15 +124,15 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#163) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2025-05-14T07:49:20.40812Z",
-    "downloads": 1800535,
+    "downloads": 1805855,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "805eb96067560fa8acc8fcc7dbfba4ad8eed1a2bc9b46566e184f122533fdff844288f3df635762e1af927a4efe8989e9f11007a24bcdc73a32fc2dbebd720c3",
-          "sha1": "848dd463bc9d75de4c519dff30cfc0666ead10d6"
+          "sha1": "848dd463bc9d75de4c519dff30cfc0666ead10d6",
+          "sha512": "805eb96067560fa8acc8fcc7dbfba4ad8eed1a2bc9b46566e184f122533fdff844288f3df635762e1af927a4efe8989e9f11007a24bcdc73a32fc2dbebd720c3"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/iqWDz8qt/fabric-language-kotlin-1.13.3%2Bkotlin.2.1.21.jar",
         "filename": "fabric-language-kotlin-1.13.3+kotlin.2.1.21.jar",
@@ -195,7 +195,7 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#162) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2025-03-21T08:55:27.595588Z",
-    "downloads": 2976907,
+    "downloads": 2978021,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -265,7 +265,7 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#158) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2025-01-28T08:55:37.824236Z",
-    "downloads": 2336399,
+    "downloads": 2337244,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -335,15 +335,15 @@
     "changelog": "- Kotlin 2.1 (#157) (modmuss, github-actions)\n- Revert \"Update versions (#152)\" (modmuss50)\n- Revert \"Bump version\" (modmuss50)\n- Bump version (modmuss)\n- Update versions (#152) (github-actions[bot], github-actions)\n- Update push.yml to actions/upload-artifact@v4 (#154) (Alexander01998)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2024-11-30T15:43:51.679367Z",
-    "downloads": 2864427,
+    "downloads": 2865512,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e3d4ebcc5aef85967ba622f9631e0897cbcd4e2c",
-          "sha512": "bd6acac5e2196aae0095ec453aec46d54e0d925289895fac94b1426cabd3db7e275302502475c61b9719fc8f026e7aaa305122dcdf374c58620bc38b8b4e99a7"
+          "sha512": "bd6acac5e2196aae0095ec453aec46d54e0d925289895fac94b1426cabd3db7e275302502475c61b9719fc8f026e7aaa305122dcdf374c58620bc38b8b4e99a7",
+          "sha1": "e3d4ebcc5aef85967ba622f9631e0897cbcd4e2c"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/csX9r2wS/fabric-language-kotlin-1.13.0%2Bkotlin.2.1.0.jar",
         "filename": "fabric-language-kotlin-1.13.0+kotlin.2.1.0.jar",
@@ -404,15 +404,15 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#151) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2024-10-11T07:52:39.954168Z",
-    "downloads": 2353315,
+    "downloads": 2354241,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "54cd3900a904b81bd24c4a35b6577a2ac197b51a",
-          "sha512": "a9278c0a32a4906989fff17431ad5cc13fbed95a99a15bb8e10ba427714e28eb4828f779affb4e80731d98ab14f23e4d759ea2090be05a10da908608139e67e7"
+          "sha512": "a9278c0a32a4906989fff17431ad5cc13fbed95a99a15bb8e10ba427714e28eb4828f779affb4e80731d98ab14f23e4d759ea2090be05a10da908608139e67e7",
+          "sha1": "54cd3900a904b81bd24c4a35b6577a2ac197b51a"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/B0fZidZi/fabric-language-kotlin-1.12.3%2Bkotlin.2.0.21.jar",
         "filename": "fabric-language-kotlin-1.12.3+kotlin.2.0.21.jar",
@@ -471,15 +471,15 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#149) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2024-09-18T09:52:50.763703Z",
-    "downloads": 825598,
+    "downloads": 825749,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "6fa5bbd06ab731cbd522aa2591af69101d921672",
-          "sha512": "918f778ab07f4f33bf7095197d05d7b36da959368f4289cdf41a67e9bf920c96bedbc4ff69f1b2d0379e62385bba6e1e4e3be4fb625f93aa130a9be938cff0a2"
+          "sha512": "918f778ab07f4f33bf7095197d05d7b36da959368f4289cdf41a67e9bf920c96bedbc4ff69f1b2d0379e62385bba6e1e4e3be4fb625f93aa130a9be938cff0a2",
+          "sha1": "6fa5bbd06ab731cbd522aa2591af69101d921672"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/o0V8mlNz/fabric-language-kotlin-1.12.2%2Bkotlin.2.0.20.jar",
         "filename": "fabric-language-kotlin-1.12.2+kotlin.2.0.20.jar",
@@ -538,7 +538,7 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#148) (github-actions[bot], github-actions)\n",
     "changelog_url": null,
     "date_published": "2024-08-23T09:57:33.412655Z",
-    "downloads": 857237,
+    "downloads": 857334,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -605,15 +605,15 @@
     "changelog": "- Bump version (modmuss50)\n- Update versions (#143) (github-actions[bot], github-actions, modmuss)\n- add kotlinx-io library (#147) (Anton)\n- Update versions (#141) (github-actions[bot], github-actions)\n- Bump version (modmuss)\n- Update to Kotlin 2.0.0 (#140) (github-actions[bot], github-actions)\n- Update create-pull-request action (modmuss)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2024-08-07T07:57:58.699755Z",
-    "downloads": 995476,
+    "downloads": 995608,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e6765b777159fb1facf462dcbabcb6539ba0a89b55556a288121f4bf9e3f2b2f9b851107656d87ec3eb2cb27df13457aaf94f011739b98fa498e08abb7caea71",
-          "sha1": "8b5c6d1caff90301ac9856959457dcfc793774c3"
+          "sha1": "8b5c6d1caff90301ac9856959457dcfc793774c3",
+          "sha512": "e6765b777159fb1facf462dcbabcb6539ba0a89b55556a288121f4bf9e3f2b2f9b851107656d87ec3eb2cb27df13457aaf94f011739b98fa498e08abb7caea71"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/kdDGGNEt/fabric-language-kotlin-1.12.0%2Bkotlin.2.0.10.jar",
         "filename": "fabric-language-kotlin-1.12.0+kotlin.2.0.10.jar",
@@ -671,7 +671,7 @@
     "changelog": "- Bump version (modmuss)\n- Update to Kotlin 2.0.0 (#140) (github-actions[bot], github-actions)\n- Update create-pull-request action (modmuss)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2024-05-21T12:07:54.863287Z",
-    "downloads": 3658803,
+    "downloads": 3659429,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -736,7 +736,7 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#137) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2024-05-08T08:43:11.46485Z",
-    "downloads": 1214132,
+    "downloads": 1214238,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -801,15 +801,15 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#133) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2024-03-08T08:47:17.156701Z",
-    "downloads": 1455201,
+    "downloads": 1455392,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0c31443b5061d85787de452d1dc0196a0e3391146aa5f030ef5fa95558b0f2b2bb9a0613fc0e5621e9d796d06e717fef0d0c98046f4ead04d150e0eb2d19abdc",
-          "sha1": "d8a8a5a4f1289e9b4d65f9551c32fbdf56b4f162"
+          "sha1": "d8a8a5a4f1289e9b4d65f9551c32fbdf56b4f162",
+          "sha512": "0c31443b5061d85787de452d1dc0196a0e3391146aa5f030ef5fa95558b0f2b2bb9a0613fc0e5621e9d796d06e717fef0d0c98046f4ead04d150e0eb2d19abdc"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/ZMokinzs/fabric-language-kotlin-1.10.19%2Bkotlin.1.9.23.jar",
         "filename": "fabric-language-kotlin-1.10.19+kotlin.1.9.23.jar",
@@ -864,15 +864,15 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#132) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2024-02-16T11:01:45.307696Z",
-    "downloads": 410681,
+    "downloads": 410743,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d7a9989f9e47c1c10e3c33551478cd9422250bf4f61e7f8ff3b6ee16c87e7dc458fed998c963a2e1c3bc39b7d338e9e334ce70ecdb0e66011d71e8948216e21c",
-          "sha1": "d7ab57b7e96bd5181efddea60452be0350bc49e6"
+          "sha1": "d7ab57b7e96bd5181efddea60452be0350bc49e6",
+          "sha512": "d7a9989f9e47c1c10e3c33551478cd9422250bf4f61e7f8ff3b6ee16c87e7dc458fed998c963a2e1c3bc39b7d338e9e334ce70ecdb0e66011d71e8948216e21c"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/vlhvI5Li/fabric-language-kotlin-1.10.18%2Bkotlin.1.9.22.jar",
         "filename": "fabric-language-kotlin-1.10.18+kotlin.1.9.22.jar",
@@ -927,7 +927,7 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#129) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-12-22T08:26:02.943242Z",
-    "downloads": 1088698,
+    "downloads": 1088801,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -990,15 +990,15 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#128) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-12-01T10:31:57.760633Z",
-    "downloads": 605697,
+    "downloads": 605726,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a8cd43f7b946c5c3229f179eee24d8ec8624b9646f27e1a4022e67281a2e142e35a13d537287718ea86b93d7a9b24169c464219806f36eefec53dfb70cc037c5",
-          "sha1": "c411b587ba7b272b956605e5ee2ad10985e38ec9"
+          "sha1": "c411b587ba7b272b956605e5ee2ad10985e38ec9",
+          "sha512": "a8cd43f7b946c5c3229f179eee24d8ec8624b9646f27e1a4022e67281a2e142e35a13d537287718ea86b93d7a9b24169c464219806f36eefec53dfb70cc037c5"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/VJUqKopR/fabric-language-kotlin-1.10.16%2Bkotlin.1.9.21.jar",
         "filename": "fabric-language-kotlin-1.10.16+kotlin.1.9.21.jar",
@@ -1051,15 +1051,15 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#127) (github-actions[bot], github-actions)\n- fix: use shields.io for curseforge badge (#126) (BD103)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-11-24T08:54:08.000353Z",
-    "downloads": 138162,
+    "downloads": 138171,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8872b42766e9835256667646ca05ea98b1214b4bd7161e5b3525407ce2b1ac445a9cf91a64dabe4aa7dbe75c442d79267752d99406071b6807ceff6d983bfef8",
-          "sha1": "206faa3c1ce1711463b69f1b549699ccdd5f14d0"
+          "sha1": "206faa3c1ce1711463b69f1b549699ccdd5f14d0",
+          "sha512": "8872b42766e9835256667646ca05ea98b1214b4bd7161e5b3525407ce2b1ac445a9cf91a64dabe4aa7dbe75c442d79267752d99406071b6807ceff6d983bfef8"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/psNjlsLR/fabric-language-kotlin-1.10.15%2Bkotlin.1.9.21.jar",
         "filename": "fabric-language-kotlin-1.10.15+kotlin.1.9.21.jar",
@@ -1112,7 +1112,7 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#125) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-11-16T13:10:09.398431Z",
-    "downloads": 217448,
+    "downloads": 217454,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1173,7 +1173,7 @@
     "changelog": "- Bump version (modmuss50)\n- Code cleanup (modmuss)\n- Add unit tests and update build script. (modmuss50)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-11-01T20:29:06.915661Z",
-    "downloads": 238930,
+    "downloads": 238944,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1234,7 +1234,7 @@
     "changelog": "- Bump version (modmuss)\n- Fix #120 (#121) (modmuss)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-11-01T15:22:54.346014Z",
-    "downloads": 127311,
+    "downloads": 127320,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1356,15 +1356,15 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#118) (github-actions[bot], github-actions)\n- Fix display name. (modmuss50)\n- Bump version (modmuss50)\n- Update versions (#116) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-08-24T08:53:01.16413Z",
-    "downloads": 2014977,
+    "downloads": 2015362,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c708f3f4e94f0f66e72c6e96858368f0512c3b38",
-          "sha512": "27e3edb4a6c170827115018728e5d3a5b84d001f8f42138403d3d0127104ec334adfaea078d063b1c87cc55c979d9237bafb16fc98558a34e1d1befdda499bc5"
+          "sha512": "27e3edb4a6c170827115018728e5d3a5b84d001f8f42138403d3d0127104ec334adfaea078d063b1c87cc55c979d9237bafb16fc98558a34e1d1befdda499bc5",
+          "sha1": "c708f3f4e94f0f66e72c6e96858368f0512c3b38"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/48ri5y9r/fabric-language-kotlin-1.10.10%2Bkotlin.1.9.10.jar",
         "filename": "fabric-language-kotlin-1.10.10+kotlin.1.9.10.jar",
@@ -1423,8 +1423,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2f4b747108d6c13d87f8365745ac7f72233fee79138d5a7cdffc729b44b5e3b056c0ac2c808839f6d455a0c87f798858d26825322b7fa03b0e1ccea660e41854",
-          "sha1": "d939718ce05833c68912cb2b5087bdd2a8e2dc8a"
+          "sha1": "d939718ce05833c68912cb2b5087bdd2a8e2dc8a",
+          "sha512": "2f4b747108d6c13d87f8365745ac7f72233fee79138d5a7cdffc729b44b5e3b056c0ac2c808839f6d455a0c87f798858d26825322b7fa03b0e1ccea660e41854"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/Cqe2URk8/fabric-language-kotlin-1.10.9%2Bkotlin.1.9.0.jar",
         "filename": "fabric-language-kotlin-1.10.9+kotlin.1.9.0.jar",
@@ -1476,7 +1476,7 @@
     "changelog": "- Update MMP (modmuss50)\n- Bump version (modmuss)\n- Move to Mod Publish Plugin (#114) (modmuss)\n- Update versions (#112) (github-actions[bot], github-actions)\n- Update Loom and Gradle (modmuss50)\n- Update versions (#111) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-07-20T10:57:40.507916Z",
-    "downloads": 564003,
+    "downloads": 564080,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1536,15 +1536,15 @@
     "changelog": "- Update Loom and Gradle (modmuss50)\n- Update versions (#111) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-07-06T12:25:55.072924Z",
-    "downloads": 136193,
+    "downloads": 136203,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "39beb733794136da9a0d0375bfd2de5dbd575649a8a954679d8df36a6d38b2e460fadb9560b826576b088ab5a2cfb1d21067ee998dcb57e1f684040a10007daa",
-          "sha1": "e0a7c6564243009f9bf2476b70e9af98dd2dd944"
+          "sha1": "e0a7c6564243009f9bf2476b70e9af98dd2dd944",
+          "sha512": "39beb733794136da9a0d0375bfd2de5dbd575649a8a954679d8df36a6d38b2e460fadb9560b826576b088ab5a2cfb1d21067ee998dcb57e1f684040a10007daa"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/65oEzjEs/fabric-language-kotlin-1.10.0%2Bkotlin.1.9.0.jar",
         "filename": "fabric-language-kotlin-1.10.0+kotlin.1.9.0.jar",
@@ -1596,7 +1596,7 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#108) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-06-25T11:03:14.955266Z",
-    "downloads": 122589,
+    "downloads": 122599,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1656,7 +1656,7 @@
     "changelog": "- Bump version (modmuss)\n- Update versions (#106) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-06-09T07:37:32.295691Z",
-    "downloads": 472404,
+    "downloads": 472444,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1715,7 +1715,7 @@
     "changelog": "- Bump version (modmuss50)\n- Update versions (#104) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-04-26T05:56:01.513867Z",
-    "downloads": 204860,
+    "downloads": 204867,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1773,15 +1773,15 @@
     "changelog": "- Bump version (modmuss50)\n- Update versions (#103) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-03-31T08:54:01.423669Z",
-    "downloads": 398678,
+    "downloads": 398710,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2a3d3f8aa263ba7748550a94e97cf760712bc2c6",
-          "sha512": "84d88bec4cde93834f47e8c786b52991eceafe7a3e85dc8842a1e4b9b959020e3afe68ff2d961a2d8b5ac7443cbc271d1f070ec668d8ae8f930b3ca7007a9ac6"
+          "sha512": "84d88bec4cde93834f47e8c786b52991eceafe7a3e85dc8842a1e4b9b959020e3afe68ff2d961a2d8b5ac7443cbc271d1f070ec668d8ae8f930b3ca7007a9ac6",
+          "sha1": "2a3d3f8aa263ba7748550a94e97cf760712bc2c6"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/MkcO8aQ0/fabric-language-kotlin-1.9.3%2Bkotlin.1.8.20.jar",
         "filename": "fabric-language-kotlin-1.9.3+kotlin.1.8.20.jar",
@@ -1831,15 +1831,15 @@
     "changelog": "- Bump version (modmuss50)\n- Update versions (#102) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-03-15T12:28:18.062137Z",
-    "downloads": 64003,
+    "downloads": 64017,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5a68b37cd9e3f13337f7959d82fcfe21b749e5c6",
-          "sha512": "aa6b385ac7f90e2da3dfd89598ec8d733a35beed35f5995f29227b432ec7cc882155e91edcdae82a4b6e9649acae7b5b13e848411c21b34787559b5f14492113"
+          "sha512": "aa6b385ac7f90e2da3dfd89598ec8d733a35beed35f5995f29227b432ec7cc882155e91edcdae82a4b6e9649acae7b5b13e848411c21b34787559b5f14492113",
+          "sha1": "5a68b37cd9e3f13337f7959d82fcfe21b749e5c6"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/Ibros2FW/fabric-language-kotlin-1.9.2%2Bkotlin.1.8.10.jar",
         "filename": "fabric-language-kotlin-1.9.2+kotlin.1.8.10.jar",
@@ -1888,15 +1888,15 @@
     "changelog": "- Bump version (modmuss50)\n- Kotlin 1.8.10 (github-actions[bot])\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2023-02-03T09:14:07.505825Z",
-    "downloads": 94754,
+    "downloads": 94762,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2c95e763bda39d471b5e252ba00b68b296d0bdb4c78f666886f6ebae99d2e7583b8a664fa35f2248dc844db66c7b77d2c3fde1d41801d070fc8083ddda886c0a",
-          "sha1": "12f265ea91e73ac2c74c6f66d446671122bbb1c8"
+          "sha1": "12f265ea91e73ac2c74c6f66d446671122bbb1c8",
+          "sha512": "2c95e763bda39d471b5e252ba00b68b296d0bdb4c78f666886f6ebae99d2e7583b8a664fa35f2248dc844db66c7b77d2c3fde1d41801d070fc8083ddda886c0a"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/lgFl3olb/fabric-language-kotlin-1.9.1%2Bkotlin.1.8.10.jar",
         "filename": "fabric-language-kotlin-1.9.1+kotlin.1.8.10.jar",
@@ -1945,15 +1945,15 @@
     "changelog": "- Bump version (modmuss50)\n- Buildscript updates (#98) (modmuss50)\n- Kotlin 1.8 (github-actions[bot], github-actions)\n- Update versions (#96) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2022-12-28T15:24:17.353199Z",
-    "downloads": 76963,
+    "downloads": 76973,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "44b2938cd01d20adc5c16c56a7a766c591c633dc3bc97e15e6cd5aa621095158b4a95fa5d02c84740684373c8669c7dc485ac2eddc72c9cf927d4bece8e43e3a",
-          "sha1": "da5adc0695672002bf5d95d1da29bbd9e2c5dfb7"
+          "sha1": "da5adc0695672002bf5d95d1da29bbd9e2c5dfb7",
+          "sha512": "44b2938cd01d20adc5c16c56a7a766c591c633dc3bc97e15e6cd5aa621095158b4a95fa5d02c84740684373c8669c7dc485ac2eddc72c9cf927d4bece8e43e3a"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/esSFbyFg/fabric-language-kotlin-1.9.0%2Bkotlin.1.8.0.jar",
         "filename": "fabric-language-kotlin-1.9.0+kotlin.1.8.0.jar",
@@ -2002,7 +2002,7 @@
     "changelog": "- Bump version (modmuss50)\n- Kotlin 1.7.22 (github-actions[bot])\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2022-11-29T19:06:19.164689Z",
-    "downloads": 41023,
+    "downloads": 41026,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2058,7 +2058,7 @@
     "changelog": "- Bump version (modmuss50)\n- Update versions (#93) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2022-11-09T08:55:09.242477Z",
-    "downloads": 47999,
+    "downloads": 48010,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2114,15 +2114,15 @@
     "changelog": "- Bump version (modmuss50)\n- Update versions (#90) (github-actions[bot], github-actions)\n- Update readme (github-actions)\n",
     "changelog_url": null,
     "date_published": "2022-10-16T14:39:42.848013Z",
-    "downloads": 17279,
+    "downloads": 17281,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4a9975f4dcdeff3d1054ed66a005ff1c77ad9413a16b267b0abc425bef0359b7e233e7b74772678f67cfa7d6348febd172b332b5370ddcf2c6d526b0c7f68c8a",
-          "sha1": "d792f00ea9cb6062646de40a235a976e1bd4b666"
+          "sha1": "d792f00ea9cb6062646de40a235a976e1bd4b666",
+          "sha512": "4a9975f4dcdeff3d1054ed66a005ff1c77ad9413a16b267b0abc425bef0359b7e233e7b74772678f67cfa7d6348febd172b332b5370ddcf2c6d526b0c7f68c8a"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/FrvEFBGt/fabric-language-kotlin-1.8.5%2Bkotlin.1.7.20.jar",
         "filename": "fabric-language-kotlin-1.8.5+kotlin.1.7.20.jar",
@@ -2170,15 +2170,15 @@
     "changelog": "- Bump version (modmuss50)\n- Update to Kotlin 1.7.20 (github-actions[bot])\n",
     "changelog_url": null,
     "date_published": "2022-09-30T09:14:28.585418Z",
-    "downloads": 14584,
+    "downloads": 14585,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f66781e06aaace31c370238554aeb99d1ec6bc98",
-          "sha512": "c9cb39c8f2bb48410c4daecaf992d67c4f0e43ea6eb8d421a02930596e650ff5503dc50568684539eec4c8c862172129c7246fdc1d917ad1bc12671fb0050443"
+          "sha512": "c9cb39c8f2bb48410c4daecaf992d67c4f0e43ea6eb8d421a02930596e650ff5503dc50568684539eec4c8c862172129c7246fdc1d917ad1bc12671fb0050443",
+          "sha1": "f66781e06aaace31c370238554aeb99d1ec6bc98"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/allNCj2E/fabric-language-kotlin-1.8.4%2Bkotlin.1.7.20.jar",
         "filename": "fabric-language-kotlin-1.8.4+kotlin.1.7.20.jar",
@@ -2226,7 +2226,7 @@
     "changelog": "- Update minotaur to 2.3.1 (#79) (Jakob K, modmuss50)\n- Update versions (#86) (github-actions[bot], github-actions)\n- Automatic version update (#84) (deirn)\n",
     "changelog_url": null,
     "date_published": "2022-08-25T20:38:48.601992Z",
-    "downloads": 92566,
+    "downloads": 92586,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2281,15 +2281,15 @@
     "changelog": "- Update to Kotlin 1.7.10 (#78) (Jakob K)\n",
     "changelog_url": null,
     "date_published": "2022-07-20T18:51:06.22301Z",
-    "downloads": 39180,
+    "downloads": 39183,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "17a34331793f62eafa9988a5a95caf832b9b7f2d69397d286a6805250bb7d40401e19ef95e422342dc7a8943d944783127d1af57b1c192ad652dd33e82ad732e",
-          "sha1": "e8a1dba4932c7b361525f17ed73636675765c5c9"
+          "sha1": "e8a1dba4932c7b361525f17ed73636675765c5c9",
+          "sha512": "17a34331793f62eafa9988a5a95caf832b9b7f2d69397d286a6805250bb7d40401e19ef95e422342dc7a8943d944783127d1af57b1c192ad652dd33e82ad732e"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/1.8.2%2Bkotlin.1.7.10/fabric-language-kotlin-1.8.2%2Bkotlin.1.7.10.jar",
         "filename": "fabric-language-kotlin-1.8.2+kotlin.1.7.10.jar",
@@ -2333,7 +2333,7 @@
     "changelog": "- Update libraries for 1.7.0 (#77) (Jakob K)\n- Refactor readme (#76) (Jakob K)\n",
     "changelog_url": null,
     "date_published": "2022-06-27T13:35:30.752265Z",
-    "downloads": 14401,
+    "downloads": 14403,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2385,7 +2385,7 @@
     "changelog": "- Fix release (modmuss50)\n- Migrate to groovy buildscript, add changelog generation, add auto github/modrinth publishing. (modmuss50)\n- Update to Kotlin 1.7.0 and bump coroutines and serialization (#73) (Jakob K)\n- Merge pull request #72 (Jakob K)\n- Add atomicfu library (#71) (Jakob K)\n",
     "changelog_url": null,
     "date_published": "2022-06-09T19:03:43.082483Z",
-    "downloads": 16974,
+    "downloads": 16976,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2439,7 +2439,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-06-07T17:57:18.301958Z",
-    "downloads": 47534,
+    "downloads": 47553,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2682,15 +2682,15 @@
     "changelog": "Update kotlin",
     "changelog_url": null,
     "date_published": "2022-04-04T12:08:53.462015Z",
-    "downloads": 23621,
+    "downloads": 23623,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6f1a711ec2d8dd6e541280591f87ace4c25097ccbd684c7b10ee31cc173d85d737e24dda0987c02024f79431c913ba1cbdffcf9278d3ea6db96790a8f45d896e",
-          "sha1": "88f240a5064963ef1aa50ebaa85dbdf2e4e1362e"
+          "sha1": "88f240a5064963ef1aa50ebaa85dbdf2e4e1362e",
+          "sha512": "6f1a711ec2d8dd6e541280591f87ace4c25097ccbd684c7b10ee31cc173d85d737e24dda0987c02024f79431c913ba1cbdffcf9278d3ea6db96790a8f45d896e"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/1.7.2%2Bkotlin.1.6.20/fabric-language-kotlin-1.7.2%2Bkotlin.1.6.20.jar",
         "filename": "fabric-language-kotlin-1.7.2+kotlin.1.6.20.jar",
@@ -2735,7 +2735,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-01-14T22:10:20.259834Z",
-    "downloads": 6136,
+    "downloads": 6137,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2780,8 +2780,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2d463575d4a9c0bbadfdf6a59f66c018fcf78e7975b1d88223f8364db4d9b1397bf847276de7cb6160057ce2d0e11e275d88e210ddc2c24f88502c18e9da631b",
-          "sha1": "9e7b1b82f6132203286aabaa11134802101cfafe"
+          "sha1": "9e7b1b82f6132203286aabaa11134802101cfafe",
+          "sha512": "2d463575d4a9c0bbadfdf6a59f66c018fcf78e7975b1d88223f8364db4d9b1397bf847276de7cb6160057ce2d0e11e275d88e210ddc2c24f88502c18e9da631b"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/1.6.4%2Bkotlin.1.5.30/fabric-language-kotlin-1.6.4%2Bkotlin.1.5.30.jar",
         "filename": "fabric-language-kotlin-1.6.4+kotlin.1.5.30.jar",
@@ -2820,8 +2820,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "58b07c1d5f397b95bb6b086087a24cafa1fb8c91bb489e284595b19152dbc5cc7b9fa779f26119a1c7fe1624e0fead3acf6bc8109030aeb3383863191279db6b",
-          "sha1": "b85ef11a7db60bf3e23085ab5abff4b9c11c8e24"
+          "sha1": "b85ef11a7db60bf3e23085ab5abff4b9c11c8e24",
+          "sha512": "58b07c1d5f397b95bb6b086087a24cafa1fb8c91bb489e284595b19152dbc5cc7b9fa779f26119a1c7fe1624e0fead3acf6bc8109030aeb3383863191279db6b"
         },
         "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/1.6.3%2Bkotlin.1.5.21/fabric-language-kotlin-1.6.3%2Bkotlin.1.5.21.jar",
         "filename": "fabric-language-kotlin-1.6.3+kotlin.1.5.21.jar",

@@ -1,6 +1,55 @@
 [
   {
     "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "NkAIcuHs",
+    "project_id": "hrVBD9fd",
+    "author_id": "VylMiU5U",
+    "featured": false,
+    "name": "1.13.3-1.21.6",
+    "version_number": "1.13.3-1.21.6",
+    "changelog": "BLAST 1.13.3 - 1.21.6:\n\nUpdate all thanks to MoriyaShiine!\n- Update to 1.21.6\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.13.3-1.21.6/changelog.md \"Changelog\")",
+    "changelog_url": null,
+    "date_published": "2025-06-25T17:23:50.248016Z",
+    "downloads": 14,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "90e2dda5ceb81f567361233a8feb37baa544fa9166acfc96eb00fedf0dbf06cd22f18b72b01529637024f4da6d5bc0ba42bfaa8409d03aab7c1e10cbe63d7b05",
+          "sha1": "545bb3f02a49f3649afa8a5b50b9f52187024100"
+        },
+        "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/NkAIcuHs/blast-1.13.3-1.21.6.jar",
+        "filename": "blast-1.13.3-1.21.6.jar",
+        "primary": true,
+        "size": 1182763,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9Ya7Yyre",
+        "file_name": null,
+        "dependency_type": "embedded"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
       "1.21.5"
     ],
     "loaders": [
@@ -16,15 +65,15 @@
     "changelog": "BLAST 1.13.3 - 1.21.5:\n\n- Fix bundles kicking the player when viewing their items\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.13.3-1.21.5/changelog.md \"Changelog\")",
     "changelog_url": null,
     "date_published": "2025-04-28T01:40:48.196903Z",
-    "downloads": 1752,
+    "downloads": 1762,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6b11c5814b93912a53c265129bbcacd727ff4875670dfc162143829ff80a14830241057351751608a1548d310674a019ea071f87c02f0a073c15bf315f6e80c6",
-          "sha1": "2565001517499fe40a3dddb34eb4c65f3ceaf999"
+          "sha1": "2565001517499fe40a3dddb34eb4c65f3ceaf999",
+          "sha512": "6b11c5814b93912a53c265129bbcacd727ff4875670dfc162143829ff80a14830241057351751608a1548d310674a019ea071f87c02f0a073c15bf315f6e80c6"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/ugOKAN0o/blast-1.13.3-1.21.5.jar",
         "filename": "blast-1.13.3-1.21.5.jar",
@@ -72,8 +121,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7c220bdf5584e7300200258711095151fa3d2638",
-          "sha512": "40a6fb8702c707db90f834e19fb2def3af282d292088eb4931db47e9edc4e336edf06460ac6182fd6720c1819d9789c6e965458878ef794791a41251a0e5bf4e"
+          "sha512": "40a6fb8702c707db90f834e19fb2def3af282d292088eb4931db47e9edc4e336edf06460ac6182fd6720c1819d9789c6e965458878ef794791a41251a0e5bf4e",
+          "sha1": "7c220bdf5584e7300200258711095151fa3d2638"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/fuAYWWr7/blast-1.13.2-1.21.5.jar",
         "filename": "blast-1.13.2-1.21.5.jar",
@@ -114,7 +163,7 @@
     "changelog": "BLAST 1.13.1 - 1.21.1:\n\n- Fixed Bonesburrier dupe bug\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.13.1-1.21.1/changelog.md \"Changelog\")",
     "changelog_url": null,
     "date_published": "2024-11-02T22:16:30.39297Z",
-    "downloads": 6382,
+    "downloads": 6391,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -164,8 +213,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9e3e7e2a74bdb01fcebac8fe1b1bbd17c7dc518e53a816b30e5979fbc21c5fc223ebbeb97eea6f94a54581acb0fec4a23274bbb86cec2bd4b89f58517eb42a5a",
-          "sha1": "d9c933d823c38429cfa04384bcf0a61e573eb435"
+          "sha1": "d9c933d823c38429cfa04384bcf0a61e573eb435",
+          "sha512": "9e3e7e2a74bdb01fcebac8fe1b1bbd17c7dc518e53a816b30e5979fbc21c5fc223ebbeb97eea6f94a54581acb0fec4a23274bbb86cec2bd4b89f58517eb42a5a"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/Kt8owOWP/blast-1.13-1.21.1.jar",
         "filename": "blast-1.13-1.21.1.jar",
@@ -199,15 +248,15 @@
     "changelog": "Reupload!\n[See full changelog here](https://github.com/Ladysnake/BLAST/blob/1.20/changelog.md)",
     "changelog_url": null,
     "date_published": "2024-06-01T10:35:16.942763Z",
-    "downloads": 16536,
+    "downloads": 16543,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "78d89b59e987858397de5db0dcbb58e8c94e1a20",
-          "sha512": "929fb0d1aa847768fa5b30c9e0fbe9b9d4b26053e77d08856539ab4f973d9a74ed33b9ba2a873b930819979a30076a0fb56dc729842a74e31d1f2438e4fe3f45"
+          "sha512": "929fb0d1aa847768fa5b30c9e0fbe9b9d4b26053e77d08856539ab4f973d9a74ed33b9ba2a873b930819979a30076a0fb56dc729842a74e31d1f2438e4fe3f45",
+          "sha1": "78d89b59e987858397de5db0dcbb58e8c94e1a20"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/tifNCUFN/blast-1.10.jar",
         "filename": "blast-1.10.jar",
@@ -241,8 +290,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9c4fc8f5dadd2df86575080371fbb35334310d5eab3a75c5fff95fe7e30790d4e28d1787028b19a97fbb3f049b1a8f5831471e46c259a73bc7f1a4c5715898f8",
-          "sha1": "4cfd2cc08aba261fa63c1c8774f13fb23d0eca95"
+          "sha1": "4cfd2cc08aba261fa63c1c8774f13fb23d0eca95",
+          "sha512": "9c4fc8f5dadd2df86575080371fbb35334310d5eab3a75c5fff95fe7e30790d4e28d1787028b19a97fbb3f049b1a8f5831471e46c259a73bc7f1a4c5715898f8"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/LdtrjDL5/blast-1.9.1.jar",
         "filename": "blast-1.9.1.jar",
@@ -311,8 +360,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "939c60264bd161f9b3bf657ecdbb3ecd0dc086f7e0a689fa86dad3e753e75990c2621ddc67cae364597b40341d5a85b1e3f878324c7baa18c99d71a35f7b0070",
-          "sha1": "262f2c86bfd714f4df7b263ef6d454cf1d674786"
+          "sha1": "262f2c86bfd714f4df7b263ef6d454cf1d674786",
+          "sha512": "939c60264bd161f9b3bf657ecdbb3ecd0dc086f7e0a689fa86dad3e753e75990c2621ddc67cae364597b40341d5a85b1e3f878324c7baa18c99d71a35f7b0070"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/CBwEPM7D/blast-1.8.4.jar",
         "filename": "blast-1.8.4.jar",
@@ -417,8 +466,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d31fe99bdc8669599cda51408748856f3797d26edcb8ae78aee7ee2427adbaa8604ad8cc31fbb571823ccc09b1d6656fd295bed1dc7a329e5045e247186c0045",
-          "sha1": "c179edd7911b6b1a7511b4d99ea171f699d67bb9"
+          "sha1": "c179edd7911b6b1a7511b4d99ea171f699d67bb9",
+          "sha512": "d31fe99bdc8669599cda51408748856f3797d26edcb8ae78aee7ee2427adbaa8604ad8cc31fbb571823ccc09b1d6656fd295bed1dc7a329e5045e247186c0045"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/YgNNrLrS/blast-1.8.1.jar",
         "filename": "blast-1.8.1.jar",
@@ -489,8 +538,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "36aff651161bd481d205679c3b8b1e6f9aece0ae",
-          "sha512": "e791570175eb6b62ab3b32b3b901ff0bee52674cc647413ac195947c8a20b79f7b8d729e9f9d5dc1c4275dbb4d733cbbed28609b336af57417397d0710746bf3"
+          "sha512": "e791570175eb6b62ab3b32b3b901ff0bee52674cc647413ac195947c8a20b79f7b8d729e9f9d5dc1c4275dbb4d733cbbed28609b336af57417397d0710746bf3",
+          "sha1": "36aff651161bd481d205679c3b8b1e6f9aece0ae"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/mNCrfDRs/blast-1.7.1.jar",
         "filename": "blast-1.7.1.jar",
@@ -525,8 +574,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8e1c52cf45acd833b046a6ad5a51a409cdab1964a5927698ae8bdac85d18ce2d5e21b0ed1a5bd45a064e90445c5a58b25ae1a15132bdf8859b096bb85e7d4eb4",
-          "sha1": "ea16f50dff940c405c1d72280adb9c7063d539d7"
+          "sha1": "ea16f50dff940c405c1d72280adb9c7063d539d7",
+          "sha512": "8e1c52cf45acd833b046a6ad5a51a409cdab1964a5927698ae8bdac85d18ce2d5e21b0ed1a5bd45a064e90445c5a58b25ae1a15132bdf8859b096bb85e7d4eb4"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/suZNu4Le/blast-1.6.2.jar",
         "filename": "blast-1.6.2.jar",
@@ -630,8 +679,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9f10db744a3f8f10e277647808361c5df4dbcca086858a8399b854e2f25518bae05a8c1f83decd77fc4ede1bea760672a68cf1fdef523c58402f80e956966ebf",
-          "sha1": "e4d5796bbd762bdb450a3cdc35d73528ee37a815"
+          "sha1": "e4d5796bbd762bdb450a3cdc35d73528ee37a815",
+          "sha512": "9f10db744a3f8f10e277647808361c5df4dbcca086858a8399b854e2f25518bae05a8c1f83decd77fc4ede1bea760672a68cf1fdef523c58402f80e956966ebf"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/5VpykvbV/blast-1.5.2.jar",
         "filename": "blast-1.5.2.jar",
@@ -665,8 +714,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "bd26c461bdd1c80fb35f4dddce7e6c65c8239a85",
-          "sha512": "2854d8e7846a398a6156cd7df23dd8764c6110e6ca33311385775e4322db714944686052430e0b8f7996e4c9e68fbadd799cb0a5b79604ebce30ddc2812b4ba5"
+          "sha512": "2854d8e7846a398a6156cd7df23dd8764c6110e6ca33311385775e4322db714944686052430e0b8f7996e4c9e68fbadd799cb0a5b79604ebce30ddc2812b4ba5",
+          "sha1": "bd26c461bdd1c80fb35f4dddce7e6c65c8239a85"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/L5HvEArb/blast-1.5.1.jar",
         "filename": "blast-1.5.1.jar",
@@ -735,8 +784,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "90cc3b4948de5a66f90cb014642c3676ba223fc8d2d887692db66a6e0f4a23b546c8f5fe4b37f72d83e5a0f81c4f973e098ea71f7a3ba6908223d30b6a5aa1d8",
-          "sha1": "8e44af9680d5fcd5089866dd9e30efdbb0be9b5c"
+          "sha1": "8e44af9680d5fcd5089866dd9e30efdbb0be9b5c",
+          "sha512": "90cc3b4948de5a66f90cb014642c3676ba223fc8d2d887692db66a6e0f4a23b546c8f5fe4b37f72d83e5a0f81c4f973e098ea71f7a3ba6908223d30b6a5aa1d8"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/vCIVWLbL/blast-1.4.jar",
         "filename": "blast-1.4.jar",
@@ -770,8 +819,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "205bef210f1a667eb553c72f9e8390e2dc05c6fd22f09a3cdfc4e79e7d9e72c7bb3f460f5ce13de0c332eabfbdc6c3cee589bcb1d1d0443bf787652c17c33437",
-          "sha1": "583071b0298580142ff046c59f0c704f3048b003"
+          "sha1": "583071b0298580142ff046c59f0c704f3048b003",
+          "sha512": "205bef210f1a667eb553c72f9e8390e2dc05c6fd22f09a3cdfc4e79e7d9e72c7bb3f460f5ce13de0c332eabfbdc6c3cee589bcb1d1d0443bf787652c17c33437"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/9YVsndjU/blast-1.3.2.jar",
         "filename": "blast-1.3.2.jar",
@@ -805,8 +854,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f24244fef3bcc94f0650e4739f520f388e080762069ec0fea27bcaaace25513dfbe3a1e1edbbdb571c4358b23fe98d3fcfd91db36a4245fa66b2978c8b9babbb",
-          "sha1": "09956236724fb4642d391d200c1eb4eac0e747ce"
+          "sha1": "09956236724fb4642d391d200c1eb4eac0e747ce",
+          "sha512": "f24244fef3bcc94f0650e4739f520f388e080762069ec0fea27bcaaace25513dfbe3a1e1edbbdb571c4358b23fe98d3fcfd91db36a4245fa66b2978c8b9babbb"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/NqeNW5iK/blast-1.3.jar",
         "filename": "blast-1.3.jar",
@@ -875,8 +924,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f4eec3eeb4c152eeb41f6179fd6c5ccd0fa17d6a10fc5a48d7f34c8eb3e8ed139ff2272a4171dcca3e9218bc3b19ba24840c407a589f1af018c6de8ac0350d12",
-          "sha1": "838e39d66bc91b83cbf0b7d374edb165e671fbf2"
+          "sha1": "838e39d66bc91b83cbf0b7d374edb165e671fbf2",
+          "sha512": "f4eec3eeb4c152eeb41f6179fd6c5ccd0fa17d6a10fc5a48d7f34c8eb3e8ed139ff2272a4171dcca3e9218bc3b19ba24840c407a589f1af018c6de8ac0350d12"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/S2i6qW5b/blast-1.2.jar",
         "filename": "blast-1.2.jar",
@@ -973,15 +1022,15 @@
     "changelog": "------------------------------------------------------\nBLAST 1.14 - 1.19.2\n------------------------------------------------------\n- Added Pipe Bombs\n  - Combine a regular bomb with up to eight fireworks to create a pipe bomb\n  - When detonating, pipe bombs will gradually release all fireworks inside it and explode them\n  - Can be stored in a bundle\n    - When stored in a bundle, pipe bombs will disguise as a random item in the game\n    - When opening the bundle in the inventory or releasing it in the world, pipe bombs will automatically set off\n\n------------------------------------------------------\nBLAST 1.10 - 1.19\n------------------------------------------------------\n- Added the Bonesburrier, a new deadly explosive block for a powerful display!\n- Added the Remote Detonator; triggered by aiming in its direction with an ender eye, it allows you to remotely and instantly detonate Blast explosive blocks and TNT adjacent to the detonator\n  - When triggered, the ender eye wil then be placed inside the detonator. If a hopper with a free slot is located below the detonator it will remove it so the detonator can be triggered again\n- Added Folly Red Paint; resulting from the explosion of the Bonesburrier\n  - It will dry over time into Dried Folly Red Paint\n  - Honey bottles can be used on (or crafted with) Folly Red Paint and Dried Folly Red Paint to turn them into Fresh Folly Red Pain, which will not dry up\n  - Folly Red Paint and Fresh Folly Red Paint can be smelted into a furnace to give Dried Folly Red Paint\n\n------------------------------------------------------\nBLAST 1.9.1 - 1.18.2\n------------------------------------------------------\n- Fixed Blast projectiles and other entities not rendering from further than 8 blocks away\n\n------------------------------------------------------\nBLAST 1.9 - 1.18.2\n------------------------------------------------------\n- Removed bombards\n- Added amethyst, frost and slime bombs, replacing the uses of the removed bombards\n- Bombs now have a 1 second cooldown when used in gamemodes other than creative, the cooldown applies to all bomb items\n- Reduced bomb maximum stack size to 16\n- Reduced amethyst and frost bomb shrapnel count from 250 to 70\n- Increased amethyst and frost bomb shrapnel speed from 0.6 to 1.4\n- Removed amethyst shards bypassing invulnerability ticks\n- Increased amethyst shard damage from 2 to 8\n- Divided utility explosion damage (bombs, diamond bombs, golden bombs, etc...) by 3\n- Reduced damage of icicles from 0.5 to 0.01\n- Icicles bypass armor and no longer damage it\n\n------------------------------------------------------\nBLAST 1.8.5 - 1.18.2\n------------------------------------------------------\n- Added compatibility with Enchancement and other mods that may remove the Fortune enchantment from the registry\n\n------------------------------------------------------\nBLAST 1.8.4 - 1.18.2\n------------------------------------------------------\n- Updated to Minecraft 1.18.2\n\n------------------------------------------------------\nBLAST 1.8.3 - 1.18.1\n------------------------------------------------------\n- Added a recipe to allow crafting stripminers with TNT\n\n------------------------------------------------------\nBLAST 1.8.2 - 1.18\n------------------------------------------------------\n- Updated to Minecraft 1.18\n\n------------------------------------------------------\nBLAST 1.8.1 - 1.17.1\n------------------------------------------------------\n- Made the bombard recipe cheaper, now requiring iron ingots instead of iron blocks\n- Made the bombard upgrade to amethyst bombard more expensive, now requiring an amethyst block instead of a single amethyst shard\n- Fixed normal bombs and dirt bombs having inverted names\n- Added a Romanian translation thanks to WindRat\n- Added a Russian translation thanks to V972\n\n------------------------------------------------------\nBLAST 1.8 - 1.17.1\n------------------------------------------------------\n- Added a new item class, the bombards! These new weapons allow you to launch bombs and trigger bombs further, at the cost of disabling their destructive nature. Each bombard type is unique and will transform your bombs into something different!\n    - Bombard: The normal bombard, throws bombs and trigger bombs but disables their block destruction. Crafted from 6 iron blocks on the side, with a cauldron, a piston and a lever in the middle respectively from top to bottom.\n    - Slime Bombard: Obtained by smithing a Bombard with a slime block, this bombard covers the launched bombs in slime that will result in no damage being dealt to the entities in the explosion radius of the bombs, while giving the explosion a stronger knockback. Great for elytra and chicken launching!\n    - Amethyst Bombard: Obtained by smithing a Bombard with an amethyst shard, this bombard will not cause any explosion damage, but will spurt out amethyst shards with cumulative damage.\n    - Frost Bombard: Obtained by smithing an Amethyst Bombard with blue ice, this bombard will act similar to the amethyst bombard but will instead shatter your bombs into icicles. These icicles deal significantly less damage than amethyst shards (a quarter of a heart compared to 2 for the amethyst shard) but will cumulatively apply freezing to the hit entities!\n- Added Dirt Bombs. Crafted by surrounding a bomb or trigger bomb in dirt blocks, this bomb will help you fill holes with dirt or terraform your land!\n- Added Pearl Bombs. Crafted like other bombs with an ender pearl as the material, this bomb will have a silk touch effects on blocks it destroys. It doesn't explode, but still respects the same logic. All living entities inside the bomb's radius will be randomly teleported.\n- Explosions from Blast will now properly be attributed to the player or entity who threw the bomb, meaning entities affected by the explosion will retaliate, and death messages will no longer hide your true intentions, like that one time when you threw a trigger bomb at your friend voluntarily and justified it as a misclick.\n- Fixed an issue that caused stripminers and colddiggers to crash game clients\n\n------------------------------------------------------\nBLAST 1.7.1 - 1.17.1\n------------------------------------------------------\n- Fixed an issue that caused trigger bombs to explode with the player right after throwing them while running or flying\n- Fixed an issue that caused bomb explosions to not always affect entities with the knockback they should\n\n------------------------------------------------------\nBLAST 1.7 - 1.17.1\n------------------------------------------------------\n- Added confetti bombs, exists in fuse and trigger variants\n    - Explodes into a burst of confetti! Perfect for all your festive needs!\n    - Crafted shapelessly from 7 paper, 1 gunpowder and 1 string / dust (fuse / trigger)\n- Added a fuse smoking particle effect to fuse bombs\n- Updated to 1.17.1\n\n------------------------------------------------------\nBLAST 1.6.2 - 1.17\n------------------------------------------------------\n- Fixed an issue that would cause the dry ice particles to not display properly\n- Updated to 1.17, thanks to Spiralhalo!\n\n------------------------------------------------------\nBLAST 1.6.1 - 21w14a\n------------------------------------------------------\n- Fixed an issue that caused naval mines to make freezing explosions\n- Naval mines no longer suffer negative drag underwater\n- Trigger bombs no longer require stone buttons in order to be crafted\n\n------------------------------------------------------\nBLAST 1.6 - 21w14a\n------------------------------------------------------\n- Added the Cold Digger, a cool stripminer upgrade allowing to quickly create tunnels by freezing the water around into ice, turning the lava into basalt and chill the air into dry ice!\n- Added Dry Ice, identical to ice except it doesn't melt and doesn't create water. Can be obtained when using the Cold Digger and can be picked up with a Silk Touch pickaxe.\n\n------------------------------------------------------\nBLAST 1.5.2 - 1.16.5\n------------------------------------------------------\n- Tweaked the Stripminer recipe to be more in line with the other recipes of the mod\n\n------------------------------------------------------\nBLAST 1.5.1 - 1.16.5\n------------------------------------------------------\n- Diamond bombs no longer destroy undestroyable blocks like command blocks, barriers or end portal frames\n- Fixed an issue that caused stripminers to disappear and drop a bomb when submerged in water\n\n------------------------------------------------------\nBLAST 1.5 - 1.16.4\n------------------------------------------------------\n- Added trigger bombs: bombs that explode on impact, available in iron, gold and diamond variants\n- Added French translation (courtesy of Lykrast)\n- Stripminers now have a random decreased fuse timer when triggered by an explosion\n- Fixed an incompatibility with Applied Energistics 2 that caused the stripminer to disappear when ignited\n- Fixed an issue that would cause a dedicated server crash upon igniting a gunpowder block\n- Removed Pulveris\n\n------------------------------------------------------\nBLAST 1.4 - 1.16.3\n------------------------------------------------------\n- Added the gunpowder block, instantly explodes when catching fire\n- Added the Stripminer, a directional explosive that can be triggered like a normal TNT\n- Updated to Minecraft 1.16.3\n\n------------------------------------------------------\nBLAST 1.3.2 - 1.16.1\n------------------------------------------------------\n- Fixed an issue where the server would crash upon explosions\n\n------------------------------------------------------\nBLAST 1.3.1 - 1.16.1\n------------------------------------------------------\n- Updated to Minecraft 1.16.1\n\n------------------------------------------------------\nBLAST 1.3 - 20w17a\n------------------------------------------------------\n- Removed boompowder\n- Changed crafting recipes to only require iron / diamond / gold / prismarine for the naval mine, gunpowder and string / redstone for the naval mine\n- Updated to Minecraft snapshot 20w17a\n\n------------------------------------------------------\nBLAST 1.2.1 - 20w13b\n------------------------------------------------------\n\n- Updated to Minecraft snapshot 20w13b\n\n------------------------------------------------------\nBLAST 1.2 - 20w06a\n------------------------------------------------------\n\n- Updated to Minecraft snapshot 20w06a\n\n------------------------------------------------------\nBLAST 1.1.1 - 1.15.1\n------------------------------------------------------\n\n- Fixed a bug that made the server crash on startup\n- Fixed a bug where thrown pulveris bottles were invisible and didn't have explosion visual effects\n\n------------------------------------------------------\nBLAST 1.1.0 - 1.15.1\n------------------------------------------------------\n\n- Updated to Minecraft 1.15.1\n",
     "changelog_url": null,
     "date_published": "2024-02-13T19:04:34.244358Z",
-    "downloads": 19131,
+    "downloads": 19139,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "22c2fa0141397101a48abddcaea2c5396617544b",
-          "sha512": "5c90b71eba01f694a164074ec0e2bd3baede2f290b48af382ff424fbedc7f3361d77e61b16f9393d4d73ecdf551cc9da151fac45b671bcbeb0c26d2ef8b27430"
+          "sha512": "5c90b71eba01f694a164074ec0e2bd3baede2f290b48af382ff424fbedc7f3361d77e61b16f9393d4d73ecdf551cc9da151fac45b671bcbeb0c26d2ef8b27430",
+          "sha1": "22c2fa0141397101a48abddcaea2c5396617544b"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/vRxBeYJI/blast-1.14.jar",
         "filename": "blast-1.14.jar",
@@ -1009,15 +1058,15 @@
     "changelog": "BLAST 1.13 - 1.20:\n\n- Added Chinese localization (thanks Rad586 !)\n- Fixed confetti particles' broken physics (thanks WillBL !)\n\n\n\n see full changelog [here](https://github.com/Ladysnake/BLAST/blob/1.13/changelog.md \"Changelog\")",
     "changelog_url": null,
     "date_published": "2024-01-01T15:19:09.289746Z",
-    "downloads": 76001,
+    "downloads": 76052,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "10d7ebefb9cd465a6577397f2cb51e529693aef5",
-          "sha512": "cc144be01386031379c4b20a844087e6f096d834a06e617a968ca65df659ec75621860963004210ce384423118adef5dfe610b04c03a96c34c14aa5a55786551"
+          "sha512": "cc144be01386031379c4b20a844087e6f096d834a06e617a968ca65df659ec75621860963004210ce384423118adef5dfe610b04c03a96c34c14aa5a55786551",
+          "sha1": "10d7ebefb9cd465a6577397f2cb51e529693aef5"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/ojB3W9Gs/blast-1.13.jar",
         "filename": "blast-1.13.jar",
@@ -1052,8 +1101,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f6622cd65d5925b6e6a081bf42863b6296141a50a4a7bf08a160ec7b5f214a29646f8591b5f25800a1b551491e153e5513fd78ccf89e94d5797c4c0e01963681",
-          "sha1": "b63c6d7c91f8535261280e95a48b6ff719bb051e"
+          "sha1": "b63c6d7c91f8535261280e95a48b6ff719bb051e",
+          "sha512": "f6622cd65d5925b6e6a081bf42863b6296141a50a4a7bf08a160ec7b5f214a29646f8591b5f25800a1b551491e153e5513fd78ccf89e94d5797c4c0e01963681"
         },
         "url": "https://cdn.modrinth.com/data/hrVBD9fd/versions/pSmVu2ni/blast-1.12.jar",
         "filename": "blast-1.12.jar",

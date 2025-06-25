@@ -15,15 +15,15 @@
     "changelog": "Updated for Minecraft 1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-21T23:56:51.759781Z",
-    "downloads": 1487,
+    "downloads": 1556,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f5a69a0d4b0d38e470e4a253cbae9da959c6dd9abf899d7a48ef908670f92a0f45860127c6037fd2f42a09305e8b549bb3dc3816c7dc458b6f2056b063bbf688",
-          "sha1": "54e23bb4565b2714be68a4468f0ac3092c33b638"
+          "sha1": "54e23bb4565b2714be68a4468f0ac3092c33b638",
+          "sha512": "f5a69a0d4b0d38e470e4a253cbae9da959c6dd9abf899d7a48ef908670f92a0f45860127c6037fd2f42a09305e8b549bb3dc3816c7dc458b6f2056b063bbf688"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/fsJEqrfj/appleskin-neoforge-mc1.21.6-3.0.7.jar",
         "filename": "appleskin-neoforge-mc1.21.6-3.0.7.jar",
@@ -50,15 +50,15 @@
     "changelog": "Updated for Minecraft 1.21.6 (thanks [Currypan1229](https://github.com/Currypan1229))",
     "changelog_url": null,
     "date_published": "2025-06-21T23:35:18.379769Z",
-    "downloads": 28941,
+    "downloads": 30518,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "18fc3a8be56c802e3515ed3e2b6376eb00cd3eaf",
-          "sha512": "e36c78b036676b3fac1ec3edefdcf014ccde8ce65fd3e9c1c2f9a7bbc7c94185168a2cd6c8c27564e9204cd892bfbaae9989830d1acea83e6f37187b7a43ad7d"
+          "sha512": "e36c78b036676b3fac1ec3edefdcf014ccde8ce65fd3e9c1c2f9a7bbc7c94185168a2cd6c8c27564e9204cd892bfbaae9989830d1acea83e6f37187b7a43ad7d",
+          "sha1": "18fc3a8be56c802e3515ed3e2b6376eb00cd3eaf"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/YAjCkZ29/appleskin-fabric-mc1.21.6-3.0.6.jar",
         "filename": "appleskin-fabric-mc1.21.6-3.0.6.jar",
@@ -92,15 +92,15 @@
     "changelog": "Added integration with the NeoForge config screen (accessible from the Mods screen)",
     "changelog_url": null,
     "date_published": "2025-06-05T04:40:21.407634Z",
-    "downloads": 8335,
+    "downloads": 8368,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "261d3167318ef99877c5d25f0b67765241531a17",
-          "sha512": "96981518f34022af38df02e7b34c5a918af89723b965c578c73cb34a886f8c27606bafcf4e88db602575ca9cd1d4f9a93aa2870fbefccd73fd64d829323b955a"
+          "sha512": "96981518f34022af38df02e7b34c5a918af89723b965c578c73cb34a886f8c27606bafcf4e88db602575ca9cd1d4f9a93aa2870fbefccd73fd64d829323b955a",
+          "sha1": "261d3167318ef99877c5d25f0b67765241531a17"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/P8sTsYtJ/appleskin-neoforge-mc1.21.5-3.0.7.jar",
         "filename": "appleskin-neoforge-mc1.21.5-3.0.7.jar",
@@ -128,7 +128,7 @@
     "changelog": "Added integration with the NeoForge config screen (accessible from the Mods screen)",
     "changelog_url": null,
     "date_published": "2025-06-05T04:39:40.950313Z",
-    "downloads": 2917,
+    "downloads": 2947,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -165,15 +165,15 @@
     "changelog": "Added integration with the NeoForge config screen (accessible from the Mods screen)",
     "changelog_url": null,
     "date_published": "2025-06-05T04:39:02.085702Z",
-    "downloads": 59413,
+    "downloads": 59996,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "8f76d97a7f61f8d61db6d84a83baf29a3bb56330",
-          "sha512": "03a94fe4143250b8e80abe97770918ba0af1265110bb73c25444674f9cdf86164464332a913cbac29af82d8ed02dce6ef19bbb62fced92620817a7ec1e761b71"
+          "sha512": "03a94fe4143250b8e80abe97770918ba0af1265110bb73c25444674f9cdf86164464332a913cbac29af82d8ed02dce6ef19bbb62fced92620817a7ec1e761b71",
+          "sha1": "8f76d97a7f61f8d61db6d84a83baf29a3bb56330"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/kztxpjAA/appleskin-neoforge-mc1.21-3.0.7.jar",
         "filename": "appleskin-neoforge-mc1.21-3.0.7.jar",
@@ -200,7 +200,7 @@
     "changelog": "- Updated for Minecraft 1.21.5 (#351, thanks @Currypan1229)\n- Updated German localization (#337, thanks @Lucanoria)\n- Added Brazilian Portuguese localization (#344, thanks @Xlr11)",
     "changelog_url": null,
     "date_published": "2025-04-05T00:19:15.247115Z",
-    "downloads": 631340,
+    "downloads": 632886,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -242,7 +242,7 @@
     "changelog": "Updated for Minecraft 1.21.5",
     "changelog_url": null,
     "date_published": "2025-04-05T00:16:27.92077Z",
-    "downloads": 14817,
+    "downloads": 14827,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -278,15 +278,15 @@
     "changelog": "Updated for Minecraft 1.21.3",
     "changelog_url": null,
     "date_published": "2024-11-01T06:23:59.365239Z",
-    "downloads": 1186817,
+    "downloads": 1187604,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5bf91b0df04e27b94b8dff36aa782cc9f44fc2f6",
-          "sha512": "b572a3eea43e0084819c88dd7fac6a0a5d5555d9b73df927b97f29764f281cadbfc8cc5f8f6b6920f1677bcec87b411e5a582d305a191735ad8d60fc90900900"
+          "sha512": "b572a3eea43e0084819c88dd7fac6a0a5d5555d9b73df927b97f29764f281cadbfc8cc5f8f6b6920f1677bcec87b411e5a582d305a191735ad8d60fc90900900",
+          "sha1": "5bf91b0df04e27b94b8dff36aa782cc9f44fc2f6"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/cHQjeYVS/appleskin-fabric-mc1.21.3-3.0.6.jar",
         "filename": "appleskin-fabric-mc1.21.3-3.0.6.jar",
@@ -321,15 +321,15 @@
     "changelog": "Updated for Minecraft 1.21.3",
     "changelog_url": null,
     "date_published": "2024-11-01T06:23:21.285781Z",
-    "downloads": 33439,
+    "downloads": 33442,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fd5aba2bc1b0417be80e01a9f991015c7cc9185476bd1845d31f8ece11a4b6305f8e5ecec9b2e7b5f09c2936aeea02b6b3469291e5adf64e00c51c5fa9bb1023",
-          "sha1": "aac5aef8f1ca2be5311dce088ef61b91d8e0eb37"
+          "sha1": "aac5aef8f1ca2be5311dce088ef61b91d8e0eb37",
+          "sha512": "fd5aba2bc1b0417be80e01a9f991015c7cc9185476bd1845d31f8ece11a4b6305f8e5ecec9b2e7b5f09c2936aeea02b6b3469291e5adf64e00c51c5fa9bb1023"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/c3srhuUU/appleskin-neoforge-mc1.21.3-3.0.6.jar",
         "filename": "appleskin-neoforge-mc1.21.3-3.0.6.jar",
@@ -358,15 +358,15 @@
     "changelog": "Fixed AppleSkin tooltips not showing up in the JEI side pane",
     "changelog_url": null,
     "date_published": "2024-11-01T06:22:22.888816Z",
-    "downloads": 2783236,
+    "downloads": 2786232,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "97452cfadfde1f8f8c67838643019eabafa58fbb",
-          "sha512": "accbb36b863bdeaaeb001f7552534f3bdf0f27556795cf8e813f9b32e7732450ec5133da5e0ec9b92dc22588c48ffb61577c375f596dc351f15c15ce6a6f4228"
+          "sha512": "accbb36b863bdeaaeb001f7552534f3bdf0f27556795cf8e813f9b32e7732450ec5133da5e0ec9b92dc22588c48ffb61577c375f596dc351f15c15ce6a6f4228",
+          "sha1": "97452cfadfde1f8f8c67838643019eabafa58fbb"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/b5ZiCjAr/appleskin-fabric-mc1.21-3.0.6.jar",
         "filename": "appleskin-fabric-mc1.21-3.0.6.jar",
@@ -401,15 +401,15 @@
     "changelog": "Fix possible crash when max health/max hunger is changing",
     "changelog_url": null,
     "date_published": "2024-08-01T10:36:04.054489Z",
-    "downloads": 956617,
+    "downloads": 956706,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "32176384779f6e223ce6c68bfa3c505222be0d5a21606a195562b471d29b2f7af253bb42756dd66373475bb75582fc11c72d8bd2f311bd0f0ad06816e4f61a29",
-          "sha1": "9cf6df32c9f98b8eb3ae6527cd5fef9a46df3175"
+          "sha1": "9cf6df32c9f98b8eb3ae6527cd5fef9a46df3175",
+          "sha512": "32176384779f6e223ce6c68bfa3c505222be0d5a21606a195562b471d29b2f7af253bb42756dd66373475bb75582fc11c72d8bd2f311bd0f0ad06816e4f61a29"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/fG1xJao0/appleskin-fabric-mc1.21-3.0.5.jar",
         "filename": "appleskin-fabric-mc1.21-3.0.5.jar",
@@ -444,7 +444,7 @@
     "changelog": "Fix possible crash when max health/max hunger is changing",
     "changelog_url": null,
     "date_published": "2024-08-01T10:35:31.961431Z",
-    "downloads": 61313,
+    "downloads": 61344,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -487,7 +487,7 @@
     "changelog": "- Fix possible crash when max health/max hunger is changing\n- Fix FoodValuesEvent being erroneously fired twice for the same tooltip values (#316)\n- Internally use NeoForge's getFoodProperties function\n",
     "changelog_url": null,
     "date_published": "2024-08-01T10:34:44.768971Z",
-    "downloads": 451954,
+    "downloads": 452106,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -565,8 +565,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "93be2e347ceebac149f63811ac42d74467b5174d",
-          "sha512": "0d961f229e3ccc5b307e28b0914601d1fa15848f5a9df04cdd149b3b7b53ab2edd6efe2157f8812dfd516da020cadcf5b4ed6481d0c06a7e12744147519d90dd"
+          "sha512": "0d961f229e3ccc5b307e28b0914601d1fa15848f5a9df04cdd149b3b7b53ab2edd6efe2157f8812dfd516da020cadcf5b4ed6481d0c06a7e12744147519d90dd",
+          "sha1": "93be2e347ceebac149f63811ac42d74467b5174d"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/LFddfubH/appleskin-neoforge-mc1.21-3.0.4.jar",
         "filename": "appleskin-neoforge-mc1.21-3.0.4.jar",
@@ -636,8 +636,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0aea5aeb5125457ea239b765e7fdd18fed1d7143e60ccab6751c527ecb4670f66271459345fa466e1a8f83606ff55be36cbad060fcd00242620947dec32ef7fb",
-          "sha1": "ef9fd972dd51545c934a06e4aa4043f344c10f44"
+          "sha1": "ef9fd972dd51545c934a06e4aa4043f344c10f44",
+          "sha512": "0aea5aeb5125457ea239b765e7fdd18fed1d7143e60ccab6751c527ecb4670f66271459345fa466e1a8f83606ff55be36cbad060fcd00242620947dec32ef7fb"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/mOQago5B/appleskin-neoforge-mc1.20.5-3.0.3.jar",
         "filename": "appleskin-neoforge-mc1.20.5-3.0.3.jar",
@@ -699,7 +699,7 @@
     "changelog": "Updated for Minecraft 1.21",
     "changelog_url": null,
     "date_published": "2024-06-15T01:10:47.925815Z",
-    "downloads": 807996,
+    "downloads": 808159,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -749,8 +749,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "fadddb7a8b387f29f130e7fe317e929e5ec6f1a5fe8b5e4a473160d335cd71028212e7494e40071405aec1701178ed024b806737f10e90527b9bece182d87dd2",
-          "sha1": "8c292d5e6ed37c21b2bec8c044b01e6c586332c5"
+          "sha1": "8c292d5e6ed37c21b2bec8c044b01e6c586332c5",
+          "sha512": "fadddb7a8b387f29f130e7fe317e929e5ec6f1a5fe8b5e4a473160d335cd71028212e7494e40071405aec1701178ed024b806737f10e90527b9bece182d87dd2"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/Mr9bRvmn/appleskin-neoforge-mc1.20.5-3.0.2.jar",
         "filename": "appleskin-neoforge-mc1.20.5-3.0.2.jar",
@@ -778,7 +778,7 @@
     "changelog": "Fix handling of the HIDE_TOOLTIP component\n- fixes a crash when an ItemStack had both the HIDE_TOOLTIP component and the FOOD component",
     "changelog_url": null,
     "date_published": "2024-05-16T00:56:42.727862Z",
-    "downloads": 151077,
+    "downloads": 151089,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -863,8 +863,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d5f67aa0bef3b73f8f019f2aaf09fd33d0a39f0958923a6e5406b5bcc671d2dfacba8cd3b63214ccede9f279c3f706d6cd9c3d6dca74587c3dab2715b55a6451",
-          "sha1": "3dd11dc95c64ed65741873af554292fb38e9c233"
+          "sha1": "3dd11dc95c64ed65741873af554292fb38e9c233",
+          "sha512": "d5f67aa0bef3b73f8f019f2aaf09fd33d0a39f0958923a6e5406b5bcc671d2dfacba8cd3b63214ccede9f279c3f706d6cd9c3d6dca74587c3dab2715b55a6451"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/8FulBxPD/appleskin-neoforge-mc1.20.5-3.0.0.jar",
         "filename": "appleskin-neoforge-mc1.20.5-3.0.0.jar",
@@ -941,8 +941,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "77ffba71795bfde057e3f09790aeba5a7d714fc004354b6e0fd3d099f108bc8ea1f9e1ac1a2eb149195a7b38e6d7afd6ff3495821a9ca28132fe2263a96d6545",
-          "sha1": "b4eb433769e4e8723b94b92dc4b4a25bb0b64b05"
+          "sha1": "b4eb433769e4e8723b94b92dc4b4a25bb0b64b05",
+          "sha512": "77ffba71795bfde057e3f09790aeba5a7d714fc004354b6e0fd3d099f108bc8ea1f9e1ac1a2eb149195a7b38e6d7afd6ff3495821a9ca28132fe2263a96d6545"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/A5tg1xFz/appleskin-fabric-mc24w14potato-2.5.1.jar",
         "filename": "appleskin-fabric-mc24w14potato-2.5.1.jar",
@@ -1012,15 +1012,15 @@
     "changelog": "- Updated for Minecraft 1.20.3/1.20.4\n- Added Spanish translations ([#278](https://github.com/squeek502/AppleSkin/pull/278), thanks RobotoSkunk)\n",
     "changelog_url": null,
     "date_published": "2023-12-13T06:56:27.281761Z",
-    "downloads": 730883,
+    "downloads": 731016,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d121c5b760da0df1882f74bedfe84f2033d81a679cb0aa15e38eeae5fefefba8b23b1a87e43095c3cb9cbde5d0960b52d99856209111069923078c39c8750aa6",
-          "sha1": "d8c8f47cadf0bec89b0539f44e3c67df73d8e048"
+          "sha1": "d8c8f47cadf0bec89b0539f44e3c67df73d8e048",
+          "sha512": "d121c5b760da0df1882f74bedfe84f2033d81a679cb0aa15e38eeae5fefefba8b23b1a87e43095c3cb9cbde5d0960b52d99856209111069923078c39c8750aa6"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/pmFyu3Sz/appleskin-fabric-mc1.20.3-2.5.1.jar",
         "filename": "appleskin-fabric-mc1.20.3-2.5.1.jar",
@@ -1054,15 +1054,15 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))\n- Made tooltips in the mod config screen translatable and added Chinese translations ([#261](https://github.com/squeek502/AppleSkin/pull/261), thanks @HhiPyrene)\n- Backported all updated and new translations from the latest 1.20 version\n- Fixed potential crash when isFood returns true but getFoodComponent returns null ([#235](https://github.com/squeek502/AppleSkin/pull/235), thanks @NerjalNosk)",
     "changelog_url": null,
     "date_published": "2023-12-13T06:52:45.475671Z",
-    "downloads": 201329,
+    "downloads": 201386,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a79afba33081be2ac8bf5d0e7e59b321240ccd4d67a84b1a18db9f10d8cdeae2fcf52e1c4898a904e0cc327dbbb8fae832ade3e6704dc3f9c2e50e1f18ab39c9",
-          "sha1": "b4ee602338d2fff9b4cb15f69aeb5c6b6c873772"
+          "sha1": "b4ee602338d2fff9b4cb15f69aeb5c6b6c873772",
+          "sha512": "a79afba33081be2ac8bf5d0e7e59b321240ccd4d67a84b1a18db9f10d8cdeae2fcf52e1c4898a904e0cc327dbbb8fae832ade3e6704dc3f9c2e50e1f18ab39c9"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/tpQpTIMn/appleskin-fabric-mc1.19.2-2.5.1.jar",
         "filename": "appleskin-fabric-mc1.19.2-2.5.1.jar",
@@ -1098,15 +1098,15 @@
     "changelog": "Initial NeoForge version for Minecraft 1.20.2",
     "changelog_url": null,
     "date_published": "2023-11-08T23:05:02.686878Z",
-    "downloads": 11086,
+    "downloads": 11088,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "660a5d2c4a9cda325d2a1e6f906e5bb65ed0e1d29ba198dea96fbcc7af5f315d5f8a1aa1d0f5d83fc3a3af4979251615300c5ec02057f049c7b5cf6fb407316f",
-          "sha1": "d1cd1fdf81dcfa0639391d221fe9551b017a9bbb"
+          "sha1": "d1cd1fdf81dcfa0639391d221fe9551b017a9bbb",
+          "sha512": "660a5d2c4a9cda325d2a1e6f906e5bb65ed0e1d29ba198dea96fbcc7af5f315d5f8a1aa1d0f5d83fc3a3af4979251615300c5ec02057f049c7b5cf6fb407316f"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/O6Swxqrh/appleskin-neoforge-mc1.20.2-2.5.1.jar",
         "filename": "appleskin-neoforge-mc1.20.2-2.5.1.jar",
@@ -1133,15 +1133,15 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))\n- Made tooltips in the mod config screen translatable and added Chinese translations ([#261](https://github.com/squeek502/AppleSkin/pull/261), thanks @HhiPyrene)\n- Added Korean translation ([#249](https://github.com/squeek502/AppleSkin/pull/249), thanks @Yusi0)\n- Updated for Minecraft 1.20.2",
     "changelog_url": null,
     "date_published": "2023-09-27T05:12:58.104446Z",
-    "downloads": 245166,
+    "downloads": 245193,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b27c6836d31a124ba216649b3ef2cf4e4011e45f",
-          "sha512": "5533eb6efac26865d88045a93b7d41f789936a4807ffa7884b04e67294122a84f3fc69c99641b0e8162f900b81395a84e71328ba3cff25aa01e73695701df3ae"
+          "sha512": "5533eb6efac26865d88045a93b7d41f789936a4807ffa7884b04e67294122a84f3fc69c99641b0e8162f900b81395a84e71328ba3cff25aa01e73695701df3ae",
+          "sha1": "b27c6836d31a124ba216649b3ef2cf4e4011e45f"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/JNKPokGG/appleskin-fabric-mc1.20.2-2.5.1.jar",
         "filename": "appleskin-fabric-mc1.20.2-2.5.1.jar",
@@ -1177,7 +1177,7 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))\n- Fixed large hunger/saturation text being drawn on top of the icon in tooltips ([#262](https://github.com/squeek502/AppleSkin/issues/262))\n- Updated for Minecraft 1.20.2",
     "changelog_url": null,
     "date_published": "2023-09-27T05:12:12.106465Z",
-    "downloads": 52959,
+    "downloads": 52972,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1213,7 +1213,7 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))\n- Made tooltips in the mod config screen translatable and added Chinese translations ([#261](https://github.com/squeek502/AppleSkin/pull/261), thanks @HhiPyrene)\n- Added Korean translation ([#249](https://github.com/squeek502/AppleSkin/pull/249), thanks @Yusi0)",
     "changelog_url": null,
     "date_published": "2023-09-27T05:11:22.074619Z",
-    "downloads": 6403505,
+    "downloads": 6406029,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1255,15 +1255,15 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))\n- Fixed large hunger/saturation text being drawn on top of the icon in tooltips ([#262](https://github.com/squeek502/AppleSkin/issues/262))",
     "changelog_url": null,
     "date_published": "2023-09-27T05:07:37.394825Z",
-    "downloads": 4407592,
+    "downloads": 4410177,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "81919356f84eab14258db98924b66c3c38e372b1",
-          "sha512": "3176f928fb6c60d27f5edb610ca4ab0236175404eebf32797a1ec6cdd794bb294a260231579578536d03571377e43c6181adc75d8dd2c0733f17fce4f7e636b9"
+          "sha512": "3176f928fb6c60d27f5edb610ca4ab0236175404eebf32797a1ec6cdd794bb294a260231579578536d03571377e43c6181adc75d8dd2c0733f17fce4f7e636b9",
+          "sha1": "81919356f84eab14258db98924b66c3c38e372b1"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/XdXDExVF/appleskin-forge-mc1.20.1-2.5.1.jar",
         "filename": "appleskin-forge-mc1.20.1-2.5.1.jar",
@@ -1290,15 +1290,15 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))\n- Made tooltips in the mod config screen translatable and added Chinese translations ([#261](https://github.com/squeek502/AppleSkin/pull/261), thanks @HhiPyrene)\n- Backported all updated and new translations from the latest 1.20 version",
     "changelog_url": null,
     "date_published": "2023-09-27T05:06:26.277593Z",
-    "downloads": 102752,
+    "downloads": 102791,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "702e8f1e14734e24128d7f854988a19c7ab76170",
-          "sha512": "833cfec3a67c1a868037b3445d7c8b50406b50cec18be51026fb03885552f110579aafe9a6d9ce4297ae29fbe155eb9995760265e04ecd1fa2272e5c74a0cd1a"
+          "sha512": "833cfec3a67c1a868037b3445d7c8b50406b50cec18be51026fb03885552f110579aafe9a6d9ce4297ae29fbe155eb9995760265e04ecd1fa2272e5c74a0cd1a",
+          "sha1": "702e8f1e14734e24128d7f854988a19c7ab76170"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/aIpOZwoo/appleskin-fabric-mc1.19.4-2.5.1.jar",
         "filename": "appleskin-fabric-mc1.19.4-2.5.1.jar",
@@ -1332,15 +1332,15 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))",
     "changelog_url": null,
     "date_published": "2023-09-27T05:05:53.6829Z",
-    "downloads": 25314,
+    "downloads": 25322,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "87f928fc0fa416a748c6b47f1bf79ad3340da5397de02754f9a1037d774edfaa7c15d5742cac9b18d0c027f23acb1e9037205e6d3cd13858bad5cd5d84323a36",
-          "sha1": "b6ba5c492030d43e2b30dcc949d533d4bd5d0c16"
+          "sha1": "b6ba5c492030d43e2b30dcc949d533d4bd5d0c16",
+          "sha512": "87f928fc0fa416a748c6b47f1bf79ad3340da5397de02754f9a1037d774edfaa7c15d5742cac9b18d0c027f23acb1e9037205e6d3cd13858bad5cd5d84323a36"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/LAwakjdi/appleskin-forge-mc1.19.4-2.5.1.jar",
         "filename": "appleskin-forge-mc1.19.4-2.5.1.jar",
@@ -1367,7 +1367,7 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))\n- Made tooltips in the mod config screen translatable and added Chinese translations ([#261](https://github.com/squeek502/AppleSkin/pull/261), thanks @HhiPyrene)\n- Backported all updated and new translations from the latest 1.20 version",
     "changelog_url": null,
     "date_published": "2023-09-27T05:05:23.302864Z",
-    "downloads": 55922,
+    "downloads": 55942,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1409,15 +1409,15 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))",
     "changelog_url": null,
     "date_published": "2023-09-27T05:04:46.592438Z",
-    "downloads": 168563,
+    "downloads": 168669,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "eaf644c8e97ee78441bca9cf05f4b73d025e9a58e5a80c2b64ba9ebf3359d49dfc7d9f569b1d427486115126d8a3aa54f614760ce16852b563b29c6fae6702da",
-          "sha1": "e14d072aa97605ac77f23f793578270c68d2624c"
+          "sha1": "e14d072aa97605ac77f23f793578270c68d2624c",
+          "sha512": "eaf644c8e97ee78441bca9cf05f4b73d025e9a58e5a80c2b64ba9ebf3359d49dfc7d9f569b1d427486115126d8a3aa54f614760ce16852b563b29c6fae6702da"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/1ZaL0ACn/appleskin-forge-mc1.18.2-2.5.1.jar",
         "filename": "appleskin-forge-mc1.18.2-2.5.1.jar",
@@ -1444,15 +1444,15 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values\n- Made tooltips in the mod config screen translatable and added Chinese translations ([#261](https://github.com/squeek502/AppleSkin/pull/261), thanks @HhiPyrene)\n- Backported all updated and new translations from the latest 1.20 version",
     "changelog_url": null,
     "date_published": "2023-09-27T05:02:48.654892Z",
-    "downloads": 17205,
+    "downloads": 17208,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5def34944a43ceb1fee83be458b2c29517c0896ea452c4135267c4c37be04e728fb06b0598db72abb55a03abeae691c036ca1b955a888a7acf5db16971965ab1",
-          "sha1": "28c72029cc5208bd7825862baa66806e8fc3fc41"
+          "sha1": "28c72029cc5208bd7825862baa66806e8fc3fc41",
+          "sha512": "5def34944a43ceb1fee83be458b2c29517c0896ea452c4135267c4c37be04e728fb06b0598db72abb55a03abeae691c036ca1b955a888a7acf5db16971965ab1"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/3hKtTn8d/appleskin-fabric-mc1.17.1-2.5.1.jar",
         "filename": "appleskin-fabric-mc1.17.1-2.5.1.jar",
@@ -1521,15 +1521,15 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))\n- Made tooltips in the mod config screen translatable and added Chinese translations ([#261](https://github.com/squeek502/AppleSkin/pull/261), thanks @HhiPyrene)\n- Backported all updated and new translations from the latest 1.20 version",
     "changelog_url": null,
     "date_published": "2023-09-27T05:01:12.555157Z",
-    "downloads": 66473,
+    "downloads": 66509,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "34c5d98545f37462dc4cac0482683c477bc55d15cdb9bd26a7bf407114613ea5a51628d41b57067cd5056cbbf1a6d114c44015bc46a110384403033a5452d960",
-          "sha1": "5723e5df8c443e54aaccfbc2443343fece2cd31a"
+          "sha1": "5723e5df8c443e54aaccfbc2443343fece2cd31a",
+          "sha512": "34c5d98545f37462dc4cac0482683c477bc55d15cdb9bd26a7bf407114613ea5a51628d41b57067cd5056cbbf1a6d114c44015bc46a110384403033a5452d960"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/8N1HVFeQ/appleskin-fabric-mc1.16.5-2.5.1.jar",
         "filename": "appleskin-fabric-mc1.16.5-2.5.1.jar",
@@ -1564,15 +1564,15 @@
     "changelog": "- Fixed potential crash from unexpectedly large health/absorption values ([#266](https://github.com/squeek502/AppleSkin/issues/266))",
     "changelog_url": null,
     "date_published": "2023-09-27T05:00:26.66738Z",
-    "downloads": 381284,
+    "downloads": 381388,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "eedbba977def58ce87d23e32391c01692121da86",
-          "sha512": "f7fec83bba6ae1ccb333a2da4f444fa2cb776e2771c43836b796b36f9b98632119e91241764f4cf9c0031d4d413004e2b2170a95e01d7123cf93ed51d9bab21f"
+          "sha512": "f7fec83bba6ae1ccb333a2da4f444fa2cb776e2771c43836b796b36f9b98632119e91241764f4cf9c0031d4d413004e2b2170a95e01d7123cf93ed51d9bab21f",
+          "sha1": "eedbba977def58ce87d23e32391c01692121da86"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/633NTwhH/appleskin-forge-mc1.16.x-2.5.1.jar",
         "filename": "appleskin-forge-mc1.16.x-2.5.1.jar",
@@ -1599,7 +1599,7 @@
     "changelog": "Originally released Jun 23, 2020",
     "changelog_url": null,
     "date_published": "2023-09-27T04:57:15.950463Z",
-    "downloads": 1521,
+    "downloads": 1522,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1641,15 +1641,15 @@
     "changelog": "Originally released Jun 23, 2020",
     "changelog_url": null,
     "date_published": "2023-09-27T04:56:30.764706Z",
-    "downloads": 1777,
+    "downloads": 1778,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "72e34699f066edb3a80a7c2f3fbb85f229de126d522072b027a82511079b656f983989147fbd38731e845b308c570f5544c661c286a69727b5d0b7d9368f423a",
-          "sha1": "1f0e57628fb847ffd826ba3d31c19093e98cea4c"
+          "sha1": "1f0e57628fb847ffd826ba3d31c19093e98cea4c",
+          "sha512": "72e34699f066edb3a80a7c2f3fbb85f229de126d522072b027a82511079b656f983989147fbd38731e845b308c570f5544c661c286a69727b5d0b7d9368f423a"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/6c22LUR7/AppleSkin-mc1.15.2-forge-1.0.14.jar",
         "filename": "AppleSkin-mc1.15.2-forge-1.0.14.jar",
@@ -1683,8 +1683,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "78ff2416d1ddf4a9873bf1d1786d394773071a9e",
-          "sha512": "3ba643f778e4abcecc95635ec94fd7b13b08e34c0887223327d7271cfc24bcf4e70f267f5e40512b4db984efd3bf5e9811bd577b15496c89d796803507b4a0f7"
+          "sha512": "3ba643f778e4abcecc95635ec94fd7b13b08e34c0887223327d7271cfc24bcf4e70f267f5e40512b4db984efd3bf5e9811bd577b15496c89d796803507b4a0f7",
+          "sha1": "78ff2416d1ddf4a9873bf1d1786d394773071a9e"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/YRYMfgWI/appleskin-mc1.14-fabric-1.0.11.jar",
         "filename": "appleskin-mc1.14-fabric-1.0.11.jar",
@@ -1718,7 +1718,7 @@
     "changelog": "Originally released Jun 23, 2020",
     "changelog_url": null,
     "date_published": "2023-09-27T04:54:58.634007Z",
-    "downloads": 1780,
+    "downloads": 1782,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1760,8 +1760,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5cdf49369e5d6d9a893aeff18606cad469136713",
-          "sha512": "e88d7760fcbc3d3abf0681a89f1da3309549f97e5c0430020e684f7ebd02703f78926058bf2e3464961c2a21dd98177fcd09e153e4ca5fed7f187a061193cce8"
+          "sha512": "e88d7760fcbc3d3abf0681a89f1da3309549f97e5c0430020e684f7ebd02703f78926058bf2e3464961c2a21dd98177fcd09e153e4ca5fed7f187a061193cce8",
+          "sha1": "5cdf49369e5d6d9a893aeff18606cad469136713"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/6Pv3U3lw/AppleSkin-mc1.13.2-1.0.14.jar",
         "filename": "AppleSkin-mc1.13.2-1.0.14.jar",
@@ -1788,7 +1788,7 @@
     "changelog": "Originally released Jun 23, 2020",
     "changelog_url": null,
     "date_published": "2023-09-27T04:52:39.09329Z",
-    "downloads": 194004,
+    "downloads": 194119,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1823,15 +1823,15 @@
     "changelog": "Originally released Jun 23, 2020",
     "changelog_url": null,
     "date_published": "2023-09-27T04:51:40.457954Z",
-    "downloads": 821,
+    "downloads": 822,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "54dff307129303837c3b06c986a6f3674223b3bc",
-          "sha512": "e09631da1922e5e8c16766b1f2166ff1d70881b81344b358624e10d48f075b1b6c6c505d07a5ea59f094d037dfbc4581de1bc541e3179a69fb50ce82bd89f779"
+          "sha512": "e09631da1922e5e8c16766b1f2166ff1d70881b81344b358624e10d48f075b1b6c6c505d07a5ea59f094d037dfbc4581de1bc541e3179a69fb50ce82bd89f779",
+          "sha1": "54dff307129303837c3b06c986a6f3674223b3bc"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/FeAwEvfD/AppleSkin-mc1.11-1.0.14.jar",
         "filename": "AppleSkin-mc1.11-1.0.14.jar",
@@ -1858,7 +1858,7 @@
     "changelog": "Originally released Jun 23, 2020",
     "changelog_url": null,
     "date_published": "2023-09-27T04:50:14.83261Z",
-    "downloads": 3425,
+    "downloads": 3430,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1893,15 +1893,15 @@
     "changelog": "- Updated for Minecraft 1.20.1 ([#243](https://github.com/squeek502/AppleSkin/pull/243), thanks @SAGESSE-CN)\n  + Requires Forge &gt;= 47.0.12 since the Forge tooltip API was broken in earlier Forge versions\n- **Breaking AppleSkin API changes**:\n  + All `PoseStack` parameters have been changed to `GuiGraphics`",
     "changelog_url": null,
     "date_published": "2023-06-23T05:33:40.562725Z",
-    "downloads": 59884,
+    "downloads": 59887,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "7688bc34a0b222d65c0d7e1e959cc78bcb6eb989",
-          "sha512": "0fd04f8d2e7a4d384fb9b3ae8f975dc3cd8cf41800c9e712e62f254ea5802c7831e1afef6a7579a7ebd0ae6a909958d35392e74e3b08de1a70c001884741d846"
+          "sha512": "0fd04f8d2e7a4d384fb9b3ae8f975dc3cd8cf41800c9e712e62f254ea5802c7831e1afef6a7579a7ebd0ae6a909958d35392e74e3b08de1a70c001884741d846",
+          "sha1": "7688bc34a0b222d65c0d7e1e959cc78bcb6eb989"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/lH9KEmGA/appleskin-forge-mc1.20.1-2.5.0.jar",
         "filename": "appleskin-forge-mc1.20.1-2.5.0.jar",
@@ -1930,15 +1930,15 @@
     "changelog": "- Updated for Minecraft 1.20 (#240, thanks @SAGESSE-CN)\n- Breaking AppleSkin API changes: all MatrixStack parameters have been changed to DrawContext\n",
     "changelog_url": null,
     "date_published": "2023-06-08T08:20:31.510637Z",
-    "downloads": 595099,
+    "downloads": 595143,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ffeec0410fa1a146788b53a727fcccfa0ef3de49245c553be52c9127c6417862742002d7a0eb11ed74d0ea0e743f2c1b1863f2d30806b38544120c02adcc2896",
-          "sha1": "f01bcf9adbaaeb5f6b185864c0b879e8e3923991"
+          "sha1": "f01bcf9adbaaeb5f6b185864c0b879e8e3923991",
+          "sha512": "ffeec0410fa1a146788b53a727fcccfa0ef3de49245c553be52c9127c6417862742002d7a0eb11ed74d0ea0e743f2c1b1863f2d30806b38544120c02adcc2896"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/CxnVG86Y/appleskin-fabric-mc1.20-2.5.0.jar",
         "filename": "appleskin-fabric-mc1.20-2.5.0.jar",
@@ -1973,15 +1973,15 @@
     "changelog": "- Added Ukranian translation (#228, thanks @BurrConnie)\n- Fixed potential crash when isFood returns true but getFoodComponent returns null (#228, thanks @NerjalNosk)\n- Added Polish translation (#239, thanks @DarkKnightComes)\n",
     "changelog_url": null,
     "date_published": "2023-06-08T08:17:15.315421Z",
-    "downloads": 25761,
+    "downloads": 25762,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a6acc5b56850c5d57954eb8e81e92acaf4df946fa993309ee1eeb3dd3fa99e8e37f3a562ff77940e7cd09653cfc2c6e72f44cd5ef4860e017b9d1e3d88bc05cf",
-          "sha1": "c4cd3e9764d4d7c6e4751defba2e3424978f55dd"
+          "sha1": "c4cd3e9764d4d7c6e4751defba2e3424978f55dd",
+          "sha512": "a6acc5b56850c5d57954eb8e81e92acaf4df946fa993309ee1eeb3dd3fa99e8e37f3a562ff77940e7cd09653cfc2c6e72f44cd5ef4860e017b9d1e3d88bc05cf"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/qB7KLPo6/appleskin-fabric-mc1.19.4-2.4.4.jar",
         "filename": "appleskin-fabric-mc1.19.4-2.4.4.jar",
@@ -2016,7 +2016,7 @@
     "changelog": "Updated for Minecraft 1.19.4",
     "changelog_url": null,
     "date_published": "2023-03-16T03:32:48.346582Z",
-    "downloads": 84112,
+    "downloads": 84114,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2065,8 +2065,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e26e5610dd628c84671a6d56b72d8b8eda2ffe1812dc4ac6676a4150cc344e977b252cc33c724d502abf678336b67c0a50fa67d716bd04eaf2b372406f463c46",
-          "sha1": "48aa6ecd77daa43fc69bc92815ff5e9a134c58fd"
+          "sha1": "48aa6ecd77daa43fc69bc92815ff5e9a134c58fd",
+          "sha512": "e26e5610dd628c84671a6d56b72d8b8eda2ffe1812dc4ac6676a4150cc344e977b252cc33c724d502abf678336b67c0a50fa67d716bd04eaf2b372406f463c46"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/qfsuYsle/appleskin-forge-mc1.19.4-2.4.3.jar",
         "filename": "appleskin-forge-mc1.19.4-2.4.3.jar",
@@ -2094,15 +2094,15 @@
     "changelog": "- Updated for Minecraft 1.19.3\n- Added Czech translation (thanks tomlonghorn)\n- Updated Russian translation (thanks Felix14-v2)\n- Updated French translation (thanks Julienraptor01)\n- Added Armenian translation (thanks millkeny)\n\n",
     "changelog_url": null,
     "date_published": "2022-12-13T10:39:58.433455Z",
-    "downloads": 55435,
+    "downloads": 55439,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b7f6f3dbf7eae8d46daa416dff94cc50981e21036939fc2eca392a9a4edaad4594b691133d712a4a22a3cafa0ed35264c0729f48db63bccb8d950405f79f0839",
-          "sha1": "313c021e65965bc6ca7b884a40b121e750cec41d"
+          "sha1": "313c021e65965bc6ca7b884a40b121e750cec41d",
+          "sha512": "b7f6f3dbf7eae8d46daa416dff94cc50981e21036939fc2eca392a9a4edaad4594b691133d712a4a22a3cafa0ed35264c0729f48db63bccb8d950405f79f0839"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/ntsDU1AP/appleskin-fabric-mc1.19.3-2.4.2.jar",
         "filename": "appleskin-fabric-mc1.19.3-2.4.2.jar",
@@ -2139,15 +2139,15 @@
     "changelog": "Fixed transparent icons in custom textures",
     "changelog_url": null,
     "date_published": "2022-08-10T07:42:39.450186Z",
-    "downloads": 872376,
+    "downloads": 872490,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "13595728a6c81bec1537951b479b16852d74f1cf348b92a4caaf9742d51d4dd511805ef2d04cfea95ed16f1389a1156d6244c2fdcd7209043f2ecd1ac6539c2e",
-          "sha1": "7bd52695e82b1ddd1fdb3320154b68bf48dfff37"
+          "sha1": "7bd52695e82b1ddd1fdb3320154b68bf48dfff37",
+          "sha512": "13595728a6c81bec1537951b479b16852d74f1cf348b92a4caaf9742d51d4dd511805ef2d04cfea95ed16f1389a1156d6244c2fdcd7209043f2ecd1ac6539c2e"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/fabric-mc1.19-2.4.1/appleskin-fabric-mc1.19-2.4.1.jar",
         "filename": "appleskin-fabric-mc1.19-2.4.1.jar",
@@ -2182,7 +2182,7 @@
     "changelog": "Fixed transparent icons in custom textures",
     "changelog_url": null,
     "date_published": "2022-08-10T07:41:40.140345Z",
-    "downloads": 41783,
+    "downloads": 41789,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2224,15 +2224,15 @@
     "changelog": "Updated to use IForgeItem.getFoodProperties to support context-sensitive food values, requires Forge >= 40.0.47",
     "changelog_url": null,
     "date_published": "2022-08-10T07:39:31.122359Z",
-    "downloads": 25967,
+    "downloads": 25974,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "bda7c9518fcd8726cca1695fe98e4cee4df1acd16bf9762730855bbd6d538c9a06959c9945059f2fa110dbcee90fe31c172f3b77f22af4fff4c8d77e91668fbc",
-          "sha1": "6fa3d2485e3a7b416470ad5a3c708f1ce366195c"
+          "sha1": "6fa3d2485e3a7b416470ad5a3c708f1ce366195c",
+          "sha512": "bda7c9518fcd8726cca1695fe98e4cee4df1acd16bf9762730855bbd6d538c9a06959c9945059f2fa110dbcee90fe31c172f3b77f22af4fff4c8d77e91668fbc"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/forge-mc1.18.2-2.4.1/appleskin-forge-mc1.18.2-2.4.1.jar",
         "filename": "appleskin-forge-mc1.18.2-2.4.1.jar",
@@ -2262,7 +2262,7 @@
     "changelog": "Updated for Forge >= 41.0.94 (now requires Forge >= 41.0.94)",
     "changelog_url": null,
     "date_published": "2022-07-12T22:50:15.801449Z",
-    "downloads": 1783974,
+    "downloads": 1784395,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2304,8 +2304,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3338b02ee9dd75ce3f0369cc2aec6aa6f725a1983330df67c25f0f054fa9214267aa9acb93fc5f44116608011fbe54fb90950d91220b71cb57a9bc0dffe91e63",
-          "sha1": "27578947848274067878778ca5c07811a0289d40"
+          "sha1": "27578947848274067878778ca5c07811a0289d40",
+          "sha512": "3338b02ee9dd75ce3f0369cc2aec6aa6f725a1983330df67c25f0f054fa9214267aa9acb93fc5f44116608011fbe54fb90950d91220b71cb57a9bc0dffe91e63"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/forge-mc1.19-2.4.1/appleskin-forge-mc1.19-2.4.1.jar",
         "filename": "appleskin-forge-mc1.19-2.4.1.jar",
@@ -2339,8 +2339,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "defbe079e4daf5ee61c9a92d4c5ade311b71e3e0c0c6d421d1fb5ff5a9fdd35f6e449a22d789044f84af30bf6e7b0a9fd46c1b1c68bd41b97b9cfec33c3e7264",
-          "sha1": "7ba2fdb9b998597d90107d244cdfb289f88b79ae"
+          "sha1": "7ba2fdb9b998597d90107d244cdfb289f88b79ae",
+          "sha512": "defbe079e4daf5ee61c9a92d4c5ade311b71e3e0c0c6d421d1fb5ff5a9fdd35f6e449a22d789044f84af30bf6e7b0a9fd46c1b1c68bd41b97b9cfec33c3e7264"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/forge-mc1.19-2.4.0/appleskin-forge-mc1.19-2.4.0.jar",
         "filename": "appleskin-forge-mc1.19-2.4.0.jar",
@@ -2368,7 +2368,7 @@
     "changelog": "Initial Fabric version for Minecraft 1.19",
     "changelog_url": null,
     "date_published": "2022-06-08T00:15:58.50849Z",
-    "downloads": 12894,
+    "downloads": 12895,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2410,15 +2410,15 @@
     "changelog": "- Fixed a possible infinite loop when estimating the health restored by the food the player is holding (#181, thanks @TigerWalts and @Darkere for reporting the bug and providing info on how to reproduce it)\n- Optimized estimation of the health restored by the food the player is holding (previously, in certain situations it could take much, much longer than it needed to; now, it will always take a reasonable amount of time)\n- Added German translation (#177, thanks @Andre601)\n- Added Simplified Chinese translation (#178, thanks @Q2297045667 and @SAGESSE-CN)\n- Added French translation (#179, thanks @Julienraptor01)\n- Updated Turkish translation (#180, thanks @Hexasan)",
     "changelog_url": null,
     "date_published": "2022-03-29T08:19:08.018414Z",
-    "downloads": 56425,
+    "downloads": 56442,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e6812dd091e138513beee5279a4d3940383bb10ea26bd5dfa046957cea0c350a00794097e6462d9b70bfd4c194bc5154deb3011783e9c1bd40763cdd0a6b6bff",
-          "sha1": "07cc0f6d00b184bef9c4390682c098d5ca52e67d"
+          "sha1": "07cc0f6d00b184bef9c4390682c098d5ca52e67d",
+          "sha512": "e6812dd091e138513beee5279a4d3940383bb10ea26bd5dfa046957cea0c350a00794097e6462d9b70bfd4c194bc5154deb3011783e9c1bd40763cdd0a6b6bff"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/fabric-mc1.18.2-2.4.0/appleskin-fabric-mc1.18.2-2.4.0.jar",
         "filename": "appleskin-fabric-mc1.18.2-2.4.0.jar",
@@ -2452,8 +2452,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f4834f9d27dc68be6988d5526431ed41c8080ad90ca18c5339b60c016371db2a58f62b8586168f36f80e9dcab169fee1087fd57501da85b9d8c8c5b631074c9e",
-          "sha1": "36c297edae79cd9c33ce3cdb2230bc36fd9523f0"
+          "sha1": "36c297edae79cd9c33ce3cdb2230bc36fd9523f0",
+          "sha512": "f4834f9d27dc68be6988d5526431ed41c8080ad90ca18c5339b60c016371db2a58f62b8586168f36f80e9dcab169fee1087fd57501da85b9d8c8c5b631074c9e"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/forge-mc1.18-2.4.0/appleskin-forge-mc1.18-2.4.0.jar",
         "filename": "appleskin-forge-mc1.18-2.4.0.jar",
@@ -2585,15 +2585,15 @@
     "changelog": "- Fixed a possible infinite loop when estimating the health restored by the food the player is holding (#181, thanks @TigerWalts and @Darkere for reporting the bug and providing info on how to reproduce it)\n- Optimized estimation of the health restored by the food the player is holding (previously, in certain situations it could take much, much longer than it needed to; now, it will always take a reasonable amount of time)",
     "changelog_url": null,
     "date_published": "2022-03-29T08:13:22.287903Z",
-    "downloads": 30502,
+    "downloads": 30508,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e94a3e14d70d8b0714046339d916cf69f72a88ef1ab0d9800b29e57322303df1b2392d42ad89033242cfe54460973310232f17d1eb1c0cc8e1c353b32fe6bb01",
-          "sha1": "556ba3ebdb401e0833e7151e7a7bca5f8fdac160"
+          "sha1": "556ba3ebdb401e0833e7151e7a7bca5f8fdac160",
+          "sha512": "e94a3e14d70d8b0714046339d916cf69f72a88ef1ab0d9800b29e57322303df1b2392d42ad89033242cfe54460973310232f17d1eb1c0cc8e1c353b32fe6bb01"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/forge-mc1.16.x-2.4.0/appleskin-forge-mc1.16.x-2.4.0.jar",
         "filename": "appleskin-forge-mc1.16.x-2.4.0.jar",
@@ -2732,8 +2732,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "64c60e52886f4ea62f19fb0e7b8718ba5358e5a6",
-          "sha512": "fbcdcdd920857b7163430ba9e74201a4f3029bf5e4d1fd3cecbf88000ecfc804dc0ef1c1b027eedae43264e76e5d44a6337808f951d2d8964fc9491ad2dc3f79"
+          "sha512": "fbcdcdd920857b7163430ba9e74201a4f3029bf5e4d1fd3cecbf88000ecfc804dc0ef1c1b027eedae43264e76e5d44a6337808f951d2d8964fc9491ad2dc3f79",
+          "sha1": "64c60e52886f4ea62f19fb0e7b8718ba5358e5a6"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/forge-mc1.16.x-2.3.0/appleskin-forge-mc1.16.x-2.3.0.jar",
         "filename": "appleskin-forge-mc1.16.x-2.3.0.jar",
@@ -2760,7 +2760,7 @@
     "changelog": "Initial version for Minecraft 1.18",
     "changelog_url": null,
     "date_published": "2021-12-05T04:37:24.412658Z",
-    "downloads": 2392,
+    "downloads": 2394,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2795,15 +2795,15 @@
     "changelog": "Ported to 1.18",
     "changelog_url": null,
     "date_published": "2021-12-02T00:09:14.458431Z",
-    "downloads": 3787,
+    "downloads": 3789,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1983bd2560cc36accf150fda8ec9d289e3f48b5e2de157711f657ce9f625ffa07a2bd6b9989c96a6d37e6354fbcf50c9a73211f8f9bafb57296cd39b72e4cb01",
-          "sha1": "2f5c7b7bc8748e8303edf74cd4168ab949ddd3f6"
+          "sha1": "2f5c7b7bc8748e8303edf74cd4168ab949ddd3f6",
+          "sha512": "1983bd2560cc36accf150fda8ec9d289e3f48b5e2de157711f657ce9f625ffa07a2bd6b9989c96a6d37e6354fbcf50c9a73211f8f9bafb57296cd39b72e4cb01"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/fabric-mc1.18-2.2.0/appleskin-fabric-mc1.18-2.2.0.jar",
         "filename": "appleskin-fabric-mc1.18-2.2.0.jar",
@@ -2873,8 +2873,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7e39e8eaa95f3311cf6d48b7cf180741950ecc2bae14c599ae91167813059af7bc1c190320247ad7cd4ea10ebec297d367cbfd58ee7e70b642397563298b20aa",
-          "sha1": "1832b3f65571467f9f4b3ab57a32b3d64c8cc18a"
+          "sha1": "1832b3f65571467f9f4b3ab57a32b3d64c8cc18a",
+          "sha512": "7e39e8eaa95f3311cf6d48b7cf180741950ecc2bae14c599ae91167813059af7bc1c190320247ad7cd4ea10ebec297d367cbfd58ee7e70b642397563298b20aa"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/forge-mc1.17.1-2.2.0/appleskin-forge-mc1.17.1-2.2.0.jar",
         "filename": "appleskin-forge-mc1.17.1-2.2.0.jar",
@@ -2909,8 +2909,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "317fec0f4b609321b00d6016b02d9c8c166611d2",
-          "sha512": "4857c04d806ab6629cd1d99a3039eca711a22b7735e842ef69b801664fccb33712e3852b3609a8f6d774673c32614b115cd2db938ddc2a9cbec1a75e3ec93764"
+          "sha512": "4857c04d806ab6629cd1d99a3039eca711a22b7735e842ef69b801664fccb33712e3852b3609a8f6d774673c32614b115cd2db938ddc2a9cbec1a75e3ec93764",
+          "sha1": "317fec0f4b609321b00d6016b02d9c8c166611d2"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/fabric-mc1.16.x-2.2.0/appleskin-fabric-mc1.16.x-2.2.0.jar",
         "filename": "appleskin-fabric-mc1.16.x-2.2.0.jar",
@@ -2944,8 +2944,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "aa2c9e5c27493bd010e64a30186988ea4cea6de2d4ecda08489027ff8a408569f4abcfb7a2fa108643c201dcd5875b8fd85a80d2fc5714ff64529cfd21f5e895",
-          "sha1": "f04392ba7d68a971df6d7a62bb0bb4fb3af59558"
+          "sha1": "f04392ba7d68a971df6d7a62bb0bb4fb3af59558",
+          "sha512": "aa2c9e5c27493bd010e64a30186988ea4cea6de2d4ecda08489027ff8a408569f4abcfb7a2fa108643c201dcd5875b8fd85a80d2fc5714ff64529cfd21f5e895"
         },
         "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/fabric-mc1.17.1-2.2.0/appleskin-fabric-mc1.17.1-2.2.0.jar",
         "filename": "appleskin-fabric-mc1.17.1-2.2.0.jar",

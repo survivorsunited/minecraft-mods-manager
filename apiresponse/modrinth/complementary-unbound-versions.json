@@ -71,7 +71,7 @@
     "changelog": "The r5.5 update substantially improves the image quality by introducing multiple improvements to Temporal Filtering, adds extra support for Minecraft 1.21.5 blocks, adds fake variable penumbra shadows for the Reimagined style, adds the new \"IPBR+ Compatibility Mode\" option, makes a lot of tweaks to existing features, and fixes a bunch of bugs as usual.\n\nThe full list of changes can be found at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2025-04-29T17:37:16.424629Z",
-    "downloads": 1047022,
+    "downloads": 1052487,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -161,7 +161,7 @@
     "changelog": "The r5.5 update substantially improves the image quality by introducing multiple improvements to Temporal Filtering, adds extra support for Minecraft 1.21.5 blocks, adds fake variable penumbra shadows for the Reimagined style, adds the new \"IPBR+ Compatibility Mode\" option, makes a lot of tweaks to existing features, and fixes a bunch of bugs as usual.\n\nThe full list of changes can be found at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2025-04-29T14:37:14.969468Z",
-    "downloads": 7166,
+    "downloads": 7181,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -251,15 +251,15 @@
     "changelog": "The first Complementary update of 2025 is here after a long development period. The r5.4 update comes with special light shaft behaviour for the new Pale Garden biome, adds new block specific effects, adds new options, tweaks existing features, fixes connected glass, fixes game crashes, and much more!\n\nThe full list of changes can be found at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2025-01-21T23:30:11.66046Z",
-    "downloads": 1878322,
+    "downloads": 1878868,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "239542849d064ab0ac9758a3e6278c310ace0a04",
-          "sha512": "e007e470a1c30311969118db9c04d527c0680f6b1480f872ce080ee5ef9cdad121706359c7d28eccc50b2843ce7fb384f692c58f084cdcc0bbeca20641f45fc0"
+          "sha512": "e007e470a1c30311969118db9c04d527c0680f6b1480f872ce080ee5ef9cdad121706359c7d28eccc50b2843ce7fb384f692c58f084cdcc0bbeca20641f45fc0",
+          "sha1": "239542849d064ab0ac9758a3e6278c310ace0a04"
         },
         "url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/Z1zqMzjh/ComplementaryUnbound_r5.4.zip",
         "filename": "ComplementaryUnbound_r5.4.zip",
@@ -339,15 +339,15 @@
     "changelog": "The r5.3 update mainly focuses on new options, small improvements, and fixes. Most notable ones being the new \"Colored Candle Lighting\" and \"Colored Light Saturation\" settings for Advanced Colored Lighting, the \"Distant Light Bokeh\" option, and the \"IPBR+ Emissive Mode\" setting that opens up flexible customization of IntegratedPBR emissives for the first time. \n\nThe full list of changes can be found at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2024-09-23T00:11:26.931346Z",
-    "downloads": 1988195,
+    "downloads": 1989090,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "9474a8bc55e4f37786568ae532e4336aab72ba42",
-          "sha512": "77171616e35fe456898a6d140f858de6c2011e7001d3263404e6cd45a356ffeccfacef9182478d6315a1e321642d14bdd5eca3865ecad85b750f5d4f404df055"
+          "sha512": "77171616e35fe456898a6d140f858de6c2011e7001d3263404e6cd45a356ffeccfacef9182478d6315a1e321642d14bdd5eca3865ecad85b750f5d4f404df055",
+          "sha1": "9474a8bc55e4f37786568ae532e4336aab72ba42"
         },
         "url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/CVu3AGAd/ComplementaryUnbound_r5.3.zip",
         "filename": "ComplementaryUnbound_r5.3.zip",
@@ -425,15 +425,15 @@
     "changelog": "After 6 months of steady development of about 2000 lines of code added and 4000 modified, the r5.2 update for Complementary is here and it's the new record holder for the biggest update a Complementary pack ever received.\n\nThe key feature of this update is the introduction of \"Advanced Colored Lighting\". Using the power of Iris, we can finally have a colored lighting implementation in Minecraft shaders without getting the critical flaws seen in most others. Massive thanks to sixthsurge for the help.\n\nThis update also includes the addition of Colored Light Fog, shader-side Connected Glass, support for Minecraft 1.21, new sandstorm/snowstorm inspired weathers, support for Distant Horizons, and about 80 other things which can be found in the full list of changes at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2024-07-06T12:47:15.609771Z",
-    "downloads": 1371852,
+    "downloads": 1372125,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f0c0cbd2059b7a464b9e0f061ddfa6f0980849e1",
-          "sha512": "e165f1dbf44b52f2ca9c921e4b1534e550c716986f9377fce0c98e129105f4ea9e7e42d70e64707d76a212eb121f525f55515b63516e3be082fa107217d26bcc"
+          "sha512": "e165f1dbf44b52f2ca9c921e4b1534e550c716986f9377fce0c98e129105f4ea9e7e42d70e64707d76a212eb121f525f55515b63516e3be082fa107217d26bcc",
+          "sha1": "f0c0cbd2059b7a464b9e0f061ddfa6f0980849e1"
         },
         "url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/RMaZ3tSJ/ComplementaryUnbound_r5.2.2.zip",
         "filename": "ComplementaryUnbound_r5.2.2.zip",
@@ -510,15 +510,15 @@
     "changelog": "After 6 months of steady development of about 2000 lines of code added and 4000 modified, the r5.2 update for Complementary is here and it's the new record holder for the biggest update a Complementary pack ever received.\n\nThe key feature of this update is the introduction of \"Advanced Colored Lighting\". Using the power of Iris, we can finally have a colored lighting implementation in Minecraft shaders without getting the critical flaws seen in most others. Massive thanks to sixthsurge for the help.\n\nThis update also includes the addition of Colored Light Fog, shader-side Connected Glass, support for Minecraft 1.21, new sandstorm/snowstorm inspired weathers, support for Distant Horizons, and about 80 other things which can be found in the full list of changes at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2024-06-06T15:11:24.140535Z",
-    "downloads": 713091,
+    "downloads": 713197,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ba698efd157df6dcd90164f4be8717d214989408",
-          "sha512": "04252b14ee4c86e801183f150f500b4cab4000115f1a6b224629989e753d23fb15378faac6a9df69f9701ea2699bcb0184cfbd8847725e1743d57d082eb5f250"
+          "sha512": "04252b14ee4c86e801183f150f500b4cab4000115f1a6b224629989e753d23fb15378faac6a9df69f9701ea2699bcb0184cfbd8847725e1743d57d082eb5f250",
+          "sha1": "ba698efd157df6dcd90164f4be8717d214989408"
         },
         "url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/qWTl3wic/ComplementaryUnbound_r5.2.1.zip",
         "filename": "ComplementaryUnbound_r5.2.1.zip",
@@ -679,7 +679,7 @@
     "changelog": "The r5.1 update brings a ton of changes that are based on the suggestions and feedback from you after the release of r5.0. You can look forward to a lot of new settings, features, improvements, tweaks and fixes as usual.\n\nThe full list of changes can be found at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2023-11-30T11:31:15.808827Z",
-    "downloads": 1635373,
+    "downloads": 1635725,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -766,8 +766,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d7e6271c35ab3019da7343b6a741c864b585e49e",
-          "sha512": "0d30609391ed6726a1965dd622ca82cf4444f4c44f3290b7921938405bc44e94dbb5cd7e75790a00fbeeb937d1b419546ebb349333226301222dbb67ab424a23"
+          "sha512": "0d30609391ed6726a1965dd622ca82cf4444f4c44f3290b7921938405bc44e94dbb5cd7e75790a00fbeeb937d1b419546ebb349333226301222dbb67ab424a23",
+          "sha1": "d7e6271c35ab3019da7343b6a741c864b585e49e"
         },
         "url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/FYuEM2Ph/ComplementaryUnbound_r5.1.zip",
         "filename": "ComplementaryUnbound_r5.1.zip",
@@ -839,15 +839,15 @@
     "changelog": "r5.0 is the biggest update ever released for Complementary Shaders. Combining both Complementary Reimagined and Complementary v4 to get the ultimate Complementary pack. So many new features, so many reworks, so many improvements. I will simply let you take a look in the changelog if you want to know about them. I hope you enjoy the future of Complementary.\n\nThe full list of changes can be found at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2023-09-10T08:54:51.813646Z",
-    "downloads": 901142,
+    "downloads": 901249,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "802869d04c0fcf8861d64729a05c757a9fe8d03fbe5bbf6f1a7103d677d2109c0c2ed162dc6659f6995645cbfeaf73231d8997f8864a41dbdf3f0c4236376f29",
-          "sha1": "52c599c7d23cf6c27cef0946e6bcaa248f59f5df"
+          "sha1": "52c599c7d23cf6c27cef0946e6bcaa248f59f5df",
+          "sha512": "802869d04c0fcf8861d64729a05c757a9fe8d03fbe5bbf6f1a7103d677d2109c0c2ed162dc6659f6995645cbfeaf73231d8997f8864a41dbdf3f0c4236376f29"
         },
         "url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/JHN3K1Ng/ComplementaryUnbound_r5.0.1.zip",
         "filename": "ComplementaryUnbound_r5.0.1.zip",
@@ -918,15 +918,15 @@
     "changelog": "r5.0 is the biggest update ever released for Complementary Shaders. Combining both Complementary Reimagined and Complementary v4 to get the ultimate Complementary pack. So many new features, so many reworks, so many improvements. I will simply let you take a look in the changelog if you want to know about them. I hope you enjoy the future of Complementary.\n\nThe full list of changes can be found at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2023-09-08T21:48:48.79632Z",
-    "downloads": 24534,
+    "downloads": 24535,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c82f38ba2a6b29489382858a2d4d7100e9149abb70e864f5d7ad482816e20931a9b84579afab376d6a094e75c1a571db3e77cd7189bbf90d4116ef727821ae01",
-          "sha1": "292626f6ed2f34dfc8d1a69b8f082180c7bbd66e"
+          "sha1": "292626f6ed2f34dfc8d1a69b8f082180c7bbd66e",
+          "sha512": "c82f38ba2a6b29489382858a2d4d7100e9149abb70e864f5d7ad482816e20931a9b84579afab376d6a094e75c1a571db3e77cd7189bbf90d4116ef727821ae01"
         },
         "url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/B1208PyS/ComplementaryUnbound_r5.0.zip",
         "filename": "ComplementaryUnbound_r5.0.zip",
@@ -1007,15 +1007,15 @@
     "changelog": "Complementary v4.7.2 brings support for Minecraft 1.20 additions.",
     "changelog_url": null,
     "date_published": "2023-06-06T17:29:02.789434Z",
-    "downloads": 464136,
+    "downloads": 464216,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c6957098a1f8ea27161289257ed14a8c5f10ba73",
-          "sha512": "a1aeebcb8c3fda3289e6c7978a031162619fa2bed8b9c67938c19a000c6e03032243347d6c72e2930d2996082ca4c3ab1764c9f384f6b8f0645e9fdbef16da7a"
+          "sha512": "a1aeebcb8c3fda3289e6c7978a031162619fa2bed8b9c67938c19a000c6e03032243347d6c72e2930d2996082ca4c3ab1764c9f384f6b8f0645e9fdbef16da7a",
+          "sha1": "c6957098a1f8ea27161289257ed14a8c5f10ba73"
         },
         "url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/G16NNnV9/ComplementaryShaders_v4.7.2.zip",
         "filename": "ComplementaryShaders_v4.7.2.zip",
@@ -1094,15 +1094,15 @@
     "changelog": "Update v4.7.1 fixes the crashing problem on Optifine 1.19.3",
     "changelog_url": null,
     "date_published": "2023-01-27T08:47:56.694347Z",
-    "downloads": 109420,
+    "downloads": 109456,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "cef61e29db8d4ec10038e07699aa814b954f41af7de17f899b2513f6933f78806dfddeffeae41bbdddcac96c6536947faa1ee4d483b7ca11e5c8a13a818d4212",
-          "sha1": "ace224078b04b7eea7541cde4f7630a89b4831cc"
+          "sha1": "ace224078b04b7eea7541cde4f7630a89b4831cc",
+          "sha512": "cef61e29db8d4ec10038e07699aa814b954f41af7de17f899b2513f6933f78806dfddeffeae41bbdddcac96c6536947faa1ee4d483b7ca11e5c8a13a818d4212"
         },
         "url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/YWBtNYH3/ComplementaryShaders_v4.7.1.zip",
         "filename": "ComplementaryShaders_v4.7.1.zip",
@@ -1180,7 +1180,7 @@
     "changelog": "Update v4.7 for Complementary v4 brings a bunch of tweaks, improvements, and critical bug fixes.\n\nThe full list of changes can be found at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2023-01-20T22:00:02.211122Z",
-    "downloads": 6923,
+    "downloads": 6924,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1274,15 +1274,15 @@
     "changelog": "The v4.6 update for Complementary v4 comes with a lot of lighting tweaks, color adjustments, improvements and fixes as usual to provide you the most natural v4 experience ever.\n\nYou can find the full list of changes at https://www.complementary.dev/changelogs",
     "changelog_url": null,
     "date_published": "2022-12-22T19:01:41.424282Z",
-    "downloads": 115067,
+    "downloads": 115108,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "42274da3fe2cd1847ff14a7699b411172cf3025d",
-          "sha512": "d18c1b66a9f3f52ca652a5bee08f75b05a0ea84d599783bfeb23de8d67120276802261d770b9111690506ba4ebf5bed27e589c1023db8f420748734526cae4ff"
+          "sha512": "d18c1b66a9f3f52ca652a5bee08f75b05a0ea84d599783bfeb23de8d67120276802261d770b9111690506ba4ebf5bed27e589c1023db8f420748734526cae4ff",
+          "sha1": "42274da3fe2cd1847ff14a7699b411172cf3025d"
         },
         "url": "https://cdn.modrinth.com/data/R6NEzAwj/versions/6JepS0T6/ComplementaryShaders_v4.6.zip",
         "filename": "ComplementaryShaders_v4.6.zip",

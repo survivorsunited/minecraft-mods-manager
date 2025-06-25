@@ -15,15 +15,15 @@
     "changelog": "- (fix) further issue with resetting values to default.",
     "changelog_url": null,
     "date_published": "2025-04-14T12:21:15.080243Z",
-    "downloads": 2668,
+    "downloads": 2679,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "22d2e4df3def59f3a0b16330654839f9fa3b298dc1fca85e3fd3399a74364f2a567dba8c58ed90e2dbe01fb1a3de7e9777cee1557773bce7ae615059fbb60d79",
-          "sha1": "5597eb9c0167dc7e4af43b0c07f358a24f5dd35d"
+          "sha1": "5597eb9c0167dc7e4af43b0c07f358a24f5dd35d",
+          "sha512": "22d2e4df3def59f3a0b16330654839f9fa3b298dc1fca85e3fd3399a74364f2a567dba8c58ed90e2dbe01fb1a3de7e9777cee1557773bce7ae615059fbb60d79"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/VCYj0LFy/jamlib-neoforge-1.3.5%2B1.21.5.jar",
         "filename": "jamlib-neoforge-1.3.5+1.21.5.jar",
@@ -58,7 +58,7 @@
     "changelog": "- (fix) further issue with resetting values to default.",
     "changelog_url": null,
     "date_published": "2025-04-14T12:21:14.26085Z",
-    "downloads": 145751,
+    "downloads": 146380,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -106,15 +106,15 @@
     "changelog": "- (fix) further issue with resetting values to default.",
     "changelog_url": null,
     "date_published": "2025-04-14T12:20:20.711846Z",
-    "downloads": 792,
+    "downloads": 794,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c738f2e0987a132cd4b151c3f3d14c2c8f9bbe8c",
-          "sha512": "45fff47ffdc1d54a08c3d87614b6b62f976c8ab5d2f9eac11d3901b6428347793f3ff81202b1044f6db8df958a6ee36f191e373e2d5519dab8d9ed13a25b31e1"
+          "sha512": "45fff47ffdc1d54a08c3d87614b6b62f976c8ab5d2f9eac11d3901b6428347793f3ff81202b1044f6db8df958a6ee36f191e373e2d5519dab8d9ed13a25b31e1",
+          "sha1": "c738f2e0987a132cd4b151c3f3d14c2c8f9bbe8c"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/GlnbTtG1/jamlib-neoforge-1.3.5%2B1.21.4.jar",
         "filename": "jamlib-neoforge-1.3.5+1.21.4.jar",
@@ -149,7 +149,7 @@
     "changelog": "- (fix) further issue with resetting values to default.",
     "changelog_url": null,
     "date_published": "2025-04-14T12:20:19.729247Z",
-    "downloads": 26059,
+    "downloads": 26105,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -198,7 +198,7 @@
     "changelog": "- (fix) further issue with resetting values to default.",
     "changelog_url": null,
     "date_published": "2025-04-14T12:19:20.685001Z",
-    "downloads": 50228,
+    "downloads": 50389,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -242,15 +242,15 @@
     "changelog": "- (fix) further issue with resetting values to default.",
     "changelog_url": null,
     "date_published": "2025-04-14T12:19:17.636906Z",
-    "downloads": 73636,
+    "downloads": 73969,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b63fc5bf9bbf68d72b23bb15d92229bfb9175a889ab492c858c551e70149afcca488ea35f45961087f8e48076b38d3d62d4d427d440d355f6e910aa6ac713b2c",
-          "sha1": "fc92c826d4cd02c99b686e564a70858ba85d7472"
+          "sha1": "fc92c826d4cd02c99b686e564a70858ba85d7472",
+          "sha512": "b63fc5bf9bbf68d72b23bb15d92229bfb9175a889ab492c858c551e70149afcca488ea35f45961087f8e48076b38d3d62d4d427d440d355f6e910aa6ac713b2c"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/V3B1Q6vH/jamlib-fabric-1.3.5%2B1.21.1.jar",
         "filename": "jamlib-fabric-1.3.5+1.21.1.jar",
@@ -262,13 +262,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -290,7 +290,7 @@
     "changelog": "- (fix) resolve crash when resetting a list config to its default value.\n- (fix) further issue with resetting values to default.\n",
     "changelog_url": null,
     "date_published": "2025-04-14T12:17:34.279134Z",
-    "downloads": 35759,
+    "downloads": 35906,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -333,7 +333,7 @@
     "changelog": "- (fix) resolve crash when resetting a list config to its default value.\n- (fix) further issue with resetting values to default.\n",
     "changelog_url": null,
     "date_published": "2025-04-14T12:15:51.003222Z",
-    "downloads": 114425,
+    "downloads": 114934,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -390,8 +390,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "90c7e3b2af5a058a9dfa266d03733c150d84116f1b6db58a386f61dcacfc2a1b6217c460b8a0593ba7b8ceb3de741cce63e3953c860680911625baa73b7d9afa",
-          "sha1": "f534201baf190cf193bcc742ea188d6defb2cb93"
+          "sha1": "f534201baf190cf193bcc742ea188d6defb2cb93",
+          "sha512": "90c7e3b2af5a058a9dfa266d03733c150d84116f1b6db58a386f61dcacfc2a1b6217c460b8a0593ba7b8ceb3de741cce63e3953c860680911625baa73b7d9afa"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/lRLVPv6y/jamlib-fabric-1.3.4%2B1.21.1.jar",
         "filename": "jamlib-fabric-1.3.4+1.21.1.jar",
@@ -403,13 +403,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -439,8 +439,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0a08ea866b105d932fd60512df2d7d7bfade3e28",
-          "sha512": "109f21509ad56bfe0d98c83f15d374db62797ef48da0468507dfc1e8e2155cd6b6cc5b21dcee6cdf159f172889fd17183c264b55479465172f2648e6ff2dc4d7"
+          "sha512": "109f21509ad56bfe0d98c83f15d374db62797ef48da0468507dfc1e8e2155cd6b6cc5b21dcee6cdf159f172889fd17183c264b55479465172f2648e6ff2dc4d7",
+          "sha1": "0a08ea866b105d932fd60512df2d7d7bfade3e28"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/YLLw6hDo/jamlib-neoforge-1.3.4%2B1.21.1.jar",
         "filename": "jamlib-neoforge-1.3.4+1.21.1.jar",
@@ -524,8 +524,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "661e4fbd772bf0b00a3c2c9ec3843894696547fa841eb81f288fdd16b0f085f06984f30054f7994fd13b0ff981eaef0c3e1208125552625bfd70bf7b60ae020c",
-          "sha1": "a31efbeea7cb8c0180e13827a4b5461b967c5d90"
+          "sha1": "a31efbeea7cb8c0180e13827a4b5461b967c5d90",
+          "sha512": "661e4fbd772bf0b00a3c2c9ec3843894696547fa841eb81f288fdd16b0f085f06984f30054f7994fd13b0ff981eaef0c3e1208125552625bfd70bf7b60ae020c"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/w5bk7UXi/jamlib-fabric-1.3.4%2B1.21.4.jar",
         "filename": "jamlib-fabric-1.3.4+1.21.4.jar",
@@ -586,13 +586,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -657,15 +657,15 @@
     "changelog": "- (fix) Config field titles are now left aligned, rather than center aligned (#17)\n- (fix) Adjust lang path for enum list translations (#16)",
     "changelog_url": null,
     "date_published": "2025-04-14T11:48:54.909937Z",
-    "downloads": 133,
+    "downloads": 134,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e775b00e24eb7ddc93aab632eeb05704b832c8786580c5942bbd18fd851ebb023ad1f4077e729ed053e92267b2bdc528ac5f969c474f1cd21bacd582a9f5fd12",
-          "sha1": "371576cf48d6b8973bfd9bfdab4ea1b9ddef3749"
+          "sha1": "371576cf48d6b8973bfd9bfdab4ea1b9ddef3749",
+          "sha512": "e775b00e24eb7ddc93aab632eeb05704b832c8786580c5942bbd18fd851ebb023ad1f4077e729ed053e92267b2bdc528ac5f969c474f1cd21bacd582a9f5fd12"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/RJwORXAv/jamlib-fabric-1.3.3%2B1.20.1.jar",
         "filename": "jamlib-fabric-1.3.3+1.20.1.jar",
@@ -677,13 +677,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -705,15 +705,15 @@
     "changelog": "- (fix) Config field titles are now left aligned, rather than center aligned (#17)\n- (fix) Adjust lang path for enum list translations (#16)",
     "changelog_url": null,
     "date_published": "2025-04-14T11:48:53.699727Z",
-    "downloads": 262,
+    "downloads": 263,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "87e8d152e2c46a23742724d047845af12756e4b089a4b3e7cb5fb6a6c426a9a8392dde7e1783c7248599b7e63aab45d3aa861219e7416963f52f420bcd7db1e9",
-          "sha1": "01ef57a6044e57d2bb1adc447fcd46c74d312eb1"
+          "sha1": "01ef57a6044e57d2bb1adc447fcd46c74d312eb1",
+          "sha512": "87e8d152e2c46a23742724d047845af12756e4b089a4b3e7cb5fb6a6c426a9a8392dde7e1783c7248599b7e63aab45d3aa861219e7416963f52f420bcd7db1e9"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/KcKqynNh/jamlib-forge-1.3.3%2B1.20.1.jar",
         "filename": "jamlib-forge-1.3.3+1.20.1.jar",
@@ -755,8 +755,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1e4b75ba24c5c56dac1330777b8420066738e710fa484e9aaf61c567ed8b8f1cbc07d2b08a763b56499c0589d4be780eedad47113bf663910a5b279fc651d79f",
-          "sha1": "516d86cbed19b2ac7aab104f0022f602eff0a726"
+          "sha1": "516d86cbed19b2ac7aab104f0022f602eff0a726",
+          "sha512": "1e4b75ba24c5c56dac1330777b8420066738e710fa484e9aaf61c567ed8b8f1cbc07d2b08a763b56499c0589d4be780eedad47113bf663910a5b279fc651d79f"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/SfDLDxor/jamlib-neoforge-1.3.3%2B1.21.1.jar",
         "filename": "jamlib-neoforge-1.3.3+1.21.1.jar",
@@ -847,8 +847,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3227d62dc2150496cd4ff5eb22751161fb3180c193bb8be83b449132748d4647c20d7ca0d231c863605b16cd3c1db8b5d00719b09e023cf33d84e67cf06a413d",
-          "sha1": "e1e61a59b9b65e755e9770e96220871883989e4b"
+          "sha1": "e1e61a59b9b65e755e9770e96220871883989e4b",
+          "sha512": "3227d62dc2150496cd4ff5eb22751161fb3180c193bb8be83b449132748d4647c20d7ca0d231c863605b16cd3c1db8b5d00719b09e023cf33d84e67cf06a413d"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/Qwt7wGRc/jamlib-neoforge-1.3.3%2B1.21.4.jar",
         "filename": "jamlib-neoforge-1.3.3+1.21.4.jar",
@@ -932,7 +932,7 @@
     "changelog": "Fix config crash.\n",
     "changelog_url": null,
     "date_published": "2025-03-19T14:24:06.305992Z",
-    "downloads": 24623,
+    "downloads": 24635,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -980,7 +980,7 @@
     "changelog": "Fix config crash.\n",
     "changelog_url": null,
     "date_published": "2025-03-19T14:24:06.175928Z",
-    "downloads": 33657,
+    "downloads": 33669,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1065,7 +1065,7 @@
     "changelog": "Fix crash on dedicated servers.\n",
     "changelog_url": null,
     "date_published": "2025-03-18T18:18:47.679555Z",
-    "downloads": 1392,
+    "downloads": 1396,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1085,13 +1085,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -1114,15 +1114,15 @@
     "changelog": "- Backport post-1.0.0 JamLib to 1.20.1\n  - Should still be compatible with mods that use pre-1.0.0 JamLib, as functionality from that is included.\n",
     "changelog_url": null,
     "date_published": "2025-03-18T18:13:52.898011Z",
-    "downloads": 150,
+    "downloads": 151,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4b2d7f4d7a82cac53ed66ada41560e06f55fb9d6bea40168d08489449295f727e757b61a8e5e211788dbffa633565d608c69f8627eeae41cd3309a2b145a0c44",
-          "sha1": "d560fc344e376db90dadc1d176854d5286412f99"
+          "sha1": "d560fc344e376db90dadc1d176854d5286412f99",
+          "sha512": "4b2d7f4d7a82cac53ed66ada41560e06f55fb9d6bea40168d08489449295f727e757b61a8e5e211788dbffa633565d608c69f8627eeae41cd3309a2b145a0c44"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/HMtNyv6G/jamlib-fabric-1.3.1%2B1.20.1.jar",
         "filename": "jamlib-fabric-1.3.1+1.20.1.jar",
@@ -1134,13 +1134,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -1162,15 +1162,15 @@
     "changelog": "- Backport post-1.0.0 JamLib to 1.20.1\n  - Should still be compatible with mods that use pre-1.0.0 JamLib, as functionality from that is included.\n",
     "changelog_url": null,
     "date_published": "2025-03-18T18:13:52.513302Z",
-    "downloads": 623,
+    "downloads": 624,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "06a70c535481cae3f4851afedc51c231d06cf777",
-          "sha512": "7d70cb1232c9d05b4626e72e0be1a7c505fffc97ffc36886c6b2d268f3fdb2d953524820a645d9e7a246a2bc1e24d2b78dbc7b5382743d5ac69d3e5d30c8a2b4"
+          "sha512": "7d70cb1232c9d05b4626e72e0be1a7c505fffc97ffc36886c6b2d268f3fdb2d953524820a645d9e7a246a2bc1e24d2b78dbc7b5382743d5ac69d3e5d30c8a2b4",
+          "sha1": "06a70c535481cae3f4851afedc51c231d06cf777"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/TlVG9QRs/jamlib-forge-1.3.1%2B1.20.1.jar",
         "filename": "jamlib-forge-1.3.1+1.20.1.jar",
@@ -1205,7 +1205,7 @@
     "changelog": "Fix crash on dedicated servers.\n",
     "changelog_url": null,
     "date_published": "2025-02-26T17:43:11.14922Z",
-    "downloads": 33549,
+    "downloads": 33553,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1249,15 +1249,15 @@
     "changelog": "Fix crash on dedicated servers.\n",
     "changelog_url": null,
     "date_published": "2025-02-26T17:43:09.502976Z",
-    "downloads": 126350,
+    "downloads": 126443,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ed065befaed5d58404591cfc5cd2f651be276655",
-          "sha512": "f0bb58165039842bfa78458506942f67f2edd7a7ca703177f51135f410bf6e2b21437f65edda1363639986e3ad299b7de16a7ad4f3b5feb5e78506673c5085a2"
+          "sha512": "f0bb58165039842bfa78458506942f67f2edd7a7ca703177f51135f410bf6e2b21437f65edda1363639986e3ad299b7de16a7ad4f3b5feb5e78506673c5085a2",
+          "sha1": "ed065befaed5d58404591cfc5cd2f651be276655"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/Qu2iH2wC/jamlib-fabric-1.3.2%2B1.21.1.jar",
         "filename": "jamlib-fabric-1.3.2+1.21.1.jar",
@@ -1269,13 +1269,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -1298,15 +1298,15 @@
     "changelog": "Fix crash on dedicated servers.\n",
     "changelog_url": null,
     "date_published": "2025-02-26T17:41:55.224706Z",
-    "downloads": 156,
+    "downloads": 158,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "11df31375cd9a178aaa4f857a3cfb5d8cb6a678fd94968828ae7e7ef0d0352782acb63afe0d8e920214784c7a6d6b8194e844f33f504e0d0f94397dac506ce36",
-          "sha1": "ee228ab99f1f988e00179baf5af70be2edf44233"
+          "sha1": "ee228ab99f1f988e00179baf5af70be2edf44233",
+          "sha512": "11df31375cd9a178aaa4f857a3cfb5d8cb6a678fd94968828ae7e7ef0d0352782acb63afe0d8e920214784c7a6d6b8194e844f33f504e0d0f94397dac506ce36"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/VxSBGN1T/jamlib-neoforge-1.3.2%2B1.21.3.jar",
         "filename": "jamlib-neoforge-1.3.2+1.21.3.jar",
@@ -1342,15 +1342,15 @@
     "changelog": "Fix crash on dedicated servers.\n",
     "changelog_url": null,
     "date_published": "2025-02-26T17:41:54.938332Z",
-    "downloads": 2075,
+    "downloads": 2077,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e4650d08f7e652c3054f3e740bd9c78467280b5a",
-          "sha512": "67c8109611a0bef4746a2f7fe280e466104c3bc13796b52f8b5b3ef0b1c9ee2ed4f270266e6de6d50f88d19267a032380fa7ad2a7512d564a32f312847d58f23"
+          "sha512": "67c8109611a0bef4746a2f7fe280e466104c3bc13796b52f8b5b3ef0b1c9ee2ed4f270266e6de6d50f88d19267a032380fa7ad2a7512d564a32f312847d58f23",
+          "sha1": "e4650d08f7e652c3054f3e740bd9c78467280b5a"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/k2QzJCVr/jamlib-fabric-1.3.2%2B1.21.3.jar",
         "filename": "jamlib-fabric-1.3.2+1.21.3.jar",
@@ -1397,8 +1397,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b041a5598bedb48183619644a7f2f678fd8b140f394bf45e6b3e8c5dbdbdb50001b0e42ff290a058f179c97b24a6fe3559d62e67af8d84caa4af79f440eb8d06",
-          "sha1": "eba7fadf3ab063ddc0a34cb84815b9f43efde48f"
+          "sha1": "eba7fadf3ab063ddc0a34cb84815b9f43efde48f",
+          "sha512": "b041a5598bedb48183619644a7f2f678fd8b140f394bf45e6b3e8c5dbdbdb50001b0e42ff290a058f179c97b24a6fe3559d62e67af8d84caa4af79f440eb8d06"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/mX2Rcbu4/jamlib-neoforge-1.3.2%2B1.21.4.jar",
         "filename": "jamlib-neoforge-1.3.2+1.21.4.jar",
@@ -1433,7 +1433,7 @@
     "changelog": "Fix crash on dedicated servers.\n",
     "changelog_url": null,
     "date_published": "2025-02-26T17:40:06.98647Z",
-    "downloads": 141733,
+    "downloads": 141777,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1453,13 +1453,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -1489,8 +1489,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4ebfc880322ec11be611a1a3a82bdd051f4e6e746f65b12870eecd263b8b726988bbef3e45aff139469ebf9360c02c8bec30b8b1fc0222efb75e6d51891e2c6b",
-          "sha1": "6393281aba5c1d1a38177e498dd8b979494559e3"
+          "sha1": "6393281aba5c1d1a38177e498dd8b979494559e3",
+          "sha512": "4ebfc880322ec11be611a1a3a82bdd051f4e6e746f65b12870eecd263b8b726988bbef3e45aff139469ebf9360c02c8bec30b8b1fc0222efb75e6d51891e2c6b"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/Cb5M9FfZ/jamlib-neoforge-1.3.1%2B1.21.1.jar",
         "filename": "jamlib-neoforge-1.3.1+1.21.1.jar",
@@ -1533,8 +1533,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e97952a3c51cfd21902fffc945cbb9a17f173c3d",
-          "sha512": "5837cef3e9f2143e4611b90bb16fbaea5f30412d48a76967fba5e04af890acab5e6226f486dea83ee778a3170c97b097d08bbebee1019bcc4046082eecaa7b58"
+          "sha512": "5837cef3e9f2143e4611b90bb16fbaea5f30412d48a76967fba5e04af890acab5e6226f486dea83ee778a3170c97b097d08bbebee1019bcc4046082eecaa7b58",
+          "sha1": "e97952a3c51cfd21902fffc945cbb9a17f173c3d"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/nhUMGArG/jamlib-fabric-1.3.1%2B1.21.1.jar",
         "filename": "jamlib-fabric-1.3.1+1.21.1.jar",
@@ -1630,8 +1630,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "594c8dae0f2425827af53456bbb19204b16367f56dcee1ad731cb40f9d51ffce9fa84b2ef318e56a074b48a183eea7ad19913553ad49876e2288f0aa2444753e",
-          "sha1": "658c4f1d2cb5226921922ec3b7835c3e8b725106"
+          "sha1": "658c4f1d2cb5226921922ec3b7835c3e8b725106",
+          "sha512": "594c8dae0f2425827af53456bbb19204b16367f56dcee1ad731cb40f9d51ffce9fa84b2ef318e56a074b48a183eea7ad19913553ad49876e2288f0aa2444753e"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/FOMXoExF/jamlib-neoforge-1.3.1%2B1.21.4.jar",
         "filename": "jamlib-neoforge-1.3.1+1.21.4.jar",
@@ -1766,8 +1766,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2bffb81450ce21882ecb5c2cbdf30b65424ba642",
-          "sha512": "e7b8972694cd1840b20e3cb9057889a492f1a973046bac380c4dde990a4e12302143f5444f61d7287a986af1a59b144b2461b52702bf5de552b4c676ff4a664f"
+          "sha512": "e7b8972694cd1840b20e3cb9057889a492f1a973046bac380c4dde990a4e12302143f5444f61d7287a986af1a59b144b2461b52702bf5de552b4c676ff4a664f",
+          "sha1": "2bffb81450ce21882ecb5c2cbdf30b65424ba642"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/i1WBudmi/jamlib-fabric-1.3.0%2B1.21.4.jar",
         "filename": "jamlib-fabric-1.3.0+1.21.4.jar",
@@ -1850,15 +1850,15 @@
     "changelog": "Fix dependency logic\n",
     "changelog_url": null,
     "date_published": "2024-12-13T16:46:11.402373Z",
-    "downloads": 20171,
+    "downloads": 20174,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "66cc75e214c80d2b0a5a59d1d84cfe9a326c0003d1599791b9ed69851496b016bce0d7af862475d1a9ec2ba5b12a70d5b9f47a9e3393134a69d15f0511e35adf",
-          "sha1": "eca7711201b0b8dedf05b24443c82029c6261bcf"
+          "sha1": "eca7711201b0b8dedf05b24443c82029c6261bcf",
+          "sha512": "66cc75e214c80d2b0a5a59d1d84cfe9a326c0003d1599791b9ed69851496b016bce0d7af862475d1a9ec2ba5b12a70d5b9f47a9e3393134a69d15f0511e35adf"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/LhGEQAZ5/jamlib-neoforge-1.2.2-build.2%2B1.21.1.jar",
         "filename": "jamlib-neoforge-1.2.2-build.2+1.21.1.jar",
@@ -1894,15 +1894,15 @@
     "changelog": "Fix dependency logic\n",
     "changelog_url": null,
     "date_published": "2024-12-13T16:46:11.3766Z",
-    "downloads": 134107,
+    "downloads": 134136,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5bef1c21b9444bb136cf8bec61d134a430e1106e",
-          "sha512": "7d3765c68c6752d5e7ab4cb50d78b388b97e5c87d15ceab8392177092eee3820bf1116008980cfbdb86c17a4fe57f930c634d87095a9d4dba60b528fdeecfaea"
+          "sha512": "7d3765c68c6752d5e7ab4cb50d78b388b97e5c87d15ceab8392177092eee3820bf1116008980cfbdb86c17a4fe57f930c634d87095a9d4dba60b528fdeecfaea",
+          "sha1": "5bef1c21b9444bb136cf8bec61d134a430e1106e"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/myXuhjoE/jamlib-fabric-1.2.2-build.2%2B1.21.1.jar",
         "filename": "jamlib-fabric-1.2.2-build.2+1.21.1.jar",
@@ -1951,8 +1951,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "58c1423b06deb4eb4f5a63b897f86af21712e21e",
-          "sha512": "2e273630773d811c53c61c7719c7c19bbb5811d2e02f2a4756de08b261589c83b01e35ecb0022f03af6684103ad3973ddda80c4fa14375773e068123069a9597"
+          "sha512": "2e273630773d811c53c61c7719c7c19bbb5811d2e02f2a4756de08b261589c83b01e35ecb0022f03af6684103ad3973ddda80c4fa14375773e068123069a9597",
+          "sha1": "58c1423b06deb4eb4f5a63b897f86af21712e21e"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/IAPgISUT/jamlib-fabric-1.2.1-build.2%2B1.21.3.jar",
         "filename": "jamlib-fabric-1.2.1-build.2+1.21.3.jar",
@@ -1964,13 +1964,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -2000,8 +2000,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b6a8cf269aa31f2a97b28c9cca0220563233d633665b8e61a2cfbfae9ad8a0fd6ffbc80d986fdfdd7d950d0f65e51c419eadef762112298e3e160ade87bb4ac8",
-          "sha1": "64997e87d20de15328099fc07e62520bc99df6cf"
+          "sha1": "64997e87d20de15328099fc07e62520bc99df6cf",
+          "sha512": "b6a8cf269aa31f2a97b28c9cca0220563233d633665b8e61a2cfbfae9ad8a0fd6ffbc80d986fdfdd7d950d0f65e51c419eadef762112298e3e160ade87bb4ac8"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/aXrWcTwq/jamlib-neoforge-1.2.1-build.2%2B1.21.3.jar",
         "filename": "jamlib-neoforge-1.2.1-build.2+1.21.3.jar",
@@ -2036,15 +2036,15 @@
     "changelog": "Update to 1.21.4\n",
     "changelog_url": null,
     "date_published": "2024-12-13T16:23:18.957556Z",
-    "downloads": 41121,
+    "downloads": 41122,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "05ee0113e02b61f0321b5030ae90763e8521123b",
-          "sha512": "b20e4d625d36d16b06eaa8410bf01042487d2b5896a1f0cffc6b713b3e1112498ef63a021ee776da02d79d367c658935aaba20273d7f2f4a731d2b1890e484e2"
+          "sha512": "b20e4d625d36d16b06eaa8410bf01042487d2b5896a1f0cffc6b713b3e1112498ef63a021ee776da02d79d367c658935aaba20273d7f2f4a731d2b1890e484e2",
+          "sha1": "05ee0113e02b61f0321b5030ae90763e8521123b"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/2J8TKset/jamlib-fabric-1.2.2%2B1.21.4.jar",
         "filename": "jamlib-fabric-1.2.2+1.21.4.jar",
@@ -2171,7 +2171,7 @@
     "changelog": "- Fix issue with not being able to launch on 1.21.\n",
     "changelog_url": null,
     "date_published": "2024-10-24T15:37:30.072083Z",
-    "downloads": 72037,
+    "downloads": 72067,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2264,15 +2264,15 @@
     "changelog": "- Update to 1.21.3/2\n",
     "changelog_url": null,
     "date_published": "2024-10-24T15:29:54.076931Z",
-    "downloads": 11943,
+    "downloads": 11948,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "7d0d2eecd319c526c06782b9e65618988ecf72c7",
-          "sha512": "1ba3919613bc86f3deda49da441ba62dffefaae9b126e581f85aafe7c1ec83037c4aeca5098b57e3cb33ea4ec41c0269fbe627e5ac01735e4c409ce920ec882f"
+          "sha512": "1ba3919613bc86f3deda49da441ba62dffefaae9b126e581f85aafe7c1ec83037c4aeca5098b57e3cb33ea4ec41c0269fbe627e5ac01735e4c409ce920ec882f",
+          "sha1": "7d0d2eecd319c526c06782b9e65618988ecf72c7"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/nhH0DRdq/jamlib-fabric-1.2.2%2B1.21.3.jar",
         "filename": "jamlib-fabric-1.2.2+1.21.3.jar",
@@ -2370,8 +2370,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6ddf091d0077b646e859faaf015fabf335ae7093",
-          "sha512": "a6a01b8cc1c62ea0c2d81c52f7df21e20c2addc0f04019b68aab6cf07bb89fed106f744dd8d9a4da7c81f013098c600a2934d2e6b85efe838df854e725125cbc"
+          "sha512": "a6a01b8cc1c62ea0c2d81c52f7df21e20c2addc0f04019b68aab6cf07bb89fed106f744dd8d9a4da7c81f013098c600a2934d2e6b85efe838df854e725125cbc",
+          "sha1": "6ddf091d0077b646e859faaf015fabf335ae7093"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/2MUc1rf4/jamlib-neoforge-1.2.1%2B1.21.jar",
         "filename": "jamlib-neoforge-1.2.1+1.21.jar",
@@ -2406,7 +2406,7 @@
     "changelog": "- Add `ClientPlayLifecycleEvents`.\n",
     "changelog_url": null,
     "date_published": "2024-10-21T17:28:57.184859Z",
-    "downloads": 1202,
+    "downloads": 1204,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2461,8 +2461,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6acced433b23ba90f52b6072332166704f31edc4",
-          "sha512": "a0bb4c19e04ba0c2d28ae6f877adf42d180afc8c26eec8392872b48ee44deedd2f25450229f8e726b65a775b3beed8f7ff49fcf3f5a0797e928d4b95591a41f6"
+          "sha512": "a0bb4c19e04ba0c2d28ae6f877adf42d180afc8c26eec8392872b48ee44deedd2f25450229f8e726b65a775b3beed8f7ff49fcf3f5a0797e928d4b95591a41f6",
+          "sha1": "6acced433b23ba90f52b6072332166704f31edc4"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/xuMhoDg8/jamlib-neoforge-1.2.0%2B1.21.jar",
         "filename": "jamlib-neoforge-1.2.0+1.21.jar",
@@ -2498,7 +2498,7 @@
     "changelog": "- (feat) config options with long names will now render in the screen as scrolling strings.\n- (chore) various code cleanups\n- (chore) use parchment mappings\n",
     "changelog_url": null,
     "date_published": "2024-08-05T17:30:51.293525Z",
-    "downloads": 196691,
+    "downloads": 196730,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2554,8 +2554,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3e7bbcc76a314a6224783f9705ebea67d90f3d0d6e1b79bcfeb07165f3fcf69daf1ab511757aae1b2a012e240f163db0bc76a57def19f3905f547cef32e50a04",
-          "sha1": "e6be53e5d86af8ae6376fc9127e8390816d83a8f"
+          "sha1": "e6be53e5d86af8ae6376fc9127e8390816d83a8f",
+          "sha512": "3e7bbcc76a314a6224783f9705ebea67d90f3d0d6e1b79bcfeb07165f3fcf69daf1ab511757aae1b2a012e240f163db0bc76a57def19f3905f547cef32e50a04"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/ti4g9gmV/jamlib-neoforge-1.0.11%2B1.21.jar",
         "filename": "jamlib-neoforge-1.0.11+1.21.jar",
@@ -2597,8 +2597,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "23c4889438a9b6de9e7ffc9a4d36f0e9dd83e3a097597a2fcb26c88916534aecbd6e1239d8e82a788519cbd57105d7168cc1adc995573bc41f670eb2816f73a9",
-          "sha1": "e45be98c993a40eec21212a14214d5ca8a53ef25"
+          "sha1": "e45be98c993a40eec21212a14214d5ca8a53ef25",
+          "sha512": "23c4889438a9b6de9e7ffc9a4d36f0e9dd83e3a097597a2fcb26c88916534aecbd6e1239d8e82a788519cbd57105d7168cc1adc995573bc41f670eb2816f73a9"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/GuJVwwK1/jamlib-fabric-1.0.10%2B1.21.jar",
         "filename": "jamlib-fabric-1.0.10+1.21.jar",
@@ -2687,8 +2687,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c92fdb7e9a2fa69cbb245fb864f81699a997766f6b7a40a379bc5e8f86ca17c0349275daf3ef63606d1bf3794770196ee3c8f1418cc12adf485b8eba381f593b",
-          "sha1": "8e61eb32177560673ecfe4ceb952f1f9b3095157"
+          "sha1": "8e61eb32177560673ecfe4ceb952f1f9b3095157",
+          "sha512": "c92fdb7e9a2fa69cbb245fb864f81699a997766f6b7a40a379bc5e8f86ca17c0349275daf3ef63606d1bf3794770196ee3c8f1418cc12adf485b8eba381f593b"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/lOS15Bkq/jamlib-neoforge-1.0.9%2B1.21.jar",
         "filename": "jamlib-neoforge-1.0.9+1.21.jar",
@@ -2723,7 +2723,7 @@
     "changelog": "- Port 1.0.9 to Minecraft 1.21\n",
     "changelog_url": null,
     "date_published": "2024-06-14T11:28:59.649046Z",
-    "downloads": 140622,
+    "downloads": 140644,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2814,7 +2814,7 @@
     "changelog": "- Port to 1.20.6\n- Remove Forge and Quilt support\n",
     "changelog_url": null,
     "date_published": "2024-05-11T15:35:59.167738Z",
-    "downloads": 12851,
+    "downloads": 12852,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2869,8 +2869,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "670997fbff99d1cecdaaf117ae18d93bcaa70cd7",
-          "sha512": "6fca040c2ae40b49bab26b13af950e8e8b3fcc097b9e4f0346f871f4783164c688ceb98d9ebf0114d4d758561d04ffbd4a74113cedb44d22e6ccfdf945c0984a"
+          "sha512": "6fca040c2ae40b49bab26b13af950e8e8b3fcc097b9e4f0346f871f4783164c688ceb98d9ebf0114d4d758561d04ffbd4a74113cedb44d22e6ccfdf945c0984a",
+          "sha1": "670997fbff99d1cecdaaf117ae18d93bcaa70cd7"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/rewr84oy/jamlib-quilt-1.0.9%2B1.20.4.jar",
         "filename": "jamlib-quilt-1.0.9+1.20.4.jar",
@@ -2959,8 +2959,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ea237b92415499f1b77f5a68effcf8fc08fc3cff218b8fbc1a9fa607b3a75080818749394d74f9e0f1236545c6c75b833767d8a4e133278946c4d6ae3a103568",
-          "sha1": "7c966f90a163c0ddfbe83f51c1d0bcc9622dd1c3"
+          "sha1": "7c966f90a163c0ddfbe83f51c1d0bcc9622dd1c3",
+          "sha512": "ea237b92415499f1b77f5a68effcf8fc08fc3cff218b8fbc1a9fa607b3a75080818749394d74f9e0f1236545c6c75b833767d8a4e133278946c4d6ae3a103568"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/6eBV1xMw/jamlib-neoforge-1.0.9%2B1.20.4.jar",
         "filename": "jamlib-neoforge-1.0.9+1.20.4.jar",
@@ -2994,7 +2994,7 @@
     "changelog": "- Clean up the ModMenu code, assumes a ModMenu version greater than 9.1.0 is installed otherwise\n  config screens are dependant on mod load order (fixes #6).\n",
     "changelog_url": null,
     "date_published": "2024-04-23T19:15:11.607621Z",
-    "downloads": 32221,
+    "downloads": 32230,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3049,8 +3049,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ddd048d95ab15c7963740d400c8ba89c0f5ee64f7a8a3835e3be4ba2d6a0cea86de6af1df3c1881cc88d84c777af2be6f543cb24aad7a6e837b9cfbb3b608112",
-          "sha1": "59ed19e5668706b393372e69ae0488b063547964"
+          "sha1": "59ed19e5668706b393372e69ae0488b063547964",
+          "sha512": "ddd048d95ab15c7963740d400c8ba89c0f5ee64f7a8a3835e3be4ba2d6a0cea86de6af1df3c1881cc88d84c777af2be6f543cb24aad7a6e837b9cfbb3b608112"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/hOv0jdab/jamlib-quilt-1.0.8%2B1.20.4.jar",
         "filename": "jamlib-quilt-1.0.8+1.20.4.jar",
@@ -3062,13 +3062,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "qvIfYCYJ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "qvIfYCYJ",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -3181,8 +3181,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d28f351d79b61aae62a00113048f2fff86cf5bd0",
-          "sha512": "28339520a458e70ca9a8d53d33e6236cf54e36e33d68b9946160e205625a4ee8c8de04124d4a37aa280e2890c752503d922c455b49bc87dfd92e7181a8b2aeff"
+          "sha512": "28339520a458e70ca9a8d53d33e6236cf54e36e33d68b9946160e205625a4ee8c8de04124d4a37aa280e2890c752503d922c455b49bc87dfd92e7181a8b2aeff",
+          "sha1": "d28f351d79b61aae62a00113048f2fff86cf5bd0"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/V1f5iPeV/jamlib-fabric-1.0.8%2B1.20.4.jar",
         "filename": "jamlib-fabric-1.0.8+1.20.4.jar",
@@ -3229,8 +3229,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "85541b95a0f427c9350ead7706fc94a2281ab8fa6530f092b0385195a94b6d6f260e5e1f1d1f880807a7413a9372dd710a925736ad73438e12e0d176941c0e80",
-          "sha1": "a0220eeef3e9815e64ec59b6b99537ff9a499582"
+          "sha1": "a0220eeef3e9815e64ec59b6b99537ff9a499582",
+          "sha512": "85541b95a0f427c9350ead7706fc94a2281ab8fa6530f092b0385195a94b6d6f260e5e1f1d1f880807a7413a9372dd710a925736ad73438e12e0d176941c0e80"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/sUA7mivB/jamlib-quilt-1.0.7%2B1.20.4.jar",
         "filename": "jamlib-quilt-1.0.7+1.20.4.jar",
@@ -3242,13 +3242,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "qvIfYCYJ",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "qvIfYCYJ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -3277,8 +3277,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "87a3ed9ff0578a8a7edb084c5700a1920b20e8c16237797f9cd142dbbe4c7a640449ecd60a894252d6a35f32da7f4d39f0bb576b6efbcf60bf7b0e325e53af74",
-          "sha1": "55b4b35ba7d84688660055f4a9dfb84f22eeaf4b"
+          "sha1": "55b4b35ba7d84688660055f4a9dfb84f22eeaf4b",
+          "sha512": "87a3ed9ff0578a8a7edb084c5700a1920b20e8c16237797f9cd142dbbe4c7a640449ecd60a894252d6a35f32da7f4d39f0bb576b6efbcf60bf7b0e325e53af74"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/Y9pAvlF6/jamlib-forge-1.0.7%2B1.20.4.jar",
         "filename": "jamlib-forge-1.0.7+1.20.4.jar",
@@ -3354,15 +3354,15 @@
     "changelog": "- Fix an issue with configs being registered after the ModMenu entrypoint.\n",
     "changelog_url": null,
     "date_published": "2024-03-25T19:21:06.977471Z",
-    "downloads": 9631,
+    "downloads": 9632,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "560beabe3313b3f4eedbd177e02a697d9e3c2848",
-          "sha512": "a5117160b8931706c41043e47e4f0f48f78f08233c59fc740cfe444100b826274fa06f80adeaa143cab01aa6a2118e1e6779412489744d2bb0978393cbea3afe"
+          "sha512": "a5117160b8931706c41043e47e4f0f48f78f08233c59fc740cfe444100b826274fa06f80adeaa143cab01aa6a2118e1e6779412489744d2bb0978393cbea3afe",
+          "sha1": "560beabe3313b3f4eedbd177e02a697d9e3c2848"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/wH1XcvzH/jamlib-fabric-1.0.7%2B1.20.4.jar",
         "filename": "jamlib-fabric-1.0.7+1.20.4.jar",
@@ -3457,8 +3457,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5a830b35e0df6e311018e1dc3cc107526b0f40e3",
-          "sha512": "a890c1eee976cba4aa18e113ca1de2ff6a9942168b44f17b9dab76df2354af24bd86c927e6806a7944680672663fea64666cd3d4f5e6985ce4a716a02a7c01f9"
+          "sha512": "a890c1eee976cba4aa18e113ca1de2ff6a9942168b44f17b9dab76df2354af24bd86c927e6806a7944680672663fea64666cd3d4f5e6985ce4a716a02a7c01f9",
+          "sha1": "5a830b35e0df6e311018e1dc3cc107526b0f40e3"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/qUYDrUMq/jamlib-neoforge-1.0.6%2B1.20.4.jar",
         "filename": "jamlib-neoforge-1.0.6+1.20.4.jar",
@@ -3541,8 +3541,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "78285c3af8fcb2fc058edf9a0e0f75b120a228358beb0eec3a69da637ccea19fdf4784631ff8051fc6af68b6de58533c2d190eaa119982992b5f1b017b21e668",
-          "sha1": "8ac6521c5b1587527fef93a2ba7a52f3375c8cdb"
+          "sha1": "8ac6521c5b1587527fef93a2ba7a52f3375c8cdb",
+          "sha512": "78285c3af8fcb2fc058edf9a0e0f75b120a228358beb0eec3a69da637ccea19fdf4784631ff8051fc6af68b6de58533c2d190eaa119982992b5f1b017b21e668"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/5T7Kqhr5/jamlib-fabric-1.0.6%2B1.20.4.jar",
         "filename": "jamlib-fabric-1.0.6+1.20.4.jar",
@@ -3679,8 +3679,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7cbde81fcf481befb1f5cb9b4cdcba3dab297f21",
-          "sha512": "ea56648b8f215af807cf3d24f080e87df6e896701c31830ef7f4a9646050b6d76c13416d8a4458e2248fbb47d439f95d79e14416463e3e97ce5ca38834379273"
+          "sha512": "ea56648b8f215af807cf3d24f080e87df6e896701c31830ef7f4a9646050b6d76c13416d8a4458e2248fbb47d439f95d79e14416463e3e97ce5ca38834379273",
+          "sha1": "7cbde81fcf481befb1f5cb9b4cdcba3dab297f21"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/kwHM7Fa5/jamlib-neoforge-1.0.5%2B1.20.4.jar",
         "filename": "jamlib-neoforge-1.0.5+1.20.4.jar",
@@ -3721,8 +3721,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "958a12ea7f30c67e0b5614aac936eb2bd77a7730",
-          "sha512": "dd553eac2925398f728aaa4c1bc54dc810671cc513e2820643f75ef80557cfc4acc8dddeed69a13cc98b25ef25d765c99e830fb59ff70499495904ac7ab43901"
+          "sha512": "dd553eac2925398f728aaa4c1bc54dc810671cc513e2820643f75ef80557cfc4acc8dddeed69a13cc98b25ef25d765c99e830fb59ff70499495904ac7ab43901",
+          "sha1": "958a12ea7f30c67e0b5614aac936eb2bd77a7730"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/Yu6Csh7v/jamlib-fabric-1.0.5%2B1.20.4.jar",
         "filename": "jamlib-fabric-1.0.5+1.20.4.jar",
@@ -3734,13 +3734,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -3817,8 +3817,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3e626adc5d3a7c5579fc14bc13db21540eae8efc3da79e3e9c414b6a7ae9678107dceb8d7922f22cc91bb664a92fa39514dba4b44a0a277b7cc79d1025a62d86",
-          "sha1": "b7c2e7ffef64fbdf4431dd8c498d213c598216ef"
+          "sha1": "b7c2e7ffef64fbdf4431dd8c498d213c598216ef",
+          "sha512": "3e626adc5d3a7c5579fc14bc13db21540eae8efc3da79e3e9c414b6a7ae9678107dceb8d7922f22cc91bb664a92fa39514dba4b44a0a277b7cc79d1025a62d86"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/VkPjYE9J/jamlib-neoforge-1.0.4%2B1.20.4.jar",
         "filename": "jamlib-neoforge-1.0.4+1.20.4.jar",
@@ -3894,15 +3894,15 @@
     "changelog": "- Functionality to notify the user if we suspect the mod has been downloaded from a repost site such as 9minecraft. See the [docs](https://docs.jamalam.tech/jamlib/mod-reposts/).\n- `@HiddenInGui` annotation to hide config entries in auto-generated GUIs. See the [docs](https://docs.jamalam.tech/jamlib/config/).\n- Fix a few nullability issues in the config system. These were not known to cause any issues, but better to be safe than sorry.\n",
     "changelog_url": null,
     "date_published": "2024-02-08T20:04:23.210488Z",
-    "downloads": 13540,
+    "downloads": 13545,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6ecc60a2da42209d865ca3f7e7fc8cfe0025da99b9016cbda570852a606e886e19fb247d16354a48c549351965106832f5b9168bbfebb0788350089709607081",
-          "sha1": "5698c4b3be50b9d043ad7c4d99e2bfef2b98e0d7"
+          "sha1": "5698c4b3be50b9d043ad7c4d99e2bfef2b98e0d7",
+          "sha512": "6ecc60a2da42209d865ca3f7e7fc8cfe0025da99b9016cbda570852a606e886e19fb247d16354a48c549351965106832f5b9168bbfebb0788350089709607081"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/K8PzNLcu/jamlib-fabric-1.0.4%2B1.20.4.jar",
         "filename": "jamlib-fabric-1.0.4+1.20.4.jar",
@@ -3914,13 +3914,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -3949,8 +3949,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e565e02b02aec9e9e769daef32104f09fb75e151fb535006254a125478273bb9d52bb8010091a81386797a2293eb17261f433c6082a4b85095687dbe6f2aaa9b",
-          "sha1": "13be66a09813f16776f28ccf76581571aec47895"
+          "sha1": "13be66a09813f16776f28ccf76581571aec47895",
+          "sha512": "e565e02b02aec9e9e769daef32104f09fb75e151fb535006254a125478273bb9d52bb8010091a81386797a2293eb17261f433c6082a4b85095687dbe6f2aaa9b"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/KNXnSvPw/jamlib-neoforge-1.20.4-1.0.3%2B1.20.4.jar",
         "filename": "jamlib-neoforge-1.20.4-1.0.3+1.20.4.jar",
@@ -4033,8 +4033,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f2c1b11dfff44a6424d5066954c1d141d92080dd",
-          "sha512": "24a905d83fb8a93ec007cc7e932550d1eaabaa83aa1cb6d09ec43f1423739ca33df149beb1964b4b5831bf9ab28958df8492f95dc1e4cf03069767f6b24b0d08"
+          "sha512": "24a905d83fb8a93ec007cc7e932550d1eaabaa83aa1cb6d09ec43f1423739ca33df149beb1964b4b5831bf9ab28958df8492f95dc1e4cf03069767f6b24b0d08",
+          "sha1": "f2c1b11dfff44a6424d5066954c1d141d92080dd"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/m73gikwQ/jamlib-quilt-1.20.4-1.0.3%2B1.20.4.jar",
         "filename": "jamlib-quilt-1.20.4-1.0.3+1.20.4.jar",
@@ -4046,13 +4046,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "qvIfYCYJ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "qvIfYCYJ",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -4171,8 +4171,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "259a9ca9536cf90c1fc31abddd5a5e81cc622b0aad68348307af6c19e6da01afaa927fd1e338b04f43d48580aa574575886b79d662012f5d04c9d44847ffd951",
-          "sha1": "212a7a97d2bc9216df3c58afd6080f6818fe4f66"
+          "sha1": "212a7a97d2bc9216df3c58afd6080f6818fe4f66",
+          "sha512": "259a9ca9536cf90c1fc31abddd5a5e81cc622b0aad68348307af6c19e6da01afaa927fd1e338b04f43d48580aa574575886b79d662012f5d04c9d44847ffd951"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/asNANxXe/jamlib-quilt-1.20.2-1.0.3%2B1.20.2.jar",
         "filename": "jamlib-quilt-1.20.2-1.0.3+1.20.2.jar",
@@ -4184,13 +4184,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "qvIfYCYJ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "qvIfYCYJ",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -4254,7 +4254,7 @@
     "changelog": "Update to support NeoForge. 1.20.4 will come later in the week :)\n \n",
     "changelog_url": null,
     "date_published": "2023-12-10T16:03:37.185781Z",
-    "downloads": 15903,
+    "downloads": 15905,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4310,8 +4310,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d21e70bcb3ac0aba47f8b298d75cb830efde69436323771bb0e299a7686f9dd00e13216007ab78a468f41dc671f6630577785f0e90b41d4b689d82589f48493d",
-          "sha1": "f6c40eb3e00344f2f2f88e4b7ee236b58771cb6b"
+          "sha1": "f6c40eb3e00344f2f2f88e4b7ee236b58771cb6b",
+          "sha512": "d21e70bcb3ac0aba47f8b298d75cb830efde69436323771bb0e299a7686f9dd00e13216007ab78a468f41dc671f6630577785f0e90b41d4b689d82589f48493d"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/LF2xPlbr/jamlib-forge-1.20.2-1.0.2.jar",
         "filename": "jamlib-forge-1.20.2-1.0.2.jar",
@@ -4352,8 +4352,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "beb943c5fae677eb96c1b82ad4dbefe5dce81b1f",
-          "sha512": "be9fb95c303187d183246d7161fb439e00b78f0ad949ebc299177ef60d992cf3ab400daa46e776d5585f9c9beb40117cf1c44e581cc147e5f82119e6b9d0d5c9"
+          "sha512": "be9fb95c303187d183246d7161fb439e00b78f0ad949ebc299177ef60d992cf3ab400daa46e776d5585f9c9beb40117cf1c44e581cc147e5f82119e6b9d0d5c9",
+          "sha1": "beb943c5fae677eb96c1b82ad4dbefe5dce81b1f"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/eScAoOMS/jamlib-quilt-1.20.2-1.0.2.jar",
         "filename": "jamlib-quilt-1.20.2-1.0.2.jar",
@@ -4365,13 +4365,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "qvIfYCYJ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "qvIfYCYJ",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -4413,13 +4413,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -4449,8 +4449,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c5b7b54082ff9c391a5d91170776d0e5123ac8dc",
-          "sha512": "0ecb773564ba929e06370776382f0ea96e1edda1b14645f93b270af9a6b87f9792d1ddfd389837956387fccf34d51081ea6f5470bfe8802b331174d823b5030b"
+          "sha512": "0ecb773564ba929e06370776382f0ea96e1edda1b14645f93b270af9a6b87f9792d1ddfd389837956387fccf34d51081ea6f5470bfe8802b331174d823b5030b",
+          "sha1": "c5b7b54082ff9c391a5d91170776d0e5123ac8dc"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/cW863D3j/jamlib-forge-1.20.2-1.0.1.jar",
         "filename": "jamlib-forge-1.20.2-1.0.1.jar",
@@ -4504,13 +4504,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "qvIfYCYJ",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "qvIfYCYJ",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -4552,13 +4552,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "lhGA9TYQ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "lhGA9TYQ",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -4622,8 +4622,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "fae71417ef0965e3e37ebf9bd3995a73b2d9b17bacd1ce43a6c4c520c25f249560ea712cfde1b79b9e6a2a0eed634c50f7c0c0d23c60357abecf1b278f0325d9",
-          "sha1": "74de349d8b4c5600189770f490b5a1e8dd7a3407"
+          "sha1": "74de349d8b4c5600189770f490b5a1e8dd7a3407",
+          "sha512": "fae71417ef0965e3e37ebf9bd3995a73b2d9b17bacd1ce43a6c4c520c25f249560ea712cfde1b79b9e6a2a0eed634c50f7c0c0d23c60357abecf1b278f0325d9"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/mpCEBa6b/jamlib-fabric-1.20.2-1.0.0.jar",
         "filename": "jamlib-fabric-1.20.2-1.0.0.jar",
@@ -4658,8 +4658,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "29e7fdd0fed39c4ea678cb1a83a825e5c58c8026f98e0aaebea2df07e5ff260a3611a62a5078b894330d4ffaad42ee2ccc2616306427aa8bc76fa8f70466859d",
-          "sha1": "6bd657d2f305564af0c4d8033bcfec71a0429d30"
+          "sha1": "6bd657d2f305564af0c4d8033bcfec71a0429d30",
+          "sha512": "29e7fdd0fed39c4ea678cb1a83a825e5c58c8026f98e0aaebea2df07e5ff260a3611a62a5078b894330d4ffaad42ee2ccc2616306427aa8bc76fa8f70466859d"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/Zt7Pz3HM/jamlib-forge-1.20.2-1.0.0.jar",
         "filename": "jamlib-forge-1.20.2-1.0.0.jar",
@@ -4725,7 +4725,7 @@
     "changelog": "## Changelog\n\n- Fix a crash on Turkish locales.\n\n[Full Changelog](https://github.com/JamCoreModding/jam-lib/compare/0.6.0+1.19...0.6.1+1.19-1.19.2)\n",
     "changelog_url": null,
     "date_published": "2023-07-24T20:11:26.706249Z",
-    "downloads": 63332,
+    "downloads": 63349,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4768,8 +4768,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ceb37ac2202d3e9d619b4b88b48a1af2e6c548b9",
-          "sha512": "cbe58c1ea089de9e587d418f1e5e06e0d729fbc1f0aaf54c6500fc644484d44fa60bb9210ccbca9921d858789da2581ed9f41431c73920a9e038923f9cbd012a"
+          "sha512": "cbe58c1ea089de9e587d418f1e5e06e0d729fbc1f0aaf54c6500fc644484d44fa60bb9210ccbca9921d858789da2581ed9f41431c73920a9e038923f9cbd012a",
+          "sha1": "ceb37ac2202d3e9d619b4b88b48a1af2e6c548b9"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/LyuLtRRr/jamlib-0.6.1%2B1.19.3.jar",
         "filename": "jamlib-0.6.1+1.19.3.jar",
@@ -4797,7 +4797,7 @@
     "changelog": "## Changelog\n\n- Fix a crash on Turkish locales.\n\n[Full Changelog](https://github.com/JamCoreModding/jam-lib/compare/0.6.0+1.19.4...0.6.1+1.19.4)\n",
     "changelog_url": null,
     "date_published": "2023-07-24T20:09:50.167033Z",
-    "downloads": 4675,
+    "downloads": 4676,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4834,7 +4834,7 @@
     "changelog": "## Changelog\n\n- Fix a crash on Turkish locales.\n\n[Full Changelog](https://github.com/JamCoreModding/jam-lib/compare/0.6.0+1.20...0.6.1+1.20.x)\n",
     "changelog_url": null,
     "date_published": "2023-07-24T20:08:47.811468Z",
-    "downloads": 2191679,
+    "downloads": 2192485,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4872,7 +4872,7 @@
     "changelog": "## Changelog\n\nJamLib has been updated to 1.20-rc1. This release will most likely work on\nthe 1.20 release when it comes.\n\n## Breaking Changes\n\n- `JamLibContentRegistry` now uses `RegistryKey<ItemGroup>` rather than\n  `ItemGroup`, in line with Minecraft and Fabric API changes.\n",
     "changelog_url": null,
     "date_published": "2023-06-07T12:40:46.465702Z",
-    "downloads": 7928,
+    "downloads": 7929,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4915,8 +4915,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "07c763baf959cf11092857c161354eeb84fb0c25",
-          "sha512": "325503851c8e0e2ac7835ea41ddfe6f208cb5b9c72a99a9451d04cc01177eed0616e265b48fbdb17d76ccfe62b452ca8840817814833323e1e66ad6dd99835b2"
+          "sha512": "325503851c8e0e2ac7835ea41ddfe6f208cb5b9c72a99a9451d04cc01177eed0616e265b48fbdb17d76ccfe62b452ca8840817814833323e1e66ad6dd99835b2",
+          "sha1": "07c763baf959cf11092857c161354eeb84fb0c25"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/6e5QJ96a/jamlib-0.6.0%2B1.19.4.jar",
         "filename": "jamlib-0.6.0+1.19.4.jar",
@@ -4983,15 +4983,15 @@
     "changelog": "## Changelog\n\nSupport for 1.19-1.19.2 is back, along with 1.19.3 of course!\n\n### Features\n\n- Add a logger that is only active in development environments.\n- Automatically register entity attributes for entity types registered through JamLib.\n- Add `JamLibCompatibilityModuleHandler`.\n- `JamLibLogger` now takes varargs to it's logging methods.\n- Use SL4J rather than Log4J.\n- Add JavaDoc.\n- More overhauls.\n\n[Full Changelog](https://github.com/JamCoreModding/jam-lib/compare/0.5.0...0.6.0+1.19)\n",
     "changelog_url": null,
     "date_published": "2023-01-08T11:03:07.12753Z",
-    "downloads": 48698,
+    "downloads": 48711,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "619d9b0b39ba28f4b35cd7d773baf7647fa436a92467c69298647eb60719080e9be442b933eebe1c96a631665060f9dfa0967b726a2aa4062c9823ccd082c7e7",
-          "sha1": "3b5034c5d85bf322fb33747f9a46cc3adc941a9b"
+          "sha1": "3b5034c5d85bf322fb33747f9a46cc3adc941a9b",
+          "sha512": "619d9b0b39ba28f4b35cd7d773baf7647fa436a92467c69298647eb60719080e9be442b933eebe1c96a631665060f9dfa0967b726a2aa4062c9823ccd082c7e7"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/MSmq1ClL/jamlib-0.6.0%2B1.19.jar",
         "filename": "jamlib-0.6.0+1.19.jar",
@@ -5138,8 +5138,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8e84ebb69fa6febb8926fac18684148a6e8ef1593b17e9eff07b1a311804394feadda2ccdac9b1d8a011b0eac1b6c3e5bc7e10c048d59fb39fcc464405220c66",
-          "sha1": "3913b86a08b25e991d36e0e6058314145a5a0448"
+          "sha1": "3913b86a08b25e991d36e0e6058314145a5a0448",
+          "sha512": "8e84ebb69fa6febb8926fac18684148a6e8ef1593b17e9eff07b1a311804394feadda2ccdac9b1d8a011b0eac1b6c3e5bc7e10c048d59fb39fcc464405220c66"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/0.4.4/jamlib-0.4.4.jar",
         "filename": "jamlib-0.4.4.jar",
@@ -5174,8 +5174,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "155b24b90e38567a87a3815649801a7efd6b0d3b6645818ca24a5bd5dc0f53a5971d1b0f547f21f776b5865d10b3c450ba9aa48103e4444b3ae27f77f9aacf5d",
-          "sha1": "63ed91c5ae96f2f078cbf8ed7c807304066b614c"
+          "sha1": "63ed91c5ae96f2f078cbf8ed7c807304066b614c",
+          "sha512": "155b24b90e38567a87a3815649801a7efd6b0d3b6645818ca24a5bd5dc0f53a5971d1b0f547f21f776b5865d10b3c450ba9aa48103e4444b3ae27f77f9aacf5d"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/0.4.3/jamlib-0.4.3.jar",
         "filename": "jamlib-0.4.3.jar",
@@ -5284,8 +5284,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "29f5657e1969f647fa9e9b9bb1f812dfe4996f4f",
-          "sha512": "db327353a478f8715462bb69571453fe9bcbe6501b3b662a709f43b22da21a3298f1f8e0c45d9632825698397dccc4ea94855511a03ca0158c65564bca400b5f"
+          "sha512": "db327353a478f8715462bb69571453fe9bcbe6501b3b662a709f43b22da21a3298f1f8e0c45d9632825698397dccc4ea94855511a03ca0158c65564bca400b5f",
+          "sha1": "29f5657e1969f647fa9e9b9bb1f812dfe4996f4f"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/0.4.0/jamlib-0.4.0.jar",
         "filename": "jamlib-0.4.0.jar",
@@ -5356,8 +5356,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "995df9270f6b759ed29a2dcf9985b4953e64f105",
-          "sha512": "12abe1b9b5f9505eed867230fdb7f8395b356e6ac18c3aa58318394fce762d07805a2a7a48e543726b00e91fea44b3e876d38d7d50ffedff64799034adddb2ff"
+          "sha512": "12abe1b9b5f9505eed867230fdb7f8395b356e6ac18c3aa58318394fce762d07805a2a7a48e543726b00e91fea44b3e876d38d7d50ffedff64799034adddb2ff",
+          "sha1": "995df9270f6b759ed29a2dcf9985b4953e64f105"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/0.3.1/jamlib-0.3.1.jar",
         "filename": "jamlib-0.3.1.jar",
@@ -5428,8 +5428,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "67b094f16f6c3bec41ff43cf1a3ebe63b1cf51a5",
-          "sha512": "6d2a11d50fb2d6879f5ca32af0a99ed3ed01fd2e06066894f4bf6f8b28c6f3bb5300036dc3c36337dbad27f3e04cb6b05f55eb624c333f2e377734145bdb354e"
+          "sha512": "6d2a11d50fb2d6879f5ca32af0a99ed3ed01fd2e06066894f4bf6f8b28c6f3bb5300036dc3c36337dbad27f3e04cb6b05f55eb624c333f2e377734145bdb354e",
+          "sha1": "67b094f16f6c3bec41ff43cf1a3ebe63b1cf51a5"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/0.2.0/jamlib-0.2.0.jar",
         "filename": "jamlib-0.2.0.jar",
@@ -5603,15 +5603,15 @@
     "changelog": "Transferred automatically from https://www.curseforge.com/minecraft/mc-mods/jamlib/files/3802327",
     "changelog_url": null,
     "date_published": "2022-07-01T09:54:34.769621Z",
-    "downloads": 9725,
+    "downloads": 9731,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b9c553dcb1d54da45a1ba6447bce6099233ad2b78c5b6d80f1dda1da5c182ab178a8e8e189ac3f005c0e5e067c8a9984dae2fb9889efb9d75a9f4d2f9c8de2d5",
-          "sha1": "d2a3335f8e8efe10ccf0b7d34eb6c4ab3b36b506"
+          "sha1": "d2a3335f8e8efe10ccf0b7d34eb6c4ab3b36b506",
+          "sha512": "b9c553dcb1d54da45a1ba6447bce6099233ad2b78c5b6d80f1dda1da5c182ab178a8e8e189ac3f005c0e5e067c8a9984dae2fb9889efb9d75a9f4d2f9c8de2d5"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/0.0.5/jam-lib-0.0.5.jar",
         "filename": "jam-lib-0.0.5.jar",
@@ -5647,8 +5647,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5f16b8f38d26a804ee6008072387467cc925227eaddd4b02b7d17e94c513fc06fad4f02d5bb387167666932b68dfbc34b0d45291d69918844abf86a499473b82",
-          "sha1": "39bb3745afd366dafb8681514ff02a972b73abb9"
+          "sha1": "39bb3745afd366dafb8681514ff02a972b73abb9",
+          "sha512": "5f16b8f38d26a804ee6008072387467cc925227eaddd4b02b7d17e94c513fc06fad4f02d5bb387167666932b68dfbc34b0d45291d69918844abf86a499473b82"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/0.0.4/jam-lib-0.0.4.jar",
         "filename": "jam-lib-0.0.4.jar",
@@ -5682,8 +5682,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5415fad943d459dc3d3dd8de0d77739e72ea0c2e",
-          "sha512": "0c086839deb4a73faba9ea8dec0de0ce7ef0530c8c01db6bc8e902f37e74c576c39ab24cc036b3fd0f96743986234066e541bf23993e22ddae37becec7a34516"
+          "sha512": "0c086839deb4a73faba9ea8dec0de0ce7ef0530c8c01db6bc8e902f37e74c576c39ab24cc036b3fd0f96743986234066e541bf23993e22ddae37becec7a34516",
+          "sha1": "5415fad943d459dc3d3dd8de0d77739e72ea0c2e"
         },
         "url": "https://cdn.modrinth.com/data/IYY9Siz8/versions/0.0.3/jam-lib-0.0.3.jar",
         "filename": "jam-lib-0.0.3.jar",

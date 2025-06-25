@@ -15,7 +15,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.8.0+1.21.6...3.8.1+1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-22T18:55:05.45405Z",
-    "downloads": 747,
+    "downloads": 800,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -57,15 +57,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.7.1+1.21.5...3.8.0+1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-18T20:31:11.341023Z",
-    "downloads": 1034,
+    "downloads": 1038,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "587e871cec5f41b76a1dd363060ed6ad71bca08e",
-          "sha512": "6d04ba514edccd599b2c73848278d302c7a0f283744f56d6a3d359db2cecf56649c01c51d731574e2c0eb336d58282173eb2cf1dcbfa5746f52d5ba14e89d0d6"
+          "sha512": "6d04ba514edccd599b2c73848278d302c7a0f283744f56d6a3d359db2cecf56649c01c51d731574e2c0eb336d58282173eb2cf1dcbfa5746f52d5ba14e89d0d6",
+          "sha1": "587e871cec5f41b76a1dd363060ed6ad71bca08e"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/hPnxwccZ/graves-3.8.0%2B1.21.6.jar",
         "filename": "graves-3.8.0+1.21.6.jar",
@@ -99,15 +99,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.7.0+1.21.5...3.7.1+1.21.5",
     "changelog_url": null,
     "date_published": "2025-03-25T21:02:15.522128Z",
-    "downloads": 21996,
+    "downloads": 22024,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2852ccf4ea276e48508af3e5c61dd8c010598ee158e05cfb7f9f6548c2e3915e6c7e4ae5450ebec71c4e7e28ef3f669e2f21eea9931d897f1b4ef2b41e4d9e29",
-          "sha1": "856f209efa35044641f830b1a893f6c6e45046a2"
+          "sha1": "856f209efa35044641f830b1a893f6c6e45046a2",
+          "sha512": "2852ccf4ea276e48508af3e5c61dd8c010598ee158e05cfb7f9f6548c2e3915e6c7e4ae5450ebec71c4e7e28ef3f669e2f21eea9931d897f1b4ef2b41e4d9e29"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/ejJjBZIM/graves-3.7.1%2B1.21.5.jar",
         "filename": "graves-3.7.1+1.21.5.jar",
@@ -185,15 +185,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.5.0+1.21.2...3.6.0+1.21.4",
     "changelog_url": null,
     "date_published": "2024-11-28T20:54:00.125032Z",
-    "downloads": 36191,
+    "downloads": 36213,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3e530f6cf38fc31c204dc26fabd28975d5cffc6c",
-          "sha512": "b0dffe29f4218bb02a8fea29e9ba0f39c2bf93a671d5f2f071afba8a3bc0ab036a00606ef25aa8a6e4b9f67123ffd4eab78c67e18ca34a5aea5cd18915adeee5"
+          "sha512": "b0dffe29f4218bb02a8fea29e9ba0f39c2bf93a671d5f2f071afba8a3bc0ab036a00606ef25aa8a6e4b9f67123ffd4eab78c67e18ca34a5aea5cd18915adeee5",
+          "sha1": "3e530f6cf38fc31c204dc26fabd28975d5cffc6c"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/o2f2Idvu/graves-3.6.0%2B1.21.4.jar",
         "filename": "graves-3.6.0+1.21.4.jar",
@@ -228,7 +228,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.4.4+1.21...3.5.0+1.21.2",
     "changelog_url": null,
     "date_published": "2024-10-22T18:27:11.651478Z",
-    "downloads": 7752,
+    "downloads": 7755,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -272,7 +272,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.4.3+1.21...3.4.4+1.21",
     "changelog_url": null,
     "date_published": "2024-09-09T08:51:33.98206Z",
-    "downloads": 118791,
+    "downloads": 118882,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -315,15 +315,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.0.2+1.20.1...3.0.3+1.20.1",
     "changelog_url": null,
     "date_published": "2024-09-09T08:31:22.947958Z",
-    "downloads": 425482,
+    "downloads": 425954,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c76d26e1bd0b3ce48c211729662b940b99d3ab5d9661fe007625840152ca064262625090d152eff93e3c4588a4cd33d353c33c31bc111b43f87a71b25f45cba1",
-          "sha1": "d0bb93a9ad7a3c41ce3bc46e5f2eed8741b7b598"
+          "sha1": "d0bb93a9ad7a3c41ce3bc46e5f2eed8741b7b598",
+          "sha512": "c76d26e1bd0b3ce48c211729662b940b99d3ab5d9661fe007625840152ca064262625090d152eff93e3c4588a4cd33d353c33c31bc111b43f87a71b25f45cba1"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/66RxRZcI/graves-3.0.3%2B1.20.1.jar",
         "filename": "graves-3.0.3+1.20.1.jar",
@@ -351,7 +351,7 @@
     "changelog": "## What's Changed\n* [1.20.1] Backport Accessories Compatbility by @Dragon-Seeker in https://github.com/Patbox/UniversalGraves/pull/169\n\n## New Contributors\n* @Dragon-Seeker made their first contribution in https://github.com/Patbox/UniversalGraves/pull/169\n\n**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.0.1+1.20.1...3.0.2+1.20.1",
     "changelog_url": null,
     "date_published": "2024-08-06T07:21:31.315317Z",
-    "downloads": 18928,
+    "downloads": 18941,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -394,8 +394,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "69bcbfcffdfb772802fc8d92aaaa3055007f7d6f",
-          "sha512": "8c809b5ac7ea168aed80622644f01ea1705bc56f996f814ac59fb656e6880eb99eb5273a95d925438ede6693d57df8df898c65abacce80e911fac9f3a706574d"
+          "sha512": "8c809b5ac7ea168aed80622644f01ea1705bc56f996f814ac59fb656e6880eb99eb5273a95d925438ede6693d57df8df898c65abacce80e911fac9f3a706574d",
+          "sha1": "69bcbfcffdfb772802fc8d92aaaa3055007f7d6f"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/pXBVFXDC/graves-3.4.3%2B1.21.jar",
         "filename": "graves-3.4.3+1.21.jar",
@@ -436,8 +436,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f9e1979d9f17c4cfe80c9216dac372833f9e58cf",
-          "sha512": "0a77899dbe4f6d76a5aa1864e1461010c3d2f27b6fc8d0d6e4ae6586fa09c0e87ae98ff47151beb292b2f297bfb562eba79febfc9fde0656f9faf1dadcafe928"
+          "sha512": "0a77899dbe4f6d76a5aa1864e1461010c3d2f27b6fc8d0d6e4ae6586fa09c0e87ae98ff47151beb292b2f297bfb562eba79febfc9fde0656f9faf1dadcafe928",
+          "sha1": "f9e1979d9f17c4cfe80c9216dac372833f9e58cf"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/b1NpGMoM/graves-3.4.2%2B1.21.jar",
         "filename": "graves-3.4.2+1.21.jar",
@@ -471,15 +471,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.4.0+1.21...3.4.1+1.21",
     "changelog_url": null,
     "date_published": "2024-06-16T16:12:39.129307Z",
-    "downloads": 44619,
+    "downloads": 44624,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "860faac48384be92f8e2d0b1edd6314eede606a3",
-          "sha512": "18796fa5462a26a61a3f0b92c53dbfc6be85a2fe1f04e44fecd284b953a3bfc850bc4593ef0e8df9732fc07663d450378d31052dfb4aee4ca6b07a0287ae00cd"
+          "sha512": "18796fa5462a26a61a3f0b92c53dbfc6be85a2fe1f04e44fecd284b953a3bfc850bc4593ef0e8df9732fc07663d450378d31052dfb4aee4ca6b07a0287ae00cd",
+          "sha1": "860faac48384be92f8e2d0b1edd6314eede606a3"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/qtHZSwwl/graves-3.4.1%2B1.21.jar",
         "filename": "graves-3.4.1+1.21.jar",
@@ -552,7 +552,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.3.2+1.20.5...3.3.3+1.20.5",
     "changelog_url": null,
     "date_published": "2024-05-06T19:49:00.834369Z",
-    "downloads": 8040,
+    "downloads": 8041,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -595,8 +595,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "732466e4e12ca0d6d39d5c491326989bd2ed82f9bc491a1ca9bfdd22b3f18725db92f15c4e815420d967f0a6991a7f1473666a0b1b1aecebeeccda28d41e6b5c",
-          "sha1": "50f7a9f25a4a02430d3b29540d6323271358e7b1"
+          "sha1": "50f7a9f25a4a02430d3b29540d6323271358e7b1",
+          "sha512": "732466e4e12ca0d6d39d5c491326989bd2ed82f9bc491a1ca9bfdd22b3f18725db92f15c4e815420d967f0a6991a7f1473666a0b1b1aecebeeccda28d41e6b5c"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/DFOwTpBJ/graves-3.3.2%2B1.20.5.jar",
         "filename": "graves-3.3.2+1.20.5.jar",
@@ -631,8 +631,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "39aac8550329a11aa22be0f20643631ed7767c56903059906977c3ef02fa9a051e4dae5f45aded7a8ef89af7d4de6ca3bc65bc5b28c6a6a36cc83f1f45b6819c",
-          "sha1": "278eaeae1f750c2d7b37c9591b16c50cca8232ec"
+          "sha1": "278eaeae1f750c2d7b37c9591b16c50cca8232ec",
+          "sha512": "39aac8550329a11aa22be0f20643631ed7767c56903059906977c3ef02fa9a051e4dae5f45aded7a8ef89af7d4de6ca3bc65bc5b28c6a6a36cc83f1f45b6819c"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/YMmiL5iG/graves-3.3.1%2B1.20.5.jar",
         "filename": "graves-3.3.1+1.20.5.jar",
@@ -667,8 +667,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "538a7e5141b13ad2445cd1589d64b0269c8555e0",
-          "sha512": "30b6f2a358f2aafc0e2a14dfb44aff0458763a7a95281b238aebda2732023474eb6a94cbd1fb7648da62f73134bd4a673f0df70b95b609b756946e52fb2f18bc"
+          "sha512": "30b6f2a358f2aafc0e2a14dfb44aff0458763a7a95281b238aebda2732023474eb6a94cbd1fb7648da62f73134bd4a673f0df70b95b609b756946e52fb2f18bc",
+          "sha1": "538a7e5141b13ad2445cd1589d64b0269c8555e0"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/igHlS9OT/graves-3.3.0%2B1.20.5.jar",
         "filename": "graves-3.3.0+1.20.5.jar",
@@ -696,7 +696,7 @@
     "changelog": "## What's Changed\n* Fix #universal_graves:replaceable tag by @unilock in https://github.com/Patbox/UniversalGraves/pull/136\n\n## New Contributors\n* @unilock made their first contribution in https://github.com/Patbox/UniversalGraves/pull/136\n\n**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.2.1+1.20.3...3.2.2+1.20.4",
     "changelog_url": null,
     "date_published": "2024-04-11T08:03:09.896889Z",
-    "downloads": 12999,
+    "downloads": 13000,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -732,15 +732,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.2.0+1.20.3...3.2.1+1.20.3",
     "changelog_url": null,
     "date_published": "2024-01-25T17:43:12.359403Z",
-    "downloads": 10192,
+    "downloads": 10193,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2fe607770273a1e083c7089f3a789cdb74e07c78",
-          "sha512": "d62420b29cd227c99b45da4a7cb8955f388db5fe82d80ee2593845404421432957e2a20a94a15288f781ea9dfd0377a4ec439457eaeb2da3298a15f7f0a0e89e"
+          "sha512": "d62420b29cd227c99b45da4a7cb8955f388db5fe82d80ee2593845404421432957e2a20a94a15288f781ea9dfd0377a4ec439457eaeb2da3298a15f7f0a0e89e",
+          "sha1": "2fe607770273a1e083c7089f3a789cdb74e07c78"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/ShXwTHys/graves-3.2.1%2B1.20.3.jar",
         "filename": "graves-3.2.1+1.20.3.jar",
@@ -768,7 +768,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.0.0+1.20.1...3.0.1+1.20.1",
     "changelog_url": null,
     "date_published": "2024-01-25T17:24:21.337839Z",
-    "downloads": 496181,
+    "downloads": 496290,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -849,8 +849,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "05ba82ca825c082c58b1bfa0727d546e67de1d0c9a2a7c9dac628916bcbcf4831273cbb145717760e9318bb69b21760dcf38974499786ec2f3f64e1969d8d6c3",
-          "sha1": "b7d56ea7cfbe9d37fb8742df62dc27501c42a3a7"
+          "sha1": "b7d56ea7cfbe9d37fb8742df62dc27501c42a3a7",
+          "sha512": "05ba82ca825c082c58b1bfa0727d546e67de1d0c9a2a7c9dac628916bcbcf4831273cbb145717760e9318bb69b21760dcf38974499786ec2f3f64e1969d8d6c3"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/v0FIdWkz/graves-3.1.1%2B1.20.2.jar",
         "filename": "graves-3.1.1+1.20.2.jar",
@@ -886,8 +886,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "68ec60bf695aaf238a94612bd48e8d021ed13780",
-          "sha512": "a738dba2647ffe7faebcc5501a2f0cf4601a4b4c125e42754a93fa47901451f66c3b3a874eae1abc402a324f2e0d6ce84211a62fe62818e354d2b3db7ef4d4cc"
+          "sha512": "a738dba2647ffe7faebcc5501a2f0cf4601a4b4c125e42754a93fa47901451f66c3b3a874eae1abc402a324f2e0d6ce84211a62fe62818e354d2b3db7ef4d4cc",
+          "sha1": "68ec60bf695aaf238a94612bd48e8d021ed13780"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/dE1IK66w/graves-3.1.0%2B1.20.2.jar",
         "filename": "graves-3.1.0+1.20.2.jar",
@@ -915,7 +915,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-09-16T08:41:07.55104Z",
-    "downloads": 170445,
+    "downloads": 170460,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -958,8 +958,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1558a4dc77b91764f6e4d8717a7ec5ea86d8427f41d34ff3a761953f0448ee2974e752cd6fd452e4e354db8e35e3477facb995bfe6de6977dd981d7d4ed19d15",
-          "sha1": "59000b20fe0316c0c08defa9db72218ea70f0d16"
+          "sha1": "59000b20fe0316c0c08defa9db72218ea70f0d16",
+          "sha512": "1558a4dc77b91764f6e4d8717a7ec5ea86d8427f41d34ff3a761953f0448ee2974e752cd6fd452e4e354db8e35e3477facb995bfe6de6977dd981d7d4ed19d15"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/RqVbvts1/graves-3.0.0-pre.1%2B1.20.1.jar",
         "filename": "graves-3.0.0-pre.1+1.20.1.jar",
@@ -1069,8 +1069,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "22141b95bae988db1b02e64be565bfc928d4f2c2",
-          "sha512": "e8c3b9df6f793d5dab7311c139f9a05c89b0e6b6833599c38aa9eaeb651b2c2dea06abbe008acc459660b46cf4158eb6daed7ad96f045a1e3f5e4dc840f93ab3"
+          "sha512": "e8c3b9df6f793d5dab7311c139f9a05c89b0e6b6833599c38aa9eaeb651b2c2dea06abbe008acc459660b46cf4158eb6daed7ad96f045a1e3f5e4dc840f93ab3",
+          "sha1": "22141b95bae988db1b02e64be565bfc928d4f2c2"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/xSCzeiCx/graves-3.0.0-beta.2%2B1.20.jar",
         "filename": "graves-3.0.0-beta.2+1.20.jar",
@@ -1105,8 +1105,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a7ea10ee79222739fe1466243e59cd33cef7bfe6de44e5d3538578120eb940c858fddd6ce2ed68ed11d505f325806627f3af27fc71b2bd13b478abefaadb84df",
-          "sha1": "6957ebc2a7bc1cee61316abe4a085895d78dc46e"
+          "sha1": "6957ebc2a7bc1cee61316abe4a085895d78dc46e",
+          "sha512": "a7ea10ee79222739fe1466243e59cd33cef7bfe6de44e5d3538578120eb940c858fddd6ce2ed68ed11d505f325806627f3af27fc71b2bd13b478abefaadb84df"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/WVtbaz9p/graves-3.0.0-beta.1%2B1.20.jar",
         "filename": "graves-3.0.0-beta.1+1.20.jar",
@@ -1135,7 +1135,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-03-11T16:23:02.97167Z",
-    "downloads": 3662,
+    "downloads": 3663,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1179,8 +1179,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "54373aaf42419cffe69c65fbf79d032c1d09c74592feaa38922cb6ddf3a5153d52cff9e3eb0858524499781daf3e5a18bf85c7592a4f893ff1d8b54c5637a844",
-          "sha1": "77deef80bc5b383c16845ec4322728a6c1a212ce"
+          "sha1": "77deef80bc5b383c16845ec4322728a6c1a212ce",
+          "sha512": "54373aaf42419cffe69c65fbf79d032c1d09c74592feaa38922cb6ddf3a5153d52cff9e3eb0858524499781daf3e5a18bf85c7592a4f893ff1d8b54c5637a844"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/tZK8jOeV/graves-2.2.0%2B1.19.3.jar",
         "filename": "graves-2.2.0+1.19.3.jar",
@@ -1208,7 +1208,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-10-31T17:00:16.600284Z",
-    "downloads": 136947,
+    "downloads": 136978,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1324,15 +1324,15 @@
     "changelog": "**Universal Graves 2.1.0 for 1.19**\n- Added way for players to teleport to their graves ( @qpcrummer#7194 and @KJP12#3880 )\n- You can set teleportation cost to block it for non-creative (default), require lvls/items or be free\n- Swiched claim checks to use Common Protection API. If you have a claim/protection mod you should implement support for it ( https://github.com/Patbox/common-protection-api )\n\n**Modrinth**: <https://modrinth.com/mod/universal-graves>\n**Curseforge**: <https://www.curseforge.com/minecraft/mc-mods/universal-graves>\n**Github**: <https://github.com/Patbox/UniversalGraves>",
     "changelog_url": null,
     "date_published": "2022-06-23T11:35:40.158767Z",
-    "downloads": 1969,
+    "downloads": 1970,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "806e6e02d5346b48d09c643286a29827fca59a49",
-          "sha512": "1329bf7bfded15eb9ca7f393efdac5e57e066eab36a8ccc039aa402fbdfa364b7f5e8ac45391460d22564fee1a868a90cc19e2658eefdad0ecf67df9765ffcda"
+          "sha512": "1329bf7bfded15eb9ca7f393efdac5e57e066eab36a8ccc039aa402fbdfa364b7f5e8ac45391460d22564fee1a868a90cc19e2658eefdad0ecf67df9765ffcda",
+          "sha1": "806e6e02d5346b48d09c643286a29827fca59a49"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.1.0%2B1.19/graves-2.1.0%2B1.19.jar",
         "filename": "graves-2.1.0+1.19.jar",
@@ -1367,8 +1367,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1c2430b3a5be40bc87278b388b78a90a8573897e",
-          "sha512": "c6c80b5911baf3cedc4dd2c15798a4853369327833638ddeede400aadce3d99eb9cc50477ac256f88511b4ab48f4f57391970d60f14c5d035d46e09fa6e00cb9"
+          "sha512": "c6c80b5911baf3cedc4dd2c15798a4853369327833638ddeede400aadce3d99eb9cc50477ac256f88511b4ab48f4f57391970d60f14c5d035d46e09fa6e00cb9",
+          "sha1": "1c2430b3a5be40bc87278b388b78a90a8573897e"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.5%2B1.19/graves-2.0.5%2B1.19.jar",
         "filename": "graves-2.0.5+1.19.jar",
@@ -1512,8 +1512,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "dcf0fc8d883d44d1411602a824eccaf9a5998e31b53e7352e20199b257db954f4045a862000709f9e6958897a5968fe9f5d6f3bdbdf6208383824d9755a25e1e",
-          "sha1": "c4c751f64b34012e175b915060af4f5317260b85"
+          "sha1": "c4c751f64b34012e175b915060af4f5317260b85",
+          "sha512": "dcf0fc8d883d44d1411602a824eccaf9a5998e31b53e7352e20199b257db954f4045a862000709f9e6958897a5968fe9f5d6f3bdbdf6208383824d9755a25e1e"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0%2B1.18.2/graves-2.0.0%2B1.18.2.jar",
         "filename": "graves-2.0.0+1.18.2.jar",
@@ -1547,8 +1547,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "98b024a6c146d46c5faaa88b28a81c75a2f218b0",
-          "sha512": "39f2886a0ecc8b2a556adedd956ca231014b4999b00d30ab348838b65dd3ab18d6e9fd03317fb24b145b0f65e6534257ec6753e4def95f4408e906d525d534eb"
+          "sha512": "39f2886a0ecc8b2a556adedd956ca231014b4999b00d30ab348838b65dd3ab18d6e9fd03317fb24b145b0f65e6534257ec6753e4def95f4408e906d525d534eb",
+          "sha1": "98b024a6c146d46c5faaa88b28a81c75a2f218b0"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-rc.5%2B1.18.2/graves-2.0.0-rc.5%2B1.18.2.jar",
         "filename": "graves-2.0.0-rc.5+1.18.2.jar",
@@ -1652,8 +1652,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b57b54dcedf22b7c4d80c0fdf2da1482d5e3c578119bdfd2bebbd2718e6d6f1d04be2976861a95eb4c61eec6758995016d76db3784a3cd259099d1142695f58f",
-          "sha1": "b4f28c745f97ae66fa67573ee360a9107b5d37d1"
+          "sha1": "b4f28c745f97ae66fa67573ee360a9107b5d37d1",
+          "sha512": "b57b54dcedf22b7c4d80c0fdf2da1482d5e3c578119bdfd2bebbd2718e6d6f1d04be2976861a95eb4c61eec6758995016d76db3784a3cd259099d1142695f58f"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-rc.3%2B1.18.1/graves-2.0.0-rc.3%2B1.18.1.jar",
         "filename": "graves-2.0.0-rc.3+1.18.1.jar",
@@ -1687,8 +1687,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a297eed39ebaa032cdbbee2e6897db4e318543f5",
-          "sha512": "68d03e4b27da34d10935c9fe0bced77688a92f74459b2f5cc6d249b72204d82bd9ae578776db6f720a35cfb04010baeb8f08b30651e09556a52bd2983291026f"
+          "sha512": "68d03e4b27da34d10935c9fe0bced77688a92f74459b2f5cc6d249b72204d82bd9ae578776db6f720a35cfb04010baeb8f08b30651e09556a52bd2983291026f",
+          "sha1": "a297eed39ebaa032cdbbee2e6897db4e318543f5"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-rc.2%2B1.18.1/graves-2.0.0-rc.2%2B1.18.1.jar",
         "filename": "graves-2.0.0-rc.2+1.18.1.jar",
@@ -1757,8 +1757,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4c65e7a715bb32e9f3fd57ca2742d4307540496a",
-          "sha512": "98aada19f0996cfc40844a93b369bc5deba9b2494b6454c22b038190a861783a1fa61b21ed580aec01b40a3d9efd7bba7f516b4c1bd83119212ad4ad91f302f2"
+          "sha512": "98aada19f0996cfc40844a93b369bc5deba9b2494b6454c22b038190a861783a1fa61b21ed580aec01b40a3d9efd7bba7f516b4c1bd83119212ad4ad91f302f2",
+          "sha1": "4c65e7a715bb32e9f3fd57ca2742d4307540496a"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.4.2%2B1.18.1/graves-2.0.0-beta.4.2%2B1.18.1.jar",
         "filename": "graves-2.0.0-beta.4.2+1.18.1.jar",
@@ -1792,8 +1792,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "feb650cf13c7e66c4814802d882851eefdc5807122af9fadf19e4afa0492b097ac9df31a78b04febdf197e827be8e632fe438f12072eef3e13e8401446059951",
-          "sha1": "c55f730ccfe6e21475d094a62d7d924fdf7f5cd8"
+          "sha1": "c55f730ccfe6e21475d094a62d7d924fdf7f5cd8",
+          "sha512": "feb650cf13c7e66c4814802d882851eefdc5807122af9fadf19e4afa0492b097ac9df31a78b04febdf197e827be8e632fe438f12072eef3e13e8401446059951"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.4.1%2B1.18.1/graves-2.0.0-beta.4.1%2B1.18.1.jar",
         "filename": "graves-2.0.0-beta.4.1+1.18.1.jar",
@@ -1862,8 +1862,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d412b92badd069faea7c0faeedd29d559b774ca1",
-          "sha512": "133a2f7c49042a278b1cf1f638e748ace5e9f2d75ec6434ad21f884e4efbea97c70bc24dc2de0626cf5b45aae8c7b3b4f23ffe362f4a78e12a515cb24fe7bde2"
+          "sha512": "133a2f7c49042a278b1cf1f638e748ace5e9f2d75ec6434ad21f884e4efbea97c70bc24dc2de0626cf5b45aae8c7b3b4f23ffe362f4a78e12a515cb24fe7bde2",
+          "sha1": "d412b92badd069faea7c0faeedd29d559b774ca1"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.3%2B1.18.1/graves-2.0.0-beta.3%2B1.18.jar",
         "filename": "graves-2.0.0-beta.3+1.18.jar",
@@ -1897,8 +1897,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5013ee95b1c3090aac428f583d126fca52dcad01",
-          "sha512": "971e186849c786d772bd81b2ef83cc6770488ed721101cfd5e6547f542868ae06eeb03c4e50b06b47e63a8cc55146da7b8c852dfbb6223bc44bf813797029720"
+          "sha512": "971e186849c786d772bd81b2ef83cc6770488ed721101cfd5e6547f542868ae06eeb03c4e50b06b47e63a8cc55146da7b8c852dfbb6223bc44bf813797029720",
+          "sha1": "5013ee95b1c3090aac428f583d126fca52dcad01"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.2.1%2B1.18.1/graves-2.0.0-beta.2.1%2B1.18.jar",
         "filename": "graves-2.0.0-beta.2.1+1.18.jar",
@@ -1967,8 +1967,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "73079b0a4700f196ba14b7fb260ef2483cb57ff3",
-          "sha512": "f199c591bfdeec584567c1a1da251111346f0a09ac1d6363fcbbc19f23f9b37f9cccc0ee877de2945f613e73d1ed805ecd5a2d913406061c2931fc7d55bc30da"
+          "sha512": "f199c591bfdeec584567c1a1da251111346f0a09ac1d6363fcbbc19f23f9b37f9cccc0ee877de2945f613e73d1ed805ecd5a2d913406061c2931fc7d55bc30da",
+          "sha1": "73079b0a4700f196ba14b7fb260ef2483cb57ff3"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.1%2B1.18.1/graves-2.0.0-beta.1%2B1.18.jar",
         "filename": "graves-2.0.0-beta.1+1.18.jar",
@@ -2003,8 +2003,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3d8a8216b6e22478b7e555845a99ccedad3b0dea28a47007056e3f5d4dbda7c30736d1ead5cc4fdb682d28ac9d0fd4f4db9437733639c58621937da6b73e83d4",
-          "sha1": "e46781ec9d47c17e6a295b3e5dd798db3a4716fa"
+          "sha1": "e46781ec9d47c17e6a295b3e5dd798db3a4716fa",
+          "sha512": "3d8a8216b6e22478b7e555845a99ccedad3b0dea28a47007056e3f5d4dbda7c30736d1ead5cc4fdb682d28ac9d0fd4f4db9437733639c58621937da6b73e83d4"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.2.2%2B1.18/graves-1.2.2%2B1.18.jar",
         "filename": "graves-1.2.2+1.18.jar",
@@ -2077,8 +2077,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "814efd38b311eef87644fb575d75fb2749028d6ab89b5cc7f4c91acc516f7c138e6dd4738748c14a11201405305cf883c873a7024ca83a1ba8418beaac0934db",
-          "sha1": "561301d6e0f1adce3fbf348bb395919ddf115f17"
+          "sha1": "561301d6e0f1adce3fbf348bb395919ddf115f17",
+          "sha512": "814efd38b311eef87644fb575d75fb2749028d6ab89b5cc7f4c91acc516f7c138e6dd4738748c14a11201405305cf883c873a7024ca83a1ba8418beaac0934db"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.2.0%2B1.18/graves-1.2.0%2B1.18.jar",
         "filename": "graves-1.2.0+1.18.jar",
@@ -2182,8 +2182,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7684b8f81bbaaad2d90449d81df7df131c3d5fb2bbe591ada1739b0243fdf088e127b99e5932ba8afac44220f67b8aa24f6b4afbaab70088077fa55996e69bb0",
-          "sha1": "347dad06928ba774bea758de00f8a0dc91c2b1aa"
+          "sha1": "347dad06928ba774bea758de00f8a0dc91c2b1aa",
+          "sha512": "7684b8f81bbaaad2d90449d81df7df131c3d5fb2bbe591ada1739b0243fdf088e127b99e5932ba8afac44220f67b8aa24f6b4afbaab70088077fa55996e69bb0"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.13/graves-1.1.3%2B1.17.1.jar",
         "filename": "graves-1.1.3+1.17.1.jar",
@@ -2252,8 +2252,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1426eb21bac2ed01cc7c372c4b40f2c381d9a5acdc3fa8ed5b0e51181fac9e8f18617c0f796ccdfffd4d829f1d11fd77447aaede35790dce86de0a10abe4f54f",
-          "sha1": "c901f34080abd02ab0c62a45fb7b693a050a69e0"
+          "sha1": "c901f34080abd02ab0c62a45fb7b693a050a69e0",
+          "sha512": "1426eb21bac2ed01cc7c372c4b40f2c381d9a5acdc3fa8ed5b0e51181fac9e8f18617c0f796ccdfffd4d829f1d11fd77447aaede35790dce86de0a10abe4f54f"
         },
         "url": "https://cdn.modrinth.com//data/yn9u3ypm/versions/1.1.0/graves-1.1.0%2B1.17.1.jar",
         "filename": "graves-1.1.0+1.17.1.jar",
@@ -2287,8 +2287,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "dcae38c07a2ffb989400816c1ddf68f3d86506ed",
-          "sha512": "76e95dc2d1ce52e2296d440fa43ca6e4d448cd34fd876d0022ffde2e9523f9e84ef9a2ac4c465339cdc7e2e8cfc117f58c363eb87e1efac7d9e492977098200f"
+          "sha512": "76e95dc2d1ce52e2296d440fa43ca6e4d448cd34fd876d0022ffde2e9523f9e84ef9a2ac4c465339cdc7e2e8cfc117f58c363eb87e1efac7d9e492977098200f",
+          "sha1": "dcae38c07a2ffb989400816c1ddf68f3d86506ed"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.8/graves-1.0.8%2B1.17.1.jar",
         "filename": "graves-1.0.8+1.17.1.jar",
@@ -2392,8 +2392,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "bd344be715fc9f6821c3c2dfcb989792024b9d6685fe03e209cfac25e540fa309edc4adeeb19b7caea7b02f4c4a5f91292fcb42528f1f1b7fb8581b47de291ae",
-          "sha1": "cd9e8bb3d03898c0900c0511cb61f4474def734a"
+          "sha1": "cd9e8bb3d03898c0900c0511cb61f4474def734a",
+          "sha512": "bd344be715fc9f6821c3c2dfcb989792024b9d6685fe03e209cfac25e540fa309edc4adeeb19b7caea7b02f4c4a5f91292fcb42528f1f1b7fb8581b47de291ae"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.5/graves-1.0.5.jar",
         "filename": "graves-1.0.5.jar",
@@ -2427,8 +2427,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "abb909e7f7d7f37334a2188f8a96e8f137897a511ea821f8cf89e7e7a273c2b68aafed0353dc01a034b394283e52409b8c93d247bc3afe68b3f3a80c7ab7cee0",
-          "sha1": "8aa2c040250278e37e563af9fad7aefe874464ca"
+          "sha1": "8aa2c040250278e37e563af9fad7aefe874464ca",
+          "sha512": "abb909e7f7d7f37334a2188f8a96e8f137897a511ea821f8cf89e7e7a273c2b68aafed0353dc01a034b394283e52409b8c93d247bc3afe68b3f3a80c7ab7cee0"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.4/graves-1.0.4.jar",
         "filename": "graves-1.0.4.jar",
@@ -2462,8 +2462,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "335733813fcc5c1f897c96621c6b11792900fc7c",
-          "sha512": "c69f58b1b251b15946e256595cafc2b64c84d155da0760f107180fac1ccffb4171b72a2dbd574369685b274c2e8ca9832138ae62e435b928c564c329d984464a"
+          "sha512": "c69f58b1b251b15946e256595cafc2b64c84d155da0760f107180fac1ccffb4171b72a2dbd574369685b274c2e8ca9832138ae62e435b928c564c329d984464a",
+          "sha1": "335733813fcc5c1f897c96621c6b11792900fc7c"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.3/graves-1.0.3.jar",
         "filename": "graves-1.0.3.jar",
@@ -2497,8 +2497,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0b16fcf7ff1918bb07b8be960286981ea8500ef04c5cf64a9dfec19d121cec43d67ef77f0ed96c5c1ea9e9621b5867301a9627d13966b228554ce7adc28594a9",
-          "sha1": "b927207201c789ad377b31d3fb15dfd35352214a"
+          "sha1": "b927207201c789ad377b31d3fb15dfd35352214a",
+          "sha512": "0b16fcf7ff1918bb07b8be960286981ea8500ef04c5cf64a9dfec19d121cec43d67ef77f0ed96c5c1ea9e9621b5867301a9627d13966b228554ce7adc28594a9"
         },
         "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.2/graves-1.0.2.jar",
         "filename": "graves-1.0.2.jar",

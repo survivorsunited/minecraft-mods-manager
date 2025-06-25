@@ -19,7 +19,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-06-24T07:16:55.838601Z",
-    "downloads": 46,
+    "downloads": 54,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -55,7 +55,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-06-24T07:16:50.395036Z",
-    "downloads": 7,
+    "downloads": 9,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -100,8 +100,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a15102da2299d35b7460ef1f9aa5003913bdb68a",
-          "sha512": "663ad3f706369ef40e1d43a5b205f8163ec45ab8ad5817614edbcf1556aa576233145ec693c0fd6a27bfe3772cf0c5f0848aea8bc666bacf50b189701c1c0784"
+          "sha512": "663ad3f706369ef40e1d43a5b205f8163ec45ab8ad5817614edbcf1556aa576233145ec693c0fd6a27bfe3772cf0c5f0848aea8bc666bacf50b189701c1c0784",
+          "sha1": "a15102da2299d35b7460ef1f9aa5003913bdb68a"
         },
         "url": "https://cdn.modrinth.com/data/5H9ypkdW/versions/mntW7qS7/pets-dont-die-1.1.2.jar",
         "filename": "pets-dont-die-1.1.2.jar",
@@ -135,8 +135,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8e27025dc6234a042dea6470bfa483aca2f3039a",
-          "sha512": "9405037a4733d5c74685acaddbab8eb955158cd05d9821ce296d444d492dc23942b165ad8341ddb4f518ad5e8c3790d5ba11b4d567cc1279620716c55aad200e"
+          "sha512": "9405037a4733d5c74685acaddbab8eb955158cd05d9821ce296d444d492dc23942b165ad8341ddb4f518ad5e8c3790d5ba11b4d567cc1279620716c55aad200e",
+          "sha1": "8e27025dc6234a042dea6470bfa483aca2f3039a"
         },
         "url": "https://cdn.modrinth.com/data/5H9ypkdW/versions/QbKd3VdO/PetsDontDie.zip",
         "filename": "PetsDontDie.zip",
@@ -251,8 +251,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8977af8e3cfa303944198a90d910c23f2545850fb62fe1d1d1a9e7abb409018e53cd91f11a64f233e34f95864663a420e98532d5a597746a52c32cbb1c3bb883",
-          "sha1": "311965e0e497bc296dee69c5ab82a8813ffafea7"
+          "sha1": "311965e0e497bc296dee69c5ab82a8813ffafea7",
+          "sha512": "8977af8e3cfa303944198a90d910c23f2545850fb62fe1d1d1a9e7abb409018e53cd91f11a64f233e34f95864663a420e98532d5a597746a52c32cbb1c3bb883"
         },
         "url": "https://cdn.modrinth.com/data/5H9ypkdW/versions/L4FbA9yS/pets-dont-die.zip",
         "filename": "pets-dont-die.zip",
@@ -326,8 +326,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "41bcf215c91f5e2ecf39b5212d51255dc6d2b47c",
-          "sha512": "1aa48683f8575944c80035eeae176e0b11a1b4d2c6e12b6a10143b6fb8d122dad3224bbb8e46ee9801d78c08d07a110701e693de07682296d751214d23e663f1"
+          "sha512": "1aa48683f8575944c80035eeae176e0b11a1b4d2c6e12b6a10143b6fb8d122dad3224bbb8e46ee9801d78c08d07a110701e693de07682296d751214d23e663f1",
+          "sha1": "41bcf215c91f5e2ecf39b5212d51255dc6d2b47c"
         },
         "url": "https://cdn.modrinth.com/data/5H9ypkdW/versions/OaEl0hcz/pets_dont_die.zip",
         "filename": "pets_dont_die.zip",

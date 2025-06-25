@@ -15,15 +15,15 @@
     "changelog": "## Architectury v17.0.6 for 1.21.6\nUpdated at **2025-06-20 01:10**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.6)\n- Fix RenderTypeRegistry.register parameters (#636)",
     "changelog_url": null,
     "date_published": "2025-06-20T01:10:51.199306Z",
-    "downloads": 858,
+    "downloads": 885,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c64f75d901f0e61f1aef46547142cccef16ce524664a425540b8804d969325afe1d80d77adc4ccb7ee521ac64cf895a5f7eb7181463496eb0005c88b25115eea",
-          "sha1": "aa2f1ddc15212cd30ade786fda2d903037ccdc90"
+          "sha1": "aa2f1ddc15212cd30ade786fda2d903037ccdc90",
+          "sha512": "c64f75d901f0e61f1aef46547142cccef16ce524664a425540b8804d969325afe1d80d77adc4ccb7ee521ac64cf895a5f7eb7181463496eb0005c88b25115eea"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/KFBGyMei/architectury-17.0.6-neoforge.jar",
         "filename": "architectury-17.0.6-neoforge.jar",
@@ -50,7 +50,7 @@
     "changelog": "## Architectury v17.0.6 for 1.21.6\nUpdated at **2025-06-20 01:10**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.6)\n- Fix RenderTypeRegistry.register parameters (#636)",
     "changelog_url": null,
     "date_published": "2025-06-20T01:10:48.154496Z",
-    "downloads": 19882,
+    "downloads": 20601,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -99,8 +99,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "57ceb9458d845b75d13cddde88eef6ef53afdc84",
-          "sha512": "720a771002f387b2dfd131c8d57ebb2c6b5639800641bb067737640652b9d5c1c7831cb2858b685bfe80374acced87ffc76f65818a58c15633c4f6801b39fbb4"
+          "sha512": "720a771002f387b2dfd131c8d57ebb2c6b5639800641bb067737640652b9d5c1c7831cb2858b685bfe80374acced87ffc76f65818a58c15633c4f6801b39fbb4",
+          "sha1": "57ceb9458d845b75d13cddde88eef6ef53afdc84"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/GiZRM7tY/architectury-17.0.4-neoforge.jar",
         "filename": "architectury-17.0.4-neoforge.jar",
@@ -127,7 +127,7 @@
     "changelog": "## Architectury v17.0.4 for 1.21.6\nUpdated at **2025-06-18 01:53**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.6)\n- Remove invalid curseforge version",
     "changelog_url": null,
     "date_published": "2025-06-18T01:54:24.507019Z",
-    "downloads": 8990,
+    "downloads": 8995,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -169,7 +169,7 @@
     "changelog": "## Architectury v16.1.4 for 1.21.5\nUpdated at **2025-04-10 06:54**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.5)\n- Bump to 16.1, add more transitive access wideners",
     "changelog_url": null,
     "date_published": "2025-04-10T06:55:14.586067Z",
-    "downloads": 19613,
+    "downloads": 19653,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -204,7 +204,7 @@
     "changelog": "## Architectury v16.1.4 for 1.21.5\nUpdated at **2025-04-10 06:54**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.5)\n- Bump to 16.1, add more transitive access wideners",
     "changelog_url": null,
     "date_published": "2025-04-10T06:55:12.10144Z",
-    "downloads": 655474,
+    "downloads": 659135,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -253,8 +253,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4dd7cb18027cd6798c1d2bfe61ca25a18e4161c09487eb3abd4bd7b102324ce8c3aea7fff3c2367a864bf63df2e4a23137fe104b39f010a37b530ca44a44ca20",
-          "sha1": "52512be93b1bb85bf772e42842d1ee60e2102bbc"
+          "sha1": "52512be93b1bb85bf772e42842d1ee60e2102bbc",
+          "sha512": "4dd7cb18027cd6798c1d2bfe61ca25a18e4161c09487eb3abd4bd7b102324ce8c3aea7fff3c2367a864bf63df2e4a23137fe104b39f010a37b530ca44a44ca20"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/I8JLUnUt/architectury-16.0.3-neoforge.jar",
         "filename": "architectury-16.0.3-neoforge.jar",
@@ -281,15 +281,15 @@
     "changelog": "## Architectury v16.0.3 for 1.21.5\nUpdated at **2025-03-26 14:58**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.5)\n- NeoForge 1.21.5 Port",
     "changelog_url": null,
     "date_published": "2025-03-26T14:58:47.450789Z",
-    "downloads": 164730,
+    "downloads": 164764,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "bbabd5fbb35442d2122c64142c211d348c551085",
-          "sha512": "98c604361660212b46e95bb3f595c1394a9d477eac073ca2de722c0d48ccee7310396b4dcf32bbe7e92f9157c3ad97c176cccf31507208149517b86e1b0e026c"
+          "sha512": "98c604361660212b46e95bb3f595c1394a9d477eac073ca2de722c0d48ccee7310396b4dcf32bbe7e92f9157c3ad97c176cccf31507208149517b86e1b0e026c",
+          "sha1": "bbabd5fbb35442d2122c64142c211d348c551085"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/8qVhRqMz/architectury-16.0.3-fabric.jar",
         "filename": "architectury-16.0.3-fabric.jar",
@@ -330,8 +330,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a881d3d3f10c9d0cce253cf2db046b35a25569f7f381c427f3f046258f0315864f7b215429b82b5ac8be0365ce1c3add53fb1dbe1054248efb387b27f4644f5f",
-          "sha1": "30172c08ba0d74b0aeb4326aed70a80693c77249"
+          "sha1": "30172c08ba0d74b0aeb4326aed70a80693c77249",
+          "sha512": "a881d3d3f10c9d0cce253cf2db046b35a25569f7f381c427f3f046258f0315864f7b215429b82b5ac8be0365ce1c3add53fb1dbe1054248efb387b27f4644f5f"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/s8y6Py15/architectury-16.0.2-fabric.jar",
         "filename": "architectury-16.0.2-fabric.jar",
@@ -372,8 +372,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "123b1f2bbafa59157c38e9303efceef574e8b4cadd5e86789f7be8e9b554a0005bf85e078557739551d10c9d6c3a2af2ad91e56bd4e7db78f42d37edd341b101",
-          "sha1": "403307c531ce4a153a86145f02440c860f1d8cf7"
+          "sha1": "403307c531ce4a153a86145f02440c860f1d8cf7",
+          "sha512": "123b1f2bbafa59157c38e9303efceef574e8b4cadd5e86789f7be8e9b554a0005bf85e078557739551d10c9d6c3a2af2ad91e56bd4e7db78f42d37edd341b101"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/mR6RgLud/architectury-16.0.1-fabric.jar",
         "filename": "architectury-16.0.1-fabric.jar",
@@ -407,7 +407,7 @@
     "changelog": "## Architectury v15.0.3 for 1.21.4\nUpdated at **2025-02-18 14:52**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.4)\n- Fix #600 (#602)",
     "changelog_url": null,
     "date_published": "2025-02-18T14:53:24.181896Z",
-    "downloads": 20144,
+    "downloads": 20163,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -442,15 +442,15 @@
     "changelog": "## Architectury v15.0.3 for 1.21.4\nUpdated at **2025-02-18 14:52**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.4)\n- Fix #600 (#602)",
     "changelog_url": null,
     "date_published": "2025-02-18T14:53:21.570735Z",
-    "downloads": 689950,
+    "downloads": 690676,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6acc7cfccfc6e93fd8c1895fb2c489cbabd27265f38f7cbad98ddaab2cb2e6d1601633bd12cf26fc0bb100a87949ee06b872f333cf7b8490cccc0082ac586dcb",
-          "sha1": "caa5462498018160de9397dd2558f27922b85751"
+          "sha1": "caa5462498018160de9397dd2558f27922b85751",
+          "sha512": "6acc7cfccfc6e93fd8c1895fb2c489cbabd27265f38f7cbad98ddaab2cb2e6d1601633bd12cf26fc0bb100a87949ee06b872f333cf7b8490cccc0082ac586dcb"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/73nlw3WM/architectury-15.0.3-fabric.jar",
         "filename": "architectury-15.0.3-fabric.jar",
@@ -491,8 +491,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "66db3466a344e70a9640664d90426458fb90ad7d9a91678e23108c28fd3f288a4c36de58928c50f6eef2a397a99dad02969ee69129c29641f4bafcbc3c5f0fff",
-          "sha1": "6a11bb06544ba5fd823fc0f1fd14ad3af67ee3a5"
+          "sha1": "6a11bb06544ba5fd823fc0f1fd14ad3af67ee3a5",
+          "sha512": "66db3466a344e70a9640664d90426458fb90ad7d9a91678e23108c28fd3f288a4c36de58928c50f6eef2a397a99dad02969ee69129c29641f4bafcbc3c5f0fff"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/j6WXh6Kl/architectury-15.0.2-neoforge.jar",
         "filename": "architectury-15.0.2-neoforge.jar",
@@ -519,15 +519,15 @@
     "changelog": "## Architectury v15.0.2 for 1.21.4\nUpdated at **2025-02-16 08:38**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.4)\n- Fix: use new neoforge reload listeners (#603)",
     "changelog_url": null,
     "date_published": "2025-02-16T08:38:57.903504Z",
-    "downloads": 24164,
+    "downloads": 24172,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b31bcceca983f5952d4523698dee72cf918ca5a6f02f914dd39781c6b03eee6d4522e0ba8aac9bcca40b441dd59d9e1f7e26bc32a8fac75052753305d8cdd9b8",
-          "sha1": "2947496272fa35d3d2d0a7df16d6549a93023259"
+          "sha1": "2947496272fa35d3d2d0a7df16d6549a93023259",
+          "sha512": "b31bcceca983f5952d4523698dee72cf918ca5a6f02f914dd39781c6b03eee6d4522e0ba8aac9bcca40b441dd59d9e1f7e26bc32a8fac75052753305d8cdd9b8"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/JJbMcnc3/architectury-15.0.2-fabric.jar",
         "filename": "architectury-15.0.2-fabric.jar",
@@ -561,15 +561,15 @@
     "changelog": "## Architectury v15.0.1 for 1.21.4\nUpdated at **2024-12-03 18:30**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.4)\n- Update for NeoForge 1.21.4",
     "changelog_url": null,
     "date_published": "2024-12-03T18:31:18.545225Z",
-    "downloads": 14147,
+    "downloads": 14149,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b91e5d206ac5073530413be95f6e4c91e9a3f283b8b6572484aca3aca0e8f289ed8c35daad94d9ad646e1b82eddcd48eef75065b646343288993a0a799167df0",
-          "sha1": "bddebda815ee978518493726bb3f4e16d484c8ed"
+          "sha1": "bddebda815ee978518493726bb3f4e16d484c8ed",
+          "sha512": "b91e5d206ac5073530413be95f6e4c91e9a3f283b8b6572484aca3aca0e8f289ed8c35daad94d9ad646e1b82eddcd48eef75065b646343288993a0a799167df0"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/QfeCC2G6/architectury-15.0.1-neoforge.jar",
         "filename": "architectury-15.0.1-neoforge.jar",
@@ -596,15 +596,15 @@
     "changelog": "## Architectury v15.0.1 for 1.21.4\nUpdated at **2024-12-03 18:30**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.4)\n- Update for NeoForge 1.21.4",
     "changelog_url": null,
     "date_published": "2024-12-03T18:31:15.208212Z",
-    "downloads": 443675,
+    "downloads": 443733,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a321c22dcbf3ba55e2de763952bbc07c5d814472",
-          "sha512": "df0e163a560439c1911c584821a643c665b13bbd541db9a9f318cdf33db0aee4573e3c901e4a3aad585e10013de1b4dc62143dce0855a2c915fcd0b35ee28263"
+          "sha512": "df0e163a560439c1911c584821a643c665b13bbd541db9a9f318cdf33db0aee4573e3c901e4a3aad585e10013de1b4dc62143dce0855a2c915fcd0b35ee28263",
+          "sha1": "a321c22dcbf3ba55e2de763952bbc07c5d814472"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/XRwibvvn/architectury-15.0.1-fabric.jar",
         "filename": "architectury-15.0.1-fabric.jar",
@@ -639,15 +639,15 @@
     "changelog": "## Architectury v14.0.4 for 1.21.2\nUpdated at **2024-10-27 07:26**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.2)\n- Fix crash (#576)",
     "changelog_url": null,
     "date_published": "2024-10-27T07:27:05.84926Z",
-    "downloads": 6853,
+    "downloads": 6855,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "52edbb50b296bf83e629ed248e1e17525a49483b",
-          "sha512": "cb19d97cf0be6124530cebc88d3cef5eefa38f787195175a018bf8cca702aa41dd9b2c426ed8a5e1684b82635e4641172e864018c18cbb629bfa39dc0c988109"
+          "sha512": "cb19d97cf0be6124530cebc88d3cef5eefa38f787195175a018bf8cca702aa41dd9b2c426ed8a5e1684b82635e4641172e864018c18cbb629bfa39dc0c988109",
+          "sha1": "52edbb50b296bf83e629ed248e1e17525a49483b"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/avlNAUxs/architectury-14.0.4-neoforge.jar",
         "filename": "architectury-14.0.4-neoforge.jar",
@@ -675,7 +675,7 @@
     "changelog": "## Architectury v14.0.4 for 1.21.2\nUpdated at **2024-10-27 07:26**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.2)\n- Fix crash (#576)",
     "changelog_url": null,
     "date_published": "2024-10-27T07:27:03.978837Z",
-    "downloads": 161231,
+    "downloads": 161290,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -724,8 +724,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8d730a95bf2362bde62d771c57a7296995c7c755",
-          "sha512": "e5999bbd6f40f9b5ef58954367d4d811eb43034a0757d0f730ce39011f7b2ff8cef27bf125fd1175edfe1195daa493b7cfa3d216e0ed9ffe30040debad04b411"
+          "sha512": "e5999bbd6f40f9b5ef58954367d4d811eb43034a0757d0f730ce39011f7b2ff8cef27bf125fd1175edfe1195daa493b7cfa3d216e0ed9ffe30040debad04b411",
+          "sha1": "8d730a95bf2362bde62d771c57a7296995c7c755"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/yOLUTj3S/architectury-14.0.3-neoforge.jar",
         "filename": "architectury-14.0.3-neoforge.jar",
@@ -752,7 +752,7 @@
     "changelog": "## Architectury v14.0.3 for 1.21.2\nUpdated at **2024-10-22 18:19**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21.2)\n- Update for NeoForge 1.21.2",
     "changelog_url": null,
     "date_published": "2024-10-22T18:19:47.65771Z",
-    "downloads": 4541,
+    "downloads": 4542,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -801,8 +801,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "821149ab79550aefc55525cdb999c6b371590756",
-          "sha512": "169ac14610481ccf9dd93bbc1299c028ae58d782f229e385d1e70c372e38d66ebd71c2c8a466cba8f5b608c4890cb60da712a9f113b04c89becd89a504e94360"
+          "sha512": "169ac14610481ccf9dd93bbc1299c028ae58d782f229e385d1e70c372e38d66ebd71c2c8a466cba8f5b608c4890cb60da712a9f113b04c89becd89a504e94360",
+          "sha1": "821149ab79550aefc55525cdb999c6b371590756"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/M7ETXdSr/architectury-14.0.1-fabric.jar",
         "filename": "architectury-14.0.1-fabric.jar",
@@ -837,15 +837,15 @@
     "changelog": "## Architectury v13.0.8 for 1.21\nUpdated at **2024-10-05 19:23**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21)\n- Update to upload-artifact@v4",
     "changelog_url": null,
     "date_published": "2024-10-05T19:24:08.875561Z",
-    "downloads": 534942,
+    "downloads": 535753,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "65e3664953385d880320dd6bb818bcb96d361c07c53e2a7f65e64c6a47720ee26b233224ae9cad465ef0b2bbaefdaf30fb0175a983cecd91de058817d6fcf57e",
-          "sha1": "6ca11d3cc136bf69bb8f4d56982481eb85b5100b"
+          "sha1": "6ca11d3cc136bf69bb8f4d56982481eb85b5100b",
+          "sha512": "65e3664953385d880320dd6bb818bcb96d361c07c53e2a7f65e64c6a47720ee26b233224ae9cad465ef0b2bbaefdaf30fb0175a983cecd91de058817d6fcf57e"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ZxYGwlk0/architectury-13.0.8-neoforge.jar",
         "filename": "architectury-13.0.8-neoforge.jar",
@@ -873,7 +873,7 @@
     "changelog": "## Architectury v13.0.8 for 1.21\nUpdated at **2024-10-05 19:23**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21)\n- Update to upload-artifact@v4",
     "changelog_url": null,
     "date_published": "2024-10-05T19:24:06.840627Z",
-    "downloads": 3146511,
+    "downloads": 3150306,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -916,15 +916,15 @@
     "changelog": "## Architectury v13.0.6 for 1.21\nUpdated at **2024-07-22 09:12**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21)\n- Update NeoForge to 21.0.114-beta and fix breakage in NeoForge config extension",
     "changelog_url": null,
     "date_published": "2024-07-22T09:13:07.041619Z",
-    "downloads": 46091,
+    "downloads": 46105,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e8716c02a9221cf567d46cdb7d43885bb7e80860",
-          "sha512": "6c95a0d97323fc0465fc3d2022e1f673ab55fea2523919a09ca4eff1f130afd30f077f30a99f9d79938b3206e1edc116dab436a6f0b1293888556aa7f44305a2"
+          "sha512": "6c95a0d97323fc0465fc3d2022e1f673ab55fea2523919a09ca4eff1f130afd30f077f30a99f9d79938b3206e1edc116dab436a6f0b1293888556aa7f44305a2",
+          "sha1": "e8716c02a9221cf567d46cdb7d43885bb7e80860"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/zQZVt59v/architectury-13.0.6-neoforge.jar",
         "filename": "architectury-13.0.6-neoforge.jar",
@@ -952,7 +952,7 @@
     "changelog": "## Architectury v13.0.6 for 1.21\nUpdated at **2024-07-22 09:12**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21)\n- Update NeoForge to 21.0.114-beta and fix breakage in NeoForge config extension",
     "changelog_url": null,
     "date_published": "2024-07-22T09:13:03.407522Z",
-    "downloads": 1236847,
+    "downloads": 1237049,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1029,7 +1029,7 @@
     "changelog": "## Architectury v13.0.5 for 1.21\nUpdated at **2024-07-22 09:01**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21)",
     "changelog_url": null,
     "date_published": "2024-07-22T09:02:21.77189Z",
-    "downloads": 5675,
+    "downloads": 5677,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1106,15 +1106,15 @@
     "changelog": "## Architectury v12.1.4 for 1.20.6\nUpdated at **2024-07-22 09:01**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.6)",
     "changelog_url": null,
     "date_published": "2024-07-22T09:02:18.861323Z",
-    "downloads": 45865,
+    "downloads": 45896,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d622784913c4be3ad045c0c04f2d0af937def79d84070a2724fb486cd47591375115aa929424aca5308d331317afbae9f677c31fd6e9893e419c8b3ba7dca8b2",
-          "sha1": "e5cbfaeb7956aff350a26323f251261bbafdca43"
+          "sha1": "e5cbfaeb7956aff350a26323f251261bbafdca43",
+          "sha512": "d622784913c4be3ad045c0c04f2d0af937def79d84070a2724fb486cd47591375115aa929424aca5308d331317afbae9f677c31fd6e9893e419c8b3ba7dca8b2"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/vvN5UGnq/architectury-12.1.4-fabric.jar",
         "filename": "architectury-12.1.4-fabric.jar",
@@ -1148,15 +1148,15 @@
     "changelog": "## Architectury v12.0.29 for 1.20.5\nUpdated at **2024-07-20 00:29**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.5)\n- Register SpawnEntityPacket on Fabric server (#526)",
     "changelog_url": null,
     "date_published": "2024-07-20T00:29:55.514956Z",
-    "downloads": 455,
+    "downloads": 457,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0f6493f0d86acc4c1a5cd8e33ee729523d4cc2f2c48411783d8885830bb2840e2ab504b01f448d88a1395c2931bc92bf65d58d217f2d0004a1f506526c319de5",
-          "sha1": "d673d625f2b62c62f5299d3cc7e6e2d843c24fb1"
+          "sha1": "d673d625f2b62c62f5299d3cc7e6e2d843c24fb1",
+          "sha512": "0f6493f0d86acc4c1a5cd8e33ee729523d4cc2f2c48411783d8885830bb2840e2ab504b01f448d88a1395c2931bc92bf65d58d217f2d0004a1f506526c319de5"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Th6yhTAa/architectury-12.0.29-neoforge.jar",
         "filename": "architectury-12.0.29-neoforge.jar",
@@ -1190,8 +1190,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "35dca339319fd3024422137f599a144e02ee8726",
-          "sha512": "83d65815589703f4806a5fc67ebd62c6a0e6f6d57202aa67a55c320296d4848ceca63c68d9ea1f5ee4602b0767280304bb4984106f57f1d60e0aaadc1ecfbd47"
+          "sha512": "83d65815589703f4806a5fc67ebd62c6a0e6f6d57202aa67a55c320296d4848ceca63c68d9ea1f5ee4602b0767280304bb4984106f57f1d60e0aaadc1ecfbd47",
+          "sha1": "35dca339319fd3024422137f599a144e02ee8726"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/iqKljDnd/architectury-12.0.29-fabric.jar",
         "filename": "architectury-12.0.29-fabric.jar",
@@ -1232,8 +1232,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "cba9187b83a2dcd42f7868b3d0f9ae9db87c1f94",
-          "sha512": "4b3ba0bf6a2023945066bf20862195924a7392c49c47935ac6f3da17e829c4abd5818ad8ecab879dde1b6d1686c6d33aef99638e3c9c7cbe1067e861d438f5a0"
+          "sha512": "4b3ba0bf6a2023945066bf20862195924a7392c49c47935ac6f3da17e829c4abd5818ad8ecab879dde1b6d1686c6d33aef99638e3c9c7cbe1067e861d438f5a0",
+          "sha1": "cba9187b83a2dcd42f7868b3d0f9ae9db87c1f94"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/cCIK28as/architectury-13.0.4-neoforge.jar",
         "filename": "architectury-13.0.4-neoforge.jar",
@@ -1260,7 +1260,7 @@
     "changelog": "## Architectury v13.0.4 for 1.21\nUpdated at **2024-07-11 01:44**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21)\n- Update NeoForge to 21.0.78-beta to account for breaking changes (#539)",
     "changelog_url": null,
     "date_published": "2024-07-11T01:45:11.817923Z",
-    "downloads": 171563,
+    "downloads": 171574,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1337,7 +1337,7 @@
     "changelog": "## Architectury v13.0.3 for 1.21\nUpdated at **2024-06-30 22:04**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21)\n- Fix NeoForge 21.0.40+ (#530)",
     "changelog_url": null,
     "date_published": "2024-06-30T22:05:14.352484Z",
-    "downloads": 128542,
+    "downloads": 128557,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1414,7 +1414,7 @@
     "changelog": "## Architectury v13.0.2 for 1.21\nUpdated at **2024-06-25 09:44**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21)\n- Updated Architectury for new Neoforge 21.0.31 entity damage pipeline (#521)",
     "changelog_url": null,
     "date_published": "2024-06-25T09:44:36.429481Z",
-    "downloads": 55789,
+    "downloads": 55794,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1491,7 +1491,7 @@
     "changelog": "## Architectury v13.0.1 for 1.21\nUpdated at **2024-06-13 18:02**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.21)\n- Port to 1.21 (#511)",
     "changelog_url": null,
     "date_published": "2024-06-13T18:03:25.408816Z",
-    "downloads": 109949,
+    "downloads": 109952,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1568,7 +1568,7 @@
     "changelog": "## Architectury v12.1.3 for 1.20.6\nUpdated at **2024-05-30 09:46**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.6)\n- [1.20.6] Update Architectury API's dependencies and require the latest Fabric API and NeoForge. (#509)",
     "changelog_url": null,
     "date_published": "2024-05-30T09:46:59.629912Z",
-    "downloads": 89130,
+    "downloads": 89134,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1645,7 +1645,7 @@
     "changelog": "## Architectury v12.1.2 for 1.20.6\nUpdated at **2024-05-21 00:05**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.6)\n- Bump version to 12.1",
     "changelog_url": null,
     "date_published": "2024-05-21T00:05:47.705916Z",
-    "downloads": 26833,
+    "downloads": 26835,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1729,8 +1729,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8dde8327df637c9a7076f4922fce446ddfea30306d836fff9314c87d5f3afb5d9ac09c920cfeaf0a9d322929ea7be16722e950c62dd0cffa7cb6339d5e48c1d7",
-          "sha1": "d7de78441cb4f386533628ba5f26455de6c950cc"
+          "sha1": "d7de78441cb4f386533628ba5f26455de6c950cc",
+          "sha512": "8dde8327df637c9a7076f4922fce446ddfea30306d836fff9314c87d5f3afb5d9ac09c920cfeaf0a9d322929ea7be16722e950c62dd0cffa7cb6339d5e48c1d7"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/pdzYN3Za/architectury-12.0.1-fabric.jar",
         "filename": "architectury-12.0.1-fabric.jar",
@@ -1806,8 +1806,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "56e8734d76ed8aaf1632f4d312c09edb4282d7ab",
-          "sha512": "f15d0e06649deff403ea77ed6f556fd65665a275deb1718dc466a8954fc0180c1e3da48dff76363491e338f5a3f077c71fc4b380b7147295d1f44951c1eeefc1"
+          "sha512": "f15d0e06649deff403ea77ed6f556fd65665a275deb1718dc466a8954fc0180c1e3da48dff76363491e338f5a3f077c71fc4b380b7147295d1f44951c1eeefc1",
+          "sha1": "56e8734d76ed8aaf1632f4d312c09edb4282d7ab"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/CQnItbHC/architectury-12.0.28-fabric.jar",
         "filename": "architectury-12.0.28-fabric.jar",
@@ -1885,8 +1885,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b3bab30606641ee6934c9993c00f63c060aa68a5",
-          "sha512": "e66fe9fcac1f85cdb541f07241e091e16b427900f237c5bb78f10813956cb4e1a912794f727836df42c4d69bcc5357efda83d11724559aa6a5ec87c8573352f6"
+          "sha512": "e66fe9fcac1f85cdb541f07241e091e16b427900f237c5bb78f10813956cb4e1a912794f727836df42c4d69bcc5357efda83d11724559aa6a5ec87c8573352f6",
+          "sha1": "b3bab30606641ee6934c9993c00f63c060aa68a5"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/M57oafqk/architectury-12.0.27-fabric.jar",
         "filename": "architectury-12.0.27-fabric.jar",
@@ -2046,8 +2046,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "997fe5afd68ee888a5337a03df721610b684dad35ecc2915e66ba57786edff77ee73c0934d17e92f138667f531de1cff4732bd882e861ed84109f2a337496bb2",
-          "sha1": "59812ec38846c010ae19ba060c93ef41cb639c72"
+          "sha1": "59812ec38846c010ae19ba060c93ef41cb639c72",
+          "sha512": "997fe5afd68ee888a5337a03df721610b684dad35ecc2915e66ba57786edff77ee73c0934d17e92f138667f531de1cff4732bd882e861ed84109f2a337496bb2"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/814k8fLR/architectury-12.0.24-beta-fabric.jar",
         "filename": "architectury-12.0.24-beta-fabric.jar",
@@ -2088,8 +2088,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7ce56817f521ace34270c0f8546e596f1e6ebfd97524d8d7ecbc7d173e9eab1ad1a543dea5374447d713f87292016deeb0f25a3be9de1b81a02dbd806f0770cb",
-          "sha1": "5da89bff08d4184f9ff2b045f86f33d4585f469a"
+          "sha1": "5da89bff08d4184f9ff2b045f86f33d4585f469a",
+          "sha512": "7ce56817f521ace34270c0f8546e596f1e6ebfd97524d8d7ecbc7d173e9eab1ad1a543dea5374447d713f87292016deeb0f25a3be9de1b81a02dbd806f0770cb"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/TiDPj2Uz/architectury-12.0.19-fabric.jar",
         "filename": "architectury-12.0.19-fabric.jar",
@@ -2130,8 +2130,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4cbbf3dc93531172688b6f122afe1f67050486ffa6019c5d49beca5fd01a30a7fade9d790adb7d9d27e59dd9516d3cbee7a6704d1e58e461ae81ec500e3c084f",
-          "sha1": "836563b040bba32dd2aa0cd11f9fc329a941518e"
+          "sha1": "836563b040bba32dd2aa0cd11f9fc329a941518e",
+          "sha512": "4cbbf3dc93531172688b6f122afe1f67050486ffa6019c5d49beca5fd01a30a7fade9d790adb7d9d27e59dd9516d3cbee7a6704d1e58e461ae81ec500e3c084f"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/vEEP0bOY/architectury-12.0.18-fabric.jar",
         "filename": "architectury-12.0.18-fabric.jar",
@@ -2165,15 +2165,15 @@
     "changelog": "## Architectury v10.1.20 for 1.20.2\nUpdated at **2024-03-19 07:32**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.2)\n- Backported fluid stack fix to 1.20.2 (#485)",
     "changelog_url": null,
     "date_published": "2024-03-19T07:33:27.619038Z",
-    "downloads": 4986,
+    "downloads": 4988,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "562e720b88cefab38b7c3b3653eaaca538a27c3e",
-          "sha512": "4a00ab4b5040c515c17343225f414dc437f83b73c82418a795bc98a76a5757c4e7d6b694f5d6faae23dff69b6c32b6ba52a5ad16e4c8e7b2fd7ae2ee847f8067"
+          "sha512": "4a00ab4b5040c515c17343225f414dc437f83b73c82418a795bc98a76a5757c4e7d6b694f5d6faae23dff69b6c32b6ba52a5ad16e4c8e7b2fd7ae2ee847f8067",
+          "sha1": "562e720b88cefab38b7c3b3653eaaca538a27c3e"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/PByNovaH/architectury-10.1.20-neoforge.jar",
         "filename": "architectury-10.1.20-neoforge.jar",
@@ -2200,7 +2200,7 @@
     "changelog": "## Architectury v10.1.20 for 1.20.2\nUpdated at **2024-03-19 07:32**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.2)\n- Backported fluid stack fix to 1.20.2 (#485)",
     "changelog_url": null,
     "date_published": "2024-03-19T07:33:25.093939Z",
-    "downloads": 32666,
+    "downloads": 32678,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2235,15 +2235,15 @@
     "changelog": "## Architectury v10.1.20 for 1.20.2\nUpdated at **2024-03-19 07:32**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.2)\n- Backported fluid stack fix to 1.20.2 (#485)",
     "changelog_url": null,
     "date_published": "2024-03-19T07:33:22.762086Z",
-    "downloads": 79248,
+    "downloads": 79253,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "da44fd3468b79df5e9816ad17ceefb16f84731fe",
-          "sha512": "07ca4fc16a53681805d24d7d994efe7e4efc150a00aae56d105f0d1f43f65ccbbc3438c9b841462a80a15951f0bc95094cc6a8222dcb16269ad5b9f7257fd9cd"
+          "sha512": "07ca4fc16a53681805d24d7d994efe7e4efc150a00aae56d105f0d1f43f65ccbbc3438c9b841462a80a15951f0bc95094cc6a8222dcb16269ad5b9f7257fd9cd",
+          "sha1": "da44fd3468b79df5e9816ad17ceefb16f84731fe"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/C2sB1Yq5/architectury-10.1.20-fabric.jar",
         "filename": "architectury-10.1.20-fabric.jar",
@@ -2312,7 +2312,7 @@
     "changelog": "## Architectury v11.1.17 for 1.20.4\nUpdated at **2024-03-11 11:25**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.4)",
     "changelog_url": null,
     "date_published": "2024-03-11T11:27:08.153417Z",
-    "downloads": 35543,
+    "downloads": 35555,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2347,7 +2347,7 @@
     "changelog": "## Architectury v11.1.17 for 1.20.4\nUpdated at **2024-03-11 11:25**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.4)",
     "changelog_url": null,
     "date_published": "2024-03-11T11:27:04.119806Z",
-    "downloads": 520824,
+    "downloads": 520914,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2480,8 +2480,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2f7403ad426b398b50aeb470aa8e21383b0c95a335901ea6a378aefc7178c1146c5a3dce9e9c5fb6585e771ddeb3b551d8b55e035c78eec8986db39f9a6478bb",
-          "sha1": "829b1a065d6462b6d6ef5aa83bbf917e3fa09774"
+          "sha1": "829b1a065d6462b6d6ef5aa83bbf917e3fa09774",
+          "sha512": "2f7403ad426b398b50aeb470aa8e21383b0c95a335901ea6a378aefc7178c1146c5a3dce9e9c5fb6585e771ddeb3b551d8b55e035c78eec8986db39f9a6478bb"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/QMCCyxa5/architectury-12.0.14-fabric.jar",
         "filename": "architectury-12.0.14-fabric.jar",
@@ -2585,7 +2585,7 @@
     "changelog": "## Architectury v11.1.13 for 1.20.4\nUpdated at **2024-02-26 13:24**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.4)",
     "changelog_url": null,
     "date_published": "2024-02-26T13:25:58.237724Z",
-    "downloads": 37706,
+    "downloads": 37711,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2634,8 +2634,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "16003ffd17c78f8ec19bcab1b29296bbc029866cd5cf52cffd70cc7c0e4e2e79a48fc95b1b461ae5b40c024e13fc5a6614ed9ebeed5889d09aa069e3a0d1b6b6",
-          "sha1": "f72472928b1790c0956501725d8c20b1970d208a"
+          "sha1": "f72472928b1790c0956501725d8c20b1970d208a",
+          "sha512": "16003ffd17c78f8ec19bcab1b29296bbc029866cd5cf52cffd70cc7c0e4e2e79a48fc95b1b461ae5b40c024e13fc5a6614ed9ebeed5889d09aa069e3a0d1b6b6"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/qbmXVUzs/architectury-10.1.19-neoforge.jar",
         "filename": "architectury-10.1.19-neoforge.jar",
@@ -2669,8 +2669,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4ec2d4938eda8168e00ab236dadc665e54543bca2fe3f190fbb74e9d6bdcec4cee7df43013460e102d33552bf40c7812a58103ac15d71a6025ece76db689e67b",
-          "sha1": "73f4b11c98bf67887723966759058d52ec5ddd11"
+          "sha1": "73f4b11c98bf67887723966759058d52ec5ddd11",
+          "sha512": "4ec2d4938eda8168e00ab236dadc665e54543bca2fe3f190fbb74e9d6bdcec4cee7df43013460e102d33552bf40c7812a58103ac15d71a6025ece76db689e67b"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ioqQQnil/architectury-10.1.19-minecraftforge.jar",
         "filename": "architectury-10.1.19-minecraftforge.jar",
@@ -2739,7 +2739,7 @@
     "changelog": "## Architectury v6.6.92 for 1.19.2\nUpdated at **2024-02-26 13:19**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)\n- Bump version for release",
     "changelog_url": null,
     "date_published": "2024-02-26T13:20:21.02068Z",
-    "downloads": 1816661,
+    "downloads": 1817092,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2775,7 +2775,7 @@
     "changelog": "## Architectury v6.6.92 for 1.19.2\nUpdated at **2024-02-26 13:19**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)\n- Bump version for release",
     "changelog_url": null,
     "date_published": "2024-02-26T13:20:03.655032Z",
-    "downloads": 232888,
+    "downloads": 233007,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2818,15 +2818,15 @@
     "changelog": "## Architectury v9.2.14 for 1.20(.1)\nUpdated at **2024-02-26 13:18**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)",
     "changelog_url": null,
     "date_published": "2024-02-26T13:19:00.816154Z",
-    "downloads": 5470923,
+    "downloads": 5474498,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a52918a500ff421180a1cbd1a0cabee712134ec4",
-          "sha512": "cf67f2050cafa00f0bee42e6d7bef77fdb808ac4f71742f7b4d6d5c1e6ffb49561a5a252f332d2b78a9767bdb5faa284611790dba303fbdc736ae36d794f61c7"
+          "sha512": "cf67f2050cafa00f0bee42e6d7bef77fdb808ac4f71742f7b4d6d5c1e6ffb49561a5a252f332d2b78a9767bdb5faa284611790dba303fbdc736ae36d794f61c7",
+          "sha1": "a52918a500ff421180a1cbd1a0cabee712134ec4"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1MKTLiiG/architectury-9.2.14-forge.jar",
         "filename": "architectury-9.2.14-forge.jar",
@@ -2855,7 +2855,7 @@
     "changelog": "## Architectury v9.2.14 for 1.20(.1)\nUpdated at **2024-02-26 13:18**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)",
     "changelog_url": null,
     "date_published": "2024-02-26T13:18:58.334386Z",
-    "downloads": 6052987,
+    "downloads": 6056255,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2897,15 +2897,15 @@
     "changelog": "## Architectury v4.12.94 for 1.18.2\nUpdated at **2024-02-26 13:15**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.18.2)\n- Add client commands (#319)",
     "changelog_url": null,
     "date_published": "2024-02-26T13:15:29.949795Z",
-    "downloads": 203169,
+    "downloads": 203345,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a6705e4ae7acb91870cdb63bc86dadf3dd97ec08",
-          "sha512": "c6e57cb00b5a05fec9ac621a2da49ae755586e48b3ad4d20538b247f843c3accf52adf8f9cf4b66b330c8170c8b1d1b31f949157952da86c12289263ae71d099"
+          "sha512": "c6e57cb00b5a05fec9ac621a2da49ae755586e48b3ad4d20538b247f843c3accf52adf8f9cf4b66b330c8170c8b1d1b31f949157952da86c12289263ae71d099",
+          "sha1": "a6705e4ae7acb91870cdb63bc86dadf3dd97ec08"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/3ChyUkZQ/architectury-4.12.94-forge.jar",
         "filename": "architectury-4.12.94-forge.jar",
@@ -2933,15 +2933,15 @@
     "changelog": "## Architectury v4.12.94 for 1.18.2\nUpdated at **2024-02-26 13:15**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.18.2)\n- Add client commands (#319)",
     "changelog_url": null,
     "date_published": "2024-02-26T13:15:28.0188Z",
-    "downloads": 50122,
+    "downloads": 50145,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ae824f839f8d7fe1ec2942bc66b2c22b1aeb837cce98e0c412235082dc930653bd076f2dc898d0c9c6d2c30fa5acca5145047418d07b550b942bdc67fb41886d",
-          "sha1": "71d328e3564a9253400d725e152b2c03ab82eac2"
+          "sha1": "71d328e3564a9253400d725e152b2c03ab82eac2",
+          "sha512": "ae824f839f8d7fe1ec2942bc66b2c22b1aeb837cce98e0c412235082dc930653bd076f2dc898d0c9c6d2c30fa5acca5145047418d07b550b942bdc67fb41886d"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ql0OowZw/architectury-4.12.94-fabric.jar",
         "filename": "architectury-4.12.94-fabric.jar",
@@ -3017,8 +3017,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "32e340e66d2f2adb634dfd29ffffde15f8e80884",
-          "sha512": "a25a77aecce45237ff954bf5cb7594f4e8835914c25923a58cd5004851be0a68dcbdddaf518f5aa3267d7fcf940a072ab9de62575029ebba219a1e9ec3a8d27e"
+          "sha512": "a25a77aecce45237ff954bf5cb7594f4e8835914c25923a58cd5004851be0a68dcbdddaf518f5aa3267d7fcf940a072ab9de62575029ebba219a1e9ec3a8d27e",
+          "sha1": "32e340e66d2f2adb634dfd29ffffde15f8e80884"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/VojERyZc/architectury-11.0.12-minecraftforge.jar",
         "filename": "architectury-11.0.12-minecraftforge.jar",
@@ -3045,15 +3045,15 @@
     "changelog": "## Architectury v11.0.12 for 1.20.4\nUpdated at **2024-02-06 09:40**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.4)",
     "changelog_url": null,
     "date_published": "2024-02-06T09:42:15.58194Z",
-    "downloads": 70124,
+    "downloads": 70131,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "299aec040ec54f7da7164ea9e7e0de7fc4735e57",
-          "sha512": "7053b19229086051d85f7710f9d330a5ae601c8b36aee180b1b705f8637d1350c0e0c0ad761a14844e10c472c4ce61483b27483cd7a80ac58bd80a94077eb35d"
+          "sha512": "7053b19229086051d85f7710f9d330a5ae601c8b36aee180b1b705f8637d1350c0e0c0ad761a14844e10c472c4ce61483b27483cd7a80ac58bd80a94077eb35d",
+          "sha1": "299aec040ec54f7da7164ea9e7e0de7fc4735e57"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ueVsvU6j/architectury-11.0.12-fabric.jar",
         "filename": "architectury-11.0.12-fabric.jar",
@@ -3094,8 +3094,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "58188b00f4e566d254f20ccaec86e8e2fa8d31ad1bbc040ac7724239d772f803d6a397ce66a2ac7fab807f0e63ec545aa993d3960864cd87fab7bf74d192e0a3",
-          "sha1": "a4dca589b2e88c6d6299cab8f3f67cd4e1ab5176"
+          "sha1": "a4dca589b2e88c6d6299cab8f3f67cd4e1ab5176",
+          "sha512": "58188b00f4e566d254f20ccaec86e8e2fa8d31ad1bbc040ac7724239d772f803d6a397ce66a2ac7fab807f0e63ec545aa993d3960864cd87fab7bf74d192e0a3"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/AIFDESOL/architectury-10.0.18-neoforge.jar",
         "filename": "architectury-10.0.18-neoforge.jar",
@@ -3129,8 +3129,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "937acc02a779e2fd42c545ab4a8cc1f4abd1e18c",
-          "sha512": "c4de0bc5a828795b7816fa8b8ada7af41ca3766227accccb56d8a7f95fc9cf54e13bbc5f3ef01a49c189d4cbc4cb37a08687de9c4b4f0059476f1fd6cae46a39"
+          "sha512": "c4de0bc5a828795b7816fa8b8ada7af41ca3766227accccb56d8a7f95fc9cf54e13bbc5f3ef01a49c189d4cbc4cb37a08687de9c4b4f0059476f1fd6cae46a39",
+          "sha1": "937acc02a779e2fd42c545ab4a8cc1f4abd1e18c"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/dSE4T7Xl/architectury-10.0.18-minecraftforge.jar",
         "filename": "architectury-10.0.18-minecraftforge.jar",
@@ -3164,8 +3164,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "be51cb2446fa972ea473136d1aed91d2941fd3ac",
-          "sha512": "b15eb1b7ee1a9318c967b0cfbc021df8392948c97b85e988fbb71b21e9a05bf6230c74d3622da5b311cbabae3269358fb7eb8a321073f190a989fe43065efcd0"
+          "sha512": "b15eb1b7ee1a9318c967b0cfbc021df8392948c97b85e988fbb71b21e9a05bf6230c74d3622da5b311cbabae3269358fb7eb8a321073f190a989fe43065efcd0",
+          "sha1": "be51cb2446fa972ea473136d1aed91d2941fd3ac"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Qf7DCvFk/architectury-10.0.18-fabric.jar",
         "filename": "architectury-10.0.18-fabric.jar",
@@ -3200,15 +3200,15 @@
     "changelog": "## Architectury v9.1.13 for 1.20(.1)\nUpdated at **2024-02-06 09:17**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)",
     "changelog_url": null,
     "date_published": "2024-02-06T09:18:05.160132Z",
-    "downloads": 73943,
+    "downloads": 73957,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5f6eb62c7e0c25c02a7aeb8e963306118681a60b98046aea67c0040ea8841ba93c360beb549ff4552dbee78b6b87cf34d70284fffc2b95ebabbea7d6f4800c58",
-          "sha1": "ef7558f149fc5db623f15aa7bf942f7ead5b8f0d"
+          "sha1": "ef7558f149fc5db623f15aa7bf942f7ead5b8f0d",
+          "sha512": "5f6eb62c7e0c25c02a7aeb8e963306118681a60b98046aea67c0040ea8841ba93c360beb549ff4552dbee78b6b87cf34d70284fffc2b95ebabbea7d6f4800c58"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/tBWqtdBO/architectury-9.1.13-forge.jar",
         "filename": "architectury-9.1.13-forge.jar",
@@ -3237,15 +3237,15 @@
     "changelog": "## Architectury v9.1.13 for 1.20(.1)\nUpdated at **2024-02-06 09:17**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)",
     "changelog_url": null,
     "date_published": "2024-02-06T09:18:03.154564Z",
-    "downloads": 123672,
+    "downloads": 123688,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "3fb2505c740d9d104dc8f2eb66d53739e1d8fd1be0bab1b0c30024229de1d2def84bdc88e1e48163907bccb0c52d076ae2625181e2b4faa6695b7f6fecdc9cff",
-          "sha1": "cece61cb9c763614b690da0db216b052122444c1"
+          "sha1": "cece61cb9c763614b690da0db216b052122444c1",
+          "sha512": "3fb2505c740d9d104dc8f2eb66d53739e1d8fd1be0bab1b0c30024229de1d2def84bdc88e1e48163907bccb0c52d076ae2625181e2b4faa6695b7f6fecdc9cff"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/whUFAS71/architectury-9.1.13-fabric.jar",
         "filename": "architectury-9.1.13-fabric.jar",
@@ -3279,15 +3279,15 @@
     "changelog": "## Architectury v8.2.91 for 1.19.4\nUpdated at **2024-02-06 09:10**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.4)",
     "changelog_url": null,
     "date_published": "2024-02-06T09:11:43.669435Z",
-    "downloads": 24202,
+    "downloads": 24205,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2f58719fe0e7d3da813075d5753c6074a1a9b826",
-          "sha512": "14675d962e5908bd77b1a27888ca10122f55b4c7e609e35763b34df1ad66c420c7caa1528fd08a1ff32c53c60309a705ab646f7f13ed154945c25cafdd8e8799"
+          "sha512": "14675d962e5908bd77b1a27888ca10122f55b4c7e609e35763b34df1ad66c420c7caa1528fd08a1ff32c53c60309a705ab646f7f13ed154945c25cafdd8e8799",
+          "sha1": "2f58719fe0e7d3da813075d5753c6074a1a9b826"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/RDKM6Ne0/architectury-8.2.91-forge.jar",
         "filename": "architectury-8.2.91-forge.jar",
@@ -3315,7 +3315,7 @@
     "changelog": "## Architectury v8.2.91 for 1.19.4\nUpdated at **2024-02-06 09:10**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.4)",
     "changelog_url": null,
     "date_published": "2024-02-06T09:11:40.192937Z",
-    "downloads": 47567,
+    "downloads": 47583,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3357,15 +3357,15 @@
     "changelog": "## Architectury v6.5.90 for 1.19.2\nUpdated at **2024-02-06 08:41**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)\n- Make ArchitecturyFlowingFluid use the same Forge FluidType when the s… (#467)",
     "changelog_url": null,
     "date_published": "2024-02-06T08:42:33.753585Z",
-    "downloads": 18071,
+    "downloads": 18073,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c724b3fccdeaa3121a4aa7bc6bc02f7571f47127",
-          "sha512": "be9c9c893d4be14071f2da4702d06fe09bd24b6ba34bd1b2600aab6830569746b03fcf422ef6bd8bbbd2d44af03b689038132ce3142ccc1725bfd0f4672ada03"
+          "sha512": "be9c9c893d4be14071f2da4702d06fe09bd24b6ba34bd1b2600aab6830569746b03fcf422ef6bd8bbbd2d44af03b689038132ce3142ccc1725bfd0f4672ada03",
+          "sha1": "c724b3fccdeaa3121a4aa7bc6bc02f7571f47127"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/NNgyZexI/architectury-6.5.90-forge.jar",
         "filename": "architectury-6.5.90-forge.jar",
@@ -3393,7 +3393,7 @@
     "changelog": "## Architectury v6.5.90 for 1.19.2\nUpdated at **2024-02-06 08:41**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)\n- Make ArchitecturyFlowingFluid use the same Forge FluidType when the s… (#467)",
     "changelog_url": null,
     "date_published": "2024-02-06T08:42:15.405209Z",
-    "downloads": 19829,
+    "downloads": 19830,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3506,15 +3506,15 @@
     "changelog": "## Architectury v11.0.11 for 1.20.4\nUpdated at **2024-01-09 17:24**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.4)\n- Simply NeoForge registrar eventbus",
     "changelog_url": null,
     "date_published": "2024-01-09T17:26:23.512794Z",
-    "downloads": 77344,
+    "downloads": 77350,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "44606a685bc5e7c7d8c054cc95a57b1f427f43396ee8fb253066718ac4a0be9e594b8eaf7d4889e71b5e82a395d09cbf463308ec8af2114deb281b4ca989f1b2",
-          "sha1": "47ff89c1c1db390a4071c37df032b73c333846b5"
+          "sha1": "47ff89c1c1db390a4071c37df032b73c333846b5",
+          "sha512": "44606a685bc5e7c7d8c054cc95a57b1f427f43396ee8fb253066718ac4a0be9e594b8eaf7d4889e71b5e82a395d09cbf463308ec8af2114deb281b4ca989f1b2"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/7a4IcC0B/architectury-11.0.11-fabric.jar",
         "filename": "architectury-11.0.11-fabric.jar",
@@ -3555,8 +3555,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "12eb1ca5a8b89c82d928ec0151c174599f18bb9c60128a71c891c845056faa310e7d7479690668b4011335895e6305e90898e256a34809b7e1a3e549cba32593",
-          "sha1": "065a71180bb4eceacfadd916bec9ed45b85dd9d7"
+          "sha1": "065a71180bb4eceacfadd916bec9ed45b85dd9d7",
+          "sha512": "12eb1ca5a8b89c82d928ec0151c174599f18bb9c60128a71c891c845056faa310e7d7479690668b4011335895e6305e90898e256a34809b7e1a3e549cba32593"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/kuK9g96U/architectury-11.0.10-neoforge.jar",
         "filename": "architectury-11.0.10-neoforge.jar",
@@ -3668,8 +3668,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "19046d543bf2812a4cc8f8e9baa6e5379504530f",
-          "sha512": "7f0d2ecc760b07f4ccf1b96da88901ef1ff5c349e97ece69eb814eb46f0464bae94f5fcf895b261cc6ae87461599f0c1910af5ef1120a8b4f20b175249c13ff8"
+          "sha512": "7f0d2ecc760b07f4ccf1b96da88901ef1ff5c349e97ece69eb814eb46f0464bae94f5fcf895b261cc6ae87461599f0c1910af5ef1120a8b4f20b175249c13ff8",
+          "sha1": "19046d543bf2812a4cc8f8e9baa6e5379504530f"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/lLMy7N02/architectury-11.0.9-neoforge.jar",
         "filename": "architectury-11.0.9-neoforge.jar",
@@ -3703,8 +3703,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9c2612047ed196f9a09e548a139200c80ea7c515",
-          "sha512": "467b963d95177b27997782a15731d218fe97f4046ef64eaef64781888e669ce36d3adb70d4895e96795a50d3894d5e5ff6103b175aca085e6efefda2c96568b7"
+          "sha512": "467b963d95177b27997782a15731d218fe97f4046ef64eaef64781888e669ce36d3adb70d4895e96795a50d3894d5e5ff6103b175aca085e6efefda2c96568b7",
+          "sha1": "9c2612047ed196f9a09e548a139200c80ea7c515"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/GASUTIWF/architectury-11.0.9-minecraftforge.jar",
         "filename": "architectury-11.0.9-minecraftforge.jar",
@@ -3732,7 +3732,7 @@
     "changelog": "## Architectury v11.0.9 for 1.20.4\nUpdated at **2023-12-20 10:30**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.4)\n- Build with NeoForge 20.4.46 (20.4.40+ required) (#460)",
     "changelog_url": null,
     "date_published": "2023-12-20T10:31:19.687337Z",
-    "downloads": 36743,
+    "downloads": 36751,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3816,8 +3816,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "073a1e273eccd51e279f23efb8b125e5f43632caf5b1578cc65ed6f787609122aee2dd4a55c9f95a21cdf358543a9920c6f3c54cf6727a8599d11f3cec5a9cc8",
-          "sha1": "1edece73bfb69947062778e7f9bff71652756d2d"
+          "sha1": "1edece73bfb69947062778e7f9bff71652756d2d",
+          "sha512": "073a1e273eccd51e279f23efb8b125e5f43632caf5b1578cc65ed6f787609122aee2dd4a55c9f95a21cdf358543a9920c6f3c54cf6727a8599d11f3cec5a9cc8"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/iqtq80D9/architectury-11.0.8-minecraftforge.jar",
         "filename": "architectury-11.0.8-minecraftforge.jar",
@@ -3894,8 +3894,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1d512edeca7d10e60d5184d1e3f44bc679812f4c",
-          "sha512": "93a1164112bc29aff33a5caf48faf97c15d86b012287b5eb74c36008c859b13eadf2f5cea30bb898772735d55ddb0f22b583a13e19088229ddf06139c558251f"
+          "sha512": "93a1164112bc29aff33a5caf48faf97c15d86b012287b5eb74c36008c859b13eadf2f5cea30bb898772735d55ddb0f22b583a13e19088229ddf06139c558251f",
+          "sha1": "1d512edeca7d10e60d5184d1e3f44bc679812f4c"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/3TLU8vWO/architectury-11.0.7-neoforge.jar",
         "filename": "architectury-11.0.7-neoforge.jar",
@@ -3929,8 +3929,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d38c554f5142289cdac72113ac861e714c7f6520b101f447fb5eb8658d95243f0923826215c3d32c059e2e083a48d4d33fc23953da823e6848d5066c29f6364f",
-          "sha1": "4c4e42e1c88e1c19959320fa74b5b4db2761a4f3"
+          "sha1": "4c4e42e1c88e1c19959320fa74b5b4db2761a4f3",
+          "sha512": "d38c554f5142289cdac72113ac861e714c7f6520b101f447fb5eb8658d95243f0923826215c3d32c059e2e083a48d4d33fc23953da823e6848d5066c29f6364f"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/m1ZNYMdO/architectury-11.0.7-minecraftforge.jar",
         "filename": "architectury-11.0.7-minecraftforge.jar",
@@ -3958,7 +3958,7 @@
     "changelog": "## Architectury v11.0.7 for 1.20.4\nUpdated at **2023-12-08 17:34**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.4)\n- Remove 1.20.4-Snapshot as a verison",
     "changelog_url": null,
     "date_published": "2023-12-08T17:35:18.700209Z",
-    "downloads": 1086,
+    "downloads": 1087,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4007,8 +4007,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "36ad23a3571bdf9e7ab54f6dde75feeeaa441f888ea1c3a6bfe34eaffa8e984b4e19593b8cb6fe4f012e8b4c61085ad34d71cf0c6cfdf11e1eca1d887a46987d",
-          "sha1": "33e5345cbce2a495bca094b933329b8ca5aed8da"
+          "sha1": "33e5345cbce2a495bca094b933329b8ca5aed8da",
+          "sha512": "36ad23a3571bdf9e7ab54f6dde75feeeaa441f888ea1c3a6bfe34eaffa8e984b4e19593b8cb6fe4f012e8b4c61085ad34d71cf0c6cfdf11e1eca1d887a46987d"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/BcFTKnjw/architectury-10.0.17-neoforge.jar",
         "filename": "architectury-10.0.17-neoforge.jar",
@@ -4071,15 +4071,15 @@
     "changelog": "## Architectury v10.0.17 for 1.20.2\nUpdated at **2023-12-08 13:15**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.2)\n- Remove references to ForgeRegistries left",
     "changelog_url": null,
     "date_published": "2023-12-08T13:17:00.028181Z",
-    "downloads": 52758,
+    "downloads": 52765,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e2e57880a525d614d898f066cce9831c8765e69f",
-          "sha512": "4afb2d7c523831ff0c2e4b1eb5641665db4022c75eedfc8106c3e3f48a4ec9ee8859a17af5f36df3c49632f62fabbc0eeea6539816919c16b568bd5c0e69d455"
+          "sha512": "4afb2d7c523831ff0c2e4b1eb5641665db4022c75eedfc8106c3e3f48a4ec9ee8859a17af5f36df3c49632f62fabbc0eeea6539816919c16b568bd5c0e69d455",
+          "sha1": "e2e57880a525d614d898f066cce9831c8765e69f"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/VFiyBfxr/architectury-10.0.17-fabric.jar",
         "filename": "architectury-10.0.17-fabric.jar",
@@ -4184,15 +4184,15 @@
     "changelog": "## Architectury v10.0.16 for 1.20.2\nUpdated at **2023-11-21 05:23**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.2)\n- Fix #453",
     "changelog_url": null,
     "date_published": "2023-11-21T05:26:01.124532Z",
-    "downloads": 29149,
+    "downloads": 29150,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "9fbee9c534a7e6051e08cb049739d1c4e9ebc97c944247c76bdbc1551f9e376f4171b1301c5ba3a283e64733a01616464ca18b4aa44fc0e9c84f23382bd0c322",
-          "sha1": "19dfa722ae593a4af0b7723150db38f83552a8a5"
+          "sha1": "19dfa722ae593a4af0b7723150db38f83552a8a5",
+          "sha512": "9fbee9c534a7e6051e08cb049739d1c4e9ebc97c944247c76bdbc1551f9e376f4171b1301c5ba3a283e64733a01616464ca18b4aa44fc0e9c84f23382bd0c322"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/TcnLTl81/architectury-10.0.16-fabric.jar",
         "filename": "architectury-10.0.16-fabric.jar",
@@ -4234,8 +4234,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "31e5c01112f02d8f5b52a7a6fc83d736247536a2",
-          "sha512": "af0b582e0c4041006d62c5424c6907f897f96d8bfc055e0eba602089bdde49a20a96c5c06aebd4a55cdfc7eb2d30eff8e8b5e46d9bcfd9a94c6c9888a4fb5cac"
+          "sha512": "af0b582e0c4041006d62c5424c6907f897f96d8bfc055e0eba602089bdde49a20a96c5c06aebd4a55cdfc7eb2d30eff8e8b5e46d9bcfd9a94c6c9888a4fb5cac",
+          "sha1": "31e5c01112f02d8f5b52a7a6fc83d736247536a2"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4P2tDXB8/architectury-11.0.5-fabric.jar",
         "filename": "architectury-11.0.5-fabric.jar",
@@ -4276,8 +4276,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "480b9de038c85798d31c8fec6497eb76a94972b8",
-          "sha512": "630a8aab25fbec1e39d178657cefc656242be35eea7202f5f687f0a7cbd1498cf38d29ace2db7d04bee46e1647e760065303dfa186514493e2df2500b462f58c"
+          "sha512": "630a8aab25fbec1e39d178657cefc656242be35eea7202f5f687f0a7cbd1498cf38d29ace2db7d04bee46e1647e760065303dfa186514493e2df2500b462f58c",
+          "sha1": "480b9de038c85798d31c8fec6497eb76a94972b8"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/JNXDm2dM/architectury-10.0.15-neoforge.jar",
         "filename": "architectury-10.0.15-neoforge.jar",
@@ -4311,8 +4311,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ddd1ae4fc96121be6a402dc20eef1ffc931f0adb",
-          "sha512": "d1f5560fb86877e5ecdd93c4a3ca4894c2d775b6408fefbaf281ef938097d724742cbaa7bbcc1b038605e337205e3bbbf799230f2353d92fb5aa1e330ff5eee8"
+          "sha512": "d1f5560fb86877e5ecdd93c4a3ca4894c2d775b6408fefbaf281ef938097d724742cbaa7bbcc1b038605e337205e3bbbf799230f2353d92fb5aa1e330ff5eee8",
+          "sha1": "ddd1ae4fc96121be6a402dc20eef1ffc931f0adb"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/DRIeZqaG/architectury-10.0.15-minecraftforge.jar",
         "filename": "architectury-10.0.15-minecraftforge.jar",
@@ -4460,8 +4460,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "34f170f1f4d5a6d2c3c67493f5d213abe9305959e5faf209f4b502e6942243c5620f65d8bd2c39e9d05ab04648c97745eb71f11bcb69a6daf729afa957da84a3",
-          "sha1": "30e2430cefba7a245ee9b9f143045f6a2576fe09"
+          "sha1": "30e2430cefba7a245ee9b9f143045f6a2576fe09",
+          "sha512": "34f170f1f4d5a6d2c3c67493f5d213abe9305959e5faf209f4b502e6942243c5620f65d8bd2c39e9d05ab04648c97745eb71f11bcb69a6daf729afa957da84a3"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/bkK2w2SA/architectury-10.0.14-fabric.jar",
         "filename": "architectury-10.0.14-fabric.jar",
@@ -4537,8 +4537,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1adc8f421981d181b518d7788403506c87448139ec20bc484f0ceb9a69e14992d0b5afe4e810df05951ca515c80d8e9239d032d97cc5e9318cd24e534389c4a5",
-          "sha1": "b8c67d08f428548c12675964d9e33d7599b63761"
+          "sha1": "b8c67d08f428548c12675964d9e33d7599b63761",
+          "sha512": "1adc8f421981d181b518d7788403506c87448139ec20bc484f0ceb9a69e14992d0b5afe4e810df05951ca515c80d8e9239d032d97cc5e9318cd24e534389c4a5"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/tcThoSyZ/architectury-10.0.13-minecraftforge.jar",
         "filename": "architectury-10.0.13-minecraftforge.jar",
@@ -4686,8 +4686,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "23a367fba52773a889bb445edb1182bd72b1aa3d",
-          "sha512": "9af02422c237f9e32c1d3fdc2bdbc5a695f5d17eae0000200243a5e55fe1f089b597f8f91d49c1dde5d0a6edb7eafbda6c49a27d315eed5d6e456ab8cad8fb12"
+          "sha512": "9af02422c237f9e32c1d3fdc2bdbc5a695f5d17eae0000200243a5e55fe1f089b597f8f91d49c1dde5d0a6edb7eafbda6c49a27d315eed5d6e456ab8cad8fb12",
+          "sha1": "23a367fba52773a889bb445edb1182bd72b1aa3d"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/hGR2Y1XK/architectury-10.0.12-fabric.jar",
         "filename": "architectury-10.0.12-fabric.jar",
@@ -4728,8 +4728,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "94e1b348538e822e70837fdd69f42bf5fe5f7dac",
-          "sha512": "1ed6e961be8dfbcc33e82731892fac6ce754aa608373b85afe7ac9494ec1f04b9636ccf3d9d74c96da627907898c52e809581d67813e516e1732847c68f24372"
+          "sha512": "1ed6e961be8dfbcc33e82731892fac6ce754aa608373b85afe7ac9494ec1f04b9636ccf3d9d74c96da627907898c52e809581d67813e516e1732847c68f24372",
+          "sha1": "94e1b348538e822e70837fdd69f42bf5fe5f7dac"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/JJjGdSFd/architectury-10.0.11-neoforge.jar",
         "filename": "architectury-10.0.11-neoforge.jar",
@@ -4763,8 +4763,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "142044ec0cce5f443d342231c4455ffe529423af",
-          "sha512": "ef1bc742ccf3136c986116d1bbd8651ad23e5919b6ea472ae3155db033133eaaa05d158f56d0597eb725f9a6b907fdbcf94cec8c6be4e2751e0533cd95ab34b6"
+          "sha512": "ef1bc742ccf3136c986116d1bbd8651ad23e5919b6ea472ae3155db033133eaaa05d158f56d0597eb725f9a6b907fdbcf94cec8c6be4e2751e0533cd95ab34b6",
+          "sha1": "142044ec0cce5f443d342231c4455ffe529423af"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/BD9Sr6TL/architectury-10.0.11-minecraftforge.jar",
         "filename": "architectury-10.0.11-minecraftforge.jar",
@@ -4841,8 +4841,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "da234f68d06dbbf4fae59dcec32f19bd067e8fbb",
-          "sha512": "7d5c1054df84beebf07132435b512b5b8871b8d282979c96599474701fa0d169b806975fdf801b57f74a75b346c1ab29bff374a1bafd9f7b79894ee1e9e34601"
+          "sha512": "7d5c1054df84beebf07132435b512b5b8871b8d282979c96599474701fa0d169b806975fdf801b57f74a75b346c1ab29bff374a1bafd9f7b79894ee1e9e34601",
+          "sha1": "da234f68d06dbbf4fae59dcec32f19bd067e8fbb"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Hwb5NUwj/architectury-10.0.9-forge.jar",
         "filename": "architectury-10.0.9-forge.jar",
@@ -4963,8 +4963,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "75f6d1b1b8f5e968eba7f8b25e186430dba1bb6c3b0c0ee387c3512daea9658fa7c3422acffd41df076f3b33d8d1837d258a855dbde7e80888d15362a4d3e987",
-          "sha1": "1a96af6b29ec971ba0e9b2b91471847a7eb6289d"
+          "sha1": "1a96af6b29ec971ba0e9b2b91471847a7eb6289d",
+          "sha512": "75f6d1b1b8f5e968eba7f8b25e186430dba1bb6c3b0c0ee387c3512daea9658fa7c3422acffd41df076f3b33d8d1837d258a855dbde7e80888d15362a4d3e987"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/WtGJ04th/architectury-11.0.1-fabric.jar",
         "filename": "architectury-11.0.1-fabric.jar",
@@ -5034,15 +5034,15 @@
     "changelog": "## Architectury v10.0.8 for 1.20.2\nUpdated at **2023-09-26 02:56**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20.2)\n- Forge 1.20.2",
     "changelog_url": null,
     "date_published": "2023-09-26T02:57:10.996552Z",
-    "downloads": 113159,
+    "downloads": 113164,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "81d7faf4230c14011b89c3e719af3f7dd4b2f12404954a41215c318501ff1c87dd55a7494b692c1eebaf5ac61a423b94bad15bb6b5cae59ef22ea70deb292f09",
-          "sha1": "18f8ce90c1118650b5b383be2f831ea9716e6047"
+          "sha1": "18f8ce90c1118650b5b383be2f831ea9716e6047",
+          "sha512": "81d7faf4230c14011b89c3e719af3f7dd4b2f12404954a41215c318501ff1c87dd55a7494b692c1eebaf5ac61a423b94bad15bb6b5cae59ef22ea70deb292f09"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/cv151FBM/architectury-10.0.8-fabric.jar",
         "filename": "architectury-10.0.8-fabric.jar",
@@ -5085,8 +5085,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8dfb28641db61977b42f055264e44090671bc4107736dd403147db10402576edfd85672accd11d07715a3bd00364423d3dd264b11f03f9c02360966739f4f506",
-          "sha1": "afa03b6902e0187c10ad207ff2dc158c90cde762"
+          "sha1": "afa03b6902e0187c10ad207ff2dc158c90cde762",
+          "sha512": "8dfb28641db61977b42f055264e44090671bc4107736dd403147db10402576edfd85672accd11d07715a3bd00364423d3dd264b11f03f9c02360966739f4f506"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/tN1jacer/architectury-10.0.7-fabric.jar",
         "filename": "architectury-10.0.7-fabric.jar",
@@ -5214,8 +5214,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "48b3f3c4f5be24634b5e864f08739ac241ae70941f5887bb4a9e24bc430cd64be9dc2e7e83982da59d22e66f41f70847fad2861a78f09f0ba38be47716fa5246",
-          "sha1": "c3824b1386b1647ecdfe65bdcea92dca9ae3ab6a"
+          "sha1": "c3824b1386b1647ecdfe65bdcea92dca9ae3ab6a",
+          "sha512": "48b3f3c4f5be24634b5e864f08739ac241ae70941f5887bb4a9e24bc430cd64be9dc2e7e83982da59d22e66f41f70847fad2861a78f09f0ba38be47716fa5246"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/UWacXu6I/architectury-10.0.4-fabric.jar",
         "filename": "architectury-10.0.4-fabric.jar",
@@ -5257,8 +5257,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7dc7962745203d664b931771b4900287f73c7e8a",
-          "sha512": "42e2818af569209d12975364447f8a4ed7b70eaec8fe93e18eb728b2070a4ec5d3329fed941fd297387285d07d34159db3534104cad3ffb39f77d63126bcc7e7"
+          "sha512": "42e2818af569209d12975364447f8a4ed7b70eaec8fe93e18eb728b2070a4ec5d3329fed941fd297387285d07d34159db3534104cad3ffb39f77d63126bcc7e7",
+          "sha1": "7dc7962745203d664b931771b4900287f73c7e8a"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/NyIvjlpf/architectury-10.0.3-fabric.jar",
         "filename": "architectury-10.0.3-fabric.jar",
@@ -5343,8 +5343,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7a76228eb5a7fb8cf675d42dcd4c74746dd70c11",
-          "sha512": "95d20eab0e2c26a6959f0b078e90f2f77fa959b500190462b4144145fcc4d1ae3505c1dcdb7e1d94fbf4e7a69cafae95705832c24c10bf927fb712239c616f5c"
+          "sha512": "95d20eab0e2c26a6959f0b078e90f2f77fa959b500190462b4144145fcc4d1ae3505c1dcdb7e1d94fbf4e7a69cafae95705832c24c10bf927fb712239c616f5c",
+          "sha1": "7a76228eb5a7fb8cf675d42dcd4c74746dd70c11"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Ock52JGW/architectury-10.0.1-fabric.jar",
         "filename": "architectury-10.0.1-fabric.jar",
@@ -5379,7 +5379,7 @@
     "changelog": "## Architectury v9.1.12 for 1.20(.1)\nUpdated at **2023-07-25 02:56**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)\n- Fix #423",
     "changelog_url": null,
     "date_published": "2023-07-25T02:56:38.8163Z",
-    "downloads": 479995,
+    "downloads": 480068,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5416,15 +5416,15 @@
     "changelog": "## Architectury v9.1.12 for 1.20(.1)\nUpdated at **2023-07-25 02:56**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)\n- Fix #423",
     "changelog_url": null,
     "date_published": "2023-07-25T02:56:35.672916Z",
-    "downloads": 2187856,
+    "downloads": 2188126,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "54bdfc469f897e70a10b31c49d908e09b9cdefdda87c662ad6695c713fbf901bc37256c157ca7d2b9c70a13b304ee74a88cbead98bb23f1ae10e2aef3482db17",
-          "sha1": "add0fffa445ee2959b0898484732704a15156553"
+          "sha1": "add0fffa445ee2959b0898484732704a15156553",
+          "sha512": "54bdfc469f897e70a10b31c49d908e09b9cdefdda87c662ad6695c713fbf901bc37256c157ca7d2b9c70a13b304ee74a88cbead98bb23f1ae10e2aef3482db17"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Sbew3kXe/architectury-9.1.12-fabric.jar",
         "filename": "architectury-9.1.12-fabric.jar",
@@ -5459,15 +5459,15 @@
     "changelog": "## Architectury v9.1.11 for 1.20(.1)\nUpdated at **2023-07-24 16:24**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)\n- Fix INIT_POST not being invoked (#418)",
     "changelog_url": null,
     "date_published": "2023-07-24T16:25:51.134009Z",
-    "downloads": 5560,
+    "downloads": 5563,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3c4979cb09fb432b98fa1682717aa1218fc74171",
-          "sha512": "ef421371fad20c3d47f92f4ff4d771404de212f15a6c9486fd6f60709a303042cc1a79d4f83d9c9a25c96f4ff7aba329f5f1f04949d55c72f8f2da0691645040"
+          "sha512": "ef421371fad20c3d47f92f4ff4d771404de212f15a6c9486fd6f60709a303042cc1a79d4f83d9c9a25c96f4ff7aba329f5f1f04949d55c72f8f2da0691645040",
+          "sha1": "3c4979cb09fb432b98fa1682717aa1218fc74171"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Xisp7QmU/architectury-9.1.11-forge.jar",
         "filename": "architectury-9.1.11-forge.jar",
@@ -5495,7 +5495,7 @@
     "changelog": "## Architectury v9.1.10 for 1.20(.1)\nUpdated at **2023-07-09 09:56**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)\n- Mark 1.20.1 as compatible",
     "changelog_url": null,
     "date_published": "2023-07-09T09:56:38.004584Z",
-    "downloads": 21996,
+    "downloads": 22002,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5532,7 +5532,7 @@
     "changelog": "## Architectury v9.1.10 for 1.20(.1)\nUpdated at **2023-07-09 09:56**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)\n- Mark 1.20.1 as compatible",
     "changelog_url": null,
     "date_published": "2023-07-09T09:56:34.323427Z",
-    "downloads": 52431,
+    "downloads": 52434,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5610,7 +5610,7 @@
     "changelog": "## Architectury v8.2.89 for 1.19.4\nUpdated at **2023-07-09 09:52**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.4)\n- Bump minor version",
     "changelog_url": null,
     "date_published": "2023-07-09T09:53:33.319501Z",
-    "downloads": 59350,
+    "downloads": 59359,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5653,15 +5653,15 @@
     "changelog": "## Architectury v9.0.8 for 1.20\nUpdated at **2023-06-12 08:00**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)\n- Update mods.toml to 1.20 (#410)",
     "changelog_url": null,
     "date_published": "2023-06-12T08:00:38.700888Z",
-    "downloads": 24521,
+    "downloads": 24529,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e284fdf8766984268a930a4a9825a3e5cb34132c",
-          "sha512": "9f9a975e0acc2f95bdb9fc84405c8529fa0c0ca16951822027a58de011a721bc02de5e819a88e8cf50aff08dce6ae0d565813e20f781d2ef7e5073307a14c91b"
+          "sha512": "9f9a975e0acc2f95bdb9fc84405c8529fa0c0ca16951822027a58de011a721bc02de5e819a88e8cf50aff08dce6ae0d565813e20f781d2ef7e5073307a14c91b",
+          "sha1": "e284fdf8766984268a930a4a9825a3e5cb34132c"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ON7CwM6M/architectury-9.0.8-forge.jar",
         "filename": "architectury-9.0.8-forge.jar",
@@ -5690,7 +5690,7 @@
     "changelog": "## Architectury v9.0.8 for 1.20\nUpdated at **2023-06-12 08:00**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)\n- Update mods.toml to 1.20 (#410)",
     "changelog_url": null,
     "date_published": "2023-06-12T08:00:36.35512Z",
-    "downloads": 94322,
+    "downloads": 94331,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5768,15 +5768,15 @@
     "changelog": "## Architectury v9.0.7 for 1.20\nUpdated at **2023-06-08 06:47**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)\n- Fix wrong injection point for container screen foreground",
     "changelog_url": null,
     "date_published": "2023-06-08T06:48:23.791807Z",
-    "downloads": 14243,
+    "downloads": 14244,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3e7f476efa608867822f6e7acc52940db2829b12",
-          "sha512": "7823bb766518444d5283385fc4270a14e30fbedab03ecf8196100a27ef2389b06aa945753fcae4508b6e676758849f50aa05ed92196e378ec8df3b37d2840319"
+          "sha512": "7823bb766518444d5283385fc4270a14e30fbedab03ecf8196100a27ef2389b06aa945753fcae4508b6e676758849f50aa05ed92196e378ec8df3b37d2840319",
+          "sha1": "3e7f476efa608867822f6e7acc52940db2829b12"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/QNVGxVoq/architectury-9.0.7-fabric.jar",
         "filename": "architectury-9.0.7-fabric.jar",
@@ -5810,7 +5810,7 @@
     "changelog": "## Architectury v9.0.6 for 1.20\nUpdated at **2023-06-08 04:57**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.20)\n- Update to 1.20 and support Forge",
     "changelog_url": null,
     "date_published": "2023-06-08T04:58:23.172043Z",
-    "downloads": 431,
+    "downloads": 432,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5888,7 +5888,7 @@
     "changelog": "## Architectury v7.1.86 for 1.19.3\nUpdated at **2023-05-28 10:44**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.3)",
     "changelog_url": null,
     "date_published": "2023-05-28T10:45:53.894325Z",
-    "downloads": 12240,
+    "downloads": 12241,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5923,7 +5923,7 @@
     "changelog": "## Architectury v5.14.84 for 1.19\nUpdated at **2023-05-28 10:44**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19)",
     "changelog_url": null,
     "date_published": "2023-05-28T10:45:51.827977Z",
-    "downloads": 17901,
+    "downloads": 17903,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5959,7 +5959,7 @@
     "changelog": "## Architectury v7.1.86 for 1.19.3\nUpdated at **2023-05-28 10:44**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.3)",
     "changelog_url": null,
     "date_published": "2023-05-28T10:45:46.854607Z",
-    "downloads": 25552,
+    "downloads": 25558,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6002,7 +6002,7 @@
     "changelog": "## Architectury v5.14.84 for 1.19\nUpdated at **2023-05-28 10:44**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19)",
     "changelog_url": null,
     "date_published": "2023-05-28T10:45:46.393656Z",
-    "downloads": 15174,
+    "downloads": 15181,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6122,15 +6122,15 @@
     "changelog": "## Architectury v6.5.85 for 1.19.2\nUpdated at **2023-05-28 10:43**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)",
     "changelog_url": null,
     "date_published": "2023-05-28T10:43:48.056023Z",
-    "downloads": 240671,
+    "downloads": 240695,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "10b119c2e574b30a9f097e85c26aae867789d2b4",
-          "sha512": "61860b23aee3b37aff0f5e92aaec708bccafd16321cd5075fe1b55e34acb2d346226023adb498573c5fd91864db4f69c34ecae212a3a873c87b58d48eb386fbe"
+          "sha512": "61860b23aee3b37aff0f5e92aaec708bccafd16321cd5075fe1b55e34acb2d346226023adb498573c5fd91864db4f69c34ecae212a3a873c87b58d48eb386fbe",
+          "sha1": "10b119c2e574b30a9f097e85c26aae867789d2b4"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ns7Xs1B6/architectury-6.5.85-forge.jar",
         "filename": "architectury-6.5.85-forge.jar",
@@ -6158,7 +6158,7 @@
     "changelog": "## Architectury v6.5.85 for 1.19.2\nUpdated at **2023-05-28 10:43**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)",
     "changelog_url": null,
     "date_published": "2023-05-28T10:43:35.769872Z",
-    "downloads": 593498,
+    "downloads": 593600,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6251,8 +6251,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c70c1bcd4c73aafee05dff58b9a73364b95669856a70e0e039823ece35bc866bfeafef2be4aaf748641de88865388914d9983f05520065bda49ed5f308143176",
-          "sha1": "a4982704659d738d34c483349d71c3071d50347f"
+          "sha1": "a4982704659d738d34c483349d71c3071d50347f",
+          "sha512": "c70c1bcd4c73aafee05dff58b9a73364b95669856a70e0e039823ece35bc866bfeafef2be4aaf748641de88865388914d9983f05520065bda49ed5f308143176"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/H3InwdRP/architectury-9.0.4-fabric.jar",
         "filename": "architectury-9.0.4-fabric.jar",
@@ -6294,8 +6294,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "475780eeaae8a23d0abb2bbc5a1d276de3f35fa6",
-          "sha512": "3c0d65e93fb608708c276201e804eb8ddcc9d34434792f419a7667affb950a21f3ae9acb6ad0972d25a2fc37ccb6b5a35c05a2dbdc7190828eb8c94c47707035"
+          "sha512": "3c0d65e93fb608708c276201e804eb8ddcc9d34434792f419a7667affb950a21f3ae9acb6ad0972d25a2fc37ccb6b5a35c05a2dbdc7190828eb8c94c47707035",
+          "sha1": "475780eeaae8a23d0abb2bbc5a1d276de3f35fa6"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/DIw2YTZ2/architectury-9.0.3-fabric.jar",
         "filename": "architectury-9.0.3-fabric.jar",
@@ -6329,15 +6329,15 @@
     "changelog": "## Architectury v4.11.93 for 1.18.2\nUpdated at **2023-05-04 10:40**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.18.2)\n- Fix block place event mixin passing incorrect BlockState on Fabric",
     "changelog_url": null,
     "date_published": "2023-05-04T10:41:16.182005Z",
-    "downloads": 153038,
+    "downloads": 153091,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6c8e416f22d9a257d69442d5f2620afcd92e2437304659a20418927b9066d0a928bc8eebd1e204911895b59a04e4be4c063b14303b6aafa814c56aac3c77c925",
-          "sha1": "745f674393a9d5827ee92fcd5c6c350c9aeeed97"
+          "sha1": "745f674393a9d5827ee92fcd5c6c350c9aeeed97",
+          "sha512": "6c8e416f22d9a257d69442d5f2620afcd92e2437304659a20418927b9066d0a928bc8eebd1e204911895b59a04e4be4c063b14303b6aafa814c56aac3c77c925"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/o069zrDa/architectury-4.11.93-forge.jar",
         "filename": "architectury-4.11.93-forge.jar",
@@ -6365,15 +6365,15 @@
     "changelog": "## Architectury v4.11.93 for 1.18.2\nUpdated at **2023-05-04 10:40**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.18.2)\n- Fix block place event mixin passing incorrect BlockState on Fabric",
     "changelog_url": null,
     "date_published": "2023-05-04T10:41:04.683518Z",
-    "downloads": 50781,
+    "downloads": 50786,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "04d694263c65fd6bed4cb14a3f45942d9d87df37",
-          "sha512": "41f8dea79e8a0f0e8a49c3baea0750a06a09d1d76285dfbd9b5b0dd7c8b02d615bf431bd822bc9fd6d6fafab7207c469e6961d35c65643eb0460df381c679f87"
+          "sha512": "41f8dea79e8a0f0e8a49c3baea0750a06a09d1d76285dfbd9b5b0dd7c8b02d615bf431bd822bc9fd6d6fafab7207c469e6961d35c65643eb0460df381c679f87",
+          "sha1": "04d694263c65fd6bed4cb14a3f45942d9d87df37"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/j5zDzQqi/architectury-4.11.93-fabric.jar",
         "filename": "architectury-4.11.93-fabric.jar",
@@ -6407,15 +6407,15 @@
     "changelog": "<h2>Architectury v1.32.68 for 1.16.5</h2>Updated at <b>2023-05-04 08:12</b>.<br><a href=\"https://www.github.com/architectury/architectury/commits/1.16\">Click here for changelog</a><br>- Backport bugfix for block place event to 1.16... again",
     "changelog_url": null,
     "date_published": "2023-05-04T08:13:30.947407Z",
-    "downloads": 551947,
+    "downloads": 552095,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ebd266dd51de8f4dd99c9b4731e35b8340734cda",
-          "sha512": "dc4299258fbce4a0006f541aaf0dc62e74007dea8fd4924319f6feeb3fbe1fa8ca9ce925434b75ea106c5c78e044050dc72a6e9811ea76fda1f9797ef6f0f4e2"
+          "sha512": "dc4299258fbce4a0006f541aaf0dc62e74007dea8fd4924319f6feeb3fbe1fa8ca9ce925434b75ea106c5c78e044050dc72a6e9811ea76fda1f9797ef6f0f4e2",
+          "sha1": "ebd266dd51de8f4dd99c9b4731e35b8340734cda"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Zw57dVyl/architectury-1.32.68.jar",
         "filename": "architectury-1.32.68.jar",
@@ -6442,7 +6442,7 @@
     "changelog": "<h2>Architectury v1.32.68 for 1.16.5</h2>Updated at <b>2023-05-04 08:12</b>.<br><a href=\"https://www.github.com/architectury/architectury/commits/1.16\">Click here for changelog</a><br>- Backport bugfix for block place event to 1.16... again",
     "changelog_url": null,
     "date_published": "2023-05-04T08:13:28.576017Z",
-    "downloads": 38695,
+    "downloads": 38720,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6527,15 +6527,15 @@
     "changelog": "## Architectury v6.5.82 for 1.19.2\nUpdated at **2023-05-04 08:01**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)\n- Fix block place event mixin passing incorrect BlockState on Fabric",
     "changelog_url": null,
     "date_published": "2023-05-04T08:03:05.10805Z",
-    "downloads": 25003,
+    "downloads": 25004,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "1d10cdaf8c620ed788839c099fadff9bfaa82b26",
-          "sha512": "016831efc108611455981e77cda73b6c5b123d28f3664834c2812b55ea654159a31e406014995c6f7f64c9b26da554e406790acdabef38a160c16870cc30866e"
+          "sha512": "016831efc108611455981e77cda73b6c5b123d28f3664834c2812b55ea654159a31e406014995c6f7f64c9b26da554e406790acdabef38a160c16870cc30866e",
+          "sha1": "1d10cdaf8c620ed788839c099fadff9bfaa82b26"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/w5Kw8FAN/architectury-6.5.82-forge.jar",
         "filename": "architectury-6.5.82-forge.jar",
@@ -6612,8 +6612,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2110afc5e777038b544208a3ffa20d7eab6e0ca9",
-          "sha512": "4e9e1d7fe083d986740d59d82febc511aa5ba429dea4df61306b56ca3930cd844362dd030ecbf4f74cf5d849471444c375ac26b7831800f2d864d373319ac443"
+          "sha512": "4e9e1d7fe083d986740d59d82febc511aa5ba429dea4df61306b56ca3930cd844362dd030ecbf4f74cf5d849471444c375ac26b7831800f2d864d373319ac443",
+          "sha1": "2110afc5e777038b544208a3ffa20d7eab6e0ca9"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/a9f986RP/architectury-5.14.83-forge.jar",
         "filename": "architectury-5.14.83-forge.jar",
@@ -6648,8 +6648,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "cb5c218c05d567cadb6d3ecaa547102864d9d139",
-          "sha512": "54cb5535c7328ef0c80043b2ee4fe9d71d237856ec40eddcf66991640a2ff21e1d6c518d6e1b3b25a8f7723bd5de41d45c9d8643e23bce682f1a9e05583ae1b6"
+          "sha512": "54cb5535c7328ef0c80043b2ee4fe9d71d237856ec40eddcf66991640a2ff21e1d6c518d6e1b3b25a8f7723bd5de41d45c9d8643e23bce682f1a9e05583ae1b6",
+          "sha1": "cb5c218c05d567cadb6d3ecaa547102864d9d139"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ZBfefNWq/architectury-5.14.83-fabric.jar",
         "filename": "architectury-5.14.83-fabric.jar",
@@ -6690,8 +6690,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "fa9589c96a1e856ddae94fc9c44699bb0a74f848444d4376adba0078907cfc617a0fc220a2a6a6c156329796f9b7940ed530a8f5ee1f532c8a6cdd5eb4574145",
-          "sha1": "ad7d4ab1eec05635db655f2f6663d756c85488e7"
+          "sha1": "ad7d4ab1eec05635db655f2f6663d756c85488e7",
+          "sha512": "fa9589c96a1e856ddae94fc9c44699bb0a74f848444d4376adba0078907cfc617a0fc220a2a6a6c156329796f9b7940ed530a8f5ee1f532c8a6cdd5eb4574145"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/jHxM99iS/architectury-7.1.81-forge.jar",
         "filename": "architectury-7.1.81-forge.jar",
@@ -6726,8 +6726,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3004b6646446c5e07f7b8a7c4c7b277d92d9c05241f37b4baacf34a2aa03a236cdcd684d009c24aa9de0f5ba9d9ad4dae8da7c5eed263ac432fa729c1bf2819b",
-          "sha1": "40017649a649325a7e544cf3803e096a1092c188"
+          "sha1": "40017649a649325a7e544cf3803e096a1092c188",
+          "sha512": "3004b6646446c5e07f7b8a7c4c7b277d92d9c05241f37b4baacf34a2aa03a236cdcd684d009c24aa9de0f5ba9d9ad4dae8da7c5eed263ac432fa729c1bf2819b"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/NtVaa36c/architectury-7.1.81-fabric.jar",
         "filename": "architectury-7.1.81-fabric.jar",
@@ -6797,15 +6797,15 @@
     "changelog": "## Architectury v8.1.80 for 1.19.4\nUpdated at **2023-05-04 07:54**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.4)\n- Fix block place event mixin passing incorrect BlockState on Fabric",
     "changelog_url": null,
     "date_published": "2023-05-04T07:55:11.068353Z",
-    "downloads": 37674,
+    "downloads": 37676,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6c2144495474abb7e3861fe145995e87aedd62cf389014e8e402fda26335adc43d9c621d53dd4051948e2d91abea991db3a36fdf6f26ae003a7798d794b34c8d",
-          "sha1": "e19f0bbaf8f27ef7feba77e091103c3bb25ee43f"
+          "sha1": "e19f0bbaf8f27ef7feba77e091103c3bb25ee43f",
+          "sha512": "6c2144495474abb7e3861fe145995e87aedd62cf389014e8e402fda26335adc43d9c621d53dd4051948e2d91abea991db3a36fdf6f26ae003a7798d794b34c8d"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Xb48U4dI/architectury-8.1.80-fabric.jar",
         "filename": "architectury-8.1.80-fabric.jar",
@@ -6846,8 +6846,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4fa812840239c174c5b4a7cf4612f7fc49a85eff",
-          "sha512": "5c0d254768dce4f5f2b0315920c59b24df30dede4cf8d7d664872e079e794d1ea7439d29757bf9a4dfaefc39ad2a8ffc8c1dc525c091089a27d2efde6fd3fa50"
+          "sha512": "5c0d254768dce4f5f2b0315920c59b24df30dede4cf8d7d664872e079e794d1ea7439d29757bf9a4dfaefc39ad2a8ffc8c1dc525c091089a27d2efde6fd3fa50",
+          "sha1": "4fa812840239c174c5b4a7cf4612f7fc49a85eff"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ppDF7bGm/architectury-4.11.92-forge.jar",
         "filename": "architectury-4.11.92-forge.jar",
@@ -6960,8 +6960,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a69f653273a82d8f79cc9bded39a2cf25836c069",
-          "sha512": "badfaeb500a5b693a8892349cd73991b44b31b3ac0be61b6daa2bdadee20a7b1815b40e74a184ce7abc229fb922b99fdc396bac03162a0049230e73bce3d6333"
+          "sha512": "badfaeb500a5b693a8892349cd73991b44b31b3ac0be61b6daa2bdadee20a7b1815b40e74a184ce7abc229fb922b99fdc396bac03162a0049230e73bce3d6333",
+          "sha1": "a69f653273a82d8f79cc9bded39a2cf25836c069"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/fHBKIXLG/architectury-5.14.76-fabric.jar",
         "filename": "architectury-5.14.76-fabric.jar",
@@ -7002,8 +7002,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6a5dd3dbdaa17976efde50dce607bd81a0cc5268",
-          "sha512": "729e800ef6c418da03f53f2628962239c158595cc8e1ea96e26a4d2de7b3aadfd3c9165ad79e1f5889b2dd0c5795e63f8b2c5cab1d8b950b7860f7f1c5eb3a38"
+          "sha512": "729e800ef6c418da03f53f2628962239c158595cc8e1ea96e26a4d2de7b3aadfd3c9165ad79e1f5889b2dd0c5795e63f8b2c5cab1d8b950b7860f7f1c5eb3a38",
+          "sha1": "6a5dd3dbdaa17976efde50dce607bd81a0cc5268"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/MDMnIYXn/architectury-1.32.67.jar",
         "filename": "architectury-1.32.67.jar",
@@ -7108,15 +7108,15 @@
     "changelog": "## Architectury v7.1.78 for 1.19.3\nUpdated at **2023-04-05 14:43**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.3)",
     "changelog_url": null,
     "date_published": "2023-04-05T14:44:09.29726Z",
-    "downloads": 6437,
+    "downloads": 6440,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a1bb43747f0bea02479258b8810f390a6cff57a3",
-          "sha512": "e83e9343d8f7157c525ecef45b81dc4c51af5e371201a48ed311a6dddeef0cff9925d495e609543f9f07a778d85d5218c3e61119d55466a70681fd47afcfd391"
+          "sha512": "e83e9343d8f7157c525ecef45b81dc4c51af5e371201a48ed311a6dddeef0cff9925d495e609543f9f07a778d85d5218c3e61119d55466a70681fd47afcfd391",
+          "sha1": "a1bb43747f0bea02479258b8810f390a6cff57a3"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/97NYBivp/architectury-7.1.78-fabric.jar",
         "filename": "architectury-7.1.78-fabric.jar",
@@ -7157,8 +7157,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "937f084af0a720490248ef6ef89812781f09079e65980e78f870d3300c2772fa673d45bc70600f39864273d020fd86846afe32fecee1e9e62df32831d3cc6f1f",
-          "sha1": "d2acc9284ff6cd6221106fe47b6b8fee86d34c1b"
+          "sha1": "d2acc9284ff6cd6221106fe47b6b8fee86d34c1b",
+          "sha512": "937f084af0a720490248ef6ef89812781f09079e65980e78f870d3300c2772fa673d45bc70600f39864273d020fd86846afe32fecee1e9e62df32831d3cc6f1f"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/LjNaLvHD/architectury-8.1.79-forge.jar",
         "filename": "architectury-8.1.79-forge.jar",
@@ -7186,15 +7186,15 @@
     "changelog": "## Architectury v8.1.79 for 1.19.4\nUpdated at **2023-04-05 14:41**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.4)",
     "changelog_url": null,
     "date_published": "2023-04-05T14:42:35.390461Z",
-    "downloads": 32751,
+    "downloads": 32760,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d09326b83c8ca179b32397a79f6e65f200813da6e5d4796cedecc8cabb86885348ee4b30b592807fd6e3c2ddcdbb7f9e3ec955b8917ce02b16e3bcc148a45f4c",
-          "sha1": "9e7641900741f14114f01933586b243ae908652f"
+          "sha1": "9e7641900741f14114f01933586b243ae908652f",
+          "sha512": "d09326b83c8ca179b32397a79f6e65f200813da6e5d4796cedecc8cabb86885348ee4b30b592807fd6e3c2ddcdbb7f9e3ec955b8917ce02b16e3bcc148a45f4c"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/tJGqxo3S/architectury-8.1.79-fabric.jar",
         "filename": "architectury-8.1.79-fabric.jar",
@@ -7264,7 +7264,7 @@
     "changelog": "## Architectury v6.5.77 for 1.19.2\nUpdated at **2023-04-05 14:41**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)",
     "changelog_url": null,
     "date_published": "2023-04-05T14:41:48.371212Z",
-    "downloads": 86295,
+    "downloads": 86306,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7313,8 +7313,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a853613e12a9d786bd8995c1e232bf6a6a2843cef36bc85f88ddbf3402d24c67be42f27c5929f22aca09d0dfcaee8983bd291b513fad0459a7e981e93dfae9f1",
-          "sha1": "535c285beee38853dbef137dbf39565f33caedc0"
+          "sha1": "535c285beee38853dbef137dbf39565f33caedc0",
+          "sha512": "a853613e12a9d786bd8995c1e232bf6a6a2843cef36bc85f88ddbf3402d24c67be42f27c5929f22aca09d0dfcaee8983bd291b513fad0459a7e981e93dfae9f1"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/SWry8g5q/architectury-4.11.90-forge.jar",
         "filename": "architectury-4.11.90-forge.jar",
@@ -7384,8 +7384,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7fc0bec2310f5d1207dc843296c8436ba021b714",
-          "sha512": "f2916b613ad7f56a8ff2dc8aaddffb090ab756b15f8965e62c4ea874cc56b2a865193aa806684caedd8b7a9de5c329ac351d4176b05f651cf93c46435c82c4a2"
+          "sha512": "f2916b613ad7f56a8ff2dc8aaddffb090ab756b15f8965e62c4ea874cc56b2a865193aa806684caedd8b7a9de5c329ac351d4176b05f651cf93c46435c82c4a2",
+          "sha1": "7fc0bec2310f5d1207dc843296c8436ba021b714"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/7vxxSNtV/architectury-4.11.90-fabric.jar",
         "filename": "architectury-4.11.90-fabric.jar",
@@ -7427,8 +7427,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "be42d195c082590f5cb399c39b1d1f466088a5393df2ae13feac0c20f15fed0769b39b40f5237fe5bf79b6ce28154fd7aa2b103aae56710570e23eb99ee631d3",
-          "sha1": "43eb31499b0cf53a973bbaee34956376ff94a276"
+          "sha1": "43eb31499b0cf53a973bbaee34956376ff94a276",
+          "sha512": "be42d195c082590f5cb399c39b1d1f466088a5393df2ae13feac0c20f15fed0769b39b40f5237fe5bf79b6ce28154fd7aa2b103aae56710570e23eb99ee631d3"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/tJBAMkGO/architectury-4.11.91-fabric.jar",
         "filename": "architectury-4.11.91-fabric.jar",
@@ -7470,8 +7470,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "fedbb41da7143aee9240e441e57a48df03e35e3bcb1e8b13bbabc6ed9f49efda97ee0f2fa29a4b70f24a18e45b7862a9cfd38e86086fe6f40a58309657b5dce0",
-          "sha1": "42d8fbb0ee2d0e207c7b17fc0d1bc27552b30434"
+          "sha1": "42d8fbb0ee2d0e207c7b17fc0d1bc27552b30434",
+          "sha512": "fedbb41da7143aee9240e441e57a48df03e35e3bcb1e8b13bbabc6ed9f49efda97ee0f2fa29a4b70f24a18e45b7862a9cfd38e86086fe6f40a58309657b5dce0"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/BmkZHo8Y/architectury-9.0.2-fabric.jar",
         "filename": "architectury-9.0.2-fabric.jar",
@@ -7555,8 +7555,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e16cefec41d43dced5ce0351b86d6187d7137383cc12311e713faf1bb4e0eb714f028908b762e8bb649924f93973b485550e248b5f44d1e37d790aaa1fa90a7f",
-          "sha1": "f20af018a20579528a0eaf901262b83afe12d5e6"
+          "sha1": "f20af018a20579528a0eaf901262b83afe12d5e6",
+          "sha512": "e16cefec41d43dced5ce0351b86d6187d7137383cc12311e713faf1bb4e0eb714f028908b762e8bb649924f93973b485550e248b5f44d1e37d790aaa1fa90a7f"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/YxX289mS/architectury-8.1.75-forge.jar",
         "filename": "architectury-8.1.75-forge.jar",
@@ -7591,8 +7591,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a93541aca44f1718bd5ac3065c9e506ce92d634d20b2f57b548e6ebe79f651d31cfec6ddbd17d8c8e0e78b3281d9702aa881a6297781bba5f3e448646ebfcf1f",
-          "sha1": "69e3d689dbf387484c5ca2cec2b2561860983614"
+          "sha1": "69e3d689dbf387484c5ca2cec2b2561860983614",
+          "sha512": "a93541aca44f1718bd5ac3065c9e506ce92d634d20b2f57b548e6ebe79f651d31cfec6ddbd17d8c8e0e78b3281d9702aa881a6297781bba5f3e448646ebfcf1f"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/OrdDd9xt/architectury-8.1.75-fabric.jar",
         "filename": "architectury-8.1.75-fabric.jar",
@@ -7633,8 +7633,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6a6906c1d7f8e03c2245390634bc2324ada4e297d9d547d9a7a8fe657d96b8deb83b874964be987b7b933c3fe22ac1b35f47f01eb3f2413b65a3837c8c717fd9",
-          "sha1": "e3831caddc8d911f0afd23d4e55c6046d4fdfe43"
+          "sha1": "e3831caddc8d911f0afd23d4e55c6046d4fdfe43",
+          "sha512": "6a6906c1d7f8e03c2245390634bc2324ada4e297d9d547d9a7a8fe657d96b8deb83b874964be987b7b933c3fe22ac1b35f47f01eb3f2413b65a3837c8c717fd9"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/YiYBpQpv/architectury-8.1.73-forge.jar",
         "filename": "architectury-8.1.73-forge.jar",
@@ -7669,8 +7669,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "be3ecbac12229366b76820f1a4bf1ba9b782ebcc1ca43ccc21a4d2eef6061feff2c5a5197e75aef5d01af1a0f4dad605b332ebe451266c974ffe9792852696af",
-          "sha1": "c1d2b3d4577d9a0dd0a8b571c1bb60bbff60768e"
+          "sha1": "c1d2b3d4577d9a0dd0a8b571c1bb60bbff60768e",
+          "sha512": "be3ecbac12229366b76820f1a4bf1ba9b782ebcc1ca43ccc21a4d2eef6061feff2c5a5197e75aef5d01af1a0f4dad605b332ebe451266c974ffe9792852696af"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/9VVWBhOe/architectury-8.1.73-fabric.jar",
         "filename": "architectury-8.1.73-fabric.jar",
@@ -7712,8 +7712,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "57186b351fe8657e5b91fbcf5fea98f9d4e2021d",
-          "sha512": "1ca8c408a6b1eafd02136a5b0cf30d55ebb7aa4718d4b42ba2180f3d271edadc0af29c614ff9a51fba224bce84ca73e5cbb169899984255cd46561201b1545c7"
+          "sha512": "1ca8c408a6b1eafd02136a5b0cf30d55ebb7aa4718d4b42ba2180f3d271edadc0af29c614ff9a51fba224bce84ca73e5cbb169899984255cd46561201b1545c7",
+          "sha1": "57186b351fe8657e5b91fbcf5fea98f9d4e2021d"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/sGPVpzLh/architectury-8.1.72-fabric.jar",
         "filename": "architectury-8.1.72-fabric.jar",
@@ -7790,8 +7790,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2852baedebb659af21d530bd7e84b0bfea75a6c7a8486909adef14d8b8897f5ec6a673f8beb10a424ad45d2912c7ba76a38e4dfc75bc1fbb2ff94c1551d22f94",
-          "sha1": "19c3b151eaf3c9fe1ae3a6209b32fe264b77defc"
+          "sha1": "19c3b151eaf3c9fe1ae3a6209b32fe264b77defc",
+          "sha512": "2852baedebb659af21d530bd7e84b0bfea75a6c7a8486909adef14d8b8897f5ec6a673f8beb10a424ad45d2912c7ba76a38e4dfc75bc1fbb2ff94c1551d22f94"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/VwpnDGLt/architectury-7.1.70-fabric.jar",
         "filename": "architectury-7.1.70-fabric.jar",
@@ -7825,15 +7825,15 @@
     "changelog": "## Architectury v6.5.69 for 1.19.2\nUpdated at **2023-02-06 17:11**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)",
     "changelog_url": null,
     "date_published": "2023-02-06T17:12:33.137434Z",
-    "downloads": 60227,
+    "downloads": 60229,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0532d2448e91c7fe3455d817eebb6213b0e6f908c21178e5bd6a2fd5e77a4fe20c002de40c63af44eedef1caca8a84737b54cd27cb4528a0be30280a17002dde",
-          "sha1": "d41713392b9e70a7a36589918ca9bd65bc8cf762"
+          "sha1": "d41713392b9e70a7a36589918ca9bd65bc8cf762",
+          "sha512": "0532d2448e91c7fe3455d817eebb6213b0e6f908c21178e5bd6a2fd5e77a4fe20c002de40c63af44eedef1caca8a84737b54cd27cb4528a0be30280a17002dde"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1hOCMZsg/architectury-6.5.69-forge.jar",
         "filename": "architectury-6.5.69-forge.jar",
@@ -7861,7 +7861,7 @@
     "changelog": "## Architectury v6.5.69 for 1.19.2\nUpdated at **2023-02-06 17:11**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)",
     "changelog_url": null,
     "date_published": "2023-02-06T17:12:29.633773Z",
-    "downloads": 186495,
+    "downloads": 186498,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -8067,8 +8067,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "558935c7237b0e3b2e6a0941ade8091486f452f966c99408b3ac2641a9e1943d7304a37d4f7469d5b84a2e931df03dc85058c6c1ccd1d672b179ee83d5b50309",
-          "sha1": "740a2e6d60a4d20a03bff22611774c4f6ec90f48"
+          "sha1": "740a2e6d60a4d20a03bff22611774c4f6ec90f48",
+          "sha512": "558935c7237b0e3b2e6a0941ade8091486f452f966c99408b3ac2641a9e1943d7304a37d4f7469d5b84a2e931df03dc85058c6c1ccd1d672b179ee83d5b50309"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/2xqs1Y6b/architectury-4.11.89-fabric.jar",
         "filename": "architectury-4.11.89-fabric.jar",
@@ -8110,8 +8110,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "84bc1a35bf6894c744834a29169d60233d73ce57",
-          "sha512": "29f8ad070af6979069b41783d04f3c92ffdfd357b54931071916d2a692b649410eae06681c56097cefc75b262a0db12113a4b0a32b9bed8aa891a27880f2bf04"
+          "sha512": "29f8ad070af6979069b41783d04f3c92ffdfd357b54931071916d2a692b649410eae06681c56097cefc75b262a0db12113a4b0a32b9bed8aa891a27880f2bf04",
+          "sha1": "84bc1a35bf6894c744834a29169d60233d73ce57"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/41RubmTw/architectury-8.0.67-fabric.jar",
         "filename": "architectury-8.0.67-fabric.jar",
@@ -8145,7 +8145,7 @@
     "changelog": "## Architectury v7.0.66 for 1.19.3\nUpdated at **2022-12-23 15:03**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.3)\n- Add creative tab access wideners (#370)",
     "changelog_url": null,
     "date_published": "2022-12-23T15:04:31.548581Z",
-    "downloads": 9711,
+    "downloads": 9712,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -8230,8 +8230,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "cd4affa0a92f5d3489264edb3b244993cc3fd50d",
-          "sha512": "bf682b364b39975789653912af73c1da6b0df0f068da1462b12d820457b20ca9bf95e2ce5aae4d5e4005a302a30d86a5864f27ee2823b65107a045f61c1c31e6"
+          "sha512": "bf682b364b39975789653912af73c1da6b0df0f068da1462b12d820457b20ca9bf95e2ce5aae4d5e4005a302a30d86a5864f27ee2823b65107a045f61c1c31e6",
+          "sha1": "cd4affa0a92f5d3489264edb3b244993cc3fd50d"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/s1gmP0Q3/architectury-7.0.65-forge.jar",
         "filename": "architectury-7.0.65-forge.jar",
@@ -8266,8 +8266,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e198f338f656b6c4062bc0a7841372e126d98cb8",
-          "sha512": "88340d1e885ae9e2fec6e52a7172fef5ba4470e46910877ca68f3a9874353950cc71adf3c1c600fc949c6b45364e0d661ed993413c13e317ffd3b320e4f89c76"
+          "sha512": "88340d1e885ae9e2fec6e52a7172fef5ba4470e46910877ca68f3a9874353950cc71adf3c1c600fc949c6b45364e0d661ed993413c13e317ffd3b320e4f89c76",
+          "sha1": "e198f338f656b6c4062bc0a7841372e126d98cb8"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Z7iWDzqB/architectury-7.0.65-fabric.jar",
         "filename": "architectury-7.0.65-fabric.jar",
@@ -8308,8 +8308,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "bf368b118bb06a6ef58a2836fe76f0f411835a3c",
-          "sha512": "d1a9fb61c29a7e7603728c9aa00c940a320838a56b3d4030e755ab56aaf546ee3374d59eb33944b06bef7b8c71069b9b435561b71a457850e57f4f0735e1cf67"
+          "sha512": "d1a9fb61c29a7e7603728c9aa00c940a320838a56b3d4030e755ab56aaf546ee3374d59eb33944b06bef7b8c71069b9b435561b71a457850e57f4f0735e1cf67",
+          "sha1": "bf368b118bb06a6ef58a2836fe76f0f411835a3c"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/WFvj4t0k/architectury-7.0.64-forge.jar",
         "filename": "architectury-7.0.64-forge.jar",
@@ -8493,7 +8493,7 @@
     "changelog": "## Architectury v6.4.62 for 1.19.2\nUpdated at **2022-12-08 18:01**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)\n- *Actually* use fabric-api dependency in fmj...",
     "changelog_url": null,
     "date_published": "2022-12-08T18:02:26.29354Z",
-    "downloads": 88499,
+    "downloads": 88513,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -8620,8 +8620,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ec9f9f08149aedf52b99a721e70984a753d796b6ebe43be3ebc193802e462573babf27ef07278937c2e0676375ca11d7574c58b67da0accdb204038ab218ab64",
-          "sha1": "3e319c7308718645a30c574c555c197b751d562f"
+          "sha1": "3e319c7308718645a30c574c555c197b751d562f",
+          "sha512": "ec9f9f08149aedf52b99a721e70984a753d796b6ebe43be3ebc193802e462573babf27ef07278937c2e0676375ca11d7574c58b67da0accdb204038ab218ab64"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/9yZyQCYh/architectury-5.13.60-forge.jar",
         "filename": "architectury-5.13.60-forge.jar",
@@ -8656,8 +8656,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b03dd273a893c0e584a43b5ec73101e07b6a4faad0cbbc5ab2dae7b0e6a861d8133787920983e7fa3844dba250fb4648820801b18793479c37e1d65a9a33f88f",
-          "sha1": "d6bede7a6930ccbf6c6062aa28bbf840468de335"
+          "sha1": "d6bede7a6930ccbf6c6062aa28bbf840468de335",
+          "sha512": "b03dd273a893c0e584a43b5ec73101e07b6a4faad0cbbc5ab2dae7b0e6a861d8133787920983e7fa3844dba250fb4648820801b18793479c37e1d65a9a33f88f"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ZZxvV3Kl/architectury-5.13.60-fabric.jar",
         "filename": "architectury-5.13.60-fabric.jar",
@@ -8727,15 +8727,15 @@
     "changelog": "## Architectury v4.10.88 for 1.18.2\nUpdated at **2022-12-08 16:55**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.18.2)\n- Fix injection point on lightning strike event (#352)",
     "changelog_url": null,
     "date_published": "2022-12-08T16:56:39.936255Z",
-    "downloads": 7547,
+    "downloads": 7548,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "dfdd74e470939f58d1709a0a921c04b13ae96429",
-          "sha512": "c094dd6f9154a4f694019e11db12eb4379a65e819ac810e5ddf25dffa2e8dde6b4169ef33b560c6abf287016ceec53f579046997e86d6d0601990d8d9c99c0a0"
+          "sha512": "c094dd6f9154a4f694019e11db12eb4379a65e819ac810e5ddf25dffa2e8dde6b4169ef33b560c6abf287016ceec53f579046997e86d6d0601990d8d9c99c0a0",
+          "sha1": "dfdd74e470939f58d1709a0a921c04b13ae96429"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/ejJFmhZW/architectury-4.10.88-fabric.jar",
         "filename": "architectury-4.10.88-fabric.jar",
@@ -8813,7 +8813,7 @@
     "changelog": "## Architectury v6.3.56 for 1.19.1/2\nUpdated at **2022-11-22 17:58**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)",
     "changelog_url": null,
     "date_published": "2022-11-22T17:59:08.744784Z",
-    "downloads": 6865,
+    "downloads": 6866,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -8850,15 +8850,15 @@
     "changelog": "## Architectury v6.3.56 for 1.19.1/2\nUpdated at **2022-11-22 17:58**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)",
     "changelog_url": null,
     "date_published": "2022-11-22T17:59:05.096694Z",
-    "downloads": 12639,
+    "downloads": 12641,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4d3a5bfe0f9095a79e8695950749a2c4a71d789c20ca06139ea709dc465fd19538911fff30bfea8aceec56cdb89ae04b16a557e2cd8e817217c3a06db56d9401",
-          "sha1": "7ab3aa9894a9b5314e978e1f2ad10c5a163a186c"
+          "sha1": "7ab3aa9894a9b5314e978e1f2ad10c5a163a186c",
+          "sha512": "4d3a5bfe0f9095a79e8695950749a2c4a71d789c20ca06139ea709dc465fd19538911fff30bfea8aceec56cdb89ae04b16a557e2cd8e817217c3a06db56d9401"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/MGP3b9Aq/architectury-6.3.56-fabric.jar",
         "filename": "architectury-6.3.56-fabric.jar",
@@ -8935,8 +8935,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1bbc8d74832760b8d9667f7331be029e9c8b59b545ddaafbe95951a948c84fb1350a187b75613e39881addcdd0a2ebbf40c58df65ace2098142cce45b80d36bd",
-          "sha1": "c516d21d7900bb625f5d9d523e80a07ce34f5eb9"
+          "sha1": "c516d21d7900bb625f5d9d523e80a07ce34f5eb9",
+          "sha512": "1bbc8d74832760b8d9667f7331be029e9c8b59b545ddaafbe95951a948c84fb1350a187b75613e39881addcdd0a2ebbf40c58df65ace2098142cce45b80d36bd"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/lvNmFud9/architectury-5.13.55-fabric.jar",
         "filename": "architectury-5.13.55-fabric.jar",
@@ -9021,8 +9021,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "25ab4483d4c459d9ff97d810c346b4d18fb88746",
-          "sha512": "775656d250c856c327c5f878e0a459acc542077bff83b3de798b1edaa315862676e32cb285a708917c222e837cf356fe80cb1d4974d3c48ad23c407709da3d09"
+          "sha512": "775656d250c856c327c5f878e0a459acc542077bff83b3de798b1edaa315862676e32cb285a708917c222e837cf356fe80cb1d4974d3c48ad23c407709da3d09",
+          "sha1": "25ab4483d4c459d9ff97d810c346b4d18fb88746"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/iIYfuRMT/architectury-7.0.52-fabric.jar",
         "filename": "architectury-7.0.52-fabric.jar",
@@ -9064,8 +9064,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a89217e0be093518e4693ec13d02c148b9820a24",
-          "sha512": "2081d6dc5804e0ad70f72e1e513e81b0370c8f68ba5e222e003e036a50345d238d8a9525864bbede58e8eec1a094395ff5846fd0a4cc962394258088e3b6be01"
+          "sha512": "2081d6dc5804e0ad70f72e1e513e81b0370c8f68ba5e222e003e036a50345d238d8a9525864bbede58e8eec1a094395ff5846fd0a4cc962394258088e3b6be01",
+          "sha1": "a89217e0be093518e4693ec13d02c148b9820a24"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/MSHtHE4s/architectury-7.0.51-fabric.jar",
         "filename": "architectury-7.0.51-fabric.jar",
@@ -9137,15 +9137,15 @@
     "changelog": "## Architectury v6.3.49 for 1.19.1/2\nUpdated at **2022-10-22 17:16**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)",
     "changelog_url": null,
     "date_published": "2022-10-22T17:17:13.530734Z",
-    "downloads": 14442,
+    "downloads": 14445,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "47df57444cabb8f107e72dc626f64b0c968c0094c51bbb58e12010b06b77a2516b1606cdea58bac1b0a257aab760f726672305910ca70b07acb5113c0ec7611a",
-          "sha1": "9c6173d2c38306fd8f87d33e259d33fecb5e1dea"
+          "sha1": "9c6173d2c38306fd8f87d33e259d33fecb5e1dea",
+          "sha512": "47df57444cabb8f107e72dc626f64b0c968c0094c51bbb58e12010b06b77a2516b1606cdea58bac1b0a257aab760f726672305910ca70b07acb5113c0ec7611a"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/KE5bu0Vd/architectury-6.3.49-fabric.jar",
         "filename": "architectury-6.3.49-fabric.jar",
@@ -9264,8 +9264,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "bfc821dbea22f2991fc15bdb9e6826062ea60c93",
-          "sha512": "9dd794e80eb4c6ed766757c670b235164486b74fdc81c78d20a7f821e3c8bb904dd61d66d10a971108ac6bdf6b3bf3e1d00647c43138781de027d7673c6f9f47"
+          "sha512": "9dd794e80eb4c6ed766757c670b235164486b74fdc81c78d20a7f821e3c8bb904dd61d66d10a971108ac6bdf6b3bf3e1d00647c43138781de027d7673c6f9f47",
+          "sha1": "bfc821dbea22f2991fc15bdb9e6826062ea60c93"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/FkwCidMg/architectury-4.10.86-forge.jar",
         "filename": "architectury-4.10.86-forge.jar",
@@ -9293,7 +9293,7 @@
     "changelog": "## Architectury v4.10.86 for 1.18.2\nUpdated at **2022-10-22 17:11**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.18.2)\n- Bump to 4.10",
     "changelog_url": null,
     "date_published": "2022-10-22T17:12:05.91014Z",
-    "downloads": 7480,
+    "downloads": 7481,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9500,8 +9500,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a932a1af3d344144dd95cd202fd5a9478242e01e",
-          "sha512": "6c0f8783b5bd6e4eeca92149b27bea643c73bad4abc8d27cf6d467ee79caa0461c49948776713626daf43ecf660884996a57fbd78adf60c1a80b0d40b0cc3679"
+          "sha512": "6c0f8783b5bd6e4eeca92149b27bea643c73bad4abc8d27cf6d467ee79caa0461c49948776713626daf43ecf660884996a57fbd78adf60c1a80b0d40b0cc3679",
+          "sha1": "a932a1af3d344144dd95cd202fd5a9478242e01e"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/TZRm0P23/architectury-4.9.84-forge.jar",
         "filename": "architectury-4.9.84-forge.jar",
@@ -9578,8 +9578,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cffda24da3e4788a1722b0213c2580018d6946465824ee8d184ade2a6811bd0a4eeea8ac80a17ccdc22d7c28677e5d216403b64fa4b466f46e828afd657f24d8",
-          "sha1": "bb15a6e7eebfa28133b8221837761b1adf8626e8"
+          "sha1": "bb15a6e7eebfa28133b8221837761b1adf8626e8",
+          "sha512": "cffda24da3e4788a1722b0213c2580018d6946465824ee8d184ade2a6811bd0a4eeea8ac80a17ccdc22d7c28677e5d216403b64fa4b466f46e828afd657f24d8"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Qg9loogH/architectury-5.12.44-forge.jar",
         "filename": "architectury-5.12.44-forge.jar",
@@ -9649,15 +9649,15 @@
     "changelog": "## Architectury v4.9.83 for 1.18.2\nUpdated at **2022-08-11 11:12**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.18.2)\n- Bump to 4.9",
     "changelog_url": null,
     "date_published": "2022-08-11T11:13:28.403669Z",
-    "downloads": 10259,
+    "downloads": 10260,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "279f62fccd697ea1ba0cdb3d32fa4687ca2cfc7b",
-          "sha512": "79fc53fa0c6ce1203032d7fc2fddec6f00ffa0d6954b2f0b03c736d83eeaa693308cfc3672cf1a93834759eab9f281318a3228621a108b9ef46384d3c52d5415"
+          "sha512": "79fc53fa0c6ce1203032d7fc2fddec6f00ffa0d6954b2f0b03c736d83eeaa693308cfc3672cf1a93834759eab9f281318a3228621a108b9ef46384d3c52d5415",
+          "sha1": "279f62fccd697ea1ba0cdb3d32fa4687ca2cfc7b"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.9.83%2Bforge/architectury-4.9.83-forge.jar",
         "filename": "architectury-4.9.83-forge.jar",
@@ -9685,7 +9685,7 @@
     "changelog": "## Architectury v4.9.83 for 1.18.2\nUpdated at **2022-08-11 11:12**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.18.2)\n- Bump to 4.9",
     "changelog_url": null,
     "date_published": "2022-08-11T11:13:25.96489Z",
-    "downloads": 7697,
+    "downloads": 7698,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9734,8 +9734,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "eb63799d72ba84f605e537bf1bfeb0abbe78e6d8",
-          "sha512": "1dec9aa323ef1e4605a2269804f74939a6f23b802c066511a92f525c1d980737d453276de3361eed974d453cd82546140503718b5712ad5bb43759688dee08a1"
+          "sha512": "1dec9aa323ef1e4605a2269804f74939a6f23b802c066511a92f525c1d980737d453276de3361eed974d453cd82546140503718b5712ad5bb43759688dee08a1",
+          "sha1": "eb63799d72ba84f605e537bf1bfeb0abbe78e6d8"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.12.42%2Bforge/architectury-5.12.42-forge.jar",
         "filename": "architectury-5.12.42-forge.jar",
@@ -9770,8 +9770,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "460f602a60e19992c5f10d3b36625067ece4454e",
-          "sha512": "3fdb7cf949b495de94f8ab4fda25112f8c870c8a55fefda8336b8de4a97f346682519503d6ceccf34f7b3f6aa9c34b679496ab89d7009446307b3ebff43731b5"
+          "sha512": "3fdb7cf949b495de94f8ab4fda25112f8c870c8a55fefda8336b8de4a97f346682519503d6ceccf34f7b3f6aa9c34b679496ab89d7009446307b3ebff43731b5",
+          "sha1": "460f602a60e19992c5f10d3b36625067ece4454e"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.12.42%2Bfabric/architectury-5.12.42-fabric.jar",
         "filename": "architectury-5.12.42-fabric.jar",
@@ -9813,8 +9813,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e4de85611a95bddeac15a9ba2904960d508bc130",
-          "sha512": "25f2dcdc3e5271a472463554d335cacfad8a7b188e9d9330c8ce49985d37f9179507ccc73874be69d9173005670f1def2ff385e16646a1bbf624990c894aee6a"
+          "sha512": "25f2dcdc3e5271a472463554d335cacfad8a7b188e9d9330c8ce49985d37f9179507ccc73874be69d9173005670f1def2ff385e16646a1bbf624990c894aee6a",
+          "sha1": "e4de85611a95bddeac15a9ba2904960d508bc130"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/6.2.43%2Bforge/architectury-6.2.43-forge.jar",
         "filename": "architectury-6.2.43-forge.jar",
@@ -9843,7 +9843,7 @@
     "changelog": "## Architectury v6.2.43 for 1.19.1/2\nUpdated at **2022-08-11 11:10**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19.2)",
     "changelog_url": null,
     "date_published": "2022-08-11T11:11:06.762063Z",
-    "downloads": 6469,
+    "downloads": 6470,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9892,8 +9892,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b1b04b27fa6aab44577c0e884d4ba5edca88a836",
-          "sha512": "2a7bd01be64c92fab2dc34f6f9ab8de00063f88137b4ad26ad1c30e1657362778935d967030e47959e537f9f019c9671c0f426737e485b37aa7fa7440262eeb0"
+          "sha512": "2a7bd01be64c92fab2dc34f6f9ab8de00063f88137b4ad26ad1c30e1657362778935d967030e47959e537f9f019c9671c0f426737e485b37aa7fa7440262eeb0",
+          "sha1": "b1b04b27fa6aab44577c0e884d4ba5edca88a836"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.8.82%2Bforge/architectury-4.8.82-forge.jar",
         "filename": "architectury-4.8.82-forge.jar",
@@ -10008,8 +10008,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "54fbfbb90317071902a3a184eead2503f5210dcfd7b30e4868c88f99342b00a53580e4577800153ff4643015817904b2872756410d46c9da79f98eae98649022",
-          "sha1": "5bccc5a69c10ea344fc8edeb56a6bf0bd45bde10"
+          "sha1": "5bccc5a69c10ea344fc8edeb56a6bf0bd45bde10",
+          "sha512": "54fbfbb90317071902a3a184eead2503f5210dcfd7b30e4868c88f99342b00a53580e4577800153ff4643015817904b2872756410d46c9da79f98eae98649022"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/6.1.41%2Bfabric/architectury-6.1.41-fabric.jar",
         "filename": "architectury-6.1.41-fabric.jar",
@@ -10050,8 +10050,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fe07c00816ae5fb091ff3518d9ce2b20986e6990",
-          "sha512": "bfb03da8988bee0281c79d4eda58e2567d5c0379393c35174f8405e4c0788aa0e5e2c0fe510a89bc8d6daaec31c81ee65ef1f9e4f58da38226a9d1979a86fe58"
+          "sha512": "bfb03da8988bee0281c79d4eda58e2567d5c0379393c35174f8405e4c0788aa0e5e2c0fe510a89bc8d6daaec31c81ee65ef1f9e4f58da38226a9d1979a86fe58",
+          "sha1": "fe07c00816ae5fb091ff3518d9ce2b20986e6990"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.11.40%2Bforge/architectury-5.11.40-forge.jar",
         "filename": "architectury-5.11.40-forge.jar",
@@ -10164,8 +10164,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6502e242d59d3ccb4c005cfd35b675dbe235ab88",
-          "sha512": "55eb1e35f17de051180faf989e7c30d065640d173d259bc29cc14d603abcaa7e64f1d4aedebf6cfe6bdc90a44de3a7e8376019ab764ba32d44b35285952f46ad"
+          "sha512": "55eb1e35f17de051180faf989e7c30d065640d173d259bc29cc14d603abcaa7e64f1d4aedebf6cfe6bdc90a44de3a7e8376019ab764ba32d44b35285952f46ad",
+          "sha1": "6502e242d59d3ccb4c005cfd35b675dbe235ab88"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/6.1.39%2Bforge/architectury-6.1.39-forge.jar",
         "filename": "architectury-6.1.39-forge.jar",
@@ -10201,8 +10201,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2611e7f6e584c0d613cad854d20c4b61ad7042f1",
-          "sha512": "f380d9f3a78a6ec32fa09632bf48c87e5ab1cd86d11ee37756c335297df930bb7b15633c13ea3d3debbb51336a36bd8938a70e3550c869c4cd563ba8caf1dbe5"
+          "sha512": "f380d9f3a78a6ec32fa09632bf48c87e5ab1cd86d11ee37756c335297df930bb7b15633c13ea3d3debbb51336a36bd8938a70e3550c869c4cd563ba8caf1dbe5",
+          "sha1": "2611e7f6e584c0d613cad854d20c4b61ad7042f1"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/6.1.39%2Bfabric/architectury-6.1.39-fabric.jar",
         "filename": "architectury-6.1.39-fabric.jar",
@@ -10244,8 +10244,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "73543ba963d4548ef782bfe1a380a5bb7b9d185a",
-          "sha512": "2a990efc4825de7c4bcb01668b363f92c4be805c9a3f4d0f990adfe709c26e6aa62d47a467cff41138c59a6333fd1a7367c65974a2cb1590e39e8186850a64db"
+          "sha512": "2a990efc4825de7c4bcb01668b363f92c4be805c9a3f4d0f990adfe709c26e6aa62d47a467cff41138c59a6333fd1a7367c65974a2cb1590e39e8186850a64db",
+          "sha1": "73543ba963d4548ef782bfe1a380a5bb7b9d185a"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.8.81%2Bfabric/architectury-4.8.81-fabric.jar",
         "filename": "architectury-4.8.81-fabric.jar",
@@ -10322,8 +10322,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "446b6c2b79bc837b2931c9eaeafb9eb3b3f2870f164acd49a05b96f881134efb83be9dd24184644d10ef7c201245affa1eca9c8ba7e77cfdea927dbc103c88a0",
-          "sha1": "cd2d15498477ed6a910bb03fe76bb48c4f05eb7e"
+          "sha1": "cd2d15498477ed6a910bb03fe76bb48c4f05eb7e",
+          "sha512": "446b6c2b79bc837b2931c9eaeafb9eb3b3f2870f164acd49a05b96f881134efb83be9dd24184644d10ef7c201245affa1eca9c8ba7e77cfdea927dbc103c88a0"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.11.38%2Bfabric/architectury-5.11.38-fabric.jar",
         "filename": "architectury-5.11.38-fabric.jar",
@@ -10400,8 +10400,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a035ea50db865ee77a34b44af86a523edaecbca9a245c9e4f5a1c2a38a4eef0008536c49fda3a3f7cdedb5c37132a8ef5f618222f392fc6ff879627494a58bc5",
-          "sha1": "24902751a6d74fd4889f29e0bbf773372d43b51e"
+          "sha1": "24902751a6d74fd4889f29e0bbf773372d43b51e",
+          "sha512": "a035ea50db865ee77a34b44af86a523edaecbca9a245c9e4f5a1c2a38a4eef0008536c49fda3a3f7cdedb5c37132a8ef5f618222f392fc6ff879627494a58bc5"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.8.80%2Bfabric/architectury-4.8.80-fabric.jar",
         "filename": "architectury-4.8.80-fabric.jar",
@@ -10521,8 +10521,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b6421aaf28b9cf5fb79e8fe81dd969a3bb068f5d",
-          "sha512": "51e79ccb5e286fbcc9285c524c981154d698e576c4f08d13d6946759768d0171a1d6e6aea16b1e54cae2ea5b44793c499c49cbe028549ace507c2e5a975ea6ba"
+          "sha512": "51e79ccb5e286fbcc9285c524c981154d698e576c4f08d13d6946759768d0171a1d6e6aea16b1e54cae2ea5b44793c499c49cbe028549ace507c2e5a975ea6ba",
+          "sha1": "b6421aaf28b9cf5fb79e8fe81dd969a3bb068f5d"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/6.0.37%2Bforge/architectury-6.0.37-forge.jar",
         "filename": "architectury-6.0.37-forge.jar",
@@ -10558,8 +10558,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0257c99eea90473fd1ccfc72f1b9b3f4460de6663eeb565efe060d87bacd1d92fdc61527785bc29821788b507cd993c6d53b49cbb1333b889280921f041488f8",
-          "sha1": "1d8522d3dfc97bc77690886f56fbca927167baf0"
+          "sha1": "1d8522d3dfc97bc77690886f56fbca927167baf0",
+          "sha512": "0257c99eea90473fd1ccfc72f1b9b3f4460de6663eeb565efe060d87bacd1d92fdc61527785bc29821788b507cd993c6d53b49cbb1333b889280921f041488f8"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/6.0.37%2Bfabric/architectury-6.0.37-fabric.jar",
         "filename": "architectury-6.0.37-fabric.jar",
@@ -10600,8 +10600,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "fdf510161d073257f010e3fc64d471aecc1d24c78630dd37280a70315e7d511e95b4248be3e98a0947cce8806e3309fc20525037652e6e6af70d049b782821b8",
-          "sha1": "ecb892173d92db742a31efd30d3a9968dd82b5df"
+          "sha1": "ecb892173d92db742a31efd30d3a9968dd82b5df",
+          "sha512": "fdf510161d073257f010e3fc64d471aecc1d24c78630dd37280a70315e7d511e95b4248be3e98a0947cce8806e3309fc20525037652e6e6af70d049b782821b8"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.10.36%2Bforge/architectury-5.10.36-forge.jar",
         "filename": "architectury-5.10.36-forge.jar",
@@ -10636,8 +10636,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6e366d9691072dd664b5a9abe889eac58ab24c94",
-          "sha512": "a8550e2b9e0c8ef1aa6148ce99ca2183546d7e5b4ecfd2def0c2bc907f1211915c41c1b96b04f08cf185d600ae19106fe63ef74f2330e92bfd59081a1c20f978"
+          "sha512": "a8550e2b9e0c8ef1aa6148ce99ca2183546d7e5b4ecfd2def0c2bc907f1211915c41c1b96b04f08cf185d600ae19106fe63ef74f2330e92bfd59081a1c20f978",
+          "sha1": "6e366d9691072dd664b5a9abe889eac58ab24c94"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.10.36%2Bfabric/architectury-5.10.36-fabric.jar",
         "filename": "architectury-5.10.36-fabric.jar",
@@ -10678,8 +10678,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "20ff2e508a26511d67c8402ddc8d231a4888fe65",
-          "sha512": "7db1748aeee3262b2ac26262c8aafe87614eaaf262cf280c32f896d2423eac461d80a4b5578176a83dc1b07eb8c5adcdd54dcad14c04625e41ba5cf17a30bc81"
+          "sha512": "7db1748aeee3262b2ac26262c8aafe87614eaaf262cf280c32f896d2423eac461d80a4b5578176a83dc1b07eb8c5adcdd54dcad14c04625e41ba5cf17a30bc81",
+          "sha1": "20ff2e508a26511d67c8402ddc8d231a4888fe65"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/6.0.35%2Bforge/architectury-6.0.35-forge.jar",
         "filename": "architectury-6.0.35-forge.jar",
@@ -10714,8 +10714,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b6b513929e39590f82167ad67b5b79c76758eccc754c7354184176e401a5a05fde02bbdf1f19a0ed330c46a39a03fa97a2e5ecf8b6f99f419ff146e67f958cbf",
-          "sha1": "07ee08a76b1a72e91fb3dc07fdbf6e1a4dcae256"
+          "sha1": "07ee08a76b1a72e91fb3dc07fdbf6e1a4dcae256",
+          "sha512": "b6b513929e39590f82167ad67b5b79c76758eccc754c7354184176e401a5a05fde02bbdf1f19a0ed330c46a39a03fa97a2e5ecf8b6f99f419ff146e67f958cbf"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/6.0.35%2Bfabric/architectury-6.0.35-fabric.jar",
         "filename": "architectury-6.0.35-fabric.jar",
@@ -10756,8 +10756,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7fd720cf5ef8f2e76df7ea4efdb8eb17a1a2fd3b",
-          "sha512": "c85e543962094061146761100e0254885e2a7d9c0b8863205d486a865d9559a4fb690abc3c658f7a17be025a4b456286d6740a59bbea5edf23f1cccd1c98d485"
+          "sha512": "c85e543962094061146761100e0254885e2a7d9c0b8863205d486a865d9559a4fb690abc3c658f7a17be025a4b456286d6740a59bbea5edf23f1cccd1c98d485",
+          "sha1": "7fd720cf5ef8f2e76df7ea4efdb8eb17a1a2fd3b"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.7.78%2Bforge/architectury-4.7.78-forge.jar",
         "filename": "architectury-4.7.78-forge.jar",
@@ -11104,8 +11104,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5fc7dfadc52f0ccf0bd0f49a0378c20013badff70b53279ab9079dbfdf752a50f686ebc317eef56b66e4581f1556774b50851719ea909883b5ce871ceb0766ca",
-          "sha1": "365428e498dca12829501385212359e835a39f87"
+          "sha1": "365428e498dca12829501385212359e835a39f87",
+          "sha512": "5fc7dfadc52f0ccf0bd0f49a0378c20013badff70b53279ab9079dbfdf752a50f686ebc317eef56b66e4581f1556774b50851719ea909883b5ce871ceb0766ca"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.10.32%2Bfabric/architectury-5.10.32-fabric.jar",
         "filename": "architectury-5.10.32-fabric.jar",
@@ -11302,8 +11302,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f6fc2db2e606fa96dc52510614c5393b94ae1186",
-          "sha512": "9ca6f9e4ad3f2b5a63b92c7e1891f1eee8c4b439064aba14260ff180013ad18d6925bcf140828db89a981bebdb073707476d9cc3e43e09d63da3b0e255dc7868"
+          "sha512": "9ca6f9e4ad3f2b5a63b92c7e1891f1eee8c4b439064aba14260ff180013ad18d6925bcf140828db89a981bebdb073707476d9cc3e43e09d63da3b0e255dc7868",
+          "sha1": "f6fc2db2e606fa96dc52510614c5393b94ae1186"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.8.29%2Bforge/architectury-5.8.29-forge.jar",
         "filename": "architectury-5.8.29-forge.jar",
@@ -11331,15 +11331,15 @@
     "changelog": "## Architectury v5.8.29 for 1.19\nUpdated at **2022-07-08 15:10**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19)\n- Fix Support for 41.0.64 (#292)",
     "changelog_url": null,
     "date_published": "2022-07-08T15:11:45.925507Z",
-    "downloads": 820,
+    "downloads": 821,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b452854ef6823e407ed7337b6f5397f7ba1f7d35957654c065a6117e806aba958fe85f449602774afb394f61805c4be50933a9f378153fc2c1e0bfbed004d7bc",
-          "sha1": "900f1d9509534600a151d0eeaeb472a1fbba9d81"
+          "sha1": "900f1d9509534600a151d0eeaeb472a1fbba9d81",
+          "sha512": "b452854ef6823e407ed7337b6f5397f7ba1f7d35957654c065a6117e806aba958fe85f449602774afb394f61805c4be50933a9f378153fc2c1e0bfbed004d7bc"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.8.29%2Bfabric/architectury-5.8.29-fabric.jar",
         "filename": "architectury-5.8.29-fabric.jar",
@@ -11373,15 +11373,15 @@
     "changelog": "<h2>Architectury v1.32.66 for 1.16.5</h2>Updated at <b>2022-07-03 10:19</b>.<br><a href=\"https://www.github.com/architectury/architectury/commits/1.16\">Click here for changelog</a><br>- Fix missing field type",
     "changelog_url": null,
     "date_published": "2022-07-03T10:19:45.340161Z",
-    "downloads": 47852,
+    "downloads": 47858,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "942f1efbbc550adac2b5a998483a08fc4521a98d26a332b670a6651cbe0a8155cea687887d5b15a197aca2988764afa26c8e95e6536df6fec212aded1cf86dd0",
-          "sha1": "e0f8a7569e033feea68e3d18e243ba13b36b0a9d"
+          "sha1": "e0f8a7569e033feea68e3d18e243ba13b36b0a9d",
+          "sha512": "942f1efbbc550adac2b5a998483a08fc4521a98d26a332b670a6651cbe0a8155cea687887d5b15a197aca2988764afa26c8e95e6536df6fec212aded1cf86dd0"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1.32.66%2Bforge/architectury-1.32.66.jar",
         "filename": "architectury-1.32.66.jar",
@@ -11415,8 +11415,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "246ba36a1759471a97d29df4b2a562a640808736",
-          "sha512": "0dcc9086b330764426ac94e5586e34cbdfc07ba31780791519a22d7d90f23219c4d2ad9024bf96f0a4edb92bd7f7005d8aefb3be862d703e70dee7f90243961f"
+          "sha512": "0dcc9086b330764426ac94e5586e34cbdfc07ba31780791519a22d7d90f23219c4d2ad9024bf96f0a4edb92bd7f7005d8aefb3be862d703e70dee7f90243961f",
+          "sha1": "246ba36a1759471a97d29df4b2a562a640808736"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1.32.66%2Bfabric/architectury-1.32.66.jar",
         "filename": "architectury-1.32.66.jar",
@@ -11493,8 +11493,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "103831783a28ea578a9bd30657d225f507a7ea40",
-          "sha512": "acbee8bb5f4746b2f2c5c66b0ab212d113d1cbd9bc1ec9759d7bde1da8b0891da2f25cf23cb1df990b2a0b29c95053a69a1dfb992b58fcbf62eec90466668f95"
+          "sha512": "acbee8bb5f4746b2f2c5c66b0ab212d113d1cbd9bc1ec9759d7bde1da8b0891da2f25cf23cb1df990b2a0b29c95053a69a1dfb992b58fcbf62eec90466668f95",
+          "sha1": "103831783a28ea578a9bd30657d225f507a7ea40"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.5.76%2Bfabric/architectury-4.5.76-fabric.jar",
         "filename": "architectury-4.5.76-fabric.jar",
@@ -11564,7 +11564,7 @@
     "changelog": "## Architectury v5.7.28 for 1.19\nUpdated at **2022-06-22 10:29**.\n[Click here for changelog](https://www.github.com/architectury/architectury/commits/1.19)",
     "changelog_url": null,
     "date_published": "2022-06-22T10:29:54.421791Z",
-    "downloads": 17186,
+    "downloads": 17189,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -11613,8 +11613,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "56a7da3a5fc9712bf194f6e1f2cb7c7dc6aafdccb93bea4bd994d7b92a31b2bb4f6ad80381a73cb262645da73ebcf13319bc9899548b872a949ff644cb22c48a",
-          "sha1": "88029fbe2442fd4da98b83860689676cad4d5658"
+          "sha1": "88029fbe2442fd4da98b83860689676cad4d5658",
+          "sha512": "56a7da3a5fc9712bf194f6e1f2cb7c7dc6aafdccb93bea4bd994d7b92a31b2bb4f6ad80381a73cb262645da73ebcf13319bc9899548b872a949ff644cb22c48a"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.5.75%2Bforge/architectury-4.5.75-forge.jar",
         "filename": "architectury-4.5.75-forge.jar",
@@ -11727,8 +11727,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b1585ffd38c67619101e86c3c6319fa52efebf7c",
-          "sha512": "7b984bfdd69b6c1877cbb838a21bf35f860e3e069e7e8466ffe4437a27333f421fe8d7b4ab7f6142eea36638102293afa49e712a6be14ff35573e451bc1d86a1"
+          "sha512": "7b984bfdd69b6c1877cbb838a21bf35f860e3e069e7e8466ffe4437a27333f421fe8d7b4ab7f6142eea36638102293afa49e712a6be14ff35573e451bc1d86a1",
+          "sha1": "b1585ffd38c67619101e86c3c6319fa52efebf7c"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.7.27%2Bfabric/architectury-5.7.27-fabric.jar",
         "filename": "architectury-5.7.27-fabric.jar",
@@ -11805,8 +11805,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9a81f012c714d47482ea1fbc6a5b139799dca32c",
-          "sha512": "86bd698fd1584379f7a8042fd3f990c7cd6843ad868ebe9b47eb64840b455ee830dd0d5ddf90b2e50d1c80b0709b7e63025bd6c5997d59b366939df288a5156e"
+          "sha512": "86bd698fd1584379f7a8042fd3f990c7cd6843ad868ebe9b47eb64840b455ee830dd0d5ddf90b2e50d1c80b0709b7e63025bd6c5997d59b366939df288a5156e",
+          "sha1": "9a81f012c714d47482ea1fbc6a5b139799dca32c"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.5.74%2Bfabric/architectury-4.5.74-fabric.jar",
         "filename": "architectury-4.5.74-fabric.jar",
@@ -11847,8 +11847,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9d3beda8d43770d0a488ac6ed7ca7200acc47bc2",
-          "sha512": "8fb8b65cd3b14dd60e711854910c67593bea71018f4d5fb76d9c05995fc167d236583ae5969fe4c9f5c833d1efc54c2e749759ca6c3db743b1d4ff57fab40eb9"
+          "sha512": "8fb8b65cd3b14dd60e711854910c67593bea71018f4d5fb76d9c05995fc167d236583ae5969fe4c9f5c833d1efc54c2e749759ca6c3db743b1d4ff57fab40eb9",
+          "sha1": "9d3beda8d43770d0a488ac6ed7ca7200acc47bc2"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.7.26%2Bforge/architectury-5.7.26.jar",
         "filename": "architectury-5.7.26.jar",
@@ -11883,8 +11883,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "81d13513dbc8da289ba1a2c35baeae713026a1caebc4d5ab461d3f799c460c5eb0add35263eb10065334d437b0abcaf906baa0f68ca2cd0fffe787ffa8f5b4a0",
-          "sha1": "6960cec21a487a73ae99e5a21379e1d1c075e3c4"
+          "sha1": "6960cec21a487a73ae99e5a21379e1d1c075e3c4",
+          "sha512": "81d13513dbc8da289ba1a2c35baeae713026a1caebc4d5ab461d3f799c460c5eb0add35263eb10065334d437b0abcaf906baa0f68ca2cd0fffe787ffa8f5b4a0"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.7.26%2Bfabric/architectury-5.7.26.jar",
         "filename": "architectury-5.7.26.jar",
@@ -11925,8 +11925,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2c933f7a01c260ba933b41f938d88b20afed9408",
-          "sha512": "69666e81a161e511670371bbf3c408ebebd8b7690e91adad03dad4df5a81c6c548744d74ed3c6aaebdbbaf8d30b9b3b943e7b00c7c7b9ef956ce2c9db430bf06"
+          "sha512": "69666e81a161e511670371bbf3c408ebebd8b7690e91adad03dad4df5a81c6c548744d74ed3c6aaebdbbaf8d30b9b3b943e7b00c7c7b9ef956ce2c9db430bf06",
+          "sha1": "2c933f7a01c260ba933b41f938d88b20afed9408"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.5.73%2Bforge/architectury-4.5.73.jar",
         "filename": "architectury-4.5.73.jar",
@@ -11961,8 +11961,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "65f18d5b07d8d0041c463640c3c0464c796c7143",
-          "sha512": "a77d21d472f4e3e6b67f43a8bc84bab155ec6e23ccd565d8d3ebf4b067f209e979d5aecd7cf909e06cef26c5ed8d31e8cfa7b561f7dec13837e3144f1d898bea"
+          "sha512": "a77d21d472f4e3e6b67f43a8bc84bab155ec6e23ccd565d8d3ebf4b067f209e979d5aecd7cf909e06cef26c5ed8d31e8cfa7b561f7dec13837e3144f1d898bea",
+          "sha1": "65f18d5b07d8d0041c463640c3c0464c796c7143"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.5.73%2Bfabric/architectury-4.5.73.jar",
         "filename": "architectury-4.5.73.jar",
@@ -12003,8 +12003,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7696c105d0948168521e8f41d33e762d29fbbb5822517dad20bc5a3659a961e5c2c44dc617e4ddbb80bf3bbd1ee6740ad0305762abe779350cc7723e309012c9",
-          "sha1": "b9834a82cc9b827a17a1c64eedbfdbcd9dcde675"
+          "sha1": "b9834a82cc9b827a17a1c64eedbfdbcd9dcde675",
+          "sha512": "7696c105d0948168521e8f41d33e762d29fbbb5822517dad20bc5a3659a961e5c2c44dc617e4ddbb80bf3bbd1ee6740ad0305762abe779350cc7723e309012c9"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.6.24%2Bforge/architectury-5.6.24.jar",
         "filename": "architectury-5.6.24.jar",
@@ -12117,8 +12117,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ea5dd6c38061c7af239e674f0333e389c7fc7934",
-          "sha512": "fa9e433be72d91cff2d0db8a23df37e0cf70f571d17d50b6a6703404fd1e3cc0850306b2fb56792520765263a506311688dd33a106c469e89b1080bc513e12f2"
+          "sha512": "fa9e433be72d91cff2d0db8a23df37e0cf70f571d17d50b6a6703404fd1e3cc0850306b2fb56792520765263a506311688dd33a106c469e89b1080bc513e12f2",
+          "sha1": "ea5dd6c38061c7af239e674f0333e389c7fc7934"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.4.71%2Bfabric/architectury-4.4.71.jar",
         "filename": "architectury-4.4.71.jar",
@@ -12195,8 +12195,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "881a3e15f05c6693fc353264037ea1b3200820ff",
-          "sha512": "cf31f255def8c355e8d2892c354def29f697a672bc8dc364d914435f4022b975707b0a5d59c9887319f417433f0ec6505f70f5b51bd61fdd40683d10c6daa9b9"
+          "sha512": "cf31f255def8c355e8d2892c354def29f697a672bc8dc364d914435f4022b975707b0a5d59c9887319f417433f0ec6505f70f5b51bd61fdd40683d10c6daa9b9",
+          "sha1": "881a3e15f05c6693fc353264037ea1b3200820ff"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.6.22%2Bfabric/architectury-5.6.22.jar",
         "filename": "architectury-5.6.22.jar",
@@ -12237,8 +12237,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "84b31daee3296be7c9ec108fecc543f5c8630c71",
-          "sha512": "22b0f208a31bc6b2b5239f1870c5169db2223934afa9e4985a2dd86e8ee9bdf94f602022d5e8d73ad4add4d69924f738bffe1bb3eb01ba3adb65ac860c6a41ff"
+          "sha512": "22b0f208a31bc6b2b5239f1870c5169db2223934afa9e4985a2dd86e8ee9bdf94f602022d5e8d73ad4add4d69924f738bffe1bb3eb01ba3adb65ac860c6a41ff",
+          "sha1": "84b31daee3296be7c9ec108fecc543f5c8630c71"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.6.21%2Bforge/architectury-5.6.21.jar",
         "filename": "architectury-5.6.21.jar",
@@ -12315,8 +12315,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "daeb6c7fcb83a6eecc6b4219f0febf4980d59aadd1a13680b88a9a1cab6bb7a854198ca17b3fa5788847036fb181925501b1eabdf9d726f19f0b7754797c185b",
-          "sha1": "2859ebc3afb0cf1a28cdeb762cdb7978d5f92382"
+          "sha1": "2859ebc3afb0cf1a28cdeb762cdb7978d5f92382",
+          "sha512": "daeb6c7fcb83a6eecc6b4219f0febf4980d59aadd1a13680b88a9a1cab6bb7a854198ca17b3fa5788847036fb181925501b1eabdf9d726f19f0b7754797c185b"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.4.70%2Bforge/architectury-4.4.70.jar",
         "filename": "architectury-4.4.70.jar",
@@ -12344,15 +12344,15 @@
     "changelog": "<h2>Architectury v4.4.70 for 1.18.2</h2>Updated at <b>2022-06-09 11:23</b>.<br><a href=\"https://www.github.com/architectury/architectury/commits/1.18.2\">Click here for changelog</a><br>- Fix SplitPacketTransformer not saving enough space for packet id (#273)",
     "changelog_url": null,
     "date_published": "2022-06-09T11:23:54.951427Z",
-    "downloads": 3330,
+    "downloads": 3331,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "64b6e6016d930fe57e24c10cc60e93e283baf4a9",
-          "sha512": "f5a1c9d0ace5b57f96da6a02e50e2cafcf885bead4f79fa71785e5433f011dc2007b2a574f69ae57589be2a387555118c31f7f7b6d4cffea276d7044c20528a6"
+          "sha512": "f5a1c9d0ace5b57f96da6a02e50e2cafcf885bead4f79fa71785e5433f011dc2007b2a574f69ae57589be2a387555118c31f7f7b6d4cffea276d7044c20528a6",
+          "sha1": "64b6e6016d930fe57e24c10cc60e93e283baf4a9"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.4.70%2Bfabric/architectury-4.4.70.jar",
         "filename": "architectury-4.4.70.jar",
@@ -12429,8 +12429,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "793c4f389daba2c25cac12fc79b40d934be3174601ee2b57511f6414fbe1136881f4768cc906a341d3ed41006afed87b9bf2fe55354dfb0685e48a806dbe82f2",
-          "sha1": "852f46277670e2a782b2f7bdda185dd4d44f4b25"
+          "sha1": "852f46277670e2a782b2f7bdda185dd4d44f4b25",
+          "sha512": "793c4f389daba2c25cac12fc79b40d934be3174601ee2b57511f6414fbe1136881f4768cc906a341d3ed41006afed87b9bf2fe55354dfb0685e48a806dbe82f2"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.5.16%2Bfabric/architectury-5.5.16.jar",
         "filename": "architectury-5.5.16.jar",
@@ -12557,8 +12557,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0259b6dfaf62a9d4cd4d1cb33f6e57c25ef0c2ce",
-          "sha512": "d251a4c4cab295a77c929d7d43464bc4903cef1a47a7de2f82b8997db56ebb8815cbdf81d79727fbbec9833349095e35c6c5d5e28d427e989f25a95071c0e9d5"
+          "sha512": "d251a4c4cab295a77c929d7d43464bc4903cef1a47a7de2f82b8997db56ebb8815cbdf81d79727fbbec9833349095e35c6c5d5e28d427e989f25a95071c0e9d5",
+          "sha1": "0259b6dfaf62a9d4cd4d1cb33f6e57c25ef0c2ce"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.4.68%2Bforge/architectury-4.4.68.jar",
         "filename": "architectury-4.4.68.jar",
@@ -12593,8 +12593,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d4b66b7e532e271213a8477072ad69a4b50b12d8a7b5e6fe3df5eb5c0a58ae9e027ffbae6c805023e81499237504808e440b63f7c0339bb80c0f2394121e5b00",
-          "sha1": "25caa4222a307016cb45cf8b6d27c09b507e2196"
+          "sha1": "25caa4222a307016cb45cf8b6d27c09b507e2196",
+          "sha512": "d4b66b7e532e271213a8477072ad69a4b50b12d8a7b5e6fe3df5eb5c0a58ae9e027ffbae6c805023e81499237504808e440b63f7c0339bb80c0f2394121e5b00"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.4.68%2Bfabric/architectury-4.4.68.jar",
         "filename": "architectury-4.4.68.jar",
@@ -12706,15 +12706,15 @@
     "changelog": "<h2>Architectury v2.10.12 for 1.17.1</h2>Updated at <b>2022-05-27 16:46</b>.<br><a href=\"https://www.github.com/architectury/architectury/commits/1.17\">Click here for changelog</a><br>- Update fabric loader to build",
     "changelog_url": null,
     "date_published": "2022-05-27T16:47:40.33931Z",
-    "downloads": 11639,
+    "downloads": 11640,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f67c433b414a01b8b2f4331c1cb880c1d105dd73d7d789b539afed58c76d105ea7e1905b40a343ff3a3d154fd512427754ce08ac10472b0b0f6ccea206974822",
-          "sha1": "28d2afcf0dafae570803e37dbc00b405ae589898"
+          "sha1": "28d2afcf0dafae570803e37dbc00b405ae589898",
+          "sha512": "f67c433b414a01b8b2f4331c1cb880c1d105dd73d7d789b539afed58c76d105ea7e1905b40a343ff3a3d154fd512427754ce08ac10472b0b0f6ccea206974822"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/2.10.12%2Bforge/architectury-2.10.12.jar",
         "filename": "architectury-2.10.12.jar",
@@ -12741,7 +12741,7 @@
     "changelog": "<h2>Architectury v2.10.12 for 1.17.1</h2>Updated at <b>2022-05-27 16:46</b>.<br><a href=\"https://www.github.com/architectury/architectury/commits/1.17\">Click here for changelog</a><br>- Update fabric loader to build",
     "changelog_url": null,
     "date_published": "2022-05-27T16:47:39.032145Z",
-    "downloads": 17928,
+    "downloads": 17931,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -12791,8 +12791,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e9bf668855dc4f28dee4231a1c6813b5d898ce5313a7fef7bf5d68d623f732d5b6f5935468dd1b972bbb4a275076bea2f9a5c0cc3b12b4c16cf329acd96f08df",
-          "sha1": "91032682b0982cb94531bdfd2e3640f31d57d7c3"
+          "sha1": "91032682b0982cb94531bdfd2e3640f31d57d7c3",
+          "sha512": "e9bf668855dc4f28dee4231a1c6813b5d898ce5313a7fef7bf5d68d623f732d5b6f5935468dd1b972bbb4a275076bea2f9a5c0cc3b12b4c16cf329acd96f08df"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/3.9.66%2Bforge/architectury-3.9.66.jar",
         "filename": "architectury-3.9.66.jar",
@@ -12820,7 +12820,7 @@
     "changelog": "<h2>Architectury v3.9.66 for 1.18(.1)</h2>Updated at <b>2022-05-27 16:37</b>.<br><a href=\"https://www.github.com/architectury/architectury/commits/1.18\">Click here for changelog</a><br>- Add Platform#getFilePaths (#268)",
     "changelog_url": null,
     "date_published": "2022-05-27T16:38:07.552782Z",
-    "downloads": 5193,
+    "downloads": 5195,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -12869,8 +12869,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "95c23c40ae86e8ee1d8b8e46efdfe8cbf2deccbe",
-          "sha512": "5b105ee3e9128d7c53ea3451349b604764419ac8cd89d9f40d63acc34c63ab8233a1c5909d3149eda9b68053d72466f4c49e5af72f75c51845f2927273280456"
+          "sha512": "5b105ee3e9128d7c53ea3451349b604764419ac8cd89d9f40d63acc34c63ab8233a1c5909d3149eda9b68053d72466f4c49e5af72f75c51845f2927273280456",
+          "sha1": "95c23c40ae86e8ee1d8b8e46efdfe8cbf2deccbe"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.4.65%2Bforge/architectury-4.4.65.jar",
         "filename": "architectury-4.4.65.jar",
@@ -12898,15 +12898,15 @@
     "changelog": "<h2>Architectury v4.4.65 for 1.18.2</h2>Updated at <b>2022-05-27 15:33</b>.<br><a href=\"https://www.github.com/architectury/architectury/commits/1.18.2\">Click here for changelog</a><br>- Add Platform#getFilePaths (#268)",
     "changelog_url": null,
     "date_published": "2022-05-27T15:34:27.046095Z",
-    "downloads": 411,
+    "downloads": 412,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e1e5f69f9ac29a477d776ff6ceca900a1a7971fd",
-          "sha512": "63fccb62ed7d3e61153e16ea25a3b07e93c58f0ed40c21c70eedacc260ba7d9c2f6a608baca3b059c820a7104b6b915103c66e10a5c2d267609a97fa18d9b4c5"
+          "sha512": "63fccb62ed7d3e61153e16ea25a3b07e93c58f0ed40c21c70eedacc260ba7d9c2f6a608baca3b059c820a7104b6b915103c66e10a5c2d267609a97fa18d9b4c5",
+          "sha1": "e1e5f69f9ac29a477d776ff6ceca900a1a7971fd"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.4.65%2Bfabric/architectury-4.4.65.jar",
         "filename": "architectury-4.4.65.jar",
@@ -12983,8 +12983,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b18f2133120c96ba40f4aec8ae6ac4a3e35f1f08",
-          "sha512": "fd8351df213d6b5f7b9102ce9de55c385359606e31aa79a9af42ef2092e0b41f9912326e914d3b96a10140a9c1e7438652ff794c424cbcaf39ae8bfcdf225f64"
+          "sha512": "fd8351df213d6b5f7b9102ce9de55c385359606e31aa79a9af42ef2092e0b41f9912326e914d3b96a10140a9c1e7438652ff794c424cbcaf39ae8bfcdf225f64",
+          "sha1": "b18f2133120c96ba40f4aec8ae6ac4a3e35f1f08"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/4.4.64%2Bfabric/architectury-4.4.64.jar",
         "filename": "architectury-4.4.64.jar",
@@ -13025,8 +13025,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "581e20ef081e4811337e7c1bedd4a8bdf593972090b026c3b83198c1cf500c0bea62b3d0c61ceb1c611bc99a5752edb5666f4aae8aa4682a5c03f86ad38bd521",
-          "sha1": "f540464536d164b3808ad03cff7e89364e1de10c"
+          "sha1": "f540464536d164b3808ad03cff7e89364e1de10c",
+          "sha512": "581e20ef081e4811337e7c1bedd4a8bdf593972090b026c3b83198c1cf500c0bea62b3d0c61ceb1c611bc99a5752edb5666f4aae8aa4682a5c03f86ad38bd521"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/2.10.10%2Bforge/architectury-2.10.10.jar",
         "filename": "architectury-2.10.10.jar",
@@ -13060,8 +13060,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "636ea734cc35747007727497e99d38dee89545e58c88661e648823d105d2f5078f028af46783ee03a80fd0007c0ba2060fd7f6b3c19014b22d6fc0ac54815f2a",
-          "sha1": "c7da5ed7754b3bab8c6fac6d9308b92f22acf734"
+          "sha1": "c7da5ed7754b3bab8c6fac6d9308b92f22acf734",
+          "sha512": "636ea734cc35747007727497e99d38dee89545e58c88661e648823d105d2f5078f028af46783ee03a80fd0007c0ba2060fd7f6b3c19014b22d6fc0ac54815f2a"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/2.10.10%2Bfabric/architectury-2.10.10.jar",
         "filename": "architectury-2.10.10.jar",
@@ -13102,8 +13102,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8606232fa894071de878c22f571303812f7790f0bb560d336630741dd6424e02c9943eb853336e651a228fd9398014e55e5b9edc5df0482fd88c53628d50a354",
-          "sha1": "34324af8cd5e559a9e4d1c3ddcb4bb048a4ff368"
+          "sha1": "34324af8cd5e559a9e4d1c3ddcb4bb048a4ff368",
+          "sha512": "8606232fa894071de878c22f571303812f7790f0bb560d336630741dd6424e02c9943eb853336e651a228fd9398014e55e5b9edc5df0482fd88c53628d50a354"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/5.4.13%2Bfabric/architectury-5.4.13.jar",
         "filename": "architectury-5.4.13.jar",
@@ -13145,8 +13145,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "41f3d949d95f8bd39506878a9ba04b26fc7eb615",
-          "sha512": "86cee1eae8fd02b9ef86ad48aee21d4f69c403c556acc6bb29386ddd232fc1683c52bac72b5dd306dcf4f6b615f1e184afdc9c7b930c4936890191ee658897da"
+          "sha512": "86cee1eae8fd02b9ef86ad48aee21d4f69c403c556acc6bb29386ddd232fc1683c52bac72b5dd306dcf4f6b615f1e184afdc9c7b930c4936890191ee658897da",
+          "sha1": "41f3d949d95f8bd39506878a9ba04b26fc7eb615"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/3.9.62%2Bforge/architectury-3.9.62.jar",
         "filename": "architectury-3.9.62.jar",
@@ -13258,8 +13258,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ef5af78358d80d68fd88700835db64403dabb90aa3cad62237ba2f7282dd638c02c3864e47c872d79ccb39735dd9c9c3b39cebc7a148349a47a7e3e16d707a0d",
-          "sha1": "3917511a9e6bfffd6df80084600ea710735d75e2"
+          "sha1": "3917511a9e6bfffd6df80084600ea710735d75e2",
+          "sha512": "ef5af78358d80d68fd88700835db64403dabb90aa3cad62237ba2f7282dd638c02c3864e47c872d79ccb39735dd9c9c3b39cebc7a148349a47a7e3e16d707a0d"
         },
         "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1.32.63%2Bfabric/architectury-1.32.63.jar",
         "filename": "architectury-1.32.63.jar",

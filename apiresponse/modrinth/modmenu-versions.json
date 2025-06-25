@@ -16,7 +16,7 @@
     "changelog": "No Changelog Available",
     "changelog_url": null,
     "date_published": "2025-06-20T23:35:23.212679Z",
-    "downloads": 97413,
+    "downloads": 101947,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -65,15 +65,15 @@
     "changelog": "- Fix description list Background-gradient widget / scroll bar (thanks sakura-ryoko)",
     "changelog_url": null,
     "date_published": "2025-06-18T02:15:34.965884Z",
-    "downloads": 72399,
+    "downloads": 72614,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0a2f24e43d93dc9402ccaf3e5e24e4392daaf0111bb450d2d96aedde9f56f11ead2bf54c77e6631d5bcd8aa3530302dce972183e71f32100192a22d8fec8a7bc",
-          "sha1": "8a0767e29d46aa4c40b6cd4e35ebff667adf212b"
+          "sha1": "8a0767e29d46aa4c40b6cd4e35ebff667adf212b",
+          "sha512": "0a2f24e43d93dc9402ccaf3e5e24e4392daaf0111bb450d2d96aedde9f56f11ead2bf54c77e6631d5bcd8aa3530302dce972183e71f32100192a22d8fec8a7bc"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/Dg11hN2f/modmenu-15.0.0-beta.2.jar",
         "filename": "modmenu-15.0.0-beta.2.jar",
@@ -115,7 +115,7 @@
     "changelog": "- Update to 1.21.6-rc1 thanks to lowercasebtw",
     "changelog_url": null,
     "date_published": "2025-06-17T04:06:52.322666Z",
-    "downloads": 9999,
+    "downloads": 10014,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -166,7 +166,7 @@
     "changelog": "- Fixed concurrency issue when loading mod metadata",
     "changelog_url": null,
     "date_published": "2025-03-25T18:32:24.314927Z",
-    "downloads": 2174534,
+    "downloads": 2179779,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -217,7 +217,7 @@
     "changelog": "- Updated to 1.21.5",
     "changelog_url": null,
     "date_published": "2025-03-25T16:31:52.405416Z",
-    "downloads": 5056,
+    "downloads": 5062,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -268,7 +268,7 @@
     "changelog": "- Removed redundant stacetrace logging for mod icon errors\n- Updated Ukrainian translation\n- Fix scroll position being reset when returning to the Mods screen\n- Optimize description rendering\n- Make generated mods appear as children of their containing mod\n- Update to 25w09a",
     "changelog_url": null,
     "date_published": "2025-03-11T22:44:56.264151Z",
-    "downloads": 5300,
+    "downloads": 5307,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -317,15 +317,15 @@
     "changelog": "- Removed redundant stacetrace logging for mod icon errors\n- Updated Ukrainian translation\n- Fix scroll position being reset when returning to the Mods screen\n- Optimize description rendering\n- Make generated mods appear as children of their containing mod",
     "changelog_url": null,
     "date_published": "2025-03-11T21:49:43.167175Z",
-    "downloads": 1098075,
+    "downloads": 1099766,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4cab0014a7223c6988fde70064579dc66ef8f000",
-          "sha512": "147681418d8729790fe7712163706d5209a5e6c90ffe81867020f70595ef5ede8037586ca4eb8239e540b1375dca4a0bbfbbe86c61c488aabf9b702520b7afe5"
+          "sha512": "147681418d8729790fe7712163706d5209a5e6c90ffe81867020f70595ef5ede8037586ca4eb8239e540b1375dca4a0bbfbbe86c61c488aabf9b702520b7afe5",
+          "sha1": "4cab0014a7223c6988fde70064579dc66ef8f000"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/7iGb2ltH/modmenu-13.0.3.jar",
         "filename": "modmenu-13.0.3.jar",
@@ -373,8 +373,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8d0ec6b95aacef9338f2127c2a526ad50d39487fd2505eea7295f228d78ae8ab6df384783fb9839052ae4fe078c59e2e8153707826644af62b4067aed325718b",
-          "sha1": "521cfd9e854729e85717e1263aa15661a44d4ced"
+          "sha1": "521cfd9e854729e85717e1263aa15661a44d4ced",
+          "sha512": "8d0ec6b95aacef9338f2127c2a526ad50d39487fd2505eea7295f228d78ae8ab6df384783fb9839052ae4fe078c59e2e8153707826644af62b4067aed325718b"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/hsiHpAl5/modmenu-14.0.0-beta.1.jar",
         "filename": "modmenu-14.0.0-beta.1.jar",
@@ -415,7 +415,7 @@
     "changelog": "- Updated German translations\n- Updated Slovak translations\n- Updated Ukrainian translations",
     "changelog_url": null,
     "date_published": "2025-02-12T02:02:43.818351Z",
-    "downloads": 718329,
+    "downloads": 718454,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -464,15 +464,15 @@
     "changelog": "- Updated Vietnamese translation\n- Updated Tartar translation\n- Updated Slovakian translation",
     "changelog_url": null,
     "date_published": "2025-01-21T21:01:20.271234Z",
-    "downloads": 503776,
+    "downloads": 503958,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "33bbf098d225683b77b2b66551ba57a5a7fb14a7ab7c3d0798fe1b0c3be3d346d3befc9c43d862533da347fa3a5c4fa48d5e1becd2d09dd1635defe0a4198806",
-          "sha1": "0ddb327640b1b766155e489852378950ef16da8d"
+          "sha1": "0ddb327640b1b766155e489852378950ef16da8d",
+          "sha512": "33bbf098d225683b77b2b66551ba57a5a7fb14a7ab7c3d0798fe1b0c3be3d346d3befc9c43d862533da347fa3a5c4fa48d5e1becd2d09dd1635defe0a4198806"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/4z29vhIo/modmenu-13.0.1.jar",
         "filename": "modmenu-13.0.1.jar",
@@ -513,7 +513,7 @@
     "changelog": "- Fix crash when using keyboard navigation at the end of the list",
     "changelog_url": null,
     "date_published": "2025-01-06T00:53:42.045002Z",
-    "downloads": 314423,
+    "downloads": 314455,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -563,15 +563,15 @@
     "changelog": "- Port to 1.21.4\n- Add sort option to sort by update",
     "changelog_url": null,
     "date_published": "2024-12-03T23:49:47.269458Z",
-    "downloads": 619707,
+    "downloads": 619747,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e142b42a007d7853fe53ca74c8cc933566a75aa3068f6f6216f55d794cd4f3344c56e3a2de3db4cd59363799aa92583c6f45633cd9a4bb6cb24115f60617dd8c",
-          "sha1": "ef2ae8075bdc720f44cf36363f873fa8d8202b5e"
+          "sha1": "ef2ae8075bdc720f44cf36363f873fa8d8202b5e",
+          "sha512": "e142b42a007d7853fe53ca74c8cc933566a75aa3068f6f6216f55d794cd4f3344c56e3a2de3db4cd59363799aa92583c6f45633cd9a4bb6cb24115f60617dd8c"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/2pJcGBVh/modmenu-13.0.0-beta.1.jar",
         "filename": "modmenu-13.0.0-beta.1.jar",
@@ -619,15 +619,15 @@
     "changelog": "- Add sort option to sort by update",
     "changelog_url": null,
     "date_published": "2024-12-03T23:46:53.6447Z",
-    "downloads": 227237,
+    "downloads": 227349,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "7175dbf35737848ab9ea1b8d16798cff22f2ba9e",
-          "sha512": "d215306281e7ad1da1037bc848c806c2e200d7eca39ccd2ca5fc25a03e3eacef2eb15b70fca1d832fb249aecc29a100fc87b9dacf90565fdf822b9a6df355af7"
+          "sha512": "d215306281e7ad1da1037bc848c806c2e200d7eca39ccd2ca5fc25a03e3eacef2eb15b70fca1d832fb249aecc29a100fc87b9dacf90565fdf822b9a6df355af7",
+          "sha1": "7175dbf35737848ab9ea1b8d16798cff22f2ba9e"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/4xPSbh0l/modmenu-12.0.0.jar",
         "filename": "modmenu-12.0.0.jar",
@@ -676,15 +676,15 @@
     "changelog": "- Updated to 1.21.2-pre3\n- Fix Mods screen being slow to open the first time\n- Config screen errors no longer show until after a user has tried to open them\n- Fix drag-n-drop not supporting Quilt mods\n- Updated Polish translation\n- Fixed issue with drag-n-drop toast having the same line displayed twice\n- Updated Korean translations\n- Fixed Belarusian translation\n- Fixed issues with parent mods\n- Improve compatibility with other mods' mixins",
     "changelog_url": null,
     "date_published": "2024-10-14T04:12:17.953801Z",
-    "downloads": 459967,
+    "downloads": 459984,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "7d7879f45e37048aa8ebd37dcc150b74ebcd6f72bd52fb25c409719779edad3610dc2cab5c248c581f10e3d7f8514555c4753ad7523fce5124b8fae6676948a6",
-          "sha1": "4536cf33f54fd52b8530fcb3e7e89431c1ccd07b"
+          "sha1": "4536cf33f54fd52b8530fcb3e7e89431c1ccd07b",
+          "sha512": "7d7879f45e37048aa8ebd37dcc150b74ebcd6f72bd52fb25c409719779edad3610dc2cab5c248c581f10e3d7f8514555c4753ad7523fce5124b8fae6676948a6"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/PcJvQYqu/modmenu-12.0.0-beta.1.jar",
         "filename": "modmenu-12.0.0-beta.1.jar",
@@ -726,7 +726,7 @@
     "changelog": "- Fix Mods screen being slow to open the first time\n- Config screen errors no longer show until after a user has tried to open them\n- Fix drag-n-drop not supporting Quilt mods\n- Updated Polish translation\n- Fixed issue with drag-n-drop toast having the same line displayed twice\n- Updated Korean translations\n- Fixed Belarusian translation\n- Fixed issues with parent mods",
     "changelog_url": null,
     "date_published": "2024-10-14T04:11:09.901609Z",
-    "downloads": 4552900,
+    "downloads": 4558142,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -776,15 +776,15 @@
     "changelog": "- Improve compatibility with other mods' mixins",
     "changelog_url": null,
     "date_published": "2024-08-25T17:06:17.366123Z",
-    "downloads": 1777422,
+    "downloads": 1777814,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "0a7c7ac1dd5360ef735ca1e782540ec45c4fc3c8",
-          "sha512": "740c9845a8447efa481607d1a9879a4774c7610eb5bc4072ccb2b7ed9b2afc295f0db41abb608ab2cbf589b42578bcd054fb51f7f7257d3151d5d3a0adc0b6ab"
+          "sha512": "740c9845a8447efa481607d1a9879a4774c7610eb5bc4072ccb2b7ed9b2afc295f0db41abb608ab2cbf589b42578bcd054fb51f7f7257d3151d5d3a0adc0b6ab",
+          "sha1": "0a7c7ac1dd5360ef735ca1e782540ec45c4fc3c8"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/3ib3Uvvv/modmenu-11.0.2.jar",
         "filename": "modmenu-11.0.2.jar",
@@ -834,8 +834,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "913be7aea000ee2c95f0678ba16d962ff452c1983c328867eae16d385bda65c3f91207651272214ce72e2e7b446789d570cdb9f17468b9d19b834cc334093301",
-          "sha1": "e2fa510f65897e90db230d797a73afa4057a193d"
+          "sha1": "e2fa510f65897e90db230d797a73afa4057a193d",
+          "sha512": "913be7aea000ee2c95f0678ba16d962ff452c1983c328867eae16d385bda65c3f91207651272214ce72e2e7b446789d570cdb9f17468b9d19b834cc334093301"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/ixIyiMpO/modmenu-12.0.0-alpha.1.jar",
         "filename": "modmenu-12.0.0-alpha.1.jar",
@@ -878,7 +878,7 @@
     "changelog": "- Fixed \"Server Links\" button overlapping Mods button in \"Insert\" mode",
     "changelog_url": null,
     "date_published": "2024-06-21T14:44:44.493843Z",
-    "downloads": 2404072,
+    "downloads": 2404457,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -927,15 +927,15 @@
     "changelog": "- Fixed mods button not showing up on servers with Server Links\n- Changed functionality of Game Mode display option \"Replace Bugs\" to \"Replace\", which now replaces both Give Feedback and Report Bugs, these are now both found in Mod Menu under the Minecraft entry. \"Below Bugs\" is now \"Insert",
     "changelog_url": null,
     "date_published": "2024-06-18T17:43:49.210075Z",
-    "downloads": 165297,
+    "downloads": 165324,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d2b353f3f491ce8029f33cc17b69d80bb465842d",
-          "sha512": "c8613d518304accf94fc83f5b6c35baf561ac1cf725f466a6c8f58e57e4143a3799a5e871c4fb69c7cf0b543f450d17b22ca59521a4df8319ecd53bd56458ec4"
+          "sha512": "c8613d518304accf94fc83f5b6c35baf561ac1cf725f466a6c8f58e57e4143a3799a5e871c4fb69c7cf0b543f450d17b22ca59521a4df8319ecd53bd56458ec4",
+          "sha1": "d2b353f3f491ce8029f33cc17b69d80bb465842d"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/lJ1xXMce/modmenu-11.0.0.jar",
         "filename": "modmenu-11.0.0.jar",
@@ -976,7 +976,7 @@
     "changelog": "- Fixed broken Chinese translation\n- Fixed update checker exception\n- Fixed update checker promoting downgrades\n- Added support for QuickText in mod descriptions\n- Newlines in descriptions are no longer forced to be paragraphs, so single linebreaks are now allowed\n- Fixed update checker promoting downgrades\n- Fixed crash with unknown badges\n- Updated Belarusian Translation\n- Updated Polish Translation\n- Updated Tatar Translation\n- Update Chinese Translation\n- Fixed credits role translation keys not being lowercased\n- Fixed contributors being sorted",
     "changelog_url": null,
     "date_published": "2024-06-18T16:14:18.029842Z",
-    "downloads": 634440,
+    "downloads": 634663,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1026,7 +1026,7 @@
     "changelog": "- Fixed broken Chinese translation\n- Fixed update checker exception\n- Fixed update checker promoting downgrades\n- Updated Belarusian Translation\n- Updated Polish Translation\n- Updated Tatar Translation\n- Update Chinese Translation\n- Fixed credits role translation keys not being lowercased\n- Fixed contributors being sorted\n- Added support for QuickText in mod descriptions\n- Newlines in descriptions are no longer forced to be paragraphs, so single linebreaks are now allowed\n- Fixed update checker promoting downgrades\n- Fixed text now having shadows properly\n- Fixed crash with unknown badges",
     "changelog_url": null,
     "date_published": "2024-06-18T16:14:03.279929Z",
-    "downloads": 280455,
+    "downloads": 280543,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1075,7 +1075,7 @@
     "changelog": "- Fixed broken Chinese translation",
     "changelog_url": null,
     "date_published": "2024-06-16T15:13:29.185771Z",
-    "downloads": 49743,
+    "downloads": 49746,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1124,7 +1124,7 @@
     "changelog": "- Fixed Options screen rendering twice\n- Fixed update checker exception\n- Fixed update checker promoting downgrades\n- Fixed text not having shadows properly\n- Fixed crash with unknown badges\n- Updated Belarusian Translation\n- Updated Polish Translation\n- Updated Tatar Translation\n- Update Chinese Translation\n- Fixed credits role translation keys not being lowercased\n- Fixed contributors being sorted\n- Added support for QuickText in mod descriptions\n- Newlines in descriptions are no longer forced to be paragraphs, so single linebreaks are now allowd",
     "changelog_url": null,
     "date_published": "2024-06-15T15:45:45.265631Z",
-    "downloads": 23111,
+    "downloads": 23113,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1209,15 +1209,15 @@
     "changelog": "No Changelog Available",
     "changelog_url": null,
     "date_published": "2024-06-14T17:30:58.570461Z",
-    "downloads": 63170,
+    "downloads": 63174,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "07c35028ea2e2bcf18235631676502ca90dc426d4a580503d9094ecfbab44898b477e859d891644c76e8c47b863bb8196bd19ad1fc7d0955cc7c58d1f2f8bf25",
-          "sha1": "e3aa145fef806d5d18f5333250ad308601fca4df"
+          "sha1": "e3aa145fef806d5d18f5333250ad308601fca4df",
+          "sha512": "07c35028ea2e2bcf18235631676502ca90dc426d4a580503d9094ecfbab44898b477e859d891644c76e8c47b863bb8196bd19ad1fc7d0955cc7c58d1f2f8bf25"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/KXx8jdVE/modmenu-11.0.0-beta.2.jar",
         "filename": "modmenu-11.0.0-beta.2.jar",
@@ -1249,7 +1249,7 @@
     "changelog": "- Fix update checker not being run when config screen is closed without the Done button",
     "changelog_url": null,
     "date_published": "2024-06-04T01:16:45.311766Z",
-    "downloads": 93467,
+    "downloads": 93478,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1289,15 +1289,15 @@
     "changelog": "- Add update checkers for Fabric Loader and Quilt Loader\n- Add API for mods to provide update checkers for other mods\n- Fix Mod Menu build metadata not being properly stripped from the User Agent string generation for privacy\n- Group mod credits together by role\n- No longer promotes updates to beta or alpha versions by default\n- Fixed disable_update_checker config option not working\n- Delay loading API implementations until it's first needed in attempt to fix Architectury API's usage (beta)\n- Change Twitter name to X (Twitter)",
     "changelog_url": null,
     "date_published": "2024-04-22T21:34:28.06816Z",
-    "downloads": 565036,
+    "downloads": 565059,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d462b9cc38eef0019b10212932439c576dafbb2a6396cf0457f8f9b7b15e91d5ad9cb2edc5dc8c7bb68dfc8586beece601aa880072ba90cd3be9466f70ce8567",
-          "sha1": "c6407363a0564a149d3466c55f829895da6d7803"
+          "sha1": "c6407363a0564a149d3466c55f829895da6d7803",
+          "sha512": "d462b9cc38eef0019b10212932439c576dafbb2a6396cf0457f8f9b7b15e91d5ad9cb2edc5dc8c7bb68dfc8586beece601aa880072ba90cd3be9466f70ce8567"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/NgnZx44E/modmenu-10.0.0-beta.1.jar",
         "filename": "modmenu-10.0.0-beta.1.jar",
@@ -1325,7 +1325,7 @@
     "changelog": "- Fix update checker not being run when config screen is closed without the Done button",
     "changelog_url": null,
     "date_published": "2024-04-22T20:32:09.833046Z",
-    "downloads": 387702,
+    "downloads": 387726,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1368,8 +1368,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8e721f73650a9c386f47b59ff355887d413582d4",
-          "sha512": "aaa220912f5d7b837c61bf8bcf26a7fc06eb5dd181c5c44dde0262aaf4ed161840d62c40db41d45ba7df3c5e495c20550ab7071aef0bd42ec985656839cff37c"
+          "sha512": "aaa220912f5d7b837c61bf8bcf26a7fc06eb5dd181c5c44dde0262aaf4ed161840d62c40db41d45ba7df3c5e495c20550ab7071aef0bd42ec985656839cff37c",
+          "sha1": "8e721f73650a9c386f47b59ff355887d413582d4"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/VOHp29AO/modmenu-9.2.0-beta.1.jar",
         "filename": "modmenu-9.2.0-beta.1.jar",
@@ -1397,15 +1397,15 @@
     "changelog": "- Delay loading API implementations until it's first needed in attempt to fix Architectury API's usage (beta)\n- Change Twitter name to X (Twitter)",
     "changelog_url": null,
     "date_published": "2024-04-04T16:37:41.934684Z",
-    "downloads": 267106,
+    "downloads": 267115,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "0417da163e6e9692c08c113117a1bd39337a7a03",
-          "sha512": "03efc2e7a0ef2b4128c16f648feaaadf4df1c747f2d2d3dbe918b15a5b6bbd8204c0e1f6e2c42e9104fad991cb6fe61553379bc02893ddc3f7e153c37ae7593b"
+          "sha512": "03efc2e7a0ef2b4128c16f648feaaadf4df1c747f2d2d3dbe918b15a5b6bbd8204c0e1f6e2c42e9104fad991cb6fe61553379bc02893ddc3f7e153c37ae7593b",
+          "sha1": "0417da163e6e9692c08c113117a1bd39337a7a03"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/w3icASIi/modmenu-9.1.0-beta.1.jar",
         "filename": "modmenu-9.1.0-beta.1.jar",
@@ -1439,7 +1439,7 @@
     "changelog": "- Change Twitter name to X (Twitter)\n- Update Belarusian translations",
     "changelog_url": null,
     "date_published": "2024-03-08T20:45:27.859816Z",
-    "downloads": 13265,
+    "downloads": 13266,
     "version_type": "alpha",
     "status": "listed",
     "requested_status": null,
@@ -1476,15 +1476,15 @@
     "changelog": "No Changelog Available",
     "changelog_url": null,
     "date_published": "2024-02-29T16:54:03.777377Z",
-    "downloads": 2359,
+    "downloads": 2360,
     "version_type": "alpha",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "229a43426b1c1b23ea74493b2f480664f7580ec2",
-          "sha512": "3461bdd8758fa2e50c946ba72e95c1d684e9961fdb0a463308d6b58657457b0d7b7650964ce4b3515a481fe8a70809bf2ba90aeda8cffebe010d10de68a1e358"
+          "sha512": "3461bdd8758fa2e50c946ba72e95c1d684e9961fdb0a463308d6b58657457b0d7b7650964ce4b3515a481fe8a70809bf2ba90aeda8cffebe010d10de68a1e358",
+          "sha1": "229a43426b1c1b23ea74493b2f480664f7580ec2"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/ua8KrvY4/modmenu-10.0.0-alpha.1.jar",
         "filename": "modmenu-10.0.0-alpha.1.jar",
@@ -1525,15 +1525,15 @@
     "changelog": "- Fix missing error icon on mod icons",
     "changelog_url": null,
     "date_published": "2023-12-18T21:18:12.030704Z",
-    "downloads": 965276,
+    "downloads": 965362,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "eb09a3b6668407df4ad9b24849d52a38c448877e",
-          "sha512": "62ae3152d6dfd2745b95a6572f085bf8deb708d183a4234e6f72ae7b07f05a787454d4f289cee96d4e0f7efab026ed6073659d1aebb87530abeb7ddcfc0fe40b"
+          "sha512": "62ae3152d6dfd2745b95a6572f085bf8deb708d183a4234e6f72ae7b07f05a787454d4f289cee96d4e0f7efab026ed6073659d1aebb87530abeb7ddcfc0fe40b",
+          "sha1": "eb09a3b6668407df4ad9b24849d52a38c448877e"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/sjtVVlsA/modmenu-9.0.0.jar",
         "filename": "modmenu-9.0.0.jar",
@@ -1561,7 +1561,7 @@
     "changelog": "- Fix missing error icon on mod icons",
     "changelog_url": null,
     "date_published": "2023-12-18T21:09:24.979305Z",
-    "downloads": 492609,
+    "downloads": 492682,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1601,15 +1601,15 @@
     "changelog": "- Updated to 1.20.3-pre4\n- Updated Belarusian translations\n- Updated Chinese translations\n- Updated Norwegian Bokmål translations",
     "changelog_url": null,
     "date_published": "2023-11-29T23:20:48.756587Z",
-    "downloads": 69902,
+    "downloads": 69903,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0c69d9a6231cbd244a36b2f67e50567eda3b07bda3b9d1a927b84a1cd30fbb840bf4c94c4b2f94fd46fe82d18c0b2389fecebd161c9ccc48927b854224f68810",
-          "sha1": "940a5614137befcad119740e20a2cfceb254307a"
+          "sha1": "940a5614137befcad119740e20a2cfceb254307a",
+          "sha512": "0c69d9a6231cbd244a36b2f67e50567eda3b07bda3b9d1a927b84a1cd30fbb840bf4c94c4b2f94fd46fe82d18c0b2389fecebd161c9ccc48927b854224f68810"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/4EYB2Bxx/modmenu-9.0.0-pre.1.jar",
         "filename": "modmenu-9.0.0-pre.1.jar",
@@ -1751,15 +1751,15 @@
     "changelog": "No Changelog Available",
     "changelog_url": null,
     "date_published": "2023-09-25T20:37:23.399667Z",
-    "downloads": 420146,
+    "downloads": 420153,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "cc27c98c68127c42ab7c1272d156a8dce4f0c00bc6b7b0c8c302c27a01c97096a01409186281f7dc9b631f60587cac26c87898fa6df56a0169a9a0ced44eb344",
-          "sha1": "6c781bc4ebf6b11296715c663bc1c7542e4eb630"
+          "sha1": "6c781bc4ebf6b11296715c663bc1c7542e4eb630",
+          "sha512": "cc27c98c68127c42ab7c1272d156a8dce4f0c00bc6b7b0c8c302c27a01c97096a01409186281f7dc9b631f60587cac26c87898fa6df56a0169a9a0ced44eb344"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/TwfjidT5/modmenu-8.0.0.jar",
         "filename": "modmenu-8.0.0.jar",
@@ -1797,7 +1797,7 @@
     "changelog": "- Update Tatar translations\n- Update Vietnamese translations\n- Fix child mods hidden via config not being hidden",
     "changelog_url": null,
     "date_published": "2023-09-08T04:44:12.386487Z",
-    "downloads": 11903,
+    "downloads": 11904,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1833,15 +1833,15 @@
     "changelog": "- Update Tatar translations\n- Update Vietnamese translations\n- Fix child mods hidden via config not being hidden",
     "changelog_url": null,
     "date_published": "2023-09-08T04:44:04.261764Z",
-    "downloads": 9390468,
+    "downloads": 9394709,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "9a7837e04bb34376611b207a3b20e5fe1c82a4822b42929d5b410809ec4b88ff3cac8821c4568f880775bafa3c079dfc7800f8471356a4046248b12607e855eb",
-          "sha1": "099c68feeb74887cbbbd8ce9a27c6123804a2c5a"
+          "sha1": "099c68feeb74887cbbbd8ce9a27c6123804a2c5a",
+          "sha512": "9a7837e04bb34376611b207a3b20e5fe1c82a4822b42929d5b410809ec4b88ff3cac8821c4568f880775bafa3c079dfc7800f8471356a4046248b12607e855eb"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/lEkperf6/modmenu-7.2.2.jar",
         "filename": "modmenu-7.2.2.jar",
@@ -1914,15 +1914,15 @@
     "changelog": "- Add the library badge to Fabric Language Kotlin\n- Add a search term for updateable mods",
     "changelog_url": null,
     "date_published": "2023-07-18T20:52:41.953834Z",
-    "downloads": 303253,
+    "downloads": 303335,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "396a22fb6c23483bea40b17e21185bcc56c77a736f52e5cda9b3ac799e4e0aac78e396476162f9166fcb56203be1d1071de04971a9b4feb8f4f6ea6103125f0d",
-          "sha1": "ab2736e00597ba8b11e4f58573eb49c79e0417b4"
+          "sha1": "ab2736e00597ba8b11e4f58573eb49c79e0417b4",
+          "sha512": "396a22fb6c23483bea40b17e21185bcc56c77a736f52e5cda9b3ac799e4e0aac78e396476162f9166fcb56203be1d1071de04971a9b4feb8f4f6ea6103125f0d"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/lMqXEzUw/modmenu-6.3.1.jar",
         "filename": "modmenu-6.3.1.jar",
@@ -1950,15 +1950,15 @@
     "changelog": "- Add the library badge to Fabric Language Kotlin\n- Add a search term for updateable mods",
     "changelog_url": null,
     "date_published": "2023-07-18T20:52:39.423597Z",
-    "downloads": 918630,
+    "downloads": 918676,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ccaa15132f3e21307736d16fc160d064cc539e8c",
-          "sha512": "bcf9f30825d51e55ed5edef77b481a8e42ba61e6b78e32b6258ce86aaf4cfe812c4bd81595c5acebc65c876ae5b9840a7fb57d8ad7d26229c74b49c1b530e76f"
+          "sha512": "bcf9f30825d51e55ed5edef77b481a8e42ba61e6b78e32b6258ce86aaf4cfe812c4bd81595c5acebc65c876ae5b9840a7fb57d8ad7d26229c74b49c1b530e76f",
+          "sha1": "ccaa15132f3e21307736d16fc160d064cc539e8c"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/eTCL1uh8/modmenu-7.2.1.jar",
         "filename": "modmenu-7.2.1.jar",
@@ -1986,15 +1986,15 @@
     "changelog": "- Update French translations\n- Updates Tatar translations\n- Add dev env tag to update checker user agent\n- Fix update checker not working for Quilt mods\n- Fixed update checker error when it could not find a primary file on Modrinth\n- Changed mod names to be prioritized when searching\n- Removed April Fools \"virus checker\" joke\n- Updated translations\n- Updated translations",
     "changelog_url": null,
     "date_published": "2023-07-18T20:00:44.644692Z",
-    "downloads": 55431,
+    "downloads": 55440,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "722ddc8a91aab0c97efc4504e39900fb085547c0",
-          "sha512": "af8b17e9db3eb0c52b5e6ef0446f77ec4abdc600ec1339a29d627f31fe93076923fd8267748bcd8ac7686099806c1c22e3e9aa93db59c52ccd20fb0438bd4b30"
+          "sha512": "af8b17e9db3eb0c52b5e6ef0446f77ec4abdc600ec1339a29d627f31fe93076923fd8267748bcd8ac7686099806c1c22e3e9aa93db59c52ccd20fb0438bd4b30",
+          "sha1": "722ddc8a91aab0c97efc4504e39900fb085547c0"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/id0aLmxO/modmenu-5.1.0.jar",
         "filename": "modmenu-5.1.0.jar",
@@ -2098,7 +2098,7 @@
     "changelog": "- Changed mod names to be prioritized when searching\n- Fixed update checker error when it could not find a primary file on Modrinth\n- Fixes double-clicking on a mod sometimes activating on a single click\n- Changes double-click to prioritize opening the config of a parent mod if Quick Configure is enabled",
     "changelog_url": null,
     "date_published": "2023-06-17T21:21:08.847536Z",
-    "downloads": 381326,
+    "downloads": 381383,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2138,15 +2138,15 @@
     "changelog": "- Removed April Fools \"virus checker\" joke",
     "changelog_url": null,
     "date_published": "2023-06-08T18:44:49.142841Z",
-    "downloads": 67936,
+    "downloads": 67938,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "561044c111cb676cc5645fb1e159538c84d5a1fd",
-          "sha512": "2f3eae4b86bf7d056bef5cfc49ee573b3eb1c4f3b4ec0511d8c64a4073b0dab3b1b043e5be8d726b89dc64d70887075905e6f05323fabd387b5924271296fae0"
+          "sha512": "2f3eae4b86bf7d056bef5cfc49ee573b3eb1c4f3b4ec0511d8c64a4073b0dab3b1b043e5be8d726b89dc64d70887075905e6f05323fabd387b5924271296fae0",
+          "sha1": "561044c111cb676cc5645fb1e159538c84d5a1fd"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/CtMNOUcV/modmenu-6.2.3.jar",
         "filename": "modmenu-6.2.3.jar",
@@ -2176,15 +2176,15 @@
     "changelog": "- Removed April Fools \"virus checker\" joke",
     "changelog_url": null,
     "date_published": "2023-06-08T18:44:49.070458Z",
-    "downloads": 507125,
+    "downloads": 507221,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "7210fab34b5ffe9f43207e2a74c7d4b8cdf5b165",
-          "sha512": "4573f699d177b28a05a5f3f208b264bf985d73042c796c9a08ad4123b78a5d4af7421ce939d0dfb21fee468000b4a6a8968094d44dac4146773b693447bfd055"
+          "sha512": "4573f699d177b28a05a5f3f208b264bf985d73042c796c9a08ad4123b78a5d4af7421ce939d0dfb21fee468000b4a6a8968094d44dac4146773b693447bfd055",
+          "sha1": "7210fab34b5ffe9f43207e2a74c7d4b8cdf5b165"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/RTFDnTKf/modmenu-7.0.1.jar",
         "filename": "modmenu-7.0.1.jar",
@@ -2212,7 +2212,7 @@
     "changelog": "No Changelog Available",
     "changelog_url": null,
     "date_published": "2023-06-07T19:37:11.72419Z",
-    "downloads": 46621,
+    "downloads": 46623,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2252,7 +2252,7 @@
     "changelog": "- Changed the way buttons are moved on the title screen to only move button widgets.",
     "changelog_url": null,
     "date_published": "2023-04-29T18:08:18.285957Z",
-    "downloads": 204979,
+    "downloads": 204988,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2297,7 +2297,7 @@
     "changelog": "- Changed the way buttons are moved on the title screen to only move button widgets.",
     "changelog_url": null,
     "date_published": "2023-04-29T18:07:53.313282Z",
-    "downloads": 2947,
+    "downloads": 2952,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -2340,8 +2340,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d8c1dc6fef9a0553b402a5070ed31cf659ebb68b",
-          "sha512": "42db6219f8c75a3fc1ed492bec297d768014be815525f954f6ffa875d7c310bc6878b9915221228b9812a55cb8999e01d0ef608164bba925a7a0bc8e95f986f7"
+          "sha512": "42db6219f8c75a3fc1ed492bec297d768014be815525f954f6ffa875d7c310bc6878b9915221228b9812a55cb8999e01d0ef608164bba925a7a0bc8e95f986f7",
+          "sha1": "d8c1dc6fef9a0553b402a5070ed31cf659ebb68b"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/RdCGzY7B/modmenu-7.0.0-beta.1.jar",
         "filename": "modmenu-7.0.0-beta.1.jar",
@@ -2373,7 +2373,7 @@
     "changelog": "- Change the Java background color to always be red by default\n- Implemented a workaround for an issue with mods relying on the time the API's config screen factory providers are used.",
     "changelog_url": null,
     "date_published": "2023-04-20T18:52:29.165949Z",
-    "downloads": 53874,
+    "downloads": 53875,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2408,7 +2408,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-04-18T20:57:27.245672Z",
-    "downloads": 10564,
+    "downloads": 10571,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2455,7 +2455,7 @@
     "changelog": "- Fixed a crash when other mods added non-clickable widgets to the Game Menu\n- Optimized loading of config screen factory providers\n- Fixed partially obscured description entries not being rendered",
     "changelog_url": null,
     "date_published": "2023-04-18T06:32:50.359994Z",
-    "downloads": 10303,
+    "downloads": 10305,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2535,7 +2535,7 @@
     "changelog": "- Fixed config button overlay being too large on compact mode\n- Fixed parent mod child toggle button area being too large on compact mode\n- Added ability to double-click parent mods to expand and collapse",
     "changelog_url": null,
     "date_published": "2023-03-17T01:10:36.565421Z",
-    "downloads": 80966,
+    "downloads": 80981,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -2578,8 +2578,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e3bd35e0efcf384a4f9276e1ee416421d789567ac5c962dcfff5b0667ab6e1731dc2f5612e91816a13079609f569cab90b69eb7e5a196b265ca009e122dac09d",
-          "sha1": "e74b7faee6c68c3932fea5c01206aa10edf63998"
+          "sha1": "e74b7faee6c68c3932fea5c01206aa10edf63998",
+          "sha512": "e3bd35e0efcf384a4f9276e1ee416421d789567ac5c962dcfff5b0667ab6e1731dc2f5612e91816a13079609f569cab90b69eb7e5a196b265ca009e122dac09d"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/pged5sGx/modmenu-6.1.0-rc.3.jar",
         "filename": "modmenu-6.1.0-rc.3.jar",
@@ -2614,8 +2614,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "91be09156788b04aee29ea081b01972e736584a6",
-          "sha512": "47611f1a5f048bbcf94a1c8ab69d6a5863c73b6206bf4afbc3fdff1876eeab9da4da121fa8b26e974f6e224c192405569ef39d43aed7b475b9627acd2ce7ddc6"
+          "sha512": "47611f1a5f048bbcf94a1c8ab69d6a5863c73b6206bf4afbc3fdff1876eeab9da4da121fa8b26e974f6e224c192405569ef39d43aed7b475b9627acd2ce7ddc6",
+          "sha1": "91be09156788b04aee29ea081b01972e736584a6"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/JYTmttex/modmenu-6.1.0-rc.2.jar",
         "filename": "modmenu-6.1.0-rc.2.jar",
@@ -2723,7 +2723,7 @@
     "changelog": "- Strip Mod Menu build metadata from user agent for privacy\n- Include mod loader and MC version in user agent",
     "changelog_url": null,
     "date_published": "2023-02-18T09:59:57.27389Z",
-    "downloads": 77343,
+    "downloads": 77346,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -2759,15 +2759,15 @@
     "changelog": "- Strip Mod Menu build metadata from user agent for privacy\n- Include mod loader and MC version in user agent",
     "changelog_url": null,
     "date_published": "2023-02-18T09:59:48.426367Z",
-    "downloads": 1127701,
+    "downloads": 1127942,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "38abddc67502e3f6b08962e13777278d3e88c3ac4d22584636362fb828bd36a0f4313747cc3023afbc9d958ca7dccad13527299b05ea492f80bb6fef8d364726",
-          "sha1": "6e627ee1b31f5be89e14c85e888f47463d8da9c2"
+          "sha1": "6e627ee1b31f5be89e14c85e888f47463d8da9c2",
+          "sha512": "38abddc67502e3f6b08962e13777278d3e88c3ac4d22584636362fb828bd36a0f4313747cc3023afbc9d958ca7dccad13527299b05ea492f80bb6fef8d364726"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/gSoPJyVn/modmenu-4.2.0-beta.2.jar",
         "filename": "modmenu-4.2.0-beta.2.jar",
@@ -2838,8 +2838,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a5456670928c52fdac1ffdafc0932012e5ecc33cb772d62042d68b761bfef6c675eadceaca3dbaa284376008e5fe6cd5a4de5bf242da4e243c210860bb7e67e7",
-          "sha1": "d9ee63c7f397ab5627483a17445b83bfe5d27dc6"
+          "sha1": "d9ee63c7f397ab5627483a17445b83bfe5d27dc6",
+          "sha512": "a5456670928c52fdac1ffdafc0932012e5ecc33cb772d62042d68b761bfef6c675eadceaca3dbaa284376008e5fe6cd5a4de5bf242da4e243c210860bb7e67e7"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/jRqFAHRH/modmenu-5.1.0-beta.3.jar",
         "filename": "modmenu-5.1.0-beta.3.jar",
@@ -2903,7 +2903,7 @@
     "changelog": "- Update checker now only makes a single Modrinth API request\n- Added config for modpack authors to disable specific mods' update checkers\n- Updated translations\n- Updated to 23w07a",
     "changelog_url": null,
     "date_published": "2023-02-17T13:02:45.657425Z",
-    "downloads": 241,
+    "downloads": 243,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -2946,8 +2946,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c9c8c08e7c0999d81be353703cdf44b03877feea",
-          "sha512": "9dc0596945a064dc9637bb4f4012433d2c0dbd9725a4be25b388bf7d28c42d8ba30d40f9fc27a67fe6eee5db7a745ec4dc6652f70a25a4a9b09679a9ff9ea30b"
+          "sha512": "9dc0596945a064dc9637bb4f4012433d2c0dbd9725a4be25b388bf7d28c42d8ba30d40f9fc27a67fe6eee5db7a745ec4dc6652f70a25a4a9b09679a9ff9ea30b",
+          "sha1": "c9c8c08e7c0999d81be353703cdf44b03877feea"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/7E8dbVv0/modmenu-5.1.0-beta.2.jar",
         "filename": "modmenu-5.1.0-beta.2.jar",
@@ -2982,8 +2982,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "14900c9c5fe89adb7edf96dbc0ba9324dd87f4e7",
-          "sha512": "b35d9cdfab08ed257dfd50c81091f979ce72b853da856160cc4c251a53f27ac3872bf4fcf06dea0e2c10a7bbc25cb42337b31fa3d352bfcdc78a85891ac23aa6"
+          "sha512": "b35d9cdfab08ed257dfd50c81091f979ce72b853da856160cc4c251a53f27ac3872bf4fcf06dea0e2c10a7bbc25cb42337b31fa3d352bfcdc78a85891ac23aa6",
+          "sha1": "14900c9c5fe89adb7edf96dbc0ba9324dd87f4e7"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/5qqTBb38/modmenu-5.1.0-beta.1.jar",
         "filename": "modmenu-5.1.0-beta.1.jar",
@@ -3054,8 +3054,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f1db8afd414ea074c86b073bfe0edb8a9c65ea52",
-          "sha512": "47aafc840f0dfdc48758e840c78833d4f3d4b68716f0c8f8f54f6e0bfa05b93f340acb17337998adac5f17dc0c8a3918105061abaf27dd29c843691d98a63ce8"
+          "sha512": "47aafc840f0dfdc48758e840c78833d4f3d4b68716f0c8f8f54f6e0bfa05b93f340acb17337998adac5f17dc0c8a3918105061abaf27dd29c843691d98a63ce8",
+          "sha1": "f1db8afd414ea074c86b073bfe0edb8a9c65ea52"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/oqeCO757/modmenu-6.1.0-alpha.1.jar",
         "filename": "modmenu-6.1.0-alpha.1.jar",
@@ -3090,8 +3090,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "81e19a89c21d64a565a042bc1b63cdd2c7b4b9c4be0f7d91ac7fe49c6d7281f1b3a8e703de214c7f6471c8599b8b2827b505a6452d4f2e818692e698febc1fc1",
-          "sha1": "8b521bee8f8c578f396b8b06e7edc0442deae849"
+          "sha1": "8b521bee8f8c578f396b8b06e7edc0442deae849",
+          "sha512": "81e19a89c21d64a565a042bc1b63cdd2c7b4b9c4be0f7d91ac7fe49c6d7281f1b3a8e703de214c7f6471c8599b8b2827b505a6452d4f2e818692e698febc1fc1"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/yA8g3pEj/modmenu-6.0.0-beta.1.jar",
         "filename": "modmenu-6.0.0-beta.1.jar",
@@ -3119,15 +3119,15 @@
     "changelog": "- Fixed a crash on the pause screen",
     "changelog_url": null,
     "date_published": "2022-12-10T02:10:16.618386Z",
-    "downloads": 77280,
+    "downloads": 77283,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "bcfee6b705a2a02932af73781133a6180560f0f2c291787029e99ff9d71fb7c3e0149d0f0298c9b91c1f49578e85f166db673e562c772225a44d1d24e6fc4685",
-          "sha1": "bcc0199aeaa40fabeda867d629a9fca7300056ad"
+          "sha1": "bcc0199aeaa40fabeda867d629a9fca7300056ad",
+          "sha512": "bcfee6b705a2a02932af73781133a6180560f0f2c291787029e99ff9d71fb7c3e0149d0f0298c9b91c1f49578e85f166db673e562c772225a44d1d24e6fc4685"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/eIrlBn1Z/modmenu-5.0.2.jar",
         "filename": "modmenu-5.0.2.jar",
@@ -3155,7 +3155,7 @@
     "changelog": "- Updated translations",
     "changelog_url": null,
     "date_published": "2022-12-08T03:43:02.188709Z",
-    "downloads": 473325,
+    "downloads": 473383,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3191,7 +3191,7 @@
     "changelog": "- Updated translations",
     "changelog_url": null,
     "date_published": "2022-12-08T03:41:46.14921Z",
-    "downloads": 317652,
+    "downloads": 317745,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3227,7 +3227,7 @@
     "changelog": "- Updated translations",
     "changelog_url": null,
     "date_published": "2022-12-08T03:36:12.497526Z",
-    "downloads": 330590,
+    "downloads": 330650,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3263,7 +3263,7 @@
     "changelog": "- Updated translations\n- Updated to 1.19.3",
     "changelog_url": null,
     "date_published": "2022-12-08T01:37:32.301068Z",
-    "downloads": 3308,
+    "downloads": 3310,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3371,15 +3371,15 @@
     "changelog": "- Fixed modpack badge being added to builtin mods",
     "changelog_url": null,
     "date_published": "2022-11-20T12:09:10.562624Z",
-    "downloads": 32660,
+    "downloads": 32664,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5f909b2b969e7ce2151f6ad7b821621648449f3668678b7d630022b9689a82024dfab0456624a7345f2dfdca7da0a620527150547bf2c8247ab98c90904b5c20",
-          "sha1": "ed592cc344f5437c56011d1d591d5734e3c6bda7"
+          "sha1": "ed592cc344f5437c56011d1d591d5734e3c6bda7",
+          "sha512": "5f909b2b969e7ce2151f6ad7b821621648449f3668678b7d630022b9689a82024dfab0456624a7345f2dfdca7da0a620527150547bf2c8247ab98c90904b5c20"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/4dReZoTJ/modmenu-4.1.1.jar",
         "filename": "modmenu-4.1.1.jar",
@@ -3414,8 +3414,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "708299511b43b97150aa788ac49f3e90cc76d5f2",
-          "sha512": "0a671506117588d1a41dcda37b75ec949ea32879451c819ef62eec1ebd0a554751358470aa76de480a53c4ffa80bcbf8bce766c5925979b7146cdbeb2f921c58"
+          "sha512": "0a671506117588d1a41dcda37b75ec949ea32879451c819ef62eec1ebd0a554751358470aa76de480a53c4ffa80bcbf8bce766c5925979b7146cdbeb2f921c58",
+          "sha1": "708299511b43b97150aa788ac49f3e90cc76d5f2"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/sI3kiPZE/modmenu-5.0.0-alpha.3.jar",
         "filename": "modmenu-5.0.0-alpha.3.jar",
@@ -3551,7 +3551,7 @@
     "changelog": "- Updated translations",
     "changelog_url": null,
     "date_published": "2022-11-03T18:25:54.061321Z",
-    "downloads": 18071,
+    "downloads": 18073,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3622,7 +3622,7 @@
     "changelog": "- Fixed crash when sort mode is null",
     "changelog_url": null,
     "date_published": "2022-10-17T01:35:48.452897Z",
-    "downloads": 6742,
+    "downloads": 6745,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3693,7 +3693,7 @@
     "changelog": "- Updated to 1.19.2",
     "changelog_url": null,
     "date_published": "2022-08-06T02:16:52.768219Z",
-    "downloads": 97431,
+    "downloads": 97452,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3729,7 +3729,7 @@
     "changelog": "- Update to 1.19.1",
     "changelog_url": null,
     "date_published": "2022-07-27T23:38:19.736614Z",
-    "downloads": 18772,
+    "downloads": 18780,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3765,15 +3765,15 @@
     "changelog": "- Fix Fabric API icon if Fabric API fatjar is not present",
     "changelog_url": null,
     "date_published": "2022-07-13T18:30:00.138691Z",
-    "downloads": 413811,
+    "downloads": 413980,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d4fbf49f72a16b0c241d2c5e856292ad4253d9f7",
-          "sha512": "ec0a3ec44a148c0fed89318ddc3d90121441b1b581affebc92855df81328e0182fd6778d5f52ca96ce8cc0f99a73ed0761abff98facdd74cc96cb1321b886d4f"
+          "sha512": "ec0a3ec44a148c0fed89318ddc3d90121441b1b581affebc92855df81328e0182fd6778d5f52ca96ce8cc0f99a73ed0761abff98facdd74cc96cb1321b886d4f",
+          "sha1": "d4fbf49f72a16b0c241d2c5e856292ad4253d9f7"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/4.0.4/modmenu-4.0.4.jar",
         "filename": "modmenu-4.0.4.jar",
@@ -3909,7 +3909,7 @@
     "changelog": "- Add keybind\n- Updated translations\n- Fixed Thai Language",
     "changelog_url": null,
     "date_published": "2022-06-27T13:58:35.878336Z",
-    "downloads": 86033,
+    "downloads": 86046,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3952,8 +3952,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fbd99bdf47b4b7936b155b341e5f5a13c943509e",
-          "sha512": "f5dbac6184d05494f3a599df9f46cde294060f7ad78a56e4c9c5e9ddd146b51813dc369cd33eb54b145425760271802658ddb2d01267688fb735f28321e30ea7"
+          "sha512": "f5dbac6184d05494f3a599df9f46cde294060f7ad78a56e4c9c5e9ddd146b51813dc369cd33eb54b145425760271802658ddb2d01267688fb735f28321e30ea7",
+          "sha1": "fbd99bdf47b4b7936b155b341e5f5a13c943509e"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/2.0.15/modmenu-2.0.15.jar",
         "filename": "modmenu-2.0.15.jar",
@@ -3980,15 +3980,15 @@
     "changelog": "- Disabled deprecation warnings by default\n- Add keybind\n- Updated translations",
     "changelog_url": null,
     "date_published": "2022-06-27T13:43:26.953078Z",
-    "downloads": 242461,
+    "downloads": 242563,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c7d28a070319e0019e85fd4fe69cf90eab9ad8350204e4723a00870aba9b98f487113102b10769129abdcffa1c0b796e63719a29137dd642a0ebef42860049f7",
-          "sha1": "62f87d6d548da07c46687baa09fb29daf0510870"
+          "sha1": "62f87d6d548da07c46687baa09fb29daf0510870",
+          "sha512": "c7d28a070319e0019e85fd4fe69cf90eab9ad8350204e4723a00870aba9b98f487113102b10769129abdcffa1c0b796e63719a29137dd642a0ebef42860049f7"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.16.23/modmenu-1.16.23.jar",
         "filename": "modmenu-1.16.23.jar",
@@ -4016,15 +4016,15 @@
     "changelog": "- Fixed Thai Language",
     "changelog_url": null,
     "date_published": "2022-06-07T19:05:56.695141Z",
-    "downloads": 42154,
+    "downloads": 42158,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4560868d0af94441fb54d5f4bceba67339019e58a7b7e8897338093a1e4a5840d2baa539c0932042f4d5233125ace02c304746eee14ebc2facd3bf0203a54fe8",
-          "sha1": "04be7e499bf67be0fea40d15f17a9ec47f21c309"
+          "sha1": "04be7e499bf67be0fea40d15f17a9ec47f21c309",
+          "sha512": "4560868d0af94441fb54d5f4bceba67339019e58a7b7e8897338093a1e4a5840d2baa539c0932042f4d5233125ace02c304746eee14ebc2facd3bf0203a54fe8"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/4.0.0/modmenu-4.0.0.jar",
         "filename": "modmenu-4.0.0.jar",
@@ -4052,15 +4052,15 @@
     "changelog": "- Updated Chinese (Traditional) translation\n- Updated Chinese (Simplified) translation\n- Updated Chinese (Literary) translation\n- Fix search terms\n- Updated Thai translation\n- Updated Spanish (Mexico) translation\n- Updated Thai translation\n- Updated Thai translation\n- Updated Russian translation\n- Updated Russian translation\n- Updated Estonian translation\n- Updated Estonian translation\n- Updated Russian translation\n- Updated Thai translation\n- Updated Chinese (Traditional) translation\n- Updated Thai translation\n- Updated Thai translation\n- Updated Chinese (Simplified) translation\n- Added Thai translation\n- Updated Chinese (Simplified) translation\n- Updated Vietnamese translation\n- Updated Vietnamese translation\n- Updated Chinese (Simplified) translation\n- Updated Chinese (Simplified) translation\n- Updated Chinese (Simplified) translation\n- Updated Chinese (Simplified) translation\n- Updated Chinese (Simplified) translation\n- Added Vietnamese translation\n- Updated Chinese (Simplified) translation\n- Updated Malay translation\n- Updated Czech translation\n- Updated Malay translation\n- Updated Russian translation\n- Updated Polish translation\n- Updated Japanese translation\n- Updated Estonian translation\n- Updated German translation\n- Added Czech translation\n- Updated Polish translation\n- Updated Polish translation",
     "changelog_url": null,
     "date_published": "2022-05-13T21:36:04.896519Z",
-    "downloads": 66854,
+    "downloads": 66874,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d581615296b1dfb72477c984a43cc6891f75eb73",
-          "sha512": "71163693df80011930e4180d5bc430715f19c82400a4916dfde2f1d53fc1c8e577f4b8b6e080b3755a8bc4fcb7f2770d244dc3af675dbdc797106b9b9f016473"
+          "sha512": "71163693df80011930e4180d5bc430715f19c82400a4916dfde2f1d53fc1c8e577f4b8b6e080b3755a8bc4fcb7f2770d244dc3af675dbdc797106b9b9f016473",
+          "sha1": "d581615296b1dfb72477c984a43cc6891f75eb73"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/3.2.2/modmenu-3.2.2.jar",
         "filename": "modmenu-3.2.2.jar",
@@ -4172,8 +4172,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8156feb82f8e21439ec46669783ddf473a8ca6f653fa3ae981293fb8c0aaafa9dc7e5f37ca44faf2f7b0dcdb86ac1e4a6f8cdb32f46981bb067fa44c6d842975",
-          "sha1": "5b1fd135988693adb2f1b25c7c4ceeaeb78214f3"
+          "sha1": "5b1fd135988693adb2f1b25c7c4ceeaeb78214f3",
+          "sha512": "8156feb82f8e21439ec46669783ddf473a8ca6f653fa3ae981293fb8c0aaafa9dc7e5f37ca44faf2f7b0dcdb86ac1e4a6f8cdb32f46981bb067fa44c6d842975"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/4.0.0-beta.3/modmenu-4.0.0-beta.3.jar",
         "filename": "modmenu-4.0.0-beta.3.jar",
@@ -4207,8 +4207,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e46648a28296475fd0cbb072bc637f233163b5e2",
-          "sha512": "dbe91b86d4e86f451323052c68aca270eb5042908c0320523bd90c04ea260b953fa5c6c0bacc386dc8015fee987441ba7e5943e0b545782ef394df4f38b207c2"
+          "sha512": "dbe91b86d4e86f451323052c68aca270eb5042908c0320523bd90c04ea260b953fa5c6c0bacc386dc8015fee987441ba7e5943e0b545782ef394df4f38b207c2",
+          "sha1": "e46648a28296475fd0cbb072bc637f233163b5e2"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/4.0.0-beta.2/modmenu-4.0.0-beta.2.jar",
         "filename": "modmenu-4.0.0-beta.2.jar",
@@ -4243,8 +4243,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0b6b73d6b1d7682790f9de36d2fe1b533bf0ae65",
-          "sha512": "f9468dd2587e5c637a04dcabedd3664628b02352acada279c3e76fd9ac7770f208a67e5ce7fcc17a2ae48ee9c727dec7954136f6314d2f2f846b173e0c909976"
+          "sha512": "f9468dd2587e5c637a04dcabedd3664628b02352acada279c3e76fd9ac7770f208a67e5ce7fcc17a2ae48ee9c727dec7954136f6314d2f2f846b173e0c909976",
+          "sha1": "0b6b73d6b1d7682790f9de36d2fe1b533bf0ae65"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/3.1.1/modmenu-3.1.1.jar",
         "filename": "modmenu-3.1.1.jar",
@@ -4278,8 +4278,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "609ba5f76ef2df07ddaa1e8a74997676df8fa377d13550418a32316aa6e5909737290fce508b5d26e1eef06e42abf6ed4a4579bf46d3ae4bd7ed0a7bdf25c519",
-          "sha1": "b520422af2fce2d7cd02b6b9ae4f025822670c28"
+          "sha1": "b520422af2fce2d7cd02b6b9ae4f025822670c28",
+          "sha512": "609ba5f76ef2df07ddaa1e8a74997676df8fa377d13550418a32316aa6e5909737290fce508b5d26e1eef06e42abf6ed4a4579bf46d3ae4bd7ed0a7bdf25c519"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/3.1.0/modmenu-3.1.0.jar",
         "filename": "modmenu-3.1.0.jar",
@@ -4320,7 +4320,7 @@
     "changelog": "- Updated Estonian translation\n- Made badge-based search terms translatable\n- Added description and summary search",
     "changelog_url": null,
     "date_published": "2021-12-18T12:38:55.453087Z",
-    "downloads": 31985,
+    "downloads": 31996,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4391,7 +4391,7 @@
     "changelog": "- Added config option to disable deprecation warnings\n- Added Arabic translation\n- Updated Russian translation\n- Updated Portuguese (Brazil) translation\n- Updated Turkish translation\n- Updated German translation",
     "changelog_url": null,
     "date_published": "2021-10-03T05:13:53.250899Z",
-    "downloads": 8783,
+    "downloads": 8784,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4426,15 +4426,15 @@
     "changelog": "- Added config option to disable deprecation warnings\n- Added Arabic translation\n- Updated Russian translation\n- Updated Portuguese (Brazil) translation\n- Updated Turkish translation\n- Updated German translation",
     "changelog_url": null,
     "date_published": "2021-10-03T05:10:58.115167Z",
-    "downloads": 9054,
+    "downloads": 9055,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "11a4d26420189fcfdfee3e565a7ba97ead122218",
-          "sha512": "e72a0b2f944ce75e78da20fc07f99b5bcae07e496205e483dd7a99631074c4a4a6e9b7a17a5e6285b10ee31e93eb592e06d195bf2ee6e25eda5ae7762b73db28"
+          "sha512": "e72a0b2f944ce75e78da20fc07f99b5bcae07e496205e483dd7a99631074c4a4a6e9b7a17a5e6285b10ee31e93eb592e06d195bf2ee6e25eda5ae7762b73db28",
+          "sha1": "11a4d26420189fcfdfee3e565a7ba97ead122218"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.16.22/modmenu-1.16.22.jar",
         "filename": "modmenu-1.16.22.jar",
@@ -4468,8 +4468,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "96c9741127516103b273fac5fac7e5b179f64270",
-          "sha512": "cfdd10585e96d53321d4d84d44d7505b4130527747da05f4c407cb3b072ff2a25ec819df12d7840810bc9ca6d2497a7bc847525a3f15dad08204caa2c68c9844"
+          "sha512": "cfdd10585e96d53321d4d84d44d7505b4130527747da05f4c407cb3b072ff2a25ec819df12d7840810bc9ca6d2497a7bc847525a3f15dad08204caa2c68c9844",
+          "sha1": "96c9741127516103b273fac5fac7e5b179f64270"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.16.21/modmenu-1.16.21.jar",
         "filename": "modmenu-1.16.21.jar",
@@ -4504,8 +4504,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c665b46f6b9f703a95fbf4f3b7c385851e212ba9f69b3335d98e8e3594b6b14d2b631db6092b8ef5fb5601a86cbb06c99f70961b068bc0204e014a7c848aa150",
-          "sha1": "0053e0a958e2d26b00739b830c015708a12be298"
+          "sha1": "0053e0a958e2d26b00739b830c015708a12be298",
+          "sha512": "c665b46f6b9f703a95fbf4f3b7c385851e212ba9f69b3335d98e8e3594b6b14d2b631db6092b8ef5fb5601a86cbb06c99f70961b068bc0204e014a7c848aa150"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/2.1.1/modmenu-2.1.1.jar",
         "filename": "modmenu-2.1.1.jar",
@@ -4817,7 +4817,7 @@
     "changelog": "- Updated Portuguese (Brazil) translation",
     "changelog_url": null,
     "date_published": "2021-09-06T11:45:40.107879Z",
-    "downloads": 407,
+    "downloads": 408,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4860,8 +4860,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "775905aaac1f7737e1747188792359cab577d4fb0fb30095430eb96e3c453403f18fc18e8f2e172a0fc2eb67b2149adf346b95e91953afe11fafbabd320ca740",
-          "sha1": "db2c640258ec56e9403a1089a27e6982b27fdb93"
+          "sha1": "db2c640258ec56e9403a1089a27e6982b27fdb93",
+          "sha512": "775905aaac1f7737e1747188792359cab577d4fb0fb30095430eb96e3c453403f18fc18e8f2e172a0fc2eb67b2149adf346b95e91953afe11fafbabd320ca740"
         },
         "url": "https://cdn.modrinth.com//data/mOgUt4GM/versions/2.0.9/modmenu-2.0.9.jar",
         "filename": "modmenu-2.0.9.jar",
@@ -4895,8 +4895,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "326f920e83dc02368ff2126c11fcf86329d1ab129469625fdabc8dbab191553298e832e50a668707c95ab7a7c1a9129d50c83326defeae6cdb424733444ce130",
-          "sha1": "d0c8a302fc432d882dc4cedc918bdc85fc64ad84"
+          "sha1": "d0c8a302fc432d882dc4cedc918bdc85fc64ad84",
+          "sha512": "326f920e83dc02368ff2126c11fcf86329d1ab129469625fdabc8dbab191553298e832e50a668707c95ab7a7c1a9129d50c83326defeae6cdb424733444ce130"
         },
         "url": "https://cdn.modrinth.com//data/mOgUt4GM/versions/1.16.16/modmenu-1.16.16.jar",
         "filename": "modmenu-1.16.16.jar",
@@ -4930,8 +4930,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c778d3d32523fcebea70614f14bc0950afec6a06",
-          "sha512": "7a9d99de0ce679111c243c983a2d4e7c38fa1ed12f563534163abea83936b60e3d5f4b3de2c9bc9e78e7916bcddbffa3f69e1b0877c81ee2083f28cbab7f346a"
+          "sha512": "7a9d99de0ce679111c243c983a2d4e7c38fa1ed12f563534163abea83936b60e3d5f4b3de2c9bc9e78e7916bcddbffa3f69e1b0877c81ee2083f28cbab7f346a",
+          "sha1": "c778d3d32523fcebea70614f14bc0950afec6a06"
         },
         "url": "https://cdn.modrinth.com//data/mOgUt4GM/versions/1.16.15/modmenu-1.16.15.jar",
         "filename": "modmenu-1.16.15.jar",
@@ -4966,8 +4966,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "05f5ef82bf43e5087a6a481a027588fdda281d7c0168d340e672f689797a9316d4d805f60e999f1ef2e40048b5cdd1e4b1d48ce81d87d5a21bb94a94d5befc46",
-          "sha1": "205d5aac4f64a5e1a70534ef7c08806596ede109"
+          "sha1": "205d5aac4f64a5e1a70534ef7c08806596ede109",
+          "sha512": "05f5ef82bf43e5087a6a481a027588fdda281d7c0168d340e672f689797a9316d4d805f60e999f1ef2e40048b5cdd1e4b1d48ce81d87d5a21bb94a94d5befc46"
         },
         "url": "https://cdn.modrinth.com//data/mOgUt4GM/versions/2.0.8/modmenu-2.0.8.jar",
         "filename": "modmenu-2.0.8.jar",
@@ -5002,8 +5002,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "bb065e91fdde821b1bd7d8190ba7cd5ad35f22438ac6f3ba213a54f7e1ccf2b11599ae457d839eadec37da72ce0fd8c43194f4401936b4839dd7a65293c3dc40",
-          "sha1": "5425b82d434a69de9e0ca539d92c7ed7bfef7146"
+          "sha1": "5425b82d434a69de9e0ca539d92c7ed7bfef7146",
+          "sha512": "bb065e91fdde821b1bd7d8190ba7cd5ad35f22438ac6f3ba213a54f7e1ccf2b11599ae457d839eadec37da72ce0fd8c43194f4401936b4839dd7a65293c3dc40"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/2.0.7/modmenu-2.0.7.jar",
         "filename": "modmenu-2.0.7.jar",
@@ -5179,8 +5179,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "53a998ab9e803d5b06cb0b7b8b387af67933fb647ecd2910d242b54479393ef05c450f7376977e96d86f6bb75c205667630b250d43b21a4f368337de0946fccd",
-          "sha1": "98c6fb528c6f64c0148a62a11ba971efdf4b2f3e"
+          "sha1": "98c6fb528c6f64c0148a62a11ba971efdf4b2f3e",
+          "sha512": "53a998ab9e803d5b06cb0b7b8b387af67933fb647ecd2910d242b54479393ef05c450f7376977e96d86f6bb75c205667630b250d43b21a4f368337de0946fccd"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.16.12/modmenu-1.16.12.jar",
         "filename": "modmenu-1.16.12.jar",
@@ -5286,8 +5286,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4af7c6bb26ee80bd816ebe9068b16902cafb946d",
-          "sha512": "27984e37c91a90232c77af795d6a58a36b7b3c276aab9d03f456deb49b38c982f88ced3dd6ec2e70a6852c0d247f833ba36e75c8d9ed59fff4d54d1c15c90ede"
+          "sha512": "27984e37c91a90232c77af795d6a58a36b7b3c276aab9d03f456deb49b38c982f88ced3dd6ec2e70a6852c0d247f833ba36e75c8d9ed59fff4d54d1c15c90ede",
+          "sha1": "4af7c6bb26ee80bd816ebe9068b16902cafb946d"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/2.0.3/modmenu-2.0.3.jar",
         "filename": "modmenu-2.0.3.jar",
@@ -5357,8 +5357,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e6ebbc3115c74dd601129099acc792e214783966",
-          "sha512": "2d66d55e114ee19877ffd3ad6ac901a3290b6b4f0e9000c7a3a8f0a5f401ea3a29bccafea7ea06a7d604057d6be9319f24752e456796624b2e36d0bcce062504"
+          "sha512": "2d66d55e114ee19877ffd3ad6ac901a3290b6b4f0e9000c7a3a8f0a5f401ea3a29bccafea7ea06a7d604057d6be9319f24752e456796624b2e36d0bcce062504",
+          "sha1": "e6ebbc3115c74dd601129099acc792e214783966"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/2.0.2/modmenu-2.0.2.jar",
         "filename": "modmenu-2.0.2.jar",
@@ -5392,8 +5392,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a3b26ff7bb57b226dcf500f6dbe42162d658e850",
-          "sha512": "d08ccef96f514813b577d1d1d246af546619cc8d8a21f058d5f920bb52477f98f2228ff80f1332891a96e7228812cc85dcca5217af0adacc8a8839780028eff1"
+          "sha512": "d08ccef96f514813b577d1d1d246af546619cc8d8a21f058d5f920bb52477f98f2228ff80f1332891a96e7228812cc85dcca5217af0adacc8a8839780028eff1",
+          "sha1": "a3b26ff7bb57b226dcf500f6dbe42162d658e850"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/2.0.0-beta.7/modmenu-2.0.0-beta.7.jar",
         "filename": "modmenu-2.0.0-beta.7.jar",
@@ -5427,8 +5427,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "92c2c785c0b06cff93203e2280abc794d62c959c",
-          "sha512": "917b08fdca974897ee46ffda2dea111211119f040137b7ba2314cce7e12a243ea182c547b89980efb6744b79898582f0d06824f53307c6c477f057b0415d532f"
+          "sha512": "917b08fdca974897ee46ffda2dea111211119f040137b7ba2314cce7e12a243ea182c547b89980efb6744b79898582f0d06824f53307c6c477f057b0415d532f",
+          "sha1": "92c2c785c0b06cff93203e2280abc794d62c959c"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/2.0.0-beta.5/modmenu-2.0.0-beta.5.jar",
         "filename": "modmenu-2.0.0-beta.5.jar",
@@ -5455,15 +5455,15 @@
     "changelog": "- Fix crash with default API getId implementation resulting in NPE",
     "changelog_url": null,
     "date_published": "2021-04-10T19:39:37.333394Z",
-    "downloads": 755,
+    "downloads": 756,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "197062aefc991c5151ac143343bd2082535ca2f6",
-          "sha512": "58628244c8e2a22dc89eb091db3d5a12852130e97f97d979e55d1a3f083ad5db89806dfd50bf8b4fbfa9c67c74f09205d33439b80a8a179701151de8b9bd7a5b"
+          "sha512": "58628244c8e2a22dc89eb091db3d5a12852130e97f97d979e55d1a3f083ad5db89806dfd50bf8b4fbfa9c67c74f09205d33439b80a8a179701151de8b9bd7a5b",
+          "sha1": "197062aefc991c5151ac143343bd2082535ca2f6"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.10.6/modmenu-1.10.6.jar",
         "filename": "modmenu-1.10.6.jar",
@@ -5602,8 +5602,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9d5fbe5ce7b1a7a26f4a4c12321809b9a0c6e9099a3f74ff7ad4f49c96f13885c4695938c516b39f529b51823f0ea5038f67ddbf4ed3ec69432f09c20f7d875b",
-          "sha1": "d59e0064d42213462379f63d3aa0e72151439aac"
+          "sha1": "d59e0064d42213462379f63d3aa0e72151439aac",
+          "sha512": "9d5fbe5ce7b1a7a26f4a4c12321809b9a0c6e9099a3f74ff7ad4f49c96f13885c4695938c516b39f529b51823f0ea5038f67ddbf4ed3ec69432f09c20f7d875b"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.16.8/modmenu-1.16.8.jar",
         "filename": "modmenu-1.16.8.jar",
@@ -5637,8 +5637,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "37851b3fa8e460e79dce63dd0a65d7a8f6fedeaff0d9985e46cc733309b16ceddeb81817951f3c0ab038b50fe441a370f882b3520f1971282024810356a3b898",
-          "sha1": "595beb5853cb1ac7cb0ea4ae83d120dafdd0adfc"
+          "sha1": "595beb5853cb1ac7cb0ea4ae83d120dafdd0adfc",
+          "sha512": "37851b3fa8e460e79dce63dd0a65d7a8f6fedeaff0d9985e46cc733309b16ceddeb81817951f3c0ab038b50fe441a370f882b3520f1971282024810356a3b898"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/2.0.0-beta.2/modmenu-2.0.0-beta.2.jar",
         "filename": "modmenu-2.0.0-beta.2.jar",
@@ -5707,8 +5707,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "63da238680e21e125ce85ebebc82c06677e8548f",
-          "sha512": "c20c276036ed10f6c49b8c1d0a43839d8f6ce372155ce9b45e255d8bac24f540b39d22b9b7f11f2d2429eaa430d79474a73f4b472e63c7d9248592d4a0b6795e"
+          "sha512": "c20c276036ed10f6c49b8c1d0a43839d8f6ce372155ce9b45e255d8bac24f540b39d22b9b7f11f2d2429eaa430d79474a73f4b472e63c7d9248592d4a0b6795e",
+          "sha1": "63da238680e21e125ce85ebebc82c06677e8548f"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.16.7/modmenu-1.16.7.jar",
         "filename": "modmenu-1.16.7.jar",
@@ -5742,8 +5742,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8da9d6db8ff527c926dad773d1f115fa7f770ad1d44bca128fe844f2d3302e491cf1e7bdedda82c350420e5ab3ca3b3c143c9fafa07c5085fde3b7e5dd05e358",
-          "sha1": "cd1b7d594e17cdfcb9313fd1af7f9a1f3d216701"
+          "sha1": "cd1b7d594e17cdfcb9313fd1af7f9a1f3d216701",
+          "sha512": "8da9d6db8ff527c926dad773d1f115fa7f770ad1d44bca128fe844f2d3302e491cf1e7bdedda82c350420e5ab3ca3b3c143c9fafa07c5085fde3b7e5dd05e358"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.16.6/modmenu-1.16.6.jar",
         "filename": "modmenu-1.16.6.jar",
@@ -5770,15 +5770,15 @@
     "changelog": "- Added additional link key translations for common links",
     "changelog_url": null,
     "date_published": "2021-02-03T17:37:00.869777Z",
-    "downloads": 3796,
+    "downloads": 3800,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "19efda14091e729e994344c88bda708b9dc4db1fa7a58deaf6a276ea8877f68048e6fb8a2155be4e32760822d5b78102e0c3e6bf216216f3bb613adae6fbe16f",
-          "sha1": "412db6dd04056379c6df0997bf3570a01816dd2d"
+          "sha1": "412db6dd04056379c6df0997bf3570a01816dd2d",
+          "sha512": "19efda14091e729e994344c88bda708b9dc4db1fa7a58deaf6a276ea8877f68048e6fb8a2155be4e32760822d5b78102e0c3e6bf216216f3bb613adae6fbe16f"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.16.5/modmenu-1.16.5.jar",
         "filename": "modmenu-1.16.5.jar",
@@ -5952,8 +5952,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "99a3f39e463e53da878a34e37a6084caa5cfefd1df9f973989815195af26548bceeb351a30585e27e77413e27e7ede95bd653549b633663004b5904658fb3f38",
-          "sha1": "ff8d7b2889aa69af06d73bfc2b679db80cb78190"
+          "sha1": "ff8d7b2889aa69af06d73bfc2b679db80cb78190",
+          "sha512": "99a3f39e463e53da878a34e37a6084caa5cfefd1df9f973989815195af26548bceeb351a30585e27e77413e27e7ede95bd653549b633663004b5904658fb3f38"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.16.0/modmenu-1.16.0.jar",
         "filename": "modmenu-1.16.0.jar",
@@ -5981,15 +5981,15 @@
     "changelog": "- Major internal refactors\n- Added links, contributors, and license information\n- Added an options screen for Mod Menu\n- Added a compact list mode option\n- Added an options to change Mods button style to: Below Realms (Default), Shrink Realms, Replace Realms, and Fabric Icon\n- Added an option to hide mod badges\n- Added an option to move where the mod count is displayed (on button, on title screen, both, neither)\n- Added options to specify whether or not to count libraries, children, and hidden mods in the mod count\n- Added options to hide mod links, credits, or license info\n- Added options to disable the modification of the title screen and/or game menu screen\n- Changed the hardcoded icon for \"java\n- Probably more that got forgotten about in this massive update",
     "changelog_url": null,
     "date_published": "2021-02-01T06:38:14.029901Z",
-    "downloads": 6999,
+    "downloads": 7000,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0a89c3513294091c639f9ed4c64252f9b469d252993e86163222687db2455d331984341c954eca84037ba06f38227de37406912fd77f342feb23bdc96048c6f6",
-          "sha1": "9c09902f887f3f742082835b8dd05a7f648786c5"
+          "sha1": "9c09902f887f3f742082835b8dd05a7f648786c5",
+          "sha512": "0a89c3513294091c639f9ed4c64252f9b469d252993e86163222687db2455d331984341c954eca84037ba06f38227de37406912fd77f342feb23bdc96048c6f6"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.15.0/modmenu-1.15.0.jar",
         "filename": "modmenu-1.15.0.jar",
@@ -6023,8 +6023,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c53c4e17a9008f7f3c99b081ae9da14716c62456975e4c7eefc09641f517a788a974fbce6e6924c366f5b5781ae1825b469e2a10b43e1f03a7e3898dd8571c37",
-          "sha1": "5e213c8cebfed2785f7d4f5f84af121f488e51ce"
+          "sha1": "5e213c8cebfed2785f7d4f5f84af121f488e51ce",
+          "sha512": "c53c4e17a9008f7f3c99b081ae9da14716c62456975e4c7eefc09641f517a788a974fbce6e6924c366f5b5781ae1825b469e2a10b43e1f03a7e3898dd8571c37"
         },
         "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/1.14.15/modmenu-1.14.15.jar",
         "filename": "modmenu-1.14.15.jar",

@@ -16,15 +16,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.8.0+1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-17T15:42:26.102905Z",
-    "downloads": 9030,
+    "downloads": 9263,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d6540420202244038ccbf64e08477b704ed14173",
-          "sha512": "344df74f700cf15925eb6317e410d2d0dbcbb5b6468f17f7802075af59c67c5a2c7040050499f724d33b4683496f73e63c312577e20d366eb8a541b222789255"
+          "sha512": "344df74f700cf15925eb6317e410d2d0dbcbb5b6468f17f7802075af59c67c5a2c7040050499f724d33b4683496f73e63c312577e20d366eb8a541b222789255",
+          "sha1": "d6540420202244038ccbf64e08477b704ed14173"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/zc18lKtk/ukulib-1.8.0%2B1.21.6.jar",
         "filename": "ukulib-1.8.0+1.21.6.jar",
@@ -52,7 +52,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.7.1+1.21.5",
     "changelog_url": null,
     "date_published": "2025-04-08T19:58:55.158623Z",
-    "downloads": 117651,
+    "downloads": 118154,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -88,15 +88,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.7.0+1.21.5",
     "changelog_url": null,
     "date_published": "2025-03-25T17:45:20.281619Z",
-    "downloads": 4217,
+    "downloads": 4219,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "1cf41ca860770c318748134e4299c4a9d84543e4",
-          "sha512": "63396f6acb78955c72ae4c52c4d5408c683ed2ac42d171f60d4a2bbdc35270ab7e74feef72bffee65091b7655d30f3a7875d2cdd4440b40a2b12527da0bfd3c3"
+          "sha512": "63396f6acb78955c72ae4c52c4d5408c683ed2ac42d171f60d4a2bbdc35270ab7e74feef72bffee65091b7655d30f3a7875d2cdd4440b40a2b12527da0bfd3c3",
+          "sha1": "1cf41ca860770c318748134e4299c4a9d84543e4"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/80isezW8/ukulib-1.7.0%2B1.21.5.jar",
         "filename": "ukulib-1.7.0+1.21.5.jar",
@@ -124,7 +124,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.6.0+1.21.4",
     "changelog_url": null,
     "date_published": "2024-12-03T21:56:12.153695Z",
-    "downloads": 215070,
+    "downloads": 215427,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -161,15 +161,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.5.0+1.21.2",
     "changelog_url": null,
     "date_published": "2024-10-22T17:25:48.807112Z",
-    "downloads": 37843,
+    "downloads": 37858,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "77d5231912d73742a90137d6c3e4db7f388269123231441c52463f16ae58fd6d060b752a74328b4f4df45de074286f2bfeee1b1e4f87fed2faee6fe387742be2",
-          "sha1": "8d767c41dc67ff081f63a73a92aab4412c64afbf"
+          "sha1": "8d767c41dc67ff081f63a73a92aab4412c64afbf",
+          "sha512": "77d5231912d73742a90137d6c3e4db7f388269123231441c52463f16ae58fd6d060b752a74328b4f4df45de074286f2bfeee1b1e4f87fed2faee6fe387742be2"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/APODDi4p/ukulib-1.5.0%2B1.21.2.jar",
         "filename": "ukulib-1.5.0+1.21.2.jar",
@@ -198,7 +198,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.4.1+1.21",
     "changelog_url": null,
     "date_published": "2024-09-13T08:59:23.661105Z",
-    "downloads": 369579,
+    "downloads": 370017,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -235,15 +235,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.4.0+1.21",
     "changelog_url": null,
     "date_published": "2024-06-16T11:34:03.091933Z",
-    "downloads": 165830,
+    "downloads": 165905,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d0a9948ce64b7db37b78cf10822a1dde40218ccb232a7e18049b6009da11f2c0f79cc515cf2c7af74f9a9287a2abe61c6c4ca006bbe7f177307acb8fb016c425",
-          "sha1": "97dc0273bf4b85ef662bb856ae2e080993826ec0"
+          "sha1": "97dc0273bf4b85ef662bb856ae2e080993826ec0",
+          "sha512": "d0a9948ce64b7db37b78cf10822a1dde40218ccb232a7e18049b6009da11f2c0f79cc515cf2c7af74f9a9287a2abe61c6c4ca006bbe7f177307acb8fb016c425"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/uOV1ub0N/ukulib-1.4.0%2B1.21.jar",
         "filename": "ukulib-1.4.0+1.21.jar",
@@ -271,7 +271,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.3.0+1.21",
     "changelog_url": null,
     "date_published": "2024-06-13T15:48:20.944042Z",
-    "downloads": 73507,
+    "downloads": 73552,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -308,15 +308,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.2.1+1.20.6",
     "changelog_url": null,
     "date_published": "2024-05-13T15:17:15.811905Z",
-    "downloads": 54525,
+    "downloads": 54529,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "68fcc396dcd490bd9d53c9ecb2b3537a040246e199190a88c9d14d941f4517f3698359ea033cc39fe717eebe9a1ed6864505ac9e380777865873823908c951b9",
-          "sha1": "ae1e2e726ad41e2ddc8030d25b76eaa34589dfea"
+          "sha1": "ae1e2e726ad41e2ddc8030d25b76eaa34589dfea",
+          "sha512": "68fcc396dcd490bd9d53c9ecb2b3537a040246e199190a88c9d14d941f4517f3698359ea033cc39fe717eebe9a1ed6864505ac9e380777865873823908c951b9"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/U9wsh3vB/ukulib-1.2.1%2B1.20.6.jar",
         "filename": "ukulib-1.2.1+1.20.6.jar",
@@ -345,15 +345,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.2.0+1.20.6",
     "changelog_url": null,
     "date_published": "2024-04-30T00:00:42.241989Z",
-    "downloads": 13708,
+    "downloads": 13714,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b9e46a2a1eeb616939390896e7dbd89f11b292c3",
-          "sha512": "21cecbd0747bebd4e4c42217222918dc35c9e589868b0ea8ecb34a3f9069eae78367a4989dced98483b99d4f78e61bfd71f5a3ea17bd67d9e59c90f25448b5d2"
+          "sha512": "21cecbd0747bebd4e4c42217222918dc35c9e589868b0ea8ecb34a3f9069eae78367a4989dced98483b99d4f78e61bfd71f5a3ea17bd67d9e59c90f25448b5d2",
+          "sha1": "b9e46a2a1eeb616939390896e7dbd89f11b292c3"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/62p3LxO3/ukulib-1.2.0%2B1.20.6.jar",
         "filename": "ukulib-1.2.0+1.20.6.jar",
@@ -382,15 +382,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.1.2+1.20.4",
     "changelog_url": null,
     "date_published": "2024-02-15T16:18:50.089803Z",
-    "downloads": 137735,
+    "downloads": 137776,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2cf7c3317489754a0cf0c1b458fecfd3f0483635408039fd5016ef13954e5461574a4e0896f1d540c75c1e691d27353fd3f080b221fc428f105c26fd31e6e1cc",
-          "sha1": "ff92bd7ce0367d25240bba3b8db0cab5e865ba46"
+          "sha1": "ff92bd7ce0367d25240bba3b8db0cab5e865ba46",
+          "sha512": "2cf7c3317489754a0cf0c1b458fecfd3f0483635408039fd5016ef13954e5461574a4e0896f1d540c75c1e691d27353fd3f080b221fc428f105c26fd31e6e1cc"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/1pdmPwYS/ukulib-1.1.2%2B1.20.4.jar",
         "filename": "ukulib-1.1.2+1.20.4.jar",
@@ -456,15 +456,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.1.0+1.20.3",
     "changelog_url": null,
     "date_published": "2023-12-06T00:10:49.118056Z",
-    "downloads": 65608,
+    "downloads": 65627,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a1b71564e737617933c388ae5e7b8ef91c8c2b28022ada759e0cfaab9066db0366af9772d2ede6d982c79fbf09b9b18ca4e81f884515285e044aea4a990b284d",
-          "sha1": "b79cf01a8f467ccb641eee05220511d8df4d7668"
+          "sha1": "b79cf01a8f467ccb641eee05220511d8df4d7668",
+          "sha512": "a1b71564e737617933c388ae5e7b8ef91c8c2b28022ada759e0cfaab9066db0366af9772d2ede6d982c79fbf09b9b18ca4e81f884515285e044aea4a990b284d"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/9uMkLHWi/ukulib-1.1.0%2B1.20.3.jar",
         "filename": "ukulib-1.1.0+1.20.3.jar",
@@ -492,7 +492,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.0.2+1.20.2",
     "changelog_url": null,
     "date_published": "2023-10-26T20:46:10.413883Z",
-    "downloads": 41801,
+    "downloads": 41803,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -528,7 +528,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.0.1+1.20.2",
     "changelog_url": null,
     "date_published": "2023-09-21T17:40:02.424705Z",
-    "downloads": 24430,
+    "downloads": 24431,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -564,7 +564,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.0.0+1.20.2",
     "changelog_url": null,
     "date_published": "2023-09-21T16:31:47.916534Z",
-    "downloads": 19261,
+    "downloads": 19263,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -607,8 +607,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "551ba90538c3fa168478d6c579ba7cb588713e35",
-          "sha512": "b4cac480cc6a356913640f867ce5d3d4cd5584d6a39fc94920fa7ae4d31e8b1b3204b9d85c76e6f2794d888a59bab9d18663bf19559880928218defb4e40507d"
+          "sha512": "b4cac480cc6a356913640f867ce5d3d4cd5584d6a39fc94920fa7ae4d31e8b1b3204b9d85c76e6f2794d888a59bab9d18663bf19559880928218defb4e40507d",
+          "sha1": "551ba90538c3fa168478d6c579ba7cb588713e35"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/E2IjZXqP/ukulib-1.0.0-beta.4%2B1.20.2-rc2.jar",
         "filename": "ukulib-1.0.0-beta.4+1.20.2-rc2.jar",
@@ -637,15 +637,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.0.0-beta.3+1.20.1",
     "changelog_url": null,
     "date_published": "2023-07-22T22:02:16.733801Z",
-    "downloads": 26155,
+    "downloads": 26158,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8b6a609c72926b49716301eac34bdf46ceeefc1ef1393183a070eae2233687944172ebaa37aae7149991933aea79524c17a688b0d1f0aac9452232bc080f9aeb",
-          "sha1": "f9782fc55821f0cdf4c7b93f2ecd5ce1de5e7ba4"
+          "sha1": "f9782fc55821f0cdf4c7b93f2ecd5ce1de5e7ba4",
+          "sha512": "8b6a609c72926b49716301eac34bdf46ceeefc1ef1393183a070eae2233687944172ebaa37aae7149991933aea79524c17a688b0d1f0aac9452232bc080f9aeb"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/bC2BC1G8/ukulib-1.0.0-beta.3%2B1.20.1.jar",
         "filename": "ukulib-1.0.0-beta.3+1.20.1.jar",
@@ -674,15 +674,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/1.0.0-beta.2+1.20",
     "changelog_url": null,
     "date_published": "2023-06-13T23:20:16.795637Z",
-    "downloads": 8203,
+    "downloads": 8204,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "31169b08fc55e8bdfd6869808755465b7f7f42c705808569cb6a48932206e6e1995352a676c53884efa41aabaa811d5c4cea8956e9d81a185bac0d0ae3932c3d",
-          "sha1": "5a452d6f637e4d3f7804f1dfd0f483169a02cf81"
+          "sha1": "5a452d6f637e4d3f7804f1dfd0f483169a02cf81",
+          "sha512": "31169b08fc55e8bdfd6869808755465b7f7f42c705808569cb6a48932206e6e1995352a676c53884efa41aabaa811d5c4cea8956e9d81a185bac0d0ae3932c3d"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/74qyHw6a/ukulib-1.0.0-beta.2%2B1.20.jar",
         "filename": "ukulib-1.0.0-beta.2+1.20.jar",
@@ -717,8 +717,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0bebb931789ecbecb7db1124ede4666979a6e6d45985c4b213b84ae184f51c2c36b4a59ec2803dfc0046f462f59d58cbf4cb1c2f98983ca46dd1a86d6ed70830",
-          "sha1": "56586d5cf1efff83016418799d4c534f5d5b74f9"
+          "sha1": "56586d5cf1efff83016418799d4c534f5d5b74f9",
+          "sha512": "0bebb931789ecbecb7db1124ede4666979a6e6d45985c4b213b84ae184f51c2c36b4a59ec2803dfc0046f462f59d58cbf4cb1c2f98983ca46dd1a86d6ed70830"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/ktJWq3Uc/ukulib-1.0.0-beta.1%2B1.20.jar",
         "filename": "ukulib-1.0.0-beta.1+1.20.jar",
@@ -747,7 +747,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/0.7.0+1.20",
     "changelog_url": null,
     "date_published": "2023-06-07T15:29:08.77415Z",
-    "downloads": 376473,
+    "downloads": 376649,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -855,7 +855,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/0.6.1+1.19.4",
     "changelog_url": null,
     "date_published": "2023-03-14T16:20:14.840431Z",
-    "downloads": 83446,
+    "downloads": 83463,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -891,15 +891,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/0.6.2+1.16.5",
     "changelog_url": null,
     "date_published": "2023-03-03T16:05:27.110689Z",
-    "downloads": 12856,
+    "downloads": 12860,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "11e9d1d6f42c45ab1539cb402482725e735360b1",
-          "sha512": "9102159de7ef9097b2df065e88f0f3d62fd12a153bad60bcd8281519540b7bad1ee51f042a55e2ac1309e3bfebd4fea9e2a1f8983336243465724e165bc096ff"
+          "sha512": "9102159de7ef9097b2df065e88f0f3d62fd12a153bad60bcd8281519540b7bad1ee51f042a55e2ac1309e3bfebd4fea9e2a1f8983336243465724e165bc096ff",
+          "sha1": "11e9d1d6f42c45ab1539cb402482725e735360b1"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/Iq7zmFKG/ukulib-0.6.2%2B1.16.5.jar",
         "filename": "ukulib-0.6.2+1.16.5.jar",
@@ -963,15 +963,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/0.6.1+1.18.2",
     "changelog_url": null,
     "date_published": "2022-12-31T17:25:25.220244Z",
-    "downloads": 33302,
+    "downloads": 33307,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c468e7c0bf58edc0e4a5f81fc5819c7119493266e3f0ac50b3e82cb5ce531a1aac6382c863b90f191ae241842eee6502b4c2c13482688f564dde6a9a2e7c2258",
-          "sha1": "9a72bc9dab18b05a0eb3c51dd497b48beba6e5f9"
+          "sha1": "9a72bc9dab18b05a0eb3c51dd497b48beba6e5f9",
+          "sha512": "c468e7c0bf58edc0e4a5f81fc5819c7119493266e3f0ac50b3e82cb5ce531a1aac6382c863b90f191ae241842eee6502b4c2c13482688f564dde6a9a2e7c2258"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/XlsUf9hq/ukulib-0.6.1%2B1.18.2.jar",
         "filename": "ukulib-0.6.1+1.18.2.jar",
@@ -999,7 +999,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/0.6.1+1.19.2",
     "changelog_url": null,
     "date_published": "2022-12-31T17:21:34.630549Z",
-    "downloads": 85577,
+    "downloads": 85596,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1035,7 +1035,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/0.6.1+1.19.3",
     "changelog_url": null,
     "date_published": "2022-12-31T17:11:22.658289Z",
-    "downloads": 24975,
+    "downloads": 24978,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1078,8 +1078,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4e1d8d8df9066aab838d022692eaf1cef70326f3d03cb499a279833f6c0bdc47778a9b0201a74e7c5cf37fc59886d2dde56900e6fd7690769e736786f38b714b",
-          "sha1": "333b845c6faa72efb608bd49280aa20dde4b8632"
+          "sha1": "333b845c6faa72efb608bd49280aa20dde4b8632",
+          "sha512": "4e1d8d8df9066aab838d022692eaf1cef70326f3d03cb499a279833f6c0bdc47778a9b0201a74e7c5cf37fc59886d2dde56900e6fd7690769e736786f38b714b"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/cUZNZ6ZJ/ukulib-0.6.0%2B1.18.2.jar",
         "filename": "ukulib-0.6.0+1.18.2.jar",
@@ -1150,8 +1150,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e8ea2a4d2d1b5b4450f40be5f7cb78dd1e0f6e3b",
-          "sha512": "d172bf1aa1bac59db14ef442bc2294cc509ebbd302373fe670bd816e0018966817d1b91eccdaba971c9a5d500b0aab0d146fe903fac22de49293e3f84a8c02db"
+          "sha512": "d172bf1aa1bac59db14ef442bc2294cc509ebbd302373fe670bd816e0018966817d1b91eccdaba971c9a5d500b0aab0d146fe903fac22de49293e3f84a8c02db",
+          "sha1": "e8ea2a4d2d1b5b4450f40be5f7cb78dd1e0f6e3b"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/G4RQBYUU/ukulib-0.6.0%2B1.19.3.jar",
         "filename": "ukulib-0.6.0+1.19.3.jar",
@@ -1186,8 +1186,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9d0b910df91c684ed272c707c5d1db4e992e536f",
-          "sha512": "e2f9b9e1b926b7b1579728998a3f3e8ee81d140c8884b68cbfb0246b5b353d5e1bb83e40499bf6fad8a59db621d9fd941311c09d170813bd901507cb53a45064"
+          "sha512": "e2f9b9e1b926b7b1579728998a3f3e8ee81d140c8884b68cbfb0246b5b353d5e1bb83e40499bf6fad8a59db621d9fd941311c09d170813bd901507cb53a45064",
+          "sha1": "9d0b910df91c684ed272c707c5d1db4e992e536f"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/2U4V0PZc/ukulib-0.5.0%2B1.19.3.jar",
         "filename": "ukulib-0.5.0+1.19.3.jar",
@@ -1222,8 +1222,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e42a3843fdcab0dae4bf02b5028c676913b528af10031cd7ba6aed6f65eb16173fb9268869bcc1c81dee7d9950a1dfaedd60c9a0b6c3d8c1442729469497bd96",
-          "sha1": "11466a53f727a0f04ed6157bdc52dc2780f5262f"
+          "sha1": "11466a53f727a0f04ed6157bdc52dc2780f5262f",
+          "sha512": "e42a3843fdcab0dae4bf02b5028c676913b528af10031cd7ba6aed6f65eb16173fb9268869bcc1c81dee7d9950a1dfaedd60c9a0b6c3d8c1442729469497bd96"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/wT8wmGkm/ukulib-0.5.0%2B1.19.2.jar",
         "filename": "ukulib-0.5.0+1.19.2.jar",
@@ -1258,8 +1258,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "18308fa29b7dffae3d7ad38ad65f9f3842af8bad43014684a49d5f0ada12147d6c3cbf82f8c322669f95ff78385dd1ff9b02ec127dbe588bd342386932be7909",
-          "sha1": "55ff23bb1448024699fd1e162bfccfe375f68be1"
+          "sha1": "55ff23bb1448024699fd1e162bfccfe375f68be1",
+          "sha512": "18308fa29b7dffae3d7ad38ad65f9f3842af8bad43014684a49d5f0ada12147d6c3cbf82f8c322669f95ff78385dd1ff9b02ec127dbe588bd342386932be7909"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/gGx9GZiN/ukulib-0.5.0%2B1.18.2.jar",
         "filename": "ukulib-0.5.0+1.18.2.jar",
@@ -1287,15 +1287,15 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/0.4.0+1.14.4",
     "changelog_url": null,
     "date_published": "2022-12-13T22:44:18.84737Z",
-    "downloads": 540,
+    "downloads": 541,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "3c68077e27d4d7d0e3f9f3371bf1214dc49cb43fbcc24b8871d85542d40a4fde6f382cc5655650edcfeb5c5a129aab582b7a6d06b021af031205376f580832c4",
-          "sha1": "834ffb71bffca117a843d1f69a34ea844ff9e1a1"
+          "sha1": "834ffb71bffca117a843d1f69a34ea844ff9e1a1",
+          "sha512": "3c68077e27d4d7d0e3f9f3371bf1214dc49cb43fbcc24b8871d85542d40a4fde6f382cc5655650edcfeb5c5a129aab582b7a6d06b021af031205376f580832c4"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/9u5DAv0V/ukulib-0.4.0%2B1.14.4.jar",
         "filename": "ukulib-0.4.0+1.14.4.jar",
@@ -1323,7 +1323,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/0.4.0+1.15.2",
     "changelog_url": null,
     "date_published": "2022-12-13T22:36:14.318485Z",
-    "downloads": 275,
+    "downloads": 276,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1395,7 +1395,7 @@
     "changelog": "See https://github.com/uku3lig/ukulib/releases/tag/0.4.0+1.17.1",
     "changelog_url": null,
     "date_published": "2022-12-12T19:50:28.5638Z",
-    "downloads": 10797,
+    "downloads": 10800,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1438,8 +1438,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0c97c86b703e3ddb4ba2382ff1a7d4a560a276df550025d3bbacd36e67abad56e74f8d3ef03b2f88d08cb732c88eb7df9479df9f36004c3ff81feb062befc0cd",
-          "sha1": "6138f6df703c834ba8a2b8e48f1cd8af1146572d"
+          "sha1": "6138f6df703c834ba8a2b8e48f1cd8af1146572d",
+          "sha512": "0c97c86b703e3ddb4ba2382ff1a7d4a560a276df550025d3bbacd36e67abad56e74f8d3ef03b2f88d08cb732c88eb7df9479df9f36004c3ff81feb062befc0cd"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/z7IEUbZI/ukulib-0.4.0%2B1.18.2.jar",
         "filename": "ukulib-0.4.0+1.18.2.jar",
@@ -1474,8 +1474,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3b1d275adbb0b4bc206a74b964e645d4647930c5c07c0778299256b975fa4658bcffef0d0c04d521ea80622922830c5b8508b4962bab9aba819aeb1288329214",
-          "sha1": "ccc62e40174c7ee3e2786b4defbfc73c67decf03"
+          "sha1": "ccc62e40174c7ee3e2786b4defbfc73c67decf03",
+          "sha512": "3b1d275adbb0b4bc206a74b964e645d4647930c5c07c0778299256b975fa4658bcffef0d0c04d521ea80622922830c5b8508b4962bab9aba819aeb1288329214"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/FJ9RSHWc/ukulib-0.4.0%2B1.19.2.jar",
         "filename": "ukulib-0.4.0+1.19.2.jar",
@@ -1510,8 +1510,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "aa86dbc4b41dce05f9e89398676ada5f230c79d039434b7ebf820a7981961c90a67f45d5c3914fda846dea965246e8332c8954d7a9606537af5f3555557fddd0",
-          "sha1": "a533f27f5b1e7ce4d1a0626c6bbcd1ffed7a3991"
+          "sha1": "a533f27f5b1e7ce4d1a0626c6bbcd1ffed7a3991",
+          "sha512": "aa86dbc4b41dce05f9e89398676ada5f230c79d039434b7ebf820a7981961c90a67f45d5c3914fda846dea965246e8332c8954d7a9606537af5f3555557fddd0"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/XsZLh6g7/ukulib-0.4.0%2B1.19.3.jar",
         "filename": "ukulib-0.4.0+1.19.3.jar",
@@ -1580,8 +1580,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9c29ef99bad15fd39a7b320f6842b17f1693a0fc0e962aa29b1b91b719467b11b6bcddf7f29a96912142dbb060a225ccb93c2fb406fa2f7b2fcb10a92eb78066",
-          "sha1": "6ce5b9214f5eaa28eba18b0baca78b61a493eb19"
+          "sha1": "6ce5b9214f5eaa28eba18b0baca78b61a493eb19",
+          "sha512": "9c29ef99bad15fd39a7b320f6842b17f1693a0fc0e962aa29b1b91b719467b11b6bcddf7f29a96912142dbb060a225ccb93c2fb406fa2f7b2fcb10a92eb78066"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/WG44sNdX/ukulib-0.3.1%2B1.14.4.jar",
         "filename": "ukulib-0.3.1+1.14.4.jar",
@@ -1685,8 +1685,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4513168da5f81248dd8f9d9c1d0cbbfcce55efd421e4d615b31d2450394d6a4a512efafd45b3c49222af9cacfec39ef75e2beff5741dbb9bb73e8c3201a9150a",
-          "sha1": "8b95e41e5885dc7c37a2b7f8705a07cdb30a4ae1"
+          "sha1": "8b95e41e5885dc7c37a2b7f8705a07cdb30a4ae1",
+          "sha512": "4513168da5f81248dd8f9d9c1d0cbbfcce55efd421e4d615b31d2450394d6a4a512efafd45b3c49222af9cacfec39ef75e2beff5741dbb9bb73e8c3201a9150a"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/WJ0Kz2j1/ukulib-0.3.1%2B1.16.5.jar",
         "filename": "ukulib-0.3.1+1.16.5.jar",
@@ -1755,8 +1755,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "593ab1ea06be3d91e655b2c33b835efd5f64dbc3",
-          "sha512": "fe159fd9168ff03998f4b269032bdeb1dc852cca7b81614f19de1fa4a91388a6931cab1963883b19b2b0ca077dda564b03e2d217fcb5d88d48cce183372faed6"
+          "sha512": "fe159fd9168ff03998f4b269032bdeb1dc852cca7b81614f19de1fa4a91388a6931cab1963883b19b2b0ca077dda564b03e2d217fcb5d88d48cce183372faed6",
+          "sha1": "593ab1ea06be3d91e655b2c33b835efd5f64dbc3"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/2FwvHsVs/ukulib-0.3.1%2B1.19.2.jar",
         "filename": "ukulib-0.3.1+1.19.2.jar",
@@ -1895,8 +1895,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c61056dd7d1f139cded05cf4257941c327ac4de0",
-          "sha512": "017df0a52a8c39e37deb01108b4422daed5134adb485b359fd406eef1b0f89ea0c6ff8b500dd366444360726bdc96151c097eff3ced3e34e2334503b8bbd299b"
+          "sha512": "017df0a52a8c39e37deb01108b4422daed5134adb485b359fd406eef1b0f89ea0c6ff8b500dd366444360726bdc96151c097eff3ced3e34e2334503b8bbd299b",
+          "sha1": "c61056dd7d1f139cded05cf4257941c327ac4de0"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/rNMoS3wT/ukulib-0.3.0%2B1.17.1.jar",
         "filename": "ukulib-0.3.0+1.17.1.jar",
@@ -1930,8 +1930,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6e0b19e4c6bfe860ae5bd141d5d3f1c977ad04ef",
-          "sha512": "d47a0ab77611018c37398abfa62a1b5043403846883d5208d39dbf327384e94872b452cdf5ad66209b5fe65af833cef549fe24b97625a33afd7ed52865c4ea3b"
+          "sha512": "d47a0ab77611018c37398abfa62a1b5043403846883d5208d39dbf327384e94872b452cdf5ad66209b5fe65af833cef549fe24b97625a33afd7ed52865c4ea3b",
+          "sha1": "6e0b19e4c6bfe860ae5bd141d5d3f1c977ad04ef"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/3AiCql5N/ukulib-0.3.0%2B1.18.2.jar",
         "filename": "ukulib-0.3.0+1.18.2.jar",
@@ -1958,15 +1958,15 @@
     "changelog": "No changelog was specified.",
     "changelog_url": null,
     "date_published": "2022-10-14T21:51:39.777035Z",
-    "downloads": 5066,
+    "downloads": 5067,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "416a182d49efeca779e0093b371c4b9dbe9528d0ae3f7b5fc3b57db0564dc464fb30ee7e3f530106f88171cab7f27305029250516ab5f72b6428ae5bb95589bb",
-          "sha1": "7a62e49a3f1c2fec44a469c4a80aefa132d7964b"
+          "sha1": "7a62e49a3f1c2fec44a469c4a80aefa132d7964b",
+          "sha512": "416a182d49efeca779e0093b371c4b9dbe9528d0ae3f7b5fc3b57db0564dc464fb30ee7e3f530106f88171cab7f27305029250516ab5f72b6428ae5bb95589bb"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/PVtRfGtN/ukulib-0.3.0%2B1.19.2.jar",
         "filename": "ukulib-0.3.0+1.19.2.jar",
@@ -1993,7 +1993,7 @@
     "changelog": "No changelog was specified.",
     "changelog_url": null,
     "date_published": "2022-10-14T08:42:35.184606Z",
-    "downloads": 664,
+    "downloads": 665,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2028,7 +2028,7 @@
     "changelog": "* a lot of bugfixes\n* backport to 1.17.1, 1.16.5, 1.15.2, 1.14.4",
     "changelog_url": null,
     "date_published": "2022-10-11T21:31:01.444606Z",
-    "downloads": 2270,
+    "downloads": 2271,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2070,8 +2070,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fbdc0641e8bab010bbf8947a071780121b97cf19",
-          "sha512": "525349e650cad9744f5769b8cdb9502e80ca13f16aa3a3a54d8a24f1ceed98a54ac78bcc23b642f3b553c3fadfde690231cabf9a394bb096a6c41b7be5663969"
+          "sha512": "525349e650cad9744f5769b8cdb9502e80ca13f16aa3a3a54d8a24f1ceed98a54ac78bcc23b642f3b553c3fadfde690231cabf9a394bb096a6c41b7be5663969",
+          "sha1": "fbdc0641e8bab010bbf8947a071780121b97cf19"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/I5na6dOg/ukulib-0.2.2%2B1.18.2.jar",
         "filename": "ukulib-0.2.2+1.18.2.jar",
@@ -2105,8 +2105,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "fce86bef99dfc06168ecedcc7fea08d3c4f402d9f035f1c7d136160a06fe079e8f553ed6362260a635be5e2522162e6bffa5cc58c5a4efa24eb998b24bbc887a",
-          "sha1": "9efeea6a0b4eaa04e84d8d46eecfeaebfe5e035a"
+          "sha1": "9efeea6a0b4eaa04e84d8d46eecfeaebfe5e035a",
+          "sha512": "fce86bef99dfc06168ecedcc7fea08d3c4f402d9f035f1c7d136160a06fe079e8f553ed6362260a635be5e2522162e6bffa5cc58c5a4efa24eb998b24bbc887a"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/UanycbKY/ukulib-0.2.2%2B1.17.1.jar",
         "filename": "ukulib-0.2.2+1.17.1.jar",
@@ -2238,15 +2238,15 @@
     "changelog": "* add javadoc\n* add overload to automatically open a screen in Ukutils#createButton\n\n**Full Changelog**: https://github.com/uku3lig/ukulib/compare/0.2.0+1.19...0.2.1+1.19",
     "changelog_url": null,
     "date_published": "2022-09-27T21:04:43.816443Z",
-    "downloads": 11197,
+    "downloads": 11200,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b6c77aa0ae5e07cdfc7ba0b93130f752ff6df574",
-          "sha512": "f6a42e88e27b2ea9e1c5b798196c648e9405f5074648251f166fabed7d8b1167e8bce250881da90f29cd22333601959a5c13f9f28ad98e8dac4ef81f14e51ff9"
+          "sha512": "f6a42e88e27b2ea9e1c5b798196c648e9405f5074648251f166fabed7d8b1167e8bce250881da90f29cd22333601959a5c13f9f28ad98e8dac4ef81f14e51ff9",
+          "sha1": "b6c77aa0ae5e07cdfc7ba0b93130f752ff6df574"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/ZNKGIHGC/ukulib-0.2.1%2B1.19.jar",
         "filename": "ukulib-0.2.1+1.19.jar",
@@ -2280,8 +2280,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7b4f76fbcf95cb4f6829143b5b2c9d085d5d241585ac9bcceca7c110300910d3b699f30faa2d57ee7e9d6254489496a5ffc88ffe1cc7c8603380a55bd6fdc4e0",
-          "sha1": "8da36193d1f99ef249bf07716de67ec18eec9b88"
+          "sha1": "8da36193d1f99ef249bf07716de67ec18eec9b88",
+          "sha512": "7b4f76fbcf95cb4f6829143b5b2c9d085d5d241585ac9bcceca7c110300910d3b699f30faa2d57ee7e9d6254489496a5ffc88ffe1cc7c8603380a55bd6fdc4e0"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/arVa0deQ/ukulib-0.2.0%2B1.19.jar",
         "filename": "ukulib-0.2.0+1.19.jar",
@@ -2350,8 +2350,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "437e7c04dd9b10097addcc08de3e05edd03790f6",
-          "sha512": "818c8a20fb72393c71d51e8df9af31d2c16eb2a6a52dce9e9388ee90da3011bb536b070e1f7d26ad92712a640bffba2379cc8ce0343be5c6a46d94c34033c3bf"
+          "sha512": "818c8a20fb72393c71d51e8df9af31d2c16eb2a6a52dce9e9388ee90da3011bb536b070e1f7d26ad92712a640bffba2379cc8ce0343be5c6a46d94c34033c3bf",
+          "sha1": "437e7c04dd9b10097addcc08de3e05edd03790f6"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/Zu2KswJp/ukulib-0.1.1%2B1.19.jar",
         "filename": "ukulib-0.1.1+1.19.jar",
@@ -2413,15 +2413,15 @@
     "changelog": "woohoo initial release\nthis release contains basic code for config screen creation\n\nFull Changelog: https://github.com/uku3lig/ukulib/commits/0.1.0+1.19",
     "changelog_url": null,
     "date_published": "2022-09-27T21:04:43.718985Z",
-    "downloads": 439,
+    "downloads": 440,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a1850510b06f5ac5b20e33c503e5e16ab4f0a756",
-          "sha512": "088b477e78305edc13ed217d75387d9038644108b39d398e412bbcca86c5fff9bb8a557522a1c20c0e871fab3894c183da6bce0d81a08ee740632074539e3e66"
+          "sha512": "088b477e78305edc13ed217d75387d9038644108b39d398e412bbcca86c5fff9bb8a557522a1c20c0e871fab3894c183da6bce0d81a08ee740632074539e3e66",
+          "sha1": "a1850510b06f5ac5b20e33c503e5e16ab4f0a756"
         },
         "url": "https://cdn.modrinth.com/data/Y8uFrUil/versions/ROBm5KUg/ukulib-0.1.0%2B1.19.jar",
         "filename": "ukulib-0.1.0+1.19.jar",

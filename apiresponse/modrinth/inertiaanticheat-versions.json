@@ -16,15 +16,15 @@
     "changelog": "Fixed soft-whitelist not working when using ID transfer method.",
     "changelog_url": null,
     "date_published": "2025-06-19T08:25:03.9581Z",
-    "downloads": 203,
+    "downloads": 209,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5f8bd7526cc25a9fff2d44f8a4fa6d9123725a50",
-          "sha512": "2760d9cd0f908b675d00e7ecd1cecdce48cea8534af7a6bbf3b6649997d7b413f093f3d45e812c2f5f6dcb9d8472d0fa14ea5be36bfada8887571ea45ca2a208"
+          "sha512": "2760d9cd0f908b675d00e7ecd1cecdce48cea8534af7a6bbf3b6649997d7b413f093f3d45e812c2f5f6dcb9d8472d0fa14ea5be36bfada8887571ea45ca2a208",
+          "sha1": "5f8bd7526cc25a9fff2d44f8a4fa6d9123725a50"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/729NvdHk/InertiaAntiCheat-1.1.0.2.jar",
         "filename": "InertiaAntiCheat-1.1.0.2.jar",
@@ -66,8 +66,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7da576e0c6aa9e72e2cbb7e69a31c9be94f446ae9fc217d338b9ed4b6b600af9bf5217501c0e6474fcc143c1e0c117f2f00e6595203832d7f44231dc980efcf0",
-          "sha1": "d05a9d0ce29e5c37ec30904ae7ef6d74ce8f6740"
+          "sha1": "d05a9d0ce29e5c37ec30904ae7ef6d74ce8f6740",
+          "sha512": "7da576e0c6aa9e72e2cbb7e69a31c9be94f446ae9fc217d338b9ed4b6b600af9bf5217501c0e6474fcc143c1e0c117f2f00e6595203832d7f44231dc980efcf0"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/ksUKcLqJ/InertiaAntiCheat-1.1.0.1.jar",
         "filename": "InertiaAntiCheat-1.1.0.1.jar",
@@ -102,7 +102,7 @@
     "changelog": "Changed from using Jackson to GSON for JSON parsing, which should help reduce the mod's size.",
     "changelog_url": null,
     "date_published": "2025-06-16T16:13:36.271957Z",
-    "downloads": 165,
+    "downloads": 166,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -152,8 +152,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d74b3540b6b3e177850437d7e7fdfe7ccc55669e150bd20d96f5bd44663b63b556b434ad145dd141eab8cf9332c9515fe25cbf7e49043150b6cb92be4d4b7457",
-          "sha1": "2da73eaeffa25317fe5c2e5051f7f8adb2612ba4"
+          "sha1": "2da73eaeffa25317fe5c2e5051f7f8adb2612ba4",
+          "sha512": "d74b3540b6b3e177850437d7e7fdfe7ccc55669e150bd20d96f5bd44663b63b556b434ad145dd141eab8cf9332c9515fe25cbf7e49043150b6cb92be4d4b7457"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/3pWXKIdZ/InertiaAntiCheat-1.1.0-PRE_RELEASE.jar",
         "filename": "InertiaAntiCheat-1.1.0-PRE_RELEASE.jar",
@@ -231,15 +231,15 @@
     "changelog": "Fixed bug #56, where players with the `inertiaanticheat.bypass` permission are stuck connecting.",
     "changelog_url": null,
     "date_published": "2025-02-26T15:12:12.020487Z",
-    "downloads": 1747,
+    "downloads": 1751,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "781e0e72d7a73c0ccebe38dac49be9fcc6175784",
-          "sha512": "e1b15f8c3212ab922d5df7af23f7aa5dd3e117b5b83d6fe9223f9b69be5d360a3d43a2e816f729404847fbb94d4358be59c90d744badabfc9b43f3a9bb1bef0e"
+          "sha512": "e1b15f8c3212ab922d5df7af23f7aa5dd3e117b5b83d6fe9223f9b69be5d360a3d43a2e816f729404847fbb94d4358be59c90d744badabfc9b43f3a9bb1bef0e",
+          "sha1": "781e0e72d7a73c0ccebe38dac49be9fcc6175784"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/xSsRgiGg/InertiaAntiCheat-1.0.4.2-1.21.1.jar",
         "filename": "InertiaAntiCheat-1.0.4.2-1.21.1.jar",
@@ -281,8 +281,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "dde50873c2acd44a7ee392fbab78f9f7d5efd13d367e9b162bc3163c6fd305c5fbfe7c781243e1c2ab2a25eadb39bffdcf83fdb65b4ee1c43ca050cdb7d48b23",
-          "sha1": "bfa6862596303c58b6bef4e5721db96092295ef1"
+          "sha1": "bfa6862596303c58b6bef4e5721db96092295ef1",
+          "sha512": "dde50873c2acd44a7ee392fbab78f9f7d5efd13d367e9b162bc3163c6fd305c5fbfe7c781243e1c2ab2a25eadb39bffdcf83fdb65b4ee1c43ca050cdb7d48b23"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/t8qBSQVb/InertiaAntiCheat-1.0.4.2.jar",
         "filename": "InertiaAntiCheat-1.0.4.2.jar",
@@ -323,8 +323,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d9171168f2cf714c3fdb4df55538185d686b5305",
-          "sha512": "d7a2d9ea295dc0445c2fe4af2c1c047460dba3da8f85c89cf6dbb9f38cd46450f5458cd6c86485ade1254b5d71fa1b9455ce8b1082482f96711b4b96b408e558"
+          "sha512": "d7a2d9ea295dc0445c2fe4af2c1c047460dba3da8f85c89cf6dbb9f38cd46450f5458cd6c86485ade1254b5d71fa1b9455ce8b1082482f96711b4b96b408e558",
+          "sha1": "d9171168f2cf714c3fdb4df55538185d686b5305"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/eNEWVwfw/InertiaAntiCheat-1.0.4.1-1.21.1.jar",
         "filename": "InertiaAntiCheat-1.0.4.1-1.21.1.jar",
@@ -409,8 +409,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "da227302579252666854c655293e98dfcff8988a89c7c525966908de050daa6d5530571de4be359ef41ebfa1e7efcb4ceedf5623e95e84e48c22dd1cacdc3521",
-          "sha1": "9d380d8cfdf7075754141173875de112a5f2b7e2"
+          "sha1": "9d380d8cfdf7075754141173875de112a5f2b7e2",
+          "sha512": "da227302579252666854c655293e98dfcff8988a89c7c525966908de050daa6d5530571de4be359ef41ebfa1e7efcb4ceedf5623e95e84e48c22dd1cacdc3521"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/gdSvdQ3F/InertiaAntiCheat-1.0.4.jar",
         "filename": "InertiaAntiCheat-1.0.4.jar",
@@ -452,8 +452,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1f9034fa9ab98a99489aa6992d206208f7e8347f",
-          "sha512": "2f73b7d895abaf2ed61fdc7206eaa69dd19fcd585e4b15c70c639f29914bd3d1865d4da9733b8aeae56232762003fdcd1a618823e6b9e079358b5cc230fefc62"
+          "sha512": "2f73b7d895abaf2ed61fdc7206eaa69dd19fcd585e4b15c70c639f29914bd3d1865d4da9733b8aeae56232762003fdcd1a618823e6b9e079358b5cc230fefc62",
+          "sha1": "1f9034fa9ab98a99489aa6992d206208f7e8347f"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/WO1x4GEa/InertiaAntiCheat-1.0.3.1.jar",
         "filename": "InertiaAntiCheat-1.0.3.1.jar",
@@ -541,8 +541,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9b25ddb4808a0bea392c74b6c2ae27acc4d39b95",
-          "sha512": "9c214d4e269533c981232e6c2bc8e69b7a25f5e938dc33bc4edbc28a3306b973b1407c9c222c547cb0abda08a6aeaa00ab175dfcad0b82e71225ded3b050831d"
+          "sha512": "9c214d4e269533c981232e6c2bc8e69b7a25f5e938dc33bc4edbc28a3306b973b1407c9c222c547cb0abda08a6aeaa00ab175dfcad0b82e71225ded3b050831d",
+          "sha1": "9b25ddb4808a0bea392c74b6c2ae27acc4d39b95"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/Wu7g9dU5/InertiaAntiCheat-0.0.7.2%2B1.20.2.jar",
         "filename": "InertiaAntiCheat-0.0.7.2+1.20.2.jar",
@@ -587,15 +587,15 @@
     "changelog": "Fixes [an issue](https://github.com/DiffuseHyperion/InertiaAntiCheat/issues/33) of modlist hashes not being printed out.",
     "changelog_url": null,
     "date_published": "2024-05-06T14:44:35.689393Z",
-    "downloads": 10381,
+    "downloads": 10391,
     "version_type": "alpha",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d701a58819485e5d5439bda4f1d18247692e020c",
-          "sha512": "749dff53917cec5cd63024201801bd5aaf16b9c366a84ad77e1630b8d558c7a70c4e3e3e64ccb69bcdacd3c2a6a9afbbbccc28f08f5246405c6790ad2407fe28"
+          "sha512": "749dff53917cec5cd63024201801bd5aaf16b9c366a84ad77e1630b8d558c7a70c4e3e3e64ccb69bcdacd3c2a6a9afbbbccc28f08f5246405c6790ad2407fe28",
+          "sha1": "d701a58819485e5d5439bda4f1d18247692e020c"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/hzjVMjzN/InertiaAntiCheat-0.0.7.2%2B1.20.1.jar",
         "filename": "InertiaAntiCheat-0.0.7.2+1.20.1.jar",
@@ -724,8 +724,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "aab9dc55e1e04a6c408d626f1c8dffcd734ca729",
-          "sha512": "3805d6f8e137257c2ad48c25d95b5fadbbf38cf3ca3b36ed6e89f8590ab236faa45e8efef6f8dcad48236031d7b2a5c1c60e2e4ff2d28dbc8d66dae81c7c9dd2"
+          "sha512": "3805d6f8e137257c2ad48c25d95b5fadbbf38cf3ca3b36ed6e89f8590ab236faa45e8efef6f8dcad48236031d7b2a5c1c60e2e4ff2d28dbc8d66dae81c7c9dd2",
+          "sha1": "aab9dc55e1e04a6c408d626f1c8dffcd734ca729"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/pZAuvsgS/InertiaAntiCheat-0.0.7.1%2B1.20.2.jar",
         "filename": "InertiaAntiCheat-0.0.7.1+1.20.2.jar",
@@ -918,8 +918,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e19ade84f44e5b0a486c83765f38fb6883a452b9",
-          "sha512": "73d0f1cc60fa811a204320c3e8e7b41c582e8725f83064c1a658bb69d0f8e97db336d5f95d065b43c8c19fca03ce6a6c5ca3b019b2c0231730da9362262259c5"
+          "sha512": "73d0f1cc60fa811a204320c3e8e7b41c582e8725f83064c1a658bb69d0f8e97db336d5f95d065b43c8c19fca03ce6a6c5ca3b019b2c0231730da9362262259c5",
+          "sha1": "e19ade84f44e5b0a486c83765f38fb6883a452b9"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/ZcGAyLbY/InertiaAntiCheat-1.0.1.jar",
         "filename": "InertiaAntiCheat-1.0.1.jar",
@@ -961,8 +961,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5aacc1b1abbe2f9ed4a6a4956a51cdaae538cd87d4103add51d1d475859af4df544815be14e5639f412715c07b4c0f5b068056bc579a6d2fe97c0cd248534e4d",
-          "sha1": "5a2098672d6ebb29cdcb913fed21ac9b0bfe01bc"
+          "sha1": "5a2098672d6ebb29cdcb913fed21ac9b0bfe01bc",
+          "sha512": "5aacc1b1abbe2f9ed4a6a4956a51cdaae538cd87d4103add51d1d475859af4df544815be14e5639f412715c07b4c0f5b068056bc579a6d2fe97c0cd248534e4d"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/R9pnS0j2/InertiaAntiCheat-1.0.0-PRE_RELEASE.jar",
         "filename": "InertiaAntiCheat-1.0.0-PRE_RELEASE.jar",
@@ -1009,15 +1009,15 @@
     "changelog": "Updated to minecraft 1.20.2\n\nSorry for the inactivity, life got really busy. A new update is coming soon-ish",
     "changelog_url": null,
     "date_published": "2023-10-22T11:41:38.151579Z",
-    "downloads": 3294,
+    "downloads": 3296,
     "version_type": "alpha",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0a5929dfcd3a38c0fea0368bc39dad9c9a7c65b0b83cf777da473d97d3a7eda07a04e458c1d8d52b3904e0a24bb0b48b05c9e64192169cd690d682887d4a34cb",
-          "sha1": "ed0e3e4176d1ed4e2863666830ead2dbfb5c8a92"
+          "sha1": "ed0e3e4176d1ed4e2863666830ead2dbfb5c8a92",
+          "sha512": "0a5929dfcd3a38c0fea0368bc39dad9c9a7c65b0b83cf777da473d97d3a7eda07a04e458c1d8d52b3904e0a24bb0b48b05c9e64192169cd690d682887d4a34cb"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/OhuxdnMy/InertiaAntiCheat-0.0.6.2.jar",
         "filename": "InertiaAntiCheat-0.0.6.2.jar",
@@ -1178,8 +1178,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4c47cc864e7871bf45cc3e969f03f58479d48a63",
-          "sha512": "9ddd0f0ade2b3a40908b154a6756b3a85a42b2ca03dc8c64d7fdf1bd8e8e2179214496939174a97075d8240e26c2e3f4e15559d9499c33f132e353a99be2409f"
+          "sha512": "9ddd0f0ade2b3a40908b154a6756b3a85a42b2ca03dc8c64d7fdf1bd8e8e2179214496939174a97075d8240e26c2e3f4e15559d9499c33f132e353a99be2409f",
+          "sha1": "4c47cc864e7871bf45cc3e969f03f58479d48a63"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/AjA7Jebu/InertiaAntiCheat-0.0.5.4.jar",
         "filename": "InertiaAntiCheat-0.0.5.4.jar",
@@ -1380,8 +1380,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9cb2e4f488112a1dd5c8d611b39c3f3cd407302d",
-          "sha512": "41fe5ced70f134aa89805f482779840652a863fe9fd0d7b3736dc51cd0f5ac4722538b8adebd18e692d9a99c1ab3411f9dfa82fdd10318a2fbbe3f5d799ecc93"
+          "sha512": "41fe5ced70f134aa89805f482779840652a863fe9fd0d7b3736dc51cd0f5ac4722538b8adebd18e692d9a99c1ab3411f9dfa82fdd10318a2fbbe3f5d799ecc93",
+          "sha1": "9cb2e4f488112a1dd5c8d611b39c3f3cd407302d"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/gmt6R5AP/InertiaAntiCheat-0.0.5.jar",
         "filename": "InertiaAntiCheat-0.0.5.jar",
@@ -1434,8 +1434,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "58992f1b91e219a627372a1b756446d0427eb4476b6b0b3bbdb8e6eb5516712bf4bc4b966970540a7a1402fa2d2567256a5945fff33c96cbf3d8aa35cb28e3b5",
-          "sha1": "402f89cb808d6babd5a1650ab58fc531d13a649d"
+          "sha1": "402f89cb808d6babd5a1650ab58fc531d13a649d",
+          "sha512": "58992f1b91e219a627372a1b756446d0427eb4476b6b0b3bbdb8e6eb5516712bf4bc4b966970540a7a1402fa2d2567256a5945fff33c96cbf3d8aa35cb28e3b5"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/uQjO3olC/InertiaAntiCheat-0.0.4.jar",
         "filename": "InertiaAntiCheat-0.0.4.jar",
@@ -1586,8 +1586,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e53d9812a328b8114cae2535060755229575987e",
-          "sha512": "f42ad36b84febc8911ab0e0e4a7de2d1c93bd99202695b0bf9186521752e2253ddb622763141aab26f53c6e3613967237debef8be864ac4f17f2b7169755daff"
+          "sha512": "f42ad36b84febc8911ab0e0e4a7de2d1c93bd99202695b0bf9186521752e2253ddb622763141aab26f53c6e3613967237debef8be864ac4f17f2b7169755daff",
+          "sha1": "e53d9812a328b8114cae2535060755229575987e"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/1XGYZEBT/InertiaAntiCheat-0.0.2.jar",
         "filename": "InertiaAntiCheat-0.0.2.jar",
@@ -1631,8 +1631,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b73cf3292c567ab6d56e37c7c25c0314243f5a7b08472d788424776b7a2bf16147e21cb40f7f36ecccd27f5cea38c3c122d8b27973529a16cd5c691718c611f1",
-          "sha1": "ee7122c9ec4b643c4fed35428f8ac8c9444eaa8a"
+          "sha1": "ee7122c9ec4b643c4fed35428f8ac8c9444eaa8a",
+          "sha512": "b73cf3292c567ab6d56e37c7c25c0314243f5a7b08472d788424776b7a2bf16147e21cb40f7f36ecccd27f5cea38c3c122d8b27973529a16cd5c691718c611f1"
         },
         "url": "https://cdn.modrinth.com/data/ljWczies/versions/LHauv7Vj/InertiaAntiCheat-0.0.1.jar",
         "filename": "InertiaAntiCheat-0.0.1.jar",

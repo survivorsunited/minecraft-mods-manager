@@ -18,7 +18,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.21.6.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2025-06-18T22:33:33.448354Z",
-    "downloads": 1558,
+    "downloads": 1615,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -63,15 +63,15 @@
     "changelog": "<p>Updated mod to Minecraft version 1.21.5.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2025-03-27T18:03:28.074525Z",
-    "downloads": 15700,
+    "downloads": 15727,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "7b26cc885b4289a0ef1d22663232d9c6736f8de00f15ca839adc9140bce246b06144952b7062cbf4b128969522abb76d07a495baa98def0f6e75ebb98630a42b",
-          "sha1": "f4366aa0b2510ab46bac4099ca8efc86ad86abae"
+          "sha1": "f4366aa0b2510ab46bac4099ca8efc86ad86abae",
+          "sha512": "7b26cc885b4289a0ef1d22663232d9c6736f8de00f15ca839adc9140bce246b06144952b7062cbf4b128969522abb76d07a495baa98def0f6e75ebb98630a42b"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/GBDXBng9/inventorytotem-1.21.5-3.4.jar",
         "filename": "inventorytotem-1.21.5-3.4.jar",
@@ -108,15 +108,15 @@
     "changelog": "<p>(Forge & Neo) Removed redundant event register annotations.<br />- This fixes events loading when they shouldn't.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2025-02-12T15:39:07.868574Z",
-    "downloads": 13911,
+    "downloads": 13915,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0d724adc9f11f393a118237315fd13fa21611aa4d0f996e9a3b8ac47c5c970b094d7203e02b3a2f9aacc99707902b0607010ee5a7db887223037964d1b2297e0",
-          "sha1": "acee1713788ab553a24b98ab766157042f94e9f8"
+          "sha1": "acee1713788ab553a24b98ab766157042f94e9f8",
+          "sha512": "0d724adc9f11f393a118237315fd13fa21611aa4d0f996e9a3b8ac47c5c970b094d7203e02b3a2f9aacc99707902b0607010ee5a7db887223037964d1b2297e0"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/Gys018jh/inventorytotem-1.21.4-3.4.jar",
         "filename": "inventorytotem-1.21.4-3.4.jar",
@@ -154,7 +154,7 @@
     "changelog": "<p>(Forge & Neo) Removed redundant event register annotations.<br />- This fixes events loading when they shouldn't.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2025-02-12T15:38:47.197469Z",
-    "downloads": 61772,
+    "downloads": 61921,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -199,15 +199,15 @@
     "changelog": "<p>(Forge & Neo) Removed redundant event register annotations.<br />- This fixes events loading when they shouldn't.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2025-02-12T15:38:25.423756Z",
-    "downloads": 150405,
+    "downloads": 150547,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1ade16e67b8bf42d8479312763ebf44ffdbc2fb257eecc157679fc2aa7226b8d79f068c01d7af262dde66d489c261ede99613915b45e59ce2699548cbd377cd7",
-          "sha1": "edd7031e9e7424949e245f97eda4944bdfb9bdf3"
+          "sha1": "edd7031e9e7424949e245f97eda4944bdfb9bdf3",
+          "sha512": "1ade16e67b8bf42d8479312763ebf44ffdbc2fb257eecc157679fc2aa7226b8d79f068c01d7af262dde66d489c261ede99613915b45e59ce2699548cbd377cd7"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/FdstVlDW/inventorytotem-1.20.1-3.4.jar",
         "filename": "inventorytotem-1.20.1-3.4.jar",
@@ -341,8 +341,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "140994f3ad0cb4eef2423f633e2df9d538d7bc35c4fcbe64e449551f831144a191aca57889aaf5d2f4d884d5ccf6c96ff1c60b3f4f90b62beedf1959fbd99c90",
-          "sha1": "f225d664b59c56c33edc92b55d9e8e5a3c70588d"
+          "sha1": "f225d664b59c56c33edc92b55d9e8e5a3c70588d",
+          "sha512": "140994f3ad0cb4eef2423f633e2df9d538d7bc35c4fcbe64e449551f831144a191aca57889aaf5d2f4d884d5ccf6c96ff1c60b3f4f90b62beedf1959fbd99c90"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/iDQ1EDqC/inventorytotem-1.21.2-3.3.jar",
         "filename": "inventorytotem-1.21.2-3.3.jar",
@@ -380,15 +380,15 @@
     "changelog": "<p>Updated mod to Minecraft version 1.21.1.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2024-08-08T23:38:08.570213Z",
-    "downloads": 40791,
+    "downloads": 40793,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e1230e6a20d9467b989c430a37ec2434ad5fbffc52c866e49cdbefaa9b1e0f2928d2a0c1e9218451d4ca52fa9e606830701635a9523766d98325ae7fa6343cd1",
-          "sha1": "31a49e2b7e49f99ba8046b6a887c497febc2de02"
+          "sha1": "31a49e2b7e49f99ba8046b6a887c497febc2de02",
+          "sha512": "e1230e6a20d9467b989c430a37ec2434ad5fbffc52c866e49cdbefaa9b1e0f2928d2a0c1e9218451d4ca52fa9e606830701635a9523766d98325ae7fa6343cd1"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/ACxrFtMz/inventorytotem-1.21.1-3.3.jar",
         "filename": "inventorytotem-1.21.1-3.3.jar",
@@ -470,7 +470,7 @@
     "changelog": "<p>Added Bundle support. The mod can now be enabled/disabled via bundle configs.<br />(NeoForge) Fixed the in-game config screen not working correctly.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2024-07-27T20:57:59.881316Z",
-    "downloads": 1535,
+    "downloads": 1536,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -515,15 +515,15 @@
     "changelog": "<p>Added Bundle support. The mod can now be enabled/disabled via bundle configs.<br />(NeoForge) Fixed the in-game config screen not working correctly.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2024-07-27T20:57:38.036782Z",
-    "downloads": 74411,
+    "downloads": 74421,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a7e0d1a11fccfc55cd704730279cb869ce973315",
-          "sha512": "853a80b0a62c980f9b38e40bc65f2f1fae226253e0021e3757414c0884d4d0b3c9d47a62886f3669830c18e3e0edfe8c71efdfde60f3f1d6ec4c77aed2db48be"
+          "sha512": "853a80b0a62c980f9b38e40bc65f2f1fae226253e0021e3757414c0884d4d0b3c9d47a62886f3669830c18e3e0edfe8c71efdfde60f3f1d6ec4c77aed2db48be",
+          "sha1": "a7e0d1a11fccfc55cd704730279cb869ce973315"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/lp00NsMn/inventorytotem-1.20.1-3.3.jar",
         "filename": "inventorytotem-1.20.1-3.3.jar",
@@ -694,7 +694,7 @@
     "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2023-12-17T22:37:31.46416Z",
-    "downloads": 15272,
+    "downloads": 15274,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -746,8 +746,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f2fd76362084ea73aa15f4da69db92788ab435fa126428512cc13c05a9d725e47fcaaca67c59e46c70897f7342e66f02cbaa2dbe083172629267cd2ce4d68092",
-          "sha1": "45e53b1fff3854f69ead5a00f997f06518dd88ca"
+          "sha1": "45e53b1fff3854f69ead5a00f997f06518dd88ca",
+          "sha512": "f2fd76362084ea73aa15f4da69db92788ab435fa126428512cc13c05a9d725e47fcaaca67c59e46c70897f7342e66f02cbaa2dbe083172629267cd2ce4d68092"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/sBHaeAe3/inventorytotem-1.20.2-3.2.jar",
         "filename": "inventorytotem-1.20.2-3.2.jar",
@@ -784,7 +784,7 @@
     "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2023-12-17T22:36:50.176234Z",
-    "downloads": 89774,
+    "downloads": 89791,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -828,15 +828,15 @@
     "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2023-12-17T22:36:29.880727Z",
-    "downloads": 16050,
+    "downloads": 16059,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "da4956191788d55eb929400cad4d2c4550212cff",
-          "sha512": "a5fab725a0eeb3e6db0a9cc064eee8dafb13421995021c94ff56d3a3cf75f09dd160d390712bb7ea7a16f7290aeea6eb537499d1318350478b0592238c270efd"
+          "sha512": "a5fab725a0eeb3e6db0a9cc064eee8dafb13421995021c94ff56d3a3cf75f09dd160d390712bb7ea7a16f7290aeea6eb537499d1318350478b0592238c270efd",
+          "sha1": "da4956191788d55eb929400cad4d2c4550212cff"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/5e0vwBGg/inventorytotem-1.19.2-3.2.jar",
         "filename": "inventorytotem-1.19.2-3.2.jar",
@@ -1008,15 +1008,15 @@
     "changelog": "<p>(1.20.*) Added official support for NeoForge. Just like Fabric and Forge, in the same jar!<br />Updated structure and content of mod info files.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2023-11-08T20:40:10.496082Z",
-    "downloads": 103243,
+    "downloads": 103257,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "955001636fff9ccd0dd3afff771ceae23fe69235",
-          "sha512": "ad20646df66574eb91d20bdb0eef625982cc0c8a8a11959d49b30313a0b8864430739730f62809c9f975f619f30ae57567179bf4d55ea59685c4b75cf5873fbd"
+          "sha512": "ad20646df66574eb91d20bdb0eef625982cc0c8a8a11959d49b30313a0b8864430739730f62809c9f975f619f30ae57567179bf4d55ea59685c4b75cf5873fbd",
+          "sha1": "955001636fff9ccd0dd3afff771ceae23fe69235"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/4WrOwuzP/inventorytotem-1.20.1-3.1.jar",
         "filename": "inventorytotem-1.20.1-3.1.jar",
@@ -1096,7 +1096,7 @@
     "changelog": "<p>(1.20.*) Added official support for NeoForge. Just like Fabric and Forge, in the same jar!<br />Updated structure and content of mod info files.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2023-11-08T20:39:27.416422Z",
-    "downloads": 25563,
+    "downloads": 25566,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1185,7 +1185,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.20.1.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2023-06-13T00:37:29.905006Z",
-    "downloads": 19064,
+    "downloads": 19067,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1229,15 +1229,15 @@
     "changelog": "<p>Updated mod to Minecraft version 1.20.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2023-06-08T12:58:23.797007Z",
-    "downloads": 3303,
+    "downloads": 3304,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "258dcbbe7c1aad2c4c5ae39c9489446aa1184e0c",
-          "sha512": "546b02577f1dbbaef2b0d5202bcf5980a1efe8320b922962cb2e75f1dfd1aca8c2e7a2ce1a9f0a036a1fbee60ea7e30736edf9ed92ed35763092df0a527ecd1e"
+          "sha512": "546b02577f1dbbaef2b0d5202bcf5980a1efe8320b922962cb2e75f1dfd1aca8c2e7a2ce1a9f0a036a1fbee60ea7e30736edf9ed92ed35763092df0a527ecd1e",
+          "sha1": "258dcbbe7c1aad2c4c5ae39c9489446aa1184e0c"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/uEH1WKpA/inventorytotem-1.20.0-3.0.jar",
         "filename": "inventorytotem-1.20.0-3.0.jar",
@@ -1273,7 +1273,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.19.4.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2023-03-15T17:58:07.192004Z",
-    "downloads": 3685,
+    "downloads": 3686,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1361,15 +1361,15 @@
     "changelog": "<p>A big backend update!<br />Forge and Fabric (and Quilt) are now contained in one file.<br /><br />This also means that the two separate project pages for Forge/Fabric will be converted to one (on CurseForge). While having a clean file list! The Fabric project page on CF will remain as a legacy for older Fabric versions.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2023-01-10T17:04:40.302Z",
-    "downloads": 4503,
+    "downloads": 4504,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d3b5b164b00dad1c49bd14b8746a99c88d3c5937ec5a85a53589d2927d6f6c47b8ade76b7a530fa0cd0bc585733c304758ab72587d19922cddac72f2e0c663f9",
-          "sha1": "1465c7df6ed12ccc38830f622a1f716328905681"
+          "sha1": "1465c7df6ed12ccc38830f622a1f716328905681",
+          "sha512": "d3b5b164b00dad1c49bd14b8746a99c88d3c5937ec5a85a53589d2927d6f6c47b8ade76b7a530fa0cd0bc585733c304758ab72587d19922cddac72f2e0c663f9"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/sYvjQiKC/inventorytotem-1.19.2-3.0.jar",
         "filename": "inventorytotem-1.19.2-3.0.jar",
@@ -1412,8 +1412,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "12406cf19914170f35d43f7ce4e12aca16e56cdd",
-          "sha512": "117c1717e4462239ba25a1fb6657a26cd658894c74ff0fba929500bb437c951e06a3aed6277f78fabcf39c59c1e89ff42796d737d64a4464279d9a4c6f424556"
+          "sha512": "117c1717e4462239ba25a1fb6657a26cd658894c74ff0fba929500bb437c951e06a3aed6277f78fabcf39c59c1e89ff42796d737d64a4464279d9a4c6f424556",
+          "sha1": "12406cf19914170f35d43f7ce4e12aca16e56cdd"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/n65CqjkR/inventorytotem-1.18.2-3.0.jar",
         "filename": "inventorytotem-1.18.2-3.0.jar",
@@ -1586,8 +1586,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7b74ae4e6835364f1cfc27ab1712537c44f2a2e158a3045b8ab8a80fdb65e0e372e5da16b6d201de9b361ee1217fb111b041d7e4eff2848f9ad090df10ab8efa",
-          "sha1": "062428718014aefc49dc7f99aeb645164ba0120c"
+          "sha1": "062428718014aefc49dc7f99aeb645164ba0120c",
+          "sha512": "7b74ae4e6835364f1cfc27ab1712537c44f2a2e158a3045b8ab8a80fdb65e0e372e5da16b6d201de9b361ee1217fb111b041d7e4eff2848f9ad090df10ab8efa"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/DIjWcX1b/inventorytotem_1.18.2-2.2.jar",
         "filename": "inventorytotem_1.18.2-2.2.jar",
@@ -1621,15 +1621,15 @@
     "changelog": "<p>Fixed the Fire Resistance effect not being applied when dying with the totem in the inventory.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2022-12-05T13:38:57.090638Z",
-    "downloads": 6581,
+    "downloads": 6583,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "410eab53c5b22290341ef4fb773dfcc4dfa1f2b54ee2dd6bafee8b814a66a36611dfb59bde8983479bb15bdc771698156106ddde94239a163990f42ba2fc9bc1",
-          "sha1": "54661c1e7e9c028ab58b54910a39e3eabae86b43"
+          "sha1": "54661c1e7e9c028ab58b54910a39e3eabae86b43",
+          "sha512": "410eab53c5b22290341ef4fb773dfcc4dfa1f2b54ee2dd6bafee8b814a66a36611dfb59bde8983479bb15bdc771698156106ddde94239a163990f42ba2fc9bc1"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/XEToLbwF/inventorytotem_1.16.5-2.2.jar",
         "filename": "inventorytotem_1.16.5-2.2.jar",
@@ -1670,8 +1670,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d122d0aa36d6f86e544339e1c0cbdf0a1ff155dd9286dffa1eefcbf9ebff46cb7b68b57c3494e3bd4005161c2462d6eea9ea752e6759392bf434289add64ea98",
-          "sha1": "f92d820b64a2a30a8a35353ae2c5e8f37d5995fc"
+          "sha1": "f92d820b64a2a30a8a35353ae2c5e8f37d5995fc",
+          "sha512": "d122d0aa36d6f86e544339e1c0cbdf0a1ff155dd9286dffa1eefcbf9ebff46cb7b68b57c3494e3bd4005161c2462d6eea9ea752e6759392bf434289add64ea98"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/gB55nNAi/inventorytotem-fabric_1.19.2-2.2.jar",
         "filename": "inventorytotem-fabric_1.19.2-2.2.jar",
@@ -1718,8 +1718,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d33d79fcf29f6adb6033952b9763493c059561e637e22a1bfff0938fd9748cb69b4994d7dc979b4087d8e39159dd77d26336d3705b1281d9480b7b0eb9a34851",
-          "sha1": "ff1b0a13c34adc80e58611384484f77194f8b299"
+          "sha1": "ff1b0a13c34adc80e58611384484f77194f8b299",
+          "sha512": "d33d79fcf29f6adb6033952b9763493c059561e637e22a1bfff0938fd9748cb69b4994d7dc979b4087d8e39159dd77d26336d3705b1281d9480b7b0eb9a34851"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/w9LJq8RP/inventorytotem-fabric_1.18.2-2.2.jar",
         "filename": "inventorytotem-fabric_1.18.2-2.2.jar",
@@ -1766,8 +1766,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ec462b56029a2002876570ddfb0a453ab073ee6e",
-          "sha512": "106f37c15cb27c00f6c59cb1f13e9ac1df467fa53b80237f50e7e90b8f85d7d3e7dba931b84b67aa0cec42c0f63baaeb08c1d145c89ef6e88d688efcab552a13"
+          "sha512": "106f37c15cb27c00f6c59cb1f13e9ac1df467fa53b80237f50e7e90b8f85d7d3e7dba931b84b67aa0cec42c0f63baaeb08c1d145c89ef6e88d688efcab552a13",
+          "sha1": "ec462b56029a2002876570ddfb0a453ab073ee6e"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/Rxpi6JjT/inventorytotem-fabric_1.16.5-2.2.jar",
         "filename": "inventorytotem-fabric_1.16.5-2.2.jar",
@@ -1855,15 +1855,15 @@
     "changelog": "<p>(Fabric) Added Mod Menu support with project links and logo.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=inventory-totem\" target=\"_blank\">https://serilum.com/mods?changelog=inventory-totem</a></p>",
     "changelog_url": null,
     "date_published": "2022-10-02T17:07:24.539194Z",
-    "downloads": 1578,
+    "downloads": 1579,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "0c0bec4307a4efa1c3994a43c0c9269b0915854c",
-          "sha512": "a70f1fea4f4f6ab117ec9a2394c196accc895d70a92b756f6abc49653edaebec212b6d6922ad65cc091255ca39027bf1ad23372609ceee12be2f658f42f8a86d"
+          "sha512": "a70f1fea4f4f6ab117ec9a2394c196accc895d70a92b756f6abc49653edaebec212b6d6922ad65cc091255ca39027bf1ad23372609ceee12be2f658f42f8a86d",
+          "sha1": "0c0bec4307a4efa1c3994a43c0c9269b0915854c"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/KhMw45l9/inventorytotem-fabric_1.18.2-2.1.jar",
         "filename": "inventorytotem-fabric_1.18.2-2.1.jar",
@@ -1958,8 +1958,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d0ea74de23cb33983a45acb410705d6e172e0d83d6b02388530b955112263c8afb4fee9f6327429afb7b8f0431e4c9ebfc0f56ba59ba179612b5bb30623bf85d",
-          "sha1": "02a2f98592704b68409f57d07c9f404f6093d1d5"
+          "sha1": "02a2f98592704b68409f57d07c9f404f6093d1d5",
+          "sha512": "d0ea74de23cb33983a45acb410705d6e172e0d83d6b02388530b955112263c8afb4fee9f6327429afb7b8f0431e4c9ebfc0f56ba59ba179612b5bb30623bf85d"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/gbuIaTzt/inventorytotem_1.19.2-1.8.jar",
         "filename": "inventorytotem_1.19.2-1.8.jar",
@@ -2000,8 +2000,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c01f7a69862cd439a2cff93c7a76fdbf7f997a74",
-          "sha512": "2da036af2705110b29814e192e0f907b978bbfebad0b10af0f51a97621f7a218808e6eda0489f05ccacf545f152a845c413ed5ac51788992ab746b529e362a14"
+          "sha512": "2da036af2705110b29814e192e0f907b978bbfebad0b10af0f51a97621f7a218808e6eda0489f05ccacf545f152a845c413ed5ac51788992ab746b529e362a14",
+          "sha1": "c01f7a69862cd439a2cff93c7a76fdbf7f997a74"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/aMkpCVZm/inventorytotem_1.18.2-1.6.jar",
         "filename": "inventorytotem_1.18.2-1.6.jar",
@@ -2084,8 +2084,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d880f28233f9d9fcff2302522ba1599451a395e164cdf51ebc9261a1e8d17bdafe7f2b8de692ddcaf676fbc09c4677daf698635a8da2dd11ba502cd6d0dfe41f",
-          "sha1": "02b9ea26d50fff76ef5ca93d7930cf6d01448093"
+          "sha1": "02b9ea26d50fff76ef5ca93d7930cf6d01448093",
+          "sha512": "d880f28233f9d9fcff2302522ba1599451a395e164cdf51ebc9261a1e8d17bdafe7f2b8de692ddcaf676fbc09c4677daf698635a8da2dd11ba502cd6d0dfe41f"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/bip0qwX6/inventorytotem-fabric_1.19.2-2.0.jar",
         "filename": "inventorytotem-fabric_1.19.2-2.0.jar",
@@ -2132,8 +2132,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4dca5f1d3b4dca0f1e6fea2d8d377b62294abfdcdaa1a979e48322161fb52395651d8f69dc1c8a9971dc0cd872364200d97ee122d35c912373a726830ac644ab",
-          "sha1": "c7eccbebc19ccb1ea88f33b7155a0e1c12e65ee6"
+          "sha1": "c7eccbebc19ccb1ea88f33b7155a0e1c12e65ee6",
+          "sha512": "4dca5f1d3b4dca0f1e6fea2d8d377b62294abfdcdaa1a979e48322161fb52395651d8f69dc1c8a9971dc0cd872364200d97ee122d35c912373a726830ac644ab"
         },
         "url": "https://cdn.modrinth.com/data/yQj7xqEM/versions/C9Dv52X6/inventorytotem-fabric_1.18.2-1.9.jar",
         "filename": "inventorytotem-fabric_1.18.2-1.9.jar",

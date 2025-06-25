@@ -15,7 +15,7 @@
     "changelog": "- Fix handling of the escape key in the keybinds menu\n- Marked mod as providing AmecsAPI to fix issues with mods not detecting Amecs Reborn as Amecs.\n  - This should fix issues with JourneyMap or other mods that have their own bespoke keybind handling with Amecs support\n- Updated MixinConstraints",
     "changelog_url": null,
     "date_published": "2025-06-18T17:50:17.173744Z",
-    "downloads": 217,
+    "downloads": 227,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -63,7 +63,7 @@
     "changelog": "- Fix handling of the escape key in the keybinds menu\n- Marked mod as providing AmecsAPI to fix issues with mods not detecting Amecs Reborn as Amecs.\n  - This should fix issues with JourneyMap or other mods that have their own bespoke keybind handling with Amecs support\n- Updated MixinConstraints",
     "changelog_url": null,
     "date_published": "2025-05-02T15:24:38.843837Z",
-    "downloads": 2439,
+    "downloads": 2512,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -118,8 +118,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0d1a41940630d4657e01041622e554b0c569c956",
-          "sha512": "5c7aa26cf08bf5989a71e30c301673f7734862f1c7d842b224692e375f5928a771d5835b389a9685af587368734ce7ad6636f7fa18d5c2129e2b852b9af238a0"
+          "sha512": "5c7aa26cf08bf5989a71e30c301673f7734862f1c7d842b224692e375f5928a771d5835b389a9685af587368734ce7ad6636f7fa18d5c2129e2b852b9af238a0",
+          "sha1": "0d1a41940630d4657e01041622e554b0c569c956"
         },
         "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/aOTRQQF8/Amecs-Reborn-2.0.2%2Bmc1.21.4.jar",
         "filename": "Amecs-Reborn-2.0.2+mc1.21.4.jar",
@@ -207,15 +207,15 @@
     "changelog": "- Fix handling of the escape key in the keybinds menu\n- Marked mod as providing AmecsAPI to fix issues with mods not detecting Amecs Reborn as Amecs.\n  - This should fix issues with JourneyMap or other mods that have their own bespoke keybind handling with Amecs support\n- Updated MixinConstraints",
     "changelog_url": null,
     "date_published": "2025-05-02T15:23:18.929974Z",
-    "downloads": 745,
+    "downloads": 749,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1ccb2227b78984acf9796957be983fae44dd942e3e3f2992ebe420bcf3440a661c80a429a33e8f509552580f59ede38827542c2eafab4a0c5c7a7bafb058b435",
-          "sha1": "b16e33c09ce89a8d8424deae472a6f2b5dcb719d"
+          "sha1": "b16e33c09ce89a8d8424deae472a6f2b5dcb719d",
+          "sha512": "1ccb2227b78984acf9796957be983fae44dd942e3e3f2992ebe420bcf3440a661c80a429a33e8f509552580f59ede38827542c2eafab4a0c5c7a7bafb058b435"
         },
         "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/Npsjy3PD/Amecs-Reborn-2.0.2%2Bmc1.21.1.jar",
         "filename": "Amecs-Reborn-2.0.2+mc1.21.1.jar",
@@ -262,8 +262,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "71a7757a108d4b52b97105e6065c13f703ccdc5bc5a3b2c8630b9c595545d3860ecad9f8d6b50b3acb2798396a1a0b1c1fce995c9f6523995077fa5be5961ed7",
-          "sha1": "cfe2e1d7a62211865229007717ff16fa9f1ebf7e"
+          "sha1": "cfe2e1d7a62211865229007717ff16fa9f1ebf7e",
+          "sha512": "71a7757a108d4b52b97105e6065c13f703ccdc5bc5a3b2c8630b9c595545d3860ecad9f8d6b50b3acb2798396a1a0b1c1fce995c9f6523995077fa5be5961ed7"
         },
         "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/FMcZhMKM/Amecs-Reborn-2.0.1%2Bmc1.21.5.jar",
         "filename": "Amecs-Reborn-2.0.1+mc1.21.5.jar",
@@ -310,8 +310,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f7f8f9bd9e4e481d94df2d40eeacbc6885200009",
-          "sha512": "1576844ef42324101b8a9b29ad17213089588e72676968ba7bcbed89ae64799826d01d2843d8db1e06d3daaafdeaaa5b50d991773155f5d7722b2e8cfe9da890"
+          "sha512": "1576844ef42324101b8a9b29ad17213089588e72676968ba7bcbed89ae64799826d01d2843d8db1e06d3daaafdeaaa5b50d991773155f5d7722b2e8cfe9da890",
+          "sha1": "f7f8f9bd9e4e481d94df2d40eeacbc6885200009"
         },
         "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/XwSSOfns/Amecs-Reborn-2.0.1%2Bmc1.21.4.jar",
         "filename": "Amecs-Reborn-2.0.1+mc1.21.4.jar",
@@ -406,8 +406,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2127754846e6b2fc916cfd31132738fc52e721bc88efbba95413571fc9fa7127c3824eb78fe922f424c7b66aaf1fec575b43dc421aeee185538fa5526f2cc0dd",
-          "sha1": "a84210d70384c72aabdc5e21645cefc9ca098cbb"
+          "sha1": "a84210d70384c72aabdc5e21645cefc9ca098cbb",
+          "sha512": "2127754846e6b2fc916cfd31132738fc52e721bc88efbba95413571fc9fa7127c3824eb78fe922f424c7b66aaf1fec575b43dc421aeee185538fa5526f2cc0dd"
         },
         "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/kqaYgPZJ/Amecs-Reborn-2.0.1%2Bmc1.21.1.jar",
         "filename": "Amecs-Reborn-2.0.1+mc1.21.1.jar",
@@ -455,8 +455,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e0748eba403dd1c8a13a38572fdc9d6f9f04fe92caad52a5ce231ccf9b7e6ee03aa47085cc6a313c7f2a32d2232eb4ac948b776e2ae51400a6a797db45002809",
-          "sha1": "791219da2d9ab70ad2c9ad028ff6b6bc9ed92eac"
+          "sha1": "791219da2d9ab70ad2c9ad028ff6b6bc9ed92eac",
+          "sha512": "e0748eba403dd1c8a13a38572fdc9d6f9f04fe92caad52a5ce231ccf9b7e6ee03aa47085cc6a313c7f2a32d2232eb4ac948b776e2ae51400a6a797db45002809"
         },
         "url": "https://cdn.modrinth.com/data/IjgEpZeq/versions/YMq9Iom8/Amecs-Reborn-2.0.0%2Bmc1.21.4.jar",
         "filename": "Amecs-Reborn-2.0.0+mc1.21.4.jar",

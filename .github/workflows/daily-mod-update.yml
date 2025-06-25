@@ -1,0 +1,106 @@
+name: Daily Mod Update Pipeline
+
+on:
+  schedule:
+    # Run daily at 2:00 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  update-mods:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Setup PowerShell
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    
+    - name: Install PowerShell Core
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y powershell
+    
+    - name: Create update script
+      run: |
+        cat > update-mods.ps1 << 'EOF'
+        # Daily Mod Update Script
+        # This script runs ModManager to update modlist.csv with latest versions
+        
+        Write-Host "🔄 Starting daily mod update pipeline..." -ForegroundColor Cyan
+        Write-Host "Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')" -ForegroundColor Gray
+        
+        try {
+            # Run ModManager to update all mods
+            Write-Host "📋 Running ModManager to update modlist.csv..." -ForegroundColor Yellow
+            $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File "ModManager.ps1" -ValidateAllModVersions -UpdateMods
+            
+            if ($LASTEXITCODE -eq 0) {
+                Write-Host "✅ ModManager completed successfully" -ForegroundColor Green
+                
+                # Check if modlist.csv was modified
+                $gitStatus = git status --porcelain modlist.csv
+                if ($gitStatus) {
+                    Write-Host "📝 Changes detected in modlist.csv" -ForegroundColor Yellow
+                    
+                    # Show what changed
+                    $diff = git diff --stat modlist.csv
+                    Write-Host "Changes summary:" -ForegroundColor Cyan
+                    Write-Host $diff -ForegroundColor Gray
+                    
+                    # Commit changes
+                    Write-Host "💾 Committing changes..." -ForegroundColor Yellow
+                    git config --local user.email "action@github.com"
+                    git config --local user.name "GitHub Action"
+                    git add modlist.csv
+                    git commit -m "🤖 Daily mod update - $(Get-Date -Format 'yyyy-MM-dd')"
+                    
+                    # Push changes
+                    Write-Host "🚀 Pushing changes to repository..." -ForegroundColor Yellow
+                    git push
+                    
+                    Write-Host "✅ Daily mod update completed successfully" -ForegroundColor Green
+                    Write-Host "📊 Changes committed and pushed to repository" -ForegroundColor Green
+                } else {
+                    Write-Host "ℹ️  No changes detected in modlist.csv" -ForegroundColor Blue
+                    Write-Host "📊 All mods are already up to date" -ForegroundColor Blue
+                }
+            } else {
+                Write-Host "❌ ModManager failed with exit code: $LASTEXITCODE" -ForegroundColor Red
+                Write-Host "Error output: $result" -ForegroundColor Red
+                exit 1
+            }
+        }
+        catch {
+            Write-Host "❌ Error during daily mod update: $($_.Exception.Message)" -ForegroundColor Red
+            Write-Host "Stack trace: $($_.ScriptStackTrace)" -ForegroundColor Red
+            exit 1
+        }
+        
+        Write-Host "🏁 Daily mod update pipeline completed" -ForegroundColor Cyan
+        Write-Host "Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')" -ForegroundColor Gray
+        EOF
+    
+    - name: Run daily mod update
+      run: pwsh -File update-mods.ps1
+    
+    - name: Create summary report
+      if: always()
+      run: |
+        echo "## Daily Mod Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "**Run Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+        echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ job.status }}" == "success" ]; then
+          echo "✅ **Result:** Daily mod update completed successfully" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ **Result:** Daily mod update failed" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Next Run:** Tomorrow at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY 

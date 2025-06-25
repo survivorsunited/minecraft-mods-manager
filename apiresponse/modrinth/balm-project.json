@@ -44,8 +44,8 @@
     "name": "",
     "url": "https://mods.twelveiterations.com/permissions"
   },
-  "downloads": 16167367,
-  "followers": 1732,
+  "downloads": 16177405,
+  "followers": 1733,
   "categories": [
     "library"
   ],
@@ -492,14 +492,14 @@
   "discord_url": "https://discord.gg/VAfZ2Nau6j",
   "donation_urls": [
     {
-      "id": "github",
-      "platform": "Github",
-      "url": "https://github.com/BlayTheNinth"
-    },
-    {
       "id": "patreon",
       "platform": "Patreon",
       "url": "https://www.patreon.com/BlayTheNinth"
+    },
+    {
+      "id": "github",
+      "platform": "Github",
+      "url": "https://github.com/BlayTheNinth"
     }
   ],
   "gallery": [],

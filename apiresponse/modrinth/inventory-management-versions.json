@@ -16,7 +16,7 @@
     "changelog": "- Updated to 1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-23T13:38:29.209325Z",
-    "downloads": 812,
+    "downloads": 913,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -52,15 +52,15 @@
     "changelog": "- Updated to 1.21.5\n- Tweaked sorting for slabs, walls, and spawn eggs (should now effectively sort with the type of item first, then the subtype, i.e. \"spawn_egg_blaze\" rather than \"blaze_spawn_egg\")",
     "changelog_url": null,
     "date_published": "2025-04-02T13:32:59.028295Z",
-    "downloads": 27759,
+    "downloads": 27815,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "45ca50ff222acdef2d556d8c1bf04d44fdf1f14734938d47284c001870194912ef1b38dfd50106907f4267d3944fde3e6af2896a2563ffa2f44a9c20abbbcccb",
-          "sha1": "4e3cad6c711b729c9fd46638d8ca6e3a3bbb7a35"
+          "sha1": "4e3cad6c711b729c9fd46638d8ca6e3a3bbb7a35",
+          "sha512": "45ca50ff222acdef2d556d8c1bf04d44fdf1f14734938d47284c001870194912ef1b38dfd50106907f4267d3944fde3e6af2896a2563ffa2f44a9c20abbbcccb"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/pJMFRd1Z/inventorymanagement-1.6.0%2B1.21.5.jar",
         "filename": "inventorymanagement-1.6.0+1.21.5.jar",
@@ -88,7 +88,7 @@
     "changelog": "- Update to 1.21.4",
     "changelog_url": null,
     "date_published": "2025-02-17T01:11:49.273455Z",
-    "downloads": 24733,
+    "downloads": 24760,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -125,15 +125,15 @@
     "changelog": "- Updated to 1.21.2/1.21.3",
     "changelog_url": null,
     "date_published": "2025-02-16T23:14:44.300088Z",
-    "downloads": 1359,
+    "downloads": 1360,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "17baa4f9203d0a6dfa217c44d058e3583186ce15",
-          "sha512": "11dad18fcfba1bb1c154fa56ad5f66e5491658c819a99d6a0e9f373c3019a2a7a03fffb35e4458934926d82ec3b6a30f2d9044993e30ea4250cc1562ce984c0f"
+          "sha512": "11dad18fcfba1bb1c154fa56ad5f66e5491658c819a99d6a0e9f373c3019a2a7a03fffb35e4458934926d82ec3b6a30f2d9044993e30ea4250cc1562ce984c0f",
+          "sha1": "17baa4f9203d0a6dfa217c44d058e3583186ce15"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/psva40MN/inventorymanagement-1.6.0%2B1.21.2.jar",
         "filename": "inventorymanagement-1.6.0+1.21.2.jar",
@@ -162,7 +162,7 @@
     "changelog": "- Updated to 1.21",
     "changelog_url": null,
     "date_published": "2025-02-16T21:50:41.35131Z",
-    "downloads": 39185,
+    "downloads": 39252,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -199,15 +199,15 @@
     "changelog": "- Updated to 1.20.5/1.20.6\n- Small fixes related to button position configuration",
     "changelog_url": null,
     "date_published": "2025-02-16T21:02:55.671481Z",
-    "downloads": 627,
+    "downloads": 628,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a398d6af8f9e1c3e8dcf447e898ff3a224ee4cf3",
-          "sha512": "536e1bd65b03163465a6146b02469766eb4de72f1072a5a9fe411bfac07cfd6afb15b263819477ef2c319cace3d4ee441b84b47fbf0741d445907d7cf1769e7a"
+          "sha512": "536e1bd65b03163465a6146b02469766eb4de72f1072a5a9fe411bfac07cfd6afb15b263819477ef2c319cace3d4ee441b84b47fbf0741d445907d7cf1769e7a",
+          "sha1": "a398d6af8f9e1c3e8dcf447e898ff3a224ee4cf3"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/aFeI4bne/inventorymanagement-1.6.0%2B1.20.5.jar",
         "filename": "inventorymanagement-1.6.0+1.20.5.jar",
@@ -236,15 +236,15 @@
     "changelog": "- Updated to 1.20.3/1.20.4\n- GUI textures are now stitched into an atlas dynamically, same as vanilla GUI textures! This means better performance, but also means any resource packs you might have been maintaining will unfortunately break and need updating.",
     "changelog_url": null,
     "date_published": "2024-01-04T20:58:25.816124Z",
-    "downloads": 29622,
+    "downloads": 29626,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "110bccca7d7fa15751ecdbfe51b5ff9d0ad199ac",
-          "sha512": "992c0a7d04467d986f7e4137a1c29670e770ea0dbc43abe40b271aa074d5f5ff787b5baf1b07250aca3b63aacf07bb330aeaf3e2e7b1253a9472898a5aefaa24"
+          "sha512": "992c0a7d04467d986f7e4137a1c29670e770ea0dbc43abe40b271aa074d5f5ff787b5baf1b07250aca3b63aacf07bb330aeaf3e2e7b1253a9472898a5aefaa24",
+          "sha1": "110bccca7d7fa15751ecdbfe51b5ff9d0ad199ac"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/rgYqJTY6/inventorymanagement-1.5.0%2B1.20.3.jar",
         "filename": "inventorymanagement-1.5.0+1.20.3.jar",
@@ -272,7 +272,7 @@
     "changelog": "- Update to 1.20.2",
     "changelog_url": null,
     "date_published": "2023-10-03T02:44:46.911295Z",
-    "downloads": 15144,
+    "downloads": 15146,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -309,7 +309,7 @@
     "changelog": "- Fixed issue causing crash on servers",
     "changelog_url": null,
     "date_published": "2023-06-08T04:05:57.085288Z",
-    "downloads": 1231664,
+    "downloads": 1232216,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -352,8 +352,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ffb158bb626f16aa5a573121bdead20f4404767c4908bcffea7bea7229e5a8a96f2c4194b964a9383219171b4c6a29efb359a5e067a05efc1757ded9098cb731",
-          "sha1": "a03f64c7f3d8239cf70b6005275f0b4bbafac5da"
+          "sha1": "a03f64c7f3d8239cf70b6005275f0b4bbafac5da",
+          "sha512": "ffb158bb626f16aa5a573121bdead20f4404767c4908bcffea7bea7229e5a8a96f2c4194b964a9383219171b4c6a29efb359a5e067a05efc1757ded9098cb731"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/k3od5tUH/inventorymanagement-1.3.0%2B1.20.jar",
         "filename": "inventorymanagement-1.3.0+1.20.jar",
@@ -455,15 +455,15 @@
     "changelog": "- Fixed bug where config entries weren't persisting across runs\n- Fixed bug where VanillaTweaks DarkUI auto-detection wasn't working",
     "changelog_url": null,
     "date_published": "2023-05-22T15:12:04.551594Z",
-    "downloads": 31951,
+    "downloads": 31952,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "34f27433e1abdf96464f2f988fdbd647c1ba5776",
-          "sha512": "2040fe9bc85244f960bc367aa9e965ebb49cd50356be4d1264c5050f2af364644b26d26eaae24a3f0833a11afd241442d8ba40da469500642230eb15aee94fcc"
+          "sha512": "2040fe9bc85244f960bc367aa9e965ebb49cd50356be4d1264c5050f2af364644b26d26eaae24a3f0833a11afd241442d8ba40da469500642230eb15aee94fcc",
+          "sha1": "34f27433e1abdf96464f2f988fdbd647c1ba5776"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/r4z4a5NO/inventorymanagement-1.1.2%2B1.19.jar",
         "filename": "inventorymanagement-1.1.2+1.19.jar",
@@ -498,8 +498,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "aeb46d30ee00e23e336a83e3d880238b24e08eeb",
-          "sha512": "cc7793284cc5366a37d80c4aa4d18f5d297cd1a42e7ac0cea2177b0afff637522e75b581bb0109e25aba50b7fced654b1cfae1d08677a657173f8c3312c4b2e4"
+          "sha512": "cc7793284cc5366a37d80c4aa4d18f5d297cd1a42e7ac0cea2177b0afff637522e75b581bb0109e25aba50b7fced654b1cfae1d08677a657173f8c3312c4b2e4",
+          "sha1": "aeb46d30ee00e23e336a83e3d880238b24e08eeb"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/9icniB3S/inventorymanagement-1.2.0%2B1.19.4.jar",
         "filename": "inventorymanagement-1.2.0+1.19.4.jar",
@@ -534,8 +534,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "84dc6c986182bc145d2bf157502c0cd71e09df49",
-          "sha512": "c106f178fd69059a1ae798913f46ba110fe9515ea2f3f8898fe58421f8fa9c5d7ade52d0f998ac2e31ff32ceace21f52c751190d7bf462c253e422f77eaf43a3"
+          "sha512": "c106f178fd69059a1ae798913f46ba110fe9515ea2f3f8898fe58421f8fa9c5d7ade52d0f998ac2e31ff32ceace21f52c751190d7bf462c253e422f77eaf43a3",
+          "sha1": "84dc6c986182bc145d2bf157502c0cd71e09df49"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/WAiOItc4/inventorymanagement-1.1.0%2B1.19.3.jar",
         "filename": "inventorymanagement-1.1.0+1.19.3.jar",
@@ -572,8 +572,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6117e24622789acd148f9189852bfa030c68774b",
-          "sha512": "922cedfcee5a579b8e1deeab7de20da25c93395519ebed9882d28629f7bca967b5aae7ccb97254104d7da298ecd80d0971a770bda4f78da43c05e5982a9ea16b"
+          "sha512": "922cedfcee5a579b8e1deeab7de20da25c93395519ebed9882d28629f7bca967b5aae7ccb97254104d7da298ecd80d0971a770bda4f78da43c05e5982a9ea16b",
+          "sha1": "6117e24622789acd148f9189852bfa030c68774b"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/1.1.0%2B1.19/inventorymanagement-1.1.0%2B1.19.jar",
         "filename": "inventorymanagement-1.1.0+1.19.jar",
@@ -636,15 +636,15 @@
     "changelog": "- Adjust textures to match when Vanilla Tweaks Dark UI is loaded!",
     "changelog_url": null,
     "date_published": "2022-07-01T13:07:10.769133Z",
-    "downloads": 4508,
+    "downloads": 4510,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "7bfc4879272dcd017013fea6360a01e6910347337866c03af3203a8d7d6c3eab100cd931cd4e87042e33e682617db53aa84a3e05954f5c5e8b83ab3428a208be",
-          "sha1": "eadd0c82534a62a36944595eb541fee50153b4a2"
+          "sha1": "eadd0c82534a62a36944595eb541fee50153b4a2",
+          "sha512": "7bfc4879272dcd017013fea6360a01e6910347337866c03af3203a8d7d6c3eab100cd931cd4e87042e33e682617db53aa84a3e05954f5c5e8b83ab3428a208be"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/1.0.3%2B1.18.2/inventorymanagement-1.0.3%2B1.18.2.jar",
         "filename": "inventorymanagement-1.0.3+1.18.2.jar",
@@ -678,8 +678,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "775ca1619c489cdfe3cdd703fca9429e25140363339777ff93a5fe31b948c6784364f57a45510136eb92c364015a9b0eb23821c06aec8ba016ff6f1d857c9289",
-          "sha1": "7f9b78a9d706fce854abc1c82114d3464a99187d"
+          "sha1": "7f9b78a9d706fce854abc1c82114d3464a99187d",
+          "sha512": "775ca1619c489cdfe3cdd703fca9429e25140363339777ff93a5fe31b948c6784364f57a45510136eb92c364015a9b0eb23821c06aec8ba016ff6f1d857c9289"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/1.0.2%2B1.18.2/inventorymanagement-1.0.2%2B1.18.2.jar",
         "filename": "inventorymanagement-1.0.2+1.18.2.jar",
@@ -713,8 +713,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "588d1196357827536ddc6e39e306178ba9b092b759a92b145a638597957f3fefea1a55344972c2ed4e0d2773a9a2fc630b2eb193bf98ba3c667db2d3dbaaabe4",
-          "sha1": "c4859be56e0e00d838fea8e3d7b858cc6167000c"
+          "sha1": "c4859be56e0e00d838fea8e3d7b858cc6167000c",
+          "sha512": "588d1196357827536ddc6e39e306178ba9b092b759a92b145a638597957f3fefea1a55344972c2ed4e0d2773a9a2fc630b2eb193bf98ba3c667db2d3dbaaabe4"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/1.0.2/inventorymanagement-1.0.2%2B1.19.jar",
         "filename": "inventorymanagement-1.0.2+1.19.jar",
@@ -807,8 +807,8 @@
       },
       {
         "hashes": {
-          "sha512": "56d22647871bdda2677389a7e7f9dbab77e5d3fe1f8b571f8c5244e216ee9622662ab898fb448b1f73b3ba0040ee5ef951e3dd5adf0992ed960a49c0e048eb22",
-          "sha1": "580f75b37e474c2e163c05b31c8dd3100b1ea41d"
+          "sha1": "580f75b37e474c2e163c05b31c8dd3100b1ea41d",
+          "sha512": "56d22647871bdda2677389a7e7f9dbab77e5d3fe1f8b571f8c5244e216ee9622662ab898fb448b1f73b3ba0040ee5ef951e3dd5adf0992ed960a49c0e048eb22"
         },
         "url": "https://cdn.modrinth.com/data/F7wXag4i/versions/1.0.0/inventorymanagement-1.0.0%2B1.18.2.jar",
         "filename": "inventorymanagement-1.0.0+1.18.2.jar",
