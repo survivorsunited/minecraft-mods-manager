@@ -1,4 +1,4 @@
-﻿# Minecraft Mod Manager PowerShell Script
+# Minecraft Mod Manager PowerShell Script
 # Uses modlist.csv as data source and Modrinth API for version checking
 
 # Command line parameters
@@ -212,6 +212,37 @@ function Test-RecordHash {
         return $false
     }
 }
+# Function to convert dependencies to JSON format for CSV storage
+function Convert-DependenciesToJson {
+    param(
+        [Parameter(Mandatory=$true)]
+        $Dependencies
+    )
+    
+    try {
+        if (-not $Dependencies -or $Dependencies.Count -eq 0) {
+            return ""
+        }
+        
+        $dependencyList = @()
+        foreach ($dep in $Dependencies) {
+            $dependencyInfo = @{
+                project_id = $dep.project_id
+                dependency_type = $dep.dependency_type
+                version_id = if ($dep.version_id) { $dep.version_id } else { $null }
+                version_range = if ($dep.version_range) { $dep.version_range } else { $null }
+            }
+            $dependencyList += $dependencyInfo
+        }
+        
+        return $dependencyList | ConvertTo-Json -Compress
+    }
+    catch {
+        Write-Warning "Failed to convert dependencies to JSON: $($_.Exception.Message)"
+        return ""
+    }
+}
+
 
 # Function to load mod list from CSV
 function Get-ModList {
@@ -555,6 +586,18 @@ function Validate-ModVersion {
             $latestVersionUrl = $latestVerObj.files[0].url
         }
         
+        # Extract dependencies from matching version and latest version
+        $currentDependencies = $null
+        $latestDependencies = $null
+        
+        if ($matchingVersion -and $matchingVersion.dependencies) {
+            $currentDependencies = Convert-DependenciesToJson -Dependencies $matchingVersion.dependencies
+        }
+        
+        if ($latestVerObj -and $latestVerObj.dependencies) {
+            $latestDependencies = Convert-DependenciesToJson -Dependencies $latestVerObj.dependencies
+        }
+        
         # Display mod and latest version
         if ($versionExists) {
             # Get latest game version for the latest version
@@ -580,6 +623,8 @@ function Validate-ModVersion {
                 WikiUrl = if ($projectInfo.WikiUrl) { $projectInfo.WikiUrl.ToString() } else { "" }
                 VersionFoundByJar = $versionFoundByJar
                 LatestGameVersion = $latestGameVersion
+                CurrentDependencies = $currentDependencies
+                LatestDependencies = $latestDependencies
             }
         } else {
             return [PSCustomObject]@{
@@ -598,6 +643,8 @@ function Validate-ModVersion {
                 WikiUrl = if ($projectInfo.WikiUrl) { $projectInfo.WikiUrl.ToString() } else { "" }
                 VersionFoundByJar = $false
                 LatestGameVersion = $null
+                CurrentDependencies = $null
+                LatestDependencies = $latestDependencies
             }
         }
     }
@@ -821,6 +868,17 @@ function Ensure-CsvColumns {
             $needsUpdate = $true
         }
         
+        # Check if dependency columns exist
+        $dependencyColumns = @("CurrentDependencies", "LatestDependencies")
+        foreach ($col in $dependencyColumns) {
+            if ($headers -notcontains $col) {
+                foreach ($mod in $mods) {
+                    $mod | Add-Member -MemberType NoteProperty -Name $col -Value ""
+                }
+                $needsUpdate = $true
+            }
+        }
+        
         if ($needsUpdate) {
             # Create backup before updating
             $backupPath = Get-BackupPath -OriginalPath $CsvPath -BackupType "columns"
@@ -885,6 +943,8 @@ function Clean-SystemEntries {
             $mod.SourceUrl = ""
             $mod.WikiUrl = ""
             $mod.LatestGameVersion = ""
+            $mod.CurrentDependencies = ""
+            $mod.LatestDependencies = ""
             
             # Ensure ApiSource and Host are set correctly
             $mod.ApiSource = "direct"
@@ -938,6 +998,8 @@ function Update-ModListWithLatestVersions {
                     WikiUrl = $false
                     Version = $false
                     LatestGameVersion = $false
+                    CurrentDependencies = $false
+                    LatestDependencies = $false
                 }
                 
                 # Update LatestVersion if available
@@ -1013,6 +1075,18 @@ function Update-ModListWithLatestVersions {
                     $changes += "LatestGameVersion: updated"
                 }
                 
+                # Update CurrentDependencies if available
+                if ($result.CurrentDependencies -and $result.CurrentDependencies -ne $mod.CurrentDependencies) {
+                    $mod.CurrentDependencies = $result.CurrentDependencies
+                    $updatedFields.CurrentDependencies = $true
+                }
+                
+                # Update LatestDependencies if available
+                if ($result.LatestDependencies -and $result.LatestDependencies -ne $mod.LatestDependencies) {
+                    $mod.LatestDependencies = $result.LatestDependencies
+                    $updatedFields.LatestDependencies = $true
+                }
+                
                 # Check if any fields were updated
                 $anyUpdates = $updatedFields.Values -contains $true
                 if ($anyUpdates) {
@@ -1032,6 +1106,8 @@ function Update-ModListWithLatestVersions {
                         WikiUrl = if ($updatedFields.WikiUrl) { "✓" } else { "" }
                         Version = if ($updatedFields.Version) { "✓" } else { "" }
                         LatestGameVersion = if ($updatedFields.LatestGameVersion) { "✓" } else { "" }
+                        CurrentDependencies = if ($updatedFields.CurrentDependencies) { "✓" } else { "" }
+                        LatestDependencies = if ($updatedFields.LatestDependencies) { "✓" } else { "" }
                     }
                 }
             }
@@ -1136,6 +1212,8 @@ function Validate-AllModVersions {
             WikiUrl = if ($result.WikiUrl) { $result.WikiUrl.ToString() } else { "" }
             VersionFoundByJar = $result.VersionFoundByJar
             LatestGameVersion = $result.LatestGameVersion
+            CurrentDependencies = $result.CurrentDependencies
+            LatestDependencies = $result.LatestDependencies
         }
     }
     
@@ -1274,6 +1352,8 @@ function Validate-AllModVersions {
                 $updatedMod.SourceUrl = $validationResult.SourceUrl
                 $updatedMod.WikiUrl = $validationResult.WikiUrl
                 $updatedMod.LatestGameVersion = $validationResult.LatestGameVersion
+                $updatedMod.CurrentDependencies = $validationResult.CurrentDependencies
+                $updatedMod.LatestDependencies = $validationResult.LatestDependencies
                 
                 if ($newMods.Count -eq 0) {
                     $newMods = @($updatedMod)
@@ -3307,4 +3387,3 @@ if ($MyInvocation.InvocationName -ne '.') {
         if ($downloadedCount -gt 0) { Write-Host ""; Write-Host "Successfully downloaded $downloadedCount mods!" -ForegroundColor Green }
     }
 } 
-
