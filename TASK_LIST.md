@@ -5,8 +5,8 @@
 ### 📋 GitHub Issues Status
 
 #### ✅ Issues Created (Ready for Development)
-- [x] **Issues #1-33**: All development tasks have been created as GitHub issues
-- [x] **Total Issues**: 33 GitHub issues covering all development tasks
+- [x] **Issues #1-34**: All development tasks have been created as GitHub issues
+- [x] **Total Issues**: 34 GitHub issues covering all development tasks
 
 #### 🎯 Development Tracking
 All development tasks are now tracked in GitHub issues. The task list serves as a high-level project status tracker:
@@ -17,9 +17,9 @@ All development tasks are now tracked in GitHub issues. The task list serves as 
 4. **Collaboration**: Issues are marked with "help wanted" for community contribution
 
 #### 📊 Issue Statistics
-- **Total Issues**: 33
+- **Total Issues**: 34
 - **Bug Issues**: 2 (Critical fixes needed)
-- **Enhancement Issues**: 27 (Feature development)
+- **Enhancement Issues**: 28 (Feature development)
 - **Testing Issues**: 3 (Test file creation)
 - **Documentation Issues**: 1 (Documentation updates)
 - **Help Wanted**: 8 (Community contribution opportunities)
@@ -70,6 +70,11 @@ Project phases and milestones are managed in the [GitHub Milestones](https://git
 
 ### ✅ Completed Tasks
 
+#### Governance and Process
+- [x] **Issue #34: Commit Discipline** - Added strict issue-based commit rules to MDC files
+- [x] **MDC Rules Organization** - Reorganized governance and project rules with numbered prefixes
+- [x] **Commit Message Standards** - Established mandatory issue reference format
+
 #### Test Infrastructure
 - [x] **Fix Random Files Issue** - All tests now properly isolate files
 - [x] **Directory Creation** - ModManager creates required directories automatically
@@ -99,5 +104,5 @@ Project phases and milestones are managed in the [GitHub Milestones](https://git
 
 **Last Updated**: 2025-06-24
 **Current Focus**: Phase 1 - Core Testing (Issues #3-6)
-**Total GitHub Issues**: 33
+**Total GitHub Issues**: 34
 **Project Status**: Active Development
