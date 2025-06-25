@@ -1,0 +1,3341 @@
+[
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "VikZFBSS",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.6-4.8",
+    "version_number": "1.21.6-4.8-fabric+forge+neo",
+    "changelog": "<p>(1.21.6 Fabric) Updated callbacks to fix an incorrect reference in the bytecode.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2025-06-18T21:23:10.901847Z",
+    "downloads": 1519,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "81deb9c248ba93bdf33472c94dd3e8f1c38c14788ebefceacf09be0f9f21161a4dd52637a539c78b1110e6763f76241e700271025535d952e85dbffe0cb78fc5",
+          "sha1": "49c173760fb2f57452da3e7a1075ddf5fa90054e"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/VikZFBSS/stackrefill-1.21.6-4.8.jar",
+        "filename": "stackrefill-1.21.6-4.8.jar",
+        "primary": true,
+        "size": 47377,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "7ePmv1dB",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.6-4.7",
+    "version_number": "1.21.6-4.7-fabric+forge+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.21.6.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2025-06-18T18:45:28.88897Z",
+    "downloads": 53,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "6a9bf9868da1adb7d264204c4d29c136df590afa",
+          "sha512": "0f339e013d65ca63bd2df0062c998f013beec83f486fcbe2b2b5f830874846e8d74067fbcc6df644efa382695aee065e6ee77c3dc76678b7edf569b47b2883ba"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/7ePmv1dB/stackrefill-1.21.6-4.7.jar",
+        "filename": "stackrefill-1.21.6-4.7.jar",
+        "primary": true,
+        "size": 47414,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "XCHC1MXs",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.5-4.7",
+    "version_number": "1.21.5-4.7-fabric+forge+neo",
+    "changelog": "<p>Fixed items being refilled post-death.<br />Fixed ArrayIndexOutOfBoundsException during refill.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2025-05-04T09:23:31.607453Z",
+    "downloads": 9812,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e8f67a9f2b837b3a9f8bae35ba7137341ac1eac5886740a1fb8555e93657a27870c66be9f8a187a8739203112d46dd9f8abd34b70e35a63d6d1831799ea25f16",
+          "sha1": "e7c22af8c9bf742ff486cb19c16466d249166942"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/XCHC1MXs/stackrefill-1.21.5-4.7.jar",
+        "filename": "stackrefill-1.21.5-4.7.jar",
+        "primary": true,
+        "size": 47110,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "zHv63BmF",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.4-4.7",
+    "version_number": "1.21.4-4.7-fabric+forge+neo",
+    "changelog": "<p>Fixed items being refilled post-death.<br />Fixed ArrayIndexOutOfBoundsException during refill.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2025-05-04T09:23:08.97229Z",
+    "downloads": 3505,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "11a802af51607cc2e6ede4132d9fb2c282ab1292",
+          "sha512": "e772164991d321b3f27c2e6fa38580e5044e8c4d79d9d811dd4625a0d4cc075676627e9dd9cf2d19ddc7c7a810d891db224ebbb948a415ae7239f9fd0a93a0b8"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/zHv63BmF/stackrefill-1.21.4-4.7.jar",
+        "filename": "stackrefill-1.21.4-4.7.jar",
+        "primary": true,
+        "size": 47100,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "7u0qP3e1",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.1-4.7",
+    "version_number": "1.21.1-4.7-fabric+forge+neo",
+    "changelog": "<p>Fixed items being refilled post-death.<br />Fixed ArrayIndexOutOfBoundsException during refill.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2025-05-04T09:22:47.345522Z",
+    "downloads": 24692,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2b0871ff14d6e74644c83b97a1c42e4d49f882bf",
+          "sha512": "53cb28110bfbbc3467174b114e56c9c62b58c6fc95a675c442f31ec79bfb5e4d5c81335b983d8d0888da15ede4000f1bbe38490c670ff9d31b5491fc266e9da0"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/7u0qP3e1/stackrefill-1.21.1-4.7.jar",
+        "filename": "stackrefill-1.21.1-4.7.jar",
+        "primary": true,
+        "size": 47057,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "48t8duHT",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.1-4.7",
+    "version_number": "1.20.1-4.7-fabric+forge+neo",
+    "changelog": "<p>Fixed items being refilled post-death.<br />Fixed ArrayIndexOutOfBoundsException during refill.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2025-05-04T09:22:25.608138Z",
+    "downloads": 67394,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "30926d30a4aa4c83e1f009a5cebcf83eb243e2df",
+          "sha512": "417b3e569d85d9ac133fb69b79e70b1999c976ed5e5458bd94291f1bce0f15143f9fd41b6f051e16ea5a6b577699a9f19722b4ba43a154fffeac4e0fc015a908"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/48t8duHT/stackrefill-1.20.1-4.7.jar",
+        "filename": "stackrefill-1.20.1-4.7.jar",
+        "primary": true,
+        "size": 35170,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "QElaScar",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.5-4.6",
+    "version_number": "1.21.5-4.6-fabric+forge+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.21.5.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2025-03-27T15:24:36.939651Z",
+    "downloads": 9389,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f51b5c1822138ee7cae4a45017b586000d1d99f5",
+          "sha512": "8604f5699b51e00887a5ac2ed4c857d57120675071f1be5e176a9b8c7281bbb0ea9b6600fb8dc89a38ae18bd4eeb9f4c07088600b10f8369b2dd661fefe92aeb"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/QElaScar/stackrefill-1.21.5-4.6.jar",
+        "filename": "stackrefill-1.21.5-4.6.jar",
+        "primary": true,
+        "size": 46694,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "7db6oUmE",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.4-4.6",
+    "version_number": "1.21.4-4.6-fabric+forge+neo",
+    "changelog": "<p>(Forge & Neo) Removed redundant event register annotations.<br />- This fixes events loading when they shouldn't.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2025-02-12T13:23:19.459545Z",
+    "downloads": 13733,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c036dd4f65c44f32a116d74854a8ca9e8a0d988c83dc1771c2ef672e65924cba8f6cd3bc9623c75039537cf4dd73fa6f8a12fcd519a91a6e84a0265497cebf33",
+          "sha1": "4346a7256341b555ad1f1797587c850117b7b6ba"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/7db6oUmE/stackrefill-1.21.4-4.6.jar",
+        "filename": "stackrefill-1.21.4-4.6.jar",
+        "primary": true,
+        "size": 46688,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "pZvybeGD",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.1-4.6",
+    "version_number": "1.21.1-4.6-fabric+forge+neo",
+    "changelog": "<p>(Forge & Neo) Removed redundant event register annotations.<br />- This fixes events loading when they shouldn't.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2025-02-12T13:22:57.802371Z",
+    "downloads": 30757,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "157f2f8082c485b11270b0c50a0e03b1ef6c848ac78a11a3b2e042ba3e64f1f1a55b24b420136c79ac9da7779e41b44b77180c7379e317ca46aa2cf38bc62b88",
+          "sha1": "c8f31e63c79221403260e8a575a3b33c0b0ce976"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/pZvybeGD/stackrefill-1.21.1-4.6.jar",
+        "filename": "stackrefill-1.21.1-4.6.jar",
+        "primary": true,
+        "size": 46639,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "f6ofQRO7",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.1-4.6",
+    "version_number": "1.20.1-4.6-fabric+forge+neo",
+    "changelog": "<p>(Forge & Neo) Removed redundant event register annotations.<br />- This fixes events loading when they shouldn't.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2025-02-12T13:22:36.064284Z",
+    "downloads": 36015,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6a6222b06eef41892389bdb3f45ab18fffac12ed61e15def457316cac6876f48564aa3b1a6da5c99e24face303b918c0d78787d14489052aa0f7ebeb8b7f42af",
+          "sha1": "5cc54e5cdf07abf0139ea52d42f20e93a394588d"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/f6ofQRO7/stackrefill-1.20.1-4.6.jar",
+        "filename": "stackrefill-1.20.1-4.6.jar",
+        "primary": true,
+        "size": 34868,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "xmyGODRG",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.4-4.5",
+    "version_number": "1.21.4-4.5-fabric+forge+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.21.4.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-12-06T09:15:02.135297Z",
+    "downloads": 11507,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2679cd198192e761061c0be21f634aef30d91934",
+          "sha512": "ea79ac80f530693fa9b792f4b74a60cd0efe995aab43521c3a83d21811a0cf03360eee01038d78394ad3f198f71289663a4e7e28134a5a22103bc5bc8f2466a8"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/xmyGODRG/stackrefill-1.21.4-4.5.jar",
+        "filename": "stackrefill-1.21.4-4.5.jar",
+        "primary": true,
+        "size": 46835,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "3LTwZlPE",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.3-4.5",
+    "version_number": "1.21.3-4.5-fabric+forge+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.21.3.<br />- Once again compatible with Fabric, Forge and NeoForge!</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-10-26T10:06:24.013658Z",
+    "downloads": 5395,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "32242f35263b4da0795961be06f722ddb78c8ff4",
+          "sha512": "98028215e84f0dde3fd98444aa1d4a3e98a2f48beb2aa9bd35efa03c6106f9a57e5991def679cd07b52d8ab0943242886250070ecbc78cc905efecc0b01cd1fc"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/3LTwZlPE/stackrefill-1.21.3-4.5.jar",
+        "filename": "stackrefill-1.21.3-4.5.jar",
+        "primary": true,
+        "size": 46835,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "DHV2tpa8",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Neo] 1.21.2-4.5",
+    "version_number": "1.21.2-4.5-fabric+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.21.2.<br />- Without Forge for now, support will be added once they update.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-10-23T19:38:37.531015Z",
+    "downloads": 634,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b9c4e84c7ae57721d21ab23600881e65fc280aa3ecd88941c2d101cb82d40532493520df0469441cdd7baa765102d3262ea8c0dd3019e60f3c2646c85d6210b1",
+          "sha1": "f5a73af2a41ec148e51330e9f571b9b871fd215f"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/DHV2tpa8/stackrefill-1.21.2-4.5.jar",
+        "filename": "stackrefill-1.21.2-4.5.jar",
+        "primary": true,
+        "size": 35359,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "XkihrYZR",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.1-4.5",
+    "version_number": "1.21.1-4.5-fabric+forge+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.21.1.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-08-08T22:43:33.907335Z",
+    "downloads": 80471,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "24b2fed532aeeffe1cdd2f91f7a472e6196951f5",
+          "sha512": "bbc274eb0b521f9b9448d79a8f9b206e2ebf1f6f939765aac5bcf877e1fa890b11af66b5e948b37a07d96d1b2b348c60a72dc0c3fc0b709a55e3522d39bc1f91"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/XkihrYZR/stackrefill-1.21.1-4.5.jar",
+        "filename": "stackrefill-1.21.1-4.5.jar",
+        "primary": true,
+        "size": 46811,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "JF4BsgNL",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.0-4.5",
+    "version_number": "1.21.0-4.5-fabric+forge+neo",
+    "changelog": "<p>Added Bundle support. The mod can now be enabled/disabled via bundle configs.<br />(NeoForge) Fixed the in-game config screen not working correctly.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-07-27T18:09:03.47663Z",
+    "downloads": 5681,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "4c3773e60b1306f4b12fc4abe7503efa83cb2369",
+          "sha512": "b5b0f71067bd784195628f9b1f7df2035238c55841c90f49cff43e86ff489e7f5f8937ca9f66aa57a00412b85fd194cdf7d1144c4cb31112490bbf45793a477f"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/JF4BsgNL/stackrefill-1.21.0-4.5.jar",
+        "filename": "stackrefill-1.21.0-4.5.jar",
+        "primary": true,
+        "size": 46802,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "PRyHAdFu",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.6-4.5",
+    "version_number": "1.20.6-4.5-fabric+forge+neo",
+    "changelog": "<p>Added Bundle support. The mod can now be enabled/disabled via bundle configs.<br />(NeoForge) Fixed the in-game config screen not working correctly.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-07-27T18:08:41.542474Z",
+    "downloads": 1192,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b89a62fa4177e4c0779998a21a4485156d9466cab2579b19836d4a8e9b26020afb11c5d293629e5dc3bf032bf555e1ff7541742777e488758f5924a3dbf102c3",
+          "sha1": "909d7215489198638f18a365e2e38284b8670881"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/PRyHAdFu/stackrefill-1.20.6-4.5.jar",
+        "filename": "stackrefill-1.20.6-4.5.jar",
+        "primary": true,
+        "size": 46811,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "O5D7DMz0",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.1-4.5",
+    "version_number": "1.20.1-4.5-fabric+forge+neo",
+    "changelog": "<p>Added Bundle support. The mod can now be enabled/disabled via bundle configs.<br />(NeoForge) Fixed the in-game config screen not working correctly.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-07-27T18:08:19.993421Z",
+    "downloads": 79406,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b88d256b7a321c80547e6930f5fac3aa82a830c350e1f85e192c248e99558f13b2f0ad9a0527ec824cac76240d5451c8eab952a0929cd4e21c35c3fcde323ea6",
+          "sha1": "6611a6ed2c8824374eba8e0a49b94573f6616892"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/O5D7DMz0/stackrefill-1.20.1-4.5.jar",
+        "filename": "stackrefill-1.20.1-4.5.jar",
+        "primary": true,
+        "size": 34953,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "xn9KY6LE",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.21.0-4.4",
+    "version_number": "1.21.0-4.4-fabric+forge+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.21.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-06-13T22:47:05.230344Z",
+    "downloads": 68302,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "18314154238cdd79033082d9c40b548c8fcd3b8f",
+          "sha512": "31c3783c615301e6efe60d9f6fa01fa48059696a267b1cd5ca5c776faccf6876365fff8a1a5438dc3eee07f101140ad989737c322bdb9d5953bf095ac7e29d05"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/xn9KY6LE/stackrefill-1.21.0-4.4.jar",
+        "filename": "stackrefill-1.21.0-4.4.jar",
+        "primary": true,
+        "size": 46563,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "3ZR7tMmn",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.6-4.4",
+    "version_number": "1.20.6-4.4-fabric+forge+neo",
+    "changelog": "<p>Improved exception handling.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-05-21T21:15:45.508101Z",
+    "downloads": 5166,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "136cf8f01c0cc3e0de6896a4f5efd756a5d174b4",
+          "sha512": "2418bac9a950d1f54235a24b2a0f0109a9db590b2e162775dab051249dd94b6c6576d774141095a22d50c1b5bd5b3becaa0b7bc720875411a564b7e02f45aeb7"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/3ZR7tMmn/stackrefill-1.20.6-4.4.jar",
+        "filename": "stackrefill-1.20.6-4.4.jar",
+        "primary": true,
+        "size": 46552,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "UmnHIRwT",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.4-4.4",
+    "version_number": "1.20.4-4.4-fabric+forge+neo",
+    "changelog": "<p>Improved exception handling.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-05-21T21:15:23.967364Z",
+    "downloads": 6774,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "736edfd05a797e97d74385dce8bea843512220fbb1085c59925ed59e480e9b311ec24036ce7627c656acc9137a51dfb0fd27ba40f5b9bcaab0e8bbb273b0e406",
+          "sha1": "2b9cb29454adcaa5999d98c5533dc21331d6aa14"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/UmnHIRwT/stackrefill-1.20.4-4.4.jar",
+        "filename": "stackrefill-1.20.4-4.4.jar",
+        "primary": true,
+        "size": 45978,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "u73gygFL",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.1-4.4",
+    "version_number": "1.20.1-4.4-fabric+forge+neo",
+    "changelog": "<p>Improved exception handling.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-05-21T21:15:02.307449Z",
+    "downloads": 15857,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a0e35a25a6b775c015bf2f13a72c68f7943e6ccd",
+          "sha512": "19749b6a8b0e51f29d474f496cbcab4e2278574044ac06b2d634c611e3dca7b5f51998e334553cd7a40422b0fd288fdf2624858e964d3fb1f0566a75ba68cef2"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/u73gygFL/stackrefill-1.20.1-4.4.jar",
+        "filename": "stackrefill-1.20.1-4.4.jar",
+        "primary": true,
+        "size": 34751,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "quilt"
+    ],
+    "id": "MDA9IAE3",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge] 1.19.2-4.4",
+    "version_number": "1.19.2-4.4-fabric+forge",
+    "changelog": "<p>Improved exception handling.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-05-21T21:14:40.454348Z",
+    "downloads": 7771,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "270854f6e4125ba7887213b8ea5565cec755cd80",
+          "sha512": "8d9ff558fcee15ea707e9cf3b01e6d0580ba2b880b507877a2484d883a588f6f9952c120a77f977e69e8e2b4c3fb571ab76c192e00b65de6937d681999b91ec6"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/MDA9IAE3/stackrefill-1.19.2-4.4.jar",
+        "filename": "stackrefill-1.19.2-4.4.jar",
+        "primary": true,
+        "size": 34761,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "Ytd2dr0x",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.6-4.3",
+    "version_number": "1.20.6-4.3-fabric+forge+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.20.6.<br />Includes compatibility for Fabric, Forge and NeoForge.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-05-01T10:40:30.844435Z",
+    "downloads": 1725,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e1b86c9e9592ffa3f56982610e6d0a13889154a8",
+          "sha512": "b6962c181091da51dc2a8c5fded7fcebf742da3983f30067f8ee37d9fd21f0a31cac163ad372a4fc7e78c0971f66918e31aed09b653c9ffa669e218642def6a0"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/Ytd2dr0x/stackrefill-1.20.6-4.3.jar",
+        "filename": "stackrefill-1.20.6-4.3.jar",
+        "primary": true,
+        "size": 46259,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.5"
+    ],
+    "loaders": [
+      "fabric",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "NB17oMUW",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Neo] 1.20.5-4.3",
+    "version_number": "1.20.5-4.3-fabric+neo",
+    "changelog": "<p>(1.20.5 Neo) Updated to work with NeoForge's TickEvent changes in 20.5.14.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-04-28T15:47:28.299482Z",
+    "downloads": 391,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7f3d7f62f40c93590a85e97683ad1c7f6be5337277a95b7e6cd19815c1186dd31beb3236d8681bf4fbabc36c8c9280d6901420fd1fe8fc1f345cb1d364ec14e1",
+          "sha1": "c45e4469bffdd38ddea570a3cedc078711f1c37d"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/NB17oMUW/stackrefill-1.20.5-4.3.jar",
+        "filename": "stackrefill-1.20.5-4.3.jar",
+        "primary": true,
+        "size": 34974,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.5"
+    ],
+    "loaders": [
+      "fabric",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "2V5hg9Gl",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Neo] 1.20.5-4.2",
+    "version_number": "1.20.5-4.2-fabric+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.20.5.<br />Without Forge for now. Support will be added once they update.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2024-04-27T22:22:27.296993Z",
+    "downloads": 102,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "9c90370c55e849cd55abfa0be555c1109b64f44d3f5abfe23c8bfe0d5f01a09f460754230378e4e3f240d7d0d3687ba4e2ec2bddc438fa2c3ed531e4c27d28cf",
+          "sha1": "4a3d54ee2f54b545c252977414b338c50f620ead"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/2V5hg9Gl/stackrefill-1.20.5-4.2.jar",
+        "filename": "stackrefill-1.20.5-4.2.jar",
+        "primary": true,
+        "size": 35175,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "HGSYHrgz",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.4-4.2",
+    "version_number": "1.20.4-4.2-fabric+forge+neo",
+    "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-12-17T18:21:41.301378Z",
+    "downloads": 10977,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7675b2c6f6192e5149c9f8500f16df18a0550c2e7bdffa2017519761bfc28e872b56a4426699e46d8ed217fdb3bf2ef1bf0f98428b795396f99b746461046aaf",
+          "sha1": "fbdd4ac06d02ad763b08a670be69365ea2e05337"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/HGSYHrgz/stackrefill-1.20.4-4.2.jar",
+        "filename": "stackrefill-1.20.4-4.2.jar",
+        "primary": true,
+        "size": 45336,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "IHdwcPL2",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.2-4.2",
+    "version_number": "1.20.2-4.2-fabric+forge+neo",
+    "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-12-17T18:21:20.323386Z",
+    "downloads": 1747,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "fb36d069128a703fe0993debbed2ecc6bc58ff74",
+          "sha512": "462f3d4474477c94527ba85276259207a19f8e5307f3b5336e361347a44b685d592f9c8830c5b9fe5442ce2fdba015cbac62e5f2b6a45d630123b49242677ce5"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/IHdwcPL2/stackrefill-1.20.2-4.2.jar",
+        "filename": "stackrefill-1.20.2-4.2.jar",
+        "primary": true,
+        "size": 45339,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "PsJVmVzf",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.1-4.2",
+    "version_number": "1.20.1-4.2-fabric+forge+neo",
+    "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-12-17T18:20:59.023769Z",
+    "downloads": 26705,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b4853ad60c46a891f6d7859bf2dc06cdf9fbf801",
+          "sha512": "72919a2b6ceea8ef6d245cd5a3981bdde134ce107fa7422dc6b7fc58fa08609c27cc7887b6debe053b6a26ef861aec96163c30cd450e61a931f62bf03f71c33f"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/PsJVmVzf/stackrefill-1.20.1-4.2.jar",
+        "filename": "stackrefill-1.20.1-4.2.jar",
+        "primary": true,
+        "size": 34176,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "quilt"
+    ],
+    "id": "sgkW3jaH",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge] 1.19.2-4.2",
+    "version_number": "1.19.2-4.2-fabric+forge+neo",
+    "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-12-17T18:20:35.897156Z",
+    "downloads": 21109,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1f673f4d93c7753ff4d73db61a2525af13241acdec2167a785fa61f49124b7558a666050ee141547964a28a86a7f37a8b6db4397de50c232cf4588473c4a4d6a",
+          "sha1": "9f4b6d5f0f75e0080d2c57d3b45ac85aa7c9b564"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/sgkW3jaH/stackrefill-1.19.2-4.2.jar",
+        "filename": "stackrefill-1.19.2-4.2.jar",
+        "primary": true,
+        "size": 34188,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "FekCG20e",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.4-4.1",
+    "version_number": "1.20.4-4.1-fabric+forge+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.20.4.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-12-08T12:32:56.090552Z",
+    "downloads": 528,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "940830c8bc430c7f5d08b3f21f3cd89175b9fe42",
+          "sha512": "fb50bd38fd5ea3f89dd07b793dea94f5660edbd63cda81f69363c89b423adb9e8b433df0189b81cd54487edc421f91029c0645a71cf7f2e65807221d97bb49a5"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/FekCG20e/stackrefill-1.20.4-4.1.jar",
+        "filename": "stackrefill-1.20.4-4.1.jar",
+        "primary": true,
+        "size": 45874,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.3"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "l9srzQAp",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.3-4.1",
+    "version_number": "1.20.3-4.1-fabric+forge+neo",
+    "changelog": "<p>Updated mod to Minecraft version 1.20.3.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-12-07T09:29:08.001167Z",
+    "downloads": 183,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1815f45478657e2d83e43f42a9515d561b647fe5cc41281c25075fcbd49f6d90b425d22e1fb263384164918ace9593ffe0f3ea98c3c50547e34f4d705a8fce11",
+          "sha1": "9da02189a5848222475f7890c58f748b9a003062"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/l9srzQAp/stackrefill-1.20.3-4.1.jar",
+        "filename": "stackrefill-1.20.3-4.1.jar",
+        "primary": true,
+        "size": 45871,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "1ATTZrXW",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.2-4.1",
+    "version_number": "1.20.2-4.1-forge+fabric",
+    "changelog": "<p>(1.20.*) Added official support for NeoForge. Just like Fabric and Forge, in the same jar!<br />Updated structure and content of mod info files.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-11-08T16:48:31.751474Z",
+    "downloads": 919,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0f0fed2891d6bb7d2d10f0f88c9159db5cb351e15e23e5345edecf071cca7ca3d8fc33f4b65c45633932a9b61324fb640e0118caa1d2e2a4393706c97dac92fc",
+          "sha1": "4c0c46432b9f572ea9e4b8b865877fc39b3f63e7"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/1ATTZrXW/stackrefill-1.20.2-4.1.jar",
+        "filename": "stackrefill-1.20.2-4.1.jar",
+        "primary": true,
+        "size": 45800,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "uANk4nhZ",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge/Neo] 1.20.1-4.1",
+    "version_number": "1.20.1-4.1-forge+fabric",
+    "changelog": "<p>(1.20.*) Added official support for NeoForge. Just like Fabric and Forge, in the same jar!<br />Updated structure and content of mod info files.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-11-08T16:48:10.393734Z",
+    "downloads": 5923,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "db5caf1c3856786e3bf5a3008b09e8b4693032e3",
+          "sha512": "a16ae4fc101d05ec5ed01cb9008079f8656b4883895315abde3ec7e74e2e27936f6ec71ee0c46cb5b60a02b09677e89657401904c2a06ca3581ffa42ac578c0e"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/uANk4nhZ/stackrefill-1.20.1-4.1.jar",
+        "filename": "stackrefill-1.20.1-4.1.jar",
+        "primary": true,
+        "size": 34646,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "quilt"
+    ],
+    "id": "btIdI4tH",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge] 1.19.2-4.1",
+    "version_number": "1.19.2-4.1-forge+fabric",
+    "changelog": "<p>(1.20.*) Added official support for NeoForge. Just like Fabric and Forge, in the same jar!<br />Updated structure and content of mod info files.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-11-08T16:47:48.868013Z",
+    "downloads": 1522,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "669ce85d6940ca7edf8ef00ddde914fa0ef99be7698d778a9659c09415b827635e50f848cf1b03360292ee8eae08f184a79ef6536e761bd2d7267d19b1af04d4",
+          "sha1": "52d47b520b40c382aea575535b13953b28ad1f59"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/btIdI4tH/stackrefill-1.19.2-4.1.jar",
+        "filename": "stackrefill-1.19.2-4.1.jar",
+        "primary": true,
+        "size": 34660,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "quilt"
+    ],
+    "id": "zMCHDEgL",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric/Forge] 1.18.2-4.1",
+    "version_number": "1.18.2-4.1-forge+fabric",
+    "changelog": "<p>(1.20.*) Added official support for NeoForge. Just like Fabric and Forge, in the same jar!<br />Updated structure and content of mod info files.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-11-08T16:47:27.941108Z",
+    "downloads": 3595,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "932970ddb5d06c4a12e692f2cece7fc168eb8e31",
+          "sha512": "3796896c3ec388d6600fb57f9e3f92cdaa72b76ffdcfde080bdda5ded3bae228fa1fe3f460edd4e90862c28ecb8cdf3110fd3986cb99b7bbc467c6826eee2efb"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/zMCHDEgL/stackrefill-1.18.2-4.1.jar",
+        "filename": "stackrefill-1.18.2-4.1.jar",
+        "primary": true,
+        "size": 34711,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "id": "MjZfVW1I",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge & Fabric] 1.20.2-4.0",
+    "version_number": "1.20.2-4.0-forge+fabric",
+    "changelog": "<p>Updated mod to Minecraft version 1.20.2.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-09-21T21:28:31.395867Z",
+    "downloads": 1915,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "95b6e51d7e1d1a213ad1867c145b546bf16eaae663417416c93f4c2dd2757ecd3b0d300358036ff516f4dec31dcd0d848f85917e1a477f77f722aa7cfd5e5b31",
+          "sha1": "bbabc9ce46f3073d91eba269aa9062417c18c90e"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/MjZfVW1I/stackrefill-1.20.2-4.0.jar",
+        "filename": "stackrefill-1.20.2-4.0.jar",
+        "primary": true,
+        "size": 34656,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "quilt"
+    ],
+    "id": "37gXvRIW",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge & Fabric] 1.20.1-4.0",
+    "version_number": "1.20.1-4.0-forge+fabric",
+    "changelog": "<p>Updated mod to Minecraft version 1.20.1.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-06-12T23:48:57.609753Z",
+    "downloads": 11692,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f53ed61a738b0db9d37ef99f2d93370e0ff686f3e8f3c98211eba6cdd159a67c983d4dbe38347bfd948927bdb4d736f812f1f26c43f533bbbcd06aa5bbac040c",
+          "sha1": "d1e2e4f7cca47abaa6813da6a1745c0bbf47c793"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/37gXvRIW/stackrefill-1.20.1-4.0.jar",
+        "filename": "stackrefill-1.20.1-4.0.jar",
+        "primary": true,
+        "size": 34660,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "W1CQ9UCz",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "quilt"
+    ],
+    "id": "wgXalt3s",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge & Fabric] 1.20-4.0",
+    "version_number": "1.20-4.0-forge+fabric",
+    "changelog": "<p>Updated mod to Minecraft version 1.20.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-06-08T11:29:43.985006Z",
+    "downloads": 1971,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b5102fec1bd33b2b8ba32fe0367b9d628bbf504aa3aeeeced3a3136f95e032be0fe89cb1335a614bb8599d6c9594cbbddc26577eeb05cde354e20321414c5dde",
+          "sha1": "793edb4b6f4f142464485cbf019ff5d0ae297255"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/wgXalt3s/stackrefill-1.20.0-4.0.jar",
+        "filename": "stackrefill-1.20.0-4.0.jar",
+        "primary": true,
+        "size": 34651,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "RNhYJa64",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "quilt"
+    ],
+    "id": "2VQobd4Z",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge & Fabric] 1.19.4-4.0",
+    "version_number": "1.19.4-4.0-forge+fabric",
+    "changelog": "<p>Updated mod to Minecraft version 1.19.4.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-03-15T16:39:04.494532Z",
+    "downloads": 2298,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "dd10f8e8a4677a00bbfddcc3638e966572163ef5",
+          "sha512": "0bb35f8c4eaac43542ac280ad28187bfdcfa5b3242a23347990f475c001d879bf2edaf443695b560afca7ed7565b4e7655b482d08cb77c429e3eaef81480f481"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/2VQobd4Z/stackrefill-1.19.4-4.0.jar",
+        "filename": "stackrefill-1.19.4-4.0.jar",
+        "primary": true,
+        "size": 34713,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "YZdu9B77",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "quilt"
+    ],
+    "id": "GYmS7YaK",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge & Fabric] 1.19.3-4.0",
+    "version_number": "1.19.3-4.0-forge+fabric",
+    "changelog": "<p>A big backend update!<br />Forge and Fabric (and Quilt) are now contained in one file.<br /><br />This also means that the two separate project pages for Forge/Fabric will be converted to one (on CurseForge). While having a clean file list! The Fabric project page on CF will remain as a legacy for older Fabric versions.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-01-06T20:37:16.738873Z",
+    "downloads": 634,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9ddf41ff202261a3a85fb9c0487c1db4f7aa1b67",
+          "sha512": "d5dee30f7de0b7601c4cebd4b2d586c6802ffe6c72b7a7240809a710498d19ec249255f11e251205ff09ca5cf9d70ae83febe9347551cc36d68849d6a7121a95"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/GYmS7YaK/stackrefill-1.19.3-4.0.jar",
+        "filename": "stackrefill-1.19.3-4.0.jar",
+        "primary": true,
+        "size": 34761,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "w1vSb4TN",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "quilt"
+    ],
+    "id": "VNRWv819",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge & Fabric] 1.19.2-4.0",
+    "version_number": "1.19.2-4.0-forge+fabric",
+    "changelog": "<p>A big backend update!<br />Forge and Fabric (and Quilt) are now contained in one file.<br /><br />This also means that the two separate project pages for Forge/Fabric will be converted to one (on CurseForge). While having a clean file list! The Fabric project page on CF will remain as a legacy for older Fabric versions.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-01-06T20:36:58.931519Z",
+    "downloads": 37531,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f6c6db37000d7e5bdf6dd86a80363f9cfef86c06f7738534083bab0c87c9b4648146675b56edd5cc78e6e946b41cd5128265320f0aa4b2bc43bc29d993cab529",
+          "sha1": "757044dc8d6eccdb0b394dd63ce0a39791860376"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/VNRWv819/stackrefill-1.19.2-4.0.jar",
+        "filename": "stackrefill-1.19.2-4.0.jar",
+        "primary": true,
+        "size": 34749,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "quilt"
+    ],
+    "id": "VGRc447U",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge & Fabric] 1.18.2-4.0",
+    "version_number": "1.18.2-4.0-forge+fabric",
+    "changelog": "<p>A big backend update!<br />Forge and Fabric (and Quilt) are now contained in one file.<br /><br />This also means that the two separate project pages for Forge/Fabric will be converted to one (on CurseForge). While having a clean file list! The Fabric project page on CF will remain as a legacy for older Fabric versions.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2023-01-06T20:36:42.013085Z",
+    "downloads": 976,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7a0f2c34afdebd17220baeb7623b682d7f8098f24249963a0a27d37ed6ec55062a6ebb8a098c99646b3f81baca5d7f2ffab235ae99d12c9ab73fafd938a26b72",
+          "sha1": "39d3d263ed6f58d611ce33378262b13fe18d3e48"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/VGRc447U/stackrefill-1.18.2-4.0.jar",
+        "filename": "stackrefill-1.18.2-4.0.jar",
+        "primary": true,
+        "size": 34806,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "qZnZndOb",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.19.3-3.2",
+    "version_number": "1.19.3-3.2-forge",
+    "changelog": "<p>Updated mod to Minecraft version 1.19.3.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-12-08T12:19:24.438473Z",
+    "downloads": 72,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "70dc27ce3fd5473401afa53d696f088d97e777900e7c6fd96a448765282e25dc4606ebdbab426249b9bd9d44fd582381a1f2d90b3a54a94bc4bdee3317063948",
+          "sha1": "83a7f80af78d3b684770b4856dcd7bcac0ff172c"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/qZnZndOb/stackrefill_1.19.3-3.2.jar",
+        "filename": "stackrefill_1.19.3-3.2.jar",
+        "primary": true,
+        "size": 9997,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "w1vSb4TN",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "2S28pp4b",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.19.3-3.3",
+    "version_number": "1.19.3-3.3-fabric",
+    "changelog": "<p>(Fabric) Updated mod to Minecraft version 1.19.3.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-12-07T19:01:29.645026Z",
+    "downloads": 172,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2d8d88d62f0cdd1684c5d2f2e99158dc3c6dd913",
+          "sha512": "6483a4ee3bb3fc2311c7c1fe119b5426a2bb96a071a4abc7b75019f5a2935d2cef299764019330d3ac218e36483a3edd26a30fad074769f1d59d34fdd94561b3"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/2S28pp4b/stackrefill-fabric_1.19.3-3.3.jar",
+        "filename": "stackrefill-fabric_1.19.3-3.3.jar",
+        "primary": true,
+        "size": 22656,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "jyKnHEDY",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "w1vSb4TN",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "e2xKytHE",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.19.2-3.2",
+    "version_number": "1.19.2-3.2-forge",
+    "changelog": "<p>Fixed a crash when a pair variable was null, due to an incompatibility with another mod.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-10-08T11:47:54.686995Z",
+    "downloads": 154,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f72a53c24264ef1f4f15e92da9ceee1ad8e8267fffda95b484e6a0837930e6312e11967293f9ec36eeea1e543ea80ebd05bd26e425c0a2aff52a850e7173949c",
+          "sha1": "c3ca4c5a20e74ebba2afef91c7055d66a62ccdc2"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/e2xKytHE/stackrefill_1.19.2-3.2.jar",
+        "filename": "stackrefill_1.19.2-3.2.jar",
+        "primary": true,
+        "size": 9977,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "my3GmCgZ",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.18.2-3.2",
+    "version_number": "1.18.2-3.2-forge",
+    "changelog": "<p>Fixed a crash when a pair variable was null, due to an incompatibility with another mod.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-10-08T11:47:39.723191Z",
+    "downloads": 125,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2b0fd86ea9ae2e3d9b4cac9c3e332b1fa5b9d22e43c44e00a662e92ee329c5f542d0a8b14d34f33e23de7b8aa038dbf79c7371850a82ed5b92bc19a13b8d662c",
+          "sha1": "d4be3926e84ec3c95497f987b1dbdce5116d6217"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/my3GmCgZ/stackrefill_1.18.2-3.2.jar",
+        "filename": "stackrefill_1.18.2-3.2.jar",
+        "primary": true,
+        "size": 10021,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "dwjOn0So",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.16.5-3.2",
+    "version_number": "1.16.5-3.2-forge",
+    "changelog": "<p>Fixed a crash when a pair variable was null, due to an incompatibility with another mod.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-10-08T11:47:24.934769Z",
+    "downloads": 2499,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2ad0477ab124ed1fed115a54b9d71d3c66964560e08b7620f4c14725a8dbb7e574278023082d79bd0f1aecf0e5ed965dd838965b02b582627ffb05721baef237",
+          "sha1": "1679901c513ea13bed98ecd156260b3f9da26ae5"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/dwjOn0So/stackrefill_1.16.5-3.2.jar",
+        "filename": "stackrefill_1.16.5-3.2.jar",
+        "primary": true,
+        "size": 10043,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "HMuqiDvH",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "LvYWrbrG",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.19.2-3.2",
+    "version_number": "1.19.2-3.2-fabric",
+    "changelog": "<p>Fixed a crash when a pair variable was null, due to an incompatibility with another mod.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-10-08T11:47:09.653256Z",
+    "downloads": 345,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e52cde59f9dc625631e27259557c0114055a3baf",
+          "sha512": "4f24f74cbf86cbb21fbfb01504885d91f1f22b2928c737eb2325d6178efea53ca1f52491e9fb9475e43f3983afe5dd5fc83d9d1a449a359de27a243c09e3bfcb"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/LvYWrbrG/stackrefill-fabric_1.19.2-3.2.jar",
+        "filename": "stackrefill-fabric_1.19.2-3.2.jar",
+        "primary": true,
+        "size": 22627,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "hfsU4hXq",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "2aDKgnbO",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.18.2-3.2",
+    "version_number": "1.18.2-3.2-fabric",
+    "changelog": "<p>Fixed a crash when a pair variable was null, due to an incompatibility with another mod.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-10-08T11:46:54.5321Z",
+    "downloads": 510,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "120b032c60a21de926cfa1b82fa33786781a36be243909a15bcd4aeed4f8a0da2ded8a75b0e09a3f9aaa47d926662ed8ebdc1f3f4e0ed78416a98603a04332f4",
+          "sha1": "6e10bcec78efb125ea057a2d8e56ddd83779efcb"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/2aDKgnbO/stackrefill-fabric_1.18.2-3.2.jar",
+        "filename": "stackrefill-fabric_1.18.2-3.2.jar",
+        "primary": true,
+        "size": 22638,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "95QMsRyb",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "YVRFiuhz",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.16.5-3.2",
+    "version_number": "1.16.5-3.2-fabric",
+    "changelog": "<p>Fixed a crash when a pair variable was null, due to an incompatibility with another mod.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-10-08T11:46:39.957183Z",
+    "downloads": 811,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c16a4044699aab16f96f093e21616941c5cf6828",
+          "sha512": "5540cfe396864df417fa21629bc37ddc8178fd602f0d7ed47883dcc51cf9bb74b56ad4e618bbedb5df2cab26cdfd158a50ee8af4091c22d661c91ddad8487698"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/YVRFiuhz/stackrefill-fabric_1.16.5-3.2.jar",
+        "filename": "stackrefill-fabric_1.16.5-3.2.jar",
+        "primary": true,
+        "size": 22168,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "diqQmTlH",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "aVWRlojC",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.19.2-3.1",
+    "version_number": "1.19.2-3.1-fabric",
+    "changelog": "<p>(Fabric) Added Mod Menu support with project links and logo.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-10-02T16:15:35.205917Z",
+    "downloads": 76,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9b8ebbc95cf7404e044ff177ed6eac959b18fd70",
+          "sha512": "943e1e7dc4240c9894a87afeb4c9720ec9da84c2bc0235fe3bfaa7e185bf53f23610bed5701c2682629080e26e525de240e8a1fdc9e5a206dc2c629084d18902"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/aVWRlojC/stackrefill-fabric_1.19.2-3.1.jar",
+        "filename": "stackrefill-fabric_1.19.2-3.1.jar",
+        "primary": true,
+        "size": 22623,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "hfsU4hXq",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "im6SnzaL",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.18.2-3.1",
+    "version_number": "1.18.2-3.1-fabric",
+    "changelog": "<p>(Fabric) Added Mod Menu support with project links and logo.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-10-02T16:15:21.874244Z",
+    "downloads": 66,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "66c306c91edab0e238f442b61a7e58a4f79d86c5",
+          "sha512": "ef2a6e524d7d1c9490d8ba453b538586cd7f9fef1b50fc15b11294559e3aa7d51182200a1accdff48191e6af0ce2d8632c35b10aa17a7bd94b92166ec34ca8a0"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/im6SnzaL/stackrefill-fabric_1.18.2-3.1.jar",
+        "filename": "stackrefill-fabric_1.18.2-3.1.jar",
+        "primary": true,
+        "size": 22632,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "95QMsRyb",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "PmHWtCW7",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.16.5-3.1",
+    "version_number": "1.16.5-3.1-fabric",
+    "changelog": "<p>(Fabric) Added Mod Menu support with project links and logo.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
+    "changelog_url": null,
+    "date_published": "2022-10-02T16:15:08.26139Z",
+    "downloads": 62,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "416ecfd4452891d405967702f87c9687d4636de42f0d8abe41de93cea4ba46abfb25921d763b56c7718738d4c0c33971581ebd3fadb667d23482209ef5544497",
+          "sha1": "8558e614d196d0ca0d11215352afd06a226852f9"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/PmHWtCW7/stackrefill-fabric_1.16.5-3.1.jar",
+        "filename": "stackrefill-fabric_1.16.5-3.1.jar",
+        "primary": true,
+        "size": 22158,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "diqQmTlH",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "bDH9FVLQ",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.19.2-3.0",
+    "version_number": "1.19.2-3.0-forge",
+    "changelog": "<p>The big 3.0 rewrite!<br />Improved code performance.<br />Fixed visual desyncs in the inventory, the mod now works better with clients.<br />Fixed snowballs and firework rockets not refilling.<br />Fixed crash due to mod incompatibility.<br />FIxed the offhand slot not being refilled correctly.<br />Improved refill during item tossing.<br />Fixed items sometimes not returning their container after consumption.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-20T20:32:48.9754Z",
+    "downloads": 413,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b09f4021d52b60d9df06226a29c1cad1f8cc7fb8",
+          "sha512": "6683367b7c3b67f9938f2f71bd4c2aeba5d47492cb221fc872fdd506d14f3d39d21427b22bffce87671d09842c81ae3389ad7342f32716e81336914677c6329f"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/bDH9FVLQ/stackrefill_1.19.2-3.0.jar",
+        "filename": "stackrefill_1.19.2-3.0.jar",
+        "primary": true,
+        "size": 9966,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "Hl2isIJu",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.18.2-3.0",
+    "version_number": "1.18.2-3.0-forge",
+    "changelog": "<p>The big 3.0 rewrite!<br />Improved code performance.<br />Fixed visual desyncs in the inventory, the mod now works better with clients.<br />Fixed snowballs and firework rockets not refilling.<br />Fixed crash due to mod incompatibility.<br />FIxed the offhand slot not being refilled correctly.<br />Improved refill during item tossing.<br />Fixed items sometimes not returning their container after consumption.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-20T20:32:34.200917Z",
+    "downloads": 78,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "dd19871547f18300c511b04f85a63ec0d77c8b42",
+          "sha512": "26f8fd6125f555cc40986d4e11760143f9ecf073c944090a58ed008e81b672c5c60c28c0b1c4d5147d794a14cf6f34d99769ad7384b1cad04762f379e8ed26e2"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/Hl2isIJu/stackrefill_1.18.2-3.0.jar",
+        "filename": "stackrefill_1.18.2-3.0.jar",
+        "primary": true,
+        "size": 10012,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "eHbhJ9Fj",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.16.5-3.0",
+    "version_number": "1.16.5-3.0-forge",
+    "changelog": "<p>The big 3.0 rewrite!<br />Improved code performance.<br />Fixed visual desyncs in the inventory, the mod now works better with clients.<br />Fixed snowballs and firework rockets not refilling.<br />Fixed crash due to mod incompatibility.<br />FIxed the offhand slot not being refilled correctly.<br />Improved refill during item tossing.<br />Fixed items sometimes not returning their container after consumption.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-20T20:32:19.741998Z",
+    "downloads": 75,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f1d472d34c90ab61241042acd8195237362453d6177349eb0f433545bb00fe14adaf821c897b5087f1f2d3aa5c13826d695c46f62da95a29feb1c373da124e2b",
+          "sha1": "d1430158bcf19652e55accee36be50a0dc988b53"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/eHbhJ9Fj/stackrefill_1.16.5-3.0.jar",
+        "filename": "stackrefill_1.16.5-3.0.jar",
+        "primary": true,
+        "size": 10032,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "HMuqiDvH",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "RgK8JsBf",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.19.2-3.0",
+    "version_number": "1.19.2-3.0-fabric",
+    "changelog": "<p>The big 3.0 rewrite!<br />Improved code performance.<br />Fixed visual desyncs in the inventory, the mod now works better with clients.<br />Fixed snowballs and firework rockets not refilling.<br />Fixed crash due to mod incompatibility.<br />FIxed the offhand slot not being refilled correctly.<br />Improved refill during item tossing.<br />Fixed items sometimes not returning their container after consumption.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-20T20:32:05.90796Z",
+    "downloads": 77,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a8b2c33a466e101645c352ec644e0b401408e57d",
+          "sha512": "82e1581912a9732893298eeada694008c583ee33290e64bc7043bb4da1dec695e670d366a2f82a54efb06f650f5fb6bcab6ce30e7782442bde60a27eaec75129"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/RgK8JsBf/stackrefill-fabric_1.19.2-3.0.jar",
+        "filename": "stackrefill-fabric_1.19.2-3.0.jar",
+        "primary": true,
+        "size": 10379,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "hfsU4hXq",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "JI4jVJuA",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.18.2-3.0",
+    "version_number": "1.18.2-3.0-fabric",
+    "changelog": "<p>The big 3.0 rewrite!<br />Improved code performance.<br />Fixed visual desyncs in the inventory, the mod now works better with clients.<br />Fixed snowballs and firework rockets not refilling.<br />Fixed crash due to mod incompatibility.<br />FIxed the offhand slot not being refilled correctly.<br />Improved refill during item tossing.<br />Fixed items sometimes not returning their container after consumption.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-20T20:31:51.911016Z",
+    "downloads": 49,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f6886beb8b4531e264f93a0be23f689708167629",
+          "sha512": "ce21ae8f7f10abcbe070d2fc2f1de582e0f3b59504d13149eade6714bda6de316b023661cd04257c268b2369e016bf933290416df7197e7bcf8a79d8c6f704ff"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/JI4jVJuA/stackrefill-fabric_1.18.2-3.0.jar",
+        "filename": "stackrefill-fabric_1.18.2-3.0.jar",
+        "primary": true,
+        "size": 10381,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "95QMsRyb",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "82vmLvzl",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.16.5-3.0",
+    "version_number": "1.16.5-3.0-fabric",
+    "changelog": "<p>The big 3.0 rewrite!<br />Improved code performance.<br />Fixed visual desyncs in the inventory, the mod now works better with clients.<br />Fixed snowballs and firework rockets not refilling.<br />Fixed crash due to mod incompatibility.<br />FIxed the offhand slot not being refilled correctly.<br />Improved refill during item tossing.<br />Fixed items sometimes not returning their container after consumption.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-20T20:31:37.903379Z",
+    "downloads": 48,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "698ce16f4e6d9dc685bd6366cbfe521e863cd9cd",
+          "sha512": "74384cb8e0c46ce5e3ddb91893f9d9543833a6ca8759e2129dcdefd52d735bb3f70da8c9eec677e83fa830b0bf346a2377b8c968fb72a5ffa2370b55d55b455e"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/82vmLvzl/stackrefill-fabric_1.16.5-3.0.jar",
+        "filename": "stackrefill-fabric_1.16.5-3.0.jar",
+        "primary": true,
+        "size": 9922,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "diqQmTlH",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "k9neuIIy",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.19.2-2.7",
+    "version_number": "1.19.2-2.7-forge",
+    "changelog": "<p>Fixed incorrectly set mod version.<br />Updated mod description.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-19T10:14:56.91998Z",
+    "downloads": 48,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f71c1195a0b37ce9543f05e288ad2bddd39e1390ddd7d032f0b73cf485c27e5c7f72464b06211c0c2a50a8b421c53bb54af382256f3a8a7a77857d395944cec9",
+          "sha1": "65b3f3b5fc94af9bc24a222b7ae20afd7b3a190d"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/k9neuIIy/stackrefill_1.19.2-2.7.jar",
+        "filename": "stackrefill_1.19.2-2.7.jar",
+        "primary": true,
+        "size": 9268,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "zAjmtcYe",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.18.2-2.7",
+    "version_number": "1.18.2-2.7-forge",
+    "changelog": "<p>Fixed incorrectly set mod version.<br />Updated mod description.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-19T10:14:43.584746Z",
+    "downloads": 47,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b64104eb33b1c47091200f90d1f1cce52f19e2cce2023bc4ba7450a0a46c3aceb882df952939493405667101cfcf3643f6feed8303b25f1ed4f12cc0418ea876",
+          "sha1": "cb48f6fd2ba6ca5a531c16d5eeddf15b879787a8"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/zAjmtcYe/stackrefill_1.18.2-2.7.jar",
+        "filename": "stackrefill_1.18.2-2.7.jar",
+        "primary": true,
+        "size": 9296,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "fFcw1G4p",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.16.5-2.7",
+    "version_number": "1.16.5-2.7-forge",
+    "changelog": "<p>Fixed incorrectly set mod version.<br />Updated mod description.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-19T10:14:30.024941Z",
+    "downloads": 53,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2e0b27716b0c45d6cc21f07310b7fb93ee988b17eb918a66d51a2e24fde6ae0e5faa2014f6e2d72c94695dc8e51ff490c971996599ed8781306e3cf928d991b5",
+          "sha1": "1e826477b6c4abf73d986ef8bfaecd8907b33e91"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/fFcw1G4p/stackrefill_1.16.5-2.7.jar",
+        "filename": "stackrefill_1.16.5-2.7.jar",
+        "primary": true,
+        "size": 9372,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "HMuqiDvH",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "NxFVCM9n",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.19.2-2.7",
+    "version_number": "1.19.2-2.7-fabric",
+    "changelog": "<p>Fixed incorrectly set mod version.<br />Updated mod description.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-19T10:14:16.397746Z",
+    "downloads": 43,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "29e437d673fbbf1ef2a7fa5cded9541d126615fe",
+          "sha512": "9a3172e2f6a056e459373a4c8a397180148e64e48f92ee2caf4e15e31e6dfc15b7d59be008198ad197a60bd6e7599ffe4b0a20aad8111f2e012d48cdf8ffc065"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/NxFVCM9n/stackrefill-fabric_1.19.2-2.7.jar",
+        "filename": "stackrefill-fabric_1.19.2-2.7.jar",
+        "primary": true,
+        "size": 9498,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "hfsU4hXq",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "kdnc1lQb",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.18.2-2.7",
+    "version_number": "1.18.2-2.7-fabric",
+    "changelog": "<p>Fixed incorrectly set mod version.<br />Updated mod description.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-19T10:14:01.746413Z",
+    "downloads": 50,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6325551573cf377c5ad1ead7f4a6a30269f418e11954aec5415eb075131a378ce36c6021192623921e038c58519c114227fbbd5d1c26e5e005329ba8ad1c4a37",
+          "sha1": "33b802c2fd5bdc5ce602f3951d290c42ed09b714"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/kdnc1lQb/stackrefill-fabric_1.18.2-2.7.jar",
+        "filename": "stackrefill-fabric_1.18.2-2.7.jar",
+        "primary": true,
+        "size": 9497,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "95QMsRyb",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "7gEicQu1",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.16.5-2.7",
+    "version_number": "1.16.5-2.7-fabric",
+    "changelog": "<p>Fixed incorrectly set mod version.<br />Updated mod description.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-19T10:13:47.843837Z",
+    "downloads": 45,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "cd50721005269cf6035c258944d1df2d55e92f00",
+          "sha512": "d48d57ceef3668357cfedbb80171de6ba359ead980f36b8a5c6c537f7077b822c74e6655ec30dd7994e86bf33cdad823385e39ac0069b8ed4cc9c7fbd4b9436e"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/7gEicQu1/stackrefill-fabric_1.16.5-2.7.jar",
+        "filename": "stackrefill-fabric_1.16.5-2.7.jar",
+        "primary": true,
+        "size": 9097,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "diqQmTlH",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ITDY15SX",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.19.2-2.5",
+    "version_number": "1.19.2-2.5-fabric",
+    "changelog": "<p>(Fabric) Updated Stack Refill to work with the latest changes in Collective version 4.63.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-17T12:20:43.257622Z",
+    "downloads": 55,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "402f9c6c919a8575f17e0a64dbba923b09cdf0e6",
+          "sha512": "8e4a114fdeb835669f263d5ca120e35405ee5c3bc1e7c0173932253f3da02a3c531aae2120b50ff17495e259120e9d491484d8b8a8057b72c2e5de4dcb0f35dd"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/ITDY15SX/stackrefill-fabric_1.19.2-2.5.jar",
+        "filename": "stackrefill-fabric_1.19.2-2.5.jar",
+        "primary": true,
+        "size": 9482,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "hfsU4hXq",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "CCSs1qWh",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.18.2-2.5",
+    "version_number": "1.18.2-2.5-fabric",
+    "changelog": "<p>(Fabric) Updated Stack Refill to work with the latest changes in Collective version 4.63.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-17T12:20:28.51856Z",
+    "downloads": 46,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9d981cba568fc935507aa9dc1a527a0cefa6b539",
+          "sha512": "ba78a1938856bf68aecdda0589b448d6d70e48175c18aa4998ac393538a5b0b90de175e37ec838e837e6f92dd80483281eb0dfadf9b0635eecfe9e756f2392bc"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/CCSs1qWh/stackrefill-fabric_1.18.2-2.5.jar",
+        "filename": "stackrefill-fabric_1.18.2-2.5.jar",
+        "primary": true,
+        "size": 9480,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "95QMsRyb",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "hb2k0BGv",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.16.5-2.5",
+    "version_number": "1.16.5-2.5-fabric",
+    "changelog": "<p>(Fabric) Updated Stack Refill to work with the latest changes in Collective version 4.63.</p><p>The complete changelog with previous versions can be found at <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a>.</p>",
+    "changelog_url": null,
+    "date_published": "2022-09-17T12:20:13.934397Z",
+    "downloads": 44,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e44e4d46c3895ed571784ef648a37e47dc20b45adaac0b1f2cd1501dfbe679783140fa8f1caddf31e87cb80f854d5b3a246cb39604e9edafe57e95e18f700b24",
+          "sha1": "4269946f7c82969258e47f4a6bf2b37a8b5bfd57"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/hb2k0BGv/stackrefill-fabric_1.16.5-2.5.jar",
+        "filename": "stackrefill-fabric_1.16.5-2.5.jar",
+        "primary": true,
+        "size": 9079,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "diqQmTlH",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "G7fQCTEu",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.19.2-2.3",
+    "version_number": "1.19.2-2.3-forge",
+    "changelog": "Initial release of Stack Refill (Forge) for Minecraft 1.19.2 on Modrinth.",
+    "changelog_url": null,
+    "date_published": "2022-08-31T19:01:18.450002Z",
+    "downloads": 175,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7b10db15f82b3fd0c6a1c9fbb9b4251c52bf618b",
+          "sha512": "62c0213722d46eacfdaa438238008b2482d5822073adf2a45d16ed9b45693bd664107b07fe74ab0a136780c5495ce5f0a84eb38dea20fe293da8f0d1888a2429"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/G7fQCTEu/stackrefill_1.19.2-2.3.jar",
+        "filename": "stackrefill_1.19.2-2.3.jar",
+        "primary": true,
+        "size": 9222,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "4RC9QtHJ",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.18.2-2.1",
+    "version_number": "1.18.2-2.1-forge",
+    "changelog": "Initial release of Stack Refill (Forge) for Minecraft 1.18.2 on Modrinth.",
+    "changelog_url": null,
+    "date_published": "2022-08-31T19:01:10.285269Z",
+    "downloads": 56,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "824985db66e52a010c3d630bffb37e0b3f1e2163c6827f737a0a6408065254dcfd06b4c5e15cb027be35015a21cc41fac8d9b72dc0c4bc5303dbd25d1510d904",
+          "sha1": "876d8c72f8c3ac7fcde9e991e7f3c66d475fe2ca"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/4RC9QtHJ/stackrefill_1.18.2-2.1.jar",
+        "filename": "stackrefill_1.18.2-2.1.jar",
+        "primary": true,
+        "size": 9261,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "5QfMV881",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Forge] 1.16.5-2.0",
+    "version_number": "1.16.5-2.0-forge",
+    "changelog": "Initial release of Stack Refill (Forge) for Minecraft 1.16.5 on Modrinth.",
+    "changelog_url": null,
+    "date_published": "2022-08-31T19:01:01.814484Z",
+    "downloads": 100,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "62f64593fc2dfd4784cf1c185af0a75ec78f64e7",
+          "sha512": "6d97a7cb2936086104a97d7c7247be0bc4a6117f3c6900b8263391837782468730557f24986eef4176eda0db9e14366cec2729de8b25464f50b79d3d332d6666"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/5QfMV881/stackrefill_1.16.5-2.0.jar",
+        "filename": "stackrefill_1.16.5-2.0.jar",
+        "primary": true,
+        "size": 8768,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "HMuqiDvH",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "JqLnWiOK",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.19.2-2.6",
+    "version_number": "1.19.2-2.6-fabric",
+    "changelog": "Initial release of Stack Refill (Fabric) for Minecraft 1.19.2 on Modrinth.",
+    "changelog_url": null,
+    "date_published": "2022-08-31T19:00:54.869643Z",
+    "downloads": 90,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e58a0b934d5187e413a3f4ea5ee1c24ee3cd0ba0e3594733e42ca9e82b48b7f45a97e90eb6d0fcb21303b648254ed811cfb9111ff2e657450c75443c32dd529f",
+          "sha1": "928ac216ec3bfcd4f101ab08c9edfacebe26a08e"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/JqLnWiOK/stackrefill-fabric_1.19.2-2.6.jar",
+        "filename": "stackrefill-fabric_1.19.2-2.6.jar",
+        "primary": true,
+        "size": 9447,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "MTb34BGn",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "hfsU4hXq",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "goiT00Ue",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.18.2-2.4",
+    "version_number": "1.18.2-2.4-fabric",
+    "changelog": "Initial release of Stack Refill (Fabric) for Minecraft 1.18.2 on Modrinth.",
+    "changelog_url": null,
+    "date_published": "2022-08-31T19:00:48.035039Z",
+    "downloads": 59,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "761c507a05cdfc701e117d97ee4b95851effebeb",
+          "sha512": "a4b18059e59d344a72d62404a31edcdd862f23686db356e36d6a7c5b2124a6bd21ed14a4fbb0ca78ad20201c9f84325f2cd584998566e47e919c13ce886b6788"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/goiT00Ue/stackrefill-fabric_1.18.2-2.4.jar",
+        "filename": "stackrefill-fabric_1.18.2-2.4.jar",
+        "primary": true,
+        "size": 9449,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": "95QMsRyb",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "Xz9KMXXo",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "j2ygmTZn",
+    "project_id": "mQWkB9ON",
+    "author_id": "NIbuUGD2",
+    "featured": false,
+    "name": "[Fabric] 1.16.5-2.4",
+    "version_number": "1.16.5-2.4-fabric",
+    "changelog": "Initial release of Stack Refill (Fabric) for Minecraft 1.16.5 on Modrinth.",
+    "changelog_url": null,
+    "date_published": "2022-08-31T19:00:40.996522Z",
+    "downloads": 72,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a1ee3b15820fa41be803c959323bbf5db51b083b",
+          "sha512": "62799e9056fadfddd69f0a1c0e7d56891f4e84f285959e5f9a582df1ac2ee3561979bebb76a174f8dd8cb99eca590ffcfd7a9b6a204b7be73cc2d29e21e17299"
+        },
+        "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/j2ygmTZn/stackrefill-fabric_1.16.5-2.4.jar",
+        "filename": "stackrefill-fabric_1.16.5-2.4.jar",
+        "primary": true,
+        "size": 9049,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "diqQmTlH",
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  }
+]

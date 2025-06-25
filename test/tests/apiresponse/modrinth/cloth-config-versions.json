@@ -1,0 +1,5093 @@
+[
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "BYkKAJ0C",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21.6] v19.0.147",
+    "version_number": "19.0.147+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2025-06-19T06:21:57.833892Z",
+    "downloads": 2136,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2b1acae5ab7ab89301f429073f339363e2e113a5cdea094fba318ba74befd442d8f751ee1c74523cacf27eed49ef98c5f9cf3ed1fdfbced6f3c3322be50b2929",
+          "sha1": "b3e37fef3d8bb1b7b3af75fbe47f5abbfafda562"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/BYkKAJ0C/cloth-config-19.0.147-neoforge.jar",
+        "filename": "cloth-config-19.0.147-neoforge.jar",
+        "primary": true,
+        "size": 1155514,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "cz0b1j8R",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21.6] v19.0.147",
+    "version_number": "19.0.147+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2025-06-19T06:21:53.357648Z",
+    "downloads": 117703,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "924b7e9bf6da670b936c3eaf3a2ba7904a05eff4fd712acf8ee62e587770c05a225109d3c0bdf015992e870945d2086aa00e738f90b3b109e364b0105c08875a",
+          "sha1": "d3bd78860580da556990726af3bed1169e69933e"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/cz0b1j8R/cloth-config-19.0.147-fabric.jar",
+        "filename": "cloth-config-19.0.147-fabric.jar",
+        "primary": true,
+        "size": 1149126,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "R1y82c6O",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21.6] v19.0.146",
+    "version_number": "19.0.146+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2025-06-18T13:16:33.297469Z",
+    "downloads": 296,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "58ace4be64872f1aada6c62f5831816e258a21da",
+          "sha512": "5ee7cd60a6baa939139cfa7ae5f9e0235e62de55d2bc82881d0f5347a9b6e86d156f7ca989b8023625c7c074ce7cf3f77845e6d47f8ba5309421537dde02601f"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/R1y82c6O/cloth-config-19.0.146-neoforge.jar",
+        "filename": "cloth-config-19.0.146-neoforge.jar",
+        "primary": true,
+        "size": 1155480,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "4S1OUeMC",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21.6] v19.0.146",
+    "version_number": "19.0.146+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2025-06-18T13:16:28.250562Z",
+    "downloads": 34656,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "866bddb37ee148d44c96df5742b86658b2890e5daaffee93142564a6a33a72b64737d95cfda7d98434532a05afbf156d5436434d52d6d78c55dcea42f5a7a911",
+          "sha1": "b1ee89f27cda8d5affac2de26df0f1708e5136f6"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/4S1OUeMC/cloth-config-19.0.146-fabric.jar",
+        "filename": "cloth-config-19.0.146-fabric.jar",
+        "primary": true,
+        "size": 1149094,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "jjrPm6iW",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21.5] v18.0.145",
+    "version_number": "18.0.145+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2025-03-26T15:14:53.982106Z",
+    "downloads": 47390,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "25bece4bbfaed4f74d6e5bdb0909c627adbc1fc368c17883a2b016c42e134cf71fefe1c2a69a080d3f6311540d3a268e3b738ff8b6987e85092a216616a85b74",
+          "sha1": "49d8e091296fd89e0c3d6f589e705ff86447163a"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/jjrPm6iW/cloth-config-18.0.145-neoforge.jar",
+        "filename": "cloth-config-18.0.145-neoforge.jar",
+        "primary": true,
+        "size": 1158806,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "qA00xo1O",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21.5] v18.0.145",
+    "version_number": "18.0.145+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2025-03-26T15:14:48.200982Z",
+    "downloads": 2231010,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2752215fdc303598f0e98208a3ddae404c413aa3de22f5e2db2f2cc2c7813f08a1731da6778a6b9056a6ebe3b74919fce67abd14332269ad0a353bdc6e9e92c4",
+          "sha1": "db73460f84cede7b5fc67dce7c38bbeb5444c63e"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/qA00xo1O/cloth-config-18.0.145-fabric.jar",
+        "filename": "cloth-config-18.0.145-fabric.jar",
+        "primary": true,
+        "size": 1152219,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "dWfheG9X",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21.4] v17.0.144",
+    "version_number": "17.0.144+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-12-13T06:36:06.683211Z",
+    "downloads": 67130,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "af9a6e52015098fd3d97d996dafbb66bbe495691",
+          "sha512": "0e16e28cc181aa95bfc4e700affc2d3c95068958e144214620502ee1307fa239a92175a121f96ec16e6abface042f030987833a231a5b60bdb81d80cb669b2ca"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/dWfheG9X/cloth-config-17.0.144-neoforge.jar",
+        "filename": "cloth-config-17.0.144-neoforge.jar",
+        "primary": true,
+        "size": 1159457,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "i6G5WG2W",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.21.4] v17.0.144",
+    "version_number": "17.0.144+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-12-13T06:36:03.791526Z",
+    "downloads": 9110,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "38ec2bfe269bc8014c5ba280f399ef85975926170d8f756e4150e45b6d95b700341a99e7cbca92d0801305b9b596801cd3d5cee5354412a21d7178ca272031fc",
+          "sha1": "55c14d92765fe42ba465eb2c27ca26006c795533"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/i6G5WG2W/cloth-config-17.0.144-forge.jar",
+        "filename": "cloth-config-17.0.144-forge.jar",
+        "primary": true,
+        "size": 1160575,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "TJ6o2sr4",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21.4] v17.0.144",
+    "version_number": "17.0.144+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-12-13T06:36:00.768326Z",
+    "downloads": 2939675,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ecc59da51149250284b0752475c7b328e0b0325888948391597afc638d6e67fa436297af12d2067376de0098ffa6ca86aa3b8d6011356c179222404c701c6345",
+          "sha1": "63a1a3b25c642f5a745dfcc9bdc0841660f560af"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/TJ6o2sr4/cloth-config-17.0.144-fabric.jar",
+        "filename": "cloth-config-17.0.144-fabric.jar",
+        "primary": true,
+        "size": 1152857,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "h06GalE6",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21.2/3] v16.0.143",
+    "version_number": "16.0.143+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-12-13T05:50:39.452618Z",
+    "downloads": 3440,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7dc3c746270310e2328646d9a8bc95a1adfe50a5",
+          "sha512": "2449d512c35f3d182875f020e806bcc9a73b593509433d1a3b485bbb1c8ca77cebfbddec4ec5fdb7f48238803809161d7f618857ac850c99b49e232368c4c06d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/h06GalE6/cloth-config-16.0.143-neoforge.jar",
+        "filename": "cloth-config-16.0.143-neoforge.jar",
+        "primary": true,
+        "size": 1157018,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "wJT939f6",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.21.2/3] v16.0.143",
+    "version_number": "16.0.143+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-12-13T05:50:34.309113Z",
+    "downloads": 417,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "96aa5c3b348d815bfea6dac0b6b56b9a19430762",
+          "sha512": "6503212fa6c3f8de630959bd0671188e1781be2d022e0d712022b0aa2f30626db377c31d619b836383c7a3566a91ff321a34058fca2ce05237fecb42be1c8a55"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/wJT939f6/cloth-config-16.0.143-forge.jar",
+        "filename": "cloth-config-16.0.143-forge.jar",
+        "primary": true,
+        "size": 1158126,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "FgXq8Sfo",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21.2/3] v16.0.143",
+    "version_number": "16.0.143+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-12-13T05:50:30.181278Z",
+    "downloads": 175824,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "16c7e2a0cfc39fd42f71cd913729343f7d3b63356e4382ef92f0d939cc18bf7ae15e916b8674af09d5cfc0ca003148d8fa9bd7b16254c86aa34ff32f6624929a",
+          "sha1": "59bae445dc49e10b5717a3ae253b12b983ed1f49"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/FgXq8Sfo/cloth-config-16.0.143-fabric.jar",
+        "filename": "cloth-config-16.0.143-fabric.jar",
+        "primary": true,
+        "size": 1150490,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "FyidnRFd",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21.4] v17.0.142",
+    "version_number": "17.0.142+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-12-06T17:13:49.757559Z",
+    "downloads": 1729,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "0e6b15e1707b9eb609fec296987c285d5dace991",
+          "sha512": "9dc509356214f2da872d054ff13a740b7a24378392f1551211dd6c3c2c47abd34c7bc266ed450ad2d86a807fe4fca47745407fbc00c0e38b20185f525bb17da0"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/FyidnRFd/cloth-config-17.0.142-neoforge.jar",
+        "filename": "cloth-config-17.0.142-neoforge.jar",
+        "primary": true,
+        "size": 1162226,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "c8IkvzeS",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21.4] v17.0.142",
+    "version_number": "17.0.142+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-12-06T17:13:44.897718Z",
+    "downloads": 101040,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e13690251525aac4edf63cfb158019f573f0669558dc704462ba7df9721e5b2dc8f4a13c0b09c616a706efc75daab75ed61d673ff603e6a89387cc5b0aec5d8d",
+          "sha1": "a26a7d954c131fd50047ffef2c2e264f9fd805a9"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/c8IkvzeS/cloth-config-17.0.142-fabric.jar",
+        "filename": "cloth-config-17.0.142-fabric.jar",
+        "primary": true,
+        "size": 1155626,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "uYoucpky",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21.2/3] v16.0.141",
+    "version_number": "16.0.141+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-10-22T18:35:47.618751Z",
+    "downloads": 15733,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "bceb716fd53166d2714a91cb932f679d04640506",
+          "sha512": "46010e9fac5ff376f0f7158a15de2abd2a9b9740b85be3e64175c05f3a0272ace45ec9bbe14edd765df71c9b402b962c2b0226db5dcc79bd09ba2d0e57224e95"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/uYoucpky/cloth-config-16.0.141-neoforge.jar",
+        "filename": "cloth-config-16.0.141-neoforge.jar",
+        "primary": true,
+        "size": 1159787,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "JbVSQUVw",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21.2/3] v16.0.141",
+    "version_number": "16.0.141+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-10-22T18:35:42.899741Z",
+    "downloads": 557114,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1fddc6ec979131a3623ae6b6a4f6c631b5f6f45d",
+          "sha512": "f8b0fa16fe80a8b78a059ebf1cf366d65132b1dd1830d8b689ecfc731696514e2b3dd73903fbb37d0a5f3d853aa521827bf7ed6fb5d9db245c6afd7ffb9e2687"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/JbVSQUVw/cloth-config-16.0.141-fabric.jar",
+        "filename": "cloth-config-16.0.141-fabric.jar",
+        "primary": true,
+        "size": 1153258,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "gUuDD6aJ",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.4] v13.0.138",
+    "version_number": "13.0.138+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:20:47.319157Z",
+    "downloads": 9291,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "30c4be59949c3b8c19a0960b2844c0309270aad8",
+          "sha512": "0c05e029ffa52973f347bc1c4de297aa9d4aef19e5b562074d3eafe7e91da748078772e7fdf38ce82282314b28fef3b70c5bdfb1445a08a86079fa6d485c0403"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/gUuDD6aJ/cloth-config-13.0.138-neoforge.jar",
+        "filename": "cloth-config-13.0.138-neoforge.jar",
+        "primary": true,
+        "size": 1162643,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "YTNEzkHf",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.4] v13.0.138",
+    "version_number": "13.0.138+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:20:42.67976Z",
+    "downloads": 18574,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c862a07ae666e9e78957bb07bcaa0c86cd7f461c6a5d33125dbb0d0c1e0f7be807891039609a1e7ec5233e672a816f6170eb3921d27075c7a2ff5cb5ba8e533b",
+          "sha1": "af8204707218c30460ee5013a9e16127faf08f59"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/YTNEzkHf/cloth-config-13.0.138-forge.jar",
+        "filename": "cloth-config-13.0.138-forge.jar",
+        "primary": true,
+        "size": 1163848,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "2deYQULk",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.4] v13.0.138",
+    "version_number": "13.0.138+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:20:39.379267Z",
+    "downloads": 284193,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3863fb95cc57526c6876cb60600f2e4282a5fa8d997d981e984da48f34be654cd0c5fc09e7d77079a393b2d7e3e48baabb756ad84ea58881b22ea771f43baa4a",
+          "sha1": "e374f80329cea3d73e10e31839fe79d5a4fc0b30"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/2deYQULk/cloth-config-13.0.138-fabric.jar",
+        "filename": "cloth-config-13.0.138-fabric.jar",
+        "primary": true,
+        "size": 1154870,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "izKINKFg",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21] v15.0.140",
+    "version_number": "15.0.140+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:18:02.926305Z",
+    "downloads": 635533,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "aaf9b010955b8cd294e5a92f069985b18729fd5e2cf22d351f1dff9680f15488688803ec41e77e941cbde130ceb535014ca4c868047d80ab69c2d508e216654d",
+          "sha1": "c3e5733ba4503b102589a026000fd5ce0212f6f2"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/izKINKFg/cloth-config-15.0.140-neoforge.jar",
+        "filename": "cloth-config-15.0.140-neoforge.jar",
+        "primary": true,
+        "size": 1163890,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "XMYFN6Zc",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.21] v15.0.140",
+    "version_number": "15.0.140+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:17:59.703431Z",
+    "downloads": 60465,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a210f4c9a50975a72facf541955d6c610f7dcfd2",
+          "sha512": "5628440a7c5951346bf98a269e0f455e55b505bd3c38218a4883847837e896ed78fbad97f71bf82a778133e4041d763fa14149794bd0f9c9a05173b653047874"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/XMYFN6Zc/cloth-config-15.0.140-forge.jar",
+        "filename": "cloth-config-15.0.140-forge.jar",
+        "primary": true,
+        "size": 1164892,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "HpMb5wGb",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21] v15.0.140",
+    "version_number": "15.0.140+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:17:55.762416Z",
+    "downloads": 5415288,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1b3f5db4fc1d481704053db9837d530919374bf7518d7cede607360f0348c04fc6347a3a72ccfef355559e1f4aef0b650cd58e5ee79c73b12ff0fc2746797a00",
+          "sha1": "5d82342a2df53fd6df712bfdd583a811572918a4"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/HpMb5wGb/cloth-config-15.0.140-fabric.jar",
+        "filename": "cloth-config-15.0.140-fabric.jar",
+        "primary": true,
+        "size": 1157166,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "mAH9Nl59",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.2] v12.0.137",
+    "version_number": "12.0.137+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:16:57.195173Z",
+    "downloads": 2407,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "926ba85fbd3cb520cc0ec72327ad71b05b1839cee56270363a5c918e89fa25d4bd096a3a5a6487fc5fde37d4cecd88ae2488337b4e77d792abf1494b2a7124da",
+          "sha1": "a8cd6ad273a413e9bc82373f9eae6dcba280df2a"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/mAH9Nl59/cloth-config-12.0.137-neoforge.jar",
+        "filename": "cloth-config-12.0.137-neoforge.jar",
+        "primary": true,
+        "size": 1162614,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "PZKJzxPT",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.2] v12.0.137",
+    "version_number": "12.0.137+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:16:54.657831Z",
+    "downloads": 13360,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "a9ebfd0737d9c6a7dff2ff50cc876a20168964f05e14298b9b256b286018d994b836995d15773919dad8fc9c18be978424dbe3a7246e29a5ec8d1d2e0bd6bc78",
+          "sha1": "dd4c5125ed910a2590331864dbf71ff77c471c1e"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/PZKJzxPT/cloth-config-12.0.137-forge.jar",
+        "filename": "cloth-config-12.0.137-forge.jar",
+        "primary": true,
+        "size": 1163849,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "9YwAqtuZ",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.2] v12.0.137",
+    "version_number": "12.0.137+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:16:52.016069Z",
+    "downloads": 45625,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1297760c04a20152dc967fa867bd8c0386c106dd",
+          "sha512": "01b21e32bbe1219dae33696c11c57abeeddb3deeec15ce61003b8065c464a82649328bc43ca732e1e56d79643a38560bd0092fef6a075649460c3e92d13b6713"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/9YwAqtuZ/cloth-config-12.0.137-fabric.jar",
+        "filename": "cloth-config-12.0.137-fabric.jar",
+        "primary": true,
+        "size": 1154848,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "hradv69C",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.5/6] v14.0.139",
+    "version_number": "14.0.139+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:16:25.060004Z",
+    "downloads": 4262,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5c0260cd0fbb856205015aaef5573d8bc173205da5bf63c1e4cf3f3e698ad05008ac9dc65d174a028220bbe61d17cbb65af2fc97ba12c1a9ccb03b291606ec94",
+          "sha1": "9c5d8104f6cc8324e6a21861b5dc13d0818f5734"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/hradv69C/cloth-config-14.0.139-neoforge.jar",
+        "filename": "cloth-config-14.0.139-neoforge.jar",
+        "primary": true,
+        "size": 1164627,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "nUTOGFsJ",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.5/6] v14.0.139",
+    "version_number": "14.0.139+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:16:22.444921Z",
+    "downloads": 4598,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "bd1a5c7d0e4c3abd8745fcaf2cc929e71c5724400d9101e616c066bf2b8c5abc69fcaa272a3f5ffe62fa6e24f8f8613111671e6e30cc47e00448bb540ce88306",
+          "sha1": "010bc007a67b6df9303ed95623e9cba83c80cc93"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/nUTOGFsJ/cloth-config-14.0.139-forge.jar",
+        "filename": "cloth-config-14.0.139-forge.jar",
+        "primary": true,
+        "size": 1164850,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "g0uTATyM",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.5/6] v14.0.139",
+    "version_number": "14.0.139+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:16:20.265696Z",
+    "downloads": 107436,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "edfd38319ed73a620a11a8d50a93f8ec8b30cd8cd02819f194589a7d6e7b8b3f6619056856f85de25e6de0d7202d4a8ad3e9c1deabbeb643d15d8610124a03b0",
+          "sha1": "6ed3c03b2269fee345f6c67eca876b78552272c3"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/g0uTATyM/cloth-config-14.0.139-fabric.jar",
+        "filename": "cloth-config-14.0.139-fabric.jar",
+        "primary": true,
+        "size": 1157222,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "t8TXrZvZ",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.20(.1)] v11.1.136",
+    "version_number": "11.1.136+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:13:50.72569Z",
+    "downloads": 4265927,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c65d07748acc57ceb45d53b3964368b84f34d54f",
+          "sha512": "137c4af99c53d77317cbfb1cc8c49fc2761708b49d1992f51fd846960df41dde3a83519c987e081508d4ed90c603566f3d5a6cb620ad9d85b8f4de59aa9115ef"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/t8TXrZvZ/cloth-config-11.1.136-forge.jar",
+        "filename": "cloth-config-11.1.136-forge.jar",
+        "primary": true,
+        "size": 1181413,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "2xQdCMyG",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20(.1)] v11.1.136",
+    "version_number": "11.1.136+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:13:47.844274Z",
+    "downloads": 3423095,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d5fe84a0cc9ed5c7290a76ba570e1f8716afecab",
+          "sha512": "2da85c071c854223cc30c8e46794391b77e53f28ecdbbde59dc83b3dbbdfc74be9e68da9ed464e7f98b4361033899ba4f681ebff1f35edc2c60e599a59796f1c"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/2xQdCMyG/cloth-config-11.1.136-fabric.jar",
+        "filename": "cloth-config-11.1.136-fabric.jar",
+        "primary": true,
+        "size": 1172214,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "mwddirHR",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19.4] v10.1.135",
+    "version_number": "10.1.135+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:12:52.015975Z",
+    "downloads": 14576,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ea6ec48c7b838040aad58224921947a55bae1c4bafdd0a692dfa011a64a657ca793749a63b7086cb733182cb2cb8dfb45ea0693db72ed1ab160d79e927e33326",
+          "sha1": "68ce66d6bf5d8525d6ec9cda2086e0434fdc065c"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/mwddirHR/cloth-config-10.1.135-forge.jar",
+        "filename": "cloth-config-10.1.135-forge.jar",
+        "primary": true,
+        "size": 1181594,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ZTMfeJij",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19.4] v10.1.135",
+    "version_number": "10.1.135+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:12:49.466158Z",
+    "downloads": 60462,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "4f180acffa5c4abb1ed895c21265dc50b1420dff",
+          "sha512": "b9aed46cff0bb4f33b55632de2234efc223d406cb33f264fc52048965c3570ae03d2493c5a93f46efd3bcf8c13f1d9cb420ff567f6c768108ddacb60918efbe6"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/ZTMfeJij/cloth-config-10.1.135-fabric.jar",
+        "filename": "cloth-config-10.1.135-fabric.jar",
+        "primary": true,
+        "size": 1171035,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "qqCHdFw2",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19-1.19.2] v8.3.134",
+    "version_number": "8.3.134+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:12:08.631675Z",
+    "downloads": 425105,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "607d0bd647ce3499fe8ab57caeb962862ca22d2b891b477e18d76e0900e6103e61e092826d8f8e104143920fd36a9a849b6d87dc677f248e08ac708a4b947e54",
+          "sha1": "e2a3a4e9eeae37b7e79aa8e72bb2834675fe4fe5"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/qqCHdFw2/cloth-config-8.3.134-forge.jar",
+        "filename": "cloth-config-8.3.134-forge.jar",
+        "primary": true,
+        "size": 1176412,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ZpV0fKbO",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19-1.19.2] v8.3.134",
+    "version_number": "8.3.134+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-16T17:12:05.476395Z",
+    "downloads": 141036,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b28c5c603d5dcdce298cd670fc58bd8a589f6407b7d650aac0831991b661f06ea235f3f0190e50f38eef3037ae1c906c285b8a1ccef86e424cb18df163b3c20a",
+          "sha1": "570282f49b3338decfe8290e78c10a1d2f7e23c9"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/ZpV0fKbO/cloth-config-8.3.134-fabric.jar",
+        "filename": "cloth-config-8.3.134-fabric.jar",
+        "primary": true,
+        "size": 1166482,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "24w36a"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "Nf2ezsBW",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21.2 (24w36a)] v16.0.131",
+    "version_number": "16.0.131+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-09-10T15:08:10.635454Z",
+    "downloads": 3611,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "dd9ca80fdda12348983c3f094c4520178eeee9b56c9285e2105b03a71ef9477a95b589d59298d9297c81e9eb1816c20471e112554fb72255cd92c246d15e0edd",
+          "sha1": "a4d52a7c9c3197575f8428ebffac35631e2b9b53"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Nf2ezsBW/cloth-config-16.0.131-fabric.jar",
+        "filename": "cloth-config-16.0.131-fabric.jar",
+        "primary": true,
+        "size": 1140727,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "DqgODWcH",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21(.1)] v15.0.130",
+    "version_number": "15.0.130+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-08-13T04:52:23.396573Z",
+    "downloads": 29059,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3cee1b6f9ecb0dcad4abdd6b028a86d25cf103202c4fe6317d6037b64e2c5b241f0c2d3aeb32637ef1e95cdef44ac8dfb3f3843ce49ded808707af1e776f111a",
+          "sha1": "4ff6b51cfb5c6cac437b18067d991a0f5f8743a7"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/DqgODWcH/cloth-config-15.0.130-neoforge.jar",
+        "filename": "cloth-config-15.0.130-neoforge.jar",
+        "primary": true,
+        "size": 1151101,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "yPULtkhh",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.21(.1)] v15.0.130",
+    "version_number": "15.0.130+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-08-13T04:52:20.447041Z",
+    "downloads": 11213,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "dfe9a970241c21647c938d714de76a98e35d14e2aedbfd37108113d1785efa2449442ece47b2558e31049df4f45265229d30b879b1ff2320dcc0b7b11e18c038",
+          "sha1": "aeee7a37d92c8941327065be7c89887ed0471565"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/yPULtkhh/cloth-config-15.0.130-forge.jar",
+        "filename": "cloth-config-15.0.130-forge.jar",
+        "primary": true,
+        "size": 1152103,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "7jtvrmVP",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21(.1)] v15.0.130",
+    "version_number": "15.0.130+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-08-13T04:52:17.279394Z",
+    "downloads": 1519750,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "8889378815cd9c645a5a7a8b4d800cf211a4cdfae48c7e005f5f1f630272e909899e304e5c294b4c4c05970171ee7ab594d5b1007086ac14d22db414e83eb60b",
+          "sha1": "4b1283fad1e4f8c9bcdb2a7767a0a468d0ac4cc5"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7jtvrmVP/cloth-config-15.0.130-fabric.jar",
+        "filename": "cloth-config-15.0.130-fabric.jar",
+        "primary": true,
+        "size": 1144380,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "Y9QgGQ59",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.5/6] v14.0.129",
+    "version_number": "14.0.129+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-08-13T04:33:20.454705Z",
+    "downloads": 1569,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "07013ac04962d60a657795e3c3e9f3f92b426599",
+          "sha512": "563984a2e450b63554c7add196ca0b1ec7c12b3868a7a65ecd207e69d0cac250f69bc6785d2eb2b79ee65ee181d66fcec9537590beeaa39c83ee2527c84ea25d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Y9QgGQ59/cloth-config-14.0.129-neoforge.jar",
+        "filename": "cloth-config-14.0.129-neoforge.jar",
+        "primary": true,
+        "size": 1151838,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "KWjX5anR",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.5/6] v14.0.129",
+    "version_number": "14.0.129+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-08-13T04:33:15.907365Z",
+    "downloads": 1102,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b62768c7ddf1982246051b608bd5c03f36f0c2c9",
+          "sha512": "9f6351322b3163c6b7afe6d9950f3bc36019390e8115ec14ddeb3b905103142026cbf9b05ff80b3651530184a1bb573d863026d9aa8618319375234baeee2e68"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/KWjX5anR/cloth-config-14.0.129-forge.jar",
+        "filename": "cloth-config-14.0.129-forge.jar",
+        "primary": true,
+        "size": 1152062,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "JYR3Y30y",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.5/6] v14.0.129",
+    "version_number": "14.0.129+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-08-13T04:33:11.981591Z",
+    "downloads": 27231,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0f49f28cdeeb99cd588b883e5f0b5b929b967ef44be1f997394e589ae52366ae107eb663aff75ed559921ffdb71f86290d7f8b8f0052f005c4c7a0189dd61c52",
+          "sha1": "902e073599c3fb4ecd692b3c7c0bb5acbdd260bc"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/JYR3Y30y/cloth-config-14.0.129-fabric.jar",
+        "filename": "cloth-config-14.0.129-fabric.jar",
+        "primary": true,
+        "size": 1144435,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "jMyYg8Uv",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21] v15.0.128",
+    "version_number": "15.0.128+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-07-22T09:14:26.882645Z",
+    "downloads": 23327,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "36ff6eb3b5df6589e14c34bc33af048a6f8551d438dcb10722fc44b76e8822317c80ea9471b8a1a60ab9cf9422499a83ff4497d0ff9a1b295d92016606a15f58",
+          "sha1": "6dc2f7919f56f28d15e604460819afb110b93323"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/jMyYg8Uv/cloth-config-15.0.128-neoforge.jar",
+        "filename": "cloth-config-15.0.128-neoforge.jar",
+        "primary": true,
+        "size": 1151100,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "gY9NB5Rj",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21] v15.0.128",
+    "version_number": "15.0.128+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-07-22T09:14:23.787506Z",
+    "downloads": 1220952,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5d9823caffc721f852451aa244693591da8fdd2ee6bc3c4339e911269390439c89c7ee62a06bdaa0011f30ea578ba725fd4ff3481683994aa6a217b4b28e52e3",
+          "sha1": "10334d4833fda919fe82e6f864caed9bc018764c"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/gY9NB5Rj/cloth-config-15.0.128-fabric.jar",
+        "filename": "cloth-config-15.0.128-fabric.jar",
+        "primary": true,
+        "size": 1144379,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "HsTzbbnf",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.21] v15.0.127",
+    "version_number": "15.0.127+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-06-13T17:37:53.001956Z",
+    "downloads": 32436,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "8b54f1c171313f741d6376caf57a2182e4f39ae7c000578808a943189427078d1773070d6f8abc9919b339f39b23ed9e6af3730dc0bcd28f2ed0b42f63273b25",
+          "sha1": "4b6feb8195c9dd6ae9b0979d4006b3fa998bd42d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/HsTzbbnf/cloth-config-15.0.127-neoforge.jar",
+        "filename": "cloth-config-15.0.127-neoforge.jar",
+        "primary": true,
+        "size": 1151107,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "Yc8omJNb",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.21] v15.0.127",
+    "version_number": "15.0.127+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-06-13T17:37:49.686415Z",
+    "downloads": 1155253,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d2cef696bbf70a07075b798e541e8c98c34ddd2d",
+          "sha512": "b3059112661363955aa77f3cdc2993e7875089f6415179351869febd4bd35a221b75001ab4698e6105f3c0241698d0ffce645b5cae7fe9f90bdb3b96b74691d2"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Yc8omJNb/cloth-config-15.0.127-fabric.jar",
+        "filename": "cloth-config-15.0.127-fabric.jar",
+        "primary": true,
+        "size": 1144382,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "PjKtC8lG",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.5/6] v14.0.126",
+    "version_number": "14.0.126+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-04-24T14:06:32.116617Z",
+    "downloads": 29598,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c506b1198bad12098fea8a7a3d57366cdcfb0ff3439956179ac0df89c2ed6121a8adbb1d6f547803ba236a72b407c89adcec101acc4a6c25835782a13157d985",
+          "sha1": "267e6cf228af4afa30e065f3e428a21485291c03"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/PjKtC8lG/cloth-config-14.0.126-neoforge.jar",
+        "filename": "cloth-config-14.0.126-neoforge.jar",
+        "primary": true,
+        "size": 1151840,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "znhJLkCd",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.5/6] v14.0.126",
+    "version_number": "14.0.126+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-04-24T14:06:29.405371Z",
+    "downloads": 691085,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9af410a9cb959c639a351129a3bebb8e87a1fb42",
+          "sha512": "6a1f7e68e2771dd96ba5d8d41f170c8d81fcc5b18b44529ae633e1f67e4738504919bfce42fdf7bfb162ee27d43f0e109919db5718a7269092f550a833bc3eae"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/znhJLkCd/cloth-config-14.0.126-fabric.jar",
+        "filename": "cloth-config-14.0.126-fabric.jar",
+        "primary": true,
+        "size": 1144434,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "24w14a"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "X9ucoGCn",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.5 (24w14a)] v14.0.125",
+    "version_number": "14.0.125+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-04-09T11:21:36.793807Z",
+    "downloads": 6591,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "805f6bb331fb8a70a2e074ad22f4700e6e121d0d",
+          "sha512": "5a077bf1f0d8ee728dfb6d55928ab20d82fd3fc4a445209180127dd23edd808975181af5036248f4c24febd803b9f65ab1904a17bef8da83d0f1c16155549e2a"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/X9ucoGCn/cloth-config-14.0.125-fabric.jar",
+        "filename": "cloth-config-14.0.125-fabric.jar",
+        "primary": true,
+        "size": 1144436,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "24w14potato"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "JRZSHDFK",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 24w14potato April Fools] v14.0.123",
+    "version_number": "14.0.123+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-04-02T11:58:55.534152Z",
+    "downloads": 5476,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c0129a25f669fd0c41534077d555950755c2c926",
+          "sha512": "3c2557098c3c2ea03965e512854839a1c72681cad61fd86321cd75862ba9c9213551f8d88d1ade92c0e4143119d07d6df99a610583be8030f50a3d79a5e62119"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/JRZSHDFK/cloth-config-14.0.123-fabric.jar",
+        "filename": "cloth-config-14.0.123-fabric.jar",
+        "primary": true,
+        "size": 1144052,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "24w09a"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "3TLtSX1e",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.5 (24w09a)] v14.0.122",
+    "version_number": "14.0.122+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2024-02-29T14:32:57.402904Z",
+    "downloads": 4729,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "366f0535a157a867649b68fe7f63f6d00c2e886337c8d514082c384aa5cc4cabd4b0aad96b3e5ef5fedaeab2bcc696f34bc14576ca08028958f873137a33a3c9",
+          "sha1": "9273c57d2c4c4ff76e7a6b8b25ba174e5caa9c72"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/3TLtSX1e/cloth-config-14.0.122-fabric.jar",
+        "filename": "cloth-config-14.0.122-fabric.jar",
+        "primary": true,
+        "size": 1144030,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "hUXzyFVO",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.4] v13.0.121",
+    "version_number": "13.0.121+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:23:51.605674Z",
+    "downloads": 76668,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "65027c8a8c8f32add46bc1c200b7f0588dbf0446723bb3f4fcdd8d6dfd557cd42f66f9d6f6c1b04c9e480b2c2437f600f61e7170bbd8f005be829b85d07b1a40",
+          "sha1": "1a3bef8d6526f1883034d274f81544bc3da733b1"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/hUXzyFVO/cloth-config-13.0.121-neoforge.jar",
+        "filename": "cloth-config-13.0.121-neoforge.jar",
+        "primary": true,
+        "size": 1149854,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "1MwQkf8u",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.4] v13.0.121",
+    "version_number": "13.0.121+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:23:39.607842Z",
+    "downloads": 43541,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "997082c935bafae292c755a11f56339b3e89ea9c5c8e026d35fdc42817faafd2eae1a56d5eb7950ac69371fc160c147732c2e837a0299cd3d8f95700a0fb2bb1",
+          "sha1": "0f9f8a8dc6c05187310c5bfd36610465f5216858"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/1MwQkf8u/cloth-config-13.0.121-forge.jar",
+        "filename": "cloth-config-13.0.121-forge.jar",
+        "primary": true,
+        "size": 1151061,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "eBZiZ9NS",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.4] v13.0.121",
+    "version_number": "13.0.121+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:23:27.195922Z",
+    "downloads": 1814732,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "05a389ce4383c7b202e6aa7b37f39da01b6ee1f5b22dad076d528891b5ef8bcae335b2d7930b33b753ad34f1a61bae52f3447f74a4df6739239344674b59b0c5",
+          "sha1": "e20f396a937a09b686aa986c802643b9adbb311e"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/eBZiZ9NS/cloth-config-13.0.121-fabric.jar",
+        "filename": "cloth-config-13.0.121-fabric.jar",
+        "primary": true,
+        "size": 1142084,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "6GeyuE7Y",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.2] v12.0.119",
+    "version_number": "12.0.119+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:20:39.099666Z",
+    "downloads": 10371,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e48b258e3ee65c04602639ebf10d0d143bfe7cda",
+          "sha512": "557d98680d8562c22101e13a7e12d516ce6e757c2601dfea3e776e40c627abcf4dea965263ec5d1106a160d06638a6ae0f50483ca391f0799b81d44e3224411a"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6GeyuE7Y/cloth-config-12.0.119-neoforge.jar",
+        "filename": "cloth-config-12.0.119-neoforge.jar",
+        "primary": true,
+        "size": 1149827,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "Y51gygcX",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.2] v12.0.119",
+    "version_number": "12.0.119+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:20:29.430774Z",
+    "downloads": 18327,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c7c8e0d15bc3626be944a6e355f78993c83234184d2b12d9b99b1dc60065ada597fe6aa6a4c30dc7a4928e75c24a9e8158bd4e4fa2707c9da7d05d0c5c71ebcb",
+          "sha1": "59d9b69c26d423fa838765c58364db566d2c6f46"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Y51gygcX/cloth-config-12.0.119-forge.jar",
+        "filename": "cloth-config-12.0.119-forge.jar",
+        "primary": true,
+        "size": 1151062,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "NPcjyMhi",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.2] v12.0.119",
+    "version_number": "12.0.119+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:20:18.497314Z",
+    "downloads": 464204,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c81984e8bd5e82b3899cd80fb87b9234f5fd173d0b6b68127ed0ca69dd66ae70d038a4ee088bbc8f3da98df5c27b9eb0cb05eef0d3776ff09f48df1c5a6f5243",
+          "sha1": "2407c417c60a44b7f3a790480a0f4be222f8ef66"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/NPcjyMhi/cloth-config-12.0.119-fabric.jar",
+        "filename": "cloth-config-12.0.119-fabric.jar",
+        "primary": true,
+        "size": 1142060,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "w2LhUkqZ",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19.4] v10.1.117",
+    "version_number": "10.1.117+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:19:19.754391Z",
+    "downloads": 39026,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1e87959f92156da668220c1d0581a8e3333370ed255740a3bcad520223b49a66de10ebb59bd996a04e2615691b9b34782c3fa90766d2cdfc4b52e9b738e4e10c",
+          "sha1": "4c6b152c7d131ba4e7ac1a39811796eb4757d879"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/w2LhUkqZ/cloth-config-10.1.117-forge.jar",
+        "filename": "cloth-config-10.1.117-forge.jar",
+        "primary": true,
+        "size": 1168571,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "4UgNKji6",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19.4] v10.1.117",
+    "version_number": "10.1.117+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:19:08.004157Z",
+    "downloads": 87316,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c0fba7b52eca028219943759e258a1269e32f923",
+          "sha512": "51d264722e843e6cc87f660edd8feb269b3b7821fdab7780cde4d1e8e8a8ea25a02e33324bc5dee2baa2ac27e4326ee492ed871d73c75495128d24e20901cebc"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/4UgNKji6/cloth-config-10.1.117-fabric.jar",
+        "filename": "cloth-config-10.1.117-fabric.jar",
+        "primary": true,
+        "size": 1158014,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "o6AGzycg",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19-1.19.2] v8.3.115",
+    "version_number": "8.3.115+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:18:48.451396Z",
+    "downloads": 1528364,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b0a894303734dc029ce4b2c49736c1ec9af91821ee2b5d72a5c4d7a74409712be5748a018613d416cfe1059f5ceb0510401855422e81ab888f9949e4c250d453",
+          "sha1": "39dfb4f1b8c7d012cd85b36a6369de2dc01ba9f8"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/o6AGzycg/cloth-config-8.3.115-forge.jar",
+        "filename": "cloth-config-8.3.115-forge.jar",
+        "primary": true,
+        "size": 1163389,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "3Ejdp6VI",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19-1.19.2] v8.3.115",
+    "version_number": "8.3.115+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:18:35.099668Z",
+    "downloads": 249205,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "73091f6269f323724b190b8bc25d90860010a22be87f09af93c20e044f37867c8efddeafa521d95cd315f1df5335c628bb2392740d05ce36c92275b18ec465f1",
+          "sha1": "949d908415eb7c6b1b974a614c719b6c9f14f527"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/3Ejdp6VI/cloth-config-8.3.115-fabric.jar",
+        "filename": "cloth-config-8.3.115-fabric.jar",
+        "primary": true,
+        "size": 1153463,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "nr1znv5v",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.20(.1)] v11.1.118",
+    "version_number": "11.1.118+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:17:34.521843Z",
+    "downloads": 1800365,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c46ca3fba95691873a765f4e79750c615f33e446",
+          "sha512": "5f8017fb496e65ce25ecb249927602d578fc235fc80c5db335e071ee9c108680b3c8c1f82dfafaf21c90e46a174b6717a3946feea5295a3c8ace5b11201ff7c5"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/nr1znv5v/cloth-config-11.1.118-forge.jar",
+        "filename": "cloth-config-11.1.118-forge.jar",
+        "primary": true,
+        "size": 1168391,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "J3FLptsi",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20(.1)] v11.1.118",
+    "version_number": "11.1.118+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-21T10:17:23.45377Z",
+    "downloads": 5157874,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "848aeaf9c218e39452a2efced1872c2f7275c8fd2504fc2cbd63b159faf4eed96481144b7e1dc4fa27296727f54803907ae2e477e66a803c07a2fd51f831eb07",
+          "sha1": "f669f899d707b9e9acf1c239b0ae6b2c8be95361"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/J3FLptsi/cloth-config-11.1.118-fabric.jar",
+        "filename": "cloth-config-11.1.118-fabric.jar",
+        "primary": true,
+        "size": 1159192,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "2FKRnZ92",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.2] v12.0.113",
+    "version_number": "12.0.113+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-09T16:37:41.433987Z",
+    "downloads": 1243,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "131fef136e6de0cee05a0e39311b9d41c449b9a28087e592403d5bc6d4d6d920f4667d93c6b83593c01e47d95fb3437a4dc3540a7e64e37fbace8be72f957d48",
+          "sha1": "d50fe2a47bd7adcadc8ba02ab2496f70d3bee0a5"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/2FKRnZ92/cloth-config-12.0.113-neoforge.jar",
+        "filename": "cloth-config-12.0.113-neoforge.jar",
+        "primary": true,
+        "size": 1149816,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "KBfIrjbA",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.4] v13.0.114",
+    "version_number": "13.0.114+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-09T16:37:40.576635Z",
+    "downloads": 2032,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d93d9e27d98be76d2deeed180a5eaf613b24d33f",
+          "sha512": "66662af0a0a0bef3755dac2cb516fba4808826a744c9336dc8cbb883bdca69ce20f5669b47e816187b1d32bb9c47af8b8a74bfa5aa356bc83b833a0e5d0305d6"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/KBfIrjbA/cloth-config-13.0.114-neoforge.jar",
+        "filename": "cloth-config-13.0.114-neoforge.jar",
+        "primary": true,
+        "size": 1149841,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "q2CkD3c1",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.4] v13.0.114",
+    "version_number": "13.0.114+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-09T16:37:31.058309Z",
+    "downloads": 850,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "0843e4f8cfbdeb189d1c1ed7790716568969d826",
+          "sha512": "7733b5d24e40860f1deb818f4aed9d1af3febd71f7711251747a95a1aa08f1f6af3a9b7d67c042b3264320888fce4098b06ec48546489f58f2e5774cfe1b5cdb"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/q2CkD3c1/cloth-config-13.0.114-forge.jar",
+        "filename": "cloth-config-13.0.114-forge.jar",
+        "primary": true,
+        "size": 1151045,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "A4lNtO10",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.2] v12.0.113",
+    "version_number": "12.0.113+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-09T16:37:28.214386Z",
+    "downloads": 907,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2627c04ceec7ac3fb7c586e3f093d27248836ed5",
+          "sha512": "5a7685714b200b93ed561a4c43be2be22def602e62d4ae654187f45921e5941c2118d27ff2b2aa612b71fcb9ca0ada7686e50a98bdec2224dfa8741e22a5cf2b"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/A4lNtO10/cloth-config-12.0.113-forge.jar",
+        "filename": "cloth-config-12.0.113-forge.jar",
+        "primary": true,
+        "size": 1151049,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "YFpDLLdu",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.4] v13.0.114",
+    "version_number": "13.0.114+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-09T16:37:19.146313Z",
+    "downloads": 299494,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "146ee4ac2092e45b9574c54ef59d897d54700dfcfa353f3b6965342261a94d83b902cf4c90d5c0691c5c7018e2f49660cd8f32aa9abe185ad03117906cf8a924",
+          "sha1": "79bad6f25b5c2c21147475f2bcdb102120bb8d74"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/YFpDLLdu/cloth-config-13.0.114-fabric.jar",
+        "filename": "cloth-config-13.0.114-fabric.jar",
+        "primary": true,
+        "size": 1142068,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "wjYUbvpn",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.2] v12.0.113",
+    "version_number": "12.0.113+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-09T16:37:15.949926Z",
+    "downloads": 21526,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "8d169d478955f5cf758dd690406bc1a75cd6bfa4c7ec8160c22d5d620146240a8f2077da8a1e3f7f7704cc36eadcf89e096163a015b2e48c688e9fe068a2318a",
+          "sha1": "28928cd6aac738ee2e4ea2b6a39d0f28e7af75dc"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/wjYUbvpn/cloth-config-12.0.113-fabric.jar",
+        "filename": "cloth-config-12.0.113-fabric.jar",
+        "primary": true,
+        "size": 1142045,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "srGqKdky",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.4] v13.0.112",
+    "version_number": "13.0.112+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-09T16:04:32.131809Z",
+    "downloads": 254,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "a53f186324ed1e23a068102e8a760ad7326f99432ba04f267bcf6e363f325cdb0a3bd49b25369f018ba1bda95796ae7c4f7ab36e4679636dc0171e7a4a55a854",
+          "sha1": "bbb6712f93646d737f49a67224add7a1422332ae"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/srGqKdky/cloth-config-13.0.112-neoforge.jar",
+        "filename": "cloth-config-13.0.112-neoforge.jar",
+        "primary": true,
+        "size": 1149841,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "gYTUlUKu",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.4] v13.0.112",
+    "version_number": "13.0.112+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-09T16:04:17.307535Z",
+    "downloads": 580,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "72d27354fca921a54e0ed67e986c9d297cb927350ea52937f8a08d0d773babd8ced878cd501869f18d2f3abd93b1b566abba1d4d9e7c096f121e2c451c51edee",
+          "sha1": "f361b27ee036f06ad14a678dc66452d4d08d9e69"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/gYTUlUKu/cloth-config-13.0.112-forge.jar",
+        "filename": "cloth-config-13.0.112-forge.jar",
+        "primary": true,
+        "size": 1151047,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "Q4D6X8wF",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.4] v13.0.112",
+    "version_number": "13.0.112+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-09T16:03:45.384237Z",
+    "downloads": 2409,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "fa063480d2be6388c971b2c90c9ad50c7502a89ca514537b47792619ff07709958f4686c55f043606050563ac5f4be8e1b0efe319acccfb14e5a44c4e3aef842",
+          "sha1": "2f9e78948687391125d4b078d989d886df2b1ae5"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Q4D6X8wF/cloth-config-13.0.112-fabric.jar",
+        "filename": "cloth-config-13.0.112-fabric.jar",
+        "primary": true,
+        "size": 1142066,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "x8gS3Jdy",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.2] v12.0.111",
+    "version_number": "12.0.111+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-11-18T17:23:20.732975Z",
+    "downloads": 4983,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "5f2f7baacc4d4248feb609f1fc9f94c4f9706216",
+          "sha512": "16b4e1b3a8ff9df1d10c6e76e8790f7000e4038da215eae70a8f296f646cb506e40bda4817dd0195d4d54be6b58b0c6843ea54e8c4564a577e165b4ec6f0d6c6"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/x8gS3Jdy/cloth-config-12.0.111-neoforge.jar",
+        "filename": "cloth-config-12.0.111-neoforge.jar",
+        "primary": true,
+        "size": 1149812,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "VmKENDcG",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.2] v12.0.111",
+    "version_number": "12.0.111+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-11-18T17:23:00.257419Z",
+    "downloads": 2862,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d8da3706c0a23120663e0f1754e9c1410bad75b09e7f5def586977d05158b7f3905afe8fe09633d87802e0ad649ca90a852de83a48796fb2f64263979bbd4764",
+          "sha1": "d9e1c3754caedd2a5f7698cf579adeefdd53b8fa"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/VmKENDcG/cloth-config-12.0.111-forge.jar",
+        "filename": "cloth-config-12.0.111-forge.jar",
+        "primary": true,
+        "size": 1151046,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "jvy82BGQ",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.2] v12.0.111",
+    "version_number": "12.0.111+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-11-18T17:22:23.088754Z",
+    "downloads": 104977,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "fadc64d481a2c0601ea5ca1e0c190aa7a06f84b0",
+          "sha512": "e1dc26bdf29c433e2530130bfc66bce53ed1881b87a9e71859b20510d58239ff1653c913f57c3879959c82bbf457e3d3bd09f4acd1fed00e82a59eb56a57315d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/jvy82BGQ/cloth-config-12.0.111-fabric.jar",
+        "filename": "cloth-config-12.0.111-fabric.jar",
+        "primary": true,
+        "size": 1142044,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "XkFQE0kx",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[NeoForge 1.20.2] v12.0.110",
+    "version_number": "12.0.110+neoforge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-11-17T15:45:38.184355Z",
+    "downloads": 526,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d6814f3092c10f5353b182c5d03460b123382ca5",
+          "sha512": "be546b9dc469278fee57dd98d99c9e8c878727de894dcc6e3862146ee76b6075aafc536cb98e0d5125a107502ff76aaedbaea57509baca0bf1daffbd6e35d58a"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/XkFQE0kx/cloth-config-12.0.110-neoforge.jar",
+        "filename": "cloth-config-12.0.110-neoforge.jar",
+        "primary": true,
+        "size": 1149799,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "rMIyh1ac",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[MinecraftForge 1.20.2] v12.0.110",
+    "version_number": "12.0.110+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-11-17T15:45:21.531174Z",
+    "downloads": 377,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c3380b157331676f542d4cc11aa6e903df594653",
+          "sha512": "2d48322624f59c68321e51808c5339cfc3fad1c794472f43382e5d3e938dd4179100f460de7878759bf0cc862039ee6c2a2059e3ac5a90774bd8d8abf54c62f6"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/rMIyh1ac/cloth-config-12.0.110-forge.jar",
+        "filename": "cloth-config-12.0.110-forge.jar",
+        "primary": true,
+        "size": 1151045,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "HvC4UPrB",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.2] v12.0.110",
+    "version_number": "12.0.110+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-11-17T15:45:00.160917Z",
+    "downloads": 16681,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e6d15b6cecbc585589bd227ec405fecf08cf84f45eabbe370d844d783299be867fe3d668ebc3565aa33d63c0af986fae79d713df574e632407cad6d3afd76e6c",
+          "sha1": "f2995b22a60898af1df649d9ef8a64db0ececd34"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/HvC4UPrB/cloth-config-12.0.110-fabric.jar",
+        "filename": "cloth-config-12.0.110-fabric.jar",
+        "primary": true,
+        "size": 1142047,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "IbAdAuBo",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[LexForge 1.20.2] v12.0.109",
+    "version_number": "12.0.109+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-09-22T06:11:46.270412Z",
+    "downloads": 302358,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "64db755476259d5c4ec6a1ebe844287e1c7e3934a2819a63669c5483780193c81cede40f127c3000a7e594f7f4319d044e1f5b01721e0b6e803ba448a1dc7400",
+          "sha1": "e2d0dabdb7cc7a504b42a5b38c768678a928bf36"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/IbAdAuBo/cloth-config-12.0.109-forge.jar",
+        "filename": "cloth-config-12.0.109-forge.jar",
+        "primary": true,
+        "size": 1168694,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "LnfolBYb",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.2] v12.0.109",
+    "version_number": "12.0.109+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-09-22T06:11:34.747487Z",
+    "downloads": 302453,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "66ebcea9ec4ce863f0cc99e56d91a4c1a4e276a4",
+          "sha512": "8eb6b7e886e5799d57d616445135ddce3dcab83d24a0f389fe44109fe29aafc711d3c146dfe0a62a0859e42c4cce02a23fda568632db754fa089fdc91b63f06d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/LnfolBYb/cloth-config-12.0.109-fabric.jar",
+        "filename": "cloth-config-12.0.109-fabric.jar",
+        "primary": true,
+        "size": 1159520,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "EuWT3qek",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.2] v12.0.108",
+    "version_number": "12.0.108+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-09-21T18:42:23.533763Z",
+    "downloads": 2200,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "dd4792fbaf27bd654b38956a40e31db7b18c465d1898676e390d7edbbbbd050a5d3e55b30dbb56453c775fa5f6afab7e1262e121434b22c2145cce3a892d18d8",
+          "sha1": "4c434b6504d7261cde944b79f9d99dc6b495fd8f"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/EuWT3qek/cloth-config-12.0.108-fabric.jar",
+        "filename": "cloth-config-12.0.108-fabric.jar",
+        "primary": true,
+        "size": 1159497,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "23w31a"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "YR0cy5Ll",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20.2 (23w31a)] v12.0.107",
+    "version_number": "12.0.107+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-08-08T14:19:33.673812Z",
+    "downloads": 7105,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "66564154d9e9cde8419ed32f191bc0c218f74b206d45cf935fe16d8081b3aff6dc7be215a0f9a70c7b15dd1a9669707ba254a7c9085df4aeda524c8756a6fc2c",
+          "sha1": "dc305579bace5cffe0adf695e144195e294bafd1"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/YR0cy5Ll/cloth-config-12.0.107-fabric.jar",
+        "filename": "cloth-config-12.0.107-fabric.jar",
+        "primary": true,
+        "size": 1159510,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "JoLgnJ0G",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.20(.1)] v11.1.106",
+    "version_number": "11.1.106+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T14:05:10.273534Z",
+    "downloads": 485738,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f48397e041df04bfd8c333cf282e6eeb076e38248aa8518ee7289859becf7037bbf00582cf7e6593e28eeaf74a44737438f100af666a83619b5d066389e70f49",
+          "sha1": "b6f17b52c469c5ca27c9e90abdb0ecc0be16149d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/JoLgnJ0G/cloth-config-11.1.106-forge.jar",
+        "filename": "cloth-config-11.1.106-forge.jar",
+        "primary": true,
+        "size": 1168375,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "s7VTKfLA",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20(.1)] v11.1.106",
+    "version_number": "11.1.106+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T14:05:00.801181Z",
+    "downloads": 2457114,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "bce3d04905f49a331ade089332f0bb5f2329a81451f2acdd4d95590cb090dbc88f0192a85de342e705f4aea9f4cdf2add8b5ef842d0014e29f0a2a9c281984a2",
+          "sha1": "a05e176326365f2b8e377a35be52a5671491bcfd"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/s7VTKfLA/cloth-config-11.1.106-fabric.jar",
+        "filename": "cloth-config-11.1.106-fabric.jar",
+        "primary": true,
+        "size": 1159179,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "Sqf2NXVd",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19.4] v10.1.105",
+    "version_number": "10.1.105+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T13:58:22.085414Z",
+    "downloads": 24299,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "4d3563086285b4b510c4b1652f0e9eb7b717b88e",
+          "sha512": "bc45349646d1020675fa60534e0f27c9f5520b1234083033c6259ec608afe9c577df53caf87feb58403da7d2dc85f8489ec0813c7fbda70225ac65bcd69369e3"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Sqf2NXVd/cloth-config-10.1.105-forge.jar",
+        "filename": "cloth-config-10.1.105-forge.jar",
+        "primary": true,
+        "size": 1168559,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "mhFzbEwE",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19.4] v10.1.105",
+    "version_number": "10.1.105+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T13:58:15.264707Z",
+    "downloads": 136746,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "636981c37851ce70d806d09724622f95724103a5",
+          "sha512": "6c381aaacedd6d4cd128ab29fc3bac734abe022cf420448dee9041a39f089adfce923caa1e3fa4e4a162f9975f4862e8a477ad2ed9d060c0971b789f7a0c322d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/mhFzbEwE/cloth-config-10.1.105-fabric.jar",
+        "filename": "cloth-config-10.1.105-fabric.jar",
+        "primary": true,
+        "size": 1157998,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "EUyHCmUW",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19-1.19.2] v8.3.103",
+    "version_number": "8.3.103+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T13:47:59.681751Z",
+    "downloads": 131746,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f328e96b7cbe94fa73e1421a72959296e7698c5d",
+          "sha512": "8a69e844d29dcfbddcc9ce07cbde84b2a147a9f368d075bcc01717af3b4aa77710c80835124e8fd508db2b9d326f7f157eb91d3fb308e2da9fd625d1fc617ffd"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/EUyHCmUW/cloth-config-8.3.103-forge.jar",
+        "filename": "cloth-config-8.3.103-forge.jar",
+        "primary": true,
+        "size": 1163374,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "8AMPotFw",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19.3] v9.1.104",
+    "version_number": "9.1.104+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T13:47:54.126043Z",
+    "downloads": 11739,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "6f4319bac5a2d5418ed75a901ca21b9b76400d1d",
+          "sha512": "16984834c3e71dd5c1116334cca074058304f28dc8320a90ef9a8254954694686fc52e20b9a2c4237293b11fa097995747f308ced75041e3469831bbd30d6c46"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/8AMPotFw/cloth-config-9.1.104-forge.jar",
+        "filename": "cloth-config-9.1.104-forge.jar",
+        "primary": true,
+        "size": 1164984,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "o9dFD9SO",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19-1.19.2] v8.3.103",
+    "version_number": "8.3.103+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T13:47:49.876681Z",
+    "downloads": 814340,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "475ab5dec26fa5d25b1d899b8261b054fbc283d6",
+          "sha512": "b490a5df321d2f3907a47d18e9549751bb97bc9de6d04aa265cd9000321b516627bc57b1ef30ae4d854d558b2936c5d3413d34d784849e0c3ffa083605ca8d3d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/o9dFD9SO/cloth-config-8.3.103-fabric.jar",
+        "filename": "cloth-config-8.3.103-fabric.jar",
+        "primary": true,
+        "size": 1153446,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "w2VZSLTf",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19.3] v9.1.104",
+    "version_number": "9.1.104+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T13:47:47.951348Z",
+    "downloads": 79882,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c80185c965c7240e5987b131358cebc07a8d2776",
+          "sha512": "1112c5f7cf7a98f703e2bf165d740733d61f288c6fbfdeb971f4c14680f99be927b7d308816816aaf7028f568c2af2148ec44869450074ccb6a75ce0f38351f9"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/w2VZSLTf/cloth-config-9.1.104-fabric.jar",
+        "filename": "cloth-config-9.1.104-fabric.jar",
+        "primary": true,
+        "size": 1154772,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1",
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "ZbWG3eJW",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.18.x] v6.5.102",
+    "version_number": "6.5.102",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T13:37:07.071835Z",
+    "downloads": 310043,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "a278313471cd9563f716059cdab2fa3be11d002f44d1ffd57d025dfec336e3fe7dd2876501fb0ff5bc159c340e9ba5439a57d6d0607bcfda1a650f14e9852c4d",
+          "sha1": "9e4f45433e80eeeb634cac50549619f183f6b3a8"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/ZbWG3eJW/cloth-config-6.5.102-forge.jar",
+        "filename": "cloth-config-6.5.102-forge.jar",
+        "primary": true,
+        "size": 1160183,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1",
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "BLMp2TRt",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.18.x] v6.5.102",
+    "version_number": "6.5.102",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T13:36:53.279686Z",
+    "downloads": 189611,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0673b8bc2b92b6a93dd63938cbc994f5c0e09a0bab5a4719ca35ff970c14f2476ef0eb431334b28ecfa6821f1daa1fd7511cef4b1a13b50620292df0adf0c7ba",
+          "sha1": "d8996df838204ebe2aa7314b0a95914d326b37e0"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/BLMp2TRt/cloth-config-6.5.102-fabric.jar",
+        "filename": "cloth-config-6.5.102-fabric.jar",
+        "primary": true,
+        "size": 1150058,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "i0ExoqTD",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.16.4/5] v4.17.101",
+    "version_number": "4.17.101",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T13:30:28.382842Z",
+    "downloads": 621145,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "56bcf4bcb80ed8701436f36d24be72fbec3f944f",
+          "sha512": "3a5755660b09408b5cce7ba8232f1edb5d5e5acbed58577da5522e5c84023150445146badd7133346b6abe57d8b22a8f578839c0e9a3df0183c9b860ace17fa4"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/i0ExoqTD/cloth-config-4.17.101-forge.jar",
+        "filename": "cloth-config-4.17.101-forge.jar",
+        "primary": true,
+        "size": 1452545,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "xMTUxQCV",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.16.4/5] v4.17.101",
+    "version_number": "4.17.101",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-07-09T13:30:06.091528Z",
+    "downloads": 128164,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "0c1311b8657bcde82b8cc755e9a5da5479a8e984",
+          "sha512": "fdfb4000999e1b443a8770377b5004b536d685c6e9be7f68428f2666d8f4b3606aaf0218fb292c1de25816fc6e9bb8b548f47fdae341e5adee525ada4dfa2ab8"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/xMTUxQCV/cloth-config-4.17.101-fabric.jar",
+        "filename": "cloth-config-4.17.101-fabric.jar",
+        "primary": true,
+        "size": 1117847,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "CXaMuU8e",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.16.4/5] v4.16.91",
+    "version_number": "4.16.91",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-06-26T14:13:57.753856Z",
+    "downloads": 18447,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "422e4f65872bf8babfa139094b7cb242e9f9f434",
+          "sha512": "3a61ee708029af5f5d91fe0cdc9081d2d7cfb094468451f03aa3234f97795ca190a8575c3a75630209d60dfc03ea41908bf677e7d6acb946b2d8381b6454b74f"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/CXaMuU8e/cloth-config-4.16.91-forge.jar",
+        "filename": "cloth-config-4.16.91-forge.jar",
+        "primary": true,
+        "size": 1441438,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "oIHJeqqQ",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.16.4/5] v4.16.91",
+    "version_number": "4.16.91",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-06-26T14:13:26.925705Z",
+    "downloads": 17337,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c6c3d864828caa945b6d7e1fc21d104421b6c8c5",
+          "sha512": "5198cec7f88facccd3f9f3a17788b702a76a69e3e63343880dbb4e6f13e3a016eb5f7724e20b29bfb46c730954bc10f4218b19f855d58d7a2e855f9c2f2cb357"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/oIHJeqqQ/cloth-config-4.16.91-fabric.jar",
+        "filename": "cloth-config-4.16.91-fabric.jar",
+        "primary": true,
+        "size": 1106615,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "aAaLEVNM",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.20] v11.0.99",
+    "version_number": "11.0.99+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-06-08T05:33:36.568281Z",
+    "downloads": 24800,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "fc8b7f06edade29450fe3b1482103dd3bb36117a",
+          "sha512": "009d6673d5c6566e4f7ba73eb501678fc866bb9cd1c9fea63e3cb84074118bffb79cbb2a9170ca578afbd47b9a7bd734d6c5ba60faf82d781363b5aa06556bba"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/aAaLEVNM/cloth-config-11.0.99-forge.jar",
+        "filename": "cloth-config-11.0.99-forge.jar",
+        "primary": true,
+        "size": 1156874,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "y0kQixP8",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20] v11.0.99",
+    "version_number": "11.0.99+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-06-08T05:33:26.563638Z",
+    "downloads": 475490,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3bbb9369efab7390193332ab9064460afa8dce7fc17fd96a2164b25cc17a0f03e928dd362539df364436a284914211005ba76d48b41fd6d9b01a22717a4d3719",
+          "sha1": "338b0968fb47460f2a1fc2d003d3f2a32d1b0c31"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/y0kQixP8/cloth-config-11.0.99-fabric.jar",
+        "filename": "cloth-config-11.0.99-fabric.jar",
+        "primary": true,
+        "size": 1147729,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20-pre6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "dVpHBgHi",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.20-pre6] v11.0.98",
+    "version_number": "11.0.98+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-05-27T17:53:17.947615Z",
+    "downloads": 14010,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e584f1517082f7eced8e0a2151556acaec678f6844555ded95608a38229875914b4e930adb338bba88fa15ace088a0bd438542197c16fc6c2973c5a8c42733e8",
+          "sha1": "8c59f08cd0e296fbd8ac29af421ed42d7b54c7fe"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/dVpHBgHi/cloth-config-11.0.98-fabric.jar",
+        "filename": "cloth-config-11.0.98-fabric.jar",
+        "primary": true,
+        "size": 1147739,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "23w13a_or_b"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "XqZIxbLN",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 23w13a_or_b] v11.0.97",
+    "version_number": "11.0.97+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-04-01T18:55:40.025228Z",
+    "downloads": 2334,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "086e9df500bfca8efe57b07527f7c677b2409b1b43c7f6d1a5ebbb721549f9cc3110b66186f0bdfb3394036b2a6f4974cbe71f2c26c322fb0a58b16fa6f54787",
+          "sha1": "db2eb8be647f8e8699f0f65e3e74c171c04cec5b"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/XqZIxbLN/cloth-config-11.0.97-fabric.jar",
+        "filename": "cloth-config-11.0.97-fabric.jar",
+        "primary": true,
+        "size": 1146523,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "X8YuGurB",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19.4] v10.0.96",
+    "version_number": "10.0.96+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-03-16T11:25:08.461198Z",
+    "downloads": 28645,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "a7c05e1af796db686c2b828e6cbbeb73cb90d54f148cab053c11cb5468cab3b8ecd84c9161be8684a46e226000076889a94e8108315f2616331dea296be1257f",
+          "sha1": "e01fda3ea6d685a8757a0550385f723de2cbaf02"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/X8YuGurB/cloth-config-10.0.96-forge.jar",
+        "filename": "cloth-config-10.0.96-forge.jar",
+        "primary": true,
+        "size": 1157023,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "6XGTNEII",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19.4] v10.0.96",
+    "version_number": "10.0.96+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-03-16T11:25:01.871301Z",
+    "downloads": 248666,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2c2ca9ad15fa08e0013505e0fbd661e0ff9861eba5df175037cc948197d7d9c4c6983d0f026321a71e7855fc4941e279ede9c930e2ca373b38402dfd70cc6376",
+          "sha1": "9bd3ad20afbcd4622d194853aa8e03c4f9d9050f"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6XGTNEII/cloth-config-10.0.96-fabric.jar",
+        "filename": "cloth-config-10.0.96-fabric.jar",
+        "primary": true,
+        "size": 1146510,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4-pre1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "QXKLvmdz",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19.4-pre1] v10.0.95",
+    "version_number": "10.0.95+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-03-03T20:31:47.229402Z",
+    "downloads": 736,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "310ca4d46c778468266f1a3a95047453d71d7eb0",
+          "sha512": "ce961e16a521d698cbcf717d492b6f1f1bbb109cf9c2f06ac6a393ec02614b029d06244a03ffac27707caa008099809d6d98a728093bafb7045db8a40475cb2c"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/QXKLvmdz/cloth-config-10.0.95-fabric.jar",
+        "filename": "cloth-config-10.0.95-fabric.jar",
+        "primary": true,
+        "size": 1146479,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "VYURtAAK",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19.3] v9.0.94",
+    "version_number": "9.0.94+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-12-08T15:26:56.644919Z",
+    "downloads": 21567,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e20b2f3ff7a03cfe8e9b500fdb2d3a97f90ab773",
+          "sha512": "3991b5597efc41770e8aa2bf8b55a58bebf28d404d1e310351236a2cfdb30354a2bd91e63489de0cf1bde866552d8d8d297940ce3035f24efb242bd1cf0a6b4a"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/VYURtAAK/cloth-config-9.0.94-forge.jar",
+        "filename": "cloth-config-9.0.94-forge.jar",
+        "primary": true,
+        "size": 1153269,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "M3yxljrZ",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19.3] v9.0.94",
+    "version_number": "9.0.94+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-12-08T15:26:49.907922Z",
+    "downloads": 229727,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9b218b97186b75e5701b343dddfea1081d8ba48d",
+          "sha512": "a06b7cd8f472c177621680d6688ad45010b8605fad49207c92066a1d682ec602aeaaa68ffd1488a87587f4207b9efb22147a1d9cc987c4a6ffd42d5c9620e13b"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/M3yxljrZ/cloth-config-9.0.94-fabric.jar",
+        "filename": "cloth-config-9.0.94-fabric.jar",
+        "primary": true,
+        "size": 1143110,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3-pre2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "IVxgEGfU",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19.3-pre2] v9.0.93",
+    "version_number": "9.0.93+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-11-27T10:41:06.438997Z",
+    "downloads": 782,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d12d012be0274b447b4c23a45a380cdd4e2d47e64143d46d2a10d9663ed51b1fa85144c4be1d8a8cb5c3e5b57ed62d2ef7593fe99805167c3abcad3518af78f5",
+          "sha1": "ea4c2aa1d7600360e81c6f3de442e4d5d6c77845"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/IVxgEGfU/cloth-config-9.0.93-fabric.jar",
+        "filename": "cloth-config-9.0.93-fabric.jar",
+        "primary": true,
+        "size": 1142994,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "22w43a"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "72Wj1Wri",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19.3 (22w43a)] v9.0.92",
+    "version_number": "9.0.92+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-10-28T09:33:37.66401Z",
+    "downloads": 14252,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2d0c5745734f847a0080d0ee3a67c9d534bfb4df6774cd64b75966cccccebf88872e95a9accebd1642ca0e9cb99a4c8f8b3dfa5157955cb0a90792fdd6d23149",
+          "sha1": "f18cc8ff3eccf561dd59820ddbf1f49c6e58e77c"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/72Wj1Wri/cloth-config-9.0.92-fabric.jar",
+        "filename": "cloth-config-9.0.92-fabric.jar",
+        "primary": true,
+        "size": 1143257,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "Fw7B2c97",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19-1.19.2] v8.2.88",
+    "version_number": "8.2.88+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-09-07T15:01:24.361515Z",
+    "downloads": 116599,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "fbd645755abc0dbe5eb1adeb5e649835294a769f",
+          "sha512": "ce2ba15870f0c316fcc5a62bac3795e4e4b57421e4a65b3c3c906436786b1b6f2fd9b1301e24c3fdaa44701670e8520dceac8b817bcdd76de186a4fe8ec256cd"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Fw7B2c97/cloth-config-8.2.88-forge.jar",
+        "filename": "cloth-config-8.2.88-forge.jar",
+        "primary": true,
+        "size": 1151677,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "EXrxCjl6",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19-1.19.2] v8.2.88",
+    "version_number": "8.2.88+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-09-07T15:01:19.140646Z",
+    "downloads": 680371,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "4b93c69f22e9bdeeca201992e99632824b55f9cb",
+          "sha512": "6a135c608dadaf5dcc07601cbca456170025e39b8adec43915e08fc140ab5b3f0fb19e3123994e30cec88770a444265a1251289422cda2944c9a17007e58065c"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/EXrxCjl6/cloth-config-8.2.88-fabric.jar",
+        "filename": "cloth-config-8.2.88-fabric.jar",
+        "primary": true,
+        "size": 1141796,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "szXeTOs6",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.16.4/5] v4.15.82",
+    "version_number": "4.15.82",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-09-04T13:33:21.761109Z",
+    "downloads": 23422,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f23d5027d37a68361354a0238c1c3000fb9003917ef61ab3953da4c5d185662834da0bf88f86c4006a514d572a73a20a9c0551078968d3d7b8cf0cbc3bc0edfc",
+          "sha1": "b2c7ae6686a9de95a93819fa8a541820dea2b8ce"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/szXeTOs6/cloth-config-4.15.82-fabric.jar",
+        "filename": "cloth-config-4.15.82-fabric.jar",
+        "primary": true,
+        "size": 1094562,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "iYo4XV1L",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.16.4/5] v4.15.82",
+    "version_number": "4.15.82",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-09-04T13:33:01.528607Z",
+    "downloads": 40850,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "59846557f98e16863852c0c3392e48984f783261aac8c7d62605a6b14a3236db0b4ba37cb19fbafbf48b05d96d2f90a9489bc359a29cd066f9f430fe90a4efee",
+          "sha1": "4ae61569d0bb82c0555b86a8c259d4f631f00582"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/iYo4XV1L/cloth-config-4.15.82-forge.jar",
+        "filename": "cloth-config-4.15.82-forge.jar",
+        "primary": true,
+        "size": 1429686,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1",
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "gPqHXnrg",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.18.x] v6.3.81",
+    "version_number": "6.3.81",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-09-04T13:32:13.202403Z",
+    "downloads": 112998,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f6501a0b48872d2d14da55796f16f582a83bef7b",
+          "sha512": "1ec0b4ae55c5c7cb04b8e88c9c20d157cc3fe4e82e74b9334532b3a5ba095c41fafe2b611b78e2cf46ebe0d618c3657fdee81587f72ba2df6d8687e5394bdf26"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/gPqHXnrg/cloth-config-6.3.81-fabric.jar",
+        "filename": "cloth-config-6.3.81-fabric.jar",
+        "primary": true,
+        "size": 1126226,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1",
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "GcaDCWXk",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.18.x] v6.3.81",
+    "version_number": "6.3.81",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-09-04T13:31:53.047688Z",
+    "downloads": 42364,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "de44be377a53519adef1e70a06f45c3eef6bcf2a",
+          "sha512": "85f5c7d414ee6ab6f52713b4223e03ac836109dd08766ddc6ce8536475df6547a90aaf892d5c328bc0af7c39bdc6d88735d5dd1aeb0e4622f02a10f1bb622854"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/GcaDCWXk/cloth-config-6.3.81-forge.jar",
+        "filename": "cloth-config-6.3.81-forge.jar",
+        "primary": true,
+        "size": 1136441,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "Q0bdszKc",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19-1.19.2] v8.1.77",
+    "version_number": "8.1.77+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-09-04T11:34:56.2125Z",
+    "downloads": 1602,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "801ef44b6e0f4eaa8be49e75c25ead8bf95d221f",
+          "sha512": "e07130646a3df5d92e9b10dc48921b60f1bd248c86f2ca7679f46f4cf015cdf434d2f8a824729a8e20b646207e07e97a071f5b64ee9993ad7c3803c857272eda"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Q0bdszKc/cloth-config-8.1.77-forge.jar",
+        "filename": "cloth-config-8.1.77-forge.jar",
+        "primary": true,
+        "size": 1142361,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "JaKvOQIz",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19-1.19.2] v8.1.77",
+    "version_number": "8.1.77+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-09-04T11:34:52.808375Z",
+    "downloads": 2797,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c638fc635f0e43bfc08536071c62db09240adec84e182352268e7b76ff23aeb5e26a049594888cf1d8294885b2d8094d68ffe63a5e2ac23055328666d7d943cc",
+          "sha1": "2fae6b5b8985babc340828ac45958be7b2dd2253"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/JaKvOQIz/cloth-config-8.1.77-fabric.jar",
+        "filename": "cloth-config-8.1.77-fabric.jar",
+        "primary": true,
+        "size": 1132338,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "VazGdWq6",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19-1.19.2] v8.0.75",
+    "version_number": "8.0.75+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-07-29T18:43:11.389363Z",
+    "downloads": 12974,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ef4148c8c3506fdc825eef2f7b174e2598d4124d",
+          "sha512": "cb3f1344186a29aca62530f7ef3a6f2255d451fb9caaf7078e1bd96aa38119493adb12478c2561b67c5b5a1b7f06fef79b1eb0a4d6800607cb8b47d0a570a64b"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/8.0.75%2Bforge/cloth-config-8.0.75-forge.jar",
+        "filename": "cloth-config-8.0.75-forge.jar",
+        "primary": true,
+        "size": 1139085,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "hg9bSXT3",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19-1.19.2] v8.0.75",
+    "version_number": "8.0.75+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-07-29T18:43:05.481036Z",
+    "downloads": 21048,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "a6fb5bbb4ddd14ecb3a907e48a3ce2485430e4713a8b0326b001c4a25ed2c1d9e36e1279f3bbb99e8cabcf13801eff0d43563c3505ee80687347f73212661923",
+          "sha1": "1d6175cee479a4fac60fc314e988e70485bd29b1"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/8.0.75%2Bfabric/cloth-config-8.0.75-fabric.jar",
+        "filename": "cloth-config-8.0.75-fabric.jar",
+        "primary": true,
+        "size": 1129049,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "c4kFw2we",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19] v7.0.74",
+    "version_number": "7.0.74+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-07-29T18:38:42.630895Z",
+    "downloads": 1697,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ea06b650a916bddc59e0cbe122245307e14ec2e8",
+          "sha512": "176b527cc0cbc9379b394f2941385831d6c342fa8ae322eecc5d50f251bc7812ac432ae348c1e81d4fa0d7784f735463ae3f32ce783ae70ede91c6bb21e35801"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.74%2Bforge/cloth-config-7.0.74-forge.jar",
+        "filename": "cloth-config-7.0.74-forge.jar",
+        "primary": true,
+        "size": 1139268,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "FPWqEBEx",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19] v7.0.74",
+    "version_number": "7.0.74+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-07-29T18:38:37.902556Z",
+    "downloads": 32802,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e4a700682c3be780faae603d822b11ac3997b555",
+          "sha512": "599847ebe41b9c4534b00bc4da5e5a29783cbe7a29f64dd429c25795c70ca04c8d7cdb515ca560ade7ca477f46f30e1a822f007c782546689ee3b23393e8c295"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.74%2Bfabric/cloth-config-7.0.74-fabric.jar",
+        "filename": "cloth-config-7.0.74-fabric.jar",
+        "primary": true,
+        "size": 1129074,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "XInqR7zc",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19] v7.0.73",
+    "version_number": "7.0.73+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-07-12T06:46:25.615836Z",
+    "downloads": 3303,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c498ab351147c1124cd0eae4b535e5029e64fa697e2b51fedae1c6732ca2210f7fcfaac8447ed62d7c7b150a03bc020e7728352c55f96352109afa712a689ced",
+          "sha1": "ebb6ba92cff7a28e06d131c5d632d532df141a2c"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.73%2Bforge/cloth-config-7.0.73-forge.jar",
+        "filename": "cloth-config-7.0.73-forge.jar",
+        "primary": true,
+        "size": 1136452,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ehzvjLXC",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19] v7.0.73",
+    "version_number": "7.0.73+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-07-12T06:46:18.398237Z",
+    "downloads": 12702,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "5bc08411344e027cac4467763740f18626dae3ae",
+          "sha512": "bebc53ee5752263ccf1e0a89b5f9f72c3c5be149467e9d66a15c335f8c616a2b8e7c7020208b291af425b31d3062e2ca305ab0f1a0142d947f12910d4bebd71b"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.73%2Bfabric/cloth-config-7.0.73-fabric.jar",
+        "filename": "cloth-config-7.0.73-fabric.jar",
+        "primary": true,
+        "size": 1126254,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "CsdOwOro",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19] v7.0.72",
+    "version_number": "7.0.72+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-06-11T12:13:06.510979Z",
+    "downloads": 3537,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "099df0acb6001c396abf141fd48bf3945c16405f",
+          "sha512": "f4addca1ff37a418cb7903f7e2941ad41b8f696dc38731f787a96cc00dd4a0e377953ab77ba09657c2085230b63edfc4796ae9d624b587f762b7acc60e3c209b"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.72%2Bforge/cloth-config-7.0.72-forge.jar",
+        "filename": "cloth-config-7.0.72-forge.jar",
+        "primary": true,
+        "size": 1136384,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "wOP2dCdL",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19] v7.0.72",
+    "version_number": "7.0.72+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-06-11T12:13:03.872115Z",
+    "downloads": 11835,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d16637c1fb138ec018a7c3234b015269208569bf51a6e5fa8f283321efb352d5793e05185dc1be066ae0d5034fd4f69e4cce1961c09ee75e2d641c5a907533db",
+          "sha1": "0bd75623bb0a9537af93dc2d537efdb02dfb50c8"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.72%2Bfabric/cloth-config-7.0.72-fabric.jar",
+        "filename": "cloth-config-7.0.72-fabric.jar",
+        "primary": true,
+        "size": 1126255,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "KiKLKNrl",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.16.2-1.16.5] v4.14.64",
+    "version_number": "4.14.64",
+    "changelog": "Updated Basic Maths",
+    "changelog_url": null,
+    "date_published": "2022-06-10T17:53:51.13815Z",
+    "downloads": 7514,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b03b3b6297481645b5f8cf91c360d05cecb06b2d",
+          "sha512": "398abd7b2f5ba946bf63af51b9f677b94e547a5bec89197c5c2aad45501c5b9eaa2d30fd9ffc99c2c6694c793f12ad0845d02e2a29a2a05a546caf23030760b4"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/4.14.64/cloth-config-fabric-4.14.64.jar",
+        "filename": "cloth-config-fabric-4.14.64.jar",
+        "primary": true,
+        "size": 1095613,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "31tLmbMI",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.16.2-1.16.5] v4.14.64",
+    "version_number": "4.14.64+forge",
+    "changelog": "Updated Basic Maths",
+    "changelog_url": null,
+    "date_published": "2022-06-10T17:53:04.650527Z",
+    "downloads": 21578,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2c1b890013bef8f154fe4c85b91c617d74d5bbef2d8ea0b357850a60b3ebe8085b4d997acfb45ce30b5251a929b9677befdfaf710575d825588996f56a667d40",
+          "sha1": "895f56a440a4cdd0f5e4719ad3dbcdbb702e321b"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/4.14.64%2Bforge/cloth-config-forge-4.14.64.jar",
+        "filename": "cloth-config-forge-4.14.64.jar",
+        "primary": true,
+        "size": 1458777,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "GH6kNTCk",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.17-1.17.1] v5.3.63",
+    "version_number": "5.3.63+forge",
+    "changelog": "Updated Basic Maths",
+    "changelog_url": null,
+    "date_published": "2022-06-10T17:51:27.217805Z",
+    "downloads": 14120,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "67d588a6daaeacc8fe13e137b5d3804337766edbc2c29d174377a6885564d6c0c4e6c9b4a8051e10ffbb65ffc31f5ed492e5600fbebfbd7df150bd9786e4dded",
+          "sha1": "1a8c592dfcfd691c326525288e3bcc275f8118d9"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/5.3.63%2Bforge/cloth-config-forge-5.3.63.jar",
+        "filename": "cloth-config-forge-5.3.63.jar",
+        "primary": true,
+        "size": 1112166,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "gb0cZ2Qp",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.17-1.17.1] v5.3.63",
+    "version_number": "5.3.63",
+    "changelog": "Update Basic Maths",
+    "changelog_url": null,
+    "date_published": "2022-06-10T17:50:42.429457Z",
+    "downloads": 52160,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f58166f0b54a1692ad8a78fba807bfe3964aeef5",
+          "sha512": "eedb0c03e2106d6cce56d040b9ba5c9977463e50d5c0c7a4a4305a69f2046784dc970a1e3fa8540db095b63fec241226f4d0fa7b0a0001a33bf2a33652590dbd"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/5.3.63/cloth-config-fabric-5.3.63.jar",
+        "filename": "cloth-config-fabric-5.3.63.jar",
+        "primary": true,
+        "size": 1096226,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1",
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "d1D40LRO",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.18.x] v6.2.62",
+    "version_number": "6.2.62",
+    "changelog": "Update Basic Maths",
+    "changelog_url": null,
+    "date_published": "2022-06-10T17:49:35.46583Z",
+    "downloads": 61576,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "bc0f07805823fdab5c7376d8d2b314c1b109d402",
+          "sha512": "1d30dbc59ac2a8668e5dd3bb7a6d74a8d243cf958d16f4d55670db270414842dc3884687c847cc9815605695ee2403e933f010a17c7ff5e296de43a55872ad0a"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6.2.62/cloth-config-fabric-6.2.62.jar",
+        "filename": "cloth-config-fabric-6.2.62.jar",
+        "primary": true,
+        "size": 1122859,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1",
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "DmOAoTTg",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.18.x] v6.2.62",
+    "version_number": "6.2.62+forge",
+    "changelog": "Bump Basic Maths",
+    "changelog_url": null,
+    "date_published": "2022-06-10T17:48:48.943354Z",
+    "downloads": 20135,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1da6c984afef261cd5484ede8685abfe5242198b",
+          "sha512": "66b85d3234843dbacfbd6588556d500931c84049ca7cc212781b843a25cc972614011eb7136fc028015a5940d2755ec240dc04a6d48ccc33f6c1bc54cc478063"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6.2.62%2Bforge/cloth-config-forge-6.2.62.jar",
+        "filename": "cloth-config-forge-6.2.62.jar",
+        "primary": true,
+        "size": 1133101,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "hcuWsP3M",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.19] v7.0.69",
+    "version_number": "7.0.69+forge",
+    "changelog": "Updated to 1.19",
+    "changelog_url": null,
+    "date_published": "2022-06-10T17:37:41.853976Z",
+    "downloads": 932,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c41fb0d247a26c160cfa82e1764c66079d4d28c8",
+          "sha512": "8a27873df9eccd937297a68d20d266e5c366263f41403b1496f7d50ad246337e38b2504defa1dd533c28142a16debf98715c7f746d1630a76713773d3a525e9f"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.69%2Bforge/cloth-config-forge-7.0.69.jar",
+        "filename": "cloth-config-forge-7.0.69.jar",
+        "primary": true,
+        "size": 1136389,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "re60xAev",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.19] v7.0.69",
+    "version_number": "7.0.69",
+    "changelog": "Updated to 1.19",
+    "changelog_url": null,
+    "date_published": "2022-06-10T17:29:43.91458Z",
+    "downloads": 1158,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6b8b3306ce5712812d81862db8f312e78c377e8f86faccb8b3fc0afd9cc7d0f570d295baaedde567cd7948b2b4e03a6c245789191685ce049594863aee34bb4f",
+          "sha1": "2af50ff83c60396839d4b332452e4d1405d9491d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.69/cloth-config-7.0.69-fabric.jar",
+        "filename": "cloth-config-7.0.69-fabric.jar",
+        "primary": true,
+        "size": 1126258,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1",
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "63NArvT8",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.18.x] v6.2.57",
+    "version_number": "6.2.57+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:44:31.7955Z",
+    "downloads": 17319,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b74f821e4f4bc4ddd1e7ae2722a424d5d3c4f5f7932a1a8ff6695b6c30c3509c070b09df19424553648c6aeafcf68b923555f7ceba908a98e71dc8c7da6952d6",
+          "sha1": "994915e00e2900453ec6478f920a87bf10ac9d05"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6.2.57%2Bfabric/cloth-config-6.2.57-fabric.jar",
+        "filename": "cloth-config-6.2.57-fabric.jar",
+        "primary": true,
+        "size": 1112730,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1",
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "6vFGWMar",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.18.x] v6.2.57",
+    "version_number": "6.2.57+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:43:52.124418Z",
+    "downloads": 6319,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "fe21430bf2daf2ce2b1f6f7e2c01b07ba9d50642",
+          "sha512": "2290494e679c1e5bd21fd80148390dfd6101d2e72e8d56ba793f8da236ef878515bec89391a044973ed292cba7a525e6d301c89d75cb216ec8b6e28bae1c7a8d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6.2.57%2Bforge/cloth-config-6.2.57-forge.jar",
+        "filename": "cloth-config-6.2.57-forge.jar",
+        "primary": true,
+        "size": 1133103,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "vb3noRwi",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.17-1.17.1] v5.3.58",
+    "version_number": "5.3.58+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:43:15.62602Z",
+    "downloads": 996,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6dbe019a0a9f12b789ac6cdaa91b347a87a547b7be53012bc59351a8f2066b6097a342aa80860d239ba1d477bdd7f960f3e3f136117394e55fdb8eedb4ae6a04",
+          "sha1": "ba773e448076e0130d9ecc7b2f5957adeb8b95a7"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/5.3.58%2Bfabric/cloth-config-5.3.58-fabric.jar",
+        "filename": "cloth-config-5.3.58-fabric.jar",
+        "primary": true,
+        "size": 1086095,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "HvviXJZV",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.17-1.17.1] v5.3.58",
+    "version_number": "5.3.58+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:42:07.128371Z",
+    "downloads": 444,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ef0517a2279c789f72283bd7616207b1cf77c290d6efccbc8a835c5ceba1f85198c279d9ae6febc00db408df9cb31939c26626e2c24d24694c5bc78d41d51dc0",
+          "sha1": "95911ef0fccb494a91de67b1ac55f75e5b8f1514"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/5.3.58%2Bforge/cloth-config-5.3.58-forge.jar",
+        "filename": "cloth-config-5.3.58-forge.jar",
+        "primary": true,
+        "size": 1112168,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "wqFP5baC",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.16.2-1.16.5] v4.14.54",
+    "version_number": "4.14.54+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:40:57.659025Z",
+    "downloads": 5874,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "58bb2b6c6677ac17ca79a6af38fbaf5bab8fcb5ac1cd31326fb0ed580299c6eb200829748a62c34d0e4f06f1af0f1e10f6c3c53c58254c619994323d0d719fb4",
+          "sha1": "523af31a92e22edcf2e2788fbe0c58430be902b1"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/4.14.54%2Bfabric/cloth-config-4.14.54-fabric.jar",
+        "filename": "cloth-config-4.14.54-fabric.jar",
+        "primary": true,
+        "size": 1085437,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16",
+      "1.16.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "mJwBHBVB",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.16-1.16.1] v4.6.0",
+    "version_number": "4.6.0+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:40:11.179839Z",
+    "downloads": 6539,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "5c341686b7a3e850195ae7459a6d4822562f420b",
+          "sha512": "2e1d7a257b894a6fef64dac7e512e7344f2b15feb928a2b5f383c9c5c2d0fe06b3526af1d71bf7248e61d2f5a004d925c1f78c7313b2e4364e158e23ca03a950"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/4.6.0%2Bfabric/config-2-4.6.0.jar",
+        "filename": "config-2-4.6.0.jar",
+        "primary": true,
+        "size": 399105,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "D7tEkaAc",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.16.2-1.16.5] v4.14.54",
+    "version_number": "4.14.54+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:39:01.896932Z",
+    "downloads": 5641,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1b78fd78e0239b30983d563fa9f7d2799a3b0dd9",
+          "sha512": "13edcd35986ef82024695d6ba5f136b310400792d90bba90d15f1eae7045c8fe96b1f39683453cf55b8b576ae958a9a657764957eb3221bc28fcd09efcd44627"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/4.14.54%2Bforge/cloth-config-4.14.54-forge.jar",
+        "filename": "cloth-config-4.14.54-forge.jar",
+        "primary": true,
+        "size": 1458779,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16",
+      "1.16.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "tR748cRj",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.16-1.16.1] v4.0.2",
+    "version_number": "4.0.2+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:38:20.662635Z",
+    "downloads": 2261,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a83f30daa6286b34ffab692405529c0c826e1376",
+          "sha512": "4d226a48fa401b5c59a47fd7436b07b2148a4ea3f7b60c0720a6f40f57de62d4811c0d11de4eae5150d0e0c4700c48b38e023eb224336020dca2f9d344564422"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/4.0.2%2Bforge/cloth-config-forge-4.0.2.jar",
+        "filename": "cloth-config-forge-4.0.2.jar",
+        "primary": true,
+        "size": 399234,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.15",
+      "1.15.1",
+      "1.15.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "FtlBFpp0",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.15.x] v2.14.2",
+    "version_number": "2.14.2+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:37:26.558337Z",
+    "downloads": 2449,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1cee5295e38921a575aec6cc2145ef331989ade9",
+          "sha512": "eb906d8bc4e88e7cbcca9ee5e7769d8f9c3859928ab529e705fef362b13a016670c5e049c4a1cb5e60b70c6b452ef61fdd13ce0179a1c22c08d3b83fc9be9f1d"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/2.14.2%2Bfabric/config-2-2.14.2.jar",
+        "filename": "config-2-2.14.2.jar",
+        "primary": true,
+        "size": 378083,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.15",
+      "1.15.1",
+      "1.15.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "dhr1Royh",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.15.x] v3.0",
+    "version_number": "3.0+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:36:46.942449Z",
+    "downloads": 1145,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0fbc32f43bdff0864b1d8220a932377d9b08c3b64beff0ac314fe5424ddb3d5ff9dcb14cfbaf9a93a7cb97132c371637d97c4255f7f98e31cb1d1e2f7f1f07bd",
+          "sha1": "f8943864fa3cf71e4ef9685e64f5bb4c131e8638"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/3.0%2Bforge/config-2-3.0.jar",
+        "filename": "config-2-3.0.jar",
+        "primary": true,
+        "size": 351021,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.14",
+      "1.14.1",
+      "1.14.2",
+      "1.14.3",
+      "1.14.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "vcrZcwvb",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Fabric 1.14.x] v1.8",
+    "version_number": "1.8+fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:29:41.5745Z",
+    "downloads": 5528,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f78c6e3cfe75e4e8ec78758aca01d5041bfff03ac0f5fb6b843c52783aab469277291906e7551d497e193fa8d67c8d44e434f04d0dd90168b050bf26664535cd",
+          "sha1": "ea9c3d63711f9e5be4064b40bec72a2cb5bc1cff"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/1.8%2Bfabric/config-2-1.8.jar",
+        "filename": "config-2-1.8.jar",
+        "primary": true,
+        "size": 311463,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.14",
+      "1.14.1",
+      "1.14.2",
+      "1.14.3",
+      "1.14.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "2E04stZn",
+    "project_id": "9s6osm5g",
+    "author_id": "1Hsaf75m",
+    "featured": false,
+    "name": "[Forge 1.14.x] v1.4.1",
+    "version_number": "1.4.1+forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-04-21T10:29:41.556634Z",
+    "downloads": 8050,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7ca538b1c4234d471125ce8dd8d2fead778a345137292464bdfe37a45b6bcda792cc73cebd046bdc7f0a12bf024ffee48b3971777c41cfc97becc1be7ffc9d6c",
+          "sha1": "fa057f76c84e8c37d00078fc6478beba953c4ec9"
+        },
+        "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/1.4.1%2Bforge/ClothConfig2-1.4.1.jar",
+        "filename": "ClothConfig2-1.4.1.jar",
+        "primary": true,
+        "size": 230274,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  }
+]

@@ -1,0 +1,3727 @@
+[
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "PqTAuCHp",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.5-1.3.11 (Neo)",
+    "version_number": "1.21.5-1.3.11",
+    "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
+    "changelog_url": null,
+    "date_published": "2025-05-31T21:11:32.571276Z",
+    "downloads": 66,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "865df9b93edd17dd7c0294d2e0c53de95f69c022",
+          "sha512": "af6a8dfb29be0d0fc838d4c65cbafaa0dc5d082c2484100838198a1fe02c3f1d0ad2b0cf28803af0b9f813d2458e1447394c873765645c7ce96d04d5af3a3dac"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/PqTAuCHp/ItemLocks-NeoForged-1.21.5-1.3.11.jar",
+        "filename": "ItemLocks-NeoForged-1.21.5-1.3.11.jar",
+        "primary": true,
+        "size": 81771,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "8TA34pXB",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.4-1.3.11 (Neo)",
+    "version_number": "1.21.4-1.3.11",
+    "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
+    "changelog_url": null,
+    "date_published": "2025-05-31T21:10:50.936232Z",
+    "downloads": 23,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a80de2fab1c4503c8dbbe68eeca8c4ab8ba35a82",
+          "sha512": "0e6232d14293d9fdd2ea8b67b553a580b31f4b3bfa6d78bcfbe712fb9b78955bab5dbed6a99c3ec7a88a670b3306ff64ae2236016296fffa0c66c0454f9583be"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/8TA34pXB/ItemLocks-NeoForged-1.21.4-1.3.11.jar",
+        "filename": "ItemLocks-NeoForged-1.21.4-1.3.11.jar",
+        "primary": true,
+        "size": 82578,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "ckL3ETzb",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.4-1.3.11 (Forge)",
+    "version_number": "1.21.4-1.3.11",
+    "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
+    "changelog_url": null,
+    "date_published": "2025-05-31T21:09:57.271097Z",
+    "downloads": 43,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "470cdb36112d80a338b6096e052439b7415f1759",
+          "sha512": "03731ca7c7bbd27c75901f022a0b3abb8448586c2b8f51f6709ae5201d1b9c9d78bd06302ee3a1c61e269ad67aeefd2d8f81e05e2c504837959bbbbc95a3a605"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ckL3ETzb/ItemLocks-Forge-1.21.4-1.3.11.jar",
+        "filename": "ItemLocks-Forge-1.21.4-1.3.11.jar",
+        "primary": true,
+        "size": 83515,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "ElM5TUYa",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.3-1.3.11 (Neo)",
+    "version_number": "1.21.3-1.3.11",
+    "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
+    "changelog_url": null,
+    "date_published": "2025-05-31T21:09:04.371051Z",
+    "downloads": 6,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b61842d6a58b34d5f3b5264007e6de2fd8c437fb55da7c4c1c87943b72a498b8b3b48bdb79fcc843640daa70ea3285144a4ba3167a1aa8f77e4712bf2bdcf4aa",
+          "sha1": "8d13fbb8643f47d18e7199f8214c8f42661f6d73"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ElM5TUYa/ItemLocks-NeoForged-1.21.3-1.3.11.jar",
+        "filename": "ItemLocks-NeoForged-1.21.3-1.3.11.jar",
+        "primary": true,
+        "size": 82577,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "7mo3lWd1",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.3-1.3.11 (Forge)",
+    "version_number": "1.21.3-1.3.11",
+    "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
+    "changelog_url": null,
+    "date_published": "2025-05-31T21:08:22.096117Z",
+    "downloads": 8,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f53ca862e0eb705738bbf4d8105017d03536cc0ab1db4ae8722812d064e49a6921ff6747fa01ac705356d1e542bc78992179ca1646609c3c7a7d6e4de993fe96",
+          "sha1": "0c0acec13d077b53d957c76d3afcace716cc766a"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/7mo3lWd1/ItemLocks-Forge-1.21.3-1.3.11.jar",
+        "filename": "ItemLocks-Forge-1.21.3-1.3.11.jar",
+        "primary": true,
+        "size": 83515,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "TtNHrpXm",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.1-1.3.11 (Neo)",
+    "version_number": "1.21.1-1.3.11",
+    "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
+    "changelog_url": null,
+    "date_published": "2025-05-31T21:07:32.523604Z",
+    "downloads": 211,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "6d48aa1e4093ee3fb8aac5820e9aa5af011d004c",
+          "sha512": "9cf685409e953204d7062018044909786610292967cde61ede9b4b7f4d86b653df6be470174807bdfcd79faff0e3b637cea2595a11990a8f32f1fc93c3082efb"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/TtNHrpXm/ItemLocks-NeoForged-1.21.1-1.3.11.jar",
+        "filename": "ItemLocks-NeoForged-1.21.1-1.3.11.jar",
+        "primary": true,
+        "size": 81581,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "eHUeJptT",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.1-1.3.11 (Forge)",
+    "version_number": "1.21.1-1.3.11",
+    "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
+    "changelog_url": null,
+    "date_published": "2025-05-31T21:06:30.505066Z",
+    "downloads": 40,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2e59ff3d2cc89881bcbe721aded68a5922e8b17b",
+          "sha512": "dba40d642a58c9062c77462a8050f17badd69ff37f470bde4c036f6bb4c7713c41fe96b08e203cf0f7707ede6e6d6ba064ffacbc0fb24842693d16969b5d1226"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/eHUeJptT/ItemLocks-Forge-1.21.1-1.3.11.jar",
+        "filename": "ItemLocks-Forge-1.21.1-1.3.11.jar",
+        "primary": true,
+        "size": 81467,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "NNkUoTWp",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.5-1.3.11 (Fabric)",
+    "version_number": "1.21.5-1.3.11",
+    "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
+    "changelog_url": null,
+    "date_published": "2025-05-30T18:13:28.243602Z",
+    "downloads": 1315,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7032cc48f9d69628d34b7579335f638f94d0829a04c769b9f3342911138f27bdfa9279c6906fc7b304f3f7918d318b90a416b48c44b0e0242867f6b2b0fd8b11",
+          "sha1": "6f0a3dc2dc3a1d796cefa47fb56bbcb3f3e7b4a8"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/NNkUoTWp/ItemLocks-Fabric-1.21.5-1.3.11.jar",
+        "filename": "ItemLocks-Fabric-1.21.5-1.3.11.jar",
+        "primary": true,
+        "size": 89160,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "fzU46VbX",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.4-1.3.10 (Fabric)",
+    "version_number": "1.21.4-1.3.10",
+    "changelog": "1.3.10\n- Fix overlap issue caused by legacy rendering code which made items disappear in various inventories with custom fonts",
+    "changelog_url": null,
+    "date_published": "2025-01-30T14:41:00.800703Z",
+    "downloads": 7314,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b59f40501e0b599b1a289db445842968fb082614e343b8ba9ca034bfe0a67a5bd80cb8a75a07126f050aba049e98ed808fbe0efbdf1478d1f120c5380a9d4948",
+          "sha1": "f2b7e61e0413a910e9e5b43f6055c4064483e19f"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/fzU46VbX/ItemLocks-Fabric-1.21.4-1.3.10.jar",
+        "filename": "ItemLocks-Fabric-1.21.4-1.3.10.jar",
+        "primary": true,
+        "size": 84876,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "bWQLP97X",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.4-1.3.9 (Fabric)",
+    "version_number": "1.21.4-1.3.9",
+    "changelog": "1.3.9\n- Now using Cloth Config\n- Added Mod Menu support\n- Old config GUI is now gone (new GUI is still accessible with the N (default) key)",
+    "changelog_url": null,
+    "date_published": "2025-01-08T17:16:48.139776Z",
+    "downloads": 1688,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "32937e0a6b7f56ffbc9eeefcf5a891a7eb7f6f59",
+          "sha512": "ab2aacd1f28ed4d3406c046f6cfd45d7835ec8a4f2b01a827db52022181f5b13ac8e684a6c37f087badfa609822e7ead2c8f6a471ce26c423bc558d28af17bbd"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/bWQLP97X/ItemLocks-Fabric-1.21.4-1.3.9.jar",
+        "filename": "ItemLocks-Fabric-1.21.4-1.3.9.jar",
+        "primary": true,
+        "size": 85060,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ou0wgkNr",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21.2-1.3.9 (Fabric)",
+    "version_number": "1.21.2-1.3.9",
+    "changelog": "1.3.9\n- Now using Cloth Config\n- Added Mod Menu support\n- Old config GUI is now gone (new GUI is still accessible with the N (default) key)",
+    "changelog_url": null,
+    "date_published": "2024-11-01T16:15:50.299973Z",
+    "downloads": 1891,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "8f56ea669b7c4c88f2e7a4791fe8083fd2c41222",
+          "sha512": "61afa49f315520abc94af9b3b446166a6e271f2a669ab665e5443581ec4efdfbab5ec40c4a4e9244196069c91bfb659f98f407ef1361d521719a4208af972fc1"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ou0wgkNr/ItemLocks-Fabric-1.21.2-1.3.9.jar",
+        "filename": "ItemLocks-Fabric-1.21.2-1.3.9.jar",
+        "primary": true,
+        "size": 85059,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "AmikGda1",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21-1.3.9 (Fabric)",
+    "version_number": "1.21-1.3.9",
+    "changelog": "1.3.9\n- Now using Cloth Config\n- Added Mod Menu support\n- Old config GUI is now gone (new GUI is still accessible with the N (default) key)",
+    "changelog_url": null,
+    "date_published": "2024-08-15T15:10:28.366987Z",
+    "downloads": 14274,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "82526829ca664e1a8bbbbe3c95f58bb286f9e613",
+          "sha512": "3b0df9fb8cf18f33e5aa5939f05568820137349b3686b90c65faca450be299e1f5b8fd4b5fff25804842909e78232921607fde067f64d161a7a8848e109c6e51"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/AmikGda1/ItemLocks-Fabric-1.21-1.3.9.jar",
+        "filename": "ItemLocks-Fabric-1.21-1.3.9.jar",
+        "primary": true,
+        "size": 85262,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "rFzr2yrd",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.21-1.3.8 (Fabric)",
+    "version_number": "1.21-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-08-10T13:39:22.700612Z",
+    "downloads": 413,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2e8d572e2601e9417b5fb6886cbece7717e32227e45062ac0468e712354a6a71767cb94a1d9418a2ed224b879196972a3d9eb3bdb686b3e46019cfb061a99ec4",
+          "sha1": "f50bddcb0739c6796346a47ba3dfb8c6293e08e0"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/rFzr2yrd/ItemLocks-Fabric-1.21-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.21-1.3.8.jar",
+        "primary": true,
+        "size": 98292,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "913XRXuG",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.6-1.3.8 (Fabric)",
+    "version_number": "1.20.6-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-05-31T09:22:59.312713Z",
+    "downloads": 1738,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d487459adbdbe5d4b72f9834795add2e653bb167524606cd7640deccc635b95686b8cdd4fc9f970fee3e04612e5eaa36f5d2b3d98b2c04ecbf18848c21c3b108",
+          "sha1": "926473960b49683bf66ed4b0141199abf4b1fdc1"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/913XRXuG/ItemLocks-Fabric-1.20.6-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.20.6-1.3.8.jar",
+        "primary": true,
+        "size": 98329,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "CxnlsuQa",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.5-1.3.8 (Fabric)",
+    "version_number": "1.20.5-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-05-31T09:22:37.57603Z",
+    "downloads": 87,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "8f891e8fe3e7c56519a36f47c9f4f9bfd33fa4c99707aa7512eac5f0ed80fd52d2ae367fe1b81f34481abcce3d662988316127127d8caccd0d737cf85f382dee",
+          "sha1": "e971c6a273da7d4e8fe756c8a59957e58bcc9064"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/CxnlsuQa/ItemLocks-Fabric-1.20.5-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.20.5-1.3.8.jar",
+        "primary": true,
+        "size": 98331,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "TNJlOCEH",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.4-1.3.8 (Fabric)",
+    "version_number": "1.20.4-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T15:04:47.744944Z",
+    "downloads": 5396,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ebd3293846033069433d3a7db8174e6c91d06387",
+          "sha512": "4bdbd959aa128d6042aa134d9b7ac2a3612c488a59fda075fd6aeb4c738fa53ef6ce2e3c50e9657990e5060073ba72e9effca91ea71dc4db211cef2558d3eab7"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/TNJlOCEH/ItemLocks-Fabric-1.20.4-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.20.4-1.3.8.jar",
+        "primary": true,
+        "size": 98829,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "BRWuoP9U",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.4-1.3.8 (Neo/Forge)",
+    "version_number": "1.20.4-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T15:04:18.663942Z",
+    "downloads": 374,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f301d57053f66344785ff6dc1b0191222f1cedd3",
+          "sha512": "e16fd1d5c4fc0aaee2f107db058d5a24155003fa44ee2b216f24fe19d4209a3074ff75b643686126da845c94534f2c44bd63aecdad656ab4d8a4282d95c64f1d"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/BRWuoP9U/ItemLocks-Forge-1.20.4-1.3.8.jar",
+        "filename": "ItemLocks-Forge-1.20.4-1.3.8.jar",
+        "primary": true,
+        "size": 88211,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "YakCmPPW",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.3-1.3.8 (Fabric)",
+    "version_number": "1.20.3-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T15:03:48.451754Z",
+    "downloads": 104,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e396fc97b3ba8128210be12a4b15b5ec4963642e72184460badefa6c00d110373c3c3b8c5922528fec43c019ef0570c83cebb643b88b894c74d3144646cc7afe",
+          "sha1": "e7ab88e345fe6ecf6eac31bba6429790a85a030d"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/YakCmPPW/ItemLocks-Fabric-1.20.3-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.20.3-1.3.8.jar",
+        "primary": true,
+        "size": 105568,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "AhIYxOcp",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.3-1.3.8 (Neo/Forge)",
+    "version_number": "1.20.3-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T15:03:21.710576Z",
+    "downloads": 53,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7cccd7797a4f640b507880bcfd16cb50ef25d40d1affdbe7b198f90a36c54a1c98eb4e08a8d24bb158a4db11cf5f3bcd127a8a6a81ed9f7a3693b585157a4e78",
+          "sha1": "906e4a160fb94b6eff07b4d4b9408a20b930d687"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/AhIYxOcp/ItemLocks-Forge-1.20.3-1.3.8.jar",
+        "filename": "ItemLocks-Forge-1.20.3-1.3.8.jar",
+        "primary": true,
+        "size": 88211,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "gi2yzoXn",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.8 (Fabric)",
+    "version_number": "1.20.2-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T15:02:45.137259Z",
+    "downloads": 622,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b2253ef13f4c4a860cbe0d73161e3dd18736ee25",
+          "sha512": "4539ca055dd0814c66a6e346f96f89f0a562195dbf4e380df4b31e2d3ad906893027f9af7ef736d41c567be687f771c0c456aa0e930416c95550bc74b386443d"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/gi2yzoXn/ItemLocks-Fabric-1.20.2-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.20.2-1.3.8.jar",
+        "primary": true,
+        "size": 105570,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "Fs9jyFL4",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.8 (Neo/Forge)",
+    "version_number": "1.20.2-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T15:02:01.689695Z",
+    "downloads": 147,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "58b6facc501e29f76e19a32f00e067b2c053e048",
+          "sha512": "756ec659756651e5ab542daf06c661924162a6a657c9a6a932dcfbd31ee2b249828d3cb56699e4eaab5cb950fc321d0a418633126ba58063017be3269146c431"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/Fs9jyFL4/ItemLocks-Forge-1.20.2-1.3.8.jar",
+        "filename": "ItemLocks-Forge-1.20.2-1.3.8.jar",
+        "primary": true,
+        "size": 88210,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "zZy69OiJ",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.8 (Fabric)",
+    "version_number": "1.20.1-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T15:01:13.703996Z",
+    "downloads": 80009,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "da930e30d1c7577c6b1a94b621f836e4a24b4e6cdf7ec6f58d87ffb5ed7577385ef60be85f7c97d9be429c328ac00f53ba3593cc0a3cbb602e66f3c7dbae238c",
+          "sha1": "47126a57af16dd3ae346169a00696544de8d56d6"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/zZy69OiJ/ItemLocks-Fabric-1.20.1-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.20.1-1.3.8.jar",
+        "primary": true,
+        "size": 105553,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "CRPoOE7V",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.8 (Neo/Forge)",
+    "version_number": "1.20.1-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T15:00:44.130511Z",
+    "downloads": 9691,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "bb0c29fda2e611d15b2f1126f84898343f75a860f258b0fcb4d2863e75f00b812a4056dccd0fb30933ee49286d0a658db54c1564be9c2b54b2c849fbde2bbc88",
+          "sha1": "5c8e526ba5d82d26db2de0183e7d62b6c02a6702"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/CRPoOE7V/ItemLocks-Forge-1.20.1-1.3.8.jar",
+        "filename": "ItemLocks-Forge-1.20.1-1.3.8.jar",
+        "primary": true,
+        "size": 88184,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "2y6VAD7R",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.8 (Fabric)",
+    "version_number": "1.20-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T14:59:59.574688Z",
+    "downloads": 814,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "8365d8d16b6fc679eb4037021210c40a733b5715",
+          "sha512": "a16d5a8e052408723dce54948624426a1cadd122699d109fb17ecaa93b16d618047d4024981437827f9ffd0b150d8becb70eed2fc350347190431762ebc73b60"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/2y6VAD7R/ItemLocks-Fabric-1.20-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.20-1.3.8.jar",
+        "primary": true,
+        "size": 105552,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "aQsy14CD",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.8 (Neo/Forge)",
+    "version_number": "1.20-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T14:59:32.121324Z",
+    "downloads": 130,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "564a9c9b1c21b42a286c12ecd1ac726a083b2094c7e376602d1ef2001a56d2414a137431d80807251d1d056044226cd49bfe79ec3f10f0cebfbf302df7c5d115",
+          "sha1": "2f97253c5866185d4a7bbae9a48f47bf6876a225"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/aQsy14CD/ItemLocks-Forge-1.20-1.3.8.jar",
+        "filename": "ItemLocks-Forge-1.20-1.3.8.jar",
+        "primary": true,
+        "size": 88201,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ymHHQXmn",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.8 (Fabric)",
+    "version_number": "1.19.4-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T14:58:45.489973Z",
+    "downloads": 1673,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "0fac4bf7753525450596c8a4845b54ef5bda07a5",
+          "sha512": "da34d92317a2e36ea3a0a1f992d0736019bcc1c780cc14a89aef04f1ab876efbd18938b2485f9802901408368a9171580b9900b8ba4e02f39434a4a42f04067e"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ymHHQXmn/ItemLocks-Fabric-1.19.4-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.19.4-1.3.8.jar",
+        "primary": true,
+        "size": 105409,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "JldDedcj",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.8 (Neo/Forge)",
+    "version_number": "1.19.4-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T14:58:25.391852Z",
+    "downloads": 226,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "66ca135528dfe41c6fcce6ee54139cda99c05543",
+          "sha512": "458e9f4263359030ecc4277a09d0242984e50c4677e00757e02a3b8cb96ab79529aedcdeffac29d01ae2b885921ad8d5a4f58e3e0fa415aa84e5ba3c016dc538"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/JldDedcj/ItemLocks-Forge-1.19.4-1.3.8.jar",
+        "filename": "ItemLocks-Forge-1.19.4-1.3.8.jar",
+        "primary": true,
+        "size": 87807,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "dJGIhwgm",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.8 (Fabric)",
+    "version_number": "1.19.3-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T14:57:45.223854Z",
+    "downloads": 367,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0b60bcd7b56c90e1c25e816126db2925b304fbe291bf14a4282bf2a6b359d75bf39cf424fd59c3f2067f31206a95cfe9d83b644e19d86dec19d6a1e8ad0dd2b2",
+          "sha1": "bfb8a685101046887ddf9d4d931521a89326be8b"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/dJGIhwgm/ItemLocks-Fabric-1.19.3-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.19.3-1.3.8.jar",
+        "primary": true,
+        "size": 105130,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "KYNtomkv",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.8 (Neo/Forge)",
+    "version_number": "1.19.3-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T14:57:23.595336Z",
+    "downloads": 108,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "cc01d1f94cb1fa8e141da82345c7e5b692a0d23d",
+          "sha512": "063a8e3cf632149024b65f4e4aac79c139b9a9634bac0a2cc4ec2732cc40539b4da2230d94bb483e67ed2effe21d151bc639fbcfabc0d45778aa838f60acce95"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/KYNtomkv/ItemLocks-Forge-1.19.3-1.3.8.jar",
+        "filename": "ItemLocks-Forge-1.19.3-1.3.8.jar",
+        "primary": true,
+        "size": 87601,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "2gw2ykUz",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.8 (Fabric)",
+    "version_number": "1.19.2-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T14:56:44.256703Z",
+    "downloads": 3138,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ceb0b2d749c5cdb7036fd8749cf8a0fa3035a7ae",
+          "sha512": "b56fc5c0978cba41163d522176ec6eaaeb53458b2dc855618b4e12f6aff20bfd815b45f22ed533947e05f3e80cfc3a64a7573307b26f59ec11e58fd955da8a07"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/2gw2ykUz/ItemLocks-Fabric-1.19.2-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.19.2-1.3.8.jar",
+        "primary": true,
+        "size": 105040,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "zKUsXHtz",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.8 (Neo/Forge)",
+    "version_number": "1.19.2-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T14:56:17.457094Z",
+    "downloads": 90744,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d1bf3f057e180857acb25ad28cfc5fb057428810",
+          "sha512": "77d1574ebb8d9d21b7d4b55c03079429237625d4883499993d06f1664ccca243e1b838f6a37d965380f93d15878775463e24d99b40f9e5953a5d3dff2f588b9e"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/zKUsXHtz/ItemLocks-Forge-1.19.2-1.3.8.jar",
+        "filename": "ItemLocks-Forge-1.19.2-1.3.8.jar",
+        "primary": true,
+        "size": 87391,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "B2Vx2w3A",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.8 (Fabric)",
+    "version_number": "1.18.2-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T14:55:05.299852Z",
+    "downloads": 1485,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c4c0ffb72089e38d30bc4fb2be02f45314262fe2",
+          "sha512": "01bc516ae66f581ed2c15473568f599205a2296270d2319a2a9a1c3decc7724b2df54f59bd0a805f8a517f26d4aaa55a207b543ca4a8e22f9a8b1f0991f75c78"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/B2Vx2w3A/ItemLocks-Fabric-1.18.2-1.3.8.jar",
+        "filename": "ItemLocks-Fabric-1.18.2-1.3.8.jar",
+        "primary": true,
+        "size": 105010,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "RWy8H6b4",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.8 (Neo/Forge)",
+    "version_number": "1.18.2-1.3.8",
+    "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
+    "changelog_url": null,
+    "date_published": "2024-03-01T14:54:37.956919Z",
+    "downloads": 942,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "80e774984d81485bedcdd17aad3a7c26b0594b3dcc497e5359849246bc54a28ddbb9fa7637e144fa5815f8f3e85eecda22af2e744bf5605fa5ced880cf18e07e",
+          "sha1": "cf6f54b354cde7ee800d38172dd15b364bcfc4ae"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/RWy8H6b4/ItemLocks-Forge-1.18.2-1.3.8.jar",
+        "filename": "ItemLocks-Forge-1.18.2-1.3.8.jar",
+        "primary": true,
+        "size": 84866,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "h9wDFG4R",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.4-1.3.7 (Fabric)",
+    "version_number": "1.20.4-1.3.7",
+    "changelog": "1.3.7\n- Fix fabric environment being set to all rather than client\n  - This fixes crash when user unknowingly included the mod in mods folder for servers",
+    "changelog_url": null,
+    "date_published": "2024-03-01T12:43:52.31375Z",
+    "downloads": 91,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "730c78ac36de2d57b5727db8b5a0183e8ec32224",
+          "sha512": "021ebaa6305c4aa9071a21a247df381d61b7aa2b4337db843dd6686ae822a9511075265e938a0419937b83075bd3fc8bdcb23e0e662c0710f64facf3b4983d88"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/h9wDFG4R/ItemLocks-Fabric-1.20.4-1.3.7.jar",
+        "filename": "ItemLocks-Fabric-1.20.4-1.3.7.jar",
+        "primary": true,
+        "size": 98759,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "OEWKOhW4",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.4-1.3.6 (Neo/Forge)",
+    "version_number": "1.20.4-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-03-01T12:43:17.818152Z",
+    "downloads": 52,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b18ba390fda23517c53b5ead8068d66520132474",
+          "sha512": "d266e6338cb861f31cd9457fbbb3ca216d6e05b1eeb445f5b86f5b2dcb514f7aaf673447b1b3bdc2bc33d4229ac4d32aa2160dc4759a1d5a72b35d6bf98b36d5"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/OEWKOhW4/ItemLocks-Forge-1.20.4-1.3.6.jar",
+        "filename": "ItemLocks-Forge-1.20.4-1.3.6.jar",
+        "primary": true,
+        "size": 88150,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "cx8Ng9c1",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.3-1.3.7 (Fabric)",
+    "version_number": "1.20.3-1.3.7",
+    "changelog": "1.3.7\n- Fix fabric environment being set to all rather than client\n  - This fixes crash when user unknowingly included the mod in mods folder for servers",
+    "changelog_url": null,
+    "date_published": "2024-03-01T12:42:18.011724Z",
+    "downloads": 49,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3db663a3896ef753d4cebe99cbdaf155fa9d2d2ce2f8dd0bf2322bb7c04bf9a42136e3f6ed93ec6691c10ecd56b41e3f1cad1d3e94642f0a40c50141ecc1ff65",
+          "sha1": "d7bdab809b87b9b969c22bb9f13cb80207238fe0"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/cx8Ng9c1/ItemLocks-Fabric-1.20.3-1.3.7.jar",
+        "filename": "ItemLocks-Fabric-1.20.3-1.3.7.jar",
+        "primary": true,
+        "size": 105499,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "iEFC9HC5",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.3-1.3.6 (Neo/Forge)",
+    "version_number": "1.20.3-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-03-01T12:41:33.806701Z",
+    "downloads": 18,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "72172c9b3971c333f29cd0410334bf63337d5a9d16e06e38eb95f5641c1165369928679d2645d236b09b20721101b9663ec007a215fa0157a39e1220ab95455a",
+          "sha1": "3163acf77dd14a290b9a9b4575202500c8248b44"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/iEFC9HC5/ItemLocks-Forge-1.20.3-1.3.6.jar",
+        "filename": "ItemLocks-Forge-1.20.3-1.3.6.jar",
+        "primary": true,
+        "size": 88149,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "SCXGoSqT",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.7 (Fabric)",
+    "version_number": "1.20.2-1.3.7",
+    "changelog": "1.3.7\n- Fix fabric environment being set to all rather than client\n  - This fixes crash when user unknowingly included the mod in mods folder for servers",
+    "changelog_url": null,
+    "date_published": "2024-02-07T13:18:34.686024Z",
+    "downloads": 156,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "780904aa7d8583643e9adc2d61a8c44e5478d8a381e4afb1b9bad362af1bb500cbb8b84f628f7e4df76b02726c941f4a0862b3f4634f71227605eeaaaf832e36",
+          "sha1": "d9932a55ca6c0d83afe072665a28cfa723c24fff"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/SCXGoSqT/ItemLocks-Fabric-1.20.2-1.3.7.jar",
+        "filename": "ItemLocks-Fabric-1.20.2-1.3.7.jar",
+        "primary": true,
+        "size": 105502,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "gIVxfJ0R",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.7 (Fabric)",
+    "version_number": "1.20.1-1.3.7",
+    "changelog": "1.3.7\n- Fix fabric environment being set to all rather than client\n  - This fixes crash when user unknowingly included the mod in mods folder for servers",
+    "changelog_url": null,
+    "date_published": "2024-02-07T13:18:07.825176Z",
+    "downloads": 517,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7e094576c98ce5bca08823dcc58e11e2a762df165bb7d90bc54629b1177df84ade576e743829db0eab9f7a9590e8f5444469171440551ac391456fd61645f151",
+          "sha1": "d178fb0c26240d99d2e8a9a3d4622a55d0a07daf"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/gIVxfJ0R/ItemLocks-Fabric-1.20.1-1.3.7.jar",
+        "filename": "ItemLocks-Fabric-1.20.1-1.3.7.jar",
+        "primary": true,
+        "size": 105485,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "DB0l95rV",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.7 (Fabric)",
+    "version_number": "1.20-1.3.7",
+    "changelog": "1.3.7\n- Fix fabric environment being set to all rather than client\n  - This fixes crash when user unknowingly included the mod in mods folder for servers",
+    "changelog_url": null,
+    "date_published": "2024-02-07T13:17:32.79646Z",
+    "downloads": 56,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "64527f860cfd1b03eb1cb77a2af8e71748ab445f097390f617126019cb005dfb99cb5ccc934a3b461f4aea96d32918d00b0efd777b0f40a59b80afe430664e4a",
+          "sha1": "aedc710c183cc8336f8ec7d4f8575b33ad7f9151"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/DB0l95rV/ItemLocks-Fabric-1.20-1.3.7.jar",
+        "filename": "ItemLocks-Fabric-1.20-1.3.7.jar",
+        "primary": true,
+        "size": 105483,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ieabMtJl",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.7 (Fabric)",
+    "version_number": "1.19.4-1.3.7",
+    "changelog": "1.3.7\n- Fix fabric environment being set to all rather than client\n  - This fixes crash when user unknowingly included the mod in mods folder for servers",
+    "changelog_url": null,
+    "date_published": "2024-02-07T13:17:16.107053Z",
+    "downloads": 80,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1c17c4fb4bc4224f79030f63c7e776604010c384",
+          "sha512": "84763d0910445255f0602fa26ebb92e2668a6ffa334d6c8e28627fb5487dcffe2d28294bf3ee0b81ca2aca9535324c22864f15ae660e524bd2fd557cff6575fc"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ieabMtJl/ItemLocks-Fabric-1.19.4-1.3.7.jar",
+        "filename": "ItemLocks-Fabric-1.19.4-1.3.7.jar",
+        "primary": true,
+        "size": 105341,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "2XY7yziL",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.7 (Fabric)",
+    "version_number": "1.19.3-1.3.7",
+    "changelog": "1.3.7\n- Fix fabric environment being set to all rather than client\n  - This fixes crash when user unknowingly included the mod in mods folder for servers",
+    "changelog_url": null,
+    "date_published": "2024-02-07T13:16:59.9266Z",
+    "downloads": 59,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "336a28690303fa48e1ca14b2f7bbf6ad5fa2de06",
+          "sha512": "9d5a6d00d625616a36fa179686ee73514ba2d64bae7f38d570299e184f9b07c8a6f46c9c7d6b57571b261175dc86ca1d2fe4186897780895fe427c06358c15ac"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/2XY7yziL/ItemLocks-Fabric-1.19.3-1.3.7.jar",
+        "filename": "ItemLocks-Fabric-1.19.3-1.3.7.jar",
+        "primary": true,
+        "size": 105062,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ph87TjCg",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.7 (Fabric)",
+    "version_number": "1.19.2-1.3.7",
+    "changelog": "1.3.7\n- Fix fabric environment being set to all rather than client\n  - This fixes crash when user unknowingly included the mod in mods folder for servers",
+    "changelog_url": null,
+    "date_published": "2024-02-07T13:16:26.359656Z",
+    "downloads": 110,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f640ffa8965ba2f97f4c936cc41a8d09178bb2f2273c46f542f8aa6e03d1880aa57df03f6b0511069d929e89391beb17b05fc2109c97d795399592390cb2f02e",
+          "sha1": "0a00dbe36159e5b46bcb5defe46eccd4a9f771cf"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ph87TjCg/ItemLocks-Fabric-1.19.2-1.3.7.jar",
+        "filename": "ItemLocks-Fabric-1.19.2-1.3.7.jar",
+        "primary": true,
+        "size": 104971,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "zq7mzPa7",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.7 (Fabric)",
+    "version_number": "1.18.2-1.3.7",
+    "changelog": "1.3.7\n- Fix fabric environment being set to all rather than client\n  - This fixes crash when user unknowingly included the mod in mods folder for servers",
+    "changelog_url": null,
+    "date_published": "2024-02-07T13:16:01.534887Z",
+    "downloads": 120,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2017165034326a3443066a22733db3ccfc219620",
+          "sha512": "c1cdcecf82591f859041ece30de6628c70defeb7f11365bfcc10f9356253668cdadefd1d3904f725f29e4c0e29d46f6da875741fc13a8e80f9530d15b457ab16"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/zq7mzPa7/ItemLocks-Fabric-1.18.2-1.3.7.jar",
+        "filename": "ItemLocks-Fabric-1.18.2-1.3.7.jar",
+        "primary": true,
+        "size": 104939,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "j0kDaInM",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.6 (Fabric)",
+    "version_number": "1.20.2-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:51:10.580273Z",
+    "downloads": 225,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "8c1f1df0aff4873ad09064dcfc1a5c975e33aa19",
+          "sha512": "8ecf6179da7dac7d63a77f3e80f4f97c56f4cce2e61540658e926b16e377f1980c7632b0cc56a518103b2cac4f5779dc0ad3233b8656acdac1b079e50c444f8b"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/j0kDaInM/ItemLocks-Fabric-1.20.2-1.3.6.jar",
+        "filename": "ItemLocks-Fabric-1.20.2-1.3.6.jar",
+        "primary": true,
+        "size": 105501,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "UPcyZJvv",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.6 (Neo/Forge)",
+    "version_number": "1.20.2-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:50:46.543276Z",
+    "downloads": 55,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d0f8faab722991f3c69b5987e9950b1ac8c0500589bed1b4a9fb3987a3ed497676213bed206a8cb00a0c8746a7ce6b2d6bfda8a4f1a111d961a4ad5b2c8060f6",
+          "sha1": "bff75b52910868b8167e949c484a4fa06c7376d1"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/UPcyZJvv/ItemLocks-Forge-1.20.2-1.3.6.jar",
+        "filename": "ItemLocks-Forge-1.20.2-1.3.6.jar",
+        "primary": true,
+        "size": 88149,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "SaWcEnBO",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.6 (Fabric)",
+    "version_number": "1.20.1-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:50:04.675653Z",
+    "downloads": 399083,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "61447573db734bb7a4f020307e1c17c67f38cded",
+          "sha512": "a867ae0fd00501077820b5020c38b45dd90eb1d02d55cd3cd593de089adf9ed61e6a838630e26d5a38948cddbd8d3117935fd41cdff713dc49b4d1908f7197b1"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/SaWcEnBO/ItemLocks-Fabric-1.20.1-1.3.6.jar",
+        "filename": "ItemLocks-Fabric-1.20.1-1.3.6.jar",
+        "primary": true,
+        "size": 105484,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "iNtywfQD",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.6 (Neo/Forge)",
+    "version_number": "1.20.1-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:49:43.046306Z",
+    "downloads": 322,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9d0dc368e09c06111ddc6fa273cb80e6aab18e98",
+          "sha512": "95f56f0e647189eac1a469228a10ffe0aba7b57711a473d1f416620664e1d2632e3af257b2d24fd19f2f7273837977cc32efa7ecf64268262945a29d571ed4f7"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/iNtywfQD/ItemLocks-Forge-1.20.1-1.3.6.jar",
+        "filename": "ItemLocks-Forge-1.20.1-1.3.6.jar",
+        "primary": true,
+        "size": 88122,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "iUEzBO1h",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.6 (Fabric)",
+    "version_number": "1.20-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:48:59.153867Z",
+    "downloads": 69,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "695b0ba94a3633b1fe54b3098efe62cad0db72ba10366f0824b8bf55bf631e47dc948b32b15ec8bffb488892767169571b7ca822224627b651116e67c66fe939",
+          "sha1": "10172724b257d6a43e077ba9ed3c47e4a4042656"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/iUEzBO1h/ItemLocks-Fabric-1.20-1.3.6.jar",
+        "filename": "ItemLocks-Fabric-1.20-1.3.6.jar",
+        "primary": true,
+        "size": 105483,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "x2SK6f2b",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.6 (Neo/Forge)",
+    "version_number": "1.20-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:47:50.804847Z",
+    "downloads": 34,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "255f581c7a1ac7c25c81360dc55b9e7595631342",
+          "sha512": "8a29600210544e5baf7ae9613a30bca6df1cce5ac25c0e2873fe299ff139ae08c5ead21e74809ee400ac57f32cb790afa901ae581bd50a5ab06dab0afcac7b3d"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/x2SK6f2b/ItemLocks-Forge-1.20-1.3.6.jar",
+        "filename": "ItemLocks-Forge-1.20-1.3.6.jar",
+        "primary": true,
+        "size": 88140,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "qpBdOmVV",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.6 (Fabric)",
+    "version_number": "1.19.4-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:47:16.739075Z",
+    "downloads": 92,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c6a8bf552e38c40c82f480606a368f94f00bf18c",
+          "sha512": "b4d65248acbc4e772c2777e2640872fb23b02966d8bae20a595af92413bb42c0feb78b2f2d8db0b5602b2e190ce573aabc51daf3c966064b575c8dcb752959a3"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/qpBdOmVV/ItemLocks-Fabric-1.19.4-1.3.6.jar",
+        "filename": "ItemLocks-Fabric-1.19.4-1.3.6.jar",
+        "primary": true,
+        "size": 105340,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "De0pfvyU",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.6 (Neo/Forge)",
+    "version_number": "1.19.4-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:46:25.983313Z",
+    "downloads": 42,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f843400ce9d94cf25bc3a6282002e6da0d1a11a28eef4d894ab54c3f3dc087e77041c9c2b8479fec98159c000ddfc67de5f8670f2073fe9f817b0096d0843006",
+          "sha1": "717eb81912e68b701ca87cb0c6981dec13655c8e"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/De0pfvyU/ItemLocks-Forge-1.19.4-1.3.6.jar",
+        "filename": "ItemLocks-Forge-1.19.4-1.3.6.jar",
+        "primary": true,
+        "size": 87745,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "P22y6CK5",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.6 (Fabric)",
+    "version_number": "1.19.3-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:45:50.196007Z",
+    "downloads": 67,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ac034d663bdc494205cc0a25391edcc3cbd8617b",
+          "sha512": "bc019f76f101c5f9951dd21bfdd21a2d8f746ff59b8cc1b01c10c2d8189a8dfd3c8cd2b3c22d3b561f5690dec7e9ebe301ea20b55cbe706a6b2d7927a19b7d9e"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/P22y6CK5/ItemLocks-Fabric-1.19.3-1.3.6.jar",
+        "filename": "ItemLocks-Fabric-1.19.3-1.3.6.jar",
+        "primary": true,
+        "size": 105061,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "J9JXVA42",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.6 (Neo/Forge)",
+    "version_number": "1.19.3-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:45:21.964774Z",
+    "downloads": 31,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "a31fd48bfccebb526f4622c8b50956a567a51b15b12d1744b07ab54f5cec74f1fc4ac788d21ac60a96dd53432a9f000c7f2679dfc53be4b40ff9eceeab6d9c21",
+          "sha1": "9355a3af1e516e5edc5e1277ac2e8d32fc35aafd"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/J9JXVA42/ItemLocks-Forge-1.19.3-1.3.6.jar",
+        "filename": "ItemLocks-Forge-1.19.3-1.3.6.jar",
+        "primary": true,
+        "size": 87540,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "6iwMKrgB",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.6 (Fabric)",
+    "version_number": "1.19.2-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:44:41.271698Z",
+    "downloads": 117,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3b5748334952733fe8713bb3bfea9b162abeebbca9d3b6b59265d4d8797cc1047aa3efe9b403528ce98e6e79d036e61265579c5b6794133d94742ef2e8be2450",
+          "sha1": "25317a6907c75ac1925525c036ea83fbfbc4ae0a"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/6iwMKrgB/ItemLocks-Fabric-1.19.2-1.3.6.jar",
+        "filename": "ItemLocks-Fabric-1.19.2-1.3.6.jar",
+        "primary": true,
+        "size": 104970,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "5euo1q7o",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.6 (Neo/Forge)",
+    "version_number": "1.19.2-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:44:18.643708Z",
+    "downloads": 114,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "0807c412e5267aa029d9e03196957f844cdddb7b",
+          "sha512": "67a537dd2da33659f8209e18e2507beae7624481eb0188c53cb49f1a8a4077eb91521250a0694dd3b0996fa36a28251d80ee3110836731c5b33347269a769b4e"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/5euo1q7o/ItemLocks-Forge-1.19.2-1.3.6.jar",
+        "filename": "ItemLocks-Forge-1.19.2-1.3.6.jar",
+        "primary": true,
+        "size": 87329,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ICFrkvbS",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.6 (Fabric)",
+    "version_number": "1.18.2-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:43:26.909535Z",
+    "downloads": 103,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "da0f5c814ff0ceea69521ebbf963fd2aa9cf90b99d1c1412078136d414fe784d68fb9c675f960588090480bb06352228ce879710cd689b19a41a1de495aee6ea",
+          "sha1": "c13b7b3c691bfa472840b64689e603910a68e7ed"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ICFrkvbS/ItemLocks-Fabric-1.18.2-1.3.6.jar",
+        "filename": "ItemLocks-Fabric-1.18.2-1.3.6.jar",
+        "primary": true,
+        "size": 104936,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "14BYZIfm",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.6 (Neo/Forge)",
+    "version_number": "1.18.2-1.3.6",
+    "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
+    "changelog_url": null,
+    "date_published": "2024-01-06T15:43:05.018627Z",
+    "downloads": 75,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f0c5d6e7578c54dedd1ef7520d70a2c64fc3d38ad9d1112733af4809b5196174656a52d529c14b15532a46c8a99e810fc07b1da0813ac08c660879b31b9492cd",
+          "sha1": "d1057c09bc3f3e984bac9b50ff7ed99fd3ceeaef"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/14BYZIfm/ItemLocks-Forge-1.18.2-1.3.6.jar",
+        "filename": "ItemLocks-Forge-1.18.2-1.3.6.jar",
+        "primary": true,
+        "size": 84803,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "uzUhu63L",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.5 (Fabric)",
+    "version_number": "1.20.2-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:40:52.231689Z",
+    "downloads": 112,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "493a24f0e61c4a9df306a4a15edd6b9b9923d8ee",
+          "sha512": "50dada247ab93a9a1ad4392a5d793a8647fa3e6f0aed07613c47d5a5c716d7a8171596255248a190ddf1f1e39b8268b3358626c9fbcb8ffa6fd74369ee338d03"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/uzUhu63L/ItemLocks-Fabric-1.20.2-1.3.5.jar",
+        "filename": "ItemLocks-Fabric-1.20.2-1.3.5.jar",
+        "primary": true,
+        "size": 105047,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "BLiKiChh",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.5 (Neo/Forge)",
+    "version_number": "1.20.2-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:40:23.833777Z",
+    "downloads": 35,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5053eb4bd3e366469d4587c8cb8577464fd8bafcd3239c3ac9653ae8bb4502c126398e34f4a962b3ddf6299657bbb41c71eb290436c40969137e770d49f0f6d7",
+          "sha1": "dbbd0ee94bb0185131cb92e17c5e8419b4ee8011"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/BLiKiChh/ItemLocks-Forge-1.20.2-1.3.5.jar",
+        "filename": "ItemLocks-Forge-1.20.2-1.3.5.jar",
+        "primary": true,
+        "size": 87803,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "gwoiUkYO",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.5 (Fabric)",
+    "version_number": "1.20.1-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:39:40.018854Z",
+    "downloads": 188,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6b2cb2342652b2ad0979abf5b97d9227c8d4fd40a656cee1651a517159dd1701798c84df756ef5c2a94dfc462959e5fc87887baa613e4c636a0d9557cf5e31cc",
+          "sha1": "20b0e424f0af8e9a76f2729051579009de478442"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/gwoiUkYO/ItemLocks-Fabric-1.20.1-1.3.5.jar",
+        "filename": "ItemLocks-Fabric-1.20.1-1.3.5.jar",
+        "primary": true,
+        "size": 105025,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "Wcq2b85N",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.5 (Neo/Forge)",
+    "version_number": "1.20.1-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:39:11.718766Z",
+    "downloads": 64,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "080516c4a71750e9a5f4041c9c032ef5843a78d1",
+          "sha512": "982836c94c88709b54de05e1ee61c12496c49fac067ea6ec88ed52e8480a214de0a1419f998c3b8861d5c469a90922ffffb126268a742b4d1fdeebc4097efe8a"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/Wcq2b85N/ItemLocks-Forge-1.20.1-1.3.5.jar",
+        "filename": "ItemLocks-Forge-1.20.1-1.3.5.jar",
+        "primary": true,
+        "size": 87779,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "UODMeAyR",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.5 (Fabric)",
+    "version_number": "1.20-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:37:50.254978Z",
+    "downloads": 63,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1f0164b67f3ac7155725034b6158ead00f87f5cc23acbe93edb6dbbb960a20a4b5a3d9242b76a5237b7db28f8f56e0c06a4e2f422452445bbf59190e724e93dd",
+          "sha1": "6b097bcb199377f7a2954a777a1dc3fedbc1e67e"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/UODMeAyR/ItemLocks-Fabric-1.20-1.3.5.jar",
+        "filename": "ItemLocks-Fabric-1.20-1.3.5.jar",
+        "primary": true,
+        "size": 105025,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "58DSWxP3",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.5 (Neo/Forge)",
+    "version_number": "1.20-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:36:58.183404Z",
+    "downloads": 47,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e73edef66126321bbc5b1dae3e2ec2c896fa954a0e9360d5c66c3e9f14880c787fd6b88358bf22a2d4dc985662d6ff461a4cedf2254c84d798272c2571f2da95",
+          "sha1": "12b48cdf83f9d018cc499e5e405d21e2af35bb54"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/58DSWxP3/ItemLocks-Forge-1.20-1.3.5.jar",
+        "filename": "ItemLocks-Forge-1.20-1.3.5.jar",
+        "primary": true,
+        "size": 87799,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "boJKuOkI",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.5 (Fabric)",
+    "version_number": "1.19.4-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:35:48.494251Z",
+    "downloads": 69,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "6f2009435ed0692a37331b337c45b91e56731110",
+          "sha512": "d3c8eed9aa2cdef1e26cada1288973c3ea3ad5f837d44594ef03f82021347cef3696cbac19c1368c64dc3b4a4f6c19e4df37bcfb63da7213f8fb602319a86d2f"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/boJKuOkI/ItemLocks-Fabric-1.19.4-1.3.5.jar",
+        "filename": "ItemLocks-Fabric-1.19.4-1.3.5.jar",
+        "primary": true,
+        "size": 104885,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "nCq4Pv4s",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.5 (Neo/Forge)",
+    "version_number": "1.19.4-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:35:20.908735Z",
+    "downloads": 50,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "bd48fe991e0ad0b821d84b4034179f937b97337b866f13037a587369e9848995e63da4439f3bd520edfef4d1af81db9787022dd52b1118bc90f2f991ff7a1c0f",
+          "sha1": "b679981f8ac9d5a85c18d0cf8f6da4e0514ff1ec"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/nCq4Pv4s/ItemLocks-Forge-1.19.4-1.3.5.jar",
+        "filename": "ItemLocks-Forge-1.19.4-1.3.5.jar",
+        "primary": true,
+        "size": 87393,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "cP6huwFr",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.5 (Fabric)",
+    "version_number": "1.19.3-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:34:30.024735Z",
+    "downloads": 47,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "593dfcb42f8165ac90882a59c15ec43c30ecc87e25b003eaf21ef51b892da51a9dd2f8adffa7c72a20fba79566ce90734b5f4396336cb7213a7e35beef26a1de",
+          "sha1": "33a92b63b1c8f3a493b453167aac88e496cec208"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/cP6huwFr/ItemLocks-Fabric-1.19.3-1.3.5.jar",
+        "filename": "ItemLocks-Fabric-1.19.3-1.3.5.jar",
+        "primary": true,
+        "size": 104611,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "6t1BG4TH",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.5 (Neo/Forge)",
+    "version_number": "1.19.3-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:34:09.412686Z",
+    "downloads": 41,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9dc4f6215be303677b0406a03283b24dd92b2e4b",
+          "sha512": "e4e65c2434e0a6186e4032900ee6f8b1426ddc73bb2c7bcd320ea1557092948d55589669c2bb8895db645220e5cf050182616e2dbfa91fad3ad85e4944ceafe5"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/6t1BG4TH/ItemLocks-Forge-1.19.3-1.3.5.jar",
+        "filename": "ItemLocks-Forge-1.19.3-1.3.5.jar",
+        "primary": true,
+        "size": 87196,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "pPbx0GEW",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.5 (Fabric)",
+    "version_number": "1.19.2-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:33:02.115962Z",
+    "downloads": 83,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "13d44be81ec447045a36990c9a6f56fd13845a96",
+          "sha512": "3f81a975a0fc8448e3ac94cb1eaedca79656c48ce40f3a1816c01d8bfc23b560bc90c53bbba0fc68d17445a99c6618292a4f9ae04df5b093918047537369dc75"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/pPbx0GEW/ItemLocks-Fabric-1.19.2-1.3.5.jar",
+        "filename": "ItemLocks-Fabric-1.19.2-1.3.5.jar",
+        "primary": true,
+        "size": 104513,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "Lv5dPydK",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.5 (Neo/Forge)",
+    "version_number": "1.19.2-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:32:41.748807Z",
+    "downloads": 51,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0c17dcccfff1a9e7d44a5fa696a0a2e2e6548ac4a40b3c8cd3bdf118dcfd6cba7a62d67c74b334aa7e24ea35cbbe671a699a90239257af86becf20741a87d1d4",
+          "sha1": "eba69fa9362447a3ec64f815256a73719f285ca3"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/Lv5dPydK/ItemLocks-Forge-1.19.2-1.3.5.jar",
+        "filename": "ItemLocks-Forge-1.19.2-1.3.5.jar",
+        "primary": true,
+        "size": 86996,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "aRDr4KkH",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.5 (Fabric)",
+    "version_number": "1.18.2-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:31:55.498055Z",
+    "downloads": 64,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "75d850bf8057a432936ded8134b97301e61f05d0",
+          "sha512": "dbbcbec73a62cc55d2c41ba5d790d919551b391e8d39dd3e4edd478bf92aaf6465b3ae6ab6183515c742bda4496282f248174ab608f06cacdc5dbec8cbef92d2"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/aRDr4KkH/ItemLocks-Fabric-1.18.2-1.3.5.jar",
+        "filename": "ItemLocks-Fabric-1.18.2-1.3.5.jar",
+        "primary": true,
+        "size": 104474,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "h2NP2Il0",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.5 (Neo/Forge)",
+    "version_number": "1.18.2-1.3.5",
+    "changelog": "1.3.5\n- Add scrolling to config screen\n- Fix ability to swap locked slots to off-hand when the main-hand slot is locked",
+    "changelog_url": null,
+    "date_published": "2023-12-27T13:31:13.00239Z",
+    "downloads": 58,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "fb0f555e32593f22e3a79b254ad56996ffc2717c90187ea4dc54c1647be472ee2dcd2c8bdf2e50dfcd0d8eab856c6c9a704d9cb9d8b6c0f7b5aa7583776231a8",
+          "sha1": "88369db3f2ccb2f115e148a92b57c2375a6e1bc9"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/h2NP2Il0/ItemLocks-Forge-1.18.2-1.3.5.jar",
+        "filename": "ItemLocks-Forge-1.18.2-1.3.5.jar",
+        "primary": true,
+        "size": 84457,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "T2jYbOTO",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.4 (Fabric)",
+    "version_number": "1.20.2-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:32:19.62885Z",
+    "downloads": 236,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e5dca6dad080743ce8e7841e0ff9d905bb9a6beb34464707a131698c9ce3afb1445fd48ed3b2c6d44907760e4fa35293e75d49ff6d6c11c31f85fb3609a85af9",
+          "sha1": "f79d89794b8bb4a3ed6e0697ef0897e26428ad93"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/T2jYbOTO/ItemLocks-Fabric-1.20.2-1.3.4.jar",
+        "filename": "ItemLocks-Fabric-1.20.2-1.3.4.jar",
+        "primary": true,
+        "size": 104287,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "kXtsD1bo",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.4 (Neo/Forge)",
+    "version_number": "1.20.2-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:31:49.55141Z",
+    "downloads": 46,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f4580f1a0c7928a2d18ef4bbd86d6984f166665b",
+          "sha512": "1e7e2e358669a60b52e117fcbf07bece746510fc69b8dc5ca48d6d434f7897f99d505c969519eab191f3ed05f82e3ff2ec1380adc100db6a4726a2213c3fe930"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/kXtsD1bo/ItemLocks-Forge-1.20.2-1.3.4.jar",
+        "filename": "ItemLocks-Forge-1.20.2-1.3.4.jar",
+        "primary": true,
+        "size": 86896,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "nNDXWQKZ",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.4 (Fabric)",
+    "version_number": "1.20.1-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:31:08.544833Z",
+    "downloads": 398,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "792d73f0a30683c64a7e74dd68b766101a9217fb",
+          "sha512": "e359269a5fa349e3907ef182167df22fd97053ab107a43268fd1387b4d7dcda6a20990ab52103321a897330846143225a2cf1e9326249825322fd6f2df522170"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/nNDXWQKZ/ItemLocks-Fabric-1.20.1-1.3.4.jar",
+        "filename": "ItemLocks-Fabric-1.20.1-1.3.4.jar",
+        "primary": true,
+        "size": 104294,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "LKkfYAdt",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.4 (Neo/Forge)",
+    "version_number": "1.20.1-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:30:34.381526Z",
+    "downloads": 114,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c5abbfe5cdc79e924f8fa9f4468a2ece5d95b36f63cec45de066e89b3c2109fc2a97728ce795f58466d247be3ef4659016c5a2484ef8feeeb07d7d668140b9e6",
+          "sha1": "cfd129741f88de6c4a6341ea896788941f8f1a56"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/LKkfYAdt/ItemLocks-Forge-1.20.1-1.3.4.jar",
+        "filename": "ItemLocks-Forge-1.20.1-1.3.4.jar",
+        "primary": true,
+        "size": 86902,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "qslj8BHt",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.4 (Fabric)",
+    "version_number": "1.20-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:29:50.390191Z",
+    "downloads": 56,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b3070edc15cb0309f25131c8f450ff552d0548a3",
+          "sha512": "8519a606c2085e14dcf09e4851976076be69ecc4694c57818294cadfbe32d6fa269aa1f86681a636ae18940e0f5b4c81b4ac4ba9495e1f147bb911f7c5c22698"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/qslj8BHt/ItemLocks-Fabric-1.20-1.3.4.jar",
+        "filename": "ItemLocks-Fabric-1.20-1.3.4.jar",
+        "primary": true,
+        "size": 104293,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "2E9xilz6",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.4 (Neo/Forge)",
+    "version_number": "1.20",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:29:24.381069Z",
+    "downloads": 61,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3e6e082423973849ca6dbea6eed3d87a768144f339254242c2f5a250d0f892ee831e7dd16bef1ac21619a9776ae2af87718dfaf0d9a6cc921895665dd940fa6c",
+          "sha1": "9ad6450d76f92e1945454e6d65b8c31e1df201a8"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/2E9xilz6/ItemLocks-Forge-1.20-1.3.4.jar",
+        "filename": "ItemLocks-Forge-1.20-1.3.4.jar",
+        "primary": true,
+        "size": 86917,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "dfEphzAN",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.4 (Fabric)",
+    "version_number": "1.19.4-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:28:39.377042Z",
+    "downloads": 82,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0535a00a2fac02d6db8dc0db85a4ba54e6773cf54d194e711d1efca9dbe5e5dffa67e430452f6146735a297555048a362994b8f9c8984c919f29a5529b4058de",
+          "sha1": "2b0580979588d3cc4bf0bef06869d1120d84601d"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/dfEphzAN/ItemLocks-Fabric-1.19.4-1.3.4.jar",
+        "filename": "ItemLocks-Fabric-1.19.4-1.3.4.jar",
+        "primary": true,
+        "size": 104149,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "cZWbJXLB",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.4 (Neo/Forge)",
+    "version_number": "1.19.4-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:27:52.537769Z",
+    "downloads": 33,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a150248107c20881866baf1a4e64e284d7b1668d",
+          "sha512": "7e27b470b2786be0bfda7bb1aa7184d509ab22c5a95d186db9bf17b295f50246d446b21288a5b97bc62527dab19f9c0d5d3cc2d8209522e6bd44bc6889a05445"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/cZWbJXLB/ItemLocks-Forge-1.19.4-1.3.4.jar",
+        "filename": "ItemLocks-Forge-1.19.4-1.3.4.jar",
+        "primary": true,
+        "size": 86522,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "uVAUDzlk",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.4 (Fabric)",
+    "version_number": "1.19.3-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:27:10.067243Z",
+    "downloads": 62,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b270df536485fb07195ff1ec4d005021184ea324f09c3e1484efcd1421afee30285da826f751dec42bb9c42784b20654c1340aaf05b2795663962803e7360a1d",
+          "sha1": "391edf419cbe0a976588c2fcda1a05ccecf555db"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/uVAUDzlk/ItemLocks-Fabric-1.19.3-1.3.4.jar",
+        "filename": "ItemLocks-Fabric-1.19.3-1.3.4.jar",
+        "primary": true,
+        "size": 103876,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "4GSPtjPI",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.4 (Neo/Forge)",
+    "version_number": "1.19.3-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:26:39.06478Z",
+    "downloads": 30,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e13bf8c16fecc370dbd56495bb5715c84b64b559",
+          "sha512": "270eaadb4a0f618d48ccc7aac88495eb1ceec56a3af1cb4a516749078565d9129bc45b8faa1453144ee11e730c778616179b110fdcb4c71e4016f33770835396"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/4GSPtjPI/ItemLocks-Forge-1.19.3-1.3.4.jar",
+        "filename": "ItemLocks-Forge-1.19.3-1.3.4.jar",
+        "primary": true,
+        "size": 86317,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "V1AZ9P05",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.4 (Fabric)",
+    "version_number": "1.19.2-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:24:34.161668Z",
+    "downloads": 145,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "5baa6a3ffc7293f72b400d3cda831cca81b38c28",
+          "sha512": "abe0edeac918dd6f8dbb86f81ea92e0a0830549a71157ad86df8361f8f403158d754d6bf4c71519efe54c3e3488bd97e46eecacdf5122181a7b64d5879cfba80"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/V1AZ9P05/ItemLocks-Fabric-1.19.2-1.3.4.jar",
+        "filename": "ItemLocks-Fabric-1.19.2-1.3.4.jar",
+        "primary": true,
+        "size": 103767,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "RCceR420",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.4 (Neo/Forge)",
+    "version_number": "1.19.2-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:24:00.19372Z",
+    "downloads": 56,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e70d3377795fb81c13fb1cd967d571eac41392efa9013c0f87d7e3e1c66150cb0f02a2b9a294fd4dfd2e38498980ee00cdcddce9195a6186f63eecfeedbf422e",
+          "sha1": "a19e21aa8665df2e8239ceb950c22399a6a105f7"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/RCceR420/ItemLocks-Forge-1.19.2-1.3.4.jar",
+        "filename": "ItemLocks-Forge-1.19.2-1.3.4.jar",
+        "primary": true,
+        "size": 86122,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "b8zEjJeC",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.4 (Fabric)",
+    "version_number": "1.18.2-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:23:14.273424Z",
+    "downloads": 101,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "cda68bf383ad9f7c1fedc0890933360b72a2830e",
+          "sha512": "547b077832d1a11da3a530dd48ec5d3c0adf76b4b2e914981cea90946938b54cad36af21e9f8d0d4200a7b24d6ba0a80682d62af127f048da94087b9d7033055"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/b8zEjJeC/ItemLocks-Fabric-1.18.2-1.3.4.jar",
+        "filename": "ItemLocks-Fabric-1.18.2-1.3.4.jar",
+        "primary": true,
+        "size": 103737,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "zYQ9G9LT",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.4 (Neo/Forge)",
+    "version_number": "1.18.2-1.3.4",
+    "changelog": "1.3.4\n\n- Add ability to disable lock visibility on the hotbar",
+    "changelog_url": null,
+    "date_published": "2023-11-19T23:22:42.387126Z",
+    "downloads": 73,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6778419d71c88cec729cba56320c95c64c032e57a8b859e51fe6163dd77cc1c44bf674618b156757d5ae539cc1a3645b9676ce05038dd08e2925d2847579edfe",
+          "sha1": "33ced8d8d09698da95391ecae2e0052ce61a83b0"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/zYQ9G9LT/ItemLocks-Forge-1.18.2-1.3.4.jar",
+        "filename": "ItemLocks-Forge-1.18.2-1.3.4.jar",
+        "primary": true,
+        "size": 83597,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "fVG9iIz7",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.3 (Fabric)",
+    "version_number": "1.20.2-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-10-19T07:57:39.127631Z",
+    "downloads": 332,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6ccc83237f9494f6c7b6d767110fb9b05335cfd759fc0ca08315137dfa8a4c05b34558e60b9f6d5f79cf1d22eb70ea4a4bc4e7cb1e19a72c7717829503b6fa8f",
+          "sha1": "ac87446e7f1fd54cffca7a0760c0cb710432c977"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/fVG9iIz7/ItemLocks-Fabric-1.20.2-1.3.3.jar",
+        "filename": "ItemLocks-Fabric-1.20.2-1.3.3.jar",
+        "primary": true,
+        "size": 102851,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "VmKeapeA",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.2-1.3.3 (Neo/Forge)",
+    "version_number": "1.20.2-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-10-19T07:57:09.217178Z",
+    "downloads": 47,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5785e6c8443d5f480079fac2872bc23404a7bc5bea17ec0b821a6605a0802ed2c59488750ccb27bf99b507ce819d94ef8202044151a9959b2b8c5b6f634fa19f",
+          "sha1": "107a97d06d41f5d126ef2619eb1cb450a3282c7b"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/VmKeapeA/ItemLocks-Forge-1.20.2-1.3.3.jar",
+        "filename": "ItemLocks-Forge-1.20.2-1.3.3.jar",
+        "primary": true,
+        "size": 85860,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "hFJYJgOY",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.3 (Fabric)",
+    "version_number": "1.20-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-27T12:55:21.944265Z",
+    "downloads": 126,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b510449bf196fcb3bb1dc52e63d66053aff5b85e",
+          "sha512": "0b69b96a52a5cf756b9bea6f45af68d0c124868fa24f1451ad698669d273809299a0dcaed278a8c13ba01236de86ff09f2ba0506772f44d451ba33379182e5bd"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/hFJYJgOY/ItemLocks-Fabric-1.20-1.3.3.jar",
+        "filename": "ItemLocks-Fabric-1.20-1.3.3.jar",
+        "primary": true,
+        "size": 102849,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "dpAUOlS9",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20-1.3.3 (Neo/Forge)",
+    "version_number": "1.20-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-27T12:54:44.418509Z",
+    "downloads": 61,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6300a3d0f64ae93249b3c834338c07eb311133e82a8df05b36576862ee70425cc03de175384b046dcbcff1cafb661a49e028f6908f307c67fa57d6f51b08242d",
+          "sha1": "9a7ac2a66af1c436cea232363b75c43d13239def"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/dpAUOlS9/ItemLocks-Forge-1.20-1.3.3.jar",
+        "filename": "ItemLocks-Forge-1.20-1.3.3.jar",
+        "primary": true,
+        "size": 85879,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "m5ZeERhY",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.3 (Fabric)",
+    "version_number": "1.19.4-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-27T12:54:06.291804Z",
+    "downloads": 145,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "db4a0c2a8773af8b502a880057c1cf14ce3c047117e2e47680d13d9b5142c8709075ef2d7a8afd9fac9bf3d76c2d34298ddde45020f2aa725adea8fcfd71a0a7",
+          "sha1": "9da89cf8986f4d3fdf767c8c480d3b50bd392538"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/m5ZeERhY/ItemLocks-Fabric-1.19.4-1.3.3.jar",
+        "filename": "ItemLocks-Fabric-1.19.4-1.3.3.jar",
+        "primary": true,
+        "size": 102707,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "VuZdTKrp",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.4-1.3.3 (Neo/Forge)",
+    "version_number": "1.19.4-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-27T12:53:31.703997Z",
+    "downloads": 44,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c3de7610ffa7d034d2c28303ef59559a9947fb83e328ac49be0df18619f821547e4437733075967c7402def9d21830c9c9a419c42997de108fad26dc0c338870",
+          "sha1": "cb3b0be39b16c5625531c30cc335790262707bbf"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/VuZdTKrp/ItemLocks-Forge-1.19.4-1.3.3.jar",
+        "filename": "ItemLocks-Forge-1.19.4-1.3.3.jar",
+        "primary": true,
+        "size": 85484,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "RcdltVJd",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.3 (Fabric)",
+    "version_number": "1.19.3-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-27T12:52:50.766299Z",
+    "downloads": 74,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "32fb6fa140978eeaf812e356ed9f81332d13f985",
+          "sha512": "c0dee0c65cec2aa421036ff8dfccf72a2c6327ecef1940d0056ff21ae44087c41c8931b257a6f5ec06bc6623107c669eeb411b7dd3b883161cab642b9d17ffa4"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/RcdltVJd/ItemLocks-Fabric-1.19.3-1.3.3.jar",
+        "filename": "ItemLocks-Fabric-1.19.3-1.3.3.jar",
+        "primary": true,
+        "size": 102433,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "Bk821DuO",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.3-1.3.3 (Neo/Forge)",
+    "version_number": "1.19.3-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-27T12:52:20.639809Z",
+    "downloads": 40,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c0394180a8b0585093c52f460ff1d766858fc8d9",
+          "sha512": "80c79803e2e5689fe81e71a1de37126aa3503d7cca87c66e080a1767e85e519a94b3fe148dbfc7c46987de0f6ffaef1989a8c0bfe4c05b4e70776ea3bd754539"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/Bk821DuO/ItemLocks-Forge-1.19.3-1.3.3.jar",
+        "filename": "ItemLocks-Forge-1.19.3-1.3.3.jar",
+        "primary": true,
+        "size": 85276,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "cqs9a2To",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.3 (Fabric)",
+    "version_number": "1.19.2-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-27T12:51:39.658858Z",
+    "downloads": 160,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "bfac64144fd2e2af756c19e48741dc3c86603c65",
+          "sha512": "e3aae36b12e9ddf634ba52099b51373ca406b08a115f593d9e85165adee3bc9b24c08d63c0fe30ad59f34c00f67f3a8abb057579ffa8f713a74e42d8e0f5c85e"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/cqs9a2To/ItemLocks-Fabric-1.19.2-1.3.3.jar",
+        "filename": "ItemLocks-Fabric-1.19.2-1.3.3.jar",
+        "primary": true,
+        "size": 102328,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "9WHdXyKB",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.19.2-1.3.3 (Neo/Forge)",
+    "version_number": "1.19.2-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-27T12:51:08.486493Z",
+    "downloads": 82,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c6039d19543c21f529ed1c2cf8204910934ad7d969ad2d76d5a45b4f7694fc086b11dc1705590e5aa7ade8f08a57d267d9c70818ca313aa0cd7b7ee9d8bf6ca3",
+          "sha1": "d9cec098174110cc511db00366341efd800b91f2"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/9WHdXyKB/ItemLocks-Forge-1.19.2-1.3.3.jar",
+        "filename": "ItemLocks-Forge-1.19.2-1.3.3.jar",
+        "primary": true,
+        "size": 85076,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "1U3K4izc",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.3 (Fabric)",
+    "version_number": "1.18.2-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-27T12:50:00.907597Z",
+    "downloads": 136,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ca1aec674524e0f42b858d5712903c19f4166568ddfd04e789e9bda32ad424ae31ed0e1a47c7e2e3dbd1310dc9f5e1ceaca774378d57cfbfadf586d6dd25aaf7",
+          "sha1": "c49f70f5d35e803ff234eee5a34d2a9740342837"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/1U3K4izc/ItemLocks-Fabric-1.18.2-1.3.3.jar",
+        "filename": "ItemLocks-Fabric-1.18.2-1.3.3.jar",
+        "primary": true,
+        "size": 102288,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "2lv3bKuq",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.18.2-1.3.3 (Neo/Forge)",
+    "version_number": "1.18.2-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-27T12:49:25.866885Z",
+    "downloads": 99,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ca2c2b750140416e329c598031d6f8a046544b77",
+          "sha512": "b1a208d1abed6183993883dfadaeb61d6336e1aba4db245c9da9bcd01b85211f8550211faa35a325f78e834f2c93fa07b1a8f8ef20101f6ee08c17f5b9b834fa"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/2lv3bKuq/ItemLocks-Forge-1.18.2-1.3.3.jar",
+        "filename": "ItemLocks-Forge-1.18.2-1.3.3.jar",
+        "primary": true,
+        "size": 82545,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "id": "B620xKFR",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.3 (Neo/Forge)",
+    "version_number": "1.20.1-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-05T13:31:05.043151Z",
+    "downloads": 356,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f817f3a5fa6f41aa5d6fefd4442c5086e785e12fa57339b200a884d4de0e51d76af2454ea85249464e70cbf76bfe30640a2d7c78e9e6be7599a44d7081812f51",
+          "sha1": "0fda44fe4f4da8cdde745028922ec531930d0b34"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/B620xKFR/ItemLocks-Forge-1.20.1-1.3.3.jar",
+        "filename": "ItemLocks-Forge-1.20.1-1.3.3.jar",
+        "primary": true,
+        "size": 85862,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "AMNhjn0s",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.3 (Fabric)",
+    "version_number": "1.20.1-1.3.3",
+    "changelog": "1.3.3\n\n- Fix bug causing locks not to load in multiplayer unless the player switches dimension at least once",
+    "changelog_url": null,
+    "date_published": "2023-09-05T13:29:59.750241Z",
+    "downloads": 755,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "aae83db162ed0bc5ad609c2b5e7442144450c60e39a2cf84d22c107dbe79d43c6248f965aa6be814ae2ca3bccef76dd252715c0a243577a09fd7eb4fabb7fbff",
+          "sha1": "586795a35f8e7c52ca9ff612d6e220f1a767024b"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/AMNhjn0s/ItemLocks-Fabric-1.20.1-1.3.3.jar",
+        "filename": "ItemLocks-Fabric-1.20.1-1.3.3.jar",
+        "primary": true,
+        "size": 102850,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "RtymnFT5",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.2 (Forge)",
+    "version_number": "1.20.1-1.3.2",
+    "changelog": "# 1.3.2\n- Fix key bindings not appearing in options\n \n# 1.3.1\n- Fix bug on Forge where hotbar doesn't have lock textures\n\n# 1.3\n- Added option to always ignore locks for ordinary inventory actions\n- Fixed issue where rebinding vanilla drop key would cause issues",
+    "changelog_url": null,
+    "date_published": "2023-08-10T11:20:36.128072Z",
+    "downloads": 521,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7e5dd12ff8a120de7947f8d77a4d9ea0a0c5d487a2b1f7799d6d47c924bd30ebdd40112052f0eb12f1495a5695ef713188310b6caba91fb66ffb2fafaf075d68",
+          "sha1": "96cef8fd793363ff792e1f3e7593bbf74480055c"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/RtymnFT5/ItemLocks-Forge-1.20.1-1.3.2.jar",
+        "filename": "ItemLocks-Forge-1.20.1-1.3.2.jar",
+        "primary": true,
+        "size": 85607,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "JfZXKprI",
+    "project_id": "tJzrFuyy",
+    "author_id": "L9Ju5vj8",
+    "featured": false,
+    "name": "ItemLocks 1.20.1-1.3.2 (Fabric)",
+    "version_number": "1.20.1-1.3.2",
+    "changelog": "# 1.3.2\n\n- Version change to be in par with Forge version\n\n# 1.3\n\n- Added option to always ignore locks for ordinary inventory actions\n\n- Fixed issue where rebinding vanilla drop key would cause issues",
+    "changelog_url": null,
+    "date_published": "2023-08-10T11:17:18.929698Z",
+    "downloads": 281,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1d618bc502535776d787583fd005f98ff44807aaa0a819f71ec844384b976761815eb6fcd2e5cd3e9911d4efe0fdb34e29089d4d5c233806d7e811c807c28ac2",
+          "sha1": "e111ffbf148e833cdfe209b5f01a7866956128b7"
+        },
+        "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/JfZXKprI/ItemLocks-Fabric-1.20.1-1.3.2.jar",
+        "filename": "ItemLocks-Fabric-1.20.1-1.3.2.jar",
+        "primary": true,
+        "size": 102554,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  }
+]

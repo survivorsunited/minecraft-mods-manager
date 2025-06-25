@@ -1,0 +1,71 @@
+{
+  "client_side": "optional",
+  "server_side": "required",
+  "game_versions": [
+    "1.21.2",
+    "1.21.3",
+    "1.21.4",
+    "1.21.5",
+    "1.21.6"
+  ],
+  "id": "5H9ypkdW",
+  "slug": "pets-dont-die",
+  "project_type": "mod",
+  "team": "wZXK89lQ",
+  "organization": null,
+  "title": "Pets Don't Die",
+  "description": "This data pack makes pets (tameable mobs) unable to die*.",
+  "body": "This data pack changes what happens when pets (tameable mods) reach 0 hit points, instead of dying the pet enters the dying state.\n\nWhile in this state it:\n- Can't move/teleport\n- Can't attack\n- Can't be riden\n- Isn't affected by gravity\n- Is immortal\n- Given the poison and resistance effects\n\nHow do you get your pet out of this state? By feeding it! Once your pet is at full HP it reverts back to normal!\n\n**Important: Anything that would bypass a totem of undying would bypass this feature (the void or /kill)**\n\nPet list:\n- Dogs (all variants)\n- Cats (all variants)\n- Horses\n- Donkeys\n- Mules\n- Parrots (all variants)\n- Llamas",
+  "body_url": null,
+  "published": "2024-11-14T05:11:35.20954Z",
+  "updated": "2025-06-24T07:16:55.838601Z",
+  "approved": "2024-11-16T08:02:07.322311Z",
+  "queued": "2024-11-14T06:17:14.576747Z",
+  "status": "approved",
+  "requested_status": "approved",
+  "moderator_message": null,
+  "license": {
+    "id": "MIT",
+    "name": "MIT License",
+    "url": null
+  },
+  "downloads": 2113,
+  "followers": 18,
+  "categories": [
+    "adventure",
+    "game-mechanics",
+    "mobs"
+  ],
+  "additional_categories": [
+    "social",
+    "utility"
+  ],
+  "loaders": [
+    "datapack",
+    "fabric",
+    "forge",
+    "neoforge",
+    "quilt"
+  ],
+  "versions": [
+    "OaEl0hcz",
+    "FpmWbhsA",
+    "L4FbA9yS",
+    "laTNy72Q",
+    "HudTkZaq",
+    "QbKd3VdO",
+    "mntW7qS7",
+    "Cxv0Jw4j",
+    "9OCPDEvR"
+  ],
+  "icon_url": "https://cdn.modrinth.com/data/5H9ypkdW/f9b9d00abb73c477455c8a8efd4b9a222cc19614_96.webp",
+  "issues_url": "https://github.com/E8zEbo8Luna/PetsDontDie/issues",
+  "source_url": "https://github.com/E8zEbo8Luna/PetsDontDie",
+  "wiki_url": null,
+  "discord_url": null,
+  "donation_urls": [],
+  "gallery": [],
+  "color": 5654600,
+  "thread_id": "FP0VMVNM",
+  "monetization_status": "monetized"
+}

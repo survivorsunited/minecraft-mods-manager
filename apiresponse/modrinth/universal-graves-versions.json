@@ -1,0 +1,2582 @@
+[
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "gdZmLCZD",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.8.1+1.21.6",
+    "version_number": "3.8.1+1.21.6",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.8.0+1.21.6...3.8.1+1.21.6",
+    "changelog_url": null,
+    "date_published": "2025-06-22T18:55:05.45405Z",
+    "downloads": 747,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "8e97e86124445e1e04852c7567dca684ee2180f0a44b0884a3409c47da996b4fdc47c5ee1acefaf52666f11a8065bd92957615353641667a331f7378362a5746",
+          "sha1": "bd29655938b4ac2b545cce20e14791547c33e8a8"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/gdZmLCZD/graves-3.8.1%2B1.21.6.jar",
+        "filename": "graves-3.8.1+1.21.6.jar",
+        "primary": true,
+        "size": 1821041,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "hPnxwccZ",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.8.0+1.21.6",
+    "version_number": "3.8.0+1.21.6",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.7.1+1.21.5...3.8.0+1.21.6",
+    "changelog_url": null,
+    "date_published": "2025-06-18T20:31:11.341023Z",
+    "downloads": 1034,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "587e871cec5f41b76a1dd363060ed6ad71bca08e",
+          "sha512": "6d04ba514edccd599b2c73848278d302c7a0f283744f56d6a3d359db2cecf56649c01c51d731574e2c0eb336d58282173eb2cf1dcbfa5746f52d5ba14e89d0d6"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/hPnxwccZ/graves-3.8.0%2B1.21.6.jar",
+        "filename": "graves-3.8.0+1.21.6.jar",
+        "primary": true,
+        "size": 1824166,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "ejJjBZIM",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.7.1+1.21.5",
+    "version_number": "3.7.1+1.21.5",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.7.0+1.21.5...3.7.1+1.21.5",
+    "changelog_url": null,
+    "date_published": "2025-03-25T21:02:15.522128Z",
+    "downloads": 21996,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2852ccf4ea276e48508af3e5c61dd8c010598ee158e05cfb7f9f6548c2e3915e6c7e4ae5450ebec71c4e7e28ef3f669e2f21eea9931d897f1b4ef2b41e4d9e29",
+          "sha1": "856f209efa35044641f830b1a893f6c6e45046a2"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/ejJjBZIM/graves-3.7.1%2B1.21.5.jar",
+        "filename": "graves-3.7.1+1.21.5.jar",
+        "primary": true,
+        "size": 1795060,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.5-rc2",
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "s5RAP8jj",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.7.0+1.21.5",
+    "version_number": "3.7.0+1.21.5",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.6.0+1.21.4...3.7.0+1.21.5\n",
+    "changelog_url": null,
+    "date_published": "2025-03-24T20:41:08.696072Z",
+    "downloads": 110,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b146e9498e4dcb3d351b2ea6b9f3a54410cb10afcd715c3c7efaa88dad69f155dfad3c40c496baceae5d827a84e6a7c0b8f6189db55b00a384a2886b297513a9",
+          "sha1": "53dc27ea28e04fd82b897c168e5777d4cfa9084d"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/s5RAP8jj/graves-3.7.0%2B1.21.5.jar",
+        "filename": "graves-3.7.0+1.21.5.jar",
+        "primary": true,
+        "size": 1795112,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.4-rc1",
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "o2f2Idvu",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.6.0+1.21.4",
+    "version_number": "3.6.0+1.21.4",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.5.0+1.21.2...3.6.0+1.21.4",
+    "changelog_url": null,
+    "date_published": "2024-11-28T20:54:00.125032Z",
+    "downloads": 36191,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "3e530f6cf38fc31c204dc26fabd28975d5cffc6c",
+          "sha512": "b0dffe29f4218bb02a8fea29e9ba0f39c2bf93a671d5f2f071afba8a3bc0ab036a00606ef25aa8a6e4b9f67123ffd4eab78c67e18ca34a5aea5cd18915adeee5"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/o2f2Idvu/graves-3.6.0%2B1.21.4.jar",
+        "filename": "graves-3.6.0+1.21.4.jar",
+        "primary": true,
+        "size": 1730588,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21.2",
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "fS2NJyqY",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.5.0+1.21.2",
+    "version_number": "3.5.0+1.21.2",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.4.4+1.21...3.5.0+1.21.2",
+    "changelog_url": null,
+    "date_published": "2024-10-22T18:27:11.651478Z",
+    "downloads": 7752,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b3771fb64b91af185bb15e6fec6b5d3611c39f79",
+          "sha512": "4b67d323b2020e6825ca768f7f7b7c279dca924c98727ae3c2703548f01c95ff517fcd46cddb603c3ca00d54e970c9af406e9369d6660e2d670ecf1cc951265c"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/fS2NJyqY/graves-3.5.0%2B1.21.2.jar",
+        "filename": "graves-3.5.0+1.21.2.jar",
+        "primary": true,
+        "size": 1724059,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "Fg64B87Y",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.4.4+1.21",
+    "version_number": "3.4.4+1.21",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.4.3+1.21...3.4.4+1.21",
+    "changelog_url": null,
+    "date_published": "2024-09-09T08:51:33.98206Z",
+    "downloads": 118791,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "a247df6557c4020ea5499a1be54d1b2a90b33fffcb94866bf682b40a6524708360ec4e1e912aa10754722761ccabcf3674bea1f82f5438f225eada983e59989a",
+          "sha1": "e289663f13de87ed871fccb8837c5d69cc3bb2e6"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/Fg64B87Y/graves-3.4.4%2B1.21.jar",
+        "filename": "graves-3.4.4+1.21.jar",
+        "primary": true,
+        "size": 1709158,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "66RxRZcI",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.0.3+1.20.1",
+    "version_number": "3.0.3+1.20.1",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.0.2+1.20.1...3.0.3+1.20.1",
+    "changelog_url": null,
+    "date_published": "2024-09-09T08:31:22.947958Z",
+    "downloads": 425482,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c76d26e1bd0b3ce48c211729662b940b99d3ab5d9661fe007625840152ca064262625090d152eff93e3c4588a4cd33d353c33c31bc111b43f87a71b25f45cba1",
+          "sha1": "d0bb93a9ad7a3c41ce3bc46e5f2eed8741b7b598"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/66RxRZcI/graves-3.0.3%2B1.20.1.jar",
+        "filename": "graves-3.0.3+1.20.1.jar",
+        "primary": true,
+        "size": 1872216,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "cAznLUxQ",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.0.2+1.20.1",
+    "version_number": "3.0.2+1.20.1",
+    "changelog": "## What's Changed\n* [1.20.1] Backport Accessories Compatbility by @Dragon-Seeker in https://github.com/Patbox/UniversalGraves/pull/169\n\n## New Contributors\n* @Dragon-Seeker made their first contribution in https://github.com/Patbox/UniversalGraves/pull/169\n\n**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.0.1+1.20.1...3.0.2+1.20.1",
+    "changelog_url": null,
+    "date_published": "2024-08-06T07:21:31.315317Z",
+    "downloads": 18928,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e725cd737d1cd3f9304ecc45c34264b14d342925f6fc35d201404e58a035cb9a943a51edf262cc1abb6c914bd0991fe257248357fd1d0cde87ff1e1ab57fcd10",
+          "sha1": "edc3866191ca07b84eff2efa8158be0ad79e04a9"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/cAznLUxQ/graves-3.0.2%2B1.20.1.jar",
+        "filename": "graves-3.0.2+1.20.1.jar",
+        "primary": true,
+        "size": 1871179,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "pXBVFXDC",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.4.3+1.21",
+    "version_number": "3.4.3+1.21",
+    "changelog": "## Universal Graves 3.4.3 for Minecraft 1.21 has been released!\nNow with more mod compatibility and more stability!\n### Changelog:\n- Added support for [Accessories](https://modrinth.com/mod/accessories) mod.\n- When grave is broken by it's owner, it will first try to make player quick-pickup it's content before dropping everything. This can be disabled in config.\n- Made error/exception catching within grave creation more robust, allowing to display more information and lower chance of losing entire inventory (for example when other mod changes it's api or implements it incorrectly).\n- Fixed serialization of entity type's in config, fixing disabling graves when killed by selected entity.\n### Download:\n- Modrinth: <https://modrinth.com/mod/universal-graves>\n- CrustyFroge: <https://legacy.curseforge.com/minecraft/mc-mods/universal-graves>\n- Github: <https://github.com/Patbox/UniversalGraves>",
+    "changelog_url": null,
+    "date_published": "2024-08-02T18:06:57.46491Z",
+    "downloads": 12093,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "69bcbfcffdfb772802fc8d92aaaa3055007f7d6f",
+          "sha512": "8c809b5ac7ea168aed80622644f01ea1705bc56f996f814ac59fb656e6880eb99eb5273a95d925438ede6693d57df8df898c65abacce80e911fac9f3a706574d"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/pXBVFXDC/graves-3.4.3%2B1.21.jar",
+        "filename": "graves-3.4.3+1.21.jar",
+        "primary": true,
+        "size": 1705087,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "b1NpGMoM",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.4.2+1.21",
+    "version_number": "3.4.2+1.21",
+    "changelog": "## Universal Graves 3.4.2 for Minecraft 1.21 has been released!\nBug fixing and some smaller tweaks/new features!\n### Changelog:\n- Changed default config: graves will no longer break expire! Their protection against other players is unchanged through.\n- Added option to toggle grave being snapped to world border. Enabled by default (it existed before, but was always active).\n- Added option to actively move graves inside world border (as in, when it changes). Disabled by default.\n- Blocked enchantments (aka enchantments that when on item make graves skip adding them) can now be added with `universal_graves:blocked_enchantments` tag.\n- Updated config loading to use new Placeholder API parsers, including support for QuickText.\n- Actually bundle translations from [Crowdin](<https://crowdin.com/project/patbox-mods>) (Oops).\n- Bunch of bugfixes.",
+    "changelog_url": null,
+    "date_published": "2024-07-25T19:01:08.013614Z",
+    "downloads": 2890,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f9e1979d9f17c4cfe80c9216dac372833f9e58cf",
+          "sha512": "0a77899dbe4f6d76a5aa1864e1461010c3d2f27b6fc8d0d6e4ae6586fa09c0e87ae98ff47151beb292b2f297bfb562eba79febfc9fde0656f9faf1dadcafe928"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/b1NpGMoM/graves-3.4.2%2B1.21.jar",
+        "filename": "graves-3.4.2+1.21.jar",
+        "primary": true,
+        "size": 1699551,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "qtHZSwwl",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.4.1+1.21",
+    "version_number": "3.4.1+1.21",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.4.0+1.21...3.4.1+1.21",
+    "changelog_url": null,
+    "date_published": "2024-06-16T16:12:39.129307Z",
+    "downloads": 44619,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "860faac48384be92f8e2d0b1edd6314eede606a3",
+          "sha512": "18796fa5462a26a61a3f0b92c53dbfc6be85a2fe1f04e44fecd284b953a3bfc850bc4593ef0e8df9732fc07663d450378d31052dfb4aee4ca6b07a0287ae00cd"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/qtHZSwwl/graves-3.4.1%2B1.21.jar",
+        "filename": "graves-3.4.1+1.21.jar",
+        "primary": true,
+        "size": 1663822,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.21-rc1",
+      "1.21"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "QpYqJ5de",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.4.0+1.21",
+    "version_number": "3.4.0+1.21",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.3.2+1.20.5...3.4.0+1.21",
+    "changelog_url": null,
+    "date_published": "2024-06-12T12:45:06.253955Z",
+    "downloads": 1269,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "84e46ad42820dd5f42689027371abe86884013fb",
+          "sha512": "8e86462b52077c18c7e0d87900e554b59f3c8fc96199a79f851191aa172c3214a589c08dfb7c98e5db682b95a5a490c1e80a09edcff295aede98b7b381ad7083"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/QpYqJ5de/graves-3.4.0%2B1.21.jar",
+        "filename": "graves-3.4.0+1.21.jar",
+        "primary": true,
+        "size": 1652337,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "lrkSxqPt",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.3.3+1.20.5",
+    "version_number": "3.3.3+1.20.5",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.3.2+1.20.5...3.3.3+1.20.5",
+    "changelog_url": null,
+    "date_published": "2024-05-06T19:49:00.834369Z",
+    "downloads": 8040,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7270b2f145d078f96dbe25663adb22302fca75a5",
+          "sha512": "ff22a37a3431221db78541fd58e9011bd7a6218b87d106ea517982af1ef2a9ec41e2109b4d7b53d6ade797cabe5d41b4daa417eb42dab7f9eb988bf08f895059"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/lrkSxqPt/graves-3.3.3%2B1.20.5.jar",
+        "filename": "graves-3.3.3+1.20.5.jar",
+        "primary": true,
+        "size": 1611504,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "DFOwTpBJ",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.3.2+1.20.5",
+    "version_number": "3.3.2+1.20.5",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.3.1+1.20.5...3.3.2+1.20.5",
+    "changelog_url": null,
+    "date_published": "2024-04-26T12:43:15.449073Z",
+    "downloads": 497,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "732466e4e12ca0d6d39d5c491326989bd2ed82f9bc491a1ca9bfdd22b3f18725db92f15c4e815420d967f0a6991a7f1473666a0b1b1aecebeeccda28d41e6b5c",
+          "sha1": "50f7a9f25a4a02430d3b29540d6323271358e7b1"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/DFOwTpBJ/graves-3.3.2%2B1.20.5.jar",
+        "filename": "graves-3.3.2+1.20.5.jar",
+        "primary": true,
+        "size": 1611503,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "YMmiL5iG",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.3.1+1.20.5",
+    "version_number": "3.3.1+1.20.5",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.3.0+1.20.5...3.3.1+1.20.5",
+    "changelog_url": null,
+    "date_published": "2024-04-26T05:15:36.010532Z",
+    "downloads": 109,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "39aac8550329a11aa22be0f20643631ed7767c56903059906977c3ef02fa9a051e4dae5f45aded7a8ef89af7d4de6ca3bc65bc5b28c6a6a36cc83f1f45b6819c",
+          "sha1": "278eaeae1f750c2d7b37c9591b16c50cca8232ec"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/YMmiL5iG/graves-3.3.1%2B1.20.5.jar",
+        "filename": "graves-3.3.1+1.20.5.jar",
+        "primary": true,
+        "size": 1611505,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "igHlS9OT",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.3.0+1.20.5",
+    "version_number": "3.3.0+1.20.5",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.2.2+1.20.4...3.3.0+1.20.5",
+    "changelog_url": null,
+    "date_published": "2024-04-25T22:07:34.539962Z",
+    "downloads": 102,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "538a7e5141b13ad2445cd1589d64b0269c8555e0",
+          "sha512": "30b6f2a358f2aafc0e2a14dfb44aff0458763a7a95281b238aebda2732023474eb6a94cbd1fb7648da62f73134bd4a673f0df70b95b609b756946e52fb2f18bc"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/igHlS9OT/graves-3.3.0%2B1.20.5.jar",
+        "filename": "graves-3.3.0+1.20.5.jar",
+        "primary": true,
+        "size": 1611378,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "apUC1ksK",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.2.2+1.20.4",
+    "version_number": "3.2.2+1.20.4",
+    "changelog": "## What's Changed\n* Fix #universal_graves:replaceable tag by @unilock in https://github.com/Patbox/UniversalGraves/pull/136\n\n## New Contributors\n* @unilock made their first contribution in https://github.com/Patbox/UniversalGraves/pull/136\n\n**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.2.1+1.20.3...3.2.2+1.20.4",
+    "changelog_url": null,
+    "date_published": "2024-04-11T08:03:09.896889Z",
+    "downloads": 12999,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "6f7fecc5815c8aa42bffe646a73de324a1f95729a2a91601a24a2c5fc2ed8f3c0e05d22fe82d27025a67c0a44ddfe13147cf645c89b6c3ed204990e1877ba69f",
+          "sha1": "f5b5b297039bf39e1ae21989107905cf19db0b42"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/apUC1ksK/graves-3.2.2%2B1.20.4.jar",
+        "filename": "graves-3.2.2+1.20.4.jar",
+        "primary": true,
+        "size": 1545008,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ShXwTHys",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.2.1+1.20.3",
+    "version_number": "3.2.1+1.20.3",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.2.0+1.20.3...3.2.1+1.20.3",
+    "changelog_url": null,
+    "date_published": "2024-01-25T17:43:12.359403Z",
+    "downloads": 10192,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2fe607770273a1e083c7089f3a789cdb74e07c78",
+          "sha512": "d62420b29cd227c99b45da4a7cb8955f388db5fe82d80ee2593845404421432957e2a20a94a15288f781ea9dfd0377a4ec439457eaeb2da3298a15f7f0a0e89e"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/ShXwTHys/graves-3.2.1%2B1.20.3.jar",
+        "filename": "graves-3.2.1+1.20.3.jar",
+        "primary": true,
+        "size": 1544452,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "KaGNkIdU",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.0.1+1.20.1",
+    "version_number": "3.0.1+1.20.1",
+    "changelog": "**Full Changelog**: https://github.com/Patbox/UniversalGraves/compare/3.0.0+1.20.1...3.0.1+1.20.1",
+    "changelog_url": null,
+    "date_published": "2024-01-25T17:24:21.337839Z",
+    "downloads": 496181,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "e21420c5e6e246862d6dbae30056d82b84116d74",
+          "sha512": "84aa4b1bc9b1b9a5ae6f72ff7c8f1b9983d7285a7abf297cfbdf20b6f36a5e47444a57d0b9b8dbd966150ad427e3a8c486f61603f7eaff16ea75038fe3b62575"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/KaGNkIdU/graves-3.0.1%2B1.20.1.jar",
+        "filename": "graves-3.0.1+1.20.1.jar",
+        "primary": true,
+        "size": 1866676,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3-rc1",
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "LM07HkNo",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.2.0+1.20.3",
+    "version_number": "3.2.0+1.20.3",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-12-05T09:50:59.752736Z",
+    "downloads": 2444,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "d89054672cf27577e01d5c288151cedf4b3c3e2c2f0590376f0cc56e3a99d243f6fef945be1fc67aec5442ee610f80dc9d133eb6a9e55dca6e17a7e3b7687221",
+          "sha1": "4bcea65615223227a97a61fe9a5118fbdcb44cea"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/LM07HkNo/graves-3.2.0%2B1.20.3.jar",
+        "filename": "graves-3.2.0+1.20.3.jar",
+        "primary": true,
+        "size": 1521369,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "v0FIdWkz",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.1.1+1.20.2",
+    "version_number": "3.1.1+1.20.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-09-27T15:41:50.699125Z",
+    "downloads": 6944,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "05ba82ca825c082c58b1bfa0727d546e67de1d0c9a2a7c9dac628916bcbcf4831273cbb145717760e9318bb69b21760dcf38974499786ec2f3f64e1969d8d6c3",
+          "sha1": "b7d56ea7cfbe9d37fb8742df62dc27501c42a3a7"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/v0FIdWkz/graves-3.1.1%2B1.20.2.jar",
+        "filename": "graves-3.1.1+1.20.2.jar",
+        "primary": true,
+        "size": 1906662,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2-rc2",
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "dE1IK66w",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.1.0+1.20.2",
+    "version_number": "3.1.0+1.20.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-09-20T11:59:02.59596Z",
+    "downloads": 245,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "68ec60bf695aaf238a94612bd48e8d021ed13780",
+          "sha512": "a738dba2647ffe7faebcc5501a2f0cf4601a4b4c125e42754a93fa47901451f66c3b3a874eae1abc402a324f2e0d6ce84211a62fe62818e354d2b3db7ef4d4cc"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/dE1IK66w/graves-3.1.0%2B1.20.2.jar",
+        "filename": "graves-3.1.0+1.20.2.jar",
+        "primary": true,
+        "size": 1902994,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "KTdIlBNB",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.0.0+1.20.1",
+    "version_number": "3.0.0+1.20.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-09-16T08:41:07.55104Z",
+    "downloads": 170445,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "28d846b811f68937ff1c21bb7412c6d3a1e1e49e4acaae68caa16d97fb22fae975afef3baf8fe85abe930e1619a4b32e2dc57346d7b611fdfd87ec3c5f683225",
+          "sha1": "901e2730d8ed3ed7c81e5990da289a5b659ba761"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/KTdIlBNB/graves-3.0.0%2B1.20.1.jar",
+        "filename": "graves-3.0.0+1.20.1.jar",
+        "primary": true,
+        "size": 1855373,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "RqVbvts1",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.0.0-pre.1+1.20.1",
+    "version_number": "3.0.0-pre.1+1.20.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-08-07T19:27:46.356808Z",
+    "downloads": 5653,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1558a4dc77b91764f6e4d8717a7ec5ea86d8427f41d34ff3a761953f0448ee2974e752cd6fd452e4e354db8e35e3477facb995bfe6de6977dd981d7d4ed19d15",
+          "sha1": "59000b20fe0316c0c08defa9db72218ea70f0d16"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/RqVbvts1/graves-3.0.0-pre.1%2B1.20.1.jar",
+        "filename": "graves-3.0.0-pre.1+1.20.1.jar",
+        "primary": true,
+        "size": 1423746,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "t2XaWkkQ",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.0.0-beta.4+1.20.1",
+    "version_number": "3.0.0-beta.4+1.20.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-06-26T05:42:54.895241Z",
+    "downloads": 5870,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "0015985232810793e385d3f8a6a5dc272e025792",
+          "sha512": "06947fe2be3f69b5319af7edb2243d8306296a66ef8c6fd957b2b8d6c1d1f05409da20ddc9563f4a622e0c303e16bcd9d7715ed9ad7f35b126d0b0cb47191f61"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/t2XaWkkQ/graves-3.0.0-beta.4%2B1.20.1.jar",
+        "filename": "graves-3.0.0-beta.4+1.20.1.jar",
+        "primary": true,
+        "size": 1380592,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ptfpP28Q",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.0.0-beta.3+1.20.1",
+    "version_number": "3.0.0-beta.3+1.20.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-06-25T14:43:30.577332Z",
+    "downloads": 172,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d498a0d50c4060bddafd7d62fc51e0db907d800c",
+          "sha512": "c6a92d197f8f0f06337910b61ba39edb573bdd4cae9373cedf1713800202515402b48c504df3e2e534c7f95227b7aa41110952a486f33e54a957e126c5ab88f6"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/ptfpP28Q/graves-3.0.0-beta.3%2B1.20.1.jar",
+        "filename": "graves-3.0.0-beta.3+1.20.1.jar",
+        "primary": true,
+        "size": 1380475,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "xSCzeiCx",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.0.0-beta.2+1.20",
+    "version_number": "3.0.0-beta.2+1.20",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-06-11T21:56:00.527085Z",
+    "downloads": 1065,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "22141b95bae988db1b02e64be565bfc928d4f2c2",
+          "sha512": "e8c3b9df6f793d5dab7311c139f9a05c89b0e6b6833599c38aa9eaeb651b2c2dea06abbe008acc459660b46cf4158eb6daed7ad96f045a1e3f5e4dc840f93ab3"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/xSCzeiCx/graves-3.0.0-beta.2%2B1.20.jar",
+        "filename": "graves-3.0.0-beta.2+1.20.jar",
+        "primary": true,
+        "size": 1382202,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20-rc1"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "WVtbaz9p",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "3.0.0-beta.1+1.20",
+    "version_number": "3.0.0-beta.1+1.20",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-06-04T17:21:51.252262Z",
+    "downloads": 174,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "a7ea10ee79222739fe1466243e59cd33cef7bfe6de44e5d3538578120eb940c858fddd6ce2ed68ed11d505f325806627f3af27fc71b2bd13b478abefaadb84df",
+          "sha1": "6957ebc2a7bc1cee61316abe4a085895d78dc46e"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/WVtbaz9p/graves-3.0.0-beta.1%2B1.20.jar",
+        "filename": "graves-3.0.0-beta.1+1.20.jar",
+        "primary": true,
+        "size": 1259614,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.4-rc2",
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "vHvEE5VR",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.2.1+1.19.4",
+    "version_number": "2.2.1+1.19.4",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2023-03-11T16:23:02.97167Z",
+    "downloads": 3662,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e6559f11f379ab022e9576dfaf5aec51d1c4a3e89cfc8280a1a6b84ce3ff2d01d30c3c80c520d46c3cbffaff665707511bef25afc9a825a6dfed88ff61af2b9c",
+          "sha1": "faa861afe6df6c0b66bd4478d722493e98336d8c"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/vHvEE5VR/graves-2.2.1%2B1.19.4.jar",
+        "filename": "graves-2.2.1+1.19.4.jar",
+        "primary": true,
+        "size": 1097900,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.3-rc3",
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "tZK8jOeV",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.2.0+1.19.3",
+    "version_number": "2.2.0+1.19.3",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-12-07T14:41:37.206211Z",
+    "downloads": 1746,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "54373aaf42419cffe69c65fbf79d032c1d09c74592feaa38922cb6ddf3a5153d52cff9e3eb0858524499781daf3e5a18bf85c7592a4f893ff1d8b54c5637a844",
+          "sha1": "77deef80bc5b383c16845ec4322728a6c1a212ce"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/tZK8jOeV/graves-2.2.0%2B1.19.3.jar",
+        "filename": "graves-2.2.0+1.19.3.jar",
+        "primary": true,
+        "size": 1130253,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "9Xjqin2k",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.3+1.19.2",
+    "version_number": "2.1.3+1.19.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-10-31T17:00:16.600284Z",
+    "downloads": 136947,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "cb7f29c5bc9237acc1412bc5848274ca5ea92781a88555c54252f31d108680f8d743bcbc4a97a1bfec3d11f6eba55808a5009bfd6e48d6dba7624511490aad40",
+          "sha1": "9584bf7ab80729b78ffea80a05a5b0a7ad5b416b"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/9Xjqin2k/graves-2.1.3%2B1.19.2.jar",
+        "filename": "graves-2.1.3+1.19.2.jar",
+        "primary": true,
+        "size": 1096151,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "xGdtZczs",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  },
+  {
+    "game_versions": [
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "LGfK5vxx",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.2+1.19.2",
+    "version_number": "2.1.2+1.19.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-10-01T13:13:43.454983Z",
+    "downloads": 559,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "aa88d452b8f3f74541724403e1f80caa3bf7ec11",
+          "sha512": "ce77668e3cde8fd3e21019d47609de731dd723f49043ae422c7f6a25710cd401e0886eec72bf6ec35742bd2a8d31e1d5355738868e0affcd619c6c815073587e"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/LGfK5vxx/graves-2.1.2%2B1.19.2.jar",
+        "filename": "graves-2.1.2+1.19.2.jar",
+        "primary": true,
+        "size": 1058840,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "rSamIDbX",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.1+1.19.1",
+    "version_number": "2.1.1+1.19.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-07-27T20:52:59.074173Z",
+    "downloads": 1376,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c6558c01e50428915603137052b3944f84199577",
+          "sha512": "49c642579434b6832e6d56ae6abcb6c20a2d522ba663c4103e685f1d8daa34a931ba8a26355b12c954fa0c5bc306cdbbe398ba6303da4cf3ab437ea49baca2cc"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.1.1%2B1.19.1/graves-2.1.1%2B1.19.1.jar",
+        "filename": "graves-2.1.1+1.19.1.jar",
+        "primary": true,
+        "size": 1040849,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "twVj4ohW",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.1.0+1.19",
+    "version_number": "2.1.0+1.19",
+    "changelog": "**Universal Graves 2.1.0 for 1.19**\n- Added way for players to teleport to their graves ( @qpcrummer#7194 and @KJP12#3880 )\n- You can set teleportation cost to block it for non-creative (default), require lvls/items or be free\n- Swiched claim checks to use Common Protection API. If you have a claim/protection mod you should implement support for it ( https://github.com/Patbox/common-protection-api )\n\n**Modrinth**: <https://modrinth.com/mod/universal-graves>\n**Curseforge**: <https://www.curseforge.com/minecraft/mc-mods/universal-graves>\n**Github**: <https://github.com/Patbox/UniversalGraves>",
+    "changelog_url": null,
+    "date_published": "2022-06-23T11:35:40.158767Z",
+    "downloads": 1969,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "806e6e02d5346b48d09c643286a29827fca59a49",
+          "sha512": "1329bf7bfded15eb9ca7f393efdac5e57e066eab36a8ccc039aa402fbdfa364b7f5e8ac45391460d22564fee1a868a90cc19e2658eefdad0ecf67df9765ffcda"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.1.0%2B1.19/graves-2.1.0%2B1.19.jar",
+        "filename": "graves-2.1.0+1.19.jar",
+        "primary": true,
+        "size": 1014971,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "ybNZj16a",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.5+1.19",
+    "version_number": "2.0.5+1.19",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-06-09T14:56:53.218628Z",
+    "downloads": 397,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1c2430b3a5be40bc87278b388b78a90a8573897e",
+          "sha512": "c6c80b5911baf3cedc4dd2c15798a4853369327833638ddeede400aadce3d99eb9cc50477ac256f88511b4ab48f4f57391970d60f14c5d035d46e09fa6e00cb9"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.5%2B1.19/graves-2.0.5%2B1.19.jar",
+        "filename": "graves-2.0.5+1.19.jar",
+        "primary": true,
+        "size": 989061,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19-rc2",
+      "1.19"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "mCPBb32D",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.4+1.19",
+    "version_number": "2.0.4+1.19",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-06-06T11:47:42.914115Z",
+    "downloads": 131,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3da43876d7af9d9e1a68d8d92be09356663c6284ad86440e1bafd5723154c479e62f0adedb300e8b6724f569f1dd2a1de0678bd24380153b0dbf55da7a464449",
+          "sha1": "b08bdb33eb5f0741b5c6fedaac7fe1d4dff8935f"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.4%2B1.19/graves-2.0.4%2B1.19.jar",
+        "filename": "graves-2.0.4+1.19.jar",
+        "primary": true,
+        "size": 989044,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "mSmmm4Bh",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.3+1.18.2",
+    "version_number": "2.0.3+1.18.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-06-01T20:09:33.023422Z",
+    "downloads": 8626,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9dc56f843fdb2510bf9adb388feb3df22b0c3600",
+          "sha512": "d74fc559d28c98ae62dc5e77e9da7443ba8867a92dc1841270f7b23fcb967701d00b9d22655a4a8b6296719f792f3154a1f49489f21f2646188b2329fae4ebff"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.3%2B1.18.2/graves-2.0.3%2B1.18.2.jar",
+        "filename": "graves-2.0.3+1.18.2.jar",
+        "primary": true,
+        "size": 967177,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "uUtfyTnt",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.1+1.18.2",
+    "version_number": "2.0.1+1.18.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-05-15T19:30:03.147264Z",
+    "downloads": 4345,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "9abd6e21850d85e46c51b53b496efadf52796e39",
+          "sha512": "958d23a61675597c466423fc4e5aa74eb3510c718cba58af79c903858270579eb016f7d5146ba935fd9969db04dcd2fa529de17ed7a0e3c93cb5397d1b87a5f9"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.1%2B1.18.2/graves-2.0.1%2B1.18.2.jar",
+        "filename": "graves-2.0.1+1.18.2.jar",
+        "primary": true,
+        "size": 962004,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "id": "OOkb2RAT",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0+1.18.2",
+    "version_number": "2.0.0+1.18.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-03-30T06:32:33.930753Z",
+    "downloads": 694,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "dcf0fc8d883d44d1411602a824eccaf9a5998e31b53e7352e20199b257db954f4045a862000709f9e6958897a5968fe9f5d6f3bdbdf6208383824d9755a25e1e",
+          "sha1": "c4c751f64b34012e175b915060af4f5317260b85"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0%2B1.18.2/graves-2.0.0%2B1.18.2.jar",
+        "filename": "graves-2.0.0+1.18.2.jar",
+        "primary": true,
+        "size": 926307,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "mz4dvnJd",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-rc.5+1.18.2",
+    "version_number": "2.0.0-rc.5+1.18.2",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-02-28T15:42:12.570205Z",
+    "downloads": 327,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "98b024a6c146d46c5faaa88b28a81c75a2f218b0",
+          "sha512": "39f2886a0ecc8b2a556adedd956ca231014b4999b00d30ab348838b65dd3ab18d6e9fd03317fb24b145b0f65e6534257ec6753e4def95f4408e906d525d534eb"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-rc.5%2B1.18.2/graves-2.0.0-rc.5%2B1.18.2.jar",
+        "filename": "graves-2.0.0-rc.5+1.18.2.jar",
+        "primary": true,
+        "size": 909433,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "suGYSt2F",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-rc.5+1.18.1",
+    "version_number": "2.0.0-rc.5+1.18.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-02-25T21:59:07.35211Z",
+    "downloads": 365,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "fd900fd403569c36caabc1cde113c3e73fae0e0b5244dff9a4b982e95b2c463fa5d5d4870bce4fe1cce3844247d16aff5348d56747a1ebb7f8d3f2ccde777ee1",
+          "sha1": "438f11b58462fda19cbcfa48f178f640e47e8ff5"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-rc.5%2B1.18.1/graves-2.0.0-rc.5%2B1.18.1.jar",
+        "filename": "graves-2.0.0-rc.5+1.18.1.jar",
+        "primary": true,
+        "size": 911134,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "Xjk18jBU",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-rc.4+1.18.1",
+    "version_number": "2.0.0-rc.4+1.18.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-02-07T16:21:14.252837Z",
+    "downloads": 208,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "bd363515d2033030149f4aeb2f2ae4cdf21dd0ef",
+          "sha512": "4969a028dcd2c789a3a1d0ba6f92d595cf148d18c961f9abea08ac769bd2598ef762575b841bcb10daad7c3e3086009a9e363d3b5d15c7bfcec82aab40405daf"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-rc.4%2B1.18.1/graves-2.0.0-rc.4%2B1.18.1.jar",
+        "filename": "graves-2.0.0-rc.4+1.18.1.jar",
+        "primary": false,
+        "size": 902576,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "rb6qaDjQ",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-rc.3+1.18.1",
+    "version_number": "2.0.0-rc.3+1.18.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-02-06T20:36:54.705675Z",
+    "downloads": 97,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b57b54dcedf22b7c4d80c0fdf2da1482d5e3c578119bdfd2bebbd2718e6d6f1d04be2976861a95eb4c61eec6758995016d76db3784a3cd259099d1142695f58f",
+          "sha1": "b4f28c745f97ae66fa67573ee360a9107b5d37d1"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-rc.3%2B1.18.1/graves-2.0.0-rc.3%2B1.18.1.jar",
+        "filename": "graves-2.0.0-rc.3+1.18.1.jar",
+        "primary": false,
+        "size": 901941,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "RT684WZr",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-rc.2+1.18.1",
+    "version_number": "2.0.0-rc.2+1.18.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-02-05T22:28:57.862719Z",
+    "downloads": 97,
+    "version_type": "alpha",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a297eed39ebaa032cdbbee2e6897db4e318543f5",
+          "sha512": "68d03e4b27da34d10935c9fe0bced77688a92f74459b2f5cc6d249b72204d82bd9ae578776db6f720a35cfb04010baeb8f08b30651e09556a52bd2983291026f"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-rc.2%2B1.18.1/graves-2.0.0-rc.2%2B1.18.1.jar",
+        "filename": "graves-2.0.0-rc.2+1.18.1.jar",
+        "primary": false,
+        "size": 903329,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "6jtUo8wT",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-rc.1+1.18.1",
+    "version_number": "2.0.0-rc.1+1.18.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-01-31T16:11:09.879411Z",
+    "downloads": 131,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b6b23a38261517cfcf3fd59161bd4f4aa279d56cc5ec32525b050c2199b15487fb24704c4c802bcbe1c2e59f0d255ee8f68a59fffbf2d35d0ff8b586b55228a5",
+          "sha1": "45b06334a73b9212f82cbda331cee3fd736e15a3"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-rc.1%2B1.18.1/graves-2.0.0-rc.1%2B1.18.1.jar",
+        "filename": "graves-2.0.0-rc.1+1.18.1.jar",
+        "primary": false,
+        "size": 895167,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "zn334ZBl",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-beta.4.2+1.18.1",
+    "version_number": "2.0.0-beta.4.2+1.18.1",
+    "changelog": "- Added support for SaveGearOnDeath mod\r\n- You can now open graves with commands while also allowing it's modification\r\n- Fixed some bugs",
+    "changelog_url": null,
+    "date_published": "2022-01-26T15:41:20.847817Z",
+    "downloads": 119,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "4c65e7a715bb32e9f3fd57ca2742d4307540496a",
+          "sha512": "98aada19f0996cfc40844a93b369bc5deba9b2494b6454c22b038190a861783a1fa61b21ed580aec01b40a3d9efd7bba7f516b4c1bd83119212ad4ad91f302f2"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.4.2%2B1.18.1/graves-2.0.0-beta.4.2%2B1.18.1.jar",
+        "filename": "graves-2.0.0-beta.4.2+1.18.1.jar",
+        "primary": false,
+        "size": 890210,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "7YLoB45o",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-beta.4.1+1.18.1",
+    "version_number": "2.0.0-beta.4.1+1.18.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-01-15T22:12:07.113921Z",
+    "downloads": 183,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "feb650cf13c7e66c4814802d882851eefdc5807122af9fadf19e4afa0492b097ac9df31a78b04febdf197e827be8e632fe438f12072eef3e13e8401446059951",
+          "sha1": "c55f730ccfe6e21475d094a62d7d924fdf7f5cd8"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.4.1%2B1.18.1/graves-2.0.0-beta.4.1%2B1.18.1.jar",
+        "filename": "graves-2.0.0-beta.4.1+1.18.1.jar",
+        "primary": false,
+        "size": 872419,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "A1eah23s",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-beta.4+1.18.1",
+    "version_number": "2.0.0-beta.4+1.18.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-01-15T17:59:59.133609Z",
+    "downloads": 79,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "cb4c47a02fda2f1e3c88e04f5b8ff4bfc7de0ae9",
+          "sha512": "268fe4673c041045e00eea53e3ccc232c2a7c24806c80437fb4260bc15d3e3b1ca3b5c668678174cd6d453963a31132c2c921b033cb412535ab4e8f6ae310416"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.4%2B1.18.1/graves-2.0.0-beta.4%2B1.18.1.jar",
+        "filename": "graves-2.0.0-beta.4+1.18.1.jar",
+        "primary": false,
+        "size": 872508,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "akSHc1nm",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-beta.3+1.18.1",
+    "version_number": "2.0.0-beta.3+1.18.1",
+    "changelog": "Universal Graves 2.0.0-beta.3\n- Reworked grave guis (Preview and list)\n- You can now remove protection and break graves remotely\n- You can convert normal compasses to grave one by clicking it in gui\n- You can now craft gravestones with 5 stone bricks and 1 sign:\n  - They look the same as normal grave\n  - You can rotate them with shovel\n  - You can use feather to change text\n  - You can use player head to change the head (if present)\n  - You can change their look to \"damaged\"/unprotected by clicking with moss block\n  - And you can revert that by using sponge\n- Changed default model config values if it's generated on client\n- Fixed some bugs",
+    "changelog_url": null,
+    "date_published": "2021-12-28T13:38:00.42281Z",
+    "downloads": 235,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d412b92badd069faea7c0faeedd29d559b774ca1",
+          "sha512": "133a2f7c49042a278b1cf1f638e748ace5e9f2d75ec6434ad21f884e4efbea97c70bc24dc2de0626cf5b45aae8c7b3b4f23ffe362f4a78e12a515cb24fe7bde2"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.3%2B1.18.1/graves-2.0.0-beta.3%2B1.18.jar",
+        "filename": "graves-2.0.0-beta.3+1.18.jar",
+        "primary": false,
+        "size": 864016,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "oC2v0jAv",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-beta.2.1+1.18.1",
+    "version_number": "2.0.0-beta.2.1+1.18.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-12-23T19:02:54.939987Z",
+    "downloads": 122,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "5013ee95b1c3090aac428f583d126fca52dcad01",
+          "sha512": "971e186849c786d772bd81b2ef83cc6770488ed721101cfd5e6547f542868ae06eeb03c4e50b06b47e63a8cc55146da7b8c852dfbb6223bc44bf813797029720"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.2.1%2B1.18.1/graves-2.0.0-beta.2.1%2B1.18.jar",
+        "filename": "graves-2.0.0-beta.2.1+1.18.jar",
+        "primary": false,
+        "size": 837194,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "aSjSoevI",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-beta.2+1.18.1",
+    "version_number": "2.0.0-beta.2+1.18.1",
+    "changelog": "Universal Graves 2.0.0-beta.2 - Added `universal_graves:breaking_time` and `universal_graves:protection_time` - Visual Graves now use their own hologram/sign text - Changing protection time to 0 disables it (it was it's own option before) - Graves now have static id instead of being position based - Fixed compatibility with Immersive Portals - Fixed few bugs",
+    "changelog_url": null,
+    "date_published": "2021-12-23T11:00:35.451842Z",
+    "downloads": 91,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1374e99b72bb5b382ff8364dba20679c5cdf717205e4450cb18077de3feabb88239180acbd7aea375bddb1f11b2edcfbeb690f02151692a989eedc940ba002fc",
+          "sha1": "97426c9394a0eca819f8befa505ff63d37c55044"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.2%2B1.18.1/graves-2.0.0-beta.2%2B1.18.jar",
+        "filename": "graves-2.0.0-beta.2+1.18.jar",
+        "primary": false,
+        "size": 837070,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "DeM6HPVV",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "2.0.0-beta.1+1.18.1",
+    "version_number": "2.0.0-beta.1+1.18.1",
+    "changelog": "- Added client side custom model for `player_head` style\n- Added `client_model` grave style for more traditional look for modpacks\n- Added death compass (enabled by default)\n- Added ability to view content of grave remotely with /graves command\n- Added `universal_graves:visual_grave` block which can be used for decorative purposes, it can be obrained only with commands for now\n- Changed way graves are stored to allow more flexibility\n- Changed how quick pickup works, now it tries to put items in correct slots (including modded like trinkets)\n- Changed from usage of real time to game time (you can toggle it to old behaviour in the config)\n- Changed `player_head` style to turn into skull if grave is unlocked (can be disabled)\n- You can now disable holograms for players with mod on client side (for usage with `client_model`)",
+    "changelog_url": null,
+    "date_published": "2021-12-19T15:31:47.659763Z",
+    "downloads": 131,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "73079b0a4700f196ba14b7fb260ef2483cb57ff3",
+          "sha512": "f199c591bfdeec584567c1a1da251111346f0a09ac1d6363fcbbc19f23f9b37f9cccc0ee877de2945f613e73d1ed805ecd5a2d913406061c2931fc7d55bc30da"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/2.0.0-beta.1%2B1.18.1/graves-2.0.0-beta.1%2B1.18.jar",
+        "filename": "graves-2.0.0-beta.1+1.18.jar",
+        "primary": false,
+        "size": 827228,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18",
+      "1.18.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "YS5BK2Pa",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.2.2+1.18",
+    "version_number": "1.2.2+1.18",
+    "changelog": "- World name overrides now support formatting\n- You can now block creation of graves in selected worlds\n- You can change max distance of grave placement compared to player position\n- Fixed some bugs",
+    "changelog_url": null,
+    "date_published": "2021-12-04T12:09:20.318924Z",
+    "downloads": 470,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3d8a8216b6e22478b7e555845a99ccedad3b0dea28a47007056e3f5d4dbda7c30736d1ead5cc4fdb682d28ac9d0fd4f4db9437733639c58621937da6b73e83d4",
+          "sha1": "e46781ec9d47c17e6a295b3e5dd798db3a4716fa"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.2.2%2B1.18/graves-1.2.2%2B1.18.jar",
+        "filename": "graves-1.2.2+1.18.jar",
+        "primary": false,
+        "size": 711111,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18-rc1",
+      "1.18-rc2",
+      "1.18-rc3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "AQcQmHuq",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.2.1",
+    "version_number": "1.2.1",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-11-28T16:08:33.037711Z",
+    "downloads": 124,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "0830e64c1fddd17ba334bc89fe4940e864f43cae",
+          "sha512": "8f4e62a0410ef332e03e75ba9c61c5f92bccf571e011dc2bb59a03eabae373b443986f2542881a48d4a02a6bdeb0b84eeaa5a7c0823874a195b3b20a0bdac7ed"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.2.1/graves-1.2.1%2B1.18.jar",
+        "filename": "graves-1.2.1+1.18.jar",
+        "primary": true,
+        "size": 709190,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18-rc1",
+      "1.18-rc2",
+      "1.18-rc3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "agDQURfM",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.2.0+1.18",
+    "version_number": "1.2.0+1.18",
+    "changelog": "- Ported to 1.18\n- You can disable creation of graves in void or in case of death from /kill command,\n- You can now add your own enchantments that will get skipped from adding to grave,\n- You can disable default compatibility with soulbound enchantment,\n- You can now allow attackers to take items from graves (disabled by default),\n- Added option for replacing any block with grave (instead of only air/fluids)\n- Changed some default config values,\n- Graves will be waterlogged now if visual block supports it",
+    "changelog_url": null,
+    "date_published": "2021-11-28T09:42:36.291208Z",
+    "downloads": 95,
+    "version_type": "alpha",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "814efd38b311eef87644fb575d75fb2749028d6ab89b5cc7f4c91acc516f7c138e6dd4738748c14a11201405305cf883c873a7024ca83a1ba8418beaac0934db",
+          "sha1": "561301d6e0f1adce3fbf348bb395919ddf115f17"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.2.0%2B1.18/graves-1.2.0%2B1.18.jar",
+        "filename": "graves-1.2.0+1.18.jar",
+        "primary": false,
+        "size": 708734,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "xTU1wu1n",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.1.4",
+    "version_number": "1.1.4",
+    "changelog": "Universal Graves 1.1.4:\n- Shift right-clicking will now try to move items from grave to yuor inventory\n- After dying outside of world border, graves will be moved to terrain within it\n- You can modify text of sign (like) blocks while using \"custom\" style\n- Add api for creation of custom grave styles",
+    "changelog_url": null,
+    "date_published": "2021-11-14T15:05:13.192543Z",
+    "downloads": 532,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "87ded84c1748ed70f65e53c5a889cbd8f7d3244cc54fa9a9c62f8cff5226576545b74a7e78488ff31fa616935f09e363e1483f9ffd51d928d58f5cac5ee5e0f1",
+          "sha1": "bba0e95ba8d5f587b4c9daff6a29e0d10a8b6fcb"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.1.4/graves-1.1.4%2B1.17.1.jar",
+        "filename": "graves-1.1.4+1.17.1.jar",
+        "primary": false,
+        "size": 497119,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "WXnztrpC",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.1.3b",
+    "version_number": "1.1.3b",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-10-17T19:40:22.591284Z",
+    "downloads": 198,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2d2cce02b3e04a14b85db6107ee860d1ef94b0727cfb0f617c7bf43dcbfe6dd675b8244508f8f780d3451a7b8ee859a955f6b6ed1bc4fc61348946de8f25d290",
+          "sha1": "99588c7226d2a522f5d3addbf7dd22305d6a1405"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.1.3b/graves-1.1.3b%2B1.17.1.jar",
+        "filename": "graves-1.1.3b+1.17.1.jar",
+        "primary": false,
+        "size": 483103,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "JhRO73su",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.1.3",
+    "version_number": "1.13",
+    "changelog": "Universal Graves 1.1.3:\n- Fixed errors with Origins mod\n- You can now disable breaking of empty graves",
+    "changelog_url": null,
+    "date_published": "2021-10-17T18:27:08.630119Z",
+    "downloads": 98,
+    "version_type": "beta",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "7684b8f81bbaaad2d90449d81df7df131c3d5fb2bbe591ada1739b0243fdf088e127b99e5932ba8afac44220f67b8aa24f6b4afbaab70088077fa55996e69bb0",
+          "sha1": "347dad06928ba774bea758de00f8a0dc91c2b1aa"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.13/graves-1.1.3%2B1.17.1.jar",
+        "filename": "graves-1.1.3+1.17.1.jar",
+        "primary": false,
+        "size": 483112,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "vEcYI4QC",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.1.2",
+    "version_number": "1.1.2",
+    "changelog": "Fix compatibility with dynmap",
+    "changelog_url": null,
+    "date_published": "2021-10-09T19:57:39.671274Z",
+    "downloads": 148,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "53eb954d1793a44653985de7a06deaf4bfbe9410",
+          "sha512": "452091b3334f464d1c27c37a80754b8021eb34d02ff65295682b9b5342baad7fbf7c0ac918610fec92f015ad7e6622167ef3fa5fb729c951958e1ed67bcb2867"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.1.2/graves-1.1.2%2B1.17.1.jar",
+        "filename": "graves-1.1.2+1.17.1.jar",
+        "primary": false,
+        "size": 476954,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "b7TW8YRA",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.1.0",
+    "version_number": "1.1.0",
+    "changelog": "**Universal Graves 1.1.0**:\n- Cleaned up config file\n- You can now modify look of graves to any block with \"custom\" style type\n- Added support for Inventorio mod\n- Updated polymer and improved loading times (it's not forge after all)\n- Empty lines in holograms are now invisible\n- Added warning if cardboard is detected (if it even get past loading)\n- And other small fixes/improvements",
+    "changelog_url": null,
+    "date_published": "2021-09-22T13:05:54.15315Z",
+    "downloads": 148,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "1426eb21bac2ed01cc7c372c4b40f2c381d9a5acdc3fa8ed5b0e51181fac9e8f18617c0f796ccdfffd4d829f1d11fd77447aaede35790dce86de0a10abe4f54f",
+          "sha1": "c901f34080abd02ab0c62a45fb7b693a050a69e0"
+        },
+        "url": "https://cdn.modrinth.com//data/yn9u3ypm/versions/1.1.0/graves-1.1.0%2B1.17.1.jar",
+        "filename": "graves-1.1.0+1.17.1.jar",
+        "primary": false,
+        "size": 471073,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "X6tr77Md",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.8",
+    "version_number": "1.0.8",
+    "changelog": "**Universal Graves 1.0.8**\n- You can now change how much xp will be stored (see readme),\n- Fixed multiple bugs\n- New event for mods that want to exclude some items from being added to grave\n\n**Modrinth**: https://modrinth.com/mod/universal-graves\n**Curseforge**: https://www.curseforge.com/minecraft/mc-mods/universal-graves\n**Github**: https://github.com/Patbox/UniversalGraves",
+    "changelog_url": null,
+    "date_published": "2021-08-11T15:52:48.590116Z",
+    "downloads": 317,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "dcae38c07a2ffb989400816c1ddf68f3d86506ed",
+          "sha512": "76e95dc2d1ce52e2296d440fa43ca6e4d448cd34fd876d0022ffde2e9523f9e84ef9a2ac4c465339cdc7e2e8cfc117f58c363eb87e1efac7d9e492977098200f"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.8/graves-1.0.8%2B1.17.1.jar",
+        "filename": "graves-1.0.8+1.17.1.jar",
+        "primary": false,
+        "size": 415567,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "YMoedekn",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.7",
+    "version_number": "1.0.7",
+    "changelog": "**Universal Graves 1.0.7**\n- Fixed items in gui not displaying sometimes\n- Fixed default config having invalid message key\n- Added option to disable graves in claims\n- Added new events, that mods can depend on\n\n**Modrinth**: https://modrinth.com/mod/universal-graves\n**Curseforge**: https://www.curseforge.com/minecraft/mc-mods/universal-graves\n**Github**: https://github.com/Patbox/UniversalGraves",
+    "changelog_url": null,
+    "date_published": "2021-07-13T10:20:52.085331Z",
+    "downloads": 209,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ca5b3e54e670627ee70bd3bf4da260ade22836ea",
+          "sha512": "07ed8536a8b123830fc74700e3ae1443a1b894eb3422e80d792a478a5a02ab0744425a6f4cb446b063a4684a4dc68bdf1c29b2f8cfc947360a44e017c47e8309"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.7/graves-1.0.7%2B1.17.1.jar",
+        "filename": "graves-1.0.7+1.17.1.jar",
+        "primary": false,
+        "size": 374018,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "4Feni3mW",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.6",
+    "version_number": "1.0.6",
+    "changelog": "- Updated to 1.17.1\n- Added support for accessing graves on GOML claims",
+    "changelog_url": null,
+    "date_published": "2021-07-06T15:07:28.948319Z",
+    "downloads": 90,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "3eb9736e3e42bd8544076456dc563de3ee364393",
+          "sha512": "ef3cb565417f47f00fe1daf6505e02e0fd23097ef7c3c138a8f05e00c9fec64d0ee61ab230993e500bad8a8af4443d50bd6542db7a481d764d1b353dea52705e"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.6/graves-1.0.6%2B1.17.1.jar",
+        "filename": "graves-1.0.6+1.17.1.jar",
+        "primary": false,
+        "size": 363710,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "KSslMTDO",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.5",
+    "version_number": "1.0.5",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-06-28T19:46:06.551014Z",
+    "downloads": 212,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "bd344be715fc9f6821c3c2dfcb989792024b9d6685fe03e209cfac25e540fa309edc4adeeb19b7caea7b02f4c4a5f91292fcb42528f1f1b7fb8581b47de291ae",
+          "sha1": "cd9e8bb3d03898c0900c0511cb61f4474def734a"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.5/graves-1.0.5.jar",
+        "filename": "graves-1.0.5.jar",
+        "primary": false,
+        "size": 353102,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "o07cTG6b",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.4",
+    "version_number": "1.0.4",
+    "changelog": "- Fixed holograms/grave info not being removed sometimes\n- Fixed time formatting being invalid in case of 0 seconds\n- Fixed warnings on client while starting with the mod\n- You can now make protection infinite",
+    "changelog_url": null,
+    "date_published": "2021-06-27T09:21:09.979154Z",
+    "downloads": 93,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "abb909e7f7d7f37334a2188f8a96e8f137897a511ea821f8cf89e7e7a273c2b68aafed0353dc01a034b394283e52409b8c93d247bc3afe68b3f3a80c7ab7cee0",
+          "sha1": "8aa2c040250278e37e563af9fad7aefe874464ca"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.4/graves-1.0.4.jar",
+        "filename": "graves-1.0.4.jar",
+        "primary": false,
+        "size": 351825,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "87iJLSS5",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.3",
+    "version_number": "1.0.3",
+    "changelog": "- Hopefully fixed items missing from the grave\n\nAlso sorry for all players that lost anything...",
+    "changelog_url": null,
+    "date_published": "2021-06-26T08:07:12.936282Z",
+    "downloads": 83,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "335733813fcc5c1f897c96621c6b11792900fc7c",
+          "sha512": "c69f58b1b251b15946e256595cafc2b64c84d155da0760f107180fac1ccffb4171b72a2dbd574369685b274c2e8ca9832138ae62e435b928c564c329d984464a"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.3/graves-1.0.3.jar",
+        "filename": "graves-1.0.3.jar",
+        "primary": false,
+        "size": 350720,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "6OrKuKP6",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.2",
+    "version_number": "1.0.2",
+    "changelog": "- Fixed crashing on client\n- Fixed server side block causing block id shifts",
+    "changelog_url": null,
+    "date_published": "2021-06-25T11:13:14.114377Z",
+    "downloads": 81,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "0b16fcf7ff1918bb07b8be960286981ea8500ef04c5cf64a9dfec19d121cec43d67ef77f0ed96c5c1ea9e9621b5867301a9627d13966b228554ce7adc28594a9",
+          "sha1": "b927207201c789ad377b31d3fb15dfd35352214a"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.2/graves-1.0.2.jar",
+        "filename": "graves-1.0.2.jar",
+        "primary": false,
+        "size": 351033,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "nQJ9Oj7x",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.1",
+    "version_number": "1.0.1",
+    "changelog": "Fixes hologram not being removed for some players",
+    "changelog_url": null,
+    "date_published": "2021-06-24T21:08:03.623527Z",
+    "downloads": 91,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e3a217c950cb2ef846ca8ff0d4c96a4aaf7e06110b50ae030bedf2b329876fcaff2a7535ccc1434bfb69a37cb553d779e382f4e7575684a60f7bab94bbc5b16d",
+          "sha1": "18b08ebb0216bd5ec97292d72bacbd4004578575"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.1/graves-1.0.1.jar",
+        "filename": "graves-1.0.1.jar",
+        "primary": false,
+        "size": 349352,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "o5dpuQKw",
+    "project_id": "yn9u3ypm",
+    "author_id": "L8RLwrF2",
+    "featured": false,
+    "name": "1.0.0",
+    "version_number": "1.0.0",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-06-24T06:48:01.91982Z",
+    "downloads": 669,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ed09a6d4ae2eb247f12e880113083e654fa9187d6ec3f151faffc1c682e86f55f56405d9976d949691b9a508401995aa246df63922757dc676560d92abdc243a",
+          "sha1": "fc3ad828da358efabd7011f8b41c9502541c3bd8"
+        },
+        "url": "https://cdn.modrinth.com/data/yn9u3ypm/versions/1.0.0/graves-1.0.0.jar",
+        "filename": "graves-1.0.0.jar",
+        "primary": false,
+        "size": 348997,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  }
+]

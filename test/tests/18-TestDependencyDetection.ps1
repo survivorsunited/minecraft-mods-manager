@@ -1,13 +1,26 @@
-# Test Dependency Detection Functionality
-# Tests the new dependency detection feature that extracts and stores mod dependencies
-
-param([string]$TestFileName = $null)
+# Test Dependency Detection
+# Tests the new dependency detection functionality for Modrinth mods
 
 # Import test framework
-. (Join-Path $PSScriptRoot "..\TestFramework.ps1")
+. "$PSScriptRoot\..\TestFramework.ps1"
 
 # Set the test file name for use throughout the script
 $TestFileName = "18-TestDependencyDetection.ps1"
+
+Write-Host "Minecraft Mod Manager - Dependency Detection Tests" -ForegroundColor $Colors.Header
+Write-Host "==================================================" -ForegroundColor $Colors.Header
+
+Initialize-TestEnvironment $TestFileName
+
+# Helper to get the full path to ModManager.ps1
+$ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+
+# Set up isolated paths
+$TestOutputDir = Get-TestOutputFolder $TestFileName
+$script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
+$TestDownloadDir = Join-Path $TestOutputDir "download"
+$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
+$ModListPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
 
 function Invoke-TestDependencyDetection {
     
@@ -20,22 +33,7 @@ function Invoke-TestDependencyDetection {
         Failed = 0
     }
     
-    # Test setup - PROPER ISOLATION (like Test 13)
-    $TestOutputDir = Get-TestOutputFolder $TestFileName
-    $TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
-    $TestDownloadDir = Join-Path $TestOutputDir "download"
-    $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
-    $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
-    $ModListPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
-    
-    # Clean previous test artifacts
-    if (Test-Path $TestOutputDir) {
-        Remove-Item -Path $TestOutputDir -Recurse -Force
-    }
-    
-    # Ensure clean state
-    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
-    New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
+    # Test setup is now handled by Initialize-TestEnvironment above
     
     # Copy main modlist to test location for isolation
     Copy-Item -Path $ModListPath -Destination $TestModListPath -Force

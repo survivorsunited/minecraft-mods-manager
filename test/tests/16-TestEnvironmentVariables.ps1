@@ -1,13 +1,25 @@
-# Test Environment Variables Support
-# Tests the new environment variable support for configuration
-
-param([string]$TestFileName = $null)
+# Test Environment Variables
+# Tests environment variable support and fallback behavior
 
 # Import test framework
-. (Join-Path $PSScriptRoot "..\TestFramework.ps1")
+. "$PSScriptRoot\..\TestFramework.ps1"
 
 # Set the test file name for use throughout the script
 $TestFileName = "16-TestEnvironmentVariables.ps1"
+
+Write-Host "Minecraft Mod Manager - Environment Variables Tests" -ForegroundColor $Colors.Header
+Write-Host "==================================================" -ForegroundColor $Colors.Header
+
+Initialize-TestEnvironment $TestFileName
+
+# Helper to get the full path to ModManager.ps1
+$ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+
+# Set up isolated paths
+$TestOutputDir = Get-TestOutputFolder $TestFileName
+$script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
+$TestDownloadDir = Join-Path $TestOutputDir "download"
+$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
 
 function Invoke-TestEnvironmentVariables {
     
@@ -20,21 +32,7 @@ function Invoke-TestEnvironmentVariables {
         Failed = 0
     }
     
-    # Test setup - PROPER ISOLATION (like Test 13)
-    $TestOutputDir = Get-TestOutputFolder $TestFileName
-    $TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
-    $TestDownloadDir = Join-Path $TestOutputDir "download"
-    $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
-    $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
-    
-    # Clean previous test artifacts
-    if (Test-Path $TestOutputDir) {
-        Remove-Item -Path $TestOutputDir -Recurse -Force
-    }
-    
-    # Ensure clean state
-    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
-    New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
+    # Test setup is now handled by Initialize-TestEnvironment above
     
     # Test 1: .env file loading functionality
     Write-TestStep "Testing .env file loading"

@@ -110,6 +110,103 @@ Project phases and milestones are managed in the [GitHub Milestones](https://git
 
 **For project status and health monitoring, see PROJECT_STATUS.md**
 
+## Critical Issues (IMMEDIATE ATTENTION REQUIRED)
+
+### 🔥 CRITICAL: Test Archetype Violations
+- **Issue**: Tests 14, 15, 16, 18 are NOT following mandatory test archetype
+- **Problem**: Missing console logs because they don't call `Initialize-TestEnvironment`
+- **Impact**: No debugging capability, violates testing rules
+- **Status**: 🔴 BLOCKING - Must fix immediately
+
+### 🔥 CRITICAL: ModManager Broken
+- **Issue**: Property errors for `CurrentDependencies` and `LatestDependencies`
+- **Error**: `SetValueInvocationException: The property 'CurrentDependencies' cannot be found on this object`
+- **Location**: ModManager.ps1:1355-1356
+- **Impact**: Core functionality broken, tests failing
+- **Status**: 🔴 BLOCKING - Must fix immediately
+
+### 🔥 CRITICAL: Test Validation Failure
+- **Issue**: Test 01 didn't catch ModManager breakage
+- **Problem**: Test validation not comprehensive enough
+- **Impact**: Broken code can pass tests
+- **Status**: 🔴 BLOCKING - Must improve test coverage
+
+### 🔥 CRITICAL: Test Isolation Violation
+- **Issue**: Random files appearing in test folder again
+- **Problem**: Tests not properly isolated, polluting workspace
+- **Impact**: Test interference, unreliable results
+- **Status**: 🔴 BLOCKING - Must fix immediately
+
+### 🔥 CRITICAL: Quality Control Failure
+- **Issue**: Didn't check logs after test execution
+- **Problem**: Missing critical debugging information
+- **Impact**: Can't identify root causes of failures
+- **Status**: 🔴 BLOCKING - Must improve process
+
+## Immediate Action Plan
+
+### Step 1: Fix ModManager (Priority 1)
+- [ ] Fix `CurrentDependencies` and `LatestDependencies` property errors
+- [ ] Ensure CSV headers are properly added before property assignment
+- [ ] Test ModManager functionality manually
+
+### Step 2: Fix Test Archetype Violations (Priority 2)
+- [ ] Update test 14 to follow archetype (add `Initialize-TestEnvironment`)
+- [ ] Update test 15 to follow archetype (add `Initialize-TestEnvironment`)
+- [ ] Update test 16 to follow archetype (add `Initialize-TestEnvironment`)
+- [ ] Update test 18 to follow archetype (add `Initialize-TestEnvironment`)
+- [ ] Verify all tests now have console logs
+
+### Step 3: Improve Test Validation (Priority 3)
+- [ ] Enhance test 01 to catch ModManager breakage
+- [ ] Add property validation to test framework
+- [ ] Ensure tests validate core functionality
+
+### Step 4: Fix Test Isolation (Priority 4)
+- [ ] Identify source of random files in test folder
+- [ ] Fix test isolation patterns
+- [ ] Clean up existing random files
+
+### Step 5: Improve Quality Control (Priority 5)
+- [ ] Always check logs after test execution
+- [ ] Add log verification to test archetype
+- [ ] Implement mandatory log review process
+
+## Project Status
+
+### Phase Status
+- **Phase 1: Core Testing** - ✅ COMPLETED (Issues #3-6)
+- **Phase 2: Feature Development** - 🔴 BLOCKED (Critical issues above)
+- **Phase 3: Advanced Features** - ⏳ PENDING (Issues #27-32)
+- **Phase 4: Polish and Documentation** - ⏳ PENDING (Issue #33)
+
+### Issue Statistics
+- **Total Issues**: 34 (28 open, 6 closed)
+- **Critical Blockers**: 5 (listed above)
+- **Current Focus**: Fix critical issues before proceeding
+
+## Recent Progress
+
+### Completed
+- ✅ Phase 1: Core Testing (Issues #3-6)
+- ✅ Test Framework Development
+- ✅ Basic ModManager Functionality
+- ✅ Test Isolation Patterns
+
+### In Progress
+- 🔄 Fixing Critical Issues (see above)
+
+### Next Steps
+1. Fix ModManager property errors
+2. Fix test archetype violations
+3. Improve test validation
+4. Fix test isolation
+5. Resume Phase 2 development
+
+## Notes
+
+**CRITICAL**: All development is blocked until the critical issues above are resolved. The project cannot proceed with new features until the core functionality is stable and tests are properly following the archetype.
+
 ---
 
 **Last Updated**: 2025-06-24

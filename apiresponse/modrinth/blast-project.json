@@ -1,0 +1,187 @@
+{
+  "client_side": "required",
+  "server_side": "required",
+  "game_versions": [
+    "1.14.4",
+    "1.15.1",
+    "20w06a",
+    "20w13b",
+    "20w17a",
+    "1.16.1",
+    "1.16.3",
+    "1.16.4",
+    "1.16.5",
+    "21w14a",
+    "1.17",
+    "1.17.1",
+    "1.18",
+    "1.18.1",
+    "1.18.2",
+    "1.19",
+    "1.19.2",
+    "1.20.1",
+    "1.21.1",
+    "1.21.5"
+  ],
+  "id": "hrVBD9fd",
+  "slug": "blast",
+  "project_type": "mod",
+  "team": "kWBylypT",
+  "organization": "TtSa4imP",
+  "title": "BLAST",
+  "description": "A mod about bombs.",
+  "body": "BLAST is a Quilt, previously Fabric, mod about bombs.\n\nThat's it, just bombs. But why? Because:\n\n- Blowing stuff up is probably one of the most entertaining things in Minecraft.\n- TNT is way too expensive, and gets boring quickly.\n- Mining with explosives takes less time, is more enjoyable, and allows you to roleplay a dwarf demolitionist.\n \n\n**[MORE INFORMATION HERE](https://ladysnake.org/wiki/blast)**\n\n## FAQs\n*Please, before posting a comment, take a gander at this section.*\n\n**Forge?**\n\nNope, sorry, no Forge, so don't bother asking.\n",
+  "body_url": null,
+  "published": "2023-10-07T23:00:20.877686Z",
+  "updated": "2025-04-28T01:40:48.196903Z",
+  "approved": "2023-10-08T15:16:42.691774Z",
+  "queued": "2023-10-07T23:27:26.606926Z",
+  "status": "approved",
+  "requested_status": "approved",
+  "moderator_message": null,
+  "license": {
+    "id": "LicenseRef-All-Rights-Reserved",
+    "name": "",
+    "url": null
+  },
+  "downloads": 126656,
+  "followers": 247,
+  "categories": [
+    "equipment"
+  ],
+  "additional_categories": [],
+  "loaders": [
+    "fabric",
+    "quilt"
+  ],
+  "versions": [
+    "4vi59LgI",
+    "pSmVu2ni",
+    "ojB3W9Gs",
+    "vRxBeYJI",
+    "j8wupN18",
+    "r0xueyn0",
+    "S2i6qW5b",
+    "ZGBWgu69",
+    "NqeNW5iK",
+    "9YVsndjU",
+    "vCIVWLbL",
+    "f5VnRWF5",
+    "L5HvEArb",
+    "5VpykvbV",
+    "FsW9893N",
+    "w2XSdhsL",
+    "suZNu4Le",
+    "mNCrfDRs",
+    "ItzKfRfg",
+    "YgNNrLrS",
+    "mxLgd6MS",
+    "mgIXEGy8",
+    "CBwEPM7D",
+    "UzsHxOcG",
+    "LdtrjDL5",
+    "tifNCUFN",
+    "Kt8owOWP",
+    "EAEEXEF7",
+    "fuAYWWr7",
+    "ugOKAN0o"
+  ],
+  "icon_url": "https://cdn.modrinth.com/data/hrVBD9fd/a5c52019acfdf497b795c85b2e0510ce1f6b5601.png",
+  "issues_url": "https://github.com/Ladysnake/BLAST/issues",
+  "source_url": "https://github.com/Ladysnake/BLAST",
+  "wiki_url": "https://ladysnake.org/wiki/blast",
+  "discord_url": "https://discord.ladysnake.org",
+  "donation_urls": [
+    {
+      "id": "ko-fi",
+      "platform": "Ko-fi",
+      "url": "https://ko-fi.com/doctor4t"
+    }
+  ],
+  "gallery": [
+    {
+      "url": "https://cdn.modrinth.com/data/hrVBD9fd/images/3bde48e43628171b50761b54e41bbc71d95fe8f4_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/hrVBD9fd/images/9a209b3bae1fffbdf40529c3259b3756ceac1841.png",
+      "featured": false,
+      "title": "Stripminer",
+      "description": null,
+      "created": "2024-06-01T10:57:53.076888Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/hrVBD9fd/images/408988f444eccbad33b4d9046e4a905f7b7b9000_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/hrVBD9fd/images/408988f444eccbad33b4d9046e4a905f7b7b9000.png",
+      "featured": false,
+      "title": "Pearl Bomb",
+      "description": null,
+      "created": "2024-06-01T10:58:07.657454Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/hrVBD9fd/images/5e99f777fe287364e7e9398ad4681adfcb98afc8_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/hrVBD9fd/images/2c8102507da3e7ec90fb14ac86f086bdc3df2369.png",
+      "featured": false,
+      "title": "Frost Bomb",
+      "description": null,
+      "created": "2024-06-01T10:58:18.860473Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/hrVBD9fd/images/61ee33f0e5991bd7164580c0b45393221951dbe2_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/hrVBD9fd/images/92cb462e27bff76a6ad367ac2b58c56295d65b1e.png",
+      "featured": false,
+      "title": "Cold Digger",
+      "description": null,
+      "created": "2024-06-01T10:59:11.0989Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/hrVBD9fd/images/d4ced5f1188e67a91019a47d971ee432a9edee12_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/hrVBD9fd/images/67446df679363014872feca9baf89123ad491a2f.png",
+      "featured": false,
+      "title": "Slime Bomb",
+      "description": null,
+      "created": "2024-06-01T10:57:34.831913Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/hrVBD9fd/images/e6771227ee73a7b9524e9f6dbd3c1598a661d66a_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/hrVBD9fd/images/ec185a6295fe113f76d1d44e7ab21e4fec081028.png",
+      "featured": false,
+      "title": "Confetti Rain",
+      "description": null,
+      "created": "2023-10-07T23:11:19.108881Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/hrVBD9fd/images/f12b45d5a3b98683013d2813a6ccda6579e57809_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/hrVBD9fd/images/c1dd05a4bec863ca2b9d07101f2b8e121ceecf43.png",
+      "featured": false,
+      "title": "Confetti Bomb",
+      "description": null,
+      "created": "2024-06-01T10:58:52.034768Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/hrVBD9fd/images/ffb12bfda969517402de6716f8a6842f59c77ef1_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/hrVBD9fd/images/ffb12bfda969517402de6716f8a6842f59c77ef1.png",
+      "featured": false,
+      "title": "Dirt Bomb",
+      "description": null,
+      "created": "2024-06-01T10:59:32.491425Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/hrVBD9fd/images/55022936dcb2151950a11a55c0f183a884ed441d_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/hrVBD9fd/images/7d21ee5d6b081a352462cd8819ee4f9dedd0d245.png",
+      "featured": true,
+      "title": "Bonesburrier",
+      "description": null,
+      "created": "2024-06-01T10:56:47.309163Z",
+      "ordering": 1
+    }
+  ],
+  "color": 5263440,
+  "thread_id": "2pONyHm0",
+  "monetization_status": "monetized"
+}

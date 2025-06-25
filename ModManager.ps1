@@ -257,6 +257,12 @@ function Get-ModList {
         $mods = Import-Csv -Path $CsvPath
         if ($mods -isnot [System.Collections.IEnumerable]) { $mods = @($mods) }
         
+        # Ensure CSV has required columns including dependency columns
+        $mods = Ensure-CsvColumns -CsvPath $CsvPath
+        if (-not $mods) {
+            throw "Failed to ensure CSV columns"
+        }
+        
         # Add RecordHash to records that don't have it and verify integrity
         $modifiedRecords = @()
         $externalChanges = @()
@@ -1327,6 +1333,13 @@ function Validate-AllModVersions {
         $currentMods = Get-ModList -CsvPath $effectiveModListPath
         if (-not $currentMods) {
             Write-Host "❌ Failed to load current modlist" -ForegroundColor Red
+            return
+        }
+        
+        # Ensure CSV has required columns including dependency columns
+        $currentMods = Ensure-CsvColumns -CsvPath $effectiveModListPath
+        if (-not $currentMods) {
+            Write-Host "❌ Failed to ensure CSV columns" -ForegroundColor Red
             return
         }
         

@@ -1,0 +1,2415 @@
+[
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "ipZBePCc",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.8 (NeoForge 1.21.6)",
+    "version_number": "v5.5.8-neoforge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.6 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-06-19T18:59:26.934781Z",
+    "downloads": 340,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f3d8f6f533bfd50746eda6a0ac69e1544ffc9d75",
+          "sha512": "36f4e83e315b316f23cd75b2dd23cff476af0c081ad5139de05a06bc2229b3a9b732ee05ac78fc3c6f0cf507e1515c43fd26395c93339173b65c82353c9ee638"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/ipZBePCc/LuckPerms-NeoForge-5.5.8.jar",
+        "filename": "LuckPerms-NeoForge-5.5.8.jar",
+        "primary": true,
+        "size": 1448515,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "D0SyBQN7",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.8 (Fabric 1.21.6)",
+    "version_number": "v5.5.8-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.6 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-06-19T18:59:09.20245Z",
+    "downloads": 818,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "da3d8e9c12b8ccca6e4c805541988ff2c6370202",
+          "sha512": "9708bc51c553fbb0397d9a504b075cbaf6522dd04b056011a908aee9a40a299d7dbaa2f2debfec5c402f0411fc30c26b39406d91ec1cdbf369c47309c58ab187"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/D0SyBQN7/LuckPerms-Fabric-5.5.8.jar",
+        "filename": "LuckPerms-Fabric-5.5.8.jar",
+        "primary": true,
+        "size": 1588704,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.6"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "l8bjhSxF",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.8 (Forge 1.21.6)",
+    "version_number": "v5.5.8-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.6 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-06-19T18:58:52.8037Z",
+    "downloads": 27,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "406a1b35a4db43c7109a0b5d37917b79f474dd4872c6201d3b65f1445e2bc17108f22bb42018945d78dfcbc9af90df745bb596f9fdf1f1a3c9f41da1f46a2b76",
+          "sha1": "3de94d8991144513db4eddfb999f195c2ad34e6f"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/l8bjhSxF/LuckPerms-Forge-5.5.8.jar",
+        "filename": "LuckPerms-Forge-5.5.8.jar",
+        "primary": true,
+        "size": 1442621,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "sq8a8S4D",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.4 (Fabric 1.21.5)",
+    "version_number": "v5.5.4-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.5 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-06-15T20:52:00.983766Z",
+    "downloads": 680,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "e9c91e6c20625c52f4e126107ead8039ec3fc92a4073c5ca4f462c74ca97cc14a599bd81f62271beb15454b1d8263e966b95112d2fb86f3956d4ad25ef201bbb",
+          "sha1": "0ce247cfc086ce11a04dd1b5cf98319bb9cbca3e"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/sq8a8S4D/LuckPerms-Fabric-5.5.4.jar",
+        "filename": "LuckPerms-Fabric-5.5.4.jar",
+        "primary": true,
+        "size": 1588268,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "FmxMzNCn",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.4 (Forge 1.21.5)",
+    "version_number": "v5.5.4-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.5 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-06-15T20:51:44.756439Z",
+    "downloads": 40,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "79ade90afc5d72aab77f72c543d5024f89ef866b41818b3de08eb84ebb1bb2a06ec0ce685f21d7ef1d370c098ed644747380d7d1e9ccb434f39ed5647566aff9",
+          "sha1": "e406634e45cf2a5696e95c244c30c92ca609e026"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/FmxMzNCn/LuckPerms-Forge-5.5.4.jar",
+        "filename": "LuckPerms-Forge-5.5.4.jar",
+        "primary": true,
+        "size": 1454880,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "6ixQGGXZ",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.0 (NeoForge 1.21.5)",
+    "version_number": "v5.5.0-neoforge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.5 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-05-26T09:09:06.066205Z",
+    "downloads": 971,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "458cdeeaff4d504d45f37a6204660d1a1d5fa4033dfbed77201d8eabd7ba7e2fc4d00acf6a4025f9ca69888eaa4300a13fff0e8e9e4dd559a96dc231b92d7323",
+          "sha1": "5c0889d240526e111aa0330d2313c3676cb2d6fa"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/6ixQGGXZ/LuckPerms-NeoForge-5.5.0.jar",
+        "filename": "LuckPerms-NeoForge-5.5.0.jar",
+        "primary": true,
+        "size": 1453598,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "S2f2wz1y",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.0 (Fabric 1.21.5)",
+    "version_number": "v5.5.0-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.5 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-05-26T09:08:44.311569Z",
+    "downloads": 2172,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b9d40c0dbec1ea504bd2af7ca00c148e934bf6025ab844255f949020f54a3fb1ce927684ba26ce61023a992d5bcbbb1db6573ccbcbd4429f36e4610887e7362e",
+          "sha1": "ff300f5b87cc09fee88225a33249e994600f1fa2"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/S2f2wz1y/LuckPerms-Fabric-5.5.0.jar",
+        "filename": "LuckPerms-Fabric-5.5.0.jar",
+        "primary": true,
+        "size": 1602275,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "zbWm52uf",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.0 (Forge 1.21.5)",
+    "version_number": "v5.5.0-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.5 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-05-26T09:08:23.373114Z",
+    "downloads": 129,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5bd5134db6993ba39cc8238e6a16bea0dbd178b76d52327f6c42f49f6c84bcc8d1b97d585b9622c6845e26099262cafdcf8f299cd3dc84c00fe2540779512a66",
+          "sha1": "0c0c40636828d10743ae9036214853ce612d9dfa"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/zbWm52uf/LuckPerms-Forge-5.5.0.jar",
+        "filename": "LuckPerms-Forge-5.5.0.jar",
+        "primary": true,
+        "size": 1460361,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.8.9",
+      "1.9.4",
+      "1.10.2",
+      "1.11.2",
+      "1.12.2",
+      "1.13.2",
+      "1.14.4",
+      "1.15.2",
+      "1.16.5",
+      "1.17.1",
+      "1.18.2",
+      "1.19.4",
+      "1.20.6",
+      "1.21.3",
+      "1.21.5"
+    ],
+    "loaders": [
+      "velocity"
+    ],
+    "id": "ACa3exrC",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.0 (Velocity)",
+    "version_number": "v5.5.0-velocity",
+    "changelog": "This update brings the latest version of LuckPerms to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-05-26T09:07:51.398123Z",
+    "downloads": 2979,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5831bc4c105f2b079828c5491d6c01dc5b32c6c8aea7059f60580763ea83e182dfde3b971b9176661cac648a8dd94cff4855346f8f2994b239898904a549a34e",
+          "sha1": "a1ed7502f17859d4c70b235981cb7bd61ca075e4"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/ACa3exrC/LuckPerms-Velocity-5.5.0.jar",
+        "filename": "LuckPerms-Velocity-5.5.0.jar",
+        "primary": true,
+        "size": 1504000,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.8.9",
+      "1.9.4",
+      "1.10.2",
+      "1.11.2",
+      "1.12.2",
+      "1.13.2",
+      "1.14.4",
+      "1.15.2",
+      "1.16.5",
+      "1.17.1",
+      "1.18.2",
+      "1.19.4",
+      "1.20.6",
+      "1.21.3",
+      "1.21.5"
+    ],
+    "loaders": [
+      "bungeecord",
+      "waterfall"
+    ],
+    "id": "V3gNjsBO",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.0 (BungeeCord)",
+    "version_number": "v5.5.0-bungee",
+    "changelog": "This update brings the latest version of LuckPerms to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-05-26T09:07:35.345665Z",
+    "downloads": 143,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "32a82172ae6dd169b33239e3527582dd19b612c579ee1942ae1b19cd5423134ccb38feb100a9e7ba439012f259ab405c26603cfaa70d7b8fec81e5ff957b5c70",
+          "sha1": "0a493d6cd17094050be43f4292f0a0a182221d89"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/V3gNjsBO/LuckPerms-Bungee-5.5.0.jar",
+        "filename": "LuckPerms-Bungee-5.5.0.jar",
+        "primary": true,
+        "size": 1392000,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.8.9",
+      "1.9.4",
+      "1.10.2",
+      "1.11.2",
+      "1.12.2",
+      "1.13.2",
+      "1.14.4",
+      "1.15.2",
+      "1.16.5",
+      "1.17.1",
+      "1.18.2",
+      "1.19.4",
+      "1.20.6",
+      "1.21.3",
+      "1.21.5"
+    ],
+    "loaders": [
+      "bukkit",
+      "paper",
+      "spigot"
+    ],
+    "id": "ZPtLedoF",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.5.0 (Bukkit)",
+    "version_number": "v5.5.0-bukkit",
+    "changelog": "This update brings the latest version of LuckPerms to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-05-26T09:07:23.940562Z",
+    "downloads": 9711,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7ac3319812ed36ba099dd258e512b7f07b4e4d4a",
+          "sha512": "f12c83c7d33cad7b73d5ddd95f9f07498eda41e273d5dd378ce1b6d37a42ebe3ae023475ab14f63d6336fdb663180708d3685d6559c82836a5deafddf9df2f8c"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/ZPtLedoF/LuckPerms-Bukkit-5.5.0.jar",
+        "filename": "LuckPerms-Bukkit-5.5.0.jar",
+        "primary": true,
+        "size": 1486438,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "r3YKerOl",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.158 (NeoForge 1.21.5)",
+    "version_number": "v5.4.158-neoforge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.5 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-03-27T20:57:54.051588Z",
+    "downloads": 2526,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "dec964af9aa9b0427b35982efc06aae9ac340f3eafda2557a7d5ded47a0331b0fad4c822846221bacd84ac35a987139b3838a194566ce1ad233735da4f3f29cf",
+          "sha1": "759db7921f7ee0ba4e90166e04f3a637dd4305da"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/r3YKerOl/LuckPerms-NeoForge-5.4.158.jar",
+        "filename": "LuckPerms-NeoForge-5.4.158.jar",
+        "primary": true,
+        "size": 1437238,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "EXnNc30c",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.158 (Fabric 1.21.5)",
+    "version_number": "v5.4.158-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.5 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-03-27T20:57:38.403235Z",
+    "downloads": 5902,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f8f00e16c3555e3de979218d9d93abb7d182a078",
+          "sha512": "b852128fcb61227a3a9f60ab8605983e850cbe06fa40163788a870964e5ce3127ce00595014c8db13e102b0bbd1446d433b788e2aa8851960465b6fc4db8e1a0"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/EXnNc30c/LuckPerms-Fabric-5.4.158.jar",
+        "filename": "LuckPerms-Fabric-5.4.158.jar",
+        "primary": true,
+        "size": 1585130,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.5"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "knI9hOQt",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.158 (Forge 1.21.5)",
+    "version_number": "v5.4.158-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.5 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2025-03-27T20:57:22.815996Z",
+    "downloads": 389,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "ccb3062b23c8eb63ba3986dab79a97432a6057c5",
+          "sha512": "0c55b898f4bcc045636fbb05593143fc3120e0c1a32875f0fe5cc168a7c37e6387350faa4c565fb3665e1299e252b98c5f1993196dbe2e4eca3653dea2ae432d"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/knI9hOQt/LuckPerms-Forge-5.4.158.jar",
+        "filename": "LuckPerms-Forge-5.4.158.jar",
+        "primary": true,
+        "size": 1443959,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "dKAPoPGd",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.150 (NeoForge 1.21.4)",
+    "version_number": "v5.4.150-neoforge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.4 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-12-07T16:34:09.437875Z",
+    "downloads": 4369,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "fe155d730150d7ee4d707916ed23efe99fdeaac3",
+          "sha512": "26de0e74d87b91acf3b71050ed1880a50ffd1809b3a1309a2e24bee5413193f27a5056e13b69d8f39085e28711244c02bc5fc329be13174abb520008a0ca9682"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/dKAPoPGd/LuckPerms-NeoForge-5.4.150.jar",
+        "filename": "LuckPerms-NeoForge-5.4.150.jar",
+        "primary": true,
+        "size": 1433955,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "6h9SnsZu",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.150 (Fabric 1.21.4)",
+    "version_number": "v5.4.150-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.4 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-12-07T16:33:55.555265Z",
+    "downloads": 11034,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "66084a700d614866f3d44d995d4c014cb11016fa",
+          "sha512": "d616346f5ae1cce2137ce589323e89263a08b4bd26e547fa67d2b87a729740d70dfd2b6b06ffd6b72433f7e20c03bde3b4da69c7cd325f295d1f28f1861c8698"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/6h9SnsZu/LuckPerms-Fabric-5.4.150.jar",
+        "filename": "LuckPerms-Fabric-5.4.150.jar",
+        "primary": true,
+        "size": 1581057,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "5a0eXoXs",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.150 (Forge 1.21.4)",
+    "version_number": "v5.4.150-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.4 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-12-07T16:33:41.248965Z",
+    "downloads": 869,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "c7d5b50e5bb7535023d4172e97cb493ca0260511ced0f844c32e2db0b590960d12b1c210c0b214e552173ef0516b3e578fd5183d65cce0564d83e2ba7c3fcbcb",
+          "sha1": "1c4bb4e8aa046f6854ccdc6ba18a6205cc634392"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/5a0eXoXs/LuckPerms-Forge-5.4.150.jar",
+        "filename": "LuckPerms-Forge-5.4.150.jar",
+        "primary": true,
+        "size": 1440207,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "PelnLFOJ",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.149 (NeoForge 1.21.3)",
+    "version_number": "v5.4.149-neoforge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-12-07T16:15:05.894919Z",
+    "downloads": 210,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "3ae4e5ab8aa0e819e4b9d4bb48c839a82abf40ad60f038df23c368bf009b8f3a9f8f8a86cb9b538760b9405f702319ceb8c1756de82449d0c6ce9b8cbd08ea46",
+          "sha1": "b2c9998b51fe1dcfdff85caac58874c20fa9e6c0"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/PelnLFOJ/LuckPerms-NeoForge-5.4.149.jar",
+        "filename": "LuckPerms-NeoForge-5.4.149.jar",
+        "primary": true,
+        "size": 1433916,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.8.9",
+      "1.9.4",
+      "1.10.2",
+      "1.11.2",
+      "1.12.2",
+      "1.13.2",
+      "1.14.4",
+      "1.15.2",
+      "1.16.5",
+      "1.17.1",
+      "1.18.2",
+      "1.19.4",
+      "1.20.6",
+      "1.21.3",
+      "1.21.4"
+    ],
+    "loaders": [
+      "velocity"
+    ],
+    "id": "vtXGoeps",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.145 (Velocity)",
+    "version_number": "v5.4.145-velocity",
+    "changelog": "This update brings the latest version of LuckPerms to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-10-26T13:46:21.978567Z",
+    "downloads": 15505,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "9eb0197be07b1c29e797fc297fbaaea02cecce65e243b474c1460454d8e88ca248fd04d9ea471d8901255da83ff1addf354f0ecb89775abc4e17b1be35be9f90",
+          "sha1": "6c5a9469c287662f36dc8d49952789d3c8b10c65"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/vtXGoeps/LuckPerms-Velocity-5.4.145.jar",
+        "filename": "LuckPerms-Velocity-5.4.145.jar",
+        "primary": true,
+        "size": 1480512,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.8.9",
+      "1.9.4",
+      "1.10.2",
+      "1.11.2",
+      "1.12.2",
+      "1.13.2",
+      "1.14.4",
+      "1.15.2",
+      "1.16.5",
+      "1.17.1",
+      "1.18.2",
+      "1.19.4",
+      "1.20.6",
+      "1.21.3",
+      "1.21.4"
+    ],
+    "loaders": [
+      "bungeecord",
+      "waterfall"
+    ],
+    "id": "g212RkA2",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.145 (BungeeCord)",
+    "version_number": "v5.4.145-bungee",
+    "changelog": "This update brings the latest version of LuckPerms to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-10-26T13:46:14.835209Z",
+    "downloads": 739,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f1bc19038134e952c5fac2b67faa0750d001f5888ebae3584447d6d2cf39f467b50099045f77bf9006234dd412076ba5431624657c0f431f47b174ef3d487004",
+          "sha1": "2ac931b3d3b10c29c9d0552ba01dd3df9f251200"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/g212RkA2/LuckPerms-Bungee-5.4.145.jar",
+        "filename": "LuckPerms-Bungee-5.4.145.jar",
+        "primary": true,
+        "size": 1370083,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.8.9",
+      "1.9.4",
+      "1.10.2",
+      "1.11.2",
+      "1.12.2",
+      "1.13.2",
+      "1.14.4",
+      "1.15.2",
+      "1.16.5",
+      "1.17.1",
+      "1.18.2",
+      "1.19.4",
+      "1.20.6",
+      "1.21.3",
+      "1.21.4"
+    ],
+    "loaders": [
+      "bukkit",
+      "paper",
+      "spigot"
+    ],
+    "id": "cfNN7sys",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.145 (Bukkit)",
+    "version_number": "v5.4.145-bukkit",
+    "changelog": "This update brings the latest version of LuckPerms to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-10-26T13:43:50.432086Z",
+    "downloads": 52058,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7fbe2a6cc4d55dfc9e3e8a4a8bade814b6d7ccba",
+          "sha512": "3450844775070d7ef6fcc09ee76f96e18f602e6781636c36c563b52d6faacbda1663087fe97834920a57ea3bb3ed0fa0b39d57c1faefa9ef6babd1e3ae77d085"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/cfNN7sys/LuckPerms-Bukkit-5.4.145.jar",
+        "filename": "LuckPerms-Bukkit-5.4.145.jar",
+        "primary": true,
+        "size": 1464521,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "OL5gef2v",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.145 (NeoForge 1.21.3)",
+    "version_number": "v5.4.145-neoforge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-10-26T09:13:21.965064Z",
+    "downloads": 111,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7da3b6a9d48826e042f1ee425ac28718b602593e",
+          "sha512": "48ed2405459c67c4bba6a4791bc6fa3c7b5437ca6c00069cefacfe2dfb9c61810903b5faf4c9e967d42e2316e34328e4ee66887ef638c307d34eb2fc29df8b1b"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/OL5gef2v/LuckPerms-NeoForge-5.4.145.jar",
+        "filename": "LuckPerms-NeoForge-5.4.145.jar",
+        "primary": true,
+        "size": 1436586,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "S8033hpf",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.145 (Fabric 1.21.3)",
+    "version_number": "v5.4.145-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-10-26T09:13:08.745197Z",
+    "downloads": 4268,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "fd2588b3588bfd0ef7a18fb20037abeafced4e18",
+          "sha512": "7da607e2419b128f558a9fc1add840fc42cc34b97115d768b12f0534ebe06fe294baaa361a1b667fe0d4a855f89a2b426db0bb1c2c791f08acdca0cd2c38b42f"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/S8033hpf/LuckPerms-Fabric-5.4.145.jar",
+        "filename": "LuckPerms-Fabric-5.4.145.jar",
+        "primary": true,
+        "size": 1577637,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "RTPkVGeT",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.145 (Forge 1.21.3)",
+    "version_number": "v5.4.145-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-10-26T09:12:54.885662Z",
+    "downloads": 216,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "389a2330f873afb9f3a52181c71939f97215be5a",
+          "sha512": "f1f2c47a71a9615527931e77bccde2f7b96550c47c77fed660d75387b53a19e135038d83d2c429fd0c616200e29c1e91b3444a757125a58fa8b9391ee11a02f0"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/RTPkVGeT/LuckPerms-Forge-5.4.145.jar",
+        "filename": "LuckPerms-Forge-5.4.145.jar",
+        "primary": true,
+        "size": 1437833,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "rnvg05YO",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.140 (NeoForge 1.21.1)",
+    "version_number": "v5.4.140-neoforge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.1 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-08-22T21:33:54.445681Z",
+    "downloads": 8358,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "50d94c5a9d2635a445a2bd4f2f16c22172678b93315e3d91fa0829349ccd2b02944354af7baa3e6ae0c7bfe19f497b09af461f84aacc93900b59b75a07cd0290",
+          "sha1": "bd368d3254d81120a8c287f79c0467478ad2d73e"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/rnvg05YO/LuckPerms-NeoForge-5.4.140.jar",
+        "filename": "LuckPerms-NeoForge-5.4.140.jar",
+        "primary": true,
+        "size": 1434674,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "l47d4ZWk",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.140 (Fabric 1.21.1)",
+    "version_number": "v5.4.140-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.1 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-08-22T21:33:40.834033Z",
+    "downloads": 49265,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "386ff4d18981c830d21ddaa599d70c1c5430c1475e2c5960275bad535cbd572c77e38b3841f0a71e3ea4a795c56d45ff8c4a8dba3799dae26bff5a382c6e0a64",
+          "sha1": "5368c9a12f181eeeae124b70395691780e5cb657"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/l47d4ZWk/LuckPerms-Fabric-5.4.140.jar",
+        "filename": "LuckPerms-Fabric-5.4.140.jar",
+        "primary": true,
+        "size": 1574861,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "NknrvgqF",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.140 (Forge 1.21.1)",
+    "version_number": "v5.4.140-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.1 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-08-22T21:33:26.473514Z",
+    "downloads": 1041,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5bee7f19e43f7596b979712040be1a399ff63e560aafee64f9be8fcd46509fd354e329d34cb5f5ccbadacaebb4e205a3c4a7c70d5c573afd59fa6b7ce9a578be",
+          "sha1": "3784d241e9a538a8701efb12f90d322c496f16b9"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/NknrvgqF/LuckPerms-Forge-5.4.140.jar",
+        "filename": "LuckPerms-Forge-5.4.140.jar",
+        "primary": true,
+        "size": 1435970,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "id": "MwOI6EAP",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.139 (NeoForge 1.21.1)",
+    "version_number": "v5.4.139-neoforge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.1 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-08-12T18:55:39.902044Z",
+    "downloads": 643,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ee5176b71d2a7db853e579ad5e99a1fb7c0777a248c089aee3cc07fb23bcd23ba7d15f7330635e9cc773f6f0a3424ff0b91186534c66818e7d379136b96b6897",
+          "sha1": "96ea7845522cbcfdbaae5cd957909333bb906a04"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/MwOI6EAP/LuckPerms-NeoForge-5.4.139.jar",
+        "filename": "LuckPerms-NeoForge-5.4.139.jar",
+        "primary": true,
+        "size": 1434750,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "oLykW1F8",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.139 (Fabric 1.21.1)",
+    "version_number": "v5.4.139-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.1 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-08-12T18:55:25.312627Z",
+    "downloads": 2215,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "a57ddfc759174118c46fc57b775187cb2a0fe5ff",
+          "sha512": "fcd867dd3bdaa880cf2fcdb2337a4069b3280b2f47ddbeadb64c423f59974fd585c5f06107a63c9ddde98331e8645a99126bf7b006897ea6c8a4abc653861f16"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/oLykW1F8/LuckPerms-Fabric-5.4.139.jar",
+        "filename": "LuckPerms-Fabric-5.4.139.jar",
+        "primary": true,
+        "size": 1574861,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "VasBcNc8",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.139 (Forge 1.21.1)",
+    "version_number": "v5.4.139-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21.1 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-08-12T18:55:11.347985Z",
+    "downloads": 164,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5ec3e2fdb80fc081125e1bdb25aab461c6a2b12cd6422568d9b594dc5408a5b49d7e254c58ac1b7d84bf06e3987fdd0feb00a4bff8677e27a7b0c8d67d3a81d3",
+          "sha1": "0ffa0008c047b9890e58b74791c0d9ba32a4a8e5"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/VasBcNc8/LuckPerms-Forge-5.4.139.jar",
+        "filename": "LuckPerms-Forge-5.4.139.jar",
+        "primary": true,
+        "size": 1436554,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "2RuZIzOq",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.133 (Fabric 1.21)",
+    "version_number": "v5.4.133-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-06-16T10:06:22.073795Z",
+    "downloads": 9927,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "ecb5e47025b61b83d689c2d66088e0709a37cd199941c178658a5836092e7932e5bf72151d42a55ee4c11aef7d51ee565a4ed8ec8d6473152bf35a9a50b1e168",
+          "sha1": "d0b2cc225e4f863b92aa880ae8947f236311d02a"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/2RuZIzOq/LuckPerms-Fabric-5.4.133.jar",
+        "filename": "LuckPerms-Fabric-5.4.133.jar",
+        "primary": true,
+        "size": 1540221,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.21"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "df7sxHxU",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.133 (Forge 1.21)",
+    "version_number": "v5.4.133-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.21 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-06-16T10:06:08.42875Z",
+    "downloads": 442,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "2fa4ba8d7c8ba93ca39aee51c4b81d87712bc998a111a1ffa23f020d985ccd81eb7ae45e7802d89c993859c77f3e03acd6b9516645d792d4b6532bc6f356fcfd",
+          "sha1": "189203257a323334c85ce71a3e1d521bfecc63ed"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/df7sxHxU/LuckPerms-Forge-5.4.133.jar",
+        "filename": "LuckPerms-Forge-5.4.133.jar",
+        "primary": true,
+        "size": 1405225,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "sifoDPrM",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.128 (Forge 1.20.6)",
+    "version_number": "v5.4.128-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.6 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-05-12T18:14:57.316663Z",
+    "downloads": 868,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "2887946e4c2a319ad669b492ff0d7ae0f79fedbe",
+          "sha512": "ff56a1a9dae7c3de5790f9ec1f12cebd0f2fc9612b4b811259a8efec6ed0f8e427fb0de06c3f105eb2500fe7f21a5830b281f0ca023fbfee4fdc7a00035c783a"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/sifoDPrM/LuckPerms-Forge-5.4.128.jar",
+        "filename": "LuckPerms-Forge-5.4.128.jar",
+        "primary": true,
+        "size": 1405039,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5",
+      "1.20.6"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "BrZOYzp6",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.125 (Fabric 1.20.6)",
+    "version_number": "v5.4.125-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.6 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-04-29T20:20:33.541389Z",
+    "downloads": 3261,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "92acaf4c3f7dd294ed05a21b2e4a9d6c2d2d3f44",
+          "sha512": "2c0959932eddc39af77e8686aeaaa96fe5b9ad9fdde45782224d84b8454147200716844710b51de30c039bac7400b24be60697d0ab7ad0b09f713afc52a529ae"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/BrZOYzp6/LuckPerms-Fabric-5.4.125.jar",
+        "filename": "LuckPerms-Fabric-5.4.125.jar",
+        "primary": true,
+        "size": 1540212,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "TIhJkC4u",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.123 (Fabric 1.20.5)",
+    "version_number": "v5.4.123-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.5 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2024-04-23T22:18:32.40902Z",
+    "downloads": 384,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "832561d2574e2d5ad1616869b187a5fb779e525e3c89cde234aa8a7864855d333c389f7a7891fb084940de1e7d1785897ed2dfca6056367826ad0ac7150a3641",
+          "sha1": "6853bea5a484e2431619da9410493e2cbba92451"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/TIhJkC4u/LuckPerms-Fabric-5.4.123.jar",
+        "filename": "LuckPerms-Fabric-5.4.123.jar",
+        "primary": true,
+        "size": 1540214,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "42RCP8I8",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.113 (Fabric 1.20.4)",
+    "version_number": "v5.4.113-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.4 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-12-16T11:20:44.934978Z",
+    "downloads": 13969,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "08a99ca6c7bf0e99d75db5cf085c0cb0bd5146b1b99ab0aef400bae6c7074a1aedf70edb2f7b1a1a065d8d689c1f58d7e100a11ba81022ea66d65e4f84dea250",
+          "sha1": "5d6b90bf3f70e19610c684da8bf4a3906805207b"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/42RCP8I8/LuckPerms-Fabric-5.4.113.jar",
+        "filename": "LuckPerms-Fabric-5.4.113.jar",
+        "primary": true,
+        "size": 1528312,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "bzPC0zKC",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.113 (Forge 1.20.4)",
+    "version_number": "v5.4.113-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.4 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-12-16T11:20:30.570412Z",
+    "downloads": 1050,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "5f47f1a0a590ab42798a298136d62e17dfe5fcdb",
+          "sha512": "07d3646bce874fb926975a91c1b6ed3b4a8ea687defdddf7a1e392fc48b7d355d97d5ddce25e8a98a17d12940705299acc1ca9e9615662440d885c5f924c2d73"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/bzPC0zKC/LuckPerms-Forge-5.4.113.jar",
+        "filename": "LuckPerms-Forge-5.4.113.jar",
+        "primary": true,
+        "size": 1400819,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "Q8sYTIzD",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.112 (Fabric 1.20.4)",
+    "version_number": "v5.4.112-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.4 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-12-11T22:51:42.711081Z",
+    "downloads": 273,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "3abc8849ab53c77c48abfdce47594a26d1b5f157",
+          "sha512": "3a1bcfa567c593ecd9f7d3095115edae18ec44cd485359ba68d040a2055602eb2b83dcebcdfde9e9d108db767df95f2682278783a4c84f70536f3026d9cdb117"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/Q8sYTIzD/LuckPerms-Fabric-5.4.112.jar",
+        "filename": "LuckPerms-Fabric-5.4.112.jar",
+        "primary": true,
+        "size": 1528386,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3",
+      "1.20.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "gQeJyotw",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.112 (Forge 1.20.4)",
+    "version_number": "v5.4.112-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.4 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-12-11T22:51:27.910455Z",
+    "downloads": 201,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "9e3bae7b9bfee5d057778d0c2b98c4229d0cfed418b11c35e29a38a541543bc0e181b33a0e7df5970f96f906eac1e8ddaf1122094971e1daabb55342943259ff",
+          "sha1": "e882bb29462e80f46b3c91a0f08b8bc6c8d5f326"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/gQeJyotw/LuckPerms-Forge-5.4.112.jar",
+        "filename": "LuckPerms-Forge-5.4.112.jar",
+        "primary": true,
+        "size": 1400858,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "V6jJcD5R",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.111 (Fabric 1.20.3)",
+    "version_number": "v5.4.111-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-12-06T21:03:28.127901Z",
+    "downloads": 201,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "642a5e25e6b81c784c8faff3130fca7172285371eda5899cbec457249f465f7859cdffe649697b48a46410e3cee940171af7afd52b0b8f212bdae3b70b05b2bb",
+          "sha1": "04ceaa36a4bb7ad21c1374d343253ce5b7ba059b"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/V6jJcD5R/LuckPerms-Fabric-5.4.111.jar",
+        "filename": "LuckPerms-Fabric-5.4.111.jar",
+        "primary": true,
+        "size": 1528375,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "jo7yK6ip",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.109 (Fabric 1.20.2)",
+    "version_number": "v5.4.109-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.2 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-12-06T20:12:58.158915Z",
+    "downloads": 2257,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "bdb142cca1b75442589f896ece8c2e32a3e7adbc",
+          "sha512": "eabe44727134578c8bda9f6de1ee0c2d13762d2393b7c5d683adb207844beec605134a9d4a21d862f3538429975673380b408f38628cfaae447c001d83e7a3db"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/jo7yK6ip/LuckPerms-Fabric-5.4.109.jar",
+        "filename": "LuckPerms-Fabric-5.4.109.jar",
+        "primary": true,
+        "size": 1551093,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "kiQHH44o",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.109 (Forge 1.20.2)",
+    "version_number": "v5.4.109-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.2 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-12-06T20:12:42.657714Z",
+    "downloads": 623,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "605b0fae16238f384d79e4ba648ab18d2d392057",
+          "sha512": "b6d02940e48a889168aa152c45720f906383e495f8d7f3b03153aac448b8c7f72d1b9da36c0cce5bf9b3591fd10a1196bd652ae483c7d43dcae4b9a98e79f47f"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/kiQHH44o/LuckPerms-Forge-5.4.109.jar",
+        "filename": "LuckPerms-Forge-5.4.109.jar",
+        "primary": true,
+        "size": 1400718,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "7PNj6nCm",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.102 (Fabric 1.20.1)",
+    "version_number": "v5.4.102-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.1 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-09-05T08:00:08.324136Z",
+    "downloads": 216069,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "45058fd2bbd2e7723af01a093ef7233d8a6fa2278a2232dfcc2aa53dae6df7ed78dbfbdb9ee133b19bc36655ccff5a4facdd476319c18e290b284733bf10edff",
+          "sha1": "891e2404c0f9790e704e29faa98241178e29fc20"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/7PNj6nCm/LuckPerms-Fabric-5.4.102.jar",
+        "filename": "LuckPerms-Fabric-5.4.102.jar",
+        "primary": true,
+        "size": 1551904,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "AudvOzqV",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.102 (Forge 1.20.1)",
+    "version_number": "v5.4.102-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.1 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-09-05T07:59:53.106375Z",
+    "downloads": 51811,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "762256001b0f2037f9d80911ba32ef2c9eaad72b256a9d2ad4e57fc289423ea8018d0751581ecd8f23f6855fd96dec1fd671c43406f9df54fcf20626f518c062",
+          "sha1": "00597f94cd1f88a468202c1fa0495106f000d564"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/AudvOzqV/LuckPerms-Forge-5.4.102.jar",
+        "filename": "LuckPerms-Forge-5.4.102.jar",
+        "primary": true,
+        "size": 1398478,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "7VG8Evoq",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.88 (Fabric 1.20.1)",
+    "version_number": "v5.4.88-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.1 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-06-14T20:56:23.780328Z",
+    "downloads": 24499,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f98c6761c5e7e2315c57c89a7deac51f58569134fd32a2323abbf5f54c59d3a916ff235ad8840ceae24b92aaf295d4fc3e8fbe845fb4d8cff8dd9b1567b0ef99",
+          "sha1": "8c9364ad400b9562d1a547ab5cd7f57920adede6"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/7VG8Evoq/LuckPerms-Fabric-5.4.88.jar",
+        "filename": "LuckPerms-Fabric-5.4.88.jar",
+        "primary": true,
+        "size": 1549210,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "D8WIgFFv",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.88 (Forge 1.20.1)",
+    "version_number": "v5.4.88-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20.1 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-06-14T20:55:58.054729Z",
+    "downloads": 3853,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "f1771db41679ed8ddc845f26c7c544b919b2d5c6",
+          "sha512": "5e0a5a1ed739bee688f0643fc8e057d04f84fbb01990c23d2127387a7beeb8a79c35b15604afbe04d0c2856eb4138c1e4dc95143da35cf85c0a3be61ec56fcaa"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/D8WIgFFv/LuckPerms-Forge-5.4.88.jar",
+        "filename": "LuckPerms-Forge-5.4.88.jar",
+        "primary": true,
+        "size": 1396018,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "TxKd00aD",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.83 (Fabric 1.20)",
+    "version_number": "v5.4.83-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-06-11T10:34:08.623164Z",
+    "downloads": 1320,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1bcd456d8a486f18b5b56c8719f1b967843061b1",
+          "sha512": "99e0821da689024e269bbcbeb6b6f66358e4e525dc7cf3a57be4032bba87e6517a3bf0668f21da9cf5924217a392f36caa04d45026db7a604ee343d1229b8743"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/TxKd00aD/LuckPerms-Fabric-5.4.83.jar",
+        "filename": "LuckPerms-Fabric-5.4.83.jar",
+        "primary": true,
+        "size": 1548353,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.20"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "ytoIgQyu",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.83 (Forge 1.20)",
+    "version_number": "v5.4.83-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.20 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-06-11T10:33:54.794122Z",
+    "downloads": 357,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "f67e5fe6caecc6d5cc6735b3b0e34fff57466b7b2364886cecf139b1734c8a7b539e68e1b60928547a9ec731cea081a7f0c59f26d9ff7412e538561223e1920d",
+          "sha1": "32dcd3fa08db7d1dbd3fc0ec9d21c09eb1ada95e"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/ytoIgQyu/LuckPerms-Forge-5.4.83.jar",
+        "filename": "LuckPerms-Forge-5.4.83.jar",
+        "primary": true,
+        "size": 1389964,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.3",
+      "1.19.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "Ws97yOyp",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.66 (Fabric 1.19.4)",
+    "version_number": "v5.4.66-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.19.4 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-03-15T19:37:20.848313Z",
+    "downloads": 114774,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "56f83af8208eaa0073faae0f8209e175ff74f50fa79a42459a055955e3a772188bf46e46b50e2bbc2f08b778e627254393c361600eb6f73694e6bd0484392cd4",
+          "sha1": "eb2bd1cda5f9f9fe5d46a4fe9b6faf52ae5d1ae6"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/Ws97yOyp/LuckPerms-Fabric-5.4.66.jar",
+        "filename": "LuckPerms-Fabric-5.4.66.jar",
+        "primary": true,
+        "size": 1537717,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.3",
+      "1.19.4"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "QF90l2xG",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": true,
+    "name": "v5.4.66 (Forge 1.19.4)",
+    "version_number": "v5.4.66-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.19.4 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-03-15T19:37:12.440231Z",
+    "downloads": 5834,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "add8c7c36390bf955a8d831f6407e0fd1b611c97",
+          "sha512": "6394136615ff336d78505ff78fbaa4aa9db21cad03865930a97d9301555e3f3b11b088392bd77a2e2985a699fae701808f4225820a6a151af3401940d015d377"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/QF90l2xG/LuckPerms-Forge-5.4.66.jar",
+        "filename": "LuckPerms-Forge-5.4.66.jar",
+        "primary": true,
+        "size": 1384708,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "BQE71eJn",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.65 (Fabric 1.19.3)",
+    "version_number": "v5.4.65-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.19.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-03-13T11:21:39.110512Z",
+    "downloads": 436,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "dad41d9fef2971217246086a96de32b0cb594702",
+          "sha512": "ee3eaff74e41cdb56c88c6acf8e877e5cf57917ed8a77c0d632a08c7a53acf85857a9756e9a8a7853a84c37fa8731bce5aeef984ff73cfaeba1341e7d815c3c1"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/BQE71eJn/LuckPerms-Fabric-5.4.65.jar",
+        "filename": "LuckPerms-Fabric-5.4.65.jar",
+        "primary": true,
+        "size": 1537716,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "reOFc2gW",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.65 (Forge 1.19.3)",
+    "version_number": "v5.4.65-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.19.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-03-13T11:21:24.963211Z",
+    "downloads": 332,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "d9ceec98eae327e2f0c800bb8d9d1076f86c457d",
+          "sha512": "fd07d35fa6f1df4148277f01a1a427e7fe779483d3306822bbd89d4822ed0515bb9045693590c8d2118e1a9aa10e7c11d6a1dba0f126fb3124e773579f1efe4f"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/reOFc2gW/LuckPerms-Forge-5.4.65.jar",
+        "filename": "LuckPerms-Forge-5.4.65.jar",
+        "primary": true,
+        "size": 1384709,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "DcPV35qG",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.60 (Fabric 1.19.3)",
+    "version_number": "v5.4.60-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.19.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-01-29T11:06:10.441908Z",
+    "downloads": 18348,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c2f7cbdddef829c839ce36c205993235d4eb5489",
+          "sha512": "64539f13f6bad34cd0772e54524ad8d01d1e2a702cacf9f155dfdaf1f1814a293a095c50170a5174db9a961c1811c9aee2961f4c6e3b88424283b09b05d90996"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/DcPV35qG/LuckPerms-Fabric-5.4.60.jar",
+        "filename": "LuckPerms-Fabric-5.4.60.jar",
+        "primary": true,
+        "size": 1537700,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "DxAbOBhn",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.60 (Forge 1.19.3)",
+    "version_number": "v5.4.60-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.19.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-01-29T11:05:57.049639Z",
+    "downloads": 856,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "c4ae03127f789d3ffd233cd3c8249f4fd8b5991f",
+          "sha512": "27196528b949b1c064e3bc7923d12e2f198d34dae6516fc97ea94156569512dd0ff0e8f7068b42d9a8914a1219113f0a801f7623ea81ccaf11d203748824cbd2"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/DxAbOBhn/LuckPerms-Forge-5.4.60.jar",
+        "filename": "LuckPerms-Forge-5.4.60.jar",
+        "primary": true,
+        "size": 1384578,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.3"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "NopnADlz",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.57 (Fabric 1.19.3)",
+    "version_number": "v5.4.57-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.19.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-01-01T22:19:55.159856Z",
+    "downloads": 911,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "588ea52be45dabaeba289c380bc59dbc1e65542fb7d5cd8d1ab3b8f84678def7432314dc3d3c67f2769a7b3eb91db85877ce23c9be431679e0418c51e7e3bf04",
+          "sha1": "25302304b2c5066e8671e2fae8e83c8e57962713"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/NopnADlz/LuckPerms-Fabric-5.4.57.jar",
+        "filename": "LuckPerms-Fabric-5.4.57.jar",
+        "primary": true,
+        "size": 1537369,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.3"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "PaCF8TrE",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.57 (Forge 1.19.3)",
+    "version_number": "v5.4.57-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.19.3 to Modrinth. The full changelog can be viewed at https://luckperms.net/download.",
+    "changelog_url": null,
+    "date_published": "2023-01-01T22:19:41.768899Z",
+    "downloads": 408,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "7a80bb1ada0c4db8616996b4d54b11467490aa1f",
+          "sha512": "f3e0d00755d110899435f5ac8b31267e491e67870b419288fdbd35069d2dbf37e174bd3811ced4756e8753fd6b1c1536c5575f146bd1a331b0b41419e909a3ce"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/PaCF8TrE/LuckPerms-Forge-5.4.57.jar",
+        "filename": "LuckPerms-Forge-5.4.57.jar",
+        "primary": true,
+        "size": 1384298,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "5inRjMdb",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.46 (Fabric 1.19.2)",
+    "version_number": "v5.4.46-fabric",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.19.2 to Modrinth.",
+    "changelog_url": null,
+    "date_published": "2022-09-18T19:59:35.056174Z",
+    "downloads": 10726,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "1b66579aa172491e37b716f67a1b28b2f0fab294",
+          "sha512": "72ec6cfccd7fa73a5282864b69bc7b0b2dfd687bf9686df0f5e2b93ad39df8bf5d12c0add77fb79ab4a918a5ae8eddb09e2b8f5f9095db0bab54146c5ae0ac9b"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/5inRjMdb/LuckPerms-Fabric-5.4.46.jar",
+        "filename": "LuckPerms-Fabric-5.4.46.jar",
+        "primary": true,
+        "size": 1523423,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19",
+      "1.19.1",
+      "1.19.2"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "39WCFdto",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.46 (Forge 1.19.2)",
+    "version_number": "v5.4.46-forge",
+    "changelog": "This update brings the latest version of LuckPerms for Minecraft 1.19.2 to Modrinth.",
+    "changelog_url": null,
+    "date_published": "2022-09-18T19:59:27.520974Z",
+    "downloads": 4359,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5ec8d1f05c6ee9ec13bd372c91632f874db5f6980bfc4dea368c3aff724638adfd5a8ed28ea50b0ab356a5ed49339a2e7661ebb56dc2f236b1f293b193a088ef",
+          "sha1": "3be96823de509cc55fd4c76037ba4dc4c3890fa2"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/39WCFdto/LuckPerms-Forge-5.4.46.jar",
+        "filename": "LuckPerms-Forge-5.4.46.jar",
+        "primary": true,
+        "size": 1374871,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "i7mAqq9g",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.36 (Fabric 1.19)",
+    "version_number": "5.4.36-fabric",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-07-24T15:14:02.541503Z",
+    "downloads": 1501,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "50b6e1291e5b280733dd3075374e9d60f52d4a81",
+          "sha512": "efc23352297057f5366f211e5546889a464d7f476c5634ab4253bb555c9029892ab04a5e1c0d73e67406dc66c3b97288ea414ce293a9b1996900672691e5d90d"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/5.4.36-fabric/LuckPerms-Fabric-5.4.36.jar",
+        "filename": "LuckPerms-Fabric-5.4.36.jar",
+        "primary": true,
+        "size": 1523224,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.19"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "id": "errgRPtM",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "v5.4.36 (Forge 1.19)",
+    "version_number": "5.4.36-forge",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2022-07-24T15:13:37.14259Z",
+    "downloads": 404,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "5a78ff3c932c0d6b53f8a4215359b2711d3246db2709e7950c1ca6115c810b91c86d17dc16cd5e006344cbd3e922c6508a58703b7c3a6daa831d63a27689a8b2",
+          "sha1": "2db0010b329b0f9b81fffb4f5cf790ceaa113ea1"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/5.4.36-forge/LuckPerms-Forge-5.4.36.jar",
+        "filename": "LuckPerms-Forge-5.4.36.jar",
+        "primary": true,
+        "size": 1374639,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.18"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "NbRSaDd7",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "5.3.86",
+    "version_number": "5.3.86",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-12-02T21:30:01.910382Z",
+    "downloads": 2704,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "085982408ff31880d96e34793031b761ce0b902e",
+          "sha512": "69f8539660850d9f25902d43c96f38717c9b592c555c66403d6203d783d260c7c85507580db4257b4cdee26769645f9a25b233eeb80ecd20b9cf103a03bbc75c"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/5.3.86/LuckPerms-Fabric-5.3.86.jar",
+        "filename": "LuckPerms-Fabric-5.3.86.jar",
+        "primary": false,
+        "size": 1439100,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.17",
+      "1.17.1"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "wEWhExS3",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "5.3.84",
+    "version_number": "5.3.84",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-12-02T21:29:36.710303Z",
+    "downloads": 1903,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "cbaf2be351390b0e7a3008f73b9c5b53a4e947798160d996b0abe6a611ccabe252e42583680cb8de2974a5b15d43b191775b20b9beda4c49aa5276169d1f4563",
+          "sha1": "2fcd066df633bed165ff67774c14d70ff71a5f99"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/5.3.84/LuckPerms-Fabric-5.3.84.jar",
+        "filename": "LuckPerms-Fabric-5.3.84.jar",
+        "primary": false,
+        "size": 1439713,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.4",
+      "1.16.5"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "AFeyDid4",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "5.3.9",
+    "version_number": "5.3.9",
+    "changelog": "Lots of changes, and fixed a Fabric related bug too!\n\nSee GitHub for the full list of changes: https://github.com/lucko/LuckPerms/commits/master",
+    "changelog_url": null,
+    "date_published": "2021-03-20T14:11:44.701213Z",
+    "downloads": 6395,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "b9ddf0ff92c48f150b4c554ad674ab7c8b0d3477",
+          "sha512": "80abdecea5ebd1a3e5c75209842d0fbcf336f99586ba1280ab8d81ccd29a31e926db5fd34e2c0cd04f1843f21dca0786e5fabb2d85ac4280710059b34ac6eee3"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/5.3.9/LuckPerms-Fabric-5.3.9.jar",
+        "filename": "LuckPerms-Fabric-5.3.9.jar",
+        "primary": false,
+        "size": 1394639,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "AB34dkXL",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "5.2.92",
+    "version_number": "5.2.92",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-01-24T21:39:53.978179Z",
+    "downloads": 249,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha512": "b825e9e833bc3144530fe9a7817bce68004f586dc442ab25f1d4d826682a78386de97a9ebc70e93b079e5eb8da012981a232a9c2d3fb3b74ae8a08115529e4d6",
+          "sha1": "6ed72eb9fbf525a0b6c846b50bb4a9f53b0a84ff"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/5.2.92/LuckPerms-Fabric-5.2.92.jar",
+        "filename": "LuckPerms-Fabric-5.2.92.jar",
+        "primary": false,
+        "size": 1368288,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  },
+  {
+    "game_versions": [
+      "1.16.4"
+    ],
+    "loaders": [
+      "fabric"
+    ],
+    "id": "FidxKRFj",
+    "project_id": "Vebnzrzj",
+    "author_id": "iRtG8gdL",
+    "featured": false,
+    "name": "5.2.76",
+    "version_number": "5.2.76",
+    "changelog": "",
+    "changelog_url": null,
+    "date_published": "2021-01-05T13:18:36.859958Z",
+    "downloads": 1744,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "hashes": {
+          "sha1": "07bde5d8a9cc90cc0f6f816b2ff4c803e2f84baa",
+          "sha512": "0f75f50d2c7b8da3d76e482621fc73259ab3edad5ad925b669009ea5c9305bc496b4817e25fc66f7079ab209fbc23e4cbecf96d87902af1b99d1637abd7e403d"
+        },
+        "url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/5.2.76/LuckPerms-Fabric-5.2.76.jar",
+        "filename": "LuckPerms-Fabric-5.2.76.jar",
+        "primary": false,
+        "size": 1369440,
+        "file_type": null
+      }
+    ],
+    "dependencies": []
+  }
+]

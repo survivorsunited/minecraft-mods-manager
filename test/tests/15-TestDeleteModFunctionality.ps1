@@ -1,13 +1,25 @@
 # Test Delete Mod Functionality
 # Tests the new DeleteMod functionality with proper parameter validation and CSV updates
 
-param([string]$TestFileName = $null)
-
 # Import test framework
-. (Join-Path $PSScriptRoot "..\TestFramework.ps1")
+. "$PSScriptRoot\..\TestFramework.ps1"
 
 # Set the test file name for use throughout the script
 $TestFileName = "15-TestDeleteModFunctionality.ps1"
+
+Write-Host "Minecraft Mod Manager - Delete Mod Functionality Tests" -ForegroundColor $Colors.Header
+Write-Host "=====================================================" -ForegroundColor $Colors.Header
+
+Initialize-TestEnvironment $TestFileName
+
+# Helper to get the full path to ModManager.ps1
+$ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+
+# Set up isolated paths
+$TestOutputDir = Get-TestOutputFolder $TestFileName
+$script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
+$TestDownloadDir = Join-Path $TestOutputDir "download"
+$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
 
 function Invoke-TestDeleteModFunctionality {
     
@@ -20,21 +32,7 @@ function Invoke-TestDeleteModFunctionality {
         Failed = 0
     }
     
-    # Test setup - PROPER ISOLATION (like Test 13)
-    $TestOutputDir = Get-TestOutputFolder $TestFileName
-    $TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
-    $TestDownloadDir = Join-Path $TestOutputDir "download"
-    $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
-    $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
-    
-    # Clean previous test artifacts
-    if (Test-Path $TestOutputDir) {
-        Remove-Item -Path $TestOutputDir -Recurse -Force
-    }
-    
-    # Ensure clean state
-    New-Item -ItemType Directory -Path $TestOutputDir -Force | Out-Null
-    New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
+    # Test setup is now handled by Initialize-TestEnvironment above
     
     # Setup: Add some test mods to the database
     Write-TestStep "Setting up test database with mods"
