@@ -13,7 +13,6 @@ $TestFileName = "12-TestLatestWithServer.ps1"
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 $TestOutputDir = Join-Path $PSScriptRoot "..\test-output\12-TestLatestWithServer"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
-$TestApiResponseFolder = Join-Path $TestOutputDir "apiresponse"
 $RootModListPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
 $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
 
@@ -118,37 +117,37 @@ function Invoke-TestLatestWithServer {
     # Test 1: Validate all mods first
     Write-Host "=== Step 1: Validating All Mods ===" -ForegroundColor Magenta
     Test-LatestWithServer -TestName "Validate All Mods" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -UseCachedResponses -DatabaseFile $TestModListPath -ApiResponseFolder $TestApiResponseFolder
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateAllModVersions -UseCachedResponses -DatabaseFile $TestModListPath
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Test 2: Update mods to latest versions
     Write-Host "=== Step 2: Updating Mods to Latest Versions ===" -ForegroundColor Magenta
     Test-LatestWithServer -TestName "Update Mods to Latest" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestModListPath -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestModListPath -UseCachedResponses
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Test 3: Download everything (mods and server files) to the same folder
     Write-Host "=== Step 3: Downloading Everything to Same Folder ===" -ForegroundColor Magenta
     Test-LatestWithServer -TestName "Download Everything" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -UseLatestVersion -DownloadFolder $TestDownloadDir -DatabaseFile $TestModListPath -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Download -UseLatestVersion -DownloadFolder $TestDownloadDir -DatabaseFile $TestModListPath -UseCachedResponses
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Test 4: Download server files to the same folder (in case they weren't included)
     Write-Host "=== Step 4: Downloading Server Files ===" -ForegroundColor Magenta
     Test-LatestWithServer -TestName "Download Server Files" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses -ApiResponseFolder $TestApiResponseFolder
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -UseCachedResponses
     } -ExpectedOutput "Minecraft Mod Manager PowerShell Script" -ExpectedExitCode 0
 
     # Test 5: Add server start script to the download folder
     Write-Host "=== Step 5: Adding Server Start Script ===" -ForegroundColor Magenta
     Test-LatestWithServer -TestName "Add Server Start Script" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddServerStartScript -DownloadFolder $TestDownloadDir -ApiResponseFolder $TestApiResponseFolder
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddServerStartScript -DownloadFolder $TestDownloadDir
     } -ExpectedOutput "Successfully copied start-server script" -ExpectedExitCode 0
 
     # Test 6: Attempt to start server (this should fail due to mod compatibility issues)
     Write-Host "=== Step 6: Attempting Server Startup (Expected to Fail) ===" -ForegroundColor Magenta
     Test-LatestWithServer -TestName "Server Startup with Latest Mods" -TestScript {
-        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir -ApiResponseFolder $TestApiResponseFolder
+        & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
     } -ExpectedOutput "Server started successfully|Server is running|Failed to start server|Error|Exception" -ExpectedExitCode 1
 
     # Test 7: Analyze and report mod compatibility issues as expected errors
