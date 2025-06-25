@@ -222,11 +222,6 @@ function Invoke-TestDependencyDetection {
     # Summary
     Write-TestSuiteSummary "Test Dependency Detection Functionality"
     
-    # Clean up test artifacts - PROPER CLEANUP
-    if (Test-Path $TestOutputDir) {
-        Remove-Item -Path $TestOutputDir -Recurse -Force
-    }
-    
     return ($script:TestResults.Failed -eq 0)
 }
 
