@@ -37,7 +37,13 @@ param(
     [string]$DownloadFolder = "download",
     [string]$ApiResponseFolder = "apiresponse",
     [switch]$UseCachedResponses,
-    [switch]$ValidateWithDownload
+    [switch]$ValidateWithDownload,
+    [switch]$DownloadCurseForgeModpack,
+    [string]$CurseForgeModpackId,
+    [string]$CurseForgeFileId,
+    [string]$CurseForgeModpackName,
+    [string]$CurseForgeGameVersion,
+    [switch]$ValidateCurseForgeModpack
 )
 
 # Load environment variables from .env file
@@ -2771,6 +2777,390 @@ function Start-MinecraftServer {
     }
 }
 
+# Function to download CurseForge modpack
+function Download-CurseForgeModpack {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackId,
+        [Parameter(Mandatory=$true)]
+        [string]$FileId,
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackName,
+        [Parameter(Mandatory=$true)]
+        [string]$GameVersion,
+        [Parameter(Mandatory=$true)]
+        [string]$DownloadFolder,
+        [bool]$ForceDownload = $false
+    )
+    try {
+        Write-Host "📦 Downloading CurseForge modpack: $ModpackName" -ForegroundColor Cyan
+        Write-Host "   Modpack ID: $ModpackId, File ID: $FileId" -ForegroundColor Gray
+        
+        # Create download directory structure
+        $downloadDir = Join-Path $DownloadFolder $GameVersion
+        $modpackDir = Join-Path $downloadDir "modpacks\$ModpackName"
+        if (-not (Test-Path $downloadDir)) {
+            New-Item -ItemType Directory -Path $downloadDir -Force | Out-Null
+        }
+        if (-not (Test-Path $modpackDir)) {
+            New-Item -ItemType Directory -Path $modpackDir -Force | Out-Null
+        }
+        
+        # Download the modpack ZIP file
+        $zipFileName = "$ModpackName.zip"
+        $zipPath = Join-Path $modpackDir $zipFileName
+        
+        if ((Test-Path $zipPath) -and (-not $ForceDownload)) {
+            Write-Host "⏭️  Modpack file already exists, skipping download" -ForegroundColor Yellow
+        } else {
+            Write-Host "⬇️  Downloading modpack file..." -ForegroundColor Yellow
+            
+            # Construct download URL
+            $downloadUrl = "https://www.curseforge.com/api/v1/mods/$ModpackId/files/$FileId/download"
+            
+            try {
+                $headers = @{ "Content-Type" = "application/json" }
+                if ($CurseForgeApiKey) { $headers["X-API-Key"] = $CurseForgeApiKey }
+                
+                Invoke-WebRequest -Uri $downloadUrl -OutFile $zipPath -Headers $headers -UseBasicParsing
+                Write-Host "✅ Downloaded modpack file" -ForegroundColor Green
+            } catch {
+                Write-Host "❌ Failed to download modpack file: $($_.Exception.Message)" -ForegroundColor Red
+                throw
+            }
+        }
+        
+        # Extract the ZIP file
+        Write-Host "📂 Extracting modpack..." -ForegroundColor Yellow
+        try {
+            Expand-Archive -Path $zipPath -DestinationPath $modpackDir -Force
+        } catch {
+            Write-Host "❌ Failed to extract modpack: $($_.Exception.Message)" -ForegroundColor Red
+            throw
+        }
+        
+        # Find and process manifest.json
+        $manifestPath = Join-Path $modpackDir "manifest.json"
+        if (-not (Test-Path $manifestPath)) {
+            Write-Host "❌ manifest.json not found in extracted modpack" -ForegroundColor Red
+            Write-Host "   Expected path: $manifestPath" -ForegroundColor Gray
+            Write-Host "   Available files:" -ForegroundColor Gray
+            Get-ChildItem $modpackDir | ForEach-Object { Write-Host "     $($_.Name)" -ForegroundColor Gray }
+            return 0
+        }
+        
+        $manifestContent = Get-Content $manifestPath | ConvertFrom-Json
+        Write-Host "📋 Processing modpack manifest with $($manifestContent.files.Count) files..." -ForegroundColor Cyan
+        
+        # Parse dependencies for database storage
+        $dependencies = Parse-CurseForgeModpackDependencies -ManifestPath $manifestPath
+        Write-Host "📋 Parsed $($manifestContent.files.Count) dependencies for database storage" -ForegroundColor Cyan
+        
+        # Download files from the manifest
+        $successCount = 0
+        $errorCount = 0
+        foreach ($file in $manifestContent.files) {
+            $projectId = $file.fileID
+            $fileId = $file.fileID
+            
+            # Get file information from CurseForge API
+            $fileInfo = Get-CurseForgeFileInfo -ModId $projectId -FileId $fileId
+            if (-not $fileInfo) {
+                Write-Host "  ❌ Failed to get file info for project $projectId, file $fileId" -ForegroundColor Red
+                $errorCount++
+                continue
+            }
+            
+            # Determine target path based on file type
+            $targetPath = $null
+            if ($fileInfo.fileName -match "\.jar$") {
+                $targetPath = Join-Path $downloadDir "mods\$($fileInfo.fileName)"
+            } elseif ($fileInfo.fileName -match "\.zip$") {
+                $targetPath = Join-Path $downloadDir "resourcepacks\$($fileInfo.fileName)"
+            } else {
+                $targetPath = Join-Path $downloadDir "overrides\$($fileInfo.fileName)"
+            }
+            
+            # Create the target directory
+            $targetDir = Split-Path -Path $targetPath -Parent
+            if (-not (Test-Path $targetDir)) {
+                New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+            }
+            
+            # Download the file
+            try {
+                if ((Test-Path $targetPath) -and (-not $ForceDownload)) {
+                    Write-Host "  ⏭️  Skipped: $($fileInfo.fileName) (already exists)" -ForegroundColor Gray
+                } else {
+                    $fileDownloadUrl = "https://www.curseforge.com/api/v1/mods/$projectId/files/$fileId/download"
+                    Invoke-WebRequest -Uri $fileDownloadUrl -OutFile $targetPath -Headers $headers -UseBasicParsing
+                    Write-Host "  ✅ Downloaded: $($fileInfo.fileName)" -ForegroundColor Green
+                    $successCount++
+                }
+            } catch {
+                Write-Host "  ❌ Failed: $($fileInfo.fileName) - $($_.Exception.Message)" -ForegroundColor Red
+                $errorCount++
+            }
+        }
+        
+        # Handle overrides folder
+        $overridesPath = Join-Path $modpackDir "overrides"
+        if (Test-Path $overridesPath) {
+            Write-Host "📁 Copying overrides folder contents..." -ForegroundColor Yellow
+            Copy-Item -Path "$overridesPath\*" -Destination $downloadDir -Recurse -Force
+            Write-Host "✅ Copied overrides to $downloadDir" -ForegroundColor Green
+        }
+        
+        Write-Host ""
+        Write-Host "📦 CurseForge modpack installation complete!" -ForegroundColor Green
+        Write-Host "✅ Successfully downloaded: $successCount files" -ForegroundColor Green
+        Write-Host "⏭️  Skipped (already exists): $(($manifestContent.files.Count - $successCount - $errorCount))" -ForegroundColor Yellow
+        Write-Host "❌ Failed: $errorCount files" -ForegroundColor Red
+        return $successCount
+    } catch {
+        Write-Host "❌ CurseForge modpack download failed: $($_.Exception.Message)" -ForegroundColor Red
+        return 0
+    }
+}
+
+# Function to get CurseForge file information
+function Get-CurseForgeFileInfo {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModId,
+        [Parameter(Mandatory=$true)]
+        [string]$FileId
+    )
+    try {
+        $apiUrl = "$CurseForgeApiBaseUrl/mods/$ModId/files/$FileId"
+        $responseFile = Get-ApiResponsePath -ModId "$ModId-$FileId" -ResponseType "file" -Domain "curseforge" -BaseResponseFolder $ApiResponseFolder
+        
+        # Check if we should use cached responses
+        if ($UseCachedResponses -and (Test-Path $responseFile)) {
+            Write-Host ("  → Using cached CurseForge file response for {0}-{1}..." -f $ModId, $FileId) -ForegroundColor DarkGray
+            $response = Get-Content -Path $responseFile -Raw | ConvertFrom-Json
+        } else {
+            # Make API request
+            Write-Host ("  → Calling CurseForge API for file {0}-{1}..." -f $ModId, $FileId) -ForegroundColor DarkGray
+            $headers = @{ "Content-Type" = "application/json" }
+            if ($CurseForgeApiKey) { $headers["X-API-Key"] = $CurseForgeApiKey }
+            $response = Invoke-RestMethod -Uri $apiUrl -Method Get -Headers $headers
+            
+            # Save response to file
+            $response | ConvertTo-Json -Depth 10 | Out-File -FilePath $responseFile -Encoding UTF8
+        }
+        
+        return $response.data
+    } catch {
+        Write-Host "❌ Failed to get CurseForge file info: $($_.Exception.Message)" -ForegroundColor Red
+        return $null
+    }
+}
+
+# Function to parse CurseForge modpack dependencies
+function Parse-CurseForgeModpackDependencies {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ManifestPath
+    )
+    try {
+        if (-not (Test-Path $ManifestPath)) {
+            Write-Host "❌ Manifest file not found: $ManifestPath" -ForegroundColor Red
+            return @()
+        }
+        
+        $manifest = Get-Content $ManifestPath | ConvertFrom-Json
+        $dependencies = @()
+        
+        foreach ($file in $manifest.files) {
+            $dependency = @{
+                ProjectId = $file.fileID
+                FileId = $file.fileID
+                Required = $true
+                Type = "required"
+                Host = "curseforge"
+            }
+            $dependencies += $dependency
+        }
+        
+        # Convert to JSON string for storage in CSV
+        $dependenciesJson = $dependencies | ConvertTo-Json -Compress
+        return $dependenciesJson
+    } catch {
+        Write-Host "❌ Failed to parse CurseForge modpack dependencies: $($_.Exception.Message)" -ForegroundColor Red
+        return ""
+    }
+}
+
+# Function to validate CurseForge modpack
+function Validate-CurseForgeModpack {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackId,
+        [Parameter(Mandatory=$true)]
+        [string]$FileId
+    )
+    try {
+        Write-Host "🔍 Validating CurseForge modpack: $ModpackId, File: $FileId" -ForegroundColor Cyan
+        
+        # Get modpack information
+        $apiUrl = "$CurseForgeApiBaseUrl/mods/$ModpackId"
+        $responseFile = Get-ApiResponsePath -ModId $ModpackId -ResponseType "project" -Domain "curseforge" -BaseResponseFolder $ApiResponseFolder
+        
+        # Check if we should use cached responses
+        if ($UseCachedResponses -and (Test-Path $responseFile)) {
+            Write-Host ("  → Using cached CurseForge response for modpack {0}..." -f $ModpackId) -ForegroundColor DarkGray
+            $response = Get-Content -Path $responseFile -Raw | ConvertFrom-Json
+        } else {
+            # Make API request
+            Write-Host ("  → Calling CurseForge API for modpack {0}..." -f $ModpackId) -ForegroundColor DarkGray
+            $headers = @{ "Content-Type" = "application/json" }
+            if ($CurseForgeApiKey) { $headers["X-API-Key"] = $CurseForgeApiKey }
+            $response = Invoke-RestMethod -Uri $apiUrl -Method Get -Headers $headers
+            
+            # Save response to file
+            $response | ConvertTo-Json -Depth 10 | Out-File -FilePath $responseFile -Encoding UTF8
+        }
+        
+        $modpackInfo = $response.data
+        
+        # Get file information
+        $fileInfo = Get-CurseForgeFileInfo -ModId $ModpackId -FileId $FileId
+        if (-not $fileInfo) {
+            return [PSCustomObject]@{
+                Valid = $false
+                Error = "Failed to get file information"
+                ModpackName = $null
+                GameVersion = $null
+                FileName = $null
+                DownloadUrl = $null
+            }
+        }
+        
+        return [PSCustomObject]@{
+            Valid = $true
+            ModpackName = $modpackInfo.name
+            GameVersion = $fileInfo.gameVersions[0]
+            FileName = $fileInfo.fileName
+            DownloadUrl = $fileInfo.downloadUrl
+            ModpackId = $ModpackId
+            FileId = $FileId
+        }
+    } catch {
+        return [PSCustomObject]@{
+            Valid = $false
+            Error = $_.Exception.Message
+            ModpackName = $null
+            GameVersion = $null
+            FileName = $null
+            DownloadUrl = $null
+        }
+    }
+}
+
+# Function to handle CurseForge API rate limits
+function Invoke-CurseForgeApiWithRateLimit {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$Url,
+        [string]$Method = "Get",
+        [hashtable]$Headers = @{},
+        [int]$MaxRetries = 3,
+        [int]$RetryDelaySeconds = 5
+    )
+    
+    for ($attempt = 1; $attempt -le $MaxRetries; $attempt++) {
+        try {
+            # Add API key if available
+            if ($CurseForgeApiKey) { $Headers["X-API-Key"] = $CurseForgeApiKey }
+            
+            $response = Invoke-RestMethod -Uri $Url -Method $Method -Headers $Headers -UseBasicParsing
+            return $response
+        } catch {
+            if ($_.Exception.Response.StatusCode -eq 429) {
+                Write-Host "⚠️  Rate limited by CurseForge API. Waiting $RetryDelaySeconds seconds before retry $attempt/$MaxRetries..." -ForegroundColor Yellow
+                Start-Sleep -Seconds $RetryDelaySeconds
+                $RetryDelaySeconds *= 2  # Exponential backoff
+            } else {
+                throw
+            }
+        }
+    }
+    
+    throw "Failed to complete API request after $MaxRetries attempts"
+}
+
+# Function to add CurseForge modpack to modlist.csv
+function Add-CurseForgeModpackToDatabase {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackId,
+        [Parameter(Mandatory=$true)]
+        [string]$FileId,
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackName,
+        [Parameter(Mandatory=$true)]
+        [string]$GameVersion,
+        [Parameter(Mandatory=$true)]
+        [string]$CsvPath,
+        [string]$Dependencies = ""
+    )
+    try {
+        # Load existing mods
+        $mods = @()
+        if (Test-Path $CsvPath) {
+            $mods = Import-Csv $CsvPath
+        }
+        
+        # Ensure CSV has required columns
+        $mods = Ensure-CsvColumns -CsvPath $CsvPath
+        
+        # Create new modpack entry
+        $newModpack = [PSCustomObject]@{
+            Group = "required"
+            Type = "modpack"
+            GameVersion = $GameVersion
+            ID = $ModpackId
+            Loader = "fabric"  # Default, can be updated later
+            Version = "1.0.0"  # Default version
+            Name = $ModpackName
+            Description = "CurseForge modpack"
+            Jar = ""
+            Url = "https://www.curseforge.com/minecraft/modpacks/$ModpackId"
+            Category = "Modpack"
+            VersionUrl = ""
+            LatestVersionUrl = ""
+            LatestVersion = "1.0.0"
+            ApiSource = "curseforge"
+            Host = "curseforge"
+            IconUrl = ""
+            ClientSide = "optional"
+            ServerSide = "optional"
+            Title = $ModpackName
+            ProjectDescription = "CurseForge modpack"
+            IssuesUrl = ""
+            SourceUrl = ""
+            WikiUrl = ""
+            LatestGameVersion = $GameVersion
+            RecordHash = ""
+            CurrentDependencies = $Dependencies
+            LatestDependencies = $Dependencies
+        }
+        
+        # Add to mods array
+        $mods += $newModpack
+        
+        # Save updated CSV
+        $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+        
+        Write-Host "✅ Successfully added CurseForge modpack '$ModpackName' to database" -ForegroundColor Green
+        return $true
+    } catch {
+        Write-Host "❌ Failed to add CurseForge modpack to database: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
 # Main execution
 if ($MyInvocation.InvocationName -ne '.') {
     Write-Host "Minecraft Mod Manager PowerShell Script" -ForegroundColor Magenta
@@ -3385,6 +3775,74 @@ if ($MyInvocation.InvocationName -ne '.') {
         }
         return
     }
+    if ($ValidateCurseForgeModpack) {
+        if (-not $CurseForgeModpackId -or -not $CurseForgeFileId) {
+            Write-Host "❌ Error: -ValidateCurseForgeModpack requires -CurseForgeModpackId and -CurseForgeFileId parameters" -ForegroundColor Red
+            Write-Host "   Example: .\ModManager.ps1 -ValidateCurseForgeModpack -CurseForgeModpackId '123456' -CurseForgeFileId '789012'" -ForegroundColor White
+            return
+        }
+        
+        Write-Host "🔍 Validating CurseForge modpack: $CurseForgeModpackId, File: $CurseForgeFileId" -ForegroundColor Cyan
+        
+        $result = Validate-CurseForgeModpack -ModpackId $CurseForgeModpackId -FileId $CurseForgeFileId
+        
+        if ($result.Valid) {
+            Write-Host "✅ CurseForge modpack validation successful!" -ForegroundColor Green
+            Write-Host "📋 Modpack information:" -ForegroundColor Yellow
+            Write-Host "   Name: $($result.ModpackName)" -ForegroundColor Gray
+            Write-Host "   Game Version: $($result.GameVersion)" -ForegroundColor Gray
+            Write-Host "   File Name: $($result.FileName)" -ForegroundColor Gray
+            Write-Host "   Download URL: $($result.DownloadUrl)" -ForegroundColor Gray
+        } else {
+            Write-Host "❌ CurseForge modpack validation failed: $($result.Error)" -ForegroundColor Red
+        }
+        return
+    }
+    
+    if ($DownloadCurseForgeModpack) {
+        if (-not $CurseForgeModpackId -or -not $CurseForgeFileId -or -not $CurseForgeModpackName) {
+            Write-Host "❌ Error: -DownloadCurseForgeModpack requires -CurseForgeModpackId, -CurseForgeFileId, and -CurseForgeModpackName parameters" -ForegroundColor Red
+            Write-Host "   Example: .\ModManager.ps1 -DownloadCurseForgeModpack -CurseForgeModpackId '123456' -CurseForgeFileId '789012' -CurseForgeModpackName 'My Modpack'" -ForegroundColor White
+            return
+        }
+        
+        $gameVersion = if ($CurseForgeGameVersion) { $CurseForgeGameVersion } else { $DefaultGameVersion }
+        
+        Write-Host "📦 Starting CurseForge modpack download..." -ForegroundColor Cyan
+        Write-Host "   Modpack: $CurseForgeModpackName" -ForegroundColor Gray
+        Write-Host "   Game Version: $gameVersion" -ForegroundColor Gray
+        
+        $downloadedCount = Download-CurseForgeModpack -ModpackId $CurseForgeModpackId -FileId $CurseForgeFileId -ModpackName $CurseForgeModpackName -GameVersion $gameVersion -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload
+        
+        if ($downloadedCount -gt 0) {
+            Write-Host ""
+            Write-Host "✅ Successfully downloaded CurseForge modpack with $downloadedCount files!" -ForegroundColor Green
+            
+            # Add modpack to database
+            $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
+            
+            # Parse dependencies from the downloaded manifest
+            $modpackDir = Join-Path $DownloadFolder "$gameVersion\modpacks\$CurseForgeModpackName"
+            $manifestPath = Join-Path $modpackDir "manifest.json"
+            
+            if (Test-Path $manifestPath) {
+                $dependencies = Parse-CurseForgeModpackDependencies -ManifestPath $manifestPath
+                $added = Add-CurseForgeModpackToDatabase -ModpackId $CurseForgeModpackId -FileId $CurseForgeFileId -ModpackName $CurseForgeModpackName -GameVersion $gameVersion -CsvPath $effectiveModListPath -Dependencies $dependencies
+                
+                if ($added) {
+                    Write-Host "✅ Successfully added modpack to database with dependencies" -ForegroundColor Green
+                } else {
+                    Write-Host "⚠️  Downloaded modpack but failed to add to database" -ForegroundColor Yellow
+                }
+            } else {
+                Write-Host "⚠️  Downloaded modpack but manifest.json not found for database entry" -ForegroundColor Yellow
+            }
+        } else {
+            Write-Host "❌ Failed to download CurseForge modpack" -ForegroundColor Red
+        }
+        return
+    }
+    
     # Default: Run validation and update modlist
     $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
     Validate-AllModVersions -CsvPath $effectiveModListPath -UpdateModList
