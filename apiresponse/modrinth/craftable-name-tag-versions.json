@@ -50,15 +50,15 @@
     "changelog": "- Added REI compatibility",
     "changelog_url": null,
     "date_published": "2025-04-17T15:35:20.40425Z",
-    "downloads": 2019,
+    "downloads": 2027,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "09bee77eb831333c73cdc07f93a13e89c64cfc6e051b9bc8d5e693eb6c50dbed5f37b4834da240d06d5dbed652fc04896f355b07537c2b15fb81a4914510ed14",
-          "sha1": "9729f1ec7f5e6fe867183e0a92093565742b7f6d"
+          "sha1": "9729f1ec7f5e6fe867183e0a92093565742b7f6d",
+          "sha512": "09bee77eb831333c73cdc07f93a13e89c64cfc6e051b9bc8d5e693eb6c50dbed5f37b4834da240d06d5dbed652fc04896f355b07537c2b15fb81a4914510ed14"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/B6h7O9jN/CraftableNameTag-1.21.5-0.2.jar",
         "filename": "CraftableNameTag-1.21.5-0.2.jar",
@@ -204,15 +204,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-03-26T11:02:50.200438Z",
-    "downloads": 853,
+    "downloads": 854,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "3a28e2c2e5e17192017157b6938549f58e87674d2ca3c30d6bdd62053a2a5e38e15e69e335028c0e56c44911784039d9908be1a8ac7ee28f48bd55a1e91253a9",
-          "sha1": "42066c0948866f4b91af81892960e0ede3bc5803"
+          "sha1": "42066c0948866f4b91af81892960e0ede3bc5803",
+          "sha512": "3a28e2c2e5e17192017157b6938549f58e87674d2ca3c30d6bdd62053a2a5e38e15e69e335028c0e56c44911784039d9908be1a8ac7ee28f48bd55a1e91253a9"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/toG1UhBv/CraftableNameTag.zip",
         "filename": "CraftableNameTag.zip",
@@ -239,15 +239,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-01-08T22:20:51.824526Z",
-    "downloads": 2585,
+    "downloads": 2587,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b34b0f2da2d2dabda3e082041efd3f83ba42e5caaabbbd53b3f838712cf9f703f6c210dd89049c89c815d2306ecf5e2b701e7ddb56e49a21b6bbcdd2ced74712",
-          "sha1": "ad6207531e5ed2acb64eb680ceb6fc1003413d96"
+          "sha1": "ad6207531e5ed2acb64eb680ceb6fc1003413d96",
+          "sha512": "b34b0f2da2d2dabda3e082041efd3f83ba42e5caaabbbd53b3f838712cf9f703f6c210dd89049c89c815d2306ecf5e2b701e7ddb56e49a21b6bbcdd2ced74712"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/k0PWRnr7/CraftableNameTag-1.21.4-0.1.jar",
         "filename": "CraftableNameTag-1.21.4-0.1.jar",
@@ -281,8 +281,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3f78dd92c8cfd2b68092436db1a3eee2bb81fce10b5dc5321d449b19ae96f391a3fb28cedf6a2dc15621b42ebac22363b9be72d56cbc78efdf6c8933158b19e4",
-          "sha1": "31b75fcf78b36e76a05ad893b98722a5abb404ac"
+          "sha1": "31b75fcf78b36e76a05ad893b98722a5abb404ac",
+          "sha512": "3f78dd92c8cfd2b68092436db1a3eee2bb81fce10b5dc5321d449b19ae96f391a3fb28cedf6a2dc15621b42ebac22363b9be72d56cbc78efdf6c8933158b19e4"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/CYMnxdLO/craftablenametag-1.21.3-0.1.jar",
         "filename": "craftablenametag-1.21.3-0.1.jar",
@@ -316,8 +316,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ae92ac59bcd2c20abae9699a1114a76434bb9754410cd16c9259888d85a9be4eb3c09f0f1fb9be2c5a0c9d54bbf05fdf7bfb5fde4a5f7a26ab25a1212575ba89",
-          "sha1": "364fa6b53ba957ae6174306f419e39d8fa25946b"
+          "sha1": "364fa6b53ba957ae6174306f419e39d8fa25946b",
+          "sha512": "ae92ac59bcd2c20abae9699a1114a76434bb9754410cd16c9259888d85a9be4eb3c09f0f1fb9be2c5a0c9d54bbf05fdf7bfb5fde4a5f7a26ab25a1212575ba89"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/liG5jMSB/CraftableNameTag-1.21.3-0.1.jar",
         "filename": "CraftableNameTag-1.21.3-0.1.jar",
@@ -358,8 +358,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4c7abafb1e32cf9fc1a346eab26e7605fbb1100642674bd49f8f30f24bdbf2f819003cd98b1f9f0b6475fd6478269be439e16eefd1e012e49edbddf3df67cb7b",
-          "sha1": "62edbc28ee5d9289d07f1cc031a35b18ee534fbc"
+          "sha1": "62edbc28ee5d9289d07f1cc031a35b18ee534fbc",
+          "sha512": "4c7abafb1e32cf9fc1a346eab26e7605fbb1100642674bd49f8f30f24bdbf2f819003cd98b1f9f0b6475fd6478269be439e16eefd1e012e49edbddf3df67cb7b"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/GQaQbh4O/craftablenametag-1.21.3-0.1.jar",
         "filename": "craftablenametag-1.21.3-0.1.jar",
@@ -393,8 +393,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "486f7646448b334bf0358b01ac64e3fcd4cfe6bb",
-          "sha512": "45e73f50305d249f5715f1ec8627c3f55389b190e4548b5ce27af45baf0cd4d6e247b8146924c0d6de02c39dd0983900e81f1d32c0cc1ee452df26ab1cbe5db1"
+          "sha512": "45e73f50305d249f5715f1ec8627c3f55389b190e4548b5ce27af45baf0cd4d6e247b8146924c0d6de02c39dd0983900e81f1d32c0cc1ee452df26ab1cbe5db1",
+          "sha1": "486f7646448b334bf0358b01ac64e3fcd4cfe6bb"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/n2z292tA/craftablenametag-1.21.3-0.1.jar",
         "filename": "craftablenametag-1.21.3-0.1.jar",
@@ -458,7 +458,7 @@
     "changelog": "CHANGELOG.md not found",
     "changelog_url": null,
     "date_published": "2024-09-24T14:35:21.775388Z",
-    "downloads": 1018,
+    "downloads": 1021,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -500,8 +500,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "90158527739288031de41cee06eeabc77ee21377",
-          "sha512": "5cb399c4840619875c80d5483034c11f458d5d1d9aebf1e34b704c70b523a522299c49879bf6b722db4302b72e709aa372b62671f1f313ace44f2afbcf690861"
+          "sha512": "5cb399c4840619875c80d5483034c11f458d5d1d9aebf1e34b704c70b523a522299c49879bf6b722db4302b72e709aa372b62671f1f313ace44f2afbcf690861",
+          "sha1": "90158527739288031de41cee06eeabc77ee21377"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/a00o4eaQ/craftablenametag-1.21-0.1.jar",
         "filename": "craftablenametag-1.21-0.1.jar",
@@ -528,15 +528,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-24T14:12:18.790587Z",
-    "downloads": 295,
+    "downloads": 297,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0a57e36def2546033859a6948a28fe3e0776859d49726fd42de575966ae3988aba6847a154eed558bf38f68249b1ca3f48d7ddf9c057715a1b23feaebfc89198",
-          "sha1": "36a6a4e9edb133917bbba0d2e64356c6ad86e890"
+          "sha1": "36a6a4e9edb133917bbba0d2e64356c6ad86e890",
+          "sha512": "0a57e36def2546033859a6948a28fe3e0776859d49726fd42de575966ae3988aba6847a154eed558bf38f68249b1ca3f48d7ddf9c057715a1b23feaebfc89198"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/Ha1gpvLF/craftablenametag-1.21.1-0.1.jar",
         "filename": "craftablenametag-1.21.1-0.1.jar",
@@ -598,7 +598,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-24T14:07:52.56646Z",
-    "downloads": 3795,
+    "downloads": 3800,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -640,15 +640,15 @@
     "changelog": "- Added compatibility for JEI & REI",
     "changelog_url": null,
     "date_published": "2024-09-24T14:04:33.308585Z",
-    "downloads": 1277,
+    "downloads": 1281,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "030d7d6d267c7180c6ac61f16a4e01093d58a34c",
-          "sha512": "ee30d673afb26bb19a1b30dfcf0d1efed1ad1c0019f1abf60a6b7ce74934759fe595b40fe79e060693a3bec34ce081b4a7513ac870402190e27a900d86cb1a46"
+          "sha512": "ee30d673afb26bb19a1b30dfcf0d1efed1ad1c0019f1abf60a6b7ce74934759fe595b40fe79e060693a3bec34ce081b4a7513ac870402190e27a900d86cb1a46",
+          "sha1": "030d7d6d267c7180c6ac61f16a4e01093d58a34c"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/HyF6X7XC/CraftableNameTag-1.21-0.3.jar",
         "filename": "CraftableNameTag-1.21-0.3.jar",
@@ -689,8 +689,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b2f2391ac112939e1c3e3782f4f2aaa4436017d4b9ee9cda3780187c56b51aeb59228b4fa35298ad8fb8198847d5d30fbbb2a94902de25e600d7ebb74f765eec",
-          "sha1": "3536899abcbc49a2e9781a6c5e373a2eac2bb753"
+          "sha1": "3536899abcbc49a2e9781a6c5e373a2eac2bb753",
+          "sha512": "b2f2391ac112939e1c3e3782f4f2aaa4436017d4b9ee9cda3780187c56b51aeb59228b4fa35298ad8fb8198847d5d30fbbb2a94902de25e600d7ebb74f765eec"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/oHi7R6L3/CraftableNameTag-1.20.6-0.2.jar",
         "filename": "CraftableNameTag-1.20.6-0.2.jar",
@@ -801,8 +801,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6b6c8629d869fcdb28a0f1ed6af3bd0968d26aa0e14837dccc29a72ed182efaa542547f0b94d0d7e56d26c806bad2ad1e13dc52b92b4a2a0cefaa991cc40ef4e",
-          "sha1": "0ad64ae45ed61cd8de0cf19aaa7c5b60e6198df8"
+          "sha1": "0ad64ae45ed61cd8de0cf19aaa7c5b60e6198df8",
+          "sha512": "6b6c8629d869fcdb28a0f1ed6af3bd0968d26aa0e14837dccc29a72ed182efaa542547f0b94d0d7e56d26c806bad2ad1e13dc52b92b4a2a0cefaa991cc40ef4e"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/CZlSLnOq/CraftableNameTag-1.21-0.1.jar",
         "filename": "CraftableNameTag-1.21-0.1.jar",
@@ -885,8 +885,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7833455a6a5d71d8893688c250126aea21e89306",
-          "sha512": "6d9de542940907f75e919236f22c15bb01133622e2e8d6dc1f3f1d4556f66f96eb18b8a50c2afde309a059a86c3b3018f1688bd9a326e9bc78a56f6bda0ad5ff"
+          "sha512": "6d9de542940907f75e919236f22c15bb01133622e2e8d6dc1f3f1d4556f66f96eb18b8a50c2afde309a059a86c3b3018f1688bd9a326e9bc78a56f6bda0ad5ff",
+          "sha1": "7833455a6a5d71d8893688c250126aea21e89306"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/DYnkDwOM/CraftableNameTag-1.20.5-0.1.jar",
         "filename": "CraftableNameTag-1.20.5-0.1.jar",
@@ -920,15 +920,15 @@
     "changelog": "CHANGELOG.md not found",
     "changelog_url": null,
     "date_published": "2024-07-03T17:07:34.765419Z",
-    "downloads": 802,
+    "downloads": 803,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c42ce5ae6beefc0e6805b910c59bbbe1c5572b61",
-          "sha512": "9bdd1b94c35949259758d74c771f097c5a0bb8d827e5acfb54763c367fed8ac2b7242462bb31d446b75ebae90829bdeb3dd44b1504c56034d7c4c4689bc62736"
+          "sha512": "9bdd1b94c35949259758d74c771f097c5a0bb8d827e5acfb54763c367fed8ac2b7242462bb31d446b75ebae90829bdeb3dd44b1504c56034d7c4c4689bc62736",
+          "sha1": "c42ce5ae6beefc0e6805b910c59bbbe1c5572b61"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/xg3hDL3I/CraftableNameTag-1.20.4-0.1.jar",
         "filename": "CraftableNameTag-1.20.4-0.1.jar",
@@ -1114,7 +1114,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-07T18:54:21.198599Z",
-    "downloads": 1118,
+    "downloads": 1120,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1192,8 +1192,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "71eba3fdf1fc178df5d59da6602041bb7e37c30b",
-          "sha512": "7fd00897b6491e6508c54ddf15e821ec234d0f58aeae42ea6727813f6d8e77a06c2c4c03727ac69bebf7c3963e0ab694f6b936e4916a9675b8dbe0f59f610f9b"
+          "sha512": "7fd00897b6491e6508c54ddf15e821ec234d0f58aeae42ea6727813f6d8e77a06c2c4c03727ac69bebf7c3963e0ab694f6b936e4916a9675b8dbe0f59f610f9b",
+          "sha1": "71eba3fdf1fc178df5d59da6602041bb7e37c30b"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/jzRLUkku/CraftableNameTag%5B1.20-1.20.1%5D.zip",
         "filename": "CraftableNameTag[1.20-1.20.1].zip",
@@ -1227,8 +1227,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "01950a39e9741d77fef9c4a24286f7d24a1a6fd1",
-          "sha512": "4981a9f75dcf957ce5125c2ea1fa605cdb7a75bb2060f522eb6be837dbda19b0065a4e7ca8f177c113377218ff7cf391e104d8721c056a9e277738a1d825971a"
+          "sha512": "4981a9f75dcf957ce5125c2ea1fa605cdb7a75bb2060f522eb6be837dbda19b0065a4e7ca8f177c113377218ff7cf391e104d8721c056a9e277738a1d825971a",
+          "sha1": "01950a39e9741d77fef9c4a24286f7d24a1a6fd1"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/VV6v9lif/CraftableNameTag%5B1.19.4%5D.zip",
         "filename": "CraftableNameTag[1.19.4].zip",
@@ -1265,8 +1265,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "699e089e060c70a1159295fa9e853a050d7c98fa",
-          "sha512": "aeb8ae3650ebde7f72ce54155ca8e6dfa336e2536d8d291e5bd34a03fd6a3202d470bbdb48e63f4705de63b82ae34dcb9663697f510d776d67323f63c98b23ca"
+          "sha512": "aeb8ae3650ebde7f72ce54155ca8e6dfa336e2536d8d291e5bd34a03fd6a3202d470bbdb48e63f4705de63b82ae34dcb9663697f510d776d67323f63c98b23ca",
+          "sha1": "699e089e060c70a1159295fa9e853a050d7c98fa"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/Oe93C411/CraftableNameTag%5B1.19-1.19.3%5D.zip",
         "filename": "CraftableNameTag[1.19-1.19.3].zip",
@@ -1328,15 +1328,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-10-08T11:31:11.865708Z",
-    "downloads": 9684,
+    "downloads": 9696,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4e2c9ca8e92e3e2e1fc25326ca123c48a52cbffc06085fa7918962ca982c28fe7117ba4d86151a07c3c9e8751441b526afdf387013e7683563e5de5b484311b8",
-          "sha1": "8901333d3e3cd7ca1dc3cb373c7af73a4944a77d"
+          "sha1": "8901333d3e3cd7ca1dc3cb373c7af73a4944a77d",
+          "sha512": "4e2c9ca8e92e3e2e1fc25326ca123c48a52cbffc06085fa7918962ca982c28fe7117ba4d86151a07c3c9e8751441b526afdf387013e7683563e5de5b484311b8"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/uSnWsTRq/CraftableNameTag-1.20.1-Fabric.jar",
         "filename": "CraftableNameTag-1.20.1-Fabric.jar",
@@ -1370,8 +1370,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "207343bead5fc5ee854f6526410a61927d3950e6",
-          "sha512": "c9d5ca598b35e56aef7c1e543c3ddd158c5db1b54dc263b81bdaa9052038e2f684f10df83203844b3013f210bb4fb2103245d9dd66fa4e475520b0d1890a13f2"
+          "sha512": "c9d5ca598b35e56aef7c1e543c3ddd158c5db1b54dc263b81bdaa9052038e2f684f10df83203844b3013f210bb4fb2103245d9dd66fa4e475520b0d1890a13f2",
+          "sha1": "207343bead5fc5ee854f6526410a61927d3950e6"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/vPEnR2Xw/CraftableNameTag-1.20-Fabric.jar",
         "filename": "CraftableNameTag-1.20-Fabric.jar",
@@ -1405,8 +1405,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "800d7280aa28851b3c44b10099c0aa23bffd22df36a37b4a826bad97b73d442de8c2bbac3336fcd4beb32ee3fd013e2fb1ff7936a233fe75b760f2e47553dc99",
-          "sha1": "8b48d76e845fd8106c7af30b1efc965da6a47705"
+          "sha1": "8b48d76e845fd8106c7af30b1efc965da6a47705",
+          "sha512": "800d7280aa28851b3c44b10099c0aa23bffd22df36a37b4a826bad97b73d442de8c2bbac3336fcd4beb32ee3fd013e2fb1ff7936a233fe75b760f2e47553dc99"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/cFJpXnIG/CraftableNameTag-1.19.4-Fabric.jar",
         "filename": "CraftableNameTag-1.19.4-Fabric.jar",
@@ -1510,8 +1510,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0eba51c1575055bf3ab80a876cc738d8eacbb06a",
-          "sha512": "c26462e82f71259f22fc87f44d327f395199ca5ee32efa69d1582b27e71cfc34288addbdaaaf24480a15a88362cbf7bddc4e813edb0da62c1efce78c1b60fef4"
+          "sha512": "c26462e82f71259f22fc87f44d327f395199ca5ee32efa69d1582b27e71cfc34288addbdaaaf24480a15a88362cbf7bddc4e813edb0da62c1efce78c1b60fef4",
+          "sha1": "0eba51c1575055bf3ab80a876cc738d8eacbb06a"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/D4ArYGlX/CraftableNameTag-1.19.1-Fabric.jar",
         "filename": "CraftableNameTag-1.19.1-Fabric.jar",
@@ -1545,8 +1545,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8793aceb057a83a6bb8b8b30fe161424acb29fca4b4932e98e0242228d0ace3b639cb2c25898def49e06e4ae4cc5090962faa5a21d894ec8ee0ee10e48458ce4",
-          "sha1": "6ece26a54a7dc550b1a93f95880ef29307dfe635"
+          "sha1": "6ece26a54a7dc550b1a93f95880ef29307dfe635",
+          "sha512": "8793aceb057a83a6bb8b8b30fe161424acb29fca4b4932e98e0242228d0ace3b639cb2c25898def49e06e4ae4cc5090962faa5a21d894ec8ee0ee10e48458ce4"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/iT3Rog1W/CraftableNameTag-1.19-Fabric.jar",
         "filename": "CraftableNameTag-1.19-Fabric.jar",
@@ -1580,8 +1580,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9ebb9298e8ff5d077867733444dd80a11420b25a",
-          "sha512": "1d2ff1b80d056449636e235f84e37e447e955a01c83dc8a0000c55066a5be0ad09615f3ef15472e7d0adf04ee85571ae8cb5a6e265313b9c758d8e42e0888406"
+          "sha512": "1d2ff1b80d056449636e235f84e37e447e955a01c83dc8a0000c55066a5be0ad09615f3ef15472e7d0adf04ee85571ae8cb5a6e265313b9c758d8e42e0888406",
+          "sha1": "9ebb9298e8ff5d077867733444dd80a11420b25a"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/bwIXOm6k/CraftableNameTag-1.20.2-Forge.jar",
         "filename": "CraftableNameTag-1.20.2-Forge.jar",
@@ -1608,7 +1608,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-10-08T11:29:58.962717Z",
-    "downloads": 9549,
+    "downloads": 9563,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1650,8 +1650,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c763f9ebda0805f44361017622ec1c8ef2755dfe",
-          "sha512": "5b670072636cb07f3f193314ff061b65d634c920cebe18363c9591d0dc8d8ed5b60820f2283212e2576fcfbdd99db5b9b118ad82240489fa524e170267ea7d96"
+          "sha512": "5b670072636cb07f3f193314ff061b65d634c920cebe18363c9591d0dc8d8ed5b60820f2283212e2576fcfbdd99db5b9b118ad82240489fa524e170267ea7d96",
+          "sha1": "c763f9ebda0805f44361017622ec1c8ef2755dfe"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/HCnWNDmd/CraftableNameTag-1.20-Forge.jar",
         "filename": "CraftableNameTag-1.20-Forge.jar",
@@ -1685,8 +1685,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a1644c22fbf596dcaa52fc80331d0e7ceb3131b646628899c77cd3ea2e2837fe0cc799cd2d4e5596e0f01049916352a016170ff1989b2c7746565121bbd475f4",
-          "sha1": "8914333739e0e7bb197c608d62d9a2699224294b"
+          "sha1": "8914333739e0e7bb197c608d62d9a2699224294b",
+          "sha512": "a1644c22fbf596dcaa52fc80331d0e7ceb3131b646628899c77cd3ea2e2837fe0cc799cd2d4e5596e0f01049916352a016170ff1989b2c7746565121bbd475f4"
         },
         "url": "https://cdn.modrinth.com/data/mi57UBwo/versions/pGcYf5c1/CraftableNameTag-1.19.4-Forge.jar",
         "filename": "CraftableNameTag-1.19.4-Forge.jar",
@@ -1748,7 +1748,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-10-08T11:29:17.54089Z",
-    "downloads": 861,
+    "downloads": 862,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,

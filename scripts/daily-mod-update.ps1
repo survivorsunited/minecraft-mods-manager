@@ -39,14 +39,15 @@ function Commit-Changes {
     param([string]$Message)
     try {
         Write-Log "Configuring git user..." "INFO"
-        git config --local user.email "daily-update@minecraft-mods-manager.local"
+        git config --local user.email "daily-update@survivorsunited.org"
         git config --local user.name "Daily Update Script"
         
         Write-Log "Adding modlist.csv to git..." "INFO"
         git add modlist.csv
         
         Write-Log "Committing changes with message: $Message" "INFO"
-        git commit -m $Message
+        $commitResult = git commit -m $Message 2>&1
+        Write-Log "Commit result: $commitResult" "INFO"
         
         return $true
     }
@@ -59,7 +60,8 @@ function Commit-Changes {
 function Push-Changes {
     try {
         Write-Log "Pushing changes to remote repository..." "INFO"
-        git push
+        $pushResult = git push 2>&1
+        Write-Log "Push result: $pushResult" "INFO"
         Write-Log "Changes pushed successfully" "INFO"
         return $true
     }
@@ -106,22 +108,35 @@ try {
     
     # Run ModManager to update all mods
     Write-Log "📋 Running ModManager to update modlist.csv..." "INFO"
-    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $modManagerPath -ValidateAllModVersions -UpdateMods
+    Write-Log "Command: pwsh -NoProfile -ExecutionPolicy Bypass -File '$modManagerPath' -ValidateAllModVersions -UpdateMods" "INFO"
+    
+    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $modManagerPath -ValidateAllModVersions -UpdateMods 2>&1
+    
+    Write-Log "ModManager output:" "INFO"
+    Write-Log $result "INFO"
     
     if ($LASTEXITCODE -eq 0) {
         Write-Log "✅ ModManager completed successfully" "INFO"
         
         # Check if modlist.csv was modified
+        Write-Log "📋 Checking git status for modlist.csv changes..." "INFO"
         $finalStatus = Test-GitStatus
         $modlistChanges = $finalStatus | Where-Object { $_ -match "modlist\.csv" }
+        Write-Log "Git status for modlist.csv: $modlistChanges" "INFO"
         
         if ($modlistChanges) {
             Write-Log "📝 Changes detected in modlist.csv" "INFO"
             
             if ($Verbose) {
                 # Show what changed
+                Write-Log "📊 Changes summary:" "DEBUG"
                 $diff = git diff --stat modlist.csv
-                Write-Log "Changes summary: $diff" "DEBUG"
+                Write-Log $diff "DEBUG"
+                
+                # Show detailed changes
+                Write-Log "📋 Detailed changes:" "DEBUG"
+                $detailedDiff = git diff modlist.csv
+                Write-Log $detailedDiff "DEBUG"
             }
             
             if ($CommitChanges) {
@@ -129,6 +144,8 @@ try {
                 if ([string]::IsNullOrEmpty($CommitMessage)) {
                     $CommitMessage = "🤖 Daily mod update - $(Get-Date -Format 'yyyy-MM-dd')"
                 }
+                
+                Write-Log "Commit message: $CommitMessage" "INFO"
                 
                 # Commit changes
                 if (Commit-Changes -Message $CommitMessage) {

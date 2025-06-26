@@ -70,15 +70,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-05-10T06:33:23.022796Z",
-    "downloads": 802809,
+    "downloads": 811173,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "82eb9981a31a4753bb5022b5f64d5ec4f6a27071",
-          "sha512": "3ce31ae8c7242ae335de70df10f8147420a64ca372585c195d0b300f9e8c5b923f1e5bf2b8dddfcc741a0ce8e0235e079540101632837624787da84e9b52d72f"
+          "sha512": "3ce31ae8c7242ae335de70df10f8147420a64ca372585c195d0b300f9e8c5b923f1e5bf2b8dddfcc741a0ce8e0235e079540101632837624787da84e9b52d72f",
+          "sha1": "82eb9981a31a4753bb5022b5f64d5ec4f6a27071"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/jRn8y2VF/BSL_v10.0.zip",
         "filename": "BSL_v10.0.zip",
@@ -160,7 +160,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-05-03T14:56:30.005645Z",
-    "downloads": 148549,
+    "downloads": 148647,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -250,7 +250,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-03-01T13:15:42.120144Z",
-    "downloads": 1330579,
+    "downloads": 1331656,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -339,7 +339,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-02-22T14:46:13.713433Z",
-    "downloads": 155162,
+    "downloads": 155192,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -428,15 +428,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-02-21T14:08:13.070466Z",
-    "downloads": 22302,
+    "downloads": 22312,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f78b54af1ee94328a9ef66a5d2c854fc8504cac4",
-          "sha512": "984883a98e650d085fab683d3509a6cbd0e71f8332d7fdf3776f0aa33fe0d3aa8912d4980f1dfa998b231552b0d51b444c1462a80b5efc529ead1d61f64bfb03"
+          "sha512": "984883a98e650d085fab683d3509a6cbd0e71f8332d7fdf3776f0aa33fe0d3aa8912d4980f1dfa998b231552b0d51b444c1462a80b5efc529ead1d61f64bfb03",
+          "sha1": "f78b54af1ee94328a9ef66a5d2c854fc8504cac4"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/hvfMfOAN/BSL_v8.4.02.zip",
         "filename": "BSL_v8.4.02.zip",
@@ -517,7 +517,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-24T05:38:05.335872Z",
-    "downloads": 1032245,
+    "downloads": 1033281,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -616,15 +616,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-06T12:48:07.939129Z",
-    "downloads": 295316,
+    "downloads": 295663,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2a69bf5f9fb468aa52a901878ab57c62b7289883",
-          "sha512": "a5241465e88ae45aa839694818113a85bda9adbd8e40c880ac025071c39aaaab109f3b39a836091c9d39a3f0f9b59cbe88fa6399fdd4ceb75072eb0b921793b3"
+          "sha512": "a5241465e88ae45aa839694818113a85bda9adbd8e40c880ac025071c39aaaab109f3b39a836091c9d39a3f0f9b59cbe88fa6399fdd4ceb75072eb0b921793b3",
+          "sha1": "2a69bf5f9fb468aa52a901878ab57c62b7289883"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/9NNQ6mPZ/BSL_v8.4.01.1.zip",
         "filename": "BSL_v8.4.01.1.zip",
@@ -715,15 +715,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-05T08:58:07.65194Z",
-    "downloads": 19224,
+    "downloads": 19238,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "368e19a9cd6332e8fb0f68131cf04bdfbd3a0c1306c4a32b63df9834f889b66dfb4f938bd248769607c9abf2c9870cd9478123dd03bd80441e79c262ad98b60c",
-          "sha1": "6c25a9d613e0f9beadf86e9bd7b54c657c3fad9f"
+          "sha1": "6c25a9d613e0f9beadf86e9bd7b54c657c3fad9f",
+          "sha512": "368e19a9cd6332e8fb0f68131cf04bdfbd3a0c1306c4a32b63df9834f889b66dfb4f938bd248769607c9abf2c9870cd9478123dd03bd80441e79c262ad98b60c"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/5fBzTEPU/BSL_v8.4.01.zip",
         "filename": "BSL_v8.4.01.zip",
@@ -813,15 +813,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-11-15T13:28:13.609343Z",
-    "downloads": 274929,
+    "downloads": 275251,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f7e9c8af14f674d21206ce5ccbdd3d6b232fd540f61d7863ab002d279a5cb3c935e1f9664264a285a01bfed217b95830a3a00f699e867aba5b12d107fb3a7f3f",
-          "sha1": "ee9a262f6f284e581dd946644704d299d1f735d5"
+          "sha1": "ee9a262f6f284e581dd946644704d299d1f735d5",
+          "sha512": "f7e9c8af14f674d21206ce5ccbdd3d6b232fd540f61d7863ab002d279a5cb3c935e1f9664264a285a01bfed217b95830a3a00f699e867aba5b12d107fb3a7f3f"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/53F1SOEu/BSL_v8.4.zip",
         "filename": "BSL_v8.4.zip",
@@ -911,7 +911,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-11-13T13:39:18.295102Z",
-    "downloads": 18458,
+    "downloads": 18477,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1007,7 +1007,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-08-17T10:47:12.836097Z",
-    "downloads": 990537,
+    "downloads": 990893,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1102,15 +1102,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-06-09T14:22:47.316773Z",
-    "downloads": 1624298,
+    "downloads": 1624882,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "cd92bf706a1347a2d2943b14391ffbe1233415bc",
-          "sha512": "68edfac08cac19ac151abdafd0708bb2304af608dde9dc04ffd52968a8e93bc2c6ce67902ff850e32c0280ec19587f06d0c550b41c709ee2e5d7974c8414c491"
+          "sha512": "68edfac08cac19ac151abdafd0708bb2304af608dde9dc04ffd52968a8e93bc2c6ce67902ff850e32c0280ec19587f06d0c550b41c709ee2e5d7974c8414c491",
+          "sha1": "cd92bf706a1347a2d2943b14391ffbe1233415bc"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/c6RfHyKW/BSL_v8.2.09.zip",
         "filename": "BSL_v8.2.09.zip",
@@ -1196,15 +1196,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-05-25T12:34:16.108405Z",
-    "downloads": 230727,
+    "downloads": 230792,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d0fdb1f7847565e8a69c225ed2300f216e6dc8a5",
-          "sha512": "ae6e9b799aa8d0883420d77e405fc16abeab0abb36dd4714e4a98c5f51b6651a120d282ce700dea6401377a14fa01ce9d43b4639cf50ffc0e2b818bc8c684d63"
+          "sha512": "ae6e9b799aa8d0883420d77e405fc16abeab0abb36dd4714e4a98c5f51b6651a120d282ce700dea6401377a14fa01ce9d43b4639cf50ffc0e2b818bc8c684d63",
+          "sha1": "d0fdb1f7847565e8a69c225ed2300f216e6dc8a5"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/k7zNmcFF/BSL_v8.2.09p2.zip",
         "filename": "BSL_v8.2.09p2.zip",
@@ -1288,7 +1288,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-03-24T06:06:31.198474Z",
-    "downloads": 624983,
+    "downloads": 625205,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1380,15 +1380,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-02-03T12:34:09.048231Z",
-    "downloads": 366507,
+    "downloads": 366591,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5c10ed196eb5bb5b2b36685803775b2ae72eb378",
-          "sha512": "daae93550a75587dcbd768e209abf8e4b05a259cf0af71e240afb877ca405e4f00ca495891f7d75698d63c36ddf4fbcb5fbd4b15d2f635a23c1cd8c658219223"
+          "sha512": "daae93550a75587dcbd768e209abf8e4b05a259cf0af71e240afb877ca405e4f00ca495891f7d75698d63c36ddf4fbcb5fbd4b15d2f635a23c1cd8c658219223",
+          "sha1": "5c10ed196eb5bb5b2b36685803775b2ae72eb378"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/EHvkeTVo/BSL_v8.2.08.zip",
         "filename": "BSL_v8.2.08.zip",
@@ -1470,15 +1470,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-11-20T02:37:30.380641Z",
-    "downloads": 276543,
+    "downloads": 276609,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c630cbff74a5f8e7b039c5f06988abe0a0047d94",
-          "sha512": "bb7827b3a8503e3a730802e144ab103cbb3810e22d808ba97d808222ad53f095e1e746794c205f2cfda39d85393607f9f5b2f5dd61990d3aef0702126f2a8478"
+          "sha512": "bb7827b3a8503e3a730802e144ab103cbb3810e22d808ba97d808222ad53f095e1e746794c205f2cfda39d85393607f9f5b2f5dd61990d3aef0702126f2a8478",
+          "sha1": "c630cbff74a5f8e7b039c5f06988abe0a0047d94"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/1aQAjQxR/BSL_v8.2.07.1.zip",
         "filename": "BSL_v8.2.07.1.zip",
@@ -1560,7 +1560,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-11-18T16:57:41.564861Z",
-    "downloads": 13263,
+    "downloads": 13264,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1650,7 +1650,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-10-14T16:30:53.543703Z",
-    "downloads": 308054,
+    "downloads": 308125,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1740,15 +1740,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-09-09T15:42:10.260819Z",
-    "downloads": 792048,
+    "downloads": 792111,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1d413c211eea1a51fd74932f51b6d990cecd1dcd70bacb84981f653862158d00d8d787bf3536a6f9c70cb3838a88f5bc7ea0ddfe1f7e58e573764c1c9dee7aff",
-          "sha1": "08f2b997d93c9eaa71e18886862cadf03f55437a"
+          "sha1": "08f2b997d93c9eaa71e18886862cadf03f55437a",
+          "sha512": "1d413c211eea1a51fd74932f51b6d990cecd1dcd70bacb84981f653862158d00d8d787bf3536a6f9c70cb3838a88f5bc7ea0ddfe1f7e58e573764c1c9dee7aff"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/Mshu5RrT/BSL_v8.2.05.zip",
         "filename": "BSL_v8.2.05.zip",
@@ -1828,7 +1828,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-06-08T15:33:36.602046Z",
-    "downloads": 448330,
+    "downloads": 448412,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1915,7 +1915,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-05-03T01:32:43.293171Z",
-    "downloads": 117063,
+    "downloads": 117148,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2001,15 +2001,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-02-11T12:09:27.627394Z",
-    "downloads": 114625,
+    "downloads": 114689,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "3487baa31a856c08476e005a4a3b2f3770c90dc5691b2dcbd93923f1ee573450d8e1d205139f32932ede7ecd09227c95411b393d4c45e74e4baf10d34145b8c5",
-          "sha1": "4463faa8252453635ed6a12f5d09f67819bf1704"
+          "sha1": "4463faa8252453635ed6a12f5d09f67819bf1704",
+          "sha512": "3487baa31a856c08476e005a4a3b2f3770c90dc5691b2dcbd93923f1ee573450d8e1d205139f32932ede7ecd09227c95411b393d4c45e74e4baf10d34145b8c5"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/WTZIsXCy/BSL_v8.2.02.zip",
         "filename": "BSL_v8.2.02.zip",
@@ -2087,7 +2087,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:41:36.1588Z",
-    "downloads": 87152,
+    "downloads": 87194,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2123,15 +2123,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:40:36.356657Z",
-    "downloads": 11992,
+    "downloads": 12030,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d41a003e744bae6ffaa69bd48aeeaeae588ab89f",
-          "sha512": "8b3002116fd7cb059e95de7a1a50f4f269ff5c23fddb056a4e997f105b365cde293dc22a39fb6a4ea58df89d7f7721e1c84b90f62ba6c9a4be25c3e3d4347798"
+          "sha512": "8b3002116fd7cb059e95de7a1a50f4f269ff5c23fddb056a4e997f105b365cde293dc22a39fb6a4ea58df89d7f7721e1c84b90f62ba6c9a4be25c3e3d4347798",
+          "sha1": "d41a003e744bae6ffaa69bd48aeeaeae588ab89f"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/lrWHSdOL/BSL_v8.2.zip",
         "filename": "BSL_v8.2.zip",
@@ -2159,7 +2159,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:39:06.25691Z",
-    "downloads": 6778,
+    "downloads": 6782,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2195,15 +2195,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:37:41.92502Z",
-    "downloads": 16355,
+    "downloads": 16369,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b6b3607ae9eefc4b434fe65647106323f6bb5ac7",
-          "sha512": "cb7fa25b0ce0cccb2d633a1a2968674f8d5d58b342730d4a49f700e6bae0e96a957ae38c5e8f0e0387891281401682b33c4c8979997cdcebc9870927cb061174"
+          "sha512": "cb7fa25b0ce0cccb2d633a1a2968674f8d5d58b342730d4a49f700e6bae0e96a957ae38c5e8f0e0387891281401682b33c4c8979997cdcebc9870927cb061174",
+          "sha1": "b6b3607ae9eefc4b434fe65647106323f6bb5ac7"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/j9LPt1yH/BSL_v8.0.zip",
         "filename": "BSL_v8.0.zip",
@@ -2231,7 +2231,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:36:54.362716Z",
-    "downloads": 28190,
+    "downloads": 28225,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2267,15 +2267,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:36:06.40529Z",
-    "downloads": 5933,
+    "downloads": 5938,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b21bac74d01cf4d70e603a3584b80680cf80ae1d",
-          "sha512": "8b9c03f6f8de939b1fc368cb69e451c7055401413343d3c43e73797399812bdafc71de46d37277e3d254f586adc895c341ac6dc8bbad20f93ec01160d4e8582b"
+          "sha512": "8b9c03f6f8de939b1fc368cb69e451c7055401413343d3c43e73797399812bdafc71de46d37277e3d254f586adc895c341ac6dc8bbad20f93ec01160d4e8582b",
+          "sha1": "b21bac74d01cf4d70e603a3584b80680cf80ae1d"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/WeyZS6if/BSL%20v7.1.zip",
         "filename": "BSL v7.1.zip",
@@ -2303,7 +2303,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:35:20.566785Z",
-    "downloads": 19226,
+    "downloads": 19233,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2339,7 +2339,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:34:13.076483Z",
-    "downloads": 8292,
+    "downloads": 8297,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2375,15 +2375,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:33:24.633645Z",
-    "downloads": 2559,
+    "downloads": 2560,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d7b5b74bdaace2f370bef632ea316b50cf98a5f3784167f3f511ebea0e694c8ee2cac032829ff0a65504125eb3631a4a0e13ce7c747ffc2700c3b886a4a03521",
-          "sha1": "554fd41d0badbdbc01cf95de378ef24a9f7fafda"
+          "sha1": "554fd41d0badbdbc01cf95de378ef24a9f7fafda",
+          "sha512": "d7b5b74bdaace2f370bef632ea316b50cf98a5f3784167f3f511ebea0e694c8ee2cac032829ff0a65504125eb3631a4a0e13ce7c747ffc2700c3b886a4a03521"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/XncrpEIA/BSL%20v6.0.zip",
         "filename": "BSL v6.0.zip",
@@ -2411,15 +2411,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:32:06.372506Z",
-    "downloads": 1160,
+    "downloads": 1161,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "3c44da097b417855791e558cfc4c873609453d28be77bb0c2bf5124422be1d602fd68afd92aca322a5e5703a57d5fd8659cd40411c77167c54e972b550cb274f",
-          "sha1": "01a25d22141a3ff5eb29d4b85ef0b8b9d0bf6378"
+          "sha1": "01a25d22141a3ff5eb29d4b85ef0b8b9d0bf6378",
+          "sha512": "3c44da097b417855791e558cfc4c873609453d28be77bb0c2bf5124422be1d602fd68afd92aca322a5e5703a57d5fd8659cd40411c77167c54e972b550cb274f"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/SJyygOF4/BSL%20v5.3.zip",
         "filename": "BSL v5.3.zip",
@@ -2447,7 +2447,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:31:13.504309Z",
-    "downloads": 5045,
+    "downloads": 5048,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2519,7 +2519,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:29:32.817115Z",
-    "downloads": 892,
+    "downloads": 894,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2562,8 +2562,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "073711edd2338d1e5d2ca9a0c5489bf45f1669ffd953895cf1ca1037e7c9297b43b31a12b8fa322d9fba5a3720ddec90ba86c159a1a4c0de1893d8a463b20a64",
-          "sha1": "6ffdf82392d49c383919adc616e4cb7676e278fc"
+          "sha1": "6ffdf82392d49c383919adc616e4cb7676e278fc",
+          "sha512": "073711edd2338d1e5d2ca9a0c5489bf45f1669ffd953895cf1ca1037e7c9297b43b31a12b8fa322d9fba5a3720ddec90ba86c159a1a4c0de1893d8a463b20a64"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/U7O5QxWB/BSL%20v3.6.zip",
         "filename": "BSL v3.6.zip",
@@ -2591,15 +2591,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:23:13.506653Z",
-    "downloads": 1991,
+    "downloads": 2005,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "56b2c0f43364d919edd61e50a928a482198b883f",
-          "sha512": "e723f8cfda0c0d2c756f38f70755e57bace7ac71f63bd83945eee96c48d21a9787e21491e24d73ddec7004df60347080f047e6b6b002097fdeeaf5852fcab2c0"
+          "sha512": "e723f8cfda0c0d2c756f38f70755e57bace7ac71f63bd83945eee96c48d21a9787e21491e24d73ddec7004df60347080f047e6b6b002097fdeeaf5852fcab2c0",
+          "sha1": "56b2c0f43364d919edd61e50a928a482198b883f"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/FoFIskk5/BSL%20v3.0.zip",
         "filename": "BSL v3.0.zip",
@@ -2627,15 +2627,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:20:31.749305Z",
-    "downloads": 1394,
+    "downloads": 1398,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4ce4bbf30e7bf8317cb055a3cd009077e22796bf",
-          "sha512": "43192c60972f88aebf6e58f6b3b9d1153fec3eec18665300b136cd1de320d6ba18a1bf46b2e76c6f68c53af9c85bbfea633600667b62901588d95ab8e8147c82"
+          "sha512": "43192c60972f88aebf6e58f6b3b9d1153fec3eec18665300b136cd1de320d6ba18a1bf46b2e76c6f68c53af9c85bbfea633600667b62901588d95ab8e8147c82",
+          "sha1": "4ce4bbf30e7bf8317cb055a3cd009077e22796bf"
         },
         "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/lQuSN0ud/BSL%20v2.0.zip",
         "filename": "BSL v2.0.zip",
@@ -2663,7 +2663,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-22T18:19:42.776127Z",
-    "downloads": 3646,
+    "downloads": 3649,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,

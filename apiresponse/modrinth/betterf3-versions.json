@@ -15,15 +15,15 @@
     "changelog": "## BetterF3 v15.0.0 for Minecraft 1.21.6\nPublished 2025-06-23\n\n### Added\n- 1.21.6 support\n\nFull Changelog: [`v14.0.0...v15.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v14.0.0...v15.0.0)",
     "changelog_url": null,
     "date_published": "2025-06-23T00:23:02.12696Z",
-    "downloads": 337,
+    "downloads": 380,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "dd9bb9c3c06aee65e65701e4083416a3268d3064",
-          "sha512": "b67799e428631d5b9e2ee69debe022004713e90f80d44b36d831810dbf97fba28c70fcd4c15b09c3d5bb6b07ba52d3909be13c452c23eee8f53b83f2c7020915"
+          "sha512": "b67799e428631d5b9e2ee69debe022004713e90f80d44b36d831810dbf97fba28c70fcd4c15b09c3d5bb6b07ba52d3909be13c452c23eee8f53b83f2c7020915",
+          "sha1": "dd9bb9c3c06aee65e65701e4083416a3268d3064"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/GioyhafN/BetterF3-15.0.0-NeoForge-1.21.6.jar",
         "filename": "BetterF3-15.0.0-NeoForge-1.21.6.jar",
@@ -58,15 +58,15 @@
     "changelog": "## BetterF3 v15.0.0 for Minecraft 1.21.6\nPublished 2025-06-23\n\n### Added\n- 1.21.6 support\n\nFull Changelog: [`v14.0.0...v15.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v14.0.0...v15.0.0)",
     "changelog_url": null,
     "date_published": "2025-06-23T00:22:58.905265Z",
-    "downloads": 11781,
+    "downloads": 13518,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e1333f3e807190ab2ce2c73ea4d8da76946cd701",
-          "sha512": "5e1a9f547fda1d49fd69ea6a6eeeb8e21e34a6f80c44670afb105d005e9cfdf1f31809bc4b490fb72a5fb988f9160ae8d240b73203f24ed0f741d5aff11235af"
+          "sha512": "5e1a9f547fda1d49fd69ea6a6eeeb8e21e34a6f80c44670afb105d005e9cfdf1f31809bc4b490fb72a5fb988f9160ae8d240b73203f24ed0f741d5aff11235af",
+          "sha1": "e1333f3e807190ab2ce2c73ea4d8da76946cd701"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/DHCqyQtH/BetterF3-15.0.0-Fabric-1.21.6.jar",
         "filename": "BetterF3-15.0.0-Fabric-1.21.6.jar",
@@ -106,7 +106,7 @@
     "changelog": "## BetterF3 v14.0.0 for Minecraft 1.21.5\nPublished 2025-03-29\n\n### Added\n- 1.21.5 support\n\nFull Changelog: [`v13.0.0...v14.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v13.0.0...v14.0.0)",
     "changelog_url": null,
     "date_published": "2025-03-29T22:10:04.171594Z",
-    "downloads": 10966,
+    "downloads": 11016,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -149,15 +149,15 @@
     "changelog": "## BetterF3 v14.0.0 for Minecraft 1.21.5\nPublished 2025-03-29\n\n### Added\n- 1.21.5 support\n\nFull Changelog: [`v13.0.0...v14.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v13.0.0...v14.0.0)",
     "changelog_url": null,
     "date_published": "2025-03-29T22:09:59.789422Z",
-    "downloads": 530974,
+    "downloads": 534899,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8ea2618fb591ec11eed414d6c8eabf15d0a343bff614be8485ae679542a0329d3de151e1562d5fc33f160435db5f5162f483de9a457ddfdc2694f1b13ef9a833",
-          "sha1": "656ff9376212cabb74ebdbb486e804cb5c759355"
+          "sha1": "656ff9376212cabb74ebdbb486e804cb5c759355",
+          "sha512": "8ea2618fb591ec11eed414d6c8eabf15d0a343bff614be8485ae679542a0329d3de151e1562d5fc33f160435db5f5162f483de9a457ddfdc2694f1b13ef9a833"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/dfWnohnD/BetterF3-14.0.0-Fabric-1.21.5.jar",
         "filename": "BetterF3-14.0.0-Fabric-1.21.5.jar",
@@ -169,15 +169,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "mOgUt4GM",
-        "file_name": null,
-        "dependency_type": "optional"
-      },
-      {
-        "version_id": null,
         "project_id": "9s6osm5g",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
       }
     ]
   },
@@ -197,7 +197,7 @@
     "changelog": "## BetterF3 v13.0.0 for Minecraft 1.21.4\nPublished 2024-12-07\n\n### Added\n- 1.21.4 support\n\nFull Changelog: [`v12.0.0...v13.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v12.0.0...v13.0.0)",
     "changelog_url": null,
     "date_published": "2024-12-07T05:25:26.55013Z",
-    "downloads": 14249,
+    "downloads": 14278,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -240,15 +240,15 @@
     "changelog": "## BetterF3 v13.0.0 for Minecraft 1.21.4\nPublished 2024-12-07\n\n### Added\n- 1.21.4 support\n\nFull Changelog: [`v12.0.0...v13.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v12.0.0...v13.0.0)",
     "changelog_url": null,
     "date_published": "2024-12-07T05:25:22.40155Z",
-    "downloads": 658201,
+    "downloads": 659045,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c39ed931c6930ffdb1c65138ad94fb8f9b590808",
-          "sha512": "aab1fc1419e534dfb98b1b33cd07df611f63d43e8975a8fc85b3f448c29bac75e35b8b9bf996689e7fce28e617e436078d244a63b6bd01cb3ae415139abb63c3"
+          "sha512": "aab1fc1419e534dfb98b1b33cd07df611f63d43e8975a8fc85b3f448c29bac75e35b8b9bf996689e7fce28e617e436078d244a63b6bd01cb3ae415139abb63c3",
+          "sha1": "c39ed931c6930ffdb1c65138ad94fb8f9b590808"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/729ec3Jf/BetterF3-13.0.0-Fabric-1.21.4.jar",
         "filename": "BetterF3-13.0.0-Fabric-1.21.4.jar",
@@ -289,15 +289,15 @@
     "changelog": "## BetterF3 v12.0.0 for Minecraft 1.21.2/1.21.3\nPublished 2024-11-04\n\n### Added\n- 1.21.2/1.21.3 support\n\nFull Changelog: [`v11.0.2...v12.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v11.0.2...v12.0.0)",
     "changelog_url": null,
     "date_published": "2024-11-04T00:56:17.065813Z",
-    "downloads": 3147,
+    "downloads": 3149,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c8fa36e9638710ba37af99914aaf8e01a8ba5922",
-          "sha512": "cfd9fca7c2b0686aa30803361ebfed004d8c1a2cc1305c00020e4eb2dc5b4b13739612d6ed56763c1d61a4b9086c10df2482ccd2230e44ba9152a133e95f7091"
+          "sha512": "cfd9fca7c2b0686aa30803361ebfed004d8c1a2cc1305c00020e4eb2dc5b4b13739612d6ed56763c1d61a4b9086c10df2482ccd2230e44ba9152a133e95f7091",
+          "sha1": "c8fa36e9638710ba37af99914aaf8e01a8ba5922"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/9h3xhh9m/BetterF3-12.0.0-NeoForge-1.21.3.jar",
         "filename": "BetterF3-12.0.0-NeoForge-1.21.3.jar",
@@ -333,7 +333,7 @@
     "changelog": "## BetterF3 v12.0.0 for Minecraft 1.21.2/1.21.3\nPublished 2024-11-04\n\n### Added\n- 1.21.2/1.21.3 support\n\nFull Changelog: [`v11.0.2...v12.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v11.0.2...v12.0.0)",
     "changelog_url": null,
     "date_published": "2024-11-04T00:56:11.856462Z",
-    "downloads": 99409,
+    "downloads": 99452,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -381,7 +381,7 @@
     "changelog": "## BetterF3 v11.0.3 for Minecraft 1.21.1\nPublished 2024-11-04\n\n### Updated\n- Translations\n\nFull Changelog: [`v11.0.2...v11.0.3`](https://github.com/TreyRuffy/BetterF3/compare/v11.0.2...v11.0.3)",
     "changelog_url": null,
     "date_published": "2024-11-04T00:45:11.855685Z",
-    "downloads": 108157,
+    "downloads": 108708,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -423,15 +423,15 @@
     "changelog": "## BetterF3 v11.0.3 for Minecraft 1.21.1\nPublished 2024-11-04\n\n### Updated\n- Translations\n\nFull Changelog: [`v11.0.2...v11.0.3`](https://github.com/TreyRuffy/BetterF3/compare/v11.0.2...v11.0.3)",
     "changelog_url": null,
     "date_published": "2024-11-04T00:45:07.216648Z",
-    "downloads": 14447,
+    "downloads": 14482,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "03658fde551b79074e7f073e5acd9bc7cb33b619f26beecf19920599b13ecdffab3dd2a6a792f497af0747373e4ff707cb6457d1cdade2044bbe4666ea3d6248",
-          "sha1": "4a87145b9867c725a79d90f29677992644e12335"
+          "sha1": "4a87145b9867c725a79d90f29677992644e12335",
+          "sha512": "03658fde551b79074e7f073e5acd9bc7cb33b619f26beecf19920599b13ecdffab3dd2a6a792f497af0747373e4ff707cb6457d1cdade2044bbe4666ea3d6248"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/VdCTYQJE/BetterF3-11.0.3-Forge-1.21.1.jar",
         "filename": "BetterF3-11.0.3-Forge-1.21.1.jar",
@@ -466,7 +466,7 @@
     "changelog": "## BetterF3 v11.0.3 for Minecraft 1.21.1\nPublished 2024-11-04\n\n### Updated\n- Translations\n\nFull Changelog: [`v11.0.2...v11.0.3`](https://github.com/TreyRuffy/BetterF3/compare/v11.0.2...v11.0.3)",
     "changelog_url": null,
     "date_published": "2024-11-04T00:45:04.898634Z",
-    "downloads": 751328,
+    "downloads": 755040,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -514,7 +514,7 @@
     "changelog": "## BetterF3 v11.0.2 for Minecraft 1.21.1\nPublished 2024-08-25\n\n### Added\n- 1.21.1 fully supported\n- Minecraft Forge support\n\nFull Changelog: [`v10.0.2...v11.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v10.0.2...v11.0.2)",
     "changelog_url": null,
     "date_published": "2024-08-25T21:13:22.485456Z",
-    "downloads": 13896,
+    "downloads": 13897,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -599,7 +599,7 @@
     "changelog": "## BetterF3 v11.0.2 for Minecraft 1.21.1\nPublished 2024-08-25\n\n### Added\n- 1.21.1 fully supported\n- Minecraft Forge support\n\nFull Changelog: [`v10.0.2...v11.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v10.0.2...v11.0.2)",
     "changelog_url": null,
     "date_published": "2024-08-25T21:13:18.224726Z",
-    "downloads": 285434,
+    "downloads": 285572,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -648,15 +648,15 @@
     "changelog": "## BetterF3 v10.0.3 for Minecraft 1.20.5/1.20.6\nPublished 2024-08-25\n\n### Fixed\n- Velocities\n\n### Updated\n- Translation updates\n\nFull Changelog: [`v10.0.2...v10.0.3`](https://github.com/TreyRuffy/BetterF3/compare/v10.0.2...v10.0.3)",
     "changelog_url": null,
     "date_published": "2024-08-25T21:10:17.262921Z",
-    "downloads": 1011,
+    "downloads": 1019,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "1519640bad87b5ff34717bafc63874cf3b4cf423",
-          "sha512": "c6ea3edef6ad88165bba2a91a1a5606e3484ecce7413324aa94721bbcd497d87e71a1c49f6c286c044ef180365c2b9bd2c3f6790515577be3101f11b7d55c043"
+          "sha512": "c6ea3edef6ad88165bba2a91a1a5606e3484ecce7413324aa94721bbcd497d87e71a1c49f6c286c044ef180365c2b9bd2c3f6790515577be3101f11b7d55c043",
+          "sha1": "1519640bad87b5ff34717bafc63874cf3b4cf423"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/e5tIjkBO/BetterF3-10.0.3-NeoForge-1.20.6.jar",
         "filename": "BetterF3-10.0.3-NeoForge-1.20.6.jar",
@@ -692,7 +692,7 @@
     "changelog": "## BetterF3 v10.0.3 for Minecraft 1.20.5/1.20.6\nPublished 2024-08-25\n\n### Fixed\n- Velocities\n\n### Updated\n- Translation updates\n\nFull Changelog: [`v10.0.2...v10.0.3`](https://github.com/TreyRuffy/BetterF3/compare/v10.0.2...v10.0.3)",
     "changelog_url": null,
     "date_published": "2024-08-25T21:10:14.151059Z",
-    "downloads": 23832,
+    "downloads": 23860,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -741,7 +741,7 @@
     "changelog": "## BetterF3 v11.0.1 for Minecraft 1.21/1.21.1/1./  \nPublished 2024-06-18\n\n### Added\n- Fix 1.21 crash\n\nFull Changelog: [`v10.0.2...v11.0.1`](https://github.com/TreyRuffy/BetterF3/compare/v10.0.2...v11.0.1)",
     "changelog_url": null,
     "date_published": "2024-06-18T01:49:49.311133Z",
-    "downloads": 21833,
+    "downloads": 21842,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -785,7 +785,7 @@
     "changelog": "## BetterF3 v11.0.1 for Minecraft 1.21/1.12.1\nPublished 2024-06-18\n\n### Added\n- Fix 1.21 crash\n\nFull Changelog: [`v10.0.2...v11.0.1`](https://github.com/TreyRuffy/BetterF3/compare/v10.0.2...v11.0.1)",
     "changelog_url": null,
     "date_published": "2024-06-18T01:49:46.107501Z",
-    "downloads": 1184705,
+    "downloads": 1185540,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -876,15 +876,15 @@
     "changelog": "## BetterF3 v11.0.0 for Minecraft 1.21\nPublished 2024-06-14\n\n### Added\n- Fabric and NeoForge support for 1.21\n\nFull Changelog: [`v10.0.2...v11.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v10.0.2...v11.0.0)",
     "changelog_url": null,
     "date_published": "2024-06-14T21:12:34.86761Z",
-    "downloads": 24058,
+    "downloads": 24060,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b916c4d03371412ef38d9e176afbae246dd09e6a",
-          "sha512": "a46b6732bf68908046d83b8223b0a37168317ab9907ce43b7ea0245c5bf1aebfcb5a1f4e091455f83083db6f1850ca9561462b9146bcff8c6fc97be593f80deb"
+          "sha512": "a46b6732bf68908046d83b8223b0a37168317ab9907ce43b7ea0245c5bf1aebfcb5a1f4e091455f83083db6f1850ca9561462b9146bcff8c6fc97be593f80deb",
+          "sha1": "b916c4d03371412ef38d9e176afbae246dd09e6a"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/v0mwC68L/BetterF3-11.0.0-Fabric-1.21.jar",
         "filename": "BetterF3-11.0.0-Fabric-1.21.jar",
@@ -896,15 +896,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "mOgUt4GM",
-        "file_name": null,
-        "dependency_type": "optional"
-      },
-      {
-        "version_id": null,
         "project_id": "9s6osm5g",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
       }
     ]
   },
@@ -925,7 +925,7 @@
     "changelog": "## BetterF3 v10.0.2 for Minecraft 1.20.5/1.20.6\nPublished 2024-06-14\n\n### Updated\n- Translation updates\n\nFull Changelog: [`v10.0.1...v10.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v10.0.1...v10.0.2)",
     "changelog_url": null,
     "date_published": "2024-06-14T21:06:57.065627Z",
-    "downloads": 2171,
+    "downloads": 2173,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -969,7 +969,7 @@
     "changelog": "## BetterF3 v10.0.2 for Minecraft 1.20.5/1.20.6\nPublished 2024-06-14\n\n### Updated\n- Translation updates\n\nFull Changelog: [`v10.0.1...v10.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v10.0.1...v10.0.2)",
     "changelog_url": null,
     "date_published": "2024-06-14T21:06:54.285464Z",
-    "downloads": 37778,
+    "downloads": 37788,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1025,8 +1025,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9bdeb9869e17efdd94f3b3ebe370f44445a4d3a5",
-          "sha512": "b730d7c2dfbb5f420a358290a3be813b2b35eda25c1b7f94b5889522aeeaea67d43cf5d6c913e676ce3e3d3539d573e4d7e5022df30eaee7b2e5b64bf2ff0e00"
+          "sha512": "b730d7c2dfbb5f420a358290a3be813b2b35eda25c1b7f94b5889522aeeaea67d43cf5d6c913e676ce3e3d3539d573e4d7e5022df30eaee7b2e5b64bf2ff0e00",
+          "sha1": "9bdeb9869e17efdd94f3b3ebe370f44445a4d3a5"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/al1gndy9/BetterF3-10.0.1-NeoForge-1.20.6.jar",
         "filename": "BetterF3-10.0.1-NeoForge-1.20.6.jar",
@@ -1062,15 +1062,15 @@
     "changelog": "## BetterF3 v10.0.1 for Minecraft 1.20.5/1.20.6\nPublished 2024-05-15\n\n### Added\n- NeoForge support for 1.20.5 / 1.20.6\n\nFull Changelog: [`v10.0.0...v10.0.1`](https://github.com/TreyRuffy/BetterF3/compare/v10.0.0...v10.0.1)",
     "changelog_url": null,
     "date_published": "2024-05-15T17:07:47.580189Z",
-    "downloads": 53061,
+    "downloads": 53063,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4fad9f86ed5fc517faad82cff66fd46f2a9ed9c4",
-          "sha512": "a888106afe955ce0aef1d851686924d92434f3a78d8534391246ace65afcc78ca84cbece16dcb22aacb2564601841e3d41aed95631fce18a0bbfc4edee787538"
+          "sha512": "a888106afe955ce0aef1d851686924d92434f3a78d8534391246ace65afcc78ca84cbece16dcb22aacb2564601841e3d41aed95631fce18a0bbfc4edee787538",
+          "sha1": "4fad9f86ed5fc517faad82cff66fd46f2a9ed9c4"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/rYpOYv1n/BetterF3-10.0.1-Fabric-1.20.6.jar",
         "filename": "BetterF3-10.0.1-Fabric-1.20.6.jar",
@@ -1112,7 +1112,7 @@
     "changelog": "## BetterF3 v10.0.0 for Minecraft 1.20.5/1.20.6\nPublished 2024-05-02\n\n### Added\n- Fabric support for 1.20.5 / 1.20.6\n\nWaiting on https://github.com/architectury/architectury-loom/issues/206 for NeoForge\nLooking into Minecraft Forge support\n\nFull Changelog: [`v9.0.2...v10.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v9.0.2...v10.0.0)",
     "changelog_url": null,
     "date_published": "2024-05-02T04:47:52.18525Z",
-    "downloads": 20749,
+    "downloads": 20750,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1210,15 +1210,15 @@
     "changelog": "## BetterF3 v9.0.2 for Minecraft 1.20.3/1.20.4\nPublished 2024-03-21\n\n### Added\n- NeoForge support for 1.20.3 / 1.20.4\n\n### Updated\n- Mappings to Mojang's official mappings\n- Combined Access Wideners\n\n### Fixed\n- Crash when saving the config file before the config folder is created\n\nFull Changelog: [`v9.0.1...v9.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v9.0.1...v9.0.2)",
     "changelog_url": null,
     "date_published": "2024-03-21T03:16:02.930438Z",
-    "downloads": 20091,
+    "downloads": 20095,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0ec6364ce9e6f30846d86488a702b51c844900248f43f04176b4b15780665600468c38cd441c70685f17ea5e8dfdbfaef42f13b93925de4344e4c91b5d73c65a",
-          "sha1": "de9a533d038d1e5fa930897e7a699e0f5b1d7d10"
+          "sha1": "de9a533d038d1e5fa930897e7a699e0f5b1d7d10",
+          "sha512": "0ec6364ce9e6f30846d86488a702b51c844900248f43f04176b4b15780665600468c38cd441c70685f17ea5e8dfdbfaef42f13b93925de4344e4c91b5d73c65a"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/jmwTc5n8/BetterF3-9.0.2-NeoForge-1.20.4.jar",
         "filename": "BetterF3-9.0.2-NeoForge-1.20.4.jar",
@@ -1253,15 +1253,15 @@
     "changelog": "## BetterF3 v9.0.2 for Minecraft 1.20.3/1.20.4\nPublished 2024-03-21\n\n### Added\n- NeoForge support for 1.20.3 / 1.20.4\n\n### Updated\n- Mappings to Mojang's official mappings\n- Combined Access Wideners\n\n### Fixed\n- Crash when saving the config file before the config folder is created\n\nFull Changelog: [`v9.0.1...v9.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v9.0.1...v9.0.2)",
     "changelog_url": null,
     "date_published": "2024-03-21T03:16:00.657304Z",
-    "downloads": 12305,
+    "downloads": 12311,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f6b88665dc45882194370a49efe1aaa59e14d331",
-          "sha512": "0aece9e83085b14f6fe6bfe62eceabd666ff093dce8834a4239fb96bb1abd9140df3aeb8e742ad6983ee07818273107fcc05b69a4f37f529855cc8463d514d08"
+          "sha512": "0aece9e83085b14f6fe6bfe62eceabd666ff093dce8834a4239fb96bb1abd9140df3aeb8e742ad6983ee07818273107fcc05b69a4f37f529855cc8463d514d08",
+          "sha1": "f6b88665dc45882194370a49efe1aaa59e14d331"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/CVXMTRPD/BetterF3-9.0.2-Forge-1.20.4.jar",
         "filename": "BetterF3-9.0.2-Forge-1.20.4.jar",
@@ -1297,15 +1297,15 @@
     "changelog": "## BetterF3 v9.0.2 for Minecraft 1.20.3/1.20.4\nPublished 2024-03-21\n\n### Added\n- NeoForge support for 1.20.3 / 1.20.4\n\n### Updated\n- Mappings to Mojang's official mappings\n- Combined Access Wideners\n\n### Fixed\n- Crash when saving the config file before the config folder is created\n\nFull Changelog: [`v9.0.1...v9.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v9.0.1...v9.0.2)",
     "changelog_url": null,
     "date_published": "2024-03-21T03:15:58.419439Z",
-    "downloads": 309484,
+    "downloads": 309654,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "780ae4f29fb249c3f6be75724b3084a075ec36cb",
-          "sha512": "f45b717acd5a6f1d71c59259dea4a62a3ea85731a0e8736eb050140a3d7fc6a3f3907b299b129d8f8b80da16a84bc9996d291f14e6fcb6034c3734ec855107dd"
+          "sha512": "f45b717acd5a6f1d71c59259dea4a62a3ea85731a0e8736eb050140a3d7fc6a3f3907b299b129d8f8b80da16a84bc9996d291f14e6fcb6034c3734ec855107dd",
+          "sha1": "780ae4f29fb249c3f6be75724b3084a075ec36cb"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/AkivIlyi/BetterF3-9.0.2-Fabric-1.20.4.jar",
         "filename": "BetterF3-9.0.2-Fabric-1.20.4.jar",
@@ -1390,15 +1390,15 @@
     "changelog": "## BetterF3 v9.0.1 for Minecraft 1.20.3/1.20.4\nPublished 2024-03-18\n\n### Updated\n- Fps module @Zazcallabah\n- Broken modules list @diskree\n- Translations\n\nThank you so much for your contributions to the project!\nWe are open to contributions, feel free to submit a PR if you want to help us improve the project:\nhttps://github.com/TreyRuffy/BetterF3/\n\nAdd or improve translations here:\nhttps://crowdin.com/project/betterf3\n\nFull Changelog: [`v9.0.0...v9.0.1`](https://github.com/TreyRuffy/BetterF3/compare/v9.0.0...v9.0.1)",
     "changelog_url": null,
     "date_published": "2024-03-18T05:42:33.029255Z",
-    "downloads": 9507,
+    "downloads": 9508,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "154ea67663412c2226aeee101c44d58cf610a9c802bea8c51c3b92f3939ebc9442945d9f708501cf803ff7281bd1d02da1f11081fd1c9104ccdcf12285b02e8c",
-          "sha1": "c654c40f7d41acb1a3ff2efd3a6765d8aa58cdbe"
+          "sha1": "c654c40f7d41acb1a3ff2efd3a6765d8aa58cdbe",
+          "sha512": "154ea67663412c2226aeee101c44d58cf610a9c802bea8c51c3b92f3939ebc9442945d9f708501cf803ff7281bd1d02da1f11081fd1c9104ccdcf12285b02e8c"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/euCaAaXx/BetterF3-9.0.1-Fabric-1.20.4.jar",
         "filename": "BetterF3-9.0.1-Fabric-1.20.4.jar",
@@ -1445,8 +1445,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "982a37b8e0edb995c3607eff7e9e63b98ed7c621",
-          "sha512": "6c597c2494572976cc5f9256be592a916300fa1d4272466285b9470077ed9ccb798587f630e7dba904c516dbaea37873c44ad86ebb58b0022d33e2a6066b9a4c"
+          "sha512": "6c597c2494572976cc5f9256be592a916300fa1d4272466285b9470077ed9ccb798587f630e7dba904c516dbaea37873c44ad86ebb58b0022d33e2a6066b9a4c",
+          "sha1": "982a37b8e0edb995c3607eff7e9e63b98ed7c621"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/k1LlRoc9/BetterF3-8.0.3-NeoForge-1.20.2.jar",
         "filename": "BetterF3-8.0.3-NeoForge-1.20.2.jar",
@@ -1480,7 +1480,7 @@
     "changelog": "## BetterF3 v8.0.3 for Minecraft 1.20.2\nPublished 2024-03-18\n\n### Added\n- NeoForge support\n- Player velocity @Zazcallabah\n\n### Updated\n- Translation files\n- FPS hotfix @ItsThosea\n\nFull Changelog: [`v8.0.2...v8.0.3`](https://github.com/TreyRuffy/BetterF3/compare/v8.0.2...v8.0.3)",
     "changelog_url": null,
     "date_published": "2024-03-18T05:34:53.808523Z",
-    "downloads": 5534,
+    "downloads": 5538,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1523,7 +1523,7 @@
     "changelog": "## BetterF3 v8.0.3 for Minecraft 1.20.2\nPublished 2024-03-18\n\n### Added\n- NeoForge support\n- Player velocity @Zazcallabah\n\n### Updated\n- Translation files\n- FPS hotfix @ItsThosea\n\nFull Changelog: [`v8.0.2...v8.0.3`](https://github.com/TreyRuffy/BetterF3/compare/v8.0.2...v8.0.3)",
     "changelog_url": null,
     "date_published": "2024-03-18T05:34:51.814051Z",
-    "downloads": 64415,
+    "downloads": 64427,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1579,8 +1579,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "84b976f3c04aeec138120d64e74fbf5d3b250ece50a87da2e46150e1b604a27d92662c45338438ecb6a407221ea79ea501edeea02d07be4687da0b3cc5440d9e",
-          "sha1": "d5db099f7d6c28beaf7daad5ad9929a2c7ee46fa"
+          "sha1": "d5db099f7d6c28beaf7daad5ad9929a2c7ee46fa",
+          "sha512": "84b976f3c04aeec138120d64e74fbf5d3b250ece50a87da2e46150e1b604a27d92662c45338438ecb6a407221ea79ea501edeea02d07be4687da0b3cc5440d9e"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/jwhdsLMc/BetterF3-9.0.0-Forge-1.20.4.jar",
         "filename": "BetterF3-9.0.0-Forge-1.20.4.jar",
@@ -1616,7 +1616,7 @@
     "changelog": "## BetterF3 v9.0.0 for Minecraft 1.20.3/1.20.4\nPublished 2023-12-17\n\n### Added\n- Support for Minecraft 1.20.3 / 1.20.4\n- Velocities\n\nFull Changelog: [`v8.0.2...v9.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v8.0.2...v9.0.0)",
     "changelog_url": null,
     "date_published": "2023-12-17T20:59:01.495527Z",
-    "downloads": 171186,
+    "downloads": 171211,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1707,15 +1707,15 @@
     "changelog": "## BetterF3 v8.0.2 for Minecraft 1.20.2\nPublished 2023-11-13\n\n### Fixed\n- Minor fixes with urls\n\nFull Changelog: [`v8.0.1...v8.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v8.0.1...v8.0.2)",
     "changelog_url": null,
     "date_published": "2023-11-13T04:20:53.855486Z",
-    "downloads": 98422,
+    "downloads": 98435,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "9d66a9ebb7157845efe108e883fe370c7ecb9a36",
-          "sha512": "e623703d1d9c5aeaf1b06ab1a795b08172489892725f63c59aeedd3850e81c3dcc6b9d4908acb4eaf61007f12e819e222ade61496558cee6dd2cc2fb6211deee"
+          "sha512": "e623703d1d9c5aeaf1b06ab1a795b08172489892725f63c59aeedd3850e81c3dcc6b9d4908acb4eaf61007f12e819e222ade61496558cee6dd2cc2fb6211deee",
+          "sha1": "9d66a9ebb7157845efe108e883fe370c7ecb9a36"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/sPcACJ3r/BetterF3-8.0.2-Fabric-1.20.2.jar",
         "filename": "BetterF3-8.0.2-Fabric-1.20.2.jar",
@@ -1756,15 +1756,15 @@
     "changelog": "## BetterF3 v7.0.2 for Minecraft 1.20/1.20.1\nPublished 2023-11-13\n\n### Fixed\n- Fix memory color toggle and time format\n- Fix log spam\n\nFull Changelog: [`v7.0.1...v7.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v7.0.1...v7.0.2)",
     "changelog_url": null,
     "date_published": "2023-11-13T04:17:25.93718Z",
-    "downloads": 1109314,
+    "downloads": 1111892,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e88ce04d601a5953de909edaabb49dad9eea2c3a9ccccb1247fd041554b30794d4d4c315be065c90b1017cbd798199e644fe8d905125f4c431ddb8eaf170dd15",
-          "sha1": "b65cba59e87dc6c6d1aa9c47f09b9996b4e5075d"
+          "sha1": "b65cba59e87dc6c6d1aa9c47f09b9996b4e5075d",
+          "sha512": "e88ce04d601a5953de909edaabb49dad9eea2c3a9ccccb1247fd041554b30794d4d4c315be065c90b1017cbd798199e644fe8d905125f4c431ddb8eaf170dd15"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/xo6HmgWj/BetterF3-7.0.2-Forge-1.20.1.jar",
         "filename": "BetterF3-7.0.2-Forge-1.20.1.jar",
@@ -1800,15 +1800,15 @@
     "changelog": "## BetterF3 v7.0.2 for Minecraft 1.20/1.20.1\nPublished 2023-11-13\n\n### Fixed\n- Fix memory color toggle and time format\n- Fix log spam\n\nFull Changelog: [`v7.0.1...v7.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v7.0.1...v7.0.2)",
     "changelog_url": null,
     "date_published": "2023-11-13T04:17:09.333495Z",
-    "downloads": 2164142,
+    "downloads": 2166748,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ed0383ed8c68e1d1cbfc61267afee028d8a4d7fe",
-          "sha512": "1b1f5bae45050bf01a23c57cfe94b7f42c6e0e9d669150effc04d3d09fd43c2dbea6c634117309ab1ee11253fcdb3c6061a9034e963b7f08476a76f1e98c3b8a"
+          "sha512": "1b1f5bae45050bf01a23c57cfe94b7f42c6e0e9d669150effc04d3d09fd43c2dbea6c634117309ab1ee11253fcdb3c6061a9034e963b7f08476a76f1e98c3b8a",
+          "sha1": "ed0383ed8c68e1d1cbfc61267afee028d8a4d7fe"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/7WkFnw9F/BetterF3-7.0.2-Fabric-1.20.1.jar",
         "filename": "BetterF3-7.0.2-Fabric-1.20.1.jar",
@@ -1848,7 +1848,7 @@
     "changelog": "## BetterF3 v6.0.3 for Minecraft 1.19.4\nPublished 2023-11-13\n\n### Fixed\n- Fixed memory color toggle and time format\n\nFull Changelog: [`v6.0.2...v6.0.3`](https://github.com/TreyRuffy/BetterF3/compare/v6.0.2...v6.0.3)",
     "changelog_url": null,
     "date_published": "2023-11-13T04:05:59.89358Z",
-    "downloads": 8513,
+    "downloads": 8518,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1891,7 +1891,7 @@
     "changelog": "## BetterF3 v6.0.3 for Minecraft 1.19.4\nPublished 2023-11-13\n\n### Fixed\n- Fixed memory color toggle and time format\n\nFull Changelog: [`v6.0.2...v6.0.3`](https://github.com/TreyRuffy/BetterF3/compare/v6.0.2...v6.0.3)",
     "changelog_url": null,
     "date_published": "2023-11-13T04:05:49.30798Z",
-    "downloads": 43137,
+    "downloads": 43168,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1939,15 +1939,15 @@
     "changelog": "## BetterF3 v5.1.1 for Minecraft 1.19.3\nPublished 2023-11-13\n\n### Added\n* Fix SpawnGroups\n* Update translations\n\nFull Changelog: [`v5.1.0...v5.1.1`](https://github.com/TreyRuffy/BetterF3/compare/v5.1.0...v5.1.1)",
     "changelog_url": null,
     "date_published": "2023-11-13T03:40:06.059009Z",
-    "downloads": 1976,
+    "downloads": 1977,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "244353de358988c67b1713059a94c3d86cd4cb1280f6ab0fad42f21dd4df11183298fadcf43845b2f0a1a5a163889b4f86fd0e369e584443694a595b1ab2b9cd",
-          "sha1": "057b39857e5a648736e5c37a0f27a5c06ef75b66"
+          "sha1": "057b39857e5a648736e5c37a0f27a5c06ef75b66",
+          "sha512": "244353de358988c67b1713059a94c3d86cd4cb1280f6ab0fad42f21dd4df11183298fadcf43845b2f0a1a5a163889b4f86fd0e369e584443694a595b1ab2b9cd"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/ytBb9iBt/BetterF3-5.1.1-Forge-1.19.3.jar",
         "filename": "BetterF3-5.1.1-Forge-1.19.3.jar",
@@ -1982,7 +1982,7 @@
     "changelog": "## BetterF3 v5.1.1 for Minecraft 1.19.3\nPublished 2023-11-13\n\n### Added\n* Fix SpawnGroups\n* Update translations\n\nFull Changelog: [`v5.1.0...v5.1.1`](https://github.com/TreyRuffy/BetterF3/compare/v5.1.0...v5.1.1)",
     "changelog_url": null,
     "date_published": "2023-11-13T03:39:56.327129Z",
-    "downloads": 6139,
+    "downloads": 6142,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2032,15 +2032,15 @@
     "changelog": "## BetterF3 v4.0.1 for Minecraft 1.19.1/2\nPublished 2023-11-13\n\n\n### Added\n- New translations\n### Updated\n- Made code more readable\n### Fixed\n- SpawnGroups by backporting\n\nFull Changelog: [`v4.0.0...v4.0.1`](https://github.com/TreyRuffy/BetterF3/compare/v4.0.0...v4.0.1)",
     "changelog_url": null,
     "date_published": "2023-11-13T03:26:58.19023Z",
-    "downloads": 337329,
+    "downloads": 337894,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0e459bad92565751912866075b0e3de6af06761c5bacbcffac1892bc6cb22ab345d26c9c52a72b62bed2ca28bc64df0d7d515c00054c13782419285de0157a96",
-          "sha1": "8a97dd1faaa6f2365434b6f5ff910eecc991e22f"
+          "sha1": "8a97dd1faaa6f2365434b6f5ff910eecc991e22f",
+          "sha512": "0e459bad92565751912866075b0e3de6af06761c5bacbcffac1892bc6cb22ab345d26c9c52a72b62bed2ca28bc64df0d7d515c00054c13782419285de0157a96"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/mMlLANpz/BetterF3-4.0.1-Forge-1.19.2.jar",
         "filename": "BetterF3-4.0.1-Forge-1.19.2.jar",
@@ -2077,7 +2077,7 @@
     "changelog": "## BetterF3 v4.0.1 for Minecraft 1.19.1/2\nPublished 2023-11-13\n\n\n### Added\n- New translations\n### Updated\n- Made code more readable\n### Fixed\n- SpawnGroups by backporting\n\nFull Changelog: [`v4.0.0...v4.0.1`](https://github.com/TreyRuffy/BetterF3/compare/v4.0.0...v4.0.1)",
     "changelog_url": null,
     "date_published": "2023-11-13T03:26:46.742974Z",
-    "downloads": 110370,
+    "downloads": 110467,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2132,8 +2132,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "74bc5f992748a69f7ed41cc911e4b92fcfe49af933326e38f75ae7bd8b74302f6d1f37498aff84129840198bb010fc89e398279e5fbdf45d8d4261851a84957f",
-          "sha1": "0d843642c3075a7302d5a2157b4ecf7e05c29321"
+          "sha1": "0d843642c3075a7302d5a2157b4ecf7e05c29321",
+          "sha512": "74bc5f992748a69f7ed41cc911e4b92fcfe49af933326e38f75ae7bd8b74302f6d1f37498aff84129840198bb010fc89e398279e5fbdf45d8d4261851a84957f"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/RCyVDnLg/BetterF3-8.0.1-Forge-1.20.2.jar",
         "filename": "BetterF3-8.0.1-Forge-1.20.2.jar",
@@ -2168,7 +2168,7 @@
     "changelog": "## BetterF3 v8.0.1 for Minecraft 1.20.2\nPublished 2023-10-12\n\n### Added\n* 1.20.2 support Forge and update translations\n\nFull Changelog: [`v8.0.0...v8.0.1`](https://github.com/TreyRuffy/BetterF3/compare/v8.0.0...v8.0.1)",
     "changelog_url": null,
     "date_published": "2023-10-12T05:07:51.155344Z",
-    "downloads": 83622,
+    "downloads": 83628,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2266,15 +2266,15 @@
     "changelog": "## BetterF3 v7.0.1 for Minecraft 1.20/1.20.1\nPublished 2023-07-13\n\n### Added\n* 1.20(.1) support for Fabric and Forge\n\nFull Changelog: [`v7.0.0...v7.0.1`](https://github.com/TreyRuffy/BetterF3/compare/v7.0.0...v7.0.1)",
     "changelog_url": null,
     "date_published": "2023-07-13T04:22:08.273145Z",
-    "downloads": 80016,
+    "downloads": 80023,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "24e9895e8ca9016a48bbb07f2367304fc71321f70cd78f86d090b096a49bf260b442cefb20bfb15bc42d30089a81c46a0121269b325273bc474d035670bb68bb",
-          "sha1": "3a422b2a055ddbe7d1ca7d5ca4b6a3280ff94a4b"
+          "sha1": "3a422b2a055ddbe7d1ca7d5ca4b6a3280ff94a4b",
+          "sha512": "24e9895e8ca9016a48bbb07f2367304fc71321f70cd78f86d090b096a49bf260b442cefb20bfb15bc42d30089a81c46a0121269b325273bc474d035670bb68bb"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/3Ed94XFJ/BetterF3-7.0.1-Forge-1.20.1.jar",
         "filename": "BetterF3-7.0.1-Forge-1.20.1.jar",
@@ -2310,7 +2310,7 @@
     "changelog": "## BetterF3 v7.0.1 for Minecraft 1.20/1.20.1\nPublished 2023-07-13\n\n### Added\n* 1.20(.1) support for Fabric and Forge\n\nFull Changelog: [`v7.0.0...v7.0.1`](https://github.com/TreyRuffy/BetterF3/compare/v7.0.0...v7.0.1)",
     "changelog_url": null,
     "date_published": "2023-07-13T04:22:03.025981Z",
-    "downloads": 932986,
+    "downloads": 934106,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2360,7 +2360,7 @@
     "changelog": "## BetterF3 v7.0.0 for Minecraft 1.20\nPublished 2023-06-07\n\n### Added\n* 1.20 Support for Fabric\n\nFull Changelog: [`v6.0.2...v7.0.0`](https://github.com/TreyRuffy/BetterF3/compare/v6.0.2...v7.0.0)",
     "changelog_url": null,
     "date_published": "2023-06-07T17:19:14.297057Z",
-    "downloads": 132835,
+    "downloads": 132895,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2408,7 +2408,7 @@
     "changelog": "## BetterF3 v6.0.2 for Minecraft 1.19.4\nPublished 2023-05-26\n\n### Added\n* Fix SpawnGroups\n* Update translations\n\nFull Changelog: [`v6.0.1...v6.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v6.0.1...v6.0.2)",
     "changelog_url": null,
     "date_published": "2023-05-26T23:02:42.091003Z",
-    "downloads": 7467,
+    "downloads": 7468,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2451,15 +2451,15 @@
     "changelog": "## BetterF3 v6.0.2 for Minecraft 1.19.4\nPublished 2023-05-26\n\n### Added\n* Fix SpawnGroups\n* Update translations\n\nFull Changelog: [`v6.0.1...v6.0.2`](https://github.com/TreyRuffy/BetterF3/compare/v6.0.1...v6.0.2)",
     "changelog_url": null,
     "date_published": "2023-05-26T23:02:38.282504Z",
-    "downloads": 62939,
+    "downloads": 62957,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "93dd391d3069f2b22945cebe15637e06d5cdfcb4",
-          "sha512": "e7b3967ec2ca4a1407cd7326723fdece614f287a3b3db702d1f55b46979ab2d4dddfb92ebc412a043a37452205efedd0dca4c90531f3c354222ff677e5ad730c"
+          "sha512": "e7b3967ec2ca4a1407cd7326723fdece614f287a3b3db702d1f55b46979ab2d4dddfb92ebc412a043a37452205efedd0dca4c90531f3c354222ff677e5ad730c",
+          "sha1": "93dd391d3069f2b22945cebe15637e06d5cdfcb4"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/up8zocIz/BetterF3-6.0.2-Fabric-1.19.4.jar",
         "filename": "BetterF3-6.0.2-Fabric-1.19.4.jar",
@@ -2506,8 +2506,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "92ac21c57df3f90c07f94cbf7512adec529fca5f308c9d6e987c67cb6a1fa311ce099b015b2c2ea13ab84e2e06eec0e0aee00ba79a9c5ff11c169cee126c2d62",
-          "sha1": "32116ff98a2aee17cf436eb7270c03c9e3c544e6"
+          "sha1": "32116ff98a2aee17cf436eb7270c03c9e3c544e6",
+          "sha512": "92ac21c57df3f90c07f94cbf7512adec529fca5f308c9d6e987c67cb6a1fa311ce099b015b2c2ea13ab84e2e06eec0e0aee00ba79a9c5ff11c169cee126c2d62"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/cEflCp0r/BetterF3-6.0.1-Forge-1.19.4.jar",
         "filename": "BetterF3-6.0.1-Forge-1.19.4.jar",
@@ -2542,15 +2542,15 @@
     "changelog": "## BetterF3 v6.0.1 for Minecraft 1.19.4\nPublished 2023-04-30\n\n### Added\n* 1.19.4 Forge Support\n\nFull Changelog: [`v6.0.0...v6.0.1`](https://github.com/TreyRuffy/BetterF3/compare/v6.0.0...v6.0.1)",
     "changelog_url": null,
     "date_published": "2023-04-30T03:54:47.557839Z",
-    "downloads": 43733,
+    "downloads": 43760,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8da2d8f4d9394d64add30ce655703b07e8a9926df1df5d4dba79b9549c81c6654b753ec0f2af31642673807f0f24d5944d45ece7778a58a4044a35e157400fd9",
-          "sha1": "138858db5f213d873069d455a65b023d87e046ea"
+          "sha1": "138858db5f213d873069d455a65b023d87e046ea",
+          "sha512": "8da2d8f4d9394d64add30ce655703b07e8a9926df1df5d4dba79b9549c81c6654b753ec0f2af31642673807f0f24d5944d45ece7778a58a4044a35e157400fd9"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/vZ9QjDs5/BetterF3-6.0.1-Fabric-1.19.4.jar",
         "filename": "BetterF3-6.0.1-Fabric-1.19.4.jar",
@@ -2646,8 +2646,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "574acd233fee8ebb6241b4f92a68c1f3b978e73e",
-          "sha512": "a558e14a4f8af71748744c1b7076b79fc1f524f8c108b578047dadb1afc5e49a2ed11cdbdf37efe9f69ff5266bc87e71b3015cb9c2c959d37554bb1df93f8da6"
+          "sha512": "a558e14a4f8af71748744c1b7076b79fc1f524f8c108b578047dadb1afc5e49a2ed11cdbdf37efe9f69ff5266bc87e71b3015cb9c2c959d37554bb1df93f8da6",
+          "sha1": "574acd233fee8ebb6241b4f92a68c1f3b978e73e"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/83hxArpY/BetterF3-5.1.0-Forge-1.19.3.jar",
         "filename": "BetterF3-5.1.0-Forge-1.19.3.jar",
@@ -2682,7 +2682,7 @@
     "changelog": "## BetterF3 v5.1.0 for Minecraft 1.19.3\nPublished 2022-12-30\n\n### Added\n* 1.19.3 Forge Support\n### Updated\n* Crowdin translations\n### Fixed\n* SpawnGroups crashing\n\nFull Changelog: [`v4.0.0...v5.1.0`](https://github.com/cominixo/BetterF3/compare/v4.0.0...v5.1.0)",
     "changelog_url": null,
     "date_published": "2022-12-30T07:30:55.840741Z",
-    "downloads": 35367,
+    "downloads": 35377,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2739,8 +2739,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "aaf5c9d7612f63f8b054aa9daf0a2bc09efa8221",
-          "sha512": "a9e24b786ce33728fef214527c1863ff5128bc4627c71b9d0dddb3f93f672885a915889cf61337acf4ecaf577f14ac5e317a8bf4220eabf09824c173f5e21cbf"
+          "sha512": "a9e24b786ce33728fef214527c1863ff5128bc4627c71b9d0dddb3f93f672885a915889cf61337acf4ecaf577f14ac5e317a8bf4220eabf09824c173f5e21cbf",
+          "sha1": "aaf5c9d7612f63f8b054aa9daf0a2bc09efa8221"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/C3hGuqnK/BetterF3-5.0.0-Fabric-1.19.3-pre2.jar",
         "filename": "BetterF3-5.0.0-Fabric-1.19.3-pre2.jar",
@@ -2782,7 +2782,7 @@
     "changelog": "## BetterF3 v4.0.0 for Minecraft 1.19.1/2\nPublished 2022-10-16\n\n### Added\n* Allocation rate calculator to the Systems module\n* BetterF3 version number to the Misc Right module\n### Updated\n* Changed the versioning system in order follow the Minecraft versioning system\n### Fixed\n* The server chunk in the location module showing client chunk data\n* The background size to better fit the text\n* The add module screen to remove duplicates\n* The profiler not popping correctly on Forge\n* The profiler showing on the main menu\n* An issue with Immersive Portal and other mods [#95](https://github.com/cominixo/BetterF3/issues/95) / [#60](https://github.com/cominixo/BetterF3/issues/60)\n* CurseForge uploads now use the beta and release types\n\nFull Changelog: [`v1.4.0...v4.0.0`](https://github.com/cominixo/BetterF3/compare/v1.4.0...v4.0.0)",
     "changelog_url": null,
     "date_published": "2022-10-16T09:58:03.535276Z",
-    "downloads": 36339,
+    "downloads": 36343,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2828,7 +2828,7 @@
     "changelog": "## BetterF3 v4.0.0 for Minecraft 1.19.1/2\nPublished 2022-10-16\n\n*Confirmed to work with 22w42a (and possibly later versions) with the corresponding [Fabric API](https://modrinth.com/mod/fabric-api) mod installed*\n\n### Added\n* Allocation rate calculator to the Systems module\n* BetterF3 version number to the Misc Right module\n### Updated\n* Changed the versioning system in order follow the Minecraft versioning system\n### Fixed\n* The server chunk in the location module showing client chunk data\n* The background size to better fit the text\n* The add module screen to remove duplicates\n* The profiler not popping correctly on Forge\n* The profiler showing on the main menu\n* An issue with Immersive Portal and other mods [#95](https://github.com/cominixo/BetterF3/issues/95) / [#60](https://github.com/cominixo/BetterF3/issues/60)\n* CurseForge uploads now use the beta and release types\n\nFull Changelog: [`v1.4.0...v4.0.0`](https://github.com/cominixo/BetterF3/compare/v1.4.0...v4.0.0)",
     "changelog_url": null,
     "date_published": "2022-10-16T09:57:54.691711Z",
-    "downloads": 387689,
+    "downloads": 387754,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2884,7 +2884,7 @@
     "changelog": "## BetterF3 v3.0.0 for Minecraft 1.18.1/2\nPublished 2022-10-16\n\n### Added\n* BetterF3 version number to the Misc Right module\n* Changelogs\n* Automatically opening the F3 menu\n* Hiding the debug crosshair\n* Hiding the boss bar when the F3 menu is open\n* Automatically opening the profiler\n* Automatically opening the FPS graph\n* More options for coloring text\n* Allocation rate calculator to the Systems module\n* CurseForge, Modrinth, and GitHub actions automatic releases\n### Updated\n* Changed the versioning system in order follow the Minecraft versioning system\n* GitHub Workflows to build the project\n* GitHub Workflows to add translations from Crowdin\n* Architectury Loom to 0.12.0\n* Update urls to the Modrinth page\n* Gradle to 7.5.1\n### Fixed\n* The server chunk in the location module showing client chunk data\n* The background size to better fit the text\n* The add module screen to remove duplicates\n* The profiler not popping correctly on Forge\n* The profiler showing on the main menu\n* An issue with Immersive Portal and other mods\n* CurseForge uploads now use the beta and release types\n* Reduced debug info with the client brand retriever\n\nFull Changelog: [`v1.2.5...v3.0.0`](https://github.com/cominixo/BetterF3/compare/v1.2.5...v3.0.0)",
     "changelog_url": null,
     "date_published": "2022-10-16T09:43:48.83794Z",
-    "downloads": 95012,
+    "downloads": 95151,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2929,7 +2929,7 @@
     "changelog": "## BetterF3 v3.0.0 for Minecraft 1.18.1/2\nPublished 2022-10-16\n\n### Added\n* BetterF3 version number to the Misc Right module\n* Changelogs\n* Automatically opening the F3 menu\n* Hiding the debug crosshair\n* Hiding the boss bar when the F3 menu is open\n* Automatically opening the profiler\n* Automatically opening the FPS graph\n* More options for coloring text\n* Allocation rate calculator to the Systems module\n* CurseForge, Modrinth, and GitHub actions automatic releases\n### Updated\n* Changed the versioning system in order follow the Minecraft versioning system\n* GitHub Workflows to build the project\n* GitHub Workflows to add translations from Crowdin\n* Architectury Loom to 0.12.0\n* Update urls to the Modrinth page\n* Gradle to 7.5.1\n### Fixed\n* The server chunk in the location module showing client chunk data\n* The background size to better fit the text\n* The add module screen to remove duplicates\n* The profiler not popping correctly on Forge\n* The profiler showing on the main menu\n* An issue with Immersive Portal and other mods\n* CurseForge uploads now use the beta and release types\n* Reduced debug info with the client brand retriever\n\nFull Changelog: [`v1.2.5...v3.0.0`](https://github.com/cominixo/BetterF3/compare/v1.2.5...v3.0.0)",
     "changelog_url": null,
     "date_published": "2022-10-16T09:43:42.329904Z",
-    "downloads": 62940,
+    "downloads": 62977,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2948,16 +2948,16 @@
     ],
     "dependencies": [
       {
-        "version_id": "nVxObSbX",
-        "project_id": "mOgUt4GM",
-        "file_name": null,
-        "dependency_type": "optional"
-      },
-      {
         "version_id": "BLMp2TRt",
         "project_id": "9s6osm5g",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": "nVxObSbX",
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
       }
     ]
   },
@@ -2978,7 +2978,7 @@
     "changelog": "## BetterF3 v2.0.0 for Minecraft 1.17/1.17.1\nPublished 2022-10-16\n\n### Added\n* BetterF3 version number to the Misc Right module\n* Changelogs\n* Automatically opening the F3 menu\n* Hiding the sidebar\n* Hiding the debug crosshair\n* Hiding the boss bar when the F3 menu is open\n* Automatically opening the profiler\n* Automatically opening the FPS graph\n* More options for coloring text\n* Slime chunk finder\n* Current time to the Systems module\n* Allocation rate calculator to the Systems module\n* CurseForge, Modrinth, and GitHub actions automatic releases\n* cominixo's ko-fi link\n### Updated\n* Changed the versioning system in order follow the Minecraft versioning system\n* GitHub Workflows to build the project\n* GitHub Workflows to add translations from Crowdin\n* Architectury Loom to 0.12.0\n* Update urls to the Modrinth page\n* Gradle to 7.5.1\n* Checkstyle (Hide Whitespace Changes)\n* README\n* Accessing some chunk methods\n### Fixed\n* The server chunk in the location module showing client chunk data\n* The background size to better fit the text\n* The add module screen to remove duplicates\n* The profiler not popping correctly on Forge\n* The profiler showing on the main menu\n* An issue with Immersive Portal and other mods\n* Reduced debug info with the client brand retriever\n\nFull Changelog: [`v1.1.5...v2.0.0`](https://github.com/cominixo/BetterF3/compare/v1.1.5...v2.0.0)",
     "changelog_url": null,
     "date_published": "2022-10-16T09:35:56.72939Z",
-    "downloads": 2813,
+    "downloads": 2816,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3022,7 +3022,7 @@
     "changelog": "## BetterF3 v2.0.0 for Minecraft 1.17/1.17.1\nPublished 2022-10-16\n\n### Added\n* BetterF3 version number to the Misc Right module\n* Changelogs\n* Automatically opening the F3 menu\n* Hiding the sidebar\n* Hiding the debug crosshair\n* Hiding the boss bar when the F3 menu is open\n* Automatically opening the profiler\n* Automatically opening the FPS graph\n* More options for coloring text\n* Slime chunk finder\n* Current time to the Systems module\n* Allocation rate calculator to the Systems module\n* CurseForge, Modrinth, and GitHub actions automatic releases\n* cominixo's ko-fi link\n### Updated\n* Changed the versioning system in order follow the Minecraft versioning system\n* GitHub Workflows to build the project\n* GitHub Workflows to add translations from Crowdin\n* Architectury Loom to 0.12.0\n* Update urls to the Modrinth page\n* Gradle to 7.5.1\n* Checkstyle (Hide Whitespace Changes)\n* README\n* Accessing some chunk methods\n### Fixed\n* The server chunk in the location module showing client chunk data\n* The background size to better fit the text\n* The add module screen to remove duplicates\n* The profiler not popping correctly on Forge\n* The profiler showing on the main menu\n* An issue with Immersive Portal and other mods\n* Reduced debug info with the client brand retriever\n\nFull Changelog: [`v1.1.5...v2.0.0`](https://github.com/cominixo/BetterF3/compare/v1.1.5...v2.0.0)",
     "changelog_url": null,
     "date_published": "2022-10-16T09:35:50.010157Z",
-    "downloads": 14354,
+    "downloads": 14364,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3075,15 +3075,15 @@
     "changelog": "## BetterF3 v1.5.0 for Minecraft 1.16-1.16.5\nPublished 2022-10-16\n\n### Added\n* Architectury support to build for both Fabric and Forge\n* Better documentation\n* [Crowdin support](https://crowdin.com/project/betterf3)\n* BetterF3 version number to the Misc Right module\n* Changelogs\n* Automatically opening the F3 menu\n* Hiding the debug crosshair\n* Hiding the boss bar when the F3 menu is open\n* Automatically opening the profiler\n* Automatically opening the FPS graph\n* More options for coloring text\n* Allocation rate calculator to the Systems module\n* CurseForge, Modrinth, and GitHub actions automatic releases\n* GitHub Workflows to build the project\n* GitHub Workflows to add translations from Crowdin\n### Updated\n* Changed the versioning system in order follow the Minecraft versioning system\n* Update urls to the Modrinth page\n* Gradle to 7.5.1\n### Fixed\n* The server chunk in the location module showing client chunk data\n* The background size to better fit the text\n* The add module screen to remove duplicates\n* The profiler not popping correctly on Forge\n* The profiler showing on the main menu\n* An issue with Immersive Portal and other mods\n* CurseForge uploads now use the beta and release types\n* Reduced debug info with the client brand retriever\n\nFull Changelog: [`v1.1.3...v1.5.0`](https://github.com/cominixo/BetterF3/compare/v1.1.3...v1.5.0)",
     "changelog_url": null,
     "date_published": "2022-10-16T09:23:45.06Z",
-    "downloads": 79593,
+    "downloads": 79706,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "85378e5a87d735c618e2df2f098fb696087b7063",
-          "sha512": "8bc55dffd5ed8569a233a884298152515d64a491380bef07254e55be50dad3ed2209152dc013818f9c15bfbd25761abc72390f017c0be8f84bca91d9135d4296"
+          "sha512": "8bc55dffd5ed8569a233a884298152515d64a491380bef07254e55be50dad3ed2209152dc013818f9c15bfbd25761abc72390f017c0be8f84bca91d9135d4296",
+          "sha1": "85378e5a87d735c618e2df2f098fb696087b7063"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/k6xmp8cg/BetterF3-1.5.0-Forge-1.16.5.jar",
         "filename": "BetterF3-1.5.0-Forge-1.16.5.jar",
@@ -3123,7 +3123,7 @@
     "changelog": "## BetterF3 v1.5.0 for Minecraft 1.16-1.16.5\nPublished 2022-10-16\n\n### Added\n* Architectury support to build for both Fabric and Forge\n* Better documentation\n* [Crowdin support](https://crowdin.com/project/betterf3)\n* BetterF3 version number to the Misc Right module\n* Changelogs\n* Automatically opening the F3 menu\n* Hiding the debug crosshair\n* Hiding the boss bar when the F3 menu is open\n* Automatically opening the profiler\n* Automatically opening the FPS graph\n* More options for coloring text\n* Allocation rate calculator to the Systems module\n* CurseForge, Modrinth, and GitHub actions automatic releases\n* GitHub Workflows to build the project\n* GitHub Workflows to add translations from Crowdin\n### Updated\n* Changed the versioning system in order follow the Minecraft versioning system\n* Update urls to the Modrinth page\n* Gradle to 7.5.1\n### Fixed\n* The server chunk in the location module showing client chunk data\n* The background size to better fit the text\n* The add module screen to remove duplicates\n* The profiler not popping correctly on Forge\n* The profiler showing on the main menu\n* An issue with Immersive Portal and other mods\n* CurseForge uploads now use the beta and release types\n* Reduced debug info with the client brand retriever\n\nFull Changelog: [`v1.1.3...v1.5.0`](https://github.com/cominixo/BetterF3/compare/v1.1.3...v1.5.0)",
     "changelog_url": null,
     "date_published": "2022-10-16T09:23:37.899109Z",
-    "downloads": 48592,
+    "downloads": 48653,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3218,7 +3218,7 @@
     "changelog": "## BetterF3 v1.4.0 for Minecraft 1.19.1/2\nPublished 2022-10-03\n\n### Added\n* In-Game Tick Display [#98](https://github.com/cominixo/BetterF3/issues/98)\n* Automatically opening the profiler and TPS graphs [#9](https://github.com/cominixo/BetterF3/issues/9)\n* Changelogs to the documentation\n* Added an option to hide the bossbar\n### Updated\n* GitHub Workflow\n* Language Files to fill in regional dialects\n### Fixed\n* Maximum FPS does not display [#102](https://github.com/cominixo/BetterF3/issues/102)\n* Info colors can't change [#101](https://github.com/cominixo/BetterF3/issues/101)\n* Left Module Background Cut Off [#94](https://github.com/cominixo/BetterF3/issues/94)\n* String error [#106](https://github.com/cominixo/BetterF3/issues/106)\n* Removing all modules from one side resets the side [#57](https://github.com/cominixo/BetterF3/issues/57)\n* Misc right module won't show on the left side [#50](https://github.com/cominixo/BetterF3/issues/50)\n\nFull Changelog: [`v1.3.2...v1.4.0`](https://github.com/cominixo/BetterF3/compare/v1.3.2...v1.4.0)",
     "changelog_url": null,
     "date_published": "2022-10-03T01:09:54.324913Z",
-    "downloads": 3902,
+    "downloads": 3903,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3313,15 +3313,15 @@
     "changelog": "Fixed Canvas incompatibility and new Forge versions.\n\n**Full Changelog**: https://github.com/cominixo/BetterF3/compare/v1.3.1...v1.3.2",
     "changelog_url": null,
     "date_published": "2022-07-19T08:09:47.395007Z",
-    "downloads": 18622,
+    "downloads": 18630,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c65443f1ac63aa7e5c16e379557641b76827cf9b",
-          "sha512": "0727d7c01055ffc6cdd1dda1690e6f5d4d271ab69047b6754afcb59e7f461edbdb87f460b60bbbaff174ba0dce25b03b381ca39cc1b15e99c736a5a773b0cba0"
+          "sha512": "0727d7c01055ffc6cdd1dda1690e6f5d4d271ab69047b6754afcb59e7f461edbdb87f460b60bbbaff174ba0dce25b03b381ca39cc1b15e99c736a5a773b0cba0",
+          "sha1": "c65443f1ac63aa7e5c16e379557641b76827cf9b"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/1.3.2-fabric/BetterF3-1.3.2-Fabric-1.19.jar",
         "filename": "BetterF3-1.3.2-Fabric-1.19.jar",
@@ -3404,15 +3404,15 @@
     "changelog": "Fully updated to 1.19\n\nAdded:\n* Forge Support\n* F3 + Q support to see what F3 commands there are\n* F3 + F and F3 + F + Ctrl to cycle render distance and simulation distance respectively (shift to reverse)\n* Slime chunk finder\n\nFixed:\n* Some inconsistencies\n\n**Full Changelog**: https://github.com/cominixo/BetterF3/compare/v1.3.0...v1.3.1",
     "changelog_url": null,
     "date_published": "2022-06-10T08:56:00.220487Z",
-    "downloads": 46469,
+    "downloads": 46515,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2734bb485f9b8cb6b1b527fa31db0860d39c7f15e70545de3940e37460475b589affc2d5e9a45dd27c83328c49d92a472b2ba3e43ce9a6ca7bb791caac315678",
-          "sha1": "f1d74cbefcac89f91dac734ab5b1ce768483f68b"
+          "sha1": "f1d74cbefcac89f91dac734ab5b1ce768483f68b",
+          "sha512": "2734bb485f9b8cb6b1b527fa31db0860d39c7f15e70545de3940e37460475b589affc2d5e9a45dd27c83328c49d92a472b2ba3e43ce9a6ca7bb791caac315678"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/1.3.1/BetterF3-1.3.1-Fabric-1.19.jar",
         "filename": "BetterF3-1.3.1-Fabric-1.19.jar",
@@ -3503,15 +3503,15 @@
     "changelog": "* Updated Crowdin Languages\n* Updated Checkstyle\n* Updated Indra\n* Updated dependencies\n\n* Fix https://github.com/cominixo/BetterF3/issues/79 (DistExecutor#safeRunWhenOn)\n* Add regions file viewer https://github.com/cominixo/BetterF3/issues/76\n\n**Full Changelog**: https://github.com/cominixo/BetterF3/compare/v1.2.4...v1.2.5",
     "changelog_url": null,
     "date_published": "2022-05-20T19:53:34.355213Z",
-    "downloads": 15845,
+    "downloads": 15846,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f98ffd002be93c55f8c207858945b77ab7a65f40e9948d8fcee6d74cf32c03348f617b0672b9a34222a5145b4fb97888498a6f60332b41f32f2d2b1a51ad6428",
-          "sha1": "457734b8099afbda9218c59aa6f197e2a2cc8d65"
+          "sha1": "457734b8099afbda9218c59aa6f197e2a2cc8d65",
+          "sha512": "f98ffd002be93c55f8c207858945b77ab7a65f40e9948d8fcee6d74cf32c03348f617b0672b9a34222a5145b4fb97888498a6f60332b41f32f2d2b1a51ad6428"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/1.2.5.1/BetterF3-1.2.5-Fabric-1.18.2.jar",
         "filename": "BetterF3-1.2.5-Fabric-1.18.2.jar",
@@ -3551,7 +3551,7 @@
     "changelog": "* Updated Crowdin Languages\n* Updated Checkstyle\n* Updated Indra\n* Updated dependencies\n\n* Fix https://github.com/cominixo/BetterF3/issues/79 (DistExecutor#safeRunWhenOn)\n* Add regions file viewer https://github.com/cominixo/BetterF3/issues/76\n\n**Full Changelog**: https://github.com/cominixo/BetterF3/compare/v1.2.4...v1.2.5",
     "changelog_url": null,
     "date_published": "2022-05-20T19:51:49.827685Z",
-    "downloads": 7548,
+    "downloads": 7551,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3600,8 +3600,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2b2f7f7e6d5ae7ae93bd02ddcac4ad0e469b282e",
-          "sha512": "878a03fb6b50b39d780facac983f55943305883c7ec41683b86a17370a26cc68b48a881a51a0ea063e1cbbf54995fbed0c67d1602d9e2a3377a303eb8cc22860"
+          "sha512": "878a03fb6b50b39d780facac983f55943305883c7ec41683b86a17370a26cc68b48a881a51a0ea063e1cbbf54995fbed0c67d1602d9e2a3377a303eb8cc22860",
+          "sha1": "2b2f7f7e6d5ae7ae93bd02ddcac4ad0e469b282e"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/1.2.4.0/BetterF3-1.2.4-Forge-1.18.2.jar",
         "filename": "BetterF3-1.2.4-Forge-1.18.2.jar",
@@ -3628,7 +3628,7 @@
     "changelog": "1.18.2 Forge\nLoom updated to 0.11\nArchitectury updated to 4.x\nLanguage updates from Crowdin\nDisable the mod on servers\n\n**Full Changelog**: https://github.com/cominixo/BetterF3/compare/v1.2.3...v1.2.4",
     "changelog_url": null,
     "date_published": "2022-03-30T04:08:12.785031Z",
-    "downloads": 43112,
+    "downloads": 43159,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3700,15 +3700,15 @@
     "changelog": "Fixes Optifine crash\nFixes TPS graph (now can work with other mods such as ServerTick)\n\n**Full Changelog**: https://github.com/cominixo/BetterF3/compare/v1.2.1...v1.2.2",
     "changelog_url": null,
     "date_published": "2021-12-06T05:22:22.898039Z",
-    "downloads": 2962,
+    "downloads": 2964,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e5140d6e028985031d99fd6493af279f22b65290",
-          "sha512": "005bbf0100b351adf60725282d4d6f1ddf5d64f81fb7af9e961f5c3f0e071dfb0cd46e093cada8034ff7393c57e03154e5b03bb1b84107bf35c8ed75b81eac3c"
+          "sha512": "005bbf0100b351adf60725282d4d6f1ddf5d64f81fb7af9e961f5c3f0e071dfb0cd46e093cada8034ff7393c57e03154e5b03bb1b84107bf35c8ed75b81eac3c",
+          "sha1": "e5140d6e028985031d99fd6493af279f22b65290"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/1.2.2/BetterF3-1.2.2-Fabric-1.18.jar",
         "filename": "BetterF3-1.2.2-Fabric-1.18.jar",
@@ -3718,8 +3718,8 @@
       },
       {
         "hashes": {
-          "sha512": "b56674c83643555541fc84a4fe37633cbb609be137552e87ce0198bd3ab3e8b01c107099867cc73e86ee3114498a365d7efe19ca781dfcab888e353c3606b2a4",
-          "sha1": "f2c46e89b6f9c5a5751e98d4868b1c36d53f9d8f"
+          "sha1": "f2c46e89b6f9c5a5751e98d4868b1c36d53f9d8f",
+          "sha512": "b56674c83643555541fc84a4fe37633cbb609be137552e87ce0198bd3ab3e8b01c107099867cc73e86ee3114498a365d7efe19ca781dfcab888e353c3606b2a4"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/1.2.2/BetterF3-1.2.2-Forge-1.18.jar",
         "filename": "BetterF3-1.2.2-Forge-1.18.jar",
@@ -3766,8 +3766,8 @@
       },
       {
         "hashes": {
-          "sha1": "96c64b4f2053e40fd8763486e8dc130ba7dca270",
-          "sha512": "e1c3bce5bbfdec18808a9633d8021fae4eb5cf429ab83f5da7d9a4db87e89a3de15302e1c13a54f668f24907e9b6c7e32373558f53b113dc04f44dbb668e25ce"
+          "sha512": "e1c3bce5bbfdec18808a9633d8021fae4eb5cf429ab83f5da7d9a4db87e89a3de15302e1c13a54f668f24907e9b6c7e32373558f53b113dc04f44dbb668e25ce",
+          "sha1": "96c64b4f2053e40fd8763486e8dc130ba7dca270"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/1.2.1/BetterF3-1.2.1-Forge-1.18.jar",
         "filename": "BetterF3-1.2.1-Forge-1.18.jar",
@@ -3803,8 +3803,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "eb884104bd9cdccb51dccba6a2b5ca45904aa0207a04cf823468b7b909885c38e8f12af49928eb50539040df668802aa4a7a625752b957727cb997fc34bf09e8",
-          "sha1": "a166530d1372fb1294201126e8d7ef0fd39439a0"
+          "sha1": "a166530d1372fb1294201126e8d7ef0fd39439a0",
+          "sha512": "eb884104bd9cdccb51dccba6a2b5ca45904aa0207a04cf823468b7b909885c38e8f12af49928eb50539040df668802aa4a7a625752b957727cb997fc34bf09e8"
         },
         "url": "https://cdn.modrinth.com/data/8shC1gFX/versions/1.2.0/BetterF3-1.2.0-Fabric-1.18.jar",
         "filename": "BetterF3-1.2.0-Fabric-1.18.jar",
@@ -3850,8 +3850,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "32d01ad6ff36b5501a1cccc2e5fd86124c83c7a0ec4d47b898694c7cd6ac30d9319762cc1026c3fa106db53bc3c7b58908c72d8339e41fd4acf33af045abe816",
-          "sha1": "68ca576d34b6b27942a04668fececec842996f84"
+          "sha1": "68ca576d34b6b27942a04668fececec842996f84",
+          "sha512": "32d01ad6ff36b5501a1cccc2e5fd86124c83c7a0ec4d47b898694c7cd6ac30d9319762cc1026c3fa106db53bc3c7b58908c72d8339e41fd4acf33af045abe816"
         },
         "url": "https://cdn.modrinth.com//data/8shC1gFX/versions/1.1.5/betterf3-1.1.5%2B1.17.jar",
         "filename": "betterf3-1.1.5+1.17.jar",
@@ -3885,8 +3885,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "207ed754d29a80f8b3816afa32961caad887edfd",
-          "sha512": "857d28f93f3e6db874be8efb5bbc1dbcdb896f10068cfa06c3cbacfc4055d342888187949421f605d99ac8319366d65257064d863b7172c097f6ca58fc680fe9"
+          "sha512": "857d28f93f3e6db874be8efb5bbc1dbcdb896f10068cfa06c3cbacfc4055d342888187949421f605d99ac8319366d65257064d863b7172c097f6ca58fc680fe9",
+          "sha1": "207ed754d29a80f8b3816afa32961caad887edfd"
         },
         "url": "https://cdn.modrinth.com//data/8shC1gFX/versions/1.1.5/BetterF3-Forge-1.17.1-1.1.5.jar",
         "filename": "BetterF3-Forge-1.17.1-1.1.5.jar",

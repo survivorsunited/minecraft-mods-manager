@@ -60,8 +60,8 @@
     "name": "MIT License",
     "url": null
   },
-  "downloads": 10384942,
-  "followers": 8182,
+  "downloads": 10404450,
+  "followers": 8190,
   "categories": [
     "decoration",
     "game-mechanics",
@@ -168,14 +168,14 @@
   "discord_url": null,
   "donation_urls": [
     {
-      "id": "bmac",
-      "platform": "Bmac",
-      "url": "https://www.buymeacoffee.com/TreyRuffy"
-    },
-    {
       "id": "ko-fi",
       "platform": "Ko-fi",
       "url": "https://ko-fi.com/cominixo"
+    },
+    {
+      "id": "bmac",
+      "platform": "Bmac",
+      "url": "https://www.buymeacoffee.com/TreyRuffy"
     },
     {
       "id": "github",

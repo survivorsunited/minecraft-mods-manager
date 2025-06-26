@@ -47,7 +47,8 @@
     "1.21.5",
     "25w14craftmine",
     "1.21.6-rc1",
-    "1.21.6"
+    "1.21.6",
+    "1.21.7-rc1"
   ],
   "id": "yBW8D80W",
   "slug": "lambdynamiclights",
@@ -70,8 +71,8 @@
     "name": "",
     "url": "https://github.com/LambdAurora/LambDynamicLights/blob/1.21.5/LICENSE"
   },
-  "downloads": 14939665,
-  "followers": 8904,
+  "downloads": 14965847,
+  "followers": 8912,
   "categories": [
     "adventure",
     "decoration",

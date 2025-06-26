@@ -15,15 +15,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.6.4-1.21.6] - 2025-06-24\n### Fixed\n- Fix custom server configs not applying in singleplayer; they would always use default values\n- Try to fix `MixinTargetAlreadyLoadedException` for the previously introduced Night Config workaround\n\n## [v21.6.3-1.21.6] - 2025-06-20\n### Fixed\n- Temporary workaround for `com.electronwill.nightconfig.core.io.WritingException: Failed to write (REPLACE_ATOMIC)` in the Night Config library\n\n## [v21.6.2-1.21.6] - 2025-06-18\n- Re-enable support for Minecraft Forge\n\n## [v21.6.1-1.21.6] - 2025-06-17\n- Update to Minecraft 1.21.6\n- Pull upstream changes: [#1439](https://github.com/neoforged/NeoForge/pull/1439), [#1458](https://github.com/neoforged/NeoForge/pull/1458), [#1652](https://github.com/neoforged/NeoForge/pull/1652), [#2224](https://github.com/neoforged/NeoForge/pull/2224)\n\n## [v21.6.0-1.21.6] - 2025-06-03\n- Update to Minecraft 1.21.6-pre1\n",
     "changelog_url": null,
     "date_published": "2025-06-24T12:51:36.96131Z",
-    "downloads": 117,
+    "downloads": 149,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "388d845635586904d8a2f565eb05f835b1837953b58cf5e40bbd7e36ea56513ab38bd665c81b4745c50ef0586cb64391c6031f9647e1bcf804663f05d6194d73",
-          "sha1": "3e5fedda4baabc6021a35ec981101a460747a046"
+          "sha1": "3e5fedda4baabc6021a35ec981101a460747a046",
+          "sha512": "388d845635586904d8a2f565eb05f835b1837953b58cf5e40bbd7e36ea56513ab38bd665c81b4745c50ef0586cb64391c6031f9647e1bcf804663f05d6194d73"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/h2CL8Htn/ForgeConfigAPIPort-v21.6.4-1.21.6-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.6.4-1.21.6-NeoForge.jar",
@@ -57,15 +57,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.6.4-1.21.6] - 2025-06-24\n### Fixed\n- Fix custom server configs not applying in singleplayer; they would always use default values\n- Try to fix `MixinTargetAlreadyLoadedException` for the previously introduced Night Config workaround\n\n## [v21.6.3-1.21.6] - 2025-06-20\n### Fixed\n- Temporary workaround for `com.electronwill.nightconfig.core.io.WritingException: Failed to write (REPLACE_ATOMIC)` in the Night Config library\n\n## [v21.6.2-1.21.6] - 2025-06-18\n- Re-enable support for Minecraft Forge\n\n## [v21.6.1-1.21.6] - 2025-06-17\n- Update to Minecraft 1.21.6\n- Pull upstream changes: [#1439](https://github.com/neoforged/NeoForge/pull/1439), [#1458](https://github.com/neoforged/NeoForge/pull/1458), [#1652](https://github.com/neoforged/NeoForge/pull/1652), [#2224](https://github.com/neoforged/NeoForge/pull/2224)\n\n## [v21.6.0-1.21.6] - 2025-06-03\n- Update to Minecraft 1.21.6-pre1\n",
     "changelog_url": null,
     "date_published": "2025-06-24T12:51:33.36462Z",
-    "downloads": 113,
+    "downloads": 156,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "7923aa88198395cac89c80703ce179c1417f3892",
-          "sha512": "d7c8dc4a65f1a4eb85f9eca746a207c9b6de5a913084c2198949ac22aabf0709270439a4e837a94a64b4db81374db38320ae5e3543fe5b0185bfa5f396c0c646"
+          "sha512": "d7c8dc4a65f1a4eb85f9eca746a207c9b6de5a913084c2198949ac22aabf0709270439a4e837a94a64b4db81374db38320ae5e3543fe5b0185bfa5f396c0c646",
+          "sha1": "7923aa88198395cac89c80703ce179c1417f3892"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/PXhPk6km/ForgeConfigAPIPort-v21.6.4-1.21.6-Forge.jar",
         "filename": "ForgeConfigAPIPort-v21.6.4-1.21.6-Forge.jar",
@@ -99,15 +99,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.6.4-1.21.6] - 2025-06-24\n### Fixed\n- Fix custom server configs not applying in singleplayer; they would always use default values\n- Try to fix `MixinTargetAlreadyLoadedException` for the previously introduced Night Config workaround\n\n## [v21.6.3-1.21.6] - 2025-06-20\n### Fixed\n- Temporary workaround for `com.electronwill.nightconfig.core.io.WritingException: Failed to write (REPLACE_ATOMIC)` in the Night Config library\n\n## [v21.6.2-1.21.6] - 2025-06-18\n- Re-enable support for Minecraft Forge\n\n## [v21.6.1-1.21.6] - 2025-06-17\n- Update to Minecraft 1.21.6\n- Pull upstream changes: [#1439](https://github.com/neoforged/NeoForge/pull/1439), [#1458](https://github.com/neoforged/NeoForge/pull/1458), [#1652](https://github.com/neoforged/NeoForge/pull/1652), [#2224](https://github.com/neoforged/NeoForge/pull/2224)\n\n## [v21.6.0-1.21.6] - 2025-06-03\n- Update to Minecraft 1.21.6-pre1\n",
     "changelog_url": null,
     "date_published": "2025-06-24T12:51:27.75219Z",
-    "downloads": 10012,
+    "downloads": 15723,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "3f3c37c9fc5123f90e4d5a423cf4db084ee0dd424616dd20fecb59deb9a50ba640a5435e3fe24b8277c0ba45c17ee2d65133a71fb263f6aa552748535e9bf2fb",
-          "sha1": "e0250c837904dc077773a6508b40aaedf34d3cb1"
+          "sha1": "e0250c837904dc077773a6508b40aaedf34d3cb1",
+          "sha512": "3f3c37c9fc5123f90e4d5a423cf4db084ee0dd424616dd20fecb59deb9a50ba640a5435e3fe24b8277c0ba45c17ee2d65133a71fb263f6aa552748535e9bf2fb"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/9IqKMm2N/ForgeConfigAPIPort-v21.6.4-1.21.6-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.6.4-1.21.6-Fabric.jar",
@@ -196,8 +196,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "70d63a3a2532f306ab70022b5ea54d0c7b2505ad",
-          "sha512": "91c712c552f2f4b3c01bf405afb0d8b97f18f97f45664dfc055b5d92f4dc3db9acd52daf435045c9a2bb81d2ab211f278b24fe310fae4b8a353f59a342ef565e"
+          "sha512": "91c712c552f2f4b3c01bf405afb0d8b97f18f97f45664dfc055b5d92f4dc3db9acd52daf435045c9a2bb81d2ab211f278b24fe310fae4b8a353f59a342ef565e",
+          "sha1": "70d63a3a2532f306ab70022b5ea54d0c7b2505ad"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/cAsXnHFu/ForgeConfigAPIPort-v21.6.3-1.21.6-Forge.jar",
         "filename": "ForgeConfigAPIPort-v21.6.3-1.21.6-Forge.jar",
@@ -231,15 +231,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.6.3-1.21.6] - 2025-06-20\n### Fixed\n- Temporary workaround for `com.electronwill.nightconfig.core.io.WritingException: Failed to write (REPLACE_ATOMIC)` in the Night Config library\n\n## [v21.6.2-1.21.6] - 2025-06-18\n- Re-enable support for Minecraft Forge\n\n## [v21.6.1-1.21.6] - 2025-06-17\n- Update to Minecraft 1.21.6\n- Pull upstream changes: [#1439](https://github.com/neoforged/NeoForge/pull/1439), [#1458](https://github.com/neoforged/NeoForge/pull/1458), [#1652](https://github.com/neoforged/NeoForge/pull/1652), [#2224](https://github.com/neoforged/NeoForge/pull/2224)\n\n## [v21.6.0-1.21.6] - 2025-06-03\n- Update to Minecraft 1.21.6-pre1\n",
     "changelog_url": null,
     "date_published": "2025-06-23T20:07:06.162765Z",
-    "downloads": 3320,
+    "downloads": 3458,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "43756df8025e8c929870f61a8de7a91dadc3de25",
-          "sha512": "d8ccf842f83f89b3aaf696d568e07ad3e7edd7d7073bf8d702d93e1c356b69f496412cbc018533f5ca99002ff340666d1ea5643be27c8d2676179e43cf068ab3"
+          "sha512": "d8ccf842f83f89b3aaf696d568e07ad3e7edd7d7073bf8d702d93e1c356b69f496412cbc018533f5ca99002ff340666d1ea5643be27c8d2676179e43cf068ab3",
+          "sha1": "43756df8025e8c929870f61a8de7a91dadc3de25"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/QI0ND783/ForgeConfigAPIPort-v21.6.3-1.21.6-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.6.3-1.21.6-Fabric.jar",
@@ -363,7 +363,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.6.2-1.21.6] - 2025-06-18\n- Re-enable support for Minecraft Forge\n\n## [v21.6.1-1.21.6] - 2025-06-17\n- Update to Minecraft 1.21.6\n- Pull upstream changes: [#1439](https://github.com/neoforged/NeoForge/pull/1439), [#1458](https://github.com/neoforged/NeoForge/pull/1458), [#1652](https://github.com/neoforged/NeoForge/pull/1652), [#2224](https://github.com/neoforged/NeoForge/pull/2224)\n\n## [v21.6.0-1.21.6] - 2025-06-03\n- Update to Minecraft 1.21.6-pre1\n",
     "changelog_url": null,
     "date_published": "2025-06-18T13:45:28.604689Z",
-    "downloads": 75545,
+    "downloads": 75919,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -383,15 +383,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "5WeWGLoJ",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -453,15 +453,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.6.1-1.21.6] - 2025-06-17\n- Update to Minecraft 1.21.6\n- Pull upstream changes: [#1439](https://github.com/neoforged/NeoForge/pull/1439), [#1458](https://github.com/neoforged/NeoForge/pull/1458), [#1652](https://github.com/neoforged/NeoForge/pull/1652), [#2224](https://github.com/neoforged/NeoForge/pull/2224)\n\n## [v21.6.0-1.21.6] - 2025-06-03\n- Update to Minecraft 1.21.6-pre1\n",
     "changelog_url": null,
     "date_published": "2025-06-17T20:32:41.417597Z",
-    "downloads": 3061,
+    "downloads": 3107,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5e3f694a0783dab3efa62a2b0693e63fb51ac2fa",
-          "sha512": "c302f26de12864cacc112a8d1bdf8604f1670aa7b001f54e181ba1f92ad486fc80cb15a50c4b37a1956fc728b21598e83a88aec0433ec775dde0bf9c5e6cd438"
+          "sha512": "c302f26de12864cacc112a8d1bdf8604f1670aa7b001f54e181ba1f92ad486fc80cb15a50c4b37a1956fc728b21598e83a88aec0433ec775dde0bf9c5e6cd438",
+          "sha1": "5e3f694a0783dab3efa62a2b0693e63fb51ac2fa"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/gE44ObxJ/ForgeConfigAPIPort-v21.6.1-1.21.6-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.6.1-1.21.6-Fabric.jar",
@@ -501,7 +501,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.5.1-1.21.5] - 2025-03-27\n- Re-enable support Minecraft Forge\n### Changed\n- Slight `/config` command changes to be more inline with NeoForge\n### Fixed\n- Fix broken Mod Menu integration\n\n## [v21.5.0-1.21.5] - 2025-03-25\n- Update to Minecraft 1.21.5\n### Changed\n- Upgrade api package to v5\n- Merge `NeoForgeConfigRegistry` & `ForgeConfigRegistry` into `ConfigRegistry` on Fabric\n- Remove `ForgeModConfigEvents`, use `NeoForgeModConfigEvents` instead which also works for Forge events on Fabric\n- Cleanup methods in `NeoForgeConfigRegistry` and `ForgeConfigRegistry` on Forge & NeoForge respectively\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2025-03-27T20:15:03.917306Z",
-    "downloads": 6916,
+    "downloads": 6933,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -543,7 +543,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.5.1-1.21.5] - 2025-03-27\n- Re-enable support Minecraft Forge\n### Changed\n- Slight `/config` command changes to be more inline with NeoForge\n### Fixed\n- Fix broken Mod Menu integration\n\n## [v21.5.0-1.21.5] - 2025-03-25\n- Update to Minecraft 1.21.5\n### Changed\n- Upgrade api package to v5\n- Merge `NeoForgeConfigRegistry` & `ForgeConfigRegistry` into `ConfigRegistry` on Fabric\n- Remove `ForgeModConfigEvents`, use `NeoForgeModConfigEvents` instead which also works for Forge events on Fabric\n- Cleanup methods in `NeoForgeConfigRegistry` and `ForgeConfigRegistry` on Forge & NeoForge respectively\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2025-03-27T20:15:00.048273Z",
-    "downloads": 7781,
+    "downloads": 7806,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -585,15 +585,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.5.1-1.21.5] - 2025-03-27\n- Re-enable support Minecraft Forge\n### Changed\n- Slight `/config` command changes to be more inline with NeoForge\n### Fixed\n- Fix broken Mod Menu integration\n\n## [v21.5.0-1.21.5] - 2025-03-25\n- Update to Minecraft 1.21.5\n### Changed\n- Upgrade api package to v5\n- Merge `NeoForgeConfigRegistry` & `ForgeConfigRegistry` into `ConfigRegistry` on Fabric\n- Remove `ForgeModConfigEvents`, use `NeoForgeModConfigEvents` instead which also works for Forge events on Fabric\n- Cleanup methods in `NeoForgeConfigRegistry` and `ForgeConfigRegistry` on Forge & NeoForge respectively\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2025-03-27T20:14:53.00178Z",
-    "downloads": 982087,
+    "downloads": 985782,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "30a5331eec454eb2129a2021ab2093138c7f7936c35057354c2ae39e8a3ea132e5ada534bdd5ee46d56f048594e0fd1e743a7ee6ec89b1873998f482e2c6fc65",
-          "sha1": "11b5a197f452a3c6ae8511189842771861316bc5"
+          "sha1": "11b5a197f452a3c6ae8511189842771861316bc5",
+          "sha512": "30a5331eec454eb2129a2021ab2093138c7f7936c35057354c2ae39e8a3ea132e5ada534bdd5ee46d56f048594e0fd1e743a7ee6ec89b1873998f482e2c6fc65"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/mlQdrgSO/ForgeConfigAPIPort-v21.5.1-1.21.5-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.5.1-1.21.5-Fabric.jar",
@@ -633,15 +633,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.5.0-1.21.5] - 2025-03-25\n- Update to Minecraft 1.21.5\n### Changed\n- Upgrade api package to v5\n- Merge `NeoForgeConfigRegistry` & `ForgeConfigRegistry` into `ConfigRegistry` on Fabric\n- Remove `ForgeModConfigEvents`, use `NeoForgeModConfigEvents` instead which also works for Forge events on Fabric\n- Cleanup methods in `NeoForgeConfigRegistry` and `ForgeConfigRegistry` on Forge & NeoForge respectively\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2025-03-25T22:19:12.968103Z",
-    "downloads": 271,
+    "downloads": 272,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "8ea9928f66f35db63e958ece610db138561b0da4",
-          "sha512": "b16359ec789b9716bd4d1c8ba0d5ec1c83bf60c93b15ecf99d6b1d8356e5212a73dcbab3de840ee2ab23a104f12ccdd9d4118801de51d7e9f92b50138d6e9f90"
+          "sha512": "b16359ec789b9716bd4d1c8ba0d5ec1c83bf60c93b15ecf99d6b1d8356e5212a73dcbab3de840ee2ab23a104f12ccdd9d4118801de51d7e9f92b50138d6e9f90",
+          "sha1": "8ea9928f66f35db63e958ece610db138561b0da4"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/DTvWt6rh/ForgeConfigAPIPort-v21.5.0-1.21.5-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.5.0-1.21.5-NeoForge.jar",
@@ -675,7 +675,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.5.0-1.21.5] - 2025-03-25\n- Update to Minecraft 1.21.5\n### Changed\n- Upgrade api package to v5\n- Merge `NeoForgeConfigRegistry` & `ForgeConfigRegistry` into `ConfigRegistry` on Fabric\n- Remove `ForgeModConfigEvents`, use `NeoForgeModConfigEvents` instead which also works for Forge events on Fabric\n- Cleanup methods in `NeoForgeConfigRegistry` and `ForgeConfigRegistry` on Forge & NeoForge respectively\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2025-03-25T22:19:05.593358Z",
-    "downloads": 18203,
+    "downloads": 18208,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -723,7 +723,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v8.0.2-1.20.1] - 2025-03-20\n### Fixed\n- Stop `FileWatcher` default instance on dedicated server exit\n\n## [v8.0.1-1.20.1] - 2024-11-14\n### Fixed\n- Fix dedicated servers being unable to shut down completely when other mods ship a newer version of the bundled Night Config libarry\n\n## [v8.0.0-1.20.1] - 2023-06-09\n- Port to Minecraft 1.20.1\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2025-03-20T11:16:18.185201Z",
-    "downloads": 601183,
+    "downloads": 605346,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -771,7 +771,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.4.1-1.21.4] - 2024-12-11\n- Publish mod for Minecraft Forge\n### Fixed\n- Stop `FileWatcher` default instance on dedicated server exit\n\n## [v21.4.0-1.21.4] - 2024-12-05\n- Update to Minecraft 1.21.4\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-12-11T11:50:44.969144Z",
-    "downloads": 11772,
+    "downloads": 11791,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -813,7 +813,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.4.1-1.21.4] - 2024-12-11\n- Publish mod for Minecraft Forge\n### Fixed\n- Stop `FileWatcher` default instance on dedicated server exit\n\n## [v21.4.0-1.21.4] - 2024-12-05\n- Update to Minecraft 1.21.4\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-12-11T11:50:39.680189Z",
-    "downloads": 27354,
+    "downloads": 27426,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -855,15 +855,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.4.1-1.21.4] - 2024-12-11\n- Publish mod for Minecraft Forge\n### Fixed\n- Stop `FileWatcher` default instance on dedicated server exit\n\n## [v21.4.0-1.21.4] - 2024-12-05\n- Update to Minecraft 1.21.4\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-12-11T11:50:35.566254Z",
-    "downloads": 1477431,
+    "downloads": 1479618,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3dbbaddb4df5533b7b806c82c27cfb389f5bef54",
-          "sha512": "a5f84411c0b7b9e5e8d267e268183fcb2e46df955fd976ed3f4bc1fd45249ab5f902a23ab93cbdc45d5bb409a5d570e7f7ec9794ca74f4b6115bf3e95d29914b"
+          "sha512": "a5f84411c0b7b9e5e8d267e268183fcb2e46df955fd976ed3f4bc1fd45249ab5f902a23ab93cbdc45d5bb409a5d570e7f7ec9794ca74f4b6115bf3e95d29914b",
+          "sha1": "3dbbaddb4df5533b7b806c82c27cfb389f5bef54"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/lTrPTmMK/ForgeConfigAPIPort-v21.4.1-1.21.4-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.4.1-1.21.4-Fabric.jar",
@@ -945,7 +945,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.3.3-1.21.3] - 2024-12-11\n### Fixed\n- Stop `FileWatcher` default instance on dedicated server exit\n\n## [v21.3.2-1.21.3] - 2024-11-14\n### Fixed\n- Attempt fixing being unable to manually save Forge configs via `ForgeConfigSpec::save`\n\n## [v21.3.1-1.21.3] - 2024-10-27\n- Publish mod for Minecraft Forge\n\n## [v21.3.0-1.21.3] - 2024-10-24\n- Update to Minecraft 1.21.3\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-12-11T11:47:55.358358Z",
-    "downloads": 2437,
+    "downloads": 2446,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -987,7 +987,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.3.3-1.21.3] - 2024-12-11\n### Fixed\n- Stop `FileWatcher` default instance on dedicated server exit\n\n## [v21.3.2-1.21.3] - 2024-11-14\n### Fixed\n- Attempt fixing being unable to manually save Forge configs via `ForgeConfigSpec::save`\n\n## [v21.3.1-1.21.3] - 2024-10-27\n- Publish mod for Minecraft Forge\n\n## [v21.3.0-1.21.3] - 2024-10-24\n- Update to Minecraft 1.21.3\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-12-11T11:47:48.127158Z",
-    "downloads": 74123,
+    "downloads": 74235,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1035,7 +1035,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.1.3-1.21.1] - 2024-12-11\n### Fixed\n- Stop `FileWatcher` default instance on dedicated server exit\n\n## [v21.1.2-1.21.1] - 2024-11-14\n### Fixed\n- Attempt fixing being unable to manually save Forge configs via `ForgeConfigSpec::save` \n\n## [v21.1.1-1.21.1] - 2024-10-01\n### Fixed\n- Fix dedicated servers being unable to shut down completely\n\n## [v21.1.0-1.21.1] - 2024-08-09\n- Update to Minecraft 1.21.1\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-12-11T11:46:10.309224Z",
-    "downloads": 79745,
+    "downloads": 80152,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1077,15 +1077,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.1.3-1.21.1] - 2024-12-11\n### Fixed\n- Stop `FileWatcher` default instance on dedicated server exit\n\n## [v21.1.2-1.21.1] - 2024-11-14\n### Fixed\n- Attempt fixing being unable to manually save Forge configs via `ForgeConfigSpec::save` \n\n## [v21.1.1-1.21.1] - 2024-10-01\n### Fixed\n- Fix dedicated servers being unable to shut down completely\n\n## [v21.1.0-1.21.1] - 2024-08-09\n- Update to Minecraft 1.21.1\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-12-11T11:46:06.792094Z",
-    "downloads": 24636,
+    "downloads": 24792,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d9425d9224eebb409b003d9f6292dc4144f2e38091a9cef2b6678bd4f4e20681368dc7368ed27842069abaca5244192df52d986d27a5ed73bbb5c0a0ff047acf",
-          "sha1": "1b604d4bdc26d19096886668905f19789a2e1341"
+          "sha1": "1b604d4bdc26d19096886668905f19789a2e1341",
+          "sha512": "d9425d9224eebb409b003d9f6292dc4144f2e38091a9cef2b6678bd4f4e20681368dc7368ed27842069abaca5244192df52d986d27a5ed73bbb5c0a0ff047acf"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/D4gwaaOI/ForgeConfigAPIPort-v21.1.3-1.21.1-Forge.jar",
         "filename": "ForgeConfigAPIPort-v21.1.3-1.21.1-Forge.jar",
@@ -1119,15 +1119,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.1.3-1.21.1] - 2024-12-11\n### Fixed\n- Stop `FileWatcher` default instance on dedicated server exit\n\n## [v21.1.2-1.21.1] - 2024-11-14\n### Fixed\n- Attempt fixing being unable to manually save Forge configs via `ForgeConfigSpec::save` \n\n## [v21.1.1-1.21.1] - 2024-10-01\n### Fixed\n- Fix dedicated servers being unable to shut down completely\n\n## [v21.1.0-1.21.1] - 2024-08-09\n- Update to Minecraft 1.21.1\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-12-11T11:45:58.192832Z",
-    "downloads": 1464408,
+    "downloads": 1470753,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e26f1b5dcdb1b05abe9c223bcf47057622afd432",
-          "sha512": "da65efa5c11d8268fb3e1f765e81b95766610a37fb9bb3ede74865f0c8882beb8897b393581de1d7306cf16ed82cc98db84649173a4acce3bd48bc1d36d34648"
+          "sha512": "da65efa5c11d8268fb3e1f765e81b95766610a37fb9bb3ede74865f0c8882beb8897b393581de1d7306cf16ed82cc98db84649173a4acce3bd48bc1d36d34648",
+          "sha1": "e26f1b5dcdb1b05abe9c223bcf47057622afd432"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/NqVx7ywO/ForgeConfigAPIPort-v21.1.3-1.21.1-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.1.3-1.21.1-Fabric.jar",
@@ -1139,15 +1139,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "5WeWGLoJ",
-        "file_name": null,
-        "dependency_type": "optional"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "5WeWGLoJ",
+        "file_name": null,
+        "dependency_type": "optional"
       }
     ]
   },
@@ -1209,7 +1209,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.4.0-1.21.4] - 2024-12-05\n- Update to Minecraft 1.21.4\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-12-05T14:04:40.340246Z",
-    "downloads": 41003,
+    "downloads": 41019,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1299,15 +1299,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.3.2-1.21.3] - 2024-11-14\n### Fixed\n- Attempt fixing being unable to manually save Forge configs via `ForgeConfigSpec::save`\n\n## [v21.3.1-1.21.3] - 2024-10-27\n- Publish mod for Minecraft Forge\n\n## [v21.3.0-1.21.3] - 2024-10-24\n- Update to Minecraft 1.21.3\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-11-15T09:50:58.02943Z",
-    "downloads": 778,
+    "downloads": 779,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "aea664110fec6ed5e9c7b21fb36850ea8e97c5b3",
-          "sha512": "229bd8329b9f9ed0d42c92abd1f304fd26b5af1f62365d01dcae0b0bfc2c8bbf344646490763f42f091f2a7f20b9e903694237ec698aae6216552f1dba8b8dd9"
+          "sha512": "229bd8329b9f9ed0d42c92abd1f304fd26b5af1f62365d01dcae0b0bfc2c8bbf344646490763f42f091f2a7f20b9e903694237ec698aae6216552f1dba8b8dd9",
+          "sha1": "aea664110fec6ed5e9c7b21fb36850ea8e97c5b3"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/zKyu1B19/ForgeConfigAPIPort-v21.3.2-1.21.3-Forge.jar",
         "filename": "ForgeConfigAPIPort-v21.3.2-1.21.3-Forge.jar",
@@ -1341,15 +1341,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.3.2-1.21.3] - 2024-11-14\n### Fixed\n- Attempt fixing being unable to manually save Forge configs via `ForgeConfigSpec::save`\n\n## [v21.3.1-1.21.3] - 2024-10-27\n- Publish mod for Minecraft Forge\n\n## [v21.3.0-1.21.3] - 2024-10-24\n- Update to Minecraft 1.21.3\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-11-15T09:50:54.347895Z",
-    "downloads": 105341,
+    "downloads": 105354,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "8e8040ee4419cebccd731bd79a6c29dfb385dddf",
-          "sha512": "d34f6c3c7e9fa0c4f9ec4f5c203d0ceeac0b4acd9fffa62ecfeb1ae6efe72ac85d8ecb7fb106ab9a1ed3f6de0faa4863c13e2365f524f71dc3c3f50f95355d15"
+          "sha512": "d34f6c3c7e9fa0c4f9ec4f5c203d0ceeac0b4acd9fffa62ecfeb1ae6efe72ac85d8ecb7fb106ab9a1ed3f6de0faa4863c13e2365f524f71dc3c3f50f95355d15",
+          "sha1": "8e8040ee4419cebccd731bd79a6c29dfb385dddf"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/rfzwvtf5/ForgeConfigAPIPort-v21.3.2-1.21.3-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.3.2-1.21.3-Fabric.jar",
@@ -1389,15 +1389,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.1.2-1.21.1] - 2024-11-14\n### Fixed\n- Attempt fixing being unable to manually save Forge configs via `ForgeConfigSpec::save` \n\n## [v21.1.1-1.21.1] - 2024-10-01\n### Fixed\n- Fix dedicated servers being unable to shut down completely\n\n## [v21.1.0-1.21.1] - 2024-08-09\n- Update to Minecraft 1.21.1\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-11-15T09:49:55.08666Z",
-    "downloads": 3793,
+    "downloads": 3794,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ca926d9d4d7015734c4455aa1e2a87e71ba1a6ca1dcbf9825e2558bff16ef7d4b18d657e090198602a70ce58c0e8ad31cc7bc42bd1ee22498e1bc407353689e6",
-          "sha1": "c83161651e8bb2bc3f3e94f0c7d1d898380d996c"
+          "sha1": "c83161651e8bb2bc3f3e94f0c7d1d898380d996c",
+          "sha512": "ca926d9d4d7015734c4455aa1e2a87e71ba1a6ca1dcbf9825e2558bff16ef7d4b18d657e090198602a70ce58c0e8ad31cc7bc42bd1ee22498e1bc407353689e6"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/XAJonlKw/ForgeConfigAPIPort-v21.1.2-1.21.1-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.1.2-1.21.1-NeoForge.jar",
@@ -1473,7 +1473,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.1.2-1.21.1] - 2024-11-14\n### Fixed\n- Attempt fixing being unable to manually save Forge configs via `ForgeConfigSpec::save` \n\n## [v21.1.1-1.21.1] - 2024-10-01\n### Fixed\n- Fix dedicated servers being unable to shut down completely\n\n## [v21.1.0-1.21.1] - 2024-08-09\n- Update to Minecraft 1.21.1\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-11-15T09:49:45.320648Z",
-    "downloads": 407497,
+    "downloads": 408728,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1521,15 +1521,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v8.0.1-1.20.1] - 2024-11-14\n### Fixed\n- Fix dedicated servers being unable to shut down completely when other mods ship a newer version of the bundled Night Config libarry\n\n## [v8.0.0-1.20.1] - 2023-06-09\n- Port to Minecraft 1.20.1\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-11-14T14:05:28.11251Z",
-    "downloads": 1391846,
+    "downloads": 1395626,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "04fcec98847d44b51c83ce38800393a5ed056873a2a450a2c8ec74ca92fde6c4e9840aab50704364a800f916621ee02044ca8cf609171ac75bec3b9d834bcb9a",
-          "sha1": "168c1195e30e1ea93da14a62c936c11b43f64748"
+          "sha1": "168c1195e30e1ea93da14a62c936c11b43f64748",
+          "sha512": "04fcec98847d44b51c83ce38800393a5ed056873a2a450a2c8ec74ca92fde6c4e9840aab50704364a800f916621ee02044ca8cf609171ac75bec3b9d834bcb9a"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/Qs8LaZLo/ForgeConfigAPIPort-v8.0.1-1.20.1-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v8.0.1-1.20.1-Fabric.jar",
@@ -1576,8 +1576,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e1400ad42e0168d6a7c0e2c4bdfbb921cd38ba45",
-          "sha512": "39f31ad7492282e57e5df7cd6bddfb54258b705b4184caaaf6a99754c6cb7957f8e3b42926f745a31eaa69227b0c85a2ffe21b563f4ef44c54e71d2bc21592fe"
+          "sha512": "39f31ad7492282e57e5df7cd6bddfb54258b705b4184caaaf6a99754c6cb7957f8e3b42926f745a31eaa69227b0c85a2ffe21b563f4ef44c54e71d2bc21592fe",
+          "sha1": "e1400ad42e0168d6a7c0e2c4bdfbb921cd38ba45"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/Bceb719b/ForgeConfigAPIPort-v21.3.1-1.21.3-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.3.1-1.21.3-NeoForge.jar",
@@ -1653,7 +1653,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.3.1-1.21.3] - 2024-10-27\n- Publish mod for Minecraft Forge\n\n## [v21.3.0-1.21.3] - 2024-10-24\n- Update to Minecraft 1.21.3\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-10-27T12:57:02.537127Z",
-    "downloads": 38118,
+    "downloads": 38140,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1708,8 +1708,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4cf29ca4383c50c7b34a978cdd06d568826d46e8a9d56eb2d70cd4a4763a15d594076822824496732ce94d8794b7d8592804e7e0c899fd0ce6a270af73fe06f8",
-          "sha1": "07da7bc7916b50c9f7aa193916494ee950493a86"
+          "sha1": "07da7bc7916b50c9f7aa193916494ee950493a86",
+          "sha512": "4cf29ca4383c50c7b34a978cdd06d568826d46e8a9d56eb2d70cd4a4763a15d594076822824496732ce94d8794b7d8592804e7e0c899fd0ce6a270af73fe06f8"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/jaexLZJz/ForgeConfigAPIPort-v21.3.0-1.21.3-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.3.0-1.21.3-NeoForge.jar",
@@ -1743,15 +1743,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.3.0-1.21.3] - 2024-10-24\n- Update to Minecraft 1.21.3\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-10-24T13:20:47.382258Z",
-    "downloads": 2643,
+    "downloads": 2644,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "962d830bf2c26e85fdbaa463d4265bc76a0ef4a7",
-          "sha512": "0e9d7d61dc92c08938c42dfc89d778ab37259818573ead233cbfe55a400c88f3f20967ddb78d7afd353b0fe68cf27a4ebeade881f9adf5c2a179fb29848ae443"
+          "sha512": "0e9d7d61dc92c08938c42dfc89d778ab37259818573ead233cbfe55a400c88f3f20967ddb78d7afd353b0fe68cf27a4ebeade881f9adf5c2a179fb29848ae443",
+          "sha1": "962d830bf2c26e85fdbaa463d4265bc76a0ef4a7"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/4cCcvv3n/ForgeConfigAPIPort-v21.3.0-1.21.3-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.3.0-1.21.3-Fabric.jar",
@@ -1875,15 +1875,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.1.1-1.21.1] - 2024-10-01\n### Fixed\n- Fix dedicated servers being unable to shut down completely\n\n## [v21.1.0-1.21.1] - 2024-08-09\n- Update to Minecraft 1.21.1\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-09-30T23:32:49.714228Z",
-    "downloads": 237656,
+    "downloads": 237816,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a5d103f37f8d6dd30e6085ff32b025fd72aa761f",
-          "sha512": "c27fc2c6c33db118880c67958255eb364eabf5147577f3e168636a8e93df5493e603046a72ab10bd1b6b1c0647ac081e3e11104fffd48c68d9d5f1b102a68fbc"
+          "sha512": "c27fc2c6c33db118880c67958255eb364eabf5147577f3e168636a8e93df5493e603046a72ab10bd1b6b1c0647ac081e3e11104fffd48c68d9d5f1b102a68fbc",
+          "sha1": "a5d103f37f8d6dd30e6085ff32b025fd72aa761f"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/ZlbHFjxE/ForgeConfigAPIPort-v21.1.1-1.21.1-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.1.1-1.21.1-Fabric.jar",
@@ -1930,8 +1930,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4c55238e68cc48f28bbd5ed800b02e9aaf682663b822be30c15d4762b28347318c9ec8c7937855aa2b3d8a153b97035a23ad64c5df2d131bf910ba21de43b897",
-          "sha1": "d08b64e80dd8de5c77279a056a703318c2d07d00"
+          "sha1": "d08b64e80dd8de5c77279a056a703318c2d07d00",
+          "sha512": "4c55238e68cc48f28bbd5ed800b02e9aaf682663b822be30c15d4762b28347318c9ec8c7937855aa2b3d8a153b97035a23ad64c5df2d131bf910ba21de43b897"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/POOzpdre/ForgeConfigAPIPort-v21.1.0-1.21.1-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.1.0-1.21.1-NeoForge.jar",
@@ -1965,7 +1965,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.1.0-1.21.1] - 2024-08-09\n- Update to Minecraft 1.21.1\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-08-09T20:54:27.747435Z",
-    "downloads": 15833,
+    "downloads": 15835,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2007,7 +2007,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.1.0-1.21.1] - 2024-08-09\n- Update to Minecraft 1.21.1\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-08-09T20:54:23.417174Z",
-    "downloads": 86025,
+    "downloads": 86071,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2055,15 +2055,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.0.8-1.21] - 2024-08-06\n### Changed\n- Update for NeoForge 21.0.159\n\n## [v21.0.7-1.21] - 2024-07-29\n### Changed\n- Update for NeoForge 21.0.143\n\n## [v21.0.6-1.21] - 2024-07-26\n### Added\n- Add new configuration screen for NeoForge configs, must be enabled via `ConfigScreenFactoryRegistry::register`\n- Not compatible with Forge configs, and will crash in-game\n\n## [v21.0.5-1.21] - 2024-07-15\n### Changed\n- Allow `net.minecraftforge.fml.config.ModConfig::save` to still be usable\n\n## [v21.0.4-1.21] - 2024-07-15\n### Fixed\n- Fix `net.minecraftforge.fml.config.ModConfig::getFullPath` throwing a `ClassCastException`\n- The class remains deprecated though and is only kept for binary compatibility\n\n## [v21.0.3-1.21] - 2024-07-15\n### Changed\n- Add a few deprecation notices to highlight the internal migration to NeoForge's config system for Forge on Fabric, that will require registering Forge config classes via the NeoForge implementation in the future\n- Add back contents to Forge's `ModConfig` as it is still used in config events, it now serves as an adapter to NeoForge's `ModConfig` for registered Forge configs\n### Fixed\n- Fix Forge config events not being called on Fabric\n\n## [v21.0.2-1.21] - 2024-07-13\n- Updated to Night Config v3.8.0\n- Update for NeoForge v21.0.82\n### Changed\n- Remove internal Forge classes from the Fabric publication, NeoForge's system is used to benefit from the concurrency safety it provides\n- There should be no breaking changes in any public facing api classes\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7.0\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-08-07T18:56:57.597997Z",
-    "downloads": 6710,
+    "downloads": 6723,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "33a807e32945f2c8d9f42f0dde8ffe347d5666cf0ba0576695c68013f094f9139cd0524b7464e5e21e6df0199926cee0afc2d77c92ba2851a9fb8236c204cf18",
-          "sha1": "c4d250554b7f6a4c1c33c8159c8d0c2d7ba9a7a8"
+          "sha1": "c4d250554b7f6a4c1c33c8159c8d0c2d7ba9a7a8",
+          "sha512": "33a807e32945f2c8d9f42f0dde8ffe347d5666cf0ba0576695c68013f094f9139cd0524b7464e5e21e6df0199926cee0afc2d77c92ba2851a9fb8236c204cf18"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/bnhVDSAh/ForgeConfigAPIPort-v21.0.8-1.21-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.0.8-1.21-NeoForge.jar",
@@ -2097,7 +2097,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.0.8-1.21] - 2024-08-06\n### Changed\n- Update for NeoForge 21.0.159\n\n## [v21.0.7-1.21] - 2024-07-29\n### Changed\n- Update for NeoForge 21.0.143\n\n## [v21.0.6-1.21] - 2024-07-26\n### Added\n- Add new configuration screen for NeoForge configs, must be enabled via `ConfigScreenFactoryRegistry::register`\n- Not compatible with Forge configs, and will crash in-game\n\n## [v21.0.5-1.21] - 2024-07-15\n### Changed\n- Allow `net.minecraftforge.fml.config.ModConfig::save` to still be usable\n\n## [v21.0.4-1.21] - 2024-07-15\n### Fixed\n- Fix `net.minecraftforge.fml.config.ModConfig::getFullPath` throwing a `ClassCastException`\n- The class remains deprecated though and is only kept for binary compatibility\n\n## [v21.0.3-1.21] - 2024-07-15\n### Changed\n- Add a few deprecation notices to highlight the internal migration to NeoForge's config system for Forge on Fabric, that will require registering Forge config classes via the NeoForge implementation in the future\n- Add back contents to Forge's `ModConfig` as it is still used in config events, it now serves as an adapter to NeoForge's `ModConfig` for registered Forge configs\n### Fixed\n- Fix Forge config events not being called on Fabric\n\n## [v21.0.2-1.21] - 2024-07-13\n- Updated to Night Config v3.8.0\n- Update for NeoForge v21.0.82\n### Changed\n- Remove internal Forge classes from the Fabric publication, NeoForge's system is used to benefit from the concurrency safety it provides\n- There should be no breaking changes in any public facing api classes\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7.0\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-08-07T18:56:50.817901Z",
-    "downloads": 15018,
+    "downloads": 15075,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2139,7 +2139,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.0.8-1.21] - 2024-08-06\n### Changed\n- Update for NeoForge 21.0.159\n\n## [v21.0.7-1.21] - 2024-07-29\n### Changed\n- Update for NeoForge 21.0.143\n\n## [v21.0.6-1.21] - 2024-07-26\n### Added\n- Add new configuration screen for NeoForge configs, must be enabled via `ConfigScreenFactoryRegistry::register`\n- Not compatible with Forge configs, and will crash in-game\n\n## [v21.0.5-1.21] - 2024-07-15\n### Changed\n- Allow `net.minecraftforge.fml.config.ModConfig::save` to still be usable\n\n## [v21.0.4-1.21] - 2024-07-15\n### Fixed\n- Fix `net.minecraftforge.fml.config.ModConfig::getFullPath` throwing a `ClassCastException`\n- The class remains deprecated though and is only kept for binary compatibility\n\n## [v21.0.3-1.21] - 2024-07-15\n### Changed\n- Add a few deprecation notices to highlight the internal migration to NeoForge's config system for Forge on Fabric, that will require registering Forge config classes via the NeoForge implementation in the future\n- Add back contents to Forge's `ModConfig` as it is still used in config events, it now serves as an adapter to NeoForge's `ModConfig` for registered Forge configs\n### Fixed\n- Fix Forge config events not being called on Fabric\n\n## [v21.0.2-1.21] - 2024-07-13\n- Updated to Night Config v3.8.0\n- Update for NeoForge v21.0.82\n### Changed\n- Remove internal Forge classes from the Fabric publication, NeoForge's system is used to benefit from the concurrency safety it provides\n- There should be no breaking changes in any public facing api classes\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7.0\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-08-07T18:56:46.685096Z",
-    "downloads": 675969,
+    "downloads": 676699,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2194,8 +2194,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "fce2501ccb93935b31e83b19fbaa94b5309cd36f16236b671b810c5b4d69b02992b6db9b4052bb49b555e78a9652bd290bf15865640c93db5a79629b1ec3c39d",
-          "sha1": "d17f9e1e4d8aba687e91feb6d93b115ebe5e4149"
+          "sha1": "d17f9e1e4d8aba687e91feb6d93b115ebe5e4149",
+          "sha512": "fce2501ccb93935b31e83b19fbaa94b5309cd36f16236b671b810c5b4d69b02992b6db9b4052bb49b555e78a9652bd290bf15865640c93db5a79629b1ec3c39d"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/FRzdKdgh/ForgeConfigAPIPort-v21.0.7-1.21-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.0.7-1.21-NeoForge.jar",
@@ -2271,7 +2271,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.0.7-1.21] - 2024-07-29\n### Changed\n- Update for NeoForge 21.0.143\n\n## [v21.0.6-1.21] - 2024-07-26\n### Added\n- Add new configuration screen for NeoForge configs, must be enabled via `ConfigScreenFactoryRegistry::register`\n- Not compatible with Forge configs, and will crash in-game\n\n## [v21.0.5-1.21] - 2024-07-15\n### Changed\n- Allow `net.minecraftforge.fml.config.ModConfig::save` to still be usable\n\n## [v21.0.4-1.21] - 2024-07-15\n### Fixed\n- Fix `net.minecraftforge.fml.config.ModConfig::getFullPath` throwing a `ClassCastException`\n- The class remains deprecated though and is only kept for binary compatibility\n\n## [v21.0.3-1.21] - 2024-07-15\n### Changed\n- Add a few deprecation notices to highlight the internal migration to NeoForge's config system for Forge on Fabric, that will require registering Forge config classes via the NeoForge implementation in the future\n- Add back contents to Forge's `ModConfig` as it is still used in config events, it now serves as an adapter to NeoForge's `ModConfig` for registered Forge configs\n### Fixed\n- Fix Forge config events not being called on Fabric\n\n## [v21.0.2-1.21] - 2024-07-13\n- Updated to Night Config v3.8.0\n- Update for NeoForge v21.0.82\n### Changed\n- Remove internal Forge classes from the Fabric publication, NeoForge's system is used to benefit from the concurrency safety it provides\n- There should be no breaking changes in any public facing api classes\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7.0\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-07-29T12:14:13.271269Z",
-    "downloads": 52792,
+    "downloads": 52809,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2403,7 +2403,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.0.6-1.21] - 2024-07-26\n### Added\n- Add new configuration screen for NeoForge configs, must be enabled via `ConfigScreenFactoryRegistry::register`\n- Not compatible with Forge configs, and will crash in-game\n\n## [v21.0.5-1.21] - 2024-07-15\n### Changed\n- Allow `net.minecraftforge.fml.config.ModConfig::save` to still be usable\n\n## [v21.0.4-1.21] - 2024-07-15\n### Fixed\n- Fix `net.minecraftforge.fml.config.ModConfig::getFullPath` throwing a `ClassCastException`\n- The class remains deprecated though and is only kept for binary compatibility\n\n## [v21.0.3-1.21] - 2024-07-15\n### Changed\n- Add a few deprecation notices to highlight the internal migration to NeoForge's config system for Forge on Fabric, that will require registering Forge config classes via the NeoForge implementation in the future\n- Add back contents to Forge's `ModConfig` as it is still used in config events, it now serves as an adapter to NeoForge's `ModConfig` for registered Forge configs\n### Fixed\n- Fix Forge config events not being called on Fabric\n\n## [v21.0.2-1.21] - 2024-07-13\n- Updated to Night Config v3.8.0\n- Update for NeoForge v21.0.82\n### Changed\n- Remove internal Forge classes from the Fabric publication, NeoForge's system is used to benefit from the concurrency safety it provides\n- There should be no breaking changes in any public facing api classes\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7.0\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-07-26T13:46:44.374263Z",
-    "downloads": 21760,
+    "downloads": 21764,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2458,8 +2458,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7326ec8221d22ce9a67b5d2d66b38d7840ef8a9a",
-          "sha512": "6fb9484d40fcca477c6962a9174572e0b065d440ac8c1378ae06033e7e360bc80f3bca29da61918ffcc0ec39b877ebe8a8bd2179073f8b7765e76818bb75e7ed"
+          "sha512": "6fb9484d40fcca477c6962a9174572e0b065d440ac8c1378ae06033e7e360bc80f3bca29da61918ffcc0ec39b877ebe8a8bd2179073f8b7765e76818bb75e7ed",
+          "sha1": "7326ec8221d22ce9a67b5d2d66b38d7840ef8a9a"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/wx8Ha8eB/ForgeConfigAPIPort-v21.0.5-1.21-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.0.5-1.21-NeoForge.jar",
@@ -2493,7 +2493,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.0.5-1.21] - 2024-07-15\n### Changed\n- Allow `net.minecraftforge.fml.config.ModConfig::save` to still be usable\n\n## [v21.0.4-1.21] - 2024-07-15\n### Fixed\n- Fix `net.minecraftforge.fml.config.ModConfig::getFullPath` throwing a `ClassCastException`\n- The class remains deprecated though and is only kept for binary compatibility\n\n## [v21.0.3-1.21] - 2024-07-15\n### Changed\n- Add a few deprecation notices to highlight the internal migration to NeoForge's config system for Forge on Fabric, that will require registering Forge config classes via the NeoForge implementation in the future\n- Add back contents to Forge's `ModConfig` as it is still used in config events, it now serves as an adapter to NeoForge's `ModConfig` for registered Forge configs\n### Fixed\n- Fix Forge config events not being called on Fabric\n\n## [v21.0.2-1.21] - 2024-07-13\n- Updated to Night Config v3.8.0\n- Update for NeoForge v21.0.82\n### Changed\n- Remove internal Forge classes from the Fabric publication, NeoForge's system is used to benefit from the concurrency safety it provides\n- There should be no breaking changes in any public facing api classes\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7.0\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-07-15T21:41:42.635552Z",
-    "downloads": 54859,
+    "downloads": 54910,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2535,7 +2535,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.0.5-1.21] - 2024-07-15\n### Changed\n- Allow `net.minecraftforge.fml.config.ModConfig::save` to still be usable\n\n## [v21.0.4-1.21] - 2024-07-15\n### Fixed\n- Fix `net.minecraftforge.fml.config.ModConfig::getFullPath` throwing a `ClassCastException`\n- The class remains deprecated though and is only kept for binary compatibility\n\n## [v21.0.3-1.21] - 2024-07-15\n### Changed\n- Add a few deprecation notices to highlight the internal migration to NeoForge's config system for Forge on Fabric, that will require registering Forge config classes via the NeoForge implementation in the future\n- Add back contents to Forge's `ModConfig` as it is still used in config events, it now serves as an adapter to NeoForge's `ModConfig` for registered Forge configs\n### Fixed\n- Fix Forge config events not being called on Fabric\n\n## [v21.0.2-1.21] - 2024-07-13\n- Updated to Night Config v3.8.0\n- Update for NeoForge v21.0.82\n### Changed\n- Remove internal Forge classes from the Fabric publication, NeoForge's system is used to benefit from the concurrency safety it provides\n- There should be no breaking changes in any public facing api classes\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7.0\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-07-15T21:41:38.455857Z",
-    "downloads": 124522,
+    "downloads": 124555,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2555,15 +2555,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "5WeWGLoJ",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -2632,8 +2632,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "45c2ca9acfd3aada57870c0dc883a91b739b22dc",
-          "sha512": "196497dec0fb990a713dc999248c7e20c30600996b235b13983874036eb2f8dd9c7c283fd6b6218d43514ee998b7ce8723c5497e24067c6d5516b0a1c7454bcf"
+          "sha512": "196497dec0fb990a713dc999248c7e20c30600996b235b13983874036eb2f8dd9c7c283fd6b6218d43514ee998b7ce8723c5497e24067c6d5516b0a1c7454bcf",
+          "sha1": "45c2ca9acfd3aada57870c0dc883a91b739b22dc"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/SaPUeEYL/ForgeConfigAPIPort-v21.0.4-1.21-Forge.jar",
         "filename": "ForgeConfigAPIPort-v21.0.4-1.21-Forge.jar",
@@ -2667,15 +2667,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.0.4-1.21] - 2024-07-15\n### Fixed\n- Fix `net.minecraftforge.fml.config.ModConfig::getFullPath` throwing a `ClassCastException`\n- The class remains deprecated though and is only kept for binary compatibility\n\n## [v21.0.3-1.21] - 2024-07-15\n### Changed\n- Add a few deprecation notices to highlight the internal migration to NeoForge's config system for Forge on Fabric, that will require registering Forge config classes via the NeoForge implementation in the future\n- Add back contents to Forge's `ModConfig` as it is still used in config events, it now serves as an adapter to NeoForge's `ModConfig` for registered Forge configs\n### Fixed\n- Fix Forge config events not being called on Fabric\n\n## [v21.0.2-1.21] - 2024-07-13\n- Updated to Night Config v3.8.0\n- Update for NeoForge v21.0.82\n### Changed\n- Remove internal Forge classes from the Fabric publication, NeoForge's system is used to benefit from the concurrency safety it provides\n- There should be no breaking changes in any public facing api classes\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7.0\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-07-15T18:16:39.405566Z",
-    "downloads": 3341,
+    "downloads": 3342,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "344263163bc74940138935cfadc90741b53eceb5247c776e7a0b7a3e28957e7514d9659046dbf1e3735afd56d76b5f58c23445d6b577d3b2af155305688c0e9c",
-          "sha1": "ca851de16697a0c6d7edc0edb0309efe92d72453"
+          "sha1": "ca851de16697a0c6d7edc0edb0309efe92d72453",
+          "sha512": "344263163bc74940138935cfadc90741b53eceb5247c776e7a0b7a3e28957e7514d9659046dbf1e3735afd56d76b5f58c23445d6b577d3b2af155305688c0e9c"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/ArqXhVnP/ForgeConfigAPIPort-v21.0.4-1.21-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.0.4-1.21-Fabric.jar",
@@ -2799,15 +2799,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.0.3-1.21] - 2024-07-15\n### Changed\n- Add a few deprecation notices to highlight the internal migration to NeoForge's config system for Forge on Fabric, that will require registering Forge config classes via the NeoForge implementation in the future\n- Add back contents to Forge's `ModConfig` as it is still used in config events, it now serves as an adapter to NeoForge's `ModConfig` for registered Forge configs\n### Fixed\n- Fix Forge config events not being called on Fabric\n\n## [v21.0.2-1.21] - 2024-07-13\n- Updated to Night Config v3.8.0\n- Update for NeoForge v21.0.82\n### Changed\n- Remove internal Forge classes from the Fabric publication, NeoForge's system is used to benefit from the concurrency safety it provides\n- There should be no breaking changes in any public facing api classes\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7.0\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-07-15T05:50:27.573929Z",
-    "downloads": 7104,
+    "downloads": 7105,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "25b14d5191051f57952ab0770a37e4071391a0e41c5476ab2adb904fca5862a1470730ef8d0e5a49b09b90f141c3e3983400124dd55d6dde76933e646bd906ac",
-          "sha1": "44cd7a6bf3d77246119dbd07df7a7696c3c4aa25"
+          "sha1": "44cd7a6bf3d77246119dbd07df7a7696c3c4aa25",
+          "sha512": "25b14d5191051f57952ab0770a37e4071391a0e41c5476ab2adb904fca5862a1470730ef8d0e5a49b09b90f141c3e3983400124dd55d6dde76933e646bd906ac"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/JGO1znQN/ForgeConfigAPIPort-v21.0.3-1.21-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.0.3-1.21-Fabric.jar",
@@ -2854,8 +2854,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "bdfb53b5cdf885e80a038c52b8b280d23c255b8b",
-          "sha512": "b2f668e3736909014ffc8936e92f3ae3310399d963f570ebdfdb1d7c23e681a365f225d3fb0d4d4f1afc7e840b56c877cd183301a00ffc08f6db1ac002562e6e"
+          "sha512": "b2f668e3736909014ffc8936e92f3ae3310399d963f570ebdfdb1d7c23e681a365f225d3fb0d4d4f1afc7e840b56c877cd183301a00ffc08f6db1ac002562e6e",
+          "sha1": "bdfb53b5cdf885e80a038c52b8b280d23c255b8b"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/sg4l7fSX/ForgeConfigAPIPort-v21.0.2-1.21-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.0.2-1.21-NeoForge.jar",
@@ -2896,8 +2896,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "84bd04bf34d8711a130fb748a5e9de3cdfbcedb4",
-          "sha512": "24903b73f80f370ed3f075f2d27f5f06bf4c2aec22b599312f4083238da7e99a9bbf736ccdf98855356f24ac2e3cf601cd6716830335b4210ae38133d03eff6d"
+          "sha512": "24903b73f80f370ed3f075f2d27f5f06bf4c2aec22b599312f4083238da7e99a9bbf736ccdf98855356f24ac2e3cf601cd6716830335b4210ae38133d03eff6d",
+          "sha1": "84bd04bf34d8711a130fb748a5e9de3cdfbcedb4"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/7HZj0EzA/ForgeConfigAPIPort-v21.0.2-1.21-Forge.jar",
         "filename": "ForgeConfigAPIPort-v21.0.2-1.21-Forge.jar",
@@ -2931,15 +2931,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [v21.0.2-1.21] - 2024-07-13\n- Updated to Night Config v3.8.0\n- Update for NeoForge v21.0.82\n### Changed\n- Remove internal Forge classes from the Fabric publication, NeoForge's system is used to benefit from the concurrency safety it provides\n- There should be no breaking changes in any public facing api classes\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7.0\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-07-13T09:25:47.105088Z",
-    "downloads": 9610,
+    "downloads": 9611,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "cac67d5b1f762ab6c62eefdc716bee39ccfbb75850786441638c66dee3eb465a2598d2df9480624e01f5ac8cf79f6d0c1c21e1efb739629f04363fabe3d516cd",
-          "sha1": "c0aa67ab4c3ad2b5243dd45dcb522d8e40380cf7"
+          "sha1": "c0aa67ab4c3ad2b5243dd45dcb522d8e40380cf7",
+          "sha512": "cac67d5b1f762ab6c62eefdc716bee39ccfbb75850786441638c66dee3eb465a2598d2df9480624e01f5ac8cf79f6d0c1c21e1efb739629f04363fabe3d516cd"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/YsY7k4Pu/ForgeConfigAPIPort-v21.0.2-1.21-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.0.2-1.21-Fabric.jar",
@@ -2986,8 +2986,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a6d5c33e1817e5db33b9f5123a348d11fc108a72dc46b0a6ae116efcac86e648d9c454b043a252a3ad5cd594141bb4613985e5904c54bc8cef3c989cb667b5e5",
-          "sha1": "52fcb1f0ebd1a93193f3b9036975f55b62155404"
+          "sha1": "52fcb1f0ebd1a93193f3b9036975f55b62155404",
+          "sha512": "a6d5c33e1817e5db33b9f5123a348d11fc108a72dc46b0a6ae116efcac86e648d9c454b043a252a3ad5cd594141bb4613985e5904c54bc8cef3c989cb667b5e5"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/2z1n7Pal/ForgeConfigAPIPort-v21.0.1-1.21-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v21.0.1-1.21-NeoForge.jar",
@@ -3028,8 +3028,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "71ac737d95bd854d1ea0958a7a03aa68f13a8ef1",
-          "sha512": "0b9691481e93c8c01008af26f014450844e579ddbef24b9bf93f9ee88b971298c06a501f2000e7ecc653fab4dcf41f4f9160796857d46e169b1adc9b6670477b"
+          "sha512": "0b9691481e93c8c01008af26f014450844e579ddbef24b9bf93f9ee88b971298c06a501f2000e7ecc653fab4dcf41f4f9160796857d46e169b1adc9b6670477b",
+          "sha1": "71ac737d95bd854d1ea0958a7a03aa68f13a8ef1"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/wMoOojVd/ForgeConfigAPIPort-v21.0.1-1.21-Forge.jar",
         "filename": "ForgeConfigAPIPort-v21.0.1-1.21-Forge.jar",
@@ -3063,15 +3063,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v21.0.1-1.21] - 2024-07-01\n- Updated for Night Config v3.7+\n### Fixed\n- Common publications no longer try to pull Fabric Loader\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-07-01T20:10:22.134501Z",
-    "downloads": 39224,
+    "downloads": 39238,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "82797085103a0b43e7bc944bfa68f17a100376b13aaa321c287990a5434cdae9f2dafa8d99cca44f4239a694e0564ee6e40a5e2dd88a5df16bad4735c1c74c72",
-          "sha1": "5e11a241d30080c45ba099976db9608bd966d158"
+          "sha1": "5e11a241d30080c45ba099976db9608bd966d158",
+          "sha512": "82797085103a0b43e7bc944bfa68f17a100376b13aaa321c287990a5434cdae9f2dafa8d99cca44f4239a694e0564ee6e40a5e2dd88a5df16bad4735c1c74c72"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/6ftTLYo0/ForgeConfigAPIPort-v21.0.1-1.21-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.0.1-1.21-Fabric.jar",
@@ -3153,15 +3153,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v21.0.0-1.21] - 2024-06-14\n- Update to Minecraft 1.21\n- Forge distribution remains unpublished as long as it is not supported by Architectury Loom\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-06-14T11:59:58.680077Z",
-    "downloads": 146515,
+    "downloads": 146561,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "77a2ace0032a3637cce73cb01a1f469655a700d6108d43d12c9fea52ca07f1a7b2b5bf8274cf82301e142fa6ee71f70629fd6dece4f998b9667d9b3a0a14b9d0",
-          "sha1": "d8c9c65b79846d6ed9729308c7d39eebd6cd7dbf"
+          "sha1": "d8c9c65b79846d6ed9729308c7d39eebd6cd7dbf",
+          "sha512": "77a2ace0032a3637cce73cb01a1f469655a700d6108d43d12c9fea52ca07f1a7b2b5bf8274cf82301e142fa6ee71f70629fd6dece4f998b9667d9b3a0a14b9d0"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/lB4p4JnZ/ForgeConfigAPIPort-v21.0.0-1.21-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v21.0.0-1.21-Fabric.jar",
@@ -3201,7 +3201,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.6.1-1.20.6] - 2024-05-04\n### Changed\n- Sync upstream changes for NeoForge, most importantly adding support for startup configs (loaded immediately on NeoForge to allow retrieving values during early mod loading)\n- Using this new type is not necessary on Fabric since all configs but server configs already load immediately due to the absence of mod loading stages\n- The new type is simply included for parity with NeoForge\n### Removed\n- Remove outdated config options `recreateConfigsWhenParsingFails` and `forceGlobalServerConfigs` which are always enabled now\n\n## [v20.6.0-1.20.6] - 2024-04-30\n- Update to Minecraft 1.20.6\n### Changed\n- Port upstream changes for `ForgeConfigSpec` and `ModConfigSpec` \n- Overhaul server config syncing to occur during the configuration phase in favor of login\n### Removed\n- Remove deprecated Fabric api events and helper methods\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-06-04T07:57:06.675217Z",
-    "downloads": 3136,
+    "downloads": 3149,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3243,7 +3243,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.6.1-1.20.6] - 2024-05-04\n### Changed\n- Sync upstream changes for NeoForge, most importantly adding support for startup configs (loaded immediately on NeoForge to allow retrieving values during early mod loading)\n- Using this new type is not necessary on Fabric since all configs but server configs already load immediately due to the absence of mod loading stages\n- The new type is simply included for parity with NeoForge\n### Removed\n- Remove outdated config options `recreateConfigsWhenParsingFails` and `forceGlobalServerConfigs` which are always enabled now\n\n## [v20.6.0-1.20.6] - 2024-04-30\n- Update to Minecraft 1.20.6\n### Changed\n- Port upstream changes for `ForgeConfigSpec` and `ModConfigSpec` \n- Overhaul server config syncing to occur during the configuration phase in favor of login\n### Removed\n- Remove deprecated Fabric api events and helper methods\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-06-04T07:57:02.933007Z",
-    "downloads": 9743,
+    "downloads": 9762,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3285,15 +3285,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.6.1-1.20.6] - 2024-05-04\n### Changed\n- Sync upstream changes for NeoForge, most importantly adding support for startup configs (loaded immediately on NeoForge to allow retrieving values during early mod loading)\n- Using this new type is not necessary on Fabric since all configs but server configs already load immediately due to the absence of mod loading stages\n- The new type is simply included for parity with NeoForge\n### Removed\n- Remove outdated config options `recreateConfigsWhenParsingFails` and `forceGlobalServerConfigs` which are always enabled now\n\n## [v20.6.0-1.20.6] - 2024-04-30\n- Update to Minecraft 1.20.6\n### Changed\n- Port upstream changes for `ForgeConfigSpec` and `ModConfigSpec` \n- Overhaul server config syncing to occur during the configuration phase in favor of login\n### Removed\n- Remove deprecated Fabric api events and helper methods\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-06-04T07:56:53.767884Z",
-    "downloads": 89803,
+    "downloads": 89870,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f4957068b8b72e785d2b354daafde89666ba7144",
-          "sha512": "8295b5cb472c65967a0f0b3d18b0b3a076d27a49143654d39ce805f8e4a5ac7e68a854d2be411a6ed9eae443e8c03368ccc69aa67d17f44e5f216c4e17e8d6eb"
+          "sha512": "8295b5cb472c65967a0f0b3d18b0b3a076d27a49143654d39ce805f8e4a5ac7e68a854d2be411a6ed9eae443e8c03368ccc69aa67d17f44e5f216c4e17e8d6eb",
+          "sha1": "f4957068b8b72e785d2b354daafde89666ba7144"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/LDpciQaD/ForgeConfigAPIPort-v20.6.1-1.20.6-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v20.6.1-1.20.6-Fabric.jar",
@@ -3305,15 +3305,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "5WeWGLoJ",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -3333,15 +3333,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.6.0-1.20.6] - 2024-04-30\n- Update to Minecraft 1.20.6\n### Changed\n- Port upstream changes for `ForgeConfigSpec` and `ModConfigSpec` \n- Overhaul server config syncing to occur during the configuration phase in favor of login\n### Removed\n- Remove deprecated Fabric api events and helper methods\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-05-01T11:28:21.581511Z",
-    "downloads": 3178,
+    "downloads": 3179,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ab20f8aacd40d57083e9bff3ef4cfce10f8bc77d",
-          "sha512": "06005b6cce96261e54a8c8d1c5569bcedd974f6bac3093c82da5de940ef1fa391b951acbf54da1dc0cd8ab75883ac0b42a1e85850e0944c7c58114f0ab4634f1"
+          "sha512": "06005b6cce96261e54a8c8d1c5569bcedd974f6bac3093c82da5de940ef1fa391b951acbf54da1dc0cd8ab75883ac0b42a1e85850e0944c7c58114f0ab4634f1",
+          "sha1": "ab20f8aacd40d57083e9bff3ef4cfce10f8bc77d"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/6b78kro0/ForgeConfigAPIPort-v20.6.0-1.20.6-Forge.jar",
         "filename": "ForgeConfigAPIPort-v20.6.0-1.20.6-Forge.jar",
@@ -3417,7 +3417,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.6.0-1.20.6] - 2024-04-30\n- Update to Minecraft 1.20.6\n### Changed\n- Port upstream changes for `ForgeConfigSpec` and `ModConfigSpec` \n- Overhaul server config syncing to occur during the configuration phase in favor of login\n### Removed\n- Remove deprecated Fabric api events and helper methods\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-04-30T12:14:08.613483Z",
-    "downloads": 69747,
+    "downloads": 69759,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3465,15 +3465,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.4.3-1.20.4] - 2024-01-22\n### Fixed\n- Fix `mods.toml` entries for NeoForge\n\n## [v20.4.2-1.20.4] - 2024-01-13\n### Changed\n- Implement `UnmodifiableConfigWrapper` for `IConfigSpec` adapters on NeoForge & Forge\n\n## [v20.4.1-1.20.4] - 2024-01-10\n- Huge internal restructure, including new publications for NeoForge (for using Forge configs) and Forge (for using NeoForge configs)\n- The Fabric publication still includes all classes for both config systems, the api package has been split from `fuzs.forgeconfigapiport.api.config` into `fuzs.forgeconfigapiport.fabric.api.forge` and `fuzs.forgeconfigapiport.fabric.api.neoforge`\n- The common module is no longer published as `forgeconfigapiport-common`, instead there are now two common publications which are `forgeconfigapiport-common-forgeapi` and `forgeconfigapiport-common-neoforgeapi`\n### Added\n- Added `disableConfigWatcher` config option to both `ForgeConfigSpec` and `ModConfigSpec`\n### Changed\n- Updated ForgeConfigSpec with changes from [MinecraftForge#9810](https://github.com/MinecraftForge/MinecraftForge/pull/9810)\n### Fixed\n- Fixed `FileWatcher` hanging due to an invalid path when unloading server configs\n\n## [v20.4.0-1.20.4] - 2023-12-21\n- Updated to Minecraft 1.20.4 (thanks to [Girafi](https://github.com/GirafiStudios) for helping out!)\n- The mod version now is more streamlined by including the targeted Minecraft version (e.g. Minecraft 1.20.4 -> Mod Version 20.4.X)\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-01-22T08:35:38.3982Z",
-    "downloads": 11908,
+    "downloads": 11919,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2bc884a350f32d39cf4e31a296b2fcb47673b391a097df74a19353eb06cbf56b1e926d943b96697fd7167b9f7d84c5933ab951e221519fc62b2c3f6fdcbfa6e3",
-          "sha1": "f9bc3555ba1f5127b0204f5b618bd12540e0f37c"
+          "sha1": "f9bc3555ba1f5127b0204f5b618bd12540e0f37c",
+          "sha512": "2bc884a350f32d39cf4e31a296b2fcb47673b391a097df74a19353eb06cbf56b1e926d943b96697fd7167b9f7d84c5933ab951e221519fc62b2c3f6fdcbfa6e3"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/izawYWhx/ForgeConfigAPIPort-v20.4.3-1.20.4-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v20.4.3-1.20.4-NeoForge.jar",
@@ -3507,7 +3507,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.4.3-1.20.4] - 2024-01-22\n### Fixed\n- Fix `mods.toml` entries for NeoForge\n\n## [v20.4.2-1.20.4] - 2024-01-13\n### Changed\n- Implement `UnmodifiableConfigWrapper` for `IConfigSpec` adapters on NeoForge & Forge\n\n## [v20.4.1-1.20.4] - 2024-01-10\n- Huge internal restructure, including new publications for NeoForge (for using Forge configs) and Forge (for using NeoForge configs)\n- The Fabric publication still includes all classes for both config systems, the api package has been split from `fuzs.forgeconfigapiport.api.config` into `fuzs.forgeconfigapiport.fabric.api.forge` and `fuzs.forgeconfigapiport.fabric.api.neoforge`\n- The common module is no longer published as `forgeconfigapiport-common`, instead there are now two common publications which are `forgeconfigapiport-common-forgeapi` and `forgeconfigapiport-common-neoforgeapi`\n### Added\n- Added `disableConfigWatcher` config option to both `ForgeConfigSpec` and `ModConfigSpec`\n### Changed\n- Updated ForgeConfigSpec with changes from [MinecraftForge#9810](https://github.com/MinecraftForge/MinecraftForge/pull/9810)\n### Fixed\n- Fixed `FileWatcher` hanging due to an invalid path when unloading server configs\n\n## [v20.4.0-1.20.4] - 2023-12-21\n- Updated to Minecraft 1.20.4 (thanks to [Girafi](https://github.com/GirafiStudios) for helping out!)\n- The mod version now is more streamlined by including the targeted Minecraft version (e.g. Minecraft 1.20.4 -> Mod Version 20.4.X)\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-01-22T08:35:33.517534Z",
-    "downloads": 27205,
+    "downloads": 27225,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3549,7 +3549,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.4.3-1.20.4] - 2024-01-22\n### Fixed\n- Fix `mods.toml` entries for NeoForge\n\n## [v20.4.2-1.20.4] - 2024-01-13\n### Changed\n- Implement `UnmodifiableConfigWrapper` for `IConfigSpec` adapters on NeoForge & Forge\n\n## [v20.4.1-1.20.4] - 2024-01-10\n- Huge internal restructure, including new publications for NeoForge (for using Forge configs) and Forge (for using NeoForge configs)\n- The Fabric publication still includes all classes for both config systems, the api package has been split from `fuzs.forgeconfigapiport.api.config` into `fuzs.forgeconfigapiport.fabric.api.forge` and `fuzs.forgeconfigapiport.fabric.api.neoforge`\n- The common module is no longer published as `forgeconfigapiport-common`, instead there are now two common publications which are `forgeconfigapiport-common-forgeapi` and `forgeconfigapiport-common-neoforgeapi`\n### Added\n- Added `disableConfigWatcher` config option to both `ForgeConfigSpec` and `ModConfigSpec`\n### Changed\n- Updated ForgeConfigSpec with changes from [MinecraftForge#9810](https://github.com/MinecraftForge/MinecraftForge/pull/9810)\n### Fixed\n- Fixed `FileWatcher` hanging due to an invalid path when unloading server configs\n\n## [v20.4.0-1.20.4] - 2023-12-21\n- Updated to Minecraft 1.20.4 (thanks to [Girafi](https://github.com/GirafiStudios) for helping out!)\n- The mod version now is more streamlined by including the targeted Minecraft version (e.g. Minecraft 1.20.4 -> Mod Version 20.4.X)\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-01-22T08:35:26.290283Z",
-    "downloads": 558109,
+    "downloads": 558478,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3569,15 +3569,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "5WeWGLoJ",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -3597,15 +3597,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.2.6-1.20.2] - 2024-01-22\n### Fixed\n- Fix `mods.toml` entries for NeoForge\n\n## [v20.2.5-1.20.2] - 2024-01-13\n### Changed\n- Implement `UnmodifiableConfigWrapper` for `IConfigSpec` adapters on NeoForge & Forge\n\n## [v20.2.4-1.20.2] - 2024-01-10\n- Huge internal restructure, including new publications for NeoForge (for using Forge configs) and Forge (for using NeoForge configs)\n- The Fabric publication still includes all classes for both config systems, the api package has been split from `fuzs.forgeconfigapiport.api.config` into `fuzs.forgeconfigapiport.fabric.api.forge` and `fuzs.forgeconfigapiport.fabric.api.neoforge`\n- The common module is no longer published as `forgeconfigapiport-common`, instead there are now two common publications which are `forgeconfigapiport-common-forgeapi` and `forgeconfigapiport-common-neoforgeapi`\n### Added\n- Added `disableConfigWatcher` config option to both `ForgeConfigSpec` and `ModConfigSpec`\n### Changed\n- Updated ForgeConfigSpec with changes from [MinecraftForge#9810](https://github.com/MinecraftForge/MinecraftForge/pull/9810)\n### Fixed\n- Fixed `FileWatcher` hanging due to an invalid path when unloading server configs\n\n## [v9.1.2-1.20.2] - 2023-12-02\n### Changed\n- Server configs can now once again be read from a local world directory, when a config file is present (it has to be manually copied there)\n- New server config files are still only created in the global `.minecraft/config` directory\n- Refactored `fuzs.forgeconfigapiport.api.config.v3.ForgeConfigPaths`\n### Fixed\n- Fixed `ModConfigSpec` using a wrong package\n\n## [v9.1.1-1.20.2] - 2023-12-01\n### Fixed\n- Fixed `ForgeConfigSpec` still using the old name for NeoForge\n\n## [v9.1.0-1.20.2] - 2023-11-30\n### Added\n- Added support for the `net.neoforged` namespace in addition to `net.minecraftforge`\n- ~~Support for Minecraft Forge will be dropped in the long term~~\n- At the moment config systems from both mod loaders are fully supported, except the `/config` command which now only works for NeoForge configs\n\n## [v9.0.0-1.20.2] - 2023-09-22\n- Ported to Minecraft 1.20.2\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-01-22T08:33:11.370819Z",
-    "downloads": 15268,
+    "downloads": 15283,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "452e1ae2d596612870c210f5b63ae553bd261074f7115bfa8bee30df2a53bb8eb9817583d428699815161bcc77636f806d27aa6597edba4aadc0409773e4f592",
-          "sha1": "1679587237cea2115334918d3389eef66a933339"
+          "sha1": "1679587237cea2115334918d3389eef66a933339",
+          "sha512": "452e1ae2d596612870c210f5b63ae553bd261074f7115bfa8bee30df2a53bb8eb9817583d428699815161bcc77636f806d27aa6597edba4aadc0409773e4f592"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/r8gESJiS/ForgeConfigAPIPort-v20.2.6-1.20.2-Forge.jar",
         "filename": "ForgeConfigAPIPort-v20.2.6-1.20.2-Forge.jar",
@@ -3639,15 +3639,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.2.6-1.20.2] - 2024-01-22\n### Fixed\n- Fix `mods.toml` entries for NeoForge\n\n## [v20.2.5-1.20.2] - 2024-01-13\n### Changed\n- Implement `UnmodifiableConfigWrapper` for `IConfigSpec` adapters on NeoForge & Forge\n\n## [v20.2.4-1.20.2] - 2024-01-10\n- Huge internal restructure, including new publications for NeoForge (for using Forge configs) and Forge (for using NeoForge configs)\n- The Fabric publication still includes all classes for both config systems, the api package has been split from `fuzs.forgeconfigapiport.api.config` into `fuzs.forgeconfigapiport.fabric.api.forge` and `fuzs.forgeconfigapiport.fabric.api.neoforge`\n- The common module is no longer published as `forgeconfigapiport-common`, instead there are now two common publications which are `forgeconfigapiport-common-forgeapi` and `forgeconfigapiport-common-neoforgeapi`\n### Added\n- Added `disableConfigWatcher` config option to both `ForgeConfigSpec` and `ModConfigSpec`\n### Changed\n- Updated ForgeConfigSpec with changes from [MinecraftForge#9810](https://github.com/MinecraftForge/MinecraftForge/pull/9810)\n### Fixed\n- Fixed `FileWatcher` hanging due to an invalid path when unloading server configs\n\n## [v9.1.2-1.20.2] - 2023-12-02\n### Changed\n- Server configs can now once again be read from a local world directory, when a config file is present (it has to be manually copied there)\n- New server config files are still only created in the global `.minecraft/config` directory\n- Refactored `fuzs.forgeconfigapiport.api.config.v3.ForgeConfigPaths`\n### Fixed\n- Fixed `ModConfigSpec` using a wrong package\n\n## [v9.1.1-1.20.2] - 2023-12-01\n### Fixed\n- Fixed `ForgeConfigSpec` still using the old name for NeoForge\n\n## [v9.1.0-1.20.2] - 2023-11-30\n### Added\n- Added support for the `net.neoforged` namespace in addition to `net.minecraftforge`\n- ~~Support for Minecraft Forge will be dropped in the long term~~\n- At the moment config systems from both mod loaders are fully supported, except the `/config` command which now only works for NeoForge configs\n\n## [v9.0.0-1.20.2] - 2023-09-22\n- Ported to Minecraft 1.20.2\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-01-22T08:33:03.296079Z",
-    "downloads": 638,
+    "downloads": 640,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d147988d85a0aaf25d707ec3f8ade2107f756c57",
-          "sha512": "0d9df3eb3c033a742cce2e603f3f7026540d144ced4f8125e527fb63310fcc6478a65f60f093485686966489a57e96d7beb4d8ba4c648af409e1950f265ed2fb"
+          "sha512": "0d9df3eb3c033a742cce2e603f3f7026540d144ced4f8125e527fb63310fcc6478a65f60f093485686966489a57e96d7beb4d8ba4c648af409e1950f265ed2fb",
+          "sha1": "d147988d85a0aaf25d707ec3f8ade2107f756c57"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/1bZs84f5/ForgeConfigAPIPort-v20.2.6-1.20.2-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v20.2.6-1.20.2-NeoForge.jar",
@@ -3681,7 +3681,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.2.6-1.20.2] - 2024-01-22\n### Fixed\n- Fix `mods.toml` entries for NeoForge\n\n## [v20.2.5-1.20.2] - 2024-01-13\n### Changed\n- Implement `UnmodifiableConfigWrapper` for `IConfigSpec` adapters on NeoForge & Forge\n\n## [v20.2.4-1.20.2] - 2024-01-10\n- Huge internal restructure, including new publications for NeoForge (for using Forge configs) and Forge (for using NeoForge configs)\n- The Fabric publication still includes all classes for both config systems, the api package has been split from `fuzs.forgeconfigapiport.api.config` into `fuzs.forgeconfigapiport.fabric.api.forge` and `fuzs.forgeconfigapiport.fabric.api.neoforge`\n- The common module is no longer published as `forgeconfigapiport-common`, instead there are now two common publications which are `forgeconfigapiport-common-forgeapi` and `forgeconfigapiport-common-neoforgeapi`\n### Added\n- Added `disableConfigWatcher` config option to both `ForgeConfigSpec` and `ModConfigSpec`\n### Changed\n- Updated ForgeConfigSpec with changes from [MinecraftForge#9810](https://github.com/MinecraftForge/MinecraftForge/pull/9810)\n### Fixed\n- Fixed `FileWatcher` hanging due to an invalid path when unloading server configs\n\n## [v9.1.2-1.20.2] - 2023-12-02\n### Changed\n- Server configs can now once again be read from a local world directory, when a config file is present (it has to be manually copied there)\n- New server config files are still only created in the global `.minecraft/config` directory\n- Refactored `fuzs.forgeconfigapiport.api.config.v3.ForgeConfigPaths`\n### Fixed\n- Fixed `ModConfigSpec` using a wrong package\n\n## [v9.1.1-1.20.2] - 2023-12-01\n### Fixed\n- Fixed `ForgeConfigSpec` still using the old name for NeoForge\n\n## [v9.1.0-1.20.2] - 2023-11-30\n### Added\n- Added support for the `net.neoforged` namespace in addition to `net.minecraftforge`\n- ~~Support for Minecraft Forge will be dropped in the long term~~\n- At the moment config systems from both mod loaders are fully supported, except the `/config` command which now only works for NeoForge configs\n\n## [v9.0.0-1.20.2] - 2023-09-22\n- Ported to Minecraft 1.20.2\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-01-22T08:32:56.076308Z",
-    "downloads": 88358,
+    "downloads": 88388,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3806,7 +3806,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.4.2-1.20.4] - 2024-01-13\n### Changed\n- Implement `UnmodifiableConfigWrapper` for `IConfigSpec` adapters on NeoForge & Forge\n\n## [v20.4.1-1.20.4] - 2024-01-10\n- Huge internal restructure, including new publications for NeoForge (for using Forge configs) and Forge (for using NeoForge configs)\n- The Fabric publication still includes all classes for both config systems, the api package has been split from `fuzs.forgeconfigapiport.api.config` into `fuzs.forgeconfigapiport.fabric.api.forge` and `fuzs.forgeconfigapiport.fabric.api.neoforge`\n- The common module is no longer published as `forgeconfigapiport-common`, instead there are now two common publications which are `forgeconfigapiport-common-forgeapi` and `forgeconfigapiport-common-neoforgeapi`\n### Added\n- Added `disableConfigWatcher` config option to both `ForgeConfigSpec` and `ModConfigSpec`\n### Changed\n- Updated ForgeConfigSpec with changes from [MinecraftForge#9810](https://github.com/MinecraftForge/MinecraftForge/pull/9810)\n### Fixed\n- Fixed `FileWatcher` hanging due to an invalid path when unloading server configs\n\n## [v20.4.0-1.20.4] - 2023-12-21\n- Updated to Minecraft 1.20.4 (thanks to [Girafi](https://github.com/GirafiStudios) for helping out!)\n- The mod version now is more streamlined by including the targeted Minecraft version (e.g. Minecraft 1.20.4 -> Mod Version 20.4.X)\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-01-13T19:46:38.744306Z",
-    "downloads": 15941,
+    "downloads": 15945,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3896,8 +3896,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c2998971ac54d685e5faf00b8dfa59404f87d588e8006adc5cdec57576f493fbd5b43d5e9c6d58b53def0292c229bbfce38a6b67b7bf420b4900be3d69071f2f",
-          "sha1": "fa72d765e31985acd7c46303466ff47a3a7b6d0a"
+          "sha1": "fa72d765e31985acd7c46303466ff47a3a7b6d0a",
+          "sha512": "c2998971ac54d685e5faf00b8dfa59404f87d588e8006adc5cdec57576f493fbd5b43d5e9c6d58b53def0292c229bbfce38a6b67b7bf420b4900be3d69071f2f"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/WjsrL3PB/ForgeConfigAPIPort-v20.2.5-1.20.2-Forge.jar",
         "filename": "ForgeConfigAPIPort-v20.2.5-1.20.2-Forge.jar",
@@ -3938,8 +3938,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5e874484913fa8517fc1448cf75982d003345e2eb5fa9bdfbfc5eea56f4087061ba0c67e14b4cd708ab490d5d16887b5f1511c30f1670832e4d6e2c7d335847c",
-          "sha1": "5d0424804ada07b996861ee6819e79c6495a5ce0"
+          "sha1": "5d0424804ada07b996861ee6819e79c6495a5ce0",
+          "sha512": "5e874484913fa8517fc1448cf75982d003345e2eb5fa9bdfbfc5eea56f4087061ba0c67e14b4cd708ab490d5d16887b5f1511c30f1670832e4d6e2c7d335847c"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/uVasUkyz/ForgeConfigAPIPort-v20.2.5-1.20.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v20.2.5-1.20.2-Fabric.jar",
@@ -3986,8 +3986,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "221ef5745d5df5b2d03bd636891dcbad956d653d62a183d5b62c46a65f482ba2d3e4cfed74c5eab46b00560109e2d44b1f1c1de468117d60ab161413d4af4d29",
-          "sha1": "59761402ca7701cf0b158385dee8dc9ab85380fd"
+          "sha1": "59761402ca7701cf0b158385dee8dc9ab85380fd",
+          "sha512": "221ef5745d5df5b2d03bd636891dcbad956d653d62a183d5b62c46a65f482ba2d3e4cfed74c5eab46b00560109e2d44b1f1c1de468117d60ab161413d4af4d29"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/RRZz6X5Y/ForgeConfigAPIPort-v20.2.4-1.20.2-NeoForge.jar",
         "filename": "ForgeConfigAPIPort-v20.2.4-1.20.2-NeoForge.jar",
@@ -4139,7 +4139,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.4.1-1.20.4] - 2024-01-10\n- Huge internal restructure, including new publications for NeoForge (for using Forge configs) and Forge (for using NeoForge configs)\n- The Fabric publication still includes all classes for both config systems, the api package has been split from `fuzs.forgeconfigapiport.api.config` into `fuzs.forgeconfigapiport.fabric.api.forge` and `fuzs.forgeconfigapiport.fabric.api.neoforge`\n- The common module is no longer published as `forgeconfigapiport-common`, instead there are now two common publications which are `forgeconfigapiport-common-forgeapi` and `forgeconfigapiport-common-neoforgeapi`\n### Added\n- Added `disableConfigWatcher` config option to both `ForgeConfigSpec` and `ModConfigSpec`\n### Changed\n- Updated ForgeConfigSpec with changes from [MinecraftForge#9810](https://github.com/MinecraftForge/MinecraftForge/pull/9810)\n### Fixed\n- Fixed `FileWatcher` hanging due to an invalid path when unloading server configs\n\n## [v20.4.0-1.20.4] - 2023-12-21\n- Updated to Minecraft 1.20.4 (thanks to [Girafi](https://github.com/GirafiStudios) for helping out!)\n- The mod version now is more streamlined by including the targeted Minecraft version (e.g. Minecraft 1.20.4 -> Mod Version 20.4.X)\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-01-10T16:54:21.297195Z",
-    "downloads": 1540,
+    "downloads": 1542,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4181,15 +4181,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.4.1-1.20.4] - 2024-01-10\n- Huge internal restructure, including new publications for NeoForge (for using Forge configs) and Forge (for using NeoForge configs)\n- The Fabric publication still includes all classes for both config systems, the api package has been split from `fuzs.forgeconfigapiport.api.config` into `fuzs.forgeconfigapiport.fabric.api.forge` and `fuzs.forgeconfigapiport.fabric.api.neoforge`\n- The common module is no longer published as `forgeconfigapiport-common`, instead there are now two common publications which are `forgeconfigapiport-common-forgeapi` and `forgeconfigapiport-common-neoforgeapi`\n### Added\n- Added `disableConfigWatcher` config option to both `ForgeConfigSpec` and `ModConfigSpec`\n### Changed\n- Updated ForgeConfigSpec with changes from [MinecraftForge#9810](https://github.com/MinecraftForge/MinecraftForge/pull/9810)\n### Fixed\n- Fixed `FileWatcher` hanging due to an invalid path when unloading server configs\n\n## [v20.4.0-1.20.4] - 2023-12-21\n- Updated to Minecraft 1.20.4 (thanks to [Girafi](https://github.com/GirafiStudios) for helping out!)\n- The mod version now is more streamlined by including the targeted Minecraft version (e.g. Minecraft 1.20.4 -> Mod Version 20.4.X)\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2024-01-10T16:54:13.84788Z",
-    "downloads": 5145,
+    "downloads": 5146,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3852a866f210cedfa3bd0836a984f371f6b8e4c8",
-          "sha512": "bf38aa2da04864a682277fa25cf883d64a56b234afe08af74321eb9b8b80b4aab9574500f423a25f51399f85acc8b288b332d2f6a816a5f4cae3e934c0ec947a"
+          "sha512": "bf38aa2da04864a682277fa25cf883d64a56b234afe08af74321eb9b8b80b4aab9574500f423a25f51399f85acc8b288b332d2f6a816a5f4cae3e934c0ec947a",
+          "sha1": "3852a866f210cedfa3bd0836a984f371f6b8e4c8"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/y5ADtIQp/ForgeConfigAPIPort-v20.4.1-1.20.4-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v20.4.1-1.20.4-Fabric.jar",
@@ -4229,7 +4229,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v20.4.0-1.20.4] - 2023-12-21\n- Updated to Minecraft 1.20.4 (thanks to [Girafi](https://github.com/GirafiStudios) for helping out!)\n- The mod version now is more streamlined by including the targeted Minecraft version (e.g. Minecraft 1.20.4 -> Mod Version 20.4.X)\n\n## [v9.1.2-1.20.2] - 2023-12-02\n### Changed\n- Server configs can now once again be read from a local world directory, when a config file is present (it has to be manually copied there)\n- New server config files are still only created in the global `.minecraft/config` directory\n- Refactored `fuzs.forgeconfigapiport.api.config.v3.ForgeConfigPaths`\n### Fixed\n- Fixed `ModConfigSpec` using a wrong package\n\n## [v9.1.1-1.20.2] - 2023-12-01\n### Fixed\n- Fixed `ForgeConfigSpec` still using the old name for NeoForge\n\n## [v9.1.0-1.20.2] - 2023-11-30\n### Added\n- Added support for the `net.neoforged` namespace in addition to `net.minecraftforge`\n- Support for Minecraft Forge will be dropped in the long term\n- At the moment config systems from both mod loaders are fully supported, except the `/config` command which now only works for NeoForge configs\n\n## [v9.0.0-1.20.2] - 2023-09-22\n- Ported to Minecraft 1.20.2\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2023-12-21T16:00:27.561549Z",
-    "downloads": 41443,
+    "downloads": 41460,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4277,7 +4277,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v9.1.2-1.20.2] - 2023-12-02\n### Changed\n- Server configs can now once again be read from a local world directory, when a config file is present (it has to be manually copied there)\n- New server config files are still only created in the global `.minecraft/config` directory\n- Refactored `fuzs.forgeconfigapiport.api.config.v3.ForgeConfigPaths`\n### Fixed\n- Fixed `ModConfigSpec` using a wrong package\n\n## [v9.1.1-1.20.2] - 2023-12-01\n### Fixed\n- Fixed `ForgeConfigSpec` still using the old name for NeoForge\n\n## [v9.1.0-1.20.2] - 2023-11-30\n### Added\n- Added support for the `net.neoforged` namespace in addition to `net.minecraftforge`\n- Support for Minecraft Forge will be dropped in the long term\n- At the moment config systems from both mod loaders are fully supported, except the `/config` command which now only works for NeoForge configs\n\n## [v9.0.0-1.20.2] - 2023-09-22\n- Ported to Minecraft 1.20.2\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2023-12-02T21:24:00.68445Z",
-    "downloads": 29594,
+    "downloads": 29597,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4332,8 +4332,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "fc64c3f7f2898525b3f7cc2bf5ef691f503cdf37bf0b405dbb9df1574471e48a5858934dad6fef627f09e21d3a8ffd3ab37e5e71bbe15b1ff9009fdc3839e2dd",
-          "sha1": "c88c2aedc0d488f974ee72e49b98a7cf762ced23"
+          "sha1": "c88c2aedc0d488f974ee72e49b98a7cf762ced23",
+          "sha512": "fc64c3f7f2898525b3f7cc2bf5ef691f503cdf37bf0b405dbb9df1574471e48a5858934dad6fef627f09e21d3a8ffd3ab37e5e71bbe15b1ff9009fdc3839e2dd"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/14GbpcF7/ForgeConfigAPIPort-v9.1.1-1.20.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v9.1.1-1.20.2-Fabric.jar",
@@ -4380,8 +4380,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5459b2b15706f017d3de6aed64a5f679c9d02a16",
-          "sha512": "eb99aa7e15b16ab150f816254f453bfb08835832770b51a4db0921a0276a254793a656185149bd657e592bfd2b231c20125e2a2f4087248492b7f08c40bbe6db"
+          "sha512": "eb99aa7e15b16ab150f816254f453bfb08835832770b51a4db0921a0276a254793a656185149bd657e592bfd2b231c20125e2a2f4087248492b7f08c40bbe6db",
+          "sha1": "5459b2b15706f017d3de6aed64a5f679c9d02a16"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/52l6IXEd/ForgeConfigAPIPort-v9.1.0-1.20.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v9.1.0-1.20.2-Fabric.jar",
@@ -4421,15 +4421,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v9.0.0-1.20] - 2023-09-22\n- Ported to Minecraft 1.20.2\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2023-09-21T22:19:31.748206Z",
-    "downloads": 82822,
+    "downloads": 82836,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "64b8168ec35549d37746d44c639f191e7c1a0851d20f51ced768520aa594456174dfab035e40f8d6afc06708335fe4dadd490d4941496914d1b46f011dcf3124",
-          "sha1": "e9471a5836daab325aaa9bd08759705f8de94545"
+          "sha1": "e9471a5836daab325aaa9bd08759705f8de94545",
+          "sha512": "64b8168ec35549d37746d44c639f191e7c1a0851d20f51ced768520aa594456174dfab035e40f8d6afc06708335fe4dadd490d4941496914d1b46f011dcf3124"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/f5d9VI72/ForgeConfigAPIPort-v9.0.0-1.20.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v9.0.0-1.20.2-Fabric.jar",
@@ -4469,7 +4469,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v7.0.0-1.20] - 2023-06-09\n- Ported to Minecraft 1.20\n### Changed-\n- [Night Config](https://github.com/TheElectronWill/night-config) is now shaded instead of being included via Jar-in-Jar to allow it to be removed from `fabric.mod.json`, which was causing issues in developement environments when Night Config wasn't retrieved from the official Maven, but instead production jars were used, e.g. from the Curse Maven\n- Note that Night Config is shaded without being relocated to a different package, which is necessary to stay consistent with Forge\n### Removed\n- Removed deprecated classes in `net.minecraftforge.api` package\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2023-06-12T19:09:21.383041Z",
-    "downloads": 6063356,
+    "downloads": 6066708,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4488,16 +4488,16 @@
     ],
     "dependencies": [
       {
-        "version_id": "nwy63zfI",
-        "project_id": "5WeWGLoJ",
-        "file_name": null,
-        "dependency_type": "optional"
-      },
-      {
         "version_id": "XheZ9iGK",
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": "nwy63zfI",
+        "project_id": "5WeWGLoJ",
+        "file_name": null,
+        "dependency_type": "optional"
       }
     ]
   },
@@ -4517,15 +4517,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v7.0.0-1.20] - 2023-06-09\n- Ported to Minecraft 1.20\n### Changed-\n- [Night Config](https://github.com/TheElectronWill/night-config) is now shaded instead of being included via Jar-in-Jar to allow it to be removed from `fabric.mod.json`, which was causing issues in developement environments when Night Config wasn't retrieved from the official Maven, but instead production jars were used, e.g. from the Curse Maven\n- Note that Night Config is shaded without being relocated to a different package, which is necessary to stay consistent with Forge\n### Removed\n- Removed deprecated classes in `net.minecraftforge.api` package\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2023-06-10T05:58:52.281699Z",
-    "downloads": 72469,
+    "downloads": 72507,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ddbfbf91a3cfd69cb2f31c67203ec26b2ae1a7acd7788a49283f3650e427ec28f458b67b50624dec977260e29894f3369d220308546c7e96460609f3f94feab2",
-          "sha1": "15b528e04d5db75ded0737610dc1bf519c72f520"
+          "sha1": "15b528e04d5db75ded0737610dc1bf519c72f520",
+          "sha512": "ddbfbf91a3cfd69cb2f31c67203ec26b2ae1a7acd7788a49283f3650e427ec28f458b67b50624dec977260e29894f3369d220308546c7e96460609f3f94feab2"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/ewYccCIi/ForgeConfigAPIPort-v7.0.0-1.20-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v7.0.0-1.20-Fabric.jar",
@@ -4620,8 +4620,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f17b608ff06ab0b6baa3beb46b3fa4015cda86ad1fa885b6e17e1772c6e228f6121629c856704f94f40f03338238a96e8fcce438cf5a1d716f19f1e36c64c91b",
-          "sha1": "2ccf2c98fb44d41ef02451c9fac6045e43dfda2d"
+          "sha1": "2ccf2c98fb44d41ef02451c9fac6045e43dfda2d",
+          "sha512": "f17b608ff06ab0b6baa3beb46b3fa4015cda86ad1fa885b6e17e1772c6e228f6121629c856704f94f40f03338238a96e8fcce438cf5a1d716f19f1e36c64c91b"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/nlcnay8A/ForgeConfigAPIPort-v7.0.0-1.20-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v7.0.0-1.20-Fabric.jar",
@@ -4703,15 +4703,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v6.0.2-1.19.4] - 2023-03-21\n### Fixed\n- The common maven publications is now deobfuscated to support any common multi-loader implementation and not just what is based on Quilt\n\n## [v6.0.1-1.19.4] - 2023-03-16\n### Changed\n- Replace `javax.annotation.Nullable` with `org.jetbrains.annotations.Nullable`\n\n## [v6.0.0-1.19.4] - 2023-03-16\n- Compiled for Minecraft 1.19.4\n### Removed\n- Removed a few deprecated methods in `fuzs.forgeconfigapiport.api.config.v2.ForgeConfigPaths`\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n[Configured]: https://www.curseforge.com/minecraft/mc-mods/configured-fabric\n",
     "changelog_url": null,
     "date_published": "2023-03-22T10:06:21.217672Z",
-    "downloads": 120517,
+    "downloads": 120566,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "38a0aacd1b59f452622038a0e86bfeecd63f2bbe6726274042d5a93c19e11e3ff7c2b8d8528444ebfa061178783b7e26eb017ea9f6adf94d78601ed148a1d1ea",
-          "sha1": "3feea15d1bb0d9b6644cf3ac7465bb9e031efa84"
+          "sha1": "3feea15d1bb0d9b6644cf3ac7465bb9e031efa84",
+          "sha512": "38a0aacd1b59f452622038a0e86bfeecd63f2bbe6726274042d5a93c19e11e3ff7c2b8d8528444ebfa061178783b7e26eb017ea9f6adf94d78601ed148a1d1ea"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/2TybfFU8/ForgeConfigAPIPort-v6.0.2-1.19.4-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v6.0.2-1.19.4-Fabric.jar",
@@ -4721,8 +4721,8 @@
       },
       {
         "hashes": {
-          "sha512": "85cfd5cd7ef843134b1512ba4b59664622d2b3f54f5b56fadc1125a3241eaad14b883d10c53573e3f37a82ec9a508e3f3111971016567280239e6c922e5b041e",
-          "sha1": "7ecd032a5e95761f5c82c6d59100b73faabebb05"
+          "sha1": "7ecd032a5e95761f5c82c6d59100b73faabebb05",
+          "sha512": "85cfd5cd7ef843134b1512ba4b59664622d2b3f54f5b56fadc1125a3241eaad14b883d10c53573e3f37a82ec9a508e3f3111971016567280239e6c922e5b041e"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/2TybfFU8/ForgeConfigAPIPort-v6.0.2-1.19.4-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v6.0.2-1.19.4-Fabric-sources.jar",
@@ -4762,15 +4762,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v5.0.11-1.19.3] - 2023-03-21\n### Fixed\n- The common maven publications is now deobfuscated to support any common multi-loader implementation and not just what is based on Quilt\n\n## [v5.0.10-1.19.3] - 2023-03-16\n### Added\n- Added `correctConfigValuesFromDefaultConfig` option from [Night Config Fixes](https://www.curseforge.com/minecraft/mc-mods/night-config-fixes) mod\n- Will ensure corrected values are restored from a potentially present config file in `defaultconfigs` instead of using built-in default values \n\n## [v5.0.9-1.19.3] - 2023-02-05\n### Fixed\n- Remove accidental test code\n\n## [v5.0.8-1.19.3] - 2023-02-05\n### Fixed\n- Fixed an issue with compile time dependencies missing from Maven publication\n\n## [v5.0.7-1.19.3] - 2023-01-28\n### Changed\n- The `/config` command now is registered as a client-side command to prevent issues with local multiplayer when vanilla clients are trying to connect (thanks for the suggestion [DJtheRedstoner](https://github.com/DJtheRedstoner)!)\n- As a result Forge Config API Port's `disableConfigCommand` config option has become obsolete and was therefore removed\n- Some further improvements to the `/config` command itself\n  - Invalid suggestions for mod id are no longer shown\n  - Supports multiple configs per config type for a single mod (if present)\n  - Disabled access to server configs when playing on a dedicated server which would throw an exception before \n- Deprecated Forge's config command implementation, it is no longer used and will be removed in the future as it's not a relevant part of the api\n\n## [v5.0.6-1.19.3] - 2023-01-09\n### Fixed\n- Fixed faulty Fabric maven publication from previous release\n\n## [v5.0.5-1.19.3] - 2023-01-09\n### Fixed\n- Update `fuzs.forgeconfigapiport.impl.util.ReflectionHelper` to fix crash with the Configured mod when editing a value that does not have a valid `net.minecraftforge.common.ForgeConfigSpec$Range`\n\n## [v5.0.4-1.19.3] - 2023-01-07\n### Changed\n- Server configs are now loaded before everything else in Fabric's `ServerLifecycleEvents#SERVER_STARTING` callback, and are unloaded after everything in `ServerLifecycleEvents#SERVER_STOPPED` via custom event phases (thanks to [SquidDev](https://github.com/SquidDev)!)\n- Sources are once again published to CurseForge and Modrinth\n### Fixed\n- Removed test config accidentally included with the last release\n\n## [v5.0.3-1.19.3] - 2022-12-23\n### Fixed\n- Fixed invalid mixin file reference in jar published to Maven\n\n## [v5.0.2-1.19.3] - 2022-12-23\n### Changed\n- Some internal restructuring to move more code to the common project, to allow for easier Quilt support when it's ready\n\n## [v5.0.1-1.19.3] - 2022-12-22\n### Fixed\n- Fixed Maven jar containing an unprocessed `fabric.mod.json`\n- Fixed optional mods missing from CurseForge and Modrinth publications\n\n## [v5.0.0-1.19.3] - 2022-12-21\nThis version includes major changes and refactors regarding the whole structure of Forge Config Api Port, most notably a reorganization into a multi-loader project (with separate publications for a common and Fabric Gradle project); as well as moving all classes and code not present on Forge to a separate domain (`fuzs.forgeconfigapiport`).\n### Added\n- Forge Config Api Port now includes a config file itself which includes the following options:\n  - An option to set the `defaultsconfigs` directory (just like Forge, not that it's too useful)\n  - An option to force server configs to generate in and load from the standard config directory (`.minecraft/config/`), so those configs are no longer world specific, but can be accessed much easier by users\n  - An option to manually prevent the custom `/config` command for opening local config files from being registered, intended to be used when hosting a LAN world to allow clients without this mod to connect\n  - An option to apply a workaround for the `com.electronwill.nightconfig.core.io.ParsingException: Not enough data available` (an issue when reading local config files from malformed/corrupted file, which apparently appears quite often)\n### Changed\n- Forge Config Api Port now comes with two publications: `forgeconfigapiport-common` and `forgeconfigapiport-fabric`. When developing a mod for Fabric only, simply keep using `forgeconfigapiport-fabric`, nothing different from before. But when developing a mod for both Forge and Fabric simultaneously using a multi-loader setup, `forgeconfigapiport-common` comes in handy for the common project, as it enables using most config related classes in that part of the project, really just config registration is what's left for the mod loader specific projects.\n- Classes not originally found in Forge now use a separate domain `fuzs.forgeconfigapiport` with a similar structure to Fabric Api (divided into `api`, `impl`, and `mixin`)\n- `fuzs.forgeconfigapiport` also is the new domain used for the Maven distribution\n- The `api` package at `net.minecraftforge.api` has been moved to the new domain at `fuzs.forgeconfigapiport.api` and refactored:\n  - `net.minecraftforge.api.ModLoadingContext` -> `fuzs.forgeconfigapiport.api.config.v2.ForgeConfigRegistry`: Same as before, methods have been renamed from `registerConfig` to simply `register` though and registration needs an instance from `ForgeConfigRegistry#INSTANCE`.\n  - `net.minecraftforge.api.ConfigPaths` -> `fuzs.forgeconfigapiport.api.config.v2.ForgeConfigPaths`: Overhauled, includes helper methods for getting default paths for all config types, also provides the full file path, not just the directory name.\n  - `net.minecraftforge.api.fml.event.config.ModConfigEvents` -> `fuzs.forgeconfigapiport.api.config.v2.ModConfigEvents`: No changes, class has only been moved.\n- All implementation related classes have been compacted and moved to `fuzs.forgeconfigapiport.impl`\n- Mixin related classes have been moved to `fuzs.forgeconfigapiport.mixin`\n### Removed\n- This version also comes with many removals and deprecations, mainly the WIP Forge config screens have been removed, as they were barely functional and the PR on Forge's GitHub has seemingly been abandoned. As an alternative for in-game configuration, Forge Config Api Port includes default support for and recommends the [Configured (Fabric)](https://www.curseforge.com/minecraft/mc-mods/configured-fabric) mod.\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n[Configured]: https://www.curseforge.com/minecraft/mc-mods/configured-fabric\n",
     "changelog_url": null,
     "date_published": "2023-03-22T10:00:46.550233Z",
-    "downloads": 21514,
+    "downloads": 21523,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f7de03448f9e08e963384dde5cb4c97d624155fb",
-          "sha512": "4683700e66439de9baa0c8a9985201fe56cda9d633e4986acc170a43626e6690e4e750ce17f16469b52872ebdd87c9aeda1d23dbd4067289f4e0132359b104ca"
+          "sha512": "4683700e66439de9baa0c8a9985201fe56cda9d633e4986acc170a43626e6690e4e750ce17f16469b52872ebdd87c9aeda1d23dbd4067289f4e0132359b104ca",
+          "sha1": "f7de03448f9e08e963384dde5cb4c97d624155fb"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/MkqOn4Yc/ForgeConfigAPIPort-v5.0.11-1.19.3-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v5.0.11-1.19.3-Fabric.jar",
@@ -4839,8 +4839,8 @@
       },
       {
         "hashes": {
-          "sha512": "976f42d0fcc5833e8a3e6d3ccf603adfba2666a64eab6bb4bf6167e763fab877e24064eab261ccb7f5ba38d5686aba7f714b187672714ab2819cc1ae940df656",
-          "sha1": "1b6a33ae64421d026ca1a1171bf1e0a9c36ed107"
+          "sha1": "1b6a33ae64421d026ca1a1171bf1e0a9c36ed107",
+          "sha512": "976f42d0fcc5833e8a3e6d3ccf603adfba2666a64eab6bb4bf6167e763fab877e24064eab261ccb7f5ba38d5686aba7f714b187672714ab2819cc1ae940df656"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/ou26o2qg/ForgeConfigAPIPort-v6.0.1-1.19.4-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v6.0.1-1.19.4-Fabric-sources.jar",
@@ -4957,8 +4957,8 @@
       },
       {
         "hashes": {
-          "sha512": "d82ccba6828a68abb6acf5d58deec3c8c68695bd44d0d85c390960b9bfc3238df02b9704c3b1490fc4401cd439b159114d127672745b1691a46cb67650b67f4a",
-          "sha1": "b16e99933d98c6bae640824b98b055547cf4681c"
+          "sha1": "b16e99933d98c6bae640824b98b055547cf4681c",
+          "sha512": "d82ccba6828a68abb6acf5d58deec3c8c68695bd44d0d85c390960b9bfc3238df02b9704c3b1490fc4401cd439b159114d127672745b1691a46cb67650b67f4a"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/TFLCxTVc/ForgeConfigAPIPort-v5.0.10-1.19.3-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v5.0.10-1.19.3-Fabric-sources.jar",
@@ -5001,15 +5001,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v4.2.11-1.19.2] - 2023-02-18\n### Fixed\n- Backported some changes to the `/config` command making it fully client-side to fix issues with command argument serialization\n\n## [v4.2.10-1.19.2] - 2023-01-09\n### Fixed\n- Update `fuzs.forgeconfigapiport.impl.util.ReflectionHelper` to fix crash with the Configured mod when editing a value that does not have a valid `net.minecraftforge.common.ForgeConfigSpec$Range`\n\n## [v4.2.9-1.19.2] - 2022-12-07\n### Fixed\n- Fixed maven publication depending on Night Config as a mod at runtime\n\n## [v4.2.8-1.19.2] - 2022-12-07\n### Fixed\n- Fixed maven publication depending on Configured mod when it's actually just optional\n\n## [v4.2.7-1.19.2] - 2022-11-22\n### Added\n- Added a callback that fires when server configs are unloading \n- Added support for the [Configured] mod, it will automatically provide config screens to replace the built-in ones when installed\n### Fixed\n- Fixed a race condition with unloading server config\n\n## [v4.2.6-1.19.2] - 2022-08-31\n### Fixed\n- Fixed crash when a config screen attempts to handle unsupported config value types\n\n## [v4.2.5-1.19.2] - 2022-08-31\n### Added\n- Added a new `ModConfigEvents` class which is the new way of handling mod config events (loading and reloading), to ensure config events are only accessed on a mod specific basis\n- The old `ModConfigEvent` class is now deprecated for removal in the next major release for 1.20\n### Changed\n- Reverted minor internal removals from previous version to ensure compatibility with mods using those internals; they are deprecated now instead\n- Added a bunch of `@ApiStatus` annotations to ensure mods are only accessing the parts of the library they are meant to\n- This will be overhauled in the next major release for 1.20 to move some internals to a dedicated `impl` domain\n\n## [v4.2.4-1.19.2] - 2022-08-30\n- Resolved issues regarding the license of Forge\n### Changed\n- Ported more changes from Forge's config screens\n- Switched remaining loggers from Log4j to SLF4J\n\n## [v4.2.3-1.19.2] - 2022-08-22\n### Fixed\n- Fixed config screen crashing for config values without a widget factory\n\n## [v4.2.2-1.19.2] - 2022-08-21\n### Fixed\n- Added missing translation keys when cancelling config editing\n\n## [v4.2.1-1.19.2] - 2022-08-21\n### Changed\n- Ported most recent changes from Forge's config screens\n### Fixed\n- Fixed minimum Minecraft version requirement\n- Fixed multiple entries being selected in gui lists\n\n## [v4.2.0-1.19.2] - 2022-08-20\n- Compiled for Minecraft 1.19.2\n### Changed\n- Fabric Api is no longer bundled again, was causing issues with Quilt and was an inconvenience when bundling the mod as jar-in-jar\n### Fixed\n- Fixed missing sub-folders not being created for configs not in the main config directory\n\n## [v4.1.4-1.19.1] - 2022-08-02\n### Fixed\n- Fixed required version of Fabric Api\n\n## [v4.1.3-1.19.1] - 2022-07-31\n- Include Fabric Lifecycle Events which is also required\n\n## [v4.1.2-1.19.1] - 2022-07-28\n- Now requires Minecraft 1.19.1 or newer\n### Fixed\n- Fix start-up crash due to wrong mixin file location in publishing jar\n\n## [v4.1.1-1.19.1] - 2022-07-28\n- Re-compile to update outdated files\n\n## [v4.1.0-1.19.1] - 2022-07-28\n- Compiled for Minecraft 1.19.1\n### Added\n- Added native config screens from Forge (they are extremely buggy, so consider this an alpha, also requires Mod Menu to become accessible)\n### Changed\n- Ported `ForgeConfigSpec` changes from Forge\n- Fabric API is no longer a dependency, relevant modules are included in the jar now\n\n## [v4.0.2-1.19] - 2022-07-28\n### Fixed\n- Fixed Mod Menu being required as a Maven dependency when it's actually just optional\n\n## [v4.0.1-1.19] - 2022-07-27\n### Changed\n- Maven publication no longer depends on Night Config as a Fabric mod\n\n## [v4.0.0-1.19] - 2022-06-08\n- Ported to Minecraft 1.19\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n[Configured]: https://www.curseforge.com/minecraft/mc-mods/configured-fabric",
     "changelog_url": null,
     "date_published": "2023-02-18T17:50:54.917542Z",
-    "downloads": 791315,
+    "downloads": 791698,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "00d05a6d57ee557ab216de5527e1434e3cf50c24",
-          "sha512": "bc6c8c703c47972aa232616bb3cbcd2602a68c00be09bce55608904eedd7088b221516893c4a46fc5fd660bf1f08d46a011426a0a4ad6606a9eefbff2c674f7a"
+          "sha512": "bc6c8c703c47972aa232616bb3cbcd2602a68c00be09bce55608904eedd7088b221516893c4a46fc5fd660bf1f08d46a011426a0a4ad6606a9eefbff2c674f7a",
+          "sha1": "00d05a6d57ee557ab216de5527e1434e3cf50c24"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/3VCgXZ79/ForgeConfigAPIPort-v4.2.11-1.19.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v4.2.11-1.19.2-Fabric.jar",
@@ -5019,8 +5019,8 @@
       },
       {
         "hashes": {
-          "sha512": "2f08e7759ecf8150e91617062676755c66e78032f12984bc2e2b45e34f98724a50b15c9aa199074cd671ffee95474e84bb847e31d47e55bedf8f987801c06fa0",
-          "sha1": "4b7104402b23280fdfc3956ca12ed190c8675f9f"
+          "sha1": "4b7104402b23280fdfc3956ca12ed190c8675f9f",
+          "sha512": "2f08e7759ecf8150e91617062676755c66e78032f12984bc2e2b45e34f98724a50b15c9aa199074cd671ffee95474e84bb847e31d47e55bedf8f987801c06fa0"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/3VCgXZ79/ForgeConfigAPIPort-v4.2.11-1.19.2-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v4.2.11-1.19.2-Fabric-sources.jar",
@@ -5078,8 +5078,8 @@
       },
       {
         "hashes": {
-          "sha1": "25944597de0c7ba712362ce839536ecacd48fae6",
-          "sha512": "d88af42c5adfc1558a476aeee94bd4a04b894b295003f1e8f03e3942bc068285cef0a4ac6c502c802e3db2eaa7df9c0165f88e4953df755e7f3bab0a3ae29c29"
+          "sha512": "d88af42c5adfc1558a476aeee94bd4a04b894b295003f1e8f03e3942bc068285cef0a4ac6c502c802e3db2eaa7df9c0165f88e4953df755e7f3bab0a3ae29c29",
+          "sha1": "25944597de0c7ba712362ce839536ecacd48fae6"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/6J0K7FyD/ForgeConfigAPIPort-v5.0.9-1.19.3-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v5.0.9-1.19.3-Fabric-sources.jar",
@@ -5090,16 +5090,16 @@
     ],
     "dependencies": [
       {
-        "version_id": "id0aLmxO",
-        "project_id": "mOgUt4GM",
-        "file_name": null,
-        "dependency_type": "optional"
-      },
-      {
         "version_id": "jyKnHEDY",
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": "id0aLmxO",
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
       }
     ]
   },
@@ -5137,8 +5137,8 @@
       },
       {
         "hashes": {
-          "sha512": "897c0580787e975329152ba144e7cbee3741597fc55f55546e4ad00a16b9c3d0f5b59bb6ac6e48d62a7fda0001b801902b2b3d933b2ad2c0122637c46e335687",
-          "sha1": "6cd1ed317e4e48086bba53ea85355dba66c60f71"
+          "sha1": "6cd1ed317e4e48086bba53ea85355dba66c60f71",
+          "sha512": "897c0580787e975329152ba144e7cbee3741597fc55f55546e4ad00a16b9c3d0f5b59bb6ac6e48d62a7fda0001b801902b2b3d933b2ad2c0122637c46e335687"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/cjmImt9R/ForgeConfigAPIPort-v5.0.7-1.19.3-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v5.0.7-1.19.3-Fabric-sources.jar",
@@ -5196,8 +5196,8 @@
       },
       {
         "hashes": {
-          "sha512": "4582d638218b51388f2b5cdeb17d45ee343389d9895061a9ab902b47f7774211a9397a0da9e8b72830213199a83341c96a4a753cdf6b1d106c16a07576279724",
-          "sha1": "14e3ef2de2f9233f729502cc8508643f0ac51e14"
+          "sha1": "14e3ef2de2f9233f729502cc8508643f0ac51e14",
+          "sha512": "4582d638218b51388f2b5cdeb17d45ee343389d9895061a9ab902b47f7774211a9397a0da9e8b72830213199a83341c96a4a753cdf6b1d106c16a07576279724"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/alqrny5V/ForgeConfigAPIPort-v5.0.6-1.19.3-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v5.0.6-1.19.3-Fabric-sources.jar",
@@ -5299,7 +5299,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v4.2.10-1.19.2] - 2023-01-09\n### Fixed\n- Update `fuzs.forgeconfigapiport.impl.util.ReflectionHelper` to fix crash with the Configured mod when editing a value that does not have a valid `net.minecraftforge.common.ForgeConfigSpec$Range`\n\n## [v4.2.9-1.19.2] - 2022-12-07\n### Fixed\n- Fixed maven publication depending on Night Config as a mod at runtime\n\n## [v4.2.8-1.19.2] - 2022-12-07\n### Fixed\n- Fixed maven publication depending on Configured mod when it's actually just optional\n\n## [v4.2.7-1.19.2] - 2022-11-22\n### Added\n- Added a callback that fires when server configs are unloading \n- Added support for the [Configured] mod, it will automatically provide config screens to replace the built-in ones when installed\n### Fixed\n- Fixed a race condition with unloading server config\n\n## [v4.2.6-1.19.2] - 2022-08-31\n### Fixed\n- Fixed crash when a config screen attempts to handle unsupported config value types\n\n## [v4.2.5-1.19.2] - 2022-08-31\n### Added\n- Added a new `ModConfigEvents` class which is the new way of handling mod config events (loading and reloading), to ensure config events are only accessed on a mod specific basis\n- The old `ModConfigEvent` class is now deprecated for removal in the next major release for 1.20\n### Changed\n- Reverted minor internal removals from previous version to ensure compatibility with mods using those internals; they are deprecated now instead\n- Added a bunch of `@ApiStatus` annotations to ensure mods are only accessing the parts of the library they are meant to\n- This will be overhauled in the next major release for 1.20 to move some internals to a dedicated `impl` domain\n\n## [v4.2.4-1.19.2] - 2022-08-30\n- Resolved issues regarding the license of Forge\n### Changed\n- Ported more changes from Forge's config screens\n- Switched remaining loggers from Log4j to SLF4J\n\n## [v4.2.3-1.19.2] - 2022-08-22\n### Fixed\n- Fixed config screen crashing for config values without a widget factory\n\n## [v4.2.2-1.19.2] - 2022-08-21\n### Fixed\n- Added missing translation keys when cancelling config editing\n\n## [v4.2.1-1.19.2] - 2022-08-21\n### Changed\n- Ported most recent changes from Forge's config screens\n### Fixed\n- Fixed minimum Minecraft version requirement\n- Fixed multiple entries being selected in gui lists\n\n## [v4.2.0-1.19.2] - 2022-08-20\n- Compiled for Minecraft 1.19.2\n### Changed\n- Fabric Api is no longer bundled again, was causing issues with Quilt and was an inconvenience when bundling the mod as jar-in-jar\n### Fixed\n- Fixed missing sub-folders not being created for configs not in the main config directory\n\n## [v4.1.4-1.19.1] - 2022-08-02\n### Fixed\n- Fixed required version of Fabric Api\n\n## [v4.1.3-1.19.1] - 2022-07-31\n- Include Fabric Lifecycle Events which is also required\n\n## [v4.1.2-1.19.1] - 2022-07-28\n- Now requires Minecraft 1.19.1 or newer\n### Fixed\n- Fix start-up crash due to wrong mixin file location in publishing jar\n\n## [v4.1.1-1.19.1] - 2022-07-28\n- Re-compile to update outdated files\n\n## [v4.1.0-1.19.1] - 2022-07-28\n- Compiled for Minecraft 1.19.1\n### Added\n- Added native config screens from Forge (they are extremely buggy, so consider this an alpha, also requires Mod Menu to become accessible)\n### Changed\n- Ported `ForgeConfigSpec` changes from Forge\n- Fabric API is no longer a dependency, relevant modules are included in the jar now\n\n## [v4.0.2-1.19] - 2022-07-28\n### Fixed\n- Fixed Mod Menu being required as a Maven dependency when it's actually just optional\n\n## [v4.0.1-1.19] - 2022-07-27\n### Changed\n- Maven publication no longer depends on Night Config as a Fabric mod\n\n## [v4.0.0-1.19] - 2022-06-08\n- Ported to Minecraft 1.19\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n[Configured]: https://www.curseforge.com/minecraft/mc-mods/configured-fabric",
     "changelog_url": null,
     "date_published": "2023-01-09T12:48:35.343832Z",
-    "downloads": 33607,
+    "downloads": 33618,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5424,8 +5424,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d8807c7e77cfe4cf299b52f2440eecc3af9193d0",
-          "sha512": "f9860811b7336dda3e5aa0b60f88bbd710b6b6e7d3a8dd618bd2a73b1248c0b2e68db6db7518725e027de9b5544cf90df22554a2fd9e5fa1eadc7aaa8aa7309c"
+          "sha512": "f9860811b7336dda3e5aa0b60f88bbd710b6b6e7d3a8dd618bd2a73b1248c0b2e68db6db7518725e027de9b5544cf90df22554a2fd9e5fa1eadc7aaa8aa7309c",
+          "sha1": "d8807c7e77cfe4cf299b52f2440eecc3af9193d0"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/tlNCwMwZ/ForgeConfigAPIPort-v5.0.3-1.19.3-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v5.0.3-1.19.3-Fabric.jar",
@@ -5561,15 +5561,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v5.0.0-1.19.3] - 2022-12-21\nThis version includes major changes and refactors regarding the whole structure of Forge Config Api Port, most notably a reorganization into a multi-loader project (with separate publications for a common and Fabric Gradle project); as well as moving all classes and code not present on Forge to a separate domain (`fuzs.forgeconfigapiport`).\n### Added\n- Forge Config Api Port now includes a config file itself which includes the following options:\n  - An option to set the `defaultsconfigs` directory (just like Forge, not that it's too useful)\n  - An option to force server configs to generate in and load from the standard config directory (`.minecraft/config/`), so those configs are no longer world specific, but can be accessed much easier by users\n  - An option to manually prevent the custom `/config` command for opening local config files from being registered, intended to be used when hosting a LAN world to allow clients without this mod to connect\n  - An option to apply a workaround for the `com.electronwill.nightconfig.core.io.ParsingException: Not enough data available` (an issue when reading local config files from malformed/corrupted file, which apparently appears quite often)\n### Changed\n- Forge Config Api Port now comes with two publications: `forgeconfigapiport-common` and `forgeconfigapiport-fabric`. When developing a mod for Fabric only, simply keep using `forgeconfigapiport-fabric`, nothing different from before. But when developing a mod for both Forge and Fabric simultaneously using a multi-loader setup, `forgeconfigapiport-common` comes in handy for the common project, as it enables using most config related classes in that part of the project, really just config registration is what's left for the mod loader specific projects.\n- Classes not originally found in Forge now use a separate domain `fuzs.forgeconfigapiport` with a similar structure to Fabric Api (divided into `api`, `impl`, and `mixin`)\n- `fuzs.forgeconfigapiport` also is the new domain used for the Maven distribution\n- The `api` package at `net.minecraftforge.api` has been moved to the new domain at `fuzs.forgeconfigapiport.api` and refactored:\n  - `net.minecraftforge.api.ModLoadingContext` -> `fuzs.forgeconfigapiport.api.config.v2.ForgeConfigRegistry`: Same as before, methods have been renamed from `registerConfig` to simply `register` though and registration needs an instance from `ForgeConfigRegistry#INSTANCE`.\n  - `net.minecraftforge.api.ConfigPaths` -> `fuzs.forgeconfigapiport.api.config.v2.ForgeConfigPaths`: Overhauled, includes helper methods for getting default paths for all config types, also provides the full file path, not just the directory name.\n  - `net.minecraftforge.api.fml.event.config.ModConfigEvents` -> `fuzs.forgeconfigapiport.api.config.v2.ModConfigEvents`: No changes, class has only been moved.\n- All implementation related classes have been compacted and moved to `fuzs.forgeconfigapiport.impl`\n- Mixin related classes have been moved to `fuzs.forgeconfigapiport.mixin`\n### Removed\n- This version also comes with many removals and deprecations, mainly the WIP Forge config screens have been removed, as they were barely functional and the PR on Forge's GitHub has seemingly been abandoned. As an alternative for in-game configuration, Forge Config Api Port includes default support for and recommends the [Configured (Fabric)](https://www.curseforge.com/minecraft/mc-mods/configured-fabric) mod.\n\n## [v4.2.9-1.19.2] - 2022-12-07\n### Fixed\n- Fixed maven publication depending on Night Config as a mod at runtime\n\n## [v4.2.8-1.19.2] - 2022-12-07\n### Fixed\n- Fixed maven publication depending on Configured mod when it's actually just optional\n\n## [v4.2.7-1.19.2] - 2022-11-22\n### Added\n- Added a callback that fires when server configs are unloading \n- Added support for the [Configured] mod, it will automatically provide config screens to replace the built-in ones when installed\n### Fixed\n- Fixed a race condition with unloading server config\n\n## [v4.2.6-1.19.2] - 2022-08-31\n### Fixed\n- Fixed crash when a config screen attempts to handle unsupported config value types\n\n## [v4.2.5-1.19.2] - 2022-08-31\n### Added\n- Added a new `ModConfigEvents` class which is the new way of handling mod config events (loading and reloading), to ensure config events are only accessed on a mod specific basis\n- The old `ModConfigEvent` class is now deprecated for removal in the next major release for 1.20\n### Changed\n- Reverted minor internal removals from previous version to ensure compatibility with mods using those internals; they are deprecated now instead\n- Added a bunch of `@ApiStatus` annotations to ensure mods are only accessing the parts of the library they are meant to\n- This will be overhauled in the next major release for 1.20 to move some internals to a dedicated `impl` domain\n\n## [v4.2.4-1.19.2] - 2022-08-30\n- Resolved issues regarding the license of Forge\n### Changed\n- Ported more changes from Forge's config screens\n- Switched remaining loggers from Log4j to SLF4J\n\n## [v4.2.3-1.19.2] - 2022-08-22\n### Fixed\n- Fixed config screen crashing for config values without a widget factory\n\n## [v4.2.2-1.19.2] - 2022-08-21\n### Fixed\n- Added missing translation keys when cancelling config editing\n\n## [v4.2.1-1.19.2] - 2022-08-21\n### Changed\n- Ported most recent changes from Forge's config screens\n### Fixed\n- Fixed minimum Minecraft version requirement\n- Fixed multiple entries being selected in gui lists\n\n## [v4.2.0-1.19.2] - 2022-08-20\n- Compiled for Minecraft 1.19.2\n### Changed\n- Fabric Api is no longer bundled again, was causing issues with Quilt and was an inconvenience when bundling the mod as jar-in-jar\n### Fixed\n- Fixed missing sub-folders not being created for configs not in the main config directory\n\n## [v4.1.4-1.19.1] - 2022-08-02\n### Fixed\n- Fixed required version of Fabric Api\n\n## [v4.1.3-1.19.1] - 2022-07-31\n- Include Fabric Lifecycle Events which is also required\n\n## [v4.1.2-1.19.1] - 2022-07-28\n- Now requires Minecraft 1.19.1 or newer\n### Fixed\n- Fix start-up crash due to wrong mixin file location in publishing jar\n\n## [v4.1.1-1.19.1] - 2022-07-28\n- Re-compile to update outdated files\n\n## [v4.1.0-1.19.1] - 2022-07-28\n- Compiled for Minecraft 1.19.1\n### Added\n- Added native config screens from Forge (they are extremely buggy, so consider this an alpha, also requires Mod Menu to become accessible)\n### Changed\n- Ported `ForgeConfigSpec` changes from Forge\n- Fabric API is no longer a dependency, relevant modules are included in the jar now\n\n## [v4.0.2-1.19] - 2022-07-28\n### Fixed\n- Fixed Mod Menu being required as a Maven dependency when it's actually just optional\n\n## [v4.0.1-1.19] - 2022-07-27\n### Changed\n- Maven publication no longer depends on Night Config as a Fabric mod\n\n## [v4.0.0-1.19] - 2022-06-08\n- Ported to Minecraft 1.19\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n[Configured]: https://www.curseforge.com/minecraft/mc-mods/configured-fabric",
     "changelog_url": null,
     "date_published": "2022-12-21T22:20:38.027005Z",
-    "downloads": 145,
+    "downloads": 146,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "8e3aa8aec9a76ca183dbc097a77448a90c00b23c",
-          "sha512": "cd4c061ce5d0173c5f0bbd003500fc34a9dfceab0191f45c5eb89bdbb2e35e9b766fb7102b7cebb18a5ecae048305260f8ac61377eb3c4bdfca0f96ad7554cff"
+          "sha512": "cd4c061ce5d0173c5f0bbd003500fc34a9dfceab0191f45c5eb89bdbb2e35e9b766fb7102b7cebb18a5ecae048305260f8ac61377eb3c4bdfca0f96ad7554cff",
+          "sha1": "8e3aa8aec9a76ca183dbc097a77448a90c00b23c"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/H1LkHOeQ/ForgeConfigAPIPort-v5.0.0-1.19.3-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v5.0.0-1.19.3-Fabric.jar",
@@ -5606,7 +5606,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v4.2.9-1.19.2] - 2022-12-07\n### Fixed\n- Fixed maven publication depending on Night Config as a mod at runtime\n\n## [v4.2.8-1.19.2] - 2022-12-07\n### Fixed\n- Fixed maven publication depending on Configured mod when it's actually just optional\n\n## [v4.2.7-1.19.2] - 2022-11-22\n### Added\n- Added a callback that fires when server configs are unloading \n- Added support for the [Configured] mod, it will automatically provide config screens to replace the built-in ones when installed\n### Fixed\n- Fixed a race condition with unloading server config\n\n## [v4.2.6-1.19.2] - 2022-08-31\n### Fixed\n- Fixed crash when a config screen attempts to handle unsupported config value types\n\n## [v4.2.5-1.19.2] - 2022-08-31\n### Added\n- Added a new `ModConfigEvents` class which is the new way of handling mod config events (loading and reloading), to ensure config events are only accessed on a mod specific basis\n- The old `ModConfigEvent` class is now deprecated for removal in the next major release for 1.20\n### Changed\n- Reverted minor internal removals from previous version to ensure compatibility with mods using those internals; they are deprecated now instead\n- Added a bunch of `@ApiStatus` annotations to ensure mods are only accessing the parts of the library they are meant to\n- This will be overhauled in the next major release for 1.20 to move some internals to a dedicated `impl` domain\n\n## [v4.2.4-1.19.2] - 2022-08-30\n- Resolved issues regarding the license of Forge\n### Changed\n- Ported more changes from Forge's config screens\n- Switched remaining loggers from Log4j to SLF4J\n\n## [v4.2.3-1.19.2] - 2022-08-22\n### Fixed\n- Fixed config screen crashing for config values without a widget factory\n\n## [v4.2.2-1.19.2] - 2022-08-21\n### Fixed\n- Added missing translation keys when cancelling config editing\n\n## [v4.2.1-1.19.2] - 2022-08-21\n### Changed\n- Ported most recent changes from Forge's config screens\n### Fixed\n- Fixed minimum Minecraft version requirement\n- Fixed multiple entries being selected in gui lists\n\n## [v4.2.0-1.19.2] - 2022-08-20\n- Compiled for Minecraft 1.19.2\n### Changed\n- Fabric Api is no longer bundled again, was causing issues with Quilt and was an inconvenience when bundling the mod as jar-in-jar\n### Fixed\n- Fixed missing sub-folders not being created for configs not in the main config directory\n\n## [v4.1.4-1.19.1] - 2022-08-02\n### Fixed\n- Fixed required version of Fabric Api\n\n## [v4.1.3-1.19.1] - 2022-07-31\n- Include Fabric Lifecycle Events which is also required\n\n## [v4.1.2-1.19.1] - 2022-07-28\n- Now requires Minecraft 1.19.1 or newer\n### Fixed\n- Fix start-up crash due to wrong mixin file location in publishing jar\n\n## [v4.1.1-1.19.1] - 2022-07-28\n- Re-compile to update outdated files\n\n## [v4.1.0-1.19.1] - 2022-07-28\n- Compiled for Minecraft 1.19.1\n### Added\n- Added native config screens from Forge (they are extremely buggy, so consider this an alpha, also requires Mod Menu to become accessible)\n### Changed\n- Ported `ForgeConfigSpec` changes from Forge\n- Fabric API is no longer a dependency, relevant modules are included in the jar now\n\n## [v4.0.2-1.19] - 2022-07-28\n### Fixed\n- Fixed Mod Menu being required as a Maven dependency when it's actually just optional\n\n## [v4.0.1-1.19] - 2022-07-27\n### Changed\n- Maven publication no longer depends on Night Config as a Fabric mod\n\n## [v4.0.0-1.19] - 2022-06-08\n- Ported to Minecraft 1.19\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n[Configured]: https://www.curseforge.com/minecraft/mc-mods/configured-fabric",
     "changelog_url": null,
     "date_published": "2022-12-07T19:34:44.555677Z",
-    "downloads": 4216,
+    "downloads": 4218,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5668,7 +5668,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v4.2.7-1.19.2] - 2022-11-22\n### Added\n- Added a callback that fires when server configs are unloading \n- Added support for the [Configured] mod, it will automatically provide config screens to replace the built-in ones when installed\n### Fixed\n- Fixed  a race condition with unloading server config\n\n## [v4.2.6-1.19.2] - 2022-08-31\n### Fixed\n- Fixed crash when a config screen attempts to handle unsupported config value types\n\n## [v4.2.5-1.19.2] - 2022-08-31\n### Added\n- Added a new `ModConfigEvents` class which is the new way of handling mod config events (loading and reloading), to ensure config events are only accessed on a mod specific basis\n- The old `ModConfigEvent` class is now deprecated for removal in the next major release for 1.20\n### Changed\n- Reverted minor internal removals from previous version to ensure compatibility with mods using those internals; they are deprecated now instead\n- Added a bunch of `@ApiStatus` annotations to ensure mods are only accessing the parts of the library they are meant to\n- This will be overhauled in the next major release for 1.20 to move some internals to a dedicated `impl` domain\n\n## [v4.2.4-1.19.2] - 2022-08-30\n- Resolved issues regarding the license of Forge\n### Changed\n- Ported more changes from Forge's config screens\n- Switched remaining loggers from Log4j to SLF4J\n\n## [v4.2.3-1.19.2] - 2022-08-22\n### Fixed\n- Fixed config screen crashing for config values without a widget factory\n\n## [v4.2.2-1.19.2] - 2022-08-21\n### Fixed\n- Added missing translation keys when cancelling config editing\n\n## [v4.2.1-1.19.2] - 2022-08-21\n### Changed\n- Ported most recent changes from Forge's config screens\n### Fixed\n- Fixed minimum Minecraft version requirement\n- Fixed multiple entries being selected in gui lists\n\n## [v4.2.0-1.19.2] - 2022-08-20\n- Compiled for Minecraft 1.19.2\n### Changed\n- Fabric Api is no longer bundled again, was causing issues with Quilt and was an inconvenience when bundling the mod as jar-in-jar\n### Fixed\n- Fixed missing sub-folders not being created for configs not in the main config directory\n\n## [v4.1.4-1.19.1] - 2022-08-02\n### Fixed\n- Fixed required version of Fabric Api\n\n## [v4.1.3-1.19.1] - 2022-07-31\n- Include Fabric Lifecycle Events which is also required\n\n## [v4.1.2-1.19.1] - 2022-07-28\n- Now requires Minecraft 1.19.1 or newer\n### Fixed\n- Fix start-up crash due to wrong mixin file location in publishing jar\n\n## [v4.1.1-1.19.1] - 2022-07-28\n- Re-compile to update outdated files\n\n## [v4.1.0-1.19.1] - 2022-07-28\n- Compiled for Minecraft 1.19.1\n### Added\n- Added native config screens from Forge (they are extremely buggy, so consider this an alpha, also requires Mod Menu to become accessible)\n### Changed\n- Ported `ForgeConfigSpec` changes from Forge\n- Fabric API is no longer a dependency, relevant modules are included in the jar now\n\n## [v4.0.2-1.19] - 2022-07-28\n### Fixed\n- Fixed Mod Menu being required as a Maven dependency when it's actually just optional\n\n## [v4.0.1-1.19] - 2022-07-27\n### Changed\n- Maven publication no longer depends on Night Config as a Fabric mod\n\n## [v4.0.0-1.19] - 2022-06-08\n- Ported to Minecraft 1.19\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n[Configured]: https://www.curseforge.com/minecraft/mc-mods/configured-fabric",
     "changelog_url": null,
     "date_published": "2022-11-22T22:00:40.816888Z",
-    "downloads": 3074,
+    "downloads": 3076,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5686,8 +5686,8 @@
       },
       {
         "hashes": {
-          "sha1": "f558826cfa91a866a3edb5151286e10e0989a503",
-          "sha512": "847014fa20763c03d18f0f14282c7294767bc1954cb8d6b886934201c5ca6a9c5c7655b786ff7405036c4f71a6f46a4704140ba24a41e5d2cd94663a11185eba"
+          "sha512": "847014fa20763c03d18f0f14282c7294767bc1954cb8d6b886934201c5ca6a9c5c7655b786ff7405036c4f71a6f46a4704140ba24a41e5d2cd94663a11185eba",
+          "sha1": "f558826cfa91a866a3edb5151286e10e0989a503"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/fI5AsaV4/ForgeConfigAPIPort-v4.2.7-1.19.2-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v4.2.7-1.19.2-Fabric-sources.jar",
@@ -5730,15 +5730,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v4.2.6-1.19.2] - 2022-08-31\n### Fixed\n- Fixed crash when a config screen attempts to handle unsupported config value types\n\n## [v4.2.5-1.19.2] - 2022-08-31\n### Added\n- Added a new `ModConfigEvents` class which is the new way of handling mod config events (loading and reloading), to ensure config events are only accessed on a mod specific basis\n- The old `ModConfigEvent` class is now deprecated for removal in the next major release for 1.20\n### Changed\n- Reverted minor internal removals from previous version to ensure compatibility with mods using those internals; they are deprecated now instead\n- Added a bunch of `@ApiStatus` annotations to ensure mods are only accessing the parts of the library they are meant to\n- This will be overhauled in the next major release for 1.20 to move some internals to a dedicated `impl` domain\n\n## [v4.2.4-1.19.2] - 2022-08-30\n- Resolved issues regarding the license of Forge\n### Changed\n- Ported more changes from Forge's config screens\n- Switched remaining loggers from Log4j to SLF4J\n\n## [v4.2.3-1.19.2] - 2022-08-22\n### Fixed\n- Fixed config screen crashing for config values without a widget factory\n\n## [v4.2.2-1.19.2] - 2022-08-21\n### Fixed\n- Added missing translation keys when cancelling config editing\n\n## [v4.2.1-1.19.2] - 2022-08-21\n### Changed\n- Ported most recent changes from Forge's config screens\n### Fixed\n- Fixed minimum Minecraft version requirement\n- Fixed multiple entries being selected in gui lists\n\n## [v4.2.0-1.19.2] - 2022-08-20\n- Compiled for Minecraft 1.19.2\n### Changed\n- Fabric Api is no longer bundled again, was causing issues with Quilt and was an inconvenience when bundling the mod as jar-in-jar\n### Fixed\n- Fixed missing sub-folders not being created for configs not in the main config directory\n\n## [v4.1.4-1.19.1] - 2022-08-02\n### Fixed\n- Fixed required version of Fabric Api\n\n## [v4.1.3-1.19.1] - 2022-07-31\n- Include Fabric Lifecycle Events which is also required\n\n## [v4.1.2-1.19.1] - 2022-07-28\n- Now requires Minecraft 1.19.1 or newer\n### Fixed\n- Fix start-up crash due to wrong mixin file location in publishing jar\n\n## [v4.1.1-1.19.1] - 2022-07-28\n- Re-compile to update outdated files\n\n## [v4.1.0-1.19.1] - 2022-07-28\n- Compiled for Minecraft 1.19.1\n### Added\n- Added native config screens from Forge (they are extremely buggy, so consider this an alpha, also requires Mod Menu to become accessible)\n### Changed\n- Ported `ForgeConfigSpec` changes from Forge\n- Fabric API is no longer a dependency, relevant modules are included in the jar now\n\n## [v4.0.2-1.19] - 2022-07-28\n### Fixed\n- Fixed Mod Menu being required as a Maven dependency when it's actually just optional\n\n## [v4.0.1-1.19] - 2022-07-27\n### Changed\n- Maven publication no longer depends on Night Config as a Fabric mod\n\n## [v4.0.0-1.19] - 2022-06-08\n- Ported to Minecraft 1.19\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/",
     "changelog_url": null,
     "date_published": "2022-08-31T08:09:03.28987Z",
-    "downloads": 8471,
+    "downloads": 8474,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "cead17d7bd258c0b7566d05b0edcb9baea1443f6",
-          "sha512": "f8deaaabd075986d6df5bffae50e02c1659476650173630b8bace35e4fe2b8a4c30818ed2fcff1c4ff92513c283b521c0ed47f92b64f98a9e76472d4026683f1"
+          "sha512": "f8deaaabd075986d6df5bffae50e02c1659476650173630b8bace35e4fe2b8a4c30818ed2fcff1c4ff92513c283b521c0ed47f92b64f98a9e76472d4026683f1",
+          "sha1": "cead17d7bd258c0b7566d05b0edcb9baea1443f6"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/XhjJZ5uE/ForgeConfigAPIPort-v4.2.6-1.19.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v4.2.6-1.19.2-Fabric.jar",
@@ -5748,8 +5748,8 @@
       },
       {
         "hashes": {
-          "sha1": "a2d8f9591361c06fbe0b4597afa6e3f11095f812",
-          "sha512": "14e9f54794e7fa0851d72ca51f9348a0d9b6f48e9a2bfd401426edeef76c5c0046e163d436c031ecae7673487ec761cae741c1ca390ac9b5d9fbc44fd8cbb0d0"
+          "sha512": "14e9f54794e7fa0851d72ca51f9348a0d9b6f48e9a2bfd401426edeef76c5c0046e163d436c031ecae7673487ec761cae741c1ca390ac9b5d9fbc44fd8cbb0d0",
+          "sha1": "a2d8f9591361c06fbe0b4597afa6e3f11095f812"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/XhjJZ5uE/ForgeConfigAPIPort-v4.2.6-1.19.2-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v4.2.6-1.19.2-Fabric-sources.jar",
@@ -5799,8 +5799,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "75acaa6f73239571b6fa6a32eaf70f3dda6523a1",
-          "sha512": "4f012cfb4718a3930f94d2962afcee49bc579ac9eec301a923448240400d376f01e0b8fe06dbcb711abb391a125c235d9ae78ccebb7ad4a9e9e50a8ef0539a72"
+          "sha512": "4f012cfb4718a3930f94d2962afcee49bc579ac9eec301a923448240400d376f01e0b8fe06dbcb711abb391a125c235d9ae78ccebb7ad4a9e9e50a8ef0539a72",
+          "sha1": "75acaa6f73239571b6fa6a32eaf70f3dda6523a1"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/KjE2hCJv/ForgeConfigAPIPort-v4.2.5-1.19.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v4.2.5-1.19.2-Fabric.jar",
@@ -5861,8 +5861,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c0dd26f7e2350549129cb58396f40c9eecb6c8fb",
-          "sha512": "4ff3e9e569e0425b4c8895088e870874b589f36b1ed6a6db17b6e873dadf7cd280a8e691bff969017fcded68bc94a6bcf3812757199726523f152340b9a64b67"
+          "sha512": "4ff3e9e569e0425b4c8895088e870874b589f36b1ed6a6db17b6e873dadf7cd280a8e691bff969017fcded68bc94a6bcf3812757199726523f152340b9a64b67",
+          "sha1": "c0dd26f7e2350549129cb58396f40c9eecb6c8fb"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/JdloDJit/ForgeConfigAPIPort-v4.2.4-1.19.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v4.2.4-1.19.2-Fabric.jar",
@@ -5872,8 +5872,8 @@
       },
       {
         "hashes": {
-          "sha512": "64a853a2682548edc55ce969fe0ffefa45d8263f73e1199326afd03ecfd10f55453bf9467d02fe804eee45cc3f175bfe77af3bef270e70e8a37948bd1c7b0f2e",
-          "sha1": "8108bc54d0e05d23f0cf1c9749fb6b3f9d4e7e2a"
+          "sha1": "8108bc54d0e05d23f0cf1c9749fb6b3f9d4e7e2a",
+          "sha512": "64a853a2682548edc55ce969fe0ffefa45d8263f73e1199326afd03ecfd10f55453bf9467d02fe804eee45cc3f175bfe77af3bef270e70e8a37948bd1c7b0f2e"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/JdloDJit/ForgeConfigAPIPort-v4.2.4-1.19.2-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v4.2.4-1.19.2-Fabric-sources.jar",
@@ -5923,8 +5923,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6417fa3f6ede64b0b429e3cc58a5ee77fce39d97",
-          "sha512": "cbc2d200111a24eaaf13045a69399a7758319e61c9c10e2b80c3ac39cc0badec33071cf0c1a782b3a9da06da6ce0e0be852cf16ecea9dc5a73b7adc53cba5d59"
+          "sha512": "cbc2d200111a24eaaf13045a69399a7758319e61c9c10e2b80c3ac39cc0badec33071cf0c1a782b3a9da06da6ce0e0be852cf16ecea9dc5a73b7adc53cba5d59",
+          "sha1": "6417fa3f6ede64b0b429e3cc58a5ee77fce39d97"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/akDg87hC/ForgeConfigAPIPort-v4.2.3-1.19.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v4.2.3-1.19.2-Fabric.jar",
@@ -6046,8 +6046,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6e306f75a3b970110fcfb446f6774ac9358eede9dd8f2cebb8c443d382840e63c51ae4beb60055f781c3938dd9ee5c0592e47c42335a5fd7cada43b7b185d53e",
-          "sha1": "cfb0960040a31f52af56c442b4a8c2beae1c8e0a"
+          "sha1": "cfb0960040a31f52af56c442b4a8c2beae1c8e0a",
+          "sha512": "6e306f75a3b970110fcfb446f6774ac9358eede9dd8f2cebb8c443d382840e63c51ae4beb60055f781c3938dd9ee5c0592e47c42335a5fd7cada43b7b185d53e"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/K7z34XSj/ForgeConfigAPIPort-v4.2.0-1.19.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v4.2.0-1.19.2-Fabric.jar",
@@ -6101,15 +6101,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v3.2.4-1.18.2] - 2022-08-20\n### Changed\n- Fabric Api is no longer bundled again, was causing issues with Quilt and was an inconvenience when bundling the mod as jar-in-jar\n### Fixed\n- Fixed missing sub-folders not being created for configs not in the main config directory\n\n## [v3.2.3-1.18.2] - 2022-08-02\n### Fixed\n- Fixed required version of Fabric Api\n\n## [v3.2.2-1.18.2] - 2022-08-01\n### Fixed\n- Fixed start-up crash due to wrong dependency\n\n## [v3.2.1-1.18.2] - 2022-07-31\n- Bundled Fabric API, it's no longer an external dependency\n- Publish latest 1.18.2 build to Maven and Modrinth\n\n## [v3.2.0-1.18.2] - 2022-03-03\n- Compiled for Minecraft 1.18.2\n\n## [v3.1.1-1.18.1] - 2022-01-10\n### Fixed\n- Fixed a bug where the game would crash during start-up due to the required config library not having been loaded yet\n\n## [v3.1.0-1.18.1] - 2021-12-12\n- Compiled for Minecraft 1.18.1\n\n## [v3.0.1-1.18] - 2021-12-06\n### Fixed\n- Hopefully fixed a bug where config loading would very rarely lead to an exception due to the toml file format not being recognized\n\n## [v3.0.0-1.18] - 2021-12-02\n- Ported to Minecraft 1.18\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/",
     "changelog_url": null,
     "date_published": "2022-08-20T11:25:56.593321Z",
-    "downloads": 66073,
+    "downloads": 66158,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "95b40c2edd1610c26a0e8f6ac980acf403098ada7b4748a9b94bab9d4b2b590955e3e345fa0727299b23eaf27b0811ca6e34305acb95b18c42507101ebfe11cd",
-          "sha1": "3e040c22d7015a855360128cfcc23e194b9e3b19"
+          "sha1": "3e040c22d7015a855360128cfcc23e194b9e3b19",
+          "sha512": "95b40c2edd1610c26a0e8f6ac980acf403098ada7b4748a9b94bab9d4b2b590955e3e345fa0727299b23eaf27b0811ca6e34305acb95b18c42507101ebfe11cd"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/XGKEYlsw/ForgeConfigAPIPort-v3.2.4-1.18.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v3.2.4-1.18.2-Fabric.jar",
@@ -6162,15 +6162,15 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v2.0.5-1.17.1] - 2022-08-20\n### Changed\n- Fabric Api is no longer bundled again, was causing issues with Quilt and was an inconvenience when bundling the mod as jar-in-jar\n### Fixed\n- Fixed missing sub-folders not being created for configs not in the main config directory\n\n## [v2.0.4-1.17.1] - 2022-08-02\n### Fixed\n- Fixed required version of Fabric Api\n\n## [v2.0.3-1.17.1] - 2022-08-02\n- Bundled Fabric API, it's no longer an external dependency\n- Publish latest 1.17.1 build to Maven and Modrinth\n\n## [v2.0.2-1.17.1] - 2022-01-10\n### Fixed\n- Fixed a bug where the game would crash during start-up due to the required config library not having been loaded yet\n\n## [v2.0.1-1.17.1] - 2021-12-06\n### Fixed\n- Hopefully fixed a bug where config loading would very rarely lead to an exception due to the toml file format not being recognized\n\n## [v2.0.0-1.17.1] - 2021-11-15\n- Initial release\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/\n",
     "changelog_url": null,
     "date_published": "2022-08-20T11:25:20.194809Z",
-    "downloads": 2237,
+    "downloads": 2241,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0921a17927b79ee612e733b0fd8a1af9f59b967907e457aee13559ff9315600bfea661710c2443c81e9962a3c1b79efa63916758745e5591d0ce69c2cab2830b",
-          "sha1": "f7da904bb38d55d8da65ac1872766136ef3c7bb5"
+          "sha1": "f7da904bb38d55d8da65ac1872766136ef3c7bb5",
+          "sha512": "0921a17927b79ee612e733b0fd8a1af9f59b967907e457aee13559ff9315600bfea661710c2443c81e9962a3c1b79efa63916758745e5591d0ce69c2cab2830b"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/4JaArhTS/ForgeConfigAPIPort-v2.0.5-1.17.1-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v2.0.5-1.17.1-Fabric.jar",
@@ -6180,8 +6180,8 @@
       },
       {
         "hashes": {
-          "sha1": "09f578433ba600f0bed9fe387b081e1158b72db6",
-          "sha512": "ef764299724f73483179fa768dfe19876239b116dae7f2f8fbf9e0d4b1909be1736c35e30bd7e3ce16ca507e8c0b15f3686ba04b4edc8bf7dd727eb33dd55403"
+          "sha512": "ef764299724f73483179fa768dfe19876239b116dae7f2f8fbf9e0d4b1909be1736c35e30bd7e3ce16ca507e8c0b15f3686ba04b4edc8bf7dd727eb33dd55403",
+          "sha1": "09f578433ba600f0bed9fe387b081e1158b72db6"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/4JaArhTS/ForgeConfigAPIPort-v2.0.5-1.17.1-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v2.0.5-1.17.1-Fabric-sources.jar",
@@ -6227,7 +6227,7 @@
     "changelog": "# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog].\n\n## [v1.0.2-1.16.5] - 2022-08-20\n### Changed\n- Fabric Api is no longer bundled again, was causing issues with Quilt and was an inconvenience when bundling the mod as jar-in-jar\n### Fixed\n- Fixed missing sub-folders not being created for configs not in the main config directory\n\n## [v1.0.1-1.16.5] - 2022-08-02\n### Fixed\n- Fixed required version of Fabric Api\n\n## [v1.0.0-1.16.5] - 2022-08-02\n- Ported to Minecraft 1.16\n\n[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/",
     "changelog_url": null,
     "date_published": "2022-08-20T11:22:15.835107Z",
-    "downloads": 25664,
+    "downloads": 25719,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6294,8 +6294,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6112a1c6cd136fb6ad87fd761ad583eb61f591fa",
-          "sha512": "031ffa891018f474b6c8f226ab3fbc1833b5c7624e540bab01733f1029a26c3b7868b1141390a36395efd1ad6682d302dfeaa21503328f5a2ecb3133c78fabeb"
+          "sha512": "031ffa891018f474b6c8f226ab3fbc1833b5c7624e540bab01733f1029a26c3b7868b1141390a36395efd1ad6682d302dfeaa21503328f5a2ecb3133c78fabeb",
+          "sha1": "6112a1c6cd136fb6ad87fd761ad583eb61f591fa"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/2.0.4/ForgeConfigAPIPort-v2.0.4-1.17.1-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v2.0.4-1.17.1-Fabric.jar",
@@ -6305,8 +6305,8 @@
       },
       {
         "hashes": {
-          "sha1": "d7d727c86b2b2221831cf5271fb533462d0e1362",
-          "sha512": "2cb2c2cfcf8ca200934cc392073a580e56224086cbfc90738328b4975b8447a7831a44fbf761a4a4fee8e03c43bbed7e2452636edfb5779ed096c5b835980854"
+          "sha512": "2cb2c2cfcf8ca200934cc392073a580e56224086cbfc90738328b4975b8447a7831a44fbf761a4a4fee8e03c43bbed7e2452636edfb5779ed096c5b835980854",
+          "sha1": "d7d727c86b2b2221831cf5271fb533462d0e1362"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/2.0.4/ForgeConfigAPIPort-v2.0.4-1.17.1-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v2.0.4-1.17.1-Fabric-sources.jar",
@@ -6364,8 +6364,8 @@
       },
       {
         "hashes": {
-          "sha512": "0447b2e884e0295ecedf963b93b946f1b1763d532b46a9ea5ee6a7e5dd59df1fe23a5e392082e5bfa05841a592a2798207da43da5306331d87c0c368aec89e5b",
-          "sha1": "ed0f60d3b5bef84c1f35d7acdb00b5afc782ae9c"
+          "sha1": "ed0f60d3b5bef84c1f35d7acdb00b5afc782ae9c",
+          "sha512": "0447b2e884e0295ecedf963b93b946f1b1763d532b46a9ea5ee6a7e5dd59df1fe23a5e392082e5bfa05841a592a2798207da43da5306331d87c0c368aec89e5b"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/4.1.4/ForgeConfigAPIPort-v4.1.4-1.19.1-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v4.1.4-1.19.1-Fabric-sources.jar",
@@ -6412,8 +6412,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c33f62a37842c53637d6e3801b9924981183b93d4f8dbd259bb5d9f7e54f58c000aad1770713e90c966558fd2b10cd684185e78c4fec1a39401687dd3f6f9360",
-          "sha1": "fcc80b7d28473ebb3654c606407b7745bc8bcc5d"
+          "sha1": "fcc80b7d28473ebb3654c606407b7745bc8bcc5d",
+          "sha512": "c33f62a37842c53637d6e3801b9924981183b93d4f8dbd259bb5d9f7e54f58c000aad1770713e90c966558fd2b10cd684185e78c4fec1a39401687dd3f6f9360"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/3.2.3/ForgeConfigAPIPort-v3.2.3-1.18.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v3.2.3-1.18.2-Fabric.jar",
@@ -6487,8 +6487,8 @@
       },
       {
         "hashes": {
-          "sha1": "b91c8e36df4422311b64cc16bdbc100c4051d5eb",
-          "sha512": "b25badb48cc2f743883c8445194063ec659203d74252c6c4af9344a6293c4a1ec3a70b1ca656e8187237c18fed27a4185b115beb5b5d94ff48eca85fdfc8a4e5"
+          "sha512": "b25badb48cc2f743883c8445194063ec659203d74252c6c4af9344a6293c4a1ec3a70b1ca656e8187237c18fed27a4185b115beb5b5d94ff48eca85fdfc8a4e5",
+          "sha1": "b91c8e36df4422311b64cc16bdbc100c4051d5eb"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/1.0.1/ForgeConfigAPIPort-v1.0.1-1.16.5-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v1.0.1-1.16.5-Fabric-sources.jar",
@@ -6536,8 +6536,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "263d2d0f9857bd01046d51b4ede3612e0390e4df3604ca73ef7b0d11821546df252add8e103886f690c45bd71e62d9cd4cedb2b76338ffb067056950762b4635",
-          "sha1": "3f9d8342ec0d4e012d0b7ca047efcb128a864f4a"
+          "sha1": "3f9d8342ec0d4e012d0b7ca047efcb128a864f4a",
+          "sha512": "263d2d0f9857bd01046d51b4ede3612e0390e4df3604ca73ef7b0d11821546df252add8e103886f690c45bd71e62d9cd4cedb2b76338ffb067056950762b4635"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/2.0.3/ForgeConfigAPIPort-v2.0.3-1.17.1-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v2.0.3-1.17.1-Fabric.jar",
@@ -6547,8 +6547,8 @@
       },
       {
         "hashes": {
-          "sha1": "d69183ed2b63fdf6dc8f87b93dd4fd0d2c7438e4",
-          "sha512": "4e7c3b4bcf6f723d50e1ecd4dabdbd1544f81e761e5e8105763c9a934f05b63fee07ac4caebb9628e9680ec35755df10191a3d0641f06e4d3dd068cfe420ddd7"
+          "sha512": "4e7c3b4bcf6f723d50e1ecd4dabdbd1544f81e761e5e8105763c9a934f05b63fee07ac4caebb9628e9680ec35755df10191a3d0641f06e4d3dd068cfe420ddd7",
+          "sha1": "d69183ed2b63fdf6dc8f87b93dd4fd0d2c7438e4"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/2.0.3/ForgeConfigAPIPort-v2.0.3-1.17.1-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v2.0.3-1.17.1-Fabric-sources.jar",
@@ -6611,8 +6611,8 @@
       },
       {
         "hashes": {
-          "sha512": "97f5236227df874ebdc08261881d2a48e71fffa3203b76a65eb23d65e15c8de964af671a10519c125f0cadc566cfd320e87b0bdc0860a4d67272b45ddce88332",
-          "sha1": "c19f949105fc04b6cfcab3a75ea0763c0eb7c035"
+          "sha1": "c19f949105fc04b6cfcab3a75ea0763c0eb7c035",
+          "sha512": "97f5236227df874ebdc08261881d2a48e71fffa3203b76a65eb23d65e15c8de964af671a10519c125f0cadc566cfd320e87b0bdc0860a4d67272b45ddce88332"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/1.0.0/ForgeConfigAPIPort-v1.0.0-1.16.5-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v1.0.0-1.16.5-Fabric-sources.jar",
@@ -6659,8 +6659,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "76ca2616476d725ceb611636cfb5c5dc7ac2d34426047386d756279fd2cb09ade229f20b6a721455f218640c877972adfb976d3db0cd2b259d7f9f0293fe3a17",
-          "sha1": "cd4d9ac9dd544ba5f645d2bc49b67576e6855ec3"
+          "sha1": "cd4d9ac9dd544ba5f645d2bc49b67576e6855ec3",
+          "sha512": "76ca2616476d725ceb611636cfb5c5dc7ac2d34426047386d756279fd2cb09ade229f20b6a721455f218640c877972adfb976d3db0cd2b259d7f9f0293fe3a17"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/3.2.2/ForgeConfigAPIPort-v3.2.2-1.18.2-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v3.2.2-1.18.2-Fabric.jar",
@@ -6670,8 +6670,8 @@
       },
       {
         "hashes": {
-          "sha1": "c8b678ca2ac95f858b95d1272412ace829307bca",
-          "sha512": "91ccb3f432846981c595e5312d604201dd2003cfd11c043ca38afb18e0c9cc7a7349f7f352eeae8c249b43ea2be896e4f72240eea0719ed3c03316032d76c430"
+          "sha512": "91ccb3f432846981c595e5312d604201dd2003cfd11c043ca38afb18e0c9cc7a7349f7f352eeae8c249b43ea2be896e4f72240eea0719ed3c03316032d76c430",
+          "sha1": "c8b678ca2ac95f858b95d1272412ace829307bca"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/3.2.2/ForgeConfigAPIPort-v3.2.2-1.18.2-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v3.2.2-1.18.2-Fabric-sources.jar",
@@ -6742,15 +6742,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "embedded"
-      },
-      {
-        "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "embedded"
       }
     ]
   },
@@ -6788,8 +6788,8 @@
       },
       {
         "hashes": {
-          "sha512": "12ada84cc33da4ebda4b73e16b501c4ee5faa5dd48910c332ae3e617892affdc2b4289e43e1ba2d2abe82bc7d1791bdd1c0d589a0f6c47b80bd7ab14d8fc1179",
-          "sha1": "de2d272301d5ae3fae5b33b8146d05153a2552da"
+          "sha1": "de2d272301d5ae3fae5b33b8146d05153a2552da",
+          "sha512": "12ada84cc33da4ebda4b73e16b501c4ee5faa5dd48910c332ae3e617892affdc2b4289e43e1ba2d2abe82bc7d1791bdd1c0d589a0f6c47b80bd7ab14d8fc1179"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/3.2.1/ForgeConfigAPIPort-v3.2.1-1.18.2-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v3.2.1-1.18.2-Fabric-sources.jar",
@@ -6836,8 +6836,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e949c920bb98e468d72c4905ee955c0987d05903",
-          "sha512": "47b065385045275f33f15862b3bb94cb95b2520eed1f4db742e3bfb0e2231a10e2039452e6a07fbf0c7e8a799d4884104f0ecb7a5d59badc8d541cd101c56d7f"
+          "sha512": "47b065385045275f33f15862b3bb94cb95b2520eed1f4db742e3bfb0e2231a10e2039452e6a07fbf0c7e8a799d4884104f0ecb7a5d59badc8d541cd101c56d7f",
+          "sha1": "e949c920bb98e468d72c4905ee955c0987d05903"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/4.1.2/ForgeConfigAPIPort-v4.1.2-1.19.1-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v4.1.2-1.19.1-Fabric.jar",
@@ -6847,8 +6847,8 @@
       },
       {
         "hashes": {
-          "sha512": "b9eea367968647986b835cc9dad44e632cb7f60b7bd22414a0b85b3dc81c23a36ade0a7141ccc4709b564a35e4d31d97a4b4e946ea1886b9e0c7fb5f0c25cb61",
-          "sha1": "0f13ae654040ab904af4b186ff869bcde29a2657"
+          "sha1": "0f13ae654040ab904af4b186ff869bcde29a2657",
+          "sha512": "b9eea367968647986b835cc9dad44e632cb7f60b7bd22414a0b85b3dc81c23a36ade0a7141ccc4709b564a35e4d31d97a4b4e946ea1886b9e0c7fb5f0c25cb61"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/4.1.2/ForgeConfigAPIPort-v4.1.2-1.19.1-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v4.1.2-1.19.1-Fabric-sources.jar",
@@ -6954,8 +6954,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a1ecc568009d373658729234da59ae333d152a4f0705e441334ef23ae5b93a117b67c023fb74c2d3fb28bcb84bf2e8e51ada74fed307670dae65aeb77574a369",
-          "sha1": "d9b3fe97a270aadee20260234aff59bc1f9ea11d"
+          "sha1": "d9b3fe97a270aadee20260234aff59bc1f9ea11d",
+          "sha512": "a1ecc568009d373658729234da59ae333d152a4f0705e441334ef23ae5b93a117b67c023fb74c2d3fb28bcb84bf2e8e51ada74fed307670dae65aeb77574a369"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/4.0.1/ForgeConfigAPIPort-v4.0.1-1.19-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v4.0.1-1.19-Fabric.jar",
@@ -7024,8 +7024,8 @@
       },
       {
         "hashes": {
-          "sha1": "c4491dee770fab07decf84d3d68ce6e371f0cee2",
-          "sha512": "4bcc879f71de6de15664ccecdd00e4db4d16666bd6e8cf4d1066d6abe109efb4b0fa57a9d0374f23502eee7f76715314b7ceb3871cb5c2401df75efa370dd7c5"
+          "sha512": "4bcc879f71de6de15664ccecdd00e4db4d16666bd6e8cf4d1066d6abe109efb4b0fa57a9d0374f23502eee7f76715314b7ceb3871cb5c2401df75efa370dd7c5",
+          "sha1": "c4491dee770fab07decf84d3d68ce6e371f0cee2"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/4.0.0/ForgeConfigAPIPort-v4.0.0-1.19-Fabric-sources.jar",
         "filename": "ForgeConfigAPIPort-v4.0.0-1.19-Fabric-sources.jar",
@@ -7083,8 +7083,8 @@
       },
       {
         "hashes": {
-          "sha1": "cd0475a0cc61e82adaf3c3255c4ed0e883961225",
-          "sha512": "ae72028f97dba7ea6ecf6d7f8381474bfff5e1f06c655790db5f6516687efb2e854179452404cdee321c3ddb749f10b282ea38bc2f4c37d0932d2c731dd61985"
+          "sha512": "ae72028f97dba7ea6ecf6d7f8381474bfff5e1f06c655790db5f6516687efb2e854179452404cdee321c3ddb749f10b282ea38bc2f4c37d0932d2c731dd61985",
+          "sha1": "cd0475a0cc61e82adaf3c3255c4ed0e883961225"
         },
         "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/v3.0.0-1.18-Fabric/ForgeConfigAPIPort-v3.0.0-1.18-Fabric.jar",
         "filename": "ForgeConfigAPIPort-v3.0.0-1.18-Fabric.jar",

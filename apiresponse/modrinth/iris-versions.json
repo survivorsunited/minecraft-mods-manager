@@ -15,15 +15,15 @@
     "changelog": "This fixes support for Pixelmon.",
     "changelog_url": null,
     "date_published": "2025-06-17T15:51:56.477905Z",
-    "downloads": 33453,
+    "downloads": 35624,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "57b8026a3c3c433cf6123d63dc6ce7e11f6d480a72926370db1fc7f2b06059bc16a753ecd7e7af659c19e90b592103196b0e89585ce4f0744a4ca433f59bcf1a",
-          "sha1": "a3e6355915c7d3b2bc392724795113e51d289378"
+          "sha1": "a3e6355915c7d3b2bc392724795113e51d289378",
+          "sha512": "57b8026a3c3c433cf6123d63dc6ce7e11f6d480a72926370db1fc7f2b06059bc16a753ecd7e7af659c19e90b592103196b0e89585ce4f0744a4ca433f59bcf1a"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/t3ruzodq/iris-neoforge-1.8.12%2Bmc1.21.1.jar",
         "filename": "iris-neoforge-1.8.12+mc1.21.1.jar",
@@ -58,15 +58,15 @@
     "changelog": "This is the first release for 1.21.6.",
     "changelog_url": null,
     "date_published": "2025-06-17T15:27:46.887313Z",
-    "downloads": 226973,
+    "downloads": 240064,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f311ec5230a9af2696f5c4a35519f5a973c2ac10",
-          "sha512": "c35c3a24854f07e0961dc4e9c161d85cc34e052175a92ae858b06e03647b2c8c87d84cbed58db5fde3968023ce881149804a8707693d250c0506d6d03fba92d5"
+          "sha512": "c35c3a24854f07e0961dc4e9c161d85cc34e052175a92ae858b06e03647b2c8c87d84cbed58db5fde3968023ce881149804a8707693d250c0506d6d03fba92d5",
+          "sha1": "f311ec5230a9af2696f5c4a35519f5a973c2ac10"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/Ga9fyDY6/iris-fabric-1.9.0%2Bmc1.21.6.jar",
         "filename": "iris-fabric-1.9.0+mc1.21.6.jar",
@@ -100,15 +100,15 @@
     "changelog": "This release fixes many bugs and crashes exclusive to 1.21.5, and fixes Distant Horizons support.",
     "changelog_url": null,
     "date_published": "2025-03-31T03:54:52.269009Z",
-    "downloads": 156858,
+    "downloads": 157225,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "454194f730538c4722aee4f0d052394d7677610818198b51e7ace67ff2a48083c31d0b816ddf907adb807869cee6827ad7a00feaac60129e3c5fecc92af1d2e3",
-          "sha1": "9bba758bc44057f20d1d677dd0ed8082f25bd41b"
+          "sha1": "9bba758bc44057f20d1d677dd0ed8082f25bd41b",
+          "sha512": "454194f730538c4722aee4f0d052394d7677610818198b51e7ace67ff2a48083c31d0b816ddf907adb807869cee6827ad7a00feaac60129e3c5fecc92af1d2e3"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/KAopiPos/iris-neoforge-1.8.11%2Bmc1.21.5.jar",
         "filename": "iris-neoforge-1.8.11+mc1.21.5.jar",
@@ -143,7 +143,7 @@
     "changelog": "This release fixes many bugs and crashes exclusive to 1.21.5, and fixes Distant Horizons support.",
     "changelog_url": null,
     "date_published": "2025-03-31T03:54:14.928136Z",
-    "downloads": 2384976,
+    "downloads": 2395648,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -185,15 +185,15 @@
     "changelog": "- Fixed a few crash bugs.",
     "changelog_url": null,
     "date_published": "2025-03-25T18:42:12.653626Z",
-    "downloads": 15636,
+    "downloads": 15660,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "949b239a4da8f4f20fe81767fea38dd3e9b63570",
-          "sha512": "5252e6a7f3219131d6ad2649fdbafcfd946d625990c37eca95e24df1737a1fe68e05d5f2b67e322b46de5fc42478fed7bfa4135d8d45abe8e9c22d5940878a5b"
+          "sha512": "5252e6a7f3219131d6ad2649fdbafcfd946d625990c37eca95e24df1737a1fe68e05d5f2b67e322b46de5fc42478fed7bfa4135d8d45abe8e9c22d5940878a5b",
+          "sha1": "949b239a4da8f4f20fe81767fea38dd3e9b63570"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/ikM5BuoC/iris-neoforge-1.8.10%2Bmc1.21.5.jar",
         "filename": "iris-neoforge-1.8.10+mc1.21.5.jar",
@@ -228,15 +228,15 @@
     "changelog": "- Fixed a few crash bugs.",
     "changelog_url": null,
     "date_published": "2025-03-25T18:40:54.133999Z",
-    "downloads": 206090,
+    "downloads": 206146,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d5ee7b510b6546f54807dd7c9d2d580994d70aec5ec170c257ef1356eb630b3b919d1602973e272cd299c418f8b73b87571f1f3540664d5ab3c8e32b3814f7db",
-          "sha1": "d7857fc2a8efda0eb4a2d1bd6aaa31620fc347f3"
+          "sha1": "d7857fc2a8efda0eb4a2d1bd6aaa31620fc347f3",
+          "sha512": "d5ee7b510b6546f54807dd7c9d2d580994d70aec5ec170c257ef1356eb630b3b919d1602973e272cd299c418f8b73b87571f1f3540664d5ab3c8e32b3814f7db"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/N0ln8GKQ/iris-fabric-1.8.10%2Bmc1.21.5.jar",
         "filename": "iris-fabric-1.8.10+mc1.21.5.jar",
@@ -271,7 +271,7 @@
     "changelog": "- Updated to Minecraft 1.21.5.",
     "changelog_url": null,
     "date_published": "2025-03-25T16:29:16.557524Z",
-    "downloads": 11173,
+    "downloads": 11190,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -314,15 +314,15 @@
     "changelog": "This backports a few bug fixes from Iris 1.8, as well as adding compatibility for Sodium 0.5.12.",
     "changelog_url": null,
     "date_published": "2025-03-03T00:22:55.778804Z",
-    "downloads": 1029743,
+    "downloads": 1035834,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "880c0b9ce38bb4997645793407c1801df83f4233",
-          "sha512": "f1337b0441c31269bd3bfcb28647d521326a83e73128c1ac8d065615f8a5a4ca1e8c96a468b356584236ece5b164ec8d8a52b1878064f4e391ecf4f32885e301"
+          "sha512": "f1337b0441c31269bd3bfcb28647d521326a83e73128c1ac8d065615f8a5a4ca1e8c96a468b356584236ece5b164ec8d8a52b1878064f4e391ecf4f32885e301",
+          "sha1": "880c0b9ce38bb4997645793407c1801df83f4233"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/s5eFLITc/iris-1.7.6%2Bmc1.20.1.jar",
         "filename": "iris-1.7.6+mc1.20.1.jar",
@@ -356,15 +356,15 @@
     "changelog": "Fixes a crash with some packs",
     "changelog_url": null,
     "date_published": "2025-02-20T15:05:57.35215Z",
-    "downloads": 86710,
+    "downloads": 86924,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b1868549b3fed06bc3cf584839c646ea5cebc6f954634ae7f2f0e8619c0c6a63e61e3f453eb1eec7e556c932b2d742998bd153885b141b9005dec8160cd90c93",
-          "sha1": "dad7229a302126503fb8651d7f101949c2c57184"
+          "sha1": "dad7229a302126503fb8651d7f101949c2c57184",
+          "sha512": "b1868549b3fed06bc3cf584839c646ea5cebc6f954634ae7f2f0e8619c0c6a63e61e3f453eb1eec7e556c932b2d742998bd153885b141b9005dec8160cd90c93"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/FNc0XYTL/iris-neoforge-1.8.8%2Bmc1.21.4.jar",
         "filename": "iris-neoforge-1.8.8+mc1.21.4.jar",
@@ -399,15 +399,15 @@
     "changelog": "Fixes a crash with some packs",
     "changelog_url": null,
     "date_published": "2025-02-20T15:04:52.100298Z",
-    "downloads": 1791887,
+    "downloads": 1796069,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5296c4b0c0be6d5259b985577154c02e6534818465205e6995b5229b26414b423d333199152693118a897f31312e4de051abe28df7d0dd0950c8b649e54a50a0",
-          "sha1": "54f7ab6450530bdca2ba44887b53458f78a256ef"
+          "sha1": "54f7ab6450530bdca2ba44887b53458f78a256ef",
+          "sha512": "5296c4b0c0be6d5259b985577154c02e6534818465205e6995b5229b26414b423d333199152693118a897f31312e4de051abe28df7d0dd0950c8b649e54a50a0"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/Ca054sTe/iris-fabric-1.8.8%2Bmc1.21.4.jar",
         "filename": "iris-fabric-1.8.8+mc1.21.4.jar",
@@ -443,7 +443,7 @@
     "changelog": "Fixes a crash with some packs",
     "changelog_url": null,
     "date_published": "2025-02-20T15:04:02.182924Z",
-    "downloads": 2057507,
+    "downloads": 2070057,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -485,15 +485,15 @@
     "changelog": "Fixes a crash with some packs",
     "changelog_url": null,
     "date_published": "2025-02-20T15:02:38.431569Z",
-    "downloads": 447955,
+    "downloads": 449510,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "79f5cb567372a51d695b690ca96e948294e45c44",
-          "sha512": "0d3741374b145f51fa993c4fa6ddad7ee9479ec2a0635c2c71efd11d91b3d7bc450705e3ac8fc66d92508334146000212c61c5a67c718cf6df62c0903b043a3a"
+          "sha512": "0d3741374b145f51fa993c4fa6ddad7ee9479ec2a0635c2c71efd11d91b3d7bc450705e3ac8fc66d92508334146000212c61c5a67c718cf6df62c0903b043a3a",
+          "sha1": "79f5cb567372a51d695b690ca96e948294e45c44"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/oXIoDcGE/iris-neoforge-1.8.8%2Bmc1.21.1.jar",
         "filename": "iris-neoforge-1.8.8+mc1.21.1.jar",
@@ -528,7 +528,7 @@
     "changelog": "This updates to the latest Sodium, fixing many texture bugs.\n\n",
     "changelog_url": null,
     "date_published": "2025-02-20T02:14:46.947146Z",
-    "downloads": 25634,
+    "downloads": 25661,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -570,7 +570,7 @@
     "changelog": "This updates to the latest Sodium, fixing many texture bugs.",
     "changelog_url": null,
     "date_published": "2025-02-20T02:13:19.690121Z",
-    "downloads": 2805,
+    "downloads": 2806,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -613,7 +613,7 @@
     "changelog": "This updates to the latest Sodium, fixing many texture bugs.",
     "changelog_url": null,
     "date_published": "2025-02-20T02:12:38.262442Z",
-    "downloads": 25656,
+    "downloads": 25703,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -655,15 +655,15 @@
     "changelog": "This adds the optional \"shader bypass\" ability",
     "changelog_url": null,
     "date_published": "2025-01-24T00:30:36.655806Z",
-    "downloads": 134420,
+    "downloads": 134453,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "466d1778dddf96f3d1c6d83f801b5d6b9a75a6c9",
-          "sha512": "95be68300c1914507aea8fa1948b3beac771b8d1ccbe33fb9151f1938906a5bffb560a070f3550c32817469dbbff9f9f57887843a29a09f585f2bd4bedb13a1f"
+          "sha512": "95be68300c1914507aea8fa1948b3beac771b8d1ccbe33fb9151f1938906a5bffb560a070f3550c32817469dbbff9f9f57887843a29a09f585f2bd4bedb13a1f",
+          "sha1": "466d1778dddf96f3d1c6d83f801b5d6b9a75a6c9"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/pgeobnib/iris-neoforge-1.8.6%2Bmc1.21.1.jar",
         "filename": "iris-neoforge-1.8.6+mc1.21.1.jar",
@@ -697,7 +697,7 @@
     "changelog": "This fixes many 1.21.4 bugs with PBR.",
     "changelog_url": null,
     "date_published": "2024-12-27T00:08:42.996458Z",
-    "downloads": 66333,
+    "downloads": 66344,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -740,7 +740,7 @@
     "changelog": "This fixes many PBR issues with 1.21.4.",
     "changelog_url": null,
     "date_published": "2024-12-27T00:05:57.738022Z",
-    "downloads": 1367079,
+    "downloads": 1367641,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -782,15 +782,15 @@
     "changelog": "This is a hotfix release to fix many bugs introduced in 1.21.4, including PBR not working as expected, performance issues with rain, and Apple chips having the UI turn black.",
     "changelog_url": null,
     "date_published": "2024-12-12T01:28:05.032531Z",
-    "downloads": 22762,
+    "downloads": 22768,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a20b3d03bca6f14a1e9c41e3f269c82137c5df53",
-          "sha512": "a523a46dc80b653a71c032ef8218722ac6b8c535f9d1e58b884163cdd8d171b5aed728bf95112488508678aa04868438ff990d053976b37137eb7628f0dc9aa7"
+          "sha512": "a523a46dc80b653a71c032ef8218722ac6b8c535f9d1e58b884163cdd8d171b5aed728bf95112488508678aa04868438ff990d053976b37137eb7628f0dc9aa7",
+          "sha1": "a20b3d03bca6f14a1e9c41e3f269c82137c5df53"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/5OyTT1R6/iris-neoforge-1.8.4%2Bmc1.21.4.jar",
         "filename": "iris-neoforge-1.8.4+mc1.21.4.jar",
@@ -825,15 +825,15 @@
     "changelog": "This is a hotfix release to fix many bugs introduced in 1.21.4, including PBR not working as expected, performance issues with rain, and Apple chips having the UI turn black.",
     "changelog_url": null,
     "date_published": "2024-12-12T01:27:16.906932Z",
-    "downloads": 347145,
+    "downloads": 347217,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6b0e76d013a8641023a69e910ad362cb26cc80f06e35e084ac16b1ce7dc1d4c69cf37692fb8e07e0c7cbf80f1eded23c776e2310be417aff99d404b1a9ca27e4",
-          "sha1": "935a243c590a888b654d192d4175096badf25101"
+          "sha1": "935a243c590a888b654d192d4175096badf25101",
+          "sha512": "6b0e76d013a8641023a69e910ad362cb26cc80f06e35e084ac16b1ce7dc1d4c69cf37692fb8e07e0c7cbf80f1eded23c776e2310be417aff99d404b1a9ca27e4"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/J55HRGSf/iris-fabric-1.8.4%2Bmc1.21.4.jar",
         "filename": "iris-fabric-1.8.4+mc1.21.4.jar",
@@ -868,15 +868,15 @@
     "changelog": "cake firework fix",
     "changelog_url": null,
     "date_published": "2024-12-04T02:03:22.855527Z",
-    "downloads": 162980,
+    "downloads": 163010,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4da9689516ed47dbdae463bc8d520812e343e474",
-          "sha512": "cd22a40ae331ced5772062bdd1fa1fe4487daf4b41ab081f54852cf4516818bc5190c1f036b772f9025c7a1dbf7925af77bd7b3b368a9d0aadd5f9d3b2b1a78a"
+          "sha512": "cd22a40ae331ced5772062bdd1fa1fe4487daf4b41ab081f54852cf4516818bc5190c1f036b772f9025c7a1dbf7925af77bd7b3b368a9d0aadd5f9d3b2b1a78a",
+          "sha1": "4da9689516ed47dbdae463bc8d520812e343e474"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1jDkBRQP/iris-fabric-1.8.3%2Bmc1.21.4.jar",
         "filename": "iris-fabric-1.8.3+mc1.21.4.jar",
@@ -911,15 +911,15 @@
     "changelog": "This is a direct update to 1.21.4.",
     "changelog_url": null,
     "date_published": "2024-12-03T21:37:41.249575Z",
-    "downloads": 12195,
+    "downloads": 12224,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3e3933baa7ba6a94645311e4d183915de45243f0",
-          "sha512": "0c3d83a2e04f28bcd474d62e3627592236caca260c1fe9b9cc4b0e1bbbf281195c3586b7b2bcb9e355bcc550e28676e41e7390b8c1403b6053134af95ab7ac58"
+          "sha512": "0c3d83a2e04f28bcd474d62e3627592236caca260c1fe9b9cc4b0e1bbbf281195c3586b7b2bcb9e355bcc550e28676e41e7390b8c1403b6053134af95ab7ac58",
+          "sha1": "3e3933baa7ba6a94645311e4d183915de45243f0"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/ZnhzDm36/iris-fabric-1.8.2%2Bmc1.21.4.jar",
         "filename": "iris-fabric-1.8.2+mc1.21.4.jar",
@@ -954,7 +954,7 @@
     "changelog": "Update to Sodium 0.6.1.",
     "changelog_url": null,
     "date_published": "2024-12-02T23:19:30.785678Z",
-    "downloads": 272823,
+    "downloads": 273132,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -996,15 +996,15 @@
     "changelog": "Update to Sodium 0.6.1.",
     "changelog_url": null,
     "date_published": "2024-12-02T23:18:19.380766Z",
-    "downloads": 8147,
+    "downloads": 8163,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a83afdcb9953ca6559829a56fd5111fc4f40ac80feb21bd942a22a22ad34e0be15709f6c8b155ab28f7b7c14e412010de6806b8a3050b0f7720b75e8153b92a1",
-          "sha1": "484be319b4b4d39d39e626d19ce326297b5f83b2"
+          "sha1": "484be319b4b4d39d39e626d19ce326297b5f83b2",
+          "sha512": "a83afdcb9953ca6559829a56fd5111fc4f40ac80feb21bd942a22a22ad34e0be15709f6c8b155ab28f7b7c14e412010de6806b8a3050b0f7720b75e8153b92a1"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/mRdVEpVp/iris-neoforge-1.8.1%2Bmc1.21.3.jar",
         "filename": "iris-neoforge-1.8.1+mc1.21.3.jar",
@@ -1038,7 +1038,7 @@
     "changelog": "Update to Sodium 0.6.1.",
     "changelog_url": null,
     "date_published": "2024-12-02T23:17:39.61682Z",
-    "downloads": 74192,
+    "downloads": 74235,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1082,15 +1082,15 @@
     "changelog": "Update to Sodium 0.6.1.",
     "changelog_url": null,
     "date_published": "2024-12-02T23:16:42.985387Z",
-    "downloads": 1835841,
+    "downloads": 1836731,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "9d4f5f923a08266831b33facf7b6f9f0080c906c652dfa1aca363f3bb4ca03ebb49aba98712820a9cc47df8ef80c7868f883d9f24aefc5449b96d67d83286ddb",
-          "sha1": "292dd61803e8e7c0f18db77a11b1aaaaa6b07ccc"
+          "sha1": "292dd61803e8e7c0f18db77a11b1aaaaa6b07ccc",
+          "sha512": "9d4f5f923a08266831b33facf7b6f9f0080c906c652dfa1aca363f3bb4ca03ebb49aba98712820a9cc47df8ef80c7868f883d9f24aefc5449b96d67d83286ddb"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/IzngD3Cy/iris-fabric-1.8.1%2Bmc1.21.1.jar",
         "filename": "iris-fabric-1.8.1+mc1.21.1.jar",
@@ -1124,7 +1124,7 @@
     "changelog": "## One of the biggest releases ever, Iris 1.8 and Sodium 0.6 are now out of beta. \n\nWith new functionality like translucency sorting, support for NeoForge and the Fabric Rendering API, and better mod compatibility, this 1.21.x release has all you could wish for. Shaders now have better mod support and slightly better performance, with improved visuals thanks to updates in Sodium.",
     "changelog_url": null,
     "date_published": "2024-11-17T05:57:49.443634Z",
-    "downloads": 19776,
+    "downloads": 19783,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1167,7 +1167,7 @@
     "changelog": "## One of the biggest releases ever, Iris 1.8 and Sodium 0.6 are now out of beta. \n\nWith new functionality like translucency sorting, support for NeoForge and the Fabric Rendering API, and better mod compatibility, this 1.21.x release has all you could wish for. Shaders now have better mod support and slightly better performance, with improved visuals thanks to updates in Sodium.",
     "changelog_url": null,
     "date_published": "2024-11-17T05:57:20.261974Z",
-    "downloads": 253706,
+    "downloads": 253788,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1209,7 +1209,7 @@
     "changelog": "## One of the biggest releases ever, Iris 1.8 and Sodium 0.6 are now out of beta. \n\nWith new functionality like translucency sorting, support for NeoForge and the Fabric Rendering API, and better mod compatibility, this 1.21.x release has all you could wish for. Shaders now have better mod support and slightly better performance, with improved visuals thanks to updates in Sodium.",
     "changelog_url": null,
     "date_published": "2024-11-17T05:56:29.658537Z",
-    "downloads": 17492,
+    "downloads": 17507,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1253,15 +1253,15 @@
     "changelog": "## One of the biggest releases ever, Iris 1.8 and Sodium 0.6 are now out of beta. \n\nWith new functionality like translucency sorting, support for NeoForge and the Fabric Rendering API, and better mod compatibility, this 1.21.x release has all you could wish for. Shaders now have better mod support and slightly better performance, with improved visuals thanks to updates in Sodium.",
     "changelog_url": null,
     "date_published": "2024-11-17T05:55:36.290304Z",
-    "downloads": 377165,
+    "downloads": 377313,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "261f47a680c4d7afbff3d38c7bd9c01dd2d5fc64",
-          "sha512": "9feafdd697118f9fb22be78857c7e4a4367bea93e63affe65da4795ad383de68653569d99d5839aa9db8d4d93589a30cb48f74a074db004ccc089a7b0b55a766"
+          "sha512": "9feafdd697118f9fb22be78857c7e4a4367bea93e63affe65da4795ad383de68653569d99d5839aa9db8d4d93589a30cb48f74a074db004ccc089a7b0b55a766",
+          "sha1": "261f47a680c4d7afbff3d38c7bd9c01dd2d5fc64"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/MA2sKKaG/iris-fabric-1.8.0%2Bmc1.21.1.jar",
         "filename": "iris-fabric-1.8.0+mc1.21.1.jar",
@@ -1295,15 +1295,15 @@
     "changelog": "This fixes a crash with Sodium beta 5.",
     "changelog_url": null,
     "date_published": "2024-11-15T19:46:02.161661Z",
-    "downloads": 2477,
+    "downloads": 2478,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "59d1542ff2805b53c25e225b5d5466f564d0bee78614d5347ab3d53c8ae151ea9835275622643af3dcb552644d41e7b65aceeb7406ff8056cec226a954d2fdc6",
-          "sha1": "401f8d97f771cdaa0b344aeb014a7c63ba5709fd"
+          "sha1": "401f8d97f771cdaa0b344aeb014a7c63ba5709fd",
+          "sha512": "59d1542ff2805b53c25e225b5d5466f564d0bee78614d5347ab3d53c8ae151ea9835275622643af3dcb552644d41e7b65aceeb7406ff8056cec226a954d2fdc6"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/LZazop7o/iris-neoforge-1.8.0-beta.9%2Bmc1.21.3.jar",
         "filename": "iris-neoforge-1.8.0-beta.9+mc1.21.3.jar",
@@ -1339,15 +1339,15 @@
     "changelog": "This fixes a crash with Sodium beta 5.",
     "changelog_url": null,
     "date_published": "2024-11-15T19:45:09.829611Z",
-    "downloads": 25069,
+    "downloads": 25076,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2222f5f1ada85b3aa55b318aac83610ab1b869d62a19cd871d39688b253d256678bd2412622500df0a12ceba655b015ac1c4a557133e2c0ef306d9a61e3a0117",
-          "sha1": "06a2a6a3d4a08266dc83e09777df2680a95b6a55"
+          "sha1": "06a2a6a3d4a08266dc83e09777df2680a95b6a55",
+          "sha512": "2222f5f1ada85b3aa55b318aac83610ab1b869d62a19cd871d39688b253d256678bd2412622500df0a12ceba655b015ac1c4a557133e2c0ef306d9a61e3a0117"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/OYXyPwMd/iris-fabric-1.8.0-beta.9%2Bmc1.21.3.jar",
         "filename": "iris-fabric-1.8.0-beta.9+mc1.21.3.jar",
@@ -1383,7 +1383,7 @@
     "changelog": "This is a hotfix to fix critical issues with shadows.\n\n",
     "changelog_url": null,
     "date_published": "2024-11-08T02:31:35.129257Z",
-    "downloads": 119392,
+    "downloads": 119419,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1425,15 +1425,15 @@
     "changelog": "This is a hotfix to fix critical issues with shadows.\n\n",
     "changelog_url": null,
     "date_published": "2024-11-08T02:30:49.106125Z",
-    "downloads": 6451,
+    "downloads": 6461,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "58feafbb458d5c4ea51e5bb6277c50e6cfa0d9ea6edf22e71a1c6b4f1b5d83f8982adb3d410cfaa44b50580d97f45fb0179ae01d06949945fd5fa77dc65aeeab",
-          "sha1": "4dc5f2d90e770e02d9713444c32d8eef5ed198d8"
+          "sha1": "4dc5f2d90e770e02d9713444c32d8eef5ed198d8",
+          "sha512": "58feafbb458d5c4ea51e5bb6277c50e6cfa0d9ea6edf22e71a1c6b4f1b5d83f8982adb3d410cfaa44b50580d97f45fb0179ae01d06949945fd5fa77dc65aeeab"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/jkePzKpI/iris-neoforge-1.8.0-beta.8%2Bmc1.21.3.jar",
         "filename": "iris-neoforge-1.8.0-beta.8+mc1.21.3.jar",
@@ -1467,7 +1467,7 @@
     "changelog": "This is a hotfix to fix issues with shadows.",
     "changelog_url": null,
     "date_published": "2024-11-08T02:30:01.01223Z",
-    "downloads": 9549,
+    "downloads": 9552,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1510,7 +1510,7 @@
     "changelog": "This is a hotfix to fix critical issues with shadows.",
     "changelog_url": null,
     "date_published": "2024-11-08T02:28:55.466328Z",
-    "downloads": 216101,
+    "downloads": 216205,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1554,7 +1554,7 @@
     "changelog": "This comes with many fixes for 1.21.2, and fixes for shadow texture handling. A new debug groups feature is present for shader developers.",
     "changelog_url": null,
     "date_published": "2024-11-03T23:55:12.771507Z",
-    "downloads": 49991,
+    "downloads": 50005,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1603,8 +1603,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5d279313dd6b5aafe42000d64f0cad65f35a7d16",
-          "sha512": "e55d9dde5d3c4208d81ac053802827c58546062607a7a1a71edcadf48aae7e2339ab02e9bccd48280ca8caedc54e55f8de3585065be946a547895eba7c5ceca1"
+          "sha512": "e55d9dde5d3c4208d81ac053802827c58546062607a7a1a71edcadf48aae7e2339ab02e9bccd48280ca8caedc54e55f8de3585065be946a547895eba7c5ceca1",
+          "sha1": "5d279313dd6b5aafe42000d64f0cad65f35a7d16"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/GXh6E3im/iris-neoforge-1.8.0-beta.7%2Bmc1.21.3.jar",
         "filename": "iris-neoforge-1.8.0-beta.7+mc1.21.3.jar",
@@ -1640,15 +1640,15 @@
     "changelog": "This comes with many fixes for 1.21.2, and fixes for shadow texture handling. A new debug groups feature is present for shader developers.",
     "changelog_url": null,
     "date_published": "2024-11-03T23:52:47.563975Z",
-    "downloads": 123913,
+    "downloads": 123936,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "7ca1a24e477d3fec1529afe1c6db588fde0ceca8325cfe0c1247a9c64c4fa7fe20257ae7a1506a15aa4ad7fb44fe46830db673c0659e53f57e8b00d85020701c",
-          "sha1": "61ca8bf8badfe83bffe46a170b5b44cd5a606147"
+          "sha1": "61ca8bf8badfe83bffe46a170b5b44cd5a606147",
+          "sha512": "7ca1a24e477d3fec1529afe1c6db588fde0ceca8325cfe0c1247a9c64c4fa7fe20257ae7a1506a15aa4ad7fb44fe46830db673c0659e53f57e8b00d85020701c"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/RyzH5mIp/iris-fabric-1.8.0-beta.7%2Bmc1.21.1.jar",
         "filename": "iris-fabric-1.8.0-beta.7+mc1.21.1.jar",
@@ -1682,15 +1682,15 @@
     "changelog": "This comes with many fixes for 1.21.2, and fixes for shadow texture handling. A new debug groups feature is present for shader developers.",
     "changelog_url": null,
     "date_published": "2024-11-03T23:51:04.180984Z",
-    "downloads": 7041,
+    "downloads": 7044,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ebd9f1e013af0bc972bbc2a59a94ce22499f21dc",
-          "sha512": "29510ed13a14eb54ee0f3a8b47a74163ee7c34c2fd6e68c7205ab8022076c85f99763ce1a2ab38caa9855222af4ed52e600f1ceb6c8ffb0c5ba71c2fdd5a1b89"
+          "sha512": "29510ed13a14eb54ee0f3a8b47a74163ee7c34c2fd6e68c7205ab8022076c85f99763ce1a2ab38caa9855222af4ed52e600f1ceb6c8ffb0c5ba71c2fdd5a1b89",
+          "sha1": "ebd9f1e013af0bc972bbc2a59a94ce22499f21dc"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/Wla8rJYn/iris-neoforge-1.8.0-beta.7%2Bmc1.21.1.jar",
         "filename": "iris-neoforge-1.8.0-beta.7+mc1.21.1.jar",
@@ -1725,15 +1725,15 @@
     "changelog": "This is a port to 1.21.2, with improved mod support and minor performance improvements.\n\n_Many changes have been made to shaders in 1.21.2 that improve load times but could affect rendering. Please report any issues exclusive to 1.21.2._",
     "changelog_url": null,
     "date_published": "2024-10-22T16:59:26.328354Z",
-    "downloads": 16854,
+    "downloads": 16860,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "13d96b8168051995c87dcc8f0618d010756af0320e799c0d6987ced88e5dce1040ae4c8951a2c3cc1d77357fd34926a3331bacf2091dd3461aab05b98e886cf5",
-          "sha1": "30de219b0b42bd320a23975f27892ec438ce3f28"
+          "sha1": "30de219b0b42bd320a23975f27892ec438ce3f28",
+          "sha512": "13d96b8168051995c87dcc8f0618d010756af0320e799c0d6987ced88e5dce1040ae4c8951a2c3cc1d77357fd34926a3331bacf2091dd3461aab05b98e886cf5"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/C15qY9cE/iris-neoforge-1.8.0-beta.6%2Bmc1.21.2.jar",
         "filename": "iris-neoforge-1.8.0-beta.6+mc1.21.2.jar",
@@ -1769,7 +1769,7 @@
     "changelog": "This is a port to 1.21.2, with improved mod support and minor performance improvements.\n\n_Many changes have been made to shaders in 1.21.2 that improve load times but could affect rendering. Please report any issues exclusive to 1.21.2._",
     "changelog_url": null,
     "date_published": "2024-10-22T15:46:19.934497Z",
-    "downloads": 182011,
+    "downloads": 182046,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1812,7 +1812,7 @@
     "changelog": "This release adds support for Distant Horizons 2.2.",
     "changelog_url": null,
     "date_published": "2024-10-06T18:27:05.586066Z",
-    "downloads": 2144730,
+    "downloads": 2148503,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1854,7 +1854,7 @@
     "changelog": "Fixes compatibility with NeoForge 21.1.62.",
     "changelog_url": null,
     "date_published": "2024-09-28T17:56:21.443909Z",
-    "downloads": 54110,
+    "downloads": 54123,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1897,7 +1897,7 @@
     "changelog": "This is a major bug fix release for Iris 1.8, fixing quite a few bugs:\n\n- Shader packs are now able to disable the stars and sky\n- VRAM usage has been improved on some shader packs\n- A bug where packs would randomly fail to load with Distant Horizons has been fixed\n- A bug where packs such as KappaPT would have light leaking has been fixed\n- Block ID's are now unsigned excluding -1 (this may break a small amount of packs)\n- New shadow programs have been added: `shadow_cutout`, `shadow_translucent`, `shadow_entities`, `shadow_block`, and `shadow_solid`\n- Distant Horizons + Iris does not instantly crash your Mac (it still does not yet work correctly)",
     "changelog_url": null,
     "date_published": "2024-09-15T18:53:13.599612Z",
-    "downloads": 49434,
+    "downloads": 49486,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1941,15 +1941,15 @@
     "changelog": "This is a major bug fix release for Iris 1.8, fixing quite a few bugs:\n\n- Shader packs are now able to disable the stars and sky\n- VRAM usage has been improved on some shader packs\n- A bug where packs would randomly fail to load with Distant Horizons has been fixed\n- A bug where packs such as KappaPT would have light leaking has been fixed\n- Block ID's are now unsigned excluding -1 (this may break a small amount of packs)\n- New shadow programs have been added: `shadow_cutout`, `shadow_translucent`, `shadow_entities`, `shadow_block`, and `shadow_solid`\n- Distant Horizons + Iris does not instantly crash your Mac (it still does not yet work correctly)",
     "changelog_url": null,
     "date_published": "2024-09-15T18:48:23.136139Z",
-    "downloads": 888252,
+    "downloads": 888638,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b177007cc1b5e1bb045b094d84fb38513c53f0ecc03ea5e90f57964c3bc8f70bd5e97d3e933a2e40359d84314ede94c883f17add6672b4eda5e6bb5cffb97187",
-          "sha1": "6481f2b12ec0d4040424b5f78d4b56faaf862ad5"
+          "sha1": "6481f2b12ec0d4040424b5f78d4b56faaf862ad5",
+          "sha512": "b177007cc1b5e1bb045b094d84fb38513c53f0ecc03ea5e90f57964c3bc8f70bd5e97d3e933a2e40359d84314ede94c883f17add6672b4eda5e6bb5cffb97187"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/u9KvDA4s/iris-fabric-1.8.0-beta.4%2Bmc1.21.1.jar",
         "filename": "iris-fabric-1.8.0-beta.4+mc1.21.1.jar",
@@ -1985,7 +1985,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-08-25T22:31:23.296002Z",
-    "downloads": 499096,
+    "downloads": 499235,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -2021,7 +2021,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-08-25T22:30:53.777448Z",
-    "downloads": 21653,
+    "downloads": 21657,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -2057,7 +2057,7 @@
     "changelog": "Fixes a crash bug in Beta 1.",
     "changelog_url": null,
     "date_published": "2024-08-23T02:21:19.902642Z",
-    "downloads": 10285,
+    "downloads": 10286,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -2094,7 +2094,7 @@
     "changelog": "Fixes a crash bug in Beta 1.",
     "changelog_url": null,
     "date_published": "2024-08-23T02:20:26.666149Z",
-    "downloads": 174501,
+    "downloads": 174581,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -2130,15 +2130,15 @@
     "changelog": "# Iris 1.8 and Sodium 0.6 are now in beta for Minecraft 1.21!\n\nThis is a major release for everyone; special thanks to douira and the rest of the team at CaffeineMC, as well as all the testers.\n\nFirst, the (admittedly minor) changes in Iris 1.8 standalone:\n- (Better) support for tags in shader packs! This allows shader packs to more easily support modded blocks should they wish.\n- Support for **Distant Horizons 2.2**. This will officially release this weekend; any older versions will not work.\n- Fixed support for some packs that did not work correctly on Iris 1.7.x. (Some packs such as KappaPT are currently broken for an unknown reason; this is being investigated.)\n\nNow, for the big part.\n# The changes in Sodium 0.6:\n\n## - Translucency sorting! \n   - No more weird bugs with putting stained glass in front of water or water through itself; it will all be handled by an advanced algorithm.\n## - Support for the Fabric Rendering API (FRAPI)!\n   - This will allow mods like Continuity, LambdaBetterGrass and Distant Horizons to work **without Indium**.\n## - Both Iris and Sodium now support NeoForge.\n   - Yes, that's correct; You will be able to use the official releases of both Iris and Sodium on your favorite NeoForge packs, such as All the Mods 10.",
     "changelog_url": null,
     "date_published": "2024-08-22T23:13:04.61567Z",
-    "downloads": 9632,
+    "downloads": 9639,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b69c93ef5f9585c761e3a1b1d8c03b24b4964b32",
-          "sha512": "0c1cf05172993296d39b521ade78eb4ec498c527d10d5046a6e046e914a6453e7a00cafce7fd4ccabc3924a2655e4ae042378c07f230f7edad5f290d81aa2199"
+          "sha512": "0c1cf05172993296d39b521ade78eb4ec498c527d10d5046a6e046e914a6453e7a00cafce7fd4ccabc3924a2655e4ae042378c07f230f7edad5f290d81aa2199",
+          "sha1": "b69c93ef5f9585c761e3a1b1d8c03b24b4964b32"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/LxHRTZan/iris-neoforge-1.8.0-beta.1%2Bmc1.21.1.jar",
         "filename": "iris-neoforge-1.8.0-beta.1+mc1.21.1.jar",
@@ -2174,15 +2174,15 @@
     "changelog": "# Iris 1.8 and Sodium 0.6 are now in beta for Minecraft 1.21!\n\nThis is a major release for everyone; special thanks to douira and the rest of the team at CaffeineMC, as well as all the testers.\n\nFirst, the (admittedly minor) changes in Iris 1.8 standalone:\n- (Better) support for tags in shader packs! This allows shader packs to more easily support modded blocks should they wish.\n- Support for **Distant Horizons 2.2**. This will officially release this weekend; any older versions will not work.\n- Fixed support for some packs that did not work correctly on Iris 1.7.x. (Some packs such as KappaPT are currently broken for an unknown reason; this is being investigated.)\n\nNow, for the big part.\n# The changes in Sodium 0.6:\n\n## - Translucency sorting! \n   - No more weird bugs with putting stained glass in front of water or water through itself; it will all be handled by an advanced algorithm.\n## - Support for the Fabric Rendering API (FRAPI)!\n   - This will allow mods like Continuity, LambdaBetterGrass and Distant Horizons to work **without Indium**.\n## - Both Iris and Sodium now support NeoForge.\n   - Yes, that's correct; You will be able to use the official releases of both Iris and Sodium on your favorite NeoForge packs, such as All the Mods 10.",
     "changelog_url": null,
     "date_published": "2024-08-22T23:11:54.656243Z",
-    "downloads": 23664,
+    "downloads": 23685,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f275bf60e246f97b1e187ef4130403aa535a8d13",
-          "sha512": "99ff78b7cda77131932334b7383487bb4120052c7e2526969b583b148d0f011ecaa2b61cf59b69adf59c6065558d34b14b35c84aea585a2c2c684eeb89139e85"
+          "sha512": "99ff78b7cda77131932334b7383487bb4120052c7e2526969b583b148d0f011ecaa2b61cf59b69adf59c6065558d34b14b35c84aea585a2c2c684eeb89139e85",
+          "sha1": "f275bf60e246f97b1e187ef4130403aa535a8d13"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/81XVWegK/iris-fabric-1.8.0-beta.1%2Bmc1.21.1.jar",
         "filename": "iris-fabric-1.8.0-beta.1+mc1.21.1.jar",
@@ -2218,15 +2218,15 @@
     "changelog": "This release fixes a critical bug relating to name tag crashes, as well as a less critical bug related to the dragon death animation.",
     "changelog_url": null,
     "date_published": "2024-07-01T00:12:05.988508Z",
-    "downloads": 3998268,
+    "downloads": 4000255,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "1b4e44a74c850d407518bc5cbe33eec9577ad9e9",
-          "sha512": "bcd9b4f5cef1521c00b59cc9409725556922a077c60f62ba834dca680e29f334660a7c68150ff827779fb888585042b1ba687dfce6fd4d650507d9c59f023703"
+          "sha512": "bcd9b4f5cef1521c00b59cc9409725556922a077c60f62ba834dca680e29f334660a7c68150ff827779fb888585042b1ba687dfce6fd4d650507d9c59f023703",
+          "sha1": "1b4e44a74c850d407518bc5cbe33eec9577ad9e9"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/kuOV4Ece/iris-1.7.3%2Bmc1.21.jar",
         "filename": "iris-1.7.3+mc1.21.jar",
@@ -2261,15 +2261,15 @@
     "changelog": "This release adds support for Sodium 0.5.11, fixes an incompatibility with Carpet Mod, adds the gbuffers_lightning program, and fixes some bugs related to vertex corruption.",
     "changelog_url": null,
     "date_published": "2024-06-29T14:36:47.089475Z",
-    "downloads": 71229,
+    "downloads": 71254,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "cc155003e9301bafe506f1c66593f19ccb880a40",
-          "sha512": "ac89377a1395603e35563ee4ee8cf0e774d0b5f489e688b0db5f309c3200cb42cb0776d0714c373d78ecb4745a051a9aee17f9564f20e7a8d88f13dc48131622"
+          "sha512": "ac89377a1395603e35563ee4ee8cf0e774d0b5f489e688b0db5f309c3200cb42cb0776d0714c373d78ecb4745a051a9aee17f9564f20e7a8d88f13dc48131622",
+          "sha1": "cc155003e9301bafe506f1c66593f19ccb880a40"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/C9Tu8Kbn/iris-1.7.2%2Bmc1.21.jar",
         "filename": "iris-1.7.2+mc1.21.jar",
@@ -2305,7 +2305,7 @@
     "changelog": "This release adds support for Sodium 0.5.11, fixes an incompatibility with Carpet Mod, adds the gbuffers_lightning program, and fixes some bugs related to vertex corruption.",
     "changelog_url": null,
     "date_published": "2024-06-29T14:35:01.933687Z",
-    "downloads": 264624,
+    "downloads": 264860,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2349,7 +2349,7 @@
     "changelog": "This release adds support for Sodium 0.5.11, fixes an incompatibility with Carpet Mod, adds the gbuffers_lightning program, and fixes some bugs related to vertex corruption.",
     "changelog_url": null,
     "date_published": "2024-06-29T14:30:35.758569Z",
-    "downloads": 545675,
+    "downloads": 546248,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2392,7 +2392,7 @@
     "changelog": "This release adds support for Sodium 0.5.11, fixes an incompatibility with Carpet Mod, adds the `gbuffers_lightning` program, and fixes some bugs related to vertex corruption.",
     "changelog_url": null,
     "date_published": "2024-06-29T14:25:17.666927Z",
-    "downloads": 1574476,
+    "downloads": 1575518,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2436,15 +2436,15 @@
     "changelog": "1.21 support Fixed a bug that could cause the UI to show incorrectly Add \"constant mood\" uniforms, expression parsers (fayer3), tag support in properties, and support SSBO's above 2GB Added better transform patcher messages (fayer3)",
     "changelog_url": null,
     "date_published": "2024-06-13T21:17:29.889906Z",
-    "downloads": 127085,
+    "downloads": 127110,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "9a858e46db5292c1f1b9f857cad902a6ec5cb4e0",
-          "sha512": "7eb68c48373c0d7210c2ff65843564187825393f2309cda8ca4fe60b3f524b25e9920257df979eb73b87d1ab1e5895d714440eb9b6b8c97156c68712d76bd7c0"
+          "sha512": "7eb68c48373c0d7210c2ff65843564187825393f2309cda8ca4fe60b3f524b25e9920257df979eb73b87d1ab1e5895d714440eb9b6b8c97156c68712d76bd7c0",
+          "sha1": "9a858e46db5292c1f1b9f857cad902a6ec5cb4e0"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/keLlmlCc/iris-1.7.1%2Bmc1.20.6.jar",
         "filename": "iris-1.7.1+mc1.20.6.jar",
@@ -2472,15 +2472,15 @@
     "changelog": "Hotfix.",
     "changelog_url": null,
     "date_published": "2024-06-13T21:16:01.660652Z",
-    "downloads": 240882,
+    "downloads": 240987,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "574992b5760f3bf2f9aa0b70984f19fb1952b748",
-          "sha512": "e0b8fe9adbecb427b00d4e90a21dc2730ed18415f9037ecfe4904ca9d246c1cc04cf8799ae0abf62d660bfde5faeec578afe7d4c0cb2c67045ce1ef2d45eea4c"
+          "sha512": "e0b8fe9adbecb427b00d4e90a21dc2730ed18415f9037ecfe4904ca9d246c1cc04cf8799ae0abf62d660bfde5faeec578afe7d4c0cb2c67045ce1ef2d45eea4c",
+          "sha1": "574992b5760f3bf2f9aa0b70984f19fb1952b748"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/G5dd9TM4/iris-1.7.1%2Bmc1.20.1.jar",
         "filename": "iris-1.7.1+mc1.20.1.jar",
@@ -2508,7 +2508,7 @@
     "changelog": "1.21 support\r\nFixed a bug that could cause the UI to show incorrectly\r\nAdd \"constant mood\" uniforms, expression parsers (fayer3), tag support in properties, and support SSBO's above 2GB\r\nAdded better transform patcher messages (fayer3)",
     "changelog_url": null,
     "date_published": "2024-06-13T16:23:38.710938Z",
-    "downloads": 697776,
+    "downloads": 697975,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2552,7 +2552,7 @@
     "changelog": "1.21 support\r\nFixed a bug that could cause the UI to show incorrectly\r\nAdd \"constant mood\" uniforms, expression parsers (fayer3), tag support in properties, and support SSBO's above 2GB\r\nAdded better transform patcher messages (fayer3)",
     "changelog_url": null,
     "date_published": "2024-06-13T16:17:00.427775Z",
-    "downloads": 129191,
+    "downloads": 129255,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2596,7 +2596,7 @@
     "changelog": "yeet",
     "changelog_url": null,
     "date_published": "2024-04-29T22:03:52.001028Z",
-    "downloads": 663907,
+    "downloads": 664006,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2632,15 +2632,15 @@
     "changelog": "This is a major release, bringing support for tessellation shaders, Distant Horizons, and many more features, alongside a 1.20.5 styled redesign.\r\n\r\nhttps://github.com/IrisShaders/Iris/blob/1.20.3/docs/changelogs/1.7.0/full.md",
     "changelog_url": null,
     "date_published": "2024-04-23T19:19:40.29965Z",
-    "downloads": 2243748,
+    "downloads": 2244467,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b02919e950102b77eb9f2908f8afa8b77af4b21381faf7c32c1b8a2efda3ca95acd21c940fe617165c3670ecc091c4f5034934e02ddec592f29c2c6cf85560f8",
-          "sha1": "28a02a9e2a4c881ed9e622aa0630276478383428"
+          "sha1": "28a02a9e2a4c881ed9e622aa0630276478383428",
+          "sha512": "b02919e950102b77eb9f2908f8afa8b77af4b21381faf7c32c1b8a2efda3ca95acd21c940fe617165c3670ecc091c4f5034934e02ddec592f29c2c6cf85560f8"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/KHQ2Hnpt/iris-1.7.0%2Bmc1.20.1.jar",
         "filename": "iris-1.7.0+mc1.20.1.jar",
@@ -2676,7 +2676,7 @@
     "changelog": "This is a major release, bringing support for tessellation shaders, Distant Horizons, and many more features, alongside a 1.20.5 styled redesign.\r\n\r\nhttps://github.com/IrisShaders/Iris/blob/1.20.3/docs/changelogs/1.7.0/full.md",
     "changelog_url": null,
     "date_published": "2024-04-23T19:16:39.242216Z",
-    "downloads": 435715,
+    "downloads": 435875,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2719,7 +2719,7 @@
     "changelog": "This is a major release, bringing support for tessellation shaders, Distant Horizons, and many more features, alongside a 1.20.5 styled redesign.\n\nhttps://github.com/IrisShaders/Iris/blob/1.20.3/docs/changelogs/1.7.0/full.md",
     "changelog_url": null,
     "date_published": "2024-04-23T19:09:19.588424Z",
-    "downloads": 192401,
+    "downloads": 192415,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2762,7 +2762,7 @@
     "changelog": "Fixes a bug causing drastically degraded performance in the last release.\n\n(pretend 1.6.16 never happened okay)",
     "changelog_url": null,
     "date_published": "2024-02-10T04:31:24.196783Z",
-    "downloads": 783401,
+    "downloads": 783742,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2806,7 +2806,7 @@
     "changelog": "Fixes a bug causing drastically degraded performance in the last release.\n\n(pretend 1.6.16 never happened okay)",
     "changelog_url": null,
     "date_published": "2024-02-10T04:27:40.820411Z",
-    "downloads": 1082173,
+    "downloads": 1082337,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2850,7 +2850,7 @@
     "changelog": "you know the drill, sodium 0.5.5",
     "changelog_url": null,
     "date_published": "2023-12-13T02:48:57.229816Z",
-    "downloads": 317748,
+    "downloads": 317790,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2893,15 +2893,15 @@
     "changelog": "sodium 0.5.5 or something",
     "changelog_url": null,
     "date_published": "2023-12-13T02:48:08.48591Z",
-    "downloads": 506354,
+    "downloads": 506525,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4d724f7016f389a7d4daf9e939307a79035d361d29bd210252efe59c8f09255c9372ae69f8b96b0dd2a47bb74b0667764445efc45b4233cb91e208823af58845",
-          "sha1": "aac3c343192ab77e5d3ede702151a0155a1712cc"
+          "sha1": "aac3c343192ab77e5d3ede702151a0155a1712cc",
+          "sha512": "4d724f7016f389a7d4daf9e939307a79035d361d29bd210252efe59c8f09255c9372ae69f8b96b0dd2a47bb74b0667764445efc45b4233cb91e208823af58845"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/Cjwm9s3i/iris-mc1.20.2-1.6.14.jar",
         "filename": "iris-mc1.20.2-1.6.14.jar",
@@ -2929,7 +2929,7 @@
     "changelog": "- Update to 1.20.4\r\n- Fix Lunar Client compatibility\r\n- Fix Rethinking Voxels compatibility",
     "changelog_url": null,
     "date_published": "2023-12-07T16:57:58.648055Z",
-    "downloads": 45009,
+    "downloads": 45017,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2979,8 +2979,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "00b71050e28be2fb827e5f67d1acd6a88f3b626e",
-          "sha512": "ceb643e14ae1394c9e7cc5301a3902e77879e30fd4521aa22db6f61c65001c6bc753e8f4227e46e0b88f002909432db3d4f492558e3e137bb77fd9a5c0336e8f"
+          "sha512": "ceb643e14ae1394c9e7cc5301a3902e77879e30fd4521aa22db6f61c65001c6bc753e8f4227e46e0b88f002909432db3d4f492558e3e137bb77fd9a5c0336e8f",
+          "sha1": "00b71050e28be2fb827e5f67d1acd6a88f3b626e"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/qpkCdX4h/iris-mc1.20.2-1.6.13.jar",
         "filename": "iris-mc1.20.2-1.6.13.jar",
@@ -3015,15 +3015,15 @@
     "changelog": "Fix snow crash",
     "changelog_url": null,
     "date_published": "2023-12-06T13:12:45.880674Z",
-    "downloads": 11002,
+    "downloads": 11003,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "665f5f79b14019d4d3ef9a91daa5bf015805a464",
-          "sha512": "e60f91f3b66fb1dc182cbe5f1e234402e53995edbdcc674503cb0e60611ce3c28970885948ca6d1493ebaf1c42236b5b9e987ce2db150392b782d38b7205beaf"
+          "sha512": "e60f91f3b66fb1dc182cbe5f1e234402e53995edbdcc674503cb0e60611ce3c28970885948ca6d1493ebaf1c42236b5b9e987ce2db150392b782d38b7205beaf",
+          "sha1": "665f5f79b14019d4d3ef9a91daa5bf015805a464"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/DKiqtWdm/iris-mc1.20.3-1.6.12.jar",
         "filename": "iris-mc1.20.3-1.6.12.jar",
@@ -3058,15 +3058,15 @@
     "changelog": "Fix snow crashing the game",
     "changelog_url": null,
     "date_published": "2023-12-06T13:12:20.182728Z",
-    "downloads": 12048,
+    "downloads": 12049,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "263a2e4e3cbada94448001d2c19e02122542ba6e",
-          "sha512": "6e8161892482a98033f56e76f816c700dbbd14d8d7dee7063c893962fdd8e9ecf6f356baa9c431137e4ef6a092d675af8ebb57f0420f7556c67e0bee40018f4f"
+          "sha512": "6e8161892482a98033f56e76f816c700dbbd14d8d7dee7063c893962fdd8e9ecf6f356baa9c431137e4ef6a092d675af8ebb57f0420f7556c67e0bee40018f4f",
+          "sha1": "263a2e4e3cbada94448001d2c19e02122542ba6e"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/CXOiI98u/iris-mc1.20.2-1.6.12.jar",
         "filename": "iris-mc1.20.2-1.6.12.jar",
@@ -3108,8 +3108,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "651ccbd2b0e8b5c4866b89658bf5a17c801a4cb9",
-          "sha512": "025ebb1fe087824113cac543cc7d84942aa6a249afa4670a18bd0af0c9b5a4b302343afbf54cfde8911af995adca60e5758986969246e2d34bef92a49eb59c30"
+          "sha512": "025ebb1fe087824113cac543cc7d84942aa6a249afa4670a18bd0af0c9b5a4b302343afbf54cfde8911af995adca60e5758986969246e2d34bef92a49eb59c30",
+          "sha1": "651ccbd2b0e8b5c4866b89658bf5a17c801a4cb9"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/LBcmOpqU/iris-mc1.20.3-1.6.11.jar",
         "filename": "iris-mc1.20.3-1.6.11.jar",
@@ -3151,8 +3151,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f07a13e909dafca5c92772a4539595a6889f0bd7f2177483972e4a8172b3f9bf89d9fe7adb763f37d055831e2c74d996b1f30fc60ded9c23d5638e476ddf5c48",
-          "sha1": "ae41feac2f8dcbe5cc846e7ac2caf676f4a9a5c5"
+          "sha1": "ae41feac2f8dcbe5cc846e7ac2caf676f4a9a5c5",
+          "sha512": "f07a13e909dafca5c92772a4539595a6889f0bd7f2177483972e4a8172b3f9bf89d9fe7adb763f37d055831e2c74d996b1f30fc60ded9c23d5638e476ddf5c48"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/ZKp9SOIC/iris-mc1.20.2-1.6.11.jar",
         "filename": "iris-mc1.20.2-1.6.11.jar",
@@ -3188,15 +3188,15 @@
     "changelog": "- Update to 1.20.3\n- Add playerLookVector and playerBodyVector vec3 uniforms\n- Add relativeEyePosition uniform\n- Added time uniforms\n- Redid handling of biome categories\n- Fix entityId in core shaders",
     "changelog_url": null,
     "date_published": "2023-12-06T00:31:49.551587Z",
-    "downloads": 1208495,
+    "downloads": 1209047,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "11c22bb87b55a7991663f2187490b25ea9c9f698",
-          "sha512": "209dda6b3d8a2d6f2d3008e1c14cc108fe4a28fe6847a439029f9ce1f333a1d7d893bd27599a7e2a9aab3c06ef0256457208fb9fe6b62d53718e096f92b256f8"
+          "sha512": "209dda6b3d8a2d6f2d3008e1c14cc108fe4a28fe6847a439029f9ce1f333a1d7d893bd27599a7e2a9aab3c06ef0256457208fb9fe6b62d53718e096f92b256f8",
+          "sha1": "11c22bb87b55a7991663f2187490b25ea9c9f698"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/ogjxrwGQ/iris-mc1.20.1-1.6.11.jar",
         "filename": "iris-mc1.20.1-1.6.11.jar",
@@ -3231,7 +3231,7 @@
     "changelog": "- Update to 1.20.3\r\n- Add playerLookVector and playerBodyVector vec3 uniforms\r\n- Add relativeEyePosition uniform\r\n- Added time uniforms\r\n- Redid handling of biome categories\r\n- Fix entityId in core shaders",
     "changelog_url": null,
     "date_published": "2023-12-06T00:30:40.466507Z",
-    "downloads": 173206,
+    "downloads": 173329,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3276,7 +3276,7 @@
     "changelog": "- Update to 1.20.3\r\n- Add playerLookVector and playerBodyVector vec3 uniforms\r\n- Add relativeEyePosition uniform\r\n- Added time uniforms\r\n- Redid handling of biome categories\r\n- Fix entityId in core shaders",
     "changelog_url": null,
     "date_published": "2023-12-06T00:29:15.108219Z",
-    "downloads": 459168,
+    "downloads": 459533,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3319,15 +3319,15 @@
     "changelog": "- Update to 1.20.3\r\n- Add playerLookVector and playerBodyVector vec3 uniforms\r\n- Add relativeEyePosition uniform\r\n- Added time uniforms\r\n- Redid handling of biome categories\r\n- Fix entityId in core shaders",
     "changelog_url": null,
     "date_published": "2023-12-06T00:28:24.224629Z",
-    "downloads": 169504,
+    "downloads": 169680,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "643d91c4639f4e7ff01dea5987e1e1b194d705518eb72f50ea2c000cc1a11c79abe45b9b39e805d43eb3f32987e57e90171ff825916626b8ef28c2f06647726e",
-          "sha1": "974ebb9ca30bf433d3533d385c461839e8adfbf2"
+          "sha1": "974ebb9ca30bf433d3533d385c461839e8adfbf2",
+          "sha512": "643d91c4639f4e7ff01dea5987e1e1b194d705518eb72f50ea2c000cc1a11c79abe45b9b39e805d43eb3f32987e57e90171ff825916626b8ef28c2f06647726e"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/ogIRhnAJ/iris-mc1.18.2-1.6.11.jar",
         "filename": "iris-mc1.18.2-1.6.11.jar",
@@ -3362,15 +3362,15 @@
     "changelog": "Iris 1.6.10 is now out.\r\n\r\n- Fixed PBR textures on 1.20.2\r\n- Removed an incredibly old hack for Slidur's shaders to make reflections look nicer\r\n- Fixed ComputerCraft monitors being extremely dark\r\n- Fixed biome support on 1.18.2/1.19.2",
     "changelog_url": null,
     "date_published": "2023-10-12T21:18:33.577598Z",
-    "downloads": 436419,
+    "downloads": 436450,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "daa258f5acba8a7cc6cc31c2b4d635e342d27e22",
-          "sha512": "6015765551010138b2b7042abb718601da38d39ec32c817b143215963b94284942ffaf83bf38b6b4bf2ab9ab01a1a46eb4c6c8964a457c9066502c4280975216"
+          "sha512": "6015765551010138b2b7042abb718601da38d39ec32c817b143215963b94284942ffaf83bf38b6b4bf2ab9ab01a1a46eb4c6c8964a457c9066502c4280975216",
+          "sha1": "daa258f5acba8a7cc6cc31c2b4d635e342d27e22"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/O7RZrusV/iris-mc1.20.2-1.6.10.jar",
         "filename": "iris-mc1.20.2-1.6.10.jar",
@@ -3405,7 +3405,7 @@
     "changelog": "Iris 1.6.10 is now out.\r\n\r\n- Fixed PBR textures on 1.20.2\r\n- Removed an incredibly old hack for Slidur's shaders to make reflections look nicer\r\n- Fixed ComputerCraft monitors being extremely dark\r\n- Fixed biome support on 1.18.2/1.19.2",
     "changelog_url": null,
     "date_published": "2023-10-12T21:17:20.610363Z",
-    "downloads": 44518,
+    "downloads": 44545,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3448,7 +3448,7 @@
     "changelog": "Iris 1.6.10 is now out.\r\n\r\n- Fixed PBR textures on 1.20.2\r\n- Removed an incredibly old hack for Slidur's shaders to make reflections look nicer\r\n- Fixed ComputerCraft monitors being extremely dark\r\n- Fixed biome support on 1.18.2/1.19.2",
     "changelog_url": null,
     "date_published": "2023-10-12T21:17:16.223006Z",
-    "downloads": 1400182,
+    "downloads": 1401650,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3493,15 +3493,15 @@
     "changelog": "Iris 1.6.10 is now out.\r\n\r\n- Fixed PBR textures on 1.20.2\r\n- Removed an incredibly old hack for Slidur's shaders to make reflections look nicer\r\n- Fixed ComputerCraft monitors being extremely dark\r\n- Fixed biome support on 1.18.2/1.19.2",
     "changelog_url": null,
     "date_published": "2023-10-12T21:15:18.404518Z",
-    "downloads": 372860,
+    "downloads": 373293,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fe07992587a5ae6842dddb190a6938ac9489c92ab5e997e96a563ef0dde94ad7b8026556a4d210b66eaf911180db91b53303fc592d4c8782734dac68481b1366",
-          "sha1": "01866f990895f9c2a8864f4a9535fe6ebc629e47"
+          "sha1": "01866f990895f9c2a8864f4a9535fe6ebc629e47",
+          "sha512": "fe07992587a5ae6842dddb190a6938ac9489c92ab5e997e96a563ef0dde94ad7b8026556a4d210b66eaf911180db91b53303fc592d4c8782734dac68481b1366"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/nfElruJM/iris-mc1.19.2-1.6.10.jar",
         "filename": "iris-mc1.19.2-1.6.10.jar",
@@ -3536,15 +3536,15 @@
     "changelog": "Iris 1.6.10 is now out.\r\n\r\n- Fixed PBR textures on 1.20.2\r\n- Removed an incredibly old hack for Slidur's shaders to make reflections look nicer\r\n- Fixed ComputerCraft monitors being extremely dark\r\n- Fixed biome support on 1.18.2/1.19.2",
     "changelog_url": null,
     "date_published": "2023-10-12T21:14:06.365254Z",
-    "downloads": 20636,
+    "downloads": 20643,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "db2ea1b4dbff1fd672da6f746633328e0e2b5003",
-          "sha512": "7e27f87d9a50727d64c5cbf4ec5114fac355ef462a90ac714c0faf7376d2d2b3b895a53bc9de49a268c438c6eacae308738b086073bb45b049e26c21eb5fb982"
+          "sha512": "7e27f87d9a50727d64c5cbf4ec5114fac355ef462a90ac714c0faf7376d2d2b3b895a53bc9de49a268c438c6eacae308738b086073bb45b049e26c21eb5fb982",
+          "sha1": "db2ea1b4dbff1fd672da6f746633328e0e2b5003"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/C7jhLYbl/iris-mc1.18.2-1.6.10.jar",
         "filename": "iris-mc1.18.2-1.6.10.jar",
@@ -3579,15 +3579,15 @@
     "changelog": "Updated to 1.20.2.",
     "changelog_url": null,
     "date_published": "2023-09-21T16:36:40.401531Z",
-    "downloads": 430481,
+    "downloads": 430492,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4266d06e00cd36e20b06f8f1b1ac7a50ffe54693",
-          "sha512": "ab5253423125ca17f84aae6d16d37adf3a8e5fe8513b9ef321c89c5a69a62736fe20d14b2e04dcf88086d7d682a93de5687585c42dbeed4da0e39d36d14846e5"
+          "sha512": "ab5253423125ca17f84aae6d16d37adf3a8e5fe8513b9ef321c89c5a69a62736fe20d14b2e04dcf88086d7d682a93de5687585c42dbeed4da0e39d36d14846e5",
+          "sha1": "4266d06e00cd36e20b06f8f1b1ac7a50ffe54693"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/Zra3j4VJ/iris-mc1.20.2-1.6.9.jar",
         "filename": "iris-mc1.20.2-1.6.9.jar",
@@ -3623,15 +3623,15 @@
     "changelog": "Iris 1.6.9 has been released for 1.18.2-1.20.1.\r\n\r\n- Fixed multiple bugs with the same result; entities glowing with Complementary Unbound/Reimagined.\r\n- Added a partial mitigation for skyrocketing VRAM.\r\n- Updated to Sodium 0.5.3 on 1.20.1.",
     "changelog_url": null,
     "date_published": "2023-09-18T03:48:52.387035Z",
-    "downloads": 487149,
+    "downloads": 487290,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "85f88b8bb3f10bf370604d894e872839a3e7710e",
-          "sha512": "9025927e394119ceaf2f106886a401abe95cd32d6afdfb114ceb065d907a437f7f2bc43037e14ff2794c2f14e6d033ffb53a22b01a0677e2e0035337aac1f4c6"
+          "sha512": "9025927e394119ceaf2f106886a401abe95cd32d6afdfb114ceb065d907a437f7f2bc43037e14ff2794c2f14e6d033ffb53a22b01a0677e2e0035337aac1f4c6",
+          "sha1": "85f88b8bb3f10bf370604d894e872839a3e7710e"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/P8R7yx6t/iris-mc1.20.1-1.6.9.jar",
         "filename": "iris-mc1.20.1-1.6.9.jar",
@@ -3666,7 +3666,7 @@
     "changelog": "Iris 1.6.9 has been released for 1.18.2-1.20.1.\r\n\r\n- Fixed multiple bugs with the same result; entities glowing with Complementary Unbound/Reimagined.\r\n- Added a partial mitigation for skyrocketing VRAM.\r\n- Updated to Sodium 0.5.3 on 1.20.1.",
     "changelog_url": null,
     "date_published": "2023-09-18T03:44:36.737088Z",
-    "downloads": 14460,
+    "downloads": 14461,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3711,7 +3711,7 @@
     "changelog": "Iris 1.6.9 has been released for 1.18.2-1.20.1.\r\n\r\n- Fixed multiple bugs with the same result; entities glowing with Complementary Unbound/Reimagined.\r\n- Added a partial mitigation for skyrocketing VRAM.\r\n- Updated to Sodium 0.5.3 on 1.20.1.",
     "changelog_url": null,
     "date_published": "2023-09-18T03:44:02.938646Z",
-    "downloads": 195310,
+    "downloads": 195401,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3754,15 +3754,15 @@
     "changelog": "Iris 1.6.9 has been released for 1.18.2-1.20.1.\r\n\r\n- Fixed multiple bugs with the same result; entities glowing with Complementary Unbound/Reimagined.\r\n- Added a partial mitigation for skyrocketing VRAM.\r\n- Updated to Sodium 0.5.3 on 1.20.1.",
     "changelog_url": null,
     "date_published": "2023-09-18T03:41:19.002987Z",
-    "downloads": 9080,
+    "downloads": 9081,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f75e6bed2e78309f50d92bb66d654639ee0d20c58b9640727cb2b10356ca2333a1ef099fd832540e52f6481cef21737f9acf8d86ed95c523ae17ea1cb515e5e6",
-          "sha1": "4f6538ae2d3f4a08d7b41b09db9ab539ad5077c3"
+          "sha1": "4f6538ae2d3f4a08d7b41b09db9ab539ad5077c3",
+          "sha512": "f75e6bed2e78309f50d92bb66d654639ee0d20c58b9640727cb2b10356ca2333a1ef099fd832540e52f6481cef21737f9acf8d86ed95c523ae17ea1cb515e5e6"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/Sqfk9myM/iris-mc1.18.2-1.6.9.jar",
         "filename": "iris-mc1.18.2-1.6.9.jar",
@@ -3797,15 +3797,15 @@
     "changelog": "Updates to Sodium 0.5.2 and fixes entity shadows.",
     "changelog_url": null,
     "date_published": "2023-08-17T23:06:28.529601Z",
-    "downloads": 427100,
+    "downloads": 427235,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "942b1b3ea44a7880b55e3896d398a6c44a3e65be",
-          "sha512": "fea24bb10711d712c3d5e12647f1fe76b364cf15fe60cdac78db8ee0fb9caf898ee7885d1eb69aa32a7b2b214cbeeb7e7891958e51666a325b3ee477f2115883"
+          "sha512": "fea24bb10711d712c3d5e12647f1fe76b364cf15fe60cdac78db8ee0fb9caf898ee7885d1eb69aa32a7b2b214cbeeb7e7891958e51666a325b3ee477f2115883",
+          "sha1": "942b1b3ea44a7880b55e3896d398a6c44a3e65be"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/pVNPPrMY/iris-mc1.20.1-1.6.8.jar",
         "filename": "iris-mc1.20.1-1.6.8.jar",
@@ -3840,7 +3840,7 @@
     "changelog": "Fixes a major issue with 1.6.6.",
     "changelog_url": null,
     "date_published": "2023-08-14T02:03:18.051065Z",
-    "downloads": 94988,
+    "downloads": 94997,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3883,7 +3883,7 @@
     "changelog": "Iris 1.6.6 has released, updating to Sodium 0.5.1, fixing some dimension related issues, and adding minor features for shader pack devs.\r\n\r\nDownload it from irisshaders.dev or Modrinth.",
     "changelog_url": null,
     "date_published": "2023-08-14T00:40:42.155197Z",
-    "downloads": 22148,
+    "downloads": 22154,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3928,15 +3928,15 @@
     "changelog": "Iris 1.6.6 has released, updating to Sodium 0.5.1, fixing some dimension related issues, and adding minor features for shader pack devs.\r\n\r\nDownload it from irisshaders.dev or Modrinth.",
     "changelog_url": null,
     "date_published": "2023-08-14T00:37:47.499869Z",
-    "downloads": 83669,
+    "downloads": 83723,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "9bde61c5fbcc2c2af72d662369a62d60b92acba0a529bcd5bddaa9c96b0d2fe98aac69d368007f33984eb58e4fced39c6b0b3fe878acf3cabf8ed100414d7a94",
-          "sha1": "6662ef4598971d8174c730d23841eaa954c46ba0"
+          "sha1": "6662ef4598971d8174c730d23841eaa954c46ba0",
+          "sha512": "9bde61c5fbcc2c2af72d662369a62d60b92acba0a529bcd5bddaa9c96b0d2fe98aac69d368007f33984eb58e4fced39c6b0b3fe878acf3cabf8ed100414d7a94"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/HzhiSGif/iris-mc1.19.2-1.6.6.jar",
         "filename": "iris-mc1.19.2-1.6.6.jar",
@@ -3971,7 +3971,7 @@
     "changelog": "Iris 1.6.6 has released, updating to Sodium 0.5.1, fixing some dimension related issues, and adding minor features for shader pack devs.\r\n\r\nDownload it from irisshaders.dev or Modrinth.",
     "changelog_url": null,
     "date_published": "2023-08-14T00:37:06.702917Z",
-    "downloads": 13935,
+    "downloads": 13942,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4014,15 +4014,15 @@
     "changelog": "It's been 2 months. In this time, we've fixed some minor bugs, moved the positioning of some buttons, and updated to Sodium 0.5 (on 1.20.1), the biggest release of Sodium.\r\n\r\nWe've also added `dimension.properties`, a new way for shader devs to support modded dimensions such as Twilight Forest! (Shaders must be updated to utilize this.)\r\n\r\nhttps://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.5/full.md",
     "changelog_url": null,
     "date_published": "2023-08-05T01:29:43.722535Z",
-    "downloads": 151420,
+    "downloads": 151432,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "dd9ed30326f239ddc5634e1c55d201b68c7abf9a",
-          "sha512": "770828177b41b6921913cac57eacc94796ea470bf11c3310d9b062274515001e3a123f509f9f034e14c9e0411939f033ac0b731d1ebaa1689e11c7deb1159957"
+          "sha512": "770828177b41b6921913cac57eacc94796ea470bf11c3310d9b062274515001e3a123f509f9f034e14c9e0411939f033ac0b731d1ebaa1689e11c7deb1159957",
+          "sha1": "dd9ed30326f239ddc5634e1c55d201b68c7abf9a"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/Sc0OZ0Ze/iris-mc1.20.1-1.6.5.jar",
         "filename": "iris-mc1.20.1-1.6.5.jar",
@@ -4057,15 +4057,15 @@
     "changelog": "It's been 2 months. In this time, we've fixed some minor bugs, moved the positioning of some buttons, and updated to Sodium 0.5 (on 1.20.1), the biggest release of Sodium.\r\n\r\nWe've also added `dimension.properties`, a new way for shader devs to support modded dimensions such as Twilight Forest! (Shaders must be updated to utilize this.)\r\n\r\nhttps://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.5/full.md",
     "changelog_url": null,
     "date_published": "2023-08-05T01:27:10.277015Z",
-    "downloads": 8261,
+    "downloads": 8262,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b7838fa6f6cc314f391181a30c9f1630e6581f5b",
-          "sha512": "38ff471e2ffbae30f898bf8f229969aac38b5e8dd3a4313f8bed86145ba9dc0c165c1bae12c6c6026a9512210757cdc9e83821065ec78f036d5633430d9ed3b6"
+          "sha512": "38ff471e2ffbae30f898bf8f229969aac38b5e8dd3a4313f8bed86145ba9dc0c165c1bae12c6c6026a9512210757cdc9e83821065ec78f036d5633430d9ed3b6",
+          "sha1": "b7838fa6f6cc314f391181a30c9f1630e6581f5b"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/IBYlCS75/iris-mc1.19.4-1.6.5.jar",
         "filename": "iris-mc1.19.4-1.6.5.jar",
@@ -4102,7 +4102,7 @@
     "changelog": "It's been 2 months. In this time, we've fixed some minor bugs, moved the positioning of some buttons, and updated to Sodium 0.5 (on 1.20.1), the biggest release of Sodium.\r\n\r\nWe've also added `dimension.properties`, a new way for shader devs to support modded dimensions such as Twilight Forest! (Shaders must be updated to utilize this.)\r\n\r\nhttps://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.5/full.md",
     "changelog_url": null,
     "date_published": "2023-08-05T01:24:41.821497Z",
-    "downloads": 111671,
+    "downloads": 111745,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4189,7 +4189,7 @@
     "changelog": "It's 1.20 time.\r\n\r\nThis release adds support for changing the color space that is drawn. (This does not enable HDR.) It also contains quite a few bug fixes.\r\n\r\nA more detailed changelog is available for those interested: https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.4/full.md",
     "changelog_url": null,
     "date_published": "2023-06-07T00:35:24.315446Z",
-    "downloads": 1223313,
+    "downloads": 1223637,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4232,7 +4232,7 @@
     "changelog": "This release adds support for changing the color space that is drawn. (This does not enable HDR.) It also contains quite a few bug fixes.\r\n\r\nA more detailed changelog is available for those interested: https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.4/full.md",
     "changelog_url": null,
     "date_published": "2023-06-06T23:57:00.406756Z",
-    "downloads": 73386,
+    "downloads": 73393,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4277,15 +4277,15 @@
     "changelog": "This release adds support for changing the color space that is drawn. (This does not enable HDR.) It also contains quite a few bug fixes.\r\n\r\nA more detailed changelog is available for those interested: https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.4/full.md",
     "changelog_url": null,
     "date_published": "2023-06-06T23:49:12.528711Z",
-    "downloads": 189218,
+    "downloads": 189241,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "22648451316c0a9c7d28e1fe287ad1d3d96938feab9f5a34b45499b132b52713d40a71973a06108053cc5fc19617b6b0fa712fd38d5833616b694f842de4f3a9",
-          "sha1": "2420090afb4c08cc82614c26b82c6f3958f06ad8"
+          "sha1": "2420090afb4c08cc82614c26b82c6f3958f06ad8",
+          "sha512": "22648451316c0a9c7d28e1fe287ad1d3d96938feab9f5a34b45499b132b52713d40a71973a06108053cc5fc19617b6b0fa712fd38d5833616b694f842de4f3a9"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/9YEwbzW6/iris-mc1.19.2-1.6.4.jar",
         "filename": "iris-mc1.19.2-1.6.4.jar",
@@ -4320,15 +4320,15 @@
     "changelog": "This release adds support for changing the color space that is drawn. (This does not enable HDR.) It also contains quite a few bug fixes.\r\n\r\nA more detailed changelog is available for those interested: https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.4/full.md",
     "changelog_url": null,
     "date_published": "2023-06-06T23:46:35.492271Z",
-    "downloads": 19557,
+    "downloads": 19563,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "bafa2392597ed1e2f92360aacb0e0791618ebe2a",
-          "sha512": "7eba0480bd22e6b53da22e718b1aef68f9ddf796edc18415627652ba349fe326c89601e73e4b141f882408847e7a8b58e59edb62f4b8a776c7702aa6f7026afb"
+          "sha512": "7eba0480bd22e6b53da22e718b1aef68f9ddf796edc18415627652ba349fe326c89601e73e4b141f882408847e7a8b58e59edb62f4b8a776c7702aa6f7026afb",
+          "sha1": "bafa2392597ed1e2f92360aacb0e0791618ebe2a"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/5tSr0LHs/iris-mc1.18.2-1.6.4.jar",
         "filename": "iris-mc1.18.2-1.6.4.jar",
@@ -4363,7 +4363,7 @@
     "changelog": "This is a re-release of Iris 1.6.2 for 1.19.4 that works with Sodium 0.4.10.",
     "changelog_url": null,
     "date_published": "2023-05-10T02:27:19.265216Z",
-    "downloads": 171371,
+    "downloads": 171441,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4408,15 +4408,15 @@
     "changelog": "Iris 1.6.2 has released for 1.18.2, 1.19.2, and 1.19.4, improving performance, enhancing debug mode, and fixing many bugs such as broken maps and text.\r\n\r\nNote: Due to changes in Sodium 0.4.11, all objects will be mipmapped. With current technology, this is not fixable, and some objects will look different than usual.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.2/full.md>\r\n",
     "changelog_url": null,
     "date_published": "2023-05-01T00:41:53.328642Z",
-    "downloads": 63481,
+    "downloads": 63487,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6ae1ac44041d5384293fdc6adbe7a5563f6bd74b1e19c7268a57173404f030ca21aff1919ea2277dba157260f75d4a995fb9d1a81656bc050fc2b701024fcb02",
-          "sha1": "3695441941e6807f38469106758073d9abe07c4e"
+          "sha1": "3695441941e6807f38469106758073d9abe07c4e",
+          "sha512": "6ae1ac44041d5384293fdc6adbe7a5563f6bd74b1e19c7268a57173404f030ca21aff1919ea2277dba157260f75d4a995fb9d1a81656bc050fc2b701024fcb02"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/7MJ26Y79/iris-mc1.19.2-1.6.2.jar",
         "filename": "iris-mc1.19.2-1.6.2.jar",
@@ -4451,15 +4451,15 @@
     "changelog": "Iris 1.6.2 has released for 1.18.2, 1.19.2, and 1.19.4, improving performance, enhancing debug mode, and fixing many bugs such as broken maps and text.\r\n\r\nNote: Due to changes in Sodium 0.4.11, all objects will be mipmapped. With current technology, this is not fixable, and some objects will look different than usual.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.2/full.md>\r\n",
     "changelog_url": null,
     "date_published": "2023-05-01T00:40:44.323826Z",
-    "downloads": 14357,
+    "downloads": 14361,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "fbcc0e7809e8aa324abe125b3f350a796b09545f",
-          "sha512": "87a2f7fb1a24a41fbeaa9d3343f8dae7a6bb5508f6894c3e0e5b1964889168be73eec0b1a83998a6ed645cdff571663c91c75cdbee650fa7627865be3dcb8307"
+          "sha512": "87a2f7fb1a24a41fbeaa9d3343f8dae7a6bb5508f6894c3e0e5b1964889168be73eec0b1a83998a6ed645cdff571663c91c75cdbee650fa7627865be3dcb8307",
+          "sha1": "fbcc0e7809e8aa324abe125b3f350a796b09545f"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/RpjxjFWm/iris-mc1.18.2-1.6.2.jar",
         "filename": "iris-mc1.18.2-1.6.2.jar",
@@ -4496,7 +4496,7 @@
     "changelog": "Iris 1.6.1 has released for 1.18.2, 1.19.2, and 1.19.4, fixing major bugs introduced in 1.6 such as banners not working properly.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.1/full.md>\r\n",
     "changelog_url": null,
     "date_published": "2023-04-14T19:21:19.366161Z",
-    "downloads": 56242,
+    "downloads": 56258,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4539,15 +4539,15 @@
     "changelog": "Iris 1.6.1 has released for 1.18.2, 1.19.2, and 1.19.4, fixing major bugs introduced in 1.6 such as banners not working properly.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.1/full.md>\r\n",
     "changelog_url": null,
     "date_published": "2023-04-14T19:21:14.418306Z",
-    "downloads": 79373,
+    "downloads": 79386,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a6bfa3d815e1d65b68e788ed30b18220bee09e35e66726dbcad9b6aee7c44bfec853076d41724ace3e162d48f8a17ec672cf71bd2a40c5d4cd660de44552d60b",
-          "sha1": "6fc8ea409fb248721701272e66d2c3bea283f94a"
+          "sha1": "6fc8ea409fb248721701272e66d2c3bea283f94a",
+          "sha512": "a6bfa3d815e1d65b68e788ed30b18220bee09e35e66726dbcad9b6aee7c44bfec853076d41724ace3e162d48f8a17ec672cf71bd2a40c5d4cd660de44552d60b"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/347HlKZS/iris-mc1.19.4-1.6.1.jar",
         "filename": "iris-mc1.19.4-1.6.1.jar",
@@ -4582,15 +4582,15 @@
     "changelog": "Iris 1.6.1 has released for 1.18.2, 1.19.2, and 1.19.4, fixing major bugs introduced in 1.6 such as banners not working properly.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.1/full.md>\r\n",
     "changelog_url": null,
     "date_published": "2023-04-14T19:20:26.355528Z",
-    "downloads": 6741,
+    "downloads": 6744,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d8015fdf6cce5fd631ed3acb3ca80f710e702afe93f35d06409027c4ad6ae3b2425c7ebbc12f746036c15a0c19da97aecf037cdf2e937a7cc7d3a4596eb62262",
-          "sha1": "ebe6d3bcdc23ef369c0a5587b25b7d19883cb493"
+          "sha1": "ebe6d3bcdc23ef369c0a5587b25b7d19883cb493",
+          "sha512": "d8015fdf6cce5fd631ed3acb3ca80f710e702afe93f35d06409027c4ad6ae3b2425c7ebbc12f746036c15a0c19da97aecf037cdf2e937a7cc7d3a4596eb62262"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/su0G9MUF/iris-mc1.18.2-1.6.1.jar",
         "filename": "iris-mc1.18.2-1.6.1.jar",
@@ -4627,7 +4627,7 @@
     "changelog": "Iris 1.6 has released for 1.18.2, 1.19.2, and 1.19.4.\r\n\r\nThis release adds **many** new features for shader developers, close to being one of the biggest releases ever of Iris.\r\nThese features allow for things never done before with shaders.\r\n\r\nWe have been working with many shader developers on exclusive features for this version, and they will be announced as they release. Packs such as Shrimple (https://modrinth.com/shader/shrimple) are already taking full advantage of what Iris 1.6 offers.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.0/full.md>",
     "changelog_url": null,
     "date_published": "2023-04-08T16:20:05.120288Z",
-    "downloads": 11378,
+    "downloads": 11379,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4670,15 +4670,15 @@
     "changelog": "Iris 1.6 has released for 1.18.2, 1.19.2, and 1.19.4.\r\n\r\nThis release adds **many** new features for shader developers, close to being one of the biggest releases ever of Iris.\r\nThese features allow for things never done before with shaders.\r\n\r\nWe have been working with many shader developers on exclusive features for this version, and they will be announced as they release. Packs such as Shrimple (https://modrinth.com/shader/shrimple) are already taking full advantage of what Iris 1.6 offers.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.6.0/full.md>",
     "changelog_url": null,
     "date_published": "2023-04-08T16:20:05.065365Z",
-    "downloads": 29683,
+    "downloads": 29706,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "24de9db031847f22f28ef24de8a7509361fc0eb4",
-          "sha512": "aaad2569c8a75a3352036fcfe894e9c8490dd27c73adfa94a03a6e29c8e2da48071327d2b282564d22664851292c115758a846ffdee86b7cd09b26fe513e49b1"
+          "sha512": "aaad2569c8a75a3352036fcfe894e9c8490dd27c73adfa94a03a6e29c8e2da48071327d2b282564d22664851292c115758a846ffdee86b7cd09b26fe513e49b1",
+          "sha1": "24de9db031847f22f28ef24de8a7509361fc0eb4"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/rKiitlRl/iris-mc1.19.4-1.6.0.jar",
         "filename": "iris-mc1.19.4-1.6.0.jar",
@@ -4756,7 +4756,7 @@
     "changelog": "Iris 1.5.2 has released for 1.18.2, 1.19.2, and 1.19.3. This hot fix adds 1.19.4 support.\r\n\r\nThis release adds support for Sodium 0.4.10 and slightly improves performance, alongside fixing a few bugs with PBR and signs.\r\n\r\n**Mods that interact with Sodium or Iris will likely break with this release. You may have to wait for updates.**\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.5.2/full.md>",
     "changelog_url": null,
     "date_published": "2023-03-14T18:00:39.959006Z",
-    "downloads": 34421,
+    "downloads": 34424,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4799,15 +4799,15 @@
     "changelog": "Iris 1.5.2 has released for 1.18.2, 1.19.2, and 1.19.3.\r\n\r\nThis release adds support for Sodium 0.4.9 and slightly improves performance, alongside fixing a few bugs with PBR and signs.\r\n\r\n**Mods that interact with Sodium or Iris will likely break with this release. You may have to wait for updates.**\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.5.2/full.md>",
     "changelog_url": null,
     "date_published": "2023-02-07T02:47:27.795721Z",
-    "downloads": 156094,
+    "downloads": 156154,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "240765b6911e5295e4a8a772d29767a3b2292614516fb3c9c0b981aec568c3d9fbd462dfbc992acd13cff7bb177bc5418843de3d2c783b63f3d37292a6066037",
-          "sha1": "b6404f241552c4ff296ee867f95b4229495ca35c"
+          "sha1": "b6404f241552c4ff296ee867f95b4229495ca35c",
+          "sha512": "240765b6911e5295e4a8a772d29767a3b2292614516fb3c9c0b981aec568c3d9fbd462dfbc992acd13cff7bb177bc5418843de3d2c783b63f3d37292a6066037"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/ExtC2pRY/iris-mc1.19.3-1.5.2.jar",
         "filename": "iris-mc1.19.3-1.5.2.jar",
@@ -4844,15 +4844,15 @@
     "changelog": "Iris 1.5.2 has released for 1.18.2, 1.19.2, and 1.19.3.\r\n\r\nThis release adds support for Sodium 0.4.9 and slightly improves performance, alongside fixing a few bugs with PBR and signs.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.5.2/full.md>\r\n",
     "changelog_url": null,
     "date_published": "2023-02-07T02:46:25.717859Z",
-    "downloads": 276952,
+    "downloads": 277027,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0cb441d67196700a0fd660ea0e2c8d58b37616370368558de1bf26c8bcb1db95ccba652923ed2305c8439bd83e00983d4f359659b86d72c148160464f03fc99f",
-          "sha1": "5377f13f7315dd48111bd431bb8ea6e6137a8c62"
+          "sha1": "5377f13f7315dd48111bd431bb8ea6e6137a8c62",
+          "sha512": "0cb441d67196700a0fd660ea0e2c8d58b37616370368558de1bf26c8bcb1db95ccba652923ed2305c8439bd83e00983d4f359659b86d72c148160464f03fc99f"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/7cPNddw8/iris-mc1.19.2-1.5.2.jar",
         "filename": "iris-mc1.19.2-1.5.2.jar",
@@ -4887,15 +4887,15 @@
     "changelog": "# Iris 1.5.2 Changelog (trimmed)\r\n\r\nIris 1.5.2 has released for 1.18.2, 1.19.2, and 1.19.3.\r\n\r\nThis release adds support for Sodium 0.4.9 and slightly improves performance, alongside fixing a few bugs with PBR and signs.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.5.2/full.md>\r\n",
     "changelog_url": null,
     "date_published": "2023-02-07T02:44:03.518675Z",
-    "downloads": 18375,
+    "downloads": 18386,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "6f45ff61ff914ab42815c903c1937d108cacd625",
-          "sha512": "b2cff8e6a72b85d0a08402b8fd39ba22c15b57abd66c925b8fd976390bfda9c181b6c0b6c31cf78463310570b382634442b33488ea7342ad3900f5e39b5a7de1"
+          "sha512": "b2cff8e6a72b85d0a08402b8fd39ba22c15b57abd66c925b8fd976390bfda9c181b6c0b6c31cf78463310570b382634442b33488ea7342ad3900f5e39b5a7de1",
+          "sha1": "6f45ff61ff914ab42815c903c1937d108cacd625"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/gcpVAwdy/iris-mc1.18.2-1.5.2.jar",
         "filename": "iris-mc1.18.2-1.5.2.jar",
@@ -4937,8 +4937,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5f6e7e493841eac375729caa00de338aeb8ef06f118aed77edf4cdd1a0c85d9eb755acd1a192cbfd413dc9688cfd5fa6742b7a5f66def7deceba755b872311b5",
-          "sha1": "bfd36e8fb2577990e23612ed73d27b6ae2fffca2"
+          "sha1": "bfd36e8fb2577990e23612ed73d27b6ae2fffca2",
+          "sha512": "5f6e7e493841eac375729caa00de338aeb8ef06f118aed77edf4cdd1a0c85d9eb755acd1a192cbfd413dc9688cfd5fa6742b7a5f66def7deceba755b872311b5"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/Sg0JZGHa/iris-mc1.19.3-1.5.1.jar",
         "filename": "iris-mc1.19.3-1.5.1.jar",
@@ -5016,15 +5016,15 @@
     "changelog": "# Iris 1.5 Changelog (trimmed)\r\n\r\nIt's finally ready!\r\n\r\nIris 1.5 has released for 1.18.2, 1.19.2, and 1.19.3, with **full support** for the majority of Optifine shaders.\r\n\r\nThis includes, but is not limited to:\r\n\r\nAll versions of Kappa, Nostalgia, and Chocapic,\r\nas well as Simpliccimus, Vanilla+, SEUS PTGI GFME, and Photon!\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/1.18.2/docs/changelogs/1.5.0/full.md>\r\n",
     "changelog_url": null,
     "date_published": "2023-01-01T03:36:41.539685Z",
-    "downloads": 121161,
+    "downloads": 121208,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "9244a7520206ba36ba8531fb4fea5157b5f280da61efea3cfb794c848fbfd9b8a672a8c214f39a0d7c1b00dc5edd9a0d20af781ca2be6541db7cce5bc3de3134",
-          "sha1": "0fab5a9ac4bc30794e12b7478fcb2e7036f02b33"
+          "sha1": "0fab5a9ac4bc30794e12b7478fcb2e7036f02b33",
+          "sha512": "9244a7520206ba36ba8531fb4fea5157b5f280da61efea3cfb794c848fbfd9b8a672a8c214f39a0d7c1b00dc5edd9a0d20af781ca2be6541db7cce5bc3de3134"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/pMwSdnE7/iris-mc1.19.2-1.5.0.jar",
         "filename": "iris-mc1.19.2-1.5.0.jar",
@@ -5152,8 +5152,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "384fde9676ef0f5556e0e4c0d97ec41c0b48dfa02867b9178afc1c10f7c3f66e5dffa479510303e1f92de679e861187a397cfe9bcfcac040b6e2e7b4faeddbfa",
-          "sha1": "1bd05194683cabfa2b83e775ef5349fe0f09480f"
+          "sha1": "1bd05194683cabfa2b83e775ef5349fe0f09480f",
+          "sha512": "384fde9676ef0f5556e0e4c0d97ec41c0b48dfa02867b9178afc1c10f7c3f66e5dffa479510303e1f92de679e861187a397cfe9bcfcac040b6e2e7b4faeddbfa"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/bhSk1gCX/iris-mc1.19.3-1.4.5.jar",
         "filename": "iris-mc1.19.3-1.4.5.jar",
@@ -5188,7 +5188,7 @@
     "changelog": "Iris 1.4.5 is a hotfix that fixes a crash when opening the inventory with an enchanted item.",
     "changelog_url": null,
     "date_published": "2022-12-07T21:28:38.526809Z",
-    "downloads": 72525,
+    "downloads": 72547,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5274,7 +5274,7 @@
     "changelog": "Iris 1.4.5 is a hotfix that fixes a crash when opening the inventory with an enchanted item.",
     "changelog_url": null,
     "date_published": "2022-12-07T21:26:43.405328Z",
-    "downloads": 331399,
+    "downloads": 331800,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5317,15 +5317,15 @@
     "changelog": "Iris 1.4.4 has now released for Minecraft 1.16.5, 1.18.2, 1.19.2, and 1.19.3, fixing some depth of field and font issues as well as slightly improving mod compatibility.\r\n\r\n**This is the first 1.19.3 release.**",
     "changelog_url": null,
     "date_published": "2022-12-07T17:01:09.576493Z",
-    "downloads": 1085,
+    "downloads": 1086,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "85d5bb65d97998d3e926f779d3c38748386d0017e11470d8639aa9f3f76e95ab50fcd6acb48ec6b5b867e6e9e095375c5bca53da78dd059032b1d23c769d8f3d",
-          "sha1": "ccd2415ea04de51e9aa6018c88325183644f219a"
+          "sha1": "ccd2415ea04de51e9aa6018c88325183644f219a",
+          "sha512": "85d5bb65d97998d3e926f779d3c38748386d0017e11470d8639aa9f3f76e95ab50fcd6acb48ec6b5b867e6e9e095375c5bca53da78dd059032b1d23c769d8f3d"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/LGMDKOTZ/iris-mc1.19.3-1.4.4.jar",
         "filename": "iris-mc1.19.3-1.4.4.jar",
@@ -5360,15 +5360,15 @@
     "changelog": "Iris 1.4.4 has now released for Minecraft 1.16.5, 1.18.2, 1.19.2, and 1.19.3, fixing some depth of field and font issues as well as slightly improving mod compatibility.\r\n\r\n**This is the first 1.19.3 release.**",
     "changelog_url": null,
     "date_published": "2022-12-07T16:59:57.955536Z",
-    "downloads": 1149,
+    "downloads": 1150,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "29efdd0e8b33d67068c35535c98cf8568703e46b",
-          "sha512": "4a313007e28881df230a2ba5626a4df67fda822df86f712d22fd8d768d9b2e9c6bbf113cfcc8f4cd1c7908d0e62764cce03eef7bf4f7e22126364f8d74481533"
+          "sha512": "4a313007e28881df230a2ba5626a4df67fda822df86f712d22fd8d768d9b2e9c6bbf113cfcc8f4cd1c7908d0e62764cce03eef7bf4f7e22126364f8d74481533",
+          "sha1": "29efdd0e8b33d67068c35535c98cf8568703e46b"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/unkwzrN7/iris-mc1.19.2-1.4.4.jar",
         "filename": "iris-mc1.19.2-1.4.4.jar",
@@ -5446,15 +5446,15 @@
     "changelog": "Iris 1.4.4 has now released for Minecraft 1.16.5, 1.18.2, 1.19.2, and 1.19.3, fixing some depth of field and font issues as well as slightly improving mod compatibility.\r\n\r\n**This is the first 1.19.3 release.**",
     "changelog_url": null,
     "date_published": "2022-12-07T16:53:57.008389Z",
-    "downloads": 4498,
+    "downloads": 4503,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fc35a6ebeba364a5bad88f1294b60a12322a7dec3de08c987b5e752056ae3178d7f57518783c1f349436a6e5c0089e79aaa3fb5e9792d02b38177c0d129d5e92",
-          "sha1": "3362c283ec5ce1508b078d0f38241d0f45124d1d"
+          "sha1": "3362c283ec5ce1508b078d0f38241d0f45124d1d",
+          "sha512": "fc35a6ebeba364a5bad88f1294b60a12322a7dec3de08c987b5e752056ae3178d7f57518783c1f349436a6e5c0089e79aaa3fb5e9792d02b38177c0d129d5e92"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/HgbdQHa6/iris-mc1.16.5-1.4.4.jar",
         "filename": "iris-mc1.16.5-1.4.4.jar",
@@ -5489,15 +5489,15 @@
     "changelog": "Iris 1.4.3 is now available for download for 1.16.5, 1.18.2, 1.19.2, and very soon 1.19.3, fixing multiple issues and improving stability.\nThis release also adds some debug features.\n\n**This will be the last 1.16.5 release.**\n\n**⬇ Download the release here: https://irisshaders.net/download.html**\n\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.4.3/full.md>",
     "changelog_url": null,
     "date_published": "2022-11-27T18:45:12.526971Z",
-    "downloads": 22847,
+    "downloads": 22849,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ffc639cea16909a607a5a2dda7278b4abfe694dff08050cee08d04789cced970c16fbd3921d15c088ee885c878f04b4bd65bc5e8b8bd630107469cda94732faa",
-          "sha1": "b63d3c66c18bd79078539ea5268456ef6e358c84"
+          "sha1": "b63d3c66c18bd79078539ea5268456ef6e358c84",
+          "sha512": "ffc639cea16909a607a5a2dda7278b4abfe694dff08050cee08d04789cced970c16fbd3921d15c088ee885c878f04b4bd65bc5e8b8bd630107469cda94732faa"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/5Ox2LQ1C/iris-mc1.19.2-1.4.3.jar",
         "filename": "iris-mc1.19.2-1.4.3.jar",
@@ -5575,7 +5575,7 @@
     "changelog": "Iris 1.4.3 is now available for download for 1.16.5, 1.18.2, 1.19.2, and very soon 1.19.3, fixing multiple issues and improving stability.\nThis release also adds some debug features.\n\n**This will be the last 1.16.5 release.**\n\n**⬇ Download the release here: https://irisshaders.net/download.html**\n\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.4.3/full.md>",
     "changelog_url": null,
     "date_published": "2022-11-27T18:35:06.217061Z",
-    "downloads": 2544,
+    "downloads": 2545,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5618,15 +5618,15 @@
     "changelog": "Iris 1.4.1 has released for Minecraft 1.16.5, 1.18.2, and 1.19.2, fixing a major texture corruption bug caused by sets of resource packs/mods.\r\n\r\nIris 1.4.2 is a re-release to fix the fix not working in some cases.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\n\r\n",
     "changelog_url": null,
     "date_published": "2022-11-18T16:54:12.859245Z",
-    "downloads": 39594,
+    "downloads": 39607,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "38961d841e4246c87e4b95bc57cf60aa8a895b0e",
-          "sha512": "211595ee757c1abf4fd9969e0f77ed22539e091f12fe877ea6bd8d579c56a0faf41e74e6a181f85dc738ff05e549e021c0295d7e71565bb5511f4659e691932d"
+          "sha512": "211595ee757c1abf4fd9969e0f77ed22539e091f12fe877ea6bd8d579c56a0faf41e74e6a181f85dc738ff05e549e021c0295d7e71565bb5511f4659e691932d",
+          "sha1": "38961d841e4246c87e4b95bc57cf60aa8a895b0e"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/vujluWvJ/iris-mc1.19.2-1.4.2.jar",
         "filename": "iris-mc1.19.2-1.4.2.jar",
@@ -5661,7 +5661,7 @@
     "changelog": "Iris 1.4.1 has released for Minecraft 1.16.5, 1.18.2, and 1.19.2, fixing a major texture corruption bug caused by sets of resource packs/mods.\r\n\r\nIris 1.4.2 is a re-release to fix the fix not working in some cases.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\n\r\n",
     "changelog_url": null,
     "date_published": "2022-11-18T16:47:11.116484Z",
-    "downloads": 3957,
+    "downloads": 3959,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5704,15 +5704,15 @@
     "changelog": "Iris 1.4.1 has released for Minecraft 1.16.5, 1.18.2, and 1.19.2, fixing a major texture corruption bug caused by sets of resource packs/mods.\n\n**⬇ Download the release here: https://irisshaders.net/download.html**",
     "changelog_url": null,
     "date_published": "2022-11-18T05:06:40.251416Z",
-    "downloads": 8601,
+    "downloads": 8603,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e2adbdd4b54dde38dda342978594ec33d7070b24d9491ce03e6e3ed22ab54b21c8c9384050f8ff277123159c81f6c48586b3f2d6d88b054ea74f719430b6d5a7",
-          "sha1": "0abc560f6a6603fc0a63d99ebb06200fbe3837f2"
+          "sha1": "0abc560f6a6603fc0a63d99ebb06200fbe3837f2",
+          "sha512": "e2adbdd4b54dde38dda342978594ec33d7070b24d9491ce03e6e3ed22ab54b21c8c9384050f8ff277123159c81f6c48586b3f2d6d88b054ea74f719430b6d5a7"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/61raaF2M/iris-mc1.19.2-1.4.1.jar",
         "filename": "iris-mc1.19.2-1.4.1.jar",
@@ -5790,7 +5790,7 @@
     "changelog": "Iris 1.4.1 has released for Minecraft 1.16.5, 1.18.2, and 1.19.2, fixing a major texture corruption bug caused by sets of resource packs/mods.\n\n**⬇ Download the release here: https://irisshaders.net/download.html**",
     "changelog_url": null,
     "date_published": "2022-11-18T05:00:15.119469Z",
-    "downloads": 3415,
+    "downloads": 3417,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5833,7 +5833,7 @@
     "changelog": "Iris 1.4 is now available for download for 1.16.5, 1.18.2, and 1.19.2, adding many OptiFine parity features as well as new features for shader developers.\nThis release also includes a few bug fixes and DSA support for performance improvements.\n\n**⬇ Download the release here: https://irisshaders.net/download.html**\n\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.4.0/full.md>",
     "changelog_url": null,
     "date_published": "2022-10-09T20:57:18.162568Z",
-    "downloads": 46766,
+    "downloads": 46771,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5876,15 +5876,15 @@
     "changelog": "Iris 1.4 is now available for download for 1.16.5, 1.18.2, and 1.19.2, adding many OptiFine parity features as well as new features for shader developers.\nThis release also includes a few bug fixes and DSA support for performance improvements.\n\n**⬇ Download the release here: https://irisshaders.net/download.html**\n\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.4.0/full.md>",
     "changelog_url": null,
     "date_published": "2022-10-09T20:56:52.255206Z",
-    "downloads": 14901,
+    "downloads": 14905,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "85580ef71ce123d7333e94539aa1a2c55010565b",
-          "sha512": "813dce353ff251f0986ed61bcdf7509b0081311b1e8ffdcae8d39e3607c27cecd1d07df54a745895e4559f6fa7ed2f9c888c61ae96a0807594428c5d9d1e7d0a"
+          "sha512": "813dce353ff251f0986ed61bcdf7509b0081311b1e8ffdcae8d39e3607c27cecd1d07df54a745895e4559f6fa7ed2f9c888c61ae96a0807594428c5d9d1e7d0a",
+          "sha1": "85580ef71ce123d7333e94539aa1a2c55010565b"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1BCkW8RE/iris-mc1.18.2-1.4.0.jar",
         "filename": "iris-mc1.18.2-1.4.0.jar",
@@ -5926,8 +5926,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "bb803ce5b1a275661cadbaa61b1233f02349e13d7035f09498210abcae55a40f1f169ad1a13971ec2eaae084788e41440ca4b8e07b43150fa046a69e62f6725a",
-          "sha1": "8fdcbbd7b33479e3356e96ad1b34339ed43f36a7"
+          "sha1": "8fdcbbd7b33479e3356e96ad1b34339ed43f36a7",
+          "sha512": "bb803ce5b1a275661cadbaa61b1233f02349e13d7035f09498210abcae55a40f1f169ad1a13971ec2eaae084788e41440ca4b8e07b43150fa046a69e62f6725a"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/3tbkyayi/iris-mc1.16.5-1.4.0.jar",
         "filename": "iris-mc1.16.5-1.4.0.jar",
@@ -5962,15 +5962,15 @@
     "changelog": "Iris 1.3.1 has released, fixing a crash with multiple mods when loading a world as well as improving key bind reliability.\r\n\r\nNote to resource pack developers: This crash happened due to Iris attempting to replicate an unintentional Optifine feature named \"broken paths\", which allows uppercase letters and other normally disallowed Unicode as paths. We have switched to partial support; Iris may not support this properly in the future, please don't rely on it.",
     "changelog_url": null,
     "date_published": "2022-09-10T21:45:18.325717Z",
-    "downloads": 31899,
+    "downloads": 31901,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d48f9bbc13989367629b85a785d0ff227b63dc5e",
-          "sha512": "f5eff3eacaf0a216a41e7a657d3a91e14df601cf4937ebd8d367b7593b54374e161d130f20a1e9207b7d2a548f30423f5dd7e964d8ad015e76f9bd88c9f2623e"
+          "sha512": "f5eff3eacaf0a216a41e7a657d3a91e14df601cf4937ebd8d367b7593b54374e161d130f20a1e9207b7d2a548f30423f5dd7e964d8ad015e76f9bd88c9f2623e",
+          "sha1": "d48f9bbc13989367629b85a785d0ff227b63dc5e"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/r8IxC3aO/iris-mc1.19.2-1.3.1.jar",
         "filename": "iris-mc1.19.2-1.3.1.jar",
@@ -6005,15 +6005,15 @@
     "changelog": "Iris 1.3.1 has released, fixing a crash with multiple mods when loading a world as well as improving key bind reliability.\r\n\r\nNote to resource pack developers: This crash happened due to Iris attempting to replicate an unintentional Optifine feature named \"broken paths\", which allows uppercase letters and other normally disallowed Unicode as paths. We have switched to partial support; Iris may not support this properly in the future, please don't rely on it.",
     "changelog_url": null,
     "date_published": "2022-09-10T21:43:09.786326Z",
-    "downloads": 50120,
+    "downloads": 50206,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "cf33f8e01f2fc8c7587e4930427143e8a1856ee895e80e8416e9afd192bfd871b1f58a5cc52a689e95bff84d712fac41afd1de633d27d6b933d5759f57b84a89",
-          "sha1": "5b16d4e32f16f6bbb6291a3805096ed362da1d92"
+          "sha1": "5b16d4e32f16f6bbb6291a3805096ed362da1d92",
+          "sha512": "cf33f8e01f2fc8c7587e4930427143e8a1856ee895e80e8416e9afd192bfd871b1f58a5cc52a689e95bff84d712fac41afd1de633d27d6b933d5759f57b84a89"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/nnr56Joh/iris-mc1.18.2-1.3.1.jar",
         "filename": "iris-mc1.18.2-1.3.1.jar",
@@ -6048,7 +6048,7 @@
     "changelog": "Iris 1.3.1 has released, fixing a crash with multiple mods when loading a world as well as improving key bind reliability.\r\n\r\nNote to resource pack developers: This crash happened due to Iris attempting to replicate an unintentional Optifine feature named \"broken paths\", which allows uppercase letters and other normally disallowed Unicode as paths. We have switched to partial support; Iris may not support this properly in the future, please don't rely on it.",
     "changelog_url": null,
     "date_published": "2022-09-10T21:38:58.752283Z",
-    "downloads": 2937,
+    "downloads": 2940,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6098,8 +6098,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8e940df70d7b657e816a3df8f479926ca8a0c1fd",
-          "sha512": "e7b53f146bd85359d0807177b6b1b13fc044850bf3514420816f662a679ade34ffc24826beb5fd3b0a12d2679f57a5ce9eadc08ca60b5e33fe85ffaa050a44c4"
+          "sha512": "e7b53f146bd85359d0807177b6b1b13fc044850bf3514420816f662a679ade34ffc24826beb5fd3b0a12d2679f57a5ce9eadc08ca60b5e33fe85ffaa050a44c4",
+          "sha1": "8e940df70d7b657e816a3df8f479926ca8a0c1fd"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/WwSkfJxS/iris-mc1.19.2-1.3.0.jar",
         "filename": "iris-mc1.19.2-1.3.0.jar",
@@ -6162,7 +6162,7 @@
     "changelog": "Iris 1.3 is now available for download for 1.16.5, 1.18.2, and 1.19.2, finally adding the long-awaited PBR support.\r\n\r\nThis release also fixes old hand lighting on SEUS Renewed and similar packs.\r\n\r\nThis release was developed by Pepper and IMS.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.3.0/full.md",
     "changelog_url": null,
     "date_published": "2022-09-09T16:30:29.561631Z",
-    "downloads": 1920,
+    "downloads": 1922,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6306,7 +6306,7 @@
     "changelog": "#### Iris 1.2.7 is now available for download for 1.16.5, 1.17.1, 1.18.2, and 1.19.2, improving performance and fixing minor bugs.\r\n\r\n**This will be the last release for 1.17.1.**\r\n\r\nThis release was developed by coderbot and IMS.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.7/full.md>",
     "changelog_url": null,
     "date_published": "2022-08-27T22:41:40.246939Z",
-    "downloads": 120142,
+    "downloads": 120229,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6348,8 +6348,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "432c8e2c89ab38b5d980b8c4283f4328339bfee3",
-          "sha512": "65fc6e057fe0ab1c1ef87eceed7e96a8e28c24fd797dafe0bce1d6ca9ce3c2561fac738c3bd08a40109632e91184fcc220f11a48766444b30d4199e18fe785d8"
+          "sha512": "65fc6e057fe0ab1c1ef87eceed7e96a8e28c24fd797dafe0bce1d6ca9ce3c2561fac738c3bd08a40109632e91184fcc220f11a48766444b30d4199e18fe785d8",
+          "sha1": "432c8e2c89ab38b5d980b8c4283f4328339bfee3"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/KDxcEpjX/iris-mc1.16.5-1.2.7.jar",
         "filename": "iris-mc1.16.5-1.2.7.jar",
@@ -6379,7 +6379,7 @@
     "changelog": "Iris 1.2.6 is now available for download, fixing minor bugs and adding support for 1.19.1.\n\nThis release was developed by coderbot, IMS, Pepper, and Justsnoopy30.\n\n**⬇ Download the release here: https://irisshaders.net/download.html**\n\nHere's what's changed since 1.2.5:\n\n- 📄 Added many Optifine parity improvements\n- 🗣️ Fix issues with translations combined with Spectrum 1.4.0\n- 🛸 Fixed ender beam effect in the End not animating with Complementary\n\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.6/full.md>",
     "changelog_url": null,
     "date_published": "2022-07-25T22:05:52.758643Z",
-    "downloads": 70161,
+    "downloads": 70177,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6415,7 +6415,7 @@
     "changelog": "Iris 1.2.6 is now available for download, fixing minor bugs and adding support for 1.19.1.\n\nThis release was developed by coderbot, IMS, Pepper, and Justsnoopy30.\n\n**⬇ Download the release here: https://irisshaders.net/download.html**\n\nHere's what's changed since 1.2.5:\n\n- 📄 Added many Optifine parity improvements\n- 🗣️ Fix issues with translations combined with Spectrum 1.4.0\n- 🛸 Fixed ender beam effect in the End not animating with Complementary\n\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.6/full.md>",
     "changelog_url": null,
     "date_published": "2022-07-25T22:05:32.384229Z",
-    "downloads": 14962,
+    "downloads": 14964,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6450,15 +6450,15 @@
     "changelog": "Iris 1.2.6 is now available for download, fixing minor bugs and adding support for 1.19.1.\n\nThis release was developed by coderbot, IMS, Pepper, and Justsnoopy30.\n\n**⬇ Download the release here: https://irisshaders.net/download.html**\n\nHere's what's changed since 1.2.5:\n\n- 📄 Added many Optifine parity improvements\n- 🗣️ Fix issues with translations combined with Spectrum 1.4.0\n- 🛸 Fixed ender beam effect in the End not animating with Complementary\n\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.6/full.md>",
     "changelog_url": null,
     "date_published": "2022-07-25T22:05:16.490368Z",
-    "downloads": 3003,
+    "downloads": 3006,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4151cfbcbd16e30a074a5a3756a9cd61304225abdf146f72863a76009951c1d6aba7c8804e82f58c2a9b84710aabb75fe260a252abc4178a9323aa8231bb7475",
-          "sha1": "07f583afbbf8c208d2bc2391281348686f844bea"
+          "sha1": "07f583afbbf8c208d2bc2391281348686f844bea",
+          "sha512": "4151cfbcbd16e30a074a5a3756a9cd61304225abdf146f72863a76009951c1d6aba7c8804e82f58c2a9b84710aabb75fe260a252abc4178a9323aa8231bb7475"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.17.x-v1.2.6/iris-mc1.17.1-1.2.6.jar",
         "filename": "iris-mc1.17.1-1.2.6.jar",
@@ -6485,7 +6485,7 @@
     "changelog": "Iris 1.2.6 is now available for download, fixing minor bugs and adding support for 1.19.1.\n\nThis release was developed by coderbot, IMS, Pepper, and Justsnoopy30.\n\n**⬇ Download the release here: https://irisshaders.net/download.html**\n\nHere's what's changed since 1.2.5:\n\n- 📄 Added many Optifine parity improvements\n- 🗣️ Fix issues with translations combined with Spectrum 1.4.0\n- 🛸 Fixed ender beam effect in the End not animating with Complementary\n\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.6/full.md>",
     "changelog_url": null,
     "date_published": "2022-07-25T22:04:04.202969Z",
-    "downloads": 2992,
+    "downloads": 2994,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6521,15 +6521,15 @@
     "changelog": "Iris 1.2.5 is now available for download for Minecraft 1.16.5, 1.17.1, and 1.18.2 (with 1.19 coming soon), fixing a huge number of bugs and mod compatibility issues, massively improving performance with packs using depth of field, and improving performance in some CPU-limited scenarios.\r\n\r\nWe hope for this to be one of the last big bugfix releases before PBR (Iris 1.3.0). **When we release PBR, we plan to drop support for 1.17.1**, meaning that the Iris release supporting PBR will only support 1.16.5, 1.18.2, and 1.19. We hope this makes sense, because actively supporting 4 different Minecraft versions would just be too much with our current development team.\r\n\r\nThis release was developed by coderbot & IMS with additional help from Pepper.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nHere's what's changed since 1.2.4:\r\n\r\n- ✅ Added an update checker so that people don't keep on running massively outdated Iris versions\r\n- 📷 Massive performance improvements when Depth of Field is enabled\r\n- 📈 Improved performance by up to 20%-40% in some CPU-limited situations\r\n- 💡 Fixed big shadow issues with SEUS PTGI HRR 3 (Entities are still very blurry)\r\n- 🐲 Fixed the dragon death animation on most shader packs\r\n- 🩹 Fixed a massive number of small miscellaneous bugs with various packs\r\n- ➕ Added support for Super Duper Vanilla Shaders\r\n- 🤝 Fixed many mod compatibility issues (Litematica, Light Overlay, Orderly, Lifts, etc)\r\n- 🏚️ Fixed compatibility with some unmaintained NVIDIA and Intel drivers for old hardware\r\n- 🖥️ 1.17: Fixed slime blocks disappearing and white dots appearing on the screen\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.5/full.md>",
     "changelog_url": null,
     "date_published": "2022-06-07T17:44:36.801799Z",
-    "downloads": 72019,
+    "downloads": 72047,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c2111865c948caa7894589a896552a4a762489d13d3177ab57b80bd3ea00cccf102a02596607ed0b434a46973e91528bde97ca6c0b28cd7fd4d36274409eeb84",
-          "sha1": "499a3e1b13eafb0eb4dceee1152c84b23211e0d5"
+          "sha1": "499a3e1b13eafb0eb4dceee1152c84b23211e0d5",
+          "sha512": "c2111865c948caa7894589a896552a4a762489d13d3177ab57b80bd3ea00cccf102a02596607ed0b434a46973e91528bde97ca6c0b28cd7fd4d36274409eeb84"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.19.x-v1.2.5/iris-mc1.19-1.2.5.jar",
         "filename": "iris-mc1.19-1.2.5.jar",
@@ -6557,7 +6557,7 @@
     "changelog": "Iris 1.2.5 is now available for download for Minecraft 1.16.5, 1.17.1, and 1.18.2 (with 1.19 coming soon), fixing a huge number of bugs and mod compatibility issues, massively improving performance with packs using depth of field, and improving performance in some CPU-limited scenarios.\r\n\r\nWe hope for this to be one of the last big bugfix releases before PBR (Iris 1.3.0). **When we release PBR, we plan to drop support for 1.17.1**, meaning that the Iris release supporting PBR will only support 1.16.5, 1.18.2, and 1.19. We hope this makes sense, because actively supporting 4 different Minecraft versions would just be too much with our current development team.\r\n\r\nThis release was developed by coderbot & IMS with additional help from Pepper.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nHere's what's changed since 1.2.4:\r\n\r\n- ✅ Added an update checker so that people don't keep on running massively outdated Iris versions\r\n- 📷 Massive performance improvements when Depth of Field is enabled\r\n- 📈 Improved performance by up to 20%-40% in some CPU-limited situations\r\n- 💡 Fixed big shadow issues with SEUS PTGI HRR 3 (Entities are still very blurry)\r\n- 🐲 Fixed the dragon death animation on most shader packs\r\n- 🩹 Fixed a massive number of small miscellaneous bugs with various packs\r\n- ➕ Added support for Super Duper Vanilla Shaders\r\n- 🤝 Fixed many mod compatibility issues (Litematica, Light Overlay, Orderly, Lifts, etc)\r\n- 🏚️ Fixed compatibility with some unmaintained NVIDIA and Intel drivers for old hardware\r\n- 🖥️ 1.17: Fixed slime blocks disappearing and white dots appearing on the screen\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.5/full.md>",
     "changelog_url": null,
     "date_published": "2022-06-07T00:57:46.483445Z",
-    "downloads": 29050,
+    "downloads": 29058,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6592,7 +6592,7 @@
     "changelog": "Iris 1.2.5 is now available for download for Minecraft 1.16.5, 1.17.1, and 1.18.2 (with 1.19 coming soon), fixing a huge number of bugs and mod compatibility issues, massively improving performance with packs using depth of field, and improving performance in some CPU-limited scenarios.\r\n\r\nWe hope for this to be one of the last big bugfix releases before PBR (Iris 1.3.0). **When we release PBR, we plan to drop support for 1.17.1**, meaning that the Iris release supporting PBR will only support 1.16.5, 1.18.2, and 1.19. We hope this makes sense, because actively supporting 4 different Minecraft versions would just be too much with our current development team.\r\n\r\nThis release was developed by coderbot & IMS with additional help from Pepper.\r\n\r\n**⬇ Download the release here: https://irisshaders.net/download.html**\r\n\r\nHere's what's changed since 1.2.4:\r\n\r\n- ✅ Added an update checker so that people don't keep on running massively outdated Iris versions\r\n- 📷 Massive performance improvements when Depth of Field is enabled\r\n- 📈 Improved performance by up to 20%-40% in some CPU-limited situations\r\n- 💡 Fixed big shadow issues with SEUS PTGI HRR 3 (Entities are still very blurry)\r\n- 🐲 Fixed the dragon death animation on most shader packs\r\n- 🩹 Fixed a massive number of small miscellaneous bugs with various packs\r\n- ➕ Added support for Super Duper Vanilla Shaders\r\n- 🤝 Fixed many mod compatibility issues (Litematica, Light Overlay, Orderly, Lifts, etc)\r\n- 🏚️ Fixed compatibility with some unmaintained NVIDIA and Intel drivers for old hardware\r\n- 🖥️ 1.17: Fixed slime blocks disappearing and white dots appearing on the screen\r\n\r\nA more detailed changelog is available for those interested: <https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.5/full.md>",
     "changelog_url": null,
     "date_published": "2022-06-07T00:56:46.994785Z",
-    "downloads": 2837,
+    "downloads": 2838,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6663,7 +6663,7 @@
     "changelog": "Iris 1.2.4 has been released as a hotfix to fix multiple issues relating to log spam, white dots appearing through walls, and crashes when entering new dimensions, as well as fixing depth of field on 1.17.1+ and fixing an incompatibility with Resolution Control+.\r\n\r\ntl;dr: fixed a ton of really bad bugs caused by 1.2.3\r\n\r\n⬇️ Download the release here: https://irisshaders.net/download.html",
     "changelog_url": null,
     "date_published": "2022-04-27T00:49:56.115921Z",
-    "downloads": 59972,
+    "downloads": 60024,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6706,7 +6706,7 @@
     "changelog": "Iris 1.2.4 has been released as a hotfix to fix multiple issues relating to log spam, white dots appearing through walls, and crashes when entering new dimensions, as well as fixing depth of field on 1.17.1+ and fixing an incompatibility with Resolution Control+.\r\n\r\ntl;dr: fixed a ton of really bad bugs caused by 1.2.3\r\n\r\n⬇️ Download the release here: https://irisshaders.net/download.html",
     "changelog_url": null,
     "date_published": "2022-04-27T00:46:47.339302Z",
-    "downloads": 1578,
+    "downloads": 1579,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6748,8 +6748,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2ebe90925611a17fb35bbb9d411b34f746f73acf3c746e68afde5c06a5af4664155f37c43b1344815d83c83bf0178ae00ee6ae58d6f5368526aa083e632dedfa",
-          "sha1": "1eab0d692dcd4fa862a96a9bd74bcbfec13bc041"
+          "sha1": "1eab0d692dcd4fa862a96a9bd74bcbfec13bc041",
+          "sha512": "2ebe90925611a17fb35bbb9d411b34f746f73acf3c746e68afde5c06a5af4664155f37c43b1344815d83c83bf0178ae00ee6ae58d6f5368526aa083e632dedfa"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.16.x-v1.2.4/iris-mc1.16.5-1.2.4-build.36.jar",
         "filename": "iris-mc1.16.5-1.2.4-build.36.jar",
@@ -6777,15 +6777,15 @@
     "changelog": "Iris 1.2.3 is ready for download, with minor performance improvements and bug fixes!\r\n\r\nThis is a smaller release while we work on a bigger release with PBR and major changes to improve compatibility with many mods.\r\n\r\nHere's what's changed since 1.2.2:\r\n\r\n🧭 Fixed compatibility with Fabric API 0.51 and Indium 1.0.3\r\n🖥️ Added debug commands\r\n🌊 Fixed issues with sky rendering in high fog situations (underwater)\r\n⚔️ Fixed issues with changing lobbies on servers with shaders enabled\r\n🚤 Improved performance slightly with more optimized vertex writing\r\n🩹 And many other bug fixes and translations!\r\n\r\nKnown potential issues:\r\n\r\n❌ SEUS PTGI HRR Test 3 currently has major graphical issues (SEUS PTGI HRR 2.1 is compatible).\r\n\r\n⬇️ Download the release here: https://irisshaders.net/download.html\r\n\r\nA more detailed changelog is available for those interested: https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.3/full.md",
     "changelog_url": null,
     "date_published": "2022-04-24T22:11:56.43588Z",
-    "downloads": 1366,
+    "downloads": 1367,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f544abd4fdc4b0c70454560516b9c3d311c723d37b39cda97dc5d5f5fa81814bb338f4d48b2b038e640d8fd6629b06d0843d6d3ab75e93a5a38f33f4accb307a",
-          "sha1": "54f32b6beaa5bfb3bbfde8eacd615b2ddcec1fca"
+          "sha1": "54f32b6beaa5bfb3bbfde8eacd615b2ddcec1fca",
+          "sha512": "f544abd4fdc4b0c70454560516b9c3d311c723d37b39cda97dc5d5f5fa81814bb338f4d48b2b038e640d8fd6629b06d0843d6d3ab75e93a5a38f33f4accb307a"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.18.x-v1.2.3/iris-mc1.18.2-1.2.3-build.35.jar",
         "filename": "iris-mc1.18.2-1.2.3-build.35.jar",
@@ -6819,8 +6819,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "299cf481c4049439dc9b4848d832466c7766694ef7075c553a41c751810ada5f35b4a78217d8793b24b2a6d1f727e1675a51415a702ce793f73574b4dc1cbef4",
-          "sha1": "e1ac3311ba51b55e00f269fd0002f602deeb8a39"
+          "sha1": "e1ac3311ba51b55e00f269fd0002f602deeb8a39",
+          "sha512": "299cf481c4049439dc9b4848d832466c7766694ef7075c553a41c751810ada5f35b4a78217d8793b24b2a6d1f727e1675a51415a702ce793f73574b4dc1cbef4"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.17.x-v1.2.3/iris-mc1.17.1-1.2.3-build.34.jar",
         "filename": "iris-mc1.17.1-1.2.3-build.34.jar",
@@ -6854,8 +6854,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d6906f56fa4bbda1a0e600a13415cfaff6225d6c005bde61392e5ead847e1139776b84473fd7d2117e060fa177c4cb9548a6e4ea4eb54738ab65e4921d0c1509",
-          "sha1": "44e299f45dee0cb18c658d16a66cd2ccc2470d66"
+          "sha1": "44e299f45dee0cb18c658d16a66cd2ccc2470d66",
+          "sha512": "d6906f56fa4bbda1a0e600a13415cfaff6225d6c005bde61392e5ead847e1139776b84473fd7d2117e060fa177c4cb9548a6e4ea4eb54738ab65e4921d0c1509"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.16.x-v1.2.3/iris-mc1.16.5-1.2.3-build.33.jar",
         "filename": "iris-mc1.16.5-1.2.3-build.33.jar",
@@ -6890,8 +6890,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4f414abe310173ea7e270e26dafec8e6c442b9d4",
-          "sha512": "2f6e70f25051874456b6bbbedc17d6a2ab82b2a84e1f5c5b1f8bc03a303a0aa790e04d79a039fbf3f7cd924bb5815c6d514d6fadee6ebc212ffbd29181fc9c7c"
+          "sha512": "2f6e70f25051874456b6bbbedc17d6a2ab82b2a84e1f5c5b1f8bc03a303a0aa790e04d79a039fbf3f7cd924bb5815c6d514d6fadee6ebc212ffbd29181fc9c7c",
+          "sha1": "4f414abe310173ea7e270e26dafec8e6c442b9d4"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.18.x-v1.2.2/iris-mc1.18.2-1.2.2-build.32.jar",
         "filename": "iris-mc1.18.2-1.2.2-build.32.jar",
@@ -6925,8 +6925,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "004188eaa6952ca579685e7d79d24bf8f2067638",
-          "sha512": "cde1e9ea97a5b77f45c0dcda4c2014b823c7c2997a46aca66bb648368424b380adebea169ad83e472c4b6df714b670bef606167d63ae04ac65fda39e6fb54c89"
+          "sha512": "cde1e9ea97a5b77f45c0dcda4c2014b823c7c2997a46aca66bb648368424b380adebea169ad83e472c4b6df714b670bef606167d63ae04ac65fda39e6fb54c89",
+          "sha1": "004188eaa6952ca579685e7d79d24bf8f2067638"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.17.x-v1.2.2/iris-mc1.17.1-1.2.2-build.31.jar",
         "filename": "iris-mc1.17.1-1.2.2-build.31.jar",
@@ -6988,7 +6988,7 @@
     "changelog": "Iris 1.2.1 is ready for download, with plenty of fixes for common issues as well as a few major changes!\r\n\r\nHere's what's changed since 1.2:\r\n\r\n💻 Switched to the Brachyura™️ build system, allowing developers to build the project and develop faster\r\n🗒️ Added a directive to allow shader developers to cap the entity shadow distance\r\n🕷️ Reworked the code for the red/white entity flash to be more consistent with Vanilla\r\n🎡 Fixed multiple rendering issues with other mods (support is still in progress)\r\n🏔️ Fixed issues with SEUS PTGI entity shadows on 1.17+\r\n🗣️ Multiple translations have been updated\r\n🩹 ...as well as many other fixes!\r\n\r\nKnown potential issues:\r\n\r\n❌ SEUS PTGI HRR Test 3 currently has major graphical issues (SEUS PTGI HRR 2.1 is compatible).\r\n\r\n⬇️ Download the release here: https://irisshaders.net/download.html\r\n\r\nA more detailed changelog is available for those interested: https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.1/full.md",
     "changelog_url": null,
     "date_published": "2022-03-02T01:17:10.199055Z",
-    "downloads": 5046,
+    "downloads": 5047,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7030,8 +7030,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2dd0ffd3b7991fe018d67558787914fdb0b36f57",
-          "sha512": "94103a59a3f48137a954858b4f4276f3bc9ecfd5b13e660a09067c8e126424e9d07b9eeeb1a6393051e9aee4521b70c18785eb858778a42bca05e9d6864751a0"
+          "sha512": "94103a59a3f48137a954858b4f4276f3bc9ecfd5b13e660a09067c8e126424e9d07b9eeeb1a6393051e9aee4521b70c18785eb858778a42bca05e9d6864751a0",
+          "sha1": "2dd0ffd3b7991fe018d67558787914fdb0b36f57"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.17.x-v1.2.1/iris-mc1.17.1-1.2.1-rc1-90bdb008.jar",
         "filename": "iris-mc1.17.1-1.2.1-rc1-90bdb008.jar",
@@ -7065,8 +7065,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "866c6d61e0b18d726b5c5a9977ff1b63ce30c9db",
-          "sha512": "85b7ae57996b4b9e5639b26af4d53ae7702000d078a50b915a507f541af9150fe09980d6e523d63df58a4cf75b04bd1b5c7b101b250adf9c562e232021584488"
+          "sha512": "85b7ae57996b4b9e5639b26af4d53ae7702000d078a50b915a507f541af9150fe09980d6e523d63df58a4cf75b04bd1b5c7b101b250adf9c562e232021584488",
+          "sha1": "866c6d61e0b18d726b5c5a9977ff1b63ce30c9db"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.16.x-v1.2.1/iris-mc1.16.5-1.2.1-rc1-20f1aa54.jar",
         "filename": "iris-mc1.16.5-1.2.1-rc1-20f1aa54.jar",
@@ -7093,15 +7093,15 @@
     "changelog": "Iris 1.2.0 is here for Minecraft 1.16.5 / 1.17.1 / 1.18.1, bringing the long awaited Shader Configuration GUI! This release was jointly developed by coderbot, IMS, and FoundationGames, but also contains code contributions from Justsnoopy30 and maximum#8760.\n\nThe shader configuration system and GUI was a massive undertaking, with development of this iteration beginning in June 2021 with development of the previous iteration (as seen in Starline) having started in February 2021. Applying option changes while accounting for all the complexity and edge cases but also keeping shader pack loading extremely fast took a ton of work. An intuitive and functional GUI on top of that was also a ton of work.\n\nBut finally, it is ready for release! We've included some smaller issue fixes as well.\n\nHere's what's changed since 1.1.5:\n\n💻 A new shader configuration system built from the ground up for performance and compatibility\n⛰️ Support for Optifine's prepare pass\n🗒️ Support for the renderStage and blendFunc uniforms, to allow SEUS PTGI HRR 3 to load\n🗣️ Multiple translations have been updated\n🩹 ...as well as many other fixes!\n\nKnown potential issues:\n\n❌ SEUS PTGI HRR Test 3 currently has major graphical issues (SEUS PTGI HRR 2.1 is compatible).\n\n⬇️ Download the release here: https://irisshaders.net/download.html\n\nA more detailed changelog is available for those interested: https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.0/full.md ",
     "changelog_url": null,
     "date_published": "2022-01-19T01:18:51.138326Z",
-    "downloads": 22934,
+    "downloads": 22957,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "94c66f904514e1a7e0ad106542a693e09b603044",
-          "sha512": "f1bc7334b819cc8b63fcd796d4a6b35358394b4e5a4488bf5f50a5c9cde3737df1ac92a0df0608ec7879d0593eeea8159dd756f776038e653c6cc02bfcf8a122"
+          "sha512": "f1bc7334b819cc8b63fcd796d4a6b35358394b4e5a4488bf5f50a5c9cde3737df1ac92a0df0608ec7879d0593eeea8159dd756f776038e653c6cc02bfcf8a122",
+          "sha1": "94c66f904514e1a7e0ad106542a693e09b603044"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.18.x/v1.2.0/iris-mc1.18.1-1.2.0-pre.jar",
         "filename": "iris-mc1.18.1-1.2.0-pre.jar",
@@ -7142,8 +7142,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "486171a70fda0e785000eafc4210e1a056bf49b4",
-          "sha512": "2568a4e94093e780948b96e0722e1bae65a8298043b43e12a09cbce864c0875f5c306b1c4de227395f5ffcfc714bc9ed1931107a804487ad0b7230ab63423380"
+          "sha512": "2568a4e94093e780948b96e0722e1bae65a8298043b43e12a09cbce864c0875f5c306b1c4de227395f5ffcfc714bc9ed1931107a804487ad0b7230ab63423380",
+          "sha1": "486171a70fda0e785000eafc4210e1a056bf49b4"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.17.x/v1.2.0/iris-mc1.17-1.2.0-pre.jar",
         "filename": "iris-mc1.17-1.2.0-pre.jar",
@@ -7177,15 +7177,15 @@
     "changelog": "Iris 1.2.0 is here for Minecraft 1.16.5 / 1.17.1 / 1.18.1, bringing the long awaited Shader Configuration GUI! This release was jointly developed by coderbot, IMS, and FoundationGames, but also contains code contributions from Justsnoopy30 and maximum#8760.\n\nThe shader configuration system and GUI was a massive undertaking, with development of this iteration beginning in June 2021 with development of the previous iteration (as seen in Starline) having started in February 2021. Applying option changes while accounting for all the complexity and edge cases but also keeping shader pack loading extremely fast took a ton of work. An intuitive and functional GUI on top of that was also a ton of work.\n\nBut finally, it is ready for release! We've included some smaller issue fixes as well.\n\nHere's what's changed since 1.1.5:\n\n💻 A new shader configuration system built from the ground up for performance and compatibility\n⛰️ Support for Optifine's prepare pass\n🗒️ Support for the renderStage and blendFunc uniforms, to allow SEUS PTGI HRR 3 to load\n🗣️ Multiple translations have been updated\n🩹 ...as well as many other fixes!\n\nKnown potential issues:\n\n❌ SEUS PTGI HRR Test 3 currently has major graphical issues (SEUS PTGI HRR 2.1 is compatible).\n\n⬇️ Download the release here: https://irisshaders.net/download.html\n\nA more detailed changelog is available for those interested: https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.2.0/full.md ",
     "changelog_url": null,
     "date_published": "2022-01-19T01:13:57.374832Z",
-    "downloads": 1782,
+    "downloads": 1783,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "22ed7ca2f6431c91a9e9d67258ab56556fc97ce628ad3818b3fb9294da0050aaaefb7bb192720e4ab1107e1c37636b4817d38c4ac8e20827fa6361e9fe4367db",
-          "sha1": "56f30f2165a784a8df466f8904f3cb28e0dc491f"
+          "sha1": "56f30f2165a784a8df466f8904f3cb28e0dc491f",
+          "sha512": "22ed7ca2f6431c91a9e9d67258ab56556fc97ce628ad3818b3fb9294da0050aaaefb7bb192720e4ab1107e1c37636b4817d38c4ac8e20827fa6361e9fe4367db"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.16.x/v1.2.0/iris-mc1.16.5-1.2.0-pre.jar",
         "filename": "iris-mc1.16.5-1.2.0-pre.jar",
@@ -7219,7 +7219,7 @@
     "changelog": "This is a small bug fix release to support Sodium 0.4.0 alpha 6 on 1.18, while we work on the 1.2.0 update to add shader settings, currently in public beta on our Discord!\r\n\r\n⬇️ Download the release here: https://irisshaders.net/download.html",
     "changelog_url": null,
     "date_published": "2022-01-14T02:56:18.861177Z",
-    "downloads": 3261,
+    "downloads": 3262,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7296,8 +7296,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "5dfe1affa406091301ea6d920b9b365cbc416199",
-          "sha512": "3febb3450183ac222c1f83c888d43f27a599ce58a56ea08ff18266a7c9b62b4b38a7aec48df205991c4fddec12725ac7cefcab27db3136d927ca6a1810e60109"
+          "sha512": "3febb3450183ac222c1f83c888d43f27a599ce58a56ea08ff18266a7c9b62b4b38a7aec48df205991c4fddec12725ac7cefcab27db3136d927ca6a1810e60109",
+          "sha1": "5dfe1affa406091301ea6d920b9b365cbc416199"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.18.x/v1.1.4/iris-mc1.18.1-1.1.4.jar",
         "filename": "iris-mc1.18.1-1.1.4.jar",
@@ -7331,8 +7331,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "00c70adcecbfe3626028c9c82107b4dfbc95612e1b4dd9b5b187eccbc9acc32087ce67da18091993c74909bdf9712a2b7ce824c7f061a07a3fba513b85fd2fb4",
-          "sha1": "4f2b6e76b84204ff22e459b8110e02ddd7ea059c"
+          "sha1": "4f2b6e76b84204ff22e459b8110e02ddd7ea059c",
+          "sha512": "00c70adcecbfe3626028c9c82107b4dfbc95612e1b4dd9b5b187eccbc9acc32087ce67da18091993c74909bdf9712a2b7ce824c7f061a07a3fba513b85fd2fb4"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.17.x/v1.1.4/iris-mc1.17-1.1.4.jar",
         "filename": "iris-mc1.17-1.1.4.jar",
@@ -7366,8 +7366,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "519fc047a714534335bd5143e84e08bb26050079d8a6bfc89c7be9777e1dede62575ad5cfdc5cc80cae6e23102bdaadae2494dc159b3e75fb292a0c12662fbef",
-          "sha1": "3fac3cc756921f103eab08c2d8090da3b5b9c954"
+          "sha1": "3fac3cc756921f103eab08c2d8090da3b5b9c954",
+          "sha512": "519fc047a714534335bd5143e84e08bb26050079d8a6bfc89c7be9777e1dede62575ad5cfdc5cc80cae6e23102bdaadae2494dc159b3e75fb292a0c12662fbef"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/1.16.x/v1.1.4/iris-mc1.16.5-1.1.4.jar",
         "filename": "iris-mc1.16.5-1.1.4.jar",
@@ -7395,7 +7395,7 @@
     "changelog": "https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.1.3/summary.md",
     "changelog_url": null,
     "date_published": "2021-11-30T20:04:25.213576Z",
-    "downloads": 26528,
+    "downloads": 26548,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7437,8 +7437,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a28042758fc8b8ec71c197b3cf18e3e4558a5219df673074910204383757113ebfa39aefba38a0b84c04d501005d7ab5ccee36dd747c69e64799c8764fc2fa3d",
-          "sha1": "5c0c63a5e36e33217026f48feb92317224f48b6c"
+          "sha1": "5c0c63a5e36e33217026f48feb92317224f48b6c",
+          "sha512": "a28042758fc8b8ec71c197b3cf18e3e4558a5219df673074910204383757113ebfa39aefba38a0b84c04d501005d7ab5ccee36dd747c69e64799c8764fc2fa3d"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/mc1.17.1-1.1.3/iris-mc1.17-1.1.3.jar",
         "filename": "iris-mc1.17-1.1.3.jar",
@@ -7465,15 +7465,15 @@
     "changelog": "https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.1.3/summary.md",
     "changelog_url": null,
     "date_published": "2021-11-30T19:59:37.972526Z",
-    "downloads": 4995,
+    "downloads": 4996,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ed9a582a616277e734cd3c39c5aa1c24e8af4d3c",
-          "sha512": "446b67839d8a11ce77dcc8ef53501f6ba1250c7440943d6586273a3008fd305dcf51f3d9512000a67c9f9a1f4d57727d54f23ebc63ee83e0dc0d1440cdc6b838"
+          "sha512": "446b67839d8a11ce77dcc8ef53501f6ba1250c7440943d6586273a3008fd305dcf51f3d9512000a67c9f9a1f4d57727d54f23ebc63ee83e0dc0d1440cdc6b838",
+          "sha1": "ed9a582a616277e734cd3c39c5aa1c24e8af4d3c"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/mc1.16.5-1.1.3/iris-mc1.16.5-1.1.3.jar",
         "filename": "iris-mc1.16.5-1.1.3.jar",
@@ -7500,15 +7500,15 @@
     "changelog": "A trimmed changelog is available below. A more detailed changelog is available [on GitHub](https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.1.2/full.md) for those who are interested.\n\n## Notable Changes\n\n- This release includes a new shadow culling system as well as a new batched entity rendering system, improving performance with many shader packs and fixing a bunch of bugs!\n- For 1.17.1 and above, this release also contains a modified version of Sodium based on 0.3.2 instead of 0.3.0 like before, improving performance and graphics driver compatibility.\n\n## Major changes for all versions\n\n- Shadow culling has been completely rewritten. It no longer incorrectly culls chunks compared to OptiFine, and overall performance has improved greatly compared to the previous system (especially with shader packs like Enhanced Default, BSL, and Complementary Shaders).\n- A Max Shadow Distance slider is now available in Video Settings, allowing you to tweak the render distance of shadows on packs that don't specify one.\n- Batched entity rendering has been completely rewritten, fixing many memory management, correctness, and performance issues.\n- Fog now fully works in most shader packs, including Sildur's Enhanced Default and other vanilla-like shaders\n- Entities now flash red when hurt, and flash white when they are going to explode\n- End portals now properly render with most shader packs\n- blockEntityId and entityId are now fully supported (Fixes many issues with Complementary Shaders' Integrated PBR)\n- Iris now has initial support for the path-traced lighting in SEUS PTGI, and has some fixes to the lighting in SEUS Renewed. (SEUS PTGI is still not officially supported, its water still does not work on Iris.)\n\n## Major fixes for 1.17.1 and above\n\n- End gateway beams no longer appear to render twice with shader packs that use shadows.\n- Fixed separate leads incorrectly rendering as connected\n- Block selection outlines now render properly, even with world curvature enabled. (due to a different issue that will be fixed soon, this doesn't work with some packs like Enhanced Default.)\n- Chunk borders (F3 + G), hitboxes, and other lines now render properly with shaders enabled. (similarly, this doesn't work with some packs like Enhanced Default.)\n- World borders render properly with most packs now.\n- The energy swirl around charged creepers now renders properly.\n\n## Mod compatibility fixes\n\n- Fix most issues with Physics Mod\n- Initial compatibility with Immersive Portals is now available on 1.17.1, though there are still issues. (credit to qouteall for implementing the compatibility code)\n- Fixed an issue where directional shading would be enabled on some blocks rendered with the Fabric Rendering API, even if the shader pack disabled it. (Fixes issues with CTM mods)\n- Added a new screen for when you have an incompatible version of Sodium installed.\n\n## But wait, there's more!\n\nFor the first time, we are releasing versions of Iris for the 1.18 snapshots for everyone to use. These builds do not represent the final version, however, they should be mostly playable (though there are significant performance issues caused by 1.18 itself.) These builds will be released to Patrons first for testing, then released for the general public after a few days once we confirm no major issues are in them. Currently, you can only get 1.18 versions of Iris through Github Releases (for Fabric). Overall, shaders should be mostly usable on 1.18 snapshots!\n",
     "changelog_url": null,
     "date_published": "2021-09-06T02:38:18.747662Z",
-    "downloads": 16448,
+    "downloads": 16451,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "259d43b3b89827a22717f5628dcb67469224adbd",
-          "sha512": "55a13a56c6eed76ab98fdce9bcf8f4dbaa66a2b09f6caf254fdd24ff4bd0f147542e380be9f854b85048848eaaa1d478beef84c3b8f4f271a345b529f312a161"
+          "sha512": "55a13a56c6eed76ab98fdce9bcf8f4dbaa66a2b09f6caf254fdd24ff4bd0f147542e380be9f854b85048848eaaa1d478beef84c3b8f4f271a345b529f312a161",
+          "sha1": "259d43b3b89827a22717f5628dcb67469224adbd"
         },
         "url": "https://cdn.modrinth.com//data/YL57xq9U/versions/mc1.17.1-1.1.2/iris-and-sodium-mc1.17-1.1.2%2Bbuild.9.jar",
         "filename": "iris-and-sodium-mc1.17-1.1.2+build.9.jar",
@@ -7535,15 +7535,15 @@
     "changelog": "A trimmed changelog is available below. A more detailed changelog is available [on GitHub](https://github.com/IrisShaders/Iris/blob/trunk/docs/changelogs/1.1.2/full.md) for those who are interested.\n\n## Notable Changes\n\n- This release includes a new shadow culling system as well as a new batched entity rendering system, improving performance with many shader packs and fixing a bunch of bugs!\n- For 1.17.1 and above, this release also contains a modified version of Sodium based on 0.3.2 instead of 0.3.0 like before, improving performance and graphics driver compatibility.\n\n## Major changes for all versions\n\n- Shadow culling has been completely rewritten. It no longer incorrectly culls chunks compared to OptiFine, and overall performance has improved greatly compared to the previous system (especially with shader packs like Enhanced Default, BSL, and Complementary Shaders).\n- A Max Shadow Distance slider is now available in Video Settings, allowing you to tweak the render distance of shadows on packs that don't specify one.\n- Batched entity rendering has been completely rewritten, fixing many memory management, correctness, and performance issues.\n- Fog now fully works in most shader packs, including Sildur's Enhanced Default and other vanilla-like shaders\n- Entities now flash red when hurt, and flash white when they are going to explode\n- End portals now properly render with most shader packs\n- blockEntityId and entityId are now fully supported (Fixes many issues with Complementary Shaders' Integrated PBR)\n- Iris now has initial support for the path-traced lighting in SEUS PTGI, and has some fixes to the lighting in SEUS Renewed. (SEUS PTGI is still not officially supported, its water still does not work on Iris.)\n\n## Major fixes for 1.17.1 and above\n\n- End gateway beams no longer appear to render twice with shader packs that use shadows.\n- Fixed separate leads incorrectly rendering as connected\n- Block selection outlines now render properly, even with world curvature enabled. (due to a different issue that will be fixed soon, this doesn't work with some packs like Enhanced Default.)\n- Chunk borders (F3 + G), hitboxes, and other lines now render properly with shaders enabled. (similarly, this doesn't work with some packs like Enhanced Default.)\n- World borders render properly with most packs now.\n- The energy swirl around charged creepers now renders properly.\n\n## Mod compatibility fixes\n\n- Fix most issues with Physics Mod\n- Initial compatibility with Immersive Portals is now available on 1.17.1, though there are still issues. (credit to qouteall for implementing the compatibility code)\n- Fixed an issue where directional shading would be enabled on some blocks rendered with the Fabric Rendering API, even if the shader pack disabled it. (Fixes issues with CTM mods)\n- Added a new screen for when you have an incompatible version of Sodium installed.\n\n## But wait, there's more!\n\nFor the first time, we are releasing versions of Iris for the 1.18 snapshots for everyone to use. These builds do not represent the final version, however, they should be mostly playable (though there are significant performance issues caused by 1.18 itself.) These builds will be released to Patrons first for testing, then released for the general public after a few days once we confirm no major issues are in them. Currently, you can only get 1.18 versions of Iris through Github Releases (for Fabric). Overall, shaders should be mostly usable on 1.18 snapshots!\n",
     "changelog_url": null,
     "date_published": "2021-09-06T02:31:47.141289Z",
-    "downloads": 4264,
+    "downloads": 4265,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3a5f8fa1da6973da5714c7577388049dc3183699",
-          "sha512": "4c4458f0a82141e3a91b92c678ec37503c8304e32e2f47f28141068cb214aec5243b8f5c48fd88e4a880dcf5f2c8cc4707095996deff05692f6b19dddebc6372"
+          "sha512": "4c4458f0a82141e3a91b92c678ec37503c8304e32e2f47f28141068cb214aec5243b8f5c48fd88e4a880dcf5f2c8cc4707095996deff05692f6b19dddebc6372",
+          "sha1": "3a5f8fa1da6973da5714c7577388049dc3183699"
         },
         "url": "https://cdn.modrinth.com//data/YL57xq9U/versions/mc1.16.5-1.1.2/iris-and-sodium-mc1.16.5-1.1.2%2Bbuild.4.jar",
         "filename": "iris-and-sodium-mc1.16.5-1.1.2+build.4.jar",
@@ -7570,7 +7570,7 @@
     "changelog": "This release primarily fixes a number of stability issues in Iris. \n\n\n\nFixes for 1.16.5 & 1.17.1: - Fixed Complementary not compiling on macOS in non-overworld dimensions - Avoid crashes with Physics Mod, but there are still some weird bugs with it - Fixed colored shadows not working (this was a regression shipped in 1.1.0) - Fixed clouds being cut off at low render distances when shaders are disabled - Added rudimentary support for atlasSize, needed by newer versions of Complementary Shaders - Fixed block breaking animations for block entities - Support separateAo for blocks rendered with the Fabric Rendering API - Fixed a number of issues related to the ordering of entity rendering",
     "changelog_url": null,
     "date_published": "2021-07-29T02:06:23.037856Z",
-    "downloads": 7178,
+    "downloads": 7180,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7606,15 +7606,15 @@
     "changelog": "This release primarily fixes a number of stability issues in the 1.17.1 version of Iris. Previously, the bundled version of Sodium for 1.17 was based on an older beta build, but now we've released to the much more stable Sodium 0.3.0 release. In addition, IMS fixed a memory leak in the sky horizon rendering code on Iris for 1.17.1.\n\n \n\nOverall, Iris 1.1.1 for 1.17.1 is much more stable than Iris 1.1.0 for 1.17.1! We've been working on a much bigger update, but unfortunately that code isn't quite ready yet. Instead of continually holding back critical fixes until that code is ready, we've decided to pull the critical fixes into an intermediate build, giving us time to polish up the next update.\n\n \n\nFixes for 1.16.5 & 1.17.1: - Fixed Complementary not compiling on macOS in non-overworld dimensions - Avoid crashes with Physics Mod, but there are still some weird bugs with it - Fixed colored shadows not working (this was a regression shipped in 1.1.0) - Fixed clouds being cut off at low render distances when shaders are disabled - Added rudimentary support for atlasSize, needed by newer versions of Complementary Shaders - Fixed block breaking animations for block entities - Support separateAo for blocks rendered with the Fabric Rendering API - Fixed a number of issues related to the ordering of entity rendering\n\n \n\nFixes for 1.17.1: - Allow shader packs to detect when the player is in powdered snow - The bundled version of Sodium is now based on the 0.3.0 release instead of a beta build, fixing a memory leak - Fixed vanilla clouds not rendering in packs that use them - Fixed beacon beams not rendering - Fixed a memory leak in horizon rendering",
     "changelog_url": null,
     "date_published": "2021-07-29T02:04:54.765633Z",
-    "downloads": 22562,
+    "downloads": 22571,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "6fc947f2b749502ac510c65cebfeab9f64cecfe1",
-          "sha512": "18aa480d8503cf98e87bc37ba734ca61b2f1c85dd92a52e5501b4e2a5d8fe17dba1de9b748155c054cb6a3f31e1fc9643d4491413ad7cf7f20ba90aec338cb76"
+          "sha512": "18aa480d8503cf98e87bc37ba734ca61b2f1c85dd92a52e5501b4e2a5d8fe17dba1de9b748155c054cb6a3f31e1fc9643d4491413ad7cf7f20ba90aec338cb76",
+          "sha1": "6fc947f2b749502ac510c65cebfeab9f64cecfe1"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/mc1.17-v1.1.1/iris-mc1.17-1.1.1.jar",
         "filename": "iris-mc1.17-1.1.1.jar",
@@ -7641,15 +7641,15 @@
     "changelog": "This release includes fixes for the vast majority of the hardware compatibility issues that Iris 1.0.0 faced. In addition, a compatible version of Sodium is now available for 1.17, allowing people to have incredible performance with shaders on both Minecraft 1.16 and Minecraft 1.17!\n\n",
     "changelog_url": null,
     "date_published": "2021-06-29T23:26:10.609754Z",
-    "downloads": 10304,
+    "downloads": 10306,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "80da62de0e01bf4023e640326e4a05bd5b5ee007",
-          "sha512": "09c473690fb28a7b9df862d2168bf5430e13e91112d67d1936399685900973956e2243669ce3daf1f73ca53f4a8baabc3a6a4bb84791c579ee531cb9ca468c06"
+          "sha512": "09c473690fb28a7b9df862d2168bf5430e13e91112d67d1936399685900973956e2243669ce3daf1f73ca53f4a8baabc3a6a4bb84791c579ee531cb9ca468c06",
+          "sha1": "80da62de0e01bf4023e640326e4a05bd5b5ee007"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/mc1.17-v1.1.0/iris-mc1.17-1.1.0.jar",
         "filename": "iris-mc1.17-1.1.0.jar",
@@ -7676,15 +7676,15 @@
     "changelog": "This release includes fixes for the vast majority of the hardware compatibility issues that Iris 1.0.0 faced. It also includes a number of general bug fixes.",
     "changelog_url": null,
     "date_published": "2021-06-29T23:24:38.72391Z",
-    "downloads": 8884,
+    "downloads": 8886,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ab3cd5967d11221ebf3e0374f13ecfac2e8ff7bf",
-          "sha512": "4c34acec4277eaeb0f4f111a7308c87f8c8fabce66af8c736b7f8492b0a448e6ebf28587208305ae740f5efa751fede24a9315e19dbcfda31473683b931a0f54"
+          "sha512": "4c34acec4277eaeb0f4f111a7308c87f8c8fabce66af8c736b7f8492b0a448e6ebf28587208305ae740f5efa751fede24a9315e19dbcfda31473683b931a0f54",
+          "sha1": "ab3cd5967d11221ebf3e0374f13ecfac2e8ff7bf"
         },
         "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/mc1.16.5-v1.1.0/iris-mc1.16.5-1.1.0.jar",
         "filename": "iris-mc1.16.5-1.1.0.jar",
@@ -7711,7 +7711,7 @@
     "changelog": "This is the recommended version to use, for users who want a stable experience on 1.16.5.",
     "changelog_url": null,
     "date_published": "2021-06-09T23:01:39.653663Z",
-    "downloads": 9275,
+    "downloads": 9280,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,

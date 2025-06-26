@@ -15,7 +15,7 @@
     "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
     "changelog_url": null,
     "date_published": "2025-05-31T21:11:32.571276Z",
-    "downloads": 66,
+    "downloads": 71,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -148,8 +148,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8d13fbb8643f47d18e7199f8214c8f42661f6d73",
-          "sha512": "b61842d6a58b34d5f3b5264007e6de2fd8c437fb55da7c4c1c87943b72a498b8b3b48bdb79fcc843640daa70ea3285144a4ba3167a1aa8f77e4712bf2bdcf4aa"
+          "sha512": "b61842d6a58b34d5f3b5264007e6de2fd8c437fb55da7c4c1c87943b72a498b8b3b48bdb79fcc843640daa70ea3285144a4ba3167a1aa8f77e4712bf2bdcf4aa",
+          "sha1": "8d13fbb8643f47d18e7199f8214c8f42661f6d73"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ElM5TUYa/ItemLocks-NeoForged-1.21.3-1.3.11.jar",
         "filename": "ItemLocks-NeoForged-1.21.3-1.3.11.jar",
@@ -190,8 +190,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f53ca862e0eb705738bbf4d8105017d03536cc0ab1db4ae8722812d064e49a6921ff6747fa01ac705356d1e542bc78992179ca1646609c3c7a7d6e4de993fe96",
-          "sha1": "0c0acec13d077b53d957c76d3afcace716cc766a"
+          "sha1": "0c0acec13d077b53d957c76d3afcace716cc766a",
+          "sha512": "f53ca862e0eb705738bbf4d8105017d03536cc0ab1db4ae8722812d064e49a6921ff6747fa01ac705356d1e542bc78992179ca1646609c3c7a7d6e4de993fe96"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/7mo3lWd1/ItemLocks-Forge-1.21.3-1.3.11.jar",
         "filename": "ItemLocks-Forge-1.21.3-1.3.11.jar",
@@ -225,15 +225,15 @@
     "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
     "changelog_url": null,
     "date_published": "2025-05-31T21:07:32.523604Z",
-    "downloads": 214,
+    "downloads": 218,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "9cf685409e953204d7062018044909786610292967cde61ede9b4b7f4d86b653df6be470174807bdfcd79faff0e3b637cea2595a11990a8f32f1fc93c3082efb",
-          "sha1": "6d48aa1e4093ee3fb8aac5820e9aa5af011d004c"
+          "sha1": "6d48aa1e4093ee3fb8aac5820e9aa5af011d004c",
+          "sha512": "9cf685409e953204d7062018044909786610292967cde61ede9b4b7f4d86b653df6be470174807bdfcd79faff0e3b637cea2595a11990a8f32f1fc93c3082efb"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/TtNHrpXm/ItemLocks-NeoForged-1.21.1-1.3.11.jar",
         "filename": "ItemLocks-NeoForged-1.21.1-1.3.11.jar",
@@ -267,7 +267,7 @@
     "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
     "changelog_url": null,
     "date_published": "2025-05-31T21:06:30.505066Z",
-    "downloads": 40,
+    "downloads": 42,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -309,7 +309,7 @@
     "changelog": "1.3.11\n- Reworked update notification system due to previous host removing free tier text hosting.\n    - Functionality is almost the same for now, but will improve in the future.",
     "changelog_url": null,
     "date_published": "2025-05-30T18:13:28.243602Z",
-    "downloads": 1334,
+    "downloads": 1358,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -329,15 +329,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "9s6osm5g",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -357,15 +357,15 @@
     "changelog": "1.3.10\n- Fix overlap issue caused by legacy rendering code which made items disappear in various inventories with custom fonts",
     "changelog_url": null,
     "date_published": "2025-01-30T14:41:00.800703Z",
-    "downloads": 7319,
+    "downloads": 7337,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f2b7e61e0413a910e9e5b43f6055c4064483e19f",
-          "sha512": "b59f40501e0b599b1a289db445842968fb082614e343b8ba9ca034bfe0a67a5bd80cb8a75a07126f050aba049e98ed808fbe0efbdf1478d1f120c5380a9d4948"
+          "sha512": "b59f40501e0b599b1a289db445842968fb082614e343b8ba9ca034bfe0a67a5bd80cb8a75a07126f050aba049e98ed808fbe0efbdf1478d1f120c5380a9d4948",
+          "sha1": "f2b7e61e0413a910e9e5b43f6055c4064483e19f"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/fzU46VbX/ItemLocks-Fabric-1.21.4-1.3.10.jar",
         "filename": "ItemLocks-Fabric-1.21.4-1.3.10.jar",
@@ -405,15 +405,15 @@
     "changelog": "1.3.9\n- Now using Cloth Config\n- Added Mod Menu support\n- Old config GUI is now gone (new GUI is still accessible with the N (default) key)",
     "changelog_url": null,
     "date_published": "2025-01-08T17:16:48.139776Z",
-    "downloads": 1688,
+    "downloads": 1690,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ab2aacd1f28ed4d3406c046f6cfd45d7835ec8a4f2b01a827db52022181f5b13ac8e684a6c37f087badfa609822e7ead2c8f6a471ce26c423bc558d28af17bbd",
-          "sha1": "32937e0a6b7f56ffbc9eeefcf5a891a7eb7f6f59"
+          "sha1": "32937e0a6b7f56ffbc9eeefcf5a891a7eb7f6f59",
+          "sha512": "ab2aacd1f28ed4d3406c046f6cfd45d7835ec8a4f2b01a827db52022181f5b13ac8e684a6c37f087badfa609822e7ead2c8f6a471ce26c423bc558d28af17bbd"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/bWQLP97X/ItemLocks-Fabric-1.21.4-1.3.9.jar",
         "filename": "ItemLocks-Fabric-1.21.4-1.3.9.jar",
@@ -503,15 +503,15 @@
     "changelog": "1.3.9\n- Now using Cloth Config\n- Added Mod Menu support\n- Old config GUI is now gone (new GUI is still accessible with the N (default) key)",
     "changelog_url": null,
     "date_published": "2024-08-15T15:10:28.366987Z",
-    "downloads": 14290,
+    "downloads": 14321,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "82526829ca664e1a8bbbbe3c95f58bb286f9e613",
-          "sha512": "3b0df9fb8cf18f33e5aa5939f05568820137349b3686b90c65faca450be299e1f5b8fd4b5fff25804842909e78232921607fde067f64d161a7a8848e109c6e51"
+          "sha512": "3b0df9fb8cf18f33e5aa5939f05568820137349b3686b90c65faca450be299e1f5b8fd4b5fff25804842909e78232921607fde067f64d161a7a8848e109c6e51",
+          "sha1": "82526829ca664e1a8bbbbe3c95f58bb286f9e613"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/AmikGda1/ItemLocks-Fabric-1.21-1.3.9.jar",
         "filename": "ItemLocks-Fabric-1.21-1.3.9.jar",
@@ -551,7 +551,7 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-08-10T13:39:22.700612Z",
-    "downloads": 413,
+    "downloads": 414,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -586,7 +586,7 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-05-31T09:22:59.312713Z",
-    "downloads": 1740,
+    "downloads": 1741,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -628,8 +628,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8f891e8fe3e7c56519a36f47c9f4f9bfd33fa4c99707aa7512eac5f0ed80fd52d2ae367fe1b81f34481abcce3d662988316127127d8caccd0d737cf85f382dee",
-          "sha1": "e971c6a273da7d4e8fe756c8a59957e58bcc9064"
+          "sha1": "e971c6a273da7d4e8fe756c8a59957e58bcc9064",
+          "sha512": "8f891e8fe3e7c56519a36f47c9f4f9bfd33fa4c99707aa7512eac5f0ed80fd52d2ae367fe1b81f34481abcce3d662988316127127d8caccd0d737cf85f382dee"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/CxnlsuQa/ItemLocks-Fabric-1.20.5-1.3.8.jar",
         "filename": "ItemLocks-Fabric-1.20.5-1.3.8.jar",
@@ -656,7 +656,7 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T15:04:47.744944Z",
-    "downloads": 5402,
+    "downloads": 5405,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -699,8 +699,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e16fd1d5c4fc0aaee2f107db058d5a24155003fa44ee2b216f24fe19d4209a3074ff75b643686126da845c94534f2c44bd63aecdad656ab4d8a4282d95c64f1d",
-          "sha1": "f301d57053f66344785ff6dc1b0191222f1cedd3"
+          "sha1": "f301d57053f66344785ff6dc1b0191222f1cedd3",
+          "sha512": "e16fd1d5c4fc0aaee2f107db058d5a24155003fa44ee2b216f24fe19d4209a3074ff75b643686126da845c94534f2c44bd63aecdad656ab4d8a4282d95c64f1d"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/BRWuoP9U/ItemLocks-Forge-1.20.4-1.3.8.jar",
         "filename": "ItemLocks-Forge-1.20.4-1.3.8.jar",
@@ -734,8 +734,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e396fc97b3ba8128210be12a4b15b5ec4963642e72184460badefa6c00d110373c3c3b8c5922528fec43c019ef0570c83cebb643b88b894c74d3144646cc7afe",
-          "sha1": "e7ab88e345fe6ecf6eac31bba6429790a85a030d"
+          "sha1": "e7ab88e345fe6ecf6eac31bba6429790a85a030d",
+          "sha512": "e396fc97b3ba8128210be12a4b15b5ec4963642e72184460badefa6c00d110373c3c3b8c5922528fec43c019ef0570c83cebb643b88b894c74d3144646cc7afe"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/YakCmPPW/ItemLocks-Fabric-1.20.3-1.3.8.jar",
         "filename": "ItemLocks-Fabric-1.20.3-1.3.8.jar",
@@ -798,7 +798,7 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T15:02:45.137259Z",
-    "downloads": 623,
+    "downloads": 625,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -841,8 +841,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "58b6facc501e29f76e19a32f00e067b2c053e048",
-          "sha512": "756ec659756651e5ab542daf06c661924162a6a657c9a6a932dcfbd31ee2b249828d3cb56699e4eaab5cb950fc321d0a418633126ba58063017be3269146c431"
+          "sha512": "756ec659756651e5ab542daf06c661924162a6a657c9a6a932dcfbd31ee2b249828d3cb56699e4eaab5cb950fc321d0a418633126ba58063017be3269146c431",
+          "sha1": "58b6facc501e29f76e19a32f00e067b2c053e048"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/Fs9jyFL4/ItemLocks-Forge-1.20.2-1.3.8.jar",
         "filename": "ItemLocks-Forge-1.20.2-1.3.8.jar",
@@ -869,15 +869,15 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T15:01:13.703996Z",
-    "downloads": 80313,
+    "downloads": 81025,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "47126a57af16dd3ae346169a00696544de8d56d6",
-          "sha512": "da930e30d1c7577c6b1a94b621f836e4a24b4e6cdf7ec6f58d87ffb5ed7577385ef60be85f7c97d9be429c328ac00f53ba3593cc0a3cbb602e66f3c7dbae238c"
+          "sha512": "da930e30d1c7577c6b1a94b621f836e4a24b4e6cdf7ec6f58d87ffb5ed7577385ef60be85f7c97d9be429c328ac00f53ba3593cc0a3cbb602e66f3c7dbae238c",
+          "sha1": "47126a57af16dd3ae346169a00696544de8d56d6"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/zZy69OiJ/ItemLocks-Fabric-1.20.1-1.3.8.jar",
         "filename": "ItemLocks-Fabric-1.20.1-1.3.8.jar",
@@ -905,7 +905,7 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T15:00:44.130511Z",
-    "downloads": 9696,
+    "downloads": 9736,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -940,7 +940,7 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T14:59:59.574688Z",
-    "downloads": 816,
+    "downloads": 818,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -976,15 +976,15 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T14:59:32.121324Z",
-    "downloads": 131,
+    "downloads": 132,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2f97253c5866185d4a7bbae9a48f47bf6876a225",
-          "sha512": "564a9c9b1c21b42a286c12ecd1ac726a083b2094c7e376602d1ef2001a56d2414a137431d80807251d1d056044226cd49bfe79ec3f10f0cebfbf302df7c5d115"
+          "sha512": "564a9c9b1c21b42a286c12ecd1ac726a083b2094c7e376602d1ef2001a56d2414a137431d80807251d1d056044226cd49bfe79ec3f10f0cebfbf302df7c5d115",
+          "sha1": "2f97253c5866185d4a7bbae9a48f47bf6876a225"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/aQsy14CD/ItemLocks-Forge-1.20-1.3.8.jar",
         "filename": "ItemLocks-Forge-1.20-1.3.8.jar",
@@ -1011,7 +1011,7 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T14:58:45.489973Z",
-    "downloads": 1676,
+    "downloads": 1678,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1054,8 +1054,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "66ca135528dfe41c6fcce6ee54139cda99c05543",
-          "sha512": "458e9f4263359030ecc4277a09d0242984e50c4677e00757e02a3b8cb96ab79529aedcdeffac29d01ae2b885921ad8d5a4f58e3e0fa415aa84e5ba3c016dc538"
+          "sha512": "458e9f4263359030ecc4277a09d0242984e50c4677e00757e02a3b8cb96ab79529aedcdeffac29d01ae2b885921ad8d5a4f58e3e0fa415aa84e5ba3c016dc538",
+          "sha1": "66ca135528dfe41c6fcce6ee54139cda99c05543"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/JldDedcj/ItemLocks-Forge-1.19.4-1.3.8.jar",
         "filename": "ItemLocks-Forge-1.19.4-1.3.8.jar",
@@ -1089,8 +1089,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "bfb8a685101046887ddf9d4d931521a89326be8b",
-          "sha512": "0b60bcd7b56c90e1c25e816126db2925b304fbe291bf14a4282bf2a6b359d75bf39cf424fd59c3f2067f31206a95cfe9d83b644e19d86dec19d6a1e8ad0dd2b2"
+          "sha512": "0b60bcd7b56c90e1c25e816126db2925b304fbe291bf14a4282bf2a6b359d75bf39cf424fd59c3f2067f31206a95cfe9d83b644e19d86dec19d6a1e8ad0dd2b2",
+          "sha1": "bfb8a685101046887ddf9d4d931521a89326be8b"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/dJGIhwgm/ItemLocks-Fabric-1.19.3-1.3.8.jar",
         "filename": "ItemLocks-Fabric-1.19.3-1.3.8.jar",
@@ -1125,8 +1125,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "cc01d1f94cb1fa8e141da82345c7e5b692a0d23d",
-          "sha512": "063a8e3cf632149024b65f4e4aac79c139b9a9634bac0a2cc4ec2732cc40539b4da2230d94bb483e67ed2effe21d151bc639fbcfabc0d45778aa838f60acce95"
+          "sha512": "063a8e3cf632149024b65f4e4aac79c139b9a9634bac0a2cc4ec2732cc40539b4da2230d94bb483e67ed2effe21d151bc639fbcfabc0d45778aa838f60acce95",
+          "sha1": "cc01d1f94cb1fa8e141da82345c7e5b692a0d23d"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/KYNtomkv/ItemLocks-Forge-1.19.3-1.3.8.jar",
         "filename": "ItemLocks-Forge-1.19.3-1.3.8.jar",
@@ -1153,15 +1153,15 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T14:56:44.256703Z",
-    "downloads": 3142,
+    "downloads": 3156,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b56fc5c0978cba41163d522176ec6eaaeb53458b2dc855618b4e12f6aff20bfd815b45f22ed533947e05f3e80cfc3a64a7573307b26f59ec11e58fd955da8a07",
-          "sha1": "ceb0b2d749c5cdb7036fd8749cf8a0fa3035a7ae"
+          "sha1": "ceb0b2d749c5cdb7036fd8749cf8a0fa3035a7ae",
+          "sha512": "b56fc5c0978cba41163d522176ec6eaaeb53458b2dc855618b4e12f6aff20bfd815b45f22ed533947e05f3e80cfc3a64a7573307b26f59ec11e58fd955da8a07"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/2gw2ykUz/ItemLocks-Fabric-1.19.2-1.3.8.jar",
         "filename": "ItemLocks-Fabric-1.19.2-1.3.8.jar",
@@ -1189,15 +1189,15 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T14:56:17.457094Z",
-    "downloads": 90849,
+    "downloads": 91074,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "77d1574ebb8d9d21b7d4b55c03079429237625d4883499993d06f1664ccca243e1b838f6a37d965380f93d15878775463e24d99b40f9e5953a5d3dff2f588b9e",
-          "sha1": "d1bf3f057e180857acb25ad28cfc5fb057428810"
+          "sha1": "d1bf3f057e180857acb25ad28cfc5fb057428810",
+          "sha512": "77d1574ebb8d9d21b7d4b55c03079429237625d4883499993d06f1664ccca243e1b838f6a37d965380f93d15878775463e24d99b40f9e5953a5d3dff2f588b9e"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/zKUsXHtz/ItemLocks-Forge-1.19.2-1.3.8.jar",
         "filename": "ItemLocks-Forge-1.19.2-1.3.8.jar",
@@ -1224,7 +1224,7 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T14:55:05.299852Z",
-    "downloads": 1486,
+    "downloads": 1488,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1260,15 +1260,15 @@
     "changelog": "1.3.8\n- Fix GL error with unbound keybinds",
     "changelog_url": null,
     "date_published": "2024-03-01T14:54:37.956919Z",
-    "downloads": 943,
+    "downloads": 945,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "80e774984d81485bedcdd17aad3a7c26b0594b3dcc497e5359849246bc54a28ddbb9fa7637e144fa5815f8f3e85eecda22af2e744bf5605fa5ced880cf18e07e",
-          "sha1": "cf6f54b354cde7ee800d38172dd15b364bcfc4ae"
+          "sha1": "cf6f54b354cde7ee800d38172dd15b364bcfc4ae",
+          "sha512": "80e774984d81485bedcdd17aad3a7c26b0594b3dcc497e5359849246bc54a28ddbb9fa7637e144fa5815f8f3e85eecda22af2e744bf5605fa5ced880cf18e07e"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/RWy8H6b4/ItemLocks-Forge-1.18.2-1.3.8.jar",
         "filename": "ItemLocks-Forge-1.18.2-1.3.8.jar",
@@ -1302,8 +1302,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "730c78ac36de2d57b5727db8b5a0183e8ec32224",
-          "sha512": "021ebaa6305c4aa9071a21a247df381d61b7aa2b4337db843dd6686ae822a9511075265e938a0419937b83075bd3fc8bdcb23e0e662c0710f64facf3b4983d88"
+          "sha512": "021ebaa6305c4aa9071a21a247df381d61b7aa2b4337db843dd6686ae822a9511075265e938a0419937b83075bd3fc8bdcb23e0e662c0710f64facf3b4983d88",
+          "sha1": "730c78ac36de2d57b5727db8b5a0183e8ec32224"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/h9wDFG4R/ItemLocks-Fabric-1.20.4-1.3.7.jar",
         "filename": "ItemLocks-Fabric-1.20.4-1.3.7.jar",
@@ -1338,8 +1338,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b18ba390fda23517c53b5ead8068d66520132474",
-          "sha512": "d266e6338cb861f31cd9457fbbb3ca216d6e05b1eeb445f5b86f5b2dcb514f7aaf673447b1b3bdc2bc33d4229ac4d32aa2160dc4759a1d5a72b35d6bf98b36d5"
+          "sha512": "d266e6338cb861f31cd9457fbbb3ca216d6e05b1eeb445f5b86f5b2dcb514f7aaf673447b1b3bdc2bc33d4229ac4d32aa2160dc4759a1d5a72b35d6bf98b36d5",
+          "sha1": "b18ba390fda23517c53b5ead8068d66520132474"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/OEWKOhW4/ItemLocks-Forge-1.20.4-1.3.6.jar",
         "filename": "ItemLocks-Forge-1.20.4-1.3.6.jar",
@@ -1373,8 +1373,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d7bdab809b87b9b969c22bb9f13cb80207238fe0",
-          "sha512": "3db663a3896ef753d4cebe99cbdaf155fa9d2d2ce2f8dd0bf2322bb7c04bf9a42136e3f6ed93ec6691c10ecd56b41e3f1cad1d3e94642f0a40c50141ecc1ff65"
+          "sha512": "3db663a3896ef753d4cebe99cbdaf155fa9d2d2ce2f8dd0bf2322bb7c04bf9a42136e3f6ed93ec6691c10ecd56b41e3f1cad1d3e94642f0a40c50141ecc1ff65",
+          "sha1": "d7bdab809b87b9b969c22bb9f13cb80207238fe0"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/cx8Ng9c1/ItemLocks-Fabric-1.20.3-1.3.7.jar",
         "filename": "ItemLocks-Fabric-1.20.3-1.3.7.jar",
@@ -1409,8 +1409,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "72172c9b3971c333f29cd0410334bf63337d5a9d16e06e38eb95f5641c1165369928679d2645d236b09b20721101b9663ec007a215fa0157a39e1220ab95455a",
-          "sha1": "3163acf77dd14a290b9a9b4575202500c8248b44"
+          "sha1": "3163acf77dd14a290b9a9b4575202500c8248b44",
+          "sha512": "72172c9b3971c333f29cd0410334bf63337d5a9d16e06e38eb95f5641c1165369928679d2645d236b09b20721101b9663ec007a215fa0157a39e1220ab95455a"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/iEFC9HC5/ItemLocks-Forge-1.20.3-1.3.6.jar",
         "filename": "ItemLocks-Forge-1.20.3-1.3.6.jar",
@@ -1549,8 +1549,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "84763d0910445255f0602fa26ebb92e2668a6ffa334d6c8e28627fb5487dcffe2d28294bf3ee0b81ca2aca9535324c22864f15ae660e524bd2fd557cff6575fc",
-          "sha1": "1c17c4fb4bc4224f79030f63c7e776604010c384"
+          "sha1": "1c17c4fb4bc4224f79030f63c7e776604010c384",
+          "sha512": "84763d0910445255f0602fa26ebb92e2668a6ffa334d6c8e28627fb5487dcffe2d28294bf3ee0b81ca2aca9535324c22864f15ae660e524bd2fd557cff6575fc"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ieabMtJl/ItemLocks-Fabric-1.19.4-1.3.7.jar",
         "filename": "ItemLocks-Fabric-1.19.4-1.3.7.jar",
@@ -1584,8 +1584,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "336a28690303fa48e1ca14b2f7bbf6ad5fa2de06",
-          "sha512": "9d5a6d00d625616a36fa179686ee73514ba2d64bae7f38d570299e184f9b07c8a6f46c9c7d6b57571b261175dc86ca1d2fe4186897780895fe427c06358c15ac"
+          "sha512": "9d5a6d00d625616a36fa179686ee73514ba2d64bae7f38d570299e184f9b07c8a6f46c9c7d6b57571b261175dc86ca1d2fe4186897780895fe427c06358c15ac",
+          "sha1": "336a28690303fa48e1ca14b2f7bbf6ad5fa2de06"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/2XY7yziL/ItemLocks-Fabric-1.19.3-1.3.7.jar",
         "filename": "ItemLocks-Fabric-1.19.3-1.3.7.jar",
@@ -1619,8 +1619,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0a00dbe36159e5b46bcb5defe46eccd4a9f771cf",
-          "sha512": "f640ffa8965ba2f97f4c936cc41a8d09178bb2f2273c46f542f8aa6e03d1880aa57df03f6b0511069d929e89391beb17b05fc2109c97d795399592390cb2f02e"
+          "sha512": "f640ffa8965ba2f97f4c936cc41a8d09178bb2f2273c46f542f8aa6e03d1880aa57df03f6b0511069d929e89391beb17b05fc2109c97d795399592390cb2f02e",
+          "sha1": "0a00dbe36159e5b46bcb5defe46eccd4a9f771cf"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ph87TjCg/ItemLocks-Fabric-1.19.2-1.3.7.jar",
         "filename": "ItemLocks-Fabric-1.19.2-1.3.7.jar",
@@ -1654,8 +1654,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c1cdcecf82591f859041ece30de6628c70defeb7f11365bfcc10f9356253668cdadefd1d3904f725f29e4c0e29d46f6da875741fc13a8e80f9530d15b457ab16",
-          "sha1": "2017165034326a3443066a22733db3ccfc219620"
+          "sha1": "2017165034326a3443066a22733db3ccfc219620",
+          "sha512": "c1cdcecf82591f859041ece30de6628c70defeb7f11365bfcc10f9356253668cdadefd1d3904f725f29e4c0e29d46f6da875741fc13a8e80f9530d15b457ab16"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/zq7mzPa7/ItemLocks-Fabric-1.18.2-1.3.7.jar",
         "filename": "ItemLocks-Fabric-1.18.2-1.3.7.jar",
@@ -1753,7 +1753,7 @@
     "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
     "changelog_url": null,
     "date_published": "2024-01-06T15:50:04.675653Z",
-    "downloads": 399096,
+    "downloads": 399104,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1831,8 +1831,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "10172724b257d6a43e077ba9ed3c47e4a4042656",
-          "sha512": "695b0ba94a3633b1fe54b3098efe62cad0db72ba10366f0824b8bf55bf631e47dc948b32b15ec8bffb488892767169571b7ca822224627b651116e67c66fe939"
+          "sha512": "695b0ba94a3633b1fe54b3098efe62cad0db72ba10366f0824b8bf55bf631e47dc948b32b15ec8bffb488892767169571b7ca822224627b651116e67c66fe939",
+          "sha1": "10172724b257d6a43e077ba9ed3c47e4a4042656"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/iUEzBO1h/ItemLocks-Fabric-1.20-1.3.6.jar",
         "filename": "ItemLocks-Fabric-1.20-1.3.6.jar",
@@ -1973,8 +1973,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "bc019f76f101c5f9951dd21bfdd21a2d8f746ff59b8cc1b01c10c2d8189a8dfd3c8cd2b3c22d3b561f5690dec7e9ebe301ea20b55cbe706a6b2d7927a19b7d9e",
-          "sha1": "ac034d663bdc494205cc0a25391edcc3cbd8617b"
+          "sha1": "ac034d663bdc494205cc0a25391edcc3cbd8617b",
+          "sha512": "bc019f76f101c5f9951dd21bfdd21a2d8f746ff59b8cc1b01c10c2d8189a8dfd3c8cd2b3c22d3b561f5690dec7e9ebe301ea20b55cbe706a6b2d7927a19b7d9e"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/P22y6CK5/ItemLocks-Fabric-1.19.3-1.3.6.jar",
         "filename": "ItemLocks-Fabric-1.19.3-1.3.6.jar",
@@ -2009,8 +2009,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9355a3af1e516e5edc5e1277ac2e8d32fc35aafd",
-          "sha512": "a31fd48bfccebb526f4622c8b50956a567a51b15b12d1744b07ab54f5cec74f1fc4ac788d21ac60a96dd53432a9f000c7f2679dfc53be4b40ff9eceeab6d9c21"
+          "sha512": "a31fd48bfccebb526f4622c8b50956a567a51b15b12d1744b07ab54f5cec74f1fc4ac788d21ac60a96dd53432a9f000c7f2679dfc53be4b40ff9eceeab6d9c21",
+          "sha1": "9355a3af1e516e5edc5e1277ac2e8d32fc35aafd"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/J9JXVA42/ItemLocks-Forge-1.19.3-1.3.6.jar",
         "filename": "ItemLocks-Forge-1.19.3-1.3.6.jar",
@@ -2037,7 +2037,7 @@
     "changelog": "1.3.6\n- Add option to bypass offhand swapping\n- Fix issue with options menu scaling",
     "changelog_url": null,
     "date_published": "2024-01-06T15:44:41.271698Z",
-    "downloads": 117,
+    "downloads": 118,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2115,8 +2115,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c13b7b3c691bfa472840b64689e603910a68e7ed",
-          "sha512": "da0f5c814ff0ceea69521ebbf963fd2aa9cf90b99d1c1412078136d414fe784d68fb9c675f960588090480bb06352228ce879710cd689b19a41a1de495aee6ea"
+          "sha512": "da0f5c814ff0ceea69521ebbf963fd2aa9cf90b99d1c1412078136d414fe784d68fb9c675f960588090480bb06352228ce879710cd689b19a41a1de495aee6ea",
+          "sha1": "c13b7b3c691bfa472840b64689e603910a68e7ed"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/ICFrkvbS/ItemLocks-Fabric-1.18.2-1.3.6.jar",
         "filename": "ItemLocks-Fabric-1.18.2-1.3.6.jar",
@@ -2257,8 +2257,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "20b0e424f0af8e9a76f2729051579009de478442",
-          "sha512": "6b2cb2342652b2ad0979abf5b97d9227c8d4fd40a656cee1651a517159dd1701798c84df756ef5c2a94dfc462959e5fc87887baa613e4c636a0d9557cf5e31cc"
+          "sha512": "6b2cb2342652b2ad0979abf5b97d9227c8d4fd40a656cee1651a517159dd1701798c84df756ef5c2a94dfc462959e5fc87887baa613e4c636a0d9557cf5e31cc",
+          "sha1": "20b0e424f0af8e9a76f2729051579009de478442"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/gwoiUkYO/ItemLocks-Fabric-1.20.1-1.3.5.jar",
         "filename": "ItemLocks-Fabric-1.20.1-1.3.5.jar",
@@ -2328,8 +2328,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1f0164b67f3ac7155725034b6158ead00f87f5cc23acbe93edb6dbbb960a20a4b5a3d9242b76a5237b7db28f8f56e0c06a4e2f422452445bbf59190e724e93dd",
-          "sha1": "6b097bcb199377f7a2954a777a1dc3fedbc1e67e"
+          "sha1": "6b097bcb199377f7a2954a777a1dc3fedbc1e67e",
+          "sha512": "1f0164b67f3ac7155725034b6158ead00f87f5cc23acbe93edb6dbbb960a20a4b5a3d9242b76a5237b7db28f8f56e0c06a4e2f422452445bbf59190e724e93dd"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/UODMeAyR/ItemLocks-Fabric-1.20-1.3.5.jar",
         "filename": "ItemLocks-Fabric-1.20-1.3.5.jar",
@@ -2399,8 +2399,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6f2009435ed0692a37331b337c45b91e56731110",
-          "sha512": "d3c8eed9aa2cdef1e26cada1288973c3ea3ad5f837d44594ef03f82021347cef3696cbac19c1368c64dc3b4a4f6c19e4df37bcfb63da7213f8fb602319a86d2f"
+          "sha512": "d3c8eed9aa2cdef1e26cada1288973c3ea3ad5f837d44594ef03f82021347cef3696cbac19c1368c64dc3b4a4f6c19e4df37bcfb63da7213f8fb602319a86d2f",
+          "sha1": "6f2009435ed0692a37331b337c45b91e56731110"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/boJKuOkI/ItemLocks-Fabric-1.19.4-1.3.5.jar",
         "filename": "ItemLocks-Fabric-1.19.4-1.3.5.jar",
@@ -2470,8 +2470,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "593dfcb42f8165ac90882a59c15ec43c30ecc87e25b003eaf21ef51b892da51a9dd2f8adffa7c72a20fba79566ce90734b5f4396336cb7213a7e35beef26a1de",
-          "sha1": "33a92b63b1c8f3a493b453167aac88e496cec208"
+          "sha1": "33a92b63b1c8f3a493b453167aac88e496cec208",
+          "sha512": "593dfcb42f8165ac90882a59c15ec43c30ecc87e25b003eaf21ef51b892da51a9dd2f8adffa7c72a20fba79566ce90734b5f4396336cb7213a7e35beef26a1de"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/cP6huwFr/ItemLocks-Fabric-1.19.3-1.3.5.jar",
         "filename": "ItemLocks-Fabric-1.19.3-1.3.5.jar",
@@ -2541,8 +2541,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "13d44be81ec447045a36990c9a6f56fd13845a96",
-          "sha512": "3f81a975a0fc8448e3ac94cb1eaedca79656c48ce40f3a1816c01d8bfc23b560bc90c53bbba0fc68d17445a99c6618292a4f9ae04df5b093918047537369dc75"
+          "sha512": "3f81a975a0fc8448e3ac94cb1eaedca79656c48ce40f3a1816c01d8bfc23b560bc90c53bbba0fc68d17445a99c6618292a4f9ae04df5b093918047537369dc75",
+          "sha1": "13d44be81ec447045a36990c9a6f56fd13845a96"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/pPbx0GEW/ItemLocks-Fabric-1.19.2-1.3.5.jar",
         "filename": "ItemLocks-Fabric-1.19.2-1.3.5.jar",
@@ -2754,8 +2754,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e359269a5fa349e3907ef182167df22fd97053ab107a43268fd1387b4d7dcda6a20990ab52103321a897330846143225a2cf1e9326249825322fd6f2df522170",
-          "sha1": "792d73f0a30683c64a7e74dd68b766101a9217fb"
+          "sha1": "792d73f0a30683c64a7e74dd68b766101a9217fb",
+          "sha512": "e359269a5fa349e3907ef182167df22fd97053ab107a43268fd1387b4d7dcda6a20990ab52103321a897330846143225a2cf1e9326249825322fd6f2df522170"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/nNDXWQKZ/ItemLocks-Fabric-1.20.1-1.3.4.jar",
         "filename": "ItemLocks-Fabric-1.20.1-1.3.4.jar",
@@ -2790,8 +2790,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c5abbfe5cdc79e924f8fa9f4468a2ece5d95b36f63cec45de066e89b3c2109fc2a97728ce795f58466d247be3ef4659016c5a2484ef8feeeb07d7d668140b9e6",
-          "sha1": "cfd129741f88de6c4a6341ea896788941f8f1a56"
+          "sha1": "cfd129741f88de6c4a6341ea896788941f8f1a56",
+          "sha512": "c5abbfe5cdc79e924f8fa9f4468a2ece5d95b36f63cec45de066e89b3c2109fc2a97728ce795f58466d247be3ef4659016c5a2484ef8feeeb07d7d668140b9e6"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/LKkfYAdt/ItemLocks-Forge-1.20.1-1.3.4.jar",
         "filename": "ItemLocks-Forge-1.20.1-1.3.4.jar",
@@ -2861,8 +2861,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3e6e082423973849ca6dbea6eed3d87a768144f339254242c2f5a250d0f892ee831e7dd16bef1ac21619a9776ae2af87718dfaf0d9a6cc921895665dd940fa6c",
-          "sha1": "9ad6450d76f92e1945454e6d65b8c31e1df201a8"
+          "sha1": "9ad6450d76f92e1945454e6d65b8c31e1df201a8",
+          "sha512": "3e6e082423973849ca6dbea6eed3d87a768144f339254242c2f5a250d0f892ee831e7dd16bef1ac21619a9776ae2af87718dfaf0d9a6cc921895665dd940fa6c"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/2E9xilz6/ItemLocks-Forge-1.20-1.3.4.jar",
         "filename": "ItemLocks-Forge-1.20-1.3.4.jar",
@@ -2967,8 +2967,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b270df536485fb07195ff1ec4d005021184ea324f09c3e1484efcd1421afee30285da826f751dec42bb9c42784b20654c1340aaf05b2795663962803e7360a1d",
-          "sha1": "391edf419cbe0a976588c2fcda1a05ccecf555db"
+          "sha1": "391edf419cbe0a976588c2fcda1a05ccecf555db",
+          "sha512": "b270df536485fb07195ff1ec4d005021184ea324f09c3e1484efcd1421afee30285da826f751dec42bb9c42784b20654c1340aaf05b2795663962803e7360a1d"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/uVAUDzlk/ItemLocks-Fabric-1.19.3-1.3.4.jar",
         "filename": "ItemLocks-Fabric-1.19.3-1.3.4.jar",
@@ -3003,8 +3003,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e13bf8c16fecc370dbd56495bb5715c84b64b559",
-          "sha512": "270eaadb4a0f618d48ccc7aac88495eb1ceec56a3af1cb4a516749078565d9129bc45b8faa1453144ee11e730c778616179b110fdcb4c71e4016f33770835396"
+          "sha512": "270eaadb4a0f618d48ccc7aac88495eb1ceec56a3af1cb4a516749078565d9129bc45b8faa1453144ee11e730c778616179b110fdcb4c71e4016f33770835396",
+          "sha1": "e13bf8c16fecc370dbd56495bb5715c84b64b559"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/4GSPtjPI/ItemLocks-Forge-1.19.3-1.3.4.jar",
         "filename": "ItemLocks-Forge-1.19.3-1.3.4.jar",
@@ -3109,8 +3109,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "547b077832d1a11da3a530dd48ec5d3c0adf76b4b2e914981cea90946938b54cad36af21e9f8d0d4200a7b24d6ba0a80682d62af127f048da94087b9d7033055",
-          "sha1": "cda68bf383ad9f7c1fedc0890933360b72a2830e"
+          "sha1": "cda68bf383ad9f7c1fedc0890933360b72a2830e",
+          "sha512": "547b077832d1a11da3a530dd48ec5d3c0adf76b4b2e914981cea90946938b54cad36af21e9f8d0d4200a7b24d6ba0a80682d62af127f048da94087b9d7033055"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/b8zEjJeC/ItemLocks-Fabric-1.18.2-1.3.4.jar",
         "filename": "ItemLocks-Fabric-1.18.2-1.3.4.jar",
@@ -3251,8 +3251,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0b69b96a52a5cf756b9bea6f45af68d0c124868fa24f1451ad698669d273809299a0dcaed278a8c13ba01236de86ff09f2ba0506772f44d451ba33379182e5bd",
-          "sha1": "b510449bf196fcb3bb1dc52e63d66053aff5b85e"
+          "sha1": "b510449bf196fcb3bb1dc52e63d66053aff5b85e",
+          "sha512": "0b69b96a52a5cf756b9bea6f45af68d0c124868fa24f1451ad698669d273809299a0dcaed278a8c13ba01236de86ff09f2ba0506772f44d451ba33379182e5bd"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/hFJYJgOY/ItemLocks-Fabric-1.20-1.3.3.jar",
         "filename": "ItemLocks-Fabric-1.20-1.3.3.jar",
@@ -3287,8 +3287,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9a7ac2a66af1c436cea232363b75c43d13239def",
-          "sha512": "6300a3d0f64ae93249b3c834338c07eb311133e82a8df05b36576862ee70425cc03de175384b046dcbcff1cafb661a49e028f6908f307c67fa57d6f51b08242d"
+          "sha512": "6300a3d0f64ae93249b3c834338c07eb311133e82a8df05b36576862ee70425cc03de175384b046dcbcff1cafb661a49e028f6908f307c67fa57d6f51b08242d",
+          "sha1": "9a7ac2a66af1c436cea232363b75c43d13239def"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/dpAUOlS9/ItemLocks-Forge-1.20-1.3.3.jar",
         "filename": "ItemLocks-Forge-1.20-1.3.3.jar",
@@ -3535,8 +3535,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c49f70f5d35e803ff234eee5a34d2a9740342837",
-          "sha512": "ca1aec674524e0f42b858d5712903c19f4166568ddfd04e789e9bda32ad424ae31ed0e1a47c7e2e3dbd1310dc9f5e1ceaca774378d57cfbfadf586d6dd25aaf7"
+          "sha512": "ca1aec674524e0f42b858d5712903c19f4166568ddfd04e789e9bda32ad424ae31ed0e1a47c7e2e3dbd1310dc9f5e1ceaca774378d57cfbfadf586d6dd25aaf7",
+          "sha1": "c49f70f5d35e803ff234eee5a34d2a9740342837"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/1U3K4izc/ItemLocks-Fabric-1.18.2-1.3.3.jar",
         "filename": "ItemLocks-Fabric-1.18.2-1.3.3.jar",
@@ -3571,8 +3571,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b1a208d1abed6183993883dfadaeb61d6336e1aba4db245c9da9bcd01b85211f8550211faa35a325f78e834f2c93fa07b1a8f8ef20101f6ee08c17f5b9b834fa",
-          "sha1": "ca2c2b750140416e329c598031d6f8a046544b77"
+          "sha1": "ca2c2b750140416e329c598031d6f8a046544b77",
+          "sha512": "b1a208d1abed6183993883dfadaeb61d6336e1aba4db245c9da9bcd01b85211f8550211faa35a325f78e834f2c93fa07b1a8f8ef20101f6ee08c17f5b9b834fa"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/2lv3bKuq/ItemLocks-Forge-1.18.2-1.3.3.jar",
         "filename": "ItemLocks-Forge-1.18.2-1.3.3.jar",
@@ -3607,8 +3607,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f817f3a5fa6f41aa5d6fefd4442c5086e785e12fa57339b200a884d4de0e51d76af2454ea85249464e70cbf76bfe30640a2d7c78e9e6be7599a44d7081812f51",
-          "sha1": "0fda44fe4f4da8cdde745028922ec531930d0b34"
+          "sha1": "0fda44fe4f4da8cdde745028922ec531930d0b34",
+          "sha512": "f817f3a5fa6f41aa5d6fefd4442c5086e785e12fa57339b200a884d4de0e51d76af2454ea85249464e70cbf76bfe30640a2d7c78e9e6be7599a44d7081812f51"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/B620xKFR/ItemLocks-Forge-1.20.1-1.3.3.jar",
         "filename": "ItemLocks-Forge-1.20.1-1.3.3.jar",
@@ -3642,8 +3642,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "586795a35f8e7c52ca9ff612d6e220f1a767024b",
-          "sha512": "aae83db162ed0bc5ad609c2b5e7442144450c60e39a2cf84d22c107dbe79d43c6248f965aa6be814ae2ca3bccef76dd252715c0a243577a09fd7eb4fabb7fbff"
+          "sha512": "aae83db162ed0bc5ad609c2b5e7442144450c60e39a2cf84d22c107dbe79d43c6248f965aa6be814ae2ca3bccef76dd252715c0a243577a09fd7eb4fabb7fbff",
+          "sha1": "586795a35f8e7c52ca9ff612d6e220f1a767024b"
         },
         "url": "https://cdn.modrinth.com/data/tJzrFuyy/versions/AMNhjn0s/ItemLocks-Fabric-1.20.1-1.3.3.jar",
         "filename": "ItemLocks-Fabric-1.20.1-1.3.3.jar",
@@ -3670,7 +3670,7 @@
     "changelog": "# 1.3.2\n- Fix key bindings not appearing in options\n \n# 1.3.1\n- Fix bug on Forge where hotbar doesn't have lock textures\n\n# 1.3\n- Added option to always ignore locks for ordinary inventory actions\n- Fixed issue where rebinding vanilla drop key would cause issues",
     "changelog_url": null,
     "date_published": "2023-08-10T11:20:36.128072Z",
-    "downloads": 521,
+    "downloads": 522,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,

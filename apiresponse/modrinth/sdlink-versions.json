@@ -32,15 +32,15 @@
     "changelog": "- REQUIRES [CraterLib](https://www.curseforge.com/minecraft/mc-mods/craterlib) - [Modrinth](https://modrinth.com/mod/craterlib)\n- [Online Config Editor](https://editor.firstdark.dev)\n- [Documentation](https://sdlink.fdd-docs.com)\n- This single jar works on 1.18.2-1.21.6\n\n*Requires CraterLib 2.1.5 or newer*\n\n**Bug Fixes**:\n\n- Fix Translation system being able to grab the wrong default files from resources - hypherionsa\n- Possible bug fix for shutdown hang when an error occurs on shutdown - hypherionsa\n- Added temporary code to forcefully regenerate language files that are invalid, due to file loading bug - hypherionsa\n- Fixed channel IDs being set to \"\" causing a startup failure - hypherionsa\n- Fix config migrator crash when migrating configs older than version 21 (3.2.0 and older) - hypherionsa\n- Fix LinkedNames breaking in chat messages, when there is an unlinked account in the database - hypherionsa\n- Fix Player Counts not excluding vanished players - hypherionsa\n- Fix ignoreConsole flag on message filtering being reversed - hypherionsa\n\n**New Features**:\n\n- Add config toggle, to silence invalid/disallowed command feedback messages for linked commands - hypherionsa\n- Add `%role_color%` placeholder for embeds, to use the user color of linked accounts - hypherionsa\n- Integration with Advanced Chat, to prevent private chats from being relayed to discord - hypherionsa\n- Added better replied to message indications in game - hypherionsa\n- Add support for FTB Teams `chat` command - hypherionsa\n- Allow mentioning users, channels and roles from chat without client side install - hypherionsa\n- Config Editor command now sends link to user that executed the command - hypherionsa\n- Implement basic support for custom emotes sent in Minecraft Chat - hypherionsa\n- Portuguese Translations by Lucasmiel0406\n\n**Changes**:\n\n- Swap to own Avatar service, due to ongoing issues with 3rd party services - hypherionsa",
     "changelog_url": null,
     "date_published": "2025-05-16T08:36:03.701445Z",
-    "downloads": 2325,
+    "downloads": 2363,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "bca2573b976653539945454e0ebcefcf72d8a4ef4ca008db124c705184cc99de15fb2acdb74cebe92f62611eb01d7611afe19de40b036443a2381d7a8de9560d",
-          "sha1": "adae059d9f397909f7804299b70c1e44946096a7"
+          "sha1": "adae059d9f397909f7804299b70c1e44946096a7",
+          "sha512": "bca2573b976653539945454e0ebcefcf72d8a4ef4ca008db124c705184cc99de15fb2acdb74cebe92f62611eb01d7611afe19de40b036443a2381d7a8de9560d"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/U3TpSJoR/SimpleDiscordLink-Universal-3.3.1.jar",
         "filename": "SimpleDiscordLink-Universal-3.3.1.jar",
@@ -90,7 +90,7 @@
     "changelog": "- REQUIRES [CraterLib](https://www.curseforge.com/minecraft/mc-mods/craterlib) - [Modrinth](https://modrinth.com/mod/craterlib)\n- [Online Config Editor](https://editor.firstdark.dev)\n- [Documentation](https://sdlink.fdd-docs.com)\n- This single jar works on 1.18.2-1.21.5\n\n*Requires CraterLib 2.1.4 or newer*\n\n### Warning: This is a config breaking update. As always, your old config file will be backed up. If you need to revert, simply rename `simple-discord-link.old` to `simple-discord-link.toml`\n\n**Bug Fixes**:\n\n- Fix /discordverify command permissions, so that it's usable by everyone - hypherionsa\n- Fix Database engine failing to read database files that end with 2 empty lines - hypherionsa\n- Don't relay raw Config Editor URLs to Console Relay - hypherionsa\n- Fix `%player_name%` placeholder not being usable in Chat Embeds - hypherionsa\n- Fix certain methods of bypassing the mention filter - unsigned-32-bit-integer - [#PR 151](https://github.com/hypherionmc/sdlink/pull/151)\n- Webhook names containing `_` being formatted as `\\_` - hypherionsa - [#152](https://github.com/hypherionmc/sdlink/issues/152)\n- Fixed events that happen on login (like rank sync) not running when Join messages are disabled, or the user is vanished - hypherionsa\n- Replaced Embed Parser with GSON to prevent escaped character errors caused by JACKSON..... You still suck - hypherionsa\n- Fixed messages containing `\"` not being relayed to Discord when using Embeds - hypherionsa\n\n**New Features**:\n\n- Added Vanish Config flag to disable fake join/leave messages - hypherionsa\n- Allow Regex matching for Message filtering - hypherionsa\n- Allow message filtering to be used on Usernames as well - hypherionsa\n- Access Control/Optional Verification can now give multiple `verifiedRole`s - hypherionsa\n- Allow advancements and death messages to respect game rules - hypherionsa\n- Hard coded english messages and responses can now be translated into different languages (TRANSLATORS WANTED) - hypherionsa\n- Added flag to disable message filter on console messages - hypherionsa\n- Allow Message Filtering system to be used on Discord -> MC messages and usernames too - hypherionsa\n- Added Spanish Translations - ArkoSammy12\n\n**Changes**:\n\n- Renamed Advancements config field from `achievements` to `advancements` - hypherionsa\n- Renamed `ignoredMessages` to `filtering` - hypherionsa\n\n**Experimental Features**:\n\n- Added new Experimental Feature System - hypherionsa\n- Added SDLink Relay System. Allowing multiple bots to relay their chats, and other things to multiple servers. Only available as an experimental flag for now - hypherionsa",
     "changelog_url": null,
     "date_published": "2025-03-29T09:31:43.243228Z",
-    "downloads": 2567,
+    "downloads": 2569,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -328,8 +328,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ca1b411bfe0efa4966b7d9b526034b6068d87be0",
-          "sha512": "2ba3b91e45f61c139ad1fa79997d68f8d921a4903d8f110f261841bc7e96c9b8e23eb55bcc33eb49f558e2cf6b974cf47e372a9e0eecb9442adf1ddaefadf19f"
+          "sha512": "2ba3b91e45f61c139ad1fa79997d68f8d921a4903d8f110f261841bc7e96c9b8e23eb55bcc33eb49f558e2cf6b974cf47e372a9e0eecb9442adf1ddaefadf19f",
+          "sha1": "ca1b411bfe0efa4966b7d9b526034b6068d87be0"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/6sbR3f3z/SimpleDiscordLink-Universal-3.2.0.jar",
         "filename": "SimpleDiscordLink-Universal-3.2.0.jar",
@@ -383,8 +383,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "755c0c98946ce7e12ebf707ce1365dd1fe162424806d5e96eb989e78153437f7c1b4869626a4ac724e01f86c5300b03996fe8e9c023d5d910c937b9bd43dcfe9",
-          "sha1": "c0f3f80c1bfb232cb4086caeae40741e9d54ce5c"
+          "sha1": "c0f3f80c1bfb232cb4086caeae40741e9d54ce5c",
+          "sha512": "755c0c98946ce7e12ebf707ce1365dd1fe162424806d5e96eb989e78153437f7c1b4869626a4ac724e01f86c5300b03996fe8e9c023d5d910c937b9bd43dcfe9"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/mDnw4mrB/SimpleDiscordLink-Universal-3.1.6.jar",
         "filename": "SimpleDiscordLink-Universal-3.1.6.jar",
@@ -493,8 +493,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4bf5ea30d1a445c765312ab4aae6bc6d2293ef311110048eaf724112d6eeec229b301417ff4efe7bf427dfb8e3f39941b0249b57f3698b89fcc8fa04379643e3",
-          "sha1": "772e4be8575091a8223388cdc3fa0d0df6b6d7ce"
+          "sha1": "772e4be8575091a8223388cdc3fa0d0df6b6d7ce",
+          "sha512": "4bf5ea30d1a445c765312ab4aae6bc6d2293ef311110048eaf724112d6eeec229b301417ff4efe7bf427dfb8e3f39941b0249b57f3698b89fcc8fa04379643e3"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/L0SRMSQ0/SimpleDiscordLink-Universal-3.1.4.jar",
         "filename": "SimpleDiscordLink-Universal-3.1.4.jar",
@@ -658,8 +658,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c53900b3993d9fd8d28811eb005a3a927719df27",
-          "sha512": "db671f81ca270a6a582853c94a5136e00765825c926ca41b272610f148899aa43988fe08002ff4f96f850957dbe3c09d66e91f1f614babfcd7eb639d126bbe13"
+          "sha512": "db671f81ca270a6a582853c94a5136e00765825c926ca41b272610f148899aa43988fe08002ff4f96f850957dbe3c09d66e91f1f614babfcd7eb639d126bbe13",
+          "sha1": "c53900b3993d9fd8d28811eb005a3a927719df27"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/As4UhLqH/SimpleDiscordLink-Universal-3.1.1.jar",
         "filename": "SimpleDiscordLink-Universal-3.1.1.jar",
@@ -761,8 +761,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f5b24f6363d40b1318fc309eb2405d6e6e3ace22",
-          "sha512": "d7eed8a4542f8d669244aaba1165fc80ba006723e482d639ba56f0470552acd9fa0dec7e7e008e6b1e2b69c560748b6cb4d58c2693dc0ab040fb1f77d8754bcf"
+          "sha512": "d7eed8a4542f8d669244aaba1165fc80ba006723e482d639ba56f0470552acd9fa0dec7e7e008e6b1e2b69c560748b6cb4d58c2693dc0ab040fb1f77d8754bcf",
+          "sha1": "f5b24f6363d40b1318fc309eb2405d6e6e3ace22"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/rtVmg0Ey/SimpleDiscordLink-Combo-1.20-3.0.1.jar",
         "filename": "SimpleDiscordLink-Combo-1.20-3.0.1.jar",
@@ -851,8 +851,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8fa61fe5125d138eabb09be71c8ee76fe62b885a",
-          "sha512": "a1252a6edc27a9da9e08e6b35712b440e4746c2a355939e2f58989128a398a757f8f3c425f3afde638c3baa390f4f8ce2e1988a2929ca8e8891c349a0c0adb86"
+          "sha512": "a1252a6edc27a9da9e08e6b35712b440e4746c2a355939e2f58989128a398a757f8f3c425f3afde638c3baa390f4f8ce2e1988a2929ca8e8891c349a0c0adb86",
+          "sha1": "8fa61fe5125d138eabb09be71c8ee76fe62b885a"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/N0vEV4zK/SimpleDiscordLink-Combo-1.18.2-3.0.1.jar",
         "filename": "SimpleDiscordLink-Combo-1.18.2-3.0.1.jar",
@@ -943,8 +943,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5c79b52863c9790b3f00e6efb67a8df96d3561410558330aa0f6907c95a58065feae019eeadd7c16b31de9a248893072fe8ad40a59cac0d58bf73b8a8b18a596",
-          "sha1": "531f87ec45fc07e43d3541a8e7829802911225c2"
+          "sha1": "531f87ec45fc07e43d3541a8e7829802911225c2",
+          "sha512": "5c79b52863c9790b3f00e6efb67a8df96d3561410558330aa0f6907c95a58065feae019eeadd7c16b31de9a248893072fe8ad40a59cac0d58bf73b8a8b18a596"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/SJcyWCa1/SimpleDiscordLink-Combo-1.19.2-3.0.0.jar",
         "filename": "SimpleDiscordLink-Combo-1.19.2-3.0.0.jar",
@@ -987,8 +987,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c9d1274bab56a4fae87678b54a2e0f3d747f754b6f8cea4cc8dcfea0d7b4488bbf87099fa1dacf3461ed0c8036be2615f3dbe2a4a7a5941f8eccded9451f30c6",
-          "sha1": "3389cca36d33e3fe8ad2765897137544ebc51d3b"
+          "sha1": "3389cca36d33e3fe8ad2765897137544ebc51d3b",
+          "sha512": "c9d1274bab56a4fae87678b54a2e0f3d747f754b6f8cea4cc8dcfea0d7b4488bbf87099fa1dacf3461ed0c8036be2615f3dbe2a4a7a5941f8eccded9451f30c6"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/J0BPITOp/SimpleDiscordLink-Combo-1.18.2-3.0.0.jar",
         "filename": "SimpleDiscordLink-Combo-1.18.2-3.0.0.jar",
@@ -1122,8 +1122,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "49d5399d0ac00207b3ccfe8296979b34fb26bf85",
-          "sha512": "93bba11c688f6597909d199bafaa77a0af084d0aaefe32b5ebe36f7e3b087d825cc42ff9912cdcf1265b54f9aac1a9ae44c4c6bb292fe1e301f30150c6ffb627"
+          "sha512": "93bba11c688f6597909d199bafaa77a0af084d0aaefe32b5ebe36f7e3b087d825cc42ff9912cdcf1265b54f9aac1a9ae44c4c6bb292fe1e301f30150c6ffb627",
+          "sha1": "49d5399d0ac00207b3ccfe8296979b34fb26bf85"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/txL4nZcz/SimpleDiscordLink-fabric-1.20-2.2.4.jar",
         "filename": "SimpleDiscordLink-fabric-1.20-2.2.4.jar",
@@ -1265,8 +1265,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f3e4b41e024274b6f6c7244398f6e972d1be2c4d6f4f3b2cf93f7df3f11aa5412cacd0ef0654b1fa0a7589c573ff2a84c352fe5b38ee92747a8cb72a7adab05a",
-          "sha1": "55dc2f6fed56ef3b0a1fa58bd97459f1d3930f4e"
+          "sha1": "55dc2f6fed56ef3b0a1fa58bd97459f1d3930f4e",
+          "sha512": "f3e4b41e024274b6f6c7244398f6e972d1be2c4d6f4f3b2cf93f7df3f11aa5412cacd0ef0654b1fa0a7589c573ff2a84c352fe5b38ee92747a8cb72a7adab05a"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/kBkO8a45/SimpleDiscordLink-fabric-1.19.3-2.2.4.jar",
         "filename": "SimpleDiscordLink-fabric-1.19.3-2.2.4.jar",
@@ -1345,8 +1345,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "319a1dab53b07c5979c9cbb3a2fb3fbd1aa2e0e7cb4181651a1b49c81dcb348d9a86c8f0489d0b30333edb64337da081827fcbdee0dff787da7cddc440291e93",
-          "sha1": "94ed6af0b7b5a0c9fbbf2f4209e06a432f622c7d"
+          "sha1": "94ed6af0b7b5a0c9fbbf2f4209e06a432f622c7d",
+          "sha512": "319a1dab53b07c5979c9cbb3a2fb3fbd1aa2e0e7cb4181651a1b49c81dcb348d9a86c8f0489d0b30333edb64337da081827fcbdee0dff787da7cddc440291e93"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/YQcotmVn/SimpleDiscordLink-fabric-1.19.1-2.2.4.jar",
         "filename": "SimpleDiscordLink-fabric-1.19.1-2.2.4.jar",
@@ -1388,8 +1388,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7b039b331b1eda549496a2827d44becdd060878afdbb8ea382831944b6aca88a54959c792621ab530573814affb6f2cbe38218c307c7401165cf412b3f44bfa3",
-          "sha1": "a5a855bcb96a555b05a6ef527547d9116fb0be18"
+          "sha1": "a5a855bcb96a555b05a6ef527547d9116fb0be18",
+          "sha512": "7b039b331b1eda549496a2827d44becdd060878afdbb8ea382831944b6aca88a54959c792621ab530573814affb6f2cbe38218c307c7401165cf412b3f44bfa3"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/3598JrjF/SimpleDiscordLink-forge-1.19.1-2.2.4.jar",
         "filename": "SimpleDiscordLink-forge-1.19.1-2.2.4.jar",
@@ -1424,8 +1424,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c47a4b09985881284b5fd0f830126ca33dfd4a97",
-          "sha512": "a334063582a7a912fbc6843af6dddd3b74da0501bd7b29bd03724ee299c2a16ff9c094b2414c915093df8f0b6e14e236adc6a6c82c72155c1a1d8dc6b44cfdd5"
+          "sha512": "a334063582a7a912fbc6843af6dddd3b74da0501bd7b29bd03724ee299c2a16ff9c094b2414c915093df8f0b6e14e236adc6a6c82c72155c1a1d8dc6b44cfdd5",
+          "sha1": "c47a4b09985881284b5fd0f830126ca33dfd4a97"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/CzZRBJWW/SimpleDiscordLink-forge-1.18.1-2.2.4.jar",
         "filename": "SimpleDiscordLink-forge-1.18.1-2.2.4.jar",
@@ -1461,8 +1461,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b6ed3985b5249d7563407ded72d00e9e8d2036fba5b08a2988811f3dbd013a9c0c5d2855d4d274987269fb7bbb956eb8f229027e1d73047946bed9f2f346482f",
-          "sha1": "9789ec8b7fef5de8638d95ae800f00e811828c92"
+          "sha1": "9789ec8b7fef5de8638d95ae800f00e811828c92",
+          "sha512": "b6ed3985b5249d7563407ded72d00e9e8d2036fba5b08a2988811f3dbd013a9c0c5d2855d4d274987269fb7bbb956eb8f229027e1d73047946bed9f2f346482f"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/zIvAO01R/SimpleDiscordLink-fabric-1.18.1-2.2.4.jar",
         "filename": "SimpleDiscordLink-fabric-1.18.1-2.2.4.jar",
@@ -1504,8 +1504,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "397be703be8f37f4f333532c1e4de721a6bae7a909b7b0b23034bb0d533b19b250a2bcd72025aedd19db59fdcc384c3804d2ba92922907a4dbff70ea23b77504",
-          "sha1": "44402b75bd32135d8fc77e790eaf057d8378d28f"
+          "sha1": "44402b75bd32135d8fc77e790eaf057d8378d28f",
+          "sha512": "397be703be8f37f4f333532c1e4de721a6bae7a909b7b0b23034bb0d533b19b250a2bcd72025aedd19db59fdcc384c3804d2ba92922907a4dbff70ea23b77504"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/9J2OOU2n/SimpleDiscordLink-forge-1.20-2.2.3.jar",
         "filename": "SimpleDiscordLink-forge-1.20-2.2.3.jar",
@@ -1548,8 +1548,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3fc8145b3bd1d77deedb03e3e8b0827aeb3e1ba55c1dc7bff05e28b5c0fd0704a7bfaa7d4488fef76baba31591314e0bb3d099dcc496c128ac1014bd03428186",
-          "sha1": "56d1cf7fd743fe513820fecb2985df5b99d28045"
+          "sha1": "56d1cf7fd743fe513820fecb2985df5b99d28045",
+          "sha512": "3fc8145b3bd1d77deedb03e3e8b0827aeb3e1ba55c1dc7bff05e28b5c0fd0704a7bfaa7d4488fef76baba31591314e0bb3d099dcc496c128ac1014bd03428186"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/NfJhY5gb/SimpleDiscordLink-fabric-1.20-2.2.3.jar",
         "filename": "SimpleDiscordLink-fabric-1.20-2.2.3.jar",
@@ -1598,8 +1598,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8f8208e078b1230ecc17b17d21398fe5def5588215fbb25974a9ac04e896643d1a4fa658c505438645e7022c17a74d457f1ae9def7cd651ca6a06ed1681f1ac8",
-          "sha1": "e2b79d0b73f7fffcf87665a90d12cde57c525570"
+          "sha1": "e2b79d0b73f7fffcf87665a90d12cde57c525570",
+          "sha512": "8f8208e078b1230ecc17b17d21398fe5def5588215fbb25974a9ac04e896643d1a4fa658c505438645e7022c17a74d457f1ae9def7cd651ca6a06ed1681f1ac8"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/EFOtYbjs/SimpleDiscordLink-fabric-1.19.1-2.2.3.jar",
         "filename": "SimpleDiscordLink-fabric-1.19.1-2.2.3.jar",
@@ -1641,8 +1641,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "44943d18944c4aba9616840858277acce8c8da56be90af864bf2481cfa2ddf162b5e4800e848f17b9a7151bb06116568635439c5eb33988404bcafc05fe2b1b5",
-          "sha1": "63ccc7f4d005445590024e76990fe7b9129453d7"
+          "sha1": "63ccc7f4d005445590024e76990fe7b9129453d7",
+          "sha512": "44943d18944c4aba9616840858277acce8c8da56be90af864bf2481cfa2ddf162b5e4800e848f17b9a7151bb06116568635439c5eb33988404bcafc05fe2b1b5"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/4DVTT7UQ/SimpleDiscordLink-forge-1.19.1-2.2.3.jar",
         "filename": "SimpleDiscordLink-forge-1.19.1-2.2.3.jar",
@@ -1678,8 +1678,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3e4430c793caab64a5cfdfb6db90ed58baa257782b496a3931dbdc7e67f546b1ee5c4d9438725149e1236f5324c2f975e225ce8ebce74bb4ac8003552123877f",
-          "sha1": "7062e577efea0388e0604d10b418311c0b1ec980"
+          "sha1": "7062e577efea0388e0604d10b418311c0b1ec980",
+          "sha512": "3e4430c793caab64a5cfdfb6db90ed58baa257782b496a3931dbdc7e67f546b1ee5c4d9438725149e1236f5324c2f975e225ce8ebce74bb4ac8003552123877f"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/ORiipIRy/SimpleDiscordLink-fabric-1.18.1-2.2.3.jar",
         "filename": "SimpleDiscordLink-fabric-1.18.1-2.2.3.jar",
@@ -1721,8 +1721,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "663689dd64ee21ef22fe06dd12dc08b81bbbbf5e",
-          "sha512": "6af566d8c72bf4a91b7b2690eb828d5ce6b8eb43e4bb2af98a0a4a641bc4f2c9fb0761789d63e6cb335b7115535a226744c85e95d063a7bc93f0754f3f0bc238"
+          "sha512": "6af566d8c72bf4a91b7b2690eb828d5ce6b8eb43e4bb2af98a0a4a641bc4f2c9fb0761789d63e6cb335b7115535a226744c85e95d063a7bc93f0754f3f0bc238",
+          "sha1": "663689dd64ee21ef22fe06dd12dc08b81bbbbf5e"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/C4xra4Gw/SimpleDiscordLink-forge-1.18.1-2.2.3.jar",
         "filename": "SimpleDiscordLink-forge-1.18.1-2.2.3.jar",
@@ -1896,8 +1896,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b7d42288f3dfe7e9b586d4705ae35ca330b9db78",
-          "sha512": "cc0a5ea9aa1598244b5c536821b9dff6119341266465d569e9d81f0b633d50edb9fb8c4122c94f6d5a80974b025ee1f62e442ebbad13b5715184884319f08cef"
+          "sha512": "cc0a5ea9aa1598244b5c536821b9dff6119341266465d569e9d81f0b633d50edb9fb8c4122c94f6d5a80974b025ee1f62e442ebbad13b5715184884319f08cef",
+          "sha1": "b7d42288f3dfe7e9b586d4705ae35ca330b9db78"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/CdteDvPc/SimpleDiscordLink-forge-1.19.3-2.2.2.jar",
         "filename": "SimpleDiscordLink-forge-1.19.3-2.2.2.jar",
@@ -2012,8 +2012,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "127336f7ddc7662117ccbd324a8b937b5759d3b46e3df4dd9afe557e4c899374b0798b5024fc0ec89c7be0d3a71e4c34856b84a666b2d13f83eacb78ba66d463",
-          "sha1": "b526a2ef7a21295ef930dcaf271d670dc07679a5"
+          "sha1": "b526a2ef7a21295ef930dcaf271d670dc07679a5",
+          "sha512": "127336f7ddc7662117ccbd324a8b937b5759d3b46e3df4dd9afe557e4c899374b0798b5024fc0ec89c7be0d3a71e4c34856b84a666b2d13f83eacb78ba66d463"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/XTeURROS/SimpleDiscordLink-forge-1.18.1-2.2.2.jar",
         "filename": "SimpleDiscordLink-forge-1.18.1-2.2.2.jar",
@@ -2049,8 +2049,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1bd970ab9c28c8e33b1b63e606ecd91405c97b24a8d9eced9e6eddac63f62ab62a7c42cb89aa1bcb4c5764c298361df64b99aca3b8593c831095e5496debba23",
-          "sha1": "c159cc3fd10689056bfcadf7dc1e53b32afe5aaa"
+          "sha1": "c159cc3fd10689056bfcadf7dc1e53b32afe5aaa",
+          "sha512": "1bd970ab9c28c8e33b1b63e606ecd91405c97b24a8d9eced9e6eddac63f62ab62a7c42cb89aa1bcb4c5764c298361df64b99aca3b8593c831095e5496debba23"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/fWdpkZWc/SimpleDiscordLink-fabric-1.18.1-2.2.2.jar",
         "filename": "SimpleDiscordLink-fabric-1.18.1-2.2.2.jar",
@@ -2127,8 +2127,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e84fd26aaf3e118792932c0af7736df0ab2826140f8da0806e23c87f0163b941039a06dbb838719a8737a0e01b7f8178097e96d749c53ed8d05f919804ad882c",
-          "sha1": "4f48104a5a35ae7edf2bba0c2078b0c772102512"
+          "sha1": "4f48104a5a35ae7edf2bba0c2078b0c772102512",
+          "sha512": "e84fd26aaf3e118792932c0af7736df0ab2826140f8da0806e23c87f0163b941039a06dbb838719a8737a0e01b7f8178097e96d749c53ed8d05f919804ad882c"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/wCMtarLq/SimpleDiscordLink-fabric-1.16.5-2.2.2.final.jar",
         "filename": "SimpleDiscordLink-fabric-1.16.5-2.2.2.final.jar",
@@ -2287,8 +2287,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "08fce4eb855fba12e42f345146bfca27050e7b18",
-          "sha512": "8b5418a2cf3eed39ebc611bbcac4ef43a8ace2618efd4d1fbcfa765d6512ee3174392713bc648e81499aa645c2730be909b7679ec25ebb40ab47628097216e8e"
+          "sha512": "8b5418a2cf3eed39ebc611bbcac4ef43a8ace2618efd4d1fbcfa765d6512ee3174392713bc648e81499aa645c2730be909b7679ec25ebb40ab47628097216e8e",
+          "sha1": "08fce4eb855fba12e42f345146bfca27050e7b18"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/27Qp6gtD/SimpleDiscordLink-fabric-1.19.1-2.2.1.jar",
         "filename": "SimpleDiscordLink-fabric-1.19.1-2.2.1.jar",
@@ -2330,8 +2330,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8b46befe61e957912e78bb5fdbf6e4d8d10f4349e25a546494975805eeb2572e728944563101661965134e5fe5796bdea4796065fe502e9bb72486c027eadce7",
-          "sha1": "d0e3e5cf3a11a5ba8c7a1d2030ecfbae7029aafe"
+          "sha1": "d0e3e5cf3a11a5ba8c7a1d2030ecfbae7029aafe",
+          "sha512": "8b46befe61e957912e78bb5fdbf6e4d8d10f4349e25a546494975805eeb2572e728944563101661965134e5fe5796bdea4796065fe502e9bb72486c027eadce7"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/3DZiaGx6/SimpleDiscordLink-forge-1.18.1-2.2.1.jar",
         "filename": "SimpleDiscordLink-forge-1.18.1-2.2.1.jar",
@@ -2409,8 +2409,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c6f0670bc1ac36f692b13dae87c5cbdaff4bb00d72718d1bc072d3c0e7fe4887f11bb74a5465c6b0e16c2050cf8a60154f1a43ec1d8a96f9779981865b1a267e",
-          "sha1": "31f080af566f3496c79be84bb1460d77066a78dd"
+          "sha1": "31f080af566f3496c79be84bb1460d77066a78dd",
+          "sha512": "c6f0670bc1ac36f692b13dae87c5cbdaff4bb00d72718d1bc072d3c0e7fe4887f11bb74a5465c6b0e16c2050cf8a60154f1a43ec1d8a96f9779981865b1a267e"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/FmfBszJM/SimpleDiscordLink-forge-1.16.5-2.2.1.final.jar",
         "filename": "SimpleDiscordLink-forge-1.16.5-2.2.1.final.jar",
@@ -2566,8 +2566,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7a486ec01035ba3476ce4342eaddabcf57433a60",
-          "sha512": "353c915aa15424d44ec34ee2f170306709d173f73905b5e92421f85a4c8696c69d9bf8ba54046f79ead1b7f010c61fb313ce92bbc689e7074d4d2a11c4dd16ec"
+          "sha512": "353c915aa15424d44ec34ee2f170306709d173f73905b5e92421f85a4c8696c69d9bf8ba54046f79ead1b7f010c61fb313ce92bbc689e7074d4d2a11c4dd16ec",
+          "sha1": "7a486ec01035ba3476ce4342eaddabcf57433a60"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/lhNSlUag/SimpleDiscordLink-forge-1.19.1-2.2.0.jar",
         "filename": "SimpleDiscordLink-forge-1.19.1-2.2.0.jar",
@@ -2646,8 +2646,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f422ad8c12557ebba8c8e10b5239a64a5d9a9af81611747a40bc1b9b587645f7023a0a2dfe2d8587e85db3f53e6eca6b7d5458c546512a3f4086d22d94c990d5",
-          "sha1": "d24ca54e262106708b5418c6fce0fd87a2792bdd"
+          "sha1": "d24ca54e262106708b5418c6fce0fd87a2792bdd",
+          "sha512": "f422ad8c12557ebba8c8e10b5239a64a5d9a9af81611747a40bc1b9b587645f7023a0a2dfe2d8587e85db3f53e6eca6b7d5458c546512a3f4086d22d94c990d5"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/KHBlQI8q/SimpleDiscordLink-forge-1.18.1-2.2.0.jar",
         "filename": "SimpleDiscordLink-forge-1.18.1-2.2.0.jar",
@@ -2683,8 +2683,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fee9e3c69ab971e73712091c4e5091c435f242e3",
-          "sha512": "20e37fbfccf72e67045047507dd726a6c80baf73f0a95d7adb18dac0495b03bce17a5e6f97849f8dfecc3d7cd7f5b668ee4b796fe06e09e7d0bc2fea0383f428"
+          "sha512": "20e37fbfccf72e67045047507dd726a6c80baf73f0a95d7adb18dac0495b03bce17a5e6f97849f8dfecc3d7cd7f5b668ee4b796fe06e09e7d0bc2fea0383f428",
+          "sha1": "fee9e3c69ab971e73712091c4e5091c435f242e3"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/fjb7PWNt/SimpleDiscordLink-fabric-1.18.1-2.2.0.jar",
         "filename": "SimpleDiscordLink-fabric-1.18.1-2.2.0.jar",
@@ -2725,8 +2725,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b04a1f4bb3d99eefb7332ae73250735f4f010b383c2b6ebc7d43ddd45873a2505243c5ca986b8a6d14dbdf5a989b3cca2deb3f345673d88fafdb9dafed6a12e7",
-          "sha1": "d93f749f155420e30a8c97e9a2e2cdcac040ef39"
+          "sha1": "d93f749f155420e30a8c97e9a2e2cdcac040ef39",
+          "sha512": "b04a1f4bb3d99eefb7332ae73250735f4f010b383c2b6ebc7d43ddd45873a2505243c5ca986b8a6d14dbdf5a989b3cca2deb3f345673d88fafdb9dafed6a12e7"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/3Gg018PA/SimpleDiscordLink-forge-1.16.5-2.2.0.final.jar",
         "filename": "SimpleDiscordLink-forge-1.16.5-2.2.0.final.jar",
@@ -2760,8 +2760,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2039efcaaa6e2515787ad7e74e4c74979a272035b74ce85de05f023ca5e369bf12a42a8980854f43d91815049764a33188161f70144554e244ae542137fdafa3",
-          "sha1": "c51b384b49b108d5e76ef440194ad34c29835a35"
+          "sha1": "c51b384b49b108d5e76ef440194ad34c29835a35",
+          "sha512": "2039efcaaa6e2515787ad7e74e4c74979a272035b74ce85de05f023ca5e369bf12a42a8980854f43d91815049764a33188161f70144554e244ae542137fdafa3"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/SGjbdHbT/SimpleDiscordLink-fabric-1.16.5-2.2.0.final.jar",
         "filename": "SimpleDiscordLink-fabric-1.16.5-2.2.0.final.jar",
@@ -2802,8 +2802,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0131e3277172b16ae86c695d0bc8adc5e366587d287eb7f232e8018936d436f6fad2a769944f1493da9bddb46b6f4e9c0c6b44a566695b67e5d64c69c3438181",
-          "sha1": "8df2d12761ffd96226745021aff821f9a3365127"
+          "sha1": "8df2d12761ffd96226745021aff821f9a3365127",
+          "sha512": "0131e3277172b16ae86c695d0bc8adc5e366587d287eb7f232e8018936d436f6fad2a769944f1493da9bddb46b6f4e9c0c6b44a566695b67e5d64c69c3438181"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/mAB0YkWY/SimpleDiscordLink-forge-1.19.3-2.1.0.jar",
         "filename": "SimpleDiscordLink-forge-1.19.3-2.1.0.jar",
@@ -2838,8 +2838,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "817d7f62cf0553ace361e5464021afe203ecf22de455bfb1cf1d7eff9dbab5a85bd7df4f9241a6b9e2fd3bf9267c2e44aac11720b48c28d9cebd3e01bcd5a3a0",
-          "sha1": "bad09106c89d5bdfe7cbb3afbc509bfba42db42a"
+          "sha1": "bad09106c89d5bdfe7cbb3afbc509bfba42db42a",
+          "sha512": "817d7f62cf0553ace361e5464021afe203ecf22de455bfb1cf1d7eff9dbab5a85bd7df4f9241a6b9e2fd3bf9267c2e44aac11720b48c28d9cebd3e01bcd5a3a0"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/JmRuwVRc/SimpleDiscordLink-fabric-1.19.3-2.1.0.jar",
         "filename": "SimpleDiscordLink-fabric-1.19.3-2.1.0.jar",
@@ -2961,8 +2961,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "08280fc611da81aa4eb87d5f1ad05c2605913bc4",
-          "sha512": "1a88421f3af8cb5f15b244556ce7d47829c1e0648b22544e085eb152d83aed81088cc47fe356444359a49d2485cc4c5dae052609977e70cbb57d17d9aacf554f"
+          "sha512": "1a88421f3af8cb5f15b244556ce7d47829c1e0648b22544e085eb152d83aed81088cc47fe356444359a49d2485cc4c5dae052609977e70cbb57d17d9aacf554f",
+          "sha1": "08280fc611da81aa4eb87d5f1ad05c2605913bc4"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/OreZ8XYQ/SimpleDiscordLink-forge-1.18.1-2.1.0.jar",
         "filename": "SimpleDiscordLink-forge-1.18.1-2.1.0.jar",
@@ -3040,8 +3040,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7c2ca5fd77df90763c57f05bdcaeaf0d4fb8b4d2",
-          "sha512": "ef57559cd640661ae9fc7f8ba4145ab0d7eef72f714ca0e4d0ef98eeba4ba73f2cbb1191ea04fa1ec96e51673c810c0e6f5a0477dfc70a5ad332eaf8be352f64"
+          "sha512": "ef57559cd640661ae9fc7f8ba4145ab0d7eef72f714ca0e4d0ef98eeba4ba73f2cbb1191ea04fa1ec96e51673c810c0e6f5a0477dfc70a5ad332eaf8be352f64",
+          "sha1": "7c2ca5fd77df90763c57f05bdcaeaf0d4fb8b4d2"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/cMc4p2nQ/SimpleDiscordLink-forge-1.16.5-2.1.0.jar",
         "filename": "SimpleDiscordLink-forge-1.16.5-2.1.0.jar",
@@ -3118,8 +3118,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "22c7f2918f8d51209bec83764e2c255fae8f7e59",
-          "sha512": "d8b328f18e3c7c892bf2d4e1b8ce34b87898dce690ee0e8d205d93f0c51a2cc3648c71d07766f841b69959bab0b98950997620d7469090308a059fafeef3e0e4"
+          "sha512": "d8b328f18e3c7c892bf2d4e1b8ce34b87898dce690ee0e8d205d93f0c51a2cc3648c71d07766f841b69959bab0b98950997620d7469090308a059fafeef3e0e4",
+          "sha1": "22c7f2918f8d51209bec83764e2c255fae8f7e59"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/WjkgQjyp/SimpleDiscordLink-forge-1.19.1-2.0.1.jar",
         "filename": "SimpleDiscordLink-forge-1.19.1-2.0.1.jar",
@@ -3198,8 +3198,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b1556d708c8ece7b5b06d9c860e8c97514e7842fce2638e587d0fccaf36cfe9e1631bcbda96636b7101c7dfb6e75f2bff37d8c5fdd93e7d7b266d42ab6254cc5",
-          "sha1": "aa05573fd384af92a45450e90b80d4e4ff329474"
+          "sha1": "aa05573fd384af92a45450e90b80d4e4ff329474",
+          "sha512": "b1556d708c8ece7b5b06d9c860e8c97514e7842fce2638e587d0fccaf36cfe9e1631bcbda96636b7101c7dfb6e75f2bff37d8c5fdd93e7d7b266d42ab6254cc5"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/uEDW4N7e/SimpleDiscordLink-forge-1.18.1-2.0.1.jar",
         "filename": "SimpleDiscordLink-forge-1.18.1-2.0.1.jar",
@@ -3235,8 +3235,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "30567c10913ae093e40d43466672b36d1c9a4700",
-          "sha512": "8b496b1fa5fa81ee15a7c82da436a7776873dc3c8a4df7691901bd8fd6e2edad341e4bb33b9309bc28c404837dfb4b70e40a3f1c0079cc425bea66118cf993d4"
+          "sha512": "8b496b1fa5fa81ee15a7c82da436a7776873dc3c8a4df7691901bd8fd6e2edad341e4bb33b9309bc28c404837dfb4b70e40a3f1c0079cc425bea66118cf993d4",
+          "sha1": "30567c10913ae093e40d43466672b36d1c9a4700"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/ZpYcn07S/SimpleDiscordLink-fabric-1.18.1-2.0.1.jar",
         "filename": "SimpleDiscordLink-fabric-1.18.1-2.0.1.jar",
@@ -3315,8 +3315,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4445500453fe5f5c4a3e7c37b070b4d5df1b3209f9771425da339f8f76f87d05d16d30515375e0ceadd7fa22b0ab1b8b158b229f4e483463d7ca05a4db23433f",
-          "sha1": "bb3834c7fd46d7981b3485d494d64afb2ce54dbc"
+          "sha1": "bb3834c7fd46d7981b3485d494d64afb2ce54dbc",
+          "sha512": "4445500453fe5f5c4a3e7c37b070b4d5df1b3209f9771425da339f8f76f87d05d16d30515375e0ceadd7fa22b0ab1b8b158b229f4e483463d7ca05a4db23433f"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/Ji1U4CvQ/SimpleDiscordLink-fabric-1.19.1-2.0.0.jar",
         "filename": "SimpleDiscordLink-fabric-1.19.1-2.0.0.jar",
@@ -3358,8 +3358,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "50039cb10c66b506ff6c1459259f0f8bb1834ab344b4f887464261c8c8ee4c96652fd02b9d9ce2d164633b9a2c71057da6189d52c655f7de41512ee1f703d983",
-          "sha1": "1e00602f84d59626b5584c7679ee1a232b771b8d"
+          "sha1": "1e00602f84d59626b5584c7679ee1a232b771b8d",
+          "sha512": "50039cb10c66b506ff6c1459259f0f8bb1834ab344b4f887464261c8c8ee4c96652fd02b9d9ce2d164633b9a2c71057da6189d52c655f7de41512ee1f703d983"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/PLlsxCeJ/SimpleDiscordLink-forge-1.18.1-2.0.0.jar",
         "filename": "SimpleDiscordLink-forge-1.18.1-2.0.0.jar",
@@ -3395,8 +3395,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b0cede8139e8064da44166e74bbc03bbd09d5d95a0907e8eb663e74ae50d33d9111a92fbe518893873402c69f04bd27cd664ea93f88e8e135c7b1c57406678f7",
-          "sha1": "8a012b0bae67eb625116a0a9feb57346c6bc3e02"
+          "sha1": "8a012b0bae67eb625116a0a9feb57346c6bc3e02",
+          "sha512": "b0cede8139e8064da44166e74bbc03bbd09d5d95a0907e8eb663e74ae50d33d9111a92fbe518893873402c69f04bd27cd664ea93f88e8e135c7b1c57406678f7"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/sGS5x6eI/SimpleDiscordLink-fabric-1.18.1-2.0.0.jar",
         "filename": "SimpleDiscordLink-fabric-1.18.1-2.0.0.jar",
@@ -3472,8 +3472,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "bff323de1b2e914d63b12fdb4bcec6f842261deb81041f02516bf5f334bb1475066bde4a505c0b5b022285249b8a95ea62b3504ac1db847747e05e0928fa3aee",
-          "sha1": "38d6ae88778da6b7513a31205fbae36fc55cea70"
+          "sha1": "38d6ae88778da6b7513a31205fbae36fc55cea70",
+          "sha512": "bff323de1b2e914d63b12fdb4bcec6f842261deb81041f02516bf5f334bb1475066bde4a505c0b5b022285249b8a95ea62b3504ac1db847747e05e0928fa3aee"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/rHhJ6V2S/SimpleDiscordLink-fabric-1.16.5-2.0.0.jar",
         "filename": "SimpleDiscordLink-fabric-1.16.5-2.0.0.jar",
@@ -3515,8 +3515,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8b4b429864706fd2acf52b2b208ecb8f47b57d92",
-          "sha512": "af25baefcb1cf4c30251b3bab59c8ade6c2cc681eeea35518bd449ed89cfe6b8e87126b3cc25d7cdd6b4a37f2368458a5edeae0575411df40f830d1a027ef28e"
+          "sha512": "af25baefcb1cf4c30251b3bab59c8ade6c2cc681eeea35518bd449ed89cfe6b8e87126b3cc25d7cdd6b4a37f2368458a5edeae0575411df40f830d1a027ef28e",
+          "sha1": "8b4b429864706fd2acf52b2b208ecb8f47b57d92"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/1.19.1-1.4.1/SimpleDiscordLink-forge-1.19.1-1.4.1.jar",
         "filename": "SimpleDiscordLink-forge-1.19.1-1.4.1.jar",
@@ -3552,8 +3552,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "299eb01331cccf6f3c06bd2141833a44c89fff4514412ae20297740fb98417135a11949b9b08e5b3157ee46f58e18eb4281736c27968234922fe867dcbe6858b",
-          "sha1": "45d92c9f019ff6207cdf7e4acfb11a937a6b75fe"
+          "sha1": "45d92c9f019ff6207cdf7e4acfb11a937a6b75fe",
+          "sha512": "299eb01331cccf6f3c06bd2141833a44c89fff4514412ae20297740fb98417135a11949b9b08e5b3157ee46f58e18eb4281736c27968234922fe867dcbe6858b"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/1.19.1-1.4.1f/SimpleDiscordLink-fabric-1.19.1-1.4.1.jar",
         "filename": "SimpleDiscordLink-fabric-1.19.1-1.4.1.jar",
@@ -3595,8 +3595,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ac524e5ce7fd88d53871b367a7428829f9b81915e7f7f69f6f316c53000856a01522b72bbd922f8a1d870afc7aa79b7a484c71c031ffc105c93cf2d5f9efa534",
-          "sha1": "20ba7214ae8c03b36a13c58a4b6c527894e1c1b6"
+          "sha1": "20ba7214ae8c03b36a13c58a4b6c527894e1c1b6",
+          "sha512": "ac524e5ce7fd88d53871b367a7428829f9b81915e7f7f69f6f316c53000856a01522b72bbd922f8a1d870afc7aa79b7a484c71c031ffc105c93cf2d5f9efa534"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/1.19-1.4.0/SimpleDiscordLink-forge-1.19-1.4.0.jar",
         "filename": "SimpleDiscordLink-forge-1.19-1.4.0.jar",
@@ -3712,8 +3712,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "194fa948c9dc95e5a1897e4524c42f83ea9317898b887dfd24bf8d290d63e1b1f9c2881f2a00feaf66063c29842a32a8ee6cc7d9a520afcd477ca00f70b9ba48",
-          "sha1": "f5a824f109a3eba5c8b0c01105bd91671dbc2bd0"
+          "sha1": "f5a824f109a3eba5c8b0c01105bd91671dbc2bd0",
+          "sha512": "194fa948c9dc95e5a1897e4524c42f83ea9317898b887dfd24bf8d290d63e1b1f9c2881f2a00feaf66063c29842a32a8ee6cc7d9a520afcd477ca00f70b9ba48"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/1.18.1-1.4.0f/SimpleDiscordLink-fabric-1.18.1-1.4.0.jar",
         "filename": "SimpleDiscordLink-fabric-1.18.1-1.4.0.jar",
@@ -3754,8 +3754,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "aaf632e1790f95fa52a54d72a63f96230369d0ab",
-          "sha512": "4a57fbef5c75a644075115bc2375edd40df3611e3738c12b669c6e314c13c15675cb3d865a7de91ef32a1b97dde55ec51f4c313a46e2da38dd8b79f6c1749487"
+          "sha512": "4a57fbef5c75a644075115bc2375edd40df3611e3738c12b669c6e314c13c15675cb3d865a7de91ef32a1b97dde55ec51f4c313a46e2da38dd8b79f6c1749487",
+          "sha1": "aaf632e1790f95fa52a54d72a63f96230369d0ab"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/1.16.5-1.4.0/SimpleDiscordLink-forge-1.16.5-1.4.0.jar",
         "filename": "SimpleDiscordLink-forge-1.16.5-1.4.0.jar",
@@ -3910,8 +3910,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cd64ce404a0e365eb07a367b31bdeae30e716f63232ea450833d81769a98c0a33edb05cf813ac62b23eeb0a8c748d4cccaf97064e5878ed6b34253ce793afc4e",
-          "sha1": "f868b2589b76e394d5e84e8ffae3136ce62acabf"
+          "sha1": "f868b2589b76e394d5e84e8ffae3136ce62acabf",
+          "sha512": "cd64ce404a0e365eb07a367b31bdeae30e716f63232ea450833d81769a98c0a33edb05cf813ac62b23eeb0a8c748d4cccaf97064e5878ed6b34253ce793afc4e"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/1.18.1-1.3.0/SimpleDiscordLink-forge-1.18.1-1.3.0.jar",
         "filename": "SimpleDiscordLink-forge-1.18.1-1.3.0.jar",
@@ -3947,8 +3947,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a5fa5f3bd839b2a65243806ca941987ddd9224f3f0056294695ac67cbc52d5a740125ce475fd4ffe234711a613033c04ba1593af3463a4cfbe06cb97966b2569",
-          "sha1": "db7f8a4788b8524ab5677dc4d4f64148edcaacd8"
+          "sha1": "db7f8a4788b8524ab5677dc4d4f64148edcaacd8",
+          "sha512": "a5fa5f3bd839b2a65243806ca941987ddd9224f3f0056294695ac67cbc52d5a740125ce475fd4ffe234711a613033c04ba1593af3463a4cfbe06cb97966b2569"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/1.18.1-1.3.0f/SimpleDiscordLink-fabric-1.18.1-1.3.0.jar",
         "filename": "SimpleDiscordLink-fabric-1.18.1-1.3.0.jar",
@@ -3989,8 +3989,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b96daa0221b13dfa50b06dabd6212305deb20184",
-          "sha512": "a5e9681ec0f4f5f37b1d4532dee5758c0b68e6c661cd7a67567af1afc237dc2d48bc9593bf32f59683c9d5e04071fcd8656a441b3d4cbeb3e70e024006fdd2b1"
+          "sha512": "a5e9681ec0f4f5f37b1d4532dee5758c0b68e6c661cd7a67567af1afc237dc2d48bc9593bf32f59683c9d5e04071fcd8656a441b3d4cbeb3e70e024006fdd2b1",
+          "sha1": "b96daa0221b13dfa50b06dabd6212305deb20184"
         },
         "url": "https://cdn.modrinth.com/data/Sh0YauEf/versions/1.16.5-1.3.0/SimpleDiscordLink-forge-1.16.5-1.3.0.jar",
         "filename": "SimpleDiscordLink-forge-1.16.5-1.3.0.jar",

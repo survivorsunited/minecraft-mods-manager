@@ -17,15 +17,15 @@
     "changelog": "# Version 93.0\n\n- Fixed underwater caustics not appearing at a certain depth.\n- Improved a bit dithering on SSS.\n- Improved sky color.\n- Decreased Rain Fog.\n- Increased a bit Day Light Intensity.\n- Decreased Day Ambience Intensity.\n- Fixed shootingStars appears when it rain.\n- Fixed Black Hole disappearing when underwater in Ender.\n- Fixed Compatibility for certain hardware on Iris.\n- Added option to Disable Flash Entities effect on players.",
     "changelog_url": null,
     "date_published": "2024-06-16T14:35:35.447944Z",
-    "downloads": 555486,
+    "downloads": 556545,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "1041c11b811ee3546bca75cbb14c8c1916a2e9c3",
-          "sha512": "171131e16b65af67c3ed2fe75f3bde9d81f66b4e921ba3ca33187cff7c87b40e1f21637e95e2fa3a1567b0717374809b18adc240c5ef74622c8e9317ecc14f9d"
+          "sha512": "171131e16b65af67c3ed2fe75f3bde9d81f66b4e921ba3ca33187cff7c87b40e1f21637e95e2fa3a1567b0717374809b18adc240c5ef74622c8e9317ecc14f9d",
+          "sha1": "1041c11b811ee3546bca75cbb14c8c1916a2e9c3"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/qSbtQS2o/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV93.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV93.0§r§l.zip",
@@ -54,7 +54,7 @@
     "changelog": "# Version 92.1\n\n- Fix bobbing on Moonphase.",
     "changelog_url": null,
     "date_published": "2024-05-06T15:11:02.069244Z",
-    "downloads": 98166,
+    "downloads": 98391,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -91,7 +91,7 @@
     "changelog": "# Version 92.0\n\n- Improved Dynamic Handlight\n- The coloring of the light in hand is now based on Blocklight color when Colored Dynamic Handlight is disable.\n- Added Copper lamp with possibility to adjusts intensity for all dimensions.\n- Adjust Redstone torch, conduit, Sea pickles, Magma Block Lighting.\n- Added Mace for Flash Entities.\n- Added emissivness for the breeze.",
     "changelog_url": null,
     "date_published": "2024-05-02T12:24:31.954515Z",
-    "downloads": 4909,
+    "downloads": 4910,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -127,15 +127,15 @@
     "changelog": "# Version 91.1\n\n- Fixed typo in language files.\n- Adjusts Ripples.\n- Improve a bit LightShaft Smoker the night.\n- Added armadillo and bogged IDs for Flash Entities.\n- Fix typo in block.properties for Iris compatibility.",
     "changelog_url": null,
     "date_published": "2024-04-27T15:24:43.639829Z",
-    "downloads": 40214,
+    "downloads": 40349,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "9be6c53dd789b394588e93efaac0160e979d8b1e",
-          "sha512": "95f6a89e77f58a528a4a707ce191c02afd8b05e2772dc26aedcdf45a9b13b1c748f0710145e6d1eb81779656650966b8a6a40e3eb5c2165da07916ce591ddcde"
+          "sha512": "95f6a89e77f58a528a4a707ce191c02afd8b05e2772dc26aedcdf45a9b13b1c748f0710145e6d1eb81779656650966b8a6a40e3eb5c2165da07916ce591ddcde",
+          "sha1": "9be6c53dd789b394588e93efaac0160e979d8b1e"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/883Kw4Yw/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV91.1%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV91.1§r§l.zip",
@@ -164,7 +164,7 @@
     "changelog": "# Version 91.0\n\n- Fixed Blaze too bright.\n- Fixed Colorgrading.\n- Now Chromatic aberration is split into 3 parts (OFF, Chromatic Blur (Need DOF enabled), Standard).\n- Fix Compilation error when you enabled Vanilla Sky.\n- Added a slider to adjust the color intensity of the Round Sun/Moon.",
     "changelog_url": null,
     "date_published": "2024-01-02T23:54:37.968631Z",
-    "downloads": 149653,
+    "downloads": 149705,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -200,15 +200,15 @@
     "changelog": "# Version 90.0\n\n- Added Anisotropic Filtering (Thx IMS & ruvaldak).\n- Fixed Stars jitter when you disable Double layer stars.\n- Fixed Stars disappears when you disabled Stars jitter.\n- Added Distant Fade for Underwater Fog.\n- Fixed Lightmap on gbuffers_block.\n- Other small adjustments.",
     "changelog_url": null,
     "date_published": "2023-09-29T21:16:43.426869Z",
-    "downloads": 72541,
+    "downloads": 72546,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fd9d57f86f9d05fae0a5185467ea2260a25b0db55c6c281b122a56b21a80625c7256197c5fad49b9377229b838216cb51c389a31c764c2de1768b6481ec36c73",
-          "sha1": "4a9a89fa26335ebd418c648bb3f6457aa66afe6b"
+          "sha1": "4a9a89fa26335ebd418c648bb3f6457aa66afe6b",
+          "sha512": "fd9d57f86f9d05fae0a5185467ea2260a25b0db55c6c281b122a56b21a80625c7256197c5fad49b9377229b838216cb51c389a31c764c2de1768b6481ec36c73"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/dj8NQFCR/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV90.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV90.0§r§l.zip",
@@ -237,7 +237,7 @@
     "changelog": "# Version 89.0\n\n- Added Night Desaturation option in World Menu (enabled by default).\n- Improved AO.\n- Improved SSS.\n- Added Rough Blur Option.\n- Slight modification of the Lens Flare.\n- Improved a bit Lost Glare and Vortex.\n- Decreased Light Shaft in Ender.\n- Improved stars jitter in Ender.\n- Set Nether Portal to \"No Disk\".\n- Deacreased Sun Size.\n- Increased Sun Color and sunRays color.\n- Deacreased Blocklight on hands and added option for that.",
     "changelog_url": null,
     "date_published": "2023-09-14T01:09:59.690844Z",
-    "downloads": 262850,
+    "downloads": 263420,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -281,8 +281,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "27c01c00950694d35deca7e04dd7672bd72c82146f6eba6b6aa18d75622c1a5a7d6070e2ff501217bca94e22fd6192ecd5019269a95642c66f1d7d561ba63882",
-          "sha1": "383adec238746ca7664ca41af4a90a6215a4e4e9"
+          "sha1": "383adec238746ca7664ca41af4a90a6215a4e4e9",
+          "sha512": "27c01c00950694d35deca7e04dd7672bd72c82146f6eba6b6aa18d75622c1a5a7d6070e2ff501217bca94e22fd6192ecd5019269a95642c66f1d7d561ba63882"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/4XE7DvP7/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV88.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV88.0§r§l.zip",
@@ -318,8 +318,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1802675adddc0d4d6ee90db1869ac63c56d08f0b8edee58794337361ffcf12bf0480f3facffbc2e35b7c764831ab595b72a5456438d3073907d234f4b2044abb",
-          "sha1": "efb77f497a15ef3b8ca710aa28044a30c7973f39"
+          "sha1": "efb77f497a15ef3b8ca710aa28044a30c7973f39",
+          "sha512": "1802675adddc0d4d6ee90db1869ac63c56d08f0b8edee58794337361ffcf12bf0480f3facffbc2e35b7c764831ab595b72a5456438d3073907d234f4b2044abb"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/ZkNRqbmj/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV87.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV87.0§r§l.zip",
@@ -348,15 +348,15 @@
     "changelog": "# Version 86.0\n\n- Added emissivness on nether_gold_ore and nether_quartz_ore compatible with Pickaxe Reveal.\n- Added emissivness on chorus (ON/OFF) in Lighting/Dimension Block Brightness/Bonus for Overworld/Nether/Ender.\n- Added option to adjusts chorus emissivness in Overworld/Nether/Ender.\n- Added ability to disable Dynamic handlight.\n- Fixed Weather Dynamic Handlight Color.\n- Fixed Dynamic Hand Light on Blocks.\n- If you have Dynamic Hand Light disabled and Blocklight by Temp enabled, the torch light will have this color setting.",
     "changelog_url": null,
     "date_published": "2023-08-16T18:12:26.022218Z",
-    "downloads": 24017,
+    "downloads": 24021,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "d5cb71a34056724f23d132e2586fb3e487db1885cf32c7f4bb9e7f76ae7036f4049d7777bcad1ace393d54603477e06fa8aee63ded17da139144182e3bc4fe55",
-          "sha1": "8895db58ef2614ff2491224d9062e60e9c44b670"
+          "sha1": "8895db58ef2614ff2491224d9062e60e9c44b670",
+          "sha512": "d5cb71a34056724f23d132e2586fb3e487db1885cf32c7f4bb9e7f76ae7036f4049d7777bcad1ace393d54603477e06fa8aee63ded17da139144182e3bc4fe55"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/yhZdcCVA/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV86.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV86.0§r§l.zip",
@@ -385,7 +385,7 @@
     "changelog": "# Version 85.0\n\n- Deleted Concentrate Light option.(is adjusted with the light concentration slider now).\n- Fixed lighting on textures.\n- Added Slider for adjusts Blocklight Concentration.\n- I lowered a bit the concentration of the default block lighting.\n- Added a menu to adjust the lighting color (luminance/saturation) of the blocks for Colored Handlight.\n- For some capricious material:\n\n      -Fixed compilation error in gbuffers_textured.\n      -Fixed compilation error in composite1.\n\n- Increase a bit Underwater Light Shaft Strength.\n- Fixed Light Shaft don't appears when it rain.",
     "changelog_url": null,
     "date_published": "2023-08-13T17:01:36.920958Z",
-    "downloads": 5361,
+    "downloads": 5362,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -429,8 +429,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d67d91c54f8ab25a9453a6c97d302dea098cf520",
-          "sha512": "8ac990876becc06e1e6b77c3fcb2f2a98bb96d193c7ae072ffeffb97689966bb5ff663d031d93b3d5cc0736bdd572260c4345f92fa72f31d76aa208c0ae69424"
+          "sha512": "8ac990876becc06e1e6b77c3fcb2f2a98bb96d193c7ae072ffeffb97689966bb5ff663d031d93b3d5cc0736bdd572260c4345f92fa72f31d76aa208c0ae69424",
+          "sha1": "d67d91c54f8ab25a9453a6c97d302dea098cf520"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/XrCvMHqm/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV84.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV84.0§r§l.zip",
@@ -466,8 +466,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0a4d820767562f45db8b2c3d268ec1d29176e025c03ee7507362c2b5c179a65c506e21ea140bbd1a113bcdfb968879676a184f45335d26842bffd0c3932671ee",
-          "sha1": "0a5b051a0274932e714eef6f03dfc2fb38fe8e99"
+          "sha1": "0a5b051a0274932e714eef6f03dfc2fb38fe8e99",
+          "sha512": "0a4d820767562f45db8b2c3d268ec1d29176e025c03ee7507362c2b5c179a65c506e21ea140bbd1a113bcdfb968879676a184f45335d26842bffd0c3932671ee"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/o4Ei6EI9/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV83.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV83.0§r§l.zip",
@@ -496,15 +496,15 @@
     "changelog": "# Version 82.0\n\n- Disabled automatic frustum culling when world curvature is enabled.\n- Fixed SSS on plants when you are underwater.\n- Improved Stars Color/Intensity.(Overworld/Ender).\n- Changing the default direction of the glint.\n- Fixed a bug that has existed for a while (Number of Shooting Stars).\n- Improved reflection in the Nether.\n- Fixed High saturation on hands when you disable Water Caustics.\n- Power Lighting is now a default value.\n- Increase a bit emissive flowers intensity.\n- Decrease a bit Critical Blur in Ender.\n- Decrease blur underwater.\n- Fixed a warning in gbuffers_entities.\n- Back to BSL's bloom (it's the best!).\n- Added Magma Bloc for Colored HandLight.\n- Fixed line position when World Curvature is enabled.\n- Camera Shift is Back! (Enabled on default profile and Lex Profile) (Only on ground for Optifine, everytime for Iris (i wait is_on_ground variable)).\n- Added more steps for Shadow Map Resolution and Distance.\n- Changing the dirt image for Dirty Lens.",
     "changelog_url": null,
     "date_published": "2023-07-29T14:24:36.552747Z",
-    "downloads": 14269,
+    "downloads": 14270,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ccd8ec5f489d4e238c88341e2c4479d5aad592297b14fc41830e25006b491dfc0e75bd0407f0e1eadaa3b3d1d8d626f21c7c5c7bf52ed51a86086c122bcc2a3c",
-          "sha1": "d5af7db67b8f5962253a232d4cfe94afac666d70"
+          "sha1": "d5af7db67b8f5962253a232d4cfe94afac666d70",
+          "sha512": "ccd8ec5f489d4e238c88341e2c4479d5aad592297b14fc41830e25006b491dfc0e75bd0407f0e1eadaa3b3d1d8d626f21c7c5c7bf52ed51a86086c122bcc2a3c"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/extqsXTA/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV82.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV82.0§r§l.zip",
@@ -540,8 +540,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f2ed8667a6545a8f111ade6344176633f570f67d",
-          "sha512": "879b6ba3205439c07bb2d7ed72e5c38c71e8eecfe3f9c5623a10fe9bfcb23bd8d747618dcfa76889d7f9687088348757e253743693c23e88d9a2d7ed61b49e13"
+          "sha512": "879b6ba3205439c07bb2d7ed72e5c38c71e8eecfe3f9c5623a10fe9bfcb23bd8d747618dcfa76889d7f9687088348757e253743693c23e88d9a2d7ed61b49e13",
+          "sha1": "f2ed8667a6545a8f111ade6344176633f570f67d"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/nyvLIEys/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV81.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV81.0§r§l.zip",
@@ -570,15 +570,15 @@
     "changelog": "# Version 80.2\n\n- Fixed sneeze particles.\n- Decrease a bit samples of the Motion Blur.",
     "changelog_url": null,
     "date_published": "2023-07-05T19:00:09.162169Z",
-    "downloads": 19053,
+    "downloads": 19055,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a96f2cc056f881fd19c674196fd82f1ec0799fde",
-          "sha512": "25a12f2da298c0d69b43b5ad5b590eb5485747d4dd0de3ed65cdf28e0ca8fcd64debc6adbaeb8c75e86d963c96ce3406b0cb72e3726c76d83a63fab5afe5cc36"
+          "sha512": "25a12f2da298c0d69b43b5ad5b590eb5485747d4dd0de3ed65cdf28e0ca8fcd64debc6adbaeb8c75e86d963c96ce3406b0cb72e3726c76d83a63fab5afe5cc36",
+          "sha1": "a96f2cc056f881fd19c674196fd82f1ec0799fde"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/bE7EFkyp/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV80.2%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV80.2§r§l.zip",
@@ -607,7 +607,7 @@
     "changelog": "# Version 80.1\n\n- Fixed compilation error in sky_basic\n- Modify a bit sun reflection.\n",
     "changelog_url": null,
     "date_published": "2023-06-30T21:42:12.559199Z",
-    "downloads": 6450,
+    "downloads": 6452,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -644,7 +644,7 @@
     "changelog": "# Version 80.0\n\n- Compatible 1.20.1.\n- Unclamp color for Custom Block Selector.\n- Added Old Aurora Noise option like BSLex.(Enable by default)\n- Improved Clouds Color and Scattering.(Day/Night).\n- Reverse of Upper and Lower in the color configuration for the Northern Lights.\n- Increase ShiningStars Brightness in the sky.\n- Re-added World Curvature.",
     "changelog_url": null,
     "date_published": "2023-06-14T12:44:50.025434Z",
-    "downloads": 19686,
+    "downloads": 19690,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -681,15 +681,15 @@
     "changelog": "# Version 79.0\n\n- Full Compatible 1.20.\n- Added 2, 10, 14 chunks for shadows distance.\n- Reduced hand movements by half when underwater.\n- Added suspicious sand ID for disable puddles on it.\n- Fixed Handlight bug with Sculk Sensor.",
     "changelog_url": null,
     "date_published": "2023-06-09T10:44:22.968652Z",
-    "downloads": 10038,
+    "downloads": 10044,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "228d16fac86389438ad1d3efee8f6a242a69817d6aee1dffda1c1de2dfb47ec8ddfc14616a4aaff8ad6b8b213d346d071fa55a5b82b0aa49783f24dc8080ae1f",
-          "sha1": "c6aa9cd6123cd63d29eb4d3b437425406cfc5f04"
+          "sha1": "c6aa9cd6123cd63d29eb4d3b437425406cfc5f04",
+          "sha512": "228d16fac86389438ad1d3efee8f6a242a69817d6aee1dffda1c1de2dfb47ec8ddfc14616a4aaff8ad6b8b213d346d071fa55a5b82b0aa49783f24dc8080ae1f"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/uafReX2Y/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV79.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV79.0§r§l.zip",
@@ -718,15 +718,15 @@
     "changelog": "# Version 78.3\n\n- Added Bloom Multiplier slider.\n- Increase a bit Default Bloom Strength.\n- Added \"Weather Emissive Flowers\" option to enable emissivity during rain. (Enable by default).\n- Fixed bad waving for crops.\n\n# Version 78.2\n\n- Fixed vanilla shadows that can appear under some entities.\n\n# Version 78.1\n\n- Modifying (fix) waving for mangrove propagule.\n- Fix Waving slider in Waving Menu.\n\n# Version 78.0\n\n- Fixed coloring of Sculk Sensor.\n- Added sliders for changes colors of Shining Stars and Lines.\n- Adjusts Emissivity for gold ore/emerald ore/iron ore/redstone ore.\n- Fixed Emissivity for Signs.\n- Added SSS for Pitcher plants.\n- Added Emissivity for Calibrated Sculk Sensor.\n- Fixed vanilla Stars appearing during sunrise under Iris.\n- Fixed Compilation error when Outline is Enable.\n- Decrease Emissivity for brewing stand.\n- Added Slider for Aurora Reflection Strength.\n- Added Slider for Clouds Reflection Strength.\n- Added Horizon Fade on water option to have the same fade above the horizon line as below. (Enable on LexBoosT Profile).\n- Enabled Lens Flare by default.\n- Improved handheld blocklight out of water and in water.\n- Improved Clouds Mask reflection on water for stars, aurora borealis, shooting stars, planets, galaxy.\n- Increase the default Shining Stars Reflection value.\n- Increase a bit clouds coloring at sunset/sunrise.\n- Removed border on dynamic handlight sharpness.\n- Increase handlight distance in water.\n- Increase a bit Sun glare.\n- Decrease AO on LabPBR.\n- Added Sliders for control Water Reflection Day/Night.\n- Added Emissive Flowers option with slider to adjust emissivity strenght. (Thanks Septonious for albedo check).\n- Added Slider for adjusts plants waving speed.\n- Added SSS on Wool, Melon, Pumpkin, Beds.\n- Added SSS with Option for Sand, Snow, Calcite, Quartz.\n- Fixed compatibility with Apple M1/2. (Thx Mammoth for testing).\n- Others small adjustments.",
     "changelog_url": null,
     "date_published": "2023-04-24T23:38:13.85037Z",
-    "downloads": 32976,
+    "downloads": 32997,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "25d7fee93c485a3d7c02e689f2bc8eaefaf39dfe",
-          "sha512": "55b2d14c1531d6152872cb6254868b4450dd5c92fadd3ed4f774cdadc72dfc7d0392c4295759f41d48437351bbc1caab4fce488a4dd765b111b1fadf987e3d70"
+          "sha512": "55b2d14c1531d6152872cb6254868b4450dd5c92fadd3ed4f774cdadc72dfc7d0392c4295759f41d48437351bbc1caab4fce488a4dd765b111b1fadf987e3d70",
+          "sha1": "25d7fee93c485a3d7c02e689f2bc8eaefaf39dfe"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/UIMygpfF/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV78.3%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV78.3§r§l.zip",
@@ -762,8 +762,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "59d744da21f1355434dce534def4c55569a6dc97",
-          "sha512": "1e68405578ba98f8958689823153488df9a9085047edc719c23a2aaa2d2969f6e0bc2f4d01f275fbe966eca391d860d3d45b7e7ba3098ff415a3c2aa4299de94"
+          "sha512": "1e68405578ba98f8958689823153488df9a9085047edc719c23a2aaa2d2969f6e0bc2f4d01f275fbe966eca391d860d3d45b7e7ba3098ff415a3c2aa4299de94",
+          "sha1": "59d744da21f1355434dce534def4c55569a6dc97"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/xiGuteT1/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV77.1%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV77.1§r§l.zip",
@@ -836,8 +836,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d53a2d6070129255129700b7ef2e44ce2eeee793",
-          "sha512": "a493f2c7710ea3324ef4bd8e1065ac3ac2bdce9fbf66697b0ffa70aae0cdb419e174629c1fd055f26dd201df202b05adf60e2c41f05bca13e1933cd0ecef0750"
+          "sha512": "a493f2c7710ea3324ef4bd8e1065ac3ac2bdce9fbf66697b0ffa70aae0cdb419e174629c1fd055f26dd201df202b05adf60e2c41f05bca13e1933cd0ecef0750",
+          "sha1": "d53a2d6070129255129700b7ef2e44ce2eeee793"
         },
         "url": "https://cdn.modrinth.com/data/RphJSnEs/versions/d0lNWaUw/%C2%A7r%C2%A7lAstra%C2%A74%C2%A7lLex%C2%A7r%C2%A7l_By_LexBoosT_%C2%A74%C2%A7lV75.0%C2%A7r%C2%A7l.zip",
         "filename": "§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV75.0§r§l.zip",
@@ -866,7 +866,7 @@
     "changelog": "\n- Fixed Fast Leaves on Iris.(Thanks IMS).\n\n- Fixed Colored Shadow Color texture.\n\n- Added Option for End Portal. (Gray or Purple/Pink/Blue).\n\n- Decrease Samples of AO if TAA is Enable.\n\n- Vanilla AO is now standard value.(1.0 instead 0.5).\n\n- Default Strength value for AO shader is now 3.0.\n\n- Improved a bit SSS noise.\n\n- Modification of the \"hue\" code to replace sin() by modulo.\n\n- Decrease normal strength for puddles.\n\n- Added option for adjust puddles fresnel on smoothness texture.\n(Low/Medium/High/Very High).\n\n- Better visibility of Ripples.\n\n- Added Approxiomate Trigonometric option for better performance with low end computer.\n\n- Fix bad glowing pixel on Shulker and increase a bit emissivness.\n\n- Improve glowing for Blaze, End Crystal, Drowned, Glow Squid and Allay.\n\n- Increase a bit Bloom Strength in Nether and Ender.\n\n- Improve samples and modify dithering for Motion Blur.\n\n- Various small adjustments and optimizations.",
     "changelog_url": null,
     "date_published": "2023-03-01T15:34:23.134611Z",
-    "downloads": 2988,
+    "downloads": 2989,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,

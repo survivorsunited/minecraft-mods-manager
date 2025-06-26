@@ -34,35 +34,52 @@ jobs:
         
         Write-Host "🔄 Starting daily mod update pipeline..." -ForegroundColor Cyan
         Write-Host "Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')" -ForegroundColor Gray
+        Write-Host "Working directory: $(Get-Location)" -ForegroundColor Gray
         
         try {
             # Run ModManager to update all mods
             Write-Host "📋 Running ModManager to update modlist.csv..." -ForegroundColor Yellow
-            $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File "ModManager.ps1" -ValidateAllModVersions -UpdateMods
+            Write-Host "Command: pwsh -NoProfile -ExecutionPolicy Bypass -File 'ModManager.ps1' -ValidateAllModVersions -UpdateMods" -ForegroundColor Gray
+            
+            $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File "ModManager.ps1" -ValidateAllModVersions -UpdateMods 2>&1
+            
+            Write-Host "ModManager output:" -ForegroundColor Cyan
+            Write-Host $result -ForegroundColor White
             
             if ($LASTEXITCODE -eq 0) {
                 Write-Host "✅ ModManager completed successfully" -ForegroundColor Green
                 
                 # Check if modlist.csv was modified
+                Write-Host "📋 Checking git status for modlist.csv changes..." -ForegroundColor Yellow
                 $gitStatus = git status --porcelain modlist.csv
+                Write-Host "Git status for modlist.csv: $gitStatus" -ForegroundColor Gray
+                
                 if ($gitStatus) {
                     Write-Host "📝 Changes detected in modlist.csv" -ForegroundColor Yellow
                     
                     # Show what changed
+                    Write-Host "📊 Changes summary:" -ForegroundColor Cyan
                     $diff = git diff --stat modlist.csv
-                    Write-Host "Changes summary:" -ForegroundColor Cyan
                     Write-Host $diff -ForegroundColor Gray
+                    
+                    # Show detailed changes
+                    Write-Host "📋 Detailed changes:" -ForegroundColor Cyan
+                    $detailedDiff = git diff modlist.csv
+                    Write-Host $detailedDiff -ForegroundColor Gray
                     
                     # Commit changes
                     Write-Host "💾 Committing changes..." -ForegroundColor Yellow
                     git config --local user.email "action@github.com"
                     git config --local user.name "GitHub Action"
                     git add modlist.csv
-                    git commit -m "🤖 Daily mod update - $(Get-Date -Format 'yyyy-MM-dd')"
+                    $commitMessage = "🤖 Daily mod update - $(Get-Date -Format 'yyyy-MM-dd')"
+                    Write-Host "Commit message: $commitMessage" -ForegroundColor Gray
+                    git commit -m $commitMessage
                     
                     # Push changes
                     Write-Host "🚀 Pushing changes to repository..." -ForegroundColor Yellow
-                    git push
+                    $pushResult = git push 2>&1
+                    Write-Host "Push result: $pushResult" -ForegroundColor Gray
                     
                     Write-Host "✅ Daily mod update completed successfully" -ForegroundColor Green
                     Write-Host "📊 Changes committed and pushed to repository" -ForegroundColor Green

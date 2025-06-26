@@ -71,8 +71,8 @@
     "name": "MIT License",
     "url": null
   },
-  "downloads": 4507941,
-  "followers": 784,
+  "downloads": 4517634,
+  "followers": 785,
   "categories": [
     "storage"
   ],
@@ -382,6 +382,11 @@
   "discord_url": null,
   "donation_urls": [
     {
+      "id": "patreon",
+      "platform": "Patreon",
+      "url": "https://www.patreon.com/tom5454"
+    },
+    {
       "id": "github",
       "platform": "Github",
       "url": "https://github.com/sponsors/tom5454"
@@ -390,11 +395,6 @@
       "id": "ko-fi",
       "platform": "Ko-fi",
       "url": "https://ko-fi.com/tom5454"
-    },
-    {
-      "id": "patreon",
-      "platform": "Patreon",
-      "url": "https://www.patreon.com/tom5454"
     }
   ],
   "gallery": [],

@@ -15,7 +15,7 @@
     "changelog": "- Port to 1.21.6\n- fix various cases of invalid file names.\n- dynamically update the Schematic Display Names upon ServerPlacement load.",
     "changelog_url": null,
     "date_published": "2025-06-22T03:59:01.666569Z",
-    "downloads": 704,
+    "downloads": 813,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -64,15 +64,15 @@
     "changelog": "- fix: SchematicMetadata to not depend upon Litematica (Server Side)\n- fix: legacy placements.json file loading (File not found error)\n- feat: add `/syncmatica load` command for loading orphaned syncmatic files.\n- fix & update most File system calls into Java NIO / Path system\n- feat: add `DISPLAY_NAME` Feature to save the file name / display name of the litematic separately.  This fixes various file saving / load problems from before.\n- addresses some of the game exit / re-log network and file loading issues by doing the above changes.\n- fix: luck permissions API version #",
     "changelog_url": null,
     "date_published": "2025-04-29T22:30:28.451492Z",
-    "downloads": 5480,
+    "downloads": 5529,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "6fb3bba91cd397ac0b2a7fc6ca0b6d9f2551e60f",
-          "sha512": "b51ea30aa1f6858703866c02b81fa0ba6007f7ced8bb08af42d990072768c5538d8454c2f0ba87afd6a40966bc9f5af17475742ff8e820eeb02950a527533648"
+          "sha512": "b51ea30aa1f6858703866c02b81fa0ba6007f7ced8bb08af42d990072768c5538d8454c2f0ba87afd6a40966bc9f5af17475742ff8e820eeb02950a527533648",
+          "sha1": "6fb3bba91cd397ac0b2a7fc6ca0b6d9f2551e60f"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/5tVZej2i/syncmatica-fabric-1.21-0.3.14-sakura.5.jar",
         "filename": "syncmatica-fabric-1.21-0.3.14-sakura.5.jar",
@@ -99,15 +99,15 @@
     "changelog": "- fix: SchematicMetadata to not depend upon Litematica (Server Side)\n- fix: legacy placements.json file loading (File not found error)\n- feat: add `/syncmatica load` command for loading orphaned syncmatic files.\n- fix & update most File system calls into Java NIO / Path system\n- feat: add `DISPLAY_NAME` Feature to save the file name / display name of the litematic separately.  This fixes various file saving / load problems from before.\n- addresses some of the game exit / re-log network and file loading issues by doing the above changes.\n",
     "changelog_url": null,
     "date_published": "2025-04-28T23:08:26.545277Z",
-    "downloads": 11105,
+    "downloads": 11241,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "af7a98beac6dd2fdd163a344d3eb1f253e28245c8247bd6805fc218fc363fc52b1427b28b31065214dc5f79c0e30bb2802c9aa2d5064908623714ea0e2dae7fd",
-          "sha1": "2521624b9840ea49b5ca30b5f29e98feea85f81c"
+          "sha1": "2521624b9840ea49b5ca30b5f29e98feea85f81c",
+          "sha512": "af7a98beac6dd2fdd163a344d3eb1f253e28245c8247bd6805fc218fc363fc52b1427b28b31065214dc5f79c0e30bb2802c9aa2d5064908623714ea0e2dae7fd"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/7Ma32dRR/syncmatica-fabric-1.21.5-0.3.14-sakura.4.jar",
         "filename": "syncmatica-fabric-1.21.5-0.3.14-sakura.4.jar",
@@ -134,15 +134,15 @@
     "changelog": "- fix: SchematicMetadata to not depend upon Litematica (Server Side)\n- fix: legacy placements.json file loading (File not found error)\n- feat: add `/syncmatica load` command for loading orphaned syncmatic files.\n- fix & update most File system calls into Java NIO / Path system\n- feat: add `DISPLAY_NAME` Feature to save the file name / display name of the litematic separately.  This fixes various file saving / load problems from before.\n- addresses some of the game exit / re-log network and file loading issues by doing the above changes.\n",
     "changelog_url": null,
     "date_published": "2025-04-28T23:08:06.450436Z",
-    "downloads": 7558,
+    "downloads": 7613,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4a6e9c358d606665f98bcefae72e9cebb782e9651e1781d69b4021a08382e7127e75b4480701380be06a5198e8e2e6bb395e35239c4ab0b9643b1c585321b5b4",
-          "sha1": "045c80bd0879911238711edc57ae18aa1879326f"
+          "sha1": "045c80bd0879911238711edc57ae18aa1879326f",
+          "sha512": "4a6e9c358d606665f98bcefae72e9cebb782e9651e1781d69b4021a08382e7127e75b4480701380be06a5198e8e2e6bb395e35239c4ab0b9643b1c585321b5b4"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/PpQoWWxV/syncmatica-fabric-1.21.4-0.3.14-sakura.4.jar",
         "filename": "syncmatica-fabric-1.21.4-0.3.14-sakura.4.jar",
@@ -205,7 +205,7 @@
     "changelog": "- Adds additional i18n lang files\n- Adds 'Schema ID / Version' handshake and display on Syncmatics GUI like in Litematica's File Browser. (Feature.VERSION)",
     "changelog_url": null,
     "date_published": "2025-04-22T16:19:17.441484Z",
-    "downloads": 2720,
+    "downloads": 2751,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -284,8 +284,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1a6381640669a5fff27ce871cd3a34cc15b9d057",
-          "sha512": "1e2cc625967735027d8e8980213dc1473fab761a0a3ce880683b3e3199b6baf12b2611fd895e3cf5c0bfd8db76d8c6286cee5eb349843682e98211ac0f8fd1de"
+          "sha512": "1e2cc625967735027d8e8980213dc1473fab761a0a3ce880683b3e3199b6baf12b2611fd895e3cf5c0bfd8db76d8c6286cee5eb349843682e98211ac0f8fd1de",
+          "sha1": "1a6381640669a5fff27ce871cd3a34cc15b9d057"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/BFaPijMg/syncmatica-fabric-1.21-0.3.13-sakura.3.jar",
         "filename": "syncmatica-fabric-1.21-0.3.13-sakura.3.jar",
@@ -320,8 +320,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d214e9329854d064902c08d20323e0c8f08473054ee3d2baf43084bb1082ed3cf51ec6400d0845c8adf7017b24e7bd6459b111597c7d493a34a081f8079523e9",
-          "sha1": "39f825c699eeb8413b5adad38c32b4b1bde85101"
+          "sha1": "39f825c699eeb8413b5adad38c32b4b1bde85101",
+          "sha512": "d214e9329854d064902c08d20323e0c8f08473054ee3d2baf43084bb1082ed3cf51ec6400d0845c8adf7017b24e7bd6459b111597c7d493a34a081f8079523e9"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/z2qcVCET/syncmatica-fabric-1.21.3-0.3.12-sakura.11.jar",
         "filename": "syncmatica-fabric-1.21.3-0.3.12-sakura.11.jar",
@@ -349,7 +349,7 @@
     "changelog": "- Porting for 1.21/1.21.1\n- 0.3.12+ changes the format of the network API; please referr to the source code.",
     "changelog_url": null,
     "date_published": "2025-04-22T16:13:28.615821Z",
-    "downloads": 704,
+    "downloads": 709,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -385,7 +385,7 @@
     "changelog": "- Porting for 1.20.6\n- 0.3.12+ changes the format of the network API; please referr to the source code.",
     "changelog_url": null,
     "date_published": "2025-04-22T16:09:52.631667Z",
-    "downloads": 160,
+    "downloads": 161,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -421,15 +421,15 @@
     "changelog": "- Ported for 1.20.4 version",
     "changelog_url": null,
     "date_published": "2025-04-22T16:04:32.382894Z",
-    "downloads": 457,
+    "downloads": 461,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "70cbae56d22dde52af0bc630de8cfe36524eaa0603c8e3aa5c4ee7ca577a1d1d6ee222f3f842759ef3c3518c1f115134f00a5e4a803d55da181f152d43701b96",
-          "sha1": "720f963ab38a04613d4e400312f10acfb4b0fdd8"
+          "sha1": "720f963ab38a04613d4e400312f10acfb4b0fdd8",
+          "sha512": "70cbae56d22dde52af0bc630de8cfe36524eaa0603c8e3aa5c4ee7ca577a1d1d6ee222f3f842759ef3c3518c1f115134f00a5e4a803d55da181f152d43701b96"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/R5GPVXYM/syncmatica-1.20.4-0.3.11.jar",
         "filename": "syncmatica-1.20.4-0.3.11.jar",
@@ -458,7 +458,7 @@
     "changelog": "Hi violetc or s-yh-china has made syncmatica compatible with 1.20.2.\nThis does not change the version number of the master.\n\nMy thanks go out to all the people using this mod and keeping it alive.",
     "changelog_url": null,
     "date_published": "2023-10-26T17:51:01.832226Z",
-    "downloads": 33721,
+    "downloads": 33739,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -494,15 +494,15 @@
     "changelog": "Hey this time around it's just a small change.\nSomeone made some code that sends some packets I did not send before apparently making the network portion of the mod compatible with other mod loaders.\n\nMy thanks go out to @Bunnui for this one.\n\nOnce again 1.18.2 for 1.18.x - 1.19.x\nAnd 1.20.1 for 1.20.x+",
     "changelog_url": null,
     "date_published": "2023-10-22T15:47:50.669261Z",
-    "downloads": 51454,
+    "downloads": 51572,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5e4218b5c3e6eee213bf548788deb71008f5afa53128da6668ff0b34839d76184463fa769829049f1be8bde7ff7a5406da7b520a9a786fd60905b98cf82ee0af",
-          "sha1": "ca7364db94e9dbf5c08f0ec95f7c38b5413932bf"
+          "sha1": "ca7364db94e9dbf5c08f0ec95f7c38b5413932bf",
+          "sha512": "5e4218b5c3e6eee213bf548788deb71008f5afa53128da6668ff0b34839d76184463fa769829049f1be8bde7ff7a5406da7b520a9a786fd60905b98cf82ee0af"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/JxB3gBzc/syncmatica-1.20.1-0.3.11.jar",
         "filename": "syncmatica-1.20.1-0.3.11.jar",
@@ -537,7 +537,7 @@
     "changelog": "Hey this time around it's just a small change.\nSomeone made some code that sends some packets I did not send before apparently making the network portion of the mod compatible with other mod loaders.\n\nMy thanks go out to @Bunnui for this one.\n\nOnce again 1.18.2 for 1.18.x - 1.19.x\nAnd 1.20.1 for 1.20.x+",
     "changelog_url": null,
     "date_published": "2023-10-22T15:46:45.849875Z",
-    "downloads": 6111,
+    "downloads": 6112,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -580,15 +580,15 @@
     "changelog": "v0.3.10 is a quick hotfix for compatability issues with pca and other masa mods.\n\nv0.3.9 better chinese translation adds minor fixes and compatability with 1.20\nThis was mostly done by other people. I want to thank them for their work. A thanks here to kpzip, whitecat346 and s-yh-china. (Especially kpzip <3)\nWe drop compatability with 1.17 and 1.16 since it doesn't compile anymore and I do not feel like fixing that\nIf you  play 1.16 feel free to drop by in the discord to let me know.",
     "changelog_url": null,
     "date_published": "2023-07-28T15:30:46.970162Z",
-    "downloads": 1293,
+    "downloads": 1294,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "40c7a5520e500f5937d2ef3d78ddfda88f4d1ce3",
-          "sha512": "6f63e88d5238e2980480c4d70451e271ced09140cea6be0e849447cc6bb295a1c6f8349e5e434d51f3641a1921e0370d45fba36486e94555a3407adc11724904"
+          "sha512": "6f63e88d5238e2980480c4d70451e271ced09140cea6be0e849447cc6bb295a1c6f8349e5e434d51f3641a1921e0370d45fba36486e94555a3407adc11724904",
+          "sha1": "40c7a5520e500f5937d2ef3d78ddfda88f4d1ce3"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/A0FWRrWP/syncmatica-1.18.2-0.3.10.jar",
         "filename": "syncmatica-1.18.2-0.3.10.jar",
@@ -617,7 +617,7 @@
     "changelog": "v0.3.10 is a quick hotfix for compatability issues with pca and other masa mods.\n\nv0.3.9 better chinese translation adds minor fixes and compatability with 1.20\nThis was mostly done by other people. I want to thank them for their work. A thanks here to kpzip, whitecat346 and s-yh-china. (Especially kpzip <3)\nWe drop compatability with 1.17 and 1.16 since it doesn't compile anymore and I do not feel like fixing that\nIf you  play 1.16 feel free to drop by in the discord to let me know.",
     "changelog_url": null,
     "date_published": "2023-07-28T15:29:41.350869Z",
-    "downloads": 11238,
+    "downloads": 11248,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -660,8 +660,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f1f6c2e83034d04cdd7e5e9e3ea55e2eaa80f14c",
-          "sha512": "632d2e62120ff4250b59847e4347fa5907e14a6186f7e35a8745c4c63602a961738c0bfb6a23d1e7020528b39095a581e7d93237563eaf622e67d34dceca359a"
+          "sha512": "632d2e62120ff4250b59847e4347fa5907e14a6186f7e35a8745c4c63602a961738c0bfb6a23d1e7020528b39095a581e7d93237563eaf622e67d34dceca359a",
+          "sha1": "f1f6c2e83034d04cdd7e5e9e3ea55e2eaa80f14c"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/rlNTRr2e/syncmatica-1.20.1-0.3.9.jar",
         "filename": "syncmatica-1.20.1-0.3.9.jar",
@@ -671,8 +671,8 @@
       },
       {
         "hashes": {
-          "sha1": "cd247052ef9a8e38d4505bd34c1610197e5d472d",
-          "sha512": "ce59517235639cf6961d6c522d8d5d7e3e8dea61b1668bcc95d987ee238641f326807a09a79da6550f836fb63e5466649a4cacb087c6c0ec9517e371ddb61fd2"
+          "sha512": "ce59517235639cf6961d6c522d8d5d7e3e8dea61b1668bcc95d987ee238641f326807a09a79da6550f836fb63e5466649a4cacb087c6c0ec9517e371ddb61fd2",
+          "sha1": "cd247052ef9a8e38d4505bd34c1610197e5d472d"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/rlNTRr2e/syncmatica-1.20.1-0.3.9-sources.jar",
         "filename": "syncmatica-1.20.1-0.3.9-sources.jar",
@@ -699,7 +699,7 @@
     "changelog": "-1.20.1<br>\n-Fixed the version number not showing correctly",
     "changelog_url": null,
     "date_published": "2023-06-13T20:05:01.952231Z",
-    "downloads": 9665,
+    "downloads": 9676,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -741,8 +741,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fb24f41f665f28f4ebb47e6fa87fc81098312a05",
-          "sha512": "91c9f5c824fc467d09750867b51e8c938f26a2c8fdddab08c0b669daf6bf715d1dc975845a0820014bc6c6a64109a93959e13f91da4291e043ce8402934a8489"
+          "sha512": "91c9f5c824fc467d09750867b51e8c938f26a2c8fdddab08c0b669daf6bf715d1dc975845a0820014bc6c6a64109a93959e13f91da4291e043ce8402934a8489",
+          "sha1": "fb24f41f665f28f4ebb47e6fa87fc81098312a05"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/Huy3lywQ/syncmatica-1.20-0.3.9.jar",
         "filename": "syncmatica-1.20-0.3.9.jar",
@@ -777,15 +777,15 @@
     "changelog": "Compatability with Minecraft 1.19.3\n\n- changes the way the mod starts up on the client\n\n- remove a detection for the removal of Screens - this now might cause crashes under very rare conditions. Please look out for any kind of issues regarding this.",
     "changelog_url": null,
     "date_published": "2022-12-21T18:36:47.955838Z",
-    "downloads": 2413,
+    "downloads": 2414,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2ac8d9b8da299443640a4061da9c6e11fd07f490",
-          "sha512": "1a1176fb08ae4fcc4d191d3596a33bcdf1ea9c51bbdc29a8c52dfa5854b7745ba515ea899bc3d91a50dd80409d460c506c01d07fcf9c683a28c5fa95fdc02833"
+          "sha512": "1a1176fb08ae4fcc4d191d3596a33bcdf1ea9c51bbdc29a8c52dfa5854b7745ba515ea899bc3d91a50dd80409d460c506c01d07fcf9c683a28c5fa95fdc02833",
+          "sha1": "2ac8d9b8da299443640a4061da9c6e11fd07f490"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/YCpraFCt/syncmatica-1.16.5-0.3.8.jar",
         "filename": "syncmatica-1.16.5-0.3.8.jar",
@@ -868,8 +868,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "df4b2bbd67729bae287d9d694c138dea899fb0f11f2732f0840282f73fc0e7263c091a7eb9e3a088eb329b6bce9ae93509e4105f8ed2686583dfc4098bbf5888",
-          "sha1": "011432660b0bbe4c541e018b09453e94d8b88049"
+          "sha1": "011432660b0bbe4c541e018b09453e94d8b88049",
+          "sha512": "df4b2bbd67729bae287d9d694c138dea899fb0f11f2732f0840282f73fc0e7263c091a7eb9e3a088eb329b6bce9ae93509e4105f8ed2686583dfc4098bbf5888"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/RJF6VfCP/syncmatica-1.18.2-0.3.7.jar",
         "filename": "syncmatica-1.18.2-0.3.7.jar",
@@ -911,8 +911,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1db20a0c4cdec657299e0d380efce2eafd6c1daf",
-          "sha512": "04716996d0df21db2276d5da057876b45b2f2bd5c170825a77df4b2030d5e7b588d27d6ff2a6236a4b448d3975d1e7c5722077b8a2e376857a16abf3dcdb0a74"
+          "sha512": "04716996d0df21db2276d5da057876b45b2f2bd5c170825a77df4b2030d5e7b588d27d6ff2a6236a4b448d3975d1e7c5722077b8a2e376857a16abf3dcdb0a74",
+          "sha1": "1db20a0c4cdec657299e0d380efce2eafd6c1daf"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/8pHbMo1q/syncmatica-1.16.5-0.3.7.jar",
         "filename": "syncmatica-1.16.5-0.3.7.jar",
@@ -954,8 +954,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b8c92b8ae785086293b2de019ae65a88d5fc1a5c",
-          "sha512": "344f18b81e7728de385343a20a53651c74b9d0de6441818e3ec892649f8f2fc1d388620474b3c9a3106787790efd94d3b4a23fc61c0780e53213846162d95763"
+          "sha512": "344f18b81e7728de385343a20a53651c74b9d0de6441818e3ec892649f8f2fc1d388620474b3c9a3106787790efd94d3b4a23fc61c0780e53213846162d95763",
+          "sha1": "b8c92b8ae785086293b2de019ae65a88d5fc1a5c"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/kItD1b77/syncmatica-1.16.5-0.3.6.jar",
         "filename": "syncmatica-1.16.5-0.3.6.jar",
@@ -1066,15 +1066,15 @@
     "changelog": "# Changes in 1.18.2-0.3.2\n\n-MC 1.18.2",
     "changelog_url": null,
     "date_published": "2022-08-02T18:46:37.179769Z",
-    "downloads": 2151,
+    "downloads": 2153,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c41b31117d1d509d82f0d114218466361553d4bd",
-          "sha512": "0bcc86bd4864fd9bf974761ac3fc7f72de3c0c6a96076337a77c2648dd66401773c9a465bdcfbea3e83658fd659f54770f34a1aec7791685894503c701254076"
+          "sha512": "0bcc86bd4864fd9bf974761ac3fc7f72de3c0c6a96076337a77c2648dd66401773c9a465bdcfbea3e83658fd659f54770f34a1aec7791685894503c701254076",
+          "sha1": "c41b31117d1d509d82f0d114218466361553d4bd"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/0.3.3/Syncmatica-1.18.2-0.3.3.jar",
         "filename": "Syncmatica-1.18.2-0.3.3.jar",
@@ -1109,8 +1109,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a2748c9c08ccd0952bf00623f6f0e9faa18af43394bdc86b63a562681be3f7c4a5c9c825c3eb3d4797faed6c3d334a1a9d23dead1e973b33f76ba3ac89f142fd",
-          "sha1": "47ca7d5aacf9d197a07f780345884b72a656185e"
+          "sha1": "47ca7d5aacf9d197a07f780345884b72a656185e",
+          "sha512": "a2748c9c08ccd0952bf00623f6f0e9faa18af43394bdc86b63a562681be3f7c4a5c9c825c3eb3d4797faed6c3d334a1a9d23dead1e973b33f76ba3ac89f142fd"
         },
         "url": "https://cdn.modrinth.com/data/bfneejKo/versions/0.3.2/Syncmatica-1.16.5-0.3.2.jar",
         "filename": "Syncmatica-1.16.5-0.3.2.jar",

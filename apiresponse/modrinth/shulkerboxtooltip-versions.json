@@ -15,7 +15,7 @@
     "changelog": "5.2.7+1.21.6:\n- Updated to Minecraft 1.21.6. (#211)\n\n",
     "changelog_url": null,
     "date_published": "2025-06-21T11:16:03.395302Z",
-    "downloads": 507,
+    "downloads": 558,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -50,15 +50,15 @@
     "changelog": "5.2.7+1.21.6:\n- Updated to Minecraft 1.21.6. (#211)\n\n",
     "changelog_url": null,
     "date_published": "2025-06-21T11:15:59.916342Z",
-    "downloads": 417,
+    "downloads": 468,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b8762da17a8105904f538310a63c4f75ba7c79051f7b8be55918d7e531ddbcd4bd0745756fd57ccca83742c76f3aef058f7696f8562ad663ff6de823f4753a00",
-          "sha1": "d8a2475dbf75d469fc88e43c4ae40b2f93d570e9"
+          "sha1": "d8a2475dbf75d469fc88e43c4ae40b2f93d570e9",
+          "sha512": "b8762da17a8105904f538310a63c4f75ba7c79051f7b8be55918d7e531ddbcd4bd0745756fd57ccca83742c76f3aef058f7696f8562ad663ff6de823f4753a00"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/5r4f1iPp/shulkerboxtooltip-forge-5.2.7%2B1.21.6.jar",
         "filename": "shulkerboxtooltip-forge-5.2.7+1.21.6.jar",
@@ -85,15 +85,15 @@
     "changelog": "5.2.7+1.21.6:\n- Updated to Minecraft 1.21.6. (#211)\n\n",
     "changelog_url": null,
     "date_published": "2025-06-21T11:15:45.555971Z",
-    "downloads": 19374,
+    "downloads": 21060,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a6fc285bc0968e202c1e89edfa22e27e16f79551",
-          "sha512": "c745a73660a82c2ec9fdf4697132da637ae42919de7044483dbfb642747157675de6af6db1e649edf558befc3f302538c1214c93db94e0475a8322d3c49644db"
+          "sha512": "c745a73660a82c2ec9fdf4697132da637ae42919de7044483dbfb642747157675de6af6db1e649edf558befc3f302538c1214c93db94e0475a8322d3c49644db",
+          "sha1": "a6fc285bc0968e202c1e89edfa22e27e16f79551"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/uKUntdmF/shulkerboxtooltip-fabric-5.2.7%2B1.21.6.jar",
         "filename": "shulkerboxtooltip-fabric-5.2.7+1.21.6.jar",
@@ -133,15 +133,15 @@
     "changelog": "5.2.6+1.21.5:\n- Updated Simplified Chinese localization by Q2297045667 (#198)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-15T00:34:58.365004Z",
-    "downloads": 3935,
+    "downloads": 3964,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "da27766cd4d54eb21219a0e99cafb4972b7b8f58",
-          "sha512": "92dc1964993225095ff59b547b8cf8281fb9834e9136b195856da7f9ee666b622d61fd6dcb75c72a97bdcb958f65a3c9701527bfd094a93cb9caf4d54bb7eb53"
+          "sha512": "92dc1964993225095ff59b547b8cf8281fb9834e9136b195856da7f9ee666b622d61fd6dcb75c72a97bdcb958f65a3c9701527bfd094a93cb9caf4d54bb7eb53",
+          "sha1": "da27766cd4d54eb21219a0e99cafb4972b7b8f58"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/1Q4lYVH6/shulkerboxtooltip-neoforge-5.2.6%2B1.21.5.jar",
         "filename": "shulkerboxtooltip-neoforge-5.2.6+1.21.5.jar",
@@ -168,15 +168,15 @@
     "changelog": "5.2.6+1.21.5:\n- Updated Simplified Chinese localization by Q2297045667 (#198)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-15T00:34:53.283899Z",
-    "downloads": 4610,
+    "downloads": 4638,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "eb0c484da97a99911b12295b2537248042418583",
-          "sha512": "31eee2c70b50519b44b30d7a424852d13d7622acb5d7be1f4d6bedb0d4fcead0772a86bd255fbb8b88b5dcb1f5eb7c705568f319d3cdff29e74e00191c898ae9"
+          "sha512": "31eee2c70b50519b44b30d7a424852d13d7622acb5d7be1f4d6bedb0d4fcead0772a86bd255fbb8b88b5dcb1f5eb7c705568f319d3cdff29e74e00191c898ae9",
+          "sha1": "eb0c484da97a99911b12295b2537248042418583"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/EOgqvBin/shulkerboxtooltip-forge-5.2.6%2B1.21.5.jar",
         "filename": "shulkerboxtooltip-forge-5.2.6+1.21.5.jar",
@@ -203,15 +203,15 @@
     "changelog": "5.2.6+1.21.5:\n- Updated Simplified Chinese localization by Q2297045667 (#198)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-15T00:34:44.210555Z",
-    "downloads": 180640,
+    "downloads": 182675,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2f0eff68c4368c376b01dd9a4b09d5d54a47540aa67b39437227cccfd229ad88609d42b399821ddef0d15c003d07bacd3d90b2709fb701f8fba22c1896c78131",
-          "sha1": "c70478b9d2fd2eefc115b852a07303a4c2c2dfd4"
+          "sha1": "c70478b9d2fd2eefc115b852a07303a4c2c2dfd4",
+          "sha512": "2f0eff68c4368c376b01dd9a4b09d5d54a47540aa67b39437227cccfd229ad88609d42b399821ddef0d15c003d07bacd3d90b2709fb701f8fba22c1896c78131"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/mMHUyoWs/shulkerboxtooltip-fabric-5.2.6%2B1.21.5.jar",
         "filename": "shulkerboxtooltip-fabric-5.2.6+1.21.5.jar",
@@ -251,15 +251,15 @@
     "changelog": "5.2.6+1.21.4:\n- Updated Simplified Chinese localization by Q2297045667 (#198)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-15T00:08:11.325809Z",
-    "downloads": 1197,
+    "downloads": 1213,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fa1a47f00d53e98b18e8c4980b5ec83a84bde3b3758138d84dd409493eb1196613d5307bed232a928fe5fc3f6a75a6ea81472151f04f11621e2b4cb613c3db46",
-          "sha1": "658d47bb0efcfeadc1ccb45a3218d8d68c4bb6ef"
+          "sha1": "658d47bb0efcfeadc1ccb45a3218d8d68c4bb6ef",
+          "sha512": "fa1a47f00d53e98b18e8c4980b5ec83a84bde3b3758138d84dd409493eb1196613d5307bed232a928fe5fc3f6a75a6ea81472151f04f11621e2b4cb613c3db46"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/eGROc5cK/shulkerboxtooltip-neoforge-5.2.6%2B1.21.4.jar",
         "filename": "shulkerboxtooltip-neoforge-5.2.6+1.21.4.jar",
@@ -286,15 +286,15 @@
     "changelog": "5.2.6+1.21.4:\n- Updated Simplified Chinese localization by Q2297045667 (#198)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-15T00:08:03.625898Z",
-    "downloads": 3200,
+    "downloads": 3250,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "df9d93a76421df9b3a2c631758425be1b688e6640edec247b9f767a58db24a2dadf8ca83194865df59cfd283a857951fc1dc5dae01d7a9a0a878fe7ed446c038",
-          "sha1": "6799fbcd8aa3433e9dbb2ea81743d327a7eece2a"
+          "sha1": "6799fbcd8aa3433e9dbb2ea81743d327a7eece2a",
+          "sha512": "df9d93a76421df9b3a2c631758425be1b688e6640edec247b9f767a58db24a2dadf8ca83194865df59cfd283a857951fc1dc5dae01d7a9a0a878fe7ed446c038"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/5h6o8uKT/shulkerboxtooltip-forge-5.2.6%2B1.21.4.jar",
         "filename": "shulkerboxtooltip-forge-5.2.6+1.21.4.jar",
@@ -321,15 +321,15 @@
     "changelog": "5.2.6+1.21.4:\n- Updated Simplified Chinese localization by Q2297045667 (#198)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-15T00:07:52.87267Z",
-    "downloads": 91211,
+    "downloads": 92135,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "63c1b35d853708de0264b088af0325bd8dfa957b",
-          "sha512": "49570eba94cf49829f0680ec45226b48f2394ea0e564d05bf9e336b8ac2c86a5977654bdefb27e7d836112571fa55e0ac9f6d7d2a14c252655ea6e73bed309fe"
+          "sha512": "49570eba94cf49829f0680ec45226b48f2394ea0e564d05bf9e336b8ac2c86a5977654bdefb27e7d836112571fa55e0ac9f6d7d2a14c252655ea6e73bed309fe",
+          "sha1": "63c1b35d853708de0264b088af0325bd8dfa957b"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/zZfEoJB1/shulkerboxtooltip-fabric-5.2.6%2B1.21.4.jar",
         "filename": "shulkerboxtooltip-fabric-5.2.6+1.21.4.jar",
@@ -369,7 +369,7 @@
     "changelog": "5.2.6+1.21.3:\n- Updated turkish localization by Hexasan. (#196)\n- Updated german localization by Lucanoria. (#194)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-14T23:52:09.188523Z",
-    "downloads": 122,
+    "downloads": 123,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -404,15 +404,15 @@
     "changelog": "5.2.6+1.21.3:\n- Updated turkish localization by Hexasan. (#196)\n- Updated german localization by Lucanoria. (#194)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-14T23:52:00.486811Z",
-    "downloads": 212,
+    "downloads": 215,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3c48077d2648418218d10494bd9bc8d7e383a6ae",
-          "sha512": "103614165ef2d16e77249a3dc6a855946220540e031c691e9bf102570028da90c5d6e9452b15fef09b99249c64f08feb56f02e0a83a9bec1eb61eea11cf711ae"
+          "sha512": "103614165ef2d16e77249a3dc6a855946220540e031c691e9bf102570028da90c5d6e9452b15fef09b99249c64f08feb56f02e0a83a9bec1eb61eea11cf711ae",
+          "sha1": "3c48077d2648418218d10494bd9bc8d7e383a6ae"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/Z6h4MBCh/shulkerboxtooltip-forge-5.2.6%2B1.21.3.jar",
         "filename": "shulkerboxtooltip-forge-5.2.6+1.21.3.jar",
@@ -439,7 +439,7 @@
     "changelog": "5.2.6+1.21.3:\n- Updated turkish localization by Hexasan. (#196)\n- Updated german localization by Lucanoria. (#194)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-14T23:51:49.402209Z",
-    "downloads": 5944,
+    "downloads": 5978,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -487,7 +487,7 @@
     "changelog": "5.1.6+1.21.1:\n- Updated turkish localization by Hexasan. (#196)\n- Updated german localization by Lucanoria. (#194)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-14T23:38:02.296475Z",
-    "downloads": 25145,
+    "downloads": 25556,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -522,7 +522,7 @@
     "changelog": "5.1.6+1.21.1:\n- Updated turkish localization by Hexasan. (#196)\n- Updated german localization by Lucanoria. (#194)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-14T23:37:55.160005Z",
-    "downloads": 2204,
+    "downloads": 2235,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -557,7 +557,7 @@
     "changelog": "5.1.6+1.21.1:\n- Updated turkish localization by Hexasan. (#196)\n- Updated german localization by Lucanoria. (#194)\n- Added Spanish (Spain) localization by pilahito (#208)\n- Added Argentine Spanish localization by Texaliuz (#209)\n- Fixed ender chest preview breaking when changing dimensions (#202)\n\n",
     "changelog_url": null,
     "date_published": "2025-05-14T23:37:44.686714Z",
-    "downloads": 149514,
+    "downloads": 152755,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -577,15 +577,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -605,7 +605,7 @@
     "changelog": "5.2.4+1.21.5:\n- Updated to Minecraft 1.21.5. (#203)\n\n",
     "changelog_url": null,
     "date_published": "2025-03-30T01:52:53.566738Z",
-    "downloads": 4306,
+    "downloads": 4312,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -647,8 +647,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "bdab317e74de1e9dce1299a78b0d1cb988dd35b4",
-          "sha512": "84adfb395c4c6b6494291247ec29e95d839ecfe8fd9409dde836bfc144d67990c1a6379006f5e8b100fa8acbd4a2671ccd2edd053b4e72136d3d521c6ae44eb8"
+          "sha512": "84adfb395c4c6b6494291247ec29e95d839ecfe8fd9409dde836bfc144d67990c1a6379006f5e8b100fa8acbd4a2671ccd2edd053b4e72136d3d521c6ae44eb8",
+          "sha1": "bdab317e74de1e9dce1299a78b0d1cb988dd35b4"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/UeH3Pf2d/shulkerboxtooltip-forge-5.2.5%2B1.21.5.jar",
         "filename": "shulkerboxtooltip-forge-5.2.5+1.21.5.jar",
@@ -675,7 +675,7 @@
     "changelog": "5.2.4+1.21.5:\n- Updated to Minecraft 1.21.5. (#203)\n\n",
     "changelog_url": null,
     "date_published": "2025-03-30T01:52:40.230814Z",
-    "downloads": 286945,
+    "downloads": 287339,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -765,8 +765,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1b2a67311d230640b2b6fecf20332831d755601f7cfc138a9fb4ca02188a7582751b50aeab30b38e6a96e771099dbca0ce8f00dd64fdd32a270ff2a36959e1c9",
-          "sha1": "ca528ca2b922d23fa9fa7f25921974832cc2865d"
+          "sha1": "ca528ca2b922d23fa9fa7f25921974832cc2865d",
+          "sha512": "1b2a67311d230640b2b6fecf20332831d755601f7cfc138a9fb4ca02188a7582751b50aeab30b38e6a96e771099dbca0ce8f00dd64fdd32a270ff2a36959e1c9"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/XbaSTy7B/shulkerboxtooltip-forge-5.2.4%2B1.21.4.jar",
         "filename": "shulkerboxtooltip-forge-5.2.4+1.21.4.jar",
@@ -793,15 +793,15 @@
     "changelog": "5.2.4+1.21.4:\n- Updated turkish localization by Hexasan. (#196)\n- Updated german localization by Lucanoria. (#194)\n\n",
     "changelog_url": null,
     "date_published": "2025-02-13T11:20:21.995931Z",
-    "downloads": 312797,
+    "downloads": 313043,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c4e20fd77208c418ce9b5d2b40963f85d3934021a7390c7dd87cf47baef814a8176acfc6ecfb8bdebe1e914f3a92e9febc839a515dac537510ba29e7b0bbea2d",
-          "sha1": "a69e6b5da9157389a94c1275a5ef9f01bbd80f70"
+          "sha1": "a69e6b5da9157389a94c1275a5ef9f01bbd80f70",
+          "sha512": "c4e20fd77208c418ce9b5d2b40963f85d3934021a7390c7dd87cf47baef814a8176acfc6ecfb8bdebe1e914f3a92e9febc839a515dac537510ba29e7b0bbea2d"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/idZLXMFh/shulkerboxtooltip-fabric-5.2.4%2B1.21.4.jar",
         "filename": "shulkerboxtooltip-fabric-5.2.4+1.21.4.jar",
@@ -813,15 +813,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -848,8 +848,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1717b67d31d8b3262a83c607c5e643397e4ee310",
-          "sha512": "6c67e2499ae1bf5ae0b2bc2b344a6cf226cb2e4be599f384fc607bbac27548931e287a28b8f00a62aff495c390b40b693ba03676c54d30353b379f099e3dfcd0"
+          "sha512": "6c67e2499ae1bf5ae0b2bc2b344a6cf226cb2e4be599f384fc607bbac27548931e287a28b8f00a62aff495c390b40b693ba03676c54d30353b379f099e3dfcd0",
+          "sha1": "1717b67d31d8b3262a83c607c5e643397e4ee310"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/X6lCAYF0/shulkerboxtooltip-neoforge-5.2.3%2B1.21.4.jar",
         "filename": "shulkerboxtooltip-neoforge-5.2.3+1.21.4.jar",
@@ -883,8 +883,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "3ade05f51e4ccfbc3ed3b4fa261aecc936937b5f",
-          "sha512": "8adf1ca430f2842b1acf8ce544e8d2b2b6c2654d7dcee51459724b8c60083ca9ea04e771f4f521c2b5a2b5ffd30765e11c964af597dcacdec62fdce9ce524533"
+          "sha512": "8adf1ca430f2842b1acf8ce544e8d2b2b6c2654d7dcee51459724b8c60083ca9ea04e771f4f521c2b5a2b5ffd30765e11c964af597dcacdec62fdce9ce524533",
+          "sha1": "3ade05f51e4ccfbc3ed3b4fa261aecc936937b5f"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/YmoJueMz/shulkerboxtooltip-forge-5.2.3%2B1.21.4.jar",
         "filename": "shulkerboxtooltip-forge-5.2.3+1.21.4.jar",
@@ -911,7 +911,7 @@
     "changelog": "5.2.3+1.21.4:\n- Fixed missing previews for trapped chests (#188)\n- Fixed custom tooltips being ignored on Fabric (#193)\n- Fixed crash on Forge dedicated servers (#189, #192)\n\n",
     "changelog_url": null,
     "date_published": "2025-01-26T23:19:30.920555Z",
-    "downloads": 84926,
+    "downloads": 85033,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -931,15 +931,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -966,8 +966,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "103d0621359699f9c50ae5f8401e12dff6a1e0e6",
-          "sha512": "488cbc7fcdb8864941d3cd78b2e2381131dc3824c027f714e2dac5c2b231b3ea34f73abc92b14ce3b352aa5de4f3cdaed474919dea7109b5e1a156249559d50d"
+          "sha512": "488cbc7fcdb8864941d3cd78b2e2381131dc3824c027f714e2dac5c2b231b3ea34f73abc92b14ce3b352aa5de4f3cdaed474919dea7109b5e1a156249559d50d",
+          "sha1": "103d0621359699f9c50ae5f8401e12dff6a1e0e6"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/USlzzmd5/shulkerboxtooltip-neoforge-5.2.2%2B1.21.3.jar",
         "filename": "shulkerboxtooltip-neoforge-5.2.2+1.21.3.jar",
@@ -1001,8 +1001,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ab0e9fccac009bcdd27a002f63bd9c6cc3a289edc94310e2473892135882bb32a6fa4e11ddab1ba638f81097cb96e5efc0bf1ce80a6133747b4a2be3f795c95a",
-          "sha1": "e2b38efdb541e5c94978a7139c95cf0b21e895dd"
+          "sha1": "e2b38efdb541e5c94978a7139c95cf0b21e895dd",
+          "sha512": "ab0e9fccac009bcdd27a002f63bd9c6cc3a289edc94310e2473892135882bb32a6fa4e11ddab1ba638f81097cb96e5efc0bf1ce80a6133747b4a2be3f795c95a"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/q6ZtptFW/shulkerboxtooltip-forge-5.2.2%2B1.21.3.jar",
         "filename": "shulkerboxtooltip-forge-5.2.2+1.21.3.jar",
@@ -1029,7 +1029,7 @@
     "changelog": "5.2.2+1.21.3:\n- Fixed missing previews for trapped chests (#188)\n- Fixed custom tooltips being ignored on Fabric (#193)\n- Fixed crash on Forge dedicated servers (#189, #192)\n\n",
     "changelog_url": null,
     "date_published": "2025-01-26T22:58:39.037471Z",
-    "downloads": 26255,
+    "downloads": 26263,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1077,15 +1077,15 @@
     "changelog": "5.1.3+1.21.1:\n- Fixed plugin loading errors in single-player\n- Fixed crash on Forge dedicated servers (#189, #192)\n- Fixed missing previews for trapped chests (#188)\n\n",
     "changelog_url": null,
     "date_published": "2025-01-26T22:23:26.338658Z",
-    "downloads": 35347,
+    "downloads": 35399,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "19a3d6b1a631e76ef2bbd99b1f2d44fa6b4d7d47fac2079aca57af59246bea7a3d9ea9e1a356afba53a578a1502082032b58feb398955918597b67f93b8d64d8",
-          "sha1": "5166fe6ba7807f1b164f2a06f982c6c902837aa9"
+          "sha1": "5166fe6ba7807f1b164f2a06f982c6c902837aa9",
+          "sha512": "19a3d6b1a631e76ef2bbd99b1f2d44fa6b4d7d47fac2079aca57af59246bea7a3d9ea9e1a356afba53a578a1502082032b58feb398955918597b67f93b8d64d8"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/eSircrMQ/shulkerboxtooltip-neoforge-5.1.3%2B1.21.1.jar",
         "filename": "shulkerboxtooltip-neoforge-5.1.3+1.21.1.jar",
@@ -1119,8 +1119,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "60c6e29dfed9ea21a6591d30824dcd919d6486ab362df066bebde70e686d4287ee39757fb541d68e3f355f07b8bba7ddcad63f34d706038e297b9cb4890a7476",
-          "sha1": "75c96af7b51750e63ca806d84ecadc392eb6fe70"
+          "sha1": "75c96af7b51750e63ca806d84ecadc392eb6fe70",
+          "sha512": "60c6e29dfed9ea21a6591d30824dcd919d6486ab362df066bebde70e686d4287ee39757fb541d68e3f355f07b8bba7ddcad63f34d706038e297b9cb4890a7476"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/t8GactqX/shulkerboxtooltip-forge-5.1.3%2B1.21.1.jar",
         "filename": "shulkerboxtooltip-forge-5.1.3+1.21.1.jar",
@@ -1147,7 +1147,7 @@
     "changelog": "5.1.3+1.21.1:\n- Fixed plugin loading errors in single-player\n- Fixed crash on Forge dedicated servers (#189, #192)\n- Fixed missing previews for trapped chests (#188)\n\n",
     "changelog_url": null,
     "date_published": "2025-01-26T22:23:10.654211Z",
-    "downloads": 598274,
+    "downloads": 600097,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1167,15 +1167,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -1195,15 +1195,15 @@
     "changelog": "5.2.2+1.21.4:\n- Updated to Minecraft 1.21.4.",
     "changelog_url": null,
     "date_published": "2024-12-06T11:17:51.536833Z",
-    "downloads": 4204,
+    "downloads": 4210,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "447aae32e56d5c0d09f57490e89cd33187373f1a0ae851c767c6875823d96ef23b2e1b89f6442c39000e9397476da6d143c155935d60a49d68ed294dc4c10724",
-          "sha1": "7f4d8149a9acd3bf1f5adbb5d92651f5de93eee9"
+          "sha1": "7f4d8149a9acd3bf1f5adbb5d92651f5de93eee9",
+          "sha512": "447aae32e56d5c0d09f57490e89cd33187373f1a0ae851c767c6875823d96ef23b2e1b89f6442c39000e9397476da6d143c155935d60a49d68ed294dc4c10724"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/U6EZBMci/shulkerboxtooltip-neoforge-5.2.2%2B1.21.4.jar",
         "filename": "shulkerboxtooltip-neoforge-5.2.2+1.21.4.jar",
@@ -1265,15 +1265,15 @@
     "changelog": "5.2.2+1.21.4:\n- Updated to Minecraft 1.21.4.\n\n",
     "changelog_url": null,
     "date_published": "2024-12-06T09:29:20.417921Z",
-    "downloads": 187890,
+    "downloads": 187958,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2410323a328f44d4ea29d3f9de8b364d245b2a60",
-          "sha512": "4fd87cafd10d6eff9c93193f8e73f113254fc88c98af3803c7707d07ba7632a083f9529174e211d78c6a6c873ae81e60bf501ab0889a753589f38c5270451a30"
+          "sha512": "4fd87cafd10d6eff9c93193f8e73f113254fc88c98af3803c7707d07ba7632a083f9529174e211d78c6a6c873ae81e60bf501ab0889a753589f38c5270451a30",
+          "sha1": "2410323a328f44d4ea29d3f9de8b364d245b2a60"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/L4CUJgGW/shulkerboxtooltip-fabric-5.2.2%2B1.21.4.jar",
         "filename": "shulkerboxtooltip-fabric-5.2.2+1.21.4.jar",
@@ -1320,8 +1320,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "dc90fa48692e82b92f3ad12096687c1efbb11b37",
-          "sha512": "99ed9073800116ea451eaede7ffbee7dcf73c5232b5189a9821c945b24f498e21a01eee2a390fca21685a203660487b7f3d499cfde6fe8c0aa1432766828ca20"
+          "sha512": "99ed9073800116ea451eaede7ffbee7dcf73c5232b5189a9821c945b24f498e21a01eee2a390fca21685a203660487b7f3d499cfde6fe8c0aa1432766828ca20",
+          "sha1": "dc90fa48692e82b92f3ad12096687c1efbb11b37"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/8N0RZC5x/shulkerboxtooltip-neoforge-5.2.1%2B1.21.3.jar",
         "filename": "shulkerboxtooltip-neoforge-5.2.1+1.21.3.jar",
@@ -1355,8 +1355,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4cd1cdbbe0a38bd64607eaa0e6c4544b38c04e84bf7f62dc5fb405468f076499b7c5e9fd746208a422e9a9730b5783d1111d42802f648e7f8ce6c5b0ba6a8c3e",
-          "sha1": "7950a0d7e93ab9686ec4dbdd236fd4c55c6b6014"
+          "sha1": "7950a0d7e93ab9686ec4dbdd236fd4c55c6b6014",
+          "sha512": "4cd1cdbbe0a38bd64607eaa0e6c4544b38c04e84bf7f62dc5fb405468f076499b7c5e9fd746208a422e9a9730b5783d1111d42802f648e7f8ce6c5b0ba6a8c3e"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/voA9EmUH/shulkerboxtooltip-forge-5.2.1%2B1.21.3.jar",
         "filename": "shulkerboxtooltip-forge-5.2.1+1.21.3.jar",
@@ -1383,15 +1383,15 @@
     "changelog": "5.2.1+1.21.3:\n- Fixed crashes on dedicated servers when player with the mod installed joined.\n(#184) (#186)\n\n",
     "changelog_url": null,
     "date_published": "2024-11-21T10:33:37.55603Z",
-    "downloads": 62952,
+    "downloads": 62956,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ffa3ba172bfc10aa51f189c5f63f672199172274bdbc55b5699b189bcf1f222fef1831b9cf9d4d8e7346aafdf70f5e5fd08121949aea5fa35842d961fb22d5cb",
-          "sha1": "c1c63878b4c7f45001273d6a7583244b0fc89a1b"
+          "sha1": "c1c63878b4c7f45001273d6a7583244b0fc89a1b",
+          "sha512": "ffa3ba172bfc10aa51f189c5f63f672199172274bdbc55b5699b189bcf1f222fef1831b9cf9d4d8e7346aafdf70f5e5fd08121949aea5fa35842d961fb22d5cb"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/PphJdojc/shulkerboxtooltip-fabric-5.2.1%2B1.21.3.jar",
         "filename": "shulkerboxtooltip-fabric-5.2.1+1.21.3.jar",
@@ -1501,7 +1501,7 @@
     "changelog": "5.2.0+1.21.3:\n- Updated to Minecraft 1.21.3.\n- Updated Vanilla theme to match new bundle preview style.\n- Fix rare errors on loading world in single-player due to integrated server and client trying to initialize plugins at the same time.\n- API: Added PreviewRenderer#getCompactMaxRowSize().\n- API: Added viewport width/height parameters to PreviewRenderer#draw(), deprecated old method.\n\n",
     "changelog_url": null,
     "date_published": "2024-11-01T22:55:23.055068Z",
-    "downloads": 35897,
+    "downloads": 35901,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1549,15 +1549,15 @@
     "changelog": "5.1.2+1.21.1:\n- Added Traditional Chinese localization by notlin4. (#177)\n\n",
     "changelog_url": null,
     "date_published": "2024-10-31T10:07:08.067847Z",
-    "downloads": 97076,
+    "downloads": 97103,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ae45e8bc2f0e5ce2fc6869eabfcadf5bd4a284dd2a095b901b2c29e6131f4adbbf3ba21fd8946a3d06e9f44269d6108a915677ab7000394d10f4bbe635e05f68",
-          "sha1": "5693ad113f43ec427a90be6ecd5a15d455e92fea"
+          "sha1": "5693ad113f43ec427a90be6ecd5a15d455e92fea",
+          "sha512": "ae45e8bc2f0e5ce2fc6869eabfcadf5bd4a284dd2a095b901b2c29e6131f4adbbf3ba21fd8946a3d06e9f44269d6108a915677ab7000394d10f4bbe635e05f68"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/4oxkavl4/shulkerboxtooltip-neoforge-5.1.2%2B1.21.1.jar",
         "filename": "shulkerboxtooltip-neoforge-5.1.2+1.21.1.jar",
@@ -1584,15 +1584,15 @@
     "changelog": "5.1.2+1.21.1:\n- Added Traditional Chinese localization by notlin4. (#177)\n\n",
     "changelog_url": null,
     "date_published": "2024-10-31T10:06:58.175234Z",
-    "downloads": 4347,
+    "downloads": 4348,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fad7fefc8956cdf5a9ffa1a2b7d55e573326673e9cc13588018d6c0c4a6a5fbc85b79212cc188400b94483530a5ebed0b6e31ae24f5d752b2b76df42232553ae",
-          "sha1": "fc552384c929d57282c4e0d383c642b91626d297"
+          "sha1": "fc552384c929d57282c4e0d383c642b91626d297",
+          "sha512": "fad7fefc8956cdf5a9ffa1a2b7d55e573326673e9cc13588018d6c0c4a6a5fbc85b79212cc188400b94483530a5ebed0b6e31ae24f5d752b2b76df42232553ae"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/u82CgsAx/shulkerboxtooltip-forge-5.1.2%2B1.21.1.jar",
         "filename": "shulkerboxtooltip-forge-5.1.2+1.21.1.jar",
@@ -1619,15 +1619,15 @@
     "changelog": "5.1.2+1.21.1:\n- Added Traditional Chinese localization by notlin4. (#177)\n\n",
     "changelog_url": null,
     "date_published": "2024-10-31T10:06:48.24308Z",
-    "downloads": 1076901,
+    "downloads": 1077173,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "54bc5f1a6b55bbca16e301442f523fa1cfc7c9bb",
-          "sha512": "0248bbf086361629275285c9ec309da10b45c9338ae038317d63180e1aed14004b98216a4f9b98e5d83d5c9510b8b29071a6425769b415cf0df66da12c0ebb5f"
+          "sha512": "0248bbf086361629275285c9ec309da10b45c9338ae038317d63180e1aed14004b98216a4f9b98e5d83d5c9510b8b29071a6425769b415cf0df66da12c0ebb5f",
+          "sha1": "54bc5f1a6b55bbca16e301442f523fa1cfc7c9bb"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/RK2ApgKw/shulkerboxtooltip-fabric-5.1.2%2B1.21.1.jar",
         "filename": "shulkerboxtooltip-fabric-5.1.2+1.21.1.jar",
@@ -1674,8 +1674,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c21e023ddfda501b71d75f40ab043ac7c49fd4b6",
-          "sha512": "b3fb6bf15bf778c6a6ab238420601e4e5e045e84f7ac944986a7a6ba85756cea585ef01bb5b5ea0b38d7186b30b47ce6da284eee208ba4ff475bfd2a463791d2"
+          "sha512": "b3fb6bf15bf778c6a6ab238420601e4e5e045e84f7ac944986a7a6ba85756cea585ef01bb5b5ea0b38d7186b30b47ce6da284eee208ba4ff475bfd2a463791d2",
+          "sha1": "c21e023ddfda501b71d75f40ab043ac7c49fd4b6"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/2ooPKbER/shulkerboxtooltip-neoforge-4.2.1%2B1.20.6.jar",
         "filename": "shulkerboxtooltip-neoforge-4.2.1+1.20.6.jar",
@@ -1702,15 +1702,15 @@
     "changelog": "4.2.1+1.20.2:\n- Updated Traditional Chinese localization by notlin4. (#177)\n\n",
     "changelog_url": null,
     "date_published": "2024-10-31T10:00:51.675907Z",
-    "downloads": 1160,
+    "downloads": 1166,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "024b32a07c387e9d97275717abbf2e8ec2972dcd",
-          "sha512": "01abedfce8d9759bdfc2fefc9b36957a7b3570abc04e647ac3ab230a0ebd414bf6f87cd9fee07af81d632cdf16610c865a17bd413baa635c097001810c59d9bd"
+          "sha512": "01abedfce8d9759bdfc2fefc9b36957a7b3570abc04e647ac3ab230a0ebd414bf6f87cd9fee07af81d632cdf16610c865a17bd413baa635c097001810c59d9bd",
+          "sha1": "024b32a07c387e9d97275717abbf2e8ec2972dcd"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/qJxhVsaz/shulkerboxtooltip-forge-4.2.1%2B1.20.6.jar",
         "filename": "shulkerboxtooltip-forge-4.2.1+1.20.6.jar",
@@ -1737,7 +1737,7 @@
     "changelog": "5.1.2+1.21:\n- Updated Traditional Chinese localization by notlin4. (#134)\n\n",
     "changelog_url": null,
     "date_published": "2024-10-31T10:00:46.044762Z",
-    "downloads": 2344,
+    "downloads": 2350,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1772,15 +1772,15 @@
     "changelog": "4.2.1+1.20.2:\n- Updated Traditional Chinese localization by notlin4. (#177)\n\n",
     "changelog_url": null,
     "date_published": "2024-10-31T10:00:41.735347Z",
-    "downloads": 21697,
+    "downloads": 21733,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e5fe8b632b63979f9b8e1a8dd3c34e98fe7b49d2",
-          "sha512": "cb55d78980e32bc4b060505a16c812219c454d63195bac99295e4e8fd6ac69830ab6fe58d9f4cc45c6266f10c47e7f9e085c8e6296ffdaea1127f03d6f773c1a"
+          "sha512": "cb55d78980e32bc4b060505a16c812219c454d63195bac99295e4e8fd6ac69830ab6fe58d9f4cc45c6266f10c47e7f9e085c8e6296ffdaea1127f03d6f773c1a",
+          "sha1": "e5fe8b632b63979f9b8e1a8dd3c34e98fe7b49d2"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/N59VN1ZQ/shulkerboxtooltip-fabric-4.2.1%2B1.20.6.jar",
         "filename": "shulkerboxtooltip-fabric-4.2.1+1.20.6.jar",
@@ -1792,15 +1792,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -1820,15 +1820,15 @@
     "changelog": "5.1.2+1.21:\n- Updated Traditional Chinese localization by notlin4. (#134)\n\n",
     "changelog_url": null,
     "date_published": "2024-10-31T10:00:39.215774Z",
-    "downloads": 5859,
+    "downloads": 5871,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "30982f99de7de351e5cc26060b56a9ebb0fb1757",
-          "sha512": "996382c3e687454e8017a15e79f7fa30d21068a86c0ee4b3f633333e0e87afd1cd7b2180af9edc7e9c73c7459ecea1b210358d4a12246d95b0338737e1f5090d"
+          "sha512": "996382c3e687454e8017a15e79f7fa30d21068a86c0ee4b3f633333e0e87afd1cd7b2180af9edc7e9c73c7459ecea1b210358d4a12246d95b0338737e1f5090d",
+          "sha1": "30982f99de7de351e5cc26060b56a9ebb0fb1757"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/bqu9WKPN/shulkerboxtooltip-forge-5.1.2%2B1.21.jar",
         "filename": "shulkerboxtooltip-forge-5.1.2+1.21.jar",
@@ -1855,7 +1855,7 @@
     "changelog": "5.1.2+1.21:\n- Updated Traditional Chinese localization by notlin4. (#134)\n\n",
     "changelog_url": null,
     "date_published": "2024-10-31T10:00:29.610479Z",
-    "downloads": 316620,
+    "downloads": 317186,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1903,7 +1903,7 @@
     "changelog": "5.1.1+1.21.1:\n- Added Japanese localization by yumunet. (#174)\n\n",
     "changelog_url": null,
     "date_published": "2024-09-13T22:46:30.856701Z",
-    "downloads": 10247,
+    "downloads": 10252,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1945,8 +1945,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "054a8e8684dad946e63c7fd7c234c6aacda48718",
-          "sha512": "5f09117bf2e94a5e50d6bdbf2dce93bfc3363db2ee01a950db9a0ff551bd89e21eb941fa888dda7924ce6a885c7d28e3fb431c32c02d38d2fec9dd62f3c25baf"
+          "sha512": "5f09117bf2e94a5e50d6bdbf2dce93bfc3363db2ee01a950db9a0ff551bd89e21eb941fa888dda7924ce6a885c7d28e3fb431c32c02d38d2fec9dd62f3c25baf",
+          "sha1": "054a8e8684dad946e63c7fd7c234c6aacda48718"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/Zi1vyNFj/shulkerboxtooltip-forge-5.1.1%2B1.21.1.jar",
         "filename": "shulkerboxtooltip-forge-5.1.1+1.21.1.jar",
@@ -1980,8 +1980,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "53b82ce866c5dd257236d47d38cb46f54e2360ea",
-          "sha512": "8af00d52349727fe22ac01f46c759b4b314639683688f5fdcdf1b5e5b384cef4a09d1343329844ab425b70151d45e7a301e3831c19c725f5746a63de10a5cf1b"
+          "sha512": "8af00d52349727fe22ac01f46c759b4b314639683688f5fdcdf1b5e5b384cef4a09d1343329844ab425b70151d45e7a301e3831c19c725f5746a63de10a5cf1b",
+          "sha1": "53b82ce866c5dd257236d47d38cb46f54e2360ea"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/o6bo80SX/shulkerboxtooltip-neoforge-5.1.1%2B1.21.jar",
         "filename": "shulkerboxtooltip-neoforge-5.1.1+1.21.jar",
@@ -2008,7 +2008,7 @@
     "changelog": "5.1.1+1.21.1:\n- Added Japanese localization by yumunet. (#174)\n\n",
     "changelog_url": null,
     "date_published": "2024-09-13T22:46:16.284728Z",
-    "downloads": 153373,
+    "downloads": 153465,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2056,15 +2056,15 @@
     "changelog": "5.1.1+1.21:\n- Added Japanese localization by yumunet. (#174)\n- Fixed crash when opening the config menu on NeoForge (#173)\n- Re-enable Forge support\n- Add data-driven preview overrides for map makers and servers, see https://github.com/MisterPeModder/ShulkerBoxTooltip/wiki/Data-Driven-Previews for more information.\n\n",
     "changelog_url": null,
     "date_published": "2024-09-13T22:46:13.917682Z",
-    "downloads": 1844,
+    "downloads": 1845,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "7102ae6fa04944eb818665e680a43a769323900d",
-          "sha512": "b222e8abbe046ad8f17e9947f6f256e1f69d1b2a8d4585a01af3aabf12321c55b53ffb3e379e738ed18e621025fe8c52772e56f9370386abf7c948a1a83f8c4a"
+          "sha512": "b222e8abbe046ad8f17e9947f6f256e1f69d1b2a8d4585a01af3aabf12321c55b53ffb3e379e738ed18e621025fe8c52772e56f9370386abf7c948a1a83f8c4a",
+          "sha1": "7102ae6fa04944eb818665e680a43a769323900d"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/OUoLU0Qn/shulkerboxtooltip-forge-5.1.1%2B1.21.jar",
         "filename": "shulkerboxtooltip-forge-5.1.1+1.21.jar",
@@ -2091,15 +2091,15 @@
     "changelog": "5.1.1+1.21:\n- Added Japanese localization by yumunet. (#174)\n- Fixed crash when opening the config menu on NeoForge (#173)\n- Re-enable Forge support\n- Add data-driven preview overrides for map makers and servers, see https://github.com/MisterPeModder/ShulkerBoxTooltip/wiki/Data-Driven-Previews for more information.\n\n",
     "changelog_url": null,
     "date_published": "2024-09-13T22:46:06.536459Z",
-    "downloads": 106196,
+    "downloads": 106226,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "247bb353b87e4c185a64eee931240a9967691d33",
-          "sha512": "dcd6080e68e1674a6d3f8b89cfe7438ee72a2eb3c8fa81fc401df2dbb4c99d93185c3305100ccd4b305518ea64c1bc27ebc59265caf9bb4f531fd8d3159e174b"
+          "sha512": "dcd6080e68e1674a6d3f8b89cfe7438ee72a2eb3c8fa81fc401df2dbb4c99d93185c3305100ccd4b305518ea64c1bc27ebc59265caf9bb4f531fd8d3159e174b",
+          "sha1": "247bb353b87e4c185a64eee931240a9967691d33"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/QjnJzVCb/shulkerboxtooltip-fabric-5.1.1%2B1.21.jar",
         "filename": "shulkerboxtooltip-fabric-5.1.1+1.21.jar",
@@ -2111,15 +2111,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -2146,8 +2146,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f404acc842cdc93ad996e2e6652e44e7c7bea754e657aac9338b864c02598e115c626ae5c5172eeb78d7db5ee90ef4ae1675eec6db54bbb8dc74af9bc229c144",
-          "sha1": "eef4795c6dde303395bc83933602fdce4fa7504d"
+          "sha1": "eef4795c6dde303395bc83933602fdce4fa7504d",
+          "sha512": "f404acc842cdc93ad996e2e6652e44e7c7bea754e657aac9338b864c02598e115c626ae5c5172eeb78d7db5ee90ef4ae1675eec6db54bbb8dc74af9bc229c144"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/mlREBUPe/shulkerboxtooltip-neoforge-5.1.1%2B1.21.jar",
         "filename": "shulkerboxtooltip-neoforge-5.1.1+1.21.jar",
@@ -2181,8 +2181,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "99025c8ff62d91a83b057005304ea43e02c000313d7490f85f8b4aaf6a6d80ceab7264129256908487531d786a0397e05ed4e632c0f72bed8064b300e6707d7a",
-          "sha1": "3dc154fd9c9742311b86582328140c54dc2e6ece"
+          "sha1": "3dc154fd9c9742311b86582328140c54dc2e6ece",
+          "sha512": "99025c8ff62d91a83b057005304ea43e02c000313d7490f85f8b4aaf6a6d80ceab7264129256908487531d786a0397e05ed4e632c0f72bed8064b300e6707d7a"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/r4YRgxdC/shulkerboxtooltip-forge-5.1.1%2B1.21.jar",
         "filename": "shulkerboxtooltip-forge-5.1.1+1.21.jar",
@@ -2216,8 +2216,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7c4df997762ad5dfa0860c74ddbe99b3d05b5ade",
-          "sha512": "1bc3bdbba76366030513d357de59ce6c0147080d50b0052e87dd580c954417ae4e33edb1f74194b7f812e79ebf83591e3b660f41cf71b7a83c801abe2626db0f"
+          "sha512": "1bc3bdbba76366030513d357de59ce6c0147080d50b0052e87dd580c954417ae4e33edb1f74194b7f812e79ebf83591e3b660f41cf71b7a83c801abe2626db0f",
+          "sha1": "7c4df997762ad5dfa0860c74ddbe99b3d05b5ade"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/kOYtUNG8/shulkerboxtooltip-fabric-5.1.1%2B1.21.jar",
         "filename": "shulkerboxtooltip-fabric-5.1.1+1.21.jar",
@@ -2257,7 +2257,7 @@
     "changelog": "5.1.0+1.21.1:\n- Updated to Minecraft 1.21.1 (#170)\n- Re-enable Forge support\n- Add data-driven preview overrides for map makers and servers, see https://github.com/MisterPeModder/ShulkerBoxTooltip/wiki/Data-Driven-Previews for more information.\n\n",
     "changelog_url": null,
     "date_published": "2024-08-18T09:30:46.461945Z",
-    "downloads": 1969,
+    "downloads": 1970,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2292,15 +2292,15 @@
     "changelog": "5.1.0+1.21.1:\n- Updated to Minecraft 1.21.1 (#170)\n- Re-enable Forge support\n- Add data-driven preview overrides for map makers and servers, see https://github.com/MisterPeModder/ShulkerBoxTooltip/wiki/Data-Driven-Previews for more information.\n\n",
     "changelog_url": null,
     "date_published": "2024-08-18T09:30:38.629626Z",
-    "downloads": 2071,
+    "downloads": 2073,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c5e04b604d069d7f85f919fe8a6ee4bb4dddeaac",
-          "sha512": "ac71e7db1a07001b6fab2191a08e42e3496b39b4bd6792e33527f5a2632dc5bbcfc3f9d5934ef798cd8cfc8df4cebae60c2c40afc9d25bd695e7c468d498a405"
+          "sha512": "ac71e7db1a07001b6fab2191a08e42e3496b39b4bd6792e33527f5a2632dc5bbcfc3f9d5934ef798cd8cfc8df4cebae60c2c40afc9d25bd695e7c468d498a405",
+          "sha1": "c5e04b604d069d7f85f919fe8a6ee4bb4dddeaac"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/4c1CcXsx/shulkerboxtooltip-forge-5.1.0%2B1.21.1.jar",
         "filename": "shulkerboxtooltip-forge-5.1.0+1.21.1.jar",
@@ -2327,15 +2327,15 @@
     "changelog": "5.1.0+1.21.1:\n- Updated to Minecraft 1.21.1 (#170)\n- Re-enable Forge support\n- Add data-driven preview overrides for map makers and servers, see https://github.com/MisterPeModder/ShulkerBoxTooltip/wiki/Data-Driven-Previews for more information.\n\n",
     "changelog_url": null,
     "date_published": "2024-08-18T09:30:30.452163Z",
-    "downloads": 56242,
+    "downloads": 56248,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "48b310b1d2c0b237646dcc6a6bde497024b9c963c4f9a5babe442647c7f8472f9ad830c242d2fd44285b04a2ae52d36eba78eabd31f2eadda8c4425c54b4b2d0",
-          "sha1": "ad7c27a90a3eba8df7b74622e15297c9a1aaf958"
+          "sha1": "ad7c27a90a3eba8df7b74622e15297c9a1aaf958",
+          "sha512": "48b310b1d2c0b237646dcc6a6bde497024b9c963c4f9a5babe442647c7f8472f9ad830c242d2fd44285b04a2ae52d36eba78eabd31f2eadda8c4425c54b4b2d0"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/O0038fY0/shulkerboxtooltip-fabric-5.1.0%2B1.21.1.jar",
         "filename": "shulkerboxtooltip-fabric-5.1.0+1.21.1.jar",
@@ -2445,7 +2445,7 @@
     "changelog": "4.2.0+1.20.6:\n- Re-enable Forge support\n- Add data-driven preview overrides for map makers and servers, see https://github.com/MisterPeModder/ShulkerBoxTooltip/wiki/Data-Driven-Previews for more information.\n\n",
     "changelog_url": null,
     "date_published": "2024-08-18T00:42:33.409097Z",
-    "downloads": 11926,
+    "downloads": 11928,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2493,7 +2493,7 @@
     "changelog": "3.4.5+1.19.4:\n- Added highlight for the currently selected slot in the preview window.\n- Internal: Switch to official Mojang mappings.\n\n",
     "changelog_url": null,
     "date_published": "2024-07-23T19:43:02.561724Z",
-    "downloads": 2996,
+    "downloads": 2998,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2535,15 +2535,15 @@
     "changelog": "3.4.5+1.19.4:\n- Added highlight for the currently selected slot in the preview window.\n- Internal: Switch to official Mojang mappings.\n\n",
     "changelog_url": null,
     "date_published": "2024-07-23T19:42:56.416458Z",
-    "downloads": 43674,
+    "downloads": 43724,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "7a426ef6a22b5832eab7f2bd17291a4f2ae3cd69",
-          "sha512": "6f9ecdb6fb0929c8c24f3aedbc46a79343ba5d8fddd26d14228b31e2ec7d2a0f4013c8e8727dfb2fd9caa508df9964786d2f4f98179bc880f58f73f7bf6c9fa7"
+          "sha512": "6f9ecdb6fb0929c8c24f3aedbc46a79343ba5d8fddd26d14228b31e2ec7d2a0f4013c8e8727dfb2fd9caa508df9964786d2f4f98179bc880f58f73f7bf6c9fa7",
+          "sha1": "7a426ef6a22b5832eab7f2bd17291a4f2ae3cd69"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/FhvqasQq/shulkerboxtooltip-fabric-3.4.5%2B1.19.4.jar",
         "filename": "shulkerboxtooltip-fabric-3.4.5+1.19.4.jar",
@@ -2561,15 +2561,15 @@
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "9s6osm5g",
         "file_name": null,
         "dependency_type": "embedded"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -2596,8 +2596,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "3edd2f6c20a3532de65d7ea5973ffd4cf7a78c9d",
-          "sha512": "e7c12037906c749fa12a4fd7a99340d66413e71c51a0c5b5b4b0095842e2d011ea01644e3efc6527e66ed788033bcc7f03f389001363d343605641fed042e3ea"
+          "sha512": "e7c12037906c749fa12a4fd7a99340d66413e71c51a0c5b5b4b0095842e2d011ea01644e3efc6527e66ed788033bcc7f03f389001363d343605641fed042e3ea",
+          "sha1": "3edd2f6c20a3532de65d7ea5973ffd4cf7a78c9d"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/PNfXTL9Z/shulkerboxtooltip-neoforge-5.0.4%2B1.21.jar",
         "filename": "shulkerboxtooltip-neoforge-5.0.4+1.21.jar",
@@ -2624,7 +2624,7 @@
     "changelog": "5.0.4+1.20.6:\n- Fix crash on dedicated Quilt servers. (#169)\n\n",
     "changelog_url": null,
     "date_published": "2024-07-15T19:36:42.762356Z",
-    "downloads": 473894,
+    "downloads": 474037,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2672,7 +2672,7 @@
     "changelog": "3.4.6+1.18.2:\n- Internal: Switch to official Mojang mappings.\n\n",
     "changelog_url": null,
     "date_published": "2024-07-10T01:04:24.136743Z",
-    "downloads": 9568,
+    "downloads": 9586,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2714,7 +2714,7 @@
     "changelog": "3.4.6+1.18.2:\n- Internal: Switch to official Mojang mappings.\n\n",
     "changelog_url": null,
     "date_published": "2024-07-10T01:04:18.562833Z",
-    "downloads": 33460,
+    "downloads": 33491,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2734,15 +2734,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "9s6osm5g",
-        "file_name": null,
-        "dependency_type": "embedded"
-      },
-      {
-        "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "embedded"
       },
       {
         "version_id": null,
@@ -2775,8 +2775,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "74804b3dba590a2dfaa672d1bf3d808a6f77ef02",
-          "sha512": "54237b35e1fee2ef5483b3ff447e465a3c419519a5dff5dfc23cf767f982c57ab2fc84d2c19b41a18ffc2737f23dc1522eadd8ab0c49144e738396c361fed390"
+          "sha512": "54237b35e1fee2ef5483b3ff447e465a3c419519a5dff5dfc23cf767f982c57ab2fc84d2c19b41a18ffc2737f23dc1522eadd8ab0c49144e738396c361fed390",
+          "sha1": "74804b3dba590a2dfaa672d1bf3d808a6f77ef02"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/uJWnsQMt/shulkerboxtooltip-forge-3.4.5%2B1.18.2.jar",
         "filename": "shulkerboxtooltip-forge-3.4.5+1.18.2.jar",
@@ -2817,8 +2817,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9e678e01529dd4f69adbb6c2e4adf749de9c8daf",
-          "sha512": "1cfc56b25a8b48a61b84ec66ff327a6310b46658fcc7ce0736907508ae9f18d2f5416379099e8e6acc5d9b4740af7dc0fe6d20247dc56e8412053d840a88d529"
+          "sha512": "1cfc56b25a8b48a61b84ec66ff327a6310b46658fcc7ce0736907508ae9f18d2f5416379099e8e6acc5d9b4740af7dc0fe6d20247dc56e8412053d840a88d529",
+          "sha1": "9e678e01529dd4f69adbb6c2e4adf749de9c8daf"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/vst0SQOn/shulkerboxtooltip-fabric-3.4.5%2B1.18.2.jar",
         "filename": "shulkerboxtooltip-fabric-3.4.5+1.18.2.jar",
@@ -2899,15 +2899,15 @@
     "changelog": "5.0.3+1.20.6:\n- Added Mexican Spanish localization by TheLegendofSaram. (#163)\n\n",
     "changelog_url": null,
     "date_published": "2024-07-07T12:54:21.972326Z",
-    "downloads": 63702,
+    "downloads": 63726,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8867e6d74ef1b28c48ae3e8d731ff73a00451221486f523787e89b32d3e1ab1c501797e440547afca5287cfd2f8afbfa455bac253a619f0fe62ecc9a941be466",
-          "sha1": "04659d32f46359f870aee65b07cee31d5b28f9cd"
+          "sha1": "04659d32f46359f870aee65b07cee31d5b28f9cd",
+          "sha512": "8867e6d74ef1b28c48ae3e8d731ff73a00451221486f523787e89b32d3e1ab1c501797e440547afca5287cfd2f8afbfa455bac253a619f0fe62ecc9a941be466"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/UwrKcvor/shulkerboxtooltip-fabric-5.0.3%2B1.21.jar",
         "filename": "shulkerboxtooltip-fabric-5.0.3+1.21.jar",
@@ -2954,8 +2954,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "bf93832a39cd2bc8b5c6ec94eed09a152a99015a",
-          "sha512": "7cfd7e5e43dd7992710c3b493561e4a7da4501755b5bb326ae004389c2bf70457a678bad1e4cfe065fbde0488f607e4dab69ce2fb85def9c658b01ee9f2355c0"
+          "sha512": "7cfd7e5e43dd7992710c3b493561e4a7da4501755b5bb326ae004389c2bf70457a678bad1e4cfe065fbde0488f607e4dab69ce2fb85def9c658b01ee9f2355c0",
+          "sha1": "bf93832a39cd2bc8b5c6ec94eed09a152a99015a"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/GXua8K6B/shulkerboxtooltip-neoforge-4.1.4%2B1.20.6.jar",
         "filename": "shulkerboxtooltip-neoforge-4.1.4+1.20.6.jar",
@@ -3002,15 +3002,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -3100,7 +3100,7 @@
     "changelog": "5.0.2+1.20.6:\n- Updated Russian localization by Alexander317. (#160)\n\n",
     "changelog_url": null,
     "date_published": "2024-06-25T12:35:59.760015Z",
-    "downloads": 117091,
+    "downloads": 117154,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3203,8 +3203,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c1ef89efe5b544b3183a410258052d449a7babf957fc68aa390a1731fd90e5ef04f039e12aa33fb260fc933678ca0fe47911b55cd6d2774cb96b674827154d9f",
-          "sha1": "92c408c1efc134449c6612a81a00ec416e2291b6"
+          "sha1": "92c408c1efc134449c6612a81a00ec416e2291b6",
+          "sha512": "c1ef89efe5b544b3183a410258052d449a7babf957fc68aa390a1731fd90e5ef04f039e12aa33fb260fc933678ca0fe47911b55cd6d2774cb96b674827154d9f"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/FpfCw9X3/shulkerboxtooltip-neoforge-4.1.2%2B1.20.6.jar",
         "filename": "shulkerboxtooltip-neoforge-4.1.2+1.20.6.jar",
@@ -3286,8 +3286,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8dab9b2256c43d06fdf47a2e55493bd29e49a77d",
-          "sha512": "d1e8c63a40e45b1162140f392337d0330dbc24b439950f468517dd2d5598355e22c19c6bf9551d1d886943d93a341bf6b92d1f1370d79ae6f7c8cb50f3179139"
+          "sha512": "d1e8c63a40e45b1162140f392337d0330dbc24b439950f468517dd2d5598355e22c19c6bf9551d1d886943d93a341bf6b92d1f1370d79ae6f7c8cb50f3179139",
+          "sha1": "8dab9b2256c43d06fdf47a2e55493bd29e49a77d"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/yy7E6BDq/shulkerboxtooltip-neoforge-5.0.1%2B1.21.jar",
         "filename": "shulkerboxtooltip-neoforge-5.0.1+1.21.jar",
@@ -3314,7 +3314,7 @@
     "changelog": "5.0.1+1.20.6:\n- Updated Traditional Chinese localization by yichifauzi. (#159)\n\n",
     "changelog_url": null,
     "date_published": "2024-06-24T08:11:19.506213Z",
-    "downloads": 7575,
+    "downloads": 7576,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3369,8 +3369,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c07c2ecf14ed713575b3ed595c2b4f135497ff12",
-          "sha512": "15c9467e3cbba87dc1e6ae3eb9c06680e1d7677e656a50ace87214c13813c13c762624bc7223934f567360743ff747981f7635e02f318bb7c36ef9c2acc5b8dc"
+          "sha512": "15c9467e3cbba87dc1e6ae3eb9c06680e1d7677e656a50ace87214c13813c13c762624bc7223934f567360743ff747981f7635e02f318bb7c36ef9c2acc5b8dc",
+          "sha1": "c07c2ecf14ed713575b3ed595c2b4f135497ff12"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/36jbAWJS/shulkerboxtooltip-neoforge-5.0.0%2B1.21.jar",
         "filename": "shulkerboxtooltip-neoforge-5.0.0+1.21.jar",
@@ -3404,8 +3404,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f5aabdb4dd994781a83cf5f66ee52d88e4f70ef5",
-          "sha512": "ff21d41296e9c19d09be83ed1fa5debf8aa6ca74b23db34280cf0d35f18808b592a8bdb00c0795bf2ee62bfda34bc67423db936579cb836a2e25fe66d628ea84"
+          "sha512": "ff21d41296e9c19d09be83ed1fa5debf8aa6ca74b23db34280cf0d35f18808b592a8bdb00c0795bf2ee62bfda34bc67423db936579cb836a2e25fe66d628ea84",
+          "sha1": "f5aabdb4dd994781a83cf5f66ee52d88e4f70ef5"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/MbRc4uaV/shulkerboxtooltip-fabric-5.0.0%2B1.21.jar",
         "filename": "shulkerboxtooltip-fabric-5.0.0+1.21.jar",
@@ -3570,8 +3570,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a1d5d742fae945ed49471aedcdccecbd94cf063c",
-          "sha512": "47db06d0aee0e1d9ad691528f96b7ab912ecb435095e65b105c40d3b1b298bee2aa76f982a0f3c3aae9081bc58916122c41c77eae3d4f4b35320c5d0a12ad0c7"
+          "sha512": "47db06d0aee0e1d9ad691528f96b7ab912ecb435095e65b105c40d3b1b298bee2aa76f982a0f3c3aae9081bc58916122c41c77eae3d4f4b35320c5d0a12ad0c7",
+          "sha1": "a1d5d742fae945ed49471aedcdccecbd94cf063c"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/awjsas26/shulkerboxtooltip-fabric-4.1.0%2B1.20.6.jar",
         "filename": "shulkerboxtooltip-fabric-4.1.0+1.20.6.jar",
@@ -3653,15 +3653,15 @@
     "changelog": "4.1.0-alpha.4+1.20.6:\n- Added support for NeoForge\n- Fixed \"Empty\" text always added to pickable containers\n\n",
     "changelog_url": null,
     "date_published": "2024-05-27T01:26:57.485239Z",
-    "downloads": 34599,
+    "downloads": 34602,
     "version_type": "alpha",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4851d26c1d0a96a5dfa486f48e72ffd95900f1ac",
-          "sha512": "67d8fcd1d3123384f87a64ee0464ae3280cdf03e427a94131668cbf46a0383ee2ebc4ab7981db5fcdfa7a916f3d6bf59b51de34631bb00d6348e9dac5dc57ae0"
+          "sha512": "67d8fcd1d3123384f87a64ee0464ae3280cdf03e427a94131668cbf46a0383ee2ebc4ab7981db5fcdfa7a916f3d6bf59b51de34631bb00d6348e9dac5dc57ae0",
+          "sha1": "4851d26c1d0a96a5dfa486f48e72ffd95900f1ac"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/EAAU9QmO/shulkerboxtooltip-fabric-4.1.0-alpha.4%2B1.20.6.jar",
         "filename": "shulkerboxtooltip-fabric-4.1.0-alpha.4+1.20.6.jar",
@@ -3707,7 +3707,7 @@
     "changelog": "4.1.0-alpha.3+1.20.6:\n- Re-enabled networking support and ender chest preview.\n\n",
     "changelog_url": null,
     "date_published": "2024-05-26T01:08:06.214875Z",
-    "downloads": 5552,
+    "downloads": 5557,
     "version_type": "alpha",
     "status": "listed",
     "requested_status": null,
@@ -3835,15 +3835,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "9s6osm5g",
-        "file_name": null,
-        "dependency_type": "embedded"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "embedded"
       },
       {
         "version_id": null,
@@ -3869,7 +3869,7 @@
     "changelog": "4.1.0+1.20.4:\n- Added German localization by ReneMuetti.\n- Added preview support for decorated pots, chiseled bookshelves, and lecterns.\n- Fixed previews swapping sizes when viewing containers with different slot counts.\n- Added highlight for the currently selected slot in the preview window.\n- Show dropper/dispenser previews as a 3x3 grid instead of 9x3.\n\n",
     "changelog_url": null,
     "date_published": "2024-05-19T03:42:11.982813Z",
-    "downloads": 9014,
+    "downloads": 9020,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3911,15 +3911,15 @@
     "changelog": "4.1.0+1.20.4:\n- Added German localization by ReneMuetti.\n- Added preview support for decorated pots, chiseled bookshelves, and lecterns.\n- Fixed previews swapping sizes when viewing containers with different slot counts.\n- Added highlight for the currently selected slot in the preview window.\n- Show dropper/dispenser previews as a 3x3 grid instead of 9x3.\n\n",
     "changelog_url": null,
     "date_published": "2024-05-19T03:42:04.186665Z",
-    "downloads": 169323,
+    "downloads": 169461,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1fd6127a25d76b5fccc52ae9b8c8f54640c2f9bdbfde7b0aa952cc5ac38074bc25c5abb57008578e371e9814a26f8a0bc315869a8243c4d4e688e3e73ceb97a7",
-          "sha1": "ddaa2630c2f5f7cea5fcea17441718f0a07aa622"
+          "sha1": "ddaa2630c2f5f7cea5fcea17441718f0a07aa622",
+          "sha512": "1fd6127a25d76b5fccc52ae9b8c8f54640c2f9bdbfde7b0aa952cc5ac38074bc25c5abb57008578e371e9814a26f8a0bc315869a8243c4d4e688e3e73ceb97a7"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/r6EhfuUa/shulkerboxtooltip-fabric-4.1.0%2B1.20.4.jar",
         "filename": "shulkerboxtooltip-fabric-4.1.0+1.20.4.jar",
@@ -4068,8 +4068,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "095b15058368bd1d2ea525df6722c0fdc50c67a5e5be8d391638d213297ee290958366c1a403c0c118a14d5293617e0b44ac6ed0c2bfb7d11471aadbfa521e0f",
-          "sha1": "a4404d49d2e40ace1f4d73e28e96f9b7674f5292"
+          "sha1": "a4404d49d2e40ace1f4d73e28e96f9b7674f5292",
+          "sha512": "095b15058368bd1d2ea525df6722c0fdc50c67a5e5be8d391638d213297ee290958366c1a403c0c118a14d5293617e0b44ac6ed0c2bfb7d11471aadbfa521e0f"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/oK5MfPFI/shulkerboxtooltip-fabric-3.4.4%2B1.18.2.jar",
         "filename": "shulkerboxtooltip-fabric-3.4.4+1.18.2.jar",
@@ -4122,8 +4122,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "bed5f7ed0bd5a6827c8420b3e45690af3901de17",
-          "sha512": "c666f8d675745130e500aa02f0df5b6c3a7822f509ddeefc0a03fc861230e11c8803c3aafb2726543e605b41159383eb849543ea9dc4260fd09912f3cef49a80"
+          "sha512": "c666f8d675745130e500aa02f0df5b6c3a7822f509ddeefc0a03fc861230e11c8803c3aafb2726543e605b41159383eb849543ea9dc4260fd09912f3cef49a80",
+          "sha1": "bed5f7ed0bd5a6827c8420b3e45690af3901de17"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/Wqh1cfgc/shulkerboxtooltip-forge-3.4.4%2B1.18.2.jar",
         "filename": "shulkerboxtooltip-forge-3.4.4+1.18.2.jar",
@@ -4157,15 +4157,15 @@
     "changelog": "4.0.8+1.20.4:\n- Updated to Minecraft 1.20.4 (#143)\n- Fixed dyed leather armor having wrong colors (#144)\n\n",
     "changelog_url": null,
     "date_published": "2024-01-09T17:15:19.259548Z",
-    "downloads": 16598,
+    "downloads": 16599,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ca9f82bcf01e79e2cd22b920677768bc1b53bb67",
-          "sha512": "f4af47606fdd0888773a7a412a57ff418deb5a312eb98854dd4242331b0f8e9f299caf6ab73ddf0e6b524d0d74f4c47c9a3b21940edba1c5cd36f6ba9ab53cc9"
+          "sha512": "f4af47606fdd0888773a7a412a57ff418deb5a312eb98854dd4242331b0f8e9f299caf6ab73ddf0e6b524d0d74f4c47c9a3b21940edba1c5cd36f6ba9ab53cc9",
+          "sha1": "ca9f82bcf01e79e2cd22b920677768bc1b53bb67"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/mzoAkveB/shulkerboxtooltip-forge-4.0.8%2B1.20.4.jar",
         "filename": "shulkerboxtooltip-forge-4.0.8+1.20.4.jar",
@@ -4199,15 +4199,15 @@
     "changelog": "4.0.8+1.20.4:\n- Updated to Minecraft 1.20.4 (#143)\n- Fixed dyed leather armor having wrong colors (#144)\n\n",
     "changelog_url": null,
     "date_published": "2024-01-09T17:15:12.375428Z",
-    "downloads": 252665,
+    "downloads": 252753,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "867e0d093eec8e37163a45d785e4b5016cd51a55bda338b5a9ede1515426561e58c033db88071c88dd7f04fd84d1a442239b33e869d8ce06dde460fa44fe3371",
-          "sha1": "170972b46c2758567f2d3beb93a72b095bf5cafb"
+          "sha1": "170972b46c2758567f2d3beb93a72b095bf5cafb",
+          "sha512": "867e0d093eec8e37163a45d785e4b5016cd51a55bda338b5a9ede1515426561e58c033db88071c88dd7f04fd84d1a442239b33e869d8ce06dde460fa44fe3371"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/R23hymvz/shulkerboxtooltip-fabric-4.0.8%2B1.20.4.jar",
         "filename": "shulkerboxtooltip-fabric-4.0.8+1.20.4.jar",
@@ -4260,8 +4260,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "42ebb76f6fc5bf7b83f732a96b7d34a5b271f5cb",
-          "sha512": "0c449f84de9e0ae299723278ef212af368f243bfa9d1255ccd752cb7efe8500c91b445c183081886de0f27610906ea8b22ea10808dbf42baff88db099e08072c"
+          "sha512": "0c449f84de9e0ae299723278ef212af368f243bfa9d1255ccd752cb7efe8500c91b445c183081886de0f27610906ea8b22ea10808dbf42baff88db099e08072c",
+          "sha1": "42ebb76f6fc5bf7b83f732a96b7d34a5b271f5cb"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/Xq3hPnLg/shulkerboxtooltip-forge-3.4.3%2B1.19.4.jar",
         "filename": "shulkerboxtooltip-forge-3.4.3+1.19.4.jar",
@@ -4295,7 +4295,7 @@
     "changelog": "3.4.3+1.19.4:\n- Fixed dyed leather armor having wrong colors (#144)\n\n",
     "changelog_url": null,
     "date_published": "2024-01-09T17:07:09.988816Z",
-    "downloads": 21111,
+    "downloads": 21112,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4403,15 +4403,15 @@
     "changelog": "3.4.3+1.18.2:\n- Fixed dyed leather armor having wrong colors (#144)\n\n",
     "changelog_url": null,
     "date_published": "2024-01-09T16:58:25.308093Z",
-    "downloads": 5015,
+    "downloads": 5017,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "0e6e5614e9bcdb031bab347877088280ec8d7e44",
-          "sha512": "2e05b691a3ee97a35c39c31a4e5058219acbdbb576484718844d0e879e43c73567eca0611821c988e7910515150533559ecc498b67bf597724beb43b85759d4f"
+          "sha512": "2e05b691a3ee97a35c39c31a4e5058219acbdbb576484718844d0e879e43c73567eca0611821c988e7910515150533559ecc498b67bf597724beb43b85759d4f",
+          "sha1": "0e6e5614e9bcdb031bab347877088280ec8d7e44"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/oaTmcpMI/shulkerboxtooltip-forge-3.4.3%2B1.18.2.jar",
         "filename": "shulkerboxtooltip-forge-3.4.3+1.18.2.jar",
@@ -4452,8 +4452,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fef50f490dd4187140f954a33387f287088fe12a",
-          "sha512": "3bedccd12d5fa5143eced3cbfa41365c532f3c274384313909040ffac262f51a5cabcaa9bf0abdc3d26e308fab90dfcb34985cb1710cc1153084286acf26787b"
+          "sha512": "3bedccd12d5fa5143eced3cbfa41365c532f3c274384313909040ffac262f51a5cabcaa9bf0abdc3d26e308fab90dfcb34985cb1710cc1153084286acf26787b",
+          "sha1": "fef50f490dd4187140f954a33387f287088fe12a"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/DIXNDfWe/shulkerboxtooltip-forge-3.4.2%2B1.18.2.jar",
         "filename": "shulkerboxtooltip-forge-3.4.2+1.18.2.jar",
@@ -4590,8 +4590,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "75f50d58ff194108f36fdc6564d4f8cc3b41ea25",
-          "sha512": "48e3a3e03dbc831ca1398e3f138d8a6975a550740a5299e3b1f07a8d92b757bfceefc3d97f1ce191614566d80855575d35d2bdbd51611f42fd3f5fbbfd9e26d3"
+          "sha512": "48e3a3e03dbc831ca1398e3f138d8a6975a550740a5299e3b1f07a8d92b757bfceefc3d97f1ce191614566d80855575d35d2bdbd51611f42fd3f5fbbfd9e26d3",
+          "sha1": "75f50d58ff194108f36fdc6564d4f8cc3b41ea25"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/gpK4bBce/shulkerboxtooltip-fabric-3.4.2%2B1.19.4.jar",
         "filename": "shulkerboxtooltip-fabric-3.4.2+1.19.4.jar",
@@ -4637,15 +4637,15 @@
     "changelog": "4.0.7+1.20.2:\n- Updated Turkish localization by JustEmo. (#137)\n\n",
     "changelog_url": null,
     "date_published": "2023-10-31T00:07:54.87602Z",
-    "downloads": 8712,
+    "downloads": 8715,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b8c0f832face6ed55de5c7a38385f388e09d621e",
-          "sha512": "bde071eb8fd1683ebd3f1b268fa4b57543ce409ea2cf43f1d2a73a3744471065a5821ed3de86395b141c73019266167f288bebf92810579af6018387e157eb69"
+          "sha512": "bde071eb8fd1683ebd3f1b268fa4b57543ce409ea2cf43f1d2a73a3744471065a5821ed3de86395b141c73019266167f288bebf92810579af6018387e157eb69",
+          "sha1": "b8c0f832face6ed55de5c7a38385f388e09d621e"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/oR2bV3V6/shulkerboxtooltip-forge-4.0.7%2B1.20.2.jar",
         "filename": "shulkerboxtooltip-forge-4.0.7+1.20.2.jar",
@@ -4679,7 +4679,7 @@
     "changelog": "4.0.7+1.20.2:\n- Updated Turkish localization by JustEmo. (#137)\n\n",
     "changelog_url": null,
     "date_published": "2023-10-31T00:07:36.57782Z",
-    "downloads": 114383,
+    "downloads": 114399,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4699,12 +4699,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "9s6osm5g",
         "file_name": null,
         "dependency_type": "embedded"
@@ -4714,6 +4708,12 @@
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -4740,8 +4740,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ea57fdedeb4530285b4885d4653e2098741219bbbd5b61474566d15a4584833bc89effa993c8d8c06b5ee3c325fe0c413fe543ca36d26c8b53183b338dd3ac45",
-          "sha1": "83999f7e02557c5e1d5d9d397a108133251303ad"
+          "sha1": "83999f7e02557c5e1d5d9d397a108133251303ad",
+          "sha512": "ea57fdedeb4530285b4885d4653e2098741219bbbd5b61474566d15a4584833bc89effa993c8d8c06b5ee3c325fe0c413fe543ca36d26c8b53183b338dd3ac45"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/34tMKYwY/shulkerboxtooltip-forge-3.4.1%2B1.19.4.jar",
         "filename": "shulkerboxtooltip-forge-3.4.1+1.19.4.jar",
@@ -4878,8 +4878,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "072585e6dde045a2483aa3d9c7c0c36803c9dc3d",
-          "sha512": "a1207ea96595e233e4a7bfa8d45fe620ffca186b7faf7326bab60618abf9e14d972afa75d49b7c4c67d43e8880516b4cea5974802360334053866310bd7c8113"
+          "sha512": "a1207ea96595e233e4a7bfa8d45fe620ffca186b7faf7326bab60618abf9e14d972afa75d49b7c4c67d43e8880516b4cea5974802360334053866310bd7c8113",
+          "sha1": "072585e6dde045a2483aa3d9c7c0c36803c9dc3d"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/N1JoFNcV/shulkerboxtooltip-fabric-3.4.1%2B1.18.2.jar",
         "filename": "shulkerboxtooltip-fabric-3.4.1+1.18.2.jar",
@@ -4932,8 +4932,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f942cdb0ce75492cfca3157a49183d077ff5b7e3bc7b49ff52515016d2a515f726616fe77f0cb2cf333234f9ae40a32457456fc724080cfd4485e557670d4883",
-          "sha1": "9acfe449c4d8c9e8197083cf9dcbaf96089ca0be"
+          "sha1": "9acfe449c4d8c9e8197083cf9dcbaf96089ca0be",
+          "sha512": "f942cdb0ce75492cfca3157a49183d077ff5b7e3bc7b49ff52515016d2a515f726616fe77f0cb2cf333234f9ae40a32457456fc724080cfd4485e557670d4883"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/r6yvRbOC/shulkerboxtooltip-forge-3.4.0%2B1.18.2.jar",
         "filename": "shulkerboxtooltip-forge-3.4.0+1.18.2.jar",
@@ -5063,15 +5063,15 @@
     "changelog": "4.0.5+1.20.2:\n- Updated to Minecraft 1.20.2 (Fabric and LexForge)\n\n",
     "changelog_url": null,
     "date_published": "2023-09-25T13:06:51.603613Z",
-    "downloads": 49497,
+    "downloads": 49500,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a43342e2c2d4897143e225de58afd573bb244f3d2d7ca5f484adfe9f814fbb24391fd08c3faa1ce405bdc1b41f41476de959de7a018a40be1ee60d69abe81144",
-          "sha1": "2ed5d84834186b994aedc8dbf747e01888696cf8"
+          "sha1": "2ed5d84834186b994aedc8dbf747e01888696cf8",
+          "sha512": "a43342e2c2d4897143e225de58afd573bb244f3d2d7ca5f484adfe9f814fbb24391fd08c3faa1ce405bdc1b41f41476de959de7a018a40be1ee60d69abe81144"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/R21bN3KV/shulkerboxtooltip-fabric-4.0.5%2B1.20.2.jar",
         "filename": "shulkerboxtooltip-fabric-4.0.5+1.20.2.jar",
@@ -5083,12 +5083,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "9s6osm5g",
         "file_name": null,
         "dependency_type": "embedded"
@@ -5098,6 +5092,12 @@
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -5117,7 +5117,7 @@
     "changelog": "4.0.4+1.20.1:\n- Fixed crash on startup when running Forge 47.0.15 or newer.\n\n",
     "changelog_url": null,
     "date_published": "2023-06-26T21:36:56.837381Z",
-    "downloads": 616070,
+    "downloads": 617119,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5159,7 +5159,7 @@
     "changelog": "4.0.4+1.20.1:\n- Fixed crash on startup when running Forge 47.0.15 or newer.\n\n",
     "changelog_url": null,
     "date_published": "2023-06-26T21:36:39.585886Z",
-    "downloads": 3101695,
+    "downloads": 3104095,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5178,12 +5178,6 @@
     ],
     "dependencies": [
       {
-        "version_id": "s7VTKfLA",
-        "project_id": "9s6osm5g",
-        "file_name": null,
-        "dependency_type": "embedded"
-      },
-      {
         "version_id": "eTCL1uh8",
         "project_id": "mOgUt4GM",
         "file_name": null,
@@ -5194,6 +5188,12 @@
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": "s7VTKfLA",
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "embedded"
       }
     ]
   },
@@ -5220,8 +5220,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0d922b28c0bd86cc5230fb3d24687ac214087f05dcb86508a593fc8ca99f15dbb1cb784e0f2c86669ed076a7810cac6dbfa2317b2354bc8a38c9e3c75430c68b",
-          "sha1": "175a05e6553d2970fc3f43fee3458851aa4dd24c"
+          "sha1": "175a05e6553d2970fc3f43fee3458851aa4dd24c",
+          "sha512": "0d922b28c0bd86cc5230fb3d24687ac214087f05dcb86508a593fc8ca99f15dbb1cb784e0f2c86669ed076a7810cac6dbfa2317b2354bc8a38c9e3c75430c68b"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/qeGD3EAf/shulkerboxtooltip-forge-3.4.0%2B1.19.4.jar",
         "filename": "shulkerboxtooltip-forge-3.4.0+1.19.4.jar",
@@ -5255,7 +5255,7 @@
     "changelog": "3.4.0+1.19.4:\n- Added tooltip locking: While previewing an item, you can hold the \"Lock\nTooltip\" key (left control, by default) to lock the tooltip and see what items\nare contained inside in detail.\n- Item counts over a thousand will now display with one decimal place by\ndefault.\n\n",
     "changelog_url": null,
     "date_published": "2023-06-19T01:01:19.250424Z",
-    "downloads": 15526,
+    "downloads": 15528,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5310,15 +5310,15 @@
     "changelog": "4.0.2+1.20:\n- Fixed the \"Contains X stacks\" line hiding itself when pressing the full preview key while the normal preview key is unbound.\n\n",
     "changelog_url": null,
     "date_published": "2023-06-14T22:15:08.813096Z",
-    "downloads": 10676,
+    "downloads": 10680,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "cd074d6b9e9d34e0a4f5286859757c0703d9778c",
-          "sha512": "2e89bbed391c3a67bb9a50e6c3a6a4a7f4449ce3a8b304059b279533fb0d2cc72d07d1461dc9bbb666f897b64fd61573c4285cbfb024ecfa02c448c49ebd6adc"
+          "sha512": "2e89bbed391c3a67bb9a50e6c3a6a4a7f4449ce3a8b304059b279533fb0d2cc72d07d1461dc9bbb666f897b64fd61573c4285cbfb024ecfa02c448c49ebd6adc",
+          "sha1": "cd074d6b9e9d34e0a4f5286859757c0703d9778c"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/UTDibU6w/shulkerboxtooltip-forge-4.0.3%2B1.20.jar",
         "filename": "shulkerboxtooltip-forge-4.0.3+1.20.jar",
@@ -5353,7 +5353,7 @@
     "changelog": "4.0.2+1.20:\n- Fixed the \"Contains X stacks\" line hiding itself when pressing the full preview key while the normal preview key is unbound.\n\n",
     "changelog_url": null,
     "date_published": "2023-06-14T22:14:53.924198Z",
-    "downloads": 114849,
+    "downloads": 114930,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5372,16 +5372,16 @@
     ],
     "dependencies": [
       {
-        "version_id": "s7VTKfLA",
-        "project_id": "9s6osm5g",
-        "file_name": null,
-        "dependency_type": "embedded"
-      },
-      {
         "version_id": "eTCL1uh8",
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": "s7VTKfLA",
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "embedded"
       },
       {
         "version_id": "XheZ9iGK",
@@ -5408,15 +5408,15 @@
     "changelog": "4.0.2+1.20:\n- Fixed inventory keyboard shortcuts not working while holding the preview key (#123)\n\n",
     "changelog_url": null,
     "date_published": "2023-06-10T16:01:18.775748Z",
-    "downloads": 1469,
+    "downloads": 1470,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "12c195caff686b2ab2b96de799374a7e41f121cf15d5c95fe4095239e545f0683ac66c337e3a12215d855072825cbdb218e48e32acb5c0da7afd1396e0cb14de",
-          "sha1": "26f54eb48ed1f2cb511d1c4160eecefd2c748440"
+          "sha1": "26f54eb48ed1f2cb511d1c4160eecefd2c748440",
+          "sha512": "12c195caff686b2ab2b96de799374a7e41f121cf15d5c95fe4095239e545f0683ac66c337e3a12215d855072825cbdb218e48e32acb5c0da7afd1396e0cb14de"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/xeRSvMD7/shulkerboxtooltip-forge-4.0.2%2B1.20.jar",
         "filename": "shulkerboxtooltip-forge-4.0.2+1.20.jar",
@@ -5451,7 +5451,7 @@
     "changelog": "4.0.2+1.20:\n- Fixed inventory keyboard shortcuts not working while holding the preview key (#123)\n\n",
     "changelog_url": null,
     "date_published": "2023-06-10T16:01:05.046862Z",
-    "downloads": 7764,
+    "downloads": 7774,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5470,16 +5470,16 @@
     ],
     "dependencies": [
       {
-        "version_id": "XheZ9iGK",
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
         "version_id": "eTCL1uh8",
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": "XheZ9iGK",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       },
       {
         "version_id": "s7VTKfLA",
@@ -5561,15 +5561,15 @@
     "changelog": "4.0.1+1.20:\n- The mod is now compatible with Forge 1.20\n\n",
     "changelog_url": null,
     "date_published": "2023-06-08T17:16:03.185504Z",
-    "downloads": 1349,
+    "downloads": 1351,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ca420b007a4995bbe6d810ab21930737504586a1fc52dd6d818799fb274666105f7038db250ca5610da88a622ebf3026aa58d1243094965c4445803bb43f3639",
-          "sha1": "a3f9091de15b961942224eaf1af05feaceaa1419"
+          "sha1": "a3f9091de15b961942224eaf1af05feaceaa1419",
+          "sha512": "ca420b007a4995bbe6d810ab21930737504586a1fc52dd6d818799fb274666105f7038db250ca5610da88a622ebf3026aa58d1243094965c4445803bb43f3639"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/4kH71xsq/shulkerboxtooltip-fabric-4.0.1%2B1.20.jar",
         "filename": "shulkerboxtooltip-fabric-4.0.1+1.20.jar",
@@ -5664,8 +5664,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c3225f4cd52548e3893f672b03fdfc11a6383563",
-          "sha512": "588e5d60a9aae98e241609c3d72b9dc0a79d37bbef123fabf57cad6f0b512c27871416987f443fec6a0e764c8a85ce6c43546483184ed1dc4bc0f371157ec3b8"
+          "sha512": "588e5d60a9aae98e241609c3d72b9dc0a79d37bbef123fabf57cad6f0b512c27871416987f443fec6a0e764c8a85ce6c43546483184ed1dc4bc0f371157ec3b8",
+          "sha1": "c3225f4cd52548e3893f672b03fdfc11a6383563"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/iWnECN0F/shulkerboxtooltip-fabric-3.3.1%2B1.19.4.jar",
         "filename": "shulkerboxtooltip-fabric-3.3.1+1.19.4.jar",
@@ -5753,7 +5753,7 @@
     "changelog": "3.3.0+1.19.4:\n- Removed the 'Dark' theme, it was replaced by the color system\n- Exposed preview-related configuration options to the API\n\n",
     "changelog_url": null,
     "date_published": "2023-05-29T13:41:55.314571Z",
-    "downloads": 4129,
+    "downloads": 4130,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5814,8 +5814,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9548adab15c220e16dd0c93c644761b8faadc597a5b9989a09a94da637aea41437919c9aa72159e69e83f4518299acf9305e7b65566321c387d661dfbc08f3d5",
-          "sha1": "106389ff1b9caf2891b9c5ab0d8b55d479290c8a"
+          "sha1": "106389ff1b9caf2891b9c5ab0d8b55d479290c8a",
+          "sha512": "9548adab15c220e16dd0c93c644761b8faadc597a5b9989a09a94da637aea41437919c9aa72159e69e83f4518299acf9305e7b65566321c387d661dfbc08f3d5"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/tJ36ak4H/shulkerboxtooltip-forge-3.2.5%2B1.19.4.jar",
         "filename": "shulkerboxtooltip-forge-3.2.5+1.19.4.jar",
@@ -5849,15 +5849,15 @@
     "changelog": "3.2.5+1.19.4:\n- Update to Minecraft 1.19.4.\n- Deprecate the API method PreviewRenderer#draw() that accepts a 'z' depth parameter.\n\n",
     "changelog_url": null,
     "date_published": "2023-03-20T23:51:23.985044Z",
-    "downloads": 34159,
+    "downloads": 34174,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "96e36df0bac5306c46639a7e29f74c2a4c1ca30b",
-          "sha512": "1016cb1864838e4504c7a7accb1daef6d1308680add6935f74887c10dc478bcd55c805a20f84d510851136c157910359ca966cd4b22a94dadd680cd0fac37030"
+          "sha512": "1016cb1864838e4504c7a7accb1daef6d1308680add6935f74887c10dc478bcd55c805a20f84d510851136c157910359ca966cd4b22a94dadd680cd0fac37030",
+          "sha1": "96e36df0bac5306c46639a7e29f74c2a4c1ca30b"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/XeZEGwBe/shulkerboxtooltip-fabric-3.2.5%2B1.19.4.jar",
         "filename": "shulkerboxtooltip-fabric-3.2.5+1.19.4.jar",
@@ -5910,8 +5910,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b7558500e7d328a3ca09081757250320b89a5b48",
-          "sha512": "55ca2afe7d3e04219b172cc7ad78c6a8b88b84a7693c4da66e221cd0f20f36bdb500fb18b8dababb32b64dd520e8a396d39b1f267f04ba647a354e1b96c05c32"
+          "sha512": "55ca2afe7d3e04219b172cc7ad78c6a8b88b84a7693c4da66e221cd0f20f36bdb500fb18b8dababb32b64dd520e8a396d39b1f267f04ba647a354e1b96c05c32",
+          "sha1": "b7558500e7d328a3ca09081757250320b89a5b48"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/akDwcTSC/shulkerboxtooltip-forge-3.2.4%2B1.19.3.jar",
         "filename": "shulkerboxtooltip-forge-3.2.4+1.19.3.jar",
@@ -5945,7 +5945,7 @@
     "changelog": "3.2.4+1.19.3:\n- Fixed preview color customization affecting banner items and blocks (#105)\n\n",
     "changelog_url": null,
     "date_published": "2022-12-20T11:50:43.343066Z",
-    "downloads": 35734,
+    "downloads": 35743,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6006,8 +6006,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "934ad7581606253b0cc686f809b317472bf1cdfa",
-          "sha512": "b2abeee843f22cd7a7883c0c8ffd178f989de35abd5cbc8cd1c8a58e63047f5c526f9c1e279d6088aac6c8a8b73ce69fe286d90dcca4725a2a263e353c8996d6"
+          "sha512": "b2abeee843f22cd7a7883c0c8ffd178f989de35abd5cbc8cd1c8a58e63047f5c526f9c1e279d6088aac6c8a8b73ce69fe286d90dcca4725a2a263e353c8996d6",
+          "sha1": "934ad7581606253b0cc686f809b317472bf1cdfa"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/uFWYJ6pA/shulkerboxtooltip-forge-3.2.3%2B1.19.3.jar",
         "filename": "shulkerboxtooltip-forge-3.2.3+1.19.3.jar",
@@ -6095,7 +6095,7 @@
     "changelog": "3.2.2+1.19.2:\n- Fix crashes related to plugin loading ordering.\n\n",
     "changelog_url": null,
     "date_published": "2022-10-27T19:37:07.074941Z",
-    "downloads": 52747,
+    "downloads": 52771,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6137,15 +6137,15 @@
     "changelog": "3.2.2+1.19.2:\n- Fix crashes related to plugin loading ordering.\n\n",
     "changelog_url": null,
     "date_published": "2022-10-27T19:37:03.451554Z",
-    "downloads": 238324,
+    "downloads": 238489,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "7e720aa586dc76feb7296b1ca4c602b183c6222e",
-          "sha512": "a1c14f19c7b28efe80138d66596f119388946599e70dfed29f3144fdc1558c5ece8c21cab0a64e4e54c904637ea9fdddcdcc447b9097845621af09f46819e5e2"
+          "sha512": "a1c14f19c7b28efe80138d66596f119388946599e70dfed29f3144fdc1558c5ece8c21cab0a64e4e54c904637ea9fdddcdcc447b9097845621af09f46819e5e2",
+          "sha1": "7e720aa586dc76feb7296b1ca4c602b183c6222e"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/luwoDnlv/shulkerboxtooltip-fabric-3.2.2%2B1.19.2.jar",
         "filename": "shulkerboxtooltip-fabric-3.2.2+1.19.2.jar",
@@ -6287,7 +6287,7 @@
     "changelog": "3.1.3+1.18.2:\n- Actually fix the missing config button (#95)",
     "changelog_url": null,
     "date_published": "2022-10-17T14:20:38.483441Z",
-    "downloads": 15001,
+    "downloads": 15004,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6306,16 +6306,16 @@
     ],
     "dependencies": [
       {
-        "version_id": "95QMsRyb",
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
         "version_id": "BLMp2TRt",
         "project_id": "9s6osm5g",
         "file_name": null,
         "dependency_type": "embedded"
+      },
+      {
+        "version_id": "95QMsRyb",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       },
       {
         "version_id": "nVxObSbX",
@@ -6432,8 +6432,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d73cb89f9f84f6894b1745c623b881325f00cfc9",
-          "sha512": "ae7e69c1245a557060c5e3309e8184fc42f4fec9475bc2aa90214051f9dee50942ac1e0eee85ddb754ac4b13306b6bf744e69c286ae1ae99d5b54d1dd6a590c8"
+          "sha512": "ae7e69c1245a557060c5e3309e8184fc42f4fec9475bc2aa90214051f9dee50942ac1e0eee85ddb754ac4b13306b6bf744e69c286ae1ae99d5b54d1dd6a590c8",
+          "sha1": "d73cb89f9f84f6894b1745c623b881325f00cfc9"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/JABCGVHi/shulkerboxtooltip-fabric-3.2.0%2B1.19.2.jar",
         "filename": "shulkerboxtooltip-fabric-3.2.0+1.19.2.jar",
@@ -6479,7 +6479,7 @@
     "changelog": "2.3.9+1.16.5:\n- Prevent config button from disappearing in newer versions of Cloth Config. (#95)\n\n",
     "changelog_url": null,
     "date_published": "2022-09-21T15:34:51.943305Z",
-    "downloads": 46135,
+    "downloads": 46186,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6582,8 +6582,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "77cfdf3a4093cd0d22712f39c01af7d43bd3afa2",
-          "sha512": "5f3527f8e69869a50abe712212de2dd448ec9cec5830639dee895e5b8d7fe0f1d3bde36250e5898a731532727be74f2e1475dd20b15945f4f951191e195df993"
+          "sha512": "5f3527f8e69869a50abe712212de2dd448ec9cec5830639dee895e5b8d7fe0f1d3bde36250e5898a731532727be74f2e1475dd20b15945f4f951191e195df993",
+          "sha1": "77cfdf3a4093cd0d22712f39c01af7d43bd3afa2"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/xMXGBIqi/shulkerboxtooltip-fabric-3.1.2%2B1.18.2.jar",
         "filename": "shulkerboxtooltip-fabric-3.1.2+1.18.2.jar",
@@ -6629,15 +6629,15 @@
     "changelog": "3.0.6+1.17.1:\n- Prevent config button from disappearing in future versions of Cloth Config. (#95)\n\n",
     "changelog_url": null,
     "date_published": "2022-09-21T15:04:30.130626Z",
-    "downloads": 174,
+    "downloads": 175,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "13c4005945c3fbee0caea7293c706370cf290cf28e1f0b96385834c3f0c4dc024a907723ac43c52c131fc6d131880aacfb62dc285ecef9b48ee9227d679d3440",
-          "sha1": "cabdb4beb09b0323ebf1845cc3bb51525a91f988"
+          "sha1": "cabdb4beb09b0323ebf1845cc3bb51525a91f988",
+          "sha512": "13c4005945c3fbee0caea7293c706370cf290cf28e1f0b96385834c3f0c4dc024a907723ac43c52c131fc6d131880aacfb62dc285ecef9b48ee9227d679d3440"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/YmTc1sqZ/shulkerboxtooltip-3.0.6%2B1.17.1.jar",
         "filename": "shulkerboxtooltip-3.0.6+1.17.1.jar",
@@ -6725,15 +6725,15 @@
     "changelog": "3.1.3+1.19.2:\n- Fixed missing config button due to incompatibility with later versions of cloth config. (#94)\n\n",
     "changelog_url": null,
     "date_published": "2022-09-17T17:06:09.133569Z",
-    "downloads": 2680,
+    "downloads": 2681,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "11831fad13cad49890a532e92775f89cf73f1287604b22f41baa17af756ca9ea26c8bc05d57253b50a0517c74d3ebc93057d233a4bc79f8801650e188b3f7350",
-          "sha1": "ce970c272ec943a3be03779a8003c50f272427ca"
+          "sha1": "ce970c272ec943a3be03779a8003c50f272427ca",
+          "sha512": "11831fad13cad49890a532e92775f89cf73f1287604b22f41baa17af756ca9ea26c8bc05d57253b50a0517c74d3ebc93057d233a4bc79f8801650e188b3f7350"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/K5IR07m0/shulkerboxtooltip-fabric-3.1.3%2B1.19.2.jar",
         "filename": "shulkerboxtooltip-fabric-3.1.3+1.19.2.jar",
@@ -6828,8 +6828,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ca18d3a06d7f2b52f313047df373e603bf9e4203dfa2eaf67fbca62e143f1d3f769481fcc8a62aa920be66ad70663c1fbfe4c610afec86c9094385215712a375",
-          "sha1": "b12a074855bfc2f94228e27c14e7cfdc3dcd799b"
+          "sha1": "b12a074855bfc2f94228e27c14e7cfdc3dcd799b",
+          "sha512": "ca18d3a06d7f2b52f313047df373e603bf9e4203dfa2eaf67fbca62e143f1d3f769481fcc8a62aa920be66ad70663c1fbfe4c610afec86c9094385215712a375"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/amfXOcfe/shulkerboxtooltip-fabric-3.1.2%2B1.19.2.jar",
         "filename": "shulkerboxtooltip-fabric-3.1.2+1.19.2.jar",
@@ -6876,15 +6876,15 @@
     "changelog": "3.1.1+1.19:\n- Added Ukrainian localization by Mark1ed. (#87)\n- Fixed crash with plugins on world load caused by missing API methods.\n- Removed warnings in log caused by extra fields in fabric.mod.json. (#89)\n\n",
     "changelog_url": null,
     "date_published": "2022-07-31T16:44:01.838573Z",
-    "downloads": 2932,
+    "downloads": 2935,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6206eafff8da72ba1facf2eae30b0a0b2f11c436da3b07893987518df13e3a28ec75237b001d3729f0e2ab83de77b97a7c3ff64233978ff2bf7ebd688e796d35",
-          "sha1": "8387766f2826b9e1d25a028b075959fc86a0dc4a"
+          "sha1": "8387766f2826b9e1d25a028b075959fc86a0dc4a",
+          "sha512": "6206eafff8da72ba1facf2eae30b0a0b2f11c436da3b07893987518df13e3a28ec75237b001d3729f0e2ab83de77b97a7c3ff64233978ff2bf7ebd688e796d35"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/3.1.1%2B1.19-forge/shulkerboxtooltip-3.1.1%2B1.19.jar",
         "filename": "shulkerboxtooltip-3.1.1+1.19.jar",
@@ -6919,7 +6919,7 @@
     "changelog": "3.1.1+1.19:\n- Added Ukrainian localization by Mark1ed. (#87)\n- Fixed crash with plugins on world load caused by missing API methods.\n- Removed warnings in log caused by extra fields in fabric.mod.json. (#89)\n\n",
     "changelog_url": null,
     "date_published": "2022-07-31T16:43:54.976756Z",
-    "downloads": 21312,
+    "downloads": 21322,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6938,6 +6938,12 @@
     ],
     "dependencies": [
       {
+        "version_id": "o9dFD9SO",
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "embedded"
+      },
+      {
         "version_id": null,
         "project_id": "mOgUt4GM",
         "file_name": null,
@@ -6948,12 +6954,6 @@
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
-      },
-      {
-        "version_id": "o9dFD9SO",
-        "project_id": "9s6osm5g",
-        "file_name": null,
-        "dependency_type": "embedded"
       }
     ]
   },
@@ -6980,8 +6980,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b545244fe1b48f9cb4c61070bda81b439f12f2a30bedaf22f8f6bd81d35f264df331b16c4f3d794cc4c13020ffdb6fa3ddbbc4c7b7e43d337ea4a63c2d248fdb",
-          "sha1": "f0de17174759808426d3c978673b0df49a28b5f9"
+          "sha1": "f0de17174759808426d3c978673b0df49a28b5f9",
+          "sha512": "b545244fe1b48f9cb4c61070bda81b439f12f2a30bedaf22f8f6bd81d35f264df331b16c4f3d794cc4c13020ffdb6fa3ddbbc4c7b7e43d337ea4a63c2d248fdb"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/3.1.1%2B1.18.2-forge/shulkerboxtooltip-3.1.1%2B1.18.2.jar",
         "filename": "shulkerboxtooltip-3.1.1+1.18.2.jar",
@@ -7119,8 +7119,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e20c8856bb5eff3e4c5ae5cd8129914fbb97d43f",
-          "sha512": "b72d37504eeccf4e3edbd1adda3ae9299fe1e122402f6de9c2b9bf3abf745abf1bf471b75893955d3747431a347c6fb19cac8beb07114f291b26db9fcd4e6081"
+          "sha512": "b72d37504eeccf4e3edbd1adda3ae9299fe1e122402f6de9c2b9bf3abf745abf1bf471b75893955d3747431a347c6fb19cac8beb07114f291b26db9fcd4e6081",
+          "sha1": "e20c8856bb5eff3e4c5ae5cd8129914fbb97d43f"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/3.1.0%2B1.19-forge/shulkerboxtooltip-3.1.0%2B1.19.jar",
         "filename": "shulkerboxtooltip-3.1.0+1.19.jar",
@@ -7263,7 +7263,7 @@
     "changelog": "2.3.8+1.16.5:\n- Fixed problems in multiplayer when server integration was turned on, notably on Hypixel where the player was sent to limbo.\n\n",
     "changelog_url": null,
     "date_published": "2022-07-16T04:24:43.058875Z",
-    "downloads": 4511,
+    "downloads": 4514,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7317,15 +7317,15 @@
     "changelog": "3.0.5+1.17.1:\n- Fixed crash with TechReborn energy crystals\n- Fixed crash related to input handling\n- Fixed preview window being drawn being REI entries\n- Fixed duplicate previews when using the Equipment Compare and Trinkets mods\n- Added Korean localization by gyular\n\n",
     "changelog_url": null,
     "date_published": "2022-07-16T04:18:24.627575Z",
-    "downloads": 24758,
+    "downloads": 24763,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8f9c671239f5f7c0c7cc6c12271572caccb8664c18726064d871b4ab8ee56482f92b10d7828c8171117507c2a777e8f87fc06d1ce1ba058bd4d34f08d70a8eef",
-          "sha1": "67746131c582af64acb34a324b99f1fc8b8da606"
+          "sha1": "67746131c582af64acb34a324b99f1fc8b8da606",
+          "sha512": "8f9c671239f5f7c0c7cc6c12271572caccb8664c18726064d871b4ab8ee56482f92b10d7828c8171117507c2a777e8f87fc06d1ce1ba058bd4d34f08d70a8eef"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/3.0.5%2B1.17.1/shulkerboxtooltip-3.0.5%2B1.17.1.jar",
         "filename": "shulkerboxtooltip-3.0.5+1.17.1.jar",
@@ -7371,7 +7371,7 @@
     "changelog": "3.0.10+1.18.2:\n- Fixed random crashes when opening previews. (#78)\n\n",
     "changelog_url": null,
     "date_published": "2022-07-16T03:56:02.691866Z",
-    "downloads": 297,
+    "downloads": 298,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7425,15 +7425,15 @@
     "changelog": "3.0.10+1.19:\n- Fixed random crashes when opening previews. (#78)",
     "changelog_url": null,
     "date_published": "2022-07-16T03:01:45.248569Z",
-    "downloads": 752,
+    "downloads": 753,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "88cca9bf73c9f029a5ab8c04618fd6c24e774f01c9927feb663f35f9221f64c7ee114e8338ce7b117cd7095d86ae39d761e9445c71d158b4253f312caaf4f4e0",
-          "sha1": "b72deb26591e1bd4fc5cdaf9a708fd57f0335280"
+          "sha1": "b72deb26591e1bd4fc5cdaf9a708fd57f0335280",
+          "sha512": "88cca9bf73c9f029a5ab8c04618fd6c24e774f01c9927feb663f35f9221f64c7ee114e8338ce7b117cd7095d86ae39d761e9445c71d158b4253f312caaf4f4e0"
         },
         "url": "https://cdn.modrinth.com/data/2M01OLQq/versions/3.0.10%2B1.19/shulkerboxtooltip-3.0.10%2B1.19.jar",
         "filename": "shulkerboxtooltip-3.0.10+1.19.jar",
@@ -7450,16 +7450,16 @@
         "dependency_type": "embedded"
       },
       {
-        "version_id": "3KmOcp6b",
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
         "version_id": "oU5qfeR6",
         "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
+      },
+      {
+        "version_id": "3KmOcp6b",
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   }

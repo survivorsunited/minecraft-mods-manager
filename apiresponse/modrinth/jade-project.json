@@ -47,7 +47,8 @@
     "1.21.4",
     "1.21.5",
     "25w14craftmine",
-    "1.21.6"
+    "1.21.6",
+    "1.21.7-rc1"
   ],
   "id": "nvQzSEkH",
   "slug": "jade",
@@ -70,8 +71,8 @@
     "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
     "url": null
   },
-  "downloads": 16783687,
-  "followers": 4351,
+  "downloads": 16824759,
+  "followers": 4357,
   "categories": [
     "utility"
   ],

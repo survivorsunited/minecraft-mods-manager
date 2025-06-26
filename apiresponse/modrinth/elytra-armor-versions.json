@@ -15,7 +15,7 @@
     "changelog": "- Armored elytra with netherite chestplate thrown in the lava will only keep the armor, the elytra will burn off.\n- Grindstone and player model rendering compatibility with Vanilla Tweaks Armored elytra datapack.\n- Fixed missing texture issues for players not having the mod view players with Armored Elytras having armore trims. Without the mod only the elytra renders with the correct textures on the players.\n\nHuge thanks to @craftycorvid for their contributions!",
     "changelog_url": null,
     "date_published": "2025-04-10T07:18:21.128589Z",
-    "downloads": 21946,
+    "downloads": 22024,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -33,8 +33,8 @@
       },
       {
         "hashes": {
-          "sha512": "77a6f75e80dc012e18ab2532950aeb5567142d3a1d010f6c2e47289f7725ed4b394d9d8877418b4fd9ad67057ace69281599581f6ec132ba45711e11623ba191",
-          "sha1": "bf6814da545abdaef59c234eb9e1a81d2a347e72"
+          "sha1": "bf6814da545abdaef59c234eb9e1a81d2a347e72",
+          "sha512": "77a6f75e80dc012e18ab2532950aeb5567142d3a1d010f6c2e47289f7725ed4b394d9d8877418b4fd9ad67057ace69281599581f6ec132ba45711e11623ba191"
         },
         "url": "https://cdn.modrinth.com/data/AuFCCYMx/versions/7MFV4XW6/Armored-Elytra-Icons-v1.6.0.zip",
         "filename": "Armored-Elytra-Icons-v1.6.0.zip",
@@ -68,7 +68,7 @@
     "changelog": "- Minecraft 1.21.5",
     "changelog_url": null,
     "date_published": "2025-03-30T21:25:52.240928Z",
-    "downloads": 1575,
+    "downloads": 1577,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -86,8 +86,8 @@
       },
       {
         "hashes": {
-          "sha512": "0c1eba1554d507be91f2a28db468041c5e2911d0275665e2930d5fa18272d14d0249ae2a4b851d884c01db83b43c7494a70e58ff02a7a8f4171bf0e44cc45144",
-          "sha1": "ffbb7af95d6832d4a42b449a9ccf08837fcec429"
+          "sha1": "ffbb7af95d6832d4a42b449a9ccf08837fcec429",
+          "sha512": "0c1eba1554d507be91f2a28db468041c5e2911d0275665e2930d5fa18272d14d0249ae2a4b851d884c01db83b43c7494a70e58ff02a7a8f4171bf0e44cc45144"
         },
         "url": "https://cdn.modrinth.com/data/AuFCCYMx/versions/zPxgaCcA/Armored%20Elytra%20Icons%201.21.5.zip",
         "filename": "Armored Elytra Icons 1.21.5.zip",
@@ -121,7 +121,7 @@
     "changelog": "- fixed icons when the chestplate has no armor trims",
     "changelog_url": null,
     "date_published": "2025-02-19T21:21:18.134673Z",
-    "downloads": 20368,
+    "downloads": 20389,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -139,8 +139,8 @@
       },
       {
         "hashes": {
-          "sha1": "d6cf05818cdf6830c14d7f42fbbbae7589d6da56",
-          "sha512": "c932cde32225221e2789c3c6ef74c633739735087e2da7ce649f44f651744fcc84db7ba10e9b2660e28f452e446a073354da1cddc55b033fc8be9361a8590e9c"
+          "sha512": "c932cde32225221e2789c3c6ef74c633739735087e2da7ce649f44f651744fcc84db7ba10e9b2660e28f452e446a073354da1cddc55b033fc8be9361a8590e9c",
+          "sha1": "d6cf05818cdf6830c14d7f42fbbbae7589d6da56"
         },
         "url": "https://cdn.modrinth.com/data/AuFCCYMx/versions/HN5tMCaw/Armored.Elytra.Icons.v1.4.1.zip",
         "filename": "Armored.Elytra.Icons.v1.4.1.zip",
@@ -174,15 +174,15 @@
     "changelog": "- Resourcepack for the mod version 1.4.0",
     "changelog_url": null,
     "date_published": "2025-01-25T21:24:44.874262Z",
-    "downloads": 6418,
+    "downloads": 6426,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "6291d674f04731d8d98e0f1e2b27e2afe4a5fe11",
-          "sha512": "5e62fb73dca7fd3425a2f930bd7881f0b6a2cada7627dcdfb4f52b7d54d4545f8d1a97716275b23a45db4d903d1469c1486a323b9aa1695689f354a131c4e269"
+          "sha512": "5e62fb73dca7fd3425a2f930bd7881f0b6a2cada7627dcdfb4f52b7d54d4545f8d1a97716275b23a45db4d903d1469c1486a323b9aa1695689f354a131c4e269",
+          "sha1": "6291d674f04731d8d98e0f1e2b27e2afe4a5fe11"
         },
         "url": "https://cdn.modrinth.com/data/AuFCCYMx/versions/4WUlRc4K/Armored%20Elytra%20Icons.zip",
         "filename": "Armored Elytra Icons.zip",
@@ -227,8 +227,8 @@
       },
       {
         "hashes": {
-          "sha1": "6291d674f04731d8d98e0f1e2b27e2afe4a5fe11",
-          "sha512": "5e62fb73dca7fd3425a2f930bd7881f0b6a2cada7627dcdfb4f52b7d54d4545f8d1a97716275b23a45db4d903d1469c1486a323b9aa1695689f354a131c4e269"
+          "sha512": "5e62fb73dca7fd3425a2f930bd7881f0b6a2cada7627dcdfb4f52b7d54d4545f8d1a97716275b23a45db4d903d1469c1486a323b9aa1695689f354a131c4e269",
+          "sha1": "6291d674f04731d8d98e0f1e2b27e2afe4a5fe11"
         },
         "url": "https://cdn.modrinth.com/data/AuFCCYMx/versions/hByCgtIl/Armored%20Elytra%20Icons.zip",
         "filename": "Armored Elytra Icons.zip",
@@ -315,8 +315,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7d2020231c7838ba234dab4cdd0334eb1c9b74ed",
-          "sha512": "0721a81255467ba3ef4a6bacf91bc82c6ef22aec72272043037bc7c8172ce9b0ca373ee4f7c812e9cc6ceaf68a4cfd09decdbba10d7a921f3d66f76b885c2e7a"
+          "sha512": "0721a81255467ba3ef4a6bacf91bc82c6ef22aec72272043037bc7c8172ce9b0ca373ee4f7c812e9cc6ceaf68a4cfd09decdbba10d7a921f3d66f76b885c2e7a",
+          "sha1": "7d2020231c7838ba234dab4cdd0334eb1c9b74ed"
         },
         "url": "https://cdn.modrinth.com/data/AuFCCYMx/versions/L0yShNav/armored-elytra-1.2.0.jar",
         "filename": "armored-elytra-1.2.0.jar",
@@ -350,15 +350,15 @@
     "changelog": "- Updated to Minecraft 1.21.1",
     "changelog_url": null,
     "date_published": "2024-08-31T15:43:15.045418Z",
-    "downloads": 12996,
+    "downloads": 13016,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "39e2fe8b154f6185533deb51d5b92a333ba43e09",
-          "sha512": "d4dae962d5adfec92a97ae0b269267b8bcdf57e4d373af9cbcb4c82697e2b9c1bde3eb923db1fb43860696f129e322c09aa6825edd02855c3d197b513cd2afa0"
+          "sha512": "d4dae962d5adfec92a97ae0b269267b8bcdf57e4d373af9cbcb4c82697e2b9c1bde3eb923db1fb43860696f129e322c09aa6825edd02855c3d197b513cd2afa0",
+          "sha1": "39e2fe8b154f6185533deb51d5b92a333ba43e09"
         },
         "url": "https://cdn.modrinth.com/data/AuFCCYMx/versions/FUhz9xnX/armored-elytra-1.1.0.jar",
         "filename": "armored-elytra-1.1.0.jar",
@@ -392,7 +392,7 @@
     "changelog": "Added Traditional Chinese (zh_tw.json) translation for item name and description thanks to contributors:\n- @yichifauzi \n- @notlin4 ",
     "changelog_url": null,
     "date_published": "2024-07-13T12:11:37.332217Z",
-    "downloads": 8750,
+    "downloads": 8766,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -434,15 +434,15 @@
     "changelog": "Initial release",
     "changelog_url": null,
     "date_published": "2024-07-02T21:33:55.460106Z",
-    "downloads": 1798,
+    "downloads": 1799,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "04b6862c57727e2923bdf5e26313408d95d95118747e39ce06b68c62db75206aa9ad20b419fd2674b171bde30f2c3fcf2d6815dfb81a367d1237e3e5a2582b13",
-          "sha1": "77c6cf1fd598897ab9c87c0170c93f99aa1a1f0b"
+          "sha1": "77c6cf1fd598897ab9c87c0170c93f99aa1a1f0b",
+          "sha512": "04b6862c57727e2923bdf5e26313408d95d95118747e39ce06b68c62db75206aa9ad20b419fd2674b171bde30f2c3fcf2d6815dfb81a367d1237e3e5a2582b13"
         },
         "url": "https://cdn.modrinth.com/data/AuFCCYMx/versions/T3LJWohg/armored-elytra-1.0.0.jar",
         "filename": "armored-elytra-1.0.0.jar",

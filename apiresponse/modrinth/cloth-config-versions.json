@@ -15,7 +15,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-06-19T06:21:57.833892Z",
-    "downloads": 2197,
+    "downloads": 2376,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -50,15 +50,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-06-19T06:21:53.357648Z",
-    "downloads": 122600,
+    "downloads": 133187,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "924b7e9bf6da670b936c3eaf3a2ba7904a05eff4fd712acf8ee62e587770c05a225109d3c0bdf015992e870945d2086aa00e738f90b3b109e364b0105c08875a",
-          "sha1": "d3bd78860580da556990726af3bed1169e69933e"
+          "sha1": "d3bd78860580da556990726af3bed1169e69933e",
+          "sha512": "924b7e9bf6da670b936c3eaf3a2ba7904a05eff4fd712acf8ee62e587770c05a225109d3c0bdf015992e870945d2086aa00e738f90b3b109e364b0105c08875a"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/cz0b1j8R/cloth-config-19.0.147-fabric.jar",
         "filename": "cloth-config-19.0.147-fabric.jar",
@@ -92,8 +92,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "58ace4be64872f1aada6c62f5831816e258a21da",
-          "sha512": "5ee7cd60a6baa939139cfa7ae5f9e0235e62de55d2bc82881d0f5347a9b6e86d156f7ca989b8023625c7c074ce7cf3f77845e6d47f8ba5309421537dde02601f"
+          "sha512": "5ee7cd60a6baa939139cfa7ae5f9e0235e62de55d2bc82881d0f5347a9b6e86d156f7ca989b8023625c7c074ce7cf3f77845e6d47f8ba5309421537dde02601f",
+          "sha1": "58ace4be64872f1aada6c62f5831816e258a21da"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/R1y82c6O/cloth-config-19.0.146-neoforge.jar",
         "filename": "cloth-config-19.0.146-neoforge.jar",
@@ -120,7 +120,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-06-18T13:16:28.250562Z",
-    "downloads": 34667,
+    "downloads": 34718,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -155,15 +155,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-03-26T15:14:53.982106Z",
-    "downloads": 47456,
+    "downloads": 47605,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "25bece4bbfaed4f74d6e5bdb0909c627adbc1fc368c17883a2b016c42e134cf71fefe1c2a69a080d3f6311540d3a268e3b738ff8b6987e85092a216616a85b74",
-          "sha1": "49d8e091296fd89e0c3d6f589e705ff86447163a"
+          "sha1": "49d8e091296fd89e0c3d6f589e705ff86447163a",
+          "sha512": "25bece4bbfaed4f74d6e5bdb0909c627adbc1fc368c17883a2b016c42e134cf71fefe1c2a69a080d3f6311540d3a268e3b738ff8b6987e85092a216616a85b74"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/jjrPm6iW/cloth-config-18.0.145-neoforge.jar",
         "filename": "cloth-config-18.0.145-neoforge.jar",
@@ -190,7 +190,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-03-26T15:14:48.200982Z",
-    "downloads": 2236456,
+    "downloads": 2248417,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -225,15 +225,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-13T06:36:06.683211Z",
-    "downloads": 67171,
+    "downloads": 67286,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0e16e28cc181aa95bfc4e700affc2d3c95068958e144214620502ee1307fa239a92175a121f96ec16e6abface042f030987833a231a5b60bdb81d80cb669b2ca",
-          "sha1": "af9a6e52015098fd3d97d996dafbb66bbe495691"
+          "sha1": "af9a6e52015098fd3d97d996dafbb66bbe495691",
+          "sha512": "0e16e28cc181aa95bfc4e700affc2d3c95068958e144214620502ee1307fa239a92175a121f96ec16e6abface042f030987833a231a5b60bdb81d80cb669b2ca"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/dWfheG9X/cloth-config-17.0.144-neoforge.jar",
         "filename": "cloth-config-17.0.144-neoforge.jar",
@@ -261,15 +261,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-13T06:36:03.791526Z",
-    "downloads": 9120,
+    "downloads": 9148,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "55c14d92765fe42ba465eb2c27ca26006c795533",
-          "sha512": "38ec2bfe269bc8014c5ba280f399ef85975926170d8f756e4150e45b6d95b700341a99e7cbca92d0801305b9b596801cd3d5cee5354412a21d7178ca272031fc"
+          "sha512": "38ec2bfe269bc8014c5ba280f399ef85975926170d8f756e4150e45b6d95b700341a99e7cbca92d0801305b9b596801cd3d5cee5354412a21d7178ca272031fc",
+          "sha1": "55c14d92765fe42ba465eb2c27ca26006c795533"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/i6G5WG2W/cloth-config-17.0.144-forge.jar",
         "filename": "cloth-config-17.0.144-forge.jar",
@@ -296,7 +296,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-13T06:36:00.768326Z",
-    "downloads": 2942014,
+    "downloads": 2946713,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -332,15 +332,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-13T05:50:39.452618Z",
-    "downloads": 3445,
+    "downloads": 3455,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2449d512c35f3d182875f020e806bcc9a73b593509433d1a3b485bbb1c8ca77cebfbddec4ec5fdb7f48238803809161d7f618857ac850c99b49e232368c4c06d",
-          "sha1": "7dc3c746270310e2328646d9a8bc95a1adfe50a5"
+          "sha1": "7dc3c746270310e2328646d9a8bc95a1adfe50a5",
+          "sha512": "2449d512c35f3d182875f020e806bcc9a73b593509433d1a3b485bbb1c8ca77cebfbddec4ec5fdb7f48238803809161d7f618857ac850c99b49e232368c4c06d"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/h06GalE6/cloth-config-16.0.143-neoforge.jar",
         "filename": "cloth-config-16.0.143-neoforge.jar",
@@ -368,15 +368,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-13T05:50:34.309113Z",
-    "downloads": 417,
+    "downloads": 418,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "96aa5c3b348d815bfea6dac0b6b56b9a19430762",
-          "sha512": "6503212fa6c3f8de630959bd0671188e1781be2d022e0d712022b0aa2f30626db377c31d619b836383c7a3566a91ff321a34058fca2ce05237fecb42be1c8a55"
+          "sha512": "6503212fa6c3f8de630959bd0671188e1781be2d022e0d712022b0aa2f30626db377c31d619b836383c7a3566a91ff321a34058fca2ce05237fecb42be1c8a55",
+          "sha1": "96aa5c3b348d815bfea6dac0b6b56b9a19430762"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/wJT939f6/cloth-config-16.0.143-forge.jar",
         "filename": "cloth-config-16.0.143-forge.jar",
@@ -404,15 +404,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-13T05:50:30.181278Z",
-    "downloads": 175930,
+    "downloads": 176187,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "59bae445dc49e10b5717a3ae253b12b983ed1f49",
-          "sha512": "16c7e2a0cfc39fd42f71cd913729343f7d3b63356e4382ef92f0d939cc18bf7ae15e916b8674af09d5cfc0ca003148d8fa9bd7b16254c86aa34ff32f6624929a"
+          "sha512": "16c7e2a0cfc39fd42f71cd913729343f7d3b63356e4382ef92f0d939cc18bf7ae15e916b8674af09d5cfc0ca003148d8fa9bd7b16254c86aa34ff32f6624929a",
+          "sha1": "59bae445dc49e10b5717a3ae253b12b983ed1f49"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/FgXq8Sfo/cloth-config-16.0.143-fabric.jar",
         "filename": "cloth-config-16.0.143-fabric.jar",
@@ -439,7 +439,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-06T17:13:49.757559Z",
-    "downloads": 1730,
+    "downloads": 1732,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -474,7 +474,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-12-06T17:13:44.897718Z",
-    "downloads": 101049,
+    "downloads": 101067,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -510,15 +510,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-10-22T18:35:47.618751Z",
-    "downloads": 15734,
+    "downloads": 15749,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "46010e9fac5ff376f0f7158a15de2abd2a9b9740b85be3e64175c05f3a0272ace45ec9bbe14edd765df71c9b402b962c2b0226db5dcc79bd09ba2d0e57224e95",
-          "sha1": "bceb716fd53166d2714a91cb932f679d04640506"
+          "sha1": "bceb716fd53166d2714a91cb932f679d04640506",
+          "sha512": "46010e9fac5ff376f0f7158a15de2abd2a9b9740b85be3e64175c05f3a0272ace45ec9bbe14edd765df71c9b402b962c2b0226db5dcc79bd09ba2d0e57224e95"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/uYoucpky/cloth-config-16.0.141-neoforge.jar",
         "filename": "cloth-config-16.0.141-neoforge.jar",
@@ -546,15 +546,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-10-22T18:35:42.899741Z",
-    "downloads": 557145,
+    "downloads": 557238,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f8b0fa16fe80a8b78a059ebf1cf366d65132b1dd1830d8b689ecfc731696514e2b3dd73903fbb37d0a5f3d853aa521827bf7ed6fb5d9db245c6afd7ffb9e2687",
-          "sha1": "1fddc6ec979131a3623ae6b6a4f6c631b5f6f45d"
+          "sha1": "1fddc6ec979131a3623ae6b6a4f6c631b5f6f45d",
+          "sha512": "f8b0fa16fe80a8b78a059ebf1cf366d65132b1dd1830d8b689ecfc731696514e2b3dd73903fbb37d0a5f3d853aa521827bf7ed6fb5d9db245c6afd7ffb9e2687"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/JbVSQUVw/cloth-config-16.0.141-fabric.jar",
         "filename": "cloth-config-16.0.141-fabric.jar",
@@ -582,15 +582,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:20:47.319157Z",
-    "downloads": 9294,
+    "downloads": 9308,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "30c4be59949c3b8c19a0960b2844c0309270aad8",
-          "sha512": "0c05e029ffa52973f347bc1c4de297aa9d4aef19e5b562074d3eafe7e91da748078772e7fdf38ce82282314b28fef3b70c5bdfb1445a08a86079fa6d485c0403"
+          "sha512": "0c05e029ffa52973f347bc1c4de297aa9d4aef19e5b562074d3eafe7e91da748078772e7fdf38ce82282314b28fef3b70c5bdfb1445a08a86079fa6d485c0403",
+          "sha1": "30c4be59949c3b8c19a0960b2844c0309270aad8"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/gUuDD6aJ/cloth-config-13.0.138-neoforge.jar",
         "filename": "cloth-config-13.0.138-neoforge.jar",
@@ -618,7 +618,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:20:42.67976Z",
-    "downloads": 18587,
+    "downloads": 18611,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -654,15 +654,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:20:39.379267Z",
-    "downloads": 284388,
+    "downloads": 284906,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e374f80329cea3d73e10e31839fe79d5a4fc0b30",
-          "sha512": "3863fb95cc57526c6876cb60600f2e4282a5fa8d997d981e984da48f34be654cd0c5fc09e7d77079a393b2d7e3e48baabb756ad84ea58881b22ea771f43baa4a"
+          "sha512": "3863fb95cc57526c6876cb60600f2e4282a5fa8d997d981e984da48f34be654cd0c5fc09e7d77079a393b2d7e3e48baabb756ad84ea58881b22ea771f43baa4a",
+          "sha1": "e374f80329cea3d73e10e31839fe79d5a4fc0b30"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/2deYQULk/cloth-config-13.0.138-fabric.jar",
         "filename": "cloth-config-13.0.138-fabric.jar",
@@ -690,7 +690,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:18:02.926305Z",
-    "downloads": 636493,
+    "downloads": 639367,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -726,15 +726,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:17:59.703431Z",
-    "downloads": 60512,
+    "downloads": 60678,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5628440a7c5951346bf98a269e0f455e55b505bd3c38218a4883847837e896ed78fbad97f71bf82a778133e4041d763fa14149794bd0f9c9a05173b653047874",
-          "sha1": "a210f4c9a50975a72facf541955d6c610f7dcfd2"
+          "sha1": "a210f4c9a50975a72facf541955d6c610f7dcfd2",
+          "sha512": "5628440a7c5951346bf98a269e0f455e55b505bd3c38218a4883847837e896ed78fbad97f71bf82a778133e4041d763fa14149794bd0f9c9a05173b653047874"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/XMYFN6Zc/cloth-config-15.0.140-forge.jar",
         "filename": "cloth-config-15.0.140-forge.jar",
@@ -762,15 +762,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:17:55.762416Z",
-    "downloads": 5421585,
+    "downloads": 5436580,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1b3f5db4fc1d481704053db9837d530919374bf7518d7cede607360f0348c04fc6347a3a72ccfef355559e1f4aef0b650cd58e5ee79c73b12ff0fc2746797a00",
-          "sha1": "5d82342a2df53fd6df712bfdd583a811572918a4"
+          "sha1": "5d82342a2df53fd6df712bfdd583a811572918a4",
+          "sha512": "1b3f5db4fc1d481704053db9837d530919374bf7518d7cede607360f0348c04fc6347a3a72ccfef355559e1f4aef0b650cd58e5ee79c73b12ff0fc2746797a00"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/HpMb5wGb/cloth-config-15.0.140-fabric.jar",
         "filename": "cloth-config-15.0.140-fabric.jar",
@@ -797,7 +797,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:16:57.195173Z",
-    "downloads": 2409,
+    "downloads": 2412,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -832,7 +832,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:16:54.657831Z",
-    "downloads": 13365,
+    "downloads": 13386,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -867,15 +867,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:16:52.016069Z",
-    "downloads": 45655,
+    "downloads": 45727,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "01b21e32bbe1219dae33696c11c57abeeddb3deeec15ce61003b8065c464a82649328bc43ca732e1e56d79643a38560bd0092fef6a075649460c3e92d13b6713",
-          "sha1": "1297760c04a20152dc967fa867bd8c0386c106dd"
+          "sha1": "1297760c04a20152dc967fa867bd8c0386c106dd",
+          "sha512": "01b21e32bbe1219dae33696c11c57abeeddb3deeec15ce61003b8065c464a82649328bc43ca732e1e56d79643a38560bd0092fef6a075649460c3e92d13b6713"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/9YwAqtuZ/cloth-config-12.0.137-fabric.jar",
         "filename": "cloth-config-12.0.137-fabric.jar",
@@ -903,15 +903,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:16:25.060004Z",
-    "downloads": 4263,
+    "downloads": 4276,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5c0260cd0fbb856205015aaef5573d8bc173205da5bf63c1e4cf3f3e698ad05008ac9dc65d174a028220bbe61d17cbb65af2fc97ba12c1a9ccb03b291606ec94",
-          "sha1": "9c5d8104f6cc8324e6a21861b5dc13d0818f5734"
+          "sha1": "9c5d8104f6cc8324e6a21861b5dc13d0818f5734",
+          "sha512": "5c0260cd0fbb856205015aaef5573d8bc173205da5bf63c1e4cf3f3e698ad05008ac9dc65d174a028220bbe61d17cbb65af2fc97ba12c1a9ccb03b291606ec94"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/hradv69C/cloth-config-14.0.139-neoforge.jar",
         "filename": "cloth-config-14.0.139-neoforge.jar",
@@ -939,15 +939,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:16:22.444921Z",
-    "downloads": 4601,
+    "downloads": 4606,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "bd1a5c7d0e4c3abd8745fcaf2cc929e71c5724400d9101e616c066bf2b8c5abc69fcaa272a3f5ffe62fa6e24f8f8613111671e6e30cc47e00448bb540ce88306",
-          "sha1": "010bc007a67b6df9303ed95623e9cba83c80cc93"
+          "sha1": "010bc007a67b6df9303ed95623e9cba83c80cc93",
+          "sha512": "bd1a5c7d0e4c3abd8745fcaf2cc929e71c5724400d9101e616c066bf2b8c5abc69fcaa272a3f5ffe62fa6e24f8f8613111671e6e30cc47e00448bb540ce88306"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/nUTOGFsJ/cloth-config-14.0.139-forge.jar",
         "filename": "cloth-config-14.0.139-forge.jar",
@@ -975,15 +975,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:16:20.265696Z",
-    "downloads": 107539,
+    "downloads": 107757,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "6ed3c03b2269fee345f6c67eca876b78552272c3",
-          "sha512": "edfd38319ed73a620a11a8d50a93f8ec8b30cd8cd02819f194589a7d6e7b8b3f6619056856f85de25e6de0d7202d4a8ad3e9c1deabbeb643d15d8610124a03b0"
+          "sha512": "edfd38319ed73a620a11a8d50a93f8ec8b30cd8cd02819f194589a7d6e7b8b3f6619056856f85de25e6de0d7202d4a8ad3e9c1deabbeb643d15d8610124a03b0",
+          "sha1": "6ed3c03b2269fee345f6c67eca876b78552272c3"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/g0uTATyM/cloth-config-14.0.139-fabric.jar",
         "filename": "cloth-config-14.0.139-fabric.jar",
@@ -1011,15 +1011,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:13:50.72569Z",
-    "downloads": 4269221,
+    "downloads": 4287085,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c65d07748acc57ceb45d53b3964368b84f34d54f",
-          "sha512": "137c4af99c53d77317cbfb1cc8c49fc2761708b49d1992f51fd846960df41dde3a83519c987e081508d4ed90c603566f3d5a6cb620ad9d85b8f4de59aa9115ef"
+          "sha512": "137c4af99c53d77317cbfb1cc8c49fc2761708b49d1992f51fd846960df41dde3a83519c987e081508d4ed90c603566f3d5a6cb620ad9d85b8f4de59aa9115ef",
+          "sha1": "c65d07748acc57ceb45d53b3964368b84f34d54f"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/t8TXrZvZ/cloth-config-11.1.136-forge.jar",
         "filename": "cloth-config-11.1.136-forge.jar",
@@ -1047,15 +1047,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:13:47.844274Z",
-    "downloads": 3426419,
+    "downloads": 3436209,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d5fe84a0cc9ed5c7290a76ba570e1f8716afecab",
-          "sha512": "2da85c071c854223cc30c8e46794391b77e53f28ecdbbde59dc83b3dbbdfc74be9e68da9ed464e7f98b4361033899ba4f681ebff1f35edc2c60e599a59796f1c"
+          "sha512": "2da85c071c854223cc30c8e46794391b77e53f28ecdbbde59dc83b3dbbdfc74be9e68da9ed464e7f98b4361033899ba4f681ebff1f35edc2c60e599a59796f1c",
+          "sha1": "d5fe84a0cc9ed5c7290a76ba570e1f8716afecab"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/2xQdCMyG/cloth-config-11.1.136-fabric.jar",
         "filename": "cloth-config-11.1.136-fabric.jar",
@@ -1082,15 +1082,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:12:52.015975Z",
-    "downloads": 14588,
+    "downloads": 14612,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ea6ec48c7b838040aad58224921947a55bae1c4bafdd0a692dfa011a64a657ca793749a63b7086cb733182cb2cb8dfb45ea0693db72ed1ab160d79e927e33326",
-          "sha1": "68ce66d6bf5d8525d6ec9cda2086e0434fdc065c"
+          "sha1": "68ce66d6bf5d8525d6ec9cda2086e0434fdc065c",
+          "sha512": "ea6ec48c7b838040aad58224921947a55bae1c4bafdd0a692dfa011a64a657ca793749a63b7086cb733182cb2cb8dfb45ea0693db72ed1ab160d79e927e33326"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/mwddirHR/cloth-config-10.1.135-forge.jar",
         "filename": "cloth-config-10.1.135-forge.jar",
@@ -1117,15 +1117,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:12:49.466158Z",
-    "downloads": 60509,
+    "downloads": 60606,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4f180acffa5c4abb1ed895c21265dc50b1420dff",
-          "sha512": "b9aed46cff0bb4f33b55632de2234efc223d406cb33f264fc52048965c3570ae03d2493c5a93f46efd3bcf8c13f1d9cb420ff567f6c768108ddacb60918efbe6"
+          "sha512": "b9aed46cff0bb4f33b55632de2234efc223d406cb33f264fc52048965c3570ae03d2493c5a93f46efd3bcf8c13f1d9cb420ff567f6c768108ddacb60918efbe6",
+          "sha1": "4f180acffa5c4abb1ed895c21265dc50b1420dff"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/ZTMfeJij/cloth-config-10.1.135-fabric.jar",
         "filename": "cloth-config-10.1.135-fabric.jar",
@@ -1154,15 +1154,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:12:08.631675Z",
-    "downloads": 425434,
+    "downloads": 426540,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e2a3a4e9eeae37b7e79aa8e72bb2834675fe4fe5",
-          "sha512": "607d0bd647ce3499fe8ab57caeb962862ca22d2b891b477e18d76e0900e6103e61e092826d8f8e104143920fd36a9a849b6d87dc677f248e08ac708a4b947e54"
+          "sha512": "607d0bd647ce3499fe8ab57caeb962862ca22d2b891b477e18d76e0900e6103e61e092826d8f8e104143920fd36a9a849b6d87dc677f248e08ac708a4b947e54",
+          "sha1": "e2a3a4e9eeae37b7e79aa8e72bb2834675fe4fe5"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/qqCHdFw2/cloth-config-8.3.134-forge.jar",
         "filename": "cloth-config-8.3.134-forge.jar",
@@ -1191,7 +1191,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-16T17:12:05.476395Z",
-    "downloads": 141179,
+    "downloads": 141461,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1226,15 +1226,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-09-10T15:08:10.635454Z",
-    "downloads": 3614,
+    "downloads": 3635,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a4d52a7c9c3197575f8428ebffac35631e2b9b53",
-          "sha512": "dd9ca80fdda12348983c3f094c4520178eeee9b56c9285e2105b03a71ef9477a95b589d59298d9297c81e9eb1816c20471e112554fb72255cd92c246d15e0edd"
+          "sha512": "dd9ca80fdda12348983c3f094c4520178eeee9b56c9285e2105b03a71ef9477a95b589d59298d9297c81e9eb1816c20471e112554fb72255cd92c246d15e0edd",
+          "sha1": "a4d52a7c9c3197575f8428ebffac35631e2b9b53"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Nf2ezsBW/cloth-config-16.0.131-fabric.jar",
         "filename": "cloth-config-16.0.131-fabric.jar",
@@ -1262,7 +1262,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-08-13T04:52:23.396573Z",
-    "downloads": 29062,
+    "downloads": 29072,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1298,15 +1298,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-08-13T04:52:20.447041Z",
-    "downloads": 11216,
+    "downloads": 11219,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "aeee7a37d92c8941327065be7c89887ed0471565",
-          "sha512": "dfe9a970241c21647c938d714de76a98e35d14e2aedbfd37108113d1785efa2449442ece47b2558e31049df4f45265229d30b879b1ff2320dcc0b7b11e18c038"
+          "sha512": "dfe9a970241c21647c938d714de76a98e35d14e2aedbfd37108113d1785efa2449442ece47b2558e31049df4f45265229d30b879b1ff2320dcc0b7b11e18c038",
+          "sha1": "aeee7a37d92c8941327065be7c89887ed0471565"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/yPULtkhh/cloth-config-15.0.130-forge.jar",
         "filename": "cloth-config-15.0.130-forge.jar",
@@ -1334,15 +1334,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-08-13T04:52:17.279394Z",
-    "downloads": 1520064,
+    "downloads": 1520946,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8889378815cd9c645a5a7a8b4d800cf211a4cdfae48c7e005f5f1f630272e909899e304e5c294b4c4c05970171ee7ab594d5b1007086ac14d22db414e83eb60b",
-          "sha1": "4b1283fad1e4f8c9bcdb2a7767a0a468d0ac4cc5"
+          "sha1": "4b1283fad1e4f8c9bcdb2a7767a0a468d0ac4cc5",
+          "sha512": "8889378815cd9c645a5a7a8b4d800cf211a4cdfae48c7e005f5f1f630272e909899e304e5c294b4c4c05970171ee7ab594d5b1007086ac14d22db414e83eb60b"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7jtvrmVP/cloth-config-15.0.130-fabric.jar",
         "filename": "cloth-config-15.0.130-fabric.jar",
@@ -1377,8 +1377,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "07013ac04962d60a657795e3c3e9f3f92b426599",
-          "sha512": "563984a2e450b63554c7add196ca0b1ec7c12b3868a7a65ecd207e69d0cac250f69bc6785d2eb2b79ee65ee181d66fcec9537590beeaa39c83ee2527c84ea25d"
+          "sha512": "563984a2e450b63554c7add196ca0b1ec7c12b3868a7a65ecd207e69d0cac250f69bc6785d2eb2b79ee65ee181d66fcec9537590beeaa39c83ee2527c84ea25d",
+          "sha1": "07013ac04962d60a657795e3c3e9f3f92b426599"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Y9QgGQ59/cloth-config-14.0.129-neoforge.jar",
         "filename": "cloth-config-14.0.129-neoforge.jar",
@@ -1413,8 +1413,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b62768c7ddf1982246051b608bd5c03f36f0c2c9",
-          "sha512": "9f6351322b3163c6b7afe6d9950f3bc36019390e8115ec14ddeb3b905103142026cbf9b05ff80b3651530184a1bb573d863026d9aa8618319375234baeee2e68"
+          "sha512": "9f6351322b3163c6b7afe6d9950f3bc36019390e8115ec14ddeb3b905103142026cbf9b05ff80b3651530184a1bb573d863026d9aa8618319375234baeee2e68",
+          "sha1": "b62768c7ddf1982246051b608bd5c03f36f0c2c9"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/KWjX5anR/cloth-config-14.0.129-forge.jar",
         "filename": "cloth-config-14.0.129-forge.jar",
@@ -1442,15 +1442,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-08-13T04:33:11.981591Z",
-    "downloads": 27233,
+    "downloads": 27252,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0f49f28cdeeb99cd588b883e5f0b5b929b967ef44be1f997394e589ae52366ae107eb663aff75ed559921ffdb71f86290d7f8b8f0052f005c4c7a0189dd61c52",
-          "sha1": "902e073599c3fb4ecd692b3c7c0bb5acbdd260bc"
+          "sha1": "902e073599c3fb4ecd692b3c7c0bb5acbdd260bc",
+          "sha512": "0f49f28cdeeb99cd588b883e5f0b5b929b967ef44be1f997394e589ae52366ae107eb663aff75ed559921ffdb71f86290d7f8b8f0052f005c4c7a0189dd61c52"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/JYR3Y30y/cloth-config-14.0.129-fabric.jar",
         "filename": "cloth-config-14.0.129-fabric.jar",
@@ -1477,15 +1477,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-07-22T09:14:26.882645Z",
-    "downloads": 23328,
+    "downloads": 23334,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "6dc2f7919f56f28d15e604460819afb110b93323",
-          "sha512": "36ff6eb3b5df6589e14c34bc33af048a6f8551d438dcb10722fc44b76e8822317c80ea9471b8a1a60ab9cf9422499a83ff4497d0ff9a1b295d92016606a15f58"
+          "sha512": "36ff6eb3b5df6589e14c34bc33af048a6f8551d438dcb10722fc44b76e8822317c80ea9471b8a1a60ab9cf9422499a83ff4497d0ff9a1b295d92016606a15f58",
+          "sha1": "6dc2f7919f56f28d15e604460819afb110b93323"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/jMyYg8Uv/cloth-config-15.0.128-neoforge.jar",
         "filename": "cloth-config-15.0.128-neoforge.jar",
@@ -1512,7 +1512,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-07-22T09:14:23.787506Z",
-    "downloads": 1221256,
+    "downloads": 1222119,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1547,15 +1547,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-06-13T17:37:53.001956Z",
-    "downloads": 32436,
+    "downloads": 32439,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8b54f1c171313f741d6376caf57a2182e4f39ae7c000578808a943189427078d1773070d6f8abc9919b339f39b23ed9e6af3730dc0bcd28f2ed0b42f63273b25",
-          "sha1": "4b6feb8195c9dd6ae9b0979d4006b3fa998bd42d"
+          "sha1": "4b6feb8195c9dd6ae9b0979d4006b3fa998bd42d",
+          "sha512": "8b54f1c171313f741d6376caf57a2182e4f39ae7c000578808a943189427078d1773070d6f8abc9919b339f39b23ed9e6af3730dc0bcd28f2ed0b42f63273b25"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/HsTzbbnf/cloth-config-15.0.127-neoforge.jar",
         "filename": "cloth-config-15.0.127-neoforge.jar",
@@ -1582,15 +1582,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-06-13T17:37:49.686415Z",
-    "downloads": 1155368,
+    "downloads": 1155795,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d2cef696bbf70a07075b798e541e8c98c34ddd2d",
-          "sha512": "b3059112661363955aa77f3cdc2993e7875089f6415179351869febd4bd35a221b75001ab4698e6105f3c0241698d0ffce645b5cae7fe9f90bdb3b96b74691d2"
+          "sha512": "b3059112661363955aa77f3cdc2993e7875089f6415179351869febd4bd35a221b75001ab4698e6105f3c0241698d0ffce645b5cae7fe9f90bdb3b96b74691d2",
+          "sha1": "d2cef696bbf70a07075b798e541e8c98c34ddd2d"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Yc8omJNb/cloth-config-15.0.127-fabric.jar",
         "filename": "cloth-config-15.0.127-fabric.jar",
@@ -1618,7 +1618,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-04-24T14:06:32.116617Z",
-    "downloads": 29598,
+    "downloads": 29600,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1654,15 +1654,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-04-24T14:06:29.405371Z",
-    "downloads": 691121,
+    "downloads": 691250,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6a1f7e68e2771dd96ba5d8d41f170c8d81fcc5b18b44529ae633e1f67e4738504919bfce42fdf7bfb162ee27d43f0e109919db5718a7269092f550a833bc3eae",
-          "sha1": "9af410a9cb959c639a351129a3bebb8e87a1fb42"
+          "sha1": "9af410a9cb959c639a351129a3bebb8e87a1fb42",
+          "sha512": "6a1f7e68e2771dd96ba5d8d41f170c8d81fcc5b18b44529ae633e1f67e4738504919bfce42fdf7bfb162ee27d43f0e109919db5718a7269092f550a833bc3eae"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/znhJLkCd/cloth-config-14.0.126-fabric.jar",
         "filename": "cloth-config-14.0.126-fabric.jar",
@@ -1696,8 +1696,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "805f6bb331fb8a70a2e074ad22f4700e6e121d0d",
-          "sha512": "5a077bf1f0d8ee728dfb6d55928ab20d82fd3fc4a445209180127dd23edd808975181af5036248f4c24febd803b9f65ab1904a17bef8da83d0f1c16155549e2a"
+          "sha512": "5a077bf1f0d8ee728dfb6d55928ab20d82fd3fc4a445209180127dd23edd808975181af5036248f4c24febd803b9f65ab1904a17bef8da83d0f1c16155549e2a",
+          "sha1": "805f6bb331fb8a70a2e074ad22f4700e6e121d0d"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/X9ucoGCn/cloth-config-14.0.125-fabric.jar",
         "filename": "cloth-config-14.0.125-fabric.jar",
@@ -1724,15 +1724,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-04-02T11:58:55.534152Z",
-    "downloads": 5476,
+    "downloads": 5478,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c0129a25f669fd0c41534077d555950755c2c926",
-          "sha512": "3c2557098c3c2ea03965e512854839a1c72681cad61fd86321cd75862ba9c9213551f8d88d1ade92c0e4143119d07d6df99a610583be8030f50a3d79a5e62119"
+          "sha512": "3c2557098c3c2ea03965e512854839a1c72681cad61fd86321cd75862ba9c9213551f8d88d1ade92c0e4143119d07d6df99a610583be8030f50a3d79a5e62119",
+          "sha1": "c0129a25f669fd0c41534077d555950755c2c926"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/JRZSHDFK/cloth-config-14.0.123-fabric.jar",
         "filename": "cloth-config-14.0.123-fabric.jar",
@@ -1766,8 +1766,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9273c57d2c4c4ff76e7a6b8b25ba174e5caa9c72",
-          "sha512": "366f0535a157a867649b68fe7f63f6d00c2e886337c8d514082c384aa5cc4cabd4b0aad96b3e5ef5fedaeab2bcc696f34bc14576ca08028958f873137a33a3c9"
+          "sha512": "366f0535a157a867649b68fe7f63f6d00c2e886337c8d514082c384aa5cc4cabd4b0aad96b3e5ef5fedaeab2bcc696f34bc14576ca08028958f873137a33a3c9",
+          "sha1": "9273c57d2c4c4ff76e7a6b8b25ba174e5caa9c72"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/3TLtSX1e/cloth-config-14.0.122-fabric.jar",
         "filename": "cloth-config-14.0.122-fabric.jar",
@@ -1795,7 +1795,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-21T10:23:51.605674Z",
-    "downloads": 76668,
+    "downloads": 76669,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1838,8 +1838,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0f9f8a8dc6c05187310c5bfd36610465f5216858",
-          "sha512": "997082c935bafae292c755a11f56339b3e89ea9c5c8e026d35fdc42817faafd2eae1a56d5eb7950ac69371fc160c147732c2e837a0299cd3d8f95700a0fb2bb1"
+          "sha512": "997082c935bafae292c755a11f56339b3e89ea9c5c8e026d35fdc42817faafd2eae1a56d5eb7950ac69371fc160c147732c2e837a0299cd3d8f95700a0fb2bb1",
+          "sha1": "0f9f8a8dc6c05187310c5bfd36610465f5216858"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/1MwQkf8u/cloth-config-13.0.121-forge.jar",
         "filename": "cloth-config-13.0.121-forge.jar",
@@ -1867,15 +1867,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-21T10:23:27.195922Z",
-    "downloads": 1814880,
+    "downloads": 1815358,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e20f396a937a09b686aa986c802643b9adbb311e",
-          "sha512": "05a389ce4383c7b202e6aa7b37f39da01b6ee1f5b22dad076d528891b5ef8bcae335b2d7930b33b753ad34f1a61bae52f3447f74a4df6739239344674b59b0c5"
+          "sha512": "05a389ce4383c7b202e6aa7b37f39da01b6ee1f5b22dad076d528891b5ef8bcae335b2d7930b33b753ad34f1a61bae52f3447f74a4df6739239344674b59b0c5",
+          "sha1": "e20f396a937a09b686aa986c802643b9adbb311e"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/eBZiZ9NS/cloth-config-13.0.121-fabric.jar",
         "filename": "cloth-config-13.0.121-fabric.jar",
@@ -1909,8 +1909,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e48b258e3ee65c04602639ebf10d0d143bfe7cda",
-          "sha512": "557d98680d8562c22101e13a7e12d516ce6e757c2601dfea3e776e40c627abcf4dea965263ec5d1106a160d06638a6ae0f50483ca391f0799b81d44e3224411a"
+          "sha512": "557d98680d8562c22101e13a7e12d516ce6e757c2601dfea3e776e40c627abcf4dea965263ec5d1106a160d06638a6ae0f50483ca391f0799b81d44e3224411a",
+          "sha1": "e48b258e3ee65c04602639ebf10d0d143bfe7cda"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6GeyuE7Y/cloth-config-12.0.119-neoforge.jar",
         "filename": "cloth-config-12.0.119-neoforge.jar",
@@ -1937,15 +1937,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-21T10:20:29.430774Z",
-    "downloads": 18327,
+    "downloads": 18328,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "59d9b69c26d423fa838765c58364db566d2c6f46",
-          "sha512": "c7c8e0d15bc3626be944a6e355f78993c83234184d2b12d9b99b1dc60065ada597fe6aa6a4c30dc7a4928e75c24a9e8158bd4e4fa2707c9da7d05d0c5c71ebcb"
+          "sha512": "c7c8e0d15bc3626be944a6e355f78993c83234184d2b12d9b99b1dc60065ada597fe6aa6a4c30dc7a4928e75c24a9e8158bd4e4fa2707c9da7d05d0c5c71ebcb",
+          "sha1": "59d9b69c26d423fa838765c58364db566d2c6f46"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Y51gygcX/cloth-config-12.0.119-forge.jar",
         "filename": "cloth-config-12.0.119-forge.jar",
@@ -1972,7 +1972,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-21T10:20:18.497314Z",
-    "downloads": 464239,
+    "downloads": 464298,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2007,15 +2007,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-21T10:19:19.754391Z",
-    "downloads": 39027,
+    "downloads": 39034,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4c6b152c7d131ba4e7ac1a39811796eb4757d879",
-          "sha512": "1e87959f92156da668220c1d0581a8e3333370ed255740a3bcad520223b49a66de10ebb59bd996a04e2615691b9b34782c3fa90766d2cdfc4b52e9b738e4e10c"
+          "sha512": "1e87959f92156da668220c1d0581a8e3333370ed255740a3bcad520223b49a66de10ebb59bd996a04e2615691b9b34782c3fa90766d2cdfc4b52e9b738e4e10c",
+          "sha1": "4c6b152c7d131ba4e7ac1a39811796eb4757d879"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/w2LhUkqZ/cloth-config-10.1.117-forge.jar",
         "filename": "cloth-config-10.1.117-forge.jar",
@@ -2042,7 +2042,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-21T10:19:08.004157Z",
-    "downloads": 87320,
+    "downloads": 87336,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2079,15 +2079,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-21T10:18:48.451396Z",
-    "downloads": 1528456,
+    "downloads": 1529319,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b0a894303734dc029ce4b2c49736c1ec9af91821ee2b5d72a5c4d7a74409712be5748a018613d416cfe1059f5ceb0510401855422e81ab888f9949e4c250d453",
-          "sha1": "39dfb4f1b8c7d012cd85b36a6369de2dc01ba9f8"
+          "sha1": "39dfb4f1b8c7d012cd85b36a6369de2dc01ba9f8",
+          "sha512": "b0a894303734dc029ce4b2c49736c1ec9af91821ee2b5d72a5c4d7a74409712be5748a018613d416cfe1059f5ceb0510401855422e81ab888f9949e4c250d453"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/o6AGzycg/cloth-config-8.3.115-forge.jar",
         "filename": "cloth-config-8.3.115-forge.jar",
@@ -2116,15 +2116,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-21T10:18:35.099668Z",
-    "downloads": 249243,
+    "downloads": 249328,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "949d908415eb7c6b1b974a614c719b6c9f14f527",
-          "sha512": "73091f6269f323724b190b8bc25d90860010a22be87f09af93c20e044f37867c8efddeafa521d95cd315f1df5335c628bb2392740d05ce36c92275b18ec465f1"
+          "sha512": "73091f6269f323724b190b8bc25d90860010a22be87f09af93c20e044f37867c8efddeafa521d95cd315f1df5335c628bb2392740d05ce36c92275b18ec465f1",
+          "sha1": "949d908415eb7c6b1b974a614c719b6c9f14f527"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/3Ejdp6VI/cloth-config-8.3.115-fabric.jar",
         "filename": "cloth-config-8.3.115-fabric.jar",
@@ -2152,7 +2152,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-21T10:17:34.521843Z",
-    "downloads": 1800679,
+    "downloads": 1802221,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2188,7 +2188,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-21T10:17:23.45377Z",
-    "downloads": 5158762,
+    "downloads": 5161490,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2230,8 +2230,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "131fef136e6de0cee05a0e39311b9d41c449b9a28087e592403d5bc6d4d6d920f4667d93c6b83593c01e47d95fb3437a4dc3540a7e64e37fbace8be72f957d48",
-          "sha1": "d50fe2a47bd7adcadc8ba02ab2496f70d3bee0a5"
+          "sha1": "d50fe2a47bd7adcadc8ba02ab2496f70d3bee0a5",
+          "sha512": "131fef136e6de0cee05a0e39311b9d41c449b9a28087e592403d5bc6d4d6d920f4667d93c6b83593c01e47d95fb3437a4dc3540a7e64e37fbace8be72f957d48"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/2FKRnZ92/cloth-config-12.0.113-neoforge.jar",
         "filename": "cloth-config-12.0.113-neoforge.jar",
@@ -2266,8 +2266,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d93d9e27d98be76d2deeed180a5eaf613b24d33f",
-          "sha512": "66662af0a0a0bef3755dac2cb516fba4808826a744c9336dc8cbb883bdca69ce20f5669b47e816187b1d32bb9c47af8b8a74bfa5aa356bc83b833a0e5d0305d6"
+          "sha512": "66662af0a0a0bef3755dac2cb516fba4808826a744c9336dc8cbb883bdca69ce20f5669b47e816187b1d32bb9c47af8b8a74bfa5aa356bc83b833a0e5d0305d6",
+          "sha1": "d93d9e27d98be76d2deeed180a5eaf613b24d33f"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/KBfIrjbA/cloth-config-13.0.114-neoforge.jar",
         "filename": "cloth-config-13.0.114-neoforge.jar",
@@ -2302,8 +2302,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7733b5d24e40860f1deb818f4aed9d1af3febd71f7711251747a95a1aa08f1f6af3a9b7d67c042b3264320888fce4098b06ec48546489f58f2e5774cfe1b5cdb",
-          "sha1": "0843e4f8cfbdeb189d1c1ed7790716568969d826"
+          "sha1": "0843e4f8cfbdeb189d1c1ed7790716568969d826",
+          "sha512": "7733b5d24e40860f1deb818f4aed9d1af3febd71f7711251747a95a1aa08f1f6af3a9b7d67c042b3264320888fce4098b06ec48546489f58f2e5774cfe1b5cdb"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/q2CkD3c1/cloth-config-13.0.114-forge.jar",
         "filename": "cloth-config-13.0.114-forge.jar",
@@ -2337,8 +2337,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5a7685714b200b93ed561a4c43be2be22def602e62d4ae654187f45921e5941c2118d27ff2b2aa612b71fcb9ca0ada7686e50a98bdec2224dfa8741e22a5cf2b",
-          "sha1": "2627c04ceec7ac3fb7c586e3f093d27248836ed5"
+          "sha1": "2627c04ceec7ac3fb7c586e3f093d27248836ed5",
+          "sha512": "5a7685714b200b93ed561a4c43be2be22def602e62d4ae654187f45921e5941c2118d27ff2b2aa612b71fcb9ca0ada7686e50a98bdec2224dfa8741e22a5cf2b"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/A4lNtO10/cloth-config-12.0.113-forge.jar",
         "filename": "cloth-config-12.0.113-forge.jar",
@@ -2366,15 +2366,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-09T16:37:19.146313Z",
-    "downloads": 299510,
+    "downloads": 299541,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "146ee4ac2092e45b9574c54ef59d897d54700dfcfa353f3b6965342261a94d83b902cf4c90d5c0691c5c7018e2f49660cd8f32aa9abe185ad03117906cf8a924",
-          "sha1": "79bad6f25b5c2c21147475f2bcdb102120bb8d74"
+          "sha1": "79bad6f25b5c2c21147475f2bcdb102120bb8d74",
+          "sha512": "146ee4ac2092e45b9574c54ef59d897d54700dfcfa353f3b6965342261a94d83b902cf4c90d5c0691c5c7018e2f49660cd8f32aa9abe185ad03117906cf8a924"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/YFpDLLdu/cloth-config-13.0.114-fabric.jar",
         "filename": "cloth-config-13.0.114-fabric.jar",
@@ -2401,7 +2401,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-12-09T16:37:15.949926Z",
-    "downloads": 21526,
+    "downloads": 21527,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2480,8 +2480,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "72d27354fca921a54e0ed67e986c9d297cb927350ea52937f8a08d0d773babd8ced878cd501869f18d2f3abd93b1b566abba1d4d9e7c096f121e2c451c51edee",
-          "sha1": "f361b27ee036f06ad14a678dc66452d4d08d9e69"
+          "sha1": "f361b27ee036f06ad14a678dc66452d4d08d9e69",
+          "sha512": "72d27354fca921a54e0ed67e986c9d297cb927350ea52937f8a08d0d773babd8ced878cd501869f18d2f3abd93b1b566abba1d4d9e7c096f121e2c451c51edee"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/gYTUlUKu/cloth-config-13.0.112-forge.jar",
         "filename": "cloth-config-13.0.112-forge.jar",
@@ -2586,8 +2586,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d8da3706c0a23120663e0f1754e9c1410bad75b09e7f5def586977d05158b7f3905afe8fe09633d87802e0ad649ca90a852de83a48796fb2f64263979bbd4764",
-          "sha1": "d9e1c3754caedd2a5f7698cf579adeefdd53b8fa"
+          "sha1": "d9e1c3754caedd2a5f7698cf579adeefdd53b8fa",
+          "sha512": "d8da3706c0a23120663e0f1754e9c1410bad75b09e7f5def586977d05158b7f3905afe8fe09633d87802e0ad649ca90a852de83a48796fb2f64263979bbd4764"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/VmKENDcG/cloth-config-12.0.111-forge.jar",
         "filename": "cloth-config-12.0.111-forge.jar",
@@ -2614,15 +2614,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-11-18T17:22:23.088754Z",
-    "downloads": 104978,
+    "downloads": 104983,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e1dc26bdf29c433e2530130bfc66bce53ed1881b87a9e71859b20510d58239ff1653c913f57c3879959c82bbf457e3d3bd09f4acd1fed00e82a59eb56a57315d",
-          "sha1": "fadc64d481a2c0601ea5ca1e0c190aa7a06f84b0"
+          "sha1": "fadc64d481a2c0601ea5ca1e0c190aa7a06f84b0",
+          "sha512": "e1dc26bdf29c433e2530130bfc66bce53ed1881b87a9e71859b20510d58239ff1653c913f57c3879959c82bbf457e3d3bd09f4acd1fed00e82a59eb56a57315d"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/jvy82BGQ/cloth-config-12.0.111-fabric.jar",
         "filename": "cloth-config-12.0.111-fabric.jar",
@@ -2691,8 +2691,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2d48322624f59c68321e51808c5339cfc3fad1c794472f43382e5d3e938dd4179100f460de7878759bf0cc862039ee6c2a2059e3ac5a90774bd8d8abf54c62f6",
-          "sha1": "c3380b157331676f542d4cc11aa6e903df594653"
+          "sha1": "c3380b157331676f542d4cc11aa6e903df594653",
+          "sha512": "2d48322624f59c68321e51808c5339cfc3fad1c794472f43382e5d3e938dd4179100f460de7878759bf0cc862039ee6c2a2059e3ac5a90774bd8d8abf54c62f6"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/rMIyh1ac/cloth-config-12.0.110-forge.jar",
         "filename": "cloth-config-12.0.110-forge.jar",
@@ -2755,15 +2755,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-09-22T06:11:46.270412Z",
-    "downloads": 302404,
+    "downloads": 302543,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e2d0dabdb7cc7a504b42a5b38c768678a928bf36",
-          "sha512": "64db755476259d5c4ec6a1ebe844287e1c7e3934a2819a63669c5483780193c81cede40f127c3000a7e594f7f4319d044e1f5b01721e0b6e803ba448a1dc7400"
+          "sha512": "64db755476259d5c4ec6a1ebe844287e1c7e3934a2819a63669c5483780193c81cede40f127c3000a7e594f7f4319d044e1f5b01721e0b6e803ba448a1dc7400",
+          "sha1": "e2d0dabdb7cc7a504b42a5b38c768678a928bf36"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/IbAdAuBo/cloth-config-12.0.109-forge.jar",
         "filename": "cloth-config-12.0.109-forge.jar",
@@ -2790,15 +2790,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-09-22T06:11:34.747487Z",
-    "downloads": 302465,
+    "downloads": 302502,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8eb6b7e886e5799d57d616445135ddce3dcab83d24a0f389fe44109fe29aafc711d3c146dfe0a62a0859e42c4cce02a23fda568632db754fa089fdc91b63f06d",
-          "sha1": "66ebcea9ec4ce863f0cc99e56d91a4c1a4e276a4"
+          "sha1": "66ebcea9ec4ce863f0cc99e56d91a4c1a4e276a4",
+          "sha512": "8eb6b7e886e5799d57d616445135ddce3dcab83d24a0f389fe44109fe29aafc711d3c146dfe0a62a0859e42c4cce02a23fda568632db754fa089fdc91b63f06d"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/LnfolBYb/cloth-config-12.0.109-fabric.jar",
         "filename": "cloth-config-12.0.109-fabric.jar",
@@ -2832,8 +2832,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "dd4792fbaf27bd654b38956a40e31db7b18c465d1898676e390d7edbbbbd050a5d3e55b30dbb56453c775fa5f6afab7e1262e121434b22c2145cce3a892d18d8",
-          "sha1": "4c434b6504d7261cde944b79f9d99dc6b495fd8f"
+          "sha1": "4c434b6504d7261cde944b79f9d99dc6b495fd8f",
+          "sha512": "dd4792fbaf27bd654b38956a40e31db7b18c465d1898676e390d7edbbbbd050a5d3e55b30dbb56453c775fa5f6afab7e1262e121434b22c2145cce3a892d18d8"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/EuWT3qek/cloth-config-12.0.108-fabric.jar",
         "filename": "cloth-config-12.0.108-fabric.jar",
@@ -2867,8 +2867,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "dc305579bace5cffe0adf695e144195e294bafd1",
-          "sha512": "66564154d9e9cde8419ed32f191bc0c218f74b206d45cf935fe16d8081b3aff6dc7be215a0f9a70c7b15dd1a9669707ba254a7c9085df4aeda524c8756a6fc2c"
+          "sha512": "66564154d9e9cde8419ed32f191bc0c218f74b206d45cf935fe16d8081b3aff6dc7be215a0f9a70c7b15dd1a9669707ba254a7c9085df4aeda524c8756a6fc2c",
+          "sha1": "dc305579bace5cffe0adf695e144195e294bafd1"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/YR0cy5Ll/cloth-config-12.0.107-fabric.jar",
         "filename": "cloth-config-12.0.107-fabric.jar",
@@ -2896,7 +2896,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T14:05:10.273534Z",
-    "downloads": 485789,
+    "downloads": 485960,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2932,7 +2932,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T14:05:00.801181Z",
-    "downloads": 2457516,
+    "downloads": 2459434,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2967,7 +2967,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T13:58:22.085414Z",
-    "downloads": 24299,
+    "downloads": 24303,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3002,15 +3002,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T13:58:15.264707Z",
-    "downloads": 136766,
+    "downloads": 136854,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6c381aaacedd6d4cd128ab29fc3bac734abe022cf420448dee9041a39f089adfce923caa1e3fa4e4a162f9975f4862e8a477ad2ed9d060c0971b789f7a0c322d",
-          "sha1": "636981c37851ce70d806d09724622f95724103a5"
+          "sha1": "636981c37851ce70d806d09724622f95724103a5",
+          "sha512": "6c381aaacedd6d4cd128ab29fc3bac734abe022cf420448dee9041a39f089adfce923caa1e3fa4e4a162f9975f4862e8a477ad2ed9d060c0971b789f7a0c322d"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/mhFzbEwE/cloth-config-10.1.105-fabric.jar",
         "filename": "cloth-config-10.1.105-fabric.jar",
@@ -3039,7 +3039,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T13:47:59.681751Z",
-    "downloads": 131762,
+    "downloads": 131816,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3074,7 +3074,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T13:47:54.126043Z",
-    "downloads": 11739,
+    "downloads": 11743,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3111,15 +3111,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T13:47:49.876681Z",
-    "downloads": 814582,
+    "downloads": 815244,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b490a5df321d2f3907a47d18e9549751bb97bc9de6d04aa265cd9000321b516627bc57b1ef30ae4d854d558b2936c5d3413d34d784849e0c3ffa083605ca8d3d",
-          "sha1": "475ab5dec26fa5d25b1d899b8261b054fbc283d6"
+          "sha1": "475ab5dec26fa5d25b1d899b8261b054fbc283d6",
+          "sha512": "b490a5df321d2f3907a47d18e9549751bb97bc9de6d04aa265cd9000321b516627bc57b1ef30ae4d854d558b2936c5d3413d34d784849e0c3ffa083605ca8d3d"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/o9dFD9SO/cloth-config-8.3.103-fabric.jar",
         "filename": "cloth-config-8.3.103-fabric.jar",
@@ -3146,15 +3146,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T13:47:47.951348Z",
-    "downloads": 79902,
+    "downloads": 79933,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1112c5f7cf7a98f703e2bf165d740733d61f288c6fbfdeb971f4c14680f99be927b7d308816816aaf7028f568c2af2148ec44869450074ccb6a75ce0f38351f9",
-          "sha1": "c80185c965c7240e5987b131358cebc07a8d2776"
+          "sha1": "c80185c965c7240e5987b131358cebc07a8d2776",
+          "sha512": "1112c5f7cf7a98f703e2bf165d740733d61f288c6fbfdeb971f4c14680f99be927b7d308816816aaf7028f568c2af2148ec44869450074ccb6a75ce0f38351f9"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/w2VZSLTf/cloth-config-9.1.104-fabric.jar",
         "filename": "cloth-config-9.1.104-fabric.jar",
@@ -3183,7 +3183,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T13:37:07.071835Z",
-    "downloads": 310162,
+    "downloads": 310539,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3220,7 +3220,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T13:36:53.279686Z",
-    "downloads": 189685,
+    "downloads": 189843,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3256,7 +3256,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T13:30:28.382842Z",
-    "downloads": 621309,
+    "downloads": 621967,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3292,7 +3292,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-07-09T13:30:06.091528Z",
-    "downloads": 128236,
+    "downloads": 128409,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3328,7 +3328,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-06-26T14:13:57.753856Z",
-    "downloads": 18449,
+    "downloads": 18474,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3364,15 +3364,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-06-26T14:13:26.925705Z",
-    "downloads": 17340,
+    "downloads": 17353,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5198cec7f88facccd3f9f3a17788b702a76a69e3e63343880dbb4e6f13e3a016eb5f7724e20b29bfb46c730954bc10f4218b19f855d58d7a2e855f9c2f2cb357",
-          "sha1": "c6c3d864828caa945b6d7e1fc21d104421b6c8c5"
+          "sha1": "c6c3d864828caa945b6d7e1fc21d104421b6c8c5",
+          "sha512": "5198cec7f88facccd3f9f3a17788b702a76a69e3e63343880dbb4e6f13e3a016eb5f7724e20b29bfb46c730954bc10f4218b19f855d58d7a2e855f9c2f2cb357"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/oIHJeqqQ/cloth-config-4.16.91-fabric.jar",
         "filename": "cloth-config-4.16.91-fabric.jar",
@@ -3400,7 +3400,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-06-08T05:33:36.568281Z",
-    "downloads": 24803,
+    "downloads": 24817,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3436,15 +3436,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-06-08T05:33:26.563638Z",
-    "downloads": 475561,
+    "downloads": 475761,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "338b0968fb47460f2a1fc2d003d3f2a32d1b0c31",
-          "sha512": "3bbb9369efab7390193332ab9064460afa8dce7fc17fd96a2164b25cc17a0f03e928dd362539df364436a284914211005ba76d48b41fd6d9b01a22717a4d3719"
+          "sha512": "3bbb9369efab7390193332ab9064460afa8dce7fc17fd96a2164b25cc17a0f03e928dd362539df364436a284914211005ba76d48b41fd6d9b01a22717a4d3719",
+          "sha1": "338b0968fb47460f2a1fc2d003d3f2a32d1b0c31"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/y0kQixP8/cloth-config-11.0.99-fabric.jar",
         "filename": "cloth-config-11.0.99-fabric.jar",
@@ -3471,15 +3471,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-05-27T17:53:17.947615Z",
-    "downloads": 14010,
+    "downloads": 14013,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e584f1517082f7eced8e0a2151556acaec678f6844555ded95608a38229875914b4e930adb338bba88fa15ace088a0bd438542197c16fc6c2973c5a8c42733e8",
-          "sha1": "8c59f08cd0e296fbd8ac29af421ed42d7b54c7fe"
+          "sha1": "8c59f08cd0e296fbd8ac29af421ed42d7b54c7fe",
+          "sha512": "e584f1517082f7eced8e0a2151556acaec678f6844555ded95608a38229875914b4e930adb338bba88fa15ace088a0bd438542197c16fc6c2973c5a8c42733e8"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/dVpHBgHi/cloth-config-11.0.98-fabric.jar",
         "filename": "cloth-config-11.0.98-fabric.jar",
@@ -3506,15 +3506,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-04-01T18:55:40.025228Z",
-    "downloads": 2334,
+    "downloads": 2335,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "db2eb8be647f8e8699f0f65e3e74c171c04cec5b",
-          "sha512": "086e9df500bfca8efe57b07527f7c677b2409b1b43c7f6d1a5ebbb721549f9cc3110b66186f0bdfb3394036b2a6f4974cbe71f2c26c322fb0a58b16fa6f54787"
+          "sha512": "086e9df500bfca8efe57b07527f7c677b2409b1b43c7f6d1a5ebbb721549f9cc3110b66186f0bdfb3394036b2a6f4974cbe71f2c26c322fb0a58b16fa6f54787",
+          "sha1": "db2eb8be647f8e8699f0f65e3e74c171c04cec5b"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/XqZIxbLN/cloth-config-11.0.97-fabric.jar",
         "filename": "cloth-config-11.0.97-fabric.jar",
@@ -3548,8 +3548,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a7c05e1af796db686c2b828e6cbbeb73cb90d54f148cab053c11cb5468cab3b8ecd84c9161be8684a46e226000076889a94e8108315f2616331dea296be1257f",
-          "sha1": "e01fda3ea6d685a8757a0550385f723de2cbaf02"
+          "sha1": "e01fda3ea6d685a8757a0550385f723de2cbaf02",
+          "sha512": "a7c05e1af796db686c2b828e6cbbeb73cb90d54f148cab053c11cb5468cab3b8ecd84c9161be8684a46e226000076889a94e8108315f2616331dea296be1257f"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/X8YuGurB/cloth-config-10.0.96-forge.jar",
         "filename": "cloth-config-10.0.96-forge.jar",
@@ -3576,15 +3576,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-03-16T11:25:01.871301Z",
-    "downloads": 248680,
+    "downloads": 248753,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "9bd3ad20afbcd4622d194853aa8e03c4f9d9050f",
-          "sha512": "2c2ca9ad15fa08e0013505e0fbd661e0ff9861eba5df175037cc948197d7d9c4c6983d0f026321a71e7855fc4941e279ede9c930e2ca373b38402dfd70cc6376"
+          "sha512": "2c2ca9ad15fa08e0013505e0fbd661e0ff9861eba5df175037cc948197d7d9c4c6983d0f026321a71e7855fc4941e279ede9c930e2ca373b38402dfd70cc6376",
+          "sha1": "9bd3ad20afbcd4622d194853aa8e03c4f9d9050f"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6XGTNEII/cloth-config-10.0.96-fabric.jar",
         "filename": "cloth-config-10.0.96-fabric.jar",
@@ -3618,8 +3618,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "310ca4d46c778468266f1a3a95047453d71d7eb0",
-          "sha512": "ce961e16a521d698cbcf717d492b6f1f1bbb109cf9c2f06ac6a393ec02614b029d06244a03ffac27707caa008099809d6d98a728093bafb7045db8a40475cb2c"
+          "sha512": "ce961e16a521d698cbcf717d492b6f1f1bbb109cf9c2f06ac6a393ec02614b029d06244a03ffac27707caa008099809d6d98a728093bafb7045db8a40475cb2c",
+          "sha1": "310ca4d46c778468266f1a3a95047453d71d7eb0"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/QXKLvmdz/cloth-config-10.0.95-fabric.jar",
         "filename": "cloth-config-10.0.95-fabric.jar",
@@ -3653,8 +3653,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3991b5597efc41770e8aa2bf8b55a58bebf28d404d1e310351236a2cfdb30354a2bd91e63489de0cf1bde866552d8d8d297940ce3035f24efb242bd1cf0a6b4a",
-          "sha1": "e20b2f3ff7a03cfe8e9b500fdb2d3a97f90ab773"
+          "sha1": "e20b2f3ff7a03cfe8e9b500fdb2d3a97f90ab773",
+          "sha512": "3991b5597efc41770e8aa2bf8b55a58bebf28d404d1e310351236a2cfdb30354a2bd91e63489de0cf1bde866552d8d8d297940ce3035f24efb242bd1cf0a6b4a"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/VYURtAAK/cloth-config-9.0.94-forge.jar",
         "filename": "cloth-config-9.0.94-forge.jar",
@@ -3681,7 +3681,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-12-08T15:26:49.907922Z",
-    "downloads": 229746,
+    "downloads": 229773,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3723,8 +3723,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d12d012be0274b447b4c23a45a380cdd4e2d47e64143d46d2a10d9663ed51b1fa85144c4be1d8a8cb5c3e5b57ed62d2ef7593fe99805167c3abcad3518af78f5",
-          "sha1": "ea4c2aa1d7600360e81c6f3de442e4d5d6c77845"
+          "sha1": "ea4c2aa1d7600360e81c6f3de442e4d5d6c77845",
+          "sha512": "d12d012be0274b447b4c23a45a380cdd4e2d47e64143d46d2a10d9663ed51b1fa85144c4be1d8a8cb5c3e5b57ed62d2ef7593fe99805167c3abcad3518af78f5"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/IVxgEGfU/cloth-config-9.0.93-fabric.jar",
         "filename": "cloth-config-9.0.93-fabric.jar",
@@ -3758,8 +3758,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f18cc8ff3eccf561dd59820ddbf1f49c6e58e77c",
-          "sha512": "2d0c5745734f847a0080d0ee3a67c9d534bfb4df6774cd64b75966cccccebf88872e95a9accebd1642ca0e9cb99a4c8f8b3dfa5157955cb0a90792fdd6d23149"
+          "sha512": "2d0c5745734f847a0080d0ee3a67c9d534bfb4df6774cd64b75966cccccebf88872e95a9accebd1642ca0e9cb99a4c8f8b3dfa5157955cb0a90792fdd6d23149",
+          "sha1": "f18cc8ff3eccf561dd59820ddbf1f49c6e58e77c"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/72Wj1Wri/cloth-config-9.0.92-fabric.jar",
         "filename": "cloth-config-9.0.92-fabric.jar",
@@ -3788,15 +3788,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-09-07T15:01:24.361515Z",
-    "downloads": 116602,
+    "downloads": 116607,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ce2ba15870f0c316fcc5a62bac3795e4e4b57421e4a65b3c3c906436786b1b6f2fd9b1301e24c3fdaa44701670e8520dceac8b817bcdd76de186a4fe8ec256cd",
-          "sha1": "fbd645755abc0dbe5eb1adeb5e649835294a769f"
+          "sha1": "fbd645755abc0dbe5eb1adeb5e649835294a769f",
+          "sha512": "ce2ba15870f0c316fcc5a62bac3795e4e4b57421e4a65b3c3c906436786b1b6f2fd9b1301e24c3fdaa44701670e8520dceac8b817bcdd76de186a4fe8ec256cd"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Fw7B2c97/cloth-config-8.2.88-forge.jar",
         "filename": "cloth-config-8.2.88-forge.jar",
@@ -3825,7 +3825,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-09-07T15:01:19.140646Z",
-    "downloads": 680462,
+    "downloads": 680730,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3863,15 +3863,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-09-04T13:33:21.761109Z",
-    "downloads": 23422,
+    "downloads": 23431,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b2c7ae6686a9de95a93819fa8a541820dea2b8ce",
-          "sha512": "f23d5027d37a68361354a0238c1c3000fb9003917ef61ab3953da4c5d185662834da0bf88f86c4006a514d572a73a20a9c0551078968d3d7b8cf0cbc3bc0edfc"
+          "sha512": "f23d5027d37a68361354a0238c1c3000fb9003917ef61ab3953da4c5d185662834da0bf88f86c4006a514d572a73a20a9c0551078968d3d7b8cf0cbc3bc0edfc",
+          "sha1": "b2c7ae6686a9de95a93819fa8a541820dea2b8ce"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/szXeTOs6/cloth-config-4.15.82-fabric.jar",
         "filename": "cloth-config-4.15.82-fabric.jar",
@@ -3901,7 +3901,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-09-04T13:33:01.528607Z",
-    "downloads": 40850,
+    "downloads": 40855,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3938,15 +3938,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-09-04T13:32:13.202403Z",
-    "downloads": 112999,
+    "downloads": 113004,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1ec0b4ae55c5c7cb04b8e88c9c20d157cc3fe4e82e74b9334532b3a5ba095c41fafe2b611b78e2cf46ebe0d618c3657fdee81587f72ba2df6d8687e5394bdf26",
-          "sha1": "f6501a0b48872d2d14da55796f16f582a83bef7b"
+          "sha1": "f6501a0b48872d2d14da55796f16f582a83bef7b",
+          "sha512": "1ec0b4ae55c5c7cb04b8e88c9c20d157cc3fe4e82e74b9334532b3a5ba095c41fafe2b611b78e2cf46ebe0d618c3657fdee81587f72ba2df6d8687e5394bdf26"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/gPqHXnrg/cloth-config-6.3.81-fabric.jar",
         "filename": "cloth-config-6.3.81-fabric.jar",
@@ -3975,7 +3975,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-09-04T13:31:53.047688Z",
-    "downloads": 42368,
+    "downloads": 42413,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4019,8 +4019,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e07130646a3df5d92e9b10dc48921b60f1bd248c86f2ca7679f46f4cf015cdf434d2f8a824729a8e20b646207e07e97a071f5b64ee9993ad7c3803c857272eda",
-          "sha1": "801ef44b6e0f4eaa8be49e75c25ead8bf95d221f"
+          "sha1": "801ef44b6e0f4eaa8be49e75c25ead8bf95d221f",
+          "sha512": "e07130646a3df5d92e9b10dc48921b60f1bd248c86f2ca7679f46f4cf015cdf434d2f8a824729a8e20b646207e07e97a071f5b64ee9993ad7c3803c857272eda"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/Q0bdszKc/cloth-config-8.1.77-forge.jar",
         "filename": "cloth-config-8.1.77-forge.jar",
@@ -4049,15 +4049,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-09-04T11:34:52.808375Z",
-    "downloads": 2797,
+    "downloads": 2798,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c638fc635f0e43bfc08536071c62db09240adec84e182352268e7b76ff23aeb5e26a049594888cf1d8294885b2d8094d68ffe63a5e2ac23055328666d7d943cc",
-          "sha1": "2fae6b5b8985babc340828ac45958be7b2dd2253"
+          "sha1": "2fae6b5b8985babc340828ac45958be7b2dd2253",
+          "sha512": "c638fc635f0e43bfc08536071c62db09240adec84e182352268e7b76ff23aeb5e26a049594888cf1d8294885b2d8094d68ffe63a5e2ac23055328666d7d943cc"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/JaKvOQIz/cloth-config-8.1.77-fabric.jar",
         "filename": "cloth-config-8.1.77-fabric.jar",
@@ -4093,8 +4093,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cb3f1344186a29aca62530f7ef3a6f2255d451fb9caaf7078e1bd96aa38119493adb12478c2561b67c5b5a1b7f06fef79b1eb0a4d6800607cb8b47d0a570a64b",
-          "sha1": "ef4148c8c3506fdc825eef2f7b174e2598d4124d"
+          "sha1": "ef4148c8c3506fdc825eef2f7b174e2598d4124d",
+          "sha512": "cb3f1344186a29aca62530f7ef3a6f2255d451fb9caaf7078e1bd96aa38119493adb12478c2561b67c5b5a1b7f06fef79b1eb0a4d6800607cb8b47d0a570a64b"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/8.0.75%2Bforge/cloth-config-8.0.75-forge.jar",
         "filename": "cloth-config-8.0.75-forge.jar",
@@ -4123,7 +4123,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-07-29T18:43:05.481036Z",
-    "downloads": 21050,
+    "downloads": 21051,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4165,8 +4165,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "176b527cc0cbc9379b394f2941385831d6c342fa8ae322eecc5d50f251bc7812ac432ae348c1e81d4fa0d7784f735463ae3f32ce783ae70ede91c6bb21e35801",
-          "sha1": "ea06b650a916bddc59e0cbe122245307e14ec2e8"
+          "sha1": "ea06b650a916bddc59e0cbe122245307e14ec2e8",
+          "sha512": "176b527cc0cbc9379b394f2941385831d6c342fa8ae322eecc5d50f251bc7812ac432ae348c1e81d4fa0d7784f735463ae3f32ce783ae70ede91c6bb21e35801"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.74%2Bforge/cloth-config-7.0.74-forge.jar",
         "filename": "cloth-config-7.0.74-forge.jar",
@@ -4263,15 +4263,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-07-12T06:46:18.398237Z",
-    "downloads": 12703,
+    "downloads": 12710,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5bc08411344e027cac4467763740f18626dae3ae",
-          "sha512": "bebc53ee5752263ccf1e0a89b5f9f72c3c5be149467e9d66a15c335f8c616a2b8e7c7020208b291af425b31d3062e2ca305ab0f1a0142d947f12910d4bebd71b"
+          "sha512": "bebc53ee5752263ccf1e0a89b5f9f72c3c5be149467e9d66a15c335f8c616a2b8e7c7020208b291af425b31d3062e2ca305ab0f1a0142d947f12910d4bebd71b",
+          "sha1": "5bc08411344e027cac4467763740f18626dae3ae"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.73%2Bfabric/cloth-config-7.0.73-fabric.jar",
         "filename": "cloth-config-7.0.73-fabric.jar",
@@ -4305,8 +4305,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "099df0acb6001c396abf141fd48bf3945c16405f",
-          "sha512": "f4addca1ff37a418cb7903f7e2941ad41b8f696dc38731f787a96cc00dd4a0e377953ab77ba09657c2085230b63edfc4796ae9d624b587f762b7acc60e3c209b"
+          "sha512": "f4addca1ff37a418cb7903f7e2941ad41b8f696dc38731f787a96cc00dd4a0e377953ab77ba09657c2085230b63edfc4796ae9d624b587f762b7acc60e3c209b",
+          "sha1": "099df0acb6001c396abf141fd48bf3945c16405f"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.72%2Bforge/cloth-config-7.0.72-forge.jar",
         "filename": "cloth-config-7.0.72-forge.jar",
@@ -4333,7 +4333,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-06-11T12:13:03.872115Z",
-    "downloads": 11836,
+    "downloads": 11842,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4409,7 +4409,7 @@
     "changelog": "Updated Basic Maths",
     "changelog_url": null,
     "date_published": "2022-06-10T17:53:04.650527Z",
-    "downloads": 21578,
+    "downloads": 21585,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4445,7 +4445,7 @@
     "changelog": "Updated Basic Maths",
     "changelog_url": null,
     "date_published": "2022-06-10T17:51:27.217805Z",
-    "downloads": 14124,
+    "downloads": 14129,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4481,7 +4481,7 @@
     "changelog": "Update Basic Maths",
     "changelog_url": null,
     "date_published": "2022-06-10T17:50:42.429457Z",
-    "downloads": 52179,
+    "downloads": 52236,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4518,15 +4518,15 @@
     "changelog": "Update Basic Maths",
     "changelog_url": null,
     "date_published": "2022-06-10T17:49:35.46583Z",
-    "downloads": 61591,
+    "downloads": 61644,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "bc0f07805823fdab5c7376d8d2b314c1b109d402",
-          "sha512": "1d30dbc59ac2a8668e5dd3bb7a6d74a8d243cf958d16f4d55670db270414842dc3884687c847cc9815605695ee2403e933f010a17c7ff5e296de43a55872ad0a"
+          "sha512": "1d30dbc59ac2a8668e5dd3bb7a6d74a8d243cf958d16f4d55670db270414842dc3884687c847cc9815605695ee2403e933f010a17c7ff5e296de43a55872ad0a",
+          "sha1": "bc0f07805823fdab5c7376d8d2b314c1b109d402"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6.2.62/cloth-config-fabric-6.2.62.jar",
         "filename": "cloth-config-fabric-6.2.62.jar",
@@ -4555,15 +4555,15 @@
     "changelog": "Bump Basic Maths",
     "changelog_url": null,
     "date_published": "2022-06-10T17:48:48.943354Z",
-    "downloads": 20136,
+    "downloads": 20139,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "1da6c984afef261cd5484ede8685abfe5242198b",
-          "sha512": "66b85d3234843dbacfbd6588556d500931c84049ca7cc212781b843a25cc972614011eb7136fc028015a5940d2755ec240dc04a6d48ccc33f6c1bc54cc478063"
+          "sha512": "66b85d3234843dbacfbd6588556d500931c84049ca7cc212781b843a25cc972614011eb7136fc028015a5940d2755ec240dc04a6d48ccc33f6c1bc54cc478063",
+          "sha1": "1da6c984afef261cd5484ede8685abfe5242198b"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6.2.62%2Bforge/cloth-config-forge-6.2.62.jar",
         "filename": "cloth-config-forge-6.2.62.jar",
@@ -4597,8 +4597,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8a27873df9eccd937297a68d20d266e5c366263f41403b1496f7d50ad246337e38b2504defa1dd533c28142a16debf98715c7f746d1630a76713773d3a525e9f",
-          "sha1": "c41fb0d247a26c160cfa82e1764c66079d4d28c8"
+          "sha1": "c41fb0d247a26c160cfa82e1764c66079d4d28c8",
+          "sha512": "8a27873df9eccd937297a68d20d266e5c366263f41403b1496f7d50ad246337e38b2504defa1dd533c28142a16debf98715c7f746d1630a76713773d3a525e9f"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/7.0.69%2Bforge/cloth-config-forge-7.0.69.jar",
         "filename": "cloth-config-forge-7.0.69.jar",
@@ -4662,7 +4662,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:44:31.7955Z",
-    "downloads": 17321,
+    "downloads": 17324,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4699,15 +4699,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:43:52.124418Z",
-    "downloads": 6320,
+    "downloads": 6339,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "fe21430bf2daf2ce2b1f6f7e2c01b07ba9d50642",
-          "sha512": "2290494e679c1e5bd21fd80148390dfd6101d2e72e8d56ba793f8da236ef878515bec89391a044973ed292cba7a525e6d301c89d75cb216ec8b6e28bae1c7a8d"
+          "sha512": "2290494e679c1e5bd21fd80148390dfd6101d2e72e8d56ba793f8da236ef878515bec89391a044973ed292cba7a525e6d301c89d75cb216ec8b6e28bae1c7a8d",
+          "sha1": "fe21430bf2daf2ce2b1f6f7e2c01b07ba9d50642"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/6.2.57%2Bforge/cloth-config-6.2.57-forge.jar",
         "filename": "cloth-config-6.2.57-forge.jar",
@@ -4735,15 +4735,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:43:15.62602Z",
-    "downloads": 996,
+    "downloads": 997,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6dbe019a0a9f12b789ac6cdaa91b347a87a547b7be53012bc59351a8f2066b6097a342aa80860d239ba1d477bdd7f960f3e3f136117394e55fdb8eedb4ae6a04",
-          "sha1": "ba773e448076e0130d9ecc7b2f5957adeb8b95a7"
+          "sha1": "ba773e448076e0130d9ecc7b2f5957adeb8b95a7",
+          "sha512": "6dbe019a0a9f12b789ac6cdaa91b347a87a547b7be53012bc59351a8f2066b6097a342aa80860d239ba1d477bdd7f960f3e3f136117394e55fdb8eedb4ae6a04"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/5.3.58%2Bfabric/cloth-config-5.3.58-fabric.jar",
         "filename": "cloth-config-5.3.58-fabric.jar",
@@ -4809,15 +4809,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:40:57.659025Z",
-    "downloads": 5875,
+    "downloads": 5876,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "523af31a92e22edcf2e2788fbe0c58430be902b1",
-          "sha512": "58bb2b6c6677ac17ca79a6af38fbaf5bab8fcb5ac1cd31326fb0ed580299c6eb200829748a62c34d0e4f06f1af0f1e10f6c3c53c58254c619994323d0d719fb4"
+          "sha512": "58bb2b6c6677ac17ca79a6af38fbaf5bab8fcb5ac1cd31326fb0ed580299c6eb200829748a62c34d0e4f06f1af0f1e10f6c3c53c58254c619994323d0d719fb4",
+          "sha1": "523af31a92e22edcf2e2788fbe0c58430be902b1"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/4.14.54%2Bfabric/cloth-config-4.14.54-fabric.jar",
         "filename": "cloth-config-4.14.54-fabric.jar",
@@ -4845,7 +4845,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:40:11.179839Z",
-    "downloads": 6541,
+    "downloads": 6550,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4883,15 +4883,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:39:01.896932Z",
-    "downloads": 5641,
+    "downloads": 5644,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "1b78fd78e0239b30983d563fa9f7d2799a3b0dd9",
-          "sha512": "13edcd35986ef82024695d6ba5f136b310400792d90bba90d15f1eae7045c8fe96b1f39683453cf55b8b576ae958a9a657764957eb3221bc28fcd09efcd44627"
+          "sha512": "13edcd35986ef82024695d6ba5f136b310400792d90bba90d15f1eae7045c8fe96b1f39683453cf55b8b576ae958a9a657764957eb3221bc28fcd09efcd44627",
+          "sha1": "1b78fd78e0239b30983d563fa9f7d2799a3b0dd9"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/4.14.54%2Bforge/cloth-config-4.14.54-forge.jar",
         "filename": "cloth-config-4.14.54-forge.jar",
@@ -4919,7 +4919,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:38:20.662635Z",
-    "downloads": 2261,
+    "downloads": 2262,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4956,15 +4956,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:37:26.558337Z",
-    "downloads": 2451,
+    "downloads": 2454,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "eb906d8bc4e88e7cbcca9ee5e7769d8f9c3859928ab529e705fef362b13a016670c5e049c4a1cb5e60b70c6b452ef61fdd13ce0179a1c22c08d3b83fc9be9f1d",
-          "sha1": "1cee5295e38921a575aec6cc2145ef331989ade9"
+          "sha1": "1cee5295e38921a575aec6cc2145ef331989ade9",
+          "sha512": "eb906d8bc4e88e7cbcca9ee5e7769d8f9c3859928ab529e705fef362b13a016670c5e049c4a1cb5e60b70c6b452ef61fdd13ce0179a1c22c08d3b83fc9be9f1d"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/2.14.2%2Bfabric/config-2-2.14.2.jar",
         "filename": "config-2-2.14.2.jar",
@@ -4993,15 +4993,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:36:46.942449Z",
-    "downloads": 1145,
+    "downloads": 1150,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f8943864fa3cf71e4ef9685e64f5bb4c131e8638",
-          "sha512": "0fbc32f43bdff0864b1d8220a932377d9b08c3b64beff0ac314fe5424ddb3d5ff9dcb14cfbaf9a93a7cb97132c371637d97c4255f7f98e31cb1d1e2f7f1f07bd"
+          "sha512": "0fbc32f43bdff0864b1d8220a932377d9b08c3b64beff0ac314fe5424ddb3d5ff9dcb14cfbaf9a93a7cb97132c371637d97c4255f7f98e31cb1d1e2f7f1f07bd",
+          "sha1": "f8943864fa3cf71e4ef9685e64f5bb4c131e8638"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/3.0%2Bforge/config-2-3.0.jar",
         "filename": "config-2-3.0.jar",
@@ -5032,7 +5032,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:29:41.5745Z",
-    "downloads": 5531,
+    "downloads": 5545,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5071,15 +5071,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-04-21T10:29:41.556634Z",
-    "downloads": 8050,
+    "downloads": 8052,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "7ca538b1c4234d471125ce8dd8d2fead778a345137292464bdfe37a45b6bcda792cc73cebd046bdc7f0a12bf024ffee48b3971777c41cfc97becc1be7ffc9d6c",
-          "sha1": "fa057f76c84e8c37d00078fc6478beba953c4ec9"
+          "sha1": "fa057f76c84e8c37d00078fc6478beba953c4ec9",
+          "sha512": "7ca538b1c4234d471125ce8dd8d2fead778a345137292464bdfe37a45b6bcda792cc73cebd046bdc7f0a12bf024ffee48b3971777c41cfc97becc1be7ffc9d6c"
         },
         "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/1.4.1%2Bforge/ClothConfig2-1.4.1.jar",
         "filename": "ClothConfig2-1.4.1.jar",

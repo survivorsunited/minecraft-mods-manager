@@ -15,15 +15,15 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-06-21T06:44:26.75932Z",
-    "downloads": 537,
+    "downloads": 598,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "579be36e7da579343abc984eaaa890c52cc6e895",
-          "sha512": "3ba004cb8230ad3bd24845c3c0cfa40b9236e6ed9a2309b61ae0d34e9a8c3c3107fb9044b1db05062cbcb4949ec94dfd81050afb4250b44d20dfdb4ffff1d806"
+          "sha512": "3ba004cb8230ad3bd24845c3c0cfa40b9236e6ed9a2309b61ae0d34e9a8c3c3107fb9044b1db05062cbcb4949ec94dfd81050afb4250b44d20dfdb4ffff1d806",
+          "sha1": "579be36e7da579343abc984eaaa890c52cc6e895"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/M8MaA0OA/libIPN-neoforge-1.21.6-6.5.0.jar",
         "filename": "libIPN-neoforge-1.21.6-6.5.0.jar",
@@ -58,7 +58,7 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-06-05T10:12:42.937926Z",
-    "downloads": 14283,
+    "downloads": 15605,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -78,13 +78,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "Ha28R6CL",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "Ha28R6CL",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -107,7 +107,7 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-04-11T16:30:08.215329Z",
-    "downloads": 138385,
+    "downloads": 139107,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -156,15 +156,15 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-04-11T16:29:00.308993Z",
-    "downloads": 82334,
+    "downloads": 82835,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "10c201d995e68a51fa53b8e8701b533a05cee6de",
-          "sha512": "be9f59f3ede2cd5892da8014be050a2d8305575462731359f79f1cf16eeb54168f6a5a0bc4e2a902f539cab3f5b830e0e51d5b61ac90d3048bd21afeab6735c7"
+          "sha512": "be9f59f3ede2cd5892da8014be050a2d8305575462731359f79f1cf16eeb54168f6a5a0bc4e2a902f539cab3f5b830e0e51d5b61ac90d3048bd21afeab6735c7",
+          "sha1": "10c201d995e68a51fa53b8e8701b533a05cee6de"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/XlXyBJTi/libIPN-fabric-1.21.4-6.5.0.jar",
         "filename": "libIPN-fabric-1.21.4-6.5.0.jar",
@@ -205,7 +205,7 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-04-11T16:27:09.248566Z",
-    "downloads": 105544,
+    "downloads": 106285,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -253,15 +253,15 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-04-11T16:25:56.445471Z",
-    "downloads": 58739,
+    "downloads": 59349,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "57920830abf6da1fb7ef7722c00c1c259e31677e7f773f6eaf8b057d61cd15ab598dd1ebbe021c658bf8e3214db881505441643c9b7a37263993ccf8d2b62c79",
-          "sha1": "c439afa90ca14a4a790a4e2ba0d98c78c0b27f27"
+          "sha1": "c439afa90ca14a4a790a4e2ba0d98c78c0b27f27",
+          "sha512": "57920830abf6da1fb7ef7722c00c1c259e31677e7f773f6eaf8b057d61cd15ab598dd1ebbe021c658bf8e3214db881505441643c9b7a37263993ccf8d2b62c79"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/jLoEF5th/libIPN-neoforge-1.21-6.5.0.jar",
         "filename": "libIPN-neoforge-1.21-6.5.0.jar",
@@ -295,7 +295,7 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-04-11T16:25:56.425487Z",
-    "downloads": 7724,
+    "downloads": 7775,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -337,15 +337,15 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-04-11T16:25:54.292528Z",
-    "downloads": 3093,
+    "downloads": 3119,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "985ce859c384f8016fca3688428d56bcf2783c3a",
-          "sha512": "002233a0dbdb50d2d84e7f2b68907386fa5ea6083fbf00f707675a68e852d68f93ebbe2295ad763cdda0be70216bda4958989a73931e1783f76dd5bd882cbf63"
+          "sha512": "002233a0dbdb50d2d84e7f2b68907386fa5ea6083fbf00f707675a68e852d68f93ebbe2295ad763cdda0be70216bda4958989a73931e1783f76dd5bd882cbf63",
+          "sha1": "985ce859c384f8016fca3688428d56bcf2783c3a"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/E0jC4Bwj/libIPN-neoforge-1.21.4-6.5.0.jar",
         "filename": "libIPN-neoforge-1.21.4-6.5.0.jar",
@@ -379,7 +379,7 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-04-11T16:25:52.43345Z",
-    "downloads": 10103,
+    "downloads": 10156,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -421,7 +421,7 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-04-11T16:25:51.405956Z",
-    "downloads": 6056,
+    "downloads": 6103,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -463,7 +463,7 @@
     "changelog": "## What's new\n\n### 6.5.0\n\n-   Adds support for xForge 1.21.5\n",
     "changelog_url": null,
     "date_published": "2025-04-11T16:25:51.138831Z",
-    "downloads": 8342,
+    "downloads": 8428,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -506,15 +506,15 @@
     "changelog": "## What's new\n\n### 6.4.0\n\n-   Due to changes how rendering works in 1.21.5 the libIPN API has incompatible changes.\n-   Due to the above some aspects of the GUI may have minor differences with previous versions.\n-   Fixed multiple click sounds when clicking on some widgets in the config screens.\n",
     "changelog_url": null,
     "date_published": "2025-03-16T17:33:16.78481Z",
-    "downloads": 51521,
+    "downloads": 51593,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "fc1dbe08f85245768919a7738f69bfed807a2dc2",
-          "sha512": "7a5ba9e7ec38840f5892f1ae9a06c6bc6b21cf53e33d77fe82622087031b83bf70ddb454c2237917f9e2f962ef372acc59ffdf3533ca37607827fd10bf019a44"
+          "sha512": "7a5ba9e7ec38840f5892f1ae9a06c6bc6b21cf53e33d77fe82622087031b83bf70ddb454c2237917f9e2f962ef372acc59ffdf3533ca37607827fd10bf019a44",
+          "sha1": "fc1dbe08f85245768919a7738f69bfed807a2dc2"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/GnltIwjx/libIPN-fabric-1.21-6.4.0.jar",
         "filename": "libIPN-fabric-1.21-6.4.0.jar",
@@ -555,7 +555,7 @@
     "changelog": "## What's new\n\n### 6.4.0\n\n-   Due to changes how rendering works in 1.21.5 the libIPN API has incompatible changes.\n-   Due to the above some aspects of the GUI may have minor differences with previous versions.\n-   Fixed multiple click sounds when clicking on some widgets in the config screens.\n",
     "changelog_url": null,
     "date_published": "2025-03-16T17:33:16.677098Z",
-    "downloads": 30336,
+    "downloads": 30371,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -575,13 +575,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "Ha28R6CL",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "Ha28R6CL",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -604,15 +604,15 @@
     "changelog": "## What's new\n\n### 6.4.0\n\n-   Due to changes how rendering works in 1.21.5 the libIPN API has incompatible changes.\n-   Due to the above some aspects of the GUI may have minor differences with previous versions.\n-   Fixed multiple click sounds when clicking on some widgets in the config screens.\n",
     "changelog_url": null,
     "date_published": "2025-03-16T17:33:16.643711Z",
-    "downloads": 62413,
+    "downloads": 62516,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b9912627302d11affa2cc5c49c804f329a5d363a",
-          "sha512": "796d345fa018bad4c022f79b39f3c2270f0cc097543937437b442423a5a2da6608de212169b7259cac6a13a150d486767fd05dd68802af6a2d198f7b7b15ce3a"
+          "sha512": "796d345fa018bad4c022f79b39f3c2270f0cc097543937437b442423a5a2da6608de212169b7259cac6a13a150d486767fd05dd68802af6a2d198f7b7b15ce3a",
+          "sha1": "b9912627302d11affa2cc5c49c804f329a5d363a"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/cAYrzp02/libIPN-fabric-1.21.4-6.4.0.jar",
         "filename": "libIPN-fabric-1.21.4-6.4.0.jar",
@@ -653,7 +653,7 @@
     "changelog": "## What's new\n\n### 6.4.0\n\n-   Due to changes how rendering works in 1.21.5 the libIPN API has incompatible changes.\n-   Due to the above some aspects of the GUI may have minor differences with previous versions.\n-   Fixed multiple click sounds when clicking on some widgets in the config screens.\n",
     "changelog_url": null,
     "date_published": "2025-03-16T17:32:22.325415Z",
-    "downloads": 6610,
+    "downloads": 6635,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -673,13 +673,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "Ha28R6CL",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "Ha28R6CL",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -701,15 +701,15 @@
     "changelog": "## What's new\n\n### 6.4.0\n\n-   Due to changes how rendering works in 1.21.5 the libIPN API has incompatible changes.\n-   Due to the above some aspects of the GUI may have minor differences with previous versions.\n-   Fixed multiple click sounds when clicking on some widgets in the config screens.\n",
     "changelog_url": null,
     "date_published": "2025-03-16T17:31:27.61197Z",
-    "downloads": 20520,
+    "downloads": 20547,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d50510ccc9c67f7518a57ab931b1289ca5c64b2c",
-          "sha512": "1b55ba4638c58db30ab981d2ed804200ed95ab0747f128327e782c9b41953476a0d3e75f459492b3a0408fa9f67fe62c50a0f3e79495109fae0fceb08e6e6cd8"
+          "sha512": "1b55ba4638c58db30ab981d2ed804200ed95ab0747f128327e782c9b41953476a0d3e75f459492b3a0408fa9f67fe62c50a0f3e79495109fae0fceb08e6e6cd8",
+          "sha1": "d50510ccc9c67f7518a57ab931b1289ca5c64b2c"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/seepTS1B/libIPN-neoforge-1.21-6.4.0.jar",
         "filename": "libIPN-neoforge-1.21-6.4.0.jar",
@@ -743,15 +743,15 @@
     "changelog": "## What's new\n\n### 6.4.0\n\n-   Due to changes how rendering works in 1.21.5 the libIPN API has incompatible changes.\n-   Due to the above some aspects of the GUI may have minor differences with previous versions.\n-   Fixed multiple click sounds when clicking on some widgets in the config screens.\n",
     "changelog_url": null,
     "date_published": "2025-03-16T17:31:27.016301Z",
-    "downloads": 288,
+    "downloads": 290,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e4bb5fb6ff453fa3c298a59f39365a9bbe6980e200dc13e8990d6efa0a457df8435a6f6ab35fd4d23ba27d4edcdede55dfa807ab7df327ba199aa80cb4cfdfe5",
-          "sha1": "d199aafa43b162da13881b5e5432ce634b73f3c9"
+          "sha1": "d199aafa43b162da13881b5e5432ce634b73f3c9",
+          "sha512": "e4bb5fb6ff453fa3c298a59f39365a9bbe6980e200dc13e8990d6efa0a457df8435a6f6ab35fd4d23ba27d4edcdede55dfa807ab7df327ba199aa80cb4cfdfe5"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/cFhDWMjS/libIPN-neoforge-1.21.3-6.4.0.jar",
         "filename": "libIPN-neoforge-1.21.3-6.4.0.jar",
@@ -785,7 +785,7 @@
     "changelog": "## What's new\n\n### 6.4.0\n\n-   Due to changes how rendering works in 1.21.5 the libIPN API has incompatible changes.\n-   Due to the above some aspects of the GUI may have minor differences with previous versions.\n-   Fixed multiple click sounds when clicking on some widgets in the config screens.\n",
     "changelog_url": null,
     "date_published": "2025-03-16T17:31:26.591439Z",
-    "downloads": 1905,
+    "downloads": 1908,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -827,15 +827,15 @@
     "changelog": "## What's new\n\n### 6.4.0\n\n-   Due to changes how rendering works in 1.21.5 the libIPN API has incompatible changes.\n-   Due to the above some aspects of the GUI may have minor differences with previous versions.\n-   Fixed multiple click sounds when clicking on some widgets in the config screens.\n",
     "changelog_url": null,
     "date_published": "2025-03-16T17:31:25.988616Z",
-    "downloads": 867,
+    "downloads": 875,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "6ac07ec2c2ac821b44d4b205a4199e51fc0dc8b2",
-          "sha512": "d193e15a70ed19c5d8fc3a7aab8590ab7f07b0199f8782d8ccc4e4e9e57a488d9cfc7c717a582c74e997ffcbb590a50dd5ea546be3dc205ee54389a468487586"
+          "sha512": "d193e15a70ed19c5d8fc3a7aab8590ab7f07b0199f8782d8ccc4e4e9e57a488d9cfc7c717a582c74e997ffcbb590a50dd5ea546be3dc205ee54389a468487586",
+          "sha1": "6ac07ec2c2ac821b44d4b205a4199e51fc0dc8b2"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/GBFl6yEw/libIPN-forge-1.21.3-6.4.0.jar",
         "filename": "libIPN-forge-1.21.3-6.4.0.jar",
@@ -869,7 +869,7 @@
     "changelog": "## What's new\n\n### 6.4.0\n\n-   Due to changes how rendering works in 1.21.5 the libIPN API has incompatible changes.\n-   Due to the above some aspects of the GUI may have minor differences with previous versions.\n-   Fixed multiple click sounds when clicking on some widgets in the config screens.\n",
     "changelog_url": null,
     "date_published": "2025-03-16T17:31:25.037512Z",
-    "downloads": 3872,
+    "downloads": 3873,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -911,15 +911,15 @@
     "changelog": "## What's new\n\n### 6.4.0\n\n-   Due to changes how rendering works in 1.21.5 the libIPN API has incompatible changes.\n-   Due to the above some aspects of the GUI may have minor differences with previous versions.\n-   Fixed multiple click sounds when clicking on some widgets in the config screens.\n",
     "changelog_url": null,
     "date_published": "2025-03-16T17:31:24.640842Z",
-    "downloads": 2787,
+    "downloads": 2789,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2abf12b71c5320d6a5e0826d93b3369a05453827",
-          "sha512": "64a3948ae812eea9c9584771fa5e99c5eee3fcc833f7c9b59e802e5c775d2f06ca774bb01e58443d0d38cef9a3e56dee554eb5aaa57337469b42df6cb1481cce"
+          "sha512": "64a3948ae812eea9c9584771fa5e99c5eee3fcc833f7c9b59e802e5c775d2f06ca774bb01e58443d0d38cef9a3e56dee554eb5aaa57337469b42df6cb1481cce",
+          "sha1": "2abf12b71c5320d6a5e0826d93b3369a05453827"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/pSFEMSOO/libIPN-forge-1.21-6.4.0.jar",
         "filename": "libIPN-forge-1.21-6.4.0.jar",
@@ -960,8 +960,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "99ddc231df73e32c908d51557a85238ae6e5c94c",
-          "sha512": "606be9c51fdc7c8186d9ed6164efb01c33c71f96ac94b4126cc6faff7596ba7c2bb8af2db5386f4061144ca20f8f658091885b2141679df1cb5363b3bcb61692"
+          "sha512": "606be9c51fdc7c8186d9ed6164efb01c33c71f96ac94b4126cc6faff7596ba7c2bb8af2db5386f4061144ca20f8f658091885b2141679df1cb5363b3bcb61692",
+          "sha1": "99ddc231df73e32c908d51557a85238ae6e5c94c"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/qDQTiiQA/libIPN-neoforge-1.21.3-6.3.1.jar",
         "filename": "libIPN-neoforge-1.21.3-6.3.1.jar",
@@ -1045,8 +1045,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a982a49442ab8edfa51cb951cdcbfcd50775e8cc",
-          "sha512": "d7ccdb76136d1b9d4167df3f4d2b475d2d2eeecb7a2ecaf2af735cbd59e2c9ec933d9688f5461d81a098a20005a83da1f821fee49623354e04afa210ac11ed2b"
+          "sha512": "d7ccdb76136d1b9d4167df3f4d2b475d2d2eeecb7a2ecaf2af735cbd59e2c9ec933d9688f5461d81a098a20005a83da1f821fee49623354e04afa210ac11ed2b",
+          "sha1": "a982a49442ab8edfa51cb951cdcbfcd50775e8cc"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/z7dPehJn/libIPN-fabric-1.21.3-6.3.1.jar",
         "filename": "libIPN-fabric-1.21.3-6.3.1.jar",
@@ -1088,7 +1088,7 @@
     "changelog": "## What's new\n\n### 6.3.0/1\n\n-   support for 1.21.5\n-   lots of technical improvements that make the client mods configs simpler\n-   1.21.3 is no longer supported\n",
     "changelog_url": null,
     "date_published": "2025-02-08T10:47:25.432363Z",
-    "downloads": 220771,
+    "downloads": 221391,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1139,15 +1139,15 @@
     "changelog": "## What's new\n\n### 6.3.0/1\n\n-   support for 1.21.5\n-   lots of technical improvements that make the client mods configs simpler\n-   1.21.3 is no longer supported\n",
     "changelog_url": null,
     "date_published": "2025-02-08T10:46:34.72677Z",
-    "downloads": 484,
+    "downloads": 489,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e3f19a697e3722e9bcbd1f7806c5f4ef149bb18bb3be820cbc2b2b6004059b021fd36c6277aed6d066aed634f11bb2a8e22d130170e3c8dc3276ceb01d088790",
-          "sha1": "01fe0b968b84c9dd37bd61c909054e3d85697edf"
+          "sha1": "01fe0b968b84c9dd37bd61c909054e3d85697edf",
+          "sha512": "e3f19a697e3722e9bcbd1f7806c5f4ef149bb18bb3be820cbc2b2b6004059b021fd36c6277aed6d066aed634f11bb2a8e22d130170e3c8dc3276ceb01d088790"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/sGgALBSS/libIPN-fabric-1.21.5-6.3.1.jar",
         "filename": "libIPN-fabric-1.21.5-6.3.1.jar",
@@ -1188,15 +1188,15 @@
     "changelog": "## What's new\n\n### 6.3.0/1\n\n-   support for 1.21.5\n-   lots of technical improvements that make the client mods configs simpler\n-   1.21.3 is no longer supported\n",
     "changelog_url": null,
     "date_published": "2025-02-08T10:45:54.425218Z",
-    "downloads": 76269,
+    "downloads": 76305,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "0877dce0dfc6b5413694363b7ad1c702ab2d5255",
-          "sha512": "6b33785c825b55184ceb8d9257abbb51869f871019b6214681a29f3590b80ef5b3ea0214b8880d3b81981b0f1f2813aeca19aed00570abb59640f12aabec4b8b"
+          "sha512": "6b33785c825b55184ceb8d9257abbb51869f871019b6214681a29f3590b80ef5b3ea0214b8880d3b81981b0f1f2813aeca19aed00570abb59640f12aabec4b8b",
+          "sha1": "0877dce0dfc6b5413694363b7ad1c702ab2d5255"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/fvP77N0g/libIPN-fabric-1.21.4-6.3.1.jar",
         "filename": "libIPN-fabric-1.21.4-6.3.1.jar",
@@ -1236,15 +1236,15 @@
     "changelog": "## What's new\n\n### 6.3.0/1\n\n-   support for 1.21.5\n-   lots of technical improvements that make the client mods configs simpler\n-   1.21.3 is no longer supported\n",
     "changelog_url": null,
     "date_published": "2025-02-08T10:44:55.627406Z",
-    "downloads": 2825,
+    "downloads": 2827,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f152abc221a8635ea7aef977160a5d79efa5d39178786970f8176452dbfd76703c2bb2a780468ace4ad8d1fa563da9db74b49537f01cc9652146c529774d6b5b",
-          "sha1": "046088dbaef185bcfa95281502601ed9ac53cf1f"
+          "sha1": "046088dbaef185bcfa95281502601ed9ac53cf1f",
+          "sha512": "f152abc221a8635ea7aef977160a5d79efa5d39178786970f8176452dbfd76703c2bb2a780468ace4ad8d1fa563da9db74b49537f01cc9652146c529774d6b5b"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/3MYAsmyP/libIPN-neoforge-1.21.4-6.3.1.jar",
         "filename": "libIPN-neoforge-1.21.4-6.3.1.jar",
@@ -1279,7 +1279,7 @@
     "changelog": "## What's new\n\n### 6.3.0/1\n\n-   support for 1.21.5\n-   lots of technical improvements that make the client mods configs simpler\n-   1.21.3 is no longer supported\n",
     "changelog_url": null,
     "date_published": "2025-02-08T10:44:54.255241Z",
-    "downloads": 19195,
+    "downloads": 19223,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1322,7 +1322,7 @@
     "changelog": "## What's new\n\n### 6.3.0/1\n\n-   support for 1.21.5\n-   lots of technical improvements that make the client mods configs simpler\n-   1.21.3 is no longer supported\n",
     "changelog_url": null,
     "date_published": "2025-02-08T10:44:52.024164Z",
-    "downloads": 7917,
+    "downloads": 7940,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1364,15 +1364,15 @@
     "changelog": "## What's new\n\n### 6.3.0/1\n\n-   support for 1.21.5\n-   lots of technical improvements that make the client mods configs simpler\n-   1.21.3 is no longer supported\n",
     "changelog_url": null,
     "date_published": "2025-02-08T10:44:50.987853Z",
-    "downloads": 7953,
+    "downloads": 7954,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e02fa386400d9b508ffdbd0f2063daefee9602a6",
-          "sha512": "ccd7e42aa67d14bc31cfb28a90e4c3858b8bc9be5317092c48adb2311b8e035d694eebb08e43ca6b9b9e12a7601b70afbccd2d6809e2e45091918da4969d0fbf"
+          "sha512": "ccd7e42aa67d14bc31cfb28a90e4c3858b8bc9be5317092c48adb2311b8e035d694eebb08e43ca6b9b9e12a7601b70afbccd2d6809e2e45091918da4969d0fbf",
+          "sha1": "e02fa386400d9b508ffdbd0f2063daefee9602a6"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/bcSvExiP/libIPN-forge-1.21.4-6.3.1.jar",
         "filename": "libIPN-forge-1.21.4-6.3.1.jar",
@@ -1407,15 +1407,15 @@
     "changelog": "## What's new\n\n### 6.2.1\n\n-   Adds support for multiple key combinations per keybind. Accessible through the button icon of the keybind option.\n",
     "changelog_url": null,
     "date_published": "2025-01-05T10:35:14.58657Z",
-    "downloads": 4611,
+    "downloads": 4617,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a17f711e8c9c9895d4e43749620a8afe06f4ef33f635bd6c249ae1ed1880796c54d1ae57b1292dacf973c90f7043518116a8dadd6bc00798ad0aad6e6bcdd436",
-          "sha1": "b0042446769925ac81fb8e6167947eb1992486f7"
+          "sha1": "b0042446769925ac81fb8e6167947eb1992486f7",
+          "sha512": "a17f711e8c9c9895d4e43749620a8afe06f4ef33f635bd6c249ae1ed1880796c54d1ae57b1292dacf973c90f7043518116a8dadd6bc00798ad0aad6e6bcdd436"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/qjhgeKOL/libIPN-neoforge-1.21.3-6.2.1.jar",
         "filename": "libIPN-neoforge-1.21.3-6.2.1.jar",
@@ -1450,7 +1450,7 @@
     "changelog": "## What's new\n\n### 6.2.1\n\n-   Adds support for multiple key combinations per keybind. Accessible through the button icon of the keybind option.\n",
     "changelog_url": null,
     "date_published": "2025-01-05T10:35:10.083036Z",
-    "downloads": 8481,
+    "downloads": 8485,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1493,7 +1493,7 @@
     "changelog": "## What's new\n\n### 6.2.1\n\n-   Adds support for multiple key combinations per keybind. Accessible through the button icon of the keybind option.\n",
     "changelog_url": null,
     "date_published": "2025-01-05T10:35:03.692009Z",
-    "downloads": 6801,
+    "downloads": 6803,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1543,8 +1543,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ccf752223027c14e4b82ae26f7620aa5729a39e4",
-          "sha512": "3502d8375f33eeb6e9dcfd1c6dc21ccec44c136baaab854e02f097c9fdd9df6e97100d85d20f8773f350c2df3cb0af8913527b3e8b77dd76b612e604ad15cf00"
+          "sha512": "3502d8375f33eeb6e9dcfd1c6dc21ccec44c136baaab854e02f097c9fdd9df6e97100d85d20f8773f350c2df3cb0af8913527b3e8b77dd76b612e604ad15cf00",
+          "sha1": "ccf752223027c14e4b82ae26f7620aa5729a39e4"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/HaegpLNg/libIPN-forge-1.21-6.2.1.jar",
         "filename": "libIPN-forge-1.21-6.2.1.jar",
@@ -1580,7 +1580,7 @@
     "changelog": "## What's new\n\n### 6.2.1\n\n-   Adds support for multiple key combinations per keybind. Accessible through the button icon of the keybind option.\n",
     "changelog_url": null,
     "date_published": "2025-01-05T10:34:46.121288Z",
-    "downloads": 79062,
+    "downloads": 79108,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1630,7 +1630,7 @@
     "changelog": "## What's new\n\n### 6.2.1\n\n-   Adds support for multiple key combinations per keybind. Accessible through the button icon of the keybind option.\n",
     "changelog_url": null,
     "date_published": "2025-01-05T10:34:41.230044Z",
-    "downloads": 70538,
+    "downloads": 70573,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1650,13 +1650,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "Ha28R6CL",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "Ha28R6CL",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -1684,7 +1684,7 @@
     "changelog": "## What's new\n\n### 6.2.0\n\n-   Support for fabric 1.21.4\n-   fixes keybinds of [InvTweaks Emulation for IPN](https://modrinth.com/mod/invtweaks-emu-for-ipn)\n",
     "changelog_url": null,
     "date_published": "2024-11-25T19:05:10.669815Z",
-    "downloads": 59908,
+    "downloads": 59919,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1734,15 +1734,15 @@
     "changelog": "## What's new\n\n### 6.2.0\n\n-   Support for fabric 1.21.4\n-   fixes keybinds of [InvTweaks Emulation for IPN](https://modrinth.com/mod/invtweaks-emu-for-ipn)\n",
     "changelog_url": null,
     "date_published": "2024-11-25T19:02:54.812633Z",
-    "downloads": 105779,
+    "downloads": 105887,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c715a0ad02d280d29c2d48b394bb245ef28e73ab",
-          "sha512": "0c4ce4a72f62234bd9fdca7d4833b9af37b00a714a852fbd90cf5c2dc192ba3c022f7c65ef35d286d35e9ff531c43b25258db959792690a325bf881d6a0eb0ba"
+          "sha512": "0c4ce4a72f62234bd9fdca7d4833b9af37b00a714a852fbd90cf5c2dc192ba3c022f7c65ef35d286d35e9ff531c43b25258db959792690a325bf881d6a0eb0ba",
+          "sha1": "c715a0ad02d280d29c2d48b394bb245ef28e73ab"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/pomcIFya/libIPN-fabric-1.21-6.2.0.jar",
         "filename": "libIPN-fabric-1.21-6.2.0.jar",
@@ -1783,7 +1783,7 @@
     "changelog": "## What's new\n\n### 6.2.0\n\n-   Support for fabric 1.21.4\n-   fixes keybinds of [InvTweaks Emulation for IPN](https://modrinth.com/mod/invtweaks-emu-for-ipn)\n",
     "changelog_url": null,
     "date_published": "2024-11-25T19:00:25.996254Z",
-    "downloads": 6021,
+    "downloads": 6023,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1833,8 +1833,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6af167f022f285ffa939db96c88b0bd46363177e30cd58d99fe87c5c1873e2f9bd1d1fe28a6a304e9684c27fcb45cc56e36908dc640382403e1fcd95b0adfe47",
-          "sha1": "3e4ddf1ed972ba156dbe9fac81618df61c8d7c72"
+          "sha1": "3e4ddf1ed972ba156dbe9fac81618df61c8d7c72",
+          "sha512": "6af167f022f285ffa939db96c88b0bd46363177e30cd58d99fe87c5c1873e2f9bd1d1fe28a6a304e9684c27fcb45cc56e36908dc640382403e1fcd95b0adfe47"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/sVRTZwnO/libIPN-forge-1.21-6.2.0.jar",
         "filename": "libIPN-forge-1.21-6.2.0.jar",
@@ -1956,7 +1956,7 @@
     "changelog": "## What's new\n\n### 6.1.1\n\n-   fixed swipe shift click to detect mouse button release.\n",
     "changelog_url": null,
     "date_published": "2024-11-01T09:09:48.325572Z",
-    "downloads": 67678,
+    "downloads": 67754,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2008,15 +2008,15 @@
     "changelog": "## What's new\n\n### 6.1.1\n\n-   fixed swipe shift click to detect mouse button release.\n",
     "changelog_url": null,
     "date_published": "2024-11-01T09:09:01.458915Z",
-    "downloads": 19757,
+    "downloads": 19761,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2672b513c191f6ef729dacbc94635bf674b63f47be11d5d4089b9c25a84df038dc9d8bda609cd542a6f1312ff33a33a224de252961c149c4bff4fcadedfb8b66",
-          "sha1": "7be84bebe4baf1e83c457b2a7c37540fe865ecc0"
+          "sha1": "7be84bebe4baf1e83c457b2a7c37540fe865ecc0",
+          "sha512": "2672b513c191f6ef729dacbc94635bf674b63f47be11d5d4089b9c25a84df038dc9d8bda609cd542a6f1312ff33a33a224de252961c149c4bff4fcadedfb8b66"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/zF9pzspj/libIPN-fabric-1.21.3-6.1.1.jar",
         "filename": "libIPN-fabric-1.21.3-6.1.1.jar",
@@ -2064,8 +2064,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "330c0609e43888133a6200209f1bef1507a65dee",
-          "sha512": "be638254bc545737c8b18fc7cb6cffc9cf2da7596e3090b502611ddfadcf6501fc20b1953eae69ca45230df19637a72f724834f8009fc050f38dfb9202654366"
+          "sha512": "be638254bc545737c8b18fc7cb6cffc9cf2da7596e3090b502611ddfadcf6501fc20b1953eae69ca45230df19637a72f724834f8009fc050f38dfb9202654366",
+          "sha1": "330c0609e43888133a6200209f1bef1507a65dee"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/fXRpgTYg/libIPN-neoforge-1.21-6.1.1.jar",
         "filename": "libIPN-neoforge-1.21-6.1.1.jar",
@@ -2106,8 +2106,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "110ad18e80abd1f8ce1a1118490a92b50776ed0a45849b137378492c7c3ca878dfa6d9b513b0404fe576d7746837b2a49222199f0bf1ff48a5922b164010740c",
-          "sha1": "388b5aaaa0ac4f1c0138a154ab2c87fe0a36979a"
+          "sha1": "388b5aaaa0ac4f1c0138a154ab2c87fe0a36979a",
+          "sha512": "110ad18e80abd1f8ce1a1118490a92b50776ed0a45849b137378492c7c3ca878dfa6d9b513b0404fe576d7746837b2a49222199f0bf1ff48a5922b164010740c"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Fm1w4a28/libIPN-neoforge-1.21.3-6.1.1.jar",
         "filename": "libIPN-neoforge-1.21.3-6.1.1.jar",
@@ -2149,8 +2149,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4442b51b32fa5791f9e25c806d7a528b8c03945e05d9fcd04c3cebe217a78d891dd3a59993329955710a382e9b95ac3926dde32662a1f24f8c4831f5a8727501",
-          "sha1": "8d040515810e9c668e410ca58f0c2b23b8349cba"
+          "sha1": "8d040515810e9c668e410ca58f0c2b23b8349cba",
+          "sha512": "4442b51b32fa5791f9e25c806d7a528b8c03945e05d9fcd04c3cebe217a78d891dd3a59993329955710a382e9b95ac3926dde32662a1f24f8c4831f5a8727501"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/nMLehNBm/libIPN-forge-1.21-6.1.1.jar",
         "filename": "libIPN-forge-1.21-6.1.1.jar",
@@ -2191,8 +2191,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4513b9d26660d915bdb6b6f1e6afd6e09a443fa1",
-          "sha512": "83e7db50ce02d204580f37c3481286e4d869872159f4c47b89fefd552af1198e4a317b6c9d8b4a0109fc0717483857ad1f2bbbdce3204afcb5358a534d304810"
+          "sha512": "83e7db50ce02d204580f37c3481286e4d869872159f4c47b89fefd552af1198e4a317b6c9d8b4a0109fc0717483857ad1f2bbbdce3204afcb5358a534d304810",
+          "sha1": "4513b9d26660d915bdb6b6f1e6afd6e09a443fa1"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/LHnSkZZ2/libIPN-forge-1.21.3-6.1.1.jar",
         "filename": "libIPN-forge-1.21.3-6.1.1.jar",
@@ -2234,8 +2234,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f72d0a04e327e1d310bc0bc0d335630781cdffbdb4c2cd22e6dccb33986458ea3d8ba76b018df4422ccbda8f44ddfd7f5dc7ecd7467b299caf937ff72b5169e9",
-          "sha1": "bb2417612ef12d7f954a3d0ed3e60db6f77fe98d"
+          "sha1": "bb2417612ef12d7f954a3d0ed3e60db6f77fe98d",
+          "sha512": "f72d0a04e327e1d310bc0bc0d335630781cdffbdb4c2cd22e6dccb33986458ea3d8ba76b018df4422ccbda8f44ddfd7f5dc7ecd7467b299caf937ff72b5169e9"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/OfvNtF84/libIPN-fabric-1.21.3-6.1.0.jar",
         "filename": "libIPN-fabric-1.21.3-6.1.0.jar",
@@ -2277,15 +2277,15 @@
     "changelog": "## What's new\n\n### 6.0.2\n\n-   minor changes needed by IPN 2.0.4\n",
     "changelog_url": null,
     "date_published": "2024-10-31T14:12:56.284855Z",
-    "downloads": 3551,
+    "downloads": 3552,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "27462bdeeb35f03f248234b0b2023c6140a43a50ee0d9046c3690fa4c32cdc444d79f186e5132a6a96916a4edc42d4b2d86956331baa91c77b70e203d7d34a81",
-          "sha1": "6895bf58aa160af82a8473717b475da09776911d"
+          "sha1": "6895bf58aa160af82a8473717b475da09776911d",
+          "sha512": "27462bdeeb35f03f248234b0b2023c6140a43a50ee0d9046c3690fa4c32cdc444d79f186e5132a6a96916a4edc42d4b2d86956331baa91c77b70e203d7d34a81"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/JoEbBET0/libIPN-fabric-1.21-6.1.0.jar",
         "filename": "libIPN-fabric-1.21-6.1.0.jar",
@@ -2333,8 +2333,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "043023ed6675fb5cde4b0b5581fc95ad8e7bea36",
-          "sha512": "f0af9f289d19eb8b81785a25a031ecc0d18c8299522a6863b2f0ee556fe4d760bd1ac7ba1380537b2d8c9b3a91cdc0bdb61e29efb0c0f3974af146a7b779ed40"
+          "sha512": "f0af9f289d19eb8b81785a25a031ecc0d18c8299522a6863b2f0ee556fe4d760bd1ac7ba1380537b2d8c9b3a91cdc0bdb61e29efb0c0f3974af146a7b779ed40",
+          "sha1": "043023ed6675fb5cde4b0b5581fc95ad8e7bea36"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/4dBma8Ef/libIPN-neoforge-1.21-6.1.0.jar",
         "filename": "libIPN-neoforge-1.21-6.1.0.jar",
@@ -2453,7 +2453,7 @@
     "changelog": "## What's new\n\n### 6.0.2\n\n-   minor changes needed by IPN 2.0.4\n",
     "changelog_url": null,
     "date_published": "2024-10-31T14:12:06.985781Z",
-    "downloads": 204,
+    "downloads": 205,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2497,7 +2497,7 @@
     "changelog": "## What's new\n\n### 6.0.2\n\n-   minor changes needed by IPN 2.0.4\n",
     "changelog_url": null,
     "date_published": "2024-10-11T20:03:15.01037Z",
-    "downloads": 47251,
+    "downloads": 47260,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2546,7 +2546,7 @@
     "changelog": "## What's new\n\n### 6.0.2\n\n-   minor changes needed by IPN 2.0.4\n",
     "changelog_url": null,
     "date_published": "2024-10-11T20:02:25.302005Z",
-    "downloads": 4802,
+    "downloads": 4803,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2589,7 +2589,7 @@
     "changelog": "## What's new\n\n### 6.0.2\n\n-   minor changes needed by IPN 2.0.4\n",
     "changelog_url": null,
     "date_published": "2024-10-11T20:02:22.816978Z",
-    "downloads": 3775,
+    "downloads": 3779,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2632,7 +2632,7 @@
     "changelog": "## What's new\n\n### 6.0.2\n\n-   minor changes needed by IPN 2.0.4\n",
     "changelog_url": null,
     "date_published": "2024-08-02T18:42:52.152564Z",
-    "downloads": 218311,
+    "downloads": 218365,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2681,15 +2681,15 @@
     "changelog": "## What's new\n\n### 6.0.2\n\n-   minor changes needed by IPN 2.0.4\n",
     "changelog_url": null,
     "date_published": "2024-08-02T18:42:02.136155Z",
-    "downloads": 13405,
+    "downloads": 13407,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a1bf708a6632ac007991b95659e26768baf5d60eed9f9d78beff1cb0e537737302522436c42a3839caafae3891b4e87adf95c303dfde56dd74a27fdaee80c1c0",
-          "sha1": "b2946ce7e173b8035b4604f66eb5b5c32c480424"
+          "sha1": "b2946ce7e173b8035b4604f66eb5b5c32c480424",
+          "sha512": "a1bf708a6632ac007991b95659e26768baf5d60eed9f9d78beff1cb0e537737302522436c42a3839caafae3891b4e87adf95c303dfde56dd74a27fdaee80c1c0"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/P2E4l86S/libIPN-forge-1.21-6.0.2.jar",
         "filename": "libIPN-forge-1.21-6.0.2.jar",
@@ -2724,15 +2724,15 @@
     "changelog": "## What's new\n\n### 6.0.2\n\n-   minor changes needed by IPN 2.0.4\n",
     "changelog_url": null,
     "date_published": "2024-08-02T18:42:02.13529Z",
-    "downloads": 12544,
+    "downloads": 12551,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b0819bd857d77a8f310e0887c2ec85af81c4b1ea907abab028f52f06b2a570256da6f82d2d8dadad0412fadf3198d2fc267e30ea5b09265758b9736a8fd57c7b",
-          "sha1": "50e52d8879aeeb811da00b79e31e4e4855a9bb54"
+          "sha1": "50e52d8879aeeb811da00b79e31e4e4855a9bb54",
+          "sha512": "b0819bd857d77a8f310e0887c2ec85af81c4b1ea907abab028f52f06b2a570256da6f82d2d8dadad0412fadf3198d2fc267e30ea5b09265758b9736a8fd57c7b"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/mwHaCe5H/libIPN-neoforge-1.21-6.0.2.jar",
         "filename": "libIPN-neoforge-1.21-6.0.2.jar",
@@ -2766,15 +2766,15 @@
     "changelog": "## What's new\n\n### 6.0.1\n\n-   showing that they are good descendant NeoForge pulled a Forge move and broke the API in the same major release.\n",
     "changelog_url": null,
     "date_published": "2024-07-28T16:04:43.63311Z",
-    "downloads": 17825,
+    "downloads": 17828,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "43d9e392cbc696c8bf9bac636fcf8eca8571ef4e",
-          "sha512": "337c09c3b42a1d6a8aae0abe98bb38089fa1dbac86a5a4b4c61b86f10fcab74fb15ec3abe5927821e9752e2d430afd59fe325191ae234946216795fe9f00cadc"
+          "sha512": "337c09c3b42a1d6a8aae0abe98bb38089fa1dbac86a5a4b4c61b86f10fcab74fb15ec3abe5927821e9752e2d430afd59fe325191ae234946216795fe9f00cadc",
+          "sha1": "43d9e392cbc696c8bf9bac636fcf8eca8571ef4e"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/34NUh0ko/libIPN-fabric-1.21-6.0.1.jar",
         "filename": "libIPN-fabric-1.21-6.0.1.jar",
@@ -2821,8 +2821,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4139d546bf0b6964b5a7ce146ae02a3ea6dfc3e0a8ca9307e130b3ab2381f4a72b301236ca059b42d52ff03d5fd6a78f7fed738ea9c19c948763502628b6bfc6",
-          "sha1": "35ba55d6e825baafad762d95c9f85a3071a05f26"
+          "sha1": "35ba55d6e825baafad762d95c9f85a3071a05f26",
+          "sha512": "4139d546bf0b6964b5a7ce146ae02a3ea6dfc3e0a8ca9307e130b3ab2381f4a72b301236ca059b42d52ff03d5fd6a78f7fed738ea9c19c948763502628b6bfc6"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/VVWWmuhh/libIPN-neoforge-1.21-6.0.1.jar",
         "filename": "libIPN-neoforge-1.21-6.0.1.jar",
@@ -2857,15 +2857,15 @@
     "changelog": "## What's new\n\n### 6.0.1\n\n-   showing that they are good descendant NeoForge pulled a Forge move and broke the API in the same major release.\n",
     "changelog_url": null,
     "date_published": "2024-07-28T16:03:44.477146Z",
-    "downloads": 1359,
+    "downloads": 1360,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d31ff8d5c305d2553172a24e69544dc70b1e6a25",
-          "sha512": "e6188dce1ded82b02bcec61fe93595b35765a51c70a728c165329ea2bd9bfc37e81acf7c2c1dcfe83e3aa13063dc9e314a940d53e357d40b012f2f7be682d323"
+          "sha512": "e6188dce1ded82b02bcec61fe93595b35765a51c70a728c165329ea2bd9bfc37e81acf7c2c1dcfe83e3aa13063dc9e314a940d53e357d40b012f2f7be682d323",
+          "sha1": "d31ff8d5c305d2553172a24e69544dc70b1e6a25"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/pIcDmlY9/libIPN-forge-1.21-6.0.1.jar",
         "filename": "libIPN-forge-1.21-6.0.1.jar",
@@ -2906,8 +2906,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e0d9b7ce6d3a26398f31254793d4f78d5ab1ee31",
-          "sha512": "399bf14061acc3a85b489989710fabed3b6c8649a45ac7b3abd0fd41f54986fb48b6136d2925fe9b1e3bdee3455b82d767706ef043f37fd71293914d4d98009a"
+          "sha512": "399bf14061acc3a85b489989710fabed3b6c8649a45ac7b3abd0fd41f54986fb48b6136d2925fe9b1e3bdee3455b82d767706ef043f37fd71293914d4d98009a",
+          "sha1": "e0d9b7ce6d3a26398f31254793d4f78d5ab1ee31"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ztRNOmLN/libIPN-neoforge-1.21-6.0.0.jar",
         "filename": "libIPN-neoforge-1.21-6.0.0.jar",
@@ -2941,15 +2941,15 @@
     "changelog": "## What's new\n\n### 6.0.0\n\n-   adds NeoForge 1.21 support\n",
     "changelog_url": null,
     "date_published": "2024-07-07T13:30:53.527337Z",
-    "downloads": 145845,
+    "downloads": 145882,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "49cb37607bdc9904adc3ccda84e3eae60654bf45439bab28c9d2f4e99a229ee03b876fc75f39be26636d97ad3a869582124f86c91f177e1f66a8938e071e26c0",
-          "sha1": "b62272c4b04b6c9247025aa684684e8f4f7a9565"
+          "sha1": "b62272c4b04b6c9247025aa684684e8f4f7a9565",
+          "sha512": "49cb37607bdc9904adc3ccda84e3eae60654bf45439bab28c9d2f4e99a229ee03b876fc75f39be26636d97ad3a869582124f86c91f177e1f66a8938e071e26c0"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/2aBSL3js/libIPN-fabric-1.21-6.0.0.jar",
         "filename": "libIPN-fabric-1.21-6.0.0.jar",
@@ -2989,15 +2989,15 @@
     "changelog": "## What's new\n\n### 6.0.0\n\n-   adds NeoForge 1.21 support\n",
     "changelog_url": null,
     "date_published": "2024-07-07T13:30:53.148174Z",
-    "downloads": 23397,
+    "downloads": 23427,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2e4d9f44748f79b8a2884db4ba6756501d2ddda8",
-          "sha512": "50ee60b0ac04fb42d5d2a27a7a18894a832bc3ed764db7df3f23cff6498a9ec071c909ac3f92fb245a37830ee9a3b2c58b91e92d026ee34455469fac8fd83cad"
+          "sha512": "50ee60b0ac04fb42d5d2a27a7a18894a832bc3ed764db7df3f23cff6498a9ec071c909ac3f92fb245a37830ee9a3b2c58b91e92d026ee34455469fac8fd83cad",
+          "sha1": "2e4d9f44748f79b8a2884db4ba6756501d2ddda8"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/eevCkyLQ/libIPN-fabric-1.20.6-6.0.0.jar",
         "filename": "libIPN-fabric-1.20.6-6.0.0.jar",
@@ -3044,8 +3044,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "84f94881bfabaa6325dd89c981e51fa54262c174d9a627685ba693502e184226c9c81d95833036ec83994b43baa549e9ee43f051438ed9390e601edd90da7d20",
-          "sha1": "a5de18b77783b2527b66deb9689882b7370cd249"
+          "sha1": "a5de18b77783b2527b66deb9689882b7370cd249",
+          "sha512": "84f94881bfabaa6325dd89c981e51fa54262c174d9a627685ba693502e184226c9c81d95833036ec83994b43baa549e9ee43f051438ed9390e601edd90da7d20"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Q9Z7Lfo6/libIPN-forge-1.21-6.0.0.jar",
         "filename": "libIPN-forge-1.21-6.0.0.jar",
@@ -3079,15 +3079,15 @@
     "changelog": "## What's new\n\n### 6.0.0\n\n-   adds NeoForge 1.21 support\n",
     "changelog_url": null,
     "date_published": "2024-07-07T13:30:09.317249Z",
-    "downloads": 5185,
+    "downloads": 5191,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2fc6b75760e9741aa8c506c5aac592eaf6228683361e5f64a5c359d3bd5a06763a3d310702dd449727f8ad4a945626bed45f0bb5ccb038dac48de6d911f9af06",
-          "sha1": "46b54f0e564accdbb97d5422eccb1b4bf7b392c6"
+          "sha1": "46b54f0e564accdbb97d5422eccb1b4bf7b392c6",
+          "sha512": "2fc6b75760e9741aa8c506c5aac592eaf6228683361e5f64a5c359d3bd5a06763a3d310702dd449727f8ad4a945626bed45f0bb5ccb038dac48de6d911f9af06"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/HUJzdFjq/libIPN-forge-1.20.6-6.0.0.jar",
         "filename": "libIPN-forge-1.20.6-6.0.0.jar",
@@ -3128,8 +3128,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "57cb279a47c9e0872ad1deb77e559bd39cf076f2",
-          "sha512": "42e1e0f7b68814c89bcb6caa9c7be01a39048e06f621fc6b10f11d754983f7de3a8610bfad1de6fa7520dcbe81f18b44107599e1278507c18ee9505fed37554b"
+          "sha512": "42e1e0f7b68814c89bcb6caa9c7be01a39048e06f621fc6b10f11d754983f7de3a8610bfad1de6fa7520dcbe81f18b44107599e1278507c18ee9505fed37554b",
+          "sha1": "57cb279a47c9e0872ad1deb77e559bd39cf076f2"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/8WeQtm9L/libIPN-fabric-1.20.6-5.0.2.jar",
         "filename": "libIPN-fabric-1.20.6-5.0.2.jar",
@@ -3176,8 +3176,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2a0df56ee44c606b204e884ee7437e03680b609f",
-          "sha512": "5525f6d8d02d5fd3cd19f0542746acfae71d6a12013f50a3626a08342612ef4392ac1d0716e5c4709a5f6558ead18bf7743c9e5d05977bfd1cdbe9dafed8a0ca"
+          "sha512": "5525f6d8d02d5fd3cd19f0542746acfae71d6a12013f50a3626a08342612ef4392ac1d0716e5c4709a5f6558ead18bf7743c9e5d05977bfd1cdbe9dafed8a0ca",
+          "sha1": "2a0df56ee44c606b204e884ee7437e03680b609f"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/FJv7qbUJ/libIPN-forge-1.20.6-5.0.2.jar",
         "filename": "libIPN-forge-1.20.6-5.0.2.jar",
@@ -3211,7 +3211,7 @@
     "changelog": "## What's new\n\n### 5.0.2\n\n-   adds forge 1.21 support\n-   small fixes and improvements\n",
     "changelog_url": null,
     "date_published": "2024-07-02T12:54:13.237084Z",
-    "downloads": 28961,
+    "downloads": 28975,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3266,8 +3266,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6bcb2d45261219fbbd312b90b318565d1116934b",
-          "sha512": "9f01c89984d44110ac97c48c6f52747787943bee74b4c9151338dcf0f5aa5243986c6275b24acf25ab5ad90016cb1144ab25182d1f941194a9a0feff7aaabb03"
+          "sha512": "9f01c89984d44110ac97c48c6f52747787943bee74b4c9151338dcf0f5aa5243986c6275b24acf25ab5ad90016cb1144ab25182d1f941194a9a0feff7aaabb03",
+          "sha1": "6bcb2d45261219fbbd312b90b318565d1116934b"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/NzUfRupp/libIPN-forge-1.21-5.0.2.jar",
         "filename": "libIPN-forge-1.21-5.0.2.jar",
@@ -3301,7 +3301,7 @@
     "changelog": "## What's new\n\n### 5.0.0\n\n-   Adds 1.21 compatibility.\n-   Minecraft versions below 1.21 will no longer receive updates!\n",
     "changelog_url": null,
     "date_published": "2024-06-14T18:10:52.783156Z",
-    "downloads": 90163,
+    "downloads": 90188,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3351,15 +3351,15 @@
     "changelog": "## What's new\n\n### 4.0.2\n\n-   this is just preliminary release for future 1.20.5 compatible version\n",
     "changelog_url": null,
     "date_published": "2024-03-24T18:17:21.592764Z",
-    "downloads": 46070,
+    "downloads": 46088,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5129bf8ed83bc001d12f8898c91980e79c598829",
-          "sha512": "58f38b34f335cbbdf5459d02086f0ce0c6884aa8dffad72f364115a445fa27298e0c1d2bd40febb8106c595c88bbe6472f3a6d2572b733362a7a52d1b4f3e3b4"
+          "sha512": "58f38b34f335cbbdf5459d02086f0ce0c6884aa8dffad72f364115a445fa27298e0c1d2bd40febb8106c595c88bbe6472f3a6d2572b733362a7a52d1b4f3e3b4",
+          "sha1": "5129bf8ed83bc001d12f8898c91980e79c598829"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/v5S7Gsd5/libIPN-forge-1.20.2-4.0.2.jar",
         "filename": "libIPN-forge-1.20.2-4.0.2.jar",
@@ -3394,7 +3394,7 @@
     "changelog": "## What's new\n\n### 4.0.2\n\n-   this is just preliminary release for future 1.20.5 compatible version\n",
     "changelog_url": null,
     "date_published": "2024-03-24T18:17:18.578454Z",
-    "downloads": 2361363,
+    "downloads": 2371988,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3438,7 +3438,7 @@
     "changelog": "## What's new\n\n### 4.0.2\n\n-   this is just preliminary release for future 1.20.5 compatible version\n",
     "changelog_url": null,
     "date_published": "2024-03-24T18:17:17.907504Z",
-    "downloads": 193782,
+    "downloads": 193907,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3486,7 +3486,7 @@
     "changelog": "## What's new\n\n### 4.0.2\n\n-   this is just preliminary release for future 1.20.5 compatible version\n",
     "changelog_url": null,
     "date_published": "2024-03-24T18:17:17.843059Z",
-    "downloads": 75495,
+    "downloads": 75749,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3530,15 +3530,15 @@
     "changelog": "## What's new\n\n### 4.0.2\n\n-   this is just preliminary release for future 1.20.5 compatible version\n",
     "changelog_url": null,
     "date_published": "2024-03-24T18:17:17.605127Z",
-    "downloads": 1353183,
+    "downloads": 1354741,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "78018d1a93e3c4a8c812719c9d1795e585db289facb65829c9c7a04b7c2bf957e6a0d09ae84716e1582d526bb59dff4641ac247ed093fd8dd72802e927871593",
-          "sha1": "15992ec4a8e15a0e45c23f66265a72f2ff44ff4f"
+          "sha1": "15992ec4a8e15a0e45c23f66265a72f2ff44ff4f",
+          "sha512": "78018d1a93e3c4a8c812719c9d1795e585db289facb65829c9c7a04b7c2bf957e6a0d09ae84716e1582d526bb59dff4641ac247ed093fd8dd72802e927871593"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Wvr1TddI/libIPN-forge-1.19-4.0.2.jar",
         "filename": "libIPN-forge-1.19-4.0.2.jar",
@@ -3575,15 +3575,15 @@
     "changelog": "## What's new\n\n### 4.0.2\n\n-   this is just preliminary release for future 1.20.5 compatible version\n",
     "changelog_url": null,
     "date_published": "2024-03-24T18:17:14.535816Z",
-    "downloads": 19166,
+    "downloads": 19176,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8e9f21e3f0ac30ab296492b93c66752ff65e6f780a5fed4a55b983003ed82a15b61b29178761ab4146a4948b58697db90147b4e604cd67e52d47841b8f9cf8da",
-          "sha1": "6c9bccefb51ec9ccff22bd37d6767ca8e583b652"
+          "sha1": "6c9bccefb51ec9ccff22bd37d6767ca8e583b652",
+          "sha512": "8e9f21e3f0ac30ab296492b93c66752ff65e6f780a5fed4a55b983003ed82a15b61b29178761ab4146a4948b58697db90147b4e604cd67e52d47841b8f9cf8da"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ubXMmBwm/libIPN-fabric-1.20.2-4.0.2.jar",
         "filename": "libIPN-fabric-1.20.2-4.0.2.jar",
@@ -3625,15 +3625,15 @@
     "changelog": "## What's new\n\n### 4.0.2\n\n-   this is just preliminary release for future 1.20.5 compatible version\n",
     "changelog_url": null,
     "date_published": "2024-03-24T18:17:13.645402Z",
-    "downloads": 1133146,
+    "downloads": 1135220,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "34961bc3a172115b6747248305b484f3cb8d26c4b41994bb8b5759359f817df0c3c73725b8bbaeb15c59c8798a13321ed9875282dbe9a1b81606f381b532a8cd",
-          "sha1": "c8c4d93037efb226b6bd3264e33df4c010cb111b"
+          "sha1": "c8c4d93037efb226b6bd3264e33df4c010cb111b",
+          "sha512": "34961bc3a172115b6747248305b484f3cb8d26c4b41994bb8b5759359f817df0c3c73725b8bbaeb15c59c8798a13321ed9875282dbe9a1b81606f381b532a8cd"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Uygzs3iI/libIPN-fabric-1.20-4.0.2.jar",
         "filename": "libIPN-fabric-1.20-4.0.2.jar",
@@ -3676,7 +3676,7 @@
     "changelog": "## What's new\n\n### 4.0.2\n\n-   this is just preliminary release for future 1.20.5 compatible version\n",
     "changelog_url": null,
     "date_published": "2024-03-24T18:17:13.442312Z",
-    "downloads": 41615,
+    "downloads": 41660,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3725,7 +3725,7 @@
     "changelog": "## What's new\n\n### 4.0.2\n\n-   this is just preliminary release for future 1.20.5 compatible version\n",
     "changelog_url": null,
     "date_published": "2024-03-24T18:17:13.172825Z",
-    "downloads": 15710,
+    "downloads": 15729,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3776,7 +3776,7 @@
     "changelog": "## What's new\n\n### 4.0.1\n\n-   fixed input handling where in some cases shortcuts weren't triggered on button/key release.\n-   \n",
     "changelog_url": null,
     "date_published": "2023-11-24T22:09:31.411495Z",
-    "downloads": 109529,
+    "downloads": 109541,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3827,7 +3827,7 @@
     "changelog": "## What's new\n\n### 4.0.1\n\n-   fixed input handling where in some cases shortcuts weren't triggered on button/key release.\n",
     "changelog_url": null,
     "date_published": "2023-11-15T13:26:36.577996Z",
-    "downloads": 26695,
+    "downloads": 26706,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3876,8 +3876,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "58c3e01bcabde9310ecb6ee0ff705f3c93d821281768488509a652f9b68184aeb605598a0f76754758021fc10882934ecd5b7751cd508e8acc565b265a531350",
-          "sha1": "f51aa0e78df841d57ab1a92f7a6813757ec86a57"
+          "sha1": "f51aa0e78df841d57ab1a92f7a6813757ec86a57",
+          "sha512": "58c3e01bcabde9310ecb6ee0ff705f3c93d821281768488509a652f9b68184aeb605598a0f76754758021fc10882934ecd5b7751cd508e8acc565b265a531350"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Dq4WH4PL/libIPN-forge-1.20.2-4.0.1.jar",
         "filename": "libIPN-forge-1.20.2-4.0.1.jar",
@@ -3912,15 +3912,15 @@
     "changelog": "## What's new\n\n### 4.0.1\n\n-   fixed input handling where in some cases shortcuts weren't triggered on button/key release.\n",
     "changelog_url": null,
     "date_published": "2023-11-15T13:26:35.262699Z",
-    "downloads": 157080,
+    "downloads": 157126,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b3e9a4dc275ce8ee78321a1b9611ed93253bc6d1",
-          "sha512": "7a2fd507f41c5e7ae4dbc5aa298a28fba2bf4589df815b6d9e0e8cbda54d5d61eb21aacf61322403922fb603af7b124d39e270e55fb2b95fd846269aa03a8714"
+          "sha512": "7a2fd507f41c5e7ae4dbc5aa298a28fba2bf4589df815b6d9e0e8cbda54d5d61eb21aacf61322403922fb603af7b124d39e270e55fb2b95fd846269aa03a8714",
+          "sha1": "b3e9a4dc275ce8ee78321a1b9611ed93253bc6d1"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/yCix4jRh/libIPN-forge-1.20-4.0.1.jar",
         "filename": "libIPN-forge-1.20-4.0.1.jar",
@@ -3962,8 +3962,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9d5a6bc3f0e55e24d7b1d5ed439c21a1e78f9c9fae9b0a064f077dc0ab504abfdde0d3ad1b3ab8dff1fac009050dc3b4cbef9f4b77d6faf2ad6eb8c544660ef5",
-          "sha1": "ac9d7762e0e0c25ae05b94664cbb10c00885f157"
+          "sha1": "ac9d7762e0e0c25ae05b94664cbb10c00885f157",
+          "sha512": "9d5a6bc3f0e55e24d7b1d5ed439c21a1e78f9c9fae9b0a064f077dc0ab504abfdde0d3ad1b3ab8dff1fac009050dc3b4cbef9f4b77d6faf2ad6eb8c544660ef5"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Z3keOWWQ/libIPN-forge-1.18.2-4.0.1.jar",
         "filename": "libIPN-forge-1.18.2-4.0.1.jar",
@@ -3998,15 +3998,15 @@
     "changelog": "## What's new\n\n### 4.0.1\n\n-   fixed input handling where in some cases shortcuts weren't triggered on button/key release.\n",
     "changelog_url": null,
     "date_published": "2023-11-15T13:26:29.788825Z",
-    "downloads": 34275,
+    "downloads": 34278,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fd1beaa9c0b956a736e284e28767e315d7afa4adddf3956d052e150ecb467689b472ec9a698c46d04096d31cb79575c4c6b4e5ffa4b80e4007936a3d28923940",
-          "sha1": "fc9583061869212adc7313e284081f5f1d7427b0"
+          "sha1": "fc9583061869212adc7313e284081f5f1d7427b0",
+          "sha512": "fd1beaa9c0b956a736e284e28767e315d7afa4adddf3956d052e150ecb467689b472ec9a698c46d04096d31cb79575c4c6b4e5ffa4b80e4007936a3d28923940"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/G56kkkNT/libIPN-fabric-1.20.2-4.0.1.jar",
         "filename": "libIPN-fabric-1.20.2-4.0.1.jar",
@@ -4048,15 +4048,15 @@
     "changelog": "## What's new\n\n### 4.0.1\n\n-   fixed input handling where in some cases shortcuts weren't triggered on button/key release.\n",
     "changelog_url": null,
     "date_published": "2023-11-15T13:26:29.289711Z",
-    "downloads": 301615,
+    "downloads": 301730,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "75449b13a9a9c30f0bf65abc39c347f7c1ffd1b7eb4fb40c5bebece0c7ea4990fb508fc9c0880dd8ccfab11f0b896a50c70ff6ea640cb7c45d0c74a45886dbb8",
-          "sha1": "55e42623a065a7f7e9cef0e70c4d20d351740aa8"
+          "sha1": "55e42623a065a7f7e9cef0e70c4d20d351740aa8",
+          "sha512": "75449b13a9a9c30f0bf65abc39c347f7c1ffd1b7eb4fb40c5bebece0c7ea4990fb508fc9c0880dd8ccfab11f0b896a50c70ff6ea640cb7c45d0c74a45886dbb8"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/n7RHn1mT/libIPN-fabric-1.20-4.0.1.jar",
         "filename": "libIPN-fabric-1.20-4.0.1.jar",
@@ -4104,8 +4104,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f3e0e836cb6a6c9aa3ac98d0381f20553e9e4505",
-          "sha512": "f01189503b614fcd190971e3cd683a961bae7092d0cbb5869923dfb2d1fd1cbb9a25f4505ff99e99c2a7fd8931df2fa13f3455455b823b44d3ac28455e999eaa"
+          "sha512": "f01189503b614fcd190971e3cd683a961bae7092d0cbb5869923dfb2d1fd1cbb9a25f4505ff99e99c2a7fd8931df2fa13f3455455b823b44d3ac28455e999eaa",
+          "sha1": "f3e0e836cb6a6c9aa3ac98d0381f20553e9e4505"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/W6QleXiv/libIPN-fabric-1.18.2-4.0.1.jar",
         "filename": "libIPN-fabric-1.18.2-4.0.1.jar",
@@ -4148,7 +4148,7 @@
     "changelog": "## What's new\n\n### 4.0.1\n\n-   fixed input handling where in some cases shortcuts weren't triggered on button/key release.\n",
     "changelog_url": null,
     "date_published": "2023-11-15T13:26:28.419984Z",
-    "downloads": 39916,
+    "downloads": 39931,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4240,15 +4240,15 @@
     "changelog": "## What's new\n\n### 4.0.0\n\n-   compatibility with MC 1.20.2 that led to interface change\n-   removed 1.16 and 1.19.4 support.\n",
     "changelog_url": null,
     "date_published": "2023-08-20T10:00:48.3994Z",
-    "downloads": 77494,
+    "downloads": 77569,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "cded3dc689b679b09d7973df8e6c8d4bae6c1b41",
-          "sha512": "7094c16cefbade5fa9c2ee4cbac2654ebaf3788f36de4fe204ad4234640403886906adcacd67ca4380b04b588153dc75e15c947bdfa8a0f8d6662df26e8b1bdb"
+          "sha512": "7094c16cefbade5fa9c2ee4cbac2654ebaf3788f36de4fe204ad4234640403886906adcacd67ca4380b04b588153dc75e15c947bdfa8a0f8d6662df26e8b1bdb",
+          "sha1": "cded3dc689b679b09d7973df8e6c8d4bae6c1b41"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/9nOJu1y9/libIPN-forge-1.20-4.0.0.jar",
         "filename": "libIPN-forge-1.20-4.0.0.jar",
@@ -4292,8 +4292,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b8931c19e57609d8dbb51ce9e064c48fbcc5d5cd35e0b7de9518f05bf2fddf40bb2c2307294272700abe2bfed892aa90cd00aef6b3716b551b4d7da3e1ed8292",
-          "sha1": "25bf65178ab71ddba5204e3f40ebdb3d475d3272"
+          "sha1": "25bf65178ab71ddba5204e3f40ebdb3d475d3272",
+          "sha512": "b8931c19e57609d8dbb51ce9e064c48fbcc5d5cd35e0b7de9518f05bf2fddf40bb2c2307294272700abe2bfed892aa90cd00aef6b3716b551b4d7da3e1ed8292"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/JflnY9yN/libIPN-forge-1.19-4.0.0.jar",
         "filename": "libIPN-forge-1.19-4.0.0.jar",
@@ -4378,8 +4378,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f523e7f1c2e6fdf55af07fb32bdc08d4d5b133960538af52390dd92e26d0587a469e75a39818b711146bd23b76fb7b5dedf2345d15f430be6b39726148e43a1d",
-          "sha1": "401319ed0fdbd10714a0c54ba393482faf987445"
+          "sha1": "401319ed0fdbd10714a0c54ba393482faf987445",
+          "sha512": "f523e7f1c2e6fdf55af07fb32bdc08d4d5b133960538af52390dd92e26d0587a469e75a39818b711146bd23b76fb7b5dedf2345d15f430be6b39726148e43a1d"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/z9Z37Q2H/libIPN-fabric-1.20.2-4.0.0.jar",
         "filename": "libIPN-fabric-1.20.2-4.0.0.jar",
@@ -4422,15 +4422,15 @@
     "changelog": "## What's new\n\n### 4.0.0\n\n-   compatibility with MC 1.20.2 that led to interface change\n-   removed 1.16 and 1.19.4 support.\n",
     "changelog_url": null,
     "date_published": "2023-08-20T10:00:42.386684Z",
-    "downloads": 180285,
+    "downloads": 180373,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f9af6ce7a72dc65823e9d8107412f5bf9faaab359b0515d7ec34df06841f6a8d3fcdebc1f3e17fbd4e5c2b25915319fcbbc858fedb2afab0de88f4fd0528f36f",
-          "sha1": "fee407a5dee17cb45ca987fbd8a94bb2ec612bf1"
+          "sha1": "fee407a5dee17cb45ca987fbd8a94bb2ec612bf1",
+          "sha512": "f9af6ce7a72dc65823e9d8107412f5bf9faaab359b0515d7ec34df06841f6a8d3fcdebc1f3e17fbd4e5c2b25915319fcbbc858fedb2afab0de88f4fd0528f36f"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/KN2S7BJS/libIPN-fabric-1.19-4.0.0.jar",
         "filename": "libIPN-fabric-1.19-4.0.0.jar",
@@ -4442,13 +4442,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "Ha28R6CL",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "Ha28R6CL",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -4472,7 +4472,7 @@
     "changelog": "## What's new\n\n### 4.0.0\n\n-   compatibility with MC 1.20.2 that led to interface change\n-   removed 1.16 and 1.19.4 support.\n",
     "changelog_url": null,
     "date_published": "2023-08-20T10:00:42.375657Z",
-    "downloads": 198249,
+    "downloads": 198333,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4571,15 +4571,15 @@
     "changelog": "## What's new\n\n### 3.0.2\n\n-   support for 1.20 fabric. Although the 1.20-preX version did partially work it had some problems that this fixes.\n-   forge version to fallow when Kotlin for Forge gets a release.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-06-11T09:33:53.660397Z",
-    "downloads": 14302,
+    "downloads": 14306,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4082afba9038cf0ff52671b2fbe390304eba90e5",
-          "sha512": "73048f61ceab9b10ff16342aa2b47a45cc34270542e35dbef8dfbf1a8564bb9fd7487eea46b9d53d9000b31d381eda7f3d8294b7c153c1bd5e5e9f4e134ca708"
+          "sha512": "73048f61ceab9b10ff16342aa2b47a45cc34270542e35dbef8dfbf1a8564bb9fd7487eea46b9d53d9000b31d381eda7f3d8294b7c153c1bd5e5e9f4e134ca708",
+          "sha1": "4082afba9038cf0ff52671b2fbe390304eba90e5"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Wtx0D8oE/libIPN-forge-1.20-3.0.2.jar",
         "filename": "libIPN-forge-1.20-3.0.2.jar",
@@ -4614,7 +4614,7 @@
     "changelog": "## What's new\n\n### 3.0.2\n\n-   support for 1.20 fabric. Although the 1.20-preX version did partially work it had some problems that this fixes.\n-   forge version to fallow when Kotlin for Forge gets a release.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-06-09T04:40:45.656384Z",
-    "downloads": 94205,
+    "downloads": 94225,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4633,14 +4633,14 @@
     ],
     "dependencies": [
       {
-        "version_id": "XheZ9iGK",
-        "project_id": "P7dR8mSH",
+        "version_id": "ADg3gvlr",
+        "project_id": "Ha28R6CL",
         "file_name": null,
         "dependency_type": "required"
       },
       {
-        "version_id": "ADg3gvlr",
-        "project_id": "Ha28R6CL",
+        "version_id": "XheZ9iGK",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -4662,7 +4662,7 @@
     "changelog": "## What's new\n\n### 3.0.2\n\n-   support for 1.20 fabric. Although the 1.20-preX version did partially work it had some problems that this fixes.\n-   forge version to fallow when Kotlin for Forge gets a release.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-06-08T20:20:54.318125Z",
-    "downloads": 27158,
+    "downloads": 27165,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4751,7 +4751,7 @@
     "changelog": "## What's new\n\n### 3.0.2\n\n-   support for 1.20 fabric. Although the 1.20-preX version did partially work it had some problems that this fixes.\n-   forge version to fallow when Kotlin for Forge gets a release.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-06-08T20:20:32.550556Z",
-    "downloads": 150696,
+    "downloads": 151022,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4835,7 +4835,7 @@
     "changelog": "## What's new\n\n### 3.0.2\n\n-   support for 1.20 fabric. Although the 1.20-preX version did partially work it had some problems that this fixes.\n-   forge version to fallow when Kotlin for Forge gets a release.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-06-08T20:20:28.908539Z",
-    "downloads": 30115,
+    "downloads": 30122,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4885,15 +4885,15 @@
     "changelog": "## What's new\n\n### 3.0.2\n\n-   support for 1.20 fabric. Although the 1.20-preX version did partially work it had some problems that this fixes.\n-   forge version to fallow when Kotlin for Forge gets a release.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-06-08T20:20:22.187552Z",
-    "downloads": 87218,
+    "downloads": 87263,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4709cad2923fbe00f69b867ce89a45b8e4d89216df874bcf8333efb6e6666a5ff9e64ebe2472ab1ebbfb0b33b860a2d9a406d2cc1af7f576f6f4af68dc34c533",
-          "sha1": "e21fdae0f244388a0a5cde9ed8527da201647b1a"
+          "sha1": "e21fdae0f244388a0a5cde9ed8527da201647b1a",
+          "sha512": "4709cad2923fbe00f69b867ce89a45b8e4d89216df874bcf8333efb6e6666a5ff9e64ebe2472ab1ebbfb0b33b860a2d9a406d2cc1af7f576f6f4af68dc34c533"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Tbvv0fRT/libIPN-fabric-1.19-3.0.2.jar",
         "filename": "libIPN-fabric-1.19-3.0.2.jar",
@@ -4933,7 +4933,7 @@
     "changelog": "## What's new\n\n### 3.0.2\n\n-   support for 1.20 fabric. Although the 1.20-preX version did partially work it had some problems that this fixes.\n-   forge version to fallow when Kotlin for Forge gets a release.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-06-08T20:20:21.854828Z",
-    "downloads": 9156,
+    "downloads": 9164,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4986,7 +4986,7 @@
     "changelog": "## What's new\n\n### 3.0.2\n\n-   support for 1.20 fabric. Although the 1.20-preX version did partially work it had some problems that this fixes.\n-   forge version to fallow when Kotlin for Forge gets a release.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-06-08T20:20:21.346525Z",
-    "downloads": 27011,
+    "downloads": 27058,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5041,8 +5041,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b5f5e5dc304d953b1f38e2fe0048a3d3533d14c4",
-          "sha512": "8335ac2dc05853ebb2410bc1b71e1a863bc1dbb8e5213e582f5238c84f0d6a4fc913aa94aa75a9cff38aab7d82ab80e8ec89f71adb02502a70512693af6982a2"
+          "sha512": "8335ac2dc05853ebb2410bc1b71e1a863bc1dbb8e5213e582f5238c84f0d6a4fc913aa94aa75a9cff38aab7d82ab80e8ec89f71adb02502a70512693af6982a2",
+          "sha1": "b5f5e5dc304d953b1f38e2fe0048a3d3533d14c4"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/1zDSZRYj/libIPN-forge-1.19.4-3.0.1.jar",
         "filename": "libIPN-forge-1.19.4-3.0.1.jar",
@@ -5085,8 +5085,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e648193a84b72a1ab1edceff932b73a1e8666e0a55599fe5067fafde13bf0b000814e1df7dc45ee8c10cf0d068557301a6059700e77de14e416a1051cfcf890f",
-          "sha1": "1aa946d3dcf097d1a6580a5aaec91f26a6d0d486"
+          "sha1": "1aa946d3dcf097d1a6580a5aaec91f26a6d0d486",
+          "sha512": "e648193a84b72a1ab1edceff932b73a1e8666e0a55599fe5067fafde13bf0b000814e1df7dc45ee8c10cf0d068557301a6059700e77de14e416a1051cfcf890f"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/37PUzFkT/libIPN-forge-1.19-3.0.1.jar",
         "filename": "libIPN-forge-1.19-3.0.1.jar",
@@ -5127,8 +5127,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e401072c6c3aea122d0a7bbb4e6677db7deb4a0c",
-          "sha512": "2a16af997b7d019c1b49edb84a1df6acb0648b55acbf894a844388cae8dea77a30caf9c284bd012a8d32f640860518515bab2255c4c706e72d229ab7aea40e74"
+          "sha512": "2a16af997b7d019c1b49edb84a1df6acb0648b55acbf894a844388cae8dea77a30caf9c284bd012a8d32f640860518515bab2255c4c706e72d229ab7aea40e74",
+          "sha1": "e401072c6c3aea122d0a7bbb4e6677db7deb4a0c"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/v0MnbiV2/libIPN-forge-1.18.2-3.0.1.jar",
         "filename": "libIPN-forge-1.18.2-3.0.1.jar",
@@ -5162,15 +5162,15 @@
     "changelog": "## What's new\n\n### 3.0.1\n\n-   Fixed crash on forge while searching in the settings screen.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-05-21T18:48:22.290649Z",
-    "downloads": 9075,
+    "downloads": 9078,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4952127c308b8fac853ae3a04964188b0cf80ad9c9598e3fbd4603a56889e66161ca978a5ca8814cf0a0f31ffd9d99e532881e3d70f38b084b1595503b5a6f84",
-          "sha1": "24191a001a8919bd1ba5d86d4aea3dd471678efc"
+          "sha1": "24191a001a8919bd1ba5d86d4aea3dd471678efc",
+          "sha512": "4952127c308b8fac853ae3a04964188b0cf80ad9c9598e3fbd4603a56889e66161ca978a5ca8814cf0a0f31ffd9d99e532881e3d70f38b084b1595503b5a6f84"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/auvkUb1L/libIPN-fabric-1.19.4-3.0.1.jar",
         "filename": "libIPN-fabric-1.19.4-3.0.1.jar",
@@ -5218,8 +5218,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "642fb9fe824feb70259c3e1865c3383ba33f98e2761824fc7230b7f0bd461e223e49ed682f9da6d98b1027b928faabfce655a02ac37528962c56c50d4433a234",
-          "sha1": "a9eccfee27c293eb54f5b3df036381852fee1be7"
+          "sha1": "a9eccfee27c293eb54f5b3df036381852fee1be7",
+          "sha512": "642fb9fe824feb70259c3e1865c3383ba33f98e2761824fc7230b7f0bd461e223e49ed682f9da6d98b1027b928faabfce655a02ac37528962c56c50d4433a234"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/jrtn0IC7/libIPN-fabric-1.20-3.0.1.jar",
         "filename": "libIPN-fabric-1.20-3.0.1.jar",
@@ -5313,8 +5313,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7278910f3f2ae778be821386a65a154371665cdff229d709bab77b91a6e487c45e8230e0b45bc9cec3916f3a6b83b79419c39a19343ab6a244eacf95eefee204",
-          "sha1": "ded15ede3c98ad2dc0e757037e1e8c3f0f748a63"
+          "sha1": "ded15ede3c98ad2dc0e757037e1e8c3f0f748a63",
+          "sha512": "7278910f3f2ae778be821386a65a154371665cdff229d709bab77b91a6e487c45e8230e0b45bc9cec3916f3a6b83b79419c39a19343ab6a244eacf95eefee204"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/lkqbNIKw/libIPN-fabric-1.19-3.0.1.jar",
         "filename": "libIPN-fabric-1.19-3.0.1.jar",
@@ -5366,8 +5366,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "69da94fc66c52dc6beee2efe50e82501323fa6ce9ce2946427d692356a077356ebcd9fce44b54e4c15f52e665e16b96a178258328595eea9c8a04fe74e7d4571",
-          "sha1": "2f1f6e8c29f024855c6c3bef5966ac79faaa248f"
+          "sha1": "2f1f6e8c29f024855c6c3bef5966ac79faaa248f",
+          "sha512": "69da94fc66c52dc6beee2efe50e82501323fa6ce9ce2946427d692356a077356ebcd9fce44b54e4c15f52e665e16b96a178258328595eea9c8a04fe74e7d4571"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/VCIgVU07/libIPN-fabric-1.16-3.0.1.jar",
         "filename": "libIPN-fabric-1.16-3.0.1.jar",
@@ -5462,8 +5462,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ae3c41e8dbbd6059e38aa96cfda4af0dd9152966",
-          "sha512": "f7026b6df27346cf931cb81ae3109abaa7b20f2cf2bdaba46644ba1d74836e7716f363d7fa3ffe5ab43dbbdaf53316a9762022af37c1b16d9d28ac629446ffd7"
+          "sha512": "f7026b6df27346cf931cb81ae3109abaa7b20f2cf2bdaba46644ba1d74836e7716f363d7fa3ffe5ab43dbbdaf53316a9762022af37c1b16d9d28ac629446ffd7",
+          "sha1": "ae3c41e8dbbd6059e38aa96cfda4af0dd9152966"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/AOmUIQmf/libIPN-forge-1.19.4-3.0.0.jar",
         "filename": "libIPN-forge-1.19.4-3.0.0.jar",
@@ -5506,8 +5506,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "fbd57fc19485a821b721829ea0c7485d15d21f69233acf4c912b3fd5159a88376830cc50844828d6c1f9bcc45dac5556ada76e95d6e4402abb996a6ad5d8d231",
-          "sha1": "42b0847740933fd51e3d99f14e84ecf157f82587"
+          "sha1": "42b0847740933fd51e3d99f14e84ecf157f82587",
+          "sha512": "fbd57fc19485a821b721829ea0c7485d15d21f69233acf4c912b3fd5159a88376830cc50844828d6c1f9bcc45dac5556ada76e95d6e4402abb996a6ad5d8d231"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/yfxqGzZF/libIPN-forge-1.19-3.0.0.jar",
         "filename": "libIPN-forge-1.19-3.0.0.jar",
@@ -5548,8 +5548,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0f99f49c779353a8f89a01da324e49716fb35dd5e0a82a2ffcb2effbd8fffa69065e24c13a5e2ab4e0695bc9bf94eb56ff86328a78c3b06a7a25a50c2f5c03d7",
-          "sha1": "5c9db0fd90c1d77f615e9a83a61efb6d3d48324f"
+          "sha1": "5c9db0fd90c1d77f615e9a83a61efb6d3d48324f",
+          "sha512": "0f99f49c779353a8f89a01da324e49716fb35dd5e0a82a2ffcb2effbd8fffa69065e24c13a5e2ab4e0695bc9bf94eb56ff86328a78c3b06a7a25a50c2f5c03d7"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/UbcTepsS/libIPN-forge-1.18.2-3.0.0.jar",
         "filename": "libIPN-forge-1.18.2-3.0.0.jar",
@@ -5586,15 +5586,15 @@
     "changelog": "## What's new\n\n### 3.0.0\n\n-   adds support for 1.20. Due to major changes in the rendering system this version is not compatible with mods build against 2.x.x\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-05-18T14:10:51.992376Z",
-    "downloads": 486,
+    "downloads": 487,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "da9801fd7423ce9447072d322a2c3532127de2c313f798bd1d10f01ff4631b6e3ac57ed12a35e79ff29ee099f21de43a5b71f784908163f3b6ce826d4f620230",
-          "sha1": "3f10313401dd9ce0a2dd30ffd90bf77814fe022e"
+          "sha1": "3f10313401dd9ce0a2dd30ffd90bf77814fe022e",
+          "sha512": "da9801fd7423ce9447072d322a2c3532127de2c313f798bd1d10f01ff4631b6e3ac57ed12a35e79ff29ee099f21de43a5b71f784908163f3b6ce826d4f620230"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/jJhKp3dd/libIPN-forge-1.16-3.0.0.jar",
         "filename": "libIPN-forge-1.16-3.0.0.jar",
@@ -5677,15 +5677,15 @@
     "changelog": "## What's new\n\n### 3.0.0\n\n-   adds support for 1.20. Due to major changes in the rendering system this version is not compatible with mods build against 2.x.x\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-05-18T14:10:46.296279Z",
-    "downloads": 4491,
+    "downloads": 4492,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4c66232bda9c7eae2b6a494b860973e631879089",
-          "sha512": "fe204356d29282638d430ecf09644f18b2646c90389eccdae596a132e3ea248bf8ecb7fb3e5d495a49f5aefbded698380e6921eafbaa059853d05d663e07a1ec"
+          "sha512": "fe204356d29282638d430ecf09644f18b2646c90389eccdae596a132e3ea248bf8ecb7fb3e5d495a49f5aefbded698380e6921eafbaa059853d05d663e07a1ec",
+          "sha1": "4c66232bda9c7eae2b6a494b860973e631879089"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ktQS6YPN/libIPN-fabric-1.19.4-3.0.0.jar",
         "filename": "libIPN-fabric-1.19.4-3.0.0.jar",
@@ -5782,8 +5782,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ed867a9bbb5b63699e15d7cb8e497299773432e9930f112340a66fe0585d7dd9a41ac7e5e47273137d38d418074d8201349ed618f55d9a6a9978d0b3974fc2aa",
-          "sha1": "07ed23857b4c51393d4ce2cfde59fef76a7a217e"
+          "sha1": "07ed23857b4c51393d4ce2cfde59fef76a7a217e",
+          "sha512": "ed867a9bbb5b63699e15d7cb8e497299773432e9930f112340a66fe0585d7dd9a41ac7e5e47273137d38d418074d8201349ed618f55d9a6a9978d0b3974fc2aa"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/I3RMKrRo/libIPN-fabric-1.18.2-3.0.0.jar",
         "filename": "libIPN-fabric-1.18.2-3.0.0.jar",
@@ -5828,7 +5828,7 @@
     "changelog": "## What's new\n\n### 3.0.0\n\n-   adds support for 1.20. Due to major changes in the rendering system this version is not compatible with mods build against 2.x.x\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-05-18T14:10:35.785201Z",
-    "downloads": 269,
+    "downloads": 270,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5883,8 +5883,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "29bc0006f48792f9ea7118a141dad0dc59077811",
-          "sha512": "8c43412b8ad1c51173cbb8b805b3093736f1357f2c01205fa475f8ba26756f81d64b2bcaad5da329cabaa9773b269443a8baeed2d5b3cdc87b3f950d0c5e726c"
+          "sha512": "8c43412b8ad1c51173cbb8b805b3093736f1357f2c01205fa475f8ba26756f81d64b2bcaad5da329cabaa9773b269443a8baeed2d5b3cdc87b3f950d0c5e726c",
+          "sha1": "29bc0006f48792f9ea7118a141dad0dc59077811"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/yZ7GXub0/libIPN-forge-1.19.4-2.0.7.jar",
         "filename": "libIPN-forge-1.19.4-2.0.7.jar",
@@ -5965,15 +5965,15 @@
     "changelog": "## What's new\n\n### 2.0.7\n\n-   Fixes crash in forge versions and potential conflict with other mods in fabric versions.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-04-29T23:03:33.946036Z",
-    "downloads": 783,
+    "downloads": 784,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c361a54b22ca209f3ca168d882d2f84be525b2c6",
-          "sha512": "9b9e14f54eb9fc2b9ede7b24e3df57426f8e4cef848690d2dbff37c2204f043105569dd6d488eb8756dd0949796973b63e70b94f463977408768c31195b6822c"
+          "sha512": "9b9e14f54eb9fc2b9ede7b24e3df57426f8e4cef848690d2dbff37c2204f043105569dd6d488eb8756dd0949796973b63e70b94f463977408768c31195b6822c",
+          "sha1": "c361a54b22ca209f3ca168d882d2f84be525b2c6"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ccFPl3QC/libIPN-forge-1.16-2.0.7.jar",
         "filename": "libIPN-forge-1.16-2.0.7.jar",
@@ -6056,8 +6056,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6e4f09b1fb516cdc118d0eb52466a07ce15051ffaf513103d81adb11f059b6bb85cb440f5eb308607230637f4c33c63b0111c91d7f9f9aefcf80134b13ef28fe",
-          "sha1": "ae14b4946978f88c32810a89bd7a07e38e287c4f"
+          "sha1": "ae14b4946978f88c32810a89bd7a07e38e287c4f",
+          "sha512": "6e4f09b1fb516cdc118d0eb52466a07ce15051ffaf513103d81adb11f059b6bb85cb440f5eb308607230637f4c33c63b0111c91d7f9f9aefcf80134b13ef28fe"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/lrTo7on9/libIPN-fabric-1.19.4-2.0.7.jar",
         "filename": "libIPN-fabric-1.19.4-2.0.7.jar",
@@ -6099,15 +6099,15 @@
     "changelog": "## What's new\n\n### 2.0.7\n\n-   Fixes crash in forge versions and potential conflict with other mods in fabric versions.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-04-29T23:03:29.908389Z",
-    "downloads": 50348,
+    "downloads": 50382,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "4cedece6be4849827245befe8cecf68e3e324ed644b6b8e4da1657dea8c1ea44af864f3d276cb989e172c7f717b14d877764abd5aa0b1d2b9fd70d598760d588",
-          "sha1": "7b69e3d855e6f6a2ed257a16f1db80db3b406efd"
+          "sha1": "7b69e3d855e6f6a2ed257a16f1db80db3b406efd",
+          "sha512": "4cedece6be4849827245befe8cecf68e3e324ed644b6b8e4da1657dea8c1ea44af864f3d276cb989e172c7f717b14d877764abd5aa0b1d2b9fd70d598760d588"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/r7dyzqCT/libIPN-fabric-1.19-2.0.7.jar",
         "filename": "libIPN-fabric-1.19-2.0.7.jar",
@@ -6154,8 +6154,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8a071e7820b7431d08b332a662f82fbf1c03623e",
-          "sha512": "c87fdf60e1013b770126f66f7346e1909356e4a810ac910a03fd5afe43ecad3c9b2930cd800af6483b6602f9899f4f103c6687fb34fad310fd4718b5a152fd93"
+          "sha512": "c87fdf60e1013b770126f66f7346e1909356e4a810ac910a03fd5afe43ecad3c9b2930cd800af6483b6602f9899f4f103c6687fb34fad310fd4718b5a152fd93",
+          "sha1": "8a071e7820b7431d08b332a662f82fbf1c03623e"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/JJ7mPGht/libIPN-fabric-1.18.2-2.0.7.jar",
         "filename": "libIPN-fabric-1.18.2-2.0.7.jar",
@@ -6200,7 +6200,7 @@
     "changelog": "## What's new\n\n### 2.0.7\n\n-   Fixes crash in forge versions and potential conflict with other mods in fabric versions.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-04-29T23:03:25.493437Z",
-    "downloads": 431,
+    "downloads": 432,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6627,8 +6627,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5c9d13d54eedd418f125bb9a6e3b573a9d2db6e5deb65aed24ea1b398d9ef223047f6955674fc7c67a4291207a5cbead6fb9eb7b45052fbee3db5707f7f8e308",
-          "sha1": "eb6f87a02d3fbc100ef2936ce9991433c15a1106"
+          "sha1": "eb6f87a02d3fbc100ef2936ce9991433c15a1106",
+          "sha512": "5c9d13d54eedd418f125bb9a6e3b573a9d2db6e5deb65aed24ea1b398d9ef223047f6955674fc7c67a4291207a5cbead6fb9eb7b45052fbee3db5707f7f8e308"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/NALYChKS/libIPN-forge-1.19.4-2.0.5.jar",
         "filename": "libIPN-forge-1.19.4-2.0.5.jar",
@@ -6671,8 +6671,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "2a64e92c43446629b2cce2e7f987a256b05aaee1",
-          "sha512": "104871b97e069b88539462aa04b50e4c3e10c48e6ec38621d721ab60c6f949a1a777ea57eaf7345f12d0a0f5ee813e16224320d7b53ba62b49c738770ce56c22"
+          "sha512": "104871b97e069b88539462aa04b50e4c3e10c48e6ec38621d721ab60c6f949a1a777ea57eaf7345f12d0a0f5ee813e16224320d7b53ba62b49c738770ce56c22",
+          "sha1": "2a64e92c43446629b2cce2e7f987a256b05aaee1"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/K928Mk3Y/libIPN-forge-1.19-2.0.5.jar",
         "filename": "libIPN-forge-1.19-2.0.5.jar",
@@ -6706,7 +6706,7 @@
     "changelog": "## What's new\n\n### 2.0.5\n\n-   added support for color picker dialog\n-   removed support for minecraft 1.19.3\n-   minecraft 1.19 and 1.19.1 are no longer officially supported. But the 1.19.2 version will probably work. Just no testing with those is done any more.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-04-22T04:56:21.034781Z",
-    "downloads": 1938,
+    "downloads": 1947,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6758,8 +6758,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9d66f6cc0848319e9960a4f0e0969d40c5a8e48e545c06819605046024add23d9d60808ae548935e9ce5bffc1e75adca3bae8babe4161d436bcde91d8f508952",
-          "sha1": "6faa9e70cd71f1669ecc75af0a8a02bd10b7807b"
+          "sha1": "6faa9e70cd71f1669ecc75af0a8a02bd10b7807b",
+          "sha512": "9d66f6cc0848319e9960a4f0e0969d40c5a8e48e545c06819605046024add23d9d60808ae548935e9ce5bffc1e75adca3bae8babe4161d436bcde91d8f508952"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ENorkbVK/libIPN-forge-1.16-2.0.5.jar",
         "filename": "libIPN-forge-1.16-2.0.5.jar",
@@ -6850,8 +6850,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "477ef7ce596b79ebf41cd860c4c9048c997c6c06",
-          "sha512": "137532990a299e693aa08d844bcc0c23664cc59a021be7448370c33f7ca81a8c4baa01c5c7e61bdf5fd9353fe8431558353e464233a9158f19c4fabcd05a470c"
+          "sha512": "137532990a299e693aa08d844bcc0c23664cc59a021be7448370c33f7ca81a8c4baa01c5c7e61bdf5fd9353fe8431558353e464233a9158f19c4fabcd05a470c",
+          "sha1": "477ef7ce596b79ebf41cd860c4c9048c997c6c06"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/YLM8vv6K/libIPN-fabric-1.19-2.0.5.jar",
         "filename": "libIPN-fabric-1.19-2.0.5.jar",
@@ -6898,8 +6898,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "028bdc5da7e72e1ea15dc81cc3359a5dda205b4246138541d8fc4d496e3761d5f6736f72b9cb8dfd4a7a8a43000d70114c2e87e5b4d5df233511c32fe74d458f",
-          "sha1": "a277084bb89e95922f4d5ac093724fb7dcdb6e42"
+          "sha1": "a277084bb89e95922f4d5ac093724fb7dcdb6e42",
+          "sha512": "028bdc5da7e72e1ea15dc81cc3359a5dda205b4246138541d8fc4d496e3761d5f6736f72b9cb8dfd4a7a8a43000d70114c2e87e5b4d5df233511c32fe74d458f"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/r31q4oNB/libIPN-fabric-1.18.2-2.0.5.jar",
         "filename": "libIPN-fabric-1.18.2-2.0.5.jar",
@@ -6992,15 +6992,15 @@
     "changelog": "## What's new\n\n### 2.0.4\n\n-   Added support for 1.19.4 Forge.\n-   Finalised support for 1.19.4 Fabric.\n-   Fabric all versions now requires fabric loaded **0.14.17** or newer.\n-   Fabric minimal required version of Fabric Language Kotlin is now **1.9.2+kotlin.1.8.10**\n-   Forge 1.18.2 and 1.19.1-2 now require Kotlin for Forge 3.11.0 or newer.\n-   Forge 1.19.3-4 now require Kotlin for Forge 4.1.0 or newer.\n\n### Note:\n\nThis is probably the last version that supports minecraft 1.19.3\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-03-23T19:04:22.463931Z",
-    "downloads": 1240,
+    "downloads": 1241,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8fa1d1312d70ba93da8b0a35547e4e8f3afeb36047df34d616825fa7cd8d3a8b5beb862f9f5ec18a7d4ea0f201a3f58f789d3d2632f3218893bbbc9c2507b75b",
-          "sha1": "f5c2461d87da9eca8156dbacc1bdb00c3da411b3"
+          "sha1": "f5c2461d87da9eca8156dbacc1bdb00c3da411b3",
+          "sha512": "8fa1d1312d70ba93da8b0a35547e4e8f3afeb36047df34d616825fa7cd8d3a8b5beb862f9f5ec18a7d4ea0f201a3f58f789d3d2632f3218893bbbc9c2507b75b"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/xG7rdQCg/libIPN-forge-1.19.4-2.0.4.jar",
         "filename": "libIPN-forge-1.19.4-2.0.4.jar",
@@ -7078,7 +7078,7 @@
     "changelog": "## What's new\n\n### 2.0.4\n\n-   Added support for 1.19.4 Forge.\n-   Finalised support for 1.19.4 Fabric.\n-   Fabric all versions now requires fabric loaded **0.14.17** or newer.\n-   Fabric minimal required version of Fabric Language Kotlin is now **1.9.2+kotlin.1.8.10**\n-   Forge 1.18.2 and 1.19.1-2 now require Kotlin for Forge 3.11.0 or newer.\n-   Forge 1.19.3-4 now require Kotlin for Forge 4.1.0 or newer.\n\n### Note:\n\nThis is probably the last version that supports minecraft 1.19.3\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-03-23T19:04:17.960472Z",
-    "downloads": 1445,
+    "downloads": 1446,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7255,7 +7255,7 @@
     "changelog": "## What's new\n\n### 2.0.4\n\n-   Added support for 1.19.4 Forge.\n-   Finalised support for 1.19.4 Fabric.\n-   Fabric all versions now requires fabric loaded **0.14.17** or newer.\n-   Fabric minimal required version of Fabric Language Kotlin is now **1.9.2+kotlin.1.8.10**\n-   Forge 1.18.2 and 1.19.1-2 now require Kotlin for Forge 3.11.0 or newer.\n-   Forge 1.19.3-4 now require Kotlin for Forge 4.1.0 or newer.\n\n### Note:\n\nThis is probably the last version that supports minecraft 1.19.3\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-03-23T19:04:09.072365Z",
-    "downloads": 8146,
+    "downloads": 8149,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7305,7 +7305,7 @@
     "changelog": "## What's new\n\n### 2.0.4\n\n-   Added support for 1.19.4 Forge.\n-   Finalised support for 1.19.4 Fabric.\n-   Fabric all versions now requires fabric loaded **0.14.17** or newer.\n-   Fabric minimal required version of Fabric Language Kotlin is now **1.9.2+kotlin.1.8.10**\n-   Forge 1.18.2 and 1.19.1-2 now require Kotlin for Forge 3.11.0 or newer.\n-   Forge 1.19.3-4 now require Kotlin for Forge 4.1.0 or newer.\n\n### Note:\n\nThis is probably the last version that supports minecraft 1.19.3\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n",
     "changelog_url": null,
     "date_published": "2023-03-23T19:04:04.091735Z",
-    "downloads": 111804,
+    "downloads": 111806,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7360,8 +7360,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f0a36677e2e83e2c0c908dab0b1952a731000d29",
-          "sha512": "de9ed9a5ffdf2e513601ac1149214e57f2f92c53361d23022731c2fbbd0aef25a640e12470ff64c369dcfee1a20334117380e6afb679b5f4e92400e7cfb0bab4"
+          "sha512": "de9ed9a5ffdf2e513601ac1149214e57f2f92c53361d23022731c2fbbd0aef25a640e12470ff64c369dcfee1a20334117380e6afb679b5f4e92400e7cfb0bab4",
+          "sha1": "f0a36677e2e83e2c0c908dab0b1952a731000d29"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/6vHgBO3g/libIPN-fabric-1.18.2-2.0.4.jar",
         "filename": "libIPN-fabric-1.18.2-2.0.4.jar",
@@ -7461,8 +7461,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9282b327a62defee63e5558267af3c54dbdb15173d82e2f8532959c851cf39b89c056c6c4e410476ee2898aa060924b91357f78c8803116811ff92fc6d43c2eb",
-          "sha1": "48e932b8b722ad52c3365e6cbb668ab0d43bed42"
+          "sha1": "48e932b8b722ad52c3365e6cbb668ab0d43bed42",
+          "sha512": "9282b327a62defee63e5558267af3c54dbdb15173d82e2f8532959c851cf39b89c056c6c4e410476ee2898aa060924b91357f78c8803116811ff92fc6d43c2eb"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/u2zVY3Wv/libIPN-forge-1.19.3-2.0.3.jar",
         "filename": "libIPN-forge-1.19.3-2.0.3.jar",
@@ -7505,8 +7505,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d2bb5c11f833570824f5e40866ac7524c19d4ab5",
-          "sha512": "93babe13a61b7f54ba72fc49d0a01def361770bf5082e823cfbac15cd47e38325b89dd2f991266433e3a82cff0a38b5b4b52f4f395aedf9c6fa8603007d6936a"
+          "sha512": "93babe13a61b7f54ba72fc49d0a01def361770bf5082e823cfbac15cd47e38325b89dd2f991266433e3a82cff0a38b5b4b52f4f395aedf9c6fa8603007d6936a",
+          "sha1": "d2bb5c11f833570824f5e40866ac7524c19d4ab5"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/sAVQLMRc/libIPN-forge-1.19-2.0.3.jar",
         "filename": "libIPN-forge-1.19-2.0.3.jar",
@@ -7589,8 +7589,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "49039a876cc64636d3b12dc44008922b1bb766d7",
-          "sha512": "0e54d357a4afe9034f753396af878787f05e4626355e97abdcbaddf84fc63857adbe1a9a1f408023ceb1f015eb9e0e92cf62e3a9f9dd1c9afd4e872adb5da2f3"
+          "sha512": "0e54d357a4afe9034f753396af878787f05e4626355e97abdcbaddf84fc63857adbe1a9a1f408023ceb1f015eb9e0e92cf62e3a9f9dd1c9afd4e872adb5da2f3",
+          "sha1": "49039a876cc64636d3b12dc44008922b1bb766d7"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/xctObNns/libIPN-fabric-1.19.4-2.0.3.jar",
         "filename": "libIPN-fabric-1.19.4-2.0.3.jar",
@@ -7684,8 +7684,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4bfce86231f6eee285384b725580db4d925f6378",
-          "sha512": "37490722f543cf55434ae5d394ede7301b7de682b063e78614ceac5fdfd855c9c309f726970f8bdb568041b165a96fe55b8c1470e6217148f07ec1cf7a053bc1"
+          "sha512": "37490722f543cf55434ae5d394ede7301b7de682b063e78614ceac5fdfd855c9c309f726970f8bdb568041b165a96fe55b8c1470e6217148f07ec1cf7a053bc1",
+          "sha1": "4bfce86231f6eee285384b725580db4d925f6378"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/3QwlCGYz/libIPN-fabric-1.19-2.0.3.jar",
         "filename": "libIPN-fabric-1.19-2.0.3.jar",
@@ -7732,8 +7732,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "705415e5f783b71046ef3d0288998d358aa58bf85ac923ef272d8734217d3c981feb64c923f1b787180c96d24127fab5c4610f9a6102e617d4c77b16d67596d7",
-          "sha1": "6118325be666a16b7a0b252f732c3ab96bd69081"
+          "sha1": "6118325be666a16b7a0b252f732c3ab96bd69081",
+          "sha512": "705415e5f783b71046ef3d0288998d358aa58bf85ac923ef272d8734217d3c981feb64c923f1b787180c96d24127fab5c4610f9a6102e617d4c77b16d67596d7"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/5eHHJKIj/libIPN-fabric-1.19.3-2.0.3.jar",
         "filename": "libIPN-fabric-1.19.3-2.0.3.jar",
@@ -7780,8 +7780,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b857cda5f4b0bc3008a2bba0aaa990997341e89f",
-          "sha512": "123fa5a8dbb9f8573207481d7094dab0ce4a745886514f544778f446f81ee0470269d2e7d29352de71c6d8d6a4abbd62f43626ec2d55349c4238e8b1e72109f4"
+          "sha512": "123fa5a8dbb9f8573207481d7094dab0ce4a745886514f544778f446f81ee0470269d2e7d29352de71c6d8d6a4abbd62f43626ec2d55349c4238e8b1e72109f4",
+          "sha1": "b857cda5f4b0bc3008a2bba0aaa990997341e89f"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ItqBu87J/libIPN-fabric-1.18.2-2.0.3.jar",
         "filename": "libIPN-fabric-1.18.2-2.0.3.jar",
@@ -7833,8 +7833,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "59c4f9c4fd9d197374486c3d4afd5aa90b24e4ab",
-          "sha512": "af3c6043fc2966cf71a08fb4c66c1b32adfcf0c12136cff038af97b67910a446f6026cedde5286e325a19ff2911718c3c9a014c1119c2af89116554dc3b6d4de"
+          "sha512": "af3c6043fc2966cf71a08fb4c66c1b32adfcf0c12136cff038af97b67910a446f6026cedde5286e325a19ff2911718c3c9a014c1119c2af89116554dc3b6d4de",
+          "sha1": "59c4f9c4fd9d197374486c3d4afd5aa90b24e4ab"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/brxnAXjh/libIPN-fabric-1.16-2.0.3.jar",
         "filename": "libIPN-fabric-1.16-2.0.3.jar",
@@ -7881,8 +7881,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c0f70cca83a28ecfe1109676d701193b8d4f1fa34d12cf93a0d4a152eea67465ef56bbbc3104afc6d70abf3e64e3aa0be43922434bc99dbde5ab9afcf1c117ca",
-          "sha1": "5b2735f1d4b81b6c4476fc324337a86af123926c"
+          "sha1": "5b2735f1d4b81b6c4476fc324337a86af123926c",
+          "sha512": "c0f70cca83a28ecfe1109676d701193b8d4f1fa34d12cf93a0d4a152eea67465ef56bbbc3104afc6d70abf3e64e3aa0be43922434bc99dbde5ab9afcf1c117ca"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/P1d6zZKI/libIPN-fabric-1.19.4-2.0.2.jar",
         "filename": "libIPN-fabric-1.19.4-2.0.2.jar",
@@ -7964,7 +7964,7 @@
     "changelog": "## What's new\n\n## Warning\n\nDo not update if you haven't update IPN to the latest verion too!\n\n### 2.0.0\n\n-   added support for 1.19.3 forge\n-   fixed toogle settings not working when more then one mod uses libIPN\n\n### End of Life Announcement:\n\n#### The fallowing Minecraft versions will no longer receive updates:\n\n-   1.14.x\n-   1.15.x\n-   1.17.x\n-   1.18\\[.1\\]\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n\n### All mods developed against v1.0.x are \\*\\*incompatible\\* with v2.0.x\n",
     "changelog_url": null,
     "date_published": "2023-01-29T09:50:48.602007Z",
-    "downloads": 759,
+    "downloads": 768,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -8015,8 +8015,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d98950253daa1871c46bc2134606301cf5ddeba5",
-          "sha512": "6ab6f9df288071bf9d2c32b74c19a6c12dc064fa166f26bf6071e0324f31f5f635f0a7ccd80121cc7a9e4a24b5d552f82e53532c1c5e414fa6595495f9c38d98"
+          "sha512": "6ab6f9df288071bf9d2c32b74c19a6c12dc064fa166f26bf6071e0324f31f5f635f0a7ccd80121cc7a9e4a24b5d552f82e53532c1c5e414fa6595495f9c38d98",
+          "sha1": "d98950253daa1871c46bc2134606301cf5ddeba5"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/oOeZU7D6/libIPN-forge-1.19-2.0.2.jar",
         "filename": "libIPN-forge-1.19-2.0.2.jar",
@@ -8102,8 +8102,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1740cf574546a60eacef4d9b85f83d5b54567e17",
-          "sha512": "8f3545fa7a1d14717b7a9d42ecfefe210b5c405a5a6a630d4ae8f67db51c789049125c796ca85d1dd93288f5d6f2a4227335f8b2c1a1c83953451ec64ac3011d"
+          "sha512": "8f3545fa7a1d14717b7a9d42ecfefe210b5c405a5a6a630d4ae8f67db51c789049125c796ca85d1dd93288f5d6f2a4227335f8b2c1a1c83953451ec64ac3011d",
+          "sha1": "1740cf574546a60eacef4d9b85f83d5b54567e17"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/hbNaUkMv/libIPN-fabric-1.19.3-2.0.2.jar",
         "filename": "libIPN-fabric-1.19.3-2.0.2.jar",
@@ -8152,8 +8152,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b65f325a75dd7703bf47cd435970508999ab3916e719d1b946ed5201e57e49d6530ed2a393aeb609bff86df6a4f93502f736575f8ee4d38fbfc571dd4f156891",
-          "sha1": "a635a001ed6b22da929696baa7e2c657b5416654"
+          "sha1": "a635a001ed6b22da929696baa7e2c657b5416654",
+          "sha512": "b65f325a75dd7703bf47cd435970508999ab3916e719d1b946ed5201e57e49d6530ed2a393aeb609bff86df6a4f93502f736575f8ee4d38fbfc571dd4f156891"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/KiaYgRoc/libIPN-fabric-1.19-2.0.2.jar",
         "filename": "libIPN-fabric-1.19-2.0.2.jar",
@@ -8200,8 +8200,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6b48ec3892b5539ecd5bb8189bee3f86db683ee608aa49bb0fd3067f43baf0b420abde98765beb0e483480ba77d40cff7111ccd5ed836480c2495e31937f2b30",
-          "sha1": "eb0f678716c60a66b588ab833c7b465a4dafb6e2"
+          "sha1": "eb0f678716c60a66b588ab833c7b465a4dafb6e2",
+          "sha512": "6b48ec3892b5539ecd5bb8189bee3f86db683ee608aa49bb0fd3067f43baf0b420abde98765beb0e483480ba77d40cff7111ccd5ed836480c2495e31937f2b30"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/o3vpcXx2/libIPN-fabric-1.18.2-2.0.2.jar",
         "filename": "libIPN-fabric-1.18.2-2.0.2.jar",
@@ -8253,8 +8253,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e31770d371e26262da49c3e7ff8b9c902c5634f07eaffc50c7d6bbe4c3734703561cab978e6e832d72fd12e2259eac5323b38a9b701eb6f9814123c056d8a246",
-          "sha1": "c0c309eebe2460c2c213a6a30b99e830e3a7f932"
+          "sha1": "c0c309eebe2460c2c213a6a30b99e830e3a7f932",
+          "sha512": "e31770d371e26262da49c3e7ff8b9c902c5634f07eaffc50c7d6bbe4c3734703561cab978e6e832d72fd12e2259eac5323b38a9b701eb6f9814123c056d8a246"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/JmOF40Xk/libIPN-fabric-1.16-2.0.2.jar",
         "filename": "libIPN-fabric-1.16-2.0.2.jar",
@@ -8303,8 +8303,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9cdc35481eaafddc370d05e2d90e4a0df3683a4a",
-          "sha512": "a990224e18bd7e53e40b9992cfaecfc00a0db45a41363fb5fecdd676d308f74410593a871489c82ce5ba3d91e0620c38df2112bc2f827701d25e88dea964f5a1"
+          "sha512": "a990224e18bd7e53e40b9992cfaecfc00a0db45a41363fb5fecdd676d308f74410593a871489c82ce5ba3d91e0620c38df2112bc2f827701d25e88dea964f5a1",
+          "sha1": "9cdc35481eaafddc370d05e2d90e4a0df3683a4a"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/O2CTz9Xk/libIPN-forge-1.19-2.0.1.jar",
         "filename": "libIPN-forge-1.19-2.0.1.jar",
@@ -8387,8 +8387,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4969e88e93d7037890ac178059be1eda91e4ef72",
-          "sha512": "ca3a8e856584791a7d08b2fb14e98d233775925e44373c29828439c950d08a28d837d4d6e606e2c0e21317d5765479e6a5fae0463c3fdb2983fc3b5dfca02829"
+          "sha512": "ca3a8e856584791a7d08b2fb14e98d233775925e44373c29828439c950d08a28d837d4d6e606e2c0e21317d5765479e6a5fae0463c3fdb2983fc3b5dfca02829",
+          "sha1": "4969e88e93d7037890ac178059be1eda91e4ef72"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/2MVDPqcL/libIPN-forge-1.18.2-2.0.1.jar",
         "filename": "libIPN-forge-1.18.2-2.0.1.jar",
@@ -8618,7 +8618,7 @@
     "changelog": "## What's new\n\n## Warning\n\nDo not update if you haven't update IPN to the latest verion too!\n\n### 2.0.0\n\n-   added support for 1.19.3 forge\n-   fixed toogle settings not working when more then one mod uses libIPN\n\n### End of Life Announcement:\n\n#### The fallowing Minecraft versions will no longer receive updates:\n\n-   1.14.x\n-   1.15.x\n-   1.17.x\n-   1.18\\[.1\\]\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n\n### All mods developed against v1.0.x are \\*\\*incompatible\\* with v2.0.x\n",
     "changelog_url": null,
     "date_published": "2022-12-26T01:36:16.604711Z",
-    "downloads": 5454,
+    "downloads": 5461,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -8673,8 +8673,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "169baa01dfa97ad9d6acbfd2644a0fc190def46b57db8017f8a6c2d022bcd38970e82de536b6e0dd74a60b2f5b9cc58e1b5132e5534e135616d8b5cd23a9adce",
-          "sha1": "d269291f261ab03b92e6b9e86931facd389195fd"
+          "sha1": "d269291f261ab03b92e6b9e86931facd389195fd",
+          "sha512": "169baa01dfa97ad9d6acbfd2644a0fc190def46b57db8017f8a6c2d022bcd38970e82de536b6e0dd74a60b2f5b9cc58e1b5132e5534e135616d8b5cd23a9adce"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ijD7pT4H/libIPN-forge-1.19.3-2.0.0.jar",
         "filename": "libIPN-forge-1.19.3-2.0.0.jar",
@@ -8759,8 +8759,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8f4a29e6fa1c0ee7f944e04a5e03e4af348cf46b",
-          "sha512": "3de1ba182076c34ec7b2a8e78d9bcc4a00ed5dd18c0d04ccdbffecb23d14a62a3cea153a1a55aabe53522ed92d8c1d1db97dfcda6982785eef0361bd5ecca404"
+          "sha512": "3de1ba182076c34ec7b2a8e78d9bcc4a00ed5dd18c0d04ccdbffecb23d14a62a3cea153a1a55aabe53522ed92d8c1d1db97dfcda6982785eef0361bd5ecca404",
+          "sha1": "8f4a29e6fa1c0ee7f944e04a5e03e4af348cf46b"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/dMbcZIi1/libIPN-forge-1.18.2-2.0.0.jar",
         "filename": "libIPN-forge-1.18.2-2.0.0.jar",
@@ -8804,8 +8804,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "392a7164f2c2a62e274abbd4038bc988a1ca740a",
-          "sha512": "30ea6d8961e09bee61c70820a43b0ea52ff566df2cef46ebcc9c27e1fb5d12d26b20e6049d42c6faecce76756e9b534ad3b99a60faa9d453aae71ec259a37bb0"
+          "sha512": "30ea6d8961e09bee61c70820a43b0ea52ff566df2cef46ebcc9c27e1fb5d12d26b20e6049d42c6faecce76756e9b534ad3b99a60faa9d453aae71ec259a37bb0",
+          "sha1": "392a7164f2c2a62e274abbd4038bc988a1ca740a"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Uu0O6Rk2/libIPN-forge-1.16-2.0.0.jar",
         "filename": "libIPN-forge-1.16-2.0.0.jar",
@@ -8944,8 +8944,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5f209adfff142aa432a3fc0b4aff02ea667e9ac5ce1974a879c7fc369d35ae29676c7bb41dbe0fff28e960803c347042add83c03d102e1496fd3a99f9e11fa62",
-          "sha1": "534efcf6cda088ff6aa1424392b527d6f0a58112"
+          "sha1": "534efcf6cda088ff6aa1424392b527d6f0a58112",
+          "sha512": "5f209adfff142aa432a3fc0b4aff02ea667e9ac5ce1974a879c7fc369d35ae29676c7bb41dbe0fff28e960803c347042add83c03d102e1496fd3a99f9e11fa62"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/QNjfoY95/libIPN-fabric-1.18.2-2.0.0.jar",
         "filename": "libIPN-fabric-1.18.2-2.0.0.jar",
@@ -9047,8 +9047,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "aee33a681cf57e1b194ca31742bb9051039644f23b876b2d0eb41be7c8105c44d0f8c7b9dc7e15cf502de96d2dcfb3b714d39612735fd1228b1c20269bed396d",
-          "sha1": "b632d71f3eacc75dd66af6a7cf0e2a6bdef0872d"
+          "sha1": "b632d71f3eacc75dd66af6a7cf0e2a6bdef0872d",
+          "sha512": "aee33a681cf57e1b194ca31742bb9051039644f23b876b2d0eb41be7c8105c44d0f8c7b9dc7e15cf502de96d2dcfb3b714d39612735fd1228b1c20269bed396d"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/5DjnPCXm/libIPN-forge-1.19-1.0.8.jar",
         "filename": "libIPN-forge-1.19-1.0.8.jar",
@@ -9089,8 +9089,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "78f796a5d7696a7addf426517d970fa713a619388c05c3c0785bd60219c0aebd31e6f02588c2312f7be2de9aa1480446c03ef85724bb04cb4dddba95d5e55296",
-          "sha1": "bbec6d509ef7ccd0abaa055c9255f0f18b0158f2"
+          "sha1": "bbec6d509ef7ccd0abaa055c9255f0f18b0158f2",
+          "sha512": "78f796a5d7696a7addf426517d970fa713a619388c05c3c0785bd60219c0aebd31e6f02588c2312f7be2de9aa1480446c03ef85724bb04cb4dddba95d5e55296"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/qmbAid7M/libIPN-forge-1.18.2-1.0.8.jar",
         "filename": "libIPN-forge-1.18.2-1.0.8.jar",
@@ -9125,15 +9125,15 @@
     "changelog": "## What's new\n\n### 1.0.8\n\n-   adds support for 1.19.3-rc1 and hopefully 1.19.3 proper\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n\n### All mods developed against v1.0.0 are compatible with v1.0.x\n",
     "changelog_url": null,
     "date_published": "2022-12-03T10:05:11.690472Z",
-    "downloads": 4907,
+    "downloads": 4912,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1b0ab75c63091ea89509e3e3492be0d81940e76bfc8e7231a822c8cf90541ddf3ff36adc463c8d736f8b77d8bad1819db0a2b93049373362388259ac931d077c",
-          "sha1": "e57d3fd640b2b04de9e5773dee35016ee4b18c41"
+          "sha1": "e57d3fd640b2b04de9e5773dee35016ee4b18c41",
+          "sha512": "1b0ab75c63091ea89509e3e3492be0d81940e76bfc8e7231a822c8cf90541ddf3ff36adc463c8d736f8b77d8bad1819db0a2b93049373362388259ac931d077c"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/7nEveuJB/libIPN-forge-1.18-1.0.8.jar",
         "filename": "libIPN-forge-1.18-1.0.8.jar",
@@ -9168,7 +9168,7 @@
     "changelog": "## What's new\n\n### 1.0.8\n\n-   adds support for 1.19.3-rc1 and hopefully 1.19.3 proper\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n\n### All mods developed against v1.0.0 are compatible with v1.0.x\n",
     "changelog_url": null,
     "date_published": "2022-12-03T10:05:09.979303Z",
-    "downloads": 5539,
+    "downloads": 5542,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9255,7 +9255,7 @@
     "changelog": "## What's new\n\n### 1.0.8\n\n-   adds support for 1.19.3-rc1 and hopefully 1.19.3 proper\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n\n### All mods developed against v1.0.0 are compatible with v1.0.x\n",
     "changelog_url": null,
     "date_published": "2022-12-03T10:05:08.302516Z",
-    "downloads": 2669,
+    "downloads": 2671,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9297,7 +9297,7 @@
     "changelog": "## What's new\n\n### 1.0.8\n\n-   adds support for 1.19.3-rc1 and hopefully 1.19.3 proper\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n\n### All mods developed against v1.0.0 are compatible with v1.0.x\n",
     "changelog_url": null,
     "date_published": "2022-12-03T10:05:08.193748Z",
-    "downloads": 1906,
+    "downloads": 1910,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9348,8 +9348,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "12c6398024a18ac47cb17ceca682cfd93e0011d5",
-          "sha512": "d14ac2a002cfa8c525c58033f8d4cb64cf0fb480241fa1926a5085c7a2ceceb66ab7b82998815ba064d91dbbf72d3ab7c16885822f81ec59bdce0f88d30a2c20"
+          "sha512": "d14ac2a002cfa8c525c58033f8d4cb64cf0fb480241fa1926a5085c7a2ceceb66ab7b82998815ba064d91dbbf72d3ab7c16885822f81ec59bdce0f88d30a2c20",
+          "sha1": "12c6398024a18ac47cb17ceca682cfd93e0011d5"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Pr1u4Tb4/libIPN-fabric-1.19.3-1.0.8.jar",
         "filename": "libIPN-fabric-1.19.3-1.0.8.jar",
@@ -9446,8 +9446,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6cdea12db05d1c9ac2f6b8a1ccbbce1c1de50f9f",
-          "sha512": "284d6ef1da5f23b7a81b090eec14224a9cc6699df3ace0137befe86ed29aba71b6e52b1274f07538f757d6f9188d1396e754fa406a7d7f02f50358743a629ad5"
+          "sha512": "284d6ef1da5f23b7a81b090eec14224a9cc6699df3ace0137befe86ed29aba71b6e52b1274f07538f757d6f9188d1396e754fa406a7d7f02f50358743a629ad5",
+          "sha1": "6cdea12db05d1c9ac2f6b8a1ccbbce1c1de50f9f"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Rl0p7f2w/libIPN-fabric-1.18.2-1.0.8.jar",
         "filename": "libIPN-fabric-1.18.2-1.0.8.jar",
@@ -9488,15 +9488,15 @@
     "changelog": "## What's new\n\n### 1.0.8\n\n-   adds support for 1.19.3-rc1 and hopefully 1.19.3 proper\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n\n### All mods developed against v1.0.0 are compatible with v1.0.x\n",
     "changelog_url": null,
     "date_published": "2022-12-03T10:05:03.425723Z",
-    "downloads": 2507,
+    "downloads": 2510,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "9c62bc1af62858f55e01493b57be2e2ab7e48cc9b54093520ae573f4117d3438c03e923e6c698dec0e0e3a2307427862e5413c2799ae33e21e8935bd952b2af5",
-          "sha1": "a248caf0943deb3ae94cb9f786f9577a3ba65ece"
+          "sha1": "a248caf0943deb3ae94cb9f786f9577a3ba65ece",
+          "sha512": "9c62bc1af62858f55e01493b57be2e2ab7e48cc9b54093520ae573f4117d3438c03e923e6c698dec0e0e3a2307427862e5413c2799ae33e21e8935bd952b2af5"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/MzOjv5M6/libIPN-fabric-1.18-1.0.8.jar",
         "filename": "libIPN-fabric-1.18-1.0.8.jar",
@@ -9537,15 +9537,15 @@
     "changelog": "## What's new\n\n### 1.0.8\n\n-   adds support for 1.19.3-rc1 and hopefully 1.19.3 proper\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n\n### All mods developed against v1.0.0 are compatible with v1.0.x\n",
     "changelog_url": null,
     "date_published": "2022-12-03T10:05:01.517642Z",
-    "downloads": 8808,
+    "downloads": 8817,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "1fb675622ebfdd3275d3eab4aad20144e98d3d78",
-          "sha512": "c4f48a9ce58a8161c59f43a383e2b9c679b4d231edbebdecb1e93a0b35a0830837027bffc9d30da0f5188dd602a619a7bfb25e2f912642f04d715be20d0d67a9"
+          "sha512": "c4f48a9ce58a8161c59f43a383e2b9c679b4d231edbebdecb1e93a0b35a0830837027bffc9d30da0f5188dd602a619a7bfb25e2f912642f04d715be20d0d67a9",
+          "sha1": "1fb675622ebfdd3275d3eab4aad20144e98d3d78"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/WZKonwzM/libIPN-fabric-1.17-1.0.8.jar",
         "filename": "libIPN-fabric-1.17-1.0.8.jar",
@@ -9647,8 +9647,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cf99ed4015fbc28799adf6412725f82e5d08c1860e6282afb06d48256fa1210cf9a555da944b6db2852f0403076e0e50e23b4718eaec5a511247cdff156e08f0",
-          "sha1": "453a0206e545e803ed3966816e209b6cb80a60ac"
+          "sha1": "453a0206e545e803ed3966816e209b6cb80a60ac",
+          "sha512": "cf99ed4015fbc28799adf6412725f82e5d08c1860e6282afb06d48256fa1210cf9a555da944b6db2852f0403076e0e50e23b4718eaec5a511247cdff156e08f0"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/qIzQaGuQ/libIPN-fabric-1.15-1.0.8.jar",
         "filename": "libIPN-fabric-1.15-1.0.8.jar",
@@ -9691,7 +9691,7 @@
     "changelog": "## What's new\n\n### 1.0.8\n\n-   adds support for 1.19.3-rc1 and hopefully 1.19.3 proper\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain early access\n\n### All mods developed against v1.0.0 are compatible with v1.0.x\n",
     "changelog_url": null,
     "date_published": "2022-12-03T10:04:55.118295Z",
-    "downloads": 1255,
+    "downloads": 1257,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -9746,8 +9746,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fc125fe61bef98e1c0d70d5d5e720669c03d4844",
-          "sha512": "f2fb462194b3adea08b60116c7cd39829b400530a98989ea87ad984bd6d79719a8f05e8adae05cf13b6d557e8d5570ab42e412f82ee36e170a77e16bcf31cb0a"
+          "sha512": "f2fb462194b3adea08b60116c7cd39829b400530a98989ea87ad984bd6d79719a8f05e8adae05cf13b6d557e8d5570ab42e412f82ee36e170a77e16bcf31cb0a",
+          "sha1": "fc125fe61bef98e1c0d70d5d5e720669c03d4844"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/po3Wa7PL/libIPN-fabric-1.19.3-1.0.7.jar",
         "filename": "libIPN-fabric-1.19.3-1.0.7.jar",
@@ -9881,8 +9881,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e06ea9333b7525236c2571f541985c7fd64a44304894363f9ff06589c4f738600f8cd50d5238b00fa175adb5a5d36be891fd6a6b57fc694099a88a9f73afc7af",
-          "sha1": "60d77ee61c614e28edd4f049090691da389596e9"
+          "sha1": "60d77ee61c614e28edd4f049090691da389596e9",
+          "sha512": "e06ea9333b7525236c2571f541985c7fd64a44304894363f9ff06589c4f738600f8cd50d5238b00fa175adb5a5d36be891fd6a6b57fc694099a88a9f73afc7af"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/m8kvQ7rP/libIPN-forge-1.18-1.0.7.jar",
         "filename": "libIPN-forge-1.18-1.0.7.jar",
@@ -10011,8 +10011,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "3ee6f853eccd023be55131004ccffc902e57d9a9",
-          "sha512": "512a97198cb5810e26197c040d99778da43e43209c43c53319709975833ee61916d2fdef625af306f4a07744c3c314a7738ea9694975d31124ad8b9d4f5d3d54"
+          "sha512": "512a97198cb5810e26197c040d99778da43e43209c43c53319709975833ee61916d2fdef625af306f4a07744c3c314a7738ea9694975d31124ad8b9d4f5d3d54",
+          "sha1": "3ee6f853eccd023be55131004ccffc902e57d9a9"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/iV0UkVbx/libIPN-forge-1.15-1.0.7.jar",
         "filename": "libIPN-forge-1.15-1.0.7.jar",
@@ -10097,8 +10097,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6ccd9eee5cae6bed397e3623b511ac51b425b9fa4b91c3da7638afeffa1fe03f455d32d110f90a53d34dd3dc60bc4563f507fb4d7d955af1dbcd88f2eec2b357",
-          "sha1": "f27e99d902e04c32bad8f5ce576d8b5d1d5f5de9"
+          "sha1": "f27e99d902e04c32bad8f5ce576d8b5d1d5f5de9",
+          "sha512": "6ccd9eee5cae6bed397e3623b511ac51b425b9fa4b91c3da7638afeffa1fe03f455d32d110f90a53d34dd3dc60bc4563f507fb4d7d955af1dbcd88f2eec2b357"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/aM6pYRik/libIPN-fabric-1.19-1.0.7.jar",
         "filename": "libIPN-fabric-1.19-1.0.7.jar",
@@ -10145,8 +10145,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e6ea82df4697d5dfb7c33f9483fbd065f419f5a7",
-          "sha512": "f2d91e9d29a2da96c59646135d07089656fb11b4981e6388163b0ff24ae0cb6c6dbe7a89ab3c9f8f1e405688fc8701f966fc784984291c369f45543a3c18ed32"
+          "sha512": "f2d91e9d29a2da96c59646135d07089656fb11b4981e6388163b0ff24ae0cb6c6dbe7a89ab3c9f8f1e405688fc8701f966fc784984291c369f45543a3c18ed32",
+          "sha1": "e6ea82df4697d5dfb7c33f9483fbd065f419f5a7"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Awhg4cHc/libIPN-fabric-1.18.2-1.0.7.jar",
         "filename": "libIPN-fabric-1.18.2-1.0.7.jar",
@@ -10194,8 +10194,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3c5ef042c64f017dd2edebe444eda58dd11b37204e8721f8e8295aeb249e82733d0a8740013bb36ee2a6f0806e45c609723e620ee56d730523fef1d9c2e1e542",
-          "sha1": "cb38697f5f69c000840c276001387431ffdf6652"
+          "sha1": "cb38697f5f69c000840c276001387431ffdf6652",
+          "sha512": "3c5ef042c64f017dd2edebe444eda58dd11b37204e8721f8e8295aeb249e82733d0a8740013bb36ee2a6f0806e45c609723e620ee56d730523fef1d9c2e1e542"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/FyDQp4el/libIPN-fabric-1.18-1.0.7.jar",
         "filename": "libIPN-fabric-1.18-1.0.7.jar",
@@ -10243,8 +10243,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8f2a8df149014c72545851e3e455ca1b10f548231d3a8443093b7df1f988462a8cf78e71cfd09b5251de31121aaa085bc93d58095d9c8707789b397883ba0326",
-          "sha1": "f370d27540e6569533c384eede66b32f482bfcf8"
+          "sha1": "f370d27540e6569533c384eede66b32f482bfcf8",
+          "sha512": "8f2a8df149014c72545851e3e455ca1b10f548231d3a8443093b7df1f988462a8cf78e71cfd09b5251de31121aaa085bc93d58095d9c8707789b397883ba0326"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/tBLGnBjG/libIPN-fabric-1.17-1.0.7.jar",
         "filename": "libIPN-fabric-1.17-1.0.7.jar",
@@ -10346,8 +10346,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "776009684bbf3c82975844f507f3e4ba2c62a78f",
-          "sha512": "949446a82858c22b707fcb41ae32be1680d070879e7250a8a35db633542dd6bd73bfc178a0497a8b435db35ef047fb11a77a8422e21401e2d2efb5f719bdc432"
+          "sha512": "949446a82858c22b707fcb41ae32be1680d070879e7250a8a35db633542dd6bd73bfc178a0497a8b435db35ef047fb11a77a8422e21401e2d2efb5f719bdc432",
+          "sha1": "776009684bbf3c82975844f507f3e4ba2c62a78f"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Fhfwkh09/libIPN-fabric-1.15-1.0.7.jar",
         "filename": "libIPN-fabric-1.15-1.0.7.jar",
@@ -10445,8 +10445,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e4424f305924b64cb18aaa8dc3296048e0ad3dfd1425745d08cbff9be24b8ebbc10c02643210db2de70675d87a7ffaebb5959d5bd89d2f1172d0108c9a850410",
-          "sha1": "f6e3b31726c7ce972855a19c21e2bef1c88f8190"
+          "sha1": "f6e3b31726c7ce972855a19c21e2bef1c88f8190",
+          "sha512": "e4424f305924b64cb18aaa8dc3296048e0ad3dfd1425745d08cbff9be24b8ebbc10c02643210db2de70675d87a7ffaebb5959d5bd89d2f1172d0108c9a850410"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/9Fc7O8ST/libIPN-forge-1.18.2-1.0.6.jar",
         "filename": "libIPN-forge-1.18.2-1.0.6.jar",
@@ -10532,8 +10532,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "281c3cce5709782f92f211135332ffb203c7ae9bd98efb08db4fd987cdc1bd054acd4232be6d8bf9a56a859154012146f6404fc8151b6d9478a9120ad4edfad8",
-          "sha1": "f629c7ba90ce1adfd178420a29b151788a2f21bc"
+          "sha1": "f629c7ba90ce1adfd178420a29b151788a2f21bc",
+          "sha512": "281c3cce5709782f92f211135332ffb203c7ae9bd98efb08db4fd987cdc1bd054acd4232be6d8bf9a56a859154012146f6404fc8151b6d9478a9120ad4edfad8"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/nc18hMRH/libIPN-forge-1.17-1.0.6.jar",
         "filename": "libIPN-forge-1.17-1.0.6.jar",
@@ -10662,8 +10662,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "830b0d85ed644dda8708aa4adec47789a5468c127ed0292aa73ba6e22cf1bc8c7500a307fcf866331a3bc5e1187c53a1b01982133586d5782cad7cafb2fdaed5",
-          "sha1": "9322a037fb3c1de4da6a803fdc6f6048dfbef413"
+          "sha1": "9322a037fb3c1de4da6a803fdc6f6048dfbef413",
+          "sha512": "830b0d85ed644dda8708aa4adec47789a5468c127ed0292aa73ba6e22cf1bc8c7500a307fcf866331a3bc5e1187c53a1b01982133586d5782cad7cafb2fdaed5"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/6ZlHy6Wx/libIPN-forge-1.16-1.0.6.jar",
         "filename": "libIPN-forge-1.16-1.0.6.jar",
@@ -10789,7 +10789,7 @@
     "changelog": "## What's new\n\n### 1.0.6\n\n-   workaround for forge out of order mod initialisation that causes crash for very small number of users.\n\n### Become a [Patreon](https://www.patreon.com/mirinimi/membership) to gain access to snapshot builds\n\n### All mods developed against v1.0.0 are compatible with v1.0.x\n",
     "changelog_url": null,
     "date_published": "2022-11-19T09:42:57.352955Z",
-    "downloads": 1536,
+    "downloads": 1538,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -11098,8 +11098,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b6daeae14ad42f3b0f08e4b1867ea8dfa33834335018ef530e0e8d3ed5af3d3764505821111a703d27849249600bcd58f270e51c7c658c3863e01c225470ccbc",
-          "sha1": "06bb3efdb7594b341f4fdaabcd8deb36494e8c7a"
+          "sha1": "06bb3efdb7594b341f4fdaabcd8deb36494e8c7a",
+          "sha512": "b6daeae14ad42f3b0f08e4b1867ea8dfa33834335018ef530e0e8d3ed5af3d3764505821111a703d27849249600bcd58f270e51c7c658c3863e01c225470ccbc"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/VGeqgpG9/libIPN-forge-1.19-1.0.5.jar",
         "filename": "libIPN-forge-1.19-1.0.5.jar",
@@ -11140,8 +11140,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "053f2529d0050044ca4f9f39e6d50d5c1327dc28",
-          "sha512": "a8044f64f6460ef1b12958cfb97413eb0aed8afda5e474a4cb12e0c6c503710cdeb460db695f389779f7906d281d343afca3a9621561b6c4deccf6611725609e"
+          "sha512": "a8044f64f6460ef1b12958cfb97413eb0aed8afda5e474a4cb12e0c6c503710cdeb460db695f389779f7906d281d343afca3a9621561b6c4deccf6611725609e",
+          "sha1": "053f2529d0050044ca4f9f39e6d50d5c1327dc28"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/koV5w2Qr/libIPN-forge-1.18.2-1.0.5.jar",
         "filename": "libIPN-forge-1.18.2-1.0.5.jar",
@@ -11226,8 +11226,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b0b8e558a13130a68659c219cc6fd4b4314a2f7f01e943acf6a5c8ce75cc8ec2b64446533deecebdfb6a23e144efee804df72a0818572ef0b196e11207f83167",
-          "sha1": "dbaa7f7cfe4adba8f7a603a39921d7c45a790576"
+          "sha1": "dbaa7f7cfe4adba8f7a603a39921d7c45a790576",
+          "sha512": "b0b8e558a13130a68659c219cc6fd4b4314a2f7f01e943acf6a5c8ce75cc8ec2b64446533deecebdfb6a23e144efee804df72a0818572ef0b196e11207f83167"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ocUsU2fd/libIPN-forge-1.17-1.0.5.jar",
         "filename": "libIPN-forge-1.17-1.0.5.jar",
@@ -11355,8 +11355,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "eba92c8e34982db03f7a9904d7d88b9e99737baa8b123d70712e6383da3d4adae18ad7f44b8754dda5c4676d91c28fc770f8b81ae23fd8e56f17a9e73b18e71e",
-          "sha1": "c68e84b8210b20bfe66ec96f4441e3f4b6d2baa0"
+          "sha1": "c68e84b8210b20bfe66ec96f4441e3f4b6d2baa0",
+          "sha512": "eba92c8e34982db03f7a9904d7d88b9e99737baa8b123d70712e6383da3d4adae18ad7f44b8754dda5c4676d91c28fc770f8b81ae23fd8e56f17a9e73b18e71e"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/1S2flFuE/libIPN-forge-1.14-1.0.5.jar",
         "filename": "libIPN-forge-1.14-1.0.5.jar",
@@ -11496,8 +11496,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ee3f951b93269966df8962723fb34166f3aefdc3119012c851613b1038bc9889213e55fcd7a590be508a2383b94ebd545fcade59f1ee3375a64fb6a97088b049",
-          "sha1": "6095047e67bad99bb1635373d2e4d0bb2510bd36"
+          "sha1": "6095047e67bad99bb1635373d2e4d0bb2510bd36",
+          "sha512": "ee3f951b93269966df8962723fb34166f3aefdc3119012c851613b1038bc9889213e55fcd7a590be508a2383b94ebd545fcade59f1ee3375a64fb6a97088b049"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/J8ATnMxC/libIPN-fabric-1.18-1.0.5.jar",
         "filename": "libIPN-fabric-1.18-1.0.5.jar",
@@ -11648,8 +11648,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c3baf9a108ef8992c03c862f8ead0c879831346941f800607477809170abb13dca4240d000c50293bed79239440eac74b45c74bfd48dab4a47f0b532b050d101",
-          "sha1": "4b5804bbdfd64a15c2fa50ea86a2a30ecc2d217c"
+          "sha1": "4b5804bbdfd64a15c2fa50ea86a2a30ecc2d217c",
+          "sha512": "c3baf9a108ef8992c03c862f8ead0c879831346941f800607477809170abb13dca4240d000c50293bed79239440eac74b45c74bfd48dab4a47f0b532b050d101"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/xffzirGX/libIPN-fabric-1.15-1.0.5.jar",
         "filename": "libIPN-fabric-1.15-1.0.5.jar",
@@ -11749,8 +11749,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "934fe09699c3de30df97f54c60a4ecee10196596",
-          "sha512": "1fc9285003dfc2e02ee3d7af42308ef9c6a228a6c718ec51b150e1e0a5fd6b14ef0be1cb497833f717ad955cf34d1eda8bda98c237b95f3587bd7e5e179f8bc6"
+          "sha512": "1fc9285003dfc2e02ee3d7af42308ef9c6a228a6c718ec51b150e1e0a5fd6b14ef0be1cb497833f717ad955cf34d1eda8bda98c237b95f3587bd7e5e179f8bc6",
+          "sha1": "934fe09699c3de30df97f54c60a4ecee10196596"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/79JE3zqT/libIPN-forge-1.19-1.0.4.jar",
         "filename": "libIPN-forge-1.19-1.0.4.jar",
@@ -11877,8 +11877,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ad7043833e475bda4481cb950d1947b2e1c5bb1f53d073b5bd5f7d96dbdbc892593a7c26a932f548ddf99e375c12ea69a2cd0e1e1b7c3762f1b6972ad55d1864",
-          "sha1": "12630d33d92c88d3a291d4fcaaa6eca285b7f2d9"
+          "sha1": "12630d33d92c88d3a291d4fcaaa6eca285b7f2d9",
+          "sha512": "ad7043833e475bda4481cb950d1947b2e1c5bb1f53d073b5bd5f7d96dbdbc892593a7c26a932f548ddf99e375c12ea69a2cd0e1e1b7c3762f1b6972ad55d1864"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/knI0LTGK/libIPN-forge-1.17-1.0.4.jar",
         "filename": "libIPN-forge-1.17-1.0.4.jar",
@@ -11922,8 +11922,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2852d628b9b51edc9e88326e39e85f338f3d4e2af07e842cb9d3e144067a851c174eaa4c12fedfcb7a40a8a3f3156d27f65835e392ab47c9051a216f3a84c4b5",
-          "sha1": "2f8154673f25328631590cc8f48f2fbe9420320d"
+          "sha1": "2f8154673f25328631590cc8f48f2fbe9420320d",
+          "sha512": "2852d628b9b51edc9e88326e39e85f338f3d4e2af07e842cb9d3e144067a851c174eaa4c12fedfcb7a40a8a3f3156d27f65835e392ab47c9051a216f3a84c4b5"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/cxBXyXkN/libIPN-forge-1.16-1.0.4.jar",
         "filename": "libIPN-forge-1.16-1.0.4.jar",
@@ -12006,8 +12006,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7cacd498c2a46d4b52b909ab7b9f0a8bb8247621",
-          "sha512": "54805f4c193fa6332331f1761761205936d23f58cb0cd6dc2e00ab89fd941c7541f6a0054871a48075a9a55646806bd3c8d807aba076f83f0aab4768947bd986"
+          "sha512": "54805f4c193fa6332331f1761761205936d23f58cb0cd6dc2e00ab89fd941c7541f6a0054871a48075a9a55646806bd3c8d807aba076f83f0aab4768947bd986",
+          "sha1": "7cacd498c2a46d4b52b909ab7b9f0a8bb8247621"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/mHp49cCo/libIPN-forge-1.15-1.0.4.jar",
         "filename": "libIPN-forge-1.15-1.0.4.jar",
@@ -12099,8 +12099,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9098f20df5b2fa053319c42c84e7bf6bbcb9d82f09e002e5e9d231def19706221f5fb855c0db7704f13c8ae5d743297d019c79c4e6a3f5f71cca8ae6852c49e4",
-          "sha1": "9a972d6524685c7feb119b7000e1fea19b8c7d97"
+          "sha1": "9a972d6524685c7feb119b7000e1fea19b8c7d97",
+          "sha512": "9098f20df5b2fa053319c42c84e7bf6bbcb9d82f09e002e5e9d231def19706221f5fb855c0db7704f13c8ae5d743297d019c79c4e6a3f5f71cca8ae6852c49e4"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/6ogPRqu6/libIPN-fabric-1.18-1.0.4.jar",
         "filename": "libIPN-fabric-1.18-1.0.4.jar",
@@ -12147,8 +12147,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0c14a11a8798813a8f2b796998338b736e1747bc",
-          "sha512": "dcf6b3e315d45da7a3c0ba47ee7e9779b7fda3146cdd66e86cecd9935ad0f9233de22f13b52ce9cbc989628399b3641839e2b1cb4fa9b436bd2067e1508073bc"
+          "sha512": "dcf6b3e315d45da7a3c0ba47ee7e9779b7fda3146cdd66e86cecd9935ad0f9233de22f13b52ce9cbc989628399b3641839e2b1cb4fa9b436bd2067e1508073bc",
+          "sha1": "0c14a11a8798813a8f2b796998338b736e1747bc"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/COKgzExi/libIPN-fabric-1.18.2-1.0.4.jar",
         "filename": "libIPN-fabric-1.18.2-1.0.4.jar",
@@ -12350,8 +12350,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "56e36b2da531d5f3922434b0207385c08496db60",
-          "sha512": "0fde2eef703074d627ddcbae7a41c01b78b689cb1c3cb92cae6f3fbb10abdb3e1f8d8981b18d8c204abacd19ceef66b9ce84a20990e28f0fee6844033e8bd74f"
+          "sha512": "0fde2eef703074d627ddcbae7a41c01b78b689cb1c3cb92cae6f3fbb10abdb3e1f8d8981b18d8c204abacd19ceef66b9ce84a20990e28f0fee6844033e8bd74f",
+          "sha1": "56e36b2da531d5f3922434b0207385c08496db60"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/AIxDsbPe/libIPN-fabric-1.14-1.0.4.jar",
         "filename": "libIPN-fabric-1.14-1.0.4.jar",
@@ -12400,8 +12400,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f6c9ec91bc8e3c2c726864bfb224f0eeaa4503c0",
-          "sha512": "deec5420805f06e5f8580b0673879fd4ca127cea16254bf754b9754da8fa44248a48fcbb409231b1104bce4a093b6cf6dc621f47d9832ac898f28f746ac32603"
+          "sha512": "deec5420805f06e5f8580b0673879fd4ca127cea16254bf754b9754da8fa44248a48fcbb409231b1104bce4a093b6cf6dc621f47d9832ac898f28f746ac32603",
+          "sha1": "f6c9ec91bc8e3c2c726864bfb224f0eeaa4503c0"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/luGKpt3O/libIPN-forge-1.19-1.0.3.jar",
         "filename": "libIPN-forge-1.19-1.0.3.jar",
@@ -12530,8 +12530,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cd64695157593914b6caaba1e06518635dcf2bcfdcd30ef54cd47ed14eeba67560f3d5398a9ee46f62586959293d38a6cc9dc4e52d4c58f9df0872c4a9a47743",
-          "sha1": "6fd9a02c9ef677d14d9df4de97dc6663b876e6f9"
+          "sha1": "6fd9a02c9ef677d14d9df4de97dc6663b876e6f9",
+          "sha512": "cd64695157593914b6caaba1e06518635dcf2bcfdcd30ef54cd47ed14eeba67560f3d5398a9ee46f62586959293d38a6cc9dc4e52d4c58f9df0872c4a9a47743"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/xPUj815z/libIPN-forge-1.16-1.0.3.jar",
         "filename": "libIPN-forge-1.16-1.0.3.jar",
@@ -12615,8 +12615,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ceec4a5e4cabc53a0fb874a718ee468fff8160f0",
-          "sha512": "0cbfe3060b2f340b517c5604f3c4a08089048e052fa22980d4c0b5f90b4a35e5ddbc90ddb2ec179294986eaf6ae4e1289bc134ff727b6c825e100cd0ffe45ebe"
+          "sha512": "0cbfe3060b2f340b517c5604f3c4a08089048e052fa22980d4c0b5f90b4a35e5ddbc90ddb2ec179294986eaf6ae4e1289bc134ff727b6c825e100cd0ffe45ebe",
+          "sha1": "ceec4a5e4cabc53a0fb874a718ee468fff8160f0"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/xPIUoGan/libIPN-forge-1.15-1.0.3.jar",
         "filename": "libIPN-forge-1.15-1.0.3.jar",
@@ -12749,8 +12749,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "497fa69a2e05dce05b49a4d3c9ebd6a4f0db688b",
-          "sha512": "e8dc517d8ebe3c4c783ea595d89cd1a15a4385a18e6a53a68edf4f4877ca272c5ca42480bb8c8d743b92fa113e827946fedd1c5c4dd89c116488f433dadb59fa"
+          "sha512": "e8dc517d8ebe3c4c783ea595d89cd1a15a4385a18e6a53a68edf4f4877ca272c5ca42480bb8c8d743b92fa113e827946fedd1c5c4dd89c116488f433dadb59fa",
+          "sha1": "497fa69a2e05dce05b49a4d3c9ebd6a4f0db688b"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/9f7JYLk7/libIPN-fabric-1.18.2-1.0.3.jar",
         "filename": "libIPN-fabric-1.18.2-1.0.3.jar",
@@ -12900,8 +12900,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cb513f7f0f19bcb484856aa85e4db068bd8f0b3db8be689ccfa7ac936d72cdeb18aec4f1e87cfe7e0bcafc60369cfb82a1437d283331d9d027690f6bfca13774",
-          "sha1": "b9387caddbcbc5ae17dfc62dfd6f1cc59e093957"
+          "sha1": "b9387caddbcbc5ae17dfc62dfd6f1cc59e093957",
+          "sha512": "cb513f7f0f19bcb484856aa85e4db068bd8f0b3db8be689ccfa7ac936d72cdeb18aec4f1e87cfe7e0bcafc60369cfb82a1437d283331d9d027690f6bfca13774"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/gkjy5WaJ/libIPN-fabric-1.16-1.0.3.jar",
         "filename": "libIPN-fabric-1.16-1.0.3.jar",
@@ -13092,8 +13092,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "225ca3eebdf4bb4eef6ad635c62d09ac84e2f800a83b1afbbe4490228609198a390aac31eb5cbc9f7ed680293eaaa39727161ec2d9b8fea004bab33e6404416b",
-          "sha1": "dea30854a1b096bbe2f10af0777de81418d68aea"
+          "sha1": "dea30854a1b096bbe2f10af0777de81418d68aea",
+          "sha512": "225ca3eebdf4bb4eef6ad635c62d09ac84e2f800a83b1afbbe4490228609198a390aac31eb5cbc9f7ed680293eaaa39727161ec2d9b8fea004bab33e6404416b"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/UxujXiv0/libIPN-forge-1.18-1.0.1.jar",
         "filename": "libIPN-forge-1.18-1.0.1.jar",
@@ -13224,8 +13224,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0973a1f1801d795af83e74bf6f4c7848ec2bba1ecd4f43f59e1551443a2e6822885c460f98b15f103cd81e0e161a54a3c931e125ad1aab6b5fcdcdb0d62a2aa2",
-          "sha1": "aa36495dcb2327b9c06b1070a610efaaeb46d787"
+          "sha1": "aa36495dcb2327b9c06b1070a610efaaeb46d787",
+          "sha512": "0973a1f1801d795af83e74bf6f4c7848ec2bba1ecd4f43f59e1551443a2e6822885c460f98b15f103cd81e0e161a54a3c931e125ad1aab6b5fcdcdb0d62a2aa2"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/MzabS4Pu/libIPN-forge-1.16-1.0.1.jar",
         "filename": "libIPN-forge-1.16-1.0.1.jar",
@@ -13351,8 +13351,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "18997834bf7f8a1d6173819edd86f16cf41275b2",
-          "sha512": "ab8cc73be8165f7f3bae2d7988597d1ec890e759dc0b62b7ce44ef7646beed12ef94cd76ec346c1093d4c38876d3d537725ea35b119dec09b7508632644c3c29"
+          "sha512": "ab8cc73be8165f7f3bae2d7988597d1ec890e759dc0b62b7ce44ef7646beed12ef94cd76ec346c1093d4c38876d3d537725ea35b119dec09b7508632644c3c29",
+          "sha1": "18997834bf7f8a1d6173819edd86f16cf41275b2"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ztIxnsL7/libIPN-fabric-1.18-1.0.1.jar",
         "filename": "libIPN-fabric-1.18-1.0.1.jar",
@@ -13448,8 +13448,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1729dc00d53229510373a94001644413c1f8bd2b",
-          "sha512": "75a4926a498a03d82dd64aed10c0c414bf9a181d0240efea2b6e9d9ad02c1cff56d79a011a38909ea1625dceb0194fd0b0647900449b97f8ead16fcc95450f98"
+          "sha512": "75a4926a498a03d82dd64aed10c0c414bf9a181d0240efea2b6e9d9ad02c1cff56d79a011a38909ea1625dceb0194fd0b0647900449b97f8ead16fcc95450f98",
+          "sha1": "1729dc00d53229510373a94001644413c1f8bd2b"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/htIKi4Us/libIPN-fabric-1.17-1.0.1.jar",
         "filename": "libIPN-fabric-1.17-1.0.1.jar",
@@ -13498,8 +13498,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8b67d8c84b7acf41085ce3c484a5d1df2fc7c5d0f59763118b13d848a3475140a8f7cf3ddfbfe1c7fe11f977d031d33f89a7699bc125b46608b6c1eb75f4a2be",
-          "sha1": "0de5bd6af2f2f04f5c76cd3ee7be4affe9b6f064"
+          "sha1": "0de5bd6af2f2f04f5c76cd3ee7be4affe9b6f064",
+          "sha512": "8b67d8c84b7acf41085ce3c484a5d1df2fc7c5d0f59763118b13d848a3475140a8f7cf3ddfbfe1c7fe11f977d031d33f89a7699bc125b46608b6c1eb75f4a2be"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/eKKEfzqI/libIPN-fabric-1.15-1.0.1.jar",
         "filename": "libIPN-fabric-1.15-1.0.1.jar",
@@ -13787,8 +13787,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "915e5111047efa5a3e57e71e61af24c068afeb37",
-          "sha512": "c08c1fdbc142a4a66ca5f0f44db71f99c2cb055cc12f093d39f7f7536a8a440c33ae4d9cb1f698770278a24bc524de46083c79cbe5fd35a419683c507e2c317e"
+          "sha512": "c08c1fdbc142a4a66ca5f0f44db71f99c2cb055cc12f093d39f7f7536a8a440c33ae4d9cb1f698770278a24bc524de46083c79cbe5fd35a419683c507e2c317e",
+          "sha1": "915e5111047efa5a3e57e71e61af24c068afeb37"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/jhhorLfg/libIPN-forge-1.18.2-1.0.0.jar",
         "filename": "libIPN-forge-1.18.2-1.0.0.jar",
@@ -13875,8 +13875,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1e51bdfc7eeec003e55e2f3f84205223691eeb1ca446a2b0e5004547c256f310acf076dfde389446109f9847e80e8a5c590e3cb68b288325f11777a58d81fd47",
-          "sha1": "7bcee6d486ebd42471b93c54053d433a53f77fc9"
+          "sha1": "7bcee6d486ebd42471b93c54053d433a53f77fc9",
+          "sha512": "1e51bdfc7eeec003e55e2f3f84205223691eeb1ca446a2b0e5004547c256f310acf076dfde389446109f9847e80e8a5c590e3cb68b288325f11777a58d81fd47"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ivECtNFG/libIPN-forge-1.16-1.0.0.jar",
         "filename": "libIPN-forge-1.16-1.0.0.jar",
@@ -13959,8 +13959,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "55151754a76bc4f2b35f5bace4f333c04c42f623",
-          "sha512": "d68af5115668787db492530ef53111b12409c34c2e3c82b0594292676532c06b1ef2632a2e160e60424f47d3a2880640b01e255b4f225ac53bc42e118b573a00"
+          "sha512": "d68af5115668787db492530ef53111b12409c34c2e3c82b0594292676532c06b1ef2632a2e160e60424f47d3a2880640b01e255b4f225ac53bc42e118b573a00",
+          "sha1": "55151754a76bc4f2b35f5bace4f333c04c42f623"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/Zu71jdwM/libIPN-forge-1.15-1.0.0.jar",
         "filename": "libIPN-forge-1.15-1.0.0.jar",
@@ -14149,8 +14149,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "91773d5871050b95e434ca1a7587f8a9dcf3f284d1e31802cf829168b4a5d2bb4a791a466e17d383c3edd25dc002b2f8b81d82d68bfa781628206d49f9d203df",
-          "sha1": "bb6f1543d382a75f6fd4595e494b6f0cfd38805e"
+          "sha1": "bb6f1543d382a75f6fd4595e494b6f0cfd38805e",
+          "sha512": "91773d5871050b95e434ca1a7587f8a9dcf3f284d1e31802cf829168b4a5d2bb4a791a466e17d383c3edd25dc002b2f8b81d82d68bfa781628206d49f9d203df"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/ZpVR7riT/libIPN-fabric-1.19-1.0.0.jar",
         "filename": "libIPN-fabric-1.19-1.0.0.jar",
@@ -14199,8 +14199,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b2457d064d479da0703810c641f2fb30dc33b56a",
-          "sha512": "dc63c3b57fb50e53a5e753684b6c8264f5bca943791e75dd029b082d1395962f808aa228646c55762683044ca9571d3baae5df78a886fc69c1500fc27a7e0263"
+          "sha512": "dc63c3b57fb50e53a5e753684b6c8264f5bca943791e75dd029b082d1395962f808aa228646c55762683044ca9571d3baae5df78a886fc69c1500fc27a7e0263",
+          "sha1": "b2457d064d479da0703810c641f2fb30dc33b56a"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/gg12Q7Ve/libIPN-fabric-1.15-1.0.0.jar",
         "filename": "libIPN-fabric-1.15-1.0.0.jar",
@@ -14303,8 +14303,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "fbd6a0f5640fa6a607318ee1b0a61752af99e96ca101c72c34726269e0be5b4fbee8b9ba10767cd08e3efa884c0b48b57e7ba425becfd6d73cf91563f83f4e5b",
-          "sha1": "f8f6dd545a5b965f5bf912d87874e19c20aa8807"
+          "sha1": "f8f6dd545a5b965f5bf912d87874e19c20aa8807",
+          "sha512": "fbd6a0f5640fa6a607318ee1b0a61752af99e96ca101c72c34726269e0be5b4fbee8b9ba10767cd08e3efa884c0b48b57e7ba425becfd6d73cf91563f83f4e5b"
         },
         "url": "https://cdn.modrinth.com/data/onSQdWhM/versions/iblieVmb/libIPN-fabric-1.14-1.0.0.jar",
         "filename": "libIPN-fabric-1.14-1.0.0.jar",

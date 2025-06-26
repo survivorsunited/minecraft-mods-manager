@@ -1,7 +1,8 @@
 [
   {
     "game_versions": [
-      "1.21.6"
+      "1.21.6",
+      "1.21.7-rc1"
     ],
     "loaders": [
       "fabric",
@@ -11,12 +12,12 @@
     "project_id": "yBW8D80W",
     "author_id": "rRnTb0fG",
     "featured": false,
-    "name": "LambDynamicLights 4.3.0 (1.21.6)",
+    "name": "LambDynamicLights 4.3.0 (1.21.6, 1.21.7)",
     "version_number": "4.3.0+1.21.6",
     "changelog": "- Updated to Minecraft 1.21.6.\n- Updated [SpruceUI].\n- Updated [pridelib].\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-06-17T18:28:55.533018Z",
-    "downloads": 105695,
+    "downloads": 112072,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -36,6 +37,12 @@
     "dependencies": [
       {
         "version_id": null,
+        "project_id": "PxQSWIcD",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
@@ -43,12 +50,6 @@
       {
         "version_id": null,
         "project_id": "reCfnRvJ",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
-        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       }
@@ -72,7 +73,7 @@
     "changelog": "- Updated to Minecraft 1.21.6.\n- Updated [SpruceUI](<https://github.com/LambdAurora/SpruceUI>).\n- Updated [pridelib](<https://github.com/Queerbric/pridelib>).",
     "changelog_url": null,
     "date_published": "2025-06-14T16:40:08.570707Z",
-    "downloads": 2033,
+    "downloads": 2066,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -127,15 +128,15 @@
     "changelog": "- Added Argentine Spanish translations ([#279](https://github.com/LambdAurora/LambDynamicLights/pull/279)).\n- Updated Chinese translations ([#281](https://github.com/LambdAurora/LambDynamicLights/pull/281)).\n- Made tab in Sodium GUI translatable ([#282](https://github.com/LambdAurora/LambDynamicLights/pull/282)).\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-06-11T17:15:09.238176Z",
-    "downloads": 101607,
+    "downloads": 104349,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "9e03cb8c31e03b051e7f08427642f967f557fca8",
-          "sha512": "97c5cf30eea77b0ad257ee625c12951ef0a982838b2053d4e73ff9a78f82023efebae760bbec231c7c07e9de5c661a0a34c82865ac996492b9bb7f51ad1aec24"
+          "sha512": "97c5cf30eea77b0ad257ee625c12951ef0a982838b2053d4e73ff9a78f82023efebae760bbec231c7c07e9de5c661a0a34c82865ac996492b9bb7f51ad1aec24",
+          "sha1": "9e03cb8c31e03b051e7f08427642f967f557fca8"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/STvJaSpP/lambdynamiclights-4.2.7%2B1.21.5.jar",
         "filename": "lambdynamiclights-4.2.7+1.21.5.jar",
@@ -147,9 +148,9 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "reCfnRvJ",
         "file_name": null,
-        "dependency_type": "required"
+        "dependency_type": "incompatible"
       },
       {
         "version_id": null,
@@ -159,9 +160,9 @@
       },
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
+        "project_id": "P7dR8mSH",
         "file_name": null,
-        "dependency_type": "incompatible"
+        "dependency_type": "required"
       }
     ]
   },
@@ -182,7 +183,7 @@
     "changelog": "- Backports some changes from the v4.2.7:\n  - Added Argentine Spanish translations ([#279](https://github.com/LambdAurora/LambDynamicLights/pull/279)).\n  - Updated Chinese translations ([#281](https://github.com/LambdAurora/LambDynamicLights/pull/281)).\n  - Made tab in Sodium GUI translatable ([#282](https://github.com/LambdAurora/LambDynamicLights/pull/282)).\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-06-11T10:57:10.006455Z",
-    "downloads": 32849,
+    "downloads": 34105,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -202,12 +203,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
@@ -217,6 +212,12 @@
         "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -238,7 +239,7 @@
     "changelog": "- Backports some changes from the v4.2.7:\n  - Added Argentine Spanish translations ([#279](https://github.com/LambdAurora/LambDynamicLights/pull/279)).\n  - Updated Chinese translations ([#281](https://github.com/LambdAurora/LambDynamicLights/pull/281)).\n  - Made tab in Sodium GUI translatable ([#282](https://github.com/LambdAurora/LambDynamicLights/pull/282)).\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-06-11T06:43:57.002449Z",
-    "downloads": 43297,
+    "downloads": 45064,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -294,7 +295,7 @@
     "changelog": "- Backports some changes from the v4.2.7:\n  - Added Argentine Spanish translations ([#279](https://github.com/LambdAurora/LambDynamicLights/pull/279)).\n  - Updated Chinese translations ([#281](https://github.com/LambdAurora/LambDynamicLights/pull/281)).\n  - Made tab in Sodium GUI translatable ([#282](https://github.com/LambdAurora/LambDynamicLights/pull/282)).\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-06-11T06:39:38.075939Z",
-    "downloads": 46482,
+    "downloads": 48730,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -350,15 +351,15 @@
     "changelog": "- Updated [Yumi Commons] to fix a crash on NeoForge with Sinytra Connector due to bad handling of JPMS.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-04-20T16:46:56.041218Z",
-    "downloads": 618547,
+    "downloads": 618976,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4b117409f4ea0fe256a60b59481095e61cae4cb4",
-          "sha512": "77f54490816508bb08f2cb98207b01d97e3aeeefd33399a419ad4a8d8010ceedf37ce686511a0237d9e920b1a164ee67cddb6467e66e95c25dcc63aac63cc1f3"
+          "sha512": "77f54490816508bb08f2cb98207b01d97e3aeeefd33399a419ad4a8d8010ceedf37ce686511a0237d9e920b1a164ee67cddb6467e66e95c25dcc63aac63cc1f3",
+          "sha1": "4b117409f4ea0fe256a60b59481095e61cae4cb4"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/UPiFwTHO/lambdynamiclights-4.2.6%2B1.21.5.jar",
         "filename": "lambdynamiclights-4.2.6+1.21.5.jar",
@@ -370,6 +371,12 @@
     "dependencies": [
       {
         "version_id": null,
+        "project_id": "PxQSWIcD",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
@@ -377,12 +384,6 @@
       {
         "version_id": null,
         "project_id": "reCfnRvJ",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
-        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       }
@@ -405,15 +406,15 @@
     "changelog": "- Updated [Yumi Commons] to fix a crash on NeoForge with Sinytra Connector due to bad handling of JPMS.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-04-20T16:42:40.5748Z",
-    "downloads": 182238,
+    "downloads": 182436,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e6b88143d25c5438a26c597b6fc2a93009d38e49",
-          "sha512": "2421632aed9f5e55348c013ae7e3e2d4b4334104e32c4a8b8f6203048125e27c7864516859357d32692e28f827223d8ac8df344afcd277181ddc947ef691a19d"
+          "sha512": "2421632aed9f5e55348c013ae7e3e2d4b4334104e32c4a8b8f6203048125e27c7864516859357d32692e28f827223d8ac8df344afcd277181ddc947ef691a19d",
+          "sha1": "e6b88143d25c5438a26c597b6fc2a93009d38e49"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/Rb8r8pQh/lambdynamiclights-4.1.2%2B1.21.4.jar",
         "filename": "lambdynamiclights-4.1.2+1.21.4.jar",
@@ -425,13 +426,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
+        "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
       },
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
+        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       },
@@ -461,7 +462,7 @@
     "changelog": "- Updated [Yumi Commons] to fix a crash on NeoForge with Sinytra Connector due to bad handling of JPMS.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-04-20T16:39:25.604202Z",
-    "downloads": 271677,
+    "downloads": 274629,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -481,12 +482,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
@@ -494,6 +489,12 @@
       {
         "version_id": null,
         "project_id": "reCfnRvJ",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       }
@@ -517,7 +518,7 @@
     "changelog": "- Updated [Yumi Commons] to fix a crash on NeoForge with Sinytra Connector due to bad handling of JPMS.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-04-20T16:34:23.04012Z",
-    "downloads": 217937,
+    "downloads": 218266,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -573,7 +574,7 @@
     "changelog": "- Fixed `/reload` crash ([#275](https://github.com/LambdAurora/LambDynamicLights/issues/275)).\n- Updated Russian translations ([#269](https://github.com/LambdAurora/LambDynamicLights/pull/269)).\n- Updated Brazilian Portuguese translations ([#270](https://github.com/LambdAurora/LambDynamicLights/pull/270)).\n- Updated Vietnamese translations ([#276](https://github.com/LambdAurora/LambDynamicLights/pull/276)).\n- Updated [Yumi Commons] for better dependency resolution.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-04-19T15:01:09.491425Z",
-    "downloads": 14421,
+    "downloads": 14445,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -593,12 +594,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
@@ -608,6 +603,12 @@
         "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -628,7 +629,7 @@
     "changelog": "- Backports some changes from the v4.2.0 versions.\n- Fixed `/reload` crash ([#275](https://github.com/LambdAurora/LambDynamicLights/issues/275)).\n- Added Spanish translations ([#268](https://github.com/LambdAurora/LambDynamicLights/pull/268)).\n- Added missing Spanish Mexican translations from Spanish translations as a stop-gap.\n- Updated German translations (thanks zOnlyKroks).\n- Updated Russian translations ([#269](https://github.com/LambdAurora/LambDynamicLights/pull/269)).\n- Updated Brazilian Portuguese translations ([#270](https://github.com/LambdAurora/LambDynamicLights/pull/270)).\n- Updated Vietnamese translations ([#276](https://github.com/LambdAurora/LambDynamicLights/pull/276)).\n- Updated [Yumi Commons] for better dependency resolution.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-04-19T14:41:56.494458Z",
-    "downloads": 6910,
+    "downloads": 6914,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -684,15 +685,15 @@
     "changelog": "- Backports some changes from the v4.2.0 versions.\n- Fixed `/reload` crash ([#275](https://github.com/LambdAurora/LambDynamicLights/issues/275)).\n- Added Spanish translations ([#268](https://github.com/LambdAurora/LambDynamicLights/pull/268)).\n- Added missing Spanish Mexican translations from Spanish translations as a stop-gap.\n- Updated German translations (thanks zOnlyKroks).\n- Updated Russian translations ([#269](https://github.com/LambdAurora/LambDynamicLights/pull/269)).\n- Updated Brazilian Portuguese translations ([#270](https://github.com/LambdAurora/LambDynamicLights/pull/270)).\n- Updated Vietnamese translations ([#276](https://github.com/LambdAurora/LambDynamicLights/pull/276)).\n- Updated [Yumi Commons] for better dependency resolution.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Yumi Commons]: https://github.com/YumiProject/yumi-commons \"Yumi Commons page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-04-19T14:25:39.877645Z",
-    "downloads": 8392,
+    "downloads": 8395,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d7f972a0f1988e1269d23f42fdc0f4fa7164560c",
-          "sha512": "86d725229f810a3c419b00190b0bfa05f1cf17fbe26c5c946e24407d4cf608665e17380931c028edd0eef8ee70e489cd954c68c503ded78149fec8ed0da1bb8b"
+          "sha512": "86d725229f810a3c419b00190b0bfa05f1cf17fbe26c5c946e24407d4cf608665e17380931c028edd0eef8ee70e489cd954c68c503ded78149fec8ed0da1bb8b",
+          "sha1": "d7f972a0f1988e1269d23f42fdc0f4fa7164560c"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/lWd14y0a/lambdynamiclights-4.1.1%2B1.21.1.jar",
         "filename": "lambdynamiclights-4.1.1+1.21.1.jar",
@@ -796,15 +797,15 @@
     "changelog": "- Hotfix performance issues due to a wrong Mixin injection.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-03-25T18:24:39.419015Z",
-    "downloads": 386577,
+    "downloads": 386807,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a288f5a4bb9a2f251ef40cdad6b240951595683cb9c6a21f9a1555cf930e76a837dac14721d0c1dade6a0e7f5331ac4f87dcb3044f1b5892552cd43fb98475af",
-          "sha1": "f5661e38c09a575f79821cfa2b56382ecb73ce36"
+          "sha1": "f5661e38c09a575f79821cfa2b56382ecb73ce36",
+          "sha512": "a288f5a4bb9a2f251ef40cdad6b240951595683cb9c6a21f9a1555cf930e76a837dac14721d0c1dade6a0e7f5331ac4f87dcb3044f1b5892552cd43fb98475af"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/cLBceQhi/lambdynamiclights-4.2.3%2B1.21.5.jar",
         "filename": "lambdynamiclights-4.2.3+1.21.5.jar",
@@ -908,15 +909,15 @@
     "changelog": "- Updated to Minecraft 1.21.5.\n- Added dynamic lighting to Firefly particles.\n- Added support for entity component predicates.\n- Fixed a crash on start due to a bad mixin remap.\n- Fixed the throwable item projectiles entity dynamic light source JSON.\n- Updated [SpruceUI].\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2025-03-22T10:18:46.68558Z",
-    "downloads": 6039,
+    "downloads": 6048,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5227925869d6aee046651cdf9b687ee768f009c2",
-          "sha512": "f21d60b7ed765ac1b70a3d201ddcd572f1d561333ffdebb366b005e497f06354b6982c957697bfae87f5feaa5049a628bf313d9a40c8aee0308f7c2e3004f7e9"
+          "sha512": "f21d60b7ed765ac1b70a3d201ddcd572f1d561333ffdebb366b005e497f06354b6982c957697bfae87f5feaa5049a628bf313d9a40c8aee0308f7c2e3004f7e9",
+          "sha1": "5227925869d6aee046651cdf9b687ee768f009c2"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/Uz3e6n2Z/lambdynamiclights-4.2.1%2B1.21.5.jar",
         "filename": "lambdynamiclights-4.2.1+1.21.5.jar",
@@ -963,15 +964,15 @@
     "changelog": "- Added datagen and helper methods to API ([#267](https://github.com/LambdAurora/LambDynamicLights/pull/267)).\n  - This should allow any modders who wishes to datagen LambDynamicLights item or entity light source JSON files to do so easily. \n- Moved `lambdynlights:glow_squid`, `lambdynlights:magma_cube`, `lambdynlights:water_sensitive`, and `lambdynlights:wet_sensitive` to the API artifact.\n  - The water sensitivity setting doesn't affect entity luminance anymore (items are still affected), however this still can be tweaked through resource packs.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-03-18T21:51:33.049987Z",
-    "downloads": 226848,
+    "downloads": 226963,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "37a489d239e3296ed887ffc422ba82f8aa5e3678",
-          "sha512": "fc57d83949ba7b1b7d83412c787c7a82daa55499bb0e83674ea73e224b0959b1594e24d8b2fee32aa8defe6919ae3af463ffeec73bf8fc8f32568b46052f8e64"
+          "sha512": "fc57d83949ba7b1b7d83412c787c7a82daa55499bb0e83674ea73e224b0959b1594e24d8b2fee32aa8defe6919ae3af463ffeec73bf8fc8f32568b46052f8e64",
+          "sha1": "37a489d239e3296ed887ffc422ba82f8aa5e3678"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/Q9UNnRXZ/lambdynamiclights-4.1.0%2B1.21.4.jar",
         "filename": "lambdynamiclights-4.1.0+1.21.4.jar",
@@ -1019,15 +1020,15 @@
     "changelog": "- Added datagen and helper methods to API ([#267](https://github.com/LambdAurora/LambDynamicLights/pull/267)).\n  - This should allow any modders who wishes to datagen LambDynamicLights item or entity light source JSON files to do so easily. \n- Moved `lambdynlights:glow_squid`, `lambdynlights:magma_cube`, `lambdynlights:water_sensitive`, and `lambdynlights:wet_sensitive` to the API artifact.\n  - The water sensitivity setting doesn't affect entity luminance anymore (items are still affected), however this still can be tweaked through resource packs.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-03-18T21:49:55.87844Z",
-    "downloads": 16515,
+    "downloads": 16582,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "60940daec1cf895cd207e3ee4f2ce73ee3f92917",
-          "sha512": "56a0c99bfc37f42ac33cde46e0d94e24451df2c1b7fb0bbd059a299afd3ad301af26bbb4d7295e41f1a848f6d71c4ea9273e3c68988d739dab025fd017693fa3"
+          "sha512": "56a0c99bfc37f42ac33cde46e0d94e24451df2c1b7fb0bbd059a299afd3ad301af26bbb4d7295e41f1a848f6d71c4ea9273e3c68988d739dab025fd017693fa3",
+          "sha1": "60940daec1cf895cd207e3ee4f2ce73ee3f92917"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/93jUghXD/lambdynamiclights-4.1.0%2B1.21.3.jar",
         "filename": "lambdynamiclights-4.1.0+1.21.3.jar",
@@ -1075,7 +1076,7 @@
     "changelog": "- Added datagen and helper methods to API ([#267](https://github.com/LambdAurora/LambDynamicLights/pull/267)).\n  - This should allow any modders who wishes to datagen LambDynamicLights item or entity light source JSON files to do so easily. \n- Moved `lambdynlights:glow_squid`, `lambdynlights:magma_cube`, `lambdynlights:water_sensitive`, and `lambdynlights:wet_sensitive` to the API artifact.\n  - The water sensitivity setting doesn't affect entity luminance anymore (items are still affected), however this still can be tweaked through resource packs.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-03-18T21:46:54.928498Z",
-    "downloads": 189791,
+    "downloads": 189962,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1131,7 +1132,7 @@
     "changelog": "- Added datagen and helper methods to API ([#267](https://github.com/LambdAurora/LambDynamicLights/pull/267)).\n  - This should allow any modders who wishes to datagen LambDynamicLights item or entity light source JSON files to do so easily. \n- Moved `lambdynlights:glow_squid`, `lambdynlights:magma_cube`, `lambdynlights:water_sensitive`, and `lambdynlights:wet_sensitive` to the API artifact.\n  - The water sensitivity setting doesn't affect entity luminance anymore (items are still affected), however this still can be tweaked through resource packs.\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[#115]: https://github.com/LambdAurora/LambDynamicLights/issues/115",
     "changelog_url": null,
     "date_published": "2025-03-18T21:44:01.755445Z",
-    "downloads": 106738,
+    "downloads": 106852,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1151,15 +1152,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "PxQSWIcD",
+        "file_name": null,
+        "dependency_type": "incompatible"
       },
       {
         "version_id": null,
@@ -1186,15 +1187,15 @@
     "changelog": "- Improved loading/saving of the configuration file, this should significantly reduce corruption issues.\n  - If the file still somehow corrupts, now the file is backed up and a default configuration is loaded instead.\n- Added support for Curios. This is only relevant with Sinytra Connector or forks.\n- Fixed entity dynamic light sources not being saved and loaded at/from the right path in the configuration.\n- Fixed throwable item projectiles with the `Item` property set not emitting light if the item emits light ([#265](https://github.com/LambdAurora/LambDynamicLights/issues/265)).\n- Updated Traditional Chinese translations ([#261](https://github.com/LambdAurora/LambDynamicLights/pull/261)).\n- Updated Turkish translations ([#263](https://github.com/LambdAurora/LambDynamicLights/pull/263)).\n- Updated Simplified Chinese translations ([#264](https://github.com/LambdAurora/LambDynamicLights/pull/264)).\n- Updated [SpruceUI].\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"\n",
     "changelog_url": null,
     "date_published": "2025-03-15T23:02:28.340518Z",
-    "downloads": 80397,
+    "downloads": 80411,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "08bc6edff679b91164cb73b43ae0fafebb9b0286",
-          "sha512": "d1710c783308fe19c126eec1b262587c4b24ed38f75512eb4ccef3f5484cb5835d8150b9cd080cf6d50c8f51768afe0692c461646b97f954faf4b69d07bced51"
+          "sha512": "d1710c783308fe19c126eec1b262587c4b24ed38f75512eb4ccef3f5484cb5835d8150b9cd080cf6d50c8f51768afe0692c461646b97f954faf4b69d07bced51",
+          "sha1": "08bc6edff679b91164cb73b43ae0fafebb9b0286"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/S2vkLTTc/lambdynamiclights-4.0.2%2B1.21.4.jar",
         "filename": "lambdynamiclights-4.0.2+1.21.4.jar",
@@ -1212,13 +1213,13 @@
       },
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
+        "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
       },
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
+        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       }
@@ -1249,8 +1250,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "048ba440ea5663b762d48e4ed4f4c3fe9bb4f2712e30c6c8b9421346edf436ca1d5677e747348a172ddfc7a415f1f6f1565928b0a1af54ef8311600eaa4b5cb6",
-          "sha1": "6d055b9c17686649b8123e0c8c71a05820a10f89"
+          "sha1": "6d055b9c17686649b8123e0c8c71a05820a10f89",
+          "sha512": "048ba440ea5663b762d48e4ed4f4c3fe9bb4f2712e30c6c8b9421346edf436ca1d5677e747348a172ddfc7a415f1f6f1565928b0a1af54ef8311600eaa4b5cb6"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/q90MUWEF/lambdynamiclights-4.0.2%2B1.21.3.jar",
         "filename": "lambdynamiclights-4.0.2+1.21.3.jar",
@@ -1298,7 +1299,7 @@
     "changelog": "- Backported LambDynamicLights 4.0.2 to Minecraft 1.21.1.\n- Updated [SpruceUI].\n\nHere's the complete changelog of all the versions included in this backport:\n\n## 3.2.x\n\n- Improved settings GUI, especially the entity dynamic light sources list.\n- Tweaked the new dynamic lighting engine introduced in 3.1.0.\n- Updated Estonian translations ([#243](https://github.com/LambdAurora/LambDynamicLights/pull/243)).\n\n## 4.0.0\n\n- Added the ability to define entity light sources in resource packs.\n  - Please refer yourself to the documentation for more details.\n- Added display entities dynamic lighting ([#209](https://github.com/LambdAurora/LambDynamicLights/issues/209)).\n  - This affects both block and item displays.\n  - If a custom brightness is defined then dynamic lighting disables itself.\n- Added a new API to define fully custom dynamic lighting of varying shapes.\n  - Added dynamic lighting to Beacon beams ([#115]).\n  - Added dynamic lighting to End Gateway beams ([#115]).\n  - Added dynamic lighting to Guardian lasers ([#115]).\n- Added debug settings and renderers to facilitate debugging.\n  - Added a debug renderer of active dynamic lighting cells.\n  - Added a debug renderer to display chunk rebuilds.\n  - Added a debug renderer of dynamic light levels.\n  - Added a debug renderer of display the bounding boxes of custom dynamic light sources.\n- Updated the data displayed in the F3 HUD to show more information about dynamic lighting.\n- Refactored heavily the ticking of entity dynamic lighting to make it more abstract.\n- Refactored heavily how chunk rebuilds are queued and how dynamic light sources are represented.\n- Fixed API publication for loom-based setups.\n- Added Upside-down English translations ([#254](https://github.com/LambdAurora/LambDynamicLights/pull/254)).\n- Updated Dutch translations ([#252](https://github.com/LambdAurora/LambDynamicLights/pull/252)).\n- Updated German translations ([#253](https://github.com/LambdAurora/LambDynamicLights/pull/253)).\n- Updated Italian translations ([#255](https://github.com/LambdAurora/LambDynamicLights/pull/255)).\n\n### 4.0.1\n\n- Added Malay and Malay (Jawi) translations ([#256](https://github.com/LambdAurora/LambDynamicLights/pull/256)).\n- Fixed Upside-down English translations ([#257](https://github.com/LambdAurora/LambDynamicLights/pull/257)).\n- Fixed custom dynamic light sources sometimes not updating previously lit chunks.\n\n### 4.0.2\n\n- Improved loading/saving of the configuration file, this should significantly reduce corruption issues.\n  - If the file still somehow corrupts, now the file is backed up and a default configuration is loaded instead.\n- Added support for Curios. This is only relevant with Sinytra Connector or forks.\n- Fixed entity dynamic light sources not being saved and loaded at/from the right path in the configuration.\n- Fixed throwable item projectiles with the `Item` property set not emitting light if the item emits light ([#265](https://github.com/LambdAurora/LambDynamicLights/issues/265)).\n- Updated Traditional Chinese translations ([#261](https://github.com/LambdAurora/LambDynamicLights/pull/261)).\n- Updated Turkish translations ([#263](https://github.com/LambdAurora/LambDynamicLights/pull/263)).\n- Updated Simplified Chinese translations ([#264](https://github.com/LambdAurora/LambDynamicLights/pull/264)).\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2025-03-15T22:48:37.889908Z",
-    "downloads": 40045,
+    "downloads": 40070,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1354,7 +1355,7 @@
     "changelog": "- Backported LambDynamicLights 4.0.2 to Minecraft 1.20.1.\n- Improved Sodium v5 and Indium integration ([#236](https://github.com/LambdAurora/LambDynamicLights/issues/236), [#262](https://github.com/LambdAurora/LambDynamicLights/issues/262)).\n- Updated [SpruceUI].\n\nHere's the complete changelog of all the versions included in this backport:\n\n## 3.0.0\n\n- Changed how item light sources are defined in resource packs:\n  - Now item light sources support a wide-range of selection predicates thanks to data-driven improvements in the base game.\n    - This means enchanted items can now selectively light up, this should mostly address ([#89](https://github.com/LambdAurora/LambDynamicLights/issues/89)).\n  - Please refer yourself to the documentation for more details.\n- Updated configuration library.\n- Updated Mexican Spanish translations ([#214](https://github.com/LambdAurora/LambDynamicLights/pull/214)).\n- Updated Italian translations ([#232](https://github.com/LambdAurora/LambDynamicLights/pull/232)).\n- Updated Polish translations ([#235](https://github.com/LambdAurora/LambDynamicLights/pull/235)).\n- Removed block entity lighting as the use-case was extremely niche.\n  - This may be re-introduced if a valid use-case is found.\n- Switched license to [Lambda License](https://github.com/LambdAurora/LambDynamicLights/blob/bbefb8860bca2e797f8a2ba8a59d1120b6e1c7b4/LICENSE).\n\n### 3.0.1\n\n- Fixed crash due to Mixin plugin ([#239](https://github.com/LambdAurora/LambDynamicLights/issues/239)).\n\n## 3.1.0\n\n- Improved general performances, especially in worst-case scenarios.\n- Added support for falling block entities ([#93](https://github.com/LambdAurora/LambDynamicLights/issues/93)).\n- Added settings access in Sodium.\n- Updated Simplified Chinese translations ([#242](https://github.com/LambdAurora/LambDynamicLights/pull/242)).\n\n### 3.1.1\n\n- Fixed in-world item light source data reload not applying.\n\n### 3.1.2\n\n- Added base light of 8 to allays.\n- Fixed dynamic lighting of various projectiles.\n- Fixed water-sensitive items lighting up underwater while they shouldn't.\n\n### 3.1.3\n\n- Fixed item frames and other \"block-attached\" entities not ticking properly on the integrated server.\n\n### 3.1.4\n\n- Added support for Trinkets and Accessories.\n\n## 3.2.x\n\n- Improved settings GUI, especially the entity dynamic light sources list.\n- Tweaked the new dynamic lighting engine introduced in 3.1.0.\n- Updated Estonian translations ([#243](https://github.com/LambdAurora/LambDynamicLights/pull/243)).\n\n## 4.0.0\n\n- Added the ability to define entity light sources in resource packs.\n  - Please refer yourself to the documentation for more details.\n- Added display entities dynamic lighting ([#209](https://github.com/LambdAurora/LambDynamicLights/issues/209)).\n  - This affects both block and item displays.\n  - If a custom brightness is defined then dynamic lighting disables itself.\n- Added a new API to define fully custom dynamic lighting of varying shapes.\n  - Added dynamic lighting to Beacon beams ([#115]).\n  - Added dynamic lighting to End Gateway beams ([#115]).\n  - Added dynamic lighting to Guardian lasers ([#115]).\n- Added debug settings and renderers to facilitate debugging.\n  - Added a debug renderer of active dynamic lighting cells.\n  - Added a debug renderer to display chunk rebuilds.\n  - Added a debug renderer of dynamic light levels.\n  - Added a debug renderer of display the bounding boxes of custom dynamic light sources.\n- Updated the data displayed in the F3 HUD to show more information about dynamic lighting.\n- Refactored heavily the ticking of entity dynamic lighting to make it more abstract.\n- Refactored heavily how chunk rebuilds are queued and how dynamic light sources are represented.\n- Fixed API publication for loom-based setups.\n- Added Upside-down English translations ([#254](https://github.com/LambdAurora/LambDynamicLights/pull/254)).\n- Updated Dutch translations ([#252](https://github.com/LambdAurora/LambDynamicLights/pull/252)).\n- Updated German translations ([#253](https://github.com/LambdAurora/LambDynamicLights/pull/253)).\n- Updated Italian translations ([#255](https://github.com/LambdAurora/LambDynamicLights/pull/255)).\n\n### 4.0.1\n\n- Added Malay and Malay (Jawi) translations ([#256](https://github.com/LambdAurora/LambDynamicLights/pull/256)).\n- Fixed Upside-down English translations ([#257](https://github.com/LambdAurora/LambDynamicLights/pull/257)).\n- Fixed custom dynamic light sources sometimes not updating previously lit chunks.\n\n### 4.0.2\n\n- Improved loading/saving of the configuration file, this should significantly reduce corruption issues.\n  - If the file still somehow corrupts, now the file is backed up and a default configuration is loaded instead.\n- Added support for Curios. This is only relevant with Sinytra Connector or forks.\n- Fixed entity dynamic light sources not being saved and loaded at/from the right path in the configuration.\n- Fixed throwable item projectiles with the `Item` property set not emitting light if the item emits light ([#265](https://github.com/LambdAurora/LambDynamicLights/issues/265)).\n- Updated Traditional Chinese translations ([#261](https://github.com/LambdAurora/LambDynamicLights/pull/261)).\n- Updated Turkish translations ([#263](https://github.com/LambdAurora/LambDynamicLights/pull/263)).\n- Updated Simplified Chinese translations ([#264](https://github.com/LambdAurora/LambDynamicLights/pull/264)).\n\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2025-03-15T22:40:28.38414Z",
-    "downloads": 10293,
+    "downloads": 10300,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1409,15 +1410,15 @@
     "changelog": "- Added Malay and Malay (Jawi) translations ([#256](https://github.com/LambdAurora/LambDynamicLights/pull/256)).\n- Fixed Upside-down English translations ([#257](https://github.com/LambdAurora/LambDynamicLights/pull/257)).\n- Fixed custom dynamic light sources sometimes not updating previously lit chunks.\n",
     "changelog_url": null,
     "date_published": "2024-12-10T23:24:32.773168Z",
-    "downloads": 923730,
+    "downloads": 923975,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ed8be22ea4099749a305aa59f86f112acd45e02f1e8b34e012e55666b3d03e385dbecc74fbb11209cb41bed16743834dafbb46676771e7f7e8697fed83d590a8",
-          "sha1": "25164bd8de975951a75ff848080fbdd5177f0238"
+          "sha1": "25164bd8de975951a75ff848080fbdd5177f0238",
+          "sha512": "ed8be22ea4099749a305aa59f86f112acd45e02f1e8b34e012e55666b3d03e385dbecc74fbb11209cb41bed16743834dafbb46676771e7f7e8697fed83d590a8"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/YgZzYuBw/lambdynamiclights-4.0.1%2B1.21.4.jar",
         "filename": "lambdynamiclights-4.0.1+1.21.4.jar",
@@ -1464,7 +1465,7 @@
     "changelog": "- Added the ability to define entity light sources in resource packs.\n  - Please refer yourself to the documentation for more details.\n- Added display entities dynamic lighting ([#209](https://github.com/LambdAurora/LambDynamicLights/issues/209)).\n  - This affects both block and item displays.\n  - If a custom brightness is defined then dynamic lighting disables itself.\n- Added a new API to define fully custom dynamic lighting of varying shapes.\n  - Added dynamic lighting to Beacon beams ([#115]).\n  - Added dynamic lighting to End Gateway beams ([#115]).\n  - Added dynamic lighting to Guardian lasers ([#115]).\n- Added debug settings and renderers to facilitate debugging.\n  - Added a debug renderer of active dynamic lighting cells.\n  - Added a debug renderer to display chunk rebuilds.\n  - Added a debug renderer of dynamic light levels.\n  - Added a debug renderer of display the bounding boxes of custom dynamic light sources.\n- Updated the data displayed in the F3 HUD to show more information about dynamic lighting.\n- Refactored heavily the ticking of entity dynamic lighting to make it more abstract.\n- Refactored heavily how chunk rebuilds are queued and how dynamic light sources are represented.\n- Fixed API publication for loom-based setups.\n- Added Upside-down English translations ([#254](https://github.com/LambdAurora/LambDynamicLights/pull/254)).\n- Updated Dutch translations ([#252](https://github.com/LambdAurora/LambDynamicLights/pull/252)).\n- Updated German translations ([#253](https://github.com/LambdAurora/LambDynamicLights/pull/253)).\n- Updated Italian translations ([#255](https://github.com/LambdAurora/LambDynamicLights/pull/255)).\n- Updated [SpruceUI].\n",
     "changelog_url": null,
     "date_published": "2024-12-03T17:32:18.099838Z",
-    "downloads": 79884,
+    "downloads": 79900,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1484,12 +1485,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
@@ -1499,6 +1494,12 @@
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "reCfnRvJ",
+        "file_name": null,
+        "dependency_type": "incompatible"
       }
     ]
   },
@@ -1520,15 +1521,15 @@
     "changelog": "- Same changes as v3.1.4 but for 1.21.3.\n- Added support for Trinkets and Accessories.\n",
     "changelog_url": null,
     "date_published": "2024-11-29T23:40:25.316751Z",
-    "downloads": 115109,
+    "downloads": 115154,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fc0ea80ccdd75bf8ae099129992ef225afbbd5ae6406366ec1c6bf77bde659851314daf81cc2fe8ca7217bd1e6aea5d6698570ffb97e7da9e05a01447c2b30fc",
-          "sha1": "0b8e91d7ceaaf21a309338efff3f43fc059e583c"
+          "sha1": "0b8e91d7ceaaf21a309338efff3f43fc059e583c",
+          "sha512": "fc0ea80ccdd75bf8ae099129992ef225afbbd5ae6406366ec1c6bf77bde659851314daf81cc2fe8ca7217bd1e6aea5d6698570ffb97e7da9e05a01447c2b30fc"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/7kUVMXJG/lambdynamiclights-3.2.4%2B1.21.3.jar",
         "filename": "lambdynamiclights-3.2.4+1.21.3.jar",
@@ -1576,7 +1577,7 @@
     "changelog": "- Added support for Trinkets and Accessories.\n",
     "changelog_url": null,
     "date_published": "2024-11-29T23:33:38.794984Z",
-    "downloads": 1235500,
+    "downloads": 1235979,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1596,12 +1597,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
@@ -1609,6 +1604,12 @@
       {
         "version_id": null,
         "project_id": "reCfnRvJ",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       }
@@ -1652,12 +1653,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
@@ -1667,6 +1662,12 @@
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "PxQSWIcD",
+        "file_name": null,
+        "dependency_type": "incompatible"
       }
     ]
   },
@@ -1688,15 +1689,15 @@
     "changelog": "- Fixed item frames and other \"block-attached\" entities not ticking properly on the integrated server.\n",
     "changelog_url": null,
     "date_published": "2024-11-25T18:41:01.971169Z",
-    "downloads": 26301,
+    "downloads": 26303,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5249ba3f8cefd246acdbf8a58a63bc634bb7ef8b3a159806b4562191d2c091c4cdcc70a458fc0c9374487c9f60353407a69edb7a346e2db677bf8e09656aa9c4",
-          "sha1": "c0114a6cbd30d1bd7dec90999cbda8ce1ffb1085"
+          "sha1": "c0114a6cbd30d1bd7dec90999cbda8ce1ffb1085",
+          "sha512": "5249ba3f8cefd246acdbf8a58a63bc634bb7ef8b3a159806b4562191d2c091c4cdcc70a458fc0c9374487c9f60353407a69edb7a346e2db677bf8e09656aa9c4"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/iIqUfRsC/lambdynamiclights-3.1.3%2B1.21.1.jar",
         "filename": "lambdynamiclights-3.1.3+1.21.1.jar",
@@ -1744,15 +1745,15 @@
     "changelog": "- Same changes as v3.1.2 but for 1.21.3.\n- Fixed dynamic lighting of various projectiles.\n- Fixed water-sensitive items lighting up underwater while they shouldn't.\n",
     "changelog_url": null,
     "date_published": "2024-10-28T20:08:38.322093Z",
-    "downloads": 183172,
+    "downloads": 183186,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "bf22a0efd39621b7354d2f5eb2bacc77da03409a",
-          "sha512": "6aebe299b59d126c954688796ed22d77617e0971056f9e281e5218ba109bc7f0e372f4762420bc92d16e4cad0cf351f9d39d13c0822ce20f1f9e87eac4f0e93c"
+          "sha512": "6aebe299b59d126c954688796ed22d77617e0971056f9e281e5218ba109bc7f0e372f4762420bc92d16e4cad0cf351f9d39d13c0822ce20f1f9e87eac4f0e93c",
+          "sha1": "bf22a0efd39621b7354d2f5eb2bacc77da03409a"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/EUvC0Bde/lambdynamiclights-3.2.2%2B1.21.3.jar",
         "filename": "lambdynamiclights-3.2.2+1.21.3.jar",
@@ -1764,6 +1765,12 @@
     "dependencies": [
       {
         "version_id": null,
+        "project_id": "PxQSWIcD",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
@@ -1771,12 +1778,6 @@
       {
         "version_id": null,
         "project_id": "reCfnRvJ",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
-        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       }
@@ -1800,7 +1801,7 @@
     "changelog": "- Added base light of 8 to allays.\n- Fixed dynamic lighting of various projectiles.\n- Fixed water-sensitive items lighting up underwater while they shouldn't.\n",
     "changelog_url": null,
     "date_published": "2024-10-28T19:46:23.6909Z",
-    "downloads": 210732,
+    "downloads": 210782,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1826,13 +1827,13 @@
       },
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
+        "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
       },
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
+        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       }
@@ -1912,15 +1913,15 @@
     "changelog": "- Fixed in-world item light source data reload not applying.\n",
     "changelog_url": null,
     "date_published": "2024-10-23T17:20:19.396361Z",
-    "downloads": 44269,
+    "downloads": 44293,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0a5b1af2fa2e40fd16300e42d39b736399d3010b6fd169411f94d6357172ee6d1cc4a559ba179b88b1b02e31d3ef24802729bec5c14eeade39d44a56b9580a81",
-          "sha1": "f54a3f3124f89c2d20007c0c6321586f856a059b"
+          "sha1": "f54a3f3124f89c2d20007c0c6321586f856a059b",
+          "sha512": "0a5b1af2fa2e40fd16300e42d39b736399d3010b6fd169411f94d6357172ee6d1cc4a559ba179b88b1b02e31d3ef24802729bec5c14eeade39d44a56b9580a81"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/49xc9xjf/lambdynamiclights-3.1.1%2B1.21.1.jar",
         "filename": "lambdynamiclights-3.1.1+1.21.1.jar",
@@ -1932,15 +1933,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       },
       {
         "version_id": null,
@@ -1968,15 +1969,15 @@
     "changelog": "- Updated to Minecraft 1.21.2.\n- Added base light of 8 to allays.\n- Improved settings GUI, especially the entity dynamic light sources list.\n- Tweaked the new dynamic lighting engine introduced in 3.1.0.\n- Updated Estonian translations ([#243](https://github.com/LambdAurora/LambDynamicLights/pull/243)).\n- Updated [SpruceUI].\n",
     "changelog_url": null,
     "date_published": "2024-10-22T21:20:45.98707Z",
-    "downloads": 17882,
+    "downloads": 17888,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "472640e8b07e7597496a2e298fb8c5922eb87ca7c3bee50f9e1001af0de9cd9fc4f592711759dcda56feabb7b922677f7189c764f81a73b52c7224e7ab31caa1",
-          "sha1": "2b364ecf08a004fc296a270d370a6c55e221571e"
+          "sha1": "2b364ecf08a004fc296a270d370a6c55e221571e",
+          "sha512": "472640e8b07e7597496a2e298fb8c5922eb87ca7c3bee50f9e1001af0de9cd9fc4f592711759dcda56feabb7b922677f7189c764f81a73b52c7224e7ab31caa1"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/ZOQT3Gug/lambdynamiclights-3.2.0%2B1.21.2.jar",
         "filename": "lambdynamiclights-3.2.0+1.21.2.jar",
@@ -1988,12 +1989,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
@@ -2003,6 +1998,12 @@
         "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -2024,7 +2025,7 @@
     "changelog": "- Improved general performances, especially in worst-case scenarios.\n- Added support for falling block entities ([#93](https://github.com/LambdAurora/LambDynamicLights/issues/93)).\n- Added settings access in Sodium.\n- Updated Simplified Chinese translations ([#242](https://github.com/LambdAurora/LambDynamicLights/pull/242)).\n",
     "changelog_url": null,
     "date_published": "2024-10-22T17:14:07.256854Z",
-    "downloads": 4863,
+    "downloads": 4864,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2080,15 +2081,15 @@
     "changelog": "- Fixed crash due to Mixin plugin ([#239](https://github.com/LambdAurora/LambDynamicLights/issues/239)).\n\nFor more information, see [the announcement](https://lambdaurora.dev/blog/2024/10/lambdynamiclights_3.0.0.html).",
     "changelog_url": null,
     "date_published": "2024-10-09T22:12:07.826288Z",
-    "downloads": 142150,
+    "downloads": 142197,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fe234d02552ad46d9d020c2518ded064356b2215288abff66d3671f40110c270b84d91bca03d01f7dedf4dd6a93b853f2b1217bbbb36a7001a90c66c5b65f580",
-          "sha1": "2192332f4d72a8b31a1635f7ddfaa1bb27156a56"
+          "sha1": "2192332f4d72a8b31a1635f7ddfaa1bb27156a56",
+          "sha512": "fe234d02552ad46d9d020c2518ded064356b2215288abff66d3671f40110c270b84d91bca03d01f7dedf4dd6a93b853f2b1217bbbb36a7001a90c66c5b65f580"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/jMgX3AR4/lambdynamiclights-3.0.1%2B1.21.1.jar",
         "filename": "lambdynamiclights-3.0.1+1.21.1.jar",
@@ -2100,15 +2101,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "PxQSWIcD",
+        "file_name": null,
+        "dependency_type": "incompatible"
       },
       {
         "version_id": null,
@@ -2136,15 +2137,15 @@
     "changelog": "- Changed how item light sources are defined in resource packs:\n  - Now item light sources support a wide-range of selection predicates thanks to data-driven improvements in the base game.\n    - This means enchanted items can now selectively light up, this should mostly address ([#89](https://github.com/LambdAurora/LambDynamicLights/issues/89)).\n  - Please refer yourself to the documentation for more details.\n- Updated to Minecraft 1.21 ([#227](https://github.com/LambdAurora/LambDynamicLights/pull/227)).\n- Updated configuration library.\n  - Configuration corruption should now be fixed.\n- Updated Mexican Spanish translations ([#214](https://github.com/LambdAurora/LambDynamicLights/pull/214)).\n- Updated Italian translations ([#232](https://github.com/LambdAurora/LambDynamicLights/pull/232)).\n- Updated Polish translations ([#235](https://github.com/LambdAurora/LambDynamicLights/pull/235)).\n- Removed block entity lighting as the use-case was extremely niche.\n  - This may be re-introduced if a valid use-case is found.\n- Switched license to [Lambda License](https://github.com/LambdAurora/LambDynamicLights/blob/bbefb8860bca2e797f8a2ba8a59d1120b6e1c7b4/LICENSE).\n\nFor more information, see [the announcement](https://lambdaurora.dev/blog/2024/10/lambdynamiclights_3.0.0.html).",
     "changelog_url": null,
     "date_published": "2024-10-09T20:02:11.441013Z",
-    "downloads": 4809,
+    "downloads": 4815,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3a4c5e20628203465bd01bf5ffe272e949bc044b",
-          "sha512": "52a29965083ffbfe04292db95fcbf3eef39af8589091856fc334f031fbfd788c433a83fdd33a3f9c2b9c7c12785516f2f9d18da3882437bf09bc0cb31e7b92b5"
+          "sha512": "52a29965083ffbfe04292db95fcbf3eef39af8589091856fc334f031fbfd788c433a83fdd33a3f9c2b9c7c12785516f2f9d18da3882437bf09bc0cb31e7b92b5",
+          "sha1": "3a4c5e20628203465bd01bf5ffe272e949bc044b"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/TrEFTjdL/lambdynamiclights-3.0.0%2B1.21.1.jar",
         "filename": "lambdynamiclights-3.0.0+1.21.1.jar",
@@ -2192,15 +2193,15 @@
     "changelog": "- Added Indonesian translations ([#203](https://github.com/LambdAurora/LambDynamicLights/pull/203)).\n- Updated Ukrainian translations ([#195](https://github.com/LambdAurora/LambDynamicLights/pull/195)).\n- Updated to Minecraft 1.20.4 ([#202](https://github.com/LambdAurora/LambDynamicLights/pull/202)).\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2024-02-05T22:31:23.523731Z",
-    "downloads": 1022838,
+    "downloads": 1023243,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "fe30491cf6f94c9672aa8a3941231773349268da7e06108d98e43f59d9c0323cbb5cebd9fabfde52bcd01dd061a4ffb2a69e02f8203aeb13f8a7fd4e8d0a3cdb",
-          "sha1": "b44b10647f170732825b28d8ff44735ae31e3837"
+          "sha1": "b44b10647f170732825b28d8ff44735ae31e3837",
+          "sha512": "fe30491cf6f94c9672aa8a3941231773349268da7e06108d98e43f59d9c0323cbb5cebd9fabfde52bcd01dd061a4ffb2a69e02f8203aeb13f8a7fd4e8d0a3cdb"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/mrQ8ZiyU/lambdynamiclights-2.3.4%2B1.20.4.jar",
         "filename": "lambdynamiclights-2.3.4+1.20.4.jar",
@@ -2218,15 +2219,15 @@
       },
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "PxQSWIcD",
+        "file_name": null,
+        "dependency_type": "incompatible"
       }
     ]
   },
@@ -2247,7 +2248,7 @@
     "changelog": "- Added Japanese translations ([#187](https://github.com/LambdAurora/LambDynamicLights/pull/187)).\n- Updated to Minecraft 1.20.2 ([#194](https://github.com/LambdAurora/LambDynamicLights/pull/194)).\n  - Fixed settings screen crash ([#186](https://github.com/LambdAurora/LambDynamicLights/issues/186)).\n- Fixed usage of the Fabric mod identifier ([#188](https://github.com/LambdAurora/LambDynamicLights/issues/188)).\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2023-11-11T11:53:21.878502Z",
-    "downloads": 316549,
+    "downloads": 316603,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2303,7 +2304,7 @@
     "changelog": "- Fixed Fabric API (Indigo Renderer) compatibility\n  (by [#182](https://github.com/LambdAurora/LambDynamicLights/pull/182),\n  issue [#172](https://github.com/LambdAurora/LambDynamicLights/issues/172)).\n- Fixed [Sodium] compatibility\n  (by [#178](https://github.com/LambdAurora/LambDynamicLights/pull/178), \n  issue [#175](https://github.com/LambdAurora/LambDynamicLights/issues/175)).\n- Fixed Minecraft version restriction.\n- Cleaned up some item light source code.\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2023-09-11T15:15:54.320276Z",
-    "downloads": 5552263,
+    "downloads": 5556618,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2358,15 +2359,15 @@
     "changelog": " - Fixed ATLauncher configuration somehow ([#152](https://github.com/LambdAurora/LambDynamicLights/pull/152)).\n - Updated to Minecraft 1.20 ([#156](https://github.com/LambdAurora/LambDynamicLights/pull/156)).\n - Updated [SpruceUI].\n - Updated night config.\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2023-06-20T00:16:18.45055Z",
-    "downloads": 479752,
+    "downloads": 479863,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "bb009883b87e45f069e83d44f2e6d559eee757e4",
-          "sha512": "ad06dd1057c01586a3f46cc0efb92f74c8f4f6781aabf44a3f4a2d1581c4ecf7eeb837e7c850deed03e07ee8381076bdde653b44998df82fe1df6654abdef69d"
+          "sha512": "ad06dd1057c01586a3f46cc0efb92f74c8f4f6781aabf44a3f4a2d1581c4ecf7eeb837e7c850deed03e07ee8381076bdde653b44998df82fe1df6654abdef69d",
+          "sha1": "bb009883b87e45f069e83d44f2e6d559eee757e4"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/Vsx4I8Np/lambdynamiclights-2.3.1%2B1.20.1.jar",
         "filename": "lambdynamiclights-2.3.1+1.20.1.jar",
@@ -2378,12 +2379,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
@@ -2391,6 +2386,12 @@
       {
         "version_id": null,
         "project_id": "reCfnRvJ",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       }
@@ -2413,15 +2414,15 @@
     "changelog": " - Fixed ATLauncher configuration somehow ([#152](https://github.com/LambdAurora/LambDynamicLights/pull/152)).\n - Updated night config.\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2023-06-19T23:49:21.963225Z",
-    "downloads": 153039,
+    "downloads": 153133,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "615407f4a51d7af6ceb34e4f708d07ec79d44ef5",
-          "sha512": "36367444be19ba28c5f6a8907d50eb172a5228f1b240f318a806ee15b03a9d6913b5335537200285ce1a5fbf6dd89e5399db6d6256bb9f45d17c26d431cc7c75"
+          "sha512": "36367444be19ba28c5f6a8907d50eb172a5228f1b240f318a806ee15b03a9d6913b5335537200285ce1a5fbf6dd89e5399db6d6256bb9f45d17c26d431cc7c75",
+          "sha1": "615407f4a51d7af6ceb34e4f708d07ec79d44ef5"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/85Jaf9ic/lambdynamiclights-2.3.1%2B1.19.4.jar",
         "filename": "lambdynamiclights-2.3.1+1.19.4.jar",
@@ -2468,15 +2469,15 @@
     "changelog": " - Added Traditional Chinese translations ([#142](https://github.com/LambdAurora/LambDynamicLights/pull/142)).\n - Updated Brazilian Portuguese translations ([#135](https://github.com/LambdAurora/LambDynamicLights/pull/135)).\n - Updated Simplified Chinese translations ([#133](https://github.com/LambdAurora/LambDynamicLights/pull/133)).\n - Updated to Minecraft 1.19.4 ([#144](https://github.com/LambdAurora/LambDynamicLights/pull/144)).\n - Updated [SpruceUI].\n - Updated [pridelib].\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2023-03-29T17:17:44.559001Z",
-    "downloads": 171082,
+    "downloads": 171134,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f6e1621f9ee31263919b75af6d6851089c355b02",
-          "sha512": "4b51218260e3e9a1500308e9525d9297daf0c5184219d35fe96ce527c30215d135b25b2df4baf4fa3117f1dd7b0f76cf7a9f535f65e3238fc0f28d251a30b71a"
+          "sha512": "4b51218260e3e9a1500308e9525d9297daf0c5184219d35fe96ce527c30215d135b25b2df4baf4fa3117f1dd7b0f76cf7a9f535f65e3238fc0f28d251a30b71a",
+          "sha1": "f6e1621f9ee31263919b75af6d6851089c355b02"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/7Cx8p05b/lambdynamiclights-2.3.0%2B1.19.4.jar",
         "filename": "lambdynamiclights-2.3.0+1.19.4.jar",
@@ -2488,12 +2489,6 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
@@ -2503,6 +2498,12 @@
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "reCfnRvJ",
+        "file_name": null,
+        "dependency_type": "incompatible"
       }
     ]
   },
@@ -2523,15 +2524,15 @@
     "changelog": " - Updated to Minecraft 1.19.3 ([#131](https://github.com/LambdAurora/LambDynamicLights/pull/131)).\n - Added option to disable self dynamic lighting.\n - Updated Russian translations ([#116](https://github.com/LambdAurora/LambDynamicLights/pull/116), [#121](https://github.com/LambdAurora/LambDynamicLights/pull/121)).\n - Added Ukrainian translations ([#120](https://github.com/LambdAurora/LambDynamicLights/pull/120)).\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2022-12-23T22:03:25.469584Z",
-    "downloads": 105506,
+    "downloads": 105522,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "99d55d20f77cf13221601a109b35371563975187",
-          "sha512": "03afe5064a33662bdad5bc265ccdef79ed6e2b105f2cb1b72806724896aba814412f8814e81ff0f57a091c39435916b9cd022d8d59c3cc0633ea9f04cd726846"
+          "sha512": "03afe5064a33662bdad5bc265ccdef79ed6e2b105f2cb1b72806724896aba814412f8814e81ff0f57a091c39435916b9cd022d8d59c3cc0633ea9f04cd726846",
+          "sha1": "99d55d20f77cf13221601a109b35371563975187"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/9E1ECN95/lambdynamiclights-2.2.0%2B1.19.3.jar",
         "filename": "lambdynamiclights-2.2.0+1.19.3.jar",
@@ -2549,15 +2550,15 @@
       },
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "reCfnRvJ",
+        "file_name": null,
+        "dependency_type": "incompatible"
       }
     ]
   },
@@ -2580,7 +2581,7 @@
     "changelog": " - Added option to disable self dynamic lighting.\n - Updated Russian translations ([#116](https://github.com/LambdAurora/LambDynamicLights/pull/116), [#121](https://github.com/LambdAurora/LambDynamicLights/pull/121)).\n - Added Ukrainian translations ([#120](https://github.com/LambdAurora/LambDynamicLights/pull/120)).\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2022-12-23T21:29:51.667743Z",
-    "downloads": 903817,
+    "downloads": 904279,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2606,15 +2607,15 @@
       },
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
-      },
-      {
-        "version_id": null,
         "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
       }
     ]
   },
@@ -2637,7 +2638,7 @@
     "changelog": " - Fixed dependencies declaration.\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[pridelib]: https://github.com/Queerbric/pridelib \"Pridelib page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2022-06-09T17:10:41.911152Z",
-    "downloads": 427815,
+    "downloads": 428290,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2708,15 +2709,15 @@
     "changelog": " - Added individual entity toggles ([#64](https://github.com/LambdAurora/LambDynamicLights/issues/64), [#79](https://github.com/LambdAurora/LambDynamicLights/issues/79)).\n - Optimized hot methods `maxDynamicLightLevel` and `updateTracking` ([#84](https://github.com/LambdAurora/LambDynamicLights/pull/84)).\n - Use `HashSet` for `dynamicLightSources` ([#85](https://github.com/LambdAurora/LambDynamicLights/pull/85)).\n - Cache config values for better performances ([#80](https://github.com/LambdAurora/LambDynamicLights/issues/80)).\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2021-11-30T13:52:23.157633Z",
-    "downloads": 290256,
+    "downloads": 290395,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5f1f59c0ff6d54fc7ec1d42eb347a2f6987d234c",
-          "sha512": "343cc1d595e25e1d40209bb429a29151031e784fd81b1ea594d236bd829d9078d3765af47705dc0884ba1898e1beffa1ddec24152471e501affe376b9f3b2865"
+          "sha512": "343cc1d595e25e1d40209bb429a29151031e784fd81b1ea594d236bd829d9078d3765af47705dc0884ba1898e1beffa1ddec24152471e501affe376b9f3b2865",
+          "sha1": "5f1f59c0ff6d54fc7ec1d42eb347a2f6987d234c"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/2.1.0%2B1.17/lambdynamiclights-2.1.0%2B1.17.jar",
         "filename": "lambdynamiclights-2.1.0+1.17.jar",
@@ -2734,13 +2735,13 @@
       },
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
+        "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
       },
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
+        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       }
@@ -2774,8 +2775,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9a3d6dafb7a066cbc3fd7fd1e34a3c0e3544a2c8",
-          "sha512": "87b5a08e007c2fa387ca58c866e2c6db6d1335a8c7878d2c5a2c1df4058db3aeab99bdb214b28fa7e77b6094b7c3ab5c37370195696154ccb4ba1c1411468308"
+          "sha512": "87b5a08e007c2fa387ca58c866e2c6db6d1335a8c7878d2c5a2c1df4058db3aeab99bdb214b28fa7e77b6094b7c3ab5c37370195696154ccb4ba1c1411468308",
+          "sha1": "9a3d6dafb7a066cbc3fd7fd1e34a3c0e3544a2c8"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/2.0.2%2B1.17/lambdynamiclights-2.0.2%2B1.17.jar",
         "filename": "lambdynamiclights-2.0.2+1.17.jar",
@@ -2787,13 +2788,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
+        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       },
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
+        "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
       },
@@ -2822,7 +2823,7 @@
     "changelog": " - Fixed mixin warnings ([#65](https://github.com/LambdAurora/LambDynamicLights/issues/65)).\n - Removed any usage of a library.\n - Updated [SpruceUI].\n\n[Canvas Renderer]: https://www.curseforge.com/minecraft/mc-mods/canvas-renderer \"Canvas Renderer CurseForge page\"\n[Sodium]: https://modrinth.com/mod/sodium \"Sodium Modrinth page\"\n[SpruceUI]: https://github.com/LambdAurora/SpruceUI \"SpruceUI page\"",
     "changelog_url": null,
     "date_published": "2021-06-12T09:09:02.655854Z",
-    "downloads": 5361,
+    "downloads": 5362,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2848,13 +2849,13 @@
       },
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
+        "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
       },
       {
         "version_id": null,
-        "project_id": "PxQSWIcD",
+        "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
       }
@@ -2933,7 +2934,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2021-01-18T14:22:47.425282Z",
-    "downloads": 156480,
+    "downloads": 156630,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2953,15 +2954,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "reCfnRvJ",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "reCfnRvJ",
+        "file_name": null,
+        "dependency_type": "incompatible"
       },
       {
         "version_id": null,
@@ -2997,8 +2998,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b9e726835cc50f1221b4eb0d9480f16cf0ce94ad",
-          "sha512": "9708bd1c0a7b6cefeaa08c8e83dc6c33faf5a4920972b843d0e3118ef831ff098c77d1f582e05a6d4aaaf098cb73a8915226bae0bad0a3618723c3fcd834291d"
+          "sha512": "9708bd1c0a7b6cefeaa08c8e83dc6c33faf5a4920972b843d0e3118ef831ff098c77d1f582e05a6d4aaaf098cb73a8915226bae0bad0a3618723c3fcd834291d",
+          "sha1": "b9e726835cc50f1221b4eb0d9480f16cf0ce94ad"
         },
         "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/1.3.3%2B1.16/lambdynamiclights-fabric-1.3.3%2B1.16.jar",
         "filename": "lambdynamiclights-fabric-1.3.3+1.16.jar",
@@ -3046,7 +3047,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2020-12-21T15:59:13.582877Z",
-    "downloads": 1765,
+    "downloads": 1766,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3066,6 +3067,12 @@
     "dependencies": [
       {
         "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
         "project_id": "PxQSWIcD",
         "file_name": null,
         "dependency_type": "incompatible"
@@ -3075,12 +3082,6 @@
         "project_id": "reCfnRvJ",
         "file_name": null,
         "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
-        "project_id": "P7dR8mSH",
-        "file_name": null,
-        "dependency_type": "required"
       }
     ]
   }

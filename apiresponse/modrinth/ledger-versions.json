@@ -16,15 +16,15 @@
     "changelog": "## What's Changed\r\n* Update to 1.21.6 by @DrexHD in https://github.com/QuiltServerTools/Ledger/pull/328\r\n\r\n\r\n**Full Changelog**: https://github.com/QuiltServerTools/Ledger/compare/1.3.11...1.3.12",
     "changelog_url": null,
     "date_published": "2025-06-21T00:10:22.912605Z",
-    "downloads": 468,
+    "downloads": 498,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f92e67f549abb7cd82f5cd2ade1830b50c312673b95ee4ae73bb455f9fe4b61442f90eb30b6515f16260945ca8f5dcf63a9728959bb5b454b3d59485a5ea29be",
-          "sha1": "b5c3f87d200ff89c1486d014ffdc420d9d8e865d"
+          "sha1": "b5c3f87d200ff89c1486d014ffdc420d9d8e865d",
+          "sha512": "f92e67f549abb7cd82f5cd2ade1830b50c312673b95ee4ae73bb455f9fe4b61442f90eb30b6515f16260945ca8f5dcf63a9728959bb5b454b3d59485a5ea29be"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/f3h7no4G/ledger-1.3.12.jar",
         "filename": "ledger-1.3.12.jar",
@@ -71,7 +71,7 @@
     "changelog": "## What's Changed\n* Fix logging of dropped items by @unsigned-32-bit-integer in https://github.com/QuiltServerTools/Ledger/pull/321\n* Feature/add entity mount and dismount actions by @krazzbeluh in https://github.com/QuiltServerTools/Ledger/pull/318\n* Remove lookup joins by @DrexHD in https://github.com/QuiltServerTools/Ledger/pull/327\n\n## New Contributors\n* @krazzbeluh made their first contribution in https://github.com/QuiltServerTools/Ledger/pull/318\n\n**Full Changelog**: https://github.com/QuiltServerTools/Ledger/compare/1.3.10...1.3.11",
     "changelog_url": null,
     "date_published": "2025-06-19T23:44:13.869911Z",
-    "downloads": 357,
+    "downloads": 375,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -97,15 +97,15 @@
       },
       {
         "version_id": null,
-        "project_id": "MLYQ9VGP",
-        "file_name": null,
-        "dependency_type": "incompatible"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "MLYQ9VGP",
+        "file_name": null,
+        "dependency_type": "incompatible"
       }
     ]
   },
@@ -126,15 +126,15 @@
     "changelog": "- Fix doublechest logging in 1.3.8 for 1.21.4",
     "changelog_url": null,
     "date_published": "2025-04-13T00:48:46.132017Z",
-    "downloads": 2803,
+    "downloads": 2819,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "2e099be8f9661590e5fee6ea93d8624a1a570972623ef8b327d9cc325d52f3e30862b16b3a4f3fb974332e89f6e2bb217f5231f9371a7e96f808e83cfc380f4d",
-          "sha1": "05a63b78cb31ac588883d1b47b16e3ea34b48507"
+          "sha1": "05a63b78cb31ac588883d1b47b16e3ea34b48507",
+          "sha512": "2e099be8f9661590e5fee6ea93d8624a1a570972623ef8b327d9cc325d52f3e30862b16b3a4f3fb974332e89f6e2bb217f5231f9371a7e96f808e83cfc380f4d"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/pzDwE16E/ledger-1.3.7-fix.jar",
         "filename": "ledger-1.3.7-fix.jar",
@@ -146,9 +146,9 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "P7dR8mSH",
+        "project_id": "MLYQ9VGP",
         "file_name": null,
-        "dependency_type": "required"
+        "dependency_type": "incompatible"
       },
       {
         "version_id": null,
@@ -158,9 +158,9 @@
       },
       {
         "version_id": null,
-        "project_id": "MLYQ9VGP",
+        "project_id": "P7dR8mSH",
         "file_name": null,
-        "dependency_type": "incompatible"
+        "dependency_type": "required"
       }
     ]
   },
@@ -243,8 +243,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1fa0c017e8520eadfcaf15d457ce037ebe20c509c9dc91a8d5e812a14262178064fcc0083a0dd91e83af78b80ba1c349d7d1fa65f5c090beca53ae369b8a3448",
-          "sha1": "e6545d06681c131a5ffac0210004ad10a11e8b2a"
+          "sha1": "e6545d06681c131a5ffac0210004ad10a11e8b2a",
+          "sha512": "1fa0c017e8520eadfcaf15d457ce037ebe20c509c9dc91a8d5e812a14262178064fcc0083a0dd91e83af78b80ba1c349d7d1fa65f5c090beca53ae369b8a3448"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/cyKd32dm/ledger-1.3.9.jar",
         "filename": "ledger-1.3.9.jar",
@@ -300,8 +300,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "dac2d05d2b114100fa273b7ff4a233a00f8dcb1f2af36d8376bbaba0c11ece2f583eeffd79c660f82d8f8291035ff1852d647dc85536276b6e306fe67bd8cbe3",
-          "sha1": "23a52f51deebfd27f839e6ea08362ff86733080a"
+          "sha1": "23a52f51deebfd27f839e6ea08362ff86733080a",
+          "sha512": "dac2d05d2b114100fa273b7ff4a233a00f8dcb1f2af36d8376bbaba0c11ece2f583eeffd79c660f82d8f8291035ff1852d647dc85536276b6e306fe67bd8cbe3"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/rTQMkMmp/ledger-1.3.7.jar",
         "filename": "ledger-1.3.7.jar",
@@ -355,8 +355,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1ef6d8aca04b5425777d3c10d2131b73d62b7d85d2b68d36137bdc9681f5a6666f5ec1db8b0e4b56d928fd9087eaaba32aeef4ca7aef4f692a1b6607b9023091",
-          "sha1": "4ff0e8be1c881d40b8f3629db9ecb62cf6e37606"
+          "sha1": "4ff0e8be1c881d40b8f3629db9ecb62cf6e37606",
+          "sha512": "1ef6d8aca04b5425777d3c10d2131b73d62b7d85d2b68d36137bdc9681f5a6666f5ec1db8b0e4b56d928fd9087eaaba32aeef4ca7aef4f692a1b6607b9023091"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/a6TcvEKA/ledger-1.3.7.jar",
         "filename": "ledger-1.3.7.jar",
@@ -411,8 +411,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3b26d26e75b7941f9e622f5e065135f64bdccfaddb8e89060a2f4d7df94c5e7126224249fdcc3be53a2721766d48a522e052f6611c5ff09e6d036b1c290413b8",
-          "sha1": "6d170a59ac9d6db5bb5ee2f7cdda18ef743d027a"
+          "sha1": "6d170a59ac9d6db5bb5ee2f7cdda18ef743d027a",
+          "sha512": "3b26d26e75b7941f9e622f5e065135f64bdccfaddb8e89060a2f4d7df94c5e7126224249fdcc3be53a2721766d48a522e052f6611c5ff09e6d036b1c290413b8"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/rFhmujrA/ledger-1.3.6.jar",
         "filename": "ledger-1.3.6.jar",
@@ -460,7 +460,7 @@
     "changelog": "## What's Changed\n* Enforce specific selectors on rollback / restore by @DrexHD in https://github.com/QuiltServerTools/Ledger/pull/277\n* Improve rollback / restore logic by @DrexHD in https://github.com/QuiltServerTools/Ledger/pull/278\n* Create uk_ua.json by @MeiNanziiii in https://github.com/QuiltServerTools/Ledger/pull/281\n* Fix traditional Chinese localization by @notlin4 in https://github.com/QuiltServerTools/Ledger/pull/279\n* Silverfish Infestation Logging by @TheDeathlyCow in https://github.com/QuiltServerTools/Ledger/pull/284\n* Use single threaded coroutine context for database transactions by @DrexHD in https://github.com/QuiltServerTools/Ledger/pull/282\n* Fix search packet and entity change action extra data by @DrexHD in https://github.com/QuiltServerTools/Ledger/pull/290\n* fix: Only log item changes on screen closed to make it less spam by @zly2006 in https://github.com/QuiltServerTools/Ledger/pull/275\n\n## New Contributors\n* @MeiNanziiii made their first contribution in https://github.com/QuiltServerTools/Ledger/pull/281\n* @notlin4 made their first contribution in https://github.com/QuiltServerTools/Ledger/pull/279\n* @zly2006 made their first contribution in https://github.com/QuiltServerTools/Ledger/pull/275\n\n**Full Changelog**: https://github.com/QuiltServerTools/Ledger/compare/1.3.4...1.3.5",
     "changelog_url": null,
     "date_published": "2024-11-13T19:45:18.582717Z",
-    "downloads": 6816,
+    "downloads": 6828,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -478,8 +478,8 @@
       },
       {
         "hashes": {
-          "sha512": "81ff6254b7e8963850616bcf8db42247fdbf2827e39fca2b3e93d22ba0cdfa488affd760d3f3c56e92bed98db7eb2c871b08a479f43437115cfaf77bbe3f74cf",
-          "sha1": "6ecc72333419b2de35b8028ef0e9e01bd35af7b8"
+          "sha1": "6ecc72333419b2de35b8028ef0e9e01bd35af7b8",
+          "sha512": "81ff6254b7e8963850616bcf8db42247fdbf2827e39fca2b3e93d22ba0cdfa488affd760d3f3c56e92bed98db7eb2c871b08a479f43437115cfaf77bbe3f74cf"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/t1AtqfxZ/ledger-1.3.5-dev-all.jar",
         "filename": "ledger-1.3.5-dev-all.jar",
@@ -489,8 +489,8 @@
       },
       {
         "hashes": {
-          "sha512": "82585a309f3105fe63da5be1a5a0c31db612b378d16b0bfa9562064a9f5a8e1244d86dc663f5aff585cc4b861491f19559adf71d2d479343ad25681575ca65dc",
-          "sha1": "2185fb71c928d5391e1da5af788884a2c2ce7796"
+          "sha1": "2185fb71c928d5391e1da5af788884a2c2ce7796",
+          "sha512": "82585a309f3105fe63da5be1a5a0c31db612b378d16b0bfa9562064a9f5a8e1244d86dc663f5aff585cc4b861491f19559adf71d2d479343ad25681575ca65dc"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/t1AtqfxZ/ledger-1.3.5-sources.jar",
         "filename": "ledger-1.3.5-sources.jar",
@@ -538,15 +538,15 @@
     "changelog": "## What's Changed\n* Update to 1.21\n\n\n**Full Changelog**: https://github.com/QuiltServerTools/Ledger/compare/1.3.3...1.3.4",
     "changelog_url": null,
     "date_published": "2024-06-19T21:07:39.43821Z",
-    "downloads": 9783,
+    "downloads": 9785,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "9701759b8507478ec19a8d441d884e2c5c41f7932207805e18ec1f14f17e3ff64394e31ee28d47b776730dde0c3a97ceca5f27af49d8b38d4a1577fb39351b44",
-          "sha1": "68eb5d3e992b6634efe62a0980295f9ecea210c1"
+          "sha1": "68eb5d3e992b6634efe62a0980295f9ecea210c1",
+          "sha512": "9701759b8507478ec19a8d441d884e2c5c41f7932207805e18ec1f14f17e3ff64394e31ee28d47b776730dde0c3a97ceca5f27af49d8b38d4a1577fb39351b44"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/mb29Srom/ledger-1.3.4.jar",
         "filename": "ledger-1.3.4.jar",
@@ -556,8 +556,8 @@
       },
       {
         "hashes": {
-          "sha1": "a65af07ee43ca9f07e32f444e027019671fcb312",
-          "sha512": "0b06292683af504a4ad54c71bf3fd4e3b0cb4ce1e4fb8af8cf4eb15e0dae24479870f7fa5d0c8ad79a60fe68aeed2d39e6506666fcb2238303d5166736170aab"
+          "sha512": "0b06292683af504a4ad54c71bf3fd4e3b0cb4ce1e4fb8af8cf4eb15e0dae24479870f7fa5d0c8ad79a60fe68aeed2d39e6506666fcb2238303d5166736170aab",
+          "sha1": "a65af07ee43ca9f07e32f444e027019671fcb312"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/mb29Srom/ledger-1.3.4-dev-all.jar",
         "filename": "ledger-1.3.4-dev-all.jar",
@@ -567,8 +567,8 @@
       },
       {
         "hashes": {
-          "sha512": "a9c43a81110a1ee27d2c67806cde08ec606faa5ffb3c2f83c1d8357b36de6b0cb3d90fb1d8604bcc69629838a1d16dcc93f188822a826643a5a01b6a962241a4",
-          "sha1": "b0f26409f24640065e3f9881ebbac0838e7f0eef"
+          "sha1": "b0f26409f24640065e3f9881ebbac0838e7f0eef",
+          "sha512": "a9c43a81110a1ee27d2c67806cde08ec606faa5ffb3c2f83c1d8357b36de6b0cb3d90fb1d8604bcc69629838a1d16dcc93f188822a826643a5a01b6a962241a4"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/mb29Srom/ledger-1.3.4-sources.jar",
         "filename": "ledger-1.3.4-sources.jar",
@@ -615,7 +615,7 @@
     "changelog": "## What's Changed\n* Fix itemstack count in 1.20.5 and higher by @DrexHD in https://github.com/QuiltServerTools/Ledger/pull/272\n* Update zh_tw.json by @yichifauzi in https://github.com/QuiltServerTools/Ledger/pull/268\n\n\n**Full Changelog**: https://github.com/QuiltServerTools/Ledger/compare/1.3.2...1.3.3",
     "changelog_url": null,
     "date_published": "2024-06-18T20:21:10.470582Z",
-    "downloads": 571,
+    "downloads": 572,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -644,8 +644,8 @@
       },
       {
         "hashes": {
-          "sha512": "2458be17e7e829aa7a798f58e301ae82073f15ce888b3539c291e76662a3527c6cf3809835d2dc8cc2b5e9094d4ca0074061487a5ef9711e51ef184dada9ebd3",
-          "sha1": "7ba085634ecfc0d4065d014d123f95e2dd2073a0"
+          "sha1": "7ba085634ecfc0d4065d014d123f95e2dd2073a0",
+          "sha512": "2458be17e7e829aa7a798f58e301ae82073f15ce888b3539c291e76662a3527c6cf3809835d2dc8cc2b5e9094d4ca0074061487a5ef9711e51ef184dada9ebd3"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/HXOeSdtP/ledger-1.3.3-sources.jar",
         "filename": "ledger-1.3.3-sources.jar",
@@ -692,15 +692,15 @@
     "changelog": "* Update to 1.20.6\r\n* Add Chinese Taiwan translation",
     "changelog_url": null,
     "date_published": "2024-06-01T22:37:37.184162Z",
-    "downloads": 475,
+    "downloads": 476,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e585bcff45a860f124831aaba9b0441faef8b0b5c6eb6a2a48a71f78c13002556215c3f460a41e7f0a7db51573fd46ffb40a062d3b4c12eeecbe851ae3a52da9",
-          "sha1": "aec2c4704b459ee45221e7ddd8be86e654c22e57"
+          "sha1": "aec2c4704b459ee45221e7ddd8be86e654c22e57",
+          "sha512": "e585bcff45a860f124831aaba9b0441faef8b0b5c6eb6a2a48a71f78c13002556215c3f460a41e7f0a7db51573fd46ffb40a062d3b4c12eeecbe851ae3a52da9"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/y46dYjhh/ledger-1.3.2.jar",
         "filename": "ledger-1.3.2.jar",
@@ -710,8 +710,8 @@
       },
       {
         "hashes": {
-          "sha1": "8ca086a0f6c4646a59beb0f5ddc3da3b633f4508",
-          "sha512": "22434d2a0c185f976d2d28fc75cb5f501467f6881d47748e2735ed9a75792909bc30fa45d37238af05f5f0b4798ab6c002d396213dd3efca34fa8595fd73cd04"
+          "sha512": "22434d2a0c185f976d2d28fc75cb5f501467f6881d47748e2735ed9a75792909bc30fa45d37238af05f5f0b4798ab6c002d396213dd3efca34fa8595fd73cd04",
+          "sha1": "8ca086a0f6c4646a59beb0f5ddc3da3b633f4508"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/y46dYjhh/ledger-1.3.2-dev-all.jar",
         "filename": "ledger-1.3.2-dev-all.jar",
@@ -769,7 +769,7 @@
     "changelog": "* Fixed issue with database getting locked when using SQLite\n* Added Spanish translations\n* Added config option for changing the database file location",
     "changelog_url": null,
     "date_published": "2024-05-30T18:59:31.068953Z",
-    "downloads": 1489,
+    "downloads": 1490,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -787,8 +787,8 @@
       },
       {
         "hashes": {
-          "sha512": "a6b9de51edb433a7f9a4e3cb803cd080ebf8cf5be5008a1d319372c75390b66e56c0cb0b652a0d4abdbc4d6b4984d88d760ff1b2453daa0234e0c3799b32be4d",
-          "sha1": "b0434dc3c85755f2c315b3496fd8b7391bc9c4dc"
+          "sha1": "b0434dc3c85755f2c315b3496fd8b7391bc9c4dc",
+          "sha512": "a6b9de51edb433a7f9a4e3cb803cd080ebf8cf5be5008a1d319372c75390b66e56c0cb0b652a0d4abdbc4d6b4984d88d760ff1b2453daa0234e0c3799b32be4d"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/zDjIMO8b/ledger-1.3.1-dev-all.jar",
         "filename": "ledger-1.3.1-dev-all.jar",
@@ -798,8 +798,8 @@
       },
       {
         "hashes": {
-          "sha512": "20868a3417f7c1e03ee02413befc326cb782768bdd2aa655251b05efee314b47b0c3952f2c4f52a81544f3d56a785b562747f74112e409ae9778a92d0bdcd42f",
-          "sha1": "5053dfa62a4be5022f8553bee81d4bb942f75c9f"
+          "sha1": "5053dfa62a4be5022f8553bee81d4bb942f75c9f",
+          "sha512": "20868a3417f7c1e03ee02413befc326cb782768bdd2aa655251b05efee314b47b0c3952f2c4f52a81544f3d56a785b562747f74112e409ae9778a92d0bdcd42f"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/zDjIMO8b/ledger-1.3.1-sources.jar",
         "filename": "ledger-1.3.1-sources.jar",
@@ -864,8 +864,8 @@
       },
       {
         "hashes": {
-          "sha1": "3c598f22028a4038dbc73e3ecaa197bec4e98405",
-          "sha512": "6dabc2bb4462dcc4d2e87fcf2921bf1035b9e5dfb546ae249352759c89cdf512817e45561be451612a6a587194068de2582530bd374a5f53bd44bae20f1e28b6"
+          "sha512": "6dabc2bb4462dcc4d2e87fcf2921bf1035b9e5dfb546ae249352759c89cdf512817e45561be451612a6a587194068de2582530bd374a5f53bd44bae20f1e28b6",
+          "sha1": "3c598f22028a4038dbc73e3ecaa197bec4e98405"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/8xCDy2Ry/ledger-1.3.0-dev-all.jar",
         "filename": "ledger-1.3.0-dev-all.jar",
@@ -875,8 +875,8 @@
       },
       {
         "hashes": {
-          "sha1": "7115a2715ffad8f59663714896552a2a04543f99",
-          "sha512": "3151d5ce07391e5c1f52e5ca53bd674a9f632ad309a9ebb3a3d0781bb000abb36b573e5ac578fa51e2badbd927d60f38e0974536b77498c986451b36c7117058"
+          "sha512": "3151d5ce07391e5c1f52e5ca53bd674a9f632ad309a9ebb3a3d0781bb000abb36b573e5ac578fa51e2badbd927d60f38e0974536b77498c986451b36c7117058",
+          "sha1": "7115a2715ffad8f59663714896552a2a04543f99"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/8xCDy2Ry/ledger-1.3.0-sources.jar",
         "filename": "ledger-1.3.0-sources.jar",
@@ -923,15 +923,15 @@
     "changelog": "## What's Changed\n* Update to 1.20.4 by @DrexHD in https://github.com/QuiltServerTools/Ledger/pull/235\n\n\n**Full Changelog**: https://github.com/QuiltServerTools/Ledger/compare/1.2.9...1.2.10",
     "changelog_url": null,
     "date_published": "2024-01-16T17:09:24.404016Z",
-    "downloads": 3613,
+    "downloads": 3614,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "96823116f8a6d026366041f17cd1856df4d79f6e",
-          "sha512": "81bdf38b17da1620a37f17f2a2be8dc4200fa9dd400216d69e970cb59b17c3305bd95bcb6c13b75ac001c07d022dfa101d25a7843d81cafc769bdc6901d583d9"
+          "sha512": "81bdf38b17da1620a37f17f2a2be8dc4200fa9dd400216d69e970cb59b17c3305bd95bcb6c13b75ac001c07d022dfa101d25a7843d81cafc769bdc6901d583d9",
+          "sha1": "96823116f8a6d026366041f17cd1856df4d79f6e"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/aeyvUBDY/ledger-1.2.10.jar",
         "filename": "ledger-1.2.10.jar",
@@ -941,8 +941,8 @@
       },
       {
         "hashes": {
-          "sha512": "e186fe41ff03efeeafe9dc3bb03399de8c5b017983a0b7ffdc051e57d81085ae4a328432c312a9153b6c67cfab42a986014fd94ea5dfa9b197217d143c0d8499",
-          "sha1": "7b1db0300427ba7f5219c00bf9a819a72cfc1822"
+          "sha1": "7b1db0300427ba7f5219c00bf9a819a72cfc1822",
+          "sha512": "e186fe41ff03efeeafe9dc3bb03399de8c5b017983a0b7ffdc051e57d81085ae4a328432c312a9153b6c67cfab42a986014fd94ea5dfa9b197217d143c0d8499"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/aeyvUBDY/ledger-1.2.10-dev-all.jar",
         "filename": "ledger-1.2.10-dev-all.jar",
@@ -952,8 +952,8 @@
       },
       {
         "hashes": {
-          "sha512": "e3de38d58dd088b9304c3f662e77edb7d6c8a4764e74276da04cd79249d23d02f0bd4a4ef8a6e3c91f9c5fbed6d1a9b7aea5356a8c1dc875f2f843067bb26866",
-          "sha1": "01a0e0c9f60e4bc3379d5b46f86e668c59188e53"
+          "sha1": "01a0e0c9f60e4bc3379d5b46f86e668c59188e53",
+          "sha512": "e3de38d58dd088b9304c3f662e77edb7d6c8a4764e74276da04cd79249d23d02f0bd4a4ef8a6e3c91f9c5fbed6d1a9b7aea5356a8c1dc875f2f843067bb26866"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/aeyvUBDY/ledger-1.2.10-sources.jar",
         "filename": "ledger-1.2.10-sources.jar",
@@ -1000,8 +1000,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "4aec6a70b2171dc1fec94bbb08e90ba78a92abe99b05ff29928f4968c1b5b7c111696bb9f17821f1bb0e073566f048dd72b416bcc0a121893d6c8900fca52197",
-          "sha1": "8b67c3f918dc655bada6fec3cffcb76628a21a96"
+          "sha1": "8b67c3f918dc655bada6fec3cffcb76628a21a96",
+          "sha512": "4aec6a70b2171dc1fec94bbb08e90ba78a92abe99b05ff29928f4968c1b5b7c111696bb9f17821f1bb0e073566f048dd72b416bcc0a121893d6c8900fca52197"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/8WSkA7qO/ledger-1.2.9.jar",
         "filename": "ledger-1.2.9.jar",
@@ -1029,15 +1029,15 @@
     "changelog": "## What's Changed\n* Update to 1.20 by @DrexHD\n\n**Full Changelog**: https://github.com/QuiltServerTools/Ledger/compare/v1.2.7...v1.2.8",
     "changelog_url": null,
     "date_published": "2023-06-07T22:51:47.542561Z",
-    "downloads": 77942,
+    "downloads": 78046,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8230ae7ef5495dd43b6ebc19fb212b7ffb10dc571fc586ecc7e2cc8177989daa41c102ac386d82586c83a0b48b9dba29f095ffa4b8d78e34d715e25830117f8d",
-          "sha1": "6f07421ba3fbe99086f1471c7cc8d8c7fed5dd45"
+          "sha1": "6f07421ba3fbe99086f1471c7cc8d8c7fed5dd45",
+          "sha512": "8230ae7ef5495dd43b6ebc19fb212b7ffb10dc571fc586ecc7e2cc8177989daa41c102ac386d82586c83a0b48b9dba29f095ffa4b8d78e34d715e25830117f8d"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/pOxgWfwI/ledger-1.2.8.jar",
         "filename": "ledger-1.2.8.jar",
@@ -1085,8 +1085,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c9bd99a03e004a06d8f98b93f9207d456aed41a6",
-          "sha512": "64e51555cd4d8ea7a55fd21ab47540795fddcbb19af989b37d074c4d39a85ec4e180b70a1bfa4d447b1b0ae8270a7a15604ca662db3b62aae46158419c2360a5"
+          "sha512": "64e51555cd4d8ea7a55fd21ab47540795fddcbb19af989b37d074c4d39a85ec4e180b70a1bfa4d447b1b0ae8270a7a15604ca662db3b62aae46158419c2360a5",
+          "sha1": "c9bd99a03e004a06d8f98b93f9207d456aed41a6"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/DrNDLlGK/ledger-1.2.7.jar",
         "filename": "ledger-1.2.7.jar",
@@ -1177,7 +1177,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2022-06-07T23:16:24.122907Z",
-    "downloads": 7857,
+    "downloads": 7863,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1196,14 +1196,14 @@
     ],
     "dependencies": [
       {
-        "version_id": "s10JMAtS",
-        "project_id": "Ha28R6CL",
+        "version_id": "3KmOcp6b",
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       },
       {
-        "version_id": "3KmOcp6b",
-        "project_id": "P7dR8mSH",
+        "version_id": "s10JMAtS",
+        "project_id": "Ha28R6CL",
         "file_name": null,
         "dependency_type": "required"
       }
@@ -1280,8 +1280,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1a316885522c9c78ce47a37e66dffb6fecc83a37",
-          "sha512": "61059089a6527880a60d6b4e9956cf2d090aee471872cc31cd00d8621c82906e7ea21675d7283b2f6f9d7aff0b83875df0eaca98abdea45ced87fb68a2bd2987"
+          "sha512": "61059089a6527880a60d6b4e9956cf2d090aee471872cc31cd00d8621c82906e7ea21675d7283b2f6f9d7aff0b83875df0eaca98abdea45ced87fb68a2bd2987",
+          "sha1": "1a316885522c9c78ce47a37e66dffb6fecc83a37"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/1.2.3/ledger-1.2.3.jar",
         "filename": "ledger-1.2.3.jar",
@@ -1424,8 +1424,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3844112f2d5c9078c49568c518a4c965124e149c21c62a5a1c3fb5c75d03c53947480f324bd6ebc85b76ea4c85201ae384011c9b3fcf2cc3173bbf84ac08b18e",
-          "sha1": "6a62901513292d0f65308f2706891c5d38045d2a"
+          "sha1": "6a62901513292d0f65308f2706891c5d38045d2a",
+          "sha512": "3844112f2d5c9078c49568c518a4c965124e149c21c62a5a1c3fb5c75d03c53947480f324bd6ebc85b76ea4c85201ae384011c9b3fcf2cc3173bbf84ac08b18e"
         },
         "url": "https://cdn.modrinth.com/data/LVN9ygNV/versions/1.2.0/ledger-1.2.0.jar",
         "filename": "ledger-1.2.0.jar",

@@ -16,7 +16,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.7.0+1.21.6...2.7.1+1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-22T19:54:46.773732Z",
-    "downloads": 18552,
+    "downloads": 21279,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -52,15 +52,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.6.3+1.21.5...2.6.4+1.21.5",
     "changelog_url": null,
     "date_published": "2025-06-02T21:07:55.293504Z",
-    "downloads": 221210,
+    "downloads": 226938,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "db8f916f040cb21efc395ca9e4d988f8a75f42d4",
-          "sha512": "587e93144be63a7df97e66d745fbbe4597d06cf03b723fe8fb3cf3ee98ca8d1dd155a8ffc09e46b546f1c9eccbbd33473900c5908546405e458945171024b80b"
+          "sha512": "587e93144be63a7df97e66d745fbbe4597d06cf03b723fe8fb3cf3ee98ca8d1dd155a8ffc09e46b546f1c9eccbbd33473900c5908546405e458945171024b80b",
+          "sha1": "db8f916f040cb21efc395ca9e4d988f8a75f42d4"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/8x0q8gHM/placeholder-api-2.6.4%2B1.21.5.jar",
         "filename": "placeholder-api-2.6.4+1.21.5.jar",
@@ -89,7 +89,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.6.3+1.21.5...2.7.0+1.21.6",
     "changelog_url": null,
     "date_published": "2025-06-02T21:04:45.315483Z",
-    "downloads": 19924,
+    "downloads": 20191,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -125,7 +125,7 @@
     "changelog": "## What's Changed\n* Fix objective_name_top & objective_score_top not sorted correctly (issue #75) by @ItsJustMiaouss in https://github.com/Patbox/TextPlaceholderAPI/pull/76\n\n## New Contributors\n* @ItsJustMiaouss made their first contribution in https://github.com/Patbox/TextPlaceholderAPI/pull/76\n\n**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.6.2+1.21.5...2.6.3+1.21.5",
     "changelog_url": null,
     "date_published": "2025-04-28T21:46:14.568199Z",
-    "downloads": 384680,
+    "downloads": 385412,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -161,7 +161,7 @@
     "changelog": "## What's Changed\n* Update to 25w14craftmine. by @Mikarific in https://github.com/Patbox/TextPlaceholderAPI/pull/74\n\n## New Contributors\n* @Mikarific made their first contribution in https://github.com/Patbox/TextPlaceholderAPI/pull/74\n\n**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.6.2+1.21.5...2.6.3+25w14craftmine",
     "changelog_url": null,
     "date_published": "2025-04-03T20:16:35.203389Z",
-    "downloads": 4016,
+    "downloads": 4034,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -197,7 +197,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.6.1+1.21.5...2.6.2+1.21.5",
     "changelog_url": null,
     "date_published": "2025-03-28T09:09:07.006722Z",
-    "downloads": 281603,
+    "downloads": 281989,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -234,15 +234,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.6.0+1.21.5...2.6.1+1.21.5",
     "changelog_url": null,
     "date_published": "2025-03-23T13:53:19.456062Z",
-    "downloads": 19972,
+    "downloads": 19974,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "3d3e10c1887131fd78605cae37bf59cb2a4d8caee02a7675b18e766eacdefe6f841aca2037bcb64f7671c7a97f5635f1322d50c9e2a3e69a0663688d539f27ca",
-          "sha1": "9993b2af208a5a7b5bb22c63e3928f310d22205b"
+          "sha1": "9993b2af208a5a7b5bb22c63e3928f310d22205b",
+          "sha512": "3d3e10c1887131fd78605cae37bf59cb2a4d8caee02a7675b18e766eacdefe6f841aca2037bcb64f7671c7a97f5635f1322d50c9e2a3e69a0663688d539f27ca"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/qXvsJsNo/placeholder-api-2.6.1%2B1.21.5.jar",
         "filename": "placeholder-api-2.6.1+1.21.5.jar",
@@ -270,15 +270,15 @@
     "changelog": "## What's Changed\n* Ensure parser is deterministic by @DrexHD in https://github.com/Patbox/TextPlaceholderAPI/pull/67\n* Port to 1.21.5-pre3+ by @sakura-ryoko in https://github.com/Patbox/TextPlaceholderAPI/pull/70\n\n**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.5.1+1.21.3...2.6.0+1.21.5",
     "changelog_url": null,
     "date_published": "2025-03-21T06:00:42.968565Z",
-    "downloads": 172,
+    "downloads": 173,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "9bf104f2c2feb89b09e59c1ef29006ae9259a405436122ba782b9541b39ced8a3de159bd62b6aff51a939c7651f0f4a1851594764326b4ead30561de7c2210ef",
-          "sha1": "3717645525e00c3c6a48a539a1d3c4f061352c7a"
+          "sha1": "3717645525e00c3c6a48a539a1d3c4f061352c7a",
+          "sha512": "9bf104f2c2feb89b09e59c1ef29006ae9259a405436122ba782b9541b39ced8a3de159bd62b6aff51a939c7651f0f4a1851594764326b4ead30561de7c2210ef"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/HmzKM0RD/placeholder-api-2.6.0%2B1.21.5.jar",
         "filename": "placeholder-api-2.6.0+1.21.5.jar",
@@ -307,15 +307,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-01-27T19:24:07.747062Z",
-    "downloads": 2517,
+    "downloads": 2522,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8d016b50ee24799781197439e8765be975891232a6aff8ff6b85ee69021bd0165a66f32eb5e1b8e0b6f2b0d378739571a0bceb3abb81b8c622fa46ce2a94c0a1",
-          "sha1": "e40f74be5f06d2ef272106edec73282db75f3bcd"
+          "sha1": "e40f74be5f06d2ef272106edec73282db75f3bcd",
+          "sha512": "8d016b50ee24799781197439e8765be975891232a6aff8ff6b85ee69021bd0165a66f32eb5e1b8e0b6f2b0d378739571a0bceb3abb81b8c622fa46ce2a94c0a1"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/r0xF3BDM/placeholder-api-2.1.1%2B1.19.4.jar",
         "filename": "placeholder-api-2.1.1+1.19.4.jar",
@@ -343,15 +343,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.1.3+1.20.1...2.1.4+1.20.1",
     "changelog_url": null,
     "date_published": "2025-01-27T19:17:45.905858Z",
-    "downloads": 51783,
+    "downloads": 51991,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "722efc56827ba973673b15ccc2e446c269a16faa",
-          "sha512": "80a4721abf9654a8bbfb9e23fbb7493bfa379d3116adb9d0d98f05482b25150d91994346dd230b691935f64f57ce0840deecce6bb279fbfaa3ebab30ad426db8"
+          "sha512": "80a4721abf9654a8bbfb9e23fbb7493bfa379d3116adb9d0d98f05482b25150d91994346dd230b691935f64f57ce0840deecce6bb279fbfaa3ebab30ad426db8",
+          "sha1": "722efc56827ba973673b15ccc2e446c269a16faa"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/DaV2ycYi/placeholder-api-2.1.4%2B1.20.1.jar",
         "filename": "placeholder-api-2.1.4+1.20.1.jar",
@@ -380,7 +380,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.2.0+1.20.2...2.2.1+1.20.2",
     "changelog_url": null,
     "date_published": "2025-01-27T19:17:20.4294Z",
-    "downloads": 1617,
+    "downloads": 1626,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -417,15 +417,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.4.0-pre.1+1.20.4...2.4.0-pre.3+1.20.4",
     "changelog_url": null,
     "date_published": "2025-01-27T19:15:11.453562Z",
-    "downloads": 71408,
+    "downloads": 71655,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "80235c9969c1db53983112a7b7ccefe23708c2c1",
-          "sha512": "d2044d957b8f07f08ef4bf154c720803a5cac3e9eac504fc127321ea6ca08ed9f06a6bb3e433814b292c8bb6152b513fd6275a81aa168e9185b7c9f167d6d3a5"
+          "sha512": "d2044d957b8f07f08ef4bf154c720803a5cac3e9eac504fc127321ea6ca08ed9f06a6bb3e433814b292c8bb6152b513fd6275a81aa168e9185b7c9f167d6d3a5",
+          "sha1": "80235c9969c1db53983112a7b7ccefe23708c2c1"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/VYMQNs7A/placeholder-api-2.4.0-pre.3%2B1.20.4.jar",
         "filename": "placeholder-api-2.4.0-pre.3+1.20.4.jar",
@@ -453,15 +453,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.4.0-pre.1+1.20.4...2.4.0-pre.2+1.20.5",
     "changelog_url": null,
     "date_published": "2025-01-27T19:11:24.317961Z",
-    "downloads": 3454,
+    "downloads": 3456,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "0b923702834d36c0dd5d89e6d9b2eaabe07b48a2",
-          "sha512": "e45e251d3af9ab0e4eece246f5bfc0ea51d1398699b1a0b0cac6fa84f719c4576b3c8ff568997183d8bebd0d919a1201adfea7749978bf13e88c1711e68c5cf4"
+          "sha512": "e45e251d3af9ab0e4eece246f5bfc0ea51d1398699b1a0b0cac6fa84f719c4576b3c8ff568997183d8bebd0d919a1201adfea7749978bf13e88c1711e68c5cf4",
+          "sha1": "0b923702834d36c0dd5d89e6d9b2eaabe07b48a2"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/3YxE3aNF/placeholder-api-2.4.0-pre.2%2B1.20.5.jar",
         "filename": "placeholder-api-2.4.0-pre.2+1.20.5.jar",
@@ -490,7 +490,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.4.1+1.21...2.4.2+1.21",
     "changelog_url": null,
     "date_published": "2025-01-27T19:08:23.196696Z",
-    "downloads": 901341,
+    "downloads": 904926,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -528,15 +528,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.5.1+1.21.3...2.5.2+1.21.3",
     "changelog_url": null,
     "date_published": "2025-01-27T19:06:13.340581Z",
-    "downloads": 958675,
+    "downloads": 960842,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "06db18ada7973bd8cbe316faeebd25d89d79820da951208cc2ec69eb4058379d4e0c0233799d7043b5a19b62248f6a4d5f7031c110066fdf5d335e29385e3853",
-          "sha1": "841b1ef57880fc0f94a22ab268b737c3830b5595"
+          "sha1": "841b1ef57880fc0f94a22ab268b737c3830b5595",
+          "sha512": "06db18ada7973bd8cbe316faeebd25d89d79820da951208cc2ec69eb4058379d4e0c0233799d7043b5a19b62248f6a4d5f7031c110066fdf5d335e29385e3853"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/eeN3FuMY/placeholder-api-2.5.2%2B1.21.3.jar",
         "filename": "placeholder-api-2.5.2+1.21.3.jar",
@@ -565,7 +565,7 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.5.0+1.21.2...2.5.1+1.21.3",
     "changelog_url": null,
     "date_published": "2024-11-21T22:23:56.119622Z",
-    "downloads": 544321,
+    "downloads": 544652,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -603,15 +603,15 @@
     "changelog": "## What's Changed\n* Update to 1.21.2 by @DrexHD in https://github.com/Patbox/TextPlaceholderAPI/pull/57\n\n**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.4.1+1.21...2.5.0+1.21.2",
     "changelog_url": null,
     "date_published": "2024-10-19T17:49:26.237397Z",
-    "downloads": 107917,
+    "downloads": 107932,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "c89e8c39990fab7b12ad4546d8ae8685bd68dda0c93cf4be73ab5e206a89f9de56fbcc00b573c75ca63ed80e5bff44b40a89b6a932e972448cdbf650f7c74645",
-          "sha1": "35f062e48f0f59519edc0290db4e9edad64b66cf"
+          "sha1": "35f062e48f0f59519edc0290db4e9edad64b66cf",
+          "sha512": "c89e8c39990fab7b12ad4546d8ae8685bd68dda0c93cf4be73ab5e206a89f9de56fbcc00b573c75ca63ed80e5bff44b40a89b6a932e972448cdbf650f7c74645"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/ZGVganES/placeholder-api-2.5.0%2B1.21.2.jar",
         "filename": "placeholder-api-2.5.0+1.21.2.jar",
@@ -640,15 +640,15 @@
     "changelog": "**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.4.0+1.21...2.4.1+1.21",
     "changelog_url": null,
     "date_published": "2024-07-15T13:08:02.625577Z",
-    "downloads": 2651103,
+    "downloads": 2653791,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "0fc2b1063277e1cadab30fdb5f1171cbdefa551f16e36daa611f67a775353e70a48538085e2bcf8fc22d657d450ce74dc8aa9ccf6e8bc6de6d5a841fb46e0828",
-          "sha1": "5f61f50e36f1f957dbb87eda02da95d847b4a943"
+          "sha1": "5f61f50e36f1f957dbb87eda02da95d847b4a943",
+          "sha512": "0fc2b1063277e1cadab30fdb5f1171cbdefa551f16e36daa611f67a775353e70a48538085e2bcf8fc22d657d450ce74dc8aa9ccf6e8bc6de6d5a841fb46e0828"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/cE5TczQr/placeholder-api-2.4.1%2B1.21.jar",
         "filename": "placeholder-api-2.4.1+1.21.jar",
@@ -676,7 +676,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-06-23T11:16:12.703168Z",
-    "downloads": 220530,
+    "downloads": 220622,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -712,7 +712,7 @@
     "changelog": "## What's Changed\n* Update mod-placeholders.md by @sakura-ryoko in https://github.com/Patbox/TextPlaceholderAPI/pull/49\n* AfkPlus 1.4.2 updates by @sakura-ryoko in https://github.com/Patbox/TextPlaceholderAPI/pull/52\n\n\n**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.3.0+1.20.3...2.4.0-pre.1+1.20.4",
     "changelog_url": null,
     "date_published": "2024-06-18T15:50:32.346584Z",
-    "downloads": 203309,
+    "downloads": 203402,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -749,15 +749,15 @@
     "changelog": "## What's Changed\n* Update to 1.21-pre2 by @sakura-ryoko in https://github.com/Patbox/TextPlaceholderAPI/pull/55\n\n\n**Full Changelog**: https://github.com/Patbox/TextPlaceholderAPI/compare/2.4.0-pre.1+1.20.5...2.4.0-pre.2+1.21",
     "changelog_url": null,
     "date_published": "2024-06-02T20:04:53.574661Z",
-    "downloads": 68953,
+    "downloads": 68967,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "ff7e9e2fde1ac9d7c7962689c421fd85982faa0a",
-          "sha512": "d652d47445055a825434f636e6def375063d34101e3adbdb04c5f035df9aab63f18baea5c369aa7bdad83871fddebfef93a4d2256aa87d1ddcb8e2d7d59bf700"
+          "sha512": "d652d47445055a825434f636e6def375063d34101e3adbdb04c5f035df9aab63f18baea5c369aa7bdad83871fddebfef93a4d2256aa87d1ddcb8e2d7d59bf700",
+          "sha1": "ff7e9e2fde1ac9d7c7962689c421fd85982faa0a"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/1NGrL2hU/placeholder-api-2.4.0-pre.2%2B1.21.jar",
         "filename": "placeholder-api-2.4.0-pre.2+1.21.jar",
@@ -787,7 +787,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2024-04-18T19:02:34.188352Z",
-    "downloads": 102230,
+    "downloads": 102319,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -832,8 +832,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7cc6d619ac0eb8328a3f05cef16b167b75eef0b2ac37e7d09a8fa7165a4d165d26b28e78f2371c88c2810bbe5005993052fbefd3228df98ad8c681668eaa1f8f",
-          "sha1": "121e816e3cca7b24e6df9acfc9b00006622b2294"
+          "sha1": "121e816e3cca7b24e6df9acfc9b00006622b2294",
+          "sha512": "7cc6d619ac0eb8328a3f05cef16b167b75eef0b2ac37e7d09a8fa7165a4d165d26b28e78f2371c88c2810bbe5005993052fbefd3228df98ad8c681668eaa1f8f"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/KvVY0jfG/placeholder-api-2.3.0%2B1.20.3.jar",
         "filename": "placeholder-api-2.3.0+1.20.3.jar",
@@ -862,7 +862,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-09-19T14:32:31.625753Z",
-    "downloads": 5094,
+    "downloads": 5097,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -898,15 +898,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-09-08T12:36:49.249056Z",
-    "downloads": 78512,
+    "downloads": 78599,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "24079fff301cc7ed6e20b145651c2fc1a8b94b2d",
-          "sha512": "8aefeb50ff5b835ceb055573a683d32b014015697063f169d6e665c1c5f1b3ed771cbc00930551365f8d4e192b0cd22106ea0af2010306c5710e10ecdb342280"
+          "sha512": "8aefeb50ff5b835ceb055573a683d32b014015697063f169d6e665c1c5f1b3ed771cbc00930551365f8d4e192b0cd22106ea0af2010306c5710e10ecdb342280",
+          "sha1": "24079fff301cc7ed6e20b145651c2fc1a8b94b2d"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/wrxtLoOX/placeholder-api-2.1.3%2B1.20.1.jar",
         "filename": "placeholder-api-2.1.3+1.20.1.jar",
@@ -969,15 +969,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-06-11T17:40:53.923599Z",
-    "downloads": 7405,
+    "downloads": 7416,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "b7782455a81d72408387bf68276b76fe101eb7227796a111d0f6d3a6137f5ae4a66bc65fa94156ee23336089d89594202e0bbe17a11821911acbe8583a65bf4f",
-          "sha1": "64665e4aeb82e15d13b8fe9deb483ac118c87b38"
+          "sha1": "64665e4aeb82e15d13b8fe9deb483ac118c87b38",
+          "sha512": "b7782455a81d72408387bf68276b76fe101eb7227796a111d0f6d3a6137f5ae4a66bc65fa94156ee23336089d89594202e0bbe17a11821911acbe8583a65bf4f"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/iCAUZykd/placeholder-api-2.1.1%2B1.20.jar",
         "filename": "placeholder-api-2.1.1+1.20.jar",
@@ -1005,15 +1005,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-05-07T07:39:00.949139Z",
-    "downloads": 2080,
+    "downloads": 2081,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a28eb08a9e0e0b7e6e35804c1e836b16d9850e53bec8c78d6e6de131cce8420d194688b9e0d5b7342821f7703b9a12d135dbb14d4e3fe3047cb1e1670599f161",
-          "sha1": "c7c8204ccaeef6f0ca4864b1be5182de54b52593"
+          "sha1": "c7c8204ccaeef6f0ca4864b1be5182de54b52593",
+          "sha512": "a28eb08a9e0e0b7e6e35804c1e836b16d9850e53bec8c78d6e6de131cce8420d194688b9e0d5b7342821f7703b9a12d135dbb14d4e3fe3047cb1e1670599f161"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/judXVfRL/placeholder-api-2.1.0%2B1.19.4.jar",
         "filename": "placeholder-api-2.1.0+1.19.4.jar",
@@ -1048,8 +1048,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a341dc8a9febeeb3fc38af8c276ceaf49e5005df",
-          "sha512": "7de594795c1065ed58a58bc15d18cdac20fde7a2634a07e144a66a655a4a5a174757220ef78266570ab4015bf9cbe7c5959fc26b48070d85c812a273cbd629a2"
+          "sha512": "7de594795c1065ed58a58bc15d18cdac20fde7a2634a07e144a66a655a4a5a174757220ef78266570ab4015bf9cbe7c5959fc26b48070d85c812a273cbd629a2",
+          "sha1": "a341dc8a9febeeb3fc38af8c276ceaf49e5005df"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/G4smC1A1/placeholder-api-2.0.0-rc.1%2B1.19.3.jar",
         "filename": "placeholder-api-2.0.0-rc.1+1.19.3.jar",
@@ -1078,7 +1078,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-05-07T07:38:17.503974Z",
-    "downloads": 5466,
+    "downloads": 5473,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1114,15 +1114,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-05-07T07:37:54.155643Z",
-    "downloads": 1278,
+    "downloads": 1280,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "adee9ead2cbcc075ddc5963ee2d0a228ea76c60e",
-          "sha512": "87eaecea15c5450b61f09927ac89bc29a80e245061ecfac525e86f464481d113c0b3091b5d2ed86b0dba5b8e8222860faec4fe4c96a6276688605fafce1ff562"
+          "sha512": "87eaecea15c5450b61f09927ac89bc29a80e245061ecfac525e86f464481d113c0b3091b5d2ed86b0dba5b8e8222860faec4fe4c96a6276688605fafce1ff562",
+          "sha1": "adee9ead2cbcc075ddc5963ee2d0a228ea76c60e"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/FsEVC8lW/placeholder-api-2.0.0-beta.7%2B1.19.jar",
         "filename": "placeholder-api-2.0.0-beta.7+1.19.jar",
@@ -1154,15 +1154,15 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2023-05-07T07:37:31.061484Z",
-    "downloads": 4576,
+    "downloads": 4583,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a4c2d44306bf2ecd98db24be12993789696ec85f",
-          "sha512": "bb680c2f6fd7eb25ea91ec2ab833adde8c969c8dcc46737778de94ff7057cb2f7b92c01c23256c3010e349e67da1c9a75bb5d9ec906d5d662c6ad30c6ac776b9"
+          "sha512": "bb680c2f6fd7eb25ea91ec2ab833adde8c969c8dcc46737778de94ff7057cb2f7b92c01c23256c3010e349e67da1c9a75bb5d9ec906d5d662c6ad30c6ac776b9",
+          "sha1": "a4c2d44306bf2ecd98db24be12993789696ec85f"
         },
         "url": "https://cdn.modrinth.com/data/eXts2L7r/versions/FplcrCus/placeholder-api-1.1.3%2B1.17.1.jar",
         "filename": "placeholder-api-1.1.3+1.17.1.jar",

@@ -15,7 +15,7 @@
     "changelog": "Port for 1.21.6\n",
     "changelog_url": null,
     "date_published": "2025-06-17T20:25:00.223476Z",
-    "downloads": 43,
+    "downloads": 46,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -58,15 +58,15 @@
     "changelog": "Port for 1.21.6\n",
     "changelog_url": null,
     "date_published": "2025-06-17T20:24:48.866546Z",
-    "downloads": 1619,
+    "downloads": 1730,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d0f5dbe7f2cebcae208e871af68b5a87c3fa2e55",
-          "sha512": "b5600ddd724921fd9227e105131f67aca2d7e208e8e8d226ddcc4a3087f5edfced101d72a91dc8560f8af25cffe1e8ee69c123853612e9e987ea1134e7fecc40"
+          "sha512": "b5600ddd724921fd9227e105131f67aca2d7e208e8e8d226ddcc4a3087f5edfced101d72a91dc8560f8af25cffe1e8ee69c123853612e9e987ea1134e7fecc40",
+          "sha1": "d0f5dbe7f2cebcae208e871af68b5a87c3fa2e55"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/o3hiSSue/CraterLib-Fabric-1.21.6-2.1.5.jar",
         "filename": "CraterLib-Fabric-1.21.6-2.1.5.jar",
@@ -112,7 +112,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T07:27:49.185142Z",
-    "downloads": 167,
+    "downloads": 170,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -155,7 +155,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T07:27:39.18875Z",
-    "downloads": 7110,
+    "downloads": 7193,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -181,13 +181,13 @@
       },
       {
         "version_id": null,
-        "project_id": "mOgUt4GM",
+        "project_id": "9s6osm5g",
         "file_name": null,
         "dependency_type": "optional"
       },
       {
         "version_id": null,
-        "project_id": "9s6osm5g",
+        "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
       }
@@ -210,15 +210,15 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T07:25:24.962204Z",
-    "downloads": 52,
+    "downloads": 53,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "70770b7c7a46ce64af1f536df925e44b1e8af667",
-          "sha512": "70c330b2a057eabead2025a1a3af3e3245c11ce8efce73a5068c62d7c18a74bd89b7214243093e94b4bd0279df8e0226d2ccda91e29ee8b679bc5f930043d20e"
+          "sha512": "70c330b2a057eabead2025a1a3af3e3245c11ce8efce73a5068c62d7c18a74bd89b7214243093e94b4bd0279df8e0226d2ccda91e29ee8b679bc5f930043d20e",
+          "sha1": "70770b7c7a46ce64af1f536df925e44b1e8af667"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/3dW2TvuI/CraterLib-NeoForge-1.21.3-2.1.5.jar",
         "filename": "CraterLib-NeoForge-1.21.3-2.1.5.jar",
@@ -254,15 +254,15 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T07:25:12.837334Z",
-    "downloads": 2360,
+    "downloads": 2378,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f8d4addf19fca3c4a139e5b2bc2996ea316aa9c532bd7653e6188f3f95f574a64ae79c0f9fd848f21c386812186393715421515e938213201b867373b192685a",
-          "sha1": "90a78002b4a9c8a04d28c303424af0061306696c"
+          "sha1": "90a78002b4a9c8a04d28c303424af0061306696c",
+          "sha512": "f8d4addf19fca3c4a139e5b2bc2996ea316aa9c532bd7653e6188f3f95f574a64ae79c0f9fd848f21c386812186393715421515e938213201b867373b192685a"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/JAVuxguJ/CraterLib-Fabric-1.21.3-2.1.5.jar",
         "filename": "CraterLib-Fabric-1.21.3-2.1.5.jar",
@@ -274,15 +274,15 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "mOgUt4GM",
-        "file_name": null,
-        "dependency_type": "optional"
-      },
-      {
-        "version_id": null,
         "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
       },
       {
         "version_id": null,
@@ -309,7 +309,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T07:21:59.136078Z",
-    "downloads": 3817,
+    "downloads": 3880,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -353,15 +353,15 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T07:21:47.413629Z",
-    "downloads": 5263,
+    "downloads": 5325,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "42d2da7c10a4078f1039e1a83e2713b88f8ed8de",
-          "sha512": "5dddc5a068d88ec85f8774b5732412c09861f79cdaf55378e8c0739ddf67f0e58124b46b3b721652d12aa661cdead06eef4319616cf8e280e315fa31f933ef93"
+          "sha512": "5dddc5a068d88ec85f8774b5732412c09861f79cdaf55378e8c0739ddf67f0e58124b46b3b721652d12aa661cdead06eef4319616cf8e280e315fa31f933ef93",
+          "sha1": "42d2da7c10a4078f1039e1a83e2713b88f8ed8de"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/rLxrxXBc/CraterLib-Fabric-1.21-2.1.5.jar",
         "filename": "CraterLib-Fabric-1.21-2.1.5.jar",
@@ -407,7 +407,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T07:18:54.899471Z",
-    "downloads": 24,
+    "downloads": 26,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -449,15 +449,15 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T07:18:43.525983Z",
-    "downloads": 40,
+    "downloads": 41,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "38d7f405618def480eb8a66c25f028b059e65b943161cd15c871388f29ba4ff45f6be45fde0b8dbd4560dac7747ae9a7990c93f926b0c692d61ab8b9808e447b",
-          "sha1": "d3399bd26e259812dd3eafc2e2e770850475159f"
+          "sha1": "d3399bd26e259812dd3eafc2e2e770850475159f",
+          "sha512": "38d7f405618def480eb8a66c25f028b059e65b943161cd15c871388f29ba4ff45f6be45fde0b8dbd4560dac7747ae9a7990c93f926b0c692d61ab8b9808e447b"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/SrzGWptG/CraterLib-Forge-1.20.4-2.1.5.jar",
         "filename": "CraterLib-Forge-1.20.4-2.1.5.jar",
@@ -492,15 +492,15 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T07:18:09.9607Z",
-    "downloads": 954,
+    "downloads": 963,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "a94bd4c87a7b322b8fc8a3079f531074f800b0b8e4ce9ac33b3e8912b3f7df1f7f749c36cf8d19848519b6702d61d746e4d4dbeeff9443f6620616bef66a5224",
-          "sha1": "d7c587186be89d5dbf2dd2b1e840577476842ce7"
+          "sha1": "d7c587186be89d5dbf2dd2b1e840577476842ce7",
+          "sha512": "a94bd4c87a7b322b8fc8a3079f531074f800b0b8e4ce9ac33b3e8912b3f7df1f7f749c36cf8d19848519b6702d61d746e4d4dbeeff9443f6620616bef66a5224"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/vYn8rIRS/CraterLib-Fabric-1.20.4-2.1.5.jar",
         "filename": "CraterLib-Fabric-1.20.4-2.1.5.jar",
@@ -553,8 +553,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6159f64e7f191d4c4e80044b434b8ba9986eaf8f750b0a034d8c7ffac66d1b172a1135e685efa1a790c7d630c08b7894184e550e91c188e9c8d5844c221ef840",
-          "sha1": "5d70290b522f115235b4bc7e64d2db35701e762f"
+          "sha1": "5d70290b522f115235b4bc7e64d2db35701e762f",
+          "sha512": "6159f64e7f191d4c4e80044b434b8ba9986eaf8f750b0a034d8c7ffac66d1b172a1135e685efa1a790c7d630c08b7894184e550e91c188e9c8d5844c221ef840"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/DdP5Zmyy/CraterLib-Forge-1.20.2-2.1.5.jar",
         "filename": "CraterLib-Forge-1.20.2-2.1.5.jar",
@@ -596,8 +596,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "e0143c3886e9dcdb36b96e732337ef4c28bf7b6a",
-          "sha512": "7f71bc38cbd580b787b3926610bc38953df8b8a247cd09d7454259ab2b246cf609cd90495215eac5ef43efc1df57c5bea2cf8a03e9abd7966df2443d796eaae6"
+          "sha512": "7f71bc38cbd580b787b3926610bc38953df8b8a247cd09d7454259ab2b246cf609cd90495215eac5ef43efc1df57c5bea2cf8a03e9abd7966df2443d796eaae6",
+          "sha1": "e0143c3886e9dcdb36b96e732337ef4c28bf7b6a"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/8jGBiDZt/CraterLib-Fabric-1.20.2-2.1.5.jar",
         "filename": "CraterLib-Fabric-1.20.2-2.1.5.jar",
@@ -644,7 +644,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n- Fixed crash when trying to open config screens on NeoForge\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat\n",
     "changelog_url": null,
     "date_published": "2025-05-16T07:06:26.539832Z",
-    "downloads": 4016,
+    "downloads": 4076,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -688,7 +688,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n- Fixed crash when trying to open config screens on NeoForge\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat\n",
     "changelog_url": null,
     "date_published": "2025-05-16T07:05:53.319047Z",
-    "downloads": 3148,
+    "downloads": 3185,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -749,8 +749,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "114ee2c7c0777c91bdb2e56b18ace7d07acc09cf",
-          "sha512": "4c05b159317853f32fcdca96920d05042fed63c0ce87a081f0c90c368ac6022aa3251fd39b96b19c8e55c874dea99f87ef4fc110310c63228aac24ea48945a91"
+          "sha512": "4c05b159317853f32fcdca96920d05042fed63c0ce87a081f0c90c368ac6022aa3251fd39b96b19c8e55c874dea99f87ef4fc110310c63228aac24ea48945a91",
+          "sha1": "114ee2c7c0777c91bdb2e56b18ace7d07acc09cf"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/MJzG4fZ2/CraterLib-Forge-1.19.4-2.1.5.jar",
         "filename": "CraterLib-Forge-1.19.4-2.1.5.jar",
@@ -839,7 +839,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T06:57:56.857288Z",
-    "downloads": 475,
+    "downloads": 478,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -936,7 +936,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fix Adventure Serializer failing completely when serialization fails, causing game glitches\n\n**New Features**:\n\n- Allow commands to send feedback as chat messages, if command feedback is disabled\n- Added Compat API for Advanced Chat",
     "changelog_url": null,
     "date_published": "2025-05-16T06:54:57.00732Z",
-    "downloads": 79,
+    "downloads": 80,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1033,7 +1033,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fixed LuckPerms breaking commands on Paper\n- Fix Config watcher using too many threads and not detecting changes on Linux systems\n\n**New Features**:\n\n- Added Nojang API to allow mods to access GameRules (SDLink)\n- Exposed Adventure JSON serializer to mods\n\n**Dev Changes**:\n\n- Bumped MoonConfig - `1.0.10` -> `1.0.12`",
     "changelog_url": null,
     "date_published": "2025-03-25T18:55:49.157664Z",
-    "downloads": 379,
+    "downloads": 380,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1076,7 +1076,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fixed LuckPerms breaking commands on Paper\n- Fix Config watcher using too many threads and not detecting changes on Linux systems\n\n**New Features**:\n\n- Added Nojang API to allow mods to access GameRules (SDLink)\n- Exposed Adventure JSON serializer to mods\n\n**Dev Changes**:\n\n- Bumped MoonConfig - `1.0.10` -> `1.0.12`",
     "changelog_url": null,
     "date_published": "2025-03-25T18:55:35.755164Z",
-    "downloads": 9435,
+    "downloads": 9448,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1138,8 +1138,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9945a1567fc09183efb8eb8fc0b255c3a1aa94aa",
-          "sha512": "d1893d3188094ab3e82d240f7e258b373ef7eb369f2efb0eca5c6f31708200553ebbaff1081c78eee33dda628997f9437d19271724d627205a05cd0543219e28"
+          "sha512": "d1893d3188094ab3e82d240f7e258b373ef7eb369f2efb0eca5c6f31708200553ebbaff1081c78eee33dda628997f9437d19271724d627205a05cd0543219e28",
+          "sha1": "9945a1567fc09183efb8eb8fc0b255c3a1aa94aa"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/xpP7PTS5/CraterLib-NeoForge-1.21.3-2.1.4.jar",
         "filename": "CraterLib-NeoForge-1.21.3-2.1.4.jar",
@@ -1175,7 +1175,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fixed LuckPerms breaking commands on Paper\n- Fix Config watcher using too many threads and not detecting changes on Linux systems\n\n**New Features**:\n\n- Added Nojang API to allow mods to access GameRules (SDLink)\n- Exposed Adventure JSON serializer to mods\n\n**Dev Changes**:\n\n- Bumped MoonConfig - `1.0.10` -> `1.0.12`",
     "changelog_url": null,
     "date_published": "2025-03-25T18:27:58.513371Z",
-    "downloads": 5501,
+    "downloads": 5505,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1230,15 +1230,15 @@
     "changelog": "**Bug Fixes**:\n\n- Fixed LuckPerms breaking commands on Paper\n- Fix Config watcher using too many threads and not detecting changes on Linux systems\n\n**New Features**:\n\n- Added Nojang API to allow mods to access GameRules (SDLink)\n- Exposed Adventure JSON serializer to mods\n\n**Dev Changes**:\n\n- Bumped MoonConfig - `1.0.10` -> `1.0.12`",
     "changelog_url": null,
     "date_published": "2025-03-25T18:25:10.015181Z",
-    "downloads": 9101,
+    "downloads": 9128,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "0107f8f31bb586e02d8fd72bc713db21d7ee5f0d",
-          "sha512": "514193ce5e3274ed5a17e73650ba7fba5467f98e3bc0c2ed2ddc578f0446d246e9a6d44da1ba1ac863404ee2266e11bf8f5855b8ba454087f52020ebe9dde63b"
+          "sha512": "514193ce5e3274ed5a17e73650ba7fba5467f98e3bc0c2ed2ddc578f0446d246e9a6d44da1ba1ac863404ee2266e11bf8f5855b8ba454087f52020ebe9dde63b",
+          "sha1": "0107f8f31bb586e02d8fd72bc713db21d7ee5f0d"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/J8XgEQ6c/CraterLib-NeoForge-1.21-2.1.4.jar",
         "filename": "CraterLib-NeoForge-1.21-2.1.4.jar",
@@ -1274,7 +1274,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fixed LuckPerms breaking commands on Paper\n- Fix Config watcher using too many threads and not detecting changes on Linux systems\n\n**New Features**:\n\n- Added Nojang API to allow mods to access GameRules (SDLink)\n- Exposed Adventure JSON serializer to mods\n\n**Dev Changes**:\n\n- Bumped MoonConfig - `1.0.10` -> `1.0.12`",
     "changelog_url": null,
     "date_published": "2025-03-25T18:25:00.169931Z",
-    "downloads": 38511,
+    "downloads": 38741,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1335,8 +1335,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "36e20d0fe49df4dce072c807f77d5eba29e0a3c9",
-          "sha512": "950d6f260b8aa83a9a52e9d12e107007a0d3e99e620386246ca4d2f85b916057358cf2a9d60ccc4600db93ba11136fdd9c5165973aa4b9bbe89cabf2d727d68c"
+          "sha512": "950d6f260b8aa83a9a52e9d12e107007a0d3e99e620386246ca4d2f85b916057358cf2a9d60ccc4600db93ba11136fdd9c5165973aa4b9bbe89cabf2d727d68c",
+          "sha1": "36e20d0fe49df4dce072c807f77d5eba29e0a3c9"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/ub1zKz6a/CraterLib-NeoForge-1.20.4-2.1.4.jar",
         "filename": "CraterLib-NeoForge-1.20.4-2.1.4.jar",
@@ -1420,8 +1420,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "f24e506bdc0303ec07316a176a93bfb3829b15a5",
-          "sha512": "d23dacca3c12cd0f705bcab1a9f8324d279ca76609c669d675d181aa59b4b524be493ab09fed9220c21dc2c33215d36eba576cfe9716fa5758c49521522632d6"
+          "sha512": "d23dacca3c12cd0f705bcab1a9f8324d279ca76609c669d675d181aa59b4b524be493ab09fed9220c21dc2c33215d36eba576cfe9716fa5758c49521522632d6",
+          "sha1": "f24e506bdc0303ec07316a176a93bfb3829b15a5"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/vTaMDWzI/CraterLib-Fabric-1.20.4-2.1.4.jar",
         "filename": "CraterLib-Fabric-1.20.4-2.1.4.jar",
@@ -1474,8 +1474,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "78525c6c2bcc0882df565de835545bfef0f2d9c1",
-          "sha512": "4b8dced6441b71c8875fa3d37cc6b3f3d9a2ab598b4a212b472bf91cf232f03df0738649d00b5217b94a98dba9caad22ab73e01c0698912f6d5cc5b36e3feeec"
+          "sha512": "4b8dced6441b71c8875fa3d37cc6b3f3d9a2ab598b4a212b472bf91cf232f03df0738649d00b5217b94a98dba9caad22ab73e01c0698912f6d5cc5b36e3feeec",
+          "sha1": "78525c6c2bcc0882df565de835545bfef0f2d9c1"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/5SLnB21n/CraterLib-Forge-1.20.2-2.1.4.jar",
         "filename": "CraterLib-Forge-1.20.2-2.1.4.jar",
@@ -1517,8 +1517,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "99d3b1b66558aa4a83091965fc297ad061c67c9556f684e3b08eceb2f7cccd961eaa5d27c4df08d1e459feb5165e2433880a64de52e6409f1f2fccb719798ea8",
-          "sha1": "eedacaca26ef12eb6f539675f7efad23541c28fa"
+          "sha1": "eedacaca26ef12eb6f539675f7efad23541c28fa",
+          "sha512": "99d3b1b66558aa4a83091965fc297ad061c67c9556f684e3b08eceb2f7cccd961eaa5d27c4df08d1e459feb5165e2433880a64de52e6409f1f2fccb719798ea8"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/XMpTy3sR/CraterLib-Fabric-1.20.2-2.1.4.jar",
         "filename": "CraterLib-Fabric-1.20.2-2.1.4.jar",
@@ -1565,15 +1565,15 @@
     "changelog": "**Bug Fixes**:\n\n- Fixed LuckPerms breaking commands on Paper\n- Fix Config watcher using too many threads and not detecting changes on Linux systems\n- Fixed crash when trying to open config screens on NeoForge\n\n**New Features**:\n\n- Added Nojang API to allow mods to access GameRules (SDLink)\n- Exposed Adventure JSON serializer to mods\n\n**Dev Changes**:\n\n- Bumped MoonConfig - `1.0.10` -> `1.0.12`\n",
     "changelog_url": null,
     "date_published": "2025-03-25T18:12:58.954312Z",
-    "downloads": 5338,
+    "downloads": 5343,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "8195f3f74821e18ce4942a7a6da7648c8b591f18",
-          "sha512": "07dcfa82bca5a88052a8207a88ff729014f0eda21405522f595ecea22f2743174db08972f83e4e39aa58cefeaaa8f0b563bb6aa50e7333fdd34ebcd73b1749f9"
+          "sha512": "07dcfa82bca5a88052a8207a88ff729014f0eda21405522f595ecea22f2743174db08972f83e4e39aa58cefeaaa8f0b563bb6aa50e7333fdd34ebcd73b1749f9",
+          "sha1": "8195f3f74821e18ce4942a7a6da7648c8b591f18"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/N68PG90I/CraterLib-Forge-1.20-2.1.4.jar",
         "filename": "CraterLib-Forge-1.20-2.1.4.jar",
@@ -1609,15 +1609,15 @@
     "changelog": "**Bug Fixes**:\n\n- Fixed LuckPerms breaking commands on Paper\n- Fix Config watcher using too many threads and not detecting changes on Linux systems\n- Fixed crash when trying to open config screens on NeoForge\n\n**New Features**:\n\n- Added Nojang API to allow mods to access GameRules (SDLink)\n- Exposed Adventure JSON serializer to mods\n\n**Dev Changes**:\n\n- Bumped MoonConfig - `1.0.10` -> `1.0.12`\n",
     "changelog_url": null,
     "date_published": "2025-03-25T18:12:26.101664Z",
-    "downloads": 5974,
+    "downloads": 5986,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8dbb84066902afebbb1901e512a6d9f8da7416f06b0af638f8e1bf6661a977c8d88ea22ede5cedd701565cb157e014653978507b7d3a88b3a10c4eb1ae00879a",
-          "sha1": "efa85daf414bef6c3b3137584afc449f93cd531f"
+          "sha1": "efa85daf414bef6c3b3137584afc449f93cd531f",
+          "sha512": "8dbb84066902afebbb1901e512a6d9f8da7416f06b0af638f8e1bf6661a977c8d88ea22ede5cedd701565cb157e014653978507b7d3a88b3a10c4eb1ae00879a"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/13HU1vOz/CraterLib-Fabric-1.20-2.1.4.jar",
         "filename": "CraterLib-Fabric-1.20-2.1.4.jar",
@@ -1810,8 +1810,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "76107a499046a7c5270ad792dcbd666174889d3fc77797f788ff7e9094ff7bf50e8a8785b1d52da4ad6a1d330568086de053234ef1f339f920b7d89d2ad1c035",
-          "sha1": "bba997cea63dede9e6de8712d41f553083382e04"
+          "sha1": "bba997cea63dede9e6de8712d41f553083382e04",
+          "sha512": "76107a499046a7c5270ad792dcbd666174889d3fc77797f788ff7e9094ff7bf50e8a8785b1d52da4ad6a1d330568086de053234ef1f339f920b7d89d2ad1c035"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/s9Kd8ye5/CraterLib-Fabric-1.19.2-2.1.4.jar",
         "filename": "CraterLib-Fabric-1.19.2-2.1.4.jar",
@@ -1864,8 +1864,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "5019017e768f447162b586212637995a7cbe82efcb8ed6a7a4e466b628a49dd43433b5ba69166f6df9724d5adc4f14db462f0d110bddf27515fb51ab74df20e1",
-          "sha1": "e33a105919a8fce9067046aeaea98828033538d3"
+          "sha1": "e33a105919a8fce9067046aeaea98828033538d3",
+          "sha512": "5019017e768f447162b586212637995a7cbe82efcb8ed6a7a4e466b628a49dd43433b5ba69166f6df9724d5adc4f14db462f0d110bddf27515fb51ab74df20e1"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/OznsuQpT/CraterLib-Forge-1.18.2-2.1.4.jar",
         "filename": "CraterLib-Forge-1.18.2-2.1.4.jar",
@@ -1962,8 +1962,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c27536eb79e0b2dda5ef77be270de8330603bb7c",
-          "sha512": "66363c857c898405743ebadc64c7120e3668615550693def9417f3b456d571b00e7c05bf95917799c3e84cb1f053136c903571afaaddf893f6b18feca1a2a167"
+          "sha512": "66363c857c898405743ebadc64c7120e3668615550693def9417f3b456d571b00e7c05bf95917799c3e84cb1f053136c903571afaaddf893f6b18feca1a2a167",
+          "sha1": "c27536eb79e0b2dda5ef77be270de8330603bb7c"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/bihR1u6X/CraterLib-NeoForge-1.21.3-2.1.3.jar",
         "filename": "CraterLib-NeoForge-1.21.3-2.1.3.jar",
@@ -1999,7 +1999,7 @@
     "changelog": "**Bug Fixes**:\n\n- Added a workaround for LuckPerms turning players into ghost players\n- Fixed Missing Getters on LuckPerms events\n\n**New Features**:\n\n- Swapped Built In Config screen for a Cloth Config System, so client side mods can have in-game configs\n- Added new APIs for Simple RPC (V4 rewrite)\n- Added new APIs for getting player information from Commands\n- Added Compat API for Player Revive Mod\n- Added new APIs to know when the Minecraft Whitelist changes",
     "changelog_url": null,
     "date_published": "2025-02-02T14:49:29.412833Z",
-    "downloads": 6823,
+    "downloads": 6826,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2061,8 +2061,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "798c04b926df356c2be2daa9a8512e544757ba72",
-          "sha512": "c82dc9395b39cd299ffa3d2449924405faebe46f9f87fc6f56f3c717de053d6f8234e7cfcfb1a35df0de547a87fc7b03e2e5dfc14eb74cea78571102c67e91de"
+          "sha512": "c82dc9395b39cd299ffa3d2449924405faebe46f9f87fc6f56f3c717de053d6f8234e7cfcfb1a35df0de547a87fc7b03e2e5dfc14eb74cea78571102c67e91de",
+          "sha1": "798c04b926df356c2be2daa9a8512e544757ba72"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/JcguohD7/CraterLib-NeoForge-1.21-2.1.3.jar",
         "filename": "CraterLib-NeoForge-1.21-2.1.3.jar",
@@ -2098,7 +2098,7 @@
     "changelog": "**Bug Fixes**:\n\n- Added a workaround for LuckPerms turning players into ghost players\n- Fixed Missing Getters on LuckPerms events\n\n**New Features**:\n\n- Swapped Built In Config screen for a Cloth Config System, so client side mods can have in-game configs\n- Added new APIs for Simple RPC (V4 rewrite)\n- Added new APIs for getting player information from Commands\n- Added Compat API for Player Revive Mod\n- Added new APIs to know when the Minecraft Whitelist changes",
     "changelog_url": null,
     "date_published": "2025-02-02T14:46:36.162124Z",
-    "downloads": 82538,
+    "downloads": 82722,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2244,8 +2244,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9432ed1b69c8ed287eb594da660700faf48a55d3c8bd7598d4caeb824320749f09e86550e4268e5eb24a4c261ce583653d2ace6f31e215318c19d491b2444309",
-          "sha1": "96f6f7bbd19c1f75be57913cb12ed3749c93137c"
+          "sha1": "96f6f7bbd19c1f75be57913cb12ed3749c93137c",
+          "sha512": "9432ed1b69c8ed287eb594da660700faf48a55d3c8bd7598d4caeb824320749f09e86550e4268e5eb24a4c261ce583653d2ace6f31e215318c19d491b2444309"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/FR62AcQt/CraterLib-Fabric-1.20.4-2.1.3.jar",
         "filename": "CraterLib-Fabric-1.20.4-2.1.3.jar",
@@ -2257,13 +2257,13 @@
     "dependencies": [
       {
         "version_id": null,
-        "project_id": "mOgUt4GM",
+        "project_id": "9s6osm5g",
         "file_name": null,
         "dependency_type": "optional"
       },
       {
         "version_id": null,
-        "project_id": "9s6osm5g",
+        "project_id": "mOgUt4GM",
         "file_name": null,
         "dependency_type": "optional"
       },
@@ -2298,8 +2298,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "76a54851fc78bd9285a916367414dbaac630849df0937f3bdb16dc474483868a8ca063a4a824fafcdb4f9c41d6e1e680a585d2a0d8183b8f33496693c9710dd5",
-          "sha1": "1ce182391ba80df3a53c60a4c4ed47d7f9dd1674"
+          "sha1": "1ce182391ba80df3a53c60a4c4ed47d7f9dd1674",
+          "sha512": "76a54851fc78bd9285a916367414dbaac630849df0937f3bdb16dc474483868a8ca063a4a824fafcdb4f9c41d6e1e680a585d2a0d8183b8f33496693c9710dd5"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/GfulIT2S/CraterLib-Forge-1.20.2-2.1.3.jar",
         "filename": "CraterLib-Forge-1.20.2-2.1.3.jar",
@@ -2341,8 +2341,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "0e5e97a760a8d548cb75cdab14072e663feb6730",
-          "sha512": "4a1201ce109f9a0be2751621160384142a9a4de19890e8b0c99549f50cd2cf9fd3ec1694a8c6fcccf5d8f3226d8387a22cc0a204778971e7730ed8f0d3998787"
+          "sha512": "4a1201ce109f9a0be2751621160384142a9a4de19890e8b0c99549f50cd2cf9fd3ec1694a8c6fcccf5d8f3226d8387a22cc0a204778971e7730ed8f0d3998787",
+          "sha1": "0e5e97a760a8d548cb75cdab14072e663feb6730"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/o47y8VjX/CraterLib-Fabric-1.20.2-2.1.3.jar",
         "filename": "CraterLib-Fabric-1.20.2-2.1.3.jar",
@@ -2389,15 +2389,15 @@
     "changelog": "**Bug Fixes**:\n\n- Added a workaround for LuckPerms turning players into ghost players\n- Fixed Missing Getters on LuckPerms events\n\n**New Features**:\n\n- Swapped Built In Config screen for a Cloth Config System, so client side mods can have in-game configs\n- Added new APIs for Simple RPC (V4 rewrite)\n- Added new APIs for getting player information from Commands\n- Added Compat API for Player Revive Mod\n- Added new APIs to know when the Minecraft Whitelist changes",
     "changelog_url": null,
     "date_published": "2025-02-02T14:33:02.149499Z",
-    "downloads": 13799,
+    "downloads": 13847,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "af1ed4e880a1fc6ec346a3abde6dccb2cd8c1fb7",
-          "sha512": "60293c925c9021bfc5cf645099c99c1ce82d935c6dd42804eeb9e681ddcc154d8338df4139feb6b22d5e25ff68f3f6520f717b07c33bb479774498cab4783f35"
+          "sha512": "60293c925c9021bfc5cf645099c99c1ce82d935c6dd42804eeb9e681ddcc154d8338df4139feb6b22d5e25ff68f3f6520f717b07c33bb479774498cab4783f35",
+          "sha1": "af1ed4e880a1fc6ec346a3abde6dccb2cd8c1fb7"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/1nFU5ee8/CraterLib-Forge-1.20-2.1.3.jar",
         "filename": "CraterLib-Forge-1.20-2.1.3.jar",
@@ -2433,7 +2433,7 @@
     "changelog": "**Bug Fixes**:\n\n- Added a workaround for LuckPerms turning players into ghost players\n- Fixed Missing Getters on LuckPerms events\n\n**New Features**:\n\n- Swapped Built In Config screen for a Cloth Config System, so client side mods can have in-game configs\n- Added new APIs for Simple RPC (V4 rewrite)\n- Added new APIs for getting player information from Commands\n- Added Compat API for Player Revive Mod\n- Added new APIs to know when the Minecraft Whitelist changes",
     "changelog_url": null,
     "date_published": "2025-02-02T14:22:06.467015Z",
-    "downloads": 5542,
+    "downloads": 5546,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2688,8 +2688,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "499a2b6ac0ade1416d0a7e5440745a357fa0390b55d88285cb7929bc391263fb60f5c1e1a7a9bba43fe8b71fb12f5ab546a18ad59e54fd194a9677fdc1d67eca",
-          "sha1": "ee7d57c92e85865da6fba7fd78abce32b4e3e9e8"
+          "sha1": "ee7d57c92e85865da6fba7fd78abce32b4e3e9e8",
+          "sha512": "499a2b6ac0ade1416d0a7e5440745a357fa0390b55d88285cb7929bc391263fb60f5c1e1a7a9bba43fe8b71fb12f5ab546a18ad59e54fd194a9677fdc1d67eca"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/ivJ1gXa7/CraterLib-Forge-1.18.2-2.1.3.jar",
         "filename": "CraterLib-Forge-1.18.2-2.1.3.jar",
@@ -2731,8 +2731,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "483ea27cfb2154781fee4dd31793f0ab607da2e9de57326bea7bcee08af40296d7c2a0c0803b73050139dcbf93ba22e0a2846149254fee13c748c812385ae8e0",
-          "sha1": "a1e3b61d7035c8bb9fc5788659d57fb7a6c7e67a"
+          "sha1": "a1e3b61d7035c8bb9fc5788659d57fb7a6c7e67a",
+          "sha512": "483ea27cfb2154781fee4dd31793f0ab607da2e9de57326bea7bcee08af40296d7c2a0c0803b73050139dcbf93ba22e0a2846149254fee13c748c812385ae8e0"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/OR7BEATV/CraterLib-Fabric-1.18.2-2.1.3.jar",
         "filename": "CraterLib-Fabric-1.18.2-2.1.3.jar",
@@ -2785,8 +2785,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2e253688acd7f6059ecfd3879f0d2824e1a1d095b232c1bc2490602a2516d9087626f471457f286564f2d3cdc8964b1a7388c9bd2fbbaef04848b666bf9b189e",
-          "sha1": "db8dbca29bb866ca7ca72207e98251e8ae88c77a"
+          "sha1": "db8dbca29bb866ca7ca72207e98251e8ae88c77a",
+          "sha512": "2e253688acd7f6059ecfd3879f0d2824e1a1d095b232c1bc2490602a2516d9087626f471457f286564f2d3cdc8964b1a7388c9bd2fbbaef04848b666bf9b189e"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/9rnSkEU3/CraterLib-Forge-1.20.2-2.1.2%2Bhotfix.1.jar",
         "filename": "CraterLib-Forge-1.20.2-2.1.2+hotfix.1.jar",
@@ -2857,7 +2857,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fix almost all chat related events not working (Forge/Fabric)",
     "changelog_url": null,
     "date_published": "2024-12-05T07:41:46.26076Z",
-    "downloads": 8236,
+    "downloads": 8242,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2894,15 +2894,15 @@
     "changelog": "**Bug Fixes**:\n\n- Fix almost all chat related events not working (Forge/Fabric)",
     "changelog_url": null,
     "date_published": "2024-12-05T07:41:06.830221Z",
-    "downloads": 39548,
+    "downloads": 39631,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "2300379f270d751dcfff8a612124ffd824ab649b",
-          "sha512": "d667452a61cfdabdd6555c371b564dae73da948b8b3b9f6f96d01012afe4835fe9f9158bd26229dafb854c6fc575593b3e600e857777560ccd5d71ab4dd0a251"
+          "sha512": "d667452a61cfdabdd6555c371b564dae73da948b8b3b9f6f96d01012afe4835fe9f9158bd26229dafb854c6fc575593b3e600e857777560ccd5d71ab4dd0a251",
+          "sha1": "2300379f270d751dcfff8a612124ffd824ab649b"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/EFb9tfNi/CraterLib-Fabric-1.20-2.1.2%2Bhotfix.1.jar",
         "filename": "CraterLib-Fabric-1.20-2.1.2+hotfix.1.jar",
@@ -3052,15 +3052,15 @@
     "changelog": "**New Features**:\n\n- Paper Support. Currently only available on [NightBloom](https://nightbloom.cc/project/craterlib/files?loader=paper)\n- Added APIs for working with FTB Ranks and LuckPerms groups\n\n**Bug Fixes**:\n\n- Fixed Vanish compact API being swapped\n\n**Changes**:\n\n- Config library now logs which line of the config the error is on",
     "changelog_url": null,
     "date_published": "2024-12-03T11:14:53.290519Z",
-    "downloads": 12232,
+    "downloads": 12234,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "02e4edf582ad33b906b7831262e4587f6888c58729b5cbf67d437a007d6abdbc78092099c10da3ab3d4c492fb4e3191adcf420a52a003d2f66efb8537b0d18f4",
-          "sha1": "a3a26391075d4d423c1e3c0af06689bb3022dac4"
+          "sha1": "a3a26391075d4d423c1e3c0af06689bb3022dac4",
+          "sha512": "02e4edf582ad33b906b7831262e4587f6888c58729b5cbf67d437a007d6abdbc78092099c10da3ab3d4c492fb4e3191adcf420a52a003d2f66efb8537b0d18f4"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/XCM1DsHb/CraterLib-Fabric-1.21.3-2.1.2.jar",
         "filename": "CraterLib-Fabric-1.21.3-2.1.2.jar",
@@ -3132,7 +3132,7 @@
     "changelog": "**New Features**:\n\n- Paper Support. Currently only available on [NightBloom](https://nightbloom.cc/project/craterlib/files?loader=paper)\n- Added APIs for working with FTB Ranks and LuckPerms groups\n\n**Bug Fixes**:\n\n- Fixed Vanish compact API being swapped\n\n**Changes**:\n\n- Config library now logs which line of the config the error is on",
     "changelog_url": null,
     "date_published": "2024-12-03T11:12:04.163183Z",
-    "downloads": 30548,
+    "downloads": 30563,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3216,8 +3216,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "393fffbcc921cd01ebbf751c77e44447ebea9138",
-          "sha512": "4b1c84a80c5f1179b4ae6c55ef20403d3f68af251ec7a0292fb22fd2c5c7819caec4ed5a1200ab559b82c37e30c4ee5c56182dcfb41d41343181453534010ef6"
+          "sha512": "4b1c84a80c5f1179b4ae6c55ef20403d3f68af251ec7a0292fb22fd2c5c7819caec4ed5a1200ab559b82c37e30c4ee5c56182dcfb41d41343181453534010ef6",
+          "sha1": "393fffbcc921cd01ebbf751c77e44447ebea9138"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/dgHO3tIb/CraterLib-Forge-1.20.4-2.1.2.jar",
         "filename": "CraterLib-Forge-1.20.4-2.1.2.jar",
@@ -3245,7 +3245,7 @@
     "changelog": "**New Features**:\n\n- Paper Support. Currently only available on [NightBloom](https://nightbloom.cc/project/craterlib/files?loader=paper)\n- Added APIs for working with FTB Ranks and LuckPerms groups\n\n**Bug Fixes**:\n\n- Fixed Vanish compact API being swapped\n\n**Changes**:\n\n- Config library now logs which line of the config the error is on",
     "changelog_url": null,
     "date_published": "2024-12-03T11:08:00.014954Z",
-    "downloads": 1596,
+    "downloads": 1600,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3294,8 +3294,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1c8ccefbd11bd40e70503a1cf56b22c34977c2f1",
-          "sha512": "5ca4199298ceb4ece2b642df18fabbbf0ca3fb32b8d6ab6a058b977fb68b718298ca8a5460b04518042102527bb00c26548fe56a0dea04d2c694f8e4c0f9803e"
+          "sha512": "5ca4199298ceb4ece2b642df18fabbbf0ca3fb32b8d6ab6a058b977fb68b718298ca8a5460b04518042102527bb00c26548fe56a0dea04d2c694f8e4c0f9803e",
+          "sha1": "1c8ccefbd11bd40e70503a1cf56b22c34977c2f1"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/p25LzJPU/CraterLib-Forge-1.20.2-2.1.2.jar",
         "filename": "CraterLib-Forge-1.20.2-2.1.2.jar",
@@ -3366,15 +3366,15 @@
     "changelog": "**New Features**:\n\n- Paper Support. Currently only available on [NightBloom](https://nightbloom.cc/project/craterlib/files?loader=paper)\n- Added APIs for working with FTB Ranks and LuckPerms groups\n\n**Bug Fixes**:\n\n- Fixed Vanish compact API being swapped\n\n**Changes**:\n\n- Config library now logs which line of the config the error is on",
     "changelog_url": null,
     "date_published": "2024-12-03T11:01:35.215181Z",
-    "downloads": 168,
+    "downloads": 169,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c948c05826c2b872d439b7513cf46140ab5ab511",
-          "sha512": "473b49f12bb8a885260b3b18022d4451e34e0b347ac9a81bdb79cb72cd42079eda8cbdf27c37e89e1b074d05d3fbbd2b6930d33b79d25c8bbec4f7ef4939eb4e"
+          "sha512": "473b49f12bb8a885260b3b18022d4451e34e0b347ac9a81bdb79cb72cd42079eda8cbdf27c37e89e1b074d05d3fbbd2b6930d33b79d25c8bbec4f7ef4939eb4e",
+          "sha1": "c948c05826c2b872d439b7513cf46140ab5ab511"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/8PRu5W3b/CraterLib-Forge-1.20-2.1.2.jar",
         "filename": "CraterLib-Forge-1.20-2.1.2.jar",
@@ -3410,8 +3410,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "ada1757afb8ec41ecf4fc73d2bd7b535d5d316af",
-          "sha512": "83d8f355140a29f617a9fbb0f3c1131e41a501026637e7a8827e41fa42e6e5d0ac28912bd535d32d3e041e6ef62e659946523fe371fc02e394514ee95ecde4dd"
+          "sha512": "83d8f355140a29f617a9fbb0f3c1131e41a501026637e7a8827e41fa42e6e5d0ac28912bd535d32d3e041e6ef62e659946523fe371fc02e394514ee95ecde4dd",
+          "sha1": "ada1757afb8ec41ecf4fc73d2bd7b535d5d316af"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/4Cpo1ET7/CraterLib-Fabric-1.20-2.1.2.jar",
         "filename": "CraterLib-Fabric-1.20-2.1.2.jar",
@@ -3488,8 +3488,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0f94afa940bf5792bae879ca8d17dbe791cfd444f2e0c426cfe08fd51caba2e20f27f6c76fc8a1edfc33f20669a20e16ecc9fc05704b39da28b36f9e4f80470c",
-          "sha1": "b25491b972a03d611888c88d5ff3e60625e23a7b"
+          "sha1": "b25491b972a03d611888c88d5ff3e60625e23a7b",
+          "sha512": "0f94afa940bf5792bae879ca8d17dbe791cfd444f2e0c426cfe08fd51caba2e20f27f6c76fc8a1edfc33f20669a20e16ecc9fc05704b39da28b36f9e4f80470c"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/8LMhxrFt/CraterLib-Fabric-1.19.4-2.1.2.jar",
         "filename": "CraterLib-Fabric-1.19.4-2.1.2.jar",
@@ -3523,15 +3523,15 @@
     "changelog": "**New Features**:\n\n- Paper Support. Currently only available on [NightBloom](https://nightbloom.cc/project/craterlib/files?loader=paper)\n- Added APIs for working with FTB Ranks and LuckPerms groups\n\n**Bug Fixes**:\n\n- Fixed Vanish compact API being swapped\n\n**Changes**:\n\n- Config library now logs which line of the config the error is on",
     "changelog_url": null,
     "date_published": "2024-12-03T10:54:18.044168Z",
-    "downloads": 2327,
+    "downloads": 2330,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "09fe86800174c3c6271367f8a86165b37a1ead54",
-          "sha512": "5b061e8229e72953678720a875394b134e4dc658473900db066ff310956a8b0d70a61ff5b74463b09b105b85c91887199efb604c278a008d398a0cdc68f76b0c"
+          "sha512": "5b061e8229e72953678720a875394b134e4dc658473900db066ff310956a8b0d70a61ff5b74463b09b105b85c91887199efb604c278a008d398a0cdc68f76b0c",
+          "sha1": "09fe86800174c3c6271367f8a86165b37a1ead54"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/FfU7Ao9H/CraterLib-Forge-1.19.2-2.1.2.jar",
         "filename": "CraterLib-Forge-1.19.2-2.1.2.jar",
@@ -3687,8 +3687,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6f606cc95064200db36db8e384f375dbaeb7ae3dd363bb6a5ee72cf77615f8dba1de2f3eff76f956a9e1d15b066e413890f30128d154bc5fb7ca1b923efe18ae",
-          "sha1": "c5c26fd6b5eaa6fcbe75812544336bf11a2a823c"
+          "sha1": "c5c26fd6b5eaa6fcbe75812544336bf11a2a823c",
+          "sha512": "6f606cc95064200db36db8e384f375dbaeb7ae3dd363bb6a5ee72cf77615f8dba1de2f3eff76f956a9e1d15b066e413890f30128d154bc5fb7ca1b923efe18ae"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/zilayLM6/CraterLib-NeoForge-1.21.2-2.1.1.jar",
         "filename": "CraterLib-NeoForge-1.21.2-2.1.1.jar",
@@ -3724,8 +3724,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1d6335e32ff8c20a80b6b7dda0afe997d393881ea48bfe0e7457be0f06dffe5d330672c65265d8c4ef0eca2254a101536af7b2a7a08d16ac831e9957a04bf417",
-          "sha1": "1cb1f735b0efffa6278342b11d69dcb215d057fe"
+          "sha1": "1cb1f735b0efffa6278342b11d69dcb215d057fe",
+          "sha512": "1d6335e32ff8c20a80b6b7dda0afe997d393881ea48bfe0e7457be0f06dffe5d330672c65265d8c4ef0eca2254a101536af7b2a7a08d16ac831e9957a04bf417"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/Fs1SP8Qg/CraterLib-Fabric-1.21.2-2.1.1.jar",
         "filename": "CraterLib-Fabric-1.21.2-2.1.1.jar",
@@ -3797,7 +3797,7 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n**New Features**:\n\nAdded FTB Essentials Compat Layer for SDLink\n",
     "changelog_url": null,
     "date_published": "2024-10-11T10:03:04.335062Z",
-    "downloads": 17152,
+    "downloads": 17167,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -3910,15 +3910,15 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n**New Features**:\n\nAdded FTB Essentials Compat Layer for SDLink\n",
     "changelog_url": null,
     "date_published": "2024-10-11T09:59:44.18444Z",
-    "downloads": 4158,
+    "downloads": 4161,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a17b1066fdd515f358ff8cc81dbefc7cc30a1190",
-          "sha512": "9fc00d68acf71e67067a48426c3b95990ec569b13f418bfa0a0797ef377975d377b0836e1b9e4cd860482fa35e4c18f875e403112c2ff29a489f1a5dd2cf2905"
+          "sha512": "9fc00d68acf71e67067a48426c3b95990ec569b13f418bfa0a0797ef377975d377b0836e1b9e4cd860482fa35e4c18f875e403112c2ff29a489f1a5dd2cf2905",
+          "sha1": "a17b1066fdd515f358ff8cc81dbefc7cc30a1190"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/ADu4CFq3/CraterLib-Fabric-1.20.4-2.1.1.jar",
         "filename": "CraterLib-Fabric-1.20.4-2.1.1.jar",
@@ -4031,15 +4031,15 @@
     "changelog": "**New Features**:\n\nAdded FTB Essentials Compat Layer for SDLink\n",
     "changelog_url": null,
     "date_published": "2024-10-11T09:53:49.645494Z",
-    "downloads": 6377,
+    "downloads": 6382,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "21edde855bbda93fdfab2ecbeef8aaae8998b9df",
-          "sha512": "71087188b28249eba8d1d9bda6262e02b3ca411c223c30811f06fdf49eff8acf782b03279e6513f19aa15e835f3a74b2ccf8e34983c2c92c9ce212281752fd4c"
+          "sha512": "71087188b28249eba8d1d9bda6262e02b3ca411c223c30811f06fdf49eff8acf782b03279e6513f19aa15e835f3a74b2ccf8e34983c2c92c9ce212281752fd4c",
+          "sha1": "21edde855bbda93fdfab2ecbeef8aaae8998b9df"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/lrhBfLA7/CraterLib-Forge-1.20-2.1.1.jar",
         "filename": "CraterLib-Forge-1.20-2.1.1.jar",
@@ -4068,15 +4068,15 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n**New Features**:\n\nAdded FTB Essentials Compat Layer for SDLink\n",
     "changelog_url": null,
     "date_published": "2024-10-11T09:53:17.362677Z",
-    "downloads": 11169,
+    "downloads": 11188,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "7796c17ffc4077d14e3cfcbe9100b08920e903e17774f068fa587518a3f2ba407356998e960b38668a61e0c75f429e4c8bc24ba0d24f18dbff7f57e721ba7a77",
-          "sha1": "cbfe38e8476c73f6ce5caf5ad90231c2583b8058"
+          "sha1": "cbfe38e8476c73f6ce5caf5ad90231c2583b8058",
+          "sha512": "7796c17ffc4077d14e3cfcbe9100b08920e903e17774f068fa587518a3f2ba407356998e960b38668a61e0c75f429e4c8bc24ba0d24f18dbff7f57e721ba7a77"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/goe111FX/CraterLib-Fabric-1.20-2.1.1.jar",
         "filename": "CraterLib-Fabric-1.20-2.1.1.jar",
@@ -4117,8 +4117,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2bd94ec3b31f9a8f41a48e6e82fad0b95158669d3653047ebd6e078da6d42f1f56b058a4c62ae6e8ec46caec4488c70882f5254ffa53dd82eb71654066902e42",
-          "sha1": "f6e566712d1a58e83a7855f8981b793d84a41d83"
+          "sha1": "f6e566712d1a58e83a7855f8981b793d84a41d83",
+          "sha512": "2bd94ec3b31f9a8f41a48e6e82fad0b95158669d3653047ebd6e078da6d42f1f56b058a4c62ae6e8ec46caec4488c70882f5254ffa53dd82eb71654066902e42"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/iWifp5eW/CraterLib-Forge-1.19.4-2.1.1.jar",
         "filename": "CraterLib-Forge-1.19.4-2.1.1.jar",
@@ -4153,8 +4153,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "734c59acccf5577765cb9d58efb40f48500d4f7e759b92ec11e214f7a9e24da93f3138e15f0b121298c491b0fb26819098aaad2d80ee2421153a0420160278d5",
-          "sha1": "daf940b0210c33eacba93e9ac67d9558878aa756"
+          "sha1": "daf940b0210c33eacba93e9ac67d9558878aa756",
+          "sha512": "734c59acccf5577765cb9d58efb40f48500d4f7e759b92ec11e214f7a9e24da93f3138e15f0b121298c491b0fb26819098aaad2d80ee2421153a0420160278d5"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/XF9k8gx4/CraterLib-Fabric-1.19.4-2.1.1.jar",
         "filename": "CraterLib-Fabric-1.19.4-2.1.1.jar",
@@ -4188,15 +4188,15 @@
     "changelog": "**New Features**:\n\nAdded FTB Essentials Compat Layer for SDLink\n",
     "changelog_url": null,
     "date_published": "2024-10-11T09:23:01.028025Z",
-    "downloads": 1439,
+    "downloads": 1441,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b2a31a93b6528e072a51cb25e14271d84922e768",
-          "sha512": "315831008785b162018bb32e74d6c20ff162f335d218e0611e8bac5ae3c099ab7b494603b95059074d1e8b06b04d0e92981f2c20f1dc0db3a4134d81ece70bd0"
+          "sha512": "315831008785b162018bb32e74d6c20ff162f335d218e0611e8bac5ae3c099ab7b494603b95059074d1e8b06b04d0e92981f2c20f1dc0db3a4134d81ece70bd0",
+          "sha1": "b2a31a93b6528e072a51cb25e14271d84922e768"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/5ckcwtKX/CraterLib-Forge-1.19.2-2.1.1.jar",
         "filename": "CraterLib-Forge-1.19.2-2.1.1.jar",
@@ -4224,7 +4224,7 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n**New Features**:\n\nAdded FTB Essentials Compat Layer for SDLink\n",
     "changelog_url": null,
     "date_published": "2024-10-11T09:22:28.769272Z",
-    "downloads": 2544,
+    "downloads": 2549,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4273,8 +4273,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "87709e7d951c0862d239f9d2a5aa7995819f7efa0030c0443e249e07a117f97f7ae7c542bf3d6cbd41f411d77bc190bb68cc133cddf2ec2af0a04fbd86bcfeeb",
-          "sha1": "493957cb679d813f2564dd0c4ea7a01757dfa539"
+          "sha1": "493957cb679d813f2564dd0c4ea7a01757dfa539",
+          "sha512": "87709e7d951c0862d239f9d2a5aa7995819f7efa0030c0443e249e07a117f97f7ae7c542bf3d6cbd41f411d77bc190bb68cc133cddf2ec2af0a04fbd86bcfeeb"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/donzzbtv/CraterLib-Forge-1.18.2-2.1.1.jar",
         "filename": "CraterLib-Forge-1.18.2-2.1.1.jar",
@@ -4309,8 +4309,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "cb468877c67d30bce7c043886829d4a6c381592b244351d85cbd38904e44645ffb9610fb34c5c7b4eac918de689ba055eadec48e01ddb3859b6253dbe8fd9b43",
-          "sha1": "0974e5d0d838c28ddd409bdf4620c6ce9498faf6"
+          "sha1": "0974e5d0d838c28ddd409bdf4620c6ce9498faf6",
+          "sha512": "cb468877c67d30bce7c043886829d4a6c381592b244351d85cbd38904e44645ffb9610fb34c5c7b4eac918de689ba055eadec48e01ddb3859b6253dbe8fd9b43"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/217JuPC8/CraterLib-Fabric-1.18.2-2.1.1.jar",
         "filename": "CraterLib-Fabric-1.18.2-2.1.1.jar",
@@ -4387,8 +4387,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1df1c06f7dbc759a0f053129ae584688a9c050291d1c9175be84dbfa1766e0e262d8f1134dd614d6e598bef868455bbbbff7c227a34514c026b1b976a2911810",
-          "sha1": "5dbdfe2026684dd84ea1cb2ccb4dc38618a91ea4"
+          "sha1": "5dbdfe2026684dd84ea1cb2ccb4dc38618a91ea4",
+          "sha512": "1df1c06f7dbc759a0f053129ae584688a9c050291d1c9175be84dbfa1766e0e262d8f1134dd614d6e598bef868455bbbbff7c227a34514c026b1b976a2911810"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/BLaISRt7/CraterLib-Fabric-1.19.2-2.1.0%2Bhotfix.1.jar",
         "filename": "CraterLib-Fabric-1.19.2-2.1.0+hotfix.1.jar",
@@ -4508,8 +4508,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c3574c8a72504e07660777adedd83e14ce34cc57",
-          "sha512": "5b57f26b42a8cc461bf48f118e366980726d07866db58701172884fa8a2d75e3d112c12a3f9583a9a6b9f5940b6b9263f8e3daebde6f99941417077157c841a0"
+          "sha512": "5b57f26b42a8cc461bf48f118e366980726d07866db58701172884fa8a2d75e3d112c12a3f9583a9a6b9f5940b6b9263f8e3daebde6f99941417077157c841a0",
+          "sha1": "c3574c8a72504e07660777adedd83e14ce34cc57"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/HtD7r8pV/CraterLib-NeoForge-1.21-2.1.0.jar",
         "filename": "CraterLib-NeoForge-1.21-2.1.0.jar",
@@ -4538,15 +4538,15 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n\n**New Features**:\n\n- New API's for Maintenance Mode\n- Added support for LuckPerms on Commands\n- Improved Config System with JSON support\n- Added support for more advanced commands\n- Added MiniMOTD support for formatting (Mostly used by MaintenanceMode)\n\n**Bug Fixes**:\n\n- The config system is no longer Async, which should fix a lot of issues with config reloads and updates\n",
     "changelog_url": null,
     "date_published": "2024-09-07T08:18:44.083705Z",
-    "downloads": 9075,
+    "downloads": 9078,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "283219ef8d6f74b1118e0d28723a12de902b7ac2d3c88b78382076598a956d53cfe6a63321e4442a7d91ea7319fad5e34f25a7883ebf35d9f64399706e6d3d3d",
-          "sha1": "98d13c9d12c3ea57ab55701f307aacdeeab6eaed"
+          "sha1": "98d13c9d12c3ea57ab55701f307aacdeeab6eaed",
+          "sha512": "283219ef8d6f74b1118e0d28723a12de902b7ac2d3c88b78382076598a956d53cfe6a63321e4442a7d91ea7319fad5e34f25a7883ebf35d9f64399706e6d3d3d"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/F52pGppz/CraterLib-Fabric-1.21-2.1.0.jar",
         "filename": "CraterLib-Fabric-1.21-2.1.0.jar",
@@ -4587,8 +4587,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "316d64741d324886fca5771443d07b13744658a014452e382e6727f014feab4232810c1ebde95d72e3583fd2be44b10ef69bb26dd221ac01b03bfa9f43b4fc77",
-          "sha1": "cc95960e8ccede0e45d44aef57fc3b20905ade4b"
+          "sha1": "cc95960e8ccede0e45d44aef57fc3b20905ade4b",
+          "sha512": "316d64741d324886fca5771443d07b13744658a014452e382e6727f014feab4232810c1ebde95d72e3583fd2be44b10ef69bb26dd221ac01b03bfa9f43b4fc77"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/GscAJS0V/CraterLib-NeoForge-1.20.4-2.1.0.jar",
         "filename": "CraterLib-NeoForge-1.20.4-2.1.0.jar",
@@ -4622,8 +4622,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "2c30a35df42b7880acc3f14c6acd20c690be45380b3e3178d054a18ce2a02faefa34116ff47df40baeb0df8bff8de31d6b1e26447c2042d2c488b499172a12b5",
-          "sha1": "72361e82bc998f2a52627e994c98723f54cf09e7"
+          "sha1": "72361e82bc998f2a52627e994c98723f54cf09e7",
+          "sha512": "2c30a35df42b7880acc3f14c6acd20c690be45380b3e3178d054a18ce2a02faefa34116ff47df40baeb0df8bff8de31d6b1e26447c2042d2c488b499172a12b5"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/gLysOhJE/CraterLib-Forge-1.20.4-2.1.0.jar",
         "filename": "CraterLib-Forge-1.20.4-2.1.0.jar",
@@ -4658,8 +4658,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c44c586fc3375f6cbabf021e1993c34ad916799e",
-          "sha512": "804234626b60212ca0382031965e3a8903c743220508e66cab0681d4be5febe99cbdf2432e537314be51283fb67371df1aa14b4c993117686b20199da6af4639"
+          "sha512": "804234626b60212ca0382031965e3a8903c743220508e66cab0681d4be5febe99cbdf2432e537314be51283fb67371df1aa14b4c993117686b20199da6af4639",
+          "sha1": "c44c586fc3375f6cbabf021e1993c34ad916799e"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/MSgPmuEY/CraterLib-Fabric-1.20.4-2.1.0.jar",
         "filename": "CraterLib-Fabric-1.20.4-2.1.0.jar",
@@ -4700,8 +4700,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "9de6c23c5f375d2d98ed53e5a7a74d026009a25bbe0464d2195c778200a9a49c58ce3137846df8aa172ba6b42dbd807b68178a857c04090775d3e37147bcaf9d",
-          "sha1": "96954f621377440685d41235a175a5f238419f88"
+          "sha1": "96954f621377440685d41235a175a5f238419f88",
+          "sha512": "9de6c23c5f375d2d98ed53e5a7a74d026009a25bbe0464d2195c778200a9a49c58ce3137846df8aa172ba6b42dbd807b68178a857c04090775d3e37147bcaf9d"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/gcWCUSFO/CraterLib-Forge-1.20.2-2.1.0.jar",
         "filename": "CraterLib-Forge-1.20.2-2.1.0.jar",
@@ -4736,8 +4736,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f238276e806814bee078c7729a8d41db65ce87719beefcfeaf1e9698d4017c7d4793132354d52a40783cfeeb315052a2264fdf36188fadac0f3827edb7c5726a",
-          "sha1": "271cc97ee6bf87dd8322ce907f37ea38b7545981"
+          "sha1": "271cc97ee6bf87dd8322ce907f37ea38b7545981",
+          "sha512": "f238276e806814bee078c7729a8d41db65ce87719beefcfeaf1e9698d4017c7d4793132354d52a40783cfeeb315052a2264fdf36188fadac0f3827edb7c5726a"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/rpLzF2f9/CraterLib-Fabric-1.20.2-2.1.0.jar",
         "filename": "CraterLib-Fabric-1.20.2-2.1.0.jar",
@@ -4772,15 +4772,15 @@
     "changelog": "**New Features**:\n\n- New API's for Maintenance Mode\n- Added support for LuckPerms on Commands\n- Improved Config System with JSON support\n- Added support for more advanced commands\n- Added MiniMOTD support for formatting (Mostly used by MaintenanceMode)\n\n**Bug Fixes**:\n\n- The config system is no longer Async, which should fix a lot of issues with config reloads and updates\n",
     "changelog_url": null,
     "date_published": "2024-09-07T08:08:40.302658Z",
-    "downloads": 7837,
+    "downloads": 7847,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "516caf1957b9a487d4c878d3375d3a3b40e9c9c8",
-          "sha512": "abcf28171ffc8a5531e8d314d06df9b2039cc94b458864308963017a27321b7eb31ee8a10881f9e7ccce6a72dd411d1faa058f050d50ef9e11f125e10ee8008e"
+          "sha512": "abcf28171ffc8a5531e8d314d06df9b2039cc94b458864308963017a27321b7eb31ee8a10881f9e7ccce6a72dd411d1faa058f050d50ef9e11f125e10ee8008e",
+          "sha1": "516caf1957b9a487d4c878d3375d3a3b40e9c9c8"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/i40fLjQb/CraterLib-Forge-1.20-2.1.0.jar",
         "filename": "CraterLib-Forge-1.20-2.1.0.jar",
@@ -4809,7 +4809,7 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n\n**New Features**:\n\n- New API's for Maintenance Mode\n- Added support for LuckPerms on Commands\n- Improved Config System with JSON support\n- Added support for more advanced commands\n- Added MiniMOTD support for formatting (Mostly used by MaintenanceMode)\n\n**Bug Fixes**:\n\n- The config system is no longer Async, which should fix a lot of issues with config reloads and updates\n",
     "changelog_url": null,
     "date_published": "2024-09-07T08:08:07.661298Z",
-    "downloads": 49296,
+    "downloads": 49328,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -4858,8 +4858,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6a5dc09ea23415e9b7ae6c7e6e8f3b1286a5dcb4",
-          "sha512": "fe5270edcd428b163ee9e7a11b65d5b0c0cd3e92f57fb90fae724a6346776d5489d74f6af181d181fea0d5f12ea75b8777b69fc8f34d75cd84f41191f1843fcd"
+          "sha512": "fe5270edcd428b163ee9e7a11b65d5b0c0cd3e92f57fb90fae724a6346776d5489d74f6af181d181fea0d5f12ea75b8777b69fc8f34d75cd84f41191f1843fcd",
+          "sha1": "6a5dc09ea23415e9b7ae6c7e6e8f3b1286a5dcb4"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/e43zHZQJ/CraterLib-Forge-1.19.4-2.1.0.jar",
         "filename": "CraterLib-Forge-1.19.4-2.1.0.jar",
@@ -4894,8 +4894,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "ae0369b0551145e8811fff0b2ff005eeb9628710bef00f74cd843d634c422c620c26321616d6d39e36f4629e0edb8c6c99c1f2915601ae5aa2ffd1aa275c095e",
-          "sha1": "c311dfa37ddad006321e0f4592b69364b15a4dfb"
+          "sha1": "c311dfa37ddad006321e0f4592b69364b15a4dfb",
+          "sha512": "ae0369b0551145e8811fff0b2ff005eeb9628710bef00f74cd843d634c422c620c26321616d6d39e36f4629e0edb8c6c99c1f2915601ae5aa2ffd1aa275c095e"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/ZKGpEqBI/CraterLib-Fabric-1.19.4-2.1.0.jar",
         "filename": "CraterLib-Fabric-1.19.4-2.1.0.jar",
@@ -5094,8 +5094,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "c103eecd90425675b1926799fb74afdec75b2c45",
-          "sha512": "13048c0d96ddd8c240b0726bc1b1f505ddc69482806a435732a9568b2465d6ff11721467b574d85cbdf2d6158ff151bdcae1a8137696c92a32aca5436560b8e7"
+          "sha512": "13048c0d96ddd8c240b0726bc1b1f505ddc69482806a435732a9568b2465d6ff11721467b574d85cbdf2d6158ff151bdcae1a8137696c92a32aca5436560b8e7",
+          "sha1": "c103eecd90425675b1926799fb74afdec75b2c45"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/I3HFsaOZ/CraterLib-Fabric-1.20-2.0.3%2Bhotfix.1.jar",
         "filename": "CraterLib-Fabric-1.20-2.0.3+hotfix.1.jar",
@@ -5167,15 +5167,15 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n\n**Bug Fixes**:\n\n- Fixed incompatibility on NeoForge/Forge with other mods that use Adventure API\n- Fixed Vanish integration being broken on Forge (1.18.2-1.20.4)\n- Fixed startup crash due to a mixin config error on 1.20.4\n\n**Changes**:\n\n- Changed ChatEvent to support mods like StyledChat better\n\n",
     "changelog_url": null,
     "date_published": "2024-08-10T11:35:25.551192Z",
-    "downloads": 11446,
+    "downloads": 11447,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "8f54964d3365fa77bba7860c04c196a230b0d7f9",
-          "sha512": "48e2baab1913abc50db7694a9c66ab29dc5718a2768baead695959a398e89b75d36bff08cd5c8ab7080a067b8d8ada1ba50ac90f2c4793418ae75deeaf00c169"
+          "sha512": "48e2baab1913abc50db7694a9c66ab29dc5718a2768baead695959a398e89b75d36bff08cd5c8ab7080a067b8d8ada1ba50ac90f2c4793418ae75deeaf00c169",
+          "sha1": "8f54964d3365fa77bba7860c04c196a230b0d7f9"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/BudKlTmu/CraterLib-Fabric-1.21-2.0.3.jar",
         "filename": "CraterLib-Fabric-1.21-2.0.3.jar",
@@ -5251,8 +5251,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "1dd396839ebb6bf10aeb3c8fb02b311d11021a88fcd09e32678d9d3f4687ab5fc6857ed22639f241f87aaaffc268567f5536fba0e3608a786f8a95917e6e9c0a",
-          "sha1": "0d68bc716fb81ebedc64efc78fb19ba697f6ec14"
+          "sha1": "0d68bc716fb81ebedc64efc78fb19ba697f6ec14",
+          "sha512": "1dd396839ebb6bf10aeb3c8fb02b311d11021a88fcd09e32678d9d3f4687ab5fc6857ed22639f241f87aaaffc268567f5536fba0e3608a786f8a95917e6e9c0a"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/EciQGKk5/CraterLib-Forge-1.20.4-2.0.3.jar",
         "filename": "CraterLib-Forge-1.20.4-2.0.3.jar",
@@ -5329,8 +5329,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "40041eaab5cc205fbabfa2884592898b44f173ef",
-          "sha512": "3dae26376ab227c93071dd8773134ec601e2efaed57e41fb84eb1d6c5b4d283c8ee22a9e8c3ed922f23c6294d60c0af9c85cf84a015d722e9ba577e65792ac20"
+          "sha512": "3dae26376ab227c93071dd8773134ec601e2efaed57e41fb84eb1d6c5b4d283c8ee22a9e8c3ed922f23c6294d60c0af9c85cf84a015d722e9ba577e65792ac20",
+          "sha1": "40041eaab5cc205fbabfa2884592898b44f173ef"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/T25jDxtR/CraterLib-Forge-1.20.2-2.0.3.jar",
         "filename": "CraterLib-Forge-1.20.2-2.0.3.jar",
@@ -5358,7 +5358,7 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n\n**Bug Fixes**:\n\n- Fixed incompatibility on NeoForge/Forge with other mods that use Adventure API\n- Fixed Vanish integration being broken on Forge (1.18.2-1.20.4)\n- Fixed startup crash due to a mixin config error on 1.20.4\n\n**Changes**:\n\n- Changed ChatEvent to support mods like StyledChat better\n\n",
     "changelog_url": null,
     "date_published": "2024-08-10T11:29:08.298139Z",
-    "downloads": 1695,
+    "downloads": 1696,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5401,7 +5401,7 @@
     "changelog": "**Bug Fixes**:\n\n- Fixed incompatibility on NeoForge/Forge with other mods that use Adventure API\n- Fixed Vanish integration being broken on Forge (1.18.2-1.20.4)\n- Fixed startup crash due to a mixin config error on 1.20.4\n\n**Changes**:\n\n- Changed ChatEvent to support mods like StyledChat better\n",
     "changelog_url": null,
     "date_published": "2024-08-10T11:26:37.696262Z",
-    "downloads": 9250,
+    "downloads": 9251,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -5645,8 +5645,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4e59ca82a460ba0ef520fa5d462edd8b3f881d9a",
-          "sha512": "262a8326099ffa2563ec1c614c2b93a4e70e028d84d942f30ebc5e989b848e32f45ef1a9a23b73405d14a25e90ad6b575a5f2e60992c022293d30de7bc97491b"
+          "sha512": "262a8326099ffa2563ec1c614c2b93a4e70e028d84d942f30ebc5e989b848e32f45ef1a9a23b73405d14a25e90ad6b575a5f2e60992c022293d30de7bc97491b",
+          "sha1": "4e59ca82a460ba0ef520fa5d462edd8b3f881d9a"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/B2i5G3Ep/CraterLib-Forge-1.18.2-2.0.3.jar",
         "filename": "CraterLib-Forge-1.18.2-2.0.3.jar",
@@ -5681,8 +5681,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f2edac9723f1fd6c246fe01923a6c489b045383b7040150ae6b5631955d6a9fee037dd4f33c8d038d1927520670c93b0f654fcf791f9d1b118370f557b3c3602",
-          "sha1": "d063c45c525acab69ccde7c19a51bf94d6bdcf48"
+          "sha1": "d063c45c525acab69ccde7c19a51bf94d6bdcf48",
+          "sha512": "f2edac9723f1fd6c246fe01923a6c489b045383b7040150ae6b5631955d6a9fee037dd4f33c8d038d1927520670c93b0f654fcf791f9d1b118370f557b3c3602"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/LHC4mNsP/CraterLib-Fabric-1.18.2-2.0.3.jar",
         "filename": "CraterLib-Fabric-1.18.2-2.0.3.jar",
@@ -5754,15 +5754,15 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n\n**Bug Fixes**:\n\n- Fixed Player Join/Leave event ignoring vanish flag\n- Fixed Chat formatter not stripping discord formatting when `formatting` is disabled in SDLink\n",
     "changelog_url": null,
     "date_published": "2024-07-28T11:04:00.414426Z",
-    "downloads": 5390,
+    "downloads": 5392,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c265031f00e147c530fe7cdb253e52d3bf84aedc",
-          "sha512": "f591b81c8a2b47003c7c150926e400f5602b58cb59ffcf1f71a5787983b31b3c2bab9974e772c784f9c324b8ab54d1a3a13d91d13b22f209558515c8938ddde7"
+          "sha512": "f591b81c8a2b47003c7c150926e400f5602b58cb59ffcf1f71a5787983b31b3c2bab9974e772c784f9c324b8ab54d1a3a13d91d13b22f209558515c8938ddde7",
+          "sha1": "c265031f00e147c530fe7cdb253e52d3bf84aedc"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/Dmn7Aour/CraterLib-Fabric-1.21-2.0.2.jar",
         "filename": "CraterLib-Fabric-1.21-2.0.2.jar",
@@ -5838,8 +5838,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "74f29dd44367a60af3826779132874e29c459580287a515441a477b8dedbf956eb85c56f4bab47e780f8a79c4c7cce7f58965e35b5763fbae570060d98a26d41",
-          "sha1": "fdb399037fc5ff061918203720596a342b45ac75"
+          "sha1": "fdb399037fc5ff061918203720596a342b45ac75",
+          "sha512": "74f29dd44367a60af3826779132874e29c459580287a515441a477b8dedbf956eb85c56f4bab47e780f8a79c4c7cce7f58965e35b5763fbae570060d98a26d41"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/kKXXpbon/CraterLib-Forge-1.20.4-2.0.2.jar",
         "filename": "CraterLib-Forge-1.20.4-2.0.2.jar",
@@ -5874,8 +5874,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "076a81b63c92a45acdbd487d9cb59b9a8cf3f7aa5c6a8d1cb2537f31f7b884687ec008162bc9a68689ca0a97f363c2b054accd7023aa0ec82b886fbfd819ee82",
-          "sha1": "40cf2b29f5969750c9d08ae1aa5729a689ae03fc"
+          "sha1": "40cf2b29f5969750c9d08ae1aa5729a689ae03fc",
+          "sha512": "076a81b63c92a45acdbd487d9cb59b9a8cf3f7aa5c6a8d1cb2537f31f7b884687ec008162bc9a68689ca0a97f363c2b054accd7023aa0ec82b886fbfd819ee82"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/V3uCrysT/CraterLib-Fabric-1.20.4-2.0.2.jar",
         "filename": "CraterLib-Fabric-1.20.4-2.0.2.jar",
@@ -5916,8 +5916,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0db9f84c57569fb129d4833d5e196e5a4daac2ae09a9777b113280ca7fafefd29a04dff760cbdd4118c1ac4d9ad01d50d619fa3aa5d91d57a32f28591f552fd5",
-          "sha1": "af668d12e621839ac17addcc6da673bd4e6ef56f"
+          "sha1": "af668d12e621839ac17addcc6da673bd4e6ef56f",
+          "sha512": "0db9f84c57569fb129d4833d5e196e5a4daac2ae09a9777b113280ca7fafefd29a04dff760cbdd4118c1ac4d9ad01d50d619fa3aa5d91d57a32f28591f552fd5"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/wqvbzryQ/CraterLib-Forge-1.20.2-2.0.2.jar",
         "filename": "CraterLib-Forge-1.20.2-2.0.2.jar",
@@ -6032,8 +6032,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "93e091e016750f7fc93f1b6fd4ce4f13b5ee2af07a30108e139840c673145993492fcb197fa55f30946ada8e4ebfa20b1394aa28350dc2ff05abbdd4b0b0c46f",
-          "sha1": "4b425e0d3797cb322060898a28fe60910b0c75ce"
+          "sha1": "4b425e0d3797cb322060898a28fe60910b0c75ce",
+          "sha512": "93e091e016750f7fc93f1b6fd4ce4f13b5ee2af07a30108e139840c673145993492fcb197fa55f30946ada8e4ebfa20b1394aa28350dc2ff05abbdd4b0b0c46f"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/MsCUhFUG/CraterLib-Fabric-1.20-2.0.2.jar",
         "filename": "CraterLib-Fabric-1.20-2.0.2.jar",
@@ -6074,8 +6074,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "7004cfde8ce7956f81174c4ea4c96856ef83ca89",
-          "sha512": "4ab953311e3d83ba4e2aab848fec200cde5077f0be925cfc24e8bd32f8a3c7132a055366231a7733edc04ece3fcdf118d2bc21f6d76b03b84669dfe2a2966497"
+          "sha512": "4ab953311e3d83ba4e2aab848fec200cde5077f0be925cfc24e8bd32f8a3c7132a055366231a7733edc04ece3fcdf118d2bc21f6d76b03b84669dfe2a2966497",
+          "sha1": "7004cfde8ce7956f81174c4ea4c96856ef83ca89"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/CDs3kJxJ/CraterLib-Forge-1.19.2-2.0.2.jar",
         "filename": "CraterLib-Forge-1.19.2-2.0.2.jar",
@@ -6110,8 +6110,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "6c220b8051b40b6997a52a54fe7ed6fea3201c16b01df28fe3199400b1b1948b3c854276ca28ebc04ab02f8ae0176b83f7a4c13ca17fee8d7e3f5babfd6ab748",
-          "sha1": "7f85ca41d11ccca67156d67c3aea224ac87ef1f3"
+          "sha1": "7f85ca41d11ccca67156d67c3aea224ac87ef1f3",
+          "sha512": "6c220b8051b40b6997a52a54fe7ed6fea3201c16b01df28fe3199400b1b1948b3c854276ca28ebc04ab02f8ae0176b83f7a4c13ca17fee8d7e3f5babfd6ab748"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/E5PhdbdN/CraterLib-Fabric-1.19.2-2.0.2.jar",
         "filename": "CraterLib-Fabric-1.19.2-2.0.2.jar",
@@ -6152,8 +6152,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "8692c7bbde200d2b70d4ab97cb10fc8ccb3d841584e9eb4ff3d10170040e455b786cba1ee7fa3347cb1dcb76aa1624f5c02ca7b00205bc95a0c888ffb09a023c",
-          "sha1": "6af047a7c7129f404a9b4f9c5a9b0016110edeb2"
+          "sha1": "6af047a7c7129f404a9b4f9c5a9b0016110edeb2",
+          "sha512": "8692c7bbde200d2b70d4ab97cb10fc8ccb3d841584e9eb4ff3d10170040e455b786cba1ee7fa3347cb1dcb76aa1624f5c02ca7b00205bc95a0c888ffb09a023c"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/oXlH7qnL/CraterLib-Forge-1.18.2-2.0.2.jar",
         "filename": "CraterLib-Forge-1.18.2-2.0.2.jar",
@@ -6259,15 +6259,15 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n\n**Bug Fixes**:\n\n- Removed the server pinger call, which causes lag with Simple RPC on Direct connections/lan - Fixes [#88](https://github.com/hypherionmc/simple-rpc-public/issues/88)\n- Actually return a `null` when trying to pull single player server data when it should return server data (nojang api)\n\n\n**API Changes**\n\n- Added a boolean flag to player join/leave events when the event was sent from Vanish\n",
     "changelog_url": null,
     "date_published": "2024-07-10T19:08:21.8471Z",
-    "downloads": 135691,
+    "downloads": 135850,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "ed1bf5b38afd55ef785bbfbb12e631b5897e2de3bac6ed139ea04d198473d572483f22fab800e346be0ec1b009d3a7e3687a7777834e74e92c196c37b8ac0da3",
-          "sha1": "7fbe841f751ec1ab3d2bbb9c641ff4e347402356"
+          "sha1": "7fbe841f751ec1ab3d2bbb9c641ff4e347402356",
+          "sha512": "ed1bf5b38afd55ef785bbfbb12e631b5897e2de3bac6ed139ea04d198473d572483f22fab800e346be0ec1b009d3a7e3687a7777834e74e92c196c37b8ac0da3"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/WD4Ni5sx/CraterLib-Fabric-1.21-2.0.1.jar",
         "filename": "CraterLib-Fabric-1.21-2.0.1.jar",
@@ -6343,8 +6343,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "3011d03fa760dcec6748640b7d21018aa033eae2be8f5ea75c0d7a9d3b76d5cc3fe3d5c565bbc324f6dc38d58e13575429910b46251b8a99f69b242ca1192cf7",
-          "sha1": "c634a443a8e9f906129247f4b8daf86a00ab4c7a"
+          "sha1": "c634a443a8e9f906129247f4b8daf86a00ab4c7a",
+          "sha512": "3011d03fa760dcec6748640b7d21018aa033eae2be8f5ea75c0d7a9d3b76d5cc3fe3d5c565bbc324f6dc38d58e13575429910b46251b8a99f69b242ca1192cf7"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/Us5hJvvh/CraterLib-Forge-1.20.4-2.0.1.jar",
         "filename": "CraterLib-Forge-1.20.4-2.0.1.jar",
@@ -6372,7 +6372,7 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n\n**Bug Fixes**:\n\n- Removed the server pinger call, which causes lag with Simple RPC on Direct connections/lan - Fixes [#88](https://github.com/hypherionmc/simple-rpc-public/issues/88)\n- Actually return a `null` when trying to pull single player server data when it should return server data (nojang api)\n\n\n**API Changes**\n\n- Added a boolean flag to player join/leave events when the event was sent from Vanish\n",
     "changelog_url": null,
     "date_published": "2024-07-10T19:05:12.250538Z",
-    "downloads": 3870,
+    "downloads": 3871,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6421,8 +6421,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c418d76c833b5a7f24321f01afd07b0b633919f3b93f3b7ef9ab76870ce1a26dafa911bc39d177a2ad7776f8767fac40a5991232d922c61fd263f4a3d58660bd",
-          "sha1": "15358e7e24e032bc1ebc0a0ec777aaeb0eea695a"
+          "sha1": "15358e7e24e032bc1ebc0a0ec777aaeb0eea695a",
+          "sha512": "c418d76c833b5a7f24321f01afd07b0b633919f3b93f3b7ef9ab76870ce1a26dafa911bc39d177a2ad7776f8767fac40a5991232d922c61fd263f4a3d58660bd"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/I32QDXH9/CraterLib-Forge-1.20.2-2.0.1.jar",
         "filename": "CraterLib-Forge-1.20.2-2.0.1.jar",
@@ -6457,8 +6457,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "8d5e77776c009e3a2ef9daec059fb918a0221992",
-          "sha512": "b3d3bd9c2586fdfc37ba6f6aa8e0df55fc7b18ffe7c33844834116c650c93d71e29b0cb7b81841924625f352f6f7ef35f9b70e83cd882e54a04c707c2a89856f"
+          "sha512": "b3d3bd9c2586fdfc37ba6f6aa8e0df55fc7b18ffe7c33844834116c650c93d71e29b0cb7b81841924625f352f6f7ef35f9b70e83cd882e54a04c707c2a89856f",
+          "sha1": "8d5e77776c009e3a2ef9daec059fb918a0221992"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/Qdz0ko4a/CraterLib-Fabric-1.20.2-2.0.1.jar",
         "filename": "CraterLib-Fabric-1.20.2-2.0.1.jar",
@@ -6493,7 +6493,7 @@
     "changelog": "**Bug Fixes**:\n\n- Removed the server pinger call, which causes lag with Simple RPC on Direct connections/lan - Fixes [#88](https://github.com/hypherionmc/simple-rpc-public/issues/88)\n- Actually return a `null` when trying to pull single player server data when it should return server data (nojang api)\n\n\n**API Changes**\n\n- Added a boolean flag to player join/leave events when the event was sent from Vanish\n",
     "changelog_url": null,
     "date_published": "2024-07-10T18:59:43.521479Z",
-    "downloads": 1714,
+    "downloads": 1718,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -6530,15 +6530,15 @@
     "changelog": "**Requires Fabric API for FABRIC** / **Requires Quilt Standard Libraries for Quilt**\n\n\n**Bug Fixes**:\n\n- Removed the server pinger call, which causes lag with Simple RPC on Direct connections/lan - Fixes [#88](https://github.com/hypherionmc/simple-rpc-public/issues/88)\n- Actually return a `null` when trying to pull single player server data when it should return server data (nojang api)\n\n\n**API Changes**\n\n- Added a boolean flag to player join/leave events when the event was sent from Vanish\n",
     "changelog_url": null,
     "date_published": "2024-07-10T18:59:10.272917Z",
-    "downloads": 28054,
+    "downloads": 28057,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "0654213a1c410bcf5f637907f4e7a02090283ae9",
-          "sha512": "8d154102b34373cbf6980c53cef1e2c3b583e0d1d9f72716e5bf7f67676f1dfbcf0904d37fc798886442c6aa62073fbecb0aa3a8f9e6b06331c51a1c120123c4"
+          "sha512": "8d154102b34373cbf6980c53cef1e2c3b583e0d1d9f72716e5bf7f67676f1dfbcf0904d37fc798886442c6aa62073fbecb0aa3a8f9e6b06331c51a1c120123c4",
+          "sha1": "0654213a1c410bcf5f637907f4e7a02090283ae9"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/OX0RQHfi/CraterLib-Fabric-1.20-2.0.1.jar",
         "filename": "CraterLib-Fabric-1.20-2.0.1.jar",
@@ -6615,8 +6615,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "1e7cd46434cd474d4cf4d723cc88bd2c4439c0dd",
-          "sha512": "16bf3778919e9548eec8a0185cbe28818b503a775c1d7de8cdfe6c71045b39f58ace5990c990a5bb60fc8566d33bb60399e56528675d2f1229751b25b55d6895"
+          "sha512": "16bf3778919e9548eec8a0185cbe28818b503a775c1d7de8cdfe6c71045b39f58ace5990c990a5bb60fc8566d33bb60399e56528675d2f1229751b25b55d6895",
+          "sha1": "1e7cd46434cd474d4cf4d723cc88bd2c4439c0dd"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/1a48bfCV/CraterLib-Fabric-1.19.2-2.0.1.jar",
         "filename": "CraterLib-Fabric-1.19.2-2.0.1.jar",
@@ -6693,8 +6693,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "cf8548b131f5bb71ab07385d850e5d2b56701c4a",
-          "sha512": "121b129ed3e36d24c130a18478d7ec8db090a7ae5c7f1078ac671b92a1d6ba683578b8fa8cb5111e46fa0618ca18b2f2ae4b252e0bf87c6cc078f83f1a3902ec"
+          "sha512": "121b129ed3e36d24c130a18478d7ec8db090a7ae5c7f1078ac671b92a1d6ba683578b8fa8cb5111e46fa0618ca18b2f2ae4b252e0bf87c6cc078f83f1a3902ec",
+          "sha1": "cf8548b131f5bb71ab07385d850e5d2b56701c4a"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/DdF3Tlog/CraterLib-Fabric-1.18.2-2.0.1.jar",
         "filename": "CraterLib-Fabric-1.18.2-2.0.1.jar",
@@ -6735,8 +6735,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "4a5999be2de63be7d1e478d7dfb9507b8fe3291b",
-          "sha512": "678b8d3ec80302b5f0b3c71ab1cffb41796e9122af96f2178b2f8fcbf9b1359c29c48ec50b8783b6608664c3058c48489f16ffd4f8bc580c04faa3c5687e3f63"
+          "sha512": "678b8d3ec80302b5f0b3c71ab1cffb41796e9122af96f2178b2f8fcbf9b1359c29c48ec50b8783b6608664c3058c48489f16ffd4f8bc580c04faa3c5687e3f63",
+          "sha1": "4a5999be2de63be7d1e478d7dfb9507b8fe3291b"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/x4VYQOR3/CraterLib-NeoForge-1.21-2.0.0%2Bhotfix.2.jar",
         "filename": "CraterLib-NeoForge-1.21-2.0.0+hotfix.2.jar",
@@ -6764,15 +6764,15 @@
     "changelog": "**Requires Fabric API for FABRIC**\n\n**Requires Quilt Standard Libraries for Quilt**\n\n\n**Bug Fixes**:\n\n- Fix rare edge crash when player is killed using enchanted weapon\n",
     "changelog_url": null,
     "date_published": "2024-06-24T18:37:16.48155Z",
-    "downloads": 6038,
+    "downloads": 6039,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "1528804a6cca427ddcc0e5a57d1378f916fc6c28",
-          "sha512": "6e5983f10d863f830b03ba6203c54c33c73a56f6bc7eee99700db465edbfbda514351323c97c567eda0e6440be06874e7bb3ed93e340011e5e68a42e1b11fa69"
+          "sha512": "6e5983f10d863f830b03ba6203c54c33c73a56f6bc7eee99700db465edbfbda514351323c97c567eda0e6440be06874e7bb3ed93e340011e5e68a42e1b11fa69",
+          "sha1": "1528804a6cca427ddcc0e5a57d1378f916fc6c28"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/XlY3dmUA/CraterLib-Fabric-1.21-2.0.0%2Bhotfix.2.jar",
         "filename": "CraterLib-Fabric-1.21-2.0.0+hotfix.2.jar",
@@ -6849,8 +6849,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "911b9f699c3c3351046d81c8fb42b42415d699d778a014965746ec6950580862334ca9c9db30eadadb00e821c75c236791324e69fdf8f392657dee8d0ac56042",
-          "sha1": "8114371610ff660a7bbdcec189905c169ef80cac"
+          "sha1": "8114371610ff660a7bbdcec189905c169ef80cac",
+          "sha512": "911b9f699c3c3351046d81c8fb42b42415d699d778a014965746ec6950580862334ca9c9db30eadadb00e821c75c236791324e69fdf8f392657dee8d0ac56042"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/Xbut7zAn/CraterLib-Fabric-1.21-2.0.0%2Bhotfix.1.jar",
         "filename": "CraterLib-Fabric-1.21-2.0.0+hotfix.1.jar",
@@ -6891,8 +6891,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "aed310fcdbe3508195a44a1f5061dd6d317ffef4fe2741da6b9ef5bc2b3f2cff642c2513f200a0d1c6ae53b60f1f7e9e67944b0bfd345b1af53aa309c6f85fd7",
-          "sha1": "e67432723ac60f21a244ccb3f24b05794741b18c"
+          "sha1": "e67432723ac60f21a244ccb3f24b05794741b18c",
+          "sha512": "aed310fcdbe3508195a44a1f5061dd6d317ffef4fe2741da6b9ef5bc2b3f2cff642c2513f200a0d1c6ae53b60f1f7e9e67944b0bfd345b1af53aa309c6f85fd7"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/kOBFw6Th/CraterLib-NeoForge-1.21-2.0.0.jar",
         "filename": "CraterLib-NeoForge-1.21-2.0.0.jar",
@@ -6969,8 +6969,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "62439319501f7b0e2d372b0e6a62e626f44a033a74c173a672a5f637460efe6da0911b6dfbfc6385ad79897caa8d6cbac3cf3dab20f3ff23f5dbec6647407f30",
-          "sha1": "f63298e827a6bd801f1c66cd5f2b63ec5bab8218"
+          "sha1": "f63298e827a6bd801f1c66cd5f2b63ec5bab8218",
+          "sha512": "62439319501f7b0e2d372b0e6a62e626f44a033a74c173a672a5f637460efe6da0911b6dfbfc6385ad79897caa8d6cbac3cf3dab20f3ff23f5dbec6647407f30"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/2kKrJbxy/CraterLib-NeoForge-1.20.4-2.0.0.jar",
         "filename": "CraterLib-NeoForge-1.20.4-2.0.0.jar",
@@ -7004,8 +7004,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "db1734d25824cb91bc20c885762292a16461ec770488e43f32ec4342c47c018b9b2a01112a11dacaa62c9c133c9fc3c303f710a0298030df8b73642efe82261b",
-          "sha1": "313a815a7f7206e834b9e5127b5452a1154f6fe7"
+          "sha1": "313a815a7f7206e834b9e5127b5452a1154f6fe7",
+          "sha512": "db1734d25824cb91bc20c885762292a16461ec770488e43f32ec4342c47c018b9b2a01112a11dacaa62c9c133c9fc3c303f710a0298030df8b73642efe82261b"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/Rioy9i4m/CraterLib-Forge-1.20.4-2.0.0.jar",
         "filename": "CraterLib-Forge-1.20.4-2.0.0.jar",
@@ -7082,8 +7082,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d5b4d4514031dd7a272129c2d7a98c93b05ca422",
-          "sha512": "20de07009b07ba1f38d8954dd43085b955e993a72271cef1094b8d1d70ab5b421f183c5b85d9aeabd3867a05a4644a7a6fea4512594a7675ab06e53557eb4f95"
+          "sha512": "20de07009b07ba1f38d8954dd43085b955e993a72271cef1094b8d1d70ab5b421f183c5b85d9aeabd3867a05a4644a7a6fea4512594a7675ab06e53557eb4f95",
+          "sha1": "d5b4d4514031dd7a272129c2d7a98c93b05ca422"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/pq91Ndsn/CraterLib-Forge-1.20.2-2.0.0.jar",
         "filename": "CraterLib-Forge-1.20.2-2.0.0.jar",
@@ -7118,8 +7118,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a2a00656a91fbc2fbd9699f4802951ea1845e25e965dce490974472be62452fd143a7e30c3576542cecd74570fe8df1157fe17b9040e7d73fa0b13634d58ea9a",
-          "sha1": "0a12f06d31d5884ba206c0550dbcb4e8c6768dc1"
+          "sha1": "0a12f06d31d5884ba206c0550dbcb4e8c6768dc1",
+          "sha512": "a2a00656a91fbc2fbd9699f4802951ea1845e25e965dce490974472be62452fd143a7e30c3576542cecd74570fe8df1157fe17b9040e7d73fa0b13634d58ea9a"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/2t4ZGemV/CraterLib-Fabric-1.20.2-2.0.0.jar",
         "filename": "CraterLib-Fabric-1.20.2-2.0.0.jar",
@@ -7154,7 +7154,7 @@
     "changelog": "**New Stuff**:\n\n- Nojang Modding API - Read more about it [here](https://blog.firstdark.dev/p/goodbye-mojang-hello-nojang-5127)\n- Ported for 1.21\n",
     "changelog_url": null,
     "date_published": "2024-06-13T19:59:41.562823Z",
-    "downloads": 20264,
+    "downloads": 20271,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7191,7 +7191,7 @@
     "changelog": "**Requires Fabric API for FABRIC**\n\n**Requires Quilt Standard Libraries for Quilt**\n\n\n**New Stuff**:\n\n- Nojang Modding API - Read more about it [here](https://blog.firstdark.dev/p/goodbye-mojang-hello-nojang-5127)\n- Ported for 1.21\n",
     "changelog_url": null,
     "date_published": "2024-06-13T19:59:10.461477Z",
-    "downloads": 12688,
+    "downloads": 12693,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7233,15 +7233,15 @@
     "changelog": "**New Stuff**:\n\n- Nojang Modding API - Read more about it [here](https://blog.firstdark.dev/p/goodbye-mojang-hello-nojang-5127)\n- Ported for 1.21\n",
     "changelog_url": null,
     "date_published": "2024-06-13T19:56:35.306981Z",
-    "downloads": 723,
+    "downloads": 726,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "18d1a8ce37d71d5034d63dc7c24718b599c9aaf102c65fad867080a00f00ce3c88c5ff5fe250c22f170176ef1072a8a975ed0b19aa15ded19ff1a2777455c99d",
-          "sha1": "9e20e1cacc358351dd9dd25abac1419f951fe850"
+          "sha1": "9e20e1cacc358351dd9dd25abac1419f951fe850",
+          "sha512": "18d1a8ce37d71d5034d63dc7c24718b599c9aaf102c65fad867080a00f00ce3c88c5ff5fe250c22f170176ef1072a8a975ed0b19aa15ded19ff1a2777455c99d"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/DW3AZms2/CraterLib-Forge-1.19.2-2.0.0.jar",
         "filename": "CraterLib-Forge-1.19.2-2.0.0.jar",
@@ -7318,8 +7318,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "db36030cdf616469e4027d69949511e45f341d52",
-          "sha512": "98d5f1511e4b9ba14391cab1de783bffb9486d9f72786243a08c11d7c673e63fffd280b6f23f3046ae7f5c7f6f559474d0655524d25f3f77e7a0729c662b657f"
+          "sha512": "98d5f1511e4b9ba14391cab1de783bffb9486d9f72786243a08c11d7c673e63fffd280b6f23f3046ae7f5c7f6f559474d0655524d25f3f77e7a0729c662b657f",
+          "sha1": "db36030cdf616469e4027d69949511e45f341d52"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/XOmHGaFs/CraterLib-Forge-1.18.2-2.0.0.jar",
         "filename": "CraterLib-Forge-1.18.2-2.0.0.jar",
@@ -7390,15 +7390,15 @@
     "changelog": "**Bug Fixes**:\n\n* Fix Server crash on world join caused by AdvancementEvent\n",
     "changelog_url": null,
     "date_published": "2024-01-03T16:03:37.75546Z",
-    "downloads": 31363,
+    "downloads": 31380,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "8ef40a4c7ac36af97b6cd64e5ba06bf82c66b01883e54dda39e44e10663ee6332844859315c1658433c907e653f25697cce55b9a4cd41b3b359634c703587c35",
-          "sha1": "7844409ad9cd48ec43337499f2b12e20ed15f02d"
+          "sha1": "7844409ad9cd48ec43337499f2b12e20ed15f02d",
+          "sha512": "8ef40a4c7ac36af97b6cd64e5ba06bf82c66b01883e54dda39e44e10663ee6332844859315c1658433c907e653f25697cce55b9a4cd41b3b359634c703587c35"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/90lpZF84/CraterLib-Forge-1.20-1.1.1.jar",
         "filename": "CraterLib-Forge-1.20-1.1.1.jar",
@@ -7427,7 +7427,7 @@
     "changelog": "**Requires Fabric API for FABRIC**\n\n**Requires Quilt Standard Libraries for Quilt**\n\n\n**Bug Fixes**:\n\n* Fix Server crash on world join caused by AdvancementEvent\n",
     "changelog_url": null,
     "date_published": "2024-01-03T16:02:58.775572Z",
-    "downloads": 114417,
+    "downloads": 114436,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -7477,8 +7477,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "24ee1e8e82037c1cd98b2a480161fd3ce722a0eb",
-          "sha512": "3ea67a4a08519cce7c312d7d098efd7e2cc8fef1e28a5563bfd2b503ba9e734b9f4b32fc61d7312228a13684c5707f50ae1b9857e7a705bf9bf840d9a9f245bf"
+          "sha512": "3ea67a4a08519cce7c312d7d098efd7e2cc8fef1e28a5563bfd2b503ba9e734b9f4b32fc61d7312228a13684c5707f50ae1b9857e7a705bf9bf840d9a9f245bf",
+          "sha1": "24ee1e8e82037c1cd98b2a480161fd3ce722a0eb"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/gH6zhujf/CraterLib-Forge-1.19.3-1.1.1.jar",
         "filename": "CraterLib-Forge-1.19.3-1.1.1.jar",
@@ -7514,8 +7514,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "72b67a78780dbc0ac98dfc87f94d7fbe17114de4b766416f79dc55b3855438db201620bdd0c7953a3b51279139aac920ea3ee30336ecfc37739ad7e61e588435",
-          "sha1": "c0b6285fcf9f4c6b5c39d9e23e0ad188069e2955"
+          "sha1": "c0b6285fcf9f4c6b5c39d9e23e0ad188069e2955",
+          "sha512": "72b67a78780dbc0ac98dfc87f94d7fbe17114de4b766416f79dc55b3855438db201620bdd0c7953a3b51279139aac920ea3ee30336ecfc37739ad7e61e588435"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/O8lbF52b/CraterLib-Fabric-1.19.3-1.1.1.jar",
         "filename": "CraterLib-Fabric-1.19.3-1.1.1.jar",
@@ -7556,8 +7556,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "927cf19f88a98f0d5c731b32799da059687ade3fce339a07a8b46dbdb8e7507d8e230b1af2dc9240e9a35ed2bc842366ead7d72a15c8426cac65f1d9d4d3060d",
-          "sha1": "2bd2eba204e0f54db2fa137d0dbc2be4362da5ea"
+          "sha1": "2bd2eba204e0f54db2fa137d0dbc2be4362da5ea",
+          "sha512": "927cf19f88a98f0d5c731b32799da059687ade3fce339a07a8b46dbdb8e7507d8e230b1af2dc9240e9a35ed2bc842366ead7d72a15c8426cac65f1d9d4d3060d"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/UkVQnIGI/CraterLib-Forge-1.19.2-1.1.1.jar",
         "filename": "CraterLib-Forge-1.19.2-1.1.1.jar",
@@ -7663,15 +7663,15 @@
     "changelog": "**Requires Fabric API for FABRIC**\n\n**Requires Quilt Standard Libraries for Quilt**\n\n\n**Bug Fixes**:\n\n* Fix Server crash on world join caused by AdvancementEvent\n",
     "changelog_url": null,
     "date_published": "2024-01-03T15:51:37.961267Z",
-    "downloads": 701,
+    "downloads": 702,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "d66a014aacf94b5c5216c6eee97d6ce8c81f321a",
-          "sha512": "1eea204b53e5e2e432257fd652725e1cb7881602fb04fdaff67623c66e0e01ab0c62c8bc60820d06327b7b5fa56d1bb516592bc8480e24232c24136d0a15c618"
+          "sha512": "1eea204b53e5e2e432257fd652725e1cb7881602fb04fdaff67623c66e0e01ab0c62c8bc60820d06327b7b5fa56d1bb516592bc8480e24232c24136d0a15c618",
+          "sha1": "d66a014aacf94b5c5216c6eee97d6ce8c81f321a"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/iXv5BEds/CraterLib-Fabric-1.18.2-1.1.1.jar",
         "filename": "CraterLib-Fabric-1.18.2-1.1.1.jar",
@@ -7776,15 +7776,15 @@
     "changelog": "**Requires Fabric API for FABRIC**\n\n**Requires Quilt Standard Libraries for Quilt**\n\n\n**Changes**:\n\n* Removed unused apis to speed up porting work\n* Advancement Event now returns the title and description strings, to try and keep mods binary compatible with MC\n\n**Bug Fixes**:\n\n* Fixed MessageBroadcastEvent returning the wrong context class\n",
     "changelog_url": null,
     "date_published": "2024-01-02T16:34:00.19387Z",
-    "downloads": 38556,
+    "downloads": 38573,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3de2753c3a7b12f82782739d7086c20f4fd22b6e",
-          "sha512": "0fa4e7c5f09d83bbef94fe6e923ea25170a358319ab535c1a5c3142eef39d2eacfd11596ceabeda5e1b0ed5b239201e67e62d32cfc1b70d7279765d3934b950a"
+          "sha512": "0fa4e7c5f09d83bbef94fe6e923ea25170a358319ab535c1a5c3142eef39d2eacfd11596ceabeda5e1b0ed5b239201e67e62d32cfc1b70d7279765d3934b950a",
+          "sha1": "3de2753c3a7b12f82782739d7086c20f4fd22b6e"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/JD6qkduu/CraterLib-Fabric-1.20.4-1.1.0.jar",
         "filename": "CraterLib-Fabric-1.20.4-1.1.0.jar",
@@ -7904,8 +7904,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "d1189ec012bf7bb7e6476d75beab8d33afa16112",
-          "sha512": "792c93709229c9280fe9eea20ebdfc6b16f679c663d8fa19354f8b24bcdd827755aef67c3d0b7b606d3e2973d9a9e25e2d967f958a3406645d2e2e85e549f3df"
+          "sha512": "792c93709229c9280fe9eea20ebdfc6b16f679c663d8fa19354f8b24bcdd827755aef67c3d0b7b606d3e2973d9a9e25e2d967f958a3406645d2e2e85e549f3df",
+          "sha1": "d1189ec012bf7bb7e6476d75beab8d33afa16112"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/sym8NBXL/CraterLib-Forge-1.20-1.1.0.jar",
         "filename": "CraterLib-Forge-1.20-1.1.0.jar",
@@ -8219,8 +8219,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "b726451f305c8d376b83bf5a0f3134899494526a",
-          "sha512": "22591c0a997b716f2cb68c316e9381b3f2e770428e960429e575c7db4aeaa8bfac10d021632f37c140e147cb1352477bad7e0a38c4059904ce443943b3494252"
+          "sha512": "22591c0a997b716f2cb68c316e9381b3f2e770428e960429e575c7db4aeaa8bfac10d021632f37c140e147cb1352477bad7e0a38c4059904ce443943b3494252",
+          "sha1": "b726451f305c8d376b83bf5a0f3134899494526a"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/P1sk2Ggb/CraterLib-Forge-1.20.2-1.0.4.jar",
         "filename": "CraterLib-Forge-1.20.2-1.0.4.jar",
@@ -8254,8 +8254,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "3c3c6b7246a996218b2395aecade3d0900dba520",
-          "sha512": "b15390e73a20cb9cf3ae528cc9838156ca15e982b4aaa0f8ccccd73a1b4774f026e20806f40623f667d583c899ff1d8ae79643b49a9d8838d3188f69a361e763"
+          "sha512": "b15390e73a20cb9cf3ae528cc9838156ca15e982b4aaa0f8ccccd73a1b4774f026e20806f40623f667d583c899ff1d8ae79643b49a9d8838d3188f69a361e763",
+          "sha1": "3c3c6b7246a996218b2395aecade3d0900dba520"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/voBYx7J1/CraterLib-Forge-1.20.2-1.0.3.jar",
         "filename": "CraterLib-Forge-1.20.2-1.0.3.jar",
@@ -8283,7 +8283,7 @@
     "changelog": "**Requires Fabric API for FABRIC**\n\n**Requires Quilt Standard Libraries for Quilt**\n\n\nInitial releases for 1.18-1.19.3 in preparation for Simple Discord Link v3 Beta\n\n**Bug Fixes**\n\n* Fixed server crash on 1.20.2 forge\n* Fixed Config GUI not rendering properly on 1.20.2\n",
     "changelog_url": null,
     "date_published": "2023-12-02T14:08:17.91448Z",
-    "downloads": 7916,
+    "downloads": 7918,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -8370,8 +8370,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "6a62e540fc2202184e65706dcf4469142f715089",
-          "sha512": "b948ed8841f2b22777d85cb0a4981f4a05eba27d0e43319daf25523355efb28e2127d87ca93be4fdc59c9bf601900896601273e23604a6133e0abb70f2585b90"
+          "sha512": "b948ed8841f2b22777d85cb0a4981f4a05eba27d0e43319daf25523355efb28e2127d87ca93be4fdc59c9bf601900896601273e23604a6133e0abb70f2585b90",
+          "sha1": "6a62e540fc2202184e65706dcf4469142f715089"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/2Dd3lYwi/CraterLib-Fabric-1.19.3-1.0.2.jar",
         "filename": "CraterLib-Fabric-1.19.3-1.0.2.jar",
@@ -8412,8 +8412,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "55fc11b0af6be49b72741d96e2347faa2e69cee8",
-          "sha512": "edccc82f95ca9c7d6da19d4766aa3361478b107a55536fbe115f64c5cff3484fd8fccb02a7233a5ac644f2f9c5c7581c6ec601cca4e1b7b7bbba1b7569930989"
+          "sha512": "edccc82f95ca9c7d6da19d4766aa3361478b107a55536fbe115f64c5cff3484fd8fccb02a7233a5ac644f2f9c5c7581c6ec601cca4e1b7b7bbba1b7569930989",
+          "sha1": "55fc11b0af6be49b72741d96e2347faa2e69cee8"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/E0QBa9as/CraterLib-Forge-1.19.2-1.0.2.jar",
         "filename": "CraterLib-Forge-1.19.2-1.0.2.jar",
@@ -8448,8 +8448,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "c2cf9200cb874f1b0220786035d625b5b9c402fd3b9f3c7cc75b785f4b24bdf5f0fbebcb92676cbb95beeab50d02607499b65122167a7e84ada7777bd3131805",
-          "sha1": "a98b67916bbf43222fa73fb569aa6a2227eda987"
+          "sha1": "a98b67916bbf43222fa73fb569aa6a2227eda987",
+          "sha512": "c2cf9200cb874f1b0220786035d625b5b9c402fd3b9f3c7cc75b785f4b24bdf5f0fbebcb92676cbb95beeab50d02607499b65122167a7e84ada7777bd3131805"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/m63G3hrt/CraterLib-Fabric-1.19.2-1.0.2.jar",
         "filename": "CraterLib-Fabric-1.19.2-1.0.2.jar",
@@ -8490,8 +8490,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "fecd9102e6cd3f625295e0d2f8cfe35e0b4b3be6",
-          "sha512": "3a14411ff7b110662a9d910c875d01756f5ebe715222d689568f5111fc2cb22ac510e69c61d6149a88883ea701f3623882cc999a611585cbb5899205e33f7afe"
+          "sha512": "3a14411ff7b110662a9d910c875d01756f5ebe715222d689568f5111fc2cb22ac510e69c61d6149a88883ea701f3623882cc999a611585cbb5899205e33f7afe",
+          "sha1": "fecd9102e6cd3f625295e0d2f8cfe35e0b4b3be6"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/PjEc7yDN/CraterLib-Forge-1.18.2-1.0.2.jar",
         "filename": "CraterLib-Forge-1.18.2-1.0.2.jar",
@@ -8604,8 +8604,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "06db916606cb34fa1764f039cc72a7b720da41f7",
-          "sha512": "5deaec5113474f0b86ebd37b427a453e1a65e233b901c24de7a460c4bf77e34038af274b4ec3c3e30566c2cf9aedfe157a00772febdd1b8ff83ae9319136a000"
+          "sha512": "5deaec5113474f0b86ebd37b427a453e1a65e233b901c24de7a460c4bf77e34038af274b4ec3c3e30566c2cf9aedfe157a00772febdd1b8ff83ae9319136a000",
+          "sha1": "06db916606cb34fa1764f039cc72a7b720da41f7"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/kxY3Mv5E/CraterLib-fabric-1.20.2-1.0.2.jar",
         "filename": "CraterLib-fabric-1.20.2-1.0.2.jar",
@@ -8640,7 +8640,7 @@
     "changelog": "**Bug Fixes**:\r\n\r\n* Fix UTF-8 Parsing for non-english languages in RPC SDK\r\n* Fix Creative Tabs not being registered on fabric\r\n* Fix Fabric network handler not sending client packets to server\r\n* Fix Apple M1 compat on RPC SDK (Yes, again. F-you apple... Seriously)\r\n* Fix LateInit event firing too early on Forge\r\n\r\n**New Stuff**:\r\n\r\n* Added MessageBroadcastEvent (Fired when messages are broadcast to players)\r\n",
     "changelog_url": null,
     "date_published": "2023-07-31T14:27:42.83565Z",
-    "downloads": 20579,
+    "downloads": 20581,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -8677,15 +8677,15 @@
     "changelog": "**Requires Fabric API for FABRIC**\r\n\r\n**Requires Quilt Standard Libraries for Quilt**\r\n\r\n**Bug Fixes**:\r\n\r\n* Fix UTF-8 Parsing for non-english languages in RPC SDK\r\n* Fix Creative Tabs not being registered on fabric\r\n* Fix Fabric network handler not sending client packets to server\r\n* Fix Apple M1 compat on RPC SDK (Yes, again. F-you apple... Seriously)\r\n* Fix LateInit event firing too early on Forge\r\n\r\n**New Stuff**:\r\n\r\n* Added MessageBroadcastEvent (Fired when messages are broadcast to players)",
     "changelog_url": null,
     "date_published": "2023-07-31T14:27:36.210869Z",
-    "downloads": 208457,
+    "downloads": 208473,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "406069119f28ebccb10c698cfbc97b2d1da2c3385c07ef63ceae886968c717b0597f78118f0a2650f08423b8d9e22b4c0892d5ac42e79182adafe346ca133434",
-          "sha1": "8713c1bd7f880db97aab8478b46711892a0ee793"
+          "sha1": "8713c1bd7f880db97aab8478b46711892a0ee793",
+          "sha512": "406069119f28ebccb10c698cfbc97b2d1da2c3385c07ef63ceae886968c717b0597f78118f0a2650f08423b8d9e22b4c0892d5ac42e79182adafe346ca133434"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/UIFNaDX8/CraterLib-fabric-1.20-1.0.2.jar",
         "filename": "CraterLib-fabric-1.20-1.0.2.jar",
@@ -8757,7 +8757,7 @@
     "changelog": "**Requires Fabric API for FABRIC**\n\n**Requires Quilt Standard Libraries for Quilt**\n\n**Bug Fixes**:\n\n* Fix EventHandlers not logging full errors\n",
     "changelog_url": null,
     "date_published": "2023-06-25T19:55:40.478738Z",
-    "downloads": 128185,
+    "downloads": 128186,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -8837,15 +8837,15 @@
     "changelog": "**Requires Fabric API for FABRIC**\n\n**Requires Quilt Standard Libraries for Quilt**\n\nInitial Release\n",
     "changelog_url": null,
     "date_published": "2023-06-10T15:30:32.984645Z",
-    "downloads": 5905,
+    "downloads": 5906,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "51e9d649f15cf80856930dd19b817c9ce2007a6e",
-          "sha512": "bdde3e639064f2a2a659258721640906d6e4030b57ba2ae9a9fa413fc9002d20174f2b704a49dd83a24b5491548290f7a085e7193f7494ed5eaf734336e7c2b4"
+          "sha512": "bdde3e639064f2a2a659258721640906d6e4030b57ba2ae9a9fa413fc9002d20174f2b704a49dd83a24b5491548290f7a085e7193f7494ed5eaf734336e7c2b4",
+          "sha1": "51e9d649f15cf80856930dd19b817c9ce2007a6e"
         },
         "url": "https://cdn.modrinth.com/data/Nn8Wasaq/versions/5Tb1a93E/CraterLib-fabric-1.20-1.0.0.jar",
         "filename": "CraterLib-fabric-1.20-1.0.0.jar",

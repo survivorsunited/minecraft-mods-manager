@@ -19,7 +19,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-06-24T07:16:55.838601Z",
-    "downloads": 54,
+    "downloads": 64,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -55,7 +55,7 @@
     "changelog": "",
     "changelog_url": null,
     "date_published": "2025-06-24T07:16:50.395036Z",
-    "downloads": 9,
+    "downloads": 10,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -100,8 +100,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "663ad3f706369ef40e1d43a5b205f8163ec45ab8ad5817614edbcf1556aa576233145ec693c0fd6a27bfe3772cf0c5f0848aea8bc666bacf50b189701c1c0784",
-          "sha1": "a15102da2299d35b7460ef1f9aa5003913bdb68a"
+          "sha1": "a15102da2299d35b7460ef1f9aa5003913bdb68a",
+          "sha512": "663ad3f706369ef40e1d43a5b205f8163ec45ab8ad5817614edbcf1556aa576233145ec693c0fd6a27bfe3772cf0c5f0848aea8bc666bacf50b189701c1c0784"
         },
         "url": "https://cdn.modrinth.com/data/5H9ypkdW/versions/mntW7qS7/pets-dont-die-1.1.2.jar",
         "filename": "pets-dont-die-1.1.2.jar",
@@ -175,8 +175,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "0eb844e842ec2308f4fa36ccaf95081ec6576834ab047aa319c23473041e9b35653565f13b15b17c5c3c9b256b2f41b0b4d56d8803e17bd43e7fde9d89dd6437",
-          "sha1": "c95d24bd08d8277df74fcd94b650d93ab0def078"
+          "sha1": "c95d24bd08d8277df74fcd94b650d93ab0def078",
+          "sha512": "0eb844e842ec2308f4fa36ccaf95081ec6576834ab047aa319c23473041e9b35653565f13b15b17c5c3c9b256b2f41b0b4d56d8803e17bd43e7fde9d89dd6437"
         },
         "url": "https://cdn.modrinth.com/data/5H9ypkdW/versions/HudTkZaq/pets-dont-die-1.1.jar",
         "filename": "pets-dont-die-1.1.jar",

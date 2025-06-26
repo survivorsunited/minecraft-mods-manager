@@ -20,7 +20,7 @@
     "changelog": "7.3.15 Beta 1\n- Added support for 1.21.6\n",
     "changelog_url": null,
     "date_published": "2025-06-25T11:05:45.630259Z",
-    "downloads": 713,
+    "downloads": 1408,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -56,15 +56,15 @@
     "changelog": "7.3.15 Beta 1\n- Added support for 1.21.6\n",
     "changelog_url": null,
     "date_published": "2025-06-25T11:04:43.208133Z",
-    "downloads": 1357,
+    "downloads": 2641,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "5bc5c11356e47b04e35a763341b74adfd13dfbd7",
-          "sha512": "597126c8de97e905c9659ae35c3a25824a8d182378f6db89bc431f587d68908f09cae8e20d358204e4ab8220327f991d057552e155d06bb53484c8329e85e029"
+          "sha512": "597126c8de97e905c9659ae35c3a25824a8d182378f6db89bc431f587d68908f09cae8e20d358204e4ab8220327f991d057552e155d06bb53484c8329e85e029",
+          "sha1": "5bc5c11356e47b04e35a763341b74adfd13dfbd7"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/p0Bm3o0X/worldedit-mod-7.3.15-beta-01.jar",
         "filename": "worldedit-mod-7.3.15-beta-01.jar",
@@ -95,15 +95,15 @@
     "changelog": "7.3.14\n- Fixed an issue where mixed NBT lists could cause errors when set to the world\n",
     "changelog_url": null,
     "date_published": "2025-06-05T10:47:04.927506Z",
-    "downloads": 27737,
+    "downloads": 27986,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "0df000e29f0ea2b11f17e87edddc8abf2e5106fb",
-          "sha512": "48e5cc03d85c685d674f09abb025d68ae51ef59c7344c0336519ca957889da3bef80b11a17cd12f85fd8f4c3f98ffecc0e28cc169ad39c6e0ce07133b720d058"
+          "sha512": "48e5cc03d85c685d674f09abb025d68ae51ef59c7344c0336519ca957889da3bef80b11a17cd12f85fd8f4c3f98ffecc0e28cc169ad39c6e0ce07133b720d058",
+          "sha1": "0df000e29f0ea2b11f17e87edddc8abf2e5106fb"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/txgouwkE/worldedit-bukkit-7.3.14.jar",
         "filename": "worldedit-bukkit-7.3.14.jar",
@@ -131,15 +131,15 @@
     "changelog": "7.3.14\n- Fixed an issue where mixed NBT lists could cause errors when set to the world\n",
     "changelog_url": null,
     "date_published": "2025-06-05T10:46:29.134867Z",
-    "downloads": 41234,
+    "downloads": 41886,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "b52d2040d70b1e77374966d96904ff19ca700263",
-          "sha512": "029622ed646e3b23d2b56d372bceba2b23135aca3a647c781eb3b2149dfef087211dc20bb10c8fb273684b0232996a4d892830a84112088d9de6196a0364eebe"
+          "sha512": "029622ed646e3b23d2b56d372bceba2b23135aca3a647c781eb3b2149dfef087211dc20bb10c8fb273684b0232996a4d892830a84112088d9de6196a0364eebe",
+          "sha1": "b52d2040d70b1e77374966d96904ff19ca700263"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/242z5LFa/worldedit-mod-7.3.14.jar",
         "filename": "worldedit-mod-7.3.14.jar",
@@ -177,8 +177,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "87cba0a41bf809f430fce489a79b478923a75157",
-          "sha512": "d7195e216bd9863addec61a7c43994876b3546622617c441634e4df2871aac883599943c544955e98b8a994c36dd80ac0de37ba16f57dbd21087a6f4c33bb906"
+          "sha512": "d7195e216bd9863addec61a7c43994876b3546622617c441634e4df2871aac883599943c544955e98b8a994c36dd80ac0de37ba16f57dbd21087a6f4c33bb906",
+          "sha1": "87cba0a41bf809f430fce489a79b478923a75157"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/U0uDF7yg/worldedit-bukkit-7.3.13.jar",
         "filename": "worldedit-bukkit-7.3.13.jar",
@@ -206,15 +206,15 @@
     "changelog": "7.3.13\n- [Fabric] Fixed an issue where in some configurations WorldEdit could not load in a server environment\n",
     "changelog_url": null,
     "date_published": "2025-05-24T10:39:32.759029Z",
-    "downloads": 31326,
+    "downloads": 31339,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "9155c371ab17a24e12a43dbbbad8dd17e3c30e0f",
-          "sha512": "a38ba02336d2c430c9238b63e6d47a7e1de3a9482798a07cfdb08de2a5cd3e0f9e74c150ac23dfcb2241dfaf8f1c86fcbf57a2a7d807560890b1a8392f167c37"
+          "sha512": "a38ba02336d2c430c9238b63e6d47a7e1de3a9482798a07cfdb08de2a5cd3e0f9e74c150ac23dfcb2241dfaf8f1c86fcbf57a2a7d807560890b1a8392f167c37",
+          "sha1": "9155c371ab17a24e12a43dbbbad8dd17e3c30e0f"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/9ACY6L4u/worldedit-mod-7.3.13.jar",
         "filename": "worldedit-mod-7.3.13.jar",
@@ -245,15 +245,15 @@
     "changelog": "Changes since 7.3.12 Beta 2\n\n* Add support for the new block_pos NBT properties on block-aligned entities\n\nChanges in 7.3.12\n\n* Added support for 1.21.5\n* Added ability to copy the block state string from the info tool output\n* Minor optimisation to memory usage of clipboards\n* Update underlying text library to improve 1.21.5 compatibility\n* Fixed non-persistent entities pasting in an invalid state\n* Add support for the new block_pos NBT properties on block-aligned entities",
     "changelog_url": null,
     "date_published": "2025-05-20T09:52:20.293922Z",
-    "downloads": 5306,
+    "downloads": 5313,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "66bb91b8d88aa28a3d8db8b73e22cdcaf49a7033",
-          "sha512": "a6582c7c2594324b456b520345d3b166a3c022cab18faabe65f112dfc5814821511f548ac04a163d8a5476c1ebadf291b54e997a130d3e116dbc402038403796"
+          "sha512": "a6582c7c2594324b456b520345d3b166a3c022cab18faabe65f112dfc5814821511f548ac04a163d8a5476c1ebadf291b54e997a130d3e116dbc402038403796",
+          "sha1": "66bb91b8d88aa28a3d8db8b73e22cdcaf49a7033"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/9Z1aKSP5/worldedit-bukkit-7.3.12.jar",
         "filename": "worldedit-bukkit-7.3.12.jar",
@@ -281,7 +281,7 @@
     "changelog": "Changes since 7.3.12 Beta 2\n\n* Add support for the new block_pos NBT properties on block-aligned entities\n* [Fabric, NeoForge] Fixed issue affecting accuracy of legacy schematic loading in certain circumstances\n\nChanges in 7.3.12\n\n* Added support for 1.21.5\n* Added ability to copy the block state string from the info tool output\n* Minor optimisation to memory usage of clipboards\n* Update underlying text library to improve 1.21.5 compatibility\n* Fixed non-persistent entities pasting in an invalid state\n* Add support for the new block_pos NBT properties on block-aligned entities\n* [Fabric, NeoForge] Fixed issue affecting accuracy of legacy schematic loading in certain circumstances\n* [Fabric, NeoForge] Split out the WorldEdit CUI protocol into a separate module to work around a Fabric/NeoForge API issue",
     "changelog_url": null,
     "date_published": "2025-05-20T09:51:33.859449Z",
-    "downloads": 9772,
+    "downloads": 9780,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -356,7 +356,7 @@
     "changelog": "7.3.12 Beta 2\n- Update underlying text library to improve 1.21.5 compatibility\n- Fixed non-persistent entities pasting in an invalid state\n",
     "changelog_url": null,
     "date_published": "2025-04-22T08:05:44.185702Z",
-    "downloads": 71490,
+    "downloads": 71619,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -395,7 +395,7 @@
     "changelog": "7.3.12 Beta 1\n- Added support for 1.21.5\n- Added ability to copy the block state string from the info tool output\n- Minor optimisation to memory usage of clipboards\n",
     "changelog_url": null,
     "date_published": "2025-04-08T10:41:01.010834Z",
-    "downloads": 13797,
+    "downloads": 13799,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -431,7 +431,7 @@
     "changelog": "7.3.12 Beta 1\n- Added support for 1.21.5\n- Added ability to copy the block state string from the info tool output\n- Minor optimisation to memory usage of clipboards\n- [Fabric, NeoForge] Fixed issue affecting accuracy of legacy schematic loading in certain circumstances\n",
     "changelog_url": null,
     "date_published": "2025-04-08T10:40:18.398881Z",
-    "downloads": 36905,
+    "downloads": 36957,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -469,15 +469,15 @@
     "changelog": "7.3.11\n- Added //mirror as an alias for //flip\n- Fixed an issue where tree generation can get incorrect world state, impacting generation\n- Fixed masks for biome operations only applying to //setbiome\n- Fixed some bugs in the snapshot system\n- Fixed CUI packets being sent to clients unnecessarily\n- Fixed cone generation with negative heights\n- Fixed world height off-by-one discrepancy since change in Minecraft 1.21.3\n- Fixed cases where the task executor would not be shut down correctly\n",
     "changelog_url": null,
     "date_published": "2025-03-24T11:02:24.305746Z",
-    "downloads": 29093,
+    "downloads": 29099,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "264e057e8504b8bda3b08a074125efb801bc34e0",
-          "sha512": "b985d16c222b7e851ebc376d7bd78b0f78ab7fd8cdda56e24371dded93c188dca1929c79a894fe21c98e30cecf3ca671da020fed72077ff5e40ec439fcaf9c22"
+          "sha512": "b985d16c222b7e851ebc376d7bd78b0f78ab7fd8cdda56e24371dded93c188dca1929c79a894fe21c98e30cecf3ca671da020fed72077ff5e40ec439fcaf9c22",
+          "sha1": "264e057e8504b8bda3b08a074125efb801bc34e0"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/DlD8WKr9/worldedit-bukkit-7.3.11.jar",
         "filename": "worldedit-bukkit-7.3.11.jar",
@@ -505,15 +505,15 @@
     "changelog": "7.3.11\n- Added //mirror as an alias for //flip\n- Fixed an issue where tree generation can get incorrect world state, impacting generation\n- Fixed masks for biome operations only applying to //setbiome\n- Fixed some bugs in the snapshot system\n- Fixed CUI packets being sent to clients unnecessarily\n- Fixed cone generation with negative heights\n- Fixed world height off-by-one discrepancy since change in Minecraft 1.21.3\n- Fixed cases where the task executor would not be shut down correctly\n- [NeoForge] Fixed legacy blocks failing to load in some instances\n",
     "changelog_url": null,
     "date_published": "2025-03-24T11:01:42.901809Z",
-    "downloads": 95160,
+    "downloads": 95500,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5a131e0059ae4b923ff6066c2be04fa5fbcbf6a52335a10363165344bd72e576f29e22a56805c28c3a061c7fbffe96db9ff6610ad414092742daa4e1e2805385",
-          "sha1": "0ed5b3d41e4d768ac84179e0c93c2ee796313e04"
+          "sha1": "0ed5b3d41e4d768ac84179e0c93c2ee796313e04",
+          "sha512": "5a131e0059ae4b923ff6066c2be04fa5fbcbf6a52335a10363165344bd72e576f29e22a56805c28c3a061c7fbffe96db9ff6610ad414092742daa4e1e2805385"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/bxlboAan/worldedit-mod-7.3.11.jar",
         "filename": "worldedit-mod-7.3.11.jar",
@@ -543,15 +543,15 @@
     "changelog": "7.3.10\n- Added support for 1.21.4\n- Improved a few translation lines relating to URLs and newlines\n- Fixed issues relating to block entities in generated features and structures\n- Added support for pale oak tree variants in the tree commands\n- [Paper] Fixed loading extra jars from the WorldEdit folder with Paper's remapping\n",
     "changelog_url": null,
     "date_published": "2025-01-25T07:13:46.252043Z",
-    "downloads": 51349,
+    "downloads": 51354,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "a95219ac8fa3b4cbc110bb1394ed7dd5d7b6e5ef",
-          "sha512": "e88bf56ab13ac547cecce6cfea23b0836c85eec9648e99f1578f63537719dab17bc6976c4d68a4f2b8d4f9318c54a2d8d740ccaedfedfcaa16dccaf5dba002fa"
+          "sha512": "e88bf56ab13ac547cecce6cfea23b0836c85eec9648e99f1578f63537719dab17bc6976c4d68a4f2b8d4f9318c54a2d8d740ccaedfedfcaa16dccaf5dba002fa",
+          "sha1": "a95219ac8fa3b4cbc110bb1394ed7dd5d7b6e5ef"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/4jRlujfz/worldedit-bukkit-7.3.10.jar",
         "filename": "worldedit-bukkit-7.3.10.jar",
@@ -579,15 +579,15 @@
     "changelog": "7.3.10\n- Added support for 1.21.4\n- Improved a few translation lines relating to URLs and newlines\n- Fixed issues relating to block entities in generated features and structures\n- Added support for pale oak tree variants in the tree commands\n- [NeoForge] Fixed NeoForge's platform name listing \"Forge\" instead of \"NeoForge\"\n- [Fabric] Worked around an error caused by other mods bundling old versions of the Fabric Permissions API that are incompatible with MC 1.21.4\n",
     "changelog_url": null,
     "date_published": "2025-01-25T07:11:37.900893Z",
-    "downloads": 153215,
+    "downloads": 153367,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "5ea3fa5f17c33f7819c3b538a26456cf6d0d8e0a934e8addc8c393c531392b99fa6ceb3466aec278f30ee5d1b42f6d660d8c4579b3520cab6f54d6f7feb7d971",
-          "sha1": "d5538fcb1be4b25b1da315576fb95d84965a5242"
+          "sha1": "d5538fcb1be4b25b1da315576fb95d84965a5242",
+          "sha512": "5ea3fa5f17c33f7819c3b538a26456cf6d0d8e0a934e8addc8c393c531392b99fa6ceb3466aec278f30ee5d1b42f6d660d8c4579b3520cab6f54d6f7feb7d971"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/KI46lJsd/worldedit-mod-7.3.10.jar",
         "filename": "worldedit-mod-7.3.10.jar",
@@ -625,15 +625,15 @@
     "changelog": "7.3.10 Beta 1\n- Added support for 1.21.4\n- Improved a few translation lines relating to URLs and newlines\n- Fixed issues relating to block entities in generated features and structures",
     "changelog_url": null,
     "date_published": "2024-12-22T12:45:37.62109Z",
-    "downloads": 44413,
+    "downloads": 44471,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "91144ad45e73f1ae115aa6cfdd1844eefc06d2c7abf8f248ab8c33f4f3fd3cecc468d4ad7209842641ec092a31c90d14ea42893e2da00f1cae297fc109a458ce",
-          "sha1": "d1bcbfedc947926b467604e216cdc144eaa4a2f1"
+          "sha1": "d1bcbfedc947926b467604e216cdc144eaa4a2f1",
+          "sha512": "91144ad45e73f1ae115aa6cfdd1844eefc06d2c7abf8f248ab8c33f4f3fd3cecc468d4ad7209842641ec092a31c90d14ea42893e2da00f1cae297fc109a458ce"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/HIoAq6RI/worldedit-bukkit-7.3.10-beta-01.jar",
         "filename": "worldedit-bukkit-7.3.10-beta-01.jar",
@@ -661,15 +661,15 @@
     "changelog": "7.3.10 Beta 1\n- Added support for 1.21.4\n- Improved a few translation lines relating to URLs and newlines\n- Fixed issues relating to block entities in generated features and structures",
     "changelog_url": null,
     "date_published": "2024-12-22T12:44:40.143711Z",
-    "downloads": 92486,
+    "downloads": 92512,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1b9366cb804c6c3c564516ee01c51d66f33a2563ae72aee74753f1dea37051205a39eb0735f301d390785107c6423837fb19cda21797f4a99c6c2f07bbdb32aa",
-          "sha1": "ed699fb9299124301a0742b02da730c19eb2de67"
+          "sha1": "ed699fb9299124301a0742b02da730c19eb2de67",
+          "sha512": "1b9366cb804c6c3c564516ee01c51d66f33a2563ae72aee74753f1dea37051205a39eb0735f301d390785107c6423837fb19cda21797f4a99c6c2f07bbdb32aa"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/rIYOU6Ta/worldedit-mod-7.3.10-beta-01.jar",
         "filename": "worldedit-mod-7.3.10-beta-01.jar",
@@ -706,15 +706,15 @@
     "changelog": "7.3.9\n- Added support for 1.21.3\n- Fixed tools not behaving correctly when mods embed worlds in worlds\n",
     "changelog_url": null,
     "date_published": "2024-11-25T06:27:16.879987Z",
-    "downloads": 64617,
+    "downloads": 64766,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "db95878d6d4c1505c8cd75949948f593c16c87af",
-          "sha512": "ce19097ab93a3ff75a929a1efec58138adc5b700f876ec8ac7a96c97d98d77a06f22661f0418c3407d644ca2d9713fde417d5789c79864d9c2094f203f372c76"
+          "sha512": "ce19097ab93a3ff75a929a1efec58138adc5b700f876ec8ac7a96c97d98d77a06f22661f0418c3407d644ca2d9713fde417d5789c79864d9c2094f203f372c76",
+          "sha1": "db95878d6d4c1505c8cd75949948f593c16c87af"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/Bu1zaaoc/worldedit-bukkit-7.3.9.jar",
         "filename": "worldedit-bukkit-7.3.9.jar",
@@ -742,7 +742,7 @@
     "changelog": "7.3.9\n- Added support for 1.21.3\n- Fixed tools not behaving correctly when mods embed worlds in worlds\n",
     "changelog_url": null,
     "date_published": "2024-11-25T06:26:30.855029Z",
-    "downloads": 42508,
+    "downloads": 42539,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -786,7 +786,7 @@
     "changelog": "7.3.9 beta 1\n- Add support for 1.21.3",
     "changelog_url": null,
     "date_published": "2024-11-09T16:47:39.701185Z",
-    "downloads": 10855,
+    "downloads": 10859,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -822,15 +822,15 @@
     "changelog": "7.3.9 beta 1\n- Added support for 1.21.3",
     "changelog_url": null,
     "date_published": "2024-11-09T16:47:20.958379Z",
-    "downloads": 17570,
+    "downloads": 17573,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "497a884bae6b808460a606dd2f8ef2d126ac016bc448c6d448835483a78919d38f2d198e1e68a64b88b1a4c45f0c4f61758c6551c3a0b33ee714d0a38673bed1",
-          "sha1": "d23ff63aa65a4da650c770f573d5827289ea8c81"
+          "sha1": "d23ff63aa65a4da650c770f573d5827289ea8c81",
+          "sha512": "497a884bae6b808460a606dd2f8ef2d126ac016bc448c6d448835483a78919d38f2d198e1e68a64b88b1a4c45f0c4f61758c6551c3a0b33ee714d0a38673bed1"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/HFvwhOTG/worldedit-mod-7.3.9-beta-01-dist.jar",
         "filename": "worldedit-mod-7.3.9-beta-01-dist.jar",
@@ -865,15 +865,15 @@
     "changelog": "7.3.8\n- [Bukkit] Update 1.21.1 adapter for Spigot breakage",
     "changelog_url": null,
     "date_published": "2024-10-21T11:02:30.754694Z",
-    "downloads": 25736,
+    "downloads": 25747,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "75ac9e214a3dd8ebd53b7cb1e6f27d9a4d0479f0",
-          "sha512": "ca8c25d1c2d894b7c3293617875abf23af1cb1c0a6a4e142ee514e7d06536a67d91664009ce8f54902c8f4fd05e32f8235f43cf52bfbd0a6c5622d6bef4f1c6e"
+          "sha512": "ca8c25d1c2d894b7c3293617875abf23af1cb1c0a6a4e142ee514e7d06536a67d91664009ce8f54902c8f4fd05e32f8235f43cf52bfbd0a6c5622d6bef4f1c6e",
+          "sha1": "75ac9e214a3dd8ebd53b7cb1e6f27d9a4d0479f0"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/ecqqLKUO/worldedit-bukkit-7.3.8.jar",
         "filename": "worldedit-bukkit-7.3.8.jar",
@@ -902,15 +902,15 @@
     "changelog": "7.3.8\n- There are no changes in this build, it exists purely to keep the versions consistent due to a Bukkit-only bugfix release\n",
     "changelog_url": null,
     "date_published": "2024-10-21T11:01:40.791602Z",
-    "downloads": 349293,
+    "downloads": 350322,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e039492df0b486e7ce76d0eaf8cb11eadad2e78220600b8498ab8eef4642a29e310a6bcb4378257553b3639c6d0bc1ebf0f73df3a7a677c6af6baf86716b0bc7",
-          "sha1": "924fe181a29bd66be6783f6d589968ab0ee02250"
+          "sha1": "924fe181a29bd66be6783f6d589968ab0ee02250",
+          "sha512": "e039492df0b486e7ce76d0eaf8cb11eadad2e78220600b8498ab8eef4642a29e310a6bcb4378257553b3639c6d0bc1ebf0f73df3a7a677c6af6baf86716b0bc7"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/WTAFvuRx/worldedit-mod-7.3.8.jar",
         "filename": "worldedit-mod-7.3.8.jar",
@@ -945,15 +945,15 @@
     "changelog": "7.3.7\n- Fixed handling of some time-related commands in the snapshot system\n- Fixed some situations where rotated pastes can behave oddly with the update side effect disabled\n- Fixed an error that can occur when generating completions starting with a `\"`\n- Fixed Sponge v3 schematics lacking the `BlockEntities` not loading\n- Fixed the `//curve` and `//line` commands not accepting decimal values for thickness\n- Fixed WorldEdit not using typical error handling systems when an error is thrown during post-edit\n- Fixed NBT parsing for certain legacy schematics with non-standard string formatting\n- Improved performance of the side effect system, and fixed some API inconsistencies\n- Re-enabled the buffering system, due to some systems depending on it in certain situations\n",
     "changelog_url": null,
     "date_published": "2024-10-13T10:32:23.226697Z",
-    "downloads": 8934,
+    "downloads": 8935,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "6584812d47101b9b1f9d51dfa55d17e0d3e483953ade47bbc758cb3e0019463777b7d80ec3412226b352361278fd63aecf7700f88db4413296912b9c4b880be2",
-          "sha1": "e568167ab6ceca9e4b60a973aca1ff330bac9d47"
+          "sha1": "e568167ab6ceca9e4b60a973aca1ff330bac9d47",
+          "sha512": "6584812d47101b9b1f9d51dfa55d17e0d3e483953ade47bbc758cb3e0019463777b7d80ec3412226b352361278fd63aecf7700f88db4413296912b9c4b880be2"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/H12HdUau/worldedit-bukkit-7.3.7.jar",
         "filename": "worldedit-bukkit-7.3.7.jar",
@@ -982,7 +982,7 @@
     "changelog": "7.3.7\n- Fixed handling of some time-related commands in the snapshot system\n- Fixed some situations where rotated pastes can behave oddly with the update side effect disabled\n- Fixed an error that can occur when generating completions starting with a `\"`\n- Fixed Sponge v3 schematics lacking the `BlockEntities` not loading\n- Fixed the `//curve` and `//line` commands not accepting decimal values for thickness\n- Fixed WorldEdit not using typical error handling systems when an error is thrown during post-edit\n- Fixed NBT parsing for certain legacy schematics with non-standard string formatting\n- Improved performance of the side effect system, and fixed some API inconsistencies\n- Re-enabled the buffering system, due to some systems depending on it in certain situations\n",
     "changelog_url": null,
     "date_published": "2024-10-13T10:31:34.462512Z",
-    "downloads": 17201,
+    "downloads": 17207,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1025,7 +1025,7 @@
     "changelog": "7.3.6\n- [Bukkit] Allow 1.21 Paper adapter to load on 1.21.1\n- Revert \"Shutdown the executor service on disable, to prevent waiting on async tasks before shutting down\" due to it causing issues in some situations\n",
     "changelog_url": null,
     "date_published": "2024-08-10T04:06:21.450874Z",
-    "downloads": 52217,
+    "downloads": 52219,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1062,15 +1062,15 @@
     "changelog": "7.3.6\n- Revert \"Shutdown the executor service on disable, to prevent waiting on async tasks before shutting down\" due to it causing issues in some situations\n",
     "changelog_url": null,
     "date_published": "2024-08-10T04:04:58.311374Z",
-    "downloads": 187952,
+    "downloads": 188015,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f59430fe9ea37cf4b10abf7b3b4d79f013fd38fed0d8e863e46b885096df304946c5f1749ed04b8bafcfb51edb8bbd0a627b90a16f27e4f9613f8fee9641c3f7",
-          "sha1": "89d3d1a5b6d4d400adf5fc64ccc3f10add3ed7c3"
+          "sha1": "89d3d1a5b6d4d400adf5fc64ccc3f10add3ed7c3",
+          "sha512": "f59430fe9ea37cf4b10abf7b3b4d79f013fd38fed0d8e863e46b885096df304946c5f1749ed04b8bafcfb51edb8bbd0a627b90a16f27e4f9613f8fee9641c3f7"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/vBzkrSYP/worldedit-mod-7.3.6.jar",
         "filename": "worldedit-mod-7.3.6.jar",
@@ -1104,15 +1104,15 @@
     "changelog": "7.3.5\n- [Bukkit] Utilise new Bukkit registry API, allowing WorldEdit to work with Commodore disabled (`paper.disableOldApiSupport` flag on Paper)\n- Fix queryRel not behaving correctly in //deform and the deform brush\n- Shutdown the executor service on disable, to prevent waiting on async tasks before shutting down\n- Remove legacy code for pre-1.16 //drawsel handling",
     "changelog_url": null,
     "date_published": "2024-07-25T11:03:01.529375Z",
-    "downloads": 16641,
+    "downloads": 16644,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "56209fbb276cdb2fbe5ad8bcc5f055affbfb5c4d",
-          "sha512": "e82327f9c5ac667a023b6697fef32c35194a7ae05171f8d88aa8ebb4f5a2ec5136925352d070e386b94e718a2c80ee644d88424428fca2cd8c4127e7393b172e"
+          "sha512": "e82327f9c5ac667a023b6697fef32c35194a7ae05171f8d88aa8ebb4f5a2ec5136925352d070e386b94e718a2c80ee644d88424428fca2cd8c4127e7393b172e",
+          "sha1": "56209fbb276cdb2fbe5ad8bcc5f055affbfb5c4d"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/Jo76t1oi/worldedit-bukkit-7.3.5.jar",
         "filename": "worldedit-bukkit-7.3.5.jar",
@@ -1141,15 +1141,15 @@
     "changelog": "7.3.5\n- Fix queryRel not behaving correctly in //deform and the deform brush\n- Shutdown the executor service on disable, to prevent waiting on async tasks before shutting down\n- Remove legacy code for pre-1.16 //drawsel handling\n",
     "changelog_url": null,
     "date_published": "2024-07-25T11:02:26.895014Z",
-    "downloads": 169915,
+    "downloads": 170045,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "294d5e52285315c896fbfa45c1829ff43650522f",
-          "sha512": "3bea0b1bd38128cc4e7e686802ce8ac2d5750de438238c7487135978fc6fd8525e4457d86117c2b37e24fcc7ca37de1a4937fd61dac77a1e76d1b0cdf098a7ed"
+          "sha512": "3bea0b1bd38128cc4e7e686802ce8ac2d5750de438238c7487135978fc6fd8525e4457d86117c2b37e24fcc7ca37de1a4937fd61dac77a1e76d1b0cdf098a7ed",
+          "sha1": "294d5e52285315c896fbfa45c1829ff43650522f"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/srWerknn/worldedit-mod-7.3.5.jar",
         "filename": "worldedit-mod-7.3.5.jar",
@@ -1183,7 +1183,7 @@
     "changelog": "7.3.4\n- Added support for 1.21\n- Fixed an issue where //drawsel can prevent using //world overrides in some situation\n- Improved performance of repeatedly getting string representations of a block\n",
     "changelog_url": null,
     "date_published": "2024-07-06T11:13:43.086355Z",
-    "downloads": 17678,
+    "downloads": 17679,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1219,7 +1219,7 @@
     "changelog": "7.3.4\n- Added support for 1.21\n- Fixed an issue where //drawsel can prevent using //world overrides in some situation\n- Improved performance of repeatedly getting string representations of a block",
     "changelog_url": null,
     "date_published": "2024-07-06T11:12:59.086103Z",
-    "downloads": 110657,
+    "downloads": 110716,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1261,15 +1261,15 @@
     "changelog": "7.3.4 Beta 1\n- Added support for 1.21",
     "changelog_url": null,
     "date_published": "2024-06-19T08:55:28.102393Z",
-    "downloads": 13351,
+    "downloads": 13352,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "80857decf2266f98b95084a75e08098b90b1ee43",
-          "sha512": "0f1ef155bed07369a57c7f8a2be828aa0b89aae0297114f8d1daf245cca526f19f651828daaa8d81789183c6108a0a1514e25bbdf1304c75b7a26228d642d630"
+          "sha512": "0f1ef155bed07369a57c7f8a2be828aa0b89aae0297114f8d1daf245cca526f19f651828daaa8d81789183c6108a0a1514e25bbdf1304c75b7a26228d642d630",
+          "sha1": "80857decf2266f98b95084a75e08098b90b1ee43"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/DBLNBwrB/worldedit-bukkit-7.3.4-beta-01.jar",
         "filename": "worldedit-bukkit-7.3.4-beta-01.jar",
@@ -1297,15 +1297,15 @@
     "changelog": "7.3.4 Beta 1\n- Added support for 1.21",
     "changelog_url": null,
     "date_published": "2024-06-19T08:54:36.721661Z",
-    "downloads": 81007,
+    "downloads": 81032,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "1ef17c05ee982ae61f99b26be847b2ac3d48a4f4b956e0e34101d4613b8ec4a127da58f223fe023eca04784b07298cb0457e2c34c5416717ab44f243523ce2ad",
-          "sha1": "7b08d506483c1a77d99b3a3d365c01d99d118969"
+          "sha1": "7b08d506483c1a77d99b3a3d365c01d99d118969",
+          "sha512": "1ef17c05ee982ae61f99b26be847b2ac3d48a4f4b956e0e34101d4613b8ec4a127da58f223fe023eca04784b07298cb0457e2c34c5416717ab44f243523ce2ad"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/JOJ9WbGc/worldedit-mod-7.3.4-beta-01.jar",
         "filename": "worldedit-mod-7.3.4-beta-01.jar",
@@ -1338,7 +1338,7 @@
     "changelog": "Changes in 7.3.3:\n- This build contains no changes, and exists purely for version consistency with other platforms",
     "changelog_url": null,
     "date_published": "2024-06-05T11:12:00.670451Z",
-    "downloads": 10894,
+    "downloads": 10895,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1374,15 +1374,15 @@
     "changelog": "7.3.3\n- [NeoForge] Update NeoForge version to workaround API break",
     "changelog_url": null,
     "date_published": "2024-06-05T11:10:31.399886Z",
-    "downloads": 40720,
+    "downloads": 40751,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "c3f6c3114d4e7e5fbe8565adec99325e6db3abf5",
-          "sha512": "dc6c261a8aa7086ee36ba192a7cf340a7644de032e1c7725b58c2761f6ff029eb36ced4c903bde181d4f331400702b5835e83c0f019c1d6f4565bf252cfbe061"
+          "sha512": "dc6c261a8aa7086ee36ba192a7cf340a7644de032e1c7725b58c2761f6ff029eb36ced4c903bde181d4f331400702b5835e83c0f019c1d6f4565bf252cfbe061",
+          "sha1": "c3f6c3114d4e7e5fbe8565adec99325e6db3abf5"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/RfIqhcpm/worldedit-mod-7.3.3.jar",
         "filename": "worldedit-mod-7.3.3.jar",
@@ -1415,7 +1415,7 @@
     "changelog": "Changes in 7.3.2:\n- [Paper] Worked around future Paper API change to prevent compatibility issues\n- [Bukkit] Dropped 1.19.4-1.20.1 support due to tooling compatibility issues\n- Fixed heightmap brush not behaving correctly below Y=0\n- Fixed paintings not getting rotated correctly\n- Fixed the crafter block not behaving correctly during flips\n- Fixed an issue where selection commands could kick some clients in certain circumstances\n\n**Important**: This version of WorldEdit targets Java 21, which is required for Minecraft 1.20.6. It will only work on 1.20 - 1.20.4 if you have also updated Java.\n\n[Check out this post for a more in-depth look at some of the biggest new features from WorldEdit 7.3!](https://madelinemiller.dev/blog/introducing-worldedit-7-3/)",
     "changelog_url": null,
     "date_published": "2024-05-21T10:34:42.282731Z",
-    "downloads": 8486,
+    "downloads": 8487,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1494,7 +1494,7 @@
     "changelog": "Changes in 7.3.1:\n- Added support for 1.20.5/1.20.6\n- Improved warnings when run on unsupported platforms\n- Removed some old data that was inflating the jar size\n- Disable chunk batching by default. We don't feel it makes sense in modern MC outside of potentially niche situations\n\n**Important**: This version of WorldEdit targets Java 21, which is required for Minecraft 1.20.6. It will only work on 1.20 - 1.20.4 if you have also updated Java.\n\n[Check out this post for a more in-depth look at some of the biggest new features from WorldEdit 7.3!](https://madelinemiller.dev/blog/introducing-worldedit-7-3/)",
     "changelog_url": null,
     "date_published": "2024-05-08T10:23:49.549734Z",
-    "downloads": 73874,
+    "downloads": 73992,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1531,15 +1531,15 @@
     "changelog": "Changes in 7.3.1:\n- [NeoForge/Forge] Moved to NeoForge, dropping Forge support\n- Added support for 1.20.5/1.20.6\n- Improved warnings when run on unsupported platforms\n- Removed some old data that was inflating the jar size\n- Disable chunk batching by default. We don't feel it makes sense in modern MC outside of potentially niche situations\n\n[Check out this post for a more in-depth look at some of the biggest new features from WorldEdit 7.3!](https://madelinemiller.dev/blog/introducing-worldedit-7-3/)",
     "changelog_url": null,
     "date_published": "2024-05-08T10:22:22.106333Z",
-    "downloads": 9998,
+    "downloads": 10002,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e34adfbc2404c791439f83fd883172864df1f4ea",
-          "sha512": "7def32a0dcce71002e81e4994234b7e0b4932c79093962c3ef1f9b1f9d7590bdac13b433003e01b33eaf336221cbea2e5996a8c55057461a0ae7674638ee45dd"
+          "sha512": "7def32a0dcce71002e81e4994234b7e0b4932c79093962c3ef1f9b1f9d7590bdac13b433003e01b33eaf336221cbea2e5996a8c55057461a0ae7674638ee45dd",
+          "sha1": "e34adfbc2404c791439f83fd883172864df1f4ea"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/2BXiy3fP/worldedit-mod-7.3.1.jar",
         "filename": "worldedit-mod-7.3.1.jar",
@@ -1572,7 +1572,7 @@
     "changelog": "Changes in 7.3.0:\n- Added an `//update [sideEffect]` command to apply side effects to a selection\n- Added a schematic sharing system and corresponding API, with `/schem share`\n- Added WorldEdit version and platform information in schematic metadata\n- Added API to clear the contents of a registry\n- Added a splatter brush, with configurable decay\n- Added support for Sponge Schematics v3, and made specific versions accessible as `sponge.1`, `sponge.2`, and `sponge.3`\n- Added a snow smoothing brush and command to smooth layered snow\n- Added a `//pos` command to allow making entire selections with a single command\n- Added a morph brush to apply morphological dilation and erosion, with simple erode and dilate presets\n- Added a custom-build NBT library, allowing access to future improvements and modern NBT constructs\n- Lazy-load most NBT data to improve performance and memory usage of some operations\n- Added API to disable history tracking in an EditSession, to improve performance for plugins that don't care about history\n- Added command suggestions for block properties to dynamic patterns such as hand, offhand, pos1, etc\n- Added a feature generator command, `//feature [featureName]`\n- Added a structure generator command, `//structure [structureName]`\n- Added an API to identify the format of a schematic from an InputStream, rather than a File\n- Added a `//placement` command to select the placement type, superseding `//toggleplace`\n- Added `min` placement mode to correspond to minimum position of a selection\n- Added `max` placement mode to correspond to maximum position of a selection\n- Added `world` placement mode to correspond to an absolute world location\n- Added `here` placement mode to correspond to the player position as of running the command\n- Added `-c` flag to the biome brush to set the biome to the entire column\n- Added API to memoize mask calls\n- Added a `//trim [mask]` command, to trim a selection to the smallest space without removing blocks that match the mask\n- Added a `//cone` command to generate cones\n- Added support for setting NBT data in patterns, using SNBT syntax (`//set oak_sign[rotation=12]{'is_waxed':1}`)\n- Improve performance of arbitrary shape generations\n- Improve \"fast\" reorder mode and make it default, deprecating alternate reorder modes\n- Changed schematic pasting to ignore structure void blocks by default, with a `-v` flag to paste it\n- Changed the offset mask to not negate itself by default\n- Fixed spline generation not correctly using block centres in some situations\n- Improve general performance across the board\n- Send biome chunk updates to the client when possible\n- Use Minecraft's \"DataFixerUpper\" system when loading legacy schematics where possible\n- [Bukkit] Remove legacy data folder migration code from 2012\n- [Bukkit] Remove support for all versions prior to 1.17.1, and non-latest patches of 1.18 and 1.19\n\n[Check out this post for a more in-depth look at some of the biggest new features!](https://madelinemiller.dev/blog/introducing-worldedit-7-3/)",
     "changelog_url": null,
     "date_published": "2024-03-09T08:42:43.199758Z",
-    "downloads": 39956,
+    "downloads": 39978,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1608,7 +1608,7 @@
     "changelog": "Changes in 7.3.0:\n- Added an `//update [sideEffect]` command to apply side effects to a selection\n- Added a schematic sharing system and corresponding API, with `/schem share`\n- Added WorldEdit version and platform information in schematic metadata\n- Added API to clear the contents of a registry\n- Added a splatter brush, with configurable decay\n- Added support for Sponge Schematics v3, and made specific versions accessible as `sponge.1`, `sponge.2`, and `sponge.3`\n- Added a snow smoothing brush and command to smooth layered snow\n- Added a `//pos` command to allow making entire selections with a single command\n- Added a morph brush to apply morphological dilation and erosion, with simple erode and dilate presets\n- Added a custom-build NBT library, allowing access to future improvements and modern NBT constructs\n- Lazy-load most NBT data to improve performance and memory usage of some operations\n- Added API to disable history tracking in an EditSession, to improve performance for plugins that don't care about history\n- Added command suggestions for block properties to dynamic patterns such as hand, offhand, pos1, etc\n- Added a feature generator command, `//feature [featureName]`\n- Added a structure generator command, `//structure [structureName]`\n- Added an API to identify the format of a schematic from an InputStream, rather than a File\n- Added a `//placement` command to select the placement type, superseding `//toggleplace`\n- Added `min` placement mode to correspond to minimum position of a selection\n- Added `max` placement mode to correspond to maximum position of a selection\n- Added `world` placement mode to correspond to an absolute world location\n- Added `here` placement mode to correspond to the player position as of running the command\n- Added `-c` flag to the biome brush to set the biome to the entire column\n- Added API to memoize mask calls\n- Added a `//trim [mask]` command, to trim a selection to the smallest space without removing blocks that match the mask\n- Added a `//cone` command to generate cones\n- Added support for setting NBT data in patterns, using SNBT syntax (`//set oak_sign[rotation=12]{'is_waxed':1}`)\n- Improve performance of arbitrary shape generations\n- Improve \"fast\" reorder mode and make it default, deprecating alternate reorder modes\n- Changed schematic pasting to ignore structure void blocks by default, with a `-v` flag to paste it\n- Changed the offset mask to not negate itself by default\n- Fixed spline generation not correctly using block centres in some situations\n- Improve general performance across the board\n- Send biome chunk updates to the client when possible\n- Use Minecraft's \"DataFixerUpper\" system when loading legacy schematics where possible\n\n[Check out this post for a more in-depth look at some of the biggest new features!](https://madelinemiller.dev/blog/introducing-worldedit-7-3/)",
     "changelog_url": null,
     "date_published": "2024-03-09T08:41:04.4712Z",
-    "downloads": 216541,
+    "downloads": 216700,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1652,7 +1652,7 @@
     "changelog": "7.2.20\n- Minor memory optimisations during startup\n- Rename the 'modulo' expressions operator to 'remainder' to better reflect the actual operation being performed\n",
     "changelog_url": null,
     "date_published": "2024-02-29T12:48:03.472123Z",
-    "downloads": 36122,
+    "downloads": 36181,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1688,7 +1688,7 @@
     "changelog": "7.2.20\n- [Forge] Workaround various Forge issues that could cause crashes in certain situations\n- Minor memory optimisations during startup\n- Add a warning about problematic mods when iterating over list of block states takes too long, to assist in tracking down issues\n- Rename the 'modulo' expressions operator to 'remainder' to better reflect the actual operation being performed",
     "changelog_url": null,
     "date_published": "2024-02-29T12:46:36.725079Z",
-    "downloads": 8115,
+    "downloads": 8117,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1732,15 +1732,15 @@
     "changelog": "Changes since 7.3.0 Beta 3\n- Include changes from 7.2.19\n- Work around a breakage in Spigot causing errors when editing some blocks (Paper unaffected)\n- Use Minecraft's \"DataFixerUpper\" system when loading legacy schematics where possible\n- Fix an issue with legacy schematic sign compatibility handlers in previous 7.3 betas\n- Workaround a Spigot change that prevented some entities being affected by history in structure/feature generation commands",
     "changelog_url": null,
     "date_published": "2024-02-03T05:21:49.511803Z",
-    "downloads": 14513,
+    "downloads": 14515,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "4029600b376d7df7ccdf377ec5e1d1b3e8f18337",
-          "sha512": "3ac0038c1a4b1d26777a8f73d8a264a3613c216eaf631931f9511ed927ce474aded64d00082a0190db14d48b562a898b813582c399316cfd960b4deee267c99e"
+          "sha512": "3ac0038c1a4b1d26777a8f73d8a264a3613c216eaf631931f9511ed927ce474aded64d00082a0190db14d48b562a898b813582c399316cfd960b4deee267c99e",
+          "sha1": "4029600b376d7df7ccdf377ec5e1d1b3e8f18337"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/gaP8AHk5/worldedit-bukkit-7.3.0-beta-04.jar",
         "filename": "worldedit-bukkit-7.3.0-beta-04.jar",
@@ -1768,7 +1768,7 @@
     "changelog": "Changes since 7.3.0 Beta 3\n- Include changes from 7.2.19\n- Use Minecraft's \"DataFixerUpper\" system when loading legacy schematics where possible\n- Fix an issue with legacy schematic sign compatibility handlers in previous 7.3 betas ",
     "changelog_url": null,
     "date_published": "2024-02-03T05:20:31.198796Z",
-    "downloads": 18173,
+    "downloads": 18175,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1812,15 +1812,15 @@
     "changelog": "7.2.19\n- Improve error handling for unsupported Sponge Schematic versions\n",
     "changelog_url": null,
     "date_published": "2024-02-03T05:05:27.188003Z",
-    "downloads": 6605,
+    "downloads": 6608,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "8fd9a090f34499623b09f323f2204cb9422e2052",
-          "sha512": "246342e1de6b99bd760f30724d6fc8a1ca92fc960a5841b917ba7524ea12ca8a0db2f840a32e3bc2bf89fe6494497f5042b646c540992830ea3dd6c1b415b129"
+          "sha512": "246342e1de6b99bd760f30724d6fc8a1ca92fc960a5841b917ba7524ea12ca8a0db2f840a32e3bc2bf89fe6494497f5042b646c540992830ea3dd6c1b415b129",
+          "sha1": "8fd9a090f34499623b09f323f2204cb9422e2052"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/TdNeSMad/worldedit-bukkit-7.2.19.jar",
         "filename": "worldedit-bukkit-7.2.19.jar",
@@ -1892,15 +1892,15 @@
     "changelog": "Changes since 7.3.0 Beta 2\n- Include changes from 7.2.18\n- Further minor performance improvements\n- Fixed an issue where `//perf off` would turn off more than it should\n- Fix EditSession initialisation without a world triggering a non-friendly error\n- Send biome chunk updates to the client when possible\n\nFor more information, [check out this post that covers some of the main new features!](https://madelinemiller.dev/blog/introducing-worldedit-7-3/)",
     "changelog_url": null,
     "date_published": "2023-12-13T12:40:25.555609Z",
-    "downloads": 23000,
+    "downloads": 23003,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "f382105a05eb9756df0ea7cd839dd156a7e38fd5de3dd1f93fd34b080038835fe26fca0003b225a665e035aadfa234ecdbfc2d54c76815d04cb5244ae931b22c",
-          "sha1": "3154e73b640ac8e0d0bd6b9b0ff8a9d3e843d4e7"
+          "sha1": "3154e73b640ac8e0d0bd6b9b0ff8a9d3e843d4e7",
+          "sha512": "f382105a05eb9756df0ea7cd839dd156a7e38fd5de3dd1f93fd34b080038835fe26fca0003b225a665e035aadfa234ecdbfc2d54c76815d04cb5244ae931b22c"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/jiqenRwc/worldedit-bukkit-7.3.0-beta-03-dist.jar",
         "filename": "worldedit-bukkit-7.3.0-beta-03-dist.jar",
@@ -1928,7 +1928,7 @@
     "changelog": "Changes since 7.3.0 Beta 2\n- Include changes from 7.2.18\n- Further minor performance improvements\n- Fixed an issue where `//perf off` would turn off more than it should\n- Fix EditSession initialisation without a world triggering a non-friendly error\n- Send biome chunk updates to the client when possible\n\nFor more information, [check out this post that covers some of the main new features!](https://madelinemiller.dev/blog/introducing-worldedit-7-3/)",
     "changelog_url": null,
     "date_published": "2023-12-13T12:39:14.175987Z",
-    "downloads": 47114,
+    "downloads": 47119,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
@@ -1972,15 +1972,15 @@
     "changelog": "7.2.18\n- Update to 1.20.4\n- Fixed ellipsoid and cylinder regions not fully clearing\n- Limit //line and //curve thickness by max-radius option\n- Add further validation to biome setting API to prevent errors with invalid positions",
     "changelog_url": null,
     "date_published": "2023-12-13T12:24:41.960503Z",
-    "downloads": 8856,
+    "downloads": 8866,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "9083175eb21ba71e6fde89c97f18a35cc521e5d8",
-          "sha512": "b1c0d7e8fa78540098fde26273e75cabc4c53fda8d9ba44de4828452fcd4b61078f2dedfd9849799b0bac1e1ab5726d09e0572653d9a8849a76d796e1ed84b29"
+          "sha512": "b1c0d7e8fa78540098fde26273e75cabc4c53fda8d9ba44de4828452fcd4b61078f2dedfd9849799b0bac1e1ab5726d09e0572653d9a8849a76d796e1ed84b29",
+          "sha1": "9083175eb21ba71e6fde89c97f18a35cc521e5d8"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/aNn2Fqf4/worldedit-bukkit-7.2.18-dist.jar",
         "filename": "worldedit-bukkit-7.2.18-dist.jar",
@@ -2008,15 +2008,15 @@
     "changelog": "7.2.18\n- Update to 1.20.4\n- Fixed ellipsoid and cylinder regions not fully clearing\n- Limit //line and //curve thickness by max-radius option\n- Add further validation to biome setting API to prevent errors with invalid positions\n",
     "changelog_url": null,
     "date_published": "2023-12-13T12:23:38.089806Z",
-    "downloads": 11973,
+    "downloads": 11978,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "bbfb13beb4e9f5c75769b7f728c2ea5d1d5bedcd",
-          "sha512": "a076630b1c563745003aa47138b2015d30499227513933fc9676e5b5b05fe1b75b475734a53e45a8eeaafe74a84d5576c5ffafd53162c2e6baa93ea31d639ef2"
+          "sha512": "a076630b1c563745003aa47138b2015d30499227513933fc9676e5b5b05fe1b75b475734a53e45a8eeaafe74a84d5576c5ffafd53162c2e6baa93ea31d639ef2",
+          "sha1": "bbfb13beb4e9f5c75769b7f728c2ea5d1d5bedcd"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/ssjKpdGo/worldedit-mod-7.2.18-dist.jar",
         "filename": "worldedit-mod-7.2.18-dist.jar",
@@ -2050,15 +2050,15 @@
     "changelog": "Changes since 7.3.0 Beta 1\n\n- Include changes from 7.2.17\n- Improve snow smooth brush to behave better with a Minecraft block grid\n- Small optimisations to //line and //curve thickness calculations\n- Small optimisations to AffineTransform \n- Fix ellipsoid and cylinder regions not entirely clearing by deselecting the selection\n- Add a permission node to the //placement command\n- Limit //line thickness by max-radius option\n- Limit //curve thickness by max-radius option\n\nFor more information, [check out this post that covers some of the main new features!](https://madelinemiller.dev/blog/introducing-worldedit-7-3/)",
     "changelog_url": null,
     "date_published": "2023-10-21T03:44:09.769061Z",
-    "downloads": 27928,
+    "downloads": 27935,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "3164b55c5ea7720ab28ca99d156cd5c279269559",
-          "sha512": "f77e429d5ef68d1c55ffb8cd247f694c1e30020e4db39f9906b0dd5c693a22adb87fb55cba68f1b61a0bc38b2c2e12effb03b1b64002829fa1abf815f3852353"
+          "sha512": "f77e429d5ef68d1c55ffb8cd247f694c1e30020e4db39f9906b0dd5c693a22adb87fb55cba68f1b61a0bc38b2c2e12effb03b1b64002829fa1abf815f3852353",
+          "sha1": "3164b55c5ea7720ab28ca99d156cd5c279269559"
         },
         "url": "https://cdn.modrinth.com/data/1u6JkXh5/versions/ans4Koju/worldedit-bukkit-7.3.0-beta-02.jar",
         "filename": "worldedit-bukkit-7.3.0-beta-02.jar",
@@ -2086,7 +2086,7 @@
     "changelog": "Changes since 7.3.0 Beta 1\n- Include changes from 7.2.17\n- Improve snow smooth brush to behave better with a Minecraft block grid\n- Small optimisations to //line and //curve thickness calculations\n- Small optimisations to AffineTransform \n- Fix ellipsoid and cylinder regions not entirely clearing by deselecting the selection\n- Add a permission node to the //placement command\n- Limit //line thickness by max-radius option\n- Limit //curve thickness by max-radius option\n\nFor more information, [check out this post that covers some of the main new features!](https://madelinemiller.dev/blog/introducing-worldedit-7-3/)",
     "changelog_url": null,
     "date_published": "2023-10-20T13:01:08.277803Z",
-    "downloads": 99779,
+    "downloads": 99824,
     "version_type": "beta",
     "status": "listed",
     "requested_status": null,

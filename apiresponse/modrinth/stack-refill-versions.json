@@ -18,7 +18,7 @@
     "changelog": "<p>(1.21.6 Fabric) Updated callbacks to fix an incorrect reference in the bytecode.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2025-06-18T21:23:10.901847Z",
-    "downloads": 1574,
+    "downloads": 1659,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -63,7 +63,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.21.6.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2025-06-18T18:45:28.88897Z",
-    "downloads": 53,
+    "downloads": 54,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -108,15 +108,15 @@
     "changelog": "<p>Fixed items being refilled post-death.<br />Fixed ArrayIndexOutOfBoundsException during refill.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2025-05-04T09:23:31.607453Z",
-    "downloads": 9846,
+    "downloads": 9896,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "e7c22af8c9bf742ff486cb19c16466d249166942",
-          "sha512": "e8f67a9f2b837b3a9f8bae35ba7137341ac1eac5886740a1fb8555e93657a27870c66be9f8a187a8739203112d46dd9f8abd34b70e35a63d6d1831799ea25f16"
+          "sha512": "e8f67a9f2b837b3a9f8bae35ba7137341ac1eac5886740a1fb8555e93657a27870c66be9f8a187a8739203112d46dd9f8abd34b70e35a63d6d1831799ea25f16",
+          "sha1": "e7c22af8c9bf742ff486cb19c16466d249166942"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/XCHC1MXs/stackrefill-1.21.5-4.7.jar",
         "filename": "stackrefill-1.21.5-4.7.jar",
@@ -153,15 +153,15 @@
     "changelog": "<p>Fixed items being refilled post-death.<br />Fixed ArrayIndexOutOfBoundsException during refill.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2025-05-04T09:23:08.97229Z",
-    "downloads": 3513,
+    "downloads": 3535,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "e772164991d321b3f27c2e6fa38580e5044e8c4d79d9d811dd4625a0d4cc075676627e9dd9cf2d19ddc7c7a810d891db224ebbb948a415ae7239f9fd0a93a0b8",
-          "sha1": "11a802af51607cc2e6ede4132d9fb2c282ab1292"
+          "sha1": "11a802af51607cc2e6ede4132d9fb2c282ab1292",
+          "sha512": "e772164991d321b3f27c2e6fa38580e5044e8c4d79d9d811dd4625a0d4cc075676627e9dd9cf2d19ddc7c7a810d891db224ebbb948a415ae7239f9fd0a93a0b8"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/zHv63BmF/stackrefill-1.21.4-4.7.jar",
         "filename": "stackrefill-1.21.4-4.7.jar",
@@ -199,15 +199,15 @@
     "changelog": "<p>Fixed items being refilled post-death.<br />Fixed ArrayIndexOutOfBoundsException during refill.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2025-05-04T09:22:47.345522Z",
-    "downloads": 24793,
+    "downloads": 24960,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "53cb28110bfbbc3467174b114e56c9c62b58c6fc95a675c442f31ec79bfb5e4d5c81335b983d8d0888da15ede4000f1bbe38490c670ff9d31b5491fc266e9da0",
-          "sha1": "2b0871ff14d6e74644c83b97a1c42e4d49f882bf"
+          "sha1": "2b0871ff14d6e74644c83b97a1c42e4d49f882bf",
+          "sha512": "53cb28110bfbbc3467174b114e56c9c62b58c6fc95a675c442f31ec79bfb5e4d5c81335b983d8d0888da15ede4000f1bbe38490c670ff9d31b5491fc266e9da0"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/7u0qP3e1/stackrefill-1.21.1-4.7.jar",
         "filename": "stackrefill-1.21.1-4.7.jar",
@@ -244,7 +244,7 @@
     "changelog": "<p>Fixed items being refilled post-death.<br />Fixed ArrayIndexOutOfBoundsException during refill.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2025-05-04T09:22:25.608138Z",
-    "downloads": 67574,
+    "downloads": 68198,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -289,7 +289,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.21.5.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2025-03-27T15:24:36.939651Z",
-    "downloads": 9390,
+    "downloads": 9395,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -334,7 +334,7 @@
     "changelog": "<p>(Forge & Neo) Removed redundant event register annotations.<br />- This fixes events loading when they shouldn't.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2025-02-12T13:23:19.459545Z",
-    "downloads": 13736,
+    "downloads": 13738,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -380,7 +380,7 @@
     "changelog": "<p>(Forge & Neo) Removed redundant event register annotations.<br />- This fixes events loading when they shouldn't.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2025-02-12T13:22:57.802371Z",
-    "downloads": 30776,
+    "downloads": 30806,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -425,7 +425,7 @@
     "changelog": "<p>(Forge & Neo) Removed redundant event register annotations.<br />- This fixes events loading when they shouldn't.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2025-02-12T13:22:36.064284Z",
-    "downloads": 36021,
+    "downloads": 36038,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -470,7 +470,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.21.4.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2024-12-06T09:15:02.135297Z",
-    "downloads": 11508,
+    "downloads": 11512,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -560,15 +560,15 @@
     "changelog": "<p>Updated mod to Minecraft version 1.21.2.<br />- Without Forge for now, support will be added once they update.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2024-10-23T19:38:37.531015Z",
-    "downloads": 634,
+    "downloads": 635,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "f5a73af2a41ec148e51330e9f571b9b871fd215f",
-          "sha512": "b9c4e84c7ae57721d21ab23600881e65fc280aa3ecd88941c2d101cb82d40532493520df0469441cdd7baa765102d3262ea8c0dd3019e60f3c2646c85d6210b1"
+          "sha512": "b9c4e84c7ae57721d21ab23600881e65fc280aa3ecd88941c2d101cb82d40532493520df0469441cdd7baa765102d3262ea8c0dd3019e60f3c2646c85d6210b1",
+          "sha1": "f5a73af2a41ec148e51330e9f571b9b871fd215f"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/DHV2tpa8/stackrefill-1.21.2-4.5.jar",
         "filename": "stackrefill-1.21.2-4.5.jar",
@@ -606,7 +606,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.21.1.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2024-08-08T22:43:33.907335Z",
-    "downloads": 80500,
+    "downloads": 80547,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -658,8 +658,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "b5b0f71067bd784195628f9b1f7df2035238c55841c90f49cff43e86ff489e7f5f8937ca9f66aa57a00412b85fd194cdf7d1144c4cb31112490bbf45793a477f",
-          "sha1": "4c3773e60b1306f4b12fc4abe7503efa83cb2369"
+          "sha1": "4c3773e60b1306f4b12fc4abe7503efa83cb2369",
+          "sha512": "b5b0f71067bd784195628f9b1f7df2035238c55841c90f49cff43e86ff489e7f5f8937ca9f66aa57a00412b85fd194cdf7d1144c4cb31112490bbf45793a477f"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/JF4BsgNL/stackrefill-1.21.0-4.5.jar",
         "filename": "stackrefill-1.21.0-4.5.jar",
@@ -696,7 +696,7 @@
     "changelog": "<p>Added Bundle support. The mod can now be enabled/disabled via bundle configs.<br />(NeoForge) Fixed the in-game config screen not working correctly.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2024-07-27T18:08:41.542474Z",
-    "downloads": 1192,
+    "downloads": 1198,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -741,7 +741,7 @@
     "changelog": "<p>Added Bundle support. The mod can now be enabled/disabled via bundle configs.<br />(NeoForge) Fixed the in-game config screen not working correctly.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2024-07-27T18:08:19.993421Z",
-    "downloads": 79443,
+    "downloads": 79561,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -786,7 +786,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.21.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2024-06-13T22:47:05.230344Z",
-    "downloads": 68312,
+    "downloads": 68324,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -831,7 +831,7 @@
     "changelog": "<p>Improved exception handling.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2024-05-21T21:15:45.508101Z",
-    "downloads": 5166,
+    "downloads": 5167,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -876,7 +876,7 @@
     "changelog": "<p>Improved exception handling.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2024-05-21T21:15:23.967364Z",
-    "downloads": 6774,
+    "downloads": 6777,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -921,15 +921,15 @@
     "changelog": "<p>Improved exception handling.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2024-05-21T21:15:02.307449Z",
-    "downloads": 15858,
+    "downloads": 15862,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "19749b6a8b0e51f29d474f496cbcab4e2278574044ac06b2d634c611e3dca7b5f51998e334553cd7a40422b0fd288fdf2624858e964d3fb1f0566a75ba68cef2",
-          "sha1": "a0e35a25a6b775c015bf2f13a72c68f7943e6ccd"
+          "sha1": "a0e35a25a6b775c015bf2f13a72c68f7943e6ccd",
+          "sha512": "19749b6a8b0e51f29d474f496cbcab4e2278574044ac06b2d634c611e3dca7b5f51998e334553cd7a40422b0fd288fdf2624858e964d3fb1f0566a75ba68cef2"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/u73gygFL/stackrefill-1.20.1-4.4.jar",
         "filename": "stackrefill-1.20.1-4.4.jar",
@@ -965,7 +965,7 @@
     "changelog": "<p>Improved exception handling.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2024-05-21T21:14:40.454348Z",
-    "downloads": 7773,
+    "downloads": 7809,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1061,8 +1061,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "7f3d7f62f40c93590a85e97683ad1c7f6be5337277a95b7e6cd19815c1186dd31beb3236d8681bf4fbabc36c8c9280d6901420fd1fe8fc1f345cb1d364ec14e1",
-          "sha1": "c45e4469bffdd38ddea570a3cedc078711f1c37d"
+          "sha1": "c45e4469bffdd38ddea570a3cedc078711f1c37d",
+          "sha512": "7f3d7f62f40c93590a85e97683ad1c7f6be5337277a95b7e6cd19815c1186dd31beb3236d8681bf4fbabc36c8c9280d6901420fd1fe8fc1f345cb1d364ec14e1"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/NB17oMUW/stackrefill-1.20.5-4.3.jar",
         "filename": "stackrefill-1.20.5-4.3.jar",
@@ -1143,15 +1143,15 @@
     "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-12-17T18:21:41.301378Z",
-    "downloads": 10977,
+    "downloads": 10978,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "7675b2c6f6192e5149c9f8500f16df18a0550c2e7bdffa2017519761bfc28e872b56a4426699e46d8ed217fdb3bf2ef1bf0f98428b795396f99b746461046aaf",
-          "sha1": "fbdd4ac06d02ad763b08a670be69365ea2e05337"
+          "sha1": "fbdd4ac06d02ad763b08a670be69365ea2e05337",
+          "sha512": "7675b2c6f6192e5149c9f8500f16df18a0550c2e7bdffa2017519761bfc28e872b56a4426699e46d8ed217fdb3bf2ef1bf0f98428b795396f99b746461046aaf"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/HGSYHrgz/stackrefill-1.20.4-4.2.jar",
         "filename": "stackrefill-1.20.4-4.2.jar",
@@ -1188,15 +1188,15 @@
     "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-12-17T18:21:20.323386Z",
-    "downloads": 1747,
+    "downloads": 1752,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "fb36d069128a703fe0993debbed2ecc6bc58ff74",
-          "sha512": "462f3d4474477c94527ba85276259207a19f8e5307f3b5336e361347a44b685d592f9c8830c5b9fe5442ce2fdba015cbac62e5f2b6a45d630123b49242677ce5"
+          "sha512": "462f3d4474477c94527ba85276259207a19f8e5307f3b5336e361347a44b685d592f9c8830c5b9fe5442ce2fdba015cbac62e5f2b6a45d630123b49242677ce5",
+          "sha1": "fb36d069128a703fe0993debbed2ecc6bc58ff74"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/IHdwcPL2/stackrefill-1.20.2-4.2.jar",
         "filename": "stackrefill-1.20.2-4.2.jar",
@@ -1233,7 +1233,7 @@
     "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-12-17T18:20:59.023769Z",
-    "downloads": 26708,
+    "downloads": 26733,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1277,15 +1277,15 @@
     "changelog": "<p>Improved mod icon compression, which lowers the jar file size.<br />Updated mod URLs to the new GitHub location.<br />(NeoForge) Updated to the new changes: Added 'type=' to mods.toml, and moved the modEventBus field.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-12-17T18:20:35.897156Z",
-    "downloads": 21110,
+    "downloads": 21113,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "9f4b6d5f0f75e0080d2c57d3b45ac85aa7c9b564",
-          "sha512": "1f673f4d93c7753ff4d73db61a2525af13241acdec2167a785fa61f49124b7558a666050ee141547964a28a86a7f37a8b6db4397de50c232cf4588473c4a4d6a"
+          "sha512": "1f673f4d93c7753ff4d73db61a2525af13241acdec2167a785fa61f49124b7558a666050ee141547964a28a86a7f37a8b6db4397de50c232cf4588473c4a4d6a",
+          "sha1": "9f4b6d5f0f75e0080d2c57d3b45ac85aa7c9b564"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/sgkW3jaH/stackrefill-1.19.2-4.2.jar",
         "filename": "stackrefill-1.19.2-4.2.jar",
@@ -1329,8 +1329,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "940830c8bc430c7f5d08b3f21f3cd89175b9fe42",
-          "sha512": "fb50bd38fd5ea3f89dd07b793dea94f5660edbd63cda81f69363c89b423adb9e8b433df0189b81cd54487edc421f91029c0645a71cf7f2e65807221d97bb49a5"
+          "sha512": "fb50bd38fd5ea3f89dd07b793dea94f5660edbd63cda81f69363c89b423adb9e8b433df0189b81cd54487edc421f91029c0645a71cf7f2e65807221d97bb49a5",
+          "sha1": "940830c8bc430c7f5d08b3f21f3cd89175b9fe42"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/FekCG20e/stackrefill-1.20.4-4.1.jar",
         "filename": "stackrefill-1.20.4-4.1.jar",
@@ -1464,8 +1464,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "a16ae4fc101d05ec5ed01cb9008079f8656b4883895315abde3ec7e74e2e27936f6ec71ee0c46cb5b60a02b09677e89657401904c2a06ca3581ffa42ac578c0e",
-          "sha1": "db5caf1c3856786e3bf5a3008b09e8b4693032e3"
+          "sha1": "db5caf1c3856786e3bf5a3008b09e8b4693032e3",
+          "sha512": "a16ae4fc101d05ec5ed01cb9008079f8656b4883895315abde3ec7e74e2e27936f6ec71ee0c46cb5b60a02b09677e89657401904c2a06ca3581ffa42ac578c0e"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/uANk4nhZ/stackrefill-1.20.1-4.1.jar",
         "filename": "stackrefill-1.20.1-4.1.jar",
@@ -1508,8 +1508,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "52d47b520b40c382aea575535b13953b28ad1f59",
-          "sha512": "669ce85d6940ca7edf8ef00ddde914fa0ef99be7698d778a9659c09415b827635e50f848cf1b03360292ee8eae08f184a79ef6536e761bd2d7267d19b1af04d4"
+          "sha512": "669ce85d6940ca7edf8ef00ddde914fa0ef99be7698d778a9659c09415b827635e50f848cf1b03360292ee8eae08f184a79ef6536e761bd2d7267d19b1af04d4",
+          "sha1": "52d47b520b40c382aea575535b13953b28ad1f59"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/btIdI4tH/stackrefill-1.19.2-4.1.jar",
         "filename": "stackrefill-1.19.2-4.1.jar",
@@ -1545,7 +1545,7 @@
     "changelog": "<p>(1.20.*) Added official support for NeoForge. Just like Fabric and Forge, in the same jar!<br />Updated structure and content of mod info files.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-11-08T16:47:27.941108Z",
-    "downloads": 3596,
+    "downloads": 3601,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1590,15 +1590,15 @@
     "changelog": "<p>Updated mod to Minecraft version 1.20.2.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-09-21T21:28:31.395867Z",
-    "downloads": 1915,
+    "downloads": 1916,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha512": "95b6e51d7e1d1a213ad1867c145b546bf16eaae663417416c93f4c2dd2757ecd3b0d300358036ff516f4dec31dcd0d848f85917e1a477f77f722aa7cfd5e5b31",
-          "sha1": "bbabc9ce46f3073d91eba269aa9062417c18c90e"
+          "sha1": "bbabc9ce46f3073d91eba269aa9062417c18c90e",
+          "sha512": "95b6e51d7e1d1a213ad1867c145b546bf16eaae663417416c93f4c2dd2757ecd3b0d300358036ff516f4dec31dcd0d848f85917e1a477f77f722aa7cfd5e5b31"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/MjZfVW1I/stackrefill-1.20.2-4.0.jar",
         "filename": "stackrefill-1.20.2-4.0.jar",
@@ -1634,7 +1634,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.20.1.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-06-12T23:48:57.609753Z",
-    "downloads": 11695,
+    "downloads": 11698,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1678,7 +1678,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.20.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-06-08T11:29:43.985006Z",
-    "downloads": 1972,
+    "downloads": 1975,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1722,7 +1722,7 @@
     "changelog": "<p>Updated mod to Minecraft version 1.19.4.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-03-15T16:39:04.494532Z",
-    "downloads": 2298,
+    "downloads": 2299,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1773,8 +1773,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "9ddf41ff202261a3a85fb9c0487c1db4f7aa1b67",
-          "sha512": "d5dee30f7de0b7601c4cebd4b2d586c6802ffe6c72b7a7240809a710498d19ec249255f11e251205ff09ca5cf9d70ae83febe9347551cc36d68849d6a7121a95"
+          "sha512": "d5dee30f7de0b7601c4cebd4b2d586c6802ffe6c72b7a7240809a710498d19ec249255f11e251205ff09ca5cf9d70ae83febe9347551cc36d68849d6a7121a95",
+          "sha1": "9ddf41ff202261a3a85fb9c0487c1db4f7aa1b67"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/GYmS7YaK/stackrefill-1.19.3-4.0.jar",
         "filename": "stackrefill-1.19.3-4.0.jar",
@@ -1810,15 +1810,15 @@
     "changelog": "<p>A big backend update!<br />Forge and Fabric (and Quilt) are now contained in one file.<br /><br />This also means that the two separate project pages for Forge/Fabric will be converted to one (on CurseForge). While having a clean file list! The Fabric project page on CF will remain as a legacy for older Fabric versions.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-01-06T20:36:58.931519Z",
-    "downloads": 37537,
+    "downloads": 37550,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
     "files": [
       {
         "hashes": {
-          "sha1": "757044dc8d6eccdb0b394dd63ce0a39791860376",
-          "sha512": "f6c6db37000d7e5bdf6dd86a80363f9cfef86c06f7738534083bab0c87c9b4648146675b56edd5cc78e6e946b41cd5128265320f0aa4b2bc43bc29d993cab529"
+          "sha512": "f6c6db37000d7e5bdf6dd86a80363f9cfef86c06f7738534083bab0c87c9b4648146675b56edd5cc78e6e946b41cd5128265320f0aa4b2bc43bc29d993cab529",
+          "sha1": "757044dc8d6eccdb0b394dd63ce0a39791860376"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/VNRWv819/stackrefill-1.19.2-4.0.jar",
         "filename": "stackrefill-1.19.2-4.0.jar",
@@ -1854,7 +1854,7 @@
     "changelog": "<p>A big backend update!<br />Forge and Fabric (and Quilt) are now contained in one file.<br /><br />This also means that the two separate project pages for Forge/Fabric will be converted to one (on CurseForge). While having a clean file list! The Fabric project page on CF will remain as a legacy for older Fabric versions.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2023-01-06T20:36:42.013085Z",
-    "downloads": 976,
+    "downloads": 985,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -1903,8 +1903,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "83a7f80af78d3b684770b4856dcd7bcac0ff172c",
-          "sha512": "70dc27ce3fd5473401afa53d696f088d97e777900e7c6fd96a448765282e25dc4606ebdbab426249b9bd9d44fd582381a1f2d90b3a54a94bc4bdee3317063948"
+          "sha512": "70dc27ce3fd5473401afa53d696f088d97e777900e7c6fd96a448765282e25dc4606ebdbab426249b9bd9d44fd582381a1f2d90b3a54a94bc4bdee3317063948",
+          "sha1": "83a7f80af78d3b684770b4856dcd7bcac0ff172c"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/qZnZndOb/stackrefill_1.19.3-3.2.jar",
         "filename": "stackrefill_1.19.3-3.2.jar",
@@ -2070,7 +2070,7 @@
     "changelog": "<p>Fixed a crash when a pair variable was null, due to an incompatibility with another mod.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2022-10-08T11:47:24.934769Z",
-    "downloads": 2500,
+    "downloads": 2502,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2208,7 +2208,7 @@
     "changelog": "<p>Fixed a crash when a pair variable was null, due to an incompatibility with another mod.</p><p>The complete changelog with previous versions can be found at: <br>&nbsp; <a href=\"https://serilum.com/mods?changelog=stack-refill\" target=\"_blank\">https://serilum.com/mods?changelog=stack-refill</a></p>",
     "changelog_url": null,
     "date_published": "2022-10-08T11:46:39.957183Z",
-    "downloads": 811,
+    "downloads": 812,
     "version_type": "release",
     "status": "listed",
     "requested_status": null,
@@ -2491,8 +2491,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "f1d472d34c90ab61241042acd8195237362453d6177349eb0f433545bb00fe14adaf821c897b5087f1f2d3aa5c13826d695c46f62da95a29feb1c373da124e2b",
-          "sha1": "d1430158bcf19652e55accee36be50a0dc988b53"
+          "sha1": "d1430158bcf19652e55accee36be50a0dc988b53",
+          "sha512": "f1d472d34c90ab61241042acd8195237362453d6177349eb0f433545bb00fe14adaf821c897b5087f1f2d3aa5c13826d695c46f62da95a29feb1c373da124e2b"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/eHbhJ9Fj/stackrefill_1.16.5-3.0.jar",
         "filename": "stackrefill_1.16.5-3.0.jar",
@@ -2533,8 +2533,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "a8b2c33a466e101645c352ec644e0b401408e57d",
-          "sha512": "82e1581912a9732893298eeada694008c583ee33290e64bc7043bb4da1dec695e670d366a2f82a54efb06f650f5fb6bcab6ce30e7782442bde60a27eaec75129"
+          "sha512": "82e1581912a9732893298eeada694008c583ee33290e64bc7043bb4da1dec695e670d366a2f82a54efb06f650f5fb6bcab6ce30e7782442bde60a27eaec75129",
+          "sha1": "a8b2c33a466e101645c352ec644e0b401408e57d"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/RgK8JsBf/stackrefill-fabric_1.19.2-3.0.jar",
         "filename": "stackrefill-fabric_1.19.2-3.0.jar",
@@ -2677,8 +2677,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "65b3f3b5fc94af9bc24a222b7ae20afd7b3a190d",
-          "sha512": "f71c1195a0b37ce9543f05e288ad2bddd39e1390ddd7d032f0b73cf485c27e5c7f72464b06211c0c2a50a8b421c53bb54af382256f3a8a7a77857d395944cec9"
+          "sha512": "f71c1195a0b37ce9543f05e288ad2bddd39e1390ddd7d032f0b73cf485c27e5c7f72464b06211c0c2a50a8b421c53bb54af382256f3a8a7a77857d395944cec9",
+          "sha1": "65b3f3b5fc94af9bc24a222b7ae20afd7b3a190d"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/k9neuIIy/stackrefill_1.19.2-2.7.jar",
         "filename": "stackrefill_1.19.2-2.7.jar",
@@ -2719,8 +2719,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "cb48f6fd2ba6ca5a531c16d5eeddf15b879787a8",
-          "sha512": "b64104eb33b1c47091200f90d1f1cce52f19e2cce2023bc4ba7450a0a46c3aceb882df952939493405667101cfcf3643f6feed8303b25f1ed4f12cc0418ea876"
+          "sha512": "b64104eb33b1c47091200f90d1f1cce52f19e2cce2023bc4ba7450a0a46c3aceb882df952939493405667101cfcf3643f6feed8303b25f1ed4f12cc0418ea876",
+          "sha1": "cb48f6fd2ba6ca5a531c16d5eeddf15b879787a8"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/zAjmtcYe/stackrefill_1.18.2-2.7.jar",
         "filename": "stackrefill_1.18.2-2.7.jar",
@@ -2899,8 +2899,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "d48d57ceef3668357cfedbb80171de6ba359ead980f36b8a5c6c537f7077b822c74e6655ec30dd7994e86bf33cdad823385e39ac0069b8ed4cc9c7fbd4b9436e",
-          "sha1": "cd50721005269cf6035c258944d1df2d55e92f00"
+          "sha1": "cd50721005269cf6035c258944d1df2d55e92f00",
+          "sha512": "d48d57ceef3668357cfedbb80171de6ba359ead980f36b8a5c6c537f7077b822c74e6655ec30dd7994e86bf33cdad823385e39ac0069b8ed4cc9c7fbd4b9436e"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/7gEicQu1/stackrefill-fabric_1.16.5-2.7.jar",
         "filename": "stackrefill-fabric_1.16.5-2.7.jar",
@@ -3043,8 +3043,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "e44e4d46c3895ed571784ef648a37e47dc20b45adaac0b1f2cd1501dfbe679783140fa8f1caddf31e87cb80f854d5b3a246cb39604e9edafe57e95e18f700b24",
-          "sha1": "4269946f7c82969258e47f4a6bf2b37a8b5bfd57"
+          "sha1": "4269946f7c82969258e47f4a6bf2b37a8b5bfd57",
+          "sha512": "e44e4d46c3895ed571784ef648a37e47dc20b45adaac0b1f2cd1501dfbe679783140fa8f1caddf31e87cb80f854d5b3a246cb39604e9edafe57e95e18f700b24"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/hb2k0BGv/stackrefill-fabric_1.16.5-2.5.jar",
         "filename": "stackrefill-fabric_1.16.5-2.5.jar",
@@ -3133,8 +3133,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "876d8c72f8c3ac7fcde9e991e7f3c66d475fe2ca",
-          "sha512": "824985db66e52a010c3d630bffb37e0b3f1e2163c6827f737a0a6408065254dcfd06b4c5e15cb027be35015a21cc41fac8d9b72dc0c4bc5303dbd25d1510d904"
+          "sha512": "824985db66e52a010c3d630bffb37e0b3f1e2163c6827f737a0a6408065254dcfd06b4c5e15cb027be35015a21cc41fac8d9b72dc0c4bc5303dbd25d1510d904",
+          "sha1": "876d8c72f8c3ac7fcde9e991e7f3c66d475fe2ca"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/4RC9QtHJ/stackrefill_1.18.2-2.1.jar",
         "filename": "stackrefill_1.18.2-2.1.jar",
@@ -3217,8 +3217,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "928ac216ec3bfcd4f101ab08c9edfacebe26a08e",
-          "sha512": "e58a0b934d5187e413a3f4ea5ee1c24ee3cd0ba0e3594733e42ca9e82b48b7f45a97e90eb6d0fcb21303b648254ed811cfb9111ff2e657450c75443c32dd529f"
+          "sha512": "e58a0b934d5187e413a3f4ea5ee1c24ee3cd0ba0e3594733e42ca9e82b48b7f45a97e90eb6d0fcb21303b648254ed811cfb9111ff2e657450c75443c32dd529f",
+          "sha1": "928ac216ec3bfcd4f101ab08c9edfacebe26a08e"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/JqLnWiOK/stackrefill-fabric_1.19.2-2.6.jar",
         "filename": "stackrefill-fabric_1.19.2-2.6.jar",
@@ -3265,8 +3265,8 @@
     "files": [
       {
         "hashes": {
-          "sha1": "761c507a05cdfc701e117d97ee4b95851effebeb",
-          "sha512": "a4b18059e59d344a72d62404a31edcdd862f23686db356e36d6a7c5b2124a6bd21ed14a4fbb0ca78ad20201c9f84325f2cd584998566e47e919c13ce886b6788"
+          "sha512": "a4b18059e59d344a72d62404a31edcdd862f23686db356e36d6a7c5b2124a6bd21ed14a4fbb0ca78ad20201c9f84325f2cd584998566e47e919c13ce886b6788",
+          "sha1": "761c507a05cdfc701e117d97ee4b95851effebeb"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/goiT00Ue/stackrefill-fabric_1.18.2-2.4.jar",
         "filename": "stackrefill-fabric_1.18.2-2.4.jar",
@@ -3313,8 +3313,8 @@
     "files": [
       {
         "hashes": {
-          "sha512": "62799e9056fadfddd69f0a1c0e7d56891f4e84f285959e5f9a582df1ac2ee3561979bebb76a174f8dd8cb99eca590ffcfd7a9b6a204b7be73cc2d29e21e17299",
-          "sha1": "a1ee3b15820fa41be803c959323bbf5db51b083b"
+          "sha1": "a1ee3b15820fa41be803c959323bbf5db51b083b",
+          "sha512": "62799e9056fadfddd69f0a1c0e7d56891f4e84f285959e5f9a582df1ac2ee3561979bebb76a174f8dd8cb99eca590ffcfd7a9b6a204b7be73cc2d29e21e17299"
         },
         "url": "https://cdn.modrinth.com/data/mQWkB9ON/versions/j2ygmTZn/stackrefill-fabric_1.16.5-2.4.jar",
         "filename": "stackrefill-fabric_1.16.5-2.4.jar",
@@ -3325,14 +3325,14 @@
     ],
     "dependencies": [
       {
-        "version_id": null,
-        "project_id": "P7dR8mSH",
+        "version_id": "diqQmTlH",
+        "project_id": "e0M1UDsY",
         "file_name": null,
         "dependency_type": "required"
       },
       {
-        "version_id": "diqQmTlH",
-        "project_id": "e0M1UDsY",
+        "version_id": null,
+        "project_id": "P7dR8mSH",
         "file_name": null,
         "dependency_type": "required"
       }
