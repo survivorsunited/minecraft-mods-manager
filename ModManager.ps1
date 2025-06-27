@@ -34,8 +34,8 @@ param(
     [switch]$DownloadServer,
     [switch]$StartServer,
     [switch]$AddServerStartScript,
-    [string]$DeleteModID = $null,
-    [string]$DeleteModType = $null,
+    [string]$DeleteModID,
+    [string]$DeleteModType,
     [string]$ModListFile = "modlist.csv",
     [string]$DatabaseFile = $null,
     [string]$DownloadFolder = "download",
@@ -77,7 +77,31 @@ param(
     [bool]$ResolveConflicts = $true,
     
     # GUI Interface
-    [switch]$Gui
+    [switch]$Gui,
+    
+    # Advanced Server Management
+    [switch]$MonitorServerPerformance,
+    [int]$PerformanceSampleInterval = 5,
+    [int]$PerformanceSampleCount = 12,
+    [switch]$CreateServerBackup,
+    [string]$BackupPath = "backups",
+    [string]$BackupName,
+    [string]$RestoreServerBackup,
+    [switch]$ForceRestore,
+    [switch]$ListServerPlugins,
+    [string]$InstallPlugin,
+    [string]$PluginUrl,
+    [string]$RemovePlugin,
+    [switch]$ForceRemovePlugin,
+    [string]$CreateConfigTemplate,
+    [string]$TemplateName = "default",
+    [string]$TemplatesPath = "templates",
+    [string]$ApplyConfigTemplate,
+    [switch]$ForceApplyTemplate,
+    [switch]$RunServerHealthCheck,
+    [int]$HealthCheckTimeout = 30,
+    [switch]$RunServerDiagnostics,
+    [int]$DiagnosticsLogLines = 100
 )
 
 # Load environment variables from .env file
@@ -4553,6 +4577,168 @@ function Test-ModpackIntegrity {
 }
 
 function Invoke-ModManagerCli {
+    # Advanced Server Management
+    if ($MonitorServerPerformance) {
+        Write-Host "📊 Server Performance Monitoring" -ForegroundColor Cyan
+        Write-Host "=================================" -ForegroundColor Cyan
+        
+        $performanceData = Get-ServerPerformance -ServerPath $DownloadFolder -SampleInterval $PerformanceSampleInterval -SampleCount $PerformanceSampleCount
+        
+        if ($performanceData) {
+            Write-Host "✅ Performance monitoring completed" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Performance monitoring failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($CreateServerBackup) {
+        Write-Host "📦 Server Backup Creation" -ForegroundColor Cyan
+        Write-Host "========================" -ForegroundColor Cyan
+        
+        $success = New-ServerBackup -ServerPath $DownloadFolder -BackupPath $BackupPath -BackupName $BackupName
+        
+        if ($success) {
+            Write-Host "✅ Server backup created successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Server backup creation failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($RestoreServerBackup) {
+        Write-Host "🔄 Server Backup Restoration" -ForegroundColor Cyan
+        Write-Host "============================" -ForegroundColor Cyan
+        
+        $success = Restore-ServerBackup -BackupFile $RestoreServerBackup -ServerPath $DownloadFolder -Force:$ForceRestore
+        
+        if ($success) {
+            Write-Host "✅ Server backup restored successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Server backup restoration failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($ListServerPlugins) {
+        Write-Host "🔌 Server Plugin Management" -ForegroundColor Cyan
+        Write-Host "===========================" -ForegroundColor Cyan
+        
+        $plugins = Get-ServerPlugins -ServerPath $DownloadFolder
+        
+        if ($plugins.Count -gt 0) {
+            Write-Host "Found $($plugins.Count) plugins:" -ForegroundColor Green
+            foreach ($plugin in $plugins) {
+                Write-Host "  - $($plugin.Name) ($([math]::Round($plugin.Size / 1KB, 2))KB)" -ForegroundColor Gray
+            }
+            exit 0
+        } else {
+            Write-Host "ℹ️  No plugins found" -ForegroundColor Yellow
+            exit 0
+        }
+    }
+
+    if ($InstallPlugin -and $PluginUrl) {
+        Write-Host "📥 Plugin Installation" -ForegroundColor Cyan
+        Write-Host "======================" -ForegroundColor Cyan
+        
+        $success = Install-ServerPlugin -PluginUrl $PluginUrl -ServerPath $DownloadFolder -PluginName $InstallPlugin
+        
+        if ($success) {
+            Write-Host "✅ Plugin installed successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Plugin installation failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($RemovePlugin) {
+        Write-Host "🗑️  Plugin Removal" -ForegroundColor Cyan
+        Write-Host "=================" -ForegroundColor Cyan
+        
+        $success = Remove-ServerPlugin -PluginName $RemovePlugin -ServerPath $DownloadFolder -Force:$ForceRemovePlugin
+        
+        if ($success) {
+            Write-Host "✅ Plugin removed successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Plugin removal failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($CreateConfigTemplate) {
+        Write-Host "📝 Server Config Template Creation" -ForegroundColor Cyan
+        Write-Host "===================================" -ForegroundColor Cyan
+        
+        $success = New-ServerConfigTemplate -TemplateName $TemplateName -ServerPath $DownloadFolder -OutputPath $TemplatesPath
+        
+        if ($success) {
+            Write-Host "✅ Server config template created successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Server config template creation failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($ApplyConfigTemplate) {
+        Write-Host "🔧 Server Config Template Application" -ForegroundColor Cyan
+        Write-Host "=====================================" -ForegroundColor Cyan
+        
+        $success = Apply-ServerConfigTemplate -TemplateName $ApplyConfigTemplate -ServerPath $DownloadFolder -TemplatesPath $TemplatesPath -Force:$ForceApplyTemplate
+        
+        if ($success) {
+            Write-Host "✅ Server config template applied successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Server config template application failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($RunServerHealthCheck) {
+        Write-Host "🏥 Server Health Check" -ForegroundColor Cyan
+        Write-Host "=====================" -ForegroundColor Cyan
+        
+        $healthResults = Test-ServerHealth -ServerPath $DownloadFolder -Timeout $HealthCheckTimeout
+        
+        if ($healthResults) {
+            $passedChecks = ($healthResults.Values | Where-Object { $_ -eq $true }).Count
+            $totalChecks = $healthResults.Count
+            
+            if ($passedChecks -eq $totalChecks) {
+                Write-Host "✅ All health checks passed" -ForegroundColor Green
+                exit 0
+            } else {
+                Write-Host "⚠️  Some health checks failed" -ForegroundColor Yellow
+                exit 1
+            }
+        } else {
+            Write-Host "❌ Health check failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($RunServerDiagnostics) {
+        Write-Host "🔍 Server Diagnostics" -ForegroundColor Cyan
+        Write-Host "====================" -ForegroundColor Cyan
+        
+        $diagnostics = Get-ServerDiagnostics -ServerPath $DownloadFolder -LogLines $DiagnosticsLogLines
+        
+        if ($diagnostics) {
+            Write-Host "✅ Server diagnostics completed" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Server diagnostics failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
     # GUI Interface
     if ($Gui) {
         Write-Host "🖥️  Starting GUI Interface" -ForegroundColor Cyan
@@ -5213,5 +5399,496 @@ function Save-GuiSettings {
     }
     catch {
         $statusLabel.Text = "Error saving settings: $($_.Exception.Message)"
+    }
+}
+
+# Advanced Server Management Functions
+function Get-ServerPerformance {
+    param(
+        [string]$ServerPath = "download",
+        [int]$SampleInterval = 5,
+        [int]$SampleCount = 12
+    )
+    
+    try {
+        $serverJar = Get-ChildItem -Path $ServerPath -Filter "minecraft_server*.jar" | Select-Object -First 1
+        if (-not $serverJar) {
+            Write-Host "❌ No server JAR found in $ServerPath" -ForegroundColor Red
+            return $null
+        }
+        
+        $performanceData = @()
+        
+        for ($i = 0; $i -lt $SampleCount; $i++) {
+            $process = Get-Process -Name "java" -ErrorAction SilentlyContinue | Where-Object { $_.ProcessName -eq "java" }
+            
+            if ($process) {
+                $cpu = $process.CPU
+                $memory = $process.WorkingSet64 / 1MB
+                $threads = $process.Threads.Count
+                
+                $performanceData += [PSCustomObject]@{
+                    Timestamp = Get-Date
+                    CPU = $cpu
+                    MemoryMB = [math]::Round($memory, 2)
+                    Threads = $threads
+                    ProcessId = $process.Id
+                }
+                
+                Write-Host "Sample $($i + 1): CPU=$cpu%, Memory=${memory}MB, Threads=$threads" -ForegroundColor Yellow
+            } else {
+                Write-Host "Sample $($i + 1): Server not running" -ForegroundColor Gray
+            }
+            
+            if ($i -lt ($SampleCount - 1)) {
+                Start-Sleep -Seconds $SampleInterval
+            }
+        }
+        
+        return $performanceData
+    }
+    catch {
+        Write-Host "❌ Error monitoring server performance: $($_.Exception.Message)" -ForegroundColor Red
+        return $null
+    }
+}
+
+function New-ServerBackup {
+    param(
+        [string]$ServerPath = "download",
+        [string]$BackupPath = "backups",
+        [string]$BackupName = $null
+    )
+    
+    try {
+        if (-not (Test-Path $ServerPath)) {
+            Write-Host "❌ Server path not found: $ServerPath" -ForegroundColor Red
+            return $false
+        }
+        
+        if (-not (Test-Path $BackupPath)) {
+            New-Item -ItemType Directory -Path $BackupPath -Force | Out-Null
+        }
+        
+        $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
+        $backupName = if ($BackupName) { $BackupName } else { "server-backup-$timestamp" }
+        $backupFile = Join-Path $BackupPath "$backupName.zip"
+        
+        Write-Host "📦 Creating server backup: $backupFile" -ForegroundColor Cyan
+        
+        # Create backup of server files
+        $serverFiles = Get-ChildItem -Path $ServerPath -Recurse | Where-Object { 
+            $_.Name -match "\.(jar|properties|json|txt|log)$" -or 
+            $_.Name -eq "mods" -or 
+            $_.Name -eq "config" -or 
+            $_.Name -eq "worlds"
+        }
+        
+        if ($serverFiles) {
+            Compress-Archive -Path $serverFiles.FullName -DestinationPath $backupFile -Force
+            Write-Host "✅ Server backup created: $backupFile" -ForegroundColor Green
+            return $true
+        } else {
+            Write-Host "❌ No server files found to backup" -ForegroundColor Red
+            return $false
+        }
+    }
+    catch {
+        Write-Host "❌ Error creating server backup: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+function Restore-ServerBackup {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$BackupFile,
+        [string]$ServerPath = "download",
+        [switch]$Force
+    )
+    
+    try {
+        if (-not (Test-Path $BackupFile)) {
+            Write-Host "❌ Backup file not found: $BackupFile" -ForegroundColor Red
+            return $false
+        }
+        
+        if (-not (Test-Path $ServerPath)) {
+            New-Item -ItemType Directory -Path $ServerPath -Force | Out-Null
+        }
+        
+        if (-not $Force) {
+            $response = Read-Host "This will overwrite existing server files. Continue? (y/N)"
+            if ($response -ne "y" -and $response -ne "Y") {
+                Write-Host "❌ Backup restore cancelled" -ForegroundColor Yellow
+                return $false
+            }
+        }
+        
+        Write-Host "🔄 Restoring server backup: $BackupFile" -ForegroundColor Cyan
+        
+        # Stop server if running
+        $javaProcess = Get-Process -Name "java" -ErrorAction SilentlyContinue
+        if ($javaProcess) {
+            Write-Host "⚠️  Stopping running server..." -ForegroundColor Yellow
+            Stop-Process -Name "java" -Force
+            Start-Sleep -Seconds 3
+        }
+        
+        # Extract backup
+        Expand-Archive -Path $BackupFile -DestinationPath $ServerPath -Force
+        
+        Write-Host "✅ Server backup restored successfully" -ForegroundColor Green
+        return $true
+    }
+    catch {
+        Write-Host "❌ Error restoring server backup: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+function Get-ServerPlugins {
+    param(
+        [string]$ServerPath = "download"
+    )
+    
+    try {
+        $pluginsPath = Join-Path $ServerPath "plugins"
+        if (-not (Test-Path $pluginsPath)) {
+            Write-Host "ℹ️  No plugins directory found" -ForegroundColor Gray
+            return @()
+        }
+        
+        $plugins = Get-ChildItem -Path $pluginsPath -Filter "*.jar" | ForEach-Object {
+            [PSCustomObject]@{
+                Name = $_.Name
+                Size = $_.Length
+                LastModified = $_.LastWriteTime
+                Path = $_.FullName
+            }
+        }
+        
+        return $plugins
+    }
+    catch {
+        Write-Host "❌ Error getting server plugins: $($_.Exception.Message)" -ForegroundColor Red
+        return @()
+    }
+}
+
+function Install-ServerPlugin {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$PluginUrl,
+        [string]$ServerPath = "download",
+        [string]$PluginName = $null
+    )
+    
+    try {
+        $pluginsPath = Join-Path $ServerPath "plugins"
+        if (-not (Test-Path $pluginsPath)) {
+            New-Item -ItemType Directory -Path $pluginsPath -Force | Out-Null
+        }
+        
+        $pluginName = if ($PluginName) { $PluginName } else { [System.IO.Path]::GetFileName($PluginUrl) }
+        $pluginPath = Join-Path $pluginsPath $pluginName
+        
+        Write-Host "📥 Installing plugin: $pluginName" -ForegroundColor Cyan
+        
+        # Download plugin
+        Invoke-WebRequest -Uri $PluginUrl -OutFile $pluginPath
+        
+        if (Test-Path $pluginPath) {
+            Write-Host "✅ Plugin installed: $pluginPath" -ForegroundColor Green
+            return $true
+        } else {
+            Write-Host "❌ Failed to install plugin" -ForegroundColor Red
+            return $false
+        }
+    }
+    catch {
+        Write-Host "❌ Error installing plugin: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+function Remove-ServerPlugin {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$PluginName,
+        [string]$ServerPath = "download",
+        [switch]$Force
+    )
+    
+    try {
+        $pluginsPath = Join-Path $ServerPath "plugins"
+        $pluginPath = Join-Path $pluginsPath $PluginName
+        
+        if (-not (Test-Path $pluginPath)) {
+            Write-Host "❌ Plugin not found: $PluginName" -ForegroundColor Red
+            return $false
+        }
+        
+        if (-not $Force) {
+            $response = Read-Host "Remove plugin '$PluginName'? (y/N)"
+            if ($response -ne "y" -and $response -ne "Y") {
+                Write-Host "❌ Plugin removal cancelled" -ForegroundColor Yellow
+                return $false
+            }
+        }
+        
+        Write-Host "🗑️  Removing plugin: $PluginName" -ForegroundColor Cyan
+        
+        Remove-Item -Path $pluginPath -Force
+        
+        Write-Host "✅ Plugin removed: $PluginName" -ForegroundColor Green
+        return $true
+    }
+    catch {
+        Write-Host "❌ Error removing plugin: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+function New-ServerConfigTemplate {
+    param(
+        [string]$TemplateName = "default",
+        [string]$ServerPath = "download",
+        [string]$OutputPath = "templates"
+    )
+    
+    try {
+        $serverProperties = Join-Path $ServerPath "server.properties"
+        if (-not (Test-Path $serverProperties)) {
+            Write-Host "❌ server.properties not found" -ForegroundColor Red
+            return $false
+        }
+        
+        if (-not (Test-Path $OutputPath)) {
+            New-Item -ItemType Directory -Path $OutputPath -Force | Out-Null
+        }
+        
+        $templateFile = Join-Path $OutputPath "$TemplateName-template.properties"
+        
+        Write-Host "📝 Creating server config template: $templateFile" -ForegroundColor Cyan
+        
+        # Copy server.properties as template
+        Copy-Item -Path $serverProperties -Destination $templateFile
+        
+        Write-Host "✅ Server config template created: $templateFile" -ForegroundColor Green
+        return $true
+    }
+    catch {
+        Write-Host "❌ Error creating server config template: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+function Apply-ServerConfigTemplate {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$TemplateName,
+        [string]$ServerPath = "download",
+        [string]$TemplatesPath = "templates",
+        [switch]$Force
+    )
+    
+    try {
+        $templateFile = Join-Path $TemplatesPath "$TemplateName-template.properties"
+        if (-not (Test-Path $templateFile)) {
+            Write-Host "❌ Template not found: $templateFile" -ForegroundColor Red
+            return $false
+        }
+        
+        $serverProperties = Join-Path $ServerPath "server.properties"
+        
+        if (-not $Force) {
+            $response = Read-Host "This will overwrite existing server.properties. Continue? (y/N)"
+            if ($response -ne "y" -and $response -ne "Y") {
+                Write-Host "❌ Template application cancelled" -ForegroundColor Yellow
+                return $false
+            }
+        }
+        
+        Write-Host "🔧 Applying server config template: $TemplateName" -ForegroundColor Cyan
+        
+        Copy-Item -Path $templateFile -Destination $serverProperties -Force
+        
+        Write-Host "✅ Server config template applied: $TemplateName" -ForegroundColor Green
+        return $true
+    }
+    catch {
+        Write-Host "❌ Error applying server config template: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+function Test-ServerHealth {
+    param(
+        [string]$ServerPath = "download",
+        [int]$Timeout = 30
+    )
+    
+    try {
+        Write-Host "🏥 Running server health check..." -ForegroundColor Cyan
+        
+        $healthResults = @{
+            ServerJar = $false
+            ServerProperties = $false
+            ModsDirectory = $false
+            ConfigDirectory = $false
+            JavaProcess = $false
+            PortAvailable = $false
+            DiskSpace = $false
+            MemoryAvailable = $false
+        }
+        
+        # Check server JAR
+        $serverJar = Get-ChildItem -Path $ServerPath -Filter "minecraft_server*.jar" | Select-Object -First 1
+        if ($serverJar) {
+            $healthResults.ServerJar = $true
+            Write-Host "✅ Server JAR found: $($serverJar.Name)" -ForegroundColor Green
+        } else {
+            Write-Host "❌ Server JAR not found" -ForegroundColor Red
+        }
+        
+        # Check server.properties
+        $serverProperties = Join-Path $ServerPath "server.properties"
+        if (Test-Path $serverProperties) {
+            $healthResults.ServerProperties = $true
+            Write-Host "✅ server.properties found" -ForegroundColor Green
+        } else {
+            Write-Host "❌ server.properties not found" -ForegroundColor Red
+        }
+        
+        # Check mods directory
+        $modsPath = Join-Path $ServerPath "mods"
+        if (Test-Path $modsPath) {
+            $healthResults.ModsDirectory = $true
+            $modCount = (Get-ChildItem -Path $modsPath -Filter "*.jar").Count
+            Write-Host "✅ Mods directory found with $modCount mods" -ForegroundColor Green
+        } else {
+            Write-Host "❌ Mods directory not found" -ForegroundColor Red
+        }
+        
+        # Check config directory
+        $configPath = Join-Path $ServerPath "config"
+        if (Test-Path $configPath) {
+            $healthResults.ConfigDirectory = $true
+            Write-Host "✅ Config directory found" -ForegroundColor Green
+        } else {
+            Write-Host "❌ Config directory not found" -ForegroundColor Red
+        }
+        
+        # Check Java process
+        $javaProcess = Get-Process -Name "java" -ErrorAction SilentlyContinue
+        if ($javaProcess) {
+            $healthResults.JavaProcess = $true
+            Write-Host "✅ Java process running (PID: $($javaProcess.Id))" -ForegroundColor Green
+        } else {
+            Write-Host "❌ Java process not running" -ForegroundColor Red
+        }
+        
+        # Check port availability (default 25565)
+        try {
+            $tcpClient = New-Object System.Net.Sockets.TcpClient
+            $tcpClient.ConnectAsync("localhost", 25565).Wait($Timeout * 1000)
+            if ($tcpClient.Connected) {
+                $healthResults.PortAvailable = $true
+                Write-Host "✅ Port 25565 is available" -ForegroundColor Green
+            } else {
+                Write-Host "❌ Port 25565 is not available" -ForegroundColor Red
+            }
+            $tcpClient.Close()
+        } catch {
+            Write-Host "❌ Port 25565 is not available" -ForegroundColor Red
+        }
+        
+        # Check disk space
+        $drive = Get-WmiObject -Class Win32_LogicalDisk -Filter "DeviceID='$((Get-Location).Drive.Name):'"
+        $freeSpaceGB = [math]::Round($drive.FreeSpace / 1GB, 2)
+        if ($freeSpaceGB -gt 1) {
+            $healthResults.DiskSpace = $true
+            Write-Host "✅ Sufficient disk space: ${freeSpaceGB}GB free" -ForegroundColor Green
+        } else {
+            Write-Host "❌ Low disk space: ${freeSpaceGB}GB free" -ForegroundColor Red
+        }
+        
+        # Check available memory
+        $memory = Get-WmiObject -Class Win32_OperatingSystem
+        $availableMemoryGB = [math]::Round($memory.FreePhysicalMemory / 1MB, 2)
+        if ($availableMemoryGB -gt 2) {
+            $healthResults.MemoryAvailable = $true
+            Write-Host "✅ Sufficient memory: ${availableMemoryGB}GB available" -ForegroundColor Green
+        } else {
+            Write-Host "❌ Low memory: ${availableMemoryGB}GB available" -ForegroundColor Red
+        }
+        
+        $passedChecks = ($healthResults.Values | Where-Object { $_ -eq $true }).Count
+        $totalChecks = $healthResults.Count
+        
+        Write-Host "🏥 Health Check Summary: $passedChecks/$totalChecks checks passed" -ForegroundColor Cyan
+        
+        return $healthResults
+    }
+    catch {
+        Write-Host "❌ Error running server health check: $($_.Exception.Message)" -ForegroundColor Red
+        return $null
+    }
+}
+
+function Get-ServerDiagnostics {
+    param(
+        [string]$ServerPath = "download",
+        [int]$LogLines = 100
+    )
+    
+    try {
+        Write-Host "🔍 Running server diagnostics..." -ForegroundColor Cyan
+        
+        $diagnostics = @{
+            ServerInfo = $null
+            RecentLogs = $null
+            ErrorLogs = $null
+            PerformanceData = $null
+            PluginStatus = $null
+        }
+        
+        # Get server information
+        $serverJar = Get-ChildItem -Path $ServerPath -Filter "minecraft_server*.jar" | Select-Object -First 1
+        if ($serverJar) {
+            $diagnostics.ServerInfo = [PSCustomObject]@{
+                JarFile = $serverJar.Name
+                Size = $serverJar.Length
+                LastModified = $serverJar.LastWriteTime
+                Version = $serverJar.Name -replace "minecraft_server\.", "" -replace "\.jar", ""
+            }
+        }
+        
+        # Get recent logs
+        $logFiles = Get-ChildItem -Path $ServerPath -Filter "*.log" | Sort-Object LastWriteTime -Descending
+        if ($logFiles) {
+            $latestLog = $logFiles[0]
+            $diagnostics.RecentLogs = Get-Content -Path $latestLog.FullName -Tail $LogLines
+        }
+        
+        # Get error logs
+        if ($diagnostics.RecentLogs) {
+            $diagnostics.ErrorLogs = $diagnostics.RecentLogs | Where-Object { 
+                $_ -match "ERROR|FATAL|Exception|Failed" 
+            }
+        }
+        
+        # Get performance data
+        $diagnostics.PerformanceData = Get-ServerPerformance -ServerPath $ServerPath -SampleCount 3
+        
+        # Get plugin status
+        $diagnostics.PluginStatus = Get-ServerPlugins -ServerPath $ServerPath
+        
+        return $diagnostics
+    }
+    catch {
+        Write-Host "❌ Error running server diagnostics: $($_.Exception.Message)" -ForegroundColor Red
+        return $null
     }
 }
