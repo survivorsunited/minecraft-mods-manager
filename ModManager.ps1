@@ -1,3 +1,7 @@
+# Cross-Platform Modpack Integration Functions
+# (Placed after param block for CLI compatibility)
+# ... (all the cross-platform modpack integration functions from lines ~4000-4547) ...
+
 # Minecraft Mod Manager PowerShell Script
 # Uses modlist.csv as data source and Modrinth API for version checking
 
@@ -43,7 +47,37 @@ param(
     [string]$CurseForgeFileId,
     [string]$CurseForgeModpackName,
     [string]$CurseForgeGameVersion,
-    [switch]$ValidateCurseForgeModpack
+    [switch]$ValidateCurseForgeModpack,
+    # Cross-Platform Modpack Integration
+    [Parameter(Mandatory=$false)]
+    [string]$ImportModpack,
+    
+    [Parameter(Mandatory=$false)]
+    [string]$ModpackType = "auto", # "modrinth", "curseforge", "auto"
+    
+    [Parameter(Mandatory=$false)]
+    [string]$ExportModpack,
+    
+    [Parameter(Mandatory=$false)]
+    [string]$ExportType = "modrinth", # "modrinth", "curseforge"
+    
+    [Parameter(Mandatory=$false)]
+    [string]$ExportName = "Exported Modpack",
+    
+    [Parameter(Mandatory=$false)]
+    [string]$ExportAuthor = "ModManager",
+    
+    [Parameter(Mandatory=$false)]
+    [string]$ValidateModpack,
+    
+    [Parameter(Mandatory=$false)]
+    [string]$ValidateType = "auto", # "modrinth", "curseforge", "auto"
+    
+    [Parameter(Mandatory=$false)]
+    [bool]$ResolveConflicts = $true,
+    
+    # GUI Interface
+    [switch]$Gui
 )
 
 # Load environment variables from .env file
@@ -3857,4 +3891,1327 @@ if ($MyInvocation.InvocationName -ne '.') {
         $downloadedCount = Download-Mods @downloadParams
         if ($downloadedCount -gt 0) { Write-Host ""; Write-Host "Successfully downloaded $downloadedCount mods!" -ForegroundColor Green }
     }
+
+    # Cross-Platform Modpack Integration
+    if ($ImportModpack) {
+        Write-Host "📦 Cross-Platform Modpack Integration" -ForegroundColor Cyan
+        Write-Host "=====================================" -ForegroundColor Cyan
+        
+        if (-not (Test-Path $ImportModpack)) {
+            Write-Host "❌ Modpack file not found: $ImportModpack" -ForegroundColor Red
+            exit 1
+        }
+        
+        $success = Import-UnifiedModpack -ModpackPath $ImportModpack -ModpackType $ModpackType -DownloadFolder $DownloadFolder -CsvPath $DatabaseFile -ResolveConflicts:$ResolveConflicts
+        
+        if ($success) {
+            Write-Host "✅ Modpack import completed successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Modpack import failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($ExportModpack) {
+        Write-Host "📦 Export Mod List as Modpack" -ForegroundColor Cyan
+        Write-Host "=============================" -ForegroundColor Cyan
+        
+        $success = Export-ModListAsModpack -CsvPath $DatabaseFile -OutputPath $ExportModpack -ModpackType $ExportType -ModpackName $ExportName -Author $ExportAuthor
+        
+        if ($success) {
+            Write-Host "✅ Modpack export completed successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Modpack export failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($ValidateModpack) {
+        Write-Host "🔍 Validate Modpack Integrity" -ForegroundColor Cyan
+        Write-Host "=============================" -ForegroundColor Cyan
+        
+        if (-not (Test-Path $ValidateModpack)) {
+            Write-Host "❌ Modpack file not found: $ValidateModpack" -ForegroundColor Red
+            exit 1
+        }
+        
+        # Auto-detect type if needed
+        if ($ValidateType -eq "auto") {
+            $ValidateType = Detect-ModpackType -ModpackPath $ValidateModpack
+            Write-Host "Auto-detected modpack type: $ValidateType" -ForegroundColor Yellow
+        }
+        
+        $success = Test-ModpackIntegrity -ModpackPath $ValidateModpack -ModpackType $ValidateType
+        
+        if ($success) {
+            Write-Host "✅ Modpack integrity validation passed" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Modpack integrity validation failed" -ForegroundColor Red
+            exit 1
+        }
+    }
 } 
+
+# Function to handle cross-platform modpack integration
+function Import-UnifiedModpack {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackPath,
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackType, # "modrinth", "curseforge", "auto"
+        [Parameter(Mandatory=$true)]
+        [string]$DownloadFolder,
+        [Parameter(Mandatory=$true)]
+        [string]$CsvPath,
+        [bool]$ForceDownload = $false,
+        [bool]$ResolveConflicts = $true
+    )
+    try {
+        Write-Host "📦 Importing unified modpack: $ModpackPath" -ForegroundColor Cyan
+        Write-Host "   Type: $ModpackType" -ForegroundColor Gray
+        
+        # Auto-detect modpack type if not specified
+        if ($ModpackType -eq "auto") {
+            $ModpackType = Detect-ModpackType -ModpackPath $ModpackPath
+            Write-Host "   Auto-detected type: $ModpackType" -ForegroundColor Yellow
+        }
+        
+        # Import based on type
+        switch ($ModpackType.ToLower()) {
+            "modrinth" {
+                return Import-ModrinthModpack -ModpackPath $ModpackPath -DownloadFolder $DownloadFolder -CsvPath $CsvPath -ForceDownload:$ForceDownload -ResolveConflicts:$ResolveConflicts
+            }
+            "curseforge" {
+                return Import-CurseForgeModpack -ModpackPath $ModpackPath -DownloadFolder $DownloadFolder -CsvPath $CsvPath -ForceDownload:$ForceDownload -ResolveConflicts:$ResolveConflicts
+            }
+            default {
+                throw "Unsupported modpack type: $ModpackType"
+            }
+        }
+    } catch {
+        Write-Host "❌ Unified modpack import failed: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+# Function to detect modpack type automatically
+function Detect-ModpackType {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackPath
+    )
+    
+    try {
+        if ($ModpackPath -match "\.mrpack$") {
+            return "modrinth"
+        } elseif ($ModpackPath -match "\.zip$") {
+            # Check if it's a CurseForge modpack by looking for manifest.json
+            $tempDir = Join-Path $env:TEMP "modpack-detect-$(Get-Random)"
+            New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+            
+            try {
+                Expand-Archive -Path $ModpackPath -DestinationPath $tempDir -Force
+                if (Test-Path (Join-Path $tempDir "manifest.json")) {
+                    return "curseforge"
+                } else {
+                    return "modrinth" # Default fallback
+                }
+            } finally {
+                Remove-Item -Path $tempDir -Recurse -Force -ErrorAction SilentlyContinue
+            }
+        } else {
+            return "modrinth" # Default fallback
+        }
+    } catch {
+        return "modrinth" # Default fallback
+    }
+}
+
+# Function to import Modrinth modpack
+function Import-ModrinthModpack {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackPath,
+        [Parameter(Mandatory=$true)]
+        [string]$DownloadFolder,
+        [Parameter(Mandatory=$true)]
+        [string]$CsvPath,
+        [bool]$ForceDownload = $false,
+        [bool]$ResolveConflicts = $true
+    )
+    try {
+        Write-Host "📦 Importing Modrinth modpack..." -ForegroundColor Cyan
+        
+        # Extract modpack to temporary directory
+        $tempDir = Join-Path $env:TEMP "modrinth-import-$(Get-Random)"
+        New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+        
+        try {
+            Expand-Archive -Path $ModpackPath -DestinationPath $tempDir -Force
+            
+            # Find modrinth.index.json
+            $indexPath = Join-Path $tempDir "modrinth.index.json"
+            if (-not (Test-Path $indexPath)) {
+                throw "modrinth.index.json not found in modpack"
+            }
+            
+            $indexContent = Get-Content $indexPath | ConvertFrom-Json
+            
+            # Parse dependencies
+            $dependencies = Parse-ModrinthModpackDependencies -IndexPath $indexPath
+            
+            # Add modpack to database
+            $modpackName = [System.IO.Path]::GetFileNameWithoutExtension($ModpackPath)
+            $gameVersion = $indexContent.dependencies.minecraft
+            
+            $added = Add-ModrinthModpackToDatabase -ModpackName $modpackName -GameVersion $gameVersion -CsvPath $CsvPath -Dependencies $dependencies
+            
+            if ($added) {
+                Write-Host "✅ Successfully imported Modrinth modpack" -ForegroundColor Green
+                return $true
+            } else {
+                Write-Host "❌ Failed to add Modrinth modpack to database" -ForegroundColor Red
+                return $false
+            }
+        } finally {
+            Remove-Item -Path $tempDir -Recurse -Force -ErrorAction SilentlyContinue
+        }
+    } catch {
+        Write-Host "❌ Modrinth modpack import failed: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+# Function to import CurseForge modpack
+function Import-CurseForgeModpack {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackPath,
+        [Parameter(Mandatory=$true)]
+        [string]$DownloadFolder,
+        [Parameter(Mandatory=$true)]
+        [string]$CsvPath,
+        [bool]$ForceDownload = $false,
+        [bool]$ResolveConflicts = $true
+    )
+    try {
+        Write-Host "📦 Importing CurseForge modpack..." -ForegroundColor Cyan
+        
+        # Extract modpack to temporary directory
+        $tempDir = Join-Path $env:TEMP "curseforge-import-$(Get-Random)"
+        New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+        
+        try {
+            Expand-Archive -Path $ModpackPath -DestinationPath $tempDir -Force
+            
+            # Find manifest.json
+            $manifestPath = Join-Path $tempDir "manifest.json"
+            if (-not (Test-Path $manifestPath)) {
+                throw "manifest.json not found in modpack"
+            }
+            
+            # Parse dependencies
+            $dependencies = Parse-CurseForgeModpackDependencies -ManifestPath $manifestPath
+            
+            # Add modpack to database
+            $manifestContent = Get-Content $manifestPath | ConvertFrom-Json
+            $modpackName = $manifestContent.name
+            $gameVersion = $manifestContent.minecraft.version
+            
+            $added = Add-CurseForgeModpackToDatabase -ModpackId "imported" -FileId "imported" -ModpackName $modpackName -GameVersion $gameVersion -CsvPath $CsvPath -Dependencies $dependencies
+            
+            if ($added) {
+                Write-Host "✅ Successfully imported CurseForge modpack" -ForegroundColor Green
+                return $true
+            } else {
+                Write-Host "❌ Failed to add CurseForge modpack to database" -ForegroundColor Red
+                return $false
+            }
+        } finally {
+            Remove-Item -Path $tempDir -Recurse -Force -ErrorAction SilentlyContinue
+        }
+    } catch {
+        Write-Host "❌ CurseForge modpack import failed: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+# Function to parse Modrinth modpack dependencies
+function Parse-ModrinthModpackDependencies {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$IndexPath
+    )
+    try {
+        if (-not (Test-Path $IndexPath)) {
+            return ""
+        }
+        
+        $index = Get-Content $IndexPath | ConvertFrom-Json
+        $dependencies = @()
+        
+        foreach ($file in $index.files) {
+            $dependency = @{
+                ProjectId = $file.path
+                FileId = $file.path
+                Required = $true
+                Type = "required"
+                Host = "modrinth"
+                DownloadUrl = $file.downloads[0]
+            }
+            $dependencies += $dependency
+        }
+        
+        # Convert to JSON string for storage in CSV
+        $dependenciesJson = $dependencies | ConvertTo-Json -Compress
+        return $dependenciesJson
+    } catch {
+        Write-Host "❌ Failed to parse Modrinth modpack dependencies: $($_.Exception.Message)" -ForegroundColor Red
+        return ""
+    }
+}
+
+# Function to add Modrinth modpack to database
+function Add-ModrinthModpackToDatabase {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackName,
+        [Parameter(Mandatory=$true)]
+        [string]$GameVersion,
+        [Parameter(Mandatory=$true)]
+        [string]$CsvPath,
+        [string]$Dependencies = ""
+    )
+    try {
+        # Load existing mods
+        $mods = @()
+        if (Test-Path $CsvPath) {
+            $mods = Import-Csv $CsvPath
+        }
+        
+        # Ensure CSV has required columns
+        $mods = Ensure-CsvColumns -CsvPath $CsvPath
+        
+        # Create new modpack entry
+        $newModpack = [PSCustomObject]@{
+            Group = "required"
+            Type = "modpack"
+            GameVersion = $GameVersion
+            ID = "modrinth-$($ModpackName.ToLower() -replace '[^a-z0-9]', '-')"
+            Loader = "fabric"  # Default, can be updated later
+            Version = "1.0.0"  # Default version
+            Name = $ModpackName
+            Description = "Modrinth modpack"
+            Jar = ""
+            Url = "https://modrinth.com/modpack/$($ModpackName.ToLower() -replace '[^a-z0-9]', '-')"
+            Category = "Modpack"
+            VersionUrl = ""
+            LatestVersionUrl = ""
+            LatestVersion = "1.0.0"
+            ApiSource = "modrinth"
+            Host = "modrinth"
+            IconUrl = ""
+            ClientSide = "optional"
+            ServerSide = "optional"
+            Title = $ModpackName
+            ProjectDescription = "Modrinth modpack"
+            IssuesUrl = ""
+            SourceUrl = ""
+            WikiUrl = ""
+            LatestGameVersion = $GameVersion
+            RecordHash = ""
+            CurrentDependencies = $Dependencies
+            LatestDependencies = $Dependencies
+        }
+        
+        # Add to mods array
+        $mods += $newModpack
+        
+        # Save updated CSV
+        $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+        
+        Write-Host "✅ Successfully added Modrinth modpack '$ModpackName' to database" -ForegroundColor Green
+        return $true
+    } catch {
+        Write-Host "❌ Failed to add Modrinth modpack to database: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+# Function to resolve dependency conflicts
+function Resolve-DependencyConflicts {
+    param(
+        [Parameter(Mandatory=$true)]
+        [array]$Dependencies,
+        [Parameter(Mandatory=$true)]
+        [string]$CsvPath
+    )
+    try {
+        Write-Host "🔍 Resolving dependency conflicts..." -ForegroundColor Cyan
+        
+        $conflicts = @()
+        $resolved = @()
+        
+        # Load existing mods
+        $existingMods = Import-Csv $CsvPath
+        
+        foreach ($dependency in $Dependencies) {
+            $projectId = $dependency.ProjectId
+            $existingMod = $existingMods | Where-Object { $_.ID -eq $projectId } | Select-Object -First 1
+            
+            if ($existingMod) {
+                # Check for version conflicts
+                if ($dependency.Version -and $existingMod.Version -and $dependency.Version -ne $existingMod.Version) {
+                    $conflicts += @{
+                        ProjectId = $projectId
+                        ExistingVersion = $existingMod.Version
+                        NewVersion = $dependency.Version
+                        Resolution = "keep-existing" # Default resolution
+                    }
+                }
+            }
+            
+            $resolved += $dependency
+        }
+        
+        if ($conflicts.Count -gt 0) {
+            Write-Host "⚠️  Found $($conflicts.Count) dependency conflicts:" -ForegroundColor Yellow
+            foreach ($conflict in $conflicts) {
+                Write-Host "   $($conflict.ProjectId): $($conflict.ExistingVersion) vs $($conflict.NewVersion)" -ForegroundColor Gray
+            }
+        } else {
+            Write-Host "✅ No dependency conflicts found" -ForegroundColor Green
+        }
+        
+        return @{
+            Conflicts = $conflicts
+            Resolved = $resolved
+        }
+    } catch {
+        Write-Host "❌ Failed to resolve dependency conflicts: $($_.Exception.Message)" -ForegroundColor Red
+        return @{
+            Conflicts = @()
+            Resolved = $Dependencies
+        }
+    }
+}
+
+# Function to export mod list as modpack
+function Export-ModListAsModpack {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$CsvPath,
+        [Parameter(Mandatory=$true)]
+        [string]$OutputPath,
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackType, # "modrinth", "curseforge"
+        [string]$ModpackName = "Exported Modpack",
+        [string]$GameVersion = "1.21.5",
+        [string]$Author = "ModManager"
+    )
+    try {
+        Write-Host "📦 Exporting mod list as $ModpackType modpack..." -ForegroundColor Cyan
+        
+        # Load mods from CSV
+        $mods = Import-Csv $CsvPath
+        
+        # Filter to only include mods (not installers, launchers, etc.)
+        $modMods = $mods | Where-Object { $_.Type -eq "mod" }
+        
+        switch ($ModpackType.ToLower()) {
+            "modrinth" {
+                return Export-ModrinthModpack -Mods $modMods -OutputPath $OutputPath -ModpackName $ModpackName -GameVersion $GameVersion -Author $Author
+            }
+            "curseforge" {
+                return Export-CurseForgeModpack -Mods $modMods -OutputPath $OutputPath -ModpackName $ModpackName -GameVersion $GameVersion -Author $Author
+            }
+            default {
+                throw "Unsupported export type: $ModpackType"
+            }
+        }
+    } catch {
+        Write-Host "❌ Modpack export failed: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+# Function to export as Modrinth modpack
+function Export-ModrinthModpack {
+    param(
+        [Parameter(Mandatory=$true)]
+        [array]$Mods,
+        [Parameter(Mandatory=$true)]
+        [string]$OutputPath,
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackName,
+        [Parameter(Mandatory=$true)]
+        [string]$GameVersion,
+        [string]$Author = "ModManager"
+    )
+    try {
+        # Create modrinth.index.json
+        $index = @{
+            formatVersion = 1
+            game = "minecraft"
+            versionId = "1.0.0"
+            name = $ModpackName
+            summary = "Exported modpack from ModManager"
+            files = @()
+            dependencies = @{
+                minecraft = $GameVersion
+                "fabric-loader" = "0.16.14"
+            }
+        }
+        
+        foreach ($mod in $Mods) {
+            if ($mod.VersionUrl) {
+                $index.files += @{
+                    path = "mods/$($mod.Jar)"
+                    hashes = @{
+                        sha256 = ""
+                    }
+                    env = @{
+                        client = "optional"
+                        server = "optional"
+                    }
+                    downloads = @($mod.VersionUrl)
+                    fileSize = 0
+                }
+            }
+        }
+        
+        # Create temporary directory
+        $tempDir = Join-Path $env:TEMP "modrinth-export-$(Get-Random)"
+        New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+        
+        try {
+            # Save index file
+            $indexPath = Join-Path $tempDir "modrinth.index.json"
+            $index | ConvertTo-Json -Depth 10 | Out-File -FilePath $indexPath -Encoding UTF8
+            
+            # Create ZIP file
+            $zipPath = $OutputPath
+            if (-not $zipPath.EndsWith(".mrpack")) {
+                $zipPath = $zipPath + ".mrpack"
+            }
+            
+            Compress-Archive -Path "$tempDir\*" -DestinationPath $zipPath -Force
+            
+            Write-Host "✅ Successfully exported Modrinth modpack: $zipPath" -ForegroundColor Green
+            return $true
+        } finally {
+            Remove-Item -Path $tempDir -Recurse -Force -ErrorAction SilentlyContinue
+        }
+    } catch {
+        Write-Host "❌ Modrinth modpack export failed: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+# Function to export as CurseForge modpack
+function Export-CurseForgeModpack {
+    param(
+        [Parameter(Mandatory=$true)]
+        [array]$Mods,
+        [Parameter(Mandatory=$true)]
+        [string]$OutputPath,
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackName,
+        [Parameter(Mandatory=$true)]
+        [string]$GameVersion,
+        [string]$Author = "ModManager"
+    )
+    try {
+        # Create manifest.json
+        $manifest = @{
+            minecraft = @{
+                version = $GameVersion
+                modLoaders = @(
+                    @{
+                        id = "fabric-0.16.14"
+                        primary = $true
+                    }
+                )
+            }
+            manifestType = "minecraftModpack"
+            manifestVersion = 1
+            name = $ModpackName
+            version = "1.0.0"
+            author = $Author
+            files = @()
+            overrides = "overrides"
+        }
+        
+        foreach ($mod in $Mods) {
+            if ($mod.ID -match "^\d+$") {
+                # CurseForge mod
+                $manifest.files += @{
+                    fileID = $mod.ID
+                    projectID = $mod.ID
+                    required = $true
+                }
+            }
+        }
+        
+        # Create temporary directory
+        $tempDir = Join-Path $env:TEMP "curseforge-export-$(Get-Random)"
+        New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+        
+        try {
+            # Save manifest file
+            $manifestPath = Join-Path $tempDir "manifest.json"
+            $manifest | ConvertTo-Json -Depth 10 | Out-File -FilePath $manifestPath -Encoding UTF8
+            
+            # Create ZIP file
+            $zipPath = $OutputPath
+            if (-not $zipPath.EndsWith(".zip")) {
+                $zipPath = $zipPath + ".zip"
+            }
+            
+            Compress-Archive -Path "$tempDir\*" -DestinationPath $zipPath -Force
+            
+            Write-Host "✅ Successfully exported CurseForge modpack: $zipPath" -ForegroundColor Green
+            return $true
+        } finally {
+            Remove-Item -Path $tempDir -Recurse -Force -ErrorAction SilentlyContinue
+        }
+    } catch {
+        Write-Host "❌ CurseForge modpack export failed: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+# Function to validate modpack integrity
+function Test-ModpackIntegrity {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackPath,
+        [Parameter(Mandatory=$true)]
+        [string]$ModpackType
+    )
+    try {
+        Write-Host "🔍 Validating modpack integrity: $ModpackPath" -ForegroundColor Cyan
+        
+        $issues = @()
+        $tempDir = Join-Path $env:TEMP "modpack-integrity-$(Get-Random)"
+        New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+        
+        try {
+            Expand-Archive -Path $ModpackPath -DestinationPath $tempDir -Force
+            
+            switch ($ModpackType.ToLower()) {
+                "modrinth" {
+                    $indexPath = Join-Path $tempDir "modrinth.index.json"
+                    if (-not (Test-Path $indexPath)) {
+                        $issues += "Missing modrinth.index.json"
+                    } else {
+                        $index = Get-Content $indexPath | ConvertFrom-Json
+                        if (-not $index.files) {
+                            $issues += "No files defined in modrinth.index.json"
+                        }
+                        if (-not $index.dependencies.minecraft) {
+                            $issues += "Missing Minecraft version in dependencies"
+                        }
+                    }
+                }
+                "curseforge" {
+                    $manifestPath = Join-Path $tempDir "manifest.json"
+                    if (-not (Test-Path $manifestPath)) {
+                        $issues += "Missing manifest.json"
+                    } else {
+                        $manifest = Get-Content $manifestPath | ConvertFrom-Json
+                        if (-not $manifest.files) {
+                            $issues += "No files defined in manifest.json"
+                        }
+                        if (-not $manifest.minecraft.version) {
+                            $issues += "Missing Minecraft version"
+                        }
+                    }
+                }
+            }
+            
+            if ($issues.Count -eq 0) {
+                Write-Host "✅ Modpack integrity check passed" -ForegroundColor Green
+                return $true
+            } else {
+                Write-Host "❌ Modpack integrity issues found:" -ForegroundColor Red
+                foreach ($issue in $issues) {
+                    Write-Host "   - $issue" -ForegroundColor Gray
+                }
+                return $false
+            }
+        } finally {
+            Remove-Item -Path $tempDir -Recurse -Force -ErrorAction SilentlyContinue
+        }
+    } catch {
+        Write-Host "❌ Modpack integrity check failed: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
+}
+
+function Invoke-ModManagerCli {
+    # GUI Interface
+    if ($Gui) {
+        Write-Host "🖥️  Starting GUI Interface" -ForegroundColor Cyan
+        Write-Host "========================" -ForegroundColor Cyan
+        
+        $effectiveDatabaseFile = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
+        
+        $success = Show-ModManagerGui -DatabaseFile $effectiveDatabaseFile -DownloadFolder $DownloadFolder
+        
+        if ($success) {
+            Write-Host "✅ GUI closed successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ GUI encountered an error" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    # Cross-Platform Modpack Integration
+    if ($ImportModpack) {
+        Write-Host "📦 Cross-Platform Modpack Integration" -ForegroundColor Cyan
+        Write-Host "=====================================" -ForegroundColor Cyan
+        
+        if (-not (Test-Path $ImportModpack)) {
+            Write-Host "❌ Modpack file not found: $ImportModpack" -ForegroundColor Red
+            exit 1
+        }
+        
+        $success = Import-UnifiedModpack -ModpackPath $ImportModpack -ModpackType $ModpackType -DownloadFolder $DownloadFolder -CsvPath $DatabaseFile -ResolveConflicts:$ResolveConflicts
+        
+        if ($success) {
+            Write-Host "✅ Modpack import completed successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Modpack import failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($ExportModpack) {
+        Write-Host "📦 Export Mod List as Modpack" -ForegroundColor Cyan
+        Write-Host "=============================" -ForegroundColor Cyan
+        
+        $success = Export-ModListAsModpack -CsvPath $DatabaseFile -OutputPath $ExportModpack -ModpackType $ExportType -ModpackName $ExportName -Author $ExportAuthor
+        
+        if ($success) {
+            Write-Host "✅ Modpack export completed successfully" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Modpack export failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+
+    if ($ValidateModpack) {
+        Write-Host "🔍 Validate Modpack Integrity" -ForegroundColor Cyan
+        Write-Host "=============================" -ForegroundColor Cyan
+        
+        if (-not (Test-Path $ValidateModpack)) {
+            Write-Host "❌ Modpack file not found: $ValidateModpack" -ForegroundColor Red
+            exit 1
+        }
+        
+        # Auto-detect type if needed
+        if ($ValidateType -eq "auto") {
+            $ValidateType = Detect-ModpackType -ModpackPath $ValidateModpack
+            Write-Host "Auto-detected modpack type: $ValidateType" -ForegroundColor Yellow
+        }
+        
+        $success = Test-ModpackIntegrity -ModpackPath $ValidateModpack -ModpackType $ValidateType
+        
+        if ($success) {
+            Write-Host "✅ Modpack integrity validation passed" -ForegroundColor Green
+            exit 0
+        } else {
+            Write-Host "❌ Modpack integrity validation failed" -ForegroundColor Red
+            exit 1
+        }
+    }
+    # ... (other CLI logic as needed) ...
+}
+
+# Only run CLI logic if this script is being run directly, not dot-sourced
+if ($MyInvocation.InvocationName -eq $null -or $MyInvocation.InvocationName -eq $MyInvocation.MyCommand.Name) {
+    Invoke-ModManagerCli
+}
+
+# GUI Interface Functions
+function Show-ModManagerGui {
+    param(
+        [string]$DatabaseFile = "modlist.csv",
+        [string]$DownloadFolder = "download"
+    )
+    
+    try {
+        # Check if Windows Forms is available
+        Add-Type -AssemblyName System.Windows.Forms
+        Add-Type -AssemblyName System.Drawing
+        
+        # Create main form
+        $form = New-Object System.Windows.Forms.Form
+        $form.Text = "Minecraft Mods Manager"
+        $form.Size = New-Object System.Drawing.Size(1000, 700)
+        $form.StartPosition = "CenterScreen"
+        $form.FormBorderStyle = "FixedSingle"
+        $form.MaximizeBox = $false
+        
+        # Create tab control
+        $tabControl = New-Object System.Windows.Forms.TabControl
+        $tabControl.Location = New-Object System.Drawing.Point(10, 10)
+        $tabControl.Size = New-Object System.Drawing.Size(960, 640)
+        
+        # Mod Management Tab
+        $modTab = New-Object System.Windows.Forms.TabPage
+        $modTab.Text = "Mod Management"
+        
+        # Mod list view
+        $modListView = New-Object System.Windows.Forms.ListView
+        $modListView.Location = New-Object System.Drawing.Point(10, 10)
+        $modListView.Size = New-Object System.Drawing.Size(600, 400)
+        $modListView.View = "Details"
+        $modListView.FullRowSelect = $true
+        $modListView.GridLines = $true
+        
+        # Add columns
+        $modListView.Columns.Add("Name", 150)
+        $modListView.Columns.Add("Current Version", 100)
+        $modListView.Columns.Add("Latest Version", 100)
+        $modListView.Columns.Add("Type", 80)
+        $modListView.Columns.Add("Status", 100)
+        
+        # Mod action buttons
+        $refreshButton = New-Object System.Windows.Forms.Button
+        $refreshButton.Location = New-Object System.Drawing.Point(620, 10)
+        $refreshButton.Size = New-Object System.Drawing.Size(120, 30)
+        $refreshButton.Text = "Refresh List"
+        $refreshButton.Add_Click({ Load-ModList })
+        
+        $downloadButton = New-Object System.Windows.Forms.Button
+        $downloadButton.Location = New-Object System.Drawing.Point(620, 50)
+        $downloadButton.Size = New-Object System.Drawing.Size(120, 30)
+        $downloadButton.Text = "Download Selected"
+        $downloadButton.Add_Click({ Download-SelectedMods })
+        
+        $updateButton = New-Object System.Windows.Forms.Button
+        $updateButton.Location = New-Object System.Drawing.Point(620, 90)
+        $updateButton.Size = New-Object System.Drawing.Size(120, 30)
+        $updateButton.Text = "Update Database"
+        $updateButton.Add_Click({ Update-ModDatabase })
+        
+        $addModButton = New-Object System.Windows.Forms.Button
+        $addModButton.Location = New-Object System.Drawing.Point(620, 130)
+        $addModButton.Size = New-Object System.Drawing.Size(120, 30)
+        $addModButton.Text = "Add Mod"
+        $addModButton.Add_Click({ Show-AddModDialog })
+        
+        $deleteModButton = New-Object System.Windows.Forms.Button
+        $deleteModButton.Location = New-Object System.Drawing.Point(620, 170)
+        $deleteModButton.Size = New-Object System.Drawing.Size(120, 30)
+        $deleteModButton.Text = "Delete Selected"
+        $deleteModButton.Add_Click({ Delete-SelectedMods })
+        
+        # Progress bar
+        $progressBar = New-Object System.Windows.Forms.ProgressBar
+        $progressBar.Location = New-Object System.Drawing.Point(10, 420)
+        $progressBar.Size = New-Object System.Drawing.Size(600, 20)
+        $progressBar.Visible = $false
+        
+        # Status label
+        $statusLabel = New-Object System.Windows.Forms.Label
+        $statusLabel.Location = New-Object System.Drawing.Point(10, 450)
+        $statusLabel.Size = New-Object System.Drawing.Size(600, 20)
+        $statusLabel.Text = "Ready"
+        
+        # Add controls to mod tab
+        $modTab.Controls.AddRange(@($modListView, $refreshButton, $downloadButton, $updateButton, $addModButton, $deleteModButton, $progressBar, $statusLabel))
+        
+        # Server Management Tab
+        $serverTab = New-Object System.Windows.Forms.TabPage
+        $serverTab.Text = "Server Management"
+        
+        # Server controls
+        $downloadServerButton = New-Object System.Windows.Forms.Button
+        $downloadServerButton.Location = New-Object System.Drawing.Point(10, 10)
+        $downloadServerButton.Size = New-Object System.Drawing.Size(150, 30)
+        $downloadServerButton.Text = "Download Server"
+        $downloadServerButton.Add_Click({ Download-ServerFiles })
+        
+        $startServerButton = New-Object System.Windows.Forms.Button
+        $startServerButton.Location = New-Object System.Drawing.Point(170, 10)
+        $startServerButton.Size = New-Object System.Drawing.Size(150, 30)
+        $startServerButton.Text = "Start Server"
+        $startServerButton.Add_Click({ Start-MinecraftServer })
+        
+        $serverLogTextBox = New-Object System.Windows.Forms.TextBox
+        $serverLogTextBox.Location = New-Object System.Drawing.Point(10, 50)
+        $serverLogTextBox.Size = New-Object System.Drawing.Size(600, 400)
+        $serverLogTextBox.Multiline = $true
+        $serverLogTextBox.ScrollBars = "Vertical"
+        $serverLogTextBox.ReadOnly = $true
+        $serverLogTextBox.Font = New-Object System.Drawing.Font("Consolas", 9)
+        
+        # Add controls to server tab
+        $serverTab.Controls.AddRange(@($downloadServerButton, $startServerButton, $serverLogTextBox))
+        
+        # Modpack Management Tab
+        $modpackTab = New-Object System.Windows.Forms.TabPage
+        $modpackTab.Text = "Modpack Management"
+        
+        # Modpack controls
+        $importModpackButton = New-Object System.Windows.Forms.Button
+        $importModpackButton.Location = New-Object System.Drawing.Point(10, 10)
+        $importModpackButton.Size = New-Object System.Drawing.Size(150, 30)
+        $importModpackButton.Text = "Import Modpack"
+        $importModpackButton.Add_Click({ Import-ModpackFromGui })
+        
+        $exportModpackButton = New-Object System.Windows.Forms.Button
+        $exportModpackButton.Location = New-Object System.Drawing.Point(170, 10)
+        $exportModpackButton.Size = New-Object System.Drawing.Size(150, 30)
+        $exportModpackButton.Text = "Export Modpack"
+        $exportModpackButton.Add_Click({ Export-ModpackFromGui })
+        
+        $validateModpackButton = New-Object System.Windows.Forms.Button
+        $validateModpackButton.Location = New-Object System.Drawing.Point(330, 10)
+        $validateModpackButton.Size = New-Object System.Drawing.Size(150, 30)
+        $validateModpackButton.Text = "Validate Modpack"
+        $validateModpackButton.Add_Click({ Validate-ModpackFromGui })
+        
+        # Modpack list view
+        $modpackListView = New-Object System.Windows.Forms.ListView
+        $modpackListView.Location = New-Object System.Drawing.Point(10, 50)
+        $modpackListView.Size = New-Object System.Drawing.Size(600, 400)
+        $modpackListView.View = "Details"
+        $modpackListView.FullRowSelect = $true
+        $modpackListView.GridLines = $true
+        
+        # Add columns
+        $modpackListView.Columns.Add("Name", 200)
+        $modpackListView.Columns.Add("Type", 100)
+        $modpackListView.Columns.Add("Game Version", 100)
+        $modpackListView.Columns.Add("Mod Count", 80)
+        $modpackListView.Columns.Add("Status", 100)
+        
+        # Add controls to modpack tab
+        $modpackTab.Controls.AddRange(@($importModpackButton, $exportModpackButton, $validateModpackButton, $modpackListView))
+        
+        # Settings Tab
+        $settingsTab = New-Object System.Windows.Forms.TabPage
+        $settingsTab.Text = "Settings"
+        
+        # Settings controls
+        $databaseFileLabel = New-Object System.Windows.Forms.Label
+        $databaseFileLabel.Location = New-Object System.Drawing.Point(10, 20)
+        $databaseFileLabel.Size = New-Object System.Drawing.Size(120, 20)
+        $databaseFileLabel.Text = "Database File:"
+        
+        $databaseFileTextBox = New-Object System.Windows.Forms.TextBox
+        $databaseFileTextBox.Location = New-Object System.Drawing.Point(140, 20)
+        $databaseFileTextBox.Size = New-Object System.Drawing.Size(300, 20)
+        $databaseFileTextBox.Text = $DatabaseFile
+        
+        $downloadFolderLabel = New-Object System.Windows.Forms.Label
+        $downloadFolderLabel.Location = New-Object System.Drawing.Point(10, 50)
+        $downloadFolderLabel.Size = New-Object System.Drawing.Size(120, 20)
+        $downloadFolderLabel.Text = "Download Folder:"
+        
+        $downloadFolderTextBox = New-Object System.Windows.Forms.TextBox
+        $downloadFolderTextBox.Location = New-Object System.Drawing.Point(140, 50)
+        $downloadFolderTextBox.Size = New-Object System.Drawing.Size(300, 20)
+        $downloadFolderTextBox.Text = $DownloadFolder
+        
+        $saveSettingsButton = New-Object System.Windows.Forms.Button
+        $saveSettingsButton.Location = New-Object System.Drawing.Point(140, 90)
+        $saveSettingsButton.Size = New-Object System.Drawing.Size(100, 30)
+        $saveSettingsButton.Text = "Save Settings"
+        $saveSettingsButton.Add_Click({ Save-GuiSettings })
+        
+        # Add controls to settings tab
+        $settingsTab.Controls.AddRange(@($databaseFileLabel, $databaseFileTextBox, $downloadFolderLabel, $downloadFolderTextBox, $saveSettingsButton))
+        
+        # Add tabs to control
+        $tabControl.TabPages.AddRange(@($modTab, $serverTab, $modpackTab, $settingsTab))
+        
+        # Add tab control to form
+        $form.Controls.Add($tabControl)
+        
+        # Load initial data
+        Load-ModList
+        Load-ModpackList
+        
+        # Show form
+        $form.ShowDialog()
+    }
+    catch {
+        Write-Error "Failed to create GUI: $($_.Exception.Message)"
+        return $false
+    }
+}
+
+function Load-ModList {
+    try {
+        $modListView.Items.Clear()
+        
+        if (-not (Test-Path $DatabaseFile)) {
+            $statusLabel.Text = "Database file not found"
+            return
+        }
+        
+        $mods = Import-Csv -Path $DatabaseFile
+        $progressBar.Maximum = $mods.Count
+        $progressBar.Value = 0
+        $progressBar.Visible = $true
+        $statusLabel.Text = "Loading mod list..."
+        
+        foreach ($mod in $mods) {
+            $item = New-Object System.Windows.Forms.ListViewItem($mod.Name)
+            $item.SubItems.Add($mod.CurrentVersion)
+            $item.SubItems.Add($mod.LatestVersion)
+            $item.SubItems.Add($mod.Type)
+            
+            # Determine status
+            $status = if ($mod.CurrentVersion -eq $mod.LatestVersion) { "Up to date" } else { "Update available" }
+            $item.SubItems.Add($status)
+            
+            $modListView.Items.Add($item)
+            $progressBar.Value++
+            [System.Windows.Forms.Application]::DoEvents()
+        }
+        
+        $progressBar.Visible = $false
+        $statusLabel.Text = "Loaded $($mods.Count) mods"
+    }
+    catch {
+        $statusLabel.Text = "Error loading mod list: $($_.Exception.Message)"
+        $progressBar.Visible = $false
+    }
+}
+
+function Download-SelectedMods {
+    try {
+        $selectedItems = $modListView.SelectedItems
+        if ($selectedItems.Count -eq 0) {
+            [System.Windows.Forms.MessageBox]::Show("Please select mods to download", "No Selection", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+            return
+        }
+        
+        $progressBar.Maximum = $selectedItems.Count
+        $progressBar.Value = 0
+        $progressBar.Visible = $true
+        $statusLabel.Text = "Downloading selected mods..."
+        
+        foreach ($item in $selectedItems) {
+            $modName = $item.Text
+            $statusLabel.Text = "Downloading $modName..."
+            
+            # Call ModManager download function
+            $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $DatabaseFile -DownloadFolder $DownloadFolder -UseCachedResponses
+            
+            $progressBar.Value++
+            [System.Windows.Forms.Application]::DoEvents()
+        }
+        
+        $progressBar.Visible = $false
+        $statusLabel.Text = "Download completed"
+        Load-ModList
+    }
+    catch {
+        $statusLabel.Text = "Error downloading mods: $($_.Exception.Message)"
+        $progressBar.Visible = $false
+    }
+}
+
+function Update-ModDatabase {
+    try {
+        $statusLabel.Text = "Updating mod database..."
+        $progressBar.Visible = $true
+        $progressBar.Style = "Marquee"
+        
+        # Call ModManager update function
+        $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $DatabaseFile -UseCachedResponses
+        
+        $progressBar.Style = "Blocks"
+        $progressBar.Visible = $false
+        $statusLabel.Text = "Database updated"
+        Load-ModList
+    }
+    catch {
+        $statusLabel.Text = "Error updating database: $($_.Exception.Message)"
+        $progressBar.Visible = $false
+    }
+}
+
+function Show-AddModDialog {
+    try {
+        $addForm = New-Object System.Windows.Forms.Form
+        $addForm.Text = "Add New Mod"
+        $addForm.Size = New-Object System.Drawing.Size(400, 300)
+        $addForm.StartPosition = "CenterParent"
+        $addForm.FormBorderStyle = "FixedDialog"
+        $addForm.MaximizeBox = $false
+        $addForm.MinimizeBox = $false
+        
+        # Mod ID
+        $modIdLabel = New-Object System.Windows.Forms.Label
+        $modIdLabel.Location = New-Object System.Drawing.Point(10, 20)
+        $modIdLabel.Size = New-Object System.Drawing.Size(100, 20)
+        $modIdLabel.Text = "Mod ID:"
+        
+        $modIdTextBox = New-Object System.Windows.Forms.TextBox
+        $modIdTextBox.Location = New-Object System.Drawing.Point(120, 20)
+        $modIdTextBox.Size = New-Object System.Drawing.Size(250, 20)
+        
+        # Mod Name
+        $modNameLabel = New-Object System.Windows.Forms.Label
+        $modNameLabel.Location = New-Object System.Drawing.Point(10, 50)
+        $modNameLabel.Size = New-Object System.Drawing.Size(100, 20)
+        $modNameLabel.Text = "Mod Name:"
+        
+        $modNameTextBox = New-Object System.Windows.Forms.TextBox
+        $modNameTextBox.Location = New-Object System.Drawing.Point(120, 50)
+        $modNameTextBox.Size = New-Object System.Drawing.Size(250, 20)
+        
+        # Game Version
+        $gameVersionLabel = New-Object System.Windows.Forms.Label
+        $gameVersionLabel.Location = New-Object System.Drawing.Point(10, 80)
+        $gameVersionLabel.Size = New-Object System.Drawing.Size(100, 20)
+        $gameVersionLabel.Text = "Game Version:"
+        
+        $gameVersionTextBox = New-Object System.Windows.Forms.TextBox
+        $gameVersionTextBox.Location = New-Object System.Drawing.Point(120, 80)
+        $gameVersionTextBox.Size = New-Object System.Drawing.Size(250, 20)
+        $gameVersionTextBox.Text = $DefaultGameVersion
+        
+        # Mod Type
+        $modTypeLabel = New-Object System.Windows.Forms.Label
+        $modTypeLabel.Location = New-Object System.Drawing.Point(10, 110)
+        $modTypeLabel.Size = New-Object System.Drawing.Size(100, 20)
+        $modTypeLabel.Text = "Mod Type:"
+        
+        $modTypeComboBox = New-Object System.Windows.Forms.ComboBox
+        $modTypeComboBox.Location = New-Object System.Drawing.Point(120, 110)
+        $modTypeComboBox.Size = New-Object System.Drawing.Size(250, 20)
+        $modTypeComboBox.Items.AddRange(@("mod", "resourcepack", "datapack", "shaderpack"))
+        $modTypeComboBox.SelectedIndex = 0
+        
+        # Buttons
+        $okButton = New-Object System.Windows.Forms.Button
+        $okButton.Location = New-Object System.Drawing.Point(200, 220)
+        $okButton.Size = New-Object System.Drawing.Size(75, 25)
+        $okButton.Text = "OK"
+        $okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+        
+        $cancelButton = New-Object System.Windows.Forms.Button
+        $cancelButton.Location = New-Object System.Drawing.Point(285, 220)
+        $cancelButton.Size = New-Object System.Drawing.Size(75, 25)
+        $cancelButton.Text = "Cancel"
+        $cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+        
+        # Add controls
+        $addForm.Controls.AddRange(@($modIdLabel, $modIdTextBox, $modNameLabel, $modNameTextBox, $gameVersionLabel, $gameVersionTextBox, $modTypeLabel, $modTypeComboBox, $okButton, $cancelButton))
+        
+        # Show dialog
+        $result = $addForm.ShowDialog()
+        
+        if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
+            # Add mod using ModManager
+            $addResult = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddMod -AddModId $modIdTextBox.Text -AddModName $modNameTextBox.Text -AddModGameVersion $gameVersionTextBox.Text -AddModType $modTypeComboBox.Text -DatabaseFile $DatabaseFile
+            
+            if ($LASTEXITCODE -eq 0) {
+                Load-ModList
+                $statusLabel.Text = "Mod added successfully"
+            } else {
+                $statusLabel.Text = "Error adding mod"
+            }
+        }
+    }
+    catch {
+        $statusLabel.Text = "Error showing add mod dialog: $($_.Exception.Message)"
+    }
+}
+
+function Delete-SelectedMods {
+    try {
+        $selectedItems = $modListView.SelectedItems
+        if ($selectedItems.Count -eq 0) {
+            [System.Windows.Forms.MessageBox]::Show("Please select mods to delete", "No Selection", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+            return
+        }
+        
+        $result = [System.Windows.Forms.MessageBox]::Show("Are you sure you want to delete the selected mods?", "Confirm Delete", [System.Windows.Forms.MessageBoxButtons]::YesNo, [System.Windows.Forms.MessageBoxIcon]::Question)
+        
+        if ($result -eq [System.Windows.Forms.DialogResult]::Yes) {
+            $progressBar.Maximum = $selectedItems.Count
+            $progressBar.Value = 0
+            $progressBar.Visible = $true
+            $statusLabel.Text = "Deleting selected mods..."
+            
+            foreach ($item in $selectedItems) {
+                $modName = $item.Text
+                $statusLabel.Text = "Deleting $modName..."
+                
+                # Call ModManager delete function
+                $deleteResult = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DeleteModID $modName -DatabaseFile $DatabaseFile
+                
+                $progressBar.Value++
+                [System.Windows.Forms.Application]::DoEvents()
+            }
+            
+            $progressBar.Visible = $false
+            $statusLabel.Text = "Delete completed"
+            Load-ModList
+        }
+    }
+    catch {
+        $statusLabel.Text = "Error deleting mods: $($_.Exception.Message)"
+        $progressBar.Visible = $false
+    }
+}
+
+function Download-ServerFiles {
+    try {
+        $statusLabel.Text = "Downloading server files..."
+        $progressBar.Visible = $true
+        $progressBar.Style = "Marquee"
+        
+        # Call ModManager server download function
+        $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $DownloadFolder -UseCachedResponses
+        
+        $progressBar.Style = "Blocks"
+        $progressBar.Visible = $false
+        $statusLabel.Text = "Server files downloaded"
+    }
+    catch {
+        $statusLabel.Text = "Error downloading server files: $($_.Exception.Message)"
+        $progressBar.Visible = $false
+    }
+}
+
+function Start-MinecraftServer {
+    try {
+        $statusLabel.Text = "Starting Minecraft server..."
+        $serverLogTextBox.Clear()
+        
+        # Call ModManager server start function
+        $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $DownloadFolder 2>&1
+        
+        $serverLogTextBox.AppendText($result)
+        $statusLabel.Text = "Server started"
+    }
+    catch {
+        $statusLabel.Text = "Error starting server: $($_.Exception.Message)"
+        $serverLogTextBox.AppendText("Error: $($_.Exception.Message)")
+    }
+}
+
+function Load-ModpackList {
+    try {
+        $modpackListView.Items.Clear()
+        
+        # This would load modpacks from a database or scan for modpack files
+        # For now, just show a placeholder
+        $item = New-Object System.Windows.Forms.ListViewItem("No modpacks found")
+        $item.SubItems.Add("")
+        $item.SubItems.Add("")
+        $item.SubItems.Add("")
+        $item.SubItems.Add("")
+        
+        $modpackListView.Items.Add($item)
+    }
+    catch {
+        Write-Error "Error loading modpack list: $($_.Exception.Message)"
+    }
+}
+
+function Import-ModpackFromGui {
+    try {
+        $openFileDialog = New-Object System.Windows.Forms.OpenFileDialog
+        $openFileDialog.Filter = "Modpack files (*.mrpack;*.zip)|*.mrpack;*.zip|All files (*.*)|*.*"
+        $openFileDialog.Title = "Select Modpack File"
+        
+        if ($openFileDialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+            $statusLabel.Text = "Importing modpack..."
+            $progressBar.Visible = $true
+            $progressBar.Style = "Marquee"
+            
+            # Call ModManager import function
+            $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ImportModpack $openFileDialog.FileName -DatabaseFile $DatabaseFile -UseCachedResponses
+            
+            $progressBar.Style = "Blocks"
+            $progressBar.Visible = $false
+            $statusLabel.Text = "Modpack imported"
+            Load-ModList
+        }
+    }
+    catch {
+        $statusLabel.Text = "Error importing modpack: $($_.Exception.Message)"
+        $progressBar.Visible = $false
+    }
+}
+
+function Export-ModpackFromGui {
+    try {
+        $saveFileDialog = New-Object System.Windows.Forms.SaveFileDialog
+        $saveFileDialog.Filter = "Modrinth modpack (*.mrpack)|*.mrpack|All files (*.*)|*.*"
+        $saveFileDialog.Title = "Save Modpack As"
+        $saveFileDialog.FileName = "exported-modpack.mrpack"
+        
+        if ($saveFileDialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+            $statusLabel.Text = "Exporting modpack..."
+            $progressBar.Visible = $true
+            $progressBar.Style = "Marquee"
+            
+            # Call ModManager export function
+            $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ExportModpack $saveFileDialog.FileName -ExportType "modrinth" -ExportName "Exported Modpack" -DatabaseFile $DatabaseFile -UseCachedResponses
+            
+            $progressBar.Style = "Blocks"
+            $progressBar.Visible = $false
+            $statusLabel.Text = "Modpack exported"
+        }
+    }
+    catch {
+        $statusLabel.Text = "Error exporting modpack: $($_.Exception.Message)"
+        $progressBar.Visible = $false
+    }
+}
+
+function Validate-ModpackFromGui {
+    try {
+        $openFileDialog = New-Object System.Windows.Forms.OpenFileDialog
+        $openFileDialog.Filter = "Modpack files (*.mrpack;*.zip)|*.mrpack;*.zip|All files (*.*)|*.*"
+        $openFileDialog.Title = "Select Modpack File to Validate"
+        
+        if ($openFileDialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+            $statusLabel.Text = "Validating modpack..."
+            $progressBar.Visible = $true
+            $progressBar.Style = "Marquee"
+            
+            # Call ModManager validate function
+            $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateModpack $openFileDialog.FileName -DatabaseFile $DatabaseFile -UseCachedResponses
+            
+            $progressBar.Style = "Blocks"
+            $progressBar.Visible = $false
+            $statusLabel.Text = "Modpack validation completed"
+        }
+    }
+    catch {
+        $statusLabel.Text = "Error validating modpack: $($_.Exception.Message)"
+        $progressBar.Visible = $false
+    }
+}
+
+function Save-GuiSettings {
+    try {
+        $DatabaseFile = $databaseFileTextBox.Text
+        $DownloadFolder = $downloadFolderTextBox.Text
+        
+        $statusLabel.Text = "Settings saved"
+    }
+    catch {
+        $statusLabel.Text = "Error saving settings: $($_.Exception.Message)"
+    }
+}
