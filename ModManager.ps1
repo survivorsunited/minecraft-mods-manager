@@ -276,7 +276,7 @@ function Test-RecordHash {
         return $false
     }
 }
-# Function to convert dependencies to JSON format for CSV storage
+# Function to convert dependencies to a clean, readable format for CSV storage
 function Convert-DependenciesToJson {
     param(
         [Parameter(Mandatory=$true)]
@@ -288,21 +288,35 @@ function Convert-DependenciesToJson {
             return ""
         }
         
-        $dependencyList = @()
+        # Separate required and optional dependencies
+        $requiredDeps = @()
+        $optionalDeps = @()
+        
         foreach ($dep in $Dependencies) {
-            $dependencyInfo = @{
-                project_id = $dep.project_id
-                dependency_type = $dep.dependency_type
-                version_id = if ($dep.version_id) { $dep.version_id } else { $null }
-                version_range = if ($dep.version_range) { $dep.version_range } else { $null }
+            $depId = $dep.project_id
+            if ($dep.dependency_type -eq "required") {
+                $requiredDeps += $depId
+            } elseif ($dep.dependency_type -eq "optional") {
+                $optionalDeps += $depId
+            } else {
+                # Default to required if type is not specified
+                $requiredDeps += $depId
             }
-            $dependencyList += $dependencyInfo
         }
         
-        return $dependencyList | ConvertTo-Json -Compress
+        # Create clean, readable format
+        $result = @()
+        if ($requiredDeps.Count -gt 0) {
+            $result += "required: $($requiredDeps -join ',')"
+        }
+        if ($optionalDeps.Count -gt 0) {
+            $result += "optional: $($optionalDeps -join ',')"
+        }
+        
+        return $result -join "; "
     }
     catch {
-        Write-Warning "Failed to convert dependencies to JSON: $($_.Exception.Message)"
+        Write-Warning "Failed to convert dependencies to readable format: $($_.Exception.Message)"
         return ""
     }
 }
