@@ -12,13 +12,12 @@ Initialize-TestEnvironment $TestFileName
 
 # Helper to get the full path to ModManager.ps1
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
-$ModManagerCliPath = Join-Path $PSScriptRoot "..\..\ModManagerCli.ps1"
 
 # Set up isolated paths
 $TestOutputDir = Get-TestOutputFolder $TestFileName
 $script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
-$ModListPath = Join-Path $TestOutputDir "modlist.csv"
+$ModListPath = Join-Path $TestOutputDir "run-test-cli.csv"
 
 Write-Host "Minecraft Mod Manager - Cross-Platform Modpack Integration Tests" -ForegroundColor $Colors.Header
 Write-Host "===============================================================" -ForegroundColor $Colors.Header
@@ -132,11 +131,11 @@ function Test-ModpackTypeDetection {
     if (-not (Test-Path $testCurseForgePath)) { Write-Host "[DEBUG] CurseForge test modpack not found: $testCurseForgePath" -ForegroundColor Red }
     
     # Test detection
-    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerCliPath -ValidateModpack $testModrinthPath -ValidateType "auto" -DatabaseFile $ModListPath -UseCachedResponses 2>&1
+    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateModpack $testModrinthPath -ValidateType "auto" -DatabaseFile $ModListPath -UseCachedResponses 2>&1
     if ($LASTEXITCODE -ne 0) { Write-Host "[DEBUG] Modrinth detection error: $result" -ForegroundColor Yellow }
     $modrinthDetected = ($LASTEXITCODE -eq 0)
     
-    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerCliPath -ValidateModpack $testCurseForgePath -ValidateType "auto" -DatabaseFile $ModListPath -UseCachedResponses 2>&1
+    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateModpack $testCurseForgePath -ValidateType "auto" -DatabaseFile $ModListPath -UseCachedResponses 2>&1
     if ($LASTEXITCODE -ne 0) { Write-Host "[DEBUG] CurseForge detection error: $result" -ForegroundColor Yellow }
     $curseforgeDetected = ($LASTEXITCODE -eq 0)
     
@@ -187,7 +186,7 @@ function Test-UnifiedModpackImport {
     }
     
     # Test import
-    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerCliPath -ImportModpack $testModpackPath -ModpackType "modrinth" -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses
+    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ImportModpack $testModpackPath -ModpackType "modrinth" -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses
     
     $importSuccess = ($LASTEXITCODE -eq 0)
     
@@ -206,41 +205,58 @@ function Test-UnifiedModpackImport {
 function Test-DependencyConflictResolution {
     Write-Host "Testing dependency conflict resolution..." -ForegroundColor Gray
     
-    # Create a test CSV with existing mods
-    $testMods = @(
-        [PSCustomObject]@{
-            Group = "required"
-            Type = "mod"
-            GameVersion = "1.21.5"
-            ID = "test-mod-1"
-            Loader = "fabric"
-            Version = "1.0.0"
-            Name = "Test Mod 1"
-            Description = "Test mod"
-            Jar = "test-mod-1.jar"
-            Url = "https://example.com"
-            Category = "Test"
-            VersionUrl = ""
-            LatestVersionUrl = ""
-            LatestVersion = "1.0.0"
-            ApiSource = "modrinth"
-            Host = "modrinth"
-            IconUrl = ""
-            ClientSide = "optional"
-            ServerSide = "optional"
-            Title = "Test Mod 1"
-            ProjectDescription = "Test mod"
-            IssuesUrl = ""
-            SourceUrl = ""
-            WikiUrl = ""
-            LatestGameVersion = "1.21.5"
-            RecordHash = ""
-            CurrentDependencies = ""
-            LatestDependencies = ""
+    # Create a minimal CSV with required columns to prevent Ensure-CsvColumns from failing
+    $minimalMod = [PSCustomObject]@{
+        Group = "required"
+        Type = "mod"
+        GameVersion = "1.21.5"
+        ID = "test-mod"
+        Loader = "fabric"
+        Version = "1.0.0"
+        Name = "Test Mod"
+        Description = "Test mod for modpack integration"
+        Jar = "test-mod.jar"
+        Url = "https://example.com"
+        Category = "Test"
+        VersionUrl = ""
+        LatestVersionUrl = ""
+        LatestVersion = "1.0.0"
+        ApiSource = "modrinth"
+        Host = "modrinth"
+        IconUrl = ""
+        ClientSide = "optional"
+        ServerSide = "optional"
+        Title = "Test Mod"
+        ProjectDescription = "Test mod for modpack integration"
+        IssuesUrl = ""
+        SourceUrl = ""
+        WikiUrl = ""
+        LatestGameVersion = "1.21.5"
+        RecordHash = ""
+        CurrentDependencies = ""
+        LatestDependencies = ""
+    }
+
+    # Create the CSV file with proper structure
+    $minimalMod | Export-Csv -Path $ModListPath -NoTypeInformation
+
+    # Verify the CSV was created properly
+    if (-not (Test-Path $ModListPath)) {
+        Write-Host "❌ Failed to create CSV file: $ModListPath" -ForegroundColor Red
+        return $false
+    }
+
+    # Test that the CSV can be read
+    try {
+        $testMods = Import-Csv -Path $ModListPath
+        if ($testMods.Count -eq 0) {
+            Write-Host "❌ CSV file is empty" -ForegroundColor Red
+            return $false
         }
-    )
-    
-    $testMods | Export-Csv -Path $ModListPath -NoTypeInformation
+    } catch {
+        Write-Host "❌ Failed to read CSV file: $($_.Exception.Message)" -ForegroundColor Red
+        return $false
+    }
     
     # Test conflict resolution (this would normally be called internally)
     # For now, just verify the function exists and can be called
@@ -318,8 +334,8 @@ function Test-CrossModpackDependencyAnalysis {
     }
     
     # Test analysis by importing both modpacks
-    $result1 = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerCliPath -ImportModpack $modpack1Path -ModpackType "modrinth" -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses
-    $result2 = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerCliPath -ImportModpack $modpack2Path -ModpackType "modrinth" -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses
+    $result1 = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ImportModpack $modpack1Path -ModpackType "modrinth" -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses
+    $result2 = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ImportModpack $modpack2Path -ModpackType "modrinth" -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses
     
     $analysisSuccess = ($LASTEXITCODE -eq 0)
     
@@ -368,7 +384,7 @@ function Test-ModpackExportFunctionality {
     
     # Test Modrinth export
     $exportPath = Join-Path $TestOutputDir "exported-modpack"
-    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerCliPath -ExportModpack $exportPath -ExportType "modrinth" -ExportName "Test Export" -ExportAuthor "Test Author" -DatabaseFile $ModListPath -UseCachedResponses
+    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ExportModpack $exportPath -ExportType "modrinth" -ExportName "Test Export" -ExportAuthor "Test Author" -DatabaseFile $ModListPath -UseCachedResponses
     
     $exportSuccess = ($LASTEXITCODE -eq 0) -and (Test-Path "$exportPath.mrpack")
     
@@ -408,7 +424,7 @@ function Test-ModpackIntegrityChecking {
     }
     
     # Test integrity validation
-    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerCliPath -ValidateModpack $validModpackPath -ValidateType "modrinth" -DatabaseFile $ModListPath -UseCachedResponses
+    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ValidateModpack $validModpackPath -ValidateType "modrinth" -DatabaseFile $ModListPath -UseCachedResponses
     
     $integritySuccess = ($LASTEXITCODE -eq 0)
     
@@ -420,12 +436,12 @@ function Test-CliParameterValidation {
     Write-Host "Testing CLI parameter validation..." -ForegroundColor Gray
     
     # Test invalid modpack type
-    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerCliPath -ImportModpack "nonexistent.mrpack" -ModpackType "invalid" -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses 2>$null
+    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ImportModpack "nonexistent.mrpack" -ModpackType "invalid" -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses 2>$null
     
     $invalidTypeHandled = ($LASTEXITCODE -ne 0)
     
     # Test missing modpack file
-    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerCliPath -ImportModpack "nonexistent.mrpack" -ModpackType "modrinth" -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses 2>$null
+    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -ImportModpack "nonexistent.mrpack" -ModpackType "modrinth" -DownloadFolder $TestDownloadDir -DatabaseFile $ModListPath -UseCachedResponses 2>$null
     
     $missingFileHandled = ($LASTEXITCODE -ne 0)
     
