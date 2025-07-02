@@ -1392,9 +1392,76 @@ function Validate-AllModVersions {
     if ($modsWithUpdates.Count -gt 0) {
         Write-Host "🔄 $($modsWithUpdates.Count) mods have newer versions available!" -ForegroundColor Yellow
         Write-Host ""
+        
+        # Create detailed table of mods with updates
+        $updateTable = @()
+        foreach ($mod in $modsWithUpdates) {
+            $modPageUrl = ""
+            $sourceUrl = ""
+            
+            # Generate mod page URL based on host
+            if ($mod.Host -eq "modrinth") {
+                $modPageUrl = "https://modrinth.com/mod/$($mod.ID)"
+            } elseif ($mod.Host -eq "curseforge") {
+                $modPageUrl = "https://www.curseforge.com/minecraft/mc-mods/$($mod.ID)"
+            }
+            
+            # Use SourceUrl if available, otherwise generate from mod page
+            if ($mod.SourceUrl) {
+                $sourceUrl = $mod.SourceUrl
+            } elseif ($mod.Host -eq "modrinth") {
+                $sourceUrl = "https://github.com/$($mod.ID)"  # Common pattern for Modrinth mods
+            }
+            
+            $updateTable += [PSCustomObject]@{
+                Name = $mod.Name
+                CurrentVersion = $mod.Version
+                LatestVersion = $mod.LatestVersion
+                ModPage = $modPageUrl
+                SourceCode = $sourceUrl
+            }
+        }
+        
+        # Display the table
+        Write-Host "📋 Mods with available updates:" -ForegroundColor Cyan
+        Write-Host "=================================" -ForegroundColor Cyan
+        
+        # Create a more readable table format
+        $tableWidth = 120
+        $nameWidth = 25
+        $currentWidth = 20
+        $latestWidth = 25
+        $urlWidth = 50
+        
+        # Header
+        $header = "Name".PadRight($nameWidth) + "Current".PadRight($currentWidth) + "Latest".PadRight($latestWidth) + "Mod Page".PadRight($urlWidth)
+        Write-Host $header -ForegroundColor Yellow
+        Write-Host ("-" * $tableWidth) -ForegroundColor Yellow
+        
+        # Table rows
+        foreach ($mod in $updateTable) {
+            $name = if ($mod.Name -and $mod.Name.Length -gt $nameWidth - 1) { $mod.Name.Substring(0, $nameWidth - 4) + "..." } else { ($mod.Name ?? "").PadRight($nameWidth) }
+            $current = if ($mod.CurrentVersion -and $mod.CurrentVersion.Length -gt $currentWidth - 1) { $mod.CurrentVersion.Substring(0, $currentWidth - 4) + "..." } else { ($mod.CurrentVersion ?? "").PadRight($currentWidth) }
+            $latest = if ($mod.LatestVersion -and $mod.LatestVersion.Length -gt $latestWidth - 1) { $mod.LatestVersion.Substring(0, $latestWidth - 4) + "..." } else { ($mod.LatestVersion ?? "").PadRight($latestWidth) }
+            $url = if ($mod.ModPage -and $mod.ModPage.Length -gt $urlWidth - 1) { $mod.ModPage.Substring(0, $urlWidth - 4) + "..." } else { ($mod.ModPage ?? "").PadRight($urlWidth) }
+            
+            $row = $name + $current + $latest + $url
+            Write-Host $row -ForegroundColor White
+        }
+        
+        Write-Host ""
+        Write-Host "💡 Click the URLs above to visit mod pages and check for updates!" -ForegroundColor Cyan
+        
+        Write-Host ""
         Write-Host "To download the latest versions:" -ForegroundColor White
         Write-Host "  .\ModManager.ps1 -DownloadMods -UseLatestVersion" -ForegroundColor Green
         Write-Host "  → Downloads latest mod files to download/ folder" -ForegroundColor Gray
+        Write-Host ""
+        Write-Host "💡 Quick commands:" -ForegroundColor White
+        Write-Host "  .\scripts\DownloadLatestMods.ps1" -ForegroundColor Green
+        Write-Host "  → Automated script to download latest mods" -ForegroundColor Gray
+        Write-Host "  .\scripts\TestLatestMods.ps1" -ForegroundColor Green
+        Write-Host "  → Test latest mods with server compatibility" -ForegroundColor Gray
     } elseif ($modsCurrent.Count -gt 0 -and $modsNotFound.Count -eq 0 -and $modsWithErrors.Count -eq 0) {
         Write-Host "🎉 All mods are up to date!" -ForegroundColor Green
         Write-Host "All $($modsCurrent.Count) mods are using their latest available versions." -ForegroundColor Green
@@ -1491,9 +1558,20 @@ function Validate-AllModVersions {
         }
         
         if ($updateTable.Count -gt 0) {
-            # $updateTable | Format-Table -AutoSize
-            # Write-Host ""
             Write-Host "✅ Database updated: $updatedCount mods now have latest version information" -ForegroundColor Green
+            
+            # Show summary of what was updated
+            $modsWithNewVersions = $results | Where-Object { $_.VersionExists -and $_.LatestVersion -ne $_.Version }
+            if ($modsWithNewVersions.Count -gt 0) {
+                Write-Host ""
+                Write-Host "📊 Update Summary:" -ForegroundColor Cyan
+                Write-Host "=================" -ForegroundColor Cyan
+                Write-Host "• Total mods processed: $($results.Count)" -ForegroundColor White
+                Write-Host "• Mods with newer versions: $($modsWithNewVersions.Count)" -ForegroundColor Yellow
+                Write-Host "• Mods already up to date: $($modsCurrent.Count)" -ForegroundColor Green
+                Write-Host "• Mods not found: $($modsNotFound.Count)" -ForegroundColor Red
+                Write-Host "• Errors encountered: $($modsWithErrors.Count)" -ForegroundColor Red
+            }
         } else {
             Write-Host "✅ No updates needed - all mods already have latest version information" -ForegroundColor Green
         }

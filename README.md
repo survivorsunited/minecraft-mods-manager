@@ -186,6 +186,33 @@ minecraft-mods-manager/
 
 ## 📖 Usage
 
+### Use Cases
+
+- **[Testing Latest Mod Versions](USECASE_LATEST_MODS_TESTING.md)** - Complete guide for testing latest mod versions with the latest Minecraft server
+  - **Helper Script**: `.\scripts\TestLatestMods.ps1` - Automated workflow for testing latest mods
+- **Modpack Development** - Validate mod compatibility before release
+- **Server Administration** - Test updates before applying to production
+- **Quality Assurance** - Automated compatibility testing
+
+### Helper Scripts
+
+For common workflows, use the focused helper scripts in the `scripts/` folder:
+
+```powershell
+# Test latest mod versions with latest server (complete workflow)
+.\scripts\TestLatestMods.ps1
+
+# Download latest versions of all mods
+.\scripts\DownloadLatestMods.ps1
+
+# Download current versions of all mods
+.\scripts\DownloadCurrentMods.ps1
+
+# With custom options
+.\scripts\TestLatestMods.ps1 -DownloadFolder "test-latest"
+.\scripts\DownloadLatestMods.ps1 -DownloadFolder "latest-mods"
+```
+
 ### Basic Commands
 
 ```powershell
