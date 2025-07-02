@@ -13,6 +13,27 @@ alwaysApply: true
 - Use appropriate labels and assignees
 - Reference existing issues when creating related ones
 
+### MANDATORY: Single Purpose Tickets
+**CRITICAL RULE**: Every ticket must have ONE specific, actionable purpose.
+
+**FORBIDDEN:**
+- ❌ "Refactor some stuff" 
+- ❌ "Fix various issues"
+- ❌ "Improve multiple things"
+- ❌ "Update dependencies and fix bugs and add features"
+
+**REQUIRED:**
+- ✅ "Fix Next Steps Logic - Remove confusing update message"
+- ✅ "Add GameVersion compatibility check to status icons"
+- ✅ "Split LatestDependencies into Required and Optional fields"
+- ✅ "Add URL display for mods without latest versions"
+
+**Enforcement:**
+- Each ticket must address exactly ONE problem or feature
+- If multiple issues exist, create separate tickets
+- Ticket title must clearly state the single purpose
+- Ticket body must focus on that one specific issue
+
 ### Issue Categories
 - **Bug Reports**: Issues with existing functionality
 - **Feature Requests**: New functionality or improvements
