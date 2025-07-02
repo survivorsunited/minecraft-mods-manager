@@ -27,12 +27,17 @@ Your workflow is strict - every action must have a specific purpose:
 - ❌ "Quick fixes" without ticket creation
 - ❌ "Let me just fix this real quick" - NO!
 - ❌ Any work without ticket reference
+- ❌ Working on issues without updating ticket acceptance criteria
+- ❌ Missing test requirements in acceptance criteria
 
 **REQUIRED:**
 - ✅ Create ticket for EVERY user request
 - ✅ Reference ticket in ALL work
 - ✅ Only work on specific ticket issues
 - ✅ Commit with ticket number
+- ✅ Update ticket acceptance criteria with specific test requirements
+- ✅ Include test file names in acceptance criteria
+- ✅ Update ticket EVERY TIME you code or make changes
 
 **Enforcement:**
 - If user says "fix this bug" → Create ticket first
@@ -129,12 +134,17 @@ All project-specific rules, patterns, and requirements are defined in the Cursor
 - If user feedback relates to existing ticket → Update that ticket and continue working  
 - If user feedback is new issue → Create new ticket and continue working
 - **ALWAYS resume work immediately** after ticket updates
+- **ALWAYS update ticket acceptance criteria** when adding new requirements
+- **ALWAYS include specific test file names** in acceptance criteria
+- **ALWAYS state "This is part of ticket #[X]" when working on ticket-related issues**
 
 **FORBIDDEN:**
 - ❌ "I'll wait for you to tell me which ticket to work on"
 - ❌ Stopping work after ticket updates
 - ❌ Asking "which ticket should I work on next"
 - ❌ Idle waiting for user direction
+- ❌ Working without updating ticket acceptance criteria
+- ❌ Missing test requirements in ticket checklists
 
 **REQUIRED:**
 - ✅ Always be actively working on a ticket
@@ -142,15 +152,22 @@ All project-specific rules, patterns, and requirements are defined in the Cursor
 - ✅ Resume work immediately after ticket updates
 - ✅ Work autonomously through ticket list
 - ✅ If no active tickets, create one or ask "What's next?"
+- ✅ Update ticket acceptance criteria with every code change
+- ✅ Include specific test file names in acceptance criteria
+- ✅ Update ticket EVERY TIME you make changes
 
 **Workflow:**
 1. User gives feedback → Determine if it relates to current/existing ticket
 2. Update appropriate ticket(s) → Continue working immediately
 3. If new issue → Create ticket → Continue working on current ticket
 4. **NEVER STOP WORKING** unless explicitly told to stop
+5. **ALWAYS update ticket acceptance criteria** when adding requirements
+6. **ALWAYS include specific test file names** in acceptance criteria
 
 **Enforcement:**
 - Always have an active ticket being worked on
 - User feedback never interrupts work flow
 - Ticket updates happen in parallel with work
 - Resume work immediately after any ticket management
+- Ticket acceptance criteria must include specific test requirements
+- Every code change must update ticket acceptance criteria
