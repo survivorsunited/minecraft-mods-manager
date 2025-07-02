@@ -683,15 +683,19 @@ function Validate-ModVersion {
         }
         
         # Extract dependencies from matching version and latest version
-        $currentDependencies = $null
-        $latestDependencies = $null
+        $currentDependenciesRequired = $null
+        $currentDependenciesOptional = $null
+        $latestDependenciesRequired = $null
+        $latestDependenciesOptional = $null
         
         if ($matchingVersion -and $matchingVersion.dependencies) {
-            $currentDependencies = Convert-DependenciesToJson -Dependencies $matchingVersion.dependencies
+            $currentDependenciesRequired = Convert-DependenciesToJsonRequired -Dependencies $matchingVersion.dependencies
+            $currentDependenciesOptional = Convert-DependenciesToJsonOptional -Dependencies $matchingVersion.dependencies
         }
         
         if ($latestVerObj -and $latestVerObj.dependencies) {
-            $latestDependencies = Convert-DependenciesToJson -Dependencies $latestVerObj.dependencies
+            $latestDependenciesRequired = Convert-DependenciesToJsonRequired -Dependencies $latestVerObj.dependencies
+            $latestDependenciesOptional = Convert-DependenciesToJsonOptional -Dependencies $latestVerObj.dependencies
         }
         
         # Display mod and latest version
@@ -719,8 +723,10 @@ function Validate-ModVersion {
                 WikiUrl = if ($projectInfo.WikiUrl) { $projectInfo.WikiUrl.ToString() } else { "" }
                 VersionFoundByJar = $versionFoundByJar
                 LatestGameVersion = $latestGameVersion
-                CurrentDependencies = $currentDependencies
-                LatestDependencies = $latestDependencies
+                CurrentDependenciesRequired = $currentDependenciesRequired
+                CurrentDependenciesOptional = $currentDependenciesOptional
+                LatestDependenciesRequired = $latestDependenciesRequired
+                LatestDependenciesOptional = $latestDependenciesOptional
             }
         } else {
             return [PSCustomObject]@{
@@ -1276,10 +1282,6 @@ function Validate-AllModVersions {
         # Get JAR filename from CSV
         $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
         
-        # Show loading message with spinner
-        $loadingMsg = ("[{0:D3}/{1:D3}] {2} {3}" -f $currentMod, $totalMods, $mod.Name, $spinner[$spinnerIndex])
-        Write-Host $loadingMsg -ForegroundColor Cyan -NoNewline
-        
         # Use appropriate API based on host (suppress output)
         if ($modHost -eq "curseforge") {
             $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
@@ -1289,13 +1291,52 @@ function Validate-AllModVersions {
             $result = Validate-ModVersion -ModId $mod.ID -Version $versionToCheck -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -Quiet
         }
         
-        # Clear the line and show result
-        Write-Host ("`r" + (" " * $loadingMsg.Length) + "`r") -NoNewline
-        if ($result.Exists) {
-            Write-Host ("[{0:D3}/{1:D3}] {2} ✓ {3}" -f $currentMod, $totalMods, $mod.Name, $result.LatestVersion) -ForegroundColor Green
-        } else {
-            Write-Host ("[{0:D3}/{1:D3}] {2} ❌ {3}" -f $currentMod, $totalMods, $mod.Name, $result.Error) -ForegroundColor Red
+        # Show result with current vs latest version comparison
+        $currentVersion = $mod.Version ?? "none"
+        $latestVersion = $result.LatestVersion ?? "unknown"
+        
+        # Determine status and colors based on game version compatibility
+        $targetGameVersion = $mod.GameVersion ?? $DefaultGameVersion
+        $currentSupportsTarget = $false
+        $latestSupportsTarget = $false
+        
+        # Check if current version supports target game version
+        if ($result.Exists -and $result.LatestGameVersion) {
+            $currentSupportsTarget = $result.LatestGameVersion -eq $targetGameVersion
         }
+        
+        # Check if latest version supports target game version
+        if ($result.Exists -and $result.LatestGameVersion) {
+            $latestSupportsTarget = $result.LatestGameVersion -eq $targetGameVersion
+        }
+        
+        if (-not $result.Exists) {
+            $statusIcon = "❌"
+            $statusColor = "Red"
+            $currentColor = "Red"
+            $latestColor = "Red"
+        } elseif ([string]::IsNullOrEmpty($latestVersion) -or $latestVersion -eq "No $loader versions found") {
+            $statusIcon = "❌"
+            $statusColor = "Red"
+            $currentColor = "Yellow"
+            $latestColor = "Red"
+        } elseif ($currentVersion -eq $latestVersion) {
+            $statusIcon = "➖"
+            $statusColor = "Gray"
+            $currentColor = "Gray"
+            $latestColor = "Gray"
+        } else {
+            $statusIcon = "⬆️"
+            $statusColor = "Yellow"
+            $currentColor = "Red"
+            $latestColor = "Green"
+        }
+        
+        Write-Host ("[{0:D3}/{1:D3}] {2} " -f $currentMod, $totalMods, $mod.Name) -NoNewline -ForegroundColor Cyan
+        Write-Host $currentVersion -NoNewline -ForegroundColor $currentColor
+        Write-Host " → " -NoNewline -ForegroundColor Gray
+        Write-Host $latestVersion -NoNewline -ForegroundColor $latestColor
+        Write-Host " $statusIcon" -ForegroundColor $statusColor
         
         # Update spinner index
         $spinnerIndex = ($spinnerIndex + 1) % $spinner.Count
@@ -1350,58 +1391,40 @@ function Validate-AllModVersions {
             continue
         }
         
-        # Compare expected version with latest version
-        $expectedVersion = $result.ExpectedVersion
+        # After UpdateMods, all mods should be up to date (we just updated them)
+        # Only count as "needs review" if they don't have a latest version available
         $latestVersion = $result.LatestVersion
         
-        if ([string]::IsNullOrEmpty($expectedVersion)) {
-            # No version specified, treat as "get latest"
-            $modsCurrent += $result
-        } elseif ($expectedVersion -eq $latestVersion) {
-            # Versions match
-            $modsCurrent += $result
-        } else {
-            # Different versions - potential upgrade
+        if ([string]::IsNullOrEmpty($latestVersion) -or $latestVersion -eq "No $loader versions found") {
+            # Mod doesn't have latest version available
             $modsWithUpdates += $result
+        } else {
+            # Mod has latest version available (and we just updated it)
+            $modsCurrent += $result
         }
     }
     
-    # Only show mods that actually need updates (current ≠ latest)
+    # Show summary with total counts
+    Write-Host ""
+    Write-Host "📊 Update Summary:" -ForegroundColor Cyan
+    Write-Host "=================" -ForegroundColor Cyan
+    Write-Host "   ✅ Up to date: $($modsCurrent.Count) mods" -ForegroundColor Green
+    Write-Host "   🔍 Need review: $($modsWithUpdates.Count) mods" -ForegroundColor Yellow
+    Write-Host "   ❌ Not found: $($modsNotFound.Count) mods" -ForegroundColor Red
+    Write-Host "   ⚠️  Errors: $($modsWithErrors.Count) mods" -ForegroundColor Red
+    
+    # Show summary of what needs review
     if ($modsWithUpdates.Count -gt 0) {
-        Write-Host "🔄 Available updates: $($modsWithUpdates.Count) mods" -ForegroundColor Yellow
         Write-Host ""
-        
-        # Create detailed table of mods with updates
-        $updateTable = @()
-        foreach ($mod in $modsWithUpdates) {
-            $modPageUrl = ""
-            $sourceUrl = ""
-            
-            # Generate mod page URL based on host
-            if ($mod.Host -eq "modrinth") {
-                $modPageUrl = "https://modrinth.com/mod/$($mod.ID)"
-            } elseif ($mod.Host -eq "curseforge") {
-                $modPageUrl = "https://www.curseforge.com/minecraft/mc-mods/$($mod.ID)"
-            }
-            
-            # Use SourceUrl if available, otherwise generate from mod page
-            if ($mod.SourceUrl) {
-                $sourceUrl = $mod.SourceUrl
-            } elseif ($mod.Host -eq "modrinth") {
-                $sourceUrl = "https://github.com/$($mod.ID)"  # Common pattern for Modrinth mods
-            }
-            
-            $updateTable += [PSCustomObject]@{
-                Name = $mod.Name
-                CurrentVersion = $mod.ExpectedVersion
-                LatestVersion = $mod.LatestVersion
-                ModPage = $modPageUrl
-                SourceCode = $sourceUrl
-            }
-        }
-        
-        # No examples needed - we already know what mods have updates
+        Write-Host "🔍 Mods needing review: $($modsWithUpdates.Count) out of $($results.Count) mods" -ForegroundColor Yellow
+    } elseif ($modsWithErrors.Count -gt 0) {
+        Write-Host ""
+        Write-Host "⚠️  $($modsWithErrors.Count) mods have errors and need review" -ForegroundColor Red
+    } elseif ($modsNotFound.Count -gt 0) {
+        Write-Host ""
+        Write-Host "❌ $($modsNotFound.Count) mods not found and need review" -ForegroundColor Red
     } else {
+        Write-Host ""
         Write-Host "✅ All mods are up to date!" -ForegroundColor Green
     }
     
@@ -1430,19 +1453,18 @@ function Validate-AllModVersions {
     Write-Host "💡 Next Steps:" -ForegroundColor Cyan
     Write-Host "==============" -ForegroundColor Cyan
     
+    # Count mods without latest versions (mods that can't be updated)
+    $modsWithoutLatest = $results | Where-Object { -not $_.VersionExists }
+    $modsNeedingReview = $modsNotFound + $modsWithErrors
+    
     if ($modsWithUpdates.Count -gt 0) {
-        # Calculate mods without latest versions (mods that can't be updated)
-        $modsWithoutLatest = $results | Where-Object { $_.VersionExists -and $_.ExpectedVersion -eq $_.LatestVersion }
-        $modsNeedingReview = $results | Where-Object { -not $_.VersionExists }
-        
         if ($modsNeedingReview.Count -gt 0) {
-            Write-Host "⚠️  $($modsNeedingReview.Count) mods need review (no latest version available)" -ForegroundColor Yellow
-            Write-Host "   Check mod pages for updates or test with current versions" -ForegroundColor Gray
-        } elseif ($modsWithoutLatest.Count -gt 0) {
             Write-Host "🔄 $($modsWithUpdates.Count) mods have updates available" -ForegroundColor Yellow
+            Write-Host "⚠️  $($modsNeedingReview.Count) mods need review (no latest version available)" -ForegroundColor Yellow
             Write-Host "   You can test the majority of mods while waiting for remaining updates" -ForegroundColor Gray
         } else {
             Write-Host "🔄 $($modsWithUpdates.Count) mods have updates available" -ForegroundColor Yellow
+            Write-Host "   All mods have latest version information - ready for testing!" -ForegroundColor Gray
         }
         
         Write-Host ""
@@ -1450,7 +1472,18 @@ function Validate-AllModVersions {
         Write-Host "  .\scripts\DownloadLatestMods.ps1  → Download latest mods" -ForegroundColor Green
         Write-Host "  .\scripts\TestLatestMods.ps1      → Test latest mods with server" -ForegroundColor Green
     } else {
-        Write-Host "🎉 Success! All mods are ready for testing and modpack creation" -ForegroundColor Green
+        if ($modsNeedingReview.Count -gt 0) {
+            if ($modsWithErrors.Count -gt 0) {
+                Write-Host "⚠️  $($modsWithErrors.Count) mods have errors and need review" -ForegroundColor Red
+                Write-Host "✅ $($modsCurrent.Count) mods are up to date" -ForegroundColor Green
+            } else {
+                Write-Host "✅ All available mods are up to date!" -ForegroundColor Green
+                Write-Host "⚠️  $($modsNeedingReview.Count) mods need review (no latest version available)" -ForegroundColor Yellow
+            }
+            Write-Host "   You can test with current versions while waiting for updates" -ForegroundColor Gray
+        } else {
+            Write-Host "🎉 Success! All mods are ready for testing and modpack creation" -ForegroundColor Green
+        }
     }
     
     Write-Host ""
@@ -5969,4 +6002,24 @@ function Get-ServerDiagnostics {
         Write-Host "❌ Error running server diagnostics: $($_.Exception.Message)" -ForegroundColor Red
         return $null
     }
+}
+
+# --- Dependency Conversion Helpers ---
+function Convert-DependenciesToJsonRequired {
+    param([Parameter(Mandatory=$true)] $Dependencies)
+    if (-not $Dependencies -or $Dependencies.Count -eq 0) { return "" }
+    $required = $Dependencies | Where-Object { $_.dependency_type -eq "required" -or -not $_.dependency_type } | ForEach-Object { $_.project_id }
+    return ($required | Sort-Object | Get-Unique) -join ","
+}
+function Convert-DependenciesToJsonOptional {
+    param([Parameter(Mandatory=$true)] $Dependencies)
+    if (-not $Dependencies -or $Dependencies.Count -eq 0) { return "" }
+    $optional = $Dependencies | Where-Object { $_.dependency_type -eq "optional" } | ForEach-Object { $_.project_id }
+    return ($optional | Sort-Object | Get-Unique) -join ","
+}
+function Set-Equals {
+    param([string]$a, [string]$b)
+    $setA = ($a -split ",") | Where-Object { $_ -ne "" } | Sort-Object | Get-Unique
+    $setB = ($b -split ",") | Where-Object { $_ -ne "" } | Sort-Object | Get-Unique
+    return ($setA -join ",") -eq ($setB -join ",")
 }
