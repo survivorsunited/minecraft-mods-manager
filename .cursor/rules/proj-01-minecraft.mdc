@@ -69,6 +69,15 @@ The Minecraft Mods Manager is a PowerShell-based tool for managing Minecraft mod
 
 ## Important Patterns
 
+### Latest Game Version Rule
+**CRITICAL**: Latest Game Version = GameVersion + 1
+- Current GameVersion in modlist: 1.21.5
+- Latest Game Version should be: 1.21.6
+- System should check majority of mods in database to determine most common GameVersion
+- Use GameVersion + 1 as the Latest Game Version
+- Check which mods don't support that Latest Game Version
+- **NEVER hardcode to 1.21.7 or any other version**
+
 ### Test Isolation
 - Each test uses isolated download directories in `test/test-output/{TestName}/`
 - Tests should not interfere with the main `test/download/` folder
