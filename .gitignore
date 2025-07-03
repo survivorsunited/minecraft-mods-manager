@@ -1,6 +1,6 @@
 
 # backup files
-backup/*.csv
+backups/*.csv
 
 !**/.gitkeep
 
