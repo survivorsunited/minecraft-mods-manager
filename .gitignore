@@ -35,6 +35,8 @@ node_modules/
 
 .env
 
+.env
+
 # Task files
 # tasks.json
 # tasks/ 
