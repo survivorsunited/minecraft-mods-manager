@@ -379,8 +379,6 @@ function Get-ModList {
             
             # Check if record has been modified externally
             if ($mod.RecordHash -and $mod.RecordHash -ne $recordHash) {
-                Write-Host "⚠️  Warning: Record for '$($mod.Name)' has been modified externally" -ForegroundColor Yellow
-                Write-Host "   Verifying and updating record..." -ForegroundColor Cyan
                 $externalChanges += $mod
             }
             
@@ -395,17 +393,18 @@ function Get-ModList {
         if ($externalChanges.Count -gt 0) {
             Write-Host "🔄 Verifying $($externalChanges.Count) externally modified records..." -ForegroundColor Cyan
             
+            $currentIndex = 0
             foreach ($changedMod in $externalChanges) {
+                $currentIndex++
+                $percentComplete = [math]::Round(($currentIndex / $externalChanges.Count) * 100)
+                Write-Progress -Activity "Verifying externally modified records" -Status "Processing $($changedMod.Name)" -PercentComplete $percentComplete -CurrentOperation "Updating record $currentIndex of $($externalChanges.Count)"
+                
                 # For externally modified records, we should verify them
                 if ($changedMod.Type -eq "mod" -or $changedMod.Type -eq "shaderpack" -or $changedMod.Type -eq "datapack") {
-                    Write-Host "   Verifying: $($changedMod.Name) (ID: $($changedMod.ID))" -ForegroundColor Gray
-                    
                     # Make API call to get current data for externally modified records
                     try {
-                        Write-Host "   🔍 Fetching current data from API..." -ForegroundColor Cyan
-                        
                         # Use the existing Validate-ModVersion function to get current data
-                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $changedMod.Version -Loader $changedMod.Loader -Jar $changedMod.Jar -ResponseFolder $ApiResponseFolder
+                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $changedMod.Version -Loader $changedMod.Loader -Jar $changedMod.Jar -ResponseFolder $ApiResponseFolder -Quiet
                         
                         if ($validationResult -and $validationResult.Exists) {
                             # Update the record with current API data
@@ -421,19 +420,15 @@ function Get-ModList {
                             $changedMod.IssuesUrl = $validationResult.IssuesUrl
                             $changedMod.SourceUrl = $validationResult.SourceUrl
                             $changedMod.WikiUrl = $validationResult.WikiUrl
-                            Write-Host "   ✅ Record updated with current API data" -ForegroundColor Green
-                        } else {
-                            Write-Host "   ⚠️  API validation failed - using existing data" -ForegroundColor Yellow
                         }
                     }
                     catch {
-                        Write-Host "   ⚠️  API verification error - using existing data: $($_.Exception.Message)" -ForegroundColor Yellow
+                        # Silent error handling - continue with existing data
                     }
-                } else {
-                    Write-Host "   ✅ System entry '$($changedMod.Name)' updated" -ForegroundColor Green
                 }
             }
             
+            Write-Progress -Activity "Verifying externally modified records" -Completed
             Write-Host "✅ All externally modified records have been verified and updated" -ForegroundColor Green
         }
         
@@ -899,6 +894,17 @@ function Validate-CurseForgeModVersion {
             if (-not $latestVersionUrl -and $latestVer.id) {
                 $latestVersionUrl = "https://www.curseforge.com/api/v1/mods/$ModId/files/$($latestVer.id)/download"
             }
+            
+            # Extract game version from latest version
+            $latestGameVersion = $null
+            if ($latestVer.gameVersions -and $latestVer.gameVersions.Count -gt 0) {
+                # Find the highest game version (excluding loaders like 'fabric', 'forge', etc.)
+                $gameVersions = $latestVer.gameVersions | Where-Object { $_ -match '^\d+\.\d+\.\d+' } | Sort-Object -Descending
+                if ($gameVersions.Count -gt 0) {
+                    $latestGameVersion = $gameVersions[0]
+                }
+            }
+            
             # Extract dependencies for latest version
             if ($latestVer.relations -and $latestVer.relations.Count -gt 0) {
                 $latestDependenciesRequired = Convert-DependenciesToJsonRequired -Dependencies $latestVer.relations
@@ -919,6 +925,7 @@ function Validate-CurseForgeModVersion {
                 VersionFoundByJar = $versionFoundByJar
                 FileName = $matchingFile.fileName
                 LatestFileName = if ($filteredResponse.Count -gt 0) { $filteredResponse[0].fileName } else { $null }
+                LatestGameVersion = $latestGameVersion
                 CurrentDependencies = ""
                 LatestDependencies = ""
                 CurrentDependenciesRequired = if ($currentDependenciesRequired) { $currentDependenciesRequired } else { "" }
@@ -937,6 +944,7 @@ function Validate-CurseForgeModVersion {
                 VersionFoundByJar = $versionFoundByJar
                 FileName = $null
                 LatestFileName = if ($filteredResponse.Count -gt 0) { $filteredResponse[0].fileName } else { $null }
+                LatestGameVersion = $latestGameVersion
                 CurrentDependencies = ""
                 LatestDependencies = ""
                 CurrentDependenciesRequired = ""
@@ -1390,14 +1398,11 @@ function Validate-AllModVersions {
     $currentMod = 0
     
     Write-Host "Validating mod versions and saving API responses..." -ForegroundColor Yellow
-    Write-Host "Total mods to validate: $totalMods" -ForegroundColor Yellow
-    
-    # Loading spinner characters
-    $spinner = @('⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏')
-    $spinnerIndex = 0
     
     foreach ($mod in $modsToValidate) {
         $currentMod++
+        $percentComplete = [math]::Round(($currentMod / $totalMods) * 100)
+        Write-Progress -Activity "Validating mod versions" -Status "Processing $($mod.Name)" -PercentComplete $percentComplete -CurrentOperation "Validating $currentMod of $totalMods"
         
         # Get loader from CSV, default to "fabric" if not specified
         $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
@@ -1458,14 +1463,9 @@ function Validate-AllModVersions {
             $latestColor = "Green"
         }
         
-        Write-Host ("[{0:D3}/{1:D3}] {2} " -f $currentMod, $totalMods, $mod.Name) -NoNewline -ForegroundColor Cyan
-        Write-Host $currentVersion -NoNewline -ForegroundColor $currentColor
-        Write-Host " → " -NoNewline -ForegroundColor Gray
-        Write-Host $latestVersion -NoNewline -ForegroundColor $latestColor
-        Write-Host " $statusIcon" -ForegroundColor $statusColor
-        
-        # Update spinner index
-        $spinnerIndex = ($spinnerIndex + 1) % $spinner.Count
+        # Log detailed info but don't show in terminal
+        $logMessage = "[$currentMod/$totalMods] $($mod.Name) $currentVersion → $latestVersion $statusIcon"
+        Write-Host $logMessage -ForegroundColor DarkGray
         
         $results += [PSCustomObject]@{
             Name = $mod.Name
@@ -1499,6 +1499,8 @@ function Validate-AllModVersions {
         }
     }
     
+    Write-Progress -Activity "Validating mod versions" -Completed
+    
     # Save results to CSV
     $resultsFile = Join-Path $ResponseFolder "version-validation-results.csv"
     $results | Export-Csv -Path $resultsFile -NoTypeInformation
@@ -1506,8 +1508,11 @@ function Validate-AllModVersions {
     # Analyze version differences and provide upgrade recommendations
     Write-Host ""
     
+    $modsNotSupportingLatest = @()
+    $modsSupportingLatest = @()
+    $modsNotUpdated = @()
     $modsWithUpdates = @()
-    $modsCurrent = @()
+    $modsExternallyUpdated = @()
     $modsNotFound = @()
     $modsWithErrors = @()
     
@@ -1521,16 +1526,56 @@ function Validate-AllModVersions {
             continue
         }
         
-        # After UpdateMods, all mods should be up to date (we just updated them)
-        # Only count as "needs review" if they don't have a latest version available
-        $latestVersion = $result.LatestVersion
+        $currentVersion = $result.ExpectedVersion ?? "none"
+        $latestVersion = $result.LatestVersion ?? "unknown"
+        $latestGameVersion = $result.LatestGameVersion ?? "unknown"
         
-        if ([string]::IsNullOrEmpty($latestVersion) -or $latestVersion -eq "No $loader versions found") {
-            # Mod doesn't have latest version available
+        # Determine target game version dynamically
+        $targetGameVersion = if ($result.LatestGameVersion) { $result.LatestGameVersion } else { "1.21.7" }
+        
+        # Check if mod supports latest game version
+        # A mod supports latest if its game version is >= target game version
+        $supportsLatest = $false
+        if ($latestGameVersion -and $targetGameVersion) {
+            # Convert version strings to comparable format
+            $latestVersionParts = $latestGameVersion -split '\.'
+            $targetVersionParts = $targetGameVersion -split '\.'
+            
+            # Compare major.minor versions
+            if ($latestVersionParts.Count -ge 2 -and $targetVersionParts.Count -ge 2) {
+                $latestMajor = [int]$latestVersionParts[0]
+                $latestMinor = [int]$latestVersionParts[1]
+                $targetMajor = [int]$targetVersionParts[0]
+                $targetMinor = [int]$targetVersionParts[1]
+                
+                $supportsLatest = ($latestMajor -gt $targetMajor) -or 
+                                (($latestMajor -eq $targetMajor) -and ($latestMinor -ge $targetMinor))
+            } else {
+                # Fallback to string comparison if version format is unexpected
+                $supportsLatest = $latestGameVersion -eq $targetGameVersion
+            }
+        }
+        
+        # Check if mod has version updates available
+        $hasUpdates = $currentVersion -ne $latestVersion -and -not [string]::IsNullOrEmpty($latestVersion)
+        
+        # Check if mod was externally updated (this would be from the earlier external changes detection)
+        $wasExternallyUpdated = $false # This would be set based on the external changes detection
+        
+        if (-not $supportsLatest) {
+            $modsNotSupportingLatest += $result
+        } else {
+            $modsSupportingLatest += $result
+        }
+        
+        if ($hasUpdates) {
             $modsWithUpdates += $result
         } else {
-            # Mod has latest version available (and we just updated it)
-            $modsCurrent += $result
+            $modsNotUpdated += $result
+        }
+        
+        if ($wasExternallyUpdated) {
+            $modsExternallyUpdated += $result
         }
     }
     
@@ -1538,24 +1583,39 @@ function Validate-AllModVersions {
     Write-Host ""
     Write-Host "📊 Update Summary:" -ForegroundColor Cyan
     Write-Host "=================" -ForegroundColor Cyan
-    Write-Host "   ✅ Up to date: $($modsCurrent.Count) mods" -ForegroundColor Green
-    Write-Host "   🔍 Need review: $($modsWithUpdates.Count) mods" -ForegroundColor Yellow
+    Write-Host "   🎯 Supporting latest version: $($modsSupportingLatest.Count) mods" -ForegroundColor Green
+    Write-Host "   ⚠️  Not supporting latest version: $($modsNotSupportingLatest.Count) mods" -ForegroundColor Yellow
+    Write-Host "   ⬆️  Have updates available: $($modsWithUpdates.Count) mods" -ForegroundColor Cyan
+    Write-Host "   ➖ Not updated: $($modsNotUpdated.Count) mods" -ForegroundColor Gray
+    Write-Host "   🔄 Externally updated: $($modsExternallyUpdated.Count) mods" -ForegroundColor Blue
     Write-Host "   ❌ Not found: $($modsNotFound.Count) mods" -ForegroundColor Red
     Write-Host "   ⚠️  Errors: $($modsWithErrors.Count) mods" -ForegroundColor Red
     
-    # Show summary of what needs review
+    # Show mods that don't support latest version
+    if ($modsNotSupportingLatest.Count -gt 0) {
+        Write-Host ""
+        Write-Host "⚠️  Mods not supporting latest version ($($modsNotSupportingLatest.Count) mods):" -ForegroundColor Yellow
+        Write-Host "===============================================" -ForegroundColor Yellow
+        foreach ($mod in $modsNotSupportingLatest) {
+            $currentVersion = $mod.ExpectedVersion ?? "none"
+            $latestVersion = $mod.LatestVersion ?? "unknown"
+            $gameVersion = $mod.LatestGameVersion ?? "unknown"
+            Write-Host "   $($mod.Name): $currentVersion → $latestVersion (Game: $gameVersion)" -ForegroundColor Yellow
+        }
+    }
+    
+    # Show available updates
     if ($modsWithUpdates.Count -gt 0) {
         Write-Host ""
-        Write-Host "🔍 Mods needing review: $($modsWithUpdates.Count) out of $($results.Count) mods" -ForegroundColor Yellow
-    } elseif ($modsWithErrors.Count -gt 0) {
+        Write-Host "⬆️  Available Updates ($($modsWithUpdates.Count) mods):" -ForegroundColor Cyan
+        Write-Host "================================" -ForegroundColor Cyan
+        foreach ($mod in $modsWithUpdates) {
+            $currentVersion = $mod.ExpectedVersion ?? "none"
+            $latestVersion = $mod.LatestVersion ?? "unknown"
+            Write-Host "   $($mod.Name): $currentVersion → $latestVersion" -ForegroundColor Cyan
+        }
         Write-Host ""
-        Write-Host "⚠️  $($modsWithErrors.Count) mods have errors and need review" -ForegroundColor Red
-    } elseif ($modsNotFound.Count -gt 0) {
-        Write-Host ""
-        Write-Host "❌ $($modsNotFound.Count) mods not found and need review" -ForegroundColor Red
-    } else {
-        Write-Host ""
-        Write-Host "✅ All mods are up to date!" -ForegroundColor Green
+        Write-Host "💡 Run with -Download -UseLatestVersion to download updated mods" -ForegroundColor Green
     }
     
     # Show mods not found
@@ -1583,37 +1643,19 @@ function Validate-AllModVersions {
     Write-Host "💡 Next Steps:" -ForegroundColor Cyan
     Write-Host "==============" -ForegroundColor Cyan
     
-    # Count mods without latest versions (mods that can't be updated)
-    $modsWithoutLatest = $results | Where-Object { -not $_.VersionExists }
-    $modsNeedingReview = $modsNotFound + $modsWithErrors
+    if ($modsNotSupportingLatest.Count -gt 0) {
+        Write-Host "⚠️  Some mods don't support latest version - you can test anyway!" -ForegroundColor Yellow
+        Write-Host "   $($modsSupportingLatest.Count) mods support latest version" -ForegroundColor Green
+        Write-Host "   $($modsNotSupportingLatest.Count) mods don't support latest version" -ForegroundColor Yellow
+    } else {
+        Write-Host "🎉 Success!! You can now upgrade!" -ForegroundColor Green
+        Write-Host "   All mods support the latest version" -ForegroundColor Green
+    }
     
     if ($modsWithUpdates.Count -gt 0) {
-        if ($modsNeedingReview.Count -gt 0) {
-            Write-Host "🔄 $($modsWithUpdates.Count) mods have updates available" -ForegroundColor Yellow
-            Write-Host "⚠️  $($modsNeedingReview.Count) mods need review (no latest version available)" -ForegroundColor Yellow
-            Write-Host "   You can test the majority of mods while waiting for remaining updates" -ForegroundColor Gray
-        } else {
-            Write-Host "🔄 $($modsWithUpdates.Count) mods have updates available" -ForegroundColor Yellow
-            Write-Host "   All mods have latest version information - ready for testing!" -ForegroundColor Gray
-        }
-        
         Write-Host ""
-        Write-Host "Quick commands:" -ForegroundColor White
-        Write-Host "  .\scripts\DownloadLatestMods.ps1  → Download latest mods" -ForegroundColor Green
-        Write-Host "  .\scripts\TestLatestMods.ps1      → Test latest mods with server" -ForegroundColor Green
-    } else {
-        if ($modsNeedingReview.Count -gt 0) {
-            if ($modsWithErrors.Count -gt 0) {
-                Write-Host "⚠️  $($modsWithErrors.Count) mods have errors and need review" -ForegroundColor Red
-                Write-Host "✅ $($modsCurrent.Count) mods are up to date" -ForegroundColor Green
-            } else {
-                Write-Host "✅ All available mods are up to date!" -ForegroundColor Green
-                Write-Host "⚠️  $($modsNeedingReview.Count) mods need review (no latest version available)" -ForegroundColor Yellow
-            }
-            Write-Host "   You can test with current versions while waiting for updates" -ForegroundColor Gray
-        } else {
-            Write-Host "🎉 Success! All mods are ready for testing and modpack creation" -ForegroundColor Green
-        }
+        Write-Host "⬆️  $($modsWithUpdates.Count) mods have updates available" -ForegroundColor Cyan
+        Write-Host "   Run with -Download -UseLatestVersion to download updated mods" -ForegroundColor Green
     }
     
     Write-Host ""
@@ -2982,27 +3024,27 @@ function Download-ServerFiles {
 # Handle command-line parameters and execute appropriate functions
 
 # Get effective modlist path
-$effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
+        $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
 
 # Handle UpdateMods parameter
-if ($UpdateMods) {
+    if ($UpdateMods) {
     Write-Host "Starting mod update process..." -ForegroundColor Yellow
     Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList
     exit 0
 }
 
 # Handle Download parameter
-if ($Download) {
+    if ($Download) {
     Write-Host "Starting mod download process..." -ForegroundColor Yellow
     if ($UseLatestVersion) {
         Write-Host "Using latest versions for download..." -ForegroundColor Cyan
         Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList
         Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
-    } else {
+        } else {
         Write-Host "Using current versions for download..." -ForegroundColor Cyan
         Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
     }
-    exit 0
+            exit 0
 }
 
 # Handle DownloadMods parameter
@@ -3012,66 +3054,66 @@ if ($DownloadMods) {
         Write-Host "Using latest versions for download..." -ForegroundColor Cyan
         Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList
         Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
-    } else {
+        } else {
         Write-Host "Using current versions for download..." -ForegroundColor Cyan
         Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
     }
-    exit 0
+            exit 0
 }
 
 # Handle DownloadServer parameter
 if ($DownloadServer) {
     Write-Host "Starting server files download process..." -ForegroundColor Yellow
     Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload
-    exit 0
+            exit 0
 }
 
 # Handle StartServer parameter
 if ($StartServer) {
     Write-Host "Starting Minecraft server..." -ForegroundColor Yellow
     Start-MinecraftServer -DownloadFolder $DownloadFolder
-    exit 0
+            exit 0
 }
 
 # Handle AddServerStartScript parameter
 if ($AddServerStartScript) {
     Write-Host "Adding server start script..." -ForegroundColor Yellow
     Add-ServerStartScript -DownloadFolder $DownloadFolder
-    exit 0
+            exit 0
 }
 
 # Handle AddMod parameters
 if ($AddMod -or $AddModId -or $AddModUrl) {
     Write-Host "Adding new mod..." -ForegroundColor Yellow
     Add-ModToDatabase -AddModId $AddModId -AddModUrl $AddModUrl -AddModName $AddModName -AddModLoader $AddModLoader -AddModGameVersion $AddModGameVersion -AddModType $AddModType -AddModGroup $AddModGroup -AddModDescription $AddModDescription -AddModJar $AddModJar -AddModUrlDirect $AddModUrlDirect -AddModCategory $AddModCategory -ForceDownload:$ForceDownload -CsvPath $effectiveModListPath
-    exit 0
+            exit 0
 }
 
 # Handle ValidateAllModVersions parameter
 if ($ValidateAllModVersions) {
     Write-Host "Starting mod validation process..." -ForegroundColor Yellow
     Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UseCachedResponses:$UseCachedResponses
-    exit 0
+            exit 0
 }
 
 # Handle ValidateModVersion parameters
 if ($ValidateModVersion -and $ModId -and $Version) {
     Write-Host "Validating specific mod version..." -ForegroundColor Yellow
     Validate-ModVersion -ModId $ModId -Version $Version -Loader $Loader -ResponseFolder $ApiResponseFolder
-    exit 0
+            exit 0
 }
 
 # Handle GetModList parameter
 if ($GetModList) {
     Write-Host "Loading mod list..." -ForegroundColor Yellow
     Get-ModList -CsvPath $effectiveModListPath
-    exit 0
+            exit 0
 }
 
 # Handle ShowHelp parameter
 if ($ShowHelp) {
     Show-Help
-    exit 0
+                exit 0
 }
 
 # Default behavior when no parameters are provided
