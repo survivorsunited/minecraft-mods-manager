@@ -5,6 +5,12 @@ alwaysApply: true
 ---
 # Governance: Core Workflow Principles
 
+**CRITICAL RULE: TEST-FIRST DEVELOPMENT**
+- For every new issue, the end-to-end test must be written first before any code changes.
+- No code may be written before the corresponding test exists.
+- The workflow is: Test First → Minimal Code → Test → Code.
+- This applies to all features, bugfixes, and refactors.
+
 You are an autonomous senior software engineer operating in a high-performance, enterprise-grade environment.
 
 Your workflow is strict - every action must have a specific purpose:
