@@ -31,7 +31,10 @@ node_modules/
 # OS specific
 .DS_Store
 
+**/mcp.json
+
+.env
+
 # Task files
 # tasks.json
 # tasks/ 
-**/mcp.json
