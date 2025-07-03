@@ -2991,5 +2991,95 @@ if ($UpdateMods) {
     exit 0
 }
 
-# Handle other parameters (existing logic would go here)
-# For now, just handle UpdateMods to fix the test
+# Handle Download parameter
+if ($Download) {
+    Write-Host "Starting mod download process..." -ForegroundColor Yellow
+    if ($UseLatestVersion) {
+        Write-Host "Using latest versions for download..." -ForegroundColor Cyan
+        Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList
+        Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
+    } else {
+        Write-Host "Using current versions for download..." -ForegroundColor Cyan
+        Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
+    }
+    exit 0
+}
+
+# Handle DownloadMods parameter
+if ($DownloadMods) {
+    Write-Host "Starting mod download process..." -ForegroundColor Yellow
+    if ($UseLatestVersion) {
+        Write-Host "Using latest versions for download..." -ForegroundColor Cyan
+        Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList
+        Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
+    } else {
+        Write-Host "Using current versions for download..." -ForegroundColor Cyan
+        Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
+    }
+    exit 0
+}
+
+# Handle DownloadServer parameter
+if ($DownloadServer) {
+    Write-Host "Starting server files download process..." -ForegroundColor Yellow
+    Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload
+    exit 0
+}
+
+# Handle StartServer parameter
+if ($StartServer) {
+    Write-Host "Starting Minecraft server..." -ForegroundColor Yellow
+    Start-MinecraftServer -DownloadFolder $DownloadFolder
+    exit 0
+}
+
+# Handle AddServerStartScript parameter
+if ($AddServerStartScript) {
+    Write-Host "Adding server start script..." -ForegroundColor Yellow
+    Add-ServerStartScript -DownloadFolder $DownloadFolder
+    exit 0
+}
+
+# Handle AddMod parameters
+if ($AddMod -or $AddModId -or $AddModUrl) {
+    Write-Host "Adding new mod..." -ForegroundColor Yellow
+    Add-ModToDatabase -AddModId $AddModId -AddModUrl $AddModUrl -AddModName $AddModName -AddModLoader $AddModLoader -AddModGameVersion $AddModGameVersion -AddModType $AddModType -AddModGroup $AddModGroup -AddModDescription $AddModDescription -AddModJar $AddModJar -AddModUrlDirect $AddModUrlDirect -AddModCategory $AddModCategory -ForceDownload:$ForceDownload -CsvPath $effectiveModListPath
+    exit 0
+}
+
+# Handle ValidateAllModVersions parameter
+if ($ValidateAllModVersions) {
+    Write-Host "Starting mod validation process..." -ForegroundColor Yellow
+    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UseCachedResponses:$UseCachedResponses
+    exit 0
+}
+
+# Handle ValidateModVersion parameters
+if ($ValidateModVersion -and $ModId -and $Version) {
+    Write-Host "Validating specific mod version..." -ForegroundColor Yellow
+    Validate-ModVersion -ModId $ModId -Version $Version -Loader $Loader -ResponseFolder $ApiResponseFolder
+    exit 0
+}
+
+# Handle GetModList parameter
+if ($GetModList) {
+    Write-Host "Loading mod list..." -ForegroundColor Yellow
+    Get-ModList -CsvPath $effectiveModListPath
+    exit 0
+}
+
+# Handle ShowHelp parameter
+if ($ShowHelp) {
+    Show-Help
+    exit 0
+}
+
+# Default behavior when no parameters are provided
+Write-Host "Minecraft Mod Manager" -ForegroundColor Magenta
+Write-Host "====================" -ForegroundColor Magenta
+Write-Host ""
+Write-Host "No parameters provided. Running default validation and update..." -ForegroundColor Yellow
+Write-Host ""
+
+# Run the default behavior: validate and update mods
+Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList
