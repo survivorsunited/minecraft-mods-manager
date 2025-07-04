@@ -435,7 +435,7 @@ function Get-ModList {
         # Save updated records if any were modified
         if ($modifiedRecords.Count -gt 0) {
             $mods | Export-Csv -Path $CsvPath -NoTypeInformation
-            Write-Host "💾 Updated $($modifiedRecords.Count) records with new hash values" -ForegroundColor Cyan
+            # Write-Host "💾 Updated $($modifiedRecords.Count) records with new hash values" -ForegroundColor Cyan
         }
         
         return $mods
@@ -1397,7 +1397,19 @@ function Validate-AllModVersions {
     $totalMods = $modsToValidate.Count
     $currentMod = 0
     
-    Write-Host "Validating mod versions and saving API responses..." -ForegroundColor Yellow
+    # Comment out progress and extra summary headers
+    # Write-Host "Validating mod versions and saving API responses..." -ForegroundColor Yellow
+    # Write-Host "⬆️  Available Updates ($($modsWithUpdates.Count) mods):" -ForegroundColor Cyan
+    # Write-Host "💡 Run with -Download -UseLatestVersion to download updated mods" -ForegroundColor Green
+    # Write-Host "💡 Next Steps:" -ForegroundColor Cyan
+    # Write-Host "==============" -ForegroundColor Cyan
+    # Write-Host "⚠️  Some mods don't support latest version - you can test anyway!" -ForegroundColor Yellow
+    # Write-Host "   $($modsSupportingLatest.Count) mods support latest version" -ForegroundColor Green
+    # Write-Host "   $($modsNotSupportingLatest.Count) mods don't support latest version" -ForegroundColor Yellow
+    # Write-Host "🎉 Success!! You can now upgrade!" -ForegroundColor Green
+    # Write-Host "   All mods support the latest version" -ForegroundColor Green
+    # Write-Host "⬆️  $($modsWithUpdates.Count) mods have updates available" -ForegroundColor Cyan
+    # Write-Host "   Run with -Download -UseLatestVersion to download updated mods" -ForegroundColor Green
     
     foreach ($mod in $modsToValidate) {
         $currentMod++
@@ -1465,7 +1477,7 @@ function Validate-AllModVersions {
         
         # Log detailed info but don't show in terminal
         $logMessage = "[$currentMod/$totalMods] $($mod.Name) $currentVersion → $latestVersion $statusIcon"
-        Write-Host $logMessage -ForegroundColor DarkGray
+        # Write-Host $logMessage -ForegroundColor DarkGray
         
         $results += [PSCustomObject]@{
             Name = $mod.Name
@@ -1531,7 +1543,31 @@ function Validate-AllModVersions {
         $latestGameVersion = $result.LatestGameVersion ?? "unknown"
         
         # Determine target game version dynamically
-        $targetGameVersion = if ($result.LatestGameVersion) { $result.LatestGameVersion } else { "1.21.7" }
+        # Calculate Latest Game Version as GameVersion + 1 (not hardcoded)
+        # CRITICAL: Use GameVersion + 1, NOT the API's LatestGameVersion
+        $targetGameVersion = if ($result.LatestGameVersion) { 
+            # Calculate as GameVersion + 1 (e.g., 1.21.5 + 1 = 1.21.6)
+            $gameVersionParts = $DefaultGameVersion -split '\.'
+            if ($gameVersionParts.Count -ge 2) {
+                $major = [int]$gameVersionParts[0]
+                $minor = [int]$gameVersionParts[1]
+                $patch = if ($gameVersionParts.Count -ge 3) { [int]$gameVersionParts[2] } else { 0 }
+                "$major.$minor.$($patch + 1)"
+            } else {
+                $DefaultGameVersion
+            }
+        } else { 
+            # Calculate as GameVersion + 1 (e.g., 1.21.5 + 1 = 1.21.6)
+            $gameVersionParts = $DefaultGameVersion -split '\.'
+            if ($gameVersionParts.Count -ge 2) {
+                $major = [int]$gameVersionParts[0]
+                $minor = [int]$gameVersionParts[1]
+                $patch = if ($gameVersionParts.Count -ge 3) { [int]$gameVersionParts[2] } else { 0 }
+                "$major.$minor.$($patch + 1)"
+            } else {
+                $DefaultGameVersion
+            }
+        }
         
         # Check if mod supports latest game version
         # A mod supports latest if its game version is >= target game version
@@ -1555,6 +1591,9 @@ function Validate-AllModVersions {
                 $supportsLatest = $latestGameVersion -eq $targetGameVersion
             }
         }
+        
+        # Debug output to understand the comparison
+        # Write-Host "DEBUG: $($result.Name) - API LatestGameVersion: $latestGameVersion, Target: $targetGameVersion, Supports: $supportsLatest" -ForegroundColor Gray
         
         # Check if mod has version updates available
         $hasUpdates = $currentVersion -ne $latestVersion -and -not [string]::IsNullOrEmpty($latestVersion)
@@ -1584,86 +1623,73 @@ function Validate-AllModVersions {
     Write-Host "📊 Update Summary:" -ForegroundColor Cyan
     Write-Host "=================" -ForegroundColor Cyan
     Write-Host "   🎯 Supporting latest version: $($modsSupportingLatest.Count) mods" -ForegroundColor Green
-    Write-Host "   ⚠️  Not supporting latest version: $($modsNotSupportingLatest.Count) mods" -ForegroundColor Yellow
     Write-Host "   ⬆️  Have updates available: $($modsWithUpdates.Count) mods" -ForegroundColor Cyan
+    Write-Host "   ⚠️  Not supporting latest version: $($modsNotSupportingLatest.Count) mods" -ForegroundColor Yellow
     Write-Host "   ➖ Not updated: $($modsNotUpdated.Count) mods" -ForegroundColor Gray
     Write-Host "   🔄 Externally updated: $($modsExternallyUpdated.Count) mods" -ForegroundColor Blue
     Write-Host "   ❌ Not found: $($modsNotFound.Count) mods" -ForegroundColor Red
     Write-Host "   ⚠️  Errors: $($modsWithErrors.Count) mods" -ForegroundColor Red
     
+    # Comment out all extra summary headers and verbose output
     # Show mods that don't support latest version
-    if ($modsNotSupportingLatest.Count -gt 0) {
-        Write-Host ""
-        Write-Host "⚠️  Mods not supporting latest version ($($modsNotSupportingLatest.Count) mods):" -ForegroundColor Yellow
-        Write-Host "===============================================" -ForegroundColor Yellow
-        foreach ($mod in $modsNotSupportingLatest) {
-            $currentVersion = $mod.ExpectedVersion ?? "none"
-            $latestVersion = $mod.LatestVersion ?? "unknown"
-            $gameVersion = $mod.LatestGameVersion ?? "unknown"
-            Write-Host "   $($mod.Name): $currentVersion → $latestVersion (Game: $gameVersion)" -ForegroundColor Yellow
-        }
-    }
+    # if ($modsNotSupportingLatest.Count -gt 0) {
+    #     Write-Host ""
+    #     Write-Host "⚠️  Mods not supporting latest version ($($modsNotSupportingLatest.Count) mods):" -ForegroundColor Yellow
+    # }
     
     # Show available updates
-    if ($modsWithUpdates.Count -gt 0) {
-        Write-Host ""
-        Write-Host "⬆️  Available Updates ($($modsWithUpdates.Count) mods):" -ForegroundColor Cyan
-        Write-Host "================================" -ForegroundColor Cyan
-        foreach ($mod in $modsWithUpdates) {
-            $currentVersion = $mod.ExpectedVersion ?? "none"
-            $latestVersion = $mod.LatestVersion ?? "unknown"
-            Write-Host "   $($mod.Name): $currentVersion → $latestVersion" -ForegroundColor Cyan
-        }
-        Write-Host ""
-        Write-Host "💡 Run with -Download -UseLatestVersion to download updated mods" -ForegroundColor Green
-    }
+    # if ($modsWithUpdates.Count -gt 0) {
+    #     Write-Host ""
+    #     Write-Host "⬆️  Available Updates ($($modsWithUpdates.Count) mods):" -ForegroundColor Cyan
+    #     Write-Host "💡 Run with -Download -UseLatestVersion to download updated mods" -ForegroundColor Green
+    # }
     
     # Show mods not found
-    if ($modsNotFound.Count -gt 0) {
-        Write-Host "❌ Mods Not Found:" -ForegroundColor Red
-        Write-Host "==================" -ForegroundColor Red
-        foreach ($mod in $modsNotFound) {
-            Write-Host ("  {0} (ID: {1}, Host: {2})" -f $mod.Name, $mod.ID, $mod.Host) -ForegroundColor Red
-        }
-        Write-Host ""
-    }
+    # if ($modsNotFound.Count -gt 0) {
+    #     Write-Host "❌ Mods Not Found:" -ForegroundColor Red
+    #     Write-Host "==================" -ForegroundColor Red
+    #     foreach ($mod in $modsNotFound) {
+    #         Write-Host ("  {0} (ID: {1}, Host: {2})" -f $mod.Name, $mod.ID, $mod.Host) -ForegroundColor Red
+    #     }
+    #     Write-Host ""
+    # }
     
     # Show mods with errors
-    if ($modsWithErrors.Count -gt 0) {
-        Write-Host "⚠️  Mods with Errors:" -ForegroundColor Red
-        Write-Host "====================" -ForegroundColor Red
-        foreach ($mod in $modsWithErrors) {
-            Write-Host ("  {0}: {1}" -f $mod.Name, $mod.Error) -ForegroundColor Red
-        }
-        Write-Host ""
-    }
+    # if ($modsWithErrors.Count -gt 0) {
+    #     Write-Host "⚠️  Mods with Errors:" -ForegroundColor Red
+    #     Write-Host "====================" -ForegroundColor Red
+    #     foreach ($mod in $modsWithErrors) {
+    #         Write-Host ("  {0}: {1}" -f $mod.Name, $mod.Error) -ForegroundColor Red
+    #     }
+    #     Write-Host ""
+    # }
     
     # Show actionable next steps
-    Write-Host ""
-    Write-Host "💡 Next Steps:" -ForegroundColor Cyan
-    Write-Host "==============" -ForegroundColor Cyan
+    # Write-Host ""
+    # Write-Host "💡 Next Steps:" -ForegroundColor Cyan
+    # Write-Host "==============" -ForegroundColor Cyan
     
-    if ($modsNotSupportingLatest.Count -gt 0) {
-        Write-Host "⚠️  Some mods don't support latest version - you can test anyway!" -ForegroundColor Yellow
-        Write-Host "   $($modsSupportingLatest.Count) mods support latest version" -ForegroundColor Green
-        Write-Host "   $($modsNotSupportingLatest.Count) mods don't support latest version" -ForegroundColor Yellow
-    } else {
-        Write-Host "🎉 Success!! You can now upgrade!" -ForegroundColor Green
-        Write-Host "   All mods support the latest version" -ForegroundColor Green
-    }
+    # if ($modsNotSupportingLatest.Count -gt 0) {
+    #     Write-Host "⚠️  Some mods don't support latest version - you can test anyway!" -ForegroundColor Yellow
+    #     Write-Host "   $($modsSupportingLatest.Count) mods support latest version" -ForegroundColor Green
+    #     Write-Host "   $($modsNotSupportingLatest.Count) mods don't support latest version" -ForegroundColor Yellow
+    # } else {
+    #     Write-Host "🎉 Success!! You can now upgrade!" -ForegroundColor Green
+    #     Write-Host "   All mods support the latest version" -ForegroundColor Green
+    # }
     
-    if ($modsWithUpdates.Count -gt 0) {
-        Write-Host ""
-        Write-Host "⬆️  $($modsWithUpdates.Count) mods have updates available" -ForegroundColor Cyan
-        Write-Host "   Run with -Download -UseLatestVersion to download updated mods" -ForegroundColor Green
-    }
+    # if ($modsWithUpdates.Count -gt 0) {
+    #     Write-Host ""
+    #     Write-Host "⬆️  $($modsWithUpdates.Count) mods have updates available" -ForegroundColor Cyan
+    #     Write-Host "   Run with -Download -UseLatestVersion to download updated mods" -ForegroundColor Green
+    # }
     
-    Write-Host ""
+    # Write-Host ""
     
     # Update modlist with latest versions if requested
     if ($UpdateModList) {
-        Write-Host "Updating modlist with latest versions and URLs..." -ForegroundColor Yellow
-        Write-Host ""
+        # Write-Host "Updating modlist with latest versions and URLs..." -ForegroundColor Yellow
+        # Write-Host ""
         
         # Load current modlist
         $currentMods = Get-ModList -CsvPath $effectiveModListPath
@@ -1796,73 +1822,71 @@ function Validate-AllModVersions {
                     $hasChanges = $false
                     if ($result.LatestVersion -ne $originalMod.LatestVersion) { 
                         $hasChanges = $true 
-                        Write-Host "DEBUG: $($result.ID) LatestVersion changed: '$($originalMod.LatestVersion)' -> '$($result.LatestVersion)'" -ForegroundColor Cyan
+                        # Comment out progress and debug output
+                        # Write-Host "DEBUG: $($result.ID) LatestVersion changed: '$($originalMod.LatestVersion)' -> '$($result.LatestVersion)'" -ForegroundColor Cyan
                     }
                     if ($result.VersionUrl -ne $originalMod.VersionUrl) { 
                         $hasChanges = $true 
-                        Write-Host "DEBUG: $($result.ID) VersionUrl changed: '$($originalMod.VersionUrl)' -> '$($result.VersionUrl)'" -ForegroundColor Cyan
+                        # Comment out progress and debug output
+                        # Write-Host "DEBUG: $($result.ID) VersionUrl changed: '$($originalMod.VersionUrl)' -> '$($result.VersionUrl)'" -ForegroundColor Cyan
                     }
                     if ($result.LatestVersionUrl -ne $originalMod.LatestVersionUrl) { 
                         $hasChanges = $true 
-                        Write-Host "DEBUG: $($result.ID) LatestVersionUrl changed: '$($originalMod.LatestVersionUrl)' -> '$($result.LatestVersionUrl)'" -ForegroundColor Cyan
+                        # Comment out progress and debug output
+                        # Write-Host "DEBUG: $($result.ID) LatestVersionUrl changed: '$($originalMod.LatestVersionUrl)' -> '$($result.LatestVersionUrl)'" -ForegroundColor Cyan
                     }
                     # Normalize remaining fields to empty string for comparison
-                    $origIconUrl = if ($originalMod.IconUrl) { $originalMod.IconUrl } else { "" }
-                    $resIconUrl = if ($result.IconUrl) { $result.IconUrl } else { "" }
-                    $origClientSide = if ($originalMod.ClientSide) { $originalMod.ClientSide } else { "" }
-                    $resClientSide = if ($result.ClientSide) { $result.ClientSide } else { "" }
-                    $origServerSide = if ($originalMod.ServerSide) { $originalMod.ServerSide } else { "" }
-                    $resServerSide = if ($result.ServerSide) { $result.ServerSide } else { "" }
-                    $origTitle = if ($originalMod.Title) { $originalMod.Title } else { "" }
-                    $resTitle = if ($result.Title) { $result.Title } else { "" }
-                    $origProjectDescription = if ($originalMod.ProjectDescription) { $originalMod.ProjectDescription } else { "" }
-                    $resProjectDescription = if ($result.ProjectDescription) { $result.ProjectDescription } else { "" }
-                    $origIssuesUrl = if ($originalMod.IssuesUrl) { $originalMod.IssuesUrl } else { "" }
-                    $resIssuesUrl = if ($result.IssuesUrl) { $result.IssuesUrl } else { "" }
-                    $origSourceUrl = if ($originalMod.SourceUrl) { $originalMod.SourceUrl } else { "" }
-                    $resSourceUrl = if ($result.SourceUrl) { $result.SourceUrl } else { "" }
-                    $origWikiUrl = if ($originalMod.WikiUrl) { $originalMod.WikiUrl } else { "" }
-                    $resWikiUrl = if ($result.WikiUrl) { $result.WikiUrl } else { "" }
-                    $origLatestGameVersion = if ($originalMod.LatestGameVersion) { $originalMod.LatestGameVersion } else { "" }
-                    $resLatestGameVersion = if ($result.LatestGameVersion) { $result.LatestGameVersion } else { "" }
+                    $originalIconUrl = if ($originalMod.IconUrl) { $originalMod.IconUrl } else { "" }
+                    $resultIconUrl = if ($result.IconUrl) { $result.IconUrl } else { "" }
+                    if ($resultIconUrl -ne $originalIconUrl) { 
+                        $hasChanges = $true 
+                    }
                     
-                    if ($resIconUrl -ne $origIconUrl) { 
+                    $originalClientSide = if ($originalMod.ClientSide) { $originalMod.ClientSide } else { "" }
+                    $resultClientSide = if ($result.ClientSide) { $result.ClientSide } else { "" }
+                    if ($resultClientSide -ne $originalClientSide) { 
                         $hasChanges = $true 
                     }
-                    if ($resClientSide -ne $origClientSide) { 
-                        $hasChanges = $true 
-                    }
-                    if ($resServerSide -ne $origServerSide) { 
-                        $hasChanges = $true 
-                    }
-                    if ($resTitle -ne $origTitle) { 
-                        $hasChanges = $true 
-                    }
-                    if ($resProjectDescription -ne $origProjectDescription) { 
-                        $hasChanges = $true 
-                    }
-                    if ($resIssuesUrl -ne $origIssuesUrl) { 
-                        $hasChanges = $true 
-                    }
-                    if ($resSourceUrl -ne $origSourceUrl) { 
-                        $hasChanges = $true 
-                    }
-                    if ($resWikiUrl -ne $origWikiUrl) { 
-                        $hasChanges = $true 
-                    }
-                    if ($resLatestGameVersion -ne $origLatestGameVersion) { 
-                        $hasChanges = $true 
-                    }
-                    # Normalize dependency fields to empty string for comparison
-                    $origCurrentDeps = if ($originalMod.CurrentDependencies) { $originalMod.CurrentDependencies } else { "" }
-                    $resCurrentDeps = if ($result.CurrentDependencies) { $result.CurrentDependencies } else { "" }
-                    $origLatestDeps = if ($originalMod.LatestDependencies) { $originalMod.LatestDependencies } else { "" }
-                    $resLatestDeps = if ($result.LatestDependencies) { $result.LatestDependencies } else { "" }
                     
-                    if ($resCurrentDeps -ne $origCurrentDeps) { 
+                    $originalServerSide = if ($originalMod.ServerSide) { $originalMod.ServerSide } else { "" }
+                    $resultServerSide = if ($result.ServerSide) { $result.ServerSide } else { "" }
+                    if ($resultServerSide -ne $originalServerSide) { 
                         $hasChanges = $true 
                     }
-                    if ($resLatestDeps -ne $origLatestDeps) { 
+                    
+                    $originalTitle = if ($originalMod.Title) { $originalMod.Title } else { "" }
+                    $resultTitle = if ($result.Title) { $result.Title } else { "" }
+                    if ($resultTitle -ne $originalTitle) { 
+                        $hasChanges = $true 
+                    }
+                    
+                    $originalProjectDescription = if ($originalMod.ProjectDescription) { $originalMod.ProjectDescription } else { "" }
+                    $resultProjectDescription = if ($result.ProjectDescription) { $result.ProjectDescription } else { "" }
+                    if ($resultProjectDescription -ne $originalProjectDescription) { 
+                        $hasChanges = $true 
+                    }
+                    
+                    $originalIssuesUrl = if ($originalMod.IssuesUrl) { $originalMod.IssuesUrl } else { "" }
+                    $resultIssuesUrl = if ($result.IssuesUrl) { $result.IssuesUrl } else { "" }
+                    if ($resultIssuesUrl -ne $originalIssuesUrl) { 
+                        $hasChanges = $true 
+                    }
+                    
+                    $originalSourceUrl = if ($originalMod.SourceUrl) { $originalMod.SourceUrl } else { "" }
+                    $resultSourceUrl = if ($result.SourceUrl) { $result.SourceUrl } else { "" }
+                    if ($resultSourceUrl -ne $originalSourceUrl) { 
+                        $hasChanges = $true 
+                    }
+                    
+                    $originalWikiUrl = if ($originalMod.WikiUrl) { $originalMod.WikiUrl } else { "" }
+                    $resultWikiUrl = if ($result.WikiUrl) { $result.WikiUrl } else { "" }
+                    if ($resultWikiUrl -ne $originalWikiUrl) { 
+                        $hasChanges = $true 
+                    }
+                    
+                    $originalLatestGameVersion = if ($originalMod.LatestGameVersion) { $originalMod.LatestGameVersion } else { "" }
+                    $resultLatestGameVersion = if ($result.LatestGameVersion) { $result.LatestGameVersion } else { "" }
+                    if ($resultLatestGameVersion -ne $originalLatestGameVersion) { 
                         $hasChanges = $true 
                     }
                     
@@ -1872,17 +1896,13 @@ function Validate-AllModVersions {
                 }
             }
         }
-        $modsWithoutLatest = $results | Where-Object { -not $_.VersionExists }
         
-        if ($modsWithNewVersions.Count -gt 0) {
-            Write-Host "✅ Database updated: $($modsWithNewVersions.Count) mods updated to latest versions" -ForegroundColor Green
-        } else {
-            Write-Host "✅ Database updated: All mods already have latest version information" -ForegroundColor Green
-        }
-        
-        if ($modsWithoutLatest.Count -gt 0) {
-            Write-Host "⚠️  $($modsWithoutLatest.Count) mods do not have latest version available" -ForegroundColor Yellow
-        }
+        # Show final update summary (hidden for cleaner output)
+        # if ($modsWithNewVersions.Count -gt 0) {
+        #     Write-Host "✅ Database updated: $($modsWithNewVersions.Count) mods updated to latest versions" -ForegroundColor Green
+        # } else {
+        #     Write-Host "✅ Database updated: All mods already have latest version information" -ForegroundColor Green
+        # }
     }
     
     # Return summary for potential use by other functions
@@ -2545,7 +2565,7 @@ function Download-Mods {
                     $downloadVersion = $mod.LatestVersion
                     # For CurseForge mods, we still need to get the filename from API
                     if ($modHost -eq "curseforge") {
-                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                     }
                 } elseif ($mod.VersionUrl) {
                     $downloadUrl = $mod.VersionUrl
