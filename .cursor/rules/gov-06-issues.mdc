@@ -201,6 +201,64 @@ Any other relevant information
 - New requirements discovered during development must be added to issue
 - Issue must always match current implementation scope
 
+### MANDATORY: Read Before Update
+**CRITICAL RULE**: ALWAYS read the current ticket content BEFORE making any updates.
+
+**FORBIDDEN:**
+- ❌ Overwriting ticket content without reading it first
+- ❌ Replacing entire ticket body without checking existing content
+- ❌ Making assumptions about what's in the ticket
+
+**REQUIRED:**
+- ✅ Read current ticket content using `gh issue view [number]`
+- ✅ Understand existing requirements and acceptance criteria
+- ✅ Add new requirements to existing content, don't replace
+- ✅ Preserve all existing information when updating
+- ✅ Use `gh issue edit` to append or modify specific sections
+
+**Enforcement:**
+- Always run `gh issue view [number]` before `gh issue edit [number]`
+- Never overwrite entire ticket body without reading it first
+- Preserve all existing content and add new requirements
+- If ticket formatting is broken, fix formatting without losing content
+
+### MANDATORY: Ticket Backup System
+**CRITICAL RULE**: EVERY ticket read and update operation MUST be backed up to `.tasks/` folder.
+
+**FORBIDDEN:**
+- ❌ Reading tickets without creating backup
+- ❌ Updating tickets without creating backup
+- ❌ Losing ticket content due to overwrites
+
+**REQUIRED:**
+- ✅ Create backup file for EVERY ticket read: `.tasks/issue-{number}-{timestamp}-read.md`
+- ✅ Create backup file for EVERY ticket update: `.tasks/issue-{number}-{timestamp}-update.md`
+- ✅ Include full ticket content, metadata, and operation type in backup
+- ✅ Update backup log with operation details
+- ✅ Maintain one file per operation with unique timestamp
+
+**Backup File Format:**
+```markdown
+---
+operation: read|update
+timestamp: YYYY-MM-DDTHH:MM:SSZ
+issue_number: 123
+issue_title: "Title"
+labels: ["label1", "label2"]
+state: open|closed
+operation_details: "Description of what was done"
+---
+
+# Full ticket content here
+```
+
+**Enforcement:**
+- Every `gh issue view` must create a backup file
+- Every `gh issue edit` must create a backup file
+- Backup files must have unique timestamps
+- Backup log must track all operations
+- No ticket operation without backup
+
 ### Testing Integration
 - Create issues for test failures
 - Reference test files in issue descriptions
