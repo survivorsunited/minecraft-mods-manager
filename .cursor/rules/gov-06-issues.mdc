@@ -201,51 +201,53 @@ Any other relevant information
 - New requirements discovered during development must be added to issue
 - Issue must always match current implementation scope
 
-### MANDATORY: Read Before Update
-**CRITICAL RULE**: ALWAYS read the current ticket content BEFORE making any updates.
+### MANDATORY: Streamlined Ticket Workflow
+**CRITICAL RULE**: Use the automated ticket management scripts for ALL ticket operations.
 
 **FORBIDDEN:**
+- ❌ Manual `gh issue view` or `gh issue edit` commands
 - ❌ Overwriting ticket content without reading it first
 - ❌ Replacing entire ticket body without checking existing content
 - ❌ Making assumptions about what's in the ticket
+- ❌ Working without proper backups
 
 **REQUIRED:**
-- ✅ Read current ticket content using `gh issue view [number]`
+- ✅ Use `.\scripts\Read-Ticket.ps1 -IssueNumber X` to read tickets
+- ✅ Use `.\scripts\Update-Ticket.ps1 -IssueNumber X -BodyFile "path"` to update tickets
+- ✅ Use `.\scripts\Modify-Ticket.ps1 -IssueNumber X` for interactive editing
 - ✅ Understand existing requirements and acceptance criteria
-- ✅ Add new requirements to existing content, don't replace
 - ✅ Preserve all existing information when updating
-- ✅ Use `gh issue edit` to append or modify specific sections
+- ✅ Always create backups before any operation
 
 **Enforcement:**
-- Always run `gh issue view [number]` before `gh issue edit [number]`
+- Always use Read-Ticket.ps1 before making any changes
 - Never overwrite entire ticket body without reading it first
 - Preserve all existing content and add new requirements
-- If ticket formatting is broken, fix formatting without losing content
+- Use automated scripts for all ticket operations
 
-### MANDATORY: Ticket Backup System
-**CRITICAL RULE**: EVERY ticket read and update operation MUST be backed up to `.tasks/` folder.
+### MANDATORY: Dual Backup System
+**CRITICAL RULE**: Read-Ticket.ps1 creates BOTH read and update backup files immediately.
 
 **FORBIDDEN:**
-- ❌ Reading tickets without creating backup
+- ❌ Reading tickets without creating dual backups
 - ❌ Updating tickets without creating backup
 - ❌ Losing ticket content due to overwrites
+- ❌ Working without proper backup files
 
 **REQUIRED:**
-- ✅ Create backup file for EVERY ticket read: `.tasks/issue-{number}-{timestamp}-read.md`
-- ✅ Create backup file for EVERY ticket update: `.tasks/issue-{number}-{timestamp}-update.md`
+- ✅ Read-Ticket.ps1 creates: `.tasks/issue-{number}-{timestamp}-read.md`
+- ✅ Read-Ticket.ps1 creates: `.tasks/issue-{number}-{timestamp}-update.md`
+- ✅ Modify the update file directly for changes
+- ✅ Use Update-Ticket.ps1 with the modified update file
 - ✅ Include full ticket content, metadata, and operation type in backup
-- ✅ Update backup log with operation details
 - ✅ Maintain one file per operation with unique timestamp
 
 **Backup File Format:**
 ```markdown
 ---
 operation: read|update
-timestamp: YYYY-MM-DDTHH:MM:SSZ
+timestamp: YYYY-MM-DD_HHMMSS
 issue_number: 123
-issue_title: "Title"
-labels: ["label1", "label2"]
-state: open|closed
 operation_details: "Description of what was done"
 ---
 
@@ -253,11 +255,39 @@ operation_details: "Description of what was done"
 ```
 
 **Enforcement:**
-- Every `gh issue view` must create a backup file
-- Every `gh issue edit` must create a backup file
+- Read-Ticket.ps1 must create both read and update files
+- Update-Ticket.ps1 must strip metadata before writing to GitHub
 - Backup files must have unique timestamps
-- Backup log must track all operations
-- No ticket operation without backup
+- No ticket operation without proper backups
+- Always use the update file for modifications
+
+### MANDATORY: Ticket Workflow Process
+**CRITICAL RULE**: Follow the exact 3-step process for ALL ticket modifications.
+
+**Step 1: Read and Create Backup Files**
+```powershell
+$result = .\scripts\Read-Ticket.ps1 -IssueNumber X
+# Creates: issue-X-timestamp-read.md and issue-X-timestamp-update.md
+```
+
+**Step 2: Modify the Update File**
+```powershell
+# Edit the update file directly
+notepad .tasks\issue-X-timestamp-update.md
+# Or use VS Code: code .tasks\issue-X-timestamp-update.md
+```
+
+**Step 3: Update Ticket Using Modified File**
+```powershell
+.\scripts\Update-Ticket.ps1 -IssueNumber X -BodyFile ".tasks\issue-X-timestamp-update.md" -OperationDetails "Description"
+```
+
+**Enforcement:**
+- Always follow the 3-step process
+- Never skip the read step
+- Always modify the update file, not the read file
+- Always use Update-Ticket.ps1 with the modified file
+- Metadata is automatically stripped during update
 
 ### Testing Integration
 - Create issues for test failures
