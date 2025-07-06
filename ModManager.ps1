@@ -1544,20 +1544,21 @@ function Validate-AllModVersions {
         
         # Determine target game version dynamically
         # Calculate Latest Game Version as GameVersion + 1 (not hardcoded)
-        # CRITICAL: Use GameVersion + 1, NOT the API's LatestGameVersion
-        $targetGameVersion = if ($result.LatestGameVersion) { 
+        # CRITICAL: Use the mod's GameVersion + 1, NOT the API's LatestGameVersion
+        $modGameVersion = $result.GameVersion ?? $DefaultGameVersion
+        $targetGameVersion = if ($modGameVersion -and $modGameVersion -ne "unknown") { 
             # Calculate as GameVersion + 1 (e.g., 1.21.5 + 1 = 1.21.6)
-            $gameVersionParts = $DefaultGameVersion -split '\.'
+            $gameVersionParts = $modGameVersion -split '\.'
             if ($gameVersionParts.Count -ge 2) {
                 $major = [int]$gameVersionParts[0]
                 $minor = [int]$gameVersionParts[1]
                 $patch = if ($gameVersionParts.Count -ge 3) { [int]$gameVersionParts[2] } else { 0 }
                 "$major.$minor.$($patch + 1)"
             } else {
-                $DefaultGameVersion
+                $modGameVersion
             }
         } else { 
-            # Calculate as GameVersion + 1 (e.g., 1.21.5 + 1 = 1.21.6)
+            # Fallback to DefaultGameVersion + 1
             $gameVersionParts = $DefaultGameVersion -split '\.'
             if ($gameVersionParts.Count -ge 2) {
                 $major = [int]$gameVersionParts[0]
@@ -1618,10 +1619,36 @@ function Validate-AllModVersions {
         }
     }
     
+    # Find most common GameVersion in database to determine target
+    $gameVersions = $results | Where-Object { $_.GameVersion -and $_.GameVersion -ne "unknown" } | Select-Object -ExpandProperty GameVersion
+    $mostCommonGameVersion = if ($gameVersions) {
+        $gameVersionCounts = $gameVersions | Group-Object | Sort-Object Count -Descending
+        $gameVersionCounts[0].Name
+    } else {
+        $DefaultGameVersion
+    }
+    
+    # Calculate Latest Game Version as most common GameVersion + 1 (not hardcoded)
+    $gameVersionParts = $mostCommonGameVersion -split '\.'
+    if ($gameVersionParts.Count -ge 2) {
+        $major = [int]$gameVersionParts[0]
+        $minor = [int]$gameVersionParts[1]
+        $patch = if ($gameVersionParts.Count -ge 3) { [int]$gameVersionParts[2] } else { 0 }
+        $calculatedLatestGameVersion = "$major.$minor.$($patch + 1)"
+    } else {
+        $calculatedLatestGameVersion = $mostCommonGameVersion
+    }
+
+    # Collect all unique available game versions from the mods
+    $allAvailableGameVersions = $results | Where-Object { $_.LatestGameVersion -and $_.LatestGameVersion -ne "unknown" } | Select-Object -ExpandProperty LatestGameVersion -Unique | Sort-Object
+    $availableGameVersionsString = if ($allAvailableGameVersions) { $allAvailableGameVersions -join ", " } else { "unknown" }
+
     # Show summary with total counts
     Write-Host ""
     Write-Host "📊 Update Summary:" -ForegroundColor Cyan
     Write-Host "=================" -ForegroundColor Cyan
+    Write-Host "   🕹️  Latest Game Version: $calculatedLatestGameVersion" -ForegroundColor Cyan
+    Write-Host "   🗂️  Latest Available Game Versions: $availableGameVersionsString" -ForegroundColor Cyan
     Write-Host "   🎯 Supporting latest version: $($modsSupportingLatest.Count) mods" -ForegroundColor Green
     Write-Host "   ⬆️  Have updates available: $($modsWithUpdates.Count) mods" -ForegroundColor Cyan
     Write-Host "   ⚠️  Not supporting latest version: $($modsNotSupportingLatest.Count) mods" -ForegroundColor Yellow
