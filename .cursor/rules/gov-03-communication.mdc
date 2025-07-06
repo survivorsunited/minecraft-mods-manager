@@ -22,6 +22,14 @@ When a new task is given:
 - Execute immediately (purpose: maintain momentum)
 - Complete full workflow automatically (purpose: maintain development momentum)
 
+### Ticket Update Communication
+When updating tickets:
+- Use Read-Ticket.ps1 to create backup files
+- Modify the update file directly
+- Use Update-Ticket.ps1 to apply changes
+- Continue working immediately after update
+- Report: "Updated ticket #[X] with [description]"
+
 ### Idle State Management
 - **If no active task**: Prompt "What's next?"
 - **If working on tasks**: Continue autonomously through task list

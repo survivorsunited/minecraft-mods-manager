@@ -136,8 +136,8 @@ All project-specific rules, patterns, and requirements are defined in the Cursor
 **CRITICAL RULE**: NEVER stop working on tickets. Always be actively working on something.
 
 **SMART TICKET UPDATES:**
-- If user feedback relates to current ticket → Add to current ticket and continue working
-- If user feedback relates to existing ticket → Update that ticket and continue working  
+- If user feedback relates to current ticket → Use Read-Ticket.ps1 → Modify update file → Update-Ticket.ps1 → Continue working
+- If user feedback relates to existing ticket → Use Read-Ticket.ps1 → Modify update file → Update-Ticket.ps1 → Continue working  
 - If user feedback is new issue → Create new ticket and continue working
 - **ALWAYS resume work immediately** after ticket updates
 - **ALWAYS update ticket acceptance criteria** when adding new requirements
