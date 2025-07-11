@@ -103,8 +103,14 @@ Write-TestHeader "Test 4: Validate Latest Available Game Versions Field"
 $hasAvailableVersionsField = ($output -match 'Latest Available Game Versions:').Count -gt 0
 $hasAvailableVersionsContent = ($output -match 'Latest Available Game Versions:.*[0-9]').Count -gt 0
 
+# CRITICAL: Validate that AvailableGameVersions is actually populated (not just field name)
+$hasValidAvailableVersions = ($output -match 'Latest Available Game Versions:.*1\.21').Count -gt 0
+$noUnknownAvailableVersions = -not ($output -match 'Latest Available Game Versions: unknown')
+
 Write-TestResult "Latest Available Game Versions Field Present" $hasAvailableVersionsField
 Write-TestResult "Latest Available Game Versions Shows Content" $hasAvailableVersionsContent
+Write-TestResult "Latest Available Game Versions Shows Valid Data (1.21.x)" $hasValidAvailableVersions
+Write-TestResult "Latest Available Game Versions Not 'unknown'" $noUnknownAvailableVersions
 
 # Test 5: Validate Clean Output (No Verbose Lists Anywhere)
 Write-TestHeader "Test 5: Validate Clean Output (No Verbose Lists Anywhere)"
@@ -178,8 +184,23 @@ $hasMostCommonDetection = ($output -match 'Latest Game Version: 1\.21\.6').Count
 
 Write-TestResult "Most Common GameVersion Detection Works" $hasMostCommonDetection
 
-# Test 11: Validate Edge Cases - Mods with Errors
-Write-TestHeader "Test 11: Validate Edge Cases - Mods with Errors"
+# Test 11: Validate Fresh API Data (No Cached Responses)
+Write-TestHeader "Test 11: Validate Fresh API Data (No Cached Responses)"
+
+# Run without cached responses to ensure fresh API data is used
+$outputFresh = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestModListPath 2>&1
+
+# Validate that fresh API data populates AvailableGameVersions correctly
+$freshHasValidAvailableVersions = ($outputFresh -match 'Latest Available Game Versions:.*1\.21').Count -gt 0
+$freshNoUnknownAvailableVersions = -not ($outputFresh -match 'Latest Available Game Versions: unknown')
+$freshShowsLatestGameVersion = ($outputFresh -match 'Latest Game Version: 1\.21\.6').Count -gt 0
+
+Write-TestResult "Fresh API Data Shows Valid Available Versions" $freshHasValidAvailableVersions
+Write-TestResult "Fresh API Data Not 'unknown'" $freshNoUnknownAvailableVersions
+Write-TestResult "Fresh API Data Shows Correct Latest Game Version" $freshShowsLatestGameVersion
+
+# Test 12: Validate Edge Cases - Mods with Errors
+Write-TestHeader "Test 12: Validate Edge Cases - Mods with Errors"
 
 # Create a test modlist with a mod that will cause an error
 $TestModListWithErrorPath = Join-Path $TestOutputDir "test-modlist-error.csv"

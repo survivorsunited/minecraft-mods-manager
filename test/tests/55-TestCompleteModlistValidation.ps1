@@ -15,8 +15,10 @@ $TestOutputDir = Get-TestOutputFolder $TestFileName
 $script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
 
-# Use the REAL modlist.csv for comprehensive testing
+# TEST ISOLATION: Copy the real modlist.csv to a test output directory and use only the test copy
 $RealModListPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
+$TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
+Copy-Item -Path $RealModListPath -Destination $TestModListPath -Force
 
 Write-Host "Minecraft Mod Manager - Complete Modlist Validation Tests" -ForegroundColor $Colors.Header
 Write-Host "=========================================================" -ForegroundColor $Colors.Header
@@ -24,11 +26,11 @@ Write-Host "=========================================================" -Foregrou
 # Test 1: Validate Real Modlist Structure
 Write-TestHeader "Test 1: Validate Real Modlist Structure"
 
-# Load the real modlist
-$realMods = Import-Csv -Path $RealModListPath
+# Load the test modlist (not the real one)
+$realMods = Import-Csv -Path $TestModListPath
 $totalMods = $realMods.Count
 
-Write-Host "  Total mods in real modlist: $totalMods" -ForegroundColor Gray
+Write-Host "  Total mods in test modlist: $totalMods" -ForegroundColor Gray
 
 # Validate required columns exist
 $requiredColumns = @("GameVersion", "LatestGameVersion", "LatestVersion", "ID", "Name", "Host")
@@ -124,8 +126,8 @@ Write-TestResult "All Mods Have Valid Latest Game Version Calculation" $allModsH
 # Test 4: Run Update Summary on Real Modlist
 Write-TestHeader "Test 4: Run Update Summary on Real Modlist"
 
-# Capture the actual output from ModManager with real modlist
-$output = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $RealModListPath -UseCachedResponses 2>&1
+# Capture the actual output from ModManager with test modlist
+$output = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestModListPath -UseCachedResponses 2>&1
 
 # Save output for analysis
 $output | Out-File -FilePath (Join-Path $TestOutputDir "real-modlist-update-output.log") -Encoding UTF8
@@ -244,7 +246,7 @@ Write-TestResult "All Mods Follow GameVersion + 1 Logic" $allModsHaveCorrectLogi
 Write-TestHeader "Test 9: Validate Consecutive Run Consistency"
 
 # Run the command again to test consecutive behavior
-$output2 = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $RealModListPath -UseCachedResponses 2>&1
+$output2 = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestModListPath -UseCachedResponses 2>&1
 
 # Save second run output
 $output2 | Out-File -FilePath (Join-Path $TestOutputDir "real-modlist-update-output-run2.log") -Encoding UTF8
