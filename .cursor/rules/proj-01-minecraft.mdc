@@ -1,13 +1,95 @@
 ---
-description: 
-globs: 
 alwaysApply: true
 ---
+
 # Project: Minecraft Mods Manager Overview
 
 ## Core Architecture
 
 The Minecraft Mods Manager is a PowerShell-based tool for managing Minecraft mods, modpacks, and server files. The main entry point is [ModManager.ps1](mdc:ModManager.ps1), which provides a comprehensive CLI for mod management operations.
+
+## Scalable Provider Structure
+
+### Complete Folder Organization
+```
+src/
+├── Core/                                    # Core system functions
+│   ├── Environment/                         # Environment and configuration
+│   │   └── Load-EnvironmentVariables.ps1
+│   └── Paths/                               # Path management and resolution
+│       ├── Get-ApiResponsePath.ps1
+│       └── Get-EffectiveModListPath.ps1
+├── Database/                                # Database operations and management
+│   ├── Operations/                          # General database operations
+│   │   ├── Get-ModList.ps1
+│   │   ├── Ensure-CsvColumns.ps1
+│   │   ├── Get-BackupPath.ps1
+│   │   └── Clean-SystemEntries.ps1
+│   └── CSV/                                 # CSV-specific CRUD operations
+│       ├── Read.ps1
+│       ├── Create.ps1
+│       ├── Update.ps1
+│       ├── Delete.ps1
+│       └── Validation/                      # CSV data validation
+│           ├── Validate-ModRecord.ps1
+│           └── Validate-CsvStructure.ps1
+├── Validation/                              # Data validation functions
+│   ├── Hash/                                # Hash validation and testing
+│   │   ├── Test-FileHash.ps1
+│   │   └── Test-RecordHash.ps1
+│   └── Mod/                                 # Mod-specific validation
+│       └── Validate-AllModVersions.ps1
+├── Data/                                    # Data processing and transformation
+│   ├── Version/                             # Version processing functions
+│   │   ├── Normalize-Version.ps1
+│   │   ├── Filter-RelevantGameVersions.ps1
+│   │   ├── Calculate-LatestGameVersionFromAvailableVersions.ps1
+│   │   └── Get-MajorityGameVersion.ps1
+│   ├── Dependencies/                        # Dependency processing functions
+│   │   └── Convert-DependenciesToJson.ps1
+│   └── Utility/                             # General utility functions
+│       └── Set-Equals.ps1
+├── File/                                    # File operations and utilities
+│   ├── Clean-Filename.ps1
+│   ├── Calculate-FileHash.ps1
+│   └── Calculate-RecordHash.ps1
+├── Download/                                # Download orchestration
+│   ├── Mods/                                # Mod download management
+│   │   └── Download-Mods.ps1
+│   ├── Modpack/                             # Modpack download management
+│   │   └── Download-Modpack.ps1
+│   └── Server/                              # Server file download management
+│       └── Download-ServerFiles.ps1
+├── Display/                                 # User interface and output
+│   ├── Show-Help.ps1
+│   └── Reporting/                           # Report generation
+│       └── Write-DownloadReadme.ps1
+└── Provider/                                # External API providers (auto-discovered)
+    ├── Common.ps1                           # Shared provider functionality
+    ├── Modrinth/                            # Modrinth API provider
+    │   ├── Read.ps1
+    │   └── Validate.ps1
+    ├── CurseForge/                          # CurseForge API provider
+    │   ├── Read.ps1
+    │   └── Validate.ps1
+    ├── Mojang/                              # Mojang API provider
+    │   └── Read.ps1
+    └── Fabric/                              # Fabric API provider
+        └── Read.ps1
+```
+
+### Key Design Principles
+- **ONE FILE PER CONTEXT**: Each file has a single responsibility
+- **AUTO-DISCOVERY**: Provider/Common.ps1 can discover all provider folders
+- **CRUD STRUCTURE**: Database/CSV follows Create/Read/Update/Delete pattern
+- **LOGICAL GROUPING**: Related functions are grouped in subfolders
+- **SEPARATION OF CONCERNS**: Clear boundaries between different types of operations
+
+### Provider URLs
+- **Fabric**: https://meta.fabricmc.net
+- **Modrinth**: https://modrinth.com  
+- **Mojang**: https://piston-data.mojang.com
+- **CurseForge**: https://www.curseforge.com
 
 ## Current Project Status
 
@@ -132,6 +214,234 @@ When working with this codebase, always reference the correct paths:
 - **Phase 1 Completion**: All core testing completed (Issues #3-6)
 - **Directory Creation**: ModManager now creates required directories automatically
 - **Test Isolation**: Improved test cleanup and isolation patterns
+- **GitHub Issues**: Comprehensive issue tracking for all development tasks
+- **Task List Streamlining**: Focused on high-level project status
+- **PowerShell Console**: Resolved PSReadLine and execution policy issues
+- **Commit Discipline**: Strict issue-based commit rules implemented
+- **Scalable Structure**: Provider-based architecture for easy expansion
+
+- **GitHub Issues**: Comprehensive issue tracking for all development tasks
+- **Task List Streamlining**: Focused on high-level project status
+- **PowerShell Console**: Resolved PSReadLine and execution policy issues
+- **Commit Discipline**: Strict issue-based commit rules implemented
+# Project: Minecraft Mods Manager Overview
+
+## Core Architecture
+
+The Minecraft Mods Manager is a PowerShell-based tool for managing Minecraft mods, modpacks, and server files. The main entry point is [ModManager.ps1](mdc:ModManager.ps1), which provides a comprehensive CLI for mod management operations.
+
+## Scalable Provider Structure
+
+### Complete Folder Organization
+```
+src/
+├── Core/                                    # Core system functions
+│   ├── Environment/                         # Environment and configuration
+│   │   └── Load-EnvironmentVariables.ps1
+│   └── Paths/                               # Path management and resolution
+│       ├── Get-ApiResponsePath.ps1
+│       └── Get-EffectiveModListPath.ps1
+├── Database/                                # Database operations and management
+│   ├── Operations/                          # General database operations
+│   │   ├── Get-ModList.ps1
+│   │   ├── Ensure-CsvColumns.ps1
+│   │   ├── Get-BackupPath.ps1
+│   │   └── Clean-SystemEntries.ps1
+│   └── CSV/                                 # CSV-specific CRUD operations
+│       ├── Read.ps1
+│       ├── Create.ps1
+│       ├── Update.ps1
+│       ├── Delete.ps1
+│       └── Validation/                      # CSV data validation
+│           ├── Validate-ModRecord.ps1
+│           └── Validate-CsvStructure.ps1
+├── Validation/                              # Data validation functions
+│   ├── Hash/                                # Hash validation and testing
+│   │   ├── Test-FileHash.ps1
+│   │   └── Test-RecordHash.ps1
+│   └── Mod/                                 # Mod-specific validation
+│       └── Validate-AllModVersions.ps1
+├── Data/                                    # Data processing and transformation
+│   ├── Version/                             # Version processing functions
+│   │   ├── Normalize-Version.ps1
+│   │   ├── Filter-RelevantGameVersions.ps1
+│   │   ├── Calculate-LatestGameVersionFromAvailableVersions.ps1
+│   │   └── Get-MajorityGameVersion.ps1
+│   ├── Dependencies/                        # Dependency processing functions
+│   │   └── Convert-DependenciesToJson.ps1
+│   └── Utility/                             # General utility functions
+│       └── Set-Equals.ps1
+├── File/                                    # File operations and utilities
+│   ├── Clean-Filename.ps1
+│   ├── Calculate-FileHash.ps1
+│   └── Calculate-RecordHash.ps1
+├── Download/                                # Download orchestration
+│   ├── Mods/                                # Mod download management
+│   │   └── Download-Mods.ps1
+│   ├── Modpack/                             # Modpack download management
+│   │   └── Download-Modpack.ps1
+│   └── Server/                              # Server file download management
+│       └── Download-ServerFiles.ps1
+├── Display/                                 # User interface and output
+│   ├── Show-Help.ps1
+│   └── Reporting/                           # Report generation
+│       └── Write-DownloadReadme.ps1
+└── Provider/                                # External API providers (auto-discovered)
+    ├── Common.ps1                           # Shared provider functionality
+    ├── Modrinth/                            # Modrinth API provider
+    │   ├── Read.ps1
+    │   └── Validate.ps1
+    ├── CurseForge/                          # CurseForge API provider
+    │   ├── Read.ps1
+    │   └── Validate.ps1
+    ├── Mojang/                              # Mojang API provider
+    │   └── Read.ps1
+    └── Fabric/                              # Fabric API provider
+        └── Read.ps1
+```
+
+### Key Design Principles
+- **ONE FILE PER CONTEXT**: Each file has a single responsibility
+- **AUTO-DISCOVERY**: Provider/Common.ps1 can discover all provider folders
+- **CRUD STRUCTURE**: Database/CSV follows Create/Read/Update/Delete pattern
+- **LOGICAL GROUPING**: Related functions are grouped in subfolders
+- **SEPARATION OF CONCERNS**: Clear boundaries between different types of operations
+
+### Provider URLs
+- **Fabric**: https://meta.fabricmc.net
+- **Modrinth**: https://modrinth.com  
+- **Mojang**: https://piston-data.mojang.com
+- **CurseForge**: https://www.curseforge.com
+
+## Current Project Status
+
+### Phase Status
+- **Phase 1: Core Testing** - ✅ COMPLETED (Issues #3-6)
+- **Phase 2: Feature Development** - 🔄 IN PROGRESS (Issues #21-26)
+- **Phase 3: Advanced Features** - ⏳ PENDING (Issues #27-32)
+- **Phase 4: Polish and Documentation** - ⏳ PENDING (Issue #33)
+
+### Issue Statistics
+- **Total Issues**: 34 (28 open, 6 closed)
+- **Current Focus**: Phase 2 - Feature Development
+- **Next Priority**: Issue #21 - Modrinth Dependency Detection
+
+## Key Components
+
+### Main Script
+- [ModManager.ps1](mdc:ModManager.ps1) - Primary entry point with CLI parameters and core functionality
+
+### Test Framework
+- [test/RunAllTests.ps1](mdc:test/RunAllTests.ps1) - Main test runner for the entire test suite
+- [test/TestFramework.ps1](mdc:test/TestFramework.ps1) - Shared test utilities and functions
+- [test/tests/](mdc:test/tests) - Individual test files (01-BasicFunctionality.ps1 through 17-TestErrorHandling.ps1)
+
+### CI/CD Pipeline
+- [.github/workflows/test.yml](mdc:.github/workflows/test.yml) - GitHub Actions workflow for automated testing
+- [test/GenerateTestSummary.ps1](mdc:test/GenerateTestSummary.ps1) - Generates test summary reports
+- [test/GenerateTestResults.ps1](mdc:test/GenerateTestResults.ps1) - Creates structured test results (JSON/CSV)
+- [test/CreateCompletionReport.ps1](mdc:test/CreateCompletionReport.ps1) - Pipeline completion reports
+
+## Critical Test Files
+
+### Phase 1 Test Coverage (Completed)
+- [test/tests/14-TestAddModFunctionality.ps1](mdc:test/tests/14-TestAddModFunctionality.ps1) - Add mod functionality testing
+- [test/tests/15-TestDeleteModFunctionality.ps1](mdc:test/tests/15-TestDeleteModFunctionality.ps1) - Delete mod functionality testing
+- [test/tests/16-TestEnvironmentVariables.ps1](mdc:test/tests/16-TestEnvironmentVariables.ps1) - Environment variable support testing
+- [test/tests/17-TestErrorHandling.ps1](mdc:test/tests/17-TestErrorHandling.ps1) - Error handling testing
+
+### Latest Mods Testing
+- [test/tests/12-TestLatestWithServer.ps1](mdc:test/tests/12-TestLatestWithServer.ps1) - **CRITICAL**: Tests downloading latest mods and server startup
+- [test/tests/10-TestLatest.ps1](mdc:test/tests/10-TestLatest.ps1) - Tests latest mod version workflows
+- [test/tests/09-TestCurrent.ps1](mdc:test/tests/09-TestCurrent.ps1) - Tests current mod version workflows
+
+### Server Testing
+- [test/tests/07-StartServerTests.ps1](mdc:test/tests/07-StartServerTests.ps1) - Server startup functionality tests
+- [test/tests/08-StartServerUnitTests.ps1](mdc:test/tests/08-StartServerUnitTests.ps1) - Server unit tests
+- [tools/start-server.ps1](mdc:tools/start-server.ps1) - Server startup script
+
+### Validation and Organization
+- [test/tests/05-ValidationTests.ps1](mdc:test/tests/05-ValidationTests.ps1) - File organization and validation tests
+- [test/tests/13-TestApiResponseOrganization.ps1](mdc:test/tests/13-TestApiResponseOrganization.ps1) - API response organization tests
+
+## Key Configuration Files
+
+- [modlist.csv](mdc:modlist.csv) - Main mod database with current and latest version information
+- [test/apiresponse/](mdc:test/apiresponse) - Cached API responses for testing
+- [test/apiresponse/mod-download-results.csv](mdc:test/apiresponse/mod-download-results.csv) - Download statistics
+- [TASK_LIST.md](mdc:TASK_LIST.md) - Project task tracking and status
+
+## Important Patterns
+
+### Latest Game Version Rule
+**CRITICAL**: Latest Game Version = GameVersion + 1
+- Current GameVersion in modlist: 1.21.5
+- Latest Game Version should be: 1.21.6
+- System should check majority of mods in database to determine most common GameVersion
+- Use GameVersion + 1 as the Latest Game Version
+- Check which mods don't support that Latest Game Version
+- **NEVER hardcode to 1.21.7 or any other version**
+
+### Test Isolation
+- Each test uses isolated download directories in `test/test-output/{TestName}/`
+- Tests should not interfere with the main `test/download/` folder
+- Use `$TestDownloadDir` parameter for isolated testing
+- Always clean up test artifacts after completion
+
+### ModManager Parameters
+- `-Download -UseLatestVersion` - Downloads latest mods to specified folder
+- `-DownloadMods` - Downloads current mods
+- `-UpdateMods` - Updates mod database to latest versions
+- `-DownloadServer` - Downloads server files
+- `-StartServer` - Starts Minecraft server
+- `-AddServerStartScript` - Adds server startup script
+- `-UseCachedResponses` - Uses cached API responses for faster testing
+
+### Test Artifacts
+- Test outputs go to `test/test-output/{TestName}/`
+- Logs are saved as `{TestName}.log`
+- Reports are saved as `{TestName}-test-report.txt`
+- Download folders contain mods and server files
+
+## Critical Issues to Watch
+
+1. **Folder Structure**: ModManager creates separate folders for different operations - ensure tests copy mods to server folders
+2. **Latest vs Current**: Use `-UpdateMods` before `-DownloadMods` to get latest versions
+3. **Test Isolation**: Always use isolated download directories to prevent test interference
+4. **Exit Codes**: Server startup tests expect exit code 1 for compatibility failures
+5. **API Caching**: Use `-UseCachedResponses` for faster testing
+6. **Directory Creation**: ModManager now creates required directories automatically
+7. **PowerShell Console**: Use `-NoProfile -ExecutionPolicy Bypass` for reliable script execution
+
+## Development Workflow
+
+1. **Local Testing**: Run `test/RunAllTests.ps1 -All` for full test suite
+2. **Individual Tests**: Run specific tests like `test/tests/12-TestLatestWithServer.ps1`
+3. **Pipeline**: Push to trigger automated testing across Windows/Linux/macOS
+4. **Artifacts**: Check GitHub Actions for comprehensive test artifacts and reports
+5. **Issue Management**: Create GitHub issues for bugs and features, track in [TASK_LIST.md](mdc:TASK_LIST.md)
+
+## File References
+
+When working with this codebase, always reference the correct paths:
+- Main script: `ModManager.ps1`
+- Test runner: `test/RunAllTests.ps1`
+- Latest mods test: `test/tests/12-TestLatestWithServer.ps1`
+- Test framework: `test/TestFramework.ps1`
+- Pipeline: `.github/workflows/test.yml`
+- Task list: `TASK_LIST.md`
+
+## Recent Improvements
+
+- **Phase 1 Completion**: All core testing completed (Issues #3-6)
+- **Directory Creation**: ModManager now creates required directories automatically
+- **Test Isolation**: Improved test cleanup and isolation patterns
+- **GitHub Issues**: Comprehensive issue tracking for all development tasks
+- **Task List Streamlining**: Focused on high-level project status
+- **PowerShell Console**: Resolved PSReadLine and execution policy issues
+- **Commit Discipline**: Strict issue-based commit rules implemented
+- **Scalable Structure**: Provider-based architecture for easy expansion
+
 - **GitHub Issues**: Comprehensive issue tracking for all development tasks
 - **Task List Streamlining**: Focused on high-level project status
 - **PowerShell Console**: Resolved PSReadLine and execution policy issues
