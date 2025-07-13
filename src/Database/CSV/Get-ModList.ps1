@@ -26,7 +26,7 @@ function Get-ModList {
                 $mod | Add-Member -MemberType NoteProperty -Name 'RecordHash' -Value $null
             }
             
-            $recordHash = Calculate-RecordHash -Record $mod
+            $recordHash = Calculate-RecordHash -Mod $mod
             
             # Check if record has been modified externally
             if ($mod.RecordHash -and $mod.RecordHash -ne $recordHash) {

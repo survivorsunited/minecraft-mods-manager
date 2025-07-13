@@ -63,10 +63,13 @@ function Add-ModToDatabase {
             return $false
         }
 
-        # Load existing mods
+        # Load existing mods - ensure it's always an array
         $mods = @()
         if (Test-Path $CsvPath) {
-            $mods = Import-Csv -Path $CsvPath
+            $importedMods = Import-Csv -Path $CsvPath
+            if ($importedMods) {
+                $mods = @($importedMods)
+            }
         }
 
         # Check if mod already exists
