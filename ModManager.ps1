@@ -55,8 +55,6 @@ param(
     [string]$ValidateModpack,
     [string]$ValidateType,
     [bool]$ResolveConflicts,
-    # GUI Interface
-    [switch]$Gui,
     # Advanced Server Management
     [switch]$MonitorServerPerformance,
     [int]$PerformanceSampleInterval,
