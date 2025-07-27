@@ -72,7 +72,7 @@ $Content
 "@
     
     try {
-        $backupContent | Out-File -FilePath $backupPath -Encoding UTF8
+        $backupContent | Out-File -FilePath $backupPath #-Encoding UTF8
         return $backupPath
     }
     catch {
@@ -96,15 +96,36 @@ function Read-GitHubTicket {
     param([int]$IssueNumber)
     
     try {
-        # Get the full issue content in JSON format, then extract the body
-        $jsonOutput = gh issue view $IssueNumber --json title,body,number,state,labels 2>&1
+        # Use temporary file to avoid PowerShell pipeline Unicode corruption
+        $tempFile = [System.IO.Path]::GetTempFileName()
         
-        if ($LASTEXITCODE -ne 0) {
-            throw "Failed to read issue #$IssueNumber. Exit code: $LASTEXITCODE"
+        # Write GitHub CLI output directly to temp file with UTF-8 encoding
+        $process = Start-Process -FilePath "gh" -ArgumentList "issue", "view", $IssueNumber, "--json", "title,body,number,state,labels" -RedirectStandardOutput $tempFile -RedirectStandardError "$tempFile.err" -NoNewWindow -Wait -PassThru
+        
+        if ($process.ExitCode -ne 0) {
+            Remove-Item $tempFile -ErrorAction SilentlyContinue
+            Remove-Item "$tempFile.err" -ErrorAction SilentlyContinue
+            throw "Failed to read issue #$IssueNumber. Exit code: $($process.ExitCode)"
+        }
+        
+        # Read from temp file and apply Unicode encoding fix
+        $rawContent = Get-Content $tempFile -Raw -Encoding UTF8
+        Remove-Item $tempFile -ErrorAction SilentlyContinue
+        
+        # Apply the Unicode encoding fix you showed me - convert from Default to UTF8
+        $jsonCorrected = [Text.Encoding]::UTF8.GetString([Text.Encoding]::Default.GetBytes($rawContent))
+        
+        # Validate JSON output
+        if ([string]::IsNullOrWhiteSpace($jsonCorrected)) {
+            throw "Empty response from GitHub CLI for issue #$IssueNumber"
         }
         
         # Parse JSON and extract the body content
-        $issueData = $jsonOutput | ConvertFrom-Json
+        $issueData = $jsonCorrected | ConvertFrom-Json -ErrorAction Stop
+        if (-not $issueData.body) {
+            throw "No body content found in issue #$IssueNumber"
+        }
+        
         return $issueData.body
     }
     catch {
@@ -116,7 +137,8 @@ function Read-GitHubTicket {
 try {
     # Validate GitHub CLI
     if (-not (Test-GitHubCLI)) {
-        return @{ Success = $false; IssueNumber = $IssueNumber; Content = $null; BackupPath = $null; Error = 'GitHub CLI not found'; }
+        Write-Error 'GitHub CLI not found'
+        return
     }
     
     # Initialize backup directory
@@ -124,6 +146,8 @@ try {
     
     # Read ticket content
     $ticketContent = Read-GitHubTicket -IssueNumber $IssueNumber
+
+    $ticketContent | Out-File -FilePath ".tasks\issue-56-2025-07-27_215924-update.txt" -Encoding UTF8
     
     # Create read backup
     $readBackupPath = New-TicketBackup -IssueNumber $IssueNumber -Operation "read" -Content $ticketContent -BackupDir $BackupDir -OperationDetails "Reading ticket content for review"
@@ -131,22 +155,9 @@ try {
     # Create update backup (same content, ready for modification)
     $updateBackupPath = New-TicketBackup -IssueNumber $IssueNumber -Operation "update" -Content $ticketContent -BackupDir $BackupDir -OperationDetails "Ready for modification"
     
-    # Return the content for potential further processing
-    return @{
-        IssueNumber = $IssueNumber
-        Content = $ticketContent
-        ReadBackupPath = $readBackupPath
-        UpdateBackupPath = $updateBackupPath
-        Success = $true
-        Error = $null
-    }
+    # Output only the update backup path
+    Write-Output $updateBackupPath
 }
 catch {
-    return @{
-        IssueNumber = $IssueNumber
-        Content = $null
-        BackupPath = $null
-        Success = $false
-        Error = $_.Exception.Message
-    }
+    Write-Error $_.Exception.Message
 } 

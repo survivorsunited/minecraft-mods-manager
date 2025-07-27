@@ -122,6 +122,42 @@ The scripts provide a **safe, documented workflow** for reading and updating Git
 
 **Purpose**: Wrapper script providing a clean interface for reading and updating tickets.
 
+### 5. `Get-Next-Ticket.ps1` - Next Ticket Finder
+
+**Purpose**: Automatically find the next ticket to work on with intelligent prioritization.
+
+**Functionality**:
+- Queries GitHub issues with automatic filtering
+- Prioritizes issues by priority labels and creation date
+- Filters by development phase and priority
+- Optionally reads the next ticket automatically
+- Returns structured result objects
+
+**Parameters**:
+- `-ReadTicket` (Optional): Automatically read the next ticket after finding it
+- `-Priority` (Optional): Filter by priority label (high-priority, medium-priority, low-priority)
+- `-Phase` (Optional): Filter by development phase (Phase 1, Phase 2, Phase 3, Phase 4)
+- `-Limit` (Optional): Number of tickets to return (default: 1)
+- `-BackupDir` (Optional): Backup directory (default: `.tasks/`)
+
+**Examples**:
+```powershell
+# Get next highest priority ticket
+.\Get-Next-Ticket.ps1
+
+# Get and read next ticket
+.\Get-Next-Ticket.ps1 -ReadTicket
+
+# Get next high-priority ticket from Phase 2
+.\Get-Next-Ticket.ps1 -Priority "high-priority" -Phase "Phase 2"
+
+# Get next 5 tickets to work on
+.\Get-Next-Ticket.ps1 -Limit 5
+
+# Get next medium priority tickets
+.\Get-Next-Ticket.ps1 -Priority "medium-priority" -Limit 3
+```
+
 **Functionality**:
 - Single script for both read and update operations
 - Validates parameters before execution

@@ -245,6 +245,7 @@ Any other relevant information
 - `scripts/tasks/Update-Ticket.ps1` - Update tickets with backup creation  
 - `scripts/tasks/Modify-Ticket.ps1` - Interactive ticket modification
 - `scripts/tasks/Get-Ticket.ps1` - Unified ticket manager
+- `scripts/tasks/Get-Next-Ticket.ps1` - Next ticket finder with prioritization
 
 **MANDATORY SCRIPT USAGE:**
 
@@ -294,6 +295,21 @@ Any other relevant information
 
 # Close ticket
 .\scripts\tasks\Get-Ticket.ps1 -IssueNumber 21 -Action "update" -State "closed" -OperationDetails "Closing completed issue"
+```
+
+### Get-Next-Ticket.ps1 - Next Ticket Finder
+```powershell
+# Get next highest priority ticket
+.\scripts\tasks\Get-Next-Ticket.ps1
+
+# Get and read next ticket
+.\scripts\tasks\Get-Next-Ticket.ps1 -ReadTicket
+
+# Get next high-priority ticket from Phase 2
+.\scripts\tasks\Get-Next-Ticket.ps1 -Priority "high-priority" -Phase "Phase 2"
+
+# Get next 5 tickets to work on
+.\scripts\tasks\Get-Next-Ticket.ps1 -Limit 5
 ```
 
 **FORBIDDEN:**

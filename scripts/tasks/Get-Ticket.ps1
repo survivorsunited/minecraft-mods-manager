@@ -91,15 +91,9 @@ function Write-ColorOutput {
     Write-Host $Message -ForegroundColor $Color
 }
 
-# Function to get script directory
+# Function to get script directory - simplified to use PSScriptRoot
 function Get-ScriptDirectory {
-    $scriptPath = $MyInvocation.MyCommand.Path
-    if ($scriptPath) {
-        return Split-Path -Parent $scriptPath
-    } else {
-        # Fallback to current directory if script path is not available
-        return Get-Location
-    }
+    return $PSScriptRoot
 }
 
 # Function to validate required parameters for update action
@@ -135,8 +129,8 @@ try {
     # Validate parameters
     Test-UpdateParameters
     
-    # Get script directory - use the scripts folder
-    $scriptDir = Join-Path (Get-Location) "scripts"
+    # Get script directory
+    $scriptDir = Get-ScriptDirectory
     
     if ($Action -eq "read") {
         # Read ticket
@@ -148,19 +142,29 @@ try {
         }
         
         $resultRaw = & pwsh -NoProfile -ExecutionPolicy Bypass -File $readScript -IssueNumber $IssueNumber -BackupDir $BackupDir
-        $result = $resultRaw | Select-Object -Last 1
+        $updateBackupPath = $resultRaw | Select-Object -First 1
         
-        if ($result.Success) {
+        if ($updateBackupPath -and (Test-Path $updateBackupPath)) {
             Write-ColorOutput "`n✓ Ticket read operation completed successfully" "Green"
-            Write-ColorOutput ("Backup file: " + $result.BackupPath) "Green"
+            Write-ColorOutput ("Update backup file: " + $updateBackupPath) "Green"
             Write-ColorOutput "`n=== Ticket Content ===" "Magenta"
-            $result.Content | Out-String | Write-Host
-            return $result
+            $content = Get-Content $updateBackupPath -Raw
+            $content | Out-String | Write-Host
+            return @{
+                IssueNumber = $IssueNumber
+                Success = $true
+                UpdateBackupPath = $updateBackupPath
+                Content = $content
+            }
         } else {
             Write-ColorOutput "`n=== Error Summary ===" "Red"
             Write-ColorOutput "✗ Failed to read ticket #$IssueNumber" "Red"
-            Write-ColorOutput ("Error: " + $result.Error) "Red"
-            return $result
+            Write-ColorOutput "Error: No valid backup file created" "Red"
+            return @{
+                IssueNumber = $IssueNumber
+                Success = $false
+                Error = "No valid backup file created"
+            }
         }
     }
     elseif ($Action -eq "update") {
@@ -186,7 +190,8 @@ try {
         if ($State) { $updateParams.State = $State }
         
         $resultRaw = & pwsh -NoProfile -ExecutionPolicy Bypass -File $updateScript @updateParams
-        $result = $resultRaw | Where-Object { $_.PSObject.Properties.Name -contains 'Success' } | Select-Object -Last 1
+        $json = $resultRaw -join ""
+        $result = $json | ConvertFrom-Json
         
         if ($result.Success) {
             Write-ColorOutput "`n✓ Ticket update operation completed successfully" "Green"
