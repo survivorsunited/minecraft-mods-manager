@@ -63,6 +63,30 @@ function Add-ModToDatabase {
             return $false
         }
 
+        # Extract ID from URL if not provided
+        if (-not $AddModId -and $AddModUrl) {
+            if ($AddModUrl -match "modrinth\.com/mod/([^/]+)") {
+                $AddModId = $matches[1]
+            } elseif ($AddModUrl -match "modrinth\.com/shader/([^/]+)") {
+                $AddModId = $matches[1]
+            } elseif ($AddModUrl -match "curseforge\.com/minecraft/mc-mods/([^/]+)") {
+                $AddModId = $matches[1]
+            } elseif ($AddModUrl -match "maven\.fabricmc\.net") {
+                # For Fabric installer URLs, use a system-specific ID with game version
+                $AddModId = "fabric-installer-$AddModGameVersion"
+            } elseif ($AddModUrl -match "meta\.fabricmc\.net") {
+                # For Fabric server launcher URLs, use a system-specific ID with game version
+                $AddModId = "fabric-server-launcher-$AddModGameVersion"
+            } elseif ($AddModUrl -match "piston-data\.mojang\.com") {
+                # For Mojang server URLs, use a system-specific ID with game version
+                $AddModId = "minecraft-server-$AddModGameVersion"
+            } else {
+                # For other URLs, generate a unique ID based on the URL
+                $urlHash = [System.Security.Cryptography.SHA256]::Create().ComputeHash([System.Text.Encoding]::UTF8.GetBytes($AddModUrl))
+                $AddModId = "system-" + [System.BitConverter]::ToString($urlHash).Replace("-", "").Substring(0, 8).ToLower()
+            }
+        }
+
         # Load existing mods - ensure it's always an array
         $mods = @()
         if (Test-Path $CsvPath) {
@@ -79,6 +103,38 @@ function Add-ModToDatabase {
             return $false
         }
 
+        # Extract version and name from URL if provided
+        $extractedVersion = ""
+        $extractedName = $AddModName
+        
+        if ($AddModUrl -and $AddModUrl -match "modrinth\.com") {
+            # For Modrinth URLs, try to get project info to extract name
+            $extractedVersion = "latest"
+            if (-not $AddModName) {
+                try {
+                    $projectInfo = Get-ModrinthProjectInfo -ProjectId $AddModId -UseCachedResponses $false
+                    if ($projectInfo -and $projectInfo.title) {
+                        $extractedName = $projectInfo.title
+                    }
+                } catch {
+                    # If API call fails, use ID as name
+                    $extractedName = $AddModId
+                }
+            }
+        } elseif ($AddModUrl -and $AddModUrl -match "curseforge\.com") {
+            # For CurseForge URLs, we'll set a default version that can be updated later
+            $extractedVersion = "latest"
+            if (-not $AddModName) {
+                $extractedName = $AddModId
+            }
+        } else {
+            # Default version for manual entries
+            $extractedVersion = "latest"
+            if (-not $AddModName) {
+                $extractedName = $AddModId
+            }
+        }
+
         # Create new mod entry
         $newMod = [PSCustomObject]@{
             Group = $AddModGroup
@@ -86,8 +142,8 @@ function Add-ModToDatabase {
             GameVersion = $AddModGameVersion
             ID = $AddModId
             Loader = $AddModLoader
-            Version = ""
-            Name = $AddModName
+            Version = $extractedVersion
+            Name = $extractedName
             Description = $AddModDescription
             Jar = $AddModJar
             Url = $AddModUrl
@@ -100,7 +156,7 @@ function Add-ModToDatabase {
             IconUrl = ""
             ClientSide = "optional"
             ServerSide = "optional"
-            Title = $AddModName
+            Title = $extractedName
             ProjectDescription = $AddModDescription
             IssuesUrl = ""
             SourceUrl = ""

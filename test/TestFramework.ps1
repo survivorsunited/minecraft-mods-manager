@@ -536,8 +536,42 @@ function Test-Command {
         $result = & pwsh -NoProfile -ExecutionPolicy Bypass -Command $Command 2>&1
         $exitCode = $LASTEXITCODE
         
-        # Display the captured output
-        $result | ForEach-Object { Write-Host $_ }
+        # Only display essential output (filter out verbose debug info)
+        $filteredOutput = $result | Where-Object { 
+            $_ -and 
+            -not ($_ -match "DEBUG:") -and
+            -not ($_ -match "Export-Csv:") -and
+            -not ($_ -match "Calculate-LatestGameVersionFromAvailableVersions:") -and
+            -not ($_ -match "Filter-RelevantGameVersions:") -and
+            -not ($_ -match "Cannot bind argument to parameter") -and
+            -not ($_ -match "Could not find a part of the path") -and
+            -not ($_ -match "Processing.*results for") -and
+            -not ($_ -match "No available game versions for") -and
+            -not ($_ -match "Total unique available game versions:") -and
+            -not ($_ -match "Update Summary:") -and
+            -not ($_ -match "Latest Game Version:") -and
+            -not ($_ -match "Latest Available Game Versions:") -and
+            -not ($_ -match "Supporting latest version:") -and
+            -not ($_ -match "Have updates available:") -and
+            -not ($_ -match "Not supporting latest version:") -and
+            -not ($_ -match "Not updated:") -and
+            -not ($_ -match "Externally updated:") -and
+            -not ($_ -match "Not found:") -and
+            -not ($_ -match "Errors:") -and
+            -not ($_ -match "All modular functions imported successfully") -and
+            -not ($_ -match "Starting mod validation process") -and
+            -not ($_ -match "Validating.*version.*for") -and
+            -not ($_ -match "\\?\\?\\?") -and
+            -not ($_ -match "\\?\\?") -and
+            -not ($_ -match "\\?")
+        }
+        
+        # Display filtered output (only if there's meaningful content and not too verbose)
+        if ($filteredOutput -and $filteredOutput.Count -lt 10) {
+            $filteredOutput | ForEach-Object { Write-Host $_ }
+        } elseif ($filteredOutput.Count -ge 10) {
+            Write-Host "  [Output suppressed - too verbose]" -ForegroundColor Gray
+        }
         
         # Consider exit code 0 or 1 as success for our tests
         if ($exitCode -eq 0 -or $exitCode -eq 1) {

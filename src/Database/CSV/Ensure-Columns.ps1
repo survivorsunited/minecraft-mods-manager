@@ -36,6 +36,12 @@ function Ensure-CsvColumns {
         $mods = Import-Csv -Path $CsvPath
         if ($mods -isnot [System.Collections.IEnumerable]) { $mods = @($mods) }
         
+        # Handle empty CSV file
+        if (-not $mods -or $mods.Count -eq 0) {
+            Write-Host "📝 CSV file is empty, creating with required columns" -ForegroundColor Yellow
+            $mods = @()
+        }
+        
         # Define required columns
         $requiredColumns = @(
             "ID", "Name", "Type", "Loader", "GameVersion", "Version", "Jar", "Url", "UrlDirect",
@@ -47,10 +53,15 @@ function Ensure-CsvColumns {
         
         # Check if any required columns are missing
         $missingColumns = @()
-        foreach ($column in $requiredColumns) {
-            if (-not ($mods[0].PSObject.Properties.Match($column).Count)) {
-                $missingColumns += $column
+        if ($mods.Count -gt 0) {
+            foreach ($column in $requiredColumns) {
+                if (-not ($mods[0].PSObject.Properties.Match($column).Count)) {
+                    $missingColumns += $column
+                }
             }
+        } else {
+            # If CSV is empty, all columns are missing
+            $missingColumns = $requiredColumns
         }
         
         # Add missing columns with default values

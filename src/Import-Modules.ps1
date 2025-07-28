@@ -27,14 +27,20 @@
 . "$PSScriptRoot\Database\CSV\Clean-SystemEntries.ps1"
 . "$PSScriptRoot\Database\CSV\Update-WithLatestVersions.ps1"
 . "$PSScriptRoot\Database\Operations\Add-ModToDatabase.ps1"
+. "$PSScriptRoot\Database\Operations\Delete-ModFromDatabase.ps1"
 
-# API modules
-. "$PSScriptRoot\API\Modrinth\Get-ProjectInfo.ps1"
-. "$PSScriptRoot\API\Modrinth\Validate-ModVersion.ps1"
-. "$PSScriptRoot\API\CurseForge\Validate-ModVersion.ps1"
+# Provider modules (consolidated from API folder)
+. "$PSScriptRoot\Provider\Common.ps1"
+. "$PSScriptRoot\Provider\Modrinth\Get-ModrinthProjectInfo.ps1"
+. "$PSScriptRoot\Provider\Modrinth\Validate-ModrinthModVersion.ps1"
+. "$PSScriptRoot\Provider\CurseForge\Get-CurseForgeProjectInfo.ps1"
+. "$PSScriptRoot\Provider\CurseForge\Get-CurseForgeFileInfo.ps1"
+. "$PSScriptRoot\Provider\CurseForge\Validate-CurseForgeModVersion.ps1"
+. "$PSScriptRoot\Provider\Mojang\Get-MojangServerInfo.ps1"
+. "$PSScriptRoot\Provider\Fabric\Get-FabricLoaderInfo.ps1"
 
 # Download modules
-. "$PSScriptRoot\Download\Mod\Download-Mods.ps1"
+. "$PSScriptRoot\Download\Mods\Download-Mods.ps1"
 . "$PSScriptRoot\Download\Modpack\Download-Modpack.ps1"
 . "$PSScriptRoot\Download\Server\Download-ServerFiles.ps1"
 . "$PSScriptRoot\Download\Server\Start-MinecraftServer.ps1"
@@ -50,10 +56,6 @@
 . "$PSScriptRoot\Display\Summary\Show-VersionSummary.ps1"
 . "$PSScriptRoot\Display\Summary\Write-DownloadReadme.ps1"
 
-# Provider modules
-. "$PSScriptRoot\Provider\CurseForge\Get-CurseForgeProjectInfo.ps1"
-. "$PSScriptRoot\Provider\CurseForge\Get-CurseForgeFileInfo.ps1"
-. "$PSScriptRoot\Provider\CurseForge\Validate-CurseForgeModVersion.ps1"
-. "$PSScriptRoot\Provider\Fabric\Get-FabricLoaderInfo.ps1"
+
 
 Write-Host "✅ All modular functions imported successfully" -ForegroundColor Green 

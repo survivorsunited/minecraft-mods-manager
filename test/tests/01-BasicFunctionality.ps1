@@ -15,18 +15,15 @@ Initialize-TestEnvironment $TestFileName
 # Helper to get the full path to ModManager.ps1
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 
-# Add this at the top after importing the test framework:
+# Set up isolated paths
 $TestOutputDir = Get-TestOutputFolder $TestFileName
 $script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
+$TestDbPath = Join-Path $TestOutputDir "run-test-cli.csv"
 
-# DEBUG: Show the exact paths being used
-Write-Host "DEBUG PATHS:" -ForegroundColor Red
-Write-Host "TestFileName: $TestFileName" -ForegroundColor Red
-Write-Host "TestOutputDir: $TestOutputDir" -ForegroundColor Red
-Write-Host "TestApiResponseDir: $script:TestApiResponseDir" -ForegroundColor Red
-Write-Host "TestDownloadDir: $TestDownloadDir" -ForegroundColor Red
-Write-Host "DEBUG PATHS END" -ForegroundColor Red
+# Create necessary directories
+New-Item -ItemType Directory -Path $script:TestApiResponseDir -Force | Out-Null
+New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
 
 # Test 1: Basic help command
 Write-TestHeader "Help Command"
@@ -46,31 +43,31 @@ Test-Command "& '$ModManagerPath' -AddMod -AddModUrl 'https://modrinth.com/shade
 
 # Test 5: Add CurseForge mod (Inventory HUD+)
 Write-TestHeader "Add CurseForge Mod"
-Test-Command "& '$ModManagerPath' -AddMod -AddModId '357540' -AddModName 'Inventory HUD+' -AddModType 'curseforge' -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Add Inventory HUD+" 3 @("Fabric API", "Sodium", "Complementary Shaders - Reimagined") $TestFileName
+Test-Command "& '$ModManagerPath' -AddMod -AddModId '357540' -AddModName 'Inventory HUD+' -AddModType 'curseforge' -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Add Inventory HUD+" 4 @("Fabric API", "Sodium", "Complementary Shaders - Reimagined", "Inventory HUD+") $TestFileName
 
 # Test 6: Add mod to specific group
 Write-TestHeader "Add Mod to Block Group"
-Test-Command "& '$ModManagerPath' -AddMod -AddModId 'no-chat-reports' -AddModName 'No Chat Reports' -AddModGroup 'block' -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Add No Chat Reports to block group" 4 @("Fabric API", "Sodium", "Complementary Shaders - Reimagined", "No Chat Reports") $TestFileName
+Test-Command "& '$ModManagerPath' -AddMod -AddModId 'no-chat-reports' -AddModName 'No Chat Reports' -AddModGroup 'block' -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Add No Chat Reports to block group" 5 @("Fabric API", "Sodium", "Complementary Shaders - Reimagined", "Inventory HUD+", "No Chat Reports") $TestFileName
 
 # Test 7: Validate all mods
 Write-TestHeader "Validate All Mods"
-Test-Command "& '$ModManagerPath' -ValidateAllModVersions -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Validate All Mods" 4 $null $TestFileName
+Test-Command "& '$ModManagerPath' -ValidateAllModVersions -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Validate All Mods" 5 $null $TestFileName
 
 # Test 8: Get mod list
 Write-TestHeader "Get Mod List"
-Test-Command "& '$ModManagerPath' -GetModList -DatabaseFile '$TestDbPath' -ApiResponseFolder '$script:TestApiResponseDir'" "Get Mod List" 4 $null $TestFileName
+Test-Command "& '$ModManagerPath' -GetModList -DatabaseFile '$TestDbPath' -ApiResponseFolder '$script:TestApiResponseDir'" "Get Mod List" 5 $null $TestFileName
 
 # Test 9: Delete mod
 Write-TestHeader "Delete Mod"
-Test-Command "& '$ModManagerPath' -DeleteModID 'sodium' -DeleteModType 'mod' -DatabaseFile '$TestDbPath' -ApiResponseFolder '$script:TestApiResponseDir'" "Delete Sodium" 3 @("Fabric API", "Complementary Shaders - Reimagined", "No Chat Reports") $TestFileName
+Test-Command "& '$ModManagerPath' -DeleteModID 'sodium' -DeleteModType 'mod' -DatabaseFile '$TestDbPath' -ApiResponseFolder '$script:TestApiResponseDir'" "Delete Sodium" 4 @("Fabric API", "Complementary Shaders - Reimagined", "Inventory HUD+", "No Chat Reports") $TestFileName
 
 # Test 10: Add mod with auto-download
 Write-TestHeader "Add Mod with Auto-Download"
-Test-Command "& '$ModManagerPath' -AddMod -AddModId 'litematica' -AddModName 'Litematica' -ForceDownload -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir' -DownloadFolder '$TestDownloadDir'" "Add Litematica with auto-download" 4 @("Fabric API", "Complementary Shaders - Reimagined", "No Chat Reports", "Litematica") $TestFileName
+Test-Command "& '$ModManagerPath' -AddMod -AddModId 'litematica' -AddModName 'Litematica' -ForceDownload -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir' -DownloadFolder '$TestDownloadDir'" "Add Litematica with auto-download" 5 @("Fabric API", "Complementary Shaders - Reimagined", "Inventory HUD+", "No Chat Reports", "Litematica") $TestFileName
 
 # Test 11: Use custom database file
 Write-TestHeader "Custom Database File"
-Test-Command "& '$ModManagerPath' -ModListFile '$TestDbPath' -GetModList -ApiResponseFolder '$script:TestApiResponseDir'" "Use Custom Database File" 4 $null $TestFileName
+Test-Command "& '$ModManagerPath' -ModListFile '$TestDbPath' -GetModList -ApiResponseFolder '$script:TestApiResponseDir'" "Use Custom Database File" 5 $null $TestFileName
 
 Write-Host "`nBasic Functionality Tests Complete" -ForegroundColor $Colors.Info
 

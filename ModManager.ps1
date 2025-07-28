@@ -83,6 +83,9 @@ param(
 # Import all modular functions
 . "$PSScriptRoot\src\Import-Modules.ps1"
 
+# Output script header
+Write-Host "Minecraft Mod Manager PowerShell Script" -ForegroundColor Magenta
+
 # Set default values for parameters
 if (-not $ModListFile) { $ModListFile = "modlist.csv" }
 if (-not $DatabaseFile) { $DatabaseFile = $null }
@@ -195,9 +198,9 @@ if ($ValidateAllModVersions) {
 }
 
 # Handle ValidateModVersion parameters
-if ($ValidateModVersion -and $ModId -and $Version) {
+if ($ValidateModVersion -and $ModID -and $AddModVersion) {
     Write-Host "Validating specific mod version..." -ForegroundColor Yellow
-    Validate-ModVersion -ModId $ModId -Version $Version -Loader $Loader -ResponseFolder $ApiResponseFolder
+    Validate-ModVersion -ModId $ModID -Version $AddModVersion -Loader $AddModLoader -ResponseFolder $ApiResponseFolder
     exit 0
 }
 
@@ -205,6 +208,13 @@ if ($ValidateModVersion -and $ModId -and $Version) {
 if ($GetModList) {
     Write-Host "Loading mod list..." -ForegroundColor Yellow
     Get-ModList -CsvPath $effectiveModListPath
+    exit 0
+}
+
+# Handle DeleteModID parameter
+if ($DeleteModID) {
+    Write-Host "Deleting mod..." -ForegroundColor Yellow
+    Delete-ModFromDatabase -DeleteModID $DeleteModID -DeleteModType $DeleteModType -CsvPath $effectiveModListPath
     exit 0
 }
 

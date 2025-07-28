@@ -163,6 +163,13 @@ function Validate-AllModVersions {
     
     # Save results to CSV
     $resultsFile = Join-Path $ResponseFolder "version-validation-results.csv"
+    
+    # Ensure the response folder exists
+    $responseFolderDir = Split-Path $resultsFile -Parent
+    if (-not (Test-Path $responseFolderDir)) {
+        New-Item -ItemType Directory -Path $responseFolderDir -Force | Out-Null
+    }
+    
     $results | Export-Csv -Path $resultsFile -NoTypeInformation
     
     # Analyze version differences and provide upgrade recommendations
@@ -266,12 +273,22 @@ function Validate-AllModVersions {
     Write-Host "DEBUG: Total unique available game versions: $($allModAvailableGameVersions.Count)" -ForegroundColor Yellow
     
     # Calculate Latest Game Version and Latest Available Game Versions using actual API data
-    $versionCalculation = Calculate-LatestGameVersionFromAvailableVersions -AvailableGameVersions $allModAvailableGameVersions -CurrentGameVersion $mostCommonGameVersion
-    $calculatedLatestGameVersion = $versionCalculation.LatestGameVersion
-    $latestAvailableGameVersions = $versionCalculation.LatestAvailableGameVersions
-    
-    # Filter out ancient versions from Latest Available Game Versions
-    $filteredLatestAvailableVersions = Filter-RelevantGameVersions -GameVersions $latestAvailableGameVersions -MinimumRelevantVersion "1.20.0"
+    if ($allModAvailableGameVersions -and $allModAvailableGameVersions.Count -gt 0) {
+        $versionCalculation = Calculate-LatestGameVersionFromAvailableVersions -AvailableGameVersions $allModAvailableGameVersions -CurrentGameVersion $mostCommonGameVersion
+        $calculatedLatestGameVersion = $versionCalculation.LatestGameVersion
+        $latestAvailableGameVersions = $versionCalculation.LatestAvailableGameVersions
+        
+        # Filter out ancient versions from Latest Available Game Versions
+        if ($latestAvailableGameVersions -and $latestAvailableGameVersions.Count -gt 0) {
+            $filteredLatestAvailableVersions = Filter-RelevantGameVersions -GameVersions $latestAvailableGameVersions -MinimumRelevantVersion "1.20.0"
+        } else {
+            $filteredLatestAvailableVersions = @()
+        }
+    } else {
+        $calculatedLatestGameVersion = $mostCommonGameVersion
+        $latestAvailableGameVersions = @()
+        $filteredLatestAvailableVersions = @()
+    }
     $availableGameVersionsString = if ($filteredLatestAvailableVersions) { ($filteredLatestAvailableVersions | Sort-Object) -join ", " } else { "unknown" }
 
     # Show summary with total counts

@@ -365,8 +365,11 @@ function Download-Mods {
                         Write-Host "  📝 Using filename from API: $filename" -ForegroundColor Gray
                     }
                     
+                    # Decode URL if it contains encoded characters
+                    $decodedUrl = [System.Web.HttpUtility]::UrlDecode($downloadUrl)
+                    
                     # Use Invoke-WebRequest for better error handling
-                    $webRequest = Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -UseBasicParsing
+                    $webRequest = Invoke-WebRequest -Uri $decodedUrl -OutFile $downloadPath -UseBasicParsing
                     
                     if (Test-Path $downloadPath) {
                         $fileSize = (Get-Item $downloadPath).Length
