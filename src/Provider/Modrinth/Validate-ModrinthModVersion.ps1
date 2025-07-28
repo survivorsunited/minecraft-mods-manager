@@ -28,6 +28,9 @@
 .PARAMETER UseCachedResponses
     Whether to use cached API responses.
 
+.PARAMETER CsvPath
+    Path to the CSV database file to update.
+
 .EXAMPLE
     Validate-ModrinthModVersion -ModID "fabric-api" -Version "0.91.0+1.21.5" -Loader "fabric"
 
@@ -46,7 +49,8 @@ function Validate-ModrinthModVersion {
         [Parameter(Mandatory=$true)]
         [string]$Loader,
         [string]$GameVersion = "1.21.5",
-        [bool]$UseCachedResponses = $false
+        [bool]$UseCachedResponses = $false,
+        [string]$CsvPath = $null
     )
     
     try {
@@ -77,12 +81,12 @@ function Validate-ModrinthModVersion {
         $dependenciesJson = Convert-DependenciesToJson -Dependencies $dependencies
         
         # Update CSV if provided
-        if ($script:ModListPath -and (Test-Path $script:ModListPath)) {
-            $mods = Import-Csv -Path $script:ModListPath
+        if ($CsvPath -and (Test-Path $CsvPath)) {
+            $mods = Import-Csv -Path $CsvPath
             $mod = $mods | Where-Object { $_.ID -eq $ModID }
             if ($mod) {
                 $mod.CurrentDependencies = $dependenciesJson
-                $mods | Export-Csv -Path $script:ModListPath -NoTypeInformation
+                $mods | Export-Csv -Path $CsvPath -NoTypeInformation
             }
         }
         
