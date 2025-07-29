@@ -64,7 +64,7 @@ function Mock-FileSystem {
 function Test-JavaVersionDetection {
     param([string]$TestName)
     
-    Write-TestHeader "Testing Java Version Detection" $TestName
+    Write-TestHeader "Testing Java Version Detection"
     
     # Test 1: Valid Java 22 version
     Write-TestStep "Testing Java 22 version detection"
@@ -120,7 +120,7 @@ function Test-JavaVersionDetection {
 function Test-ErrorDetectionLogic {
     param([string]$TestName)
     
-    Write-TestHeader "Testing Error Detection Logic" $TestName
+    Write-TestHeader "Testing Error Detection Logic"
     
     # Test 1: Normal log line (should not trigger error)
     Write-TestStep "Testing normal log line"
@@ -175,7 +175,7 @@ function Test-ErrorDetectionLogic {
 function Test-JobManagement {
     param([string]$TestName)
     
-    Write-TestHeader "Testing Job Management" $TestName
+    Write-TestHeader "Testing Job Management"
     
     # Test 1: Job creation and monitoring
     Write-TestStep "Testing job creation and monitoring"
@@ -222,7 +222,7 @@ function Test-JobManagement {
 function Test-LogFileMonitoring {
     param([string]$TestName)
     
-    Write-TestHeader "Testing Log File Monitoring" $TestName
+    Write-TestHeader "Testing Log File Monitoring"
     
     # Create test log file
     $testLogFile = Join-Path $TestOutputDir "test-monitoring.log"
@@ -269,7 +269,7 @@ function Test-LogFileMonitoring {
 function Test-FileSystemValidation {
     param([string]$TestName)
     
-    Write-TestHeader "Testing File System Validation" $TestName
+    Write-TestHeader "Testing File System Validation"
     
     # Create test directory structure
     $testBase = Join-Path $TestOutputDir "filesystem-test"
@@ -327,7 +327,7 @@ function Test-FileSystemValidation {
 function Test-VersionFolderDetection {
     param([string]$TestName)
     
-    Write-TestHeader "Testing Version Folder Detection" $TestName
+    Write-TestHeader "Testing Version Folder Detection"
     
     # Create test directory structure
     $testBase = Join-Path $TestOutputDir "version-test"

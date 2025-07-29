@@ -1,9 +1,6 @@
 # Import test framework
 . "$PSScriptRoot\..\TestFramework.ps1"
 
-# Dot-source ModManager.ps1 to make all functions available
-. (Join-Path $PSScriptRoot "..\..\ModManager.ps1")
-
 # Set the test file name for use throughout the script
 $TestFileName = "33-TestCrossPlatformModpackIntegration.ps1"
 
@@ -139,7 +136,7 @@ function Test-ModpackTypeDetection {
     if ($LASTEXITCODE -ne 0) { Write-Host "[DEBUG] CurseForge detection error: $result" -ForegroundColor Yellow }
     $curseforgeDetected = ($LASTEXITCODE -eq 0)
     
-    Write-TestResult "Modpack Type Detection" ($modrinthDetected -and $curseforgeDetected)
+    Write-TestResult "Modpack Type Detection" ($modrinthDetected -and $curseforgeDetected) "Modpack type detection functionality tested"
     return ($modrinthDetected -and $curseforgeDetected)
 }
 
@@ -198,7 +195,7 @@ function Test-UnifiedModpackImport {
         $modsAdded = ($modpackEntry -ne $null)
     }
     
-    Write-TestResult "Unified Modpack Import Interface" ($importSuccess -and $modsAdded)
+    Write-TestResult "Unified Modpack Import Interface" ($importSuccess -and $modsAdded) "Unified modpack import interface tested"
     return ($importSuccess -and $modsAdded)
 }
 
@@ -445,7 +442,7 @@ function Test-CliParameterValidation {
     
     $missingFileHandled = ($LASTEXITCODE -ne 0)
     
-    Write-TestResult "CLI Parameter Validation" ($invalidTypeHandled -and $missingFileHandled)
+    Write-TestResult "CLI Parameter Validation" ($invalidTypeHandled -and $missingFileHandled) "CLI parameter validation tested"
     return ($invalidTypeHandled -and $missingFileHandled)
 }
 

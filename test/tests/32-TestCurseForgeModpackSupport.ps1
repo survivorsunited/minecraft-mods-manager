@@ -145,7 +145,7 @@ Write-TestStep "Testing CurseForge modpack database integration"
 # Test adding modpack to database
 $addResult = & pwsh -NoProfile -ExecutionPolicy Bypass -Command "& '$ModManagerPath'; Add-CurseForgeModpackToDatabase -ModpackId 'test-modpack-2' -FileId 'test-file-2' -ModpackName 'Test Modpack 2' -GameVersion '1.21.5' -CsvPath '$TestModListPath' -Dependencies '[{\"ProjectId\":\"999\",\"FileId\":\"888\",\"Required\":true,\"Type\":\"required\",\"Host\":\"curseforge\"}]'"
 
-$databaseIntegrationSuccess = $addResult -eq $true
+$databaseIntegrationSuccess = [bool]($addResult -eq $true)
 Write-TestResult "CurseForge Modpack Database Integration" $databaseIntegrationSuccess "Successfully integrated CurseForge modpack with database"
 
 # Test 6: Test rate limiting functionality
@@ -189,7 +189,7 @@ if ($manifestExists) {
 Write-TestResult "Manifest.json Parsing" $manifestValid "Successfully parsed and validated manifest.json structure"
 
 # Summary
-Show-TestSummary
+Write-TestSuiteSummary "CurseForge Modpack Support Tests"
 
 # Log file verification
 $expectedLogPath = Join-Path $TestOutputDir "$([IO.Path]::GetFileNameWithoutExtension($TestFileName)).log"
