@@ -24,11 +24,11 @@ $ModpackDir = Join-Path $TestDownloadDir "modpacks/Fabulously Optimized"
 
 # Test 1: Add modpack by URL
 Write-TestHeader "Add Modpack by URL"
-Test-Command "& '$ModManagerPath' -AddMod -AddModUrl 'https://modrinth.com/modpack/fabulously-optimized' -DatabaseFile '$TestDbPath' -UseCachedResponses" "Add Fabulously Optimized Modpack" 1 $null $TestFileName
+Test-Command "& '$ModManagerPath' -AddMod -AddModUrl 'https://modrinth.com/modpack/fabulously-optimized' -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Add Fabulously Optimized Modpack" 1 $null $TestFileName
 
 # Test 2: Add modpack by ID
 Write-TestHeader "Add Modpack by ID"
-Test-Command "& '$ModManagerPath' -AddMod -AddModId '1KVo5zza' -AddModName 'Fabulously Optimized' -AddModType 'modpack' -DatabaseFile '$TestDbPath' -UseCachedResponses" "Add Modpack by ID" 2 $null $TestFileName
+Test-Command "& '$ModManagerPath' -AddMod -AddModId '1KVo5zza' -AddModName 'Fabulously Optimized' -AddModType 'modpack' -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Add Modpack by ID" 2 $null $TestFileName
 
 # Test 3: Download modpack (SKIPPED - Not implemented yet)
 Write-TestHeader "Download Modpack (SKIPPED)"
@@ -42,7 +42,7 @@ Write-Host "✓ PASS: Skipped modpack extraction test" -ForegroundColor Green
 
 # Test 5: Test modpack with specific version
 Write-TestHeader "Add Modpack with Specific Version"
-Test-Command "& '$ModManagerPath' -AddMod -AddModId '1KVo5zza' -AddModName 'Fabulously Optimized v4.9.0' -AddModType 'modpack' -AddModVersion '4.9.0' -DatabaseFile '$TestDbPath' -UseCachedResponses" "Add Modpack with Version" 2 $null $TestFileName
+Test-Command "& '$ModManagerPath' -AddMod -AddModId '1KVo5zza' -AddModName 'Fabulously Optimized v4.9.0' -AddModType 'modpack' -AddModVersion '4.9.0' -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Add Modpack with Version" 2 $null $TestFileName
 
 # Test 6: Download modpack with version (SKIPPED - Not implemented yet)
 Write-TestHeader "Download Modpack with Version (SKIPPED)"
