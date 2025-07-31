@@ -46,6 +46,7 @@ function Add-ModToDatabase {
         [string]$AddModName,
         [string]$AddModLoader = "fabric",
         [string]$AddModGameVersion = "1.21.5",
+        [string]$AddModVersion = "latest",
         [string]$AddModType = "mod",
         [string]$AddModGroup = "required",
         [string]$AddModDescription = "",
@@ -109,7 +110,7 @@ function Add-ModToDatabase {
         
         if ($AddModUrl -and $AddModUrl -match "modrinth\.com") {
             # For Modrinth URLs, try to get project info to extract name
-            $extractedVersion = "latest"
+            $extractedVersion = $AddModVersion
             if (-not $AddModName) {
                 try {
                     $projectInfo = Get-ModrinthProjectInfo -ProjectId $AddModId -UseCachedResponses $false
@@ -123,13 +124,13 @@ function Add-ModToDatabase {
             }
         } elseif ($AddModUrl -and $AddModUrl -match "curseforge\.com") {
             # For CurseForge URLs, we'll set a default version that can be updated later
-            $extractedVersion = "latest"
+            $extractedVersion = $AddModVersion
             if (-not $AddModName) {
                 $extractedName = $AddModId
             }
         } else {
             # Default version for manual entries
-            $extractedVersion = "latest"
+            $extractedVersion = $AddModVersion
             if (-not $AddModName) {
                 $extractedName = $AddModId
             }

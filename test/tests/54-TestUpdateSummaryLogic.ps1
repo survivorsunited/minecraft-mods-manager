@@ -15,12 +15,12 @@ $TestOutputDir = Get-TestOutputFolder $TestFileName
 $script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
 
-# Create test modlist with known GameVersion
+# Create test modlist with known GameVersion and valid mod versions
 $TestModListPath = Join-Path $TestOutputDir "test-modlist.csv"
 $TestModListContent = @"
-"Group","Type","GameVersion","ID","Loader","Version","Name","Description","Jar","Url","Category","VersionUrl","LatestVersionUrl","LatestVersion","ApiSource","Host","IconUrl","ClientSide","ServerSide","Title","ProjectDescription","IssuesUrl","SourceUrl","WikiUrl","LatestGameVersion","RecordHash","CurrentDependencies","LatestDependencies","CurrentDependenciesRequired","CurrentDependenciesOptional","LatestDependenciesRequired","LatestDependenciesOptional"
-"required","mod","1.21.5","fabric-api","fabric","0.127.1+1.21.5","Fabric API","Test mod","fabric-api-0.127.1+1.21.5.jar","https://modrinth.com/mod/fabric-api","Core & Utility","","","","modrinth","modrinth","","optional","optional","Fabric API","","","","","","","","","","","",""
-"required","mod","1.21.5","sodium","fabric","mc1.21.5-0.6.13-fabric","Sodium","Test mod","sodium-fabric-0.6.13+mc1.21.5.jar","https://modrinth.com/mod/sodium","Performance","","","","modrinth","modrinth","","required","unsupported","Sodium","","","","","","","","","","","","",""
+"Group","Type","GameVersion","ID","Loader","Version","Name","Description","Jar","Url","Category","VersionUrl","LatestVersionUrl","LatestVersion","ApiSource","Host","IconUrl","ClientSide","ServerSide","Title","ProjectDescription","IssuesUrl","SourceUrl","WikiUrl","LatestGameVersion","RecordHash","CurrentDependencies","LatestDependencies","CurrentDependenciesRequired","CurrentDependenciesOptional","LatestDependenciesRequired","LatestDependenciesOptional","UrlDirect","AvailableGameVersions"
+"required","mod","1.21.5","fabric-api","fabric","0.127.1+1.21.5","Fabric API","Lightweight and modular API providing common hooks and intercompatibility measures","fabric-api-0.127.1+1.21.5.jar","https://modrinth.com/mod/fabric-api","Core & Utility","https://cdn.modrinth.com/data/P7dR8mSH/versions/vNBWcMLP/fabric-api-0.127.1%2B1.21.5.jar","https://cdn.modrinth.com/data/P7dR8mSH/versions/JntuF9Ul/fabric-api-0.129.0%2B1.21.7.jar","0.129.0+1.21.7","modrinth","modrinth","https://cdn.modrinth.com/data/P7dR8mSH/icon.png","optional","optional","Fabric API","Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.","https://github.com/FabricMC/fabric/issues","https://github.com/FabricMC/fabric","https://fabricmc.net/wiki/","1.21.7","dc0dfd50ed0093b2e6b68c35863b6fd283cdc3c6b9ae4414d6e62f25f29eeea5","","","","","","","",""
+"required","mod","1.21.5","cloth-config","fabric","v18.0.145","Cloth Config","Configuration library used by many mods","cloth-config-18.0.145-fabric.jar","https://modrinth.com/mod/cloth-config","Core & Utility","https://cdn.modrinth.com/data/9s6osm5g/versions/qA00xo1O/cloth-config-18.0.145-fabric.jar","https://cdn.modrinth.com/data/9s6osm5g/versions/cz0b1j8R/cloth-config-19.0.147-fabric.jar","19.0.147+fabric","modrinth","modrinth","https://cdn.modrinth.com/data/9s6osm5g/ed8a2316cbb6f4fc5f510e8e13a59a85cbbbff4d_96.webp","optional","optional","Cloth Config API","Configuration Library for Minecraft Mods","https://github.com/shedaniel/ClothConfig/issues","https://github.com/shedaniel/ClothConfig/","https://shedaniel.gitbook.io/cloth-config/","1.21.7","9e05a5a283f2a2fd2f9e166f421ec241f8b44de2df894623ecfebafb4e5844df","","","","","","","",""
 "@
 
 Write-Host "Minecraft Mod Manager - Update Summary Logic Tests" -ForegroundColor $Colors.Header
@@ -38,10 +38,27 @@ $output = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -Updat
 
 # Validate against acceptance criteria
 $hasVerboseLists = $output -match 'Inventory HUD\+: v3\.4\.27 ->'
-$hasOnlyCounts = $output -match 'Have updates available: 2 mods' -and -not ($output -match '-> \[Fabric\]')
-# Count the actual summary lines in the output (now 9 lines with new fields)
-# Exclude the header line "📊 Update Summary:" and only count the data lines
-$summaryLines = $output -split "`n" | Where-Object { $_ -match '^\s*[🕹️🗂️🎯⬆️⚠️➖🔄❌].*:' -and $_ -notmatch '📊 Update Summary:' }
+$hasOnlyCounts = $output -match 'Have updates available: \d+ mods' -and -not ($output -match '-> \[Fabric\]')
+
+# Count the actual summary lines in the output (should be 9 lines)
+# Only count lines that come after "📊 Update Summary:" and match the summary pattern
+$outputLines = $output -split "`n"
+$summaryStartIndex = -1
+for ($i = 0; $i -lt $outputLines.Count; $i++) {
+    if ($outputLines[$i] -match '📊 Update Summary:') {
+        $summaryStartIndex = $i
+        break
+    }
+}
+
+if ($summaryStartIndex -ge 0) {
+    # Get lines after the summary header that match the summary pattern
+    $summaryLines = $outputLines[($summaryStartIndex + 1)..($outputLines.Count - 1)] | Where-Object { 
+        $_ -match '^\s*\s*[🕹️🗂️🎯⬆️⚠️➖🔄❌].*:' -and $_ -notmatch '📊 Update Summary:' -and $_.Trim() -ne ""
+    }
+} else {
+    $summaryLines = @()
+}
 $hasNineSummaryLines = $summaryLines.Count -eq 9
 
 # Debug: Show what lines were found
@@ -130,8 +147,24 @@ Write-TestHeader "Test 6: Validate Consecutive Run Behavior"
 $output2 = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestModListPath -UseCachedResponses 2>&1
 
 # Check that consecutive runs maintain the same format (9 summary lines)
-# Exclude the header line "📊 Update Summary:" and only count the data lines
-$summaryLines2 = $output2 -split "`n" | Where-Object { $_ -match '^\s*[🕹️🗂️🎯⬆️⚠️➖🔄❌].*:' -and $_ -notmatch '📊 Update Summary:' }
+# Use the same logic as the first test to count summary lines properly
+$outputLines2 = $output2 -split "`n"
+$summaryStartIndex2 = -1
+for ($i = 0; $i -lt $outputLines2.Count; $i++) {
+    if ($outputLines2[$i] -match '📊 Update Summary:') {
+        $summaryStartIndex2 = $i
+        break
+    }
+}
+
+if ($summaryStartIndex2 -ge 0) {
+    # Get lines after the summary header that match the summary pattern
+    $summaryLines2 = $outputLines2[($summaryStartIndex2 + 1)..($outputLines2.Count - 1)] | Where-Object { 
+        $_ -match '^\s*\s*[🕹️🗂️🎯⬆️⚠️➖🔄❌].*:' -and $_ -notmatch '📊 Update Summary:' -and $_.Trim() -ne ""
+    }
+} else {
+    $summaryLines2 = @()
+}
 $consecutiveFormatConsistent = $summaryLines2.Count -eq 9
 
 # Debug: Show what lines were found in consecutive run

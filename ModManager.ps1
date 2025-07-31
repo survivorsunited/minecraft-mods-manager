@@ -83,8 +83,25 @@ param(
 # Import all modular functions
 . "$PSScriptRoot\src\Import-Modules.ps1"
 
+# Set up logging
+$logDir = Join-Path $PSScriptRoot "logs"
+if (-not (Test-Path $logDir)) {
+    New-Item -ItemType Directory -Path $logDir -Force | Out-Null
+}
+
+$logFile = Join-Path $logDir "modmanager-$(Get-Date -Format 'yyyy-MM-dd_HH-mm-ss').log"
+Start-Transcript -Path $logFile -Append -Force
+
+# Helper function to exit cleanly with transcript stop
+function Exit-ModManager {
+    param([int]$ExitCode = 0)
+    Stop-Transcript
+    exit $ExitCode
+}
+
 # Output script header
 Write-Host "Minecraft Mod Manager PowerShell Script" -ForegroundColor Magenta
+Write-Host "Log file: $logFile" -ForegroundColor DarkGray
 
 # Set default values for parameters
 if (-not $ModListFile) { $ModListFile = "modlist.csv" }
@@ -130,8 +147,8 @@ $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -Mo
 # Handle UpdateMods parameter
 if ($UpdateMods) {
     Write-Host "Starting mod update process..." -ForegroundColor Yellow
-    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList
-    exit 0
+    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
+    Exit-ModManager 0
 }
 
 # Handle Download parameter
@@ -139,13 +156,13 @@ if ($Download) {
     Write-Host "Starting mod download process..." -ForegroundColor Yellow
     if ($UseLatestVersion) {
         Write-Host "Using latest versions for download..." -ForegroundColor Cyan
-        Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList
+        Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
         Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
     } else {
         Write-Host "Using current versions for download..." -ForegroundColor Cyan
         Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
     }
-    exit 0
+    Exit-ModManager 0
 }
 
 # Handle DownloadMods parameter
@@ -153,75 +170,75 @@ if ($DownloadMods) {
     Write-Host "Starting mod download process..." -ForegroundColor Yellow
     if ($UseLatestVersion) {
         Write-Host "Using latest versions for download..." -ForegroundColor Cyan
-        Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList
+        Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
         Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
     } else {
         Write-Host "Using current versions for download..." -ForegroundColor Cyan
         Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
     }
-    exit 0
+    Exit-ModManager 0
 }
 
 # Handle DownloadServer parameter
 if ($DownloadServer) {
     Write-Host "Starting server files download process..." -ForegroundColor Yellow
     Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload
-    exit 0
+    Exit-ModManager 0
 }
 
 # Handle StartServer parameter
 if ($StartServer) {
     Write-Host "Starting Minecraft server..." -ForegroundColor Yellow
     Start-MinecraftServer -DownloadFolder $DownloadFolder
-    exit 0
+    Exit-ModManager 0
 }
 
 # Handle AddServerStartScript parameter
 if ($AddServerStartScript) {
     Write-Host "Adding server start script..." -ForegroundColor Yellow
     Add-ServerStartScript -DownloadFolder $DownloadFolder
-    exit 0
+    Exit-ModManager 0
 }
 
 # Handle AddMod parameters
 if ($AddMod -or $AddModId -or $AddModUrl) {
     Write-Host "Adding new mod..." -ForegroundColor Yellow
-    Add-ModToDatabase -AddModId $AddModId -AddModUrl $AddModUrl -AddModName $AddModName -AddModLoader $AddModLoader -AddModGameVersion $AddModGameVersion -AddModType $AddModType -AddModGroup $AddModGroup -AddModDescription $AddModDescription -AddModJar $AddModJar -AddModUrlDirect $AddModUrlDirect -AddModCategory $AddModCategory -ForceDownload:$ForceDownload -CsvPath $effectiveModListPath
-    exit 0
+    Add-ModToDatabase -AddModId $AddModId -AddModUrl $AddModUrl -AddModName $AddModName -AddModLoader $AddModLoader -AddModGameVersion $AddModGameVersion -AddModVersion $AddModVersion -AddModType $AddModType -AddModGroup $AddModGroup -AddModDescription $AddModDescription -AddModJar $AddModJar -AddModUrlDirect $AddModUrlDirect -AddModCategory $AddModCategory -ForceDownload:$ForceDownload -CsvPath $effectiveModListPath
+    Exit-ModManager 0
 }
 
 # Handle ValidateAllModVersions parameter
 if ($ValidateAllModVersions) {
     Write-Host "Starting mod validation process..." -ForegroundColor Yellow
-    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UseCachedResponses:$UseCachedResponses
-    exit 0
+    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UseCachedResponses:$UseCachedResponses | Out-Null
+    Exit-ModManager 0
 }
 
 # Handle ValidateModVersion parameters
 if ($ValidateModVersion -and $ModID -and $AddModVersion) {
     Write-Host "Validating specific mod version..." -ForegroundColor Yellow
     Validate-ModVersion -ModId $ModID -Version $AddModVersion -Loader $AddModLoader -ResponseFolder $ApiResponseFolder
-    exit 0
+    Exit-ModManager 0
 }
 
 # Handle GetModList parameter
 if ($GetModList) {
     Write-Host "Loading mod list..." -ForegroundColor Yellow
     Get-ModList -CsvPath $effectiveModListPath
-    exit 0
+    Exit-ModManager 0
 }
 
 # Handle DeleteModID parameter
 if ($DeleteModID) {
     Write-Host "Deleting mod..." -ForegroundColor Yellow
     Delete-ModFromDatabase -DeleteModID $DeleteModID -DeleteModType $DeleteModType -CsvPath $effectiveModListPath
-    exit 0
+    Exit-ModManager 0
 }
 
 # Handle ShowHelp parameter
 if ($ShowHelp) {
     Show-Help
-    exit 0
+    Exit-ModManager 0
 }
 
 # Default behavior when no parameters are provided
@@ -232,4 +249,7 @@ Write-Host "No parameters provided. Running default validation and update..." -F
 Write-Host ""
 
 # Run the default behavior: validate and update mods
-Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList
+Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
+
+# Exit cleanly with transcript stop
+Exit-ModManager 0

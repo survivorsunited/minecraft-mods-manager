@@ -66,12 +66,27 @@ function Calculate-LatestGameVersionFromAvailableVersions {
     }
     
     # Latest Available Game Versions are all versions above the Latest Game Version
+    # For newer versions, we want to show the most recent versions regardless of format
     $latestAvailableGameVersions = $validVersions | Where-Object { 
         try {
+            # Try to parse as version and compare
             [System.Version]$_ -gt [System.Version]$latestGameVersion
         } catch {
-            $false
+            # If version parsing fails, it might be a newer format (like 25w21a)
+            # Check if it looks like a newer version
+            if ($_ -match '^\d+w\d+[a-z]?$' -or $_ -match '^\d+\.\d+\.\d+-pre\d+$' -or $_ -match '^\d+\.\d+\.\d+-rc\d+$') {
+                # These are newer snapshot/pre-release versions, include them
+                $true
+            } else {
+                $false
+            }
         }
+    }
+    
+    # If no versions found with the above logic, include the most recent versions
+    if ($latestAvailableGameVersions.Count -eq 0) {
+        # Get the most recent versions (last 10)
+        $latestAvailableGameVersions = $validVersions | Sort-Object | Select-Object -Last 10
     }
     
     return @{

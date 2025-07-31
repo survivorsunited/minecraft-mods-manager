@@ -57,14 +57,26 @@ function Validate-ModrinthModVersion {
         Write-Host "Validating $ModID version $Version for $Loader..." -ForegroundColor Cyan
         
         # Get project info
+        Write-Host "DEBUG: Getting project info for $ModID" -ForegroundColor Yellow
         $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModID -UseCachedResponses $UseCachedResponses
         if (-not $projectInfo) {
+            Write-Host "DEBUG: Failed to get project info for $ModID" -ForegroundColor Red
             return @{ Success = $false; Error = "Failed to get project info" }
         }
         
-        # Find the specific version
-        $versionInfo = $projectInfo.versions | Where-Object { $_.version_number -eq $Version }
+        Write-Host "DEBUG: Found project info for $ModID with $($projectInfo.versions.Count) versions" -ForegroundColor Yellow
+        
+        # Get all version details to find the specific version
+        $versionsApiUrl = "https://api.modrinth.com/v2/project/$ModID/version"
+        $versionsResponse = Invoke-RestMethod -Uri $versionsApiUrl -Method Get -TimeoutSec 30
+        
+        # Find the specific version by version_number
+        $versionInfo = $versionsResponse | Where-Object { $_.version_number -eq $Version }
         if (-not $versionInfo) {
+            Write-Host "DEBUG: Version $Version not found in $($versionsResponse.Count) versions" -ForegroundColor Red
+            # Show available versions for debugging
+            $availableVersions = $versionsResponse | Select-Object -First 5 | ForEach-Object { $_.version_number }
+            Write-Host "DEBUG: Available versions (first 5): $($availableVersions -join ', ')" -ForegroundColor Yellow
             return @{ Success = $false; Error = "Version $Version not found" }
         }
         
@@ -88,6 +100,24 @@ function Validate-ModrinthModVersion {
                 $mod.CurrentDependencies = $dependenciesJson
                 $mods | Export-Csv -Path $CsvPath -NoTypeInformation
             }
+        }
+        
+        # Generate response file if script variable is set
+        if ($script:TestOutputDir) {
+            $responseFile = Join-Path $script:TestOutputDir "$ModID-$Version.json"
+            $responseData = @{
+                modId = $ModID
+                version = $Version
+                loader = $Loader
+                gameVersion = $GameVersion
+                compatible = $true
+                downloadUrl = $versionInfo.files[0].url
+                fileSize = $versionInfo.files[0].size
+                dependencies = $dependencies
+                timestamp = Get-Date -Format "o"
+            }
+            $responseData | ConvertTo-Json -Depth 10 | Out-File -FilePath $responseFile -Encoding UTF8
+            Write-Host "DEBUG: Created response file: $responseFile" -ForegroundColor Green
         }
         
         return @{ 

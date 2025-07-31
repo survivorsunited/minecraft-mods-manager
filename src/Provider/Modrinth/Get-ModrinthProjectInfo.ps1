@@ -45,8 +45,9 @@ function Get-ModrinthProjectInfo {
         $cacheDir = if ($script:TestApiResponseDir) { $script:TestApiResponseDir } else { "." }
         $cachePath = Join-Path $cacheDir "modrinth" "$ProjectId.json"
         
-        # Use cached response if available and requested
-        if ($UseCachedResponses -and (Test-Path $cachePath)) {
+        # Use cached response if available and requested, or if cache file exists and is recent
+        if (($UseCachedResponses -and (Test-Path $cachePath)) -or 
+            ((Test-Path $cachePath) -and ((Get-Item $cachePath).LastWriteTime -gt (Get-Date).AddMinutes(-5)))) {
             $response = Get-Content $cachePath | ConvertFrom-Json
             Write-Host "Using cached response for $ProjectId" -ForegroundColor Gray
             return $response
@@ -55,11 +56,12 @@ function Get-ModrinthProjectInfo {
         # Make API request
         $response = Invoke-RestMethod -Uri $apiUrl -Method Get -TimeoutSec 30
         
-        # Cache response if directory exists
+        # Cache response if directory exists, create it if needed
         $cacheDirPath = Split-Path $cachePath
-        if (Test-Path $cacheDirPath) {
-            $response | ConvertTo-Json -Depth 10 | Out-File -FilePath $cachePath -Encoding UTF8
+        if (-not (Test-Path $cacheDirPath)) {
+            New-Item -ItemType Directory -Path $cacheDirPath -Force | Out-Null
         }
+        $response | ConvertTo-Json -Depth 10 | Out-File -FilePath $cachePath -Encoding UTF8
         
         return $response
     } catch {

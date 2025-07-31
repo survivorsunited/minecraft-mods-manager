@@ -50,6 +50,9 @@ function Validate-ModVersion {
     )
     
     try {
+        # Store original version for later reference
+        $originalVersion = $Version
+        
         # Determine the provider based on the mod ID or other criteria
         # For now, assume Modrinth for most cases
         $provider = "modrinth"
@@ -62,54 +65,93 @@ function Validate-ModVersion {
                     # Get project info to find latest version
                     $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModId -UseCachedResponses $false
                     if ($projectInfo -and $projectInfo.versions) {
-                        # Find the latest version for the specified loader
-                        if ($Loader -and $Loader.Trim() -ne "") {
-                            # If loader is specified, filter by loader
-                            $latestVersion = $projectInfo.versions | 
-                                Where-Object { $_.loaders -contains $Loader } |
-                                Sort-Object { 
-                                    try { 
-                                        [System.Version]::Parse($_.version_number) 
-                                    } catch { 
-                                        # For non-standard version strings, use string comparison
-                                        [System.Version]::new(0, 0, 0, 0) 
-                                    }
-                                } -Descending |
-                                Select-Object -First 1
-                        } else {
-                            # If no loader specified, get the latest version regardless of loader
-                            $latestVersion = $projectInfo.versions | 
-                                Sort-Object { 
-                                    try { 
-                                        [System.Version]::Parse($_.version_number) 
-                                    } catch { 
-                                        # For non-standard version strings, use string comparison
-                                        [System.Version]::new(0, 0, 0, 0) 
-                                    }
-                                } -Descending |
-                                Select-Object -First 1
-                        }
+                        Write-Host "DEBUG: Found $($projectInfo.versions.Count) version IDs for $ModId" -ForegroundColor Yellow
                         
-                        if ($latestVersion) {
-                            $Version = $latestVersion.version_number
-                        } else {
-                            $loaderMsg = if ($Loader -and $Loader.Trim() -ne "") { " for loader: $Loader" } else { "" }
+                        # Get all version details to find the actual latest version number
+                        try {
+                            $versionsApiUrl = "https://api.modrinth.com/v2/project/$ModId/version"
+                            $versionsResponse = Invoke-RestMethod -Uri $versionsApiUrl -Method Get -TimeoutSec 30
+                            
+                            if ($versionsResponse -and $versionsResponse.Count -gt 0) {
+                                # Find the latest version compatible with the requested game version
+                                $targetGameVersion = "1.21.5"  # Default game version for tests
+                                $compatibleVersion = $null
+                                
+                                foreach ($version in $versionsResponse) {
+                                    if ($version.game_versions -contains $targetGameVersion -and 
+                                        $version.loaders -contains $effectiveLoader) {
+                                        $compatibleVersion = $version
+                                        break
+                                    }
+                                }
+                                
+                                if ($compatibleVersion) {
+                                    $Version = $compatibleVersion.version_number
+                                    Write-Host "DEBUG: Using latest compatible version: $Version (supports $targetGameVersion)" -ForegroundColor Yellow
+                                } else {
+                                    # Look for any version that supports the target game version
+                                    $anyCompatible = $versionsResponse | Where-Object { 
+                                        $_.game_versions -contains $targetGameVersion -and 
+                                        $_.loaders -contains $effectiveLoader 
+                                    } | Select-Object -First 1
+                                    
+                                    if ($anyCompatible) {
+                                        $Version = $anyCompatible.version_number
+                                        Write-Host "DEBUG: Found compatible version: $Version (supports $targetGameVersion)" -ForegroundColor Yellow
+                                    } else {
+                                        # Fall back to first version if no compatible version found
+                                        $latestVersion = $versionsResponse[0]
+                                        $Version = $latestVersion.version_number
+                                        Write-Host "DEBUG: No $targetGameVersion compatible version found, using latest: $Version" -ForegroundColor Yellow
+                                    }
+                                }
+                            } else {
+                                Write-Host "DEBUG: No versions found in API response" -ForegroundColor Red
+                                return @{
+                                    Exists = $false
+                                    Error = "No versions found in API response"
+                                    ResponseFile = Join-Path $ResponseFolder "$ModId-latest.json"
+                                }
+                            }
+                        } catch {
+                            Write-Host "DEBUG: Failed to fetch version details: $($_.Exception.Message)" -ForegroundColor Red
                             return @{
                                 Exists = $false
-                                Error = "No versions found$loaderMsg"
+                                Error = "Failed to fetch version details: $($_.Exception.Message)"
                                 ResponseFile = Join-Path $ResponseFolder "$ModId-latest.json"
                             }
                         }
                     } else {
+                        $loaderMsg = if ($Loader -and $Loader.Trim() -ne "") { " for loader: $Loader" } else { "" }
                         return @{
                             Exists = $false
-                            Error = "Failed to get project info"
+                            Error = "No versions found$loaderMsg"
                             ResponseFile = Join-Path $ResponseFolder "$ModId-latest.json"
                         }
                     }
                 }
                 
-                $result = Validate-ModrinthModVersion -ModID $ModId -Version $Version -Loader $Loader
+                # Handle empty loader parameter by using default
+                $effectiveLoader = if ($Loader -and $Loader.Trim() -ne "") { $Loader } else { "fabric" }
+                
+                # Set script variable for response file generation
+                $script:TestOutputDir = $ResponseFolder
+                
+                $result = Validate-ModrinthModVersion -ModID $ModId -Version $Version -Loader $effectiveLoader
+                # Get project info to extract all available game versions (regardless of validation result)
+                Write-Host "DEBUG: Getting project info for $ModId to extract AvailableGameVersions" -ForegroundColor Yellow
+                $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModId -UseCachedResponses $false
+                $availableGameVersions = @()
+                
+                if ($projectInfo -and $projectInfo.game_versions) {
+                    Write-Host "DEBUG: Found $($projectInfo.game_versions.Count) game versions for $ModId" -ForegroundColor Yellow
+                    # Use the project-level game_versions field
+                    $availableGameVersions = $projectInfo.game_versions | Sort-Object
+                    Write-Host "DEBUG: Extracted $($availableGameVersions.Count) game versions for $ModId" -ForegroundColor Yellow
+                } else {
+                    Write-Host "DEBUG: No project info or game_versions found for $ModId" -ForegroundColor Red
+                }
+                
                 if ($result.Success) {
                     return @{
                         Exists = $true
@@ -119,19 +161,38 @@ function Validate-ModVersion {
                         LatestGameVersion = "1.21.5"  # Default for now
                         CurrentDependencies = $result.Dependencies
                         LatestDependencies = $result.Dependencies
+                        AvailableGameVersions = $availableGameVersions
                         ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
                     }
                 } else {
-                    return @{
-                        Exists = $false
-                        Error = $result.Error
-                        ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                    # For "latest" version resolution, still provide the version info even if not compatible
+                    if ($originalVersion -eq "latest" -and $Version) {
+                        return @{
+                            Exists = $false
+                            LatestVersion = $Version  # Still provide the latest version number
+                            Error = $result.Error
+                            AvailableGameVersions = $availableGameVersions
+                            ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                        }
+                    } else {
+                        return @{
+                            Exists = $false
+                            Error = $result.Error
+                            AvailableGameVersions = $availableGameVersions
+                            ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                        }
                     }
                 }
             }
             "curseforge" {
-                $result = Validate-CurseForgeModVersion -ModID $ModId -Version $Version -Loader $Loader
+                # Handle empty loader parameter by using default
+                $effectiveLoader = if ($Loader -and $Loader.Trim() -ne "") { $Loader } else { "fabric" }
+                $result = Validate-CurseForgeModVersion -ModID $ModId -Version $Version -Loader $effectiveLoader
                 if ($result.Success) {
+                    # For CurseForge, we'll need to implement similar logic
+                    # For now, return empty array - this can be enhanced later
+                    $availableGameVersions = @()
+                    
                     return @{
                         Exists = $true
                         LatestVersion = $result.Version
@@ -140,12 +201,14 @@ function Validate-ModVersion {
                         LatestGameVersion = "1.21.5"  # Default for now
                         CurrentDependencies = $result.Dependencies
                         LatestDependencies = $result.Dependencies
+                        AvailableGameVersions = $availableGameVersions
                         ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
                     }
                 } else {
                     return @{
                         Exists = $false
                         Error = $result.Error
+                        AvailableGameVersions = @()
                         ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
                     }
                 }

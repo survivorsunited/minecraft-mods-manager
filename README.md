@@ -4,6 +4,14 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
 
 ## 🚀 Features
 
+### Automated Mod Lifecycle Management
+- **Intelligent Update Detection**: Automatically identifies when mod updates are available
+- **Smart Upgrade Recommendations**: Provides feedback on when upgrades should happen based on compatibility analysis
+- **Automated Testing Pipeline**: Downloads and tests mod updates with server execution
+- **Compatibility Reporting**: Provides detailed feedback on mod execution and compatibility issues
+- **Dual Modpack Generation**: Creates both current and updated version modpacks for comparison testing
+- **Continuous Integration Ready**: Enables automated mod testing and validation workflows
+
 ### Core Functionality
 - **Multi-Platform Support**: Works with both Modrinth and CurseForge APIs
 - **Automatic Version Validation**: Checks if mod versions exist and finds latest versions
@@ -188,7 +196,7 @@ minecraft-mods-manager/
 
 ### Use Cases
 
-- **[Testing Latest Mod Versions](USECASE_LATEST_MODS_TESTING.md)** - Complete guide for testing latest mod versions with the latest Minecraft server
+- **[Testing Latest Mod Versions](docs/USECASE_LATEST_MODS_TESTING.md)** - Complete guide for testing latest mod versions with the latest Minecraft server
   - **Helper Script**: `.\scripts\TestLatestMods.ps1` - Automated workflow for testing latest mods
 - **Modpack Development** - Validate mod compatibility before release
 - **Server Administration** - Test updates before applying to production
@@ -216,8 +224,13 @@ For common workflows, use the focused helper scripts in the `scripts/` folder:
 ### Basic Commands
 
 ```powershell
-# Run validation and update modlist
+# Check for mod updates and show summary (default behavior)
 .\ModManager.ps1
+# or explicitly:
+.\ModManager.ps1 -UpdateMods
+
+# Run validation and update modlist
+.\ModManager.ps1 -ValidateAllModVersions
 
 # Download all mods to download/ folder
 .\ModManager.ps1 -Download
@@ -235,6 +248,37 @@ For common workflows, use the focused helper scripts in the `scripts/` folder:
 # Show help
 .\ModManager.ps1 -Help
 ```
+
+### Update Summary Output
+
+The default `.\ModManager.ps1` command shows a comprehensive **Update Summary** with clean, concise information:
+
+```
+📊 Update Summary:
+=================
+   🕹️  Latest Game Version: 1.21.6
+   🗂️  Latest Available Game Versions: 1.21.7, 1.21.8
+   🎯 Supporting latest version: 45 mods
+   ⬆️  Have updates available: 15 mods
+   ⚠️  Not supporting latest version: 5 mods
+   ➖ Not updated: 2 mods
+   🔄 Externally updated: 0 mods
+   ❌ Not found: 0 mods
+   ⚠️  Errors: 0 mods
+```
+
+**Key Features:**
+- **Latest Game Version**: Calculated as GameVersion + 1 from your modlist
+- **Clean Output**: Shows only counts, no verbose mod lists
+- **Status Tracking**: Clear indicators for each mod category
+- **Update Detection**: Identifies mods with available updates
+- **Compatibility Check**: Shows which mods support the latest game version
+
+**Use Cases:**
+- **Daily Check**: Quick overview of mod update status
+- **Update Planning**: Identify which mods need attention
+- **Version Compatibility**: See which mods support newer game versions
+- **Maintenance**: Track mod ecosystem health
 
 ## 📋 Complete Parameter Reference
 
@@ -674,14 +718,44 @@ Each download creates a detailed README with:
 
 ## 🔄 Workflow
 
+### How It Works
+
+**Your `modlist.csv` represents your currently installed mod versions.** The Minecraft Mod Manager provides a complete automated workflow for mod lifecycle management, from update detection to testing and modpack creation.
+
+**Complete Automation Workflow:**
+
+1. **Update Detection**: Script checks each mod against Modrinth/CurseForge APIs  
+2. **Intelligent Feedback**: Provides recommendations on when upgrades should happen
+3. **Automated Downloads**: Downloads updated mods for testing
+4. **Compatibility Testing**: Tests mods with server execution and reports issues
+5. **Modpack Generation**: Creates new modpacks for current and updated versions
+6. **Continuous Integration**: Enables automated testing pipelines
+
+**Process Flow:**
+```
+Your Installed Mods → API Validation → Update Analysis → Smart Recommendations
+        ↓
+Download Updates → Server Testing → Compatibility Report → Modpack Creation
+        ↓
+Current Version Modpack ← → Updated Version Modpack → Testing Feedback
+```
+
+**Example Workflow:**
+- Your CSV: `fabric-api v0.127.1+1.21.5` (what you have installed)
+- API Response: `v0.130.0+1.21.6` is latest available  
+- **Update Detection**: **"Have updates available: 1 mod"** 
+- **Testing**: Downloads and tests new version with server startup
+- **Feedback**: Reports compatibility success/issues
+- **Output**: Creates both current and updated modpacks for comparison
+
 ### Typical Usage Workflow
 
-1. **Prepare modlist.csv** with your mods
-2. **Run validation**: `.\ModManager.ps1`
-3. **Review results** in the console output
-4. **Download mods**: `.\ModManager.ps1 -Download -UseLatestVersion`
-5. **Check generated README** in the mods folder
-6. **Use downloaded mods** in your Minecraft installation
+1. **Prepare modlist.csv** with your currently installed mods and versions
+2. **Run validation**: `.\ModManager.ps1` (checks for available updates)
+3. **Review Update Summary** showing which mods have updates available
+4. **Download latest versions**: `.\ModManager.ps1 -Download -UseLatestVersion`
+5. **Check generated README** in the download folder
+6. **Apply updates** to your Minecraft installation
 
 ### Continuous Integration
 

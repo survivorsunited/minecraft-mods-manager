@@ -193,7 +193,8 @@ function Run-SingleTest {
         }
         
         # Execute the test file directly in the same process
-        & $testFilePath
+        # Use dot-sourcing to share script scope and access $script:TestResults
+        . $testFilePath
         
         # Get the test results from the script-scoped variable
         $fileResults = @{

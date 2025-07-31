@@ -137,6 +137,7 @@ function Validate-AllModVersions {
             ResponseFile = $result.ResponseFile
             Error = $result.Error
             AvailableVersions = if ($result.AvailableVersions) { $result.AvailableVersions -join ', ' } else { $null }
+            AvailableGameVersions = if ($result.AvailableGameVersions) { $result.AvailableGameVersions } else { @() }
             LatestVersion = $result.LatestVersion
             VersionUrl = $result.VersionUrl
             LatestVersionUrl = $result.LatestVersionUrl
@@ -172,6 +173,57 @@ function Validate-AllModVersions {
     
     $results | Export-Csv -Path $resultsFile -NoTypeInformation
     
+    # Find most common GameVersion in database to determine target
+    $mods = Get-ModList -CsvPath $effectiveModListPath
+    $gameVersions = $mods | Where-Object { $_.GameVersion -and $_.GameVersion -ne "unknown" } | Select-Object -ExpandProperty GameVersion
+    $mostCommonGameVersion = if ($gameVersions) {
+        $gameVersionCounts = $gameVersions | Group-Object | Sort-Object Count -Descending
+        $gameVersionCounts[0].Name
+    } else {
+        $DefaultGameVersion
+    }
+    
+    # Calculate Latest Game Version using GameVersion + 1 logic (as specified in requirements)
+    # Parse the most common game version and increment the patch version
+    if ($mostCommonGameVersion -match '^(\d+)\.(\d+)\.(\d+)$') {
+        $major = [int]$matches[1]
+        $minor = [int]$matches[2] 
+        $patch = [int]$matches[3]
+        $calculatedLatestGameVersion = "$major.$minor.$($patch + 1)"
+    } else {
+        # Fallback to adding .1 if version format is different
+        $calculatedLatestGameVersion = "$mostCommonGameVersion.1"
+    }
+    
+    # Get all available game versions from all mods for the Latest Available Game Versions field
+    $allModAvailableGameVersions = @()
+    foreach ($result in $results) {
+        if ($result.AvailableGameVersions -and $result.AvailableGameVersions.Count -gt 0) {
+            $allModAvailableGameVersions += $result.AvailableGameVersions
+        }
+    }
+    $allModAvailableGameVersions = $allModAvailableGameVersions | Select-Object -Unique | Sort-Object
+    
+    # Filter out ancient versions and get versions newer than the calculated latest game version
+    if ($allModAvailableGameVersions -and $allModAvailableGameVersions.Count -gt 0) {
+        $filteredLatestAvailableVersions = $allModAvailableGameVersions | Where-Object {
+            try {
+                [System.Version]$_ -gt [System.Version]$calculatedLatestGameVersion
+            } catch {
+                # Include snapshot versions and other formats
+                $_ -match '^\d+\.\d+\.\d+' -and $_ -gt $calculatedLatestGameVersion
+            }
+        }
+        
+        # If no versions are newer, show the most recent available versions
+        if (-not $filteredLatestAvailableVersions -or $filteredLatestAvailableVersions.Count -eq 0) {
+            $filteredLatestAvailableVersions = $allModAvailableGameVersions | Sort-Object | Select-Object -Last 10
+        }
+    } else {
+        $filteredLatestAvailableVersions = @()
+    }
+    $availableGameVersionsString = if ($filteredLatestAvailableVersions) { ($filteredLatestAvailableVersions | Sort-Object) -join ", " } else { "unknown" }
+
     # Analyze version differences and provide upgrade recommendations
     Write-Host ""
     
@@ -197,10 +249,8 @@ function Validate-AllModVersions {
         $latestVersion = $result.LatestVersion ?? "unknown"
         $latestGameVersion = $result.LatestGameVersion ?? "unknown"
         
-        # Use the calculated latest game version from the summary logic
-        # This will be calculated later in the code, so we'll use a placeholder for now
-        # The actual calculation will be done in the summary section
-        $targetGameVersion = $null  # Will be set later
+        # Use the calculated latest game version
+        $targetGameVersion = $calculatedLatestGameVersion
         
         # Check if mod supports latest game version
         # A mod supports latest if its game version is >= target game version
@@ -247,49 +297,6 @@ function Validate-AllModVersions {
             $modsExternallyUpdated += $result
         }
     }
-    
-    # Find most common GameVersion in database to determine target
-    $gameVersions = $results | Where-Object { $_.GameVersion -and $_.GameVersion -ne "unknown" } | Select-Object -ExpandProperty GameVersion
-    $mostCommonGameVersion = if ($gameVersions) {
-        $gameVersionCounts = $gameVersions | Group-Object | Sort-Object Count -Descending
-        $gameVersionCounts[0].Name
-    } else {
-        $DefaultGameVersion
-    }
-    
-    # Use the new function to calculate Latest Game Version from actual available versions
-    # Get all available game versions from all mods
-    $allModAvailableGameVersions = @()
-    Write-Host "DEBUG: Processing $($results.Count) results for available game versions" -ForegroundColor Yellow
-    foreach ($result in $results) {
-        if ($result.AvailableGameVersions -and $result.AvailableGameVersions.Count -gt 0) {
-            Write-Host "DEBUG: Adding $($result.AvailableGameVersions.Count) game versions from $($result.ID)" -ForegroundColor Yellow
-            $allModAvailableGameVersions += $result.AvailableGameVersions
-        } else {
-            Write-Host "DEBUG: No available game versions for $($result.ID)" -ForegroundColor Yellow
-        }
-    }
-    $allModAvailableGameVersions = $allModAvailableGameVersions | Select-Object -Unique | Sort-Object
-    Write-Host "DEBUG: Total unique available game versions: $($allModAvailableGameVersions.Count)" -ForegroundColor Yellow
-    
-    # Calculate Latest Game Version and Latest Available Game Versions using actual API data
-    if ($allModAvailableGameVersions -and $allModAvailableGameVersions.Count -gt 0) {
-        $versionCalculation = Calculate-LatestGameVersionFromAvailableVersions -AvailableGameVersions $allModAvailableGameVersions -CurrentGameVersion $mostCommonGameVersion
-        $calculatedLatestGameVersion = $versionCalculation.LatestGameVersion
-        $latestAvailableGameVersions = $versionCalculation.LatestAvailableGameVersions
-        
-        # Filter out ancient versions from Latest Available Game Versions
-        if ($latestAvailableGameVersions -and $latestAvailableGameVersions.Count -gt 0) {
-            $filteredLatestAvailableVersions = Filter-RelevantGameVersions -GameVersions $latestAvailableGameVersions -MinimumRelevantVersion "1.20.0"
-        } else {
-            $filteredLatestAvailableVersions = @()
-        }
-    } else {
-        $calculatedLatestGameVersion = $mostCommonGameVersion
-        $latestAvailableGameVersions = @()
-        $filteredLatestAvailableVersions = @()
-    }
-    $availableGameVersionsString = if ($filteredLatestAvailableVersions) { ($filteredLatestAvailableVersions | Sort-Object) -join ", " } else { "unknown" }
 
     # Show summary with total counts
     Write-Host ""
