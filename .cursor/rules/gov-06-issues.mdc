@@ -5,382 +5,35 @@ alwaysApply: true
 ---
 # Governance: Issue Management Workflow
 
-## Issue Management Strategy
+**CRITICAL**: This file references the ticket management system. The complete documentation is in `scripts/tasks/README.md`.
 
-### Issue Creation Process
-- Use GitHub CLI (`gh`) for issue management
-- Create issues for all bugs, features, and development tasks
-- Use appropriate labels and assignees
-- Reference existing issues when creating related ones
-
-### MANDATORY: Single Purpose Tickets
-**CRITICAL RULE**: Every ticket must have ONE specific, actionable purpose.
+## CONTROLLED: Issue Creation Through Scripts
+**REQUIRED**: Use ticket management scripts for ALL issue operations.
 
 **FORBIDDEN:**
-- ❌ "Refactor some stuff" 
-- ❌ "Fix various issues"
-- ❌ "Improve multiple things"
-- ❌ "Update dependencies and fix bugs and add features"
+- ❌ Manual `gh issue create` commands
+- ❌ Creating issues outside the script system
 
-**REQUIRED:**
-- ✅ "Fix Next Steps Logic - Remove confusing update message"
-- ✅ "Add GameVersion compatibility check to status icons"
-- ✅ "Split LatestDependencies into Required and Optional fields"
-- ✅ "Add URL display for mods without latest versions"
+**ALLOWED:**
+- ✅ Use `.\scripts\tasks\Create-Ticket.ps1` for new issues
+- ✅ Follow proper backup and documentation procedures
 
-**Enforcement:**
-- Each ticket must address exactly ONE problem or feature
-- If multiple issues exist, create separate tickets
-- Ticket title must clearly state the single purpose
-- Ticket body must focus on that one specific issue
+## REQUIRED: Use Existing Ticket System
+**MANDATORY**: Use the existing ticket management scripts for ALL operations.
 
-### MANDATORY: Acceptance Criteria Structure
-**CRITICAL RULE**: Acceptance Criteria must describe WHAT the feature should do, not HOW to implement it.
+## MANDATORY: Ticket Creation Workflow
 
-**FORBIDDEN:**
-- ❌ Acceptance Criteria as implementation tasks
-- ❌ Acceptance Criteria as to-do lists
-- ❌ Acceptance Criteria without specific behavior descriptions
-
-**REQUIRED:**
-- ✅ Acceptance Criteria as behavior descriptions
-- ✅ Acceptance Criteria using "When [condition], then [expected result]" format
-- ✅ Acceptance Criteria that define success criteria
-- ✅ Separate "Implementation Tasks" section for HOW to implement
-- ✅ Separate "Tests Required" section for specific test files
-
-**Enforcement:**
-- Acceptance Criteria must focus on user-visible behavior
-- Implementation details go in separate "Implementation Tasks" section
-- Test requirements go in separate "Tests Required" section
-- Every acceptance criterion must be testable
-
-### Issue Categories
-- **Bug Reports**: Issues with existing functionality
-- **Feature Requests**: New functionality or improvements
-- **Development Tasks**: Technical debt, refactoring, testing
-- **Documentation**: README updates, code comments, guides
-
-### MANDATORY: Test Requirements
-**CRITICAL RULE**: Every issue must include specific test requirements.
-
-**FORBIDDEN:**
-- ❌ Issues without test requirements
-- ❌ Vague test descriptions like "test the feature"
-- ❌ Missing test file names
-
-**REQUIRED:**
-- ✅ Specific test file names (e.g., "test/21-TestFeatureName.ps1")
-- ✅ Clear test descriptions of what to verify
-- ✅ Test requirements that validate acceptance criteria
-- ✅ Tests for both positive and negative cases
-
-**Enforcement:**
-- Every acceptance criterion must have corresponding test requirements
-- Test files must follow naming convention: test/[number]-[Description].ps1
-- Tests must verify the specific behavior described in acceptance criteria
-
-### MANDATORY: GitHub CLI Requirements
-**CRITICAL RULE**: GitHub CLI (gh) is **REQUIRED** for all ticket management operations.
-
-**INSTALLATION REQUIREMENTS:**
-- **Windows**: `winget install GitHub.cli` or download from https://cli.github.com/
-- **macOS**: `brew install gh` or download from https://cli.github.com/
-- **Linux**: Follow installation guide at https://cli.github.com/
-
-**AUTHENTICATION REQUIREMENTS:**
-- **MANDATORY**: Run `gh auth login` before any ticket operations
-- **MANDATORY**: Authenticate with GitHub account that has repository access
-- **MANDATORY**: Verify authentication with `gh auth status`
-
-**VERIFICATION COMMANDS:**
-```bash
-# Check installation
-gh --version
-
-# Check authentication
-gh auth status
-
-# Authenticate if needed
-gh auth login
-```
-
-**ENFORCEMENT:**
-- ❌ **FORBIDDEN**: Any ticket operations without GitHub CLI installed
-- ❌ **FORBIDDEN**: Any ticket operations without proper authentication
-- ✅ **REQUIRED**: Verify GitHub CLI before using ticket management scripts
-- ✅ **REQUIRED**: Re-authenticate if authentication expires
-
-### GitHub CLI Commands
-```bash
-# Create issue with body from file
-gh issue create --title "Title" --body-file issue_body.txt --label "bug,high-priority"
-
-# Create issue with inline body
-gh issue create --title "Title" --body "Description" --label "feature"
-
-# List issues
-gh issue list --state open --label "bug"
-
-# Update issue
-gh issue edit 123 --body "Updated description"
-
-# View issue content (used by ticket scripts)
-gh issue view 123 --json title,body,number,state,labels
-```
-
-## Issue Templates
-
-### Bug Report Template
-```markdown
-## Issue Description
-Brief description of the issue
-
-## Current Problem
-What's wrong or broken
-
-## Expected Behavior
-What should happen when working correctly
-
-## Acceptance Criteria
-- When [condition], then [expected result]
-- When [condition], then [expected result]
-- [Specific behavior that defines success]
-
-## Implementation Tasks
-- [ ] Task 1
-- [ ] Task 2
-- [ ] Task 3
-
-## Tests Required
-- [ ] Create test/[number]-[Description].ps1
-- [ ] Test specific behavior
-- [ ] Test edge cases
-
-## Additional Context
-Any other relevant information
-```
-
-### Feature Request Template
-```markdown
-## Feature Description
-Brief description of the requested feature
-
-## Use Case
-Why this feature is needed
-
-## Expected Behavior
-What the feature should do when working correctly
-
-## Acceptance Criteria
-- When [condition], then [expected result]
-- When [condition], then [expected result]
-- [Specific behavior that defines success]
-
-## Implementation Tasks
-- [ ] Task 1
-- [ ] Task 2
-- [ ] Task 3
-
-## Tests Required
-- [ ] Create test/[number]-[Description].ps1
-- [ ] Test specific behavior
-- [ ] Test edge cases
-
-## Additional Context
-Any other relevant information
-```
-
-## Issue Tracking Integration
-
-### Task List Integration
-- Task list tracks high-level project status
-- GitHub issues track specific implementation details
-- Keep task list focused on project milestones
-- Move detailed development tasks to GitHub issues
-
-### Label Strategy
-- **Priority**: `high-priority`, `medium-priority`, `low-priority`
-- **Type**: `bug`, `feature`, `enhancement`, `documentation`
-- **Component**: `core`, `testing`, `pipeline`, `api`
-- **Status**: `ready`, `in-progress`, `blocked`, `needs-review`
-
-## Workflow Integration
-
-### Development Workflow
-1. Create GitHub issue for new task
-2. Define acceptance criteria as behavior descriptions
-3. Add specific test requirements with file names
-4. Reference issue in commit messages
-5. Update issue acceptance criteria when requirements change
-6. Update issue status as work progresses
-7. Close issue when complete
-
-### MANDATORY: Issue Updates During Development
-**CRITICAL RULE**: Update issue acceptance criteria whenever requirements change during development.
-
-**FORBIDDEN:**
-- ❌ Working on issues without updating acceptance criteria
-- ❌ Adding requirements without updating issue
-- ❌ Changing scope without updating issue
-
-**REQUIRED:**
-- ✅ Update acceptance criteria when new requirements discovered
-- ✅ Add test requirements for new acceptance criteria
-- ✅ Update issue immediately when scope changes
-- ✅ Reflect all changes in issue before committing code
-
-**Enforcement:**
-- Every code change must be reflected in issue acceptance criteria
-- New requirements discovered during development must be added to issue
-- Issue must always match current implementation scope
-
-### MANDATORY: Streamlined Ticket Workflow
-**CRITICAL RULE**: Use the automated ticket management scripts for ALL ticket operations.
-
-**DOCUMENTATION**: Complete documentation for all ticket management scripts is available in `scripts/tasks/README.md`. This documentation is **MANDATORY** to read and follow before using any ticket management scripts.
-
-**SCRIPTS LOCATION**: All ticket management scripts are located in `scripts/tasks/` folder:
-- `scripts/tasks/Read-Ticket.ps1` - Read tickets and create backups
-- `scripts/tasks/Update-Ticket.ps1` - Update tickets with backup creation  
-- `scripts/tasks/Modify-Ticket.ps1` - Interactive ticket modification
-- `scripts/tasks/Get-Ticket.ps1` - Unified ticket manager
-- `scripts/tasks/Get-Next-Ticket.ps1` - Next ticket finder with prioritization
-
-**MANDATORY SCRIPT USAGE:**
-
-### Read-Ticket.ps1 - Read GitHub Tickets
+**For New Issues:**
 ```powershell
-# Read ticket #54 and create backups
-.\scripts\tasks\Read-Ticket.ps1 -IssueNumber 54
-
-# Read with custom backup directory
-.\scripts\tasks\Read-Ticket.ps1 -IssueNumber 21 -BackupDir "backups"
+.\scripts\tasks\Create-Ticket.ps1 -Title "Issue Title" -Body "Issue description" -Labels "bug,high-priority" -OperationDetails "Creating ticket for analysis"
+# Creates: issue-create-timestamp-pre.md and issue-123-timestamp-created.md
 ```
 
-### Update-Ticket.ps1 - Update GitHub Tickets
-```powershell
-# Update ticket body
-.\scripts\tasks\Update-Ticket.ps1 -IssueNumber 54 -Body "Updated content" -OperationDetails "Adding new requirements"
-
-# Update from file
-.\scripts\tasks\Update-Ticket.ps1 -IssueNumber 21 -BodyFile "update-content.md" -OperationDetails "Updating from file"
-
-# Close ticket
-.\scripts\tasks\Update-Ticket.ps1 -IssueNumber 33 -State "closed" -OperationDetails "Closing completed issue"
-
-# Add labels
-.\scripts\tasks\Update-Ticket.ps1 -IssueNumber 45 -Labels "bug,high-priority" -OperationDetails "Adding priority labels"
-```
-
-### Modify-Ticket.ps1 - Interactive Ticket Modification
-```powershell
-# Modify with default editor (notepad)
-.\scripts\tasks\Modify-Ticket.ps1 -IssueNumber 54 -OperationDetails "Adding new acceptance criteria"
-
-# Modify with VS Code
-.\scripts\tasks\Modify-Ticket.ps1 -IssueNumber 21 -Editor "code" -OperationDetails "Updating requirements"
-
-# Modify with custom editor
-.\scripts\tasks\Modify-Ticket.ps1 -IssueNumber 33 -Editor "vim" -OperationDetails "Fixing typos"
-```
-
-### Get-Ticket.ps1 - Unified Ticket Manager
-```powershell
-# Read ticket
-.\scripts\tasks\Get-Ticket.ps1 -IssueNumber 54
-
-# Update ticket body
-.\scripts\tasks\Get-Ticket.ps1 -IssueNumber 54 -Action "update" -Body "Updated content" -OperationDetails "Adding new requirements"
-
-# Close ticket
-.\scripts\tasks\Get-Ticket.ps1 -IssueNumber 21 -Action "update" -State "closed" -OperationDetails "Closing completed issue"
-```
-
-### Get-Next-Ticket.ps1 - Next Ticket Finder
-```powershell
-# Get next highest priority ticket
-.\scripts\tasks\Get-Next-Ticket.ps1
-
-# Get and read next ticket
-.\scripts\tasks\Get-Next-Ticket.ps1 -ReadTicket
-
-# Get next high-priority ticket from Phase 2
-.\scripts\tasks\Get-Next-Ticket.ps1 -Priority "high-priority" -Phase "Phase 2"
-
-# Get next 5 tickets to work on
-.\scripts\tasks\Get-Next-Ticket.ps1 -Limit 5
-```
-
-**FORBIDDEN:**
-- ❌ **ABSOLUTELY FORBIDDEN: Any direct `gh` commands (gh issue view, gh issue edit, gh api, etc.)**
-- ❌ **CRITICAL VIOLATION: Running GitHub CLI commands outside of provided scripts**
-- ❌ Manual `gh issue view` or `gh issue edit` commands
-- ❌ Overwriting ticket content without reading it first
-- ❌ Replacing entire ticket body without checking existing content
-- ❌ Making assumptions about what's in the ticket
-- ❌ Working without proper backups
-
-**REQUIRED:**
-- ✅ **MANDATORY: ONLY use the provided scripts in `.\scripts\tasks\` folder**
-- ✅ **NEVER run direct GitHub CLI commands - ONLY use ticket management scripts**
-- ✅ Use `.\scripts\tasks\Read-Ticket.ps1 -IssueNumber X` to read tickets
-- ✅ Use `.\scripts\tasks\Update-Ticket.ps1 -IssueNumber X -BodyFile "path"` to update tickets
-- ✅ Use `.\scripts\tasks\Modify-Ticket.ps1 -IssueNumber X` for interactive editing
-- ✅ Understand existing requirements and acceptance criteria
-- ✅ Preserve all existing information when updating
-- ✅ Always create backups before any operation
-
-**Enforcement:**
-- **ZERO TOLERANCE: Any direct GitHub CLI command usage is a critical violation**
-- **IMMEDIATE STOP: If direct `gh` command is attempted, stop and use scripts instead**
-- Always use Read-Ticket.ps1 before making any changes
-- Never overwrite entire ticket body without reading it first
-- Preserve all existing content and add new requirements
-- Use automated scripts for all ticket operations
-
-### MANDATORY: Dual Backup System
-**CRITICAL RULE**: Read-Ticket.ps1 creates BOTH read and update backup files immediately.
-
-**FORBIDDEN:**
-- ❌ Reading tickets without creating dual backups
-- ❌ Updating tickets without creating backup
-- ❌ Losing ticket content due to overwrites
-- ❌ Working without proper backup files
-
-**REQUIRED:**
-- ✅ Read-Ticket.ps1 creates: `.tasks/issue-{number}-{timestamp}-read.md`
-- ✅ Read-Ticket.ps1 creates: `.tasks/issue-{number}-{timestamp}-update.md`
-- ✅ Modify the update file directly for changes
-- ✅ Use Update-Ticket.ps1 with the modified update file
-- ✅ Include full ticket content, metadata, and operation type in backup
-- ✅ Maintain one file per operation with unique timestamp
-
-**Backup File Format:**
-```markdown
----
-operation: read|update
-timestamp: YYYY-MM-DD_HHMMSS
-issue_number: 123
-operation_details: "Description of what was done"
----
-
-# Full ticket content here
-```
-
-**Enforcement:**
-- Read-Ticket.ps1 must create both read and update files
-- Update-Ticket.ps1 must strip metadata before writing to GitHub
-- Backup files must have unique timestamps
-- No ticket operation without proper backups
-- Always use the update file for modifications
-
-### MANDATORY: Ticket Workflow Process
-**CRITICAL RULE**: Follow the exact 3-step process for ALL ticket modifications.
+## MANDATORY: 3-Step Ticket Update Workflow
 
 **Step 1: Read and Create Backup Files**
 ```powershell
-$result = .\scripts\tasks\Read-Ticket.ps1 -IssueNumber X
+.\scripts\tasks\Read-Ticket.ps1 -IssueNumber X
 # Creates: issue-X-timestamp-read.md and issue-X-timestamp-update.md
 ```
 
@@ -396,61 +49,27 @@ notepad .tasks\issue-X-timestamp-update.md
 .\scripts\tasks\Update-Ticket.ps1 -IssueNumber X -BodyFile ".tasks\issue-X-timestamp-update.md" -OperationDetails "Description"
 ```
 
-**COMPLETE WORKFLOW EXAMPLES:**
-
-### Example 1: Complete 3-Step Process
+## MANDATORY: Find Next Ticket
+When no specific ticket is given, use:
 ```powershell
-# Step 1: Read ticket and create backups
-$result = .\scripts\tasks\Read-Ticket.ps1 -IssueNumber 54
+# Get next highest priority ticket
+.\scripts\tasks\Get-Next-Ticket.ps1
 
-# Step 2: Modify the update file
-notepad $result.UpdateBackupPath
-
-# Step 3: Update ticket with modified content
-.\scripts\tasks\Update-Ticket.ps1 -IssueNumber 54 -BodyFile $result.UpdateBackupPath -OperationDetails "Adding new requirements"
+# Get and read next ticket automatically
+.\scripts\tasks\Get-Next-Ticket.ps1 -ReadTicket
 ```
 
-### Example 2: Interactive Modification
-```powershell
-# Modify ticket through editor (combines all 3 steps)
-.\scripts\tasks\Modify-Ticket.ps1 -IssueNumber 54 -Editor "code" -OperationDetails "Updating acceptance criteria"
-```
+## FORBIDDEN Actions
+- ❌ **Manual `gh` commands (gh issue view, gh issue edit, etc.)**
+- ❌ **Creating new issues**
+- ❌ **Working without ticket reference**
+- ❌ **Overwriting ticket content without reading first**
 
-### Example 3: Batch Operations
-```powershell
-# Read multiple tickets
-foreach ($issue in @(21, 22, 23)) {
-    .\scripts\tasks\Read-Ticket.ps1 -IssueNumber $issue
-}
-```
+## REQUIRED Actions
+- ✅ **Use ticket management scripts ONLY**
+- ✅ **Follow 3-step process for ALL ticket modifications**
+- ✅ **Always create backups before changes**
+- ✅ **Reference scripts/tasks/README.md for complete documentation**
 
-**Enforcement:**
-- Always follow the 3-step process
-- Never skip the read step
-- Always modify the update file, not the read file
-- Always use Update-Ticket.ps1 with the modified file
-- Metadata is automatically stripped during update
-
-### Testing Integration
-- Create issues for test failures
-- Reference test files in issue descriptions
-- Track test improvements as separate issues
-
-### Pipeline Integration
-- Monitor CI/CD for failures
-- Create issues for pipeline problems
-- Track deployment and release issues
-
-## Issue Maintenance
-
-### Regular Reviews
-- Review open issues weekly
-- Update stale issues
-- Close completed issues
-- Merge duplicate issues
-
-### Issue Cleanup
-- Remove outdated labels
-- Update issue templates
-- Archive resolved issues
-- Maintain issue searchability
+## Complete Documentation
+**MANDATORY READ**: `scripts/tasks/README.md` contains the complete documentation for all ticket management scripts and workflows.

@@ -17,7 +17,40 @@ The scripts provide a **safe, documented workflow** for reading and updating Git
 
 ## Scripts
 
-### 1. `Read-Ticket.ps1` - Read GitHub Tickets
+### 1. `Create-Ticket.ps1` - Create GitHub Tickets
+
+**Purpose**: Create a new GitHub ticket with proper backup creation and error handling.
+
+**Functionality**:
+- Creates new GitHub tickets using GitHub CLI
+- Creates **dual backup files** (pre-creation + post-creation)
+- Validates GitHub CLI availability
+- Returns structured result object with issue number
+- Supports both inline body and body from file
+
+**Parameters**:
+- `-Title` (Required): GitHub issue title
+- `-Body` (Optional): Issue body content
+- `-BodyFile` (Optional): File containing issue body content
+- `-Labels` (Optional): Comma-separated labels
+- `-BackupDir` (Optional): Backup directory (default: `.tasks/`)
+- `-OperationDetails` (Required): Description of the creation operation
+
+**Example**:
+```powershell
+# Create ticket with inline body
+.\Create-Ticket.ps1 -Title "Fix logging issues" -Body "Analysis shows multiple issues..." -Labels "bug,high-priority" -OperationDetails "Creating ticket for analysis findings"
+
+# Create ticket from file
+.\Create-Ticket.ps1 -Title "Feature request" -BodyFile "feature-description.md" -Labels "enhancement" -OperationDetails "Creating feature request"
+```
+
+**Output**:
+- Creates `.tasks/issue-create-2024-01-15_143022-pre.md`
+- Creates `.tasks/issue-123-2024-01-15_143022-created.md`
+- Returns issue number and backup paths
+
+### 2. `Read-Ticket.ps1` - Read GitHub Tickets
 
 **Purpose**: Read a GitHub ticket and create backup files for safe review.
 
@@ -45,7 +78,7 @@ The scripts provide a **safe, documented workflow** for reading and updating Git
 - Creates `.tasks/issue-54-2024-01-15_143022-update.md`
 - Returns ticket content and backup paths
 
-### 2. `Update-Ticket.ps1` - Update GitHub Tickets
+### 3. `Update-Ticket.ps1` - Update GitHub Tickets
 
 **Purpose**: Update GitHub tickets with proper backup creation and content preservation.
 
@@ -81,7 +114,7 @@ The scripts provide a **safe, documented workflow** for reading and updating Git
 .\Update-Ticket.ps1 -IssueNumber 45 -Labels "bug,high-priority" -OperationDetails "Adding priority labels"
 ```
 
-### 3. `Modify-Ticket.ps1` - Interactive Ticket Modification
+### 4. `Modify-Ticket.ps1` - Interactive Ticket Modification
 
 **Purpose**: Modify GitHub tickets through an interactive editor workflow.
 
@@ -118,11 +151,11 @@ The scripts provide a **safe, documented workflow** for reading and updating Git
 5. Updates ticket with modified content
 6. Creates backup of updated content
 
-### 4. `Get-Ticket.ps1` - Unified Ticket Manager
+### 5. `Get-Ticket.ps1` - Unified Ticket Manager
 
 **Purpose**: Wrapper script providing a clean interface for reading and updating tickets.
 
-### 5. `Get-Next-Ticket.ps1` - Next Ticket Finder
+### 6. `Get-Next-Ticket.ps1` - Next Ticket Finder
 
 **Purpose**: Automatically find the next ticket to work on with intelligent prioritization.
 
@@ -422,10 +455,12 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 scripts/tasks/
 ├── README.md              # This documentation
+├── Create-Ticket.ps1      # Create new tickets with backup creation
 ├── Read-Ticket.ps1        # Read tickets and create backups
 ├── Update-Ticket.ps1      # Update tickets with backup creation
 ├── Modify-Ticket.ps1      # Interactive ticket modification
-└── Get-Ticket.ps1         # Unified ticket manager
+├── Get-Ticket.ps1         # Unified ticket manager
+└── Get-Next-Ticket.ps1    # Next ticket finder
 
 .tasks/                    # Backup directory (created automatically)
 ├── issue-54-2024-01-15_143022-read.md

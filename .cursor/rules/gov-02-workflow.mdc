@@ -24,44 +24,38 @@ Your workflow is strict - every action must have a specific purpose:
 7. **Strict Issue-Based Commits**: Commit code only for specific issues with issue references (purpose: maintain traceability)
 8. **Automatic Issue Management**: Create, commit, push, and close issues automatically (purpose: maintain workflow momentum)
 
-## MANDATORY: Ticket-First Workflow
+## MANDATORY: Existing Ticket Workflow
 
-**CRITICAL RULE**: EVERYTHING the user gives you MUST go into a GitHub ticket FIRST before any work is done.
+**CRITICAL RULE**: NEVER create new tickets. Always work on existing tickets using the ticket management system.
 
 **FORBIDDEN:**
-- ❌ Implementing code changes without a ticket
-- ❌ "Quick fixes" without ticket creation
-- ❌ "Let me just fix this real quick" - NO!
-- ❌ Any work without ticket reference
-- ❌ Working on issues without updating ticket acceptance criteria
-- ❌ Missing test requirements in acceptance criteria
+- ❌ Creating new GitHub issues manually
+- ❌ Using `gh issue create` commands
+- ❌ Working without existing ticket reference
+- ❌ "Quick fixes" without proper ticket workflow
 
 **REQUIRED:**
-- ✅ Create ticket for EVERY user request
-- ✅ Reference ticket in ALL work
-- ✅ Only work on specific ticket issues
-- ✅ Commit with ticket number
-- ✅ Update ticket acceptance criteria with specific test requirements
-- ✅ Include test file names in acceptance criteria
-- ✅ Update ticket EVERY TIME you code or make changes
+- ✅ Use `.\scripts\tasks\Get-Next-Ticket.ps1` to find work
+- ✅ Work ONLY on existing tickets
+- ✅ Follow 3-step ticket management process
+- ✅ Reference existing ticket in ALL work
 
 **Enforcement:**
-- If user says "fix this bug" → Create ticket first
-- If user says "add this feature" → Create ticket first  
-- If user says "improve this" → Create ticket first
-- If user says "this is wrong" → Create ticket first
-- NO EXCEPTIONS!
+- If user gives new work → Find appropriate existing ticket
+- If no existing ticket → Ask user which ticket to work on
+- Use ticket management scripts for ALL operations
+- NO manual issue creation
 
 ## Automatic Workflow Execution
 
-### MANDATORY: Complete Issue Lifecycle
-When working on any task, you MUST complete the full issue lifecycle:
+### MANDATORY: Existing Ticket Lifecycle
+When working on any task, you MUST use existing tickets:
 
-1. **Create Issue**: `gh issue create --title "Title" --body "Description" --label "type,priority"`
+1. **Find Ticket**: `.\scripts\tasks\Get-Next-Ticket.ps1 -ReadTicket`
 2. **Implement Solution**: Write code, tests, and documentation
-3. **Commit Changes**: `git commit -m "#[issue-number] type(scope): description"`
-4. **Push Code**: `git push`
-5. **Close Issue**: `gh issue close #[issue-number] --reason completed`
+3. **Update Ticket**: Use 3-step ticket management process
+4. **Commit Changes**: `git commit -m "#[issue-number] type(scope): description"`
+5. **Push Code**: `git push`
 
 ### NO REMINDERS NEEDED
 - **Never wait for user reminders** to create issues, commit, push, or close issues
@@ -103,10 +97,10 @@ When working on any task, you MUST complete the full issue lifecycle:
 
 When a new task is given:
 - Acknowledge: "✅ Task added: [task]." (purpose: confirm receipt)
-- Create GitHub issue: `gh issue create --title "Title" --body "Description" --label "type,priority"` (purpose: track detailed work)
+- Find existing ticket: `.\scripts\tasks\Get-Next-Ticket.ps1` (purpose: find appropriate work)
 - Update task list status (purpose: maintain high-level overview)
 - Execute immediately (purpose: maintain momentum)
-- Complete full workflow: implement → commit → push → close issue
+- Complete full workflow: implement → update ticket → commit → push
 
 **Communication Rules**: No "proceeding," "on it," or clarification requests. Execute next step immediately.
 
@@ -136,9 +130,9 @@ All project-specific rules, patterns, and requirements are defined in the Cursor
 **CRITICAL RULE**: NEVER stop working on tickets. Always be actively working on something.
 
 **SMART TICKET UPDATES:**
-- If user feedback relates to current ticket → Use Read-Ticket.ps1 → Modify update file → Update-Ticket.ps1 → Continue working
-- If user feedback relates to existing ticket → Use Read-Ticket.ps1 → Modify update file → Update-Ticket.ps1 → Continue working  
-- If user feedback is new issue → Create new ticket and continue working
+- If user feedback relates to current ticket → Use `.\scripts\tasks\Read-Ticket.ps1` → Modify update file → `.\scripts\tasks\Update-Ticket.ps1` → Continue working
+- If user feedback relates to existing ticket → Use `.\scripts\tasks\Read-Ticket.ps1` → Modify update file → `.\scripts\tasks\Update-Ticket.ps1` → Continue working  
+- If user feedback is new issue → Find appropriate existing ticket and continue working
 - **ALWAYS resume work immediately** after ticket updates
 - **ALWAYS update ticket acceptance criteria** when adding new requirements
 - **ALWAYS include specific test file names** in acceptance criteria
@@ -164,8 +158,8 @@ All project-specific rules, patterns, and requirements are defined in the Cursor
 
 **Workflow:**
 1. User gives feedback → Determine if it relates to current/existing ticket
-2. Update appropriate ticket(s) → Continue working immediately
-3. If new issue → Create ticket → Continue working on current ticket
+2. Update appropriate ticket(s) using 3-step process → Continue working immediately
+3. If new issue → Find appropriate existing ticket → Continue working on current ticket
 4. **NEVER STOP WORKING** unless explicitly told to stop
 5. **ALWAYS update ticket acceptance criteria** when adding requirements
 6. **ALWAYS include specific test file names** in acceptance criteria
