@@ -313,6 +313,8 @@ Any other relevant information
 ```
 
 **FORBIDDEN:**
+- ❌ **ABSOLUTELY FORBIDDEN: Any direct `gh` commands (gh issue view, gh issue edit, gh api, etc.)**
+- ❌ **CRITICAL VIOLATION: Running GitHub CLI commands outside of provided scripts**
 - ❌ Manual `gh issue view` or `gh issue edit` commands
 - ❌ Overwriting ticket content without reading it first
 - ❌ Replacing entire ticket body without checking existing content
@@ -320,6 +322,8 @@ Any other relevant information
 - ❌ Working without proper backups
 
 **REQUIRED:**
+- ✅ **MANDATORY: ONLY use the provided scripts in `.\scripts\tasks\` folder**
+- ✅ **NEVER run direct GitHub CLI commands - ONLY use ticket management scripts**
 - ✅ Use `.\scripts\tasks\Read-Ticket.ps1 -IssueNumber X` to read tickets
 - ✅ Use `.\scripts\tasks\Update-Ticket.ps1 -IssueNumber X -BodyFile "path"` to update tickets
 - ✅ Use `.\scripts\tasks\Modify-Ticket.ps1 -IssueNumber X` for interactive editing
@@ -328,6 +332,8 @@ Any other relevant information
 - ✅ Always create backups before any operation
 
 **Enforcement:**
+- **ZERO TOLERANCE: Any direct GitHub CLI command usage is a critical violation**
+- **IMMEDIATE STOP: If direct `gh` command is attempted, stop and use scripts instead**
 - Always use Read-Ticket.ps1 before making any changes
 - Never overwrite entire ticket body without reading it first
 - Preserve all existing content and add new requirements

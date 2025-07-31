@@ -1,0 +1,161 @@
+---
+description: Mandatory file reads before starting any work
+globs: 
+alwaysApply: true
+---
+# Governance: Mandatory File Reads Before Starting Work
+
+## CRITICAL RULE: Pre-Work Reading Requirements
+**MANDATORY**: Before starting ANY work on this project, you MUST read these files in this exact order:
+
+### Step 1: Project Understanding (MANDATORY)
+**REQUIRED FILES TO READ:**
+1. **`README.md`** - Project overview, features, usage instructions
+2. **`CLAUDE.md`** - Claude-specific project memory and context
+3. **`TODO.md`** - Current project status and priorities
+4. **`modlist.csv`** - Current mod database structure and data
+
+### Step 2: Governance Rules (MANDATORY)
+**REQUIRED FILES TO READ:**
+1. **`.cursor/rules/gov-01-instructions.mdc`** - Basic instruction guidelines
+2. **`.cursor/rules/gov-02-workflow.mdc`** - Development workflow requirements
+3. **`.cursor/rules/gov-03-communication.mdc`** - Communication standards
+4. **`.cursor/rules/gov-04-quality.mdc`** - Quality assurance requirements
+5. **`.cursor/rules/gov-05-testing.mdc`** - Testing requirements and standards
+6. **`.cursor/rules/gov-06-issues.mdc`** - Issue management and GitHub CLI rules
+7. **`.cursor/rules/gov-07-tasks.mdc`** - Task management requirements
+8. **`.cursor/rules/gov-08-mandatory-reads.mdc`** - This file (self-reference)
+
+### Step 3: Project-Specific Rules (MANDATORY)
+**REQUIRED FILES TO READ:**
+1. **`.cursor/rules/proj-01-minecraft.mdc`** - Minecraft mod management specifics
+2. **`.cursor/rules/proj-02-powershell.mdc`** - PowerShell coding standards
+3. **`.cursor/rules/proj-03-development.mdc`** - Development practices
+4. **`.cursor/rules/proj-04-testing.mdc`** - Testing implementation details
+5. **`.cursor/rules/proj-05-api.mdc`** - API integration requirements
+
+### Step 4: Current Task Context (MANDATORY)
+**REQUIRED ACTIONS:**
+1. **Read any open tickets** using `.\scripts\tasks\Read-Ticket.ps1 -IssueNumber X`
+2. **Check current git status** to understand pending changes
+3. **Review recent commits** to understand recent work
+4. **Check test status** by running relevant tests if needed
+
+## ENFORCEMENT RULES
+
+### FORBIDDEN:
+- ❌ **Starting work without reading ALL mandatory files**
+- ❌ **Making assumptions about project structure or requirements**
+- ❌ **Ignoring existing conventions established in the files**
+- ❌ **Working on tickets without reading the ticket content first**
+- ❌ **Making code changes without understanding current project state**
+
+### REQUIRED:
+- ✅ **Read ALL files in the specified order before any work**
+- ✅ **Understand project context, rules, and current state**
+- ✅ **Follow ALL governance and project rules learned from reading**
+- ✅ **Ask clarifying questions if any rules conflict or are unclear**
+- ✅ **Demonstrate understanding of project requirements before proceeding**
+
+### CRITICAL VIOLATIONS:
+- ❌ **Skipping mandatory file reads**
+- ❌ **Starting work without context**
+- ❌ **Violating rules established in the mandatory files**
+- ❌ **Making changes that contradict established patterns**
+
+## PRE-WORK CHECKLIST
+
+Before starting ANY task, confirm you have:
+
+### Project Understanding ✓
+- [ ] Read and understood README.md
+- [ ] Read and understood CLAUDE.md 
+- [ ] Read and understood TODO.md
+- [ ] Examined modlist.csv structure
+
+### Governance Rules ✓
+- [ ] Read all gov-*.mdc files
+- [ ] Understood workflow requirements
+- [ ] Understood communication standards
+- [ ] Understood quality requirements
+- [ ] Understood testing requirements
+- [ ] Understood issue management rules
+- [ ] Understood task management rules
+
+### Project Rules ✓
+- [ ] Read all proj-*.mdc files
+- [ ] Understood Minecraft-specific requirements
+- [ ] Understood PowerShell standards
+- [ ] Understood development practices
+- [ ] Understood testing implementation
+- [ ] Understood API requirements
+
+### Current Context ✓
+- [ ] Read any relevant tickets
+- [ ] Checked git status
+- [ ] Reviewed recent commits
+- [ ] Understood current project state
+
+## READING ORDER RATIONALE
+
+### Why This Order Matters:
+1. **README.md first** - Establishes basic project understanding
+2. **CLAUDE.md second** - Provides specific context and memory
+3. **TODO.md third** - Shows current priorities and status
+4. **Governance rules** - Establishes how to work properly
+5. **Project rules** - Establishes technical requirements
+6. **Current context** - Understands immediate work environment
+
+### Failure to Follow Order:
+- Missing critical context needed for later files
+- Misunderstanding project requirements
+- Violating established patterns
+- Making inappropriate assumptions
+
+## VERIFICATION REQUIREMENTS
+
+### Before Starting Work:
+1. **Confirm you've read all mandatory files**
+2. **State your understanding of the current task**
+3. **Confirm you understand all relevant rules**
+4. **Ask questions about any unclear requirements**
+
+### During Work:
+1. **Reference the rules when making decisions**
+2. **Follow established patterns and conventions**
+3. **Respect all governance requirements**
+4. **Maintain project quality standards**
+
+## CONSEQUENCES OF VIOLATIONS
+
+### Missing Mandatory Reads:
+- Work may violate established patterns
+- Code may not meet quality standards  
+- May conflict with governance requirements
+- May waste time on incorrect approaches
+
+### Recommended Response to Violations:
+1. **STOP current work immediately**
+2. **Read all mandatory files**
+3. **Restart work with proper context**
+4. **Follow all established requirements**
+
+## CONTINUOUS LEARNING
+
+### File Update Monitoring:
+- Monitor changes to mandatory files
+- Re-read updated files when they change
+- Adjust approach based on new requirements
+- Stay current with project evolution
+
+### Knowledge Verification:
+- Periodically verify understanding of requirements
+- Ask questions when requirements are unclear
+- Seek clarification on conflicting rules
+- Maintain current knowledge of project state
+
+## SUMMARY
+
+**ZERO EXCEPTIONS**: Every work session MUST begin with reading all mandatory files in the specified order. This ensures consistent, high-quality work that follows all project requirements and governance rules.
+
+**CRITICAL SUCCESS FACTOR**: Understanding project context before starting work is essential for success. The mandatory reading requirement ensures this understanding is always current and complete.
