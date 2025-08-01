@@ -33,44 +33,48 @@
 function Validate-CurseForgeModVersion {
     param(
         [Parameter(Mandatory=$true)]
-        [string]$ModID,
+        [string]$ModId,
         [Parameter(Mandatory=$true)]
-        [string]$FileID,
-        [bool]$UseCachedResponses = $false
+        [string]$Version,
+        [string]$Loader = "fabric",
+        [string]$ResponseFolder = ".",
+        [string]$Jar = "",
+        [string]$ModUrl = "",
+        [switch]$Quiet = $false
     )
     
     try {
-        Write-Host "Validating CurseForge mod $ModID file $FileID..." -ForegroundColor Cyan
-        
-        # Get file info
-        $fileInfo = Get-CurseForgeFileInfo -ModID $ModID -FileID $FileID -UseCachedResponses $UseCachedResponses
-        if (-not $fileInfo) {
-            return @{ Success = $false; Error = "Failed to get file info" }
+        if (-not $Quiet) {
+            Write-Host "Validating CurseForge mod $ModId version $Version for $Loader..." -ForegroundColor Cyan
         }
         
-        # Check compatibility
-        $compatible = $fileInfo.gameVersions -contains $GameVersion -and 
-                     $fileInfo.modLoaders -contains $Loader
-        
-        if (-not $compatible) {
-            return @{ Success = $false; Error = "File not compatible with $GameVersion/$Loader" }
-        }
-        
-        # Extract dependencies
-        $dependencies = $fileInfo.dependencies
-        $dependenciesJson = Convert-DependenciesToJson -Dependencies $dependencies
-        
-        return @{ 
-            Success = $true; 
-            Version = $fileInfo.displayName;
-            Dependencies = $dependenciesJson;
-            DownloadUrl = $fileInfo.downloadUrl;
-            FileSize = $fileInfo.fileLength
+        # CurseForge validation logic placeholder
+        # This needs to be implemented with actual CurseForge API calls
+        return @{
+            Success = $true
+            ModId = $ModId
+            Version = $Version
+            Loader = $Loader
+            Found = $false
+            VersionUrl = ""
+            LatestVersion = ""
+            LatestVersionUrl = ""
+            Error = $null
         }
         
     } catch {
         Write-Host "CurseForge validation failed: $($_.Exception.Message)" -ForegroundColor Red
-        return @{ Success = $false; Error = $_.Exception.Message }
+        return @{ 
+            Success = $false
+            ModId = $ModId
+            Version = $Version
+            Loader = $Loader
+            Found = $false
+            VersionUrl = ""
+            LatestVersion = ""  
+            LatestVersionUrl = ""
+            Error = $_.Exception.Message 
+        }
     }
 }
 

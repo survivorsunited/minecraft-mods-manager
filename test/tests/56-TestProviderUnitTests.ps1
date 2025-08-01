@@ -123,7 +123,7 @@ if ($fileInfo) {
 }
 
 # Test Validate-CurseForgeModVersion with valid mod and version (use cached responses)
-$result = Validate-CurseForgeModVersion -ModID "238222" -FileID "123456" -UseCachedResponses $true
+$result = Validate-CurseForgeModVersion -ModId "238222" -Version "latest" -Loader "fabric" -ResponseFolder $TestOutputDir -Quiet
 if ($result) {
     Write-TestResult "Validate-CurseForgeModVersion - Valid Mod/Version" $true
 } else {

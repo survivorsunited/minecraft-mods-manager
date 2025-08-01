@@ -7,7 +7,11 @@ backups/*.csv
 # ignore all sub folders in test that start with number and -
 test/test-output/[0-9]*-*/
 
-apiresponse/
+# Old cache location (now moved to .cache/)
+# apiresponse/
+
+# Cache directory
+.cache/
 
 # Logs
 logs

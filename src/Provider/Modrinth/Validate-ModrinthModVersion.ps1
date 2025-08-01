@@ -70,8 +70,30 @@ function Validate-ModrinthModVersion {
         $versionsApiUrl = "https://api.modrinth.com/v2/project/$ModID/version"
         $versionsResponse = Invoke-RestMethod -Uri $versionsApiUrl -Method Get -TimeoutSec 30
         
-        # Find the specific version by version_number
+        # Find the specific version by version_number with flexible matching
+        # Try exact match first
         $versionInfo = $versionsResponse | Where-Object { $_.version_number -eq $Version }
+        
+        # If exact match fails, try partial matches for common version format differences
+        if (-not $versionInfo) {
+            # Remove 'v' prefix if present in search version
+            $cleanVersion = $Version -replace '^v', ''
+            $versionInfo = $versionsResponse | Where-Object { $_.version_number -eq $cleanVersion }
+            
+            # Try with loader suffix (for versions like "18.0.145" -> "18.0.145+fabric")
+            if (-not $versionInfo -and $Loader) {
+                $versionWithLoader = "$cleanVersion+$Loader"
+                $versionInfo = $versionsResponse | Where-Object { $_.version_number -eq $versionWithLoader }
+            }
+            
+            # Try partial match for complex version formats
+            if (-not $versionInfo) {
+                $versionInfo = $versionsResponse | Where-Object { 
+                    $_.version_number -like "*$cleanVersion*" -and $_.loaders -contains $Loader 
+                }
+            }
+        }
+        
         if (-not $versionInfo) {
             Write-Host "DEBUG: Version $Version not found in $($versionsResponse.Count) versions" -ForegroundColor Red
             # Show available versions for debugging

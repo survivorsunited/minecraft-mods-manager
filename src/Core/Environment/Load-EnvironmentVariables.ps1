@@ -38,6 +38,6 @@ $script:DefaultGameVersion = "1.21.5"
 $script:DefaultLoader = "fabric"
 $script:DefaultModType = "mod"
 $script:ModListPath = "modlist.csv"
-$script:ApiResponseFolder = "apiresponse"
+$script:ApiResponseFolder = ".cache/apiresponse"
 
 # Function is available for dot-sourcing 

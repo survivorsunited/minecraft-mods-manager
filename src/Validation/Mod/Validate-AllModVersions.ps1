@@ -380,6 +380,8 @@ function Validate-AllModVersions {
                     WikiUrl = $validationResult.WikiUrl
                     LatestGameVersion = $validationResult.LatestGameVersion
                     RecordHash = $currentMod.RecordHash
+                    UrlDirect = $currentMod.UrlDirect
+                    AvailableGameVersions = if ($validationResult.AvailableGameVersions) { ($validationResult.AvailableGameVersions -join ",") } else { $currentMod.AvailableGameVersions }
                     CurrentDependencies = $validationResult.CurrentDependencies
                     LatestDependencies = $validationResult.LatestDependencies
                     CurrentDependenciesRequired = $validationResult.CurrentDependenciesRequired

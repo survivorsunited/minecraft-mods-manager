@@ -664,8 +664,8 @@ function Initialize-TestEnvironment {
         Write-Host "Removed existing database: $TestDbPath" -ForegroundColor $Colors.Info
     }
     
-    # Create blank database with headers only
-    $headers = @("Group", "Type", "GameVersion", "ID", "Loader", "Version", "Name", "Description", "Jar", "Url", "Category", "VersionUrl", "LatestVersionUrl", "LatestVersion", "ApiSource", "Host", "IconUrl", "ClientSide", "ServerSide", "Title", "ProjectDescription", "IssuesUrl", "SourceUrl", "WikiUrl", "LatestGameVersion", "RecordHash")
+    # Create blank database with headers only (all 34 columns as per MODLIST_CSV_COLUMNS.md)
+    $headers = @("Group", "Type", "GameVersion", "ID", "Loader", "Version", "Name", "Description", "Jar", "Url", "Category", "VersionUrl", "LatestVersionUrl", "LatestVersion", "ApiSource", "Host", "IconUrl", "ClientSide", "ServerSide", "Title", "ProjectDescription", "IssuesUrl", "SourceUrl", "WikiUrl", "LatestGameVersion", "RecordHash", "UrlDirect", "AvailableGameVersions", "CurrentDependencies", "LatestDependencies", "CurrentDependenciesRequired", "CurrentDependenciesOptional", "LatestDependenciesRequired", "LatestDependenciesOptional")
     $headers -join "," | Out-File $TestDbPath -Encoding UTF8
     Write-Host "Created new database: $TestDbPath" -ForegroundColor $Colors.Info
     

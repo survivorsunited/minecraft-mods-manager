@@ -65,7 +65,7 @@ function Validate-ModVersion {
                     # Get project info to find latest version
                     $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModId -UseCachedResponses $false
                     if ($projectInfo -and $projectInfo.versions) {
-                        Write-Host "DEBUG: Found $($projectInfo.versions.Count) version IDs for $ModId" -ForegroundColor Yellow
+                        if (-not $Quiet) { Write-Host "DEBUG: Found $($projectInfo.versions.Count) version IDs for $ModId" -ForegroundColor Yellow }
                         
                         # Get all version details to find the actual latest version number
                         try {
@@ -87,7 +87,7 @@ function Validate-ModVersion {
                                 
                                 if ($compatibleVersion) {
                                     $Version = $compatibleVersion.version_number
-                                    Write-Host "DEBUG: Using latest compatible version: $Version (supports $targetGameVersion)" -ForegroundColor Yellow
+                                    if (-not $Quiet) { Write-Host "DEBUG: Using latest compatible version: $Version (supports $targetGameVersion)" -ForegroundColor Yellow }
                                 } else {
                                     # Look for any version that supports the target game version
                                     $anyCompatible = $versionsResponse | Where-Object { 
@@ -97,16 +97,16 @@ function Validate-ModVersion {
                                     
                                     if ($anyCompatible) {
                                         $Version = $anyCompatible.version_number
-                                        Write-Host "DEBUG: Found compatible version: $Version (supports $targetGameVersion)" -ForegroundColor Yellow
+                                        if (-not $Quiet) { Write-Host "DEBUG: Found compatible version: $Version (supports $targetGameVersion)" -ForegroundColor Yellow }
                                     } else {
                                         # Fall back to first version if no compatible version found
                                         $latestVersion = $versionsResponse[0]
                                         $Version = $latestVersion.version_number
-                                        Write-Host "DEBUG: No $targetGameVersion compatible version found, using latest: $Version" -ForegroundColor Yellow
+                                        if (-not $Quiet) { Write-Host "DEBUG: No $targetGameVersion compatible version found, using latest: $Version" -ForegroundColor Yellow }
                                     }
                                 }
                             } else {
-                                Write-Host "DEBUG: No versions found in API response" -ForegroundColor Red
+                                if (-not $Quiet) { Write-Host "DEBUG: No versions found in API response" -ForegroundColor Red }
                                 return @{
                                     Exists = $false
                                     Error = "No versions found in API response"
@@ -114,7 +114,7 @@ function Validate-ModVersion {
                                 }
                             }
                         } catch {
-                            Write-Host "DEBUG: Failed to fetch version details: $($_.Exception.Message)" -ForegroundColor Red
+                            if (-not $Quiet) { Write-Host "DEBUG: Failed to fetch version details: $($_.Exception.Message)" -ForegroundColor Red }
                             return @{
                                 Exists = $false
                                 Error = "Failed to fetch version details: $($_.Exception.Message)"
@@ -139,17 +139,17 @@ function Validate-ModVersion {
                 
                 $result = Validate-ModrinthModVersion -ModID $ModId -Version $Version -Loader $effectiveLoader
                 # Get project info to extract all available game versions (regardless of validation result)
-                Write-Host "DEBUG: Getting project info for $ModId to extract AvailableGameVersions" -ForegroundColor Yellow
+                if (-not $Quiet) { Write-Host "DEBUG: Getting project info for $ModId to extract AvailableGameVersions" -ForegroundColor Yellow }
                 $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModId -UseCachedResponses $false
                 $availableGameVersions = @()
                 
                 if ($projectInfo -and $projectInfo.game_versions) {
-                    Write-Host "DEBUG: Found $($projectInfo.game_versions.Count) game versions for $ModId" -ForegroundColor Yellow
+                    if (-not $Quiet) { Write-Host "DEBUG: Found $($projectInfo.game_versions.Count) game versions for $ModId" -ForegroundColor Yellow }
                     # Use the project-level game_versions field
                     $availableGameVersions = $projectInfo.game_versions | Sort-Object
-                    Write-Host "DEBUG: Extracted $($availableGameVersions.Count) game versions for $ModId" -ForegroundColor Yellow
+                    if (-not $Quiet) { Write-Host "DEBUG: Extracted $($availableGameVersions.Count) game versions for $ModId" -ForegroundColor Yellow }
                 } else {
-                    Write-Host "DEBUG: No project info or game_versions found for $ModId" -ForegroundColor Red
+                    if (-not $Quiet) { Write-Host "DEBUG: No project info or game_versions found for $ModId" -ForegroundColor Red }
                 }
                 
                 if ($result.Success) {
