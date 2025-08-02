@@ -27,6 +27,8 @@ function Load-EnvironmentVariables {
             if ($_ -match "^([^#][^=]+)=(.*)$") {
                 $name = $matches[1].Trim()
                 $value = $matches[2].Trim()
+                # Set both as environment variable and global variable for compatibility
+                Set-Item -Path "env:$name" -Value $value
                 Set-Variable -Name $name -Value $value -Scope Global
             }
         }

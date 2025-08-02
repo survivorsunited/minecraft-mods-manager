@@ -26,7 +26,7 @@
 #>
 function Convert-DependenciesToJson {
     param(
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory=$false)]
         $Dependencies
     )
     
@@ -87,7 +87,7 @@ function Convert-DependenciesToJson {
     - Returns empty string if no required dependencies
 #>
 function Convert-DependenciesToJsonRequired {
-    param([Parameter(Mandatory=$true)] $Dependencies)
+    param([Parameter(Mandatory=$false)] $Dependencies)
     if (-not $Dependencies -or $Dependencies.Count -eq 0) { return "" }
     $required = $Dependencies | Where-Object { $_.dependency_type -eq "required" -or -not $_.dependency_type } | ForEach-Object { $_.project_id }
     return ($required | Sort-Object | Get-Unique) -join ","
@@ -112,7 +112,7 @@ function Convert-DependenciesToJsonRequired {
     - Returns empty string if no optional dependencies
 #>
 function Convert-DependenciesToJsonOptional {
-    param([Parameter(Mandatory=$true)] $Dependencies)
+    param([Parameter(Mandatory=$false)] $Dependencies)
     if (-not $Dependencies -or $Dependencies.Count -eq 0) { return "" }
     $optional = $Dependencies | Where-Object { $_.dependency_type -eq "optional" } | ForEach-Object { $_.project_id }
     return ($optional | Sort-Object | Get-Unique) -join ","

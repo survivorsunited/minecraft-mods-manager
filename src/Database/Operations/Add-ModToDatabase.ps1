@@ -70,6 +70,10 @@ function Add-ModToDatabase {
                 $AddModId = $matches[1]
             } elseif ($AddModUrl -match "modrinth\.com/shader/([^/]+)") {
                 $AddModId = $matches[1]
+            } elseif ($AddModUrl -match "modrinth\.com/datapack/([^/]+)") {
+                $AddModId = $matches[1]
+            } elseif ($AddModUrl -match "modrinth\.com/resourcepack/([^/]+)") {
+                $AddModId = $matches[1]
             } elseif ($AddModUrl -match "curseforge\.com/minecraft/mc-mods/([^/]+)") {
                 $AddModId = $matches[1]
             } elseif ($AddModUrl -match "maven\.fabricmc\.net") {
@@ -109,24 +113,84 @@ function Add-ModToDatabase {
         $extractedName = $AddModName
         
         if ($AddModUrl -and $AddModUrl -match "modrinth\.com") {
-            # For Modrinth URLs, try to get project info to extract name
+            # For Modrinth URLs, try to get project info to extract name, detect type, and find best version
             $extractedVersion = $AddModVersion
-            if (-not $AddModName) {
-                try {
-                    $projectInfo = Get-ModrinthProjectInfo -ProjectId $AddModId -UseCachedResponses $false
-                    if ($projectInfo -and $projectInfo.title) {
+            try {
+                $projectInfo = Get-ModrinthProjectInfo -ProjectId $AddModId -UseCachedResponses $false
+                if ($projectInfo) {
+                    # Extract name if not provided
+                    if (-not $AddModName -and $projectInfo.title) {
                         $extractedName = $projectInfo.title
                     }
-                } catch {
-                    # If API call fails, use ID as name
+                    
+                    # Auto-detect project type based on loaders
+                    if ($projectInfo.loaders) {
+                        if ($projectInfo.loaders -contains "datapack") {
+                            # If it supports datapack, treat it as a datapack
+                            # This handles both pure datapacks and mixed projects
+                            $AddModType = "datapack"
+                        } elseif ($projectInfo.project_type) {
+                            # Use the project_type from API (mod, shader, etc.)
+                            $AddModType = $projectInfo.project_type
+                        }
+                        # else keep the provided/default type
+                    }
+                    
+                    # Auto-detect best version for the specified game version if version is "latest"
+                    if ($AddModVersion -eq "latest" -and $AddModGameVersion) {
+                        try {
+                            # Use the validation function to find the best version
+                            $validationResult = Validate-ModVersion -ModId $AddModId -Version "latest" -Loader $AddModLoader -GameVersion $AddModGameVersion -Quiet
+                            if ($validationResult -and $validationResult.LatestVersion) {
+                                $extractedVersion = $validationResult.LatestVersion
+                                Write-Host "  Auto-detected best version for ${AddModGameVersion}: $extractedVersion" -ForegroundColor Gray
+                            }
+                        } catch {
+                            Write-Host "  Warning: Could not auto-detect version, using latest" -ForegroundColor Yellow
+                        }
+                    }
+                    
+                    Write-Host "  Auto-detected project type: $AddModType" -ForegroundColor Gray
+                }
+            } catch {
+                # If API call fails, use ID as name and keep default type
+                if (-not $AddModName) {
                     $extractedName = $AddModId
                 }
+                Write-Host "  Warning: Could not fetch project info for type detection" -ForegroundColor Yellow
             }
         } elseif ($AddModUrl -and $AddModUrl -match "curseforge\.com") {
-            # For CurseForge URLs, we'll set a default version that can be updated later
+            # For CurseForge URLs, try to get project info to extract name and detect type
             $extractedVersion = $AddModVersion
-            if (-not $AddModName) {
-                $extractedName = $AddModId
+            try {
+                $projectInfo = Get-CurseForgeProjectInfo -ProjectId $AddModId -UseCachedResponses $false
+                if ($projectInfo -and $projectInfo.data) {
+                    # Extract name if not provided
+                    if (-not $AddModName -and $projectInfo.data.name) {
+                        $extractedName = $projectInfo.data.name
+                    }
+                    
+                    # Auto-detect project type based on CurseForge category
+                    # CurseForge uses different category structure than Modrinth
+                    if ($projectInfo.data.classId) {
+                        # ClassId 6 = Mods, 12 = Resource Packs, etc.
+                        # For now, we'll mainly detect datapacks vs mods
+                        # Most CurseForge projects are mods, datapacks are less common
+                        $AddModType = "mod"  # Default for CurseForge
+                    }
+                    
+                    Write-Host "  Auto-detected project type: $AddModType (CurseForge)" -ForegroundColor Gray
+                } else {
+                    if (-not $AddModName) {
+                        $extractedName = $AddModId
+                    }
+                }
+            } catch {
+                # If API call fails, use ID as name and keep default type
+                if (-not $AddModName) {
+                    $extractedName = $AddModId
+                }
+                Write-Host "  Warning: Could not fetch CurseForge project info for type detection" -ForegroundColor Yellow
             }
         } else {
             # Default version for manual entries
@@ -178,7 +242,7 @@ function Add-ModToDatabase {
         # Save back to CSV
         $mods | Export-Csv -Path $CsvPath -NoTypeInformation
 
-        Write-Host "✅ Successfully added mod '$AddModName' to database" -ForegroundColor Green
+        Write-Host "✅ Successfully added mod '$extractedName' to database" -ForegroundColor Green
         return $true
 
     } catch {

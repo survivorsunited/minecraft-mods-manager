@@ -50,21 +50,22 @@ function Validate-ModrinthModVersion {
         [string]$Loader,
         [string]$GameVersion = "1.21.5",
         [bool]$UseCachedResponses = $false,
-        [string]$CsvPath = $null
+        [string]$CsvPath = $null,
+        [switch]$Quiet = $false
     )
     
     try {
         Write-Host "Validating $ModID version $Version for $Loader..." -ForegroundColor Cyan
         
         # Get project info
-        Write-Host "DEBUG: Getting project info for $ModID" -ForegroundColor Yellow
-        $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModID -UseCachedResponses $UseCachedResponses
+        if (-not $Quiet) { Write-Host "DEBUG: Getting project info for $ModID" -ForegroundColor Yellow }
+        $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModID -UseCachedResponses $UseCachedResponses -Quiet:$Quiet
         if (-not $projectInfo) {
-            Write-Host "DEBUG: Failed to get project info for $ModID" -ForegroundColor Red
+            if (-not $Quiet) { Write-Host "DEBUG: Failed to get project info for $ModID" -ForegroundColor Red }
             return @{ Success = $false; Error = "Failed to get project info" }
         }
         
-        Write-Host "DEBUG: Found project info for $ModID with $($projectInfo.versions.Count) versions" -ForegroundColor Yellow
+        if (-not $Quiet) { Write-Host "DEBUG: Found project info for $ModID with $($projectInfo.versions.Count) versions" -ForegroundColor Yellow }
         
         # Get all version details to find the specific version
         $versionsApiUrl = "https://api.modrinth.com/v2/project/$ModID/version"
@@ -95,32 +96,143 @@ function Validate-ModrinthModVersion {
         }
         
         if (-not $versionInfo) {
-            Write-Host "DEBUG: Version $Version not found in $($versionsResponse.Count) versions" -ForegroundColor Red
-            # Show available versions for debugging
-            $availableVersions = $versionsResponse | Select-Object -First 5 | ForEach-Object { $_.version_number }
-            Write-Host "DEBUG: Available versions (first 5): $($availableVersions -join ', ')" -ForegroundColor Yellow
-            return @{ Success = $false; Error = "Version $Version not found" }
+            if (-not $Quiet) { Write-Host "DEBUG: Version $Version not found in $($versionsResponse.Count) versions" -ForegroundColor Red }
+            
+            # Try to find the closest matching version for the same loader and game version
+            $closeMatches = $versionsResponse | Where-Object { 
+                ($_.loaders -contains $Loader -or ($_.loaders -contains "datapack" -and $_.loaders.Count -eq 1)) -and 
+                $_.game_versions -contains $GameVersion 
+            } | ForEach-Object {
+                $versionNum = $_.version_number
+                # Calculate similarity score based on common prefixes
+                $similarity = 0
+                $cleanVersionParts = $cleanVersion -split '[+\-\.]'
+                $candidateParts = $versionNum -split '[+\-\.]'
+                
+                for ($i = 0; $i -lt [Math]::Min($cleanVersionParts.Count, $candidateParts.Count); $i++) {
+                    if ($cleanVersionParts[$i] -eq $candidateParts[$i]) {
+                        $similarity++
+                    } else {
+                        break
+                    }
+                }
+                
+                [PSCustomObject]@{
+                    VersionInfo = $_
+                    VersionNumber = $versionNum
+                    Similarity = $similarity
+                }
+            } | Sort-Object -Property Similarity -Descending | Select-Object -First 1
+            
+            if ($closeMatches -and $closeMatches.Similarity -gt 0) {
+                $closestMatch = $closeMatches.VersionInfo
+                if (-not $Quiet) { 
+                    Write-Host "🔍 Found closest match: $($closestMatch.version_number) (requested: $Version)" -ForegroundColor Yellow 
+                    Write-Host "   Auto-updating to use matching version..." -ForegroundColor Yellow
+                }
+                $versionInfo = $closestMatch
+                
+                # Update the CSV with the corrected version if provided
+                if ($CsvPath -and (Test-Path $CsvPath) -and $versionInfo) {
+                    $mods = Import-Csv -Path $CsvPath
+                    $mod = $mods | Where-Object { $_.ID -eq $ModID }
+                    if ($mod) {
+                        $mod.Version = $versionInfo.version_number
+                        $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+                        if (-not $Quiet) { 
+                            Write-Host "✅ Updated database with correct version: $($versionInfo.version_number)" -ForegroundColor Green 
+                        }
+                    }
+                }
+            } else {
+                # Show available versions for debugging
+                $availableVersions = $versionsResponse | Where-Object { 
+                    $_.loaders -contains $Loader -and 
+                    $_.game_versions -contains $GameVersion 
+                } | Select-Object -First 5 | ForEach-Object { $_.version_number }
+                if (-not $Quiet) { 
+                    Write-Host "DEBUG: Available versions for $Loader/$GameVersion (first 5): $($availableVersions -join ', ')" -ForegroundColor Yellow 
+                }
+                return @{ Success = $false; Error = "Version $Version not found and no close matches available" }
+            }
         }
         
-        # Check compatibility
-        $compatible = $versionInfo.game_versions -contains $GameVersion -and 
-                     $versionInfo.loaders -contains $Loader
+        # Check compatibility with flexible game version matching
+        # Special handling for datapacks - they are loader-agnostic
+        if ($versionInfo.loaders -contains "datapack" -and $versionInfo.loaders.Count -eq 1) {
+            # Pure datapack - compatible with any loader
+            $loaderCompatible = $true
+        } else {
+            # Regular mod or mixed project - check for specific loader support
+            $loaderCompatible = $versionInfo.loaders -contains $Loader
+        }
+        $gameVersionCompatible = $false
         
-        if (-not $compatible) {
-            return @{ Success = $false; Error = "Version not compatible with $GameVersion/$Loader" }
+        # First check for exact match
+        if ($versionInfo.game_versions -contains $GameVersion) {
+            $gameVersionCompatible = $true
+        } else {
+            # Check for compatible versions within the same major.minor version
+            # For example, 1.21.4 should be compatible with 1.21.5
+            if ($GameVersion -match '^(\d+)\.(\d+)\.(\d+)$') {
+                $targetMajor = [int]$matches[1]
+                $targetMinor = [int]$matches[2]
+                $targetPatch = [int]$matches[3]
+                
+                foreach ($supportedVersion in $versionInfo.game_versions) {
+                    if ($supportedVersion -match '^(\d+)\.(\d+)\.(\d+)') {
+                        $supportedMajor = [int]$matches[1]
+                        $supportedMinor = [int]$matches[2]
+                        $supportedPatch = [int]$matches[3]
+                        
+                        # Compatible if same major.minor and supported patch is <= target patch
+                        if ($supportedMajor -eq $targetMajor -and 
+                            $supportedMinor -eq $targetMinor -and 
+                            $supportedPatch -le $targetPatch) {
+                            $gameVersionCompatible = $true
+                            if (-not $Quiet) {
+                                Write-Host "DEBUG: Version $($versionInfo.version_number) compatible: supports $supportedVersion, requesting $GameVersion" -ForegroundColor Green
+                            }
+                            break
+                        }
+                    }
+                }
+            }
+        }
+        
+        if (-not $loaderCompatible) {
+            return @{ Success = $false; Error = "Version does not support loader: $Loader" }
+        }
+        
+        if (-not $gameVersionCompatible) {
+            $supportedVersions = $versionInfo.game_versions -join ", "
+            return @{ Success = $false; Error = "Version not compatible with $GameVersion (supports: $supportedVersions)" }
         }
         
         # Extract dependencies
         $dependencies = $versionInfo.dependencies
-        $dependenciesJson = Convert-DependenciesToJson -Dependencies $dependencies
+        $dependenciesJson = if ($dependencies) {
+            Convert-DependenciesToJson -Dependencies $dependencies
+        } else {
+            ""
+        }
         
         # Update CSV if provided
         if ($CsvPath -and (Test-Path $CsvPath)) {
-            $mods = Import-Csv -Path $CsvPath
-            $mod = $mods | Where-Object { $_.ID -eq $ModID }
-            if ($mod) {
-                $mod.CurrentDependencies = $dependenciesJson
-                $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+            try {
+                $mods = Import-Csv -Path $CsvPath
+                $mod = $mods | Where-Object { $_.ID -eq $ModID }
+                if ($mod) {
+                    # Check if CurrentDependencies property exists, if not add it
+                    if (-not ($mod | Get-Member -Name "CurrentDependencies" -MemberType Properties)) {
+                        $mod | Add-Member -MemberType NoteProperty -Name "CurrentDependencies" -Value ""
+                    }
+                    $mod.CurrentDependencies = $dependenciesJson
+                    $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+                }
+            } catch {
+                # Silently handle CSV update errors to avoid breaking validation
+                Write-Debug "Failed to update CSV dependencies: $($_.Exception.Message)"
             }
         }
         
@@ -139,7 +251,7 @@ function Validate-ModrinthModVersion {
                 timestamp = Get-Date -Format "o"
             }
             $responseData | ConvertTo-Json -Depth 10 | Out-File -FilePath $responseFile -Encoding UTF8
-            Write-Host "DEBUG: Created response file: $responseFile" -ForegroundColor Green
+            if (-not $Quiet) { Write-Host "DEBUG: Created response file: $responseFile" -ForegroundColor Green }
         }
         
         return @{ 

@@ -46,6 +46,7 @@ function Validate-ModVersion {
         [string]$Loader = "",
         [string]$ResponseFolder = ".",
         [string]$Jar = "",
+        [string]$CsvPath = "",
         [switch]$Quiet = $false
     )
     
@@ -63,7 +64,7 @@ function Validate-ModVersion {
                 # Handle "latest" version specially
                 if ($Version -eq "latest") {
                     # Get project info to find latest version
-                    $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModId -UseCachedResponses $false
+                    $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModId -UseCachedResponses $false -Quiet:$Quiet
                     if ($projectInfo -and $projectInfo.versions) {
                         if (-not $Quiet) { Write-Host "DEBUG: Found $($projectInfo.versions.Count) version IDs for $ModId" -ForegroundColor Yellow }
                         
@@ -137,10 +138,10 @@ function Validate-ModVersion {
                 # Set script variable for response file generation
                 $script:TestOutputDir = $ResponseFolder
                 
-                $result = Validate-ModrinthModVersion -ModID $ModId -Version $Version -Loader $effectiveLoader
+                $result = Validate-ModrinthModVersion -ModID $ModId -Version $Version -Loader $effectiveLoader -CsvPath $CsvPath -Quiet:$Quiet
                 # Get project info to extract all available game versions (regardless of validation result)
                 if (-not $Quiet) { Write-Host "DEBUG: Getting project info for $ModId to extract AvailableGameVersions" -ForegroundColor Yellow }
-                $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModId -UseCachedResponses $false
+                $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModId -UseCachedResponses $false -Quiet:$Quiet
                 $availableGameVersions = @()
                 
                 if ($projectInfo -and $projectInfo.game_versions) {
@@ -173,6 +174,23 @@ function Validate-ModVersion {
                             Error = $result.Error
                             AvailableGameVersions = $availableGameVersions
                             ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                            CurrentDependencies = ""
+                            LatestDependencies = ""
+                            CurrentDependenciesRequired = ""
+                            CurrentDependenciesOptional = ""
+                            LatestDependenciesRequired = ""
+                            LatestDependenciesOptional = ""
+                            VersionUrl = ""
+                            LatestVersionUrl = ""
+                            IconUrl = ""
+                            ClientSide = ""
+                            ServerSide = ""
+                            Title = ""
+                            ProjectDescription = ""
+                            IssuesUrl = ""
+                            SourceUrl = ""
+                            WikiUrl = ""
+                            LatestGameVersion = ""
                         }
                     } else {
                         return @{
@@ -180,6 +198,23 @@ function Validate-ModVersion {
                             Error = $result.Error
                             AvailableGameVersions = $availableGameVersions
                             ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                            CurrentDependencies = ""
+                            LatestDependencies = ""
+                            CurrentDependenciesRequired = ""
+                            CurrentDependenciesOptional = ""
+                            LatestDependenciesRequired = ""
+                            LatestDependenciesOptional = ""
+                            VersionUrl = ""
+                            LatestVersionUrl = ""
+                            IconUrl = ""
+                            ClientSide = ""
+                            ServerSide = ""
+                            Title = ""
+                            ProjectDescription = ""
+                            IssuesUrl = ""
+                            SourceUrl = ""
+                            WikiUrl = ""
+                            LatestGameVersion = ""
                         }
                     }
                 }
@@ -210,6 +245,23 @@ function Validate-ModVersion {
                         Error = $result.Error
                         AvailableGameVersions = @()
                         ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                        CurrentDependencies = ""
+                        LatestDependencies = ""
+                        CurrentDependenciesRequired = ""
+                        CurrentDependenciesOptional = ""
+                        LatestDependenciesRequired = ""
+                        LatestDependenciesOptional = ""
+                        VersionUrl = ""
+                        LatestVersionUrl = ""
+                        IconUrl = ""
+                        ClientSide = ""
+                        ServerSide = ""
+                        Title = ""
+                        ProjectDescription = ""
+                        IssuesUrl = ""
+                        SourceUrl = ""
+                        WikiUrl = ""
+                        LatestGameVersion = ""
                     }
                 }
             }
@@ -218,6 +270,24 @@ function Validate-ModVersion {
                     Exists = $false
                     Error = "Unknown provider: $provider"
                     ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                    CurrentDependencies = ""
+                    LatestDependencies = ""
+                    CurrentDependenciesRequired = ""
+                    CurrentDependenciesOptional = ""
+                    LatestDependenciesRequired = ""
+                    LatestDependenciesOptional = ""
+                    VersionUrl = ""
+                    LatestVersionUrl = ""
+                    IconUrl = ""
+                    ClientSide = ""
+                    ServerSide = ""
+                    Title = ""
+                    ProjectDescription = ""
+                    IssuesUrl = ""
+                    SourceUrl = ""
+                    WikiUrl = ""
+                    LatestGameVersion = ""
+                    AvailableGameVersions = @()
                 }
             }
         }
@@ -226,6 +296,24 @@ function Validate-ModVersion {
             Exists = $false
             Error = $_.Exception.Message
             ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+            CurrentDependencies = ""
+            LatestDependencies = ""
+            CurrentDependenciesRequired = ""
+            CurrentDependenciesOptional = ""
+            LatestDependenciesRequired = ""
+            LatestDependenciesOptional = ""
+            VersionUrl = ""
+            LatestVersionUrl = ""
+            IconUrl = ""
+            ClientSide = ""
+            ServerSide = ""
+            Title = ""
+            ProjectDescription = ""
+            IssuesUrl = ""
+            SourceUrl = ""
+            WikiUrl = ""
+            LatestGameVersion = ""
+            AvailableGameVersions = @()
         }
     }
 } 

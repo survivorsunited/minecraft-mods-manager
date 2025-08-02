@@ -32,33 +32,45 @@ function Get-CurseForgeProjectInfo {
     param(
         [Parameter(Mandatory=$true)]
         [string]$ProjectId,
-        [bool]$UseCachedResponses = $false
+        [bool]$UseCachedResponses = $false,
+        [switch]$Quiet = $false
     )
     
     try {
-        $apiUrl = "https://www.curseforge.com/api/v1/mods/$ProjectId"
-        $cachePath = Join-Path $script:TestApiResponseDir "curseforge" "$ProjectId.json"
+        $apiUrl = "https://api.curseforge.com/v1/mods/$ProjectId"
+        
+        # Determine cache path - use script variable if available, otherwise use current directory
+        $cacheDir = if ($script:TestApiResponseDir) { $script:TestApiResponseDir } else { ".cache/apiresponse" }
+        $cachePath = Join-Path $cacheDir "curseforge" "$ProjectId.json"
         
         # Use cached response if available and requested
         if ($UseCachedResponses -and (Test-Path $cachePath)) {
             $response = Get-Content $cachePath | ConvertFrom-Json
-            Write-Host "Using cached response for CurseForge project $ProjectId" -ForegroundColor Gray
+            if (-not $Quiet) { Write-Host "Using cached response for CurseForge project $ProjectId" -ForegroundColor Gray }
             return $response
+        }
+        
+        # Get API key from environment
+        $apiKey = $env:CURSEFORGE_API_KEY
+        if (-not $apiKey) {
+            throw "CurseForge API key not found. Please set CURSEFORGE_API_KEY environment variable."
         }
         
         # Set up headers for CurseForge API
         $headers = @{
             "Accept" = "application/json"
-            "x-api-key" = $CurseForgeApiKey
+            "x-api-key" = $apiKey
         }
         
         # Make API request
         $response = Invoke-RestMethod -Uri $apiUrl -Method Get -Headers $headers -TimeoutSec 30
         
-        # Cache response if directory exists
-        if (Test-Path (Split-Path $cachePath)) {
-            $response | ConvertTo-Json -Depth 10 | Out-File -FilePath $cachePath -Encoding UTF8
+        # Cache response if directory exists, create it if needed
+        $cacheDirPath = Split-Path $cachePath
+        if (-not (Test-Path $cacheDirPath)) {
+            New-Item -ItemType Directory -Path $cacheDirPath -Force | Out-Null
         }
+        $response | ConvertTo-Json -Depth 10 | Out-File -FilePath $cachePath -Encoding UTF8
         
         return $response
     } catch {

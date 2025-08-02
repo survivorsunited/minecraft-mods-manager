@@ -27,7 +27,7 @@
 
 .NOTES
     - Requires internet connection for live API calls
-    - Cached responses are stored in test/apiresponse/modrinth/
+    - Cached responses are stored in .cache/apiresponse/modrinth/
     - Handles API rate limiting automatically
     - Returns null if project not found or API unavailable
 #>
@@ -35,21 +35,22 @@ function Get-ModrinthProjectInfo {
     param(
         [Parameter(Mandatory=$true)]
         [string]$ProjectId,
-        [bool]$UseCachedResponses = $false
+        [bool]$UseCachedResponses = $false,
+        [switch]$Quiet = $false
     )
     
     try {
         $apiUrl = "https://api.modrinth.com/v2/project/$ProjectId"
         
-        # Determine cache path - use script variable if available, otherwise use current directory
-        $cacheDir = if ($script:TestApiResponseDir) { $script:TestApiResponseDir } else { "." }
+        # Determine cache path - use script variable if available, otherwise use .cache/apiresponse
+        $cacheDir = if ($script:TestApiResponseDir) { $script:TestApiResponseDir } else { ".cache/apiresponse" }
         $cachePath = Join-Path $cacheDir "modrinth" "$ProjectId.json"
         
         # Use cached response if available and requested, or if cache file exists and is recent
         if (($UseCachedResponses -and (Test-Path $cachePath)) -or 
             ((Test-Path $cachePath) -and ((Get-Item $cachePath).LastWriteTime -gt (Get-Date).AddMinutes(-5)))) {
             $response = Get-Content $cachePath | ConvertFrom-Json
-            Write-Host "Using cached response for $ProjectId" -ForegroundColor Gray
+            if (-not $Quiet) { Write-Host "Using cached response for $ProjectId" -ForegroundColor Gray }
             return $response
         }
         

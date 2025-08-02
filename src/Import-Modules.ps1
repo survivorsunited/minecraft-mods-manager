@@ -33,6 +33,7 @@
 . "$PSScriptRoot\Provider\Common.ps1"
 . "$PSScriptRoot\Provider\Modrinth\Get-ModrinthProjectInfo.ps1"
 . "$PSScriptRoot\Provider\Modrinth\Validate-ModrinthModVersion.ps1"
+. "$PSScriptRoot\Provider\Modrinth\Search-ModrinthProjects.ps1"
 . "$PSScriptRoot\Provider\CurseForge\Get-CurseForgeProjectInfo.ps1"
 . "$PSScriptRoot\Provider\CurseForge\Get-CurseForgeFileInfo.ps1"
 . "$PSScriptRoot\Provider\CurseForge\Validate-CurseForgeModVersion.ps1"

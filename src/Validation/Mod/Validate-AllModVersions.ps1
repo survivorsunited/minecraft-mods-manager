@@ -80,7 +80,7 @@ function Validate-AllModVersions {
         } else {
             # If version is empty, treat as "get latest version" request
             $versionToCheck = if ([string]::IsNullOrEmpty($mod.Version)) { "latest" } else { $mod.Version }
-            $result = Validate-ModVersion -ModId $mod.ID -Version $versionToCheck -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -Quiet
+            $result = Validate-ModVersion -ModId $mod.ID -Version $versionToCheck -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -CsvPath $effectiveModListPath -Quiet
         }
         
         # Show result with current vs latest version comparison
@@ -151,12 +151,12 @@ function Validate-AllModVersions {
             WikiUrl = if ($result.WikiUrl) { $result.WikiUrl.ToString() } else { "" }
             VersionFoundByJar = $result.VersionFoundByJar
             LatestGameVersion = $result.LatestGameVersion
-            CurrentDependencies = $result.CurrentDependencies
-            LatestDependencies = $result.LatestDependencies
-            CurrentDependenciesRequired = $result.CurrentDependenciesRequired
-            CurrentDependenciesOptional = $result.CurrentDependenciesOptional
-            LatestDependenciesRequired = $result.LatestDependenciesRequired
-            LatestDependenciesOptional = $result.LatestDependenciesOptional
+            CurrentDependencies = $result.CurrentDependencies ?? ""
+            LatestDependencies = $result.LatestDependencies ?? ""
+            CurrentDependenciesRequired = $result.CurrentDependenciesRequired ?? ""
+            CurrentDependenciesOptional = $result.CurrentDependenciesOptional ?? ""
+            LatestDependenciesRequired = $result.LatestDependenciesRequired ?? ""
+            LatestDependenciesOptional = $result.LatestDependenciesOptional ?? ""
         }
     }
     
@@ -312,6 +312,24 @@ function Validate-AllModVersions {
     Write-Host "   ❌ Not found: $($modsNotFound.Count) mods" -ForegroundColor Red
     Write-Host "   ⚠️  Errors: $($modsWithErrors.Count) mods" -ForegroundColor Red
     
+    # Show detailed error/not found information if any exist
+    if ($modsNotFound.Count -gt 0) {
+        Write-Host ""
+        Write-Host "❌ Mods Not Found:" -ForegroundColor Red
+        foreach ($mod in $modsNotFound) {
+            Write-Host "   - $($mod.Name) ($($mod.ID)) - Version: $($mod.ExpectedVersion)" -ForegroundColor Red
+        }
+    }
+    
+    if ($modsWithErrors.Count -gt 0) {
+        Write-Host ""
+        Write-Host "⚠️  Mods With Errors:" -ForegroundColor Red
+        foreach ($mod in $modsWithErrors) {
+            $errorMsg = if ($mod.Error) { $mod.Error } else { "Unknown error" }
+            Write-Host "   - $($mod.Name) ($($mod.ID)) - $errorMsg" -ForegroundColor Red
+        }
+    }
+    
     # Update modlist with latest versions if requested
     if ($UpdateModList) {
         # Load current modlist
@@ -382,12 +400,12 @@ function Validate-AllModVersions {
                     RecordHash = $currentMod.RecordHash
                     UrlDirect = $currentMod.UrlDirect
                     AvailableGameVersions = if ($validationResult.AvailableGameVersions) { ($validationResult.AvailableGameVersions -join ",") } else { $currentMod.AvailableGameVersions }
-                    CurrentDependencies = $validationResult.CurrentDependencies
-                    LatestDependencies = $validationResult.LatestDependencies
-                    CurrentDependenciesRequired = $validationResult.CurrentDependenciesRequired
-                    CurrentDependenciesOptional = $validationResult.CurrentDependenciesOptional
-                    LatestDependenciesRequired = $validationResult.LatestDependenciesRequired
-                    LatestDependenciesOptional = $validationResult.LatestDependenciesOptional
+                    CurrentDependencies = $validationResult.CurrentDependencies ?? ""
+                    LatestDependencies = $validationResult.LatestDependencies ?? ""
+                    CurrentDependenciesRequired = $validationResult.CurrentDependenciesRequired ?? ""
+                    CurrentDependenciesOptional = $validationResult.CurrentDependenciesOptional ?? ""
+                    LatestDependenciesRequired = $validationResult.LatestDependenciesRequired ?? ""
+                    LatestDependenciesOptional = $validationResult.LatestDependenciesOptional ?? ""
                 }
                 
                 if ($newMods.Count -eq 0) {

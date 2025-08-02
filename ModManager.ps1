@@ -19,6 +19,7 @@ param(
     [string]$AddModId,
     [string]$AddModUrl,
     [string]$AddModName,
+    [string]$SearchModName,
     [string]$AddModLoader,
     [string]$AddModGameVersion,
     [string]$AddModType,
@@ -197,6 +198,22 @@ if ($StartServer) {
 if ($AddServerStartScript) {
     Write-Host "Adding server start script..." -ForegroundColor Yellow
     Add-ServerStartScript -DownloadFolder $DownloadFolder
+    Exit-ModManager 0
+}
+
+# Handle SearchModName parameter
+if ($SearchModName) {
+    Write-Host "Searching for mods..." -ForegroundColor Yellow
+    $searchResult = Search-ModrinthProjects -Query $SearchModName -Interactive
+    
+    if ($searchResult) {
+        # User selected a project, now add it to database
+        $projectUrl = "https://modrinth.com/$($searchResult.project_type)/$($searchResult.slug)"
+        Write-Host "Adding selected mod to database..." -ForegroundColor Green
+        Add-ModToDatabase -AddModUrl $projectUrl -AddModName $searchResult.title -AddModLoader $AddModLoader -AddModGameVersion $AddModGameVersion -AddModType $AddModType -AddModGroup $AddModGroup -AddModDescription $searchResult.description -AddModJar $AddModJar -AddModUrlDirect $AddModUrlDirect -AddModCategory $AddModCategory -ForceDownload:$ForceDownload -CsvPath $effectiveModListPath
+    } else {
+        Write-Host "No mod selected or search cancelled" -ForegroundColor Yellow
+    }
     Exit-ModManager 0
 }
 
