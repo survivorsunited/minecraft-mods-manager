@@ -47,6 +47,7 @@ function Validate-ModVersion {
         [string]$ResponseFolder = ".",
         [string]$Jar = "",
         [string]$CsvPath = "",
+        [string]$GameVersion = "",
         [switch]$Quiet = $false
     )
     
@@ -75,7 +76,7 @@ function Validate-ModVersion {
                             
                             if ($versionsResponse -and $versionsResponse.Count -gt 0) {
                                 # Find the latest version compatible with the requested game version
-                                $targetGameVersion = "1.21.5"  # Default game version for tests
+                                $targetGameVersion = if (-not [string]::IsNullOrEmpty($GameVersion)) { $GameVersion } else { $DefaultGameVersion }
                                 $compatibleVersion = $null
                                 
                                 foreach ($version in $versionsResponse) {
@@ -100,10 +101,61 @@ function Validate-ModVersion {
                                         $Version = $anyCompatible.version_number
                                         if (-not $Quiet) { Write-Host "DEBUG: Found compatible version: $Version (supports $targetGameVersion)" -ForegroundColor Yellow }
                                     } else {
-                                        # Fall back to first version if no compatible version found
-                                        $latestVersion = $versionsResponse[0]
-                                        $Version = $latestVersion.version_number
-                                        if (-not $Quiet) { Write-Host "DEBUG: No $targetGameVersion compatible version found, using latest: $Version" -ForegroundColor Yellow }
+                                        # Try to find closest version that supports the loader
+                                        $loaderCompatible = $versionsResponse | Where-Object { 
+                                            $_.loaders -contains $effectiveLoader 
+                                        }
+                                        
+                                        if ($loaderCompatible) {
+                                            # Find the version closest to our target game version
+                                            $targetParts = $targetGameVersion -split '\.'
+                                            $targetMajor = [int]$targetParts[0]
+                                            $targetMinor = [int]$targetParts[1]
+                                            $targetPatch = if ($targetParts.Count -ge 3) { [int]$targetParts[2] } else { 0 }
+                                            
+                                            $closestVersion = $null
+                                            $closestDiff = [int]::MaxValue
+                                            
+                                            foreach ($version in $loaderCompatible) {
+                                                foreach ($gameVer in $version.game_versions) {
+                                                    if ($gameVer -match '^(\d+)\.(\d+)\.(\d+)$') {
+                                                        $verMajor = [int]$Matches[1]
+                                                        $verMinor = [int]$Matches[2]
+                                                        $verPatch = [int]$Matches[3]
+                                                        
+                                                        # Calculate version difference (prefer same major.minor)
+                                                        if ($verMajor -eq $targetMajor -and $verMinor -eq $targetMinor) {
+                                                            $diff = [Math]::Abs($verPatch - $targetPatch)
+                                                        } else {
+                                                            # Penalize different major/minor versions
+                                                            $diff = [Math]::Abs($verMajor - $targetMajor) * 1000 + [Math]::Abs($verMinor - $targetMinor) * 100 + [Math]::Abs($verPatch - $targetPatch)
+                                                        }
+                                                        
+                                                        if ($diff -lt $closestDiff) {
+                                                            $closestDiff = $diff
+                                                            $closestVersion = $version
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            
+                                            if ($closestVersion) {
+                                                $Version = $closestVersion.version_number
+                                                $supportedVersions = ($closestVersion.game_versions | Where-Object { $_ -match '^\d+\.\d+\.\d+$' }) -join ", "
+                                                if (-not $Quiet) { Write-Host "DEBUG: No exact match for $targetGameVersion, using closest version: $Version (supports: $supportedVersions)" -ForegroundColor Yellow }
+                                            } else {
+                                                # Fall back to latest loader-compatible version
+                                                $Version = $loaderCompatible[0].version_number
+                                                if (-not $Quiet) { Write-Host "DEBUG: No $targetGameVersion compatible version found, using latest $effectiveLoader version: $Version" -ForegroundColor Yellow }
+                                            }
+                                        } else {
+                                            # No loader-compatible versions at all
+                                            return @{
+                                                Exists = $false
+                                                Error = "No versions found that support loader: $effectiveLoader"
+                                                ResponseFile = Join-Path $ResponseFolder "$ModId-latest.json"
+                                            }
+                                        }
                                     }
                                 }
                             } else {
@@ -138,7 +190,7 @@ function Validate-ModVersion {
                 # Set script variable for response file generation
                 $script:TestOutputDir = $ResponseFolder
                 
-                $result = Validate-ModrinthModVersion -ModID $ModId -Version $Version -Loader $effectiveLoader -CsvPath $CsvPath -Quiet:$Quiet
+                $result = Validate-ModrinthModVersion -ModID $ModId -Version $Version -Loader $effectiveLoader -GameVersion $targetGameVersion -CsvPath $CsvPath -Quiet:$Quiet
                 # Get project info to extract all available game versions (regardless of validation result)
                 if (-not $Quiet) { Write-Host "DEBUG: Getting project info for $ModId to extract AvailableGameVersions" -ForegroundColor Yellow }
                 $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModId -UseCachedResponses $false -Quiet:$Quiet
@@ -159,7 +211,7 @@ function Validate-ModVersion {
                         LatestVersion = $result.Version
                         VersionUrl = $result.DownloadUrl
                         LatestVersionUrl = $result.DownloadUrl
-                        LatestGameVersion = "1.21.5"  # Default for now
+                        LatestGameVersion = $targetGameVersion
                         CurrentDependencies = $result.Dependencies
                         LatestDependencies = $result.Dependencies
                         AvailableGameVersions = $availableGameVersions
@@ -233,7 +285,7 @@ function Validate-ModVersion {
                         LatestVersion = $result.Version
                         VersionUrl = $result.DownloadUrl
                         LatestVersionUrl = $result.DownloadUrl
-                        LatestGameVersion = "1.21.5"  # Default for now
+                        LatestGameVersion = $targetGameVersion
                         CurrentDependencies = $result.Dependencies
                         LatestDependencies = $result.Dependencies
                         AvailableGameVersions = $availableGameVersions

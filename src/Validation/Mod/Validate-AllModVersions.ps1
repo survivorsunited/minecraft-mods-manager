@@ -80,7 +80,7 @@ function Validate-AllModVersions {
         } else {
             # If version is empty, treat as "get latest version" request
             $versionToCheck = if ([string]::IsNullOrEmpty($mod.Version)) { "latest" } else { $mod.Version }
-            $result = Validate-ModVersion -ModId $mod.ID -Version $versionToCheck -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -CsvPath $effectiveModListPath -Quiet
+            $result = Validate-ModVersion -ModId $mod.ID -Version $versionToCheck -Loader $loader -GameVersion $gameVersion -ResponseFolder $ResponseFolder -Jar $jarFilename -CsvPath $effectiveModListPath -Quiet
         }
         
         # Show result with current vs latest version comparison

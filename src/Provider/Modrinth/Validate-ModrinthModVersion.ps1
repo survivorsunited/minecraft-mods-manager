@@ -48,13 +48,16 @@ function Validate-ModrinthModVersion {
         [string]$Version,
         [Parameter(Mandatory=$true)]
         [string]$Loader,
-        [string]$GameVersion = "1.21.5",
+        [string]$GameVersion = "",
         [bool]$UseCachedResponses = $false,
         [string]$CsvPath = $null,
         [switch]$Quiet = $false
     )
     
     try {
+        # Use provided GameVersion or default
+        $effectiveGameVersion = if (-not [string]::IsNullOrEmpty($GameVersion)) { $GameVersion } else { $DefaultGameVersion }
+        
         Write-Host "Validating $ModID version $Version for $Loader..." -ForegroundColor Cyan
         
         # Get project info
@@ -101,7 +104,7 @@ function Validate-ModrinthModVersion {
             # Try to find the closest matching version for the same loader and game version
             $closeMatches = $versionsResponse | Where-Object { 
                 ($_.loaders -contains $Loader -or ($_.loaders -contains "datapack" -and $_.loaders.Count -eq 1)) -and 
-                $_.game_versions -contains $GameVersion 
+                $_.game_versions -contains $effectiveGameVersion 
             } | ForEach-Object {
                 $versionNum = $_.version_number
                 # Calculate similarity score based on common prefixes
@@ -148,10 +151,10 @@ function Validate-ModrinthModVersion {
                 # Show available versions for debugging
                 $availableVersions = $versionsResponse | Where-Object { 
                     $_.loaders -contains $Loader -and 
-                    $_.game_versions -contains $GameVersion 
+                    $_.game_versions -contains $effectiveGameVersion 
                 } | Select-Object -First 5 | ForEach-Object { $_.version_number }
                 if (-not $Quiet) { 
-                    Write-Host "DEBUG: Available versions for $Loader/$GameVersion (first 5): $($availableVersions -join ', ')" -ForegroundColor Yellow 
+                    Write-Host "DEBUG: Available versions for $Loader/$effectiveGameVersion (first 5): $($availableVersions -join ', ')" -ForegroundColor Yellow 
                 }
                 return @{ Success = $false; Error = "Version $Version not found and no close matches available" }
             }
@@ -169,12 +172,12 @@ function Validate-ModrinthModVersion {
         $gameVersionCompatible = $false
         
         # First check for exact match
-        if ($versionInfo.game_versions -contains $GameVersion) {
+        if ($versionInfo.game_versions -contains $effectiveGameVersion) {
             $gameVersionCompatible = $true
         } else {
             # Check for compatible versions within the same major.minor version
             # For example, 1.21.4 should be compatible with 1.21.5
-            if ($GameVersion -match '^(\d+)\.(\d+)\.(\d+)$') {
+            if ($effectiveGameVersion -match '^(\d+)\.(\d+)\.(\d+)$') {
                 $targetMajor = [int]$matches[1]
                 $targetMinor = [int]$matches[2]
                 $targetPatch = [int]$matches[3]
@@ -191,7 +194,7 @@ function Validate-ModrinthModVersion {
                             $supportedPatch -le $targetPatch) {
                             $gameVersionCompatible = $true
                             if (-not $Quiet) {
-                                Write-Host "DEBUG: Version $($versionInfo.version_number) compatible: supports $supportedVersion, requesting $GameVersion" -ForegroundColor Green
+                                Write-Host "DEBUG: Version $($versionInfo.version_number) compatible: supports $supportedVersion, requesting $effectiveGameVersion" -ForegroundColor Green
                             }
                             break
                         }
@@ -206,7 +209,7 @@ function Validate-ModrinthModVersion {
         
         if (-not $gameVersionCompatible) {
             $supportedVersions = $versionInfo.game_versions -join ", "
-            return @{ Success = $false; Error = "Version not compatible with $GameVersion (supports: $supportedVersions)" }
+            return @{ Success = $false; Error = "Version not compatible with $effectiveGameVersion (supports: $supportedVersions)" }
         }
         
         # Extract dependencies
@@ -243,7 +246,7 @@ function Validate-ModrinthModVersion {
                 modId = $ModID
                 version = $Version
                 loader = $Loader
-                gameVersion = $GameVersion
+                gameVersion = $effectiveGameVersion
                 compatible = $true
                 downloadUrl = $versionInfo.files[0].url
                 fileSize = $versionInfo.files[0].size

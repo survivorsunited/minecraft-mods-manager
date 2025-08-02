@@ -223,7 +223,7 @@ function Download-Mods {
                     if ($modHost -eq "curseforge") {
                         $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
                     } else {
-                        $result = Validate-ModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename
+                        $result = Validate-ModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -GameVersion $gameVersion -ResponseFolder $ApiResponseFolder -Jar $jarFilename
                     }
                     
                     if ($result.Exists) {
