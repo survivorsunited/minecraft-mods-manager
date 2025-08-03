@@ -44,6 +44,7 @@
 . "$PSScriptRoot\Download\Mods\Download-Mods.ps1"
 . "$PSScriptRoot\Download\Modpack\Download-Modpack.ps1"
 . "$PSScriptRoot\Download\Server\Download-ServerFiles.ps1"
+. "$PSScriptRoot\Download\Server\Download-ServerFilesFromDatabase.ps1"
 . "$PSScriptRoot\Download\Server\Start-MinecraftServer.ps1"
 
 # File utility modules
