@@ -33,6 +33,7 @@ alwaysApply: true
 3. **`.cursor/rules/proj-03-development.mdc`** - Development practices
 4. **`.cursor/rules/proj-04-testing.mdc`** - Testing implementation details
 5. **`.cursor/rules/proj-05-api.mdc`** - API integration requirements
+6. **`.cursor/rules/proj-06-server-management.mdc`** - Server management and URL resolution
 
 ### Step 4: Current Task Context (MANDATORY)
 **REQUIRED ACTIONS:**
