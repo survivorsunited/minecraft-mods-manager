@@ -25,13 +25,16 @@ function Start-MinecraftServer {
     
     Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
     
+    # Get minimum Java version from environment or use default
+    $minJavaVersion = [int]($env:JAVA_VERSION_MIN ?? "17")
+    
     # Check Java version first
     Write-Host "🔍 Checking Java version..." -ForegroundColor Cyan
     try {
         $javaVersion = java -version 2>&1 | Select-String "version" | Select-Object -First 1
         if (-not $javaVersion) {
             Write-Host "❌ Java is not installed or not in PATH" -ForegroundColor Red
-            Write-Host "💡 Please install Java 22+ and ensure it's in your PATH" -ForegroundColor Yellow
+            Write-Host "💡 Please install Java $minJavaVersion+ and ensure it's in your PATH" -ForegroundColor Yellow
             return $false
         }
         
@@ -40,29 +43,29 @@ function Start-MinecraftServer {
             $versionString = $matches[1]
             Write-Host "📋 Found Java version: $versionString" -ForegroundColor Gray
             
-            # Parse version to check if it's 22+
+            # Parse version to check if it meets minimum requirement
             if ($versionString -match "^(\d+)") {
                 $majorVersion = [int]$matches[1]
-                if ($majorVersion -lt 22) {
+                if ($majorVersion -lt $minJavaVersion) {
                     Write-Host "❌ Java version $majorVersion is too old" -ForegroundColor Red
-                    Write-Host "💡 Minecraft server requires Java 22+ (found version $majorVersion)" -ForegroundColor Yellow
-                    Write-Host "💡 Please upgrade to Java 22 or later" -ForegroundColor Yellow
+                    Write-Host "💡 Minecraft server requires Java $minJavaVersion+ (found version $majorVersion)" -ForegroundColor Yellow
+                    Write-Host "💡 Please upgrade to Java $minJavaVersion or later" -ForegroundColor Yellow
                     return $false
                 } else {
-                    Write-Host "✅ Java version $majorVersion is compatible" -ForegroundColor Green
+                    Write-Host "✅ Java version $majorVersion is compatible (minimum: $minJavaVersion)" -ForegroundColor Green
                 }
             } else {
                 Write-Host "⚠️  Could not parse Java version: $versionString" -ForegroundColor Yellow
-                Write-Host "💡 Please ensure you have Java 22+ installed" -ForegroundColor Yellow
+                Write-Host "💡 Please ensure you have Java $minJavaVersion+ installed" -ForegroundColor Yellow
             }
         } else {
             Write-Host "⚠️  Could not determine Java version" -ForegroundColor Yellow
-            Write-Host "💡 Please ensure you have Java 22+ installed" -ForegroundColor Yellow
+            Write-Host "💡 Please ensure you have Java $minJavaVersion+ installed" -ForegroundColor Yellow
         }
     }
     catch {
         Write-Host "❌ Error checking Java version: $($_.Exception.Message)" -ForegroundColor Red
-        Write-Host "💡 Please ensure Java 22+ is installed and in PATH" -ForegroundColor Yellow
+        Write-Host "💡 Please ensure Java $minJavaVersion+ is installed and in PATH" -ForegroundColor Yellow
         return $false
     }
     

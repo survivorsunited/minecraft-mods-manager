@@ -1,51 +1,32 @@
 # Minecraft Mod Manager
 
-A powerful PowerShell script for managing Minecraft mods across multiple platforms (Modrinth and CurseForge) with automatic version validation, download management, comprehensive testing, and compatibility error reporting.
+A powerful PowerShell script for managing Minecraft mods across multiple platforms (Modrinth and CurseForge) with automatic version validation, download management, and server compatibility testing.
 
 ## 🚀 Features
-
-### Automated Mod Lifecycle Management
-- **Intelligent Update Detection**: Automatically identifies when mod updates are available
-- **Smart Upgrade Recommendations**: Provides feedback on when upgrades should happen based on compatibility analysis
-- **Automated Testing Pipeline**: Downloads and tests mod updates with server execution
-- **Compatibility Reporting**: Provides detailed feedback on mod execution and compatibility issues
-- **Dual Modpack Generation**: Creates both current and updated version modpacks for comparison testing
-- **Continuous Integration Ready**: Enables automated mod testing and validation workflows
 
 ### Core Functionality
 - **Multi-Platform Support**: Works with both Modrinth and CurseForge APIs
 - **Automatic Version Validation**: Checks if mod versions exist and finds latest versions
 - **Smart Download Management**: Downloads mods organized by game version
-- **Majority Version Targeting**: Automatically determines the most compatible game version
 - **Comprehensive Reporting**: Generates detailed README files with analysis and mod lists
 - **Easy Mod Addition**: Add new mods with minimal information and auto-resolve details
-- **Organized API Responses**: API responses are organized by domain in subfolders for better management
+- **Server Compatibility**: Validate and test mods for server deployment
 
 ### Advanced Features
 - **Icon URL Extraction**: Automatically fetches mod icons and metadata
 - **Project Information**: Retrieves detailed mod information (description, links, etc.)
 - **Latest Game Version Detection**: Uses the highest supported game version from API responses
-- **JAR Filename Matching**: Fallback matching when version strings don't match exactly
 - **CurseForge Direct API Downloads**: Uses direct API endpoints for reliable downloads
-- **Git Integration**: Includes minecraft-mod-hash tool as a submodule for mod validation
 - **Shaderpack Support**: Download shaderpacks with iris loader support
 - **Server Downloads**: Download Minecraft server JARs and Fabric launchers
-- **Installer Support**: Download installers (including predefined Fabric installer) to dedicated folders
-
-### Testing & Quality Assurance
-- **Comprehensive Test Suite**: Full test coverage with 12+ test files
-- **Mod Compatibility Testing**: Automated detection of mod compatibility issues
-- **Server Startup Validation**: Tests server startup with downloaded mods
-- **Isolated Test Environment**: Each test runs in isolated directories
-- **API Response Caching**: Faster testing with cached API responses
-- **CI/CD Pipeline**: Automated testing across Windows/Linux/macOS
-- **Compatibility Error Reporting**: Detailed reporting of mod conflicts and issues
+- **Installer Support**: Download installers to dedicated folders
 
 ## 📋 Requirements
 
-- **PowerShell 5.1+** (Windows 10/11)
+- **PowerShell 5.1+** (Windows, Linux, macOS)
 - **Internet Connection** for API access
 - **Optional**: CurseForge API key for enhanced access
+- **Java 17+** for server testing (22+ for MC 1.21.6+)
 
 ## 🛠️ Installation
 
@@ -60,22 +41,152 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
    git submodule update --init --recursive
    ```
 
-3. **Optional**: Create a `.env` file for API keys and configuration:
+3. **Optional**: Create a `.env` file for configuration (server URLs already added):
    ```env
    # API Configuration
    MODRINTH_API_BASE_URL=https://api.modrinth.com/v2
-   CURSEFORGE_API_BASE_URL=https://www.curseforge.com/api/v1
+   CURSEFORGE_API_BASE_URL=https://api.curseforge.com/v1
    CURSEFORGE_API_KEY=your_api_key_here
    
-   # API Response Subfolder Configuration
-   APIRESPONSE_MODRINTH_SUBFOLDER=modrinth
-   APIRESPONSE_CURSEFORGE_SUBFOLDER=curseforge
+   # Server URLs
+   MINECRAFT_SERVER_URL=https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
+   FABRIC_SERVER_URL=https://meta.fabricmc.net/v2/versions
    
    # Default settings
    DEFAULT_LOADER=fabric
-   DEFAULT_GAME_VERSION=1.21.5
+   DEFAULT_GAME_VERSION=1.21.6
    DEFAULT_MOD_TYPE=mod
+   
+   # Server requirements
+   JAVA_VERSION_MIN=17
    ```
+
+## 📖 Quick Start
+
+### Basic Usage
+
+#### Check for mod updates (default behavior)
+
+```powershell
+.\ModManager.ps1
+```
+
+#### Validate all mods and update database
+
+```powershell
+.\ModManager.ps1 -ValidateAllModVersions
+```
+
+#### Download all mods
+
+```powershell
+.\ModManager.ps1 -Download
+```
+
+#### Download latest versions instead of current
+
+```powershell
+.\ModManager.ps1 -Download -UseLatestVersion
+```
+
+#### Quick server validation
+
+```powershell
+.\scripts\Validate-ServerMods.ps1 -ShowDetails
+```
+
+### Adding Mods
+
+#### Quick add with Modrinth URL (recommended)
+```powershell
+.\ModManager.ps1 -AddModId "https://modrinth.com/mod/fabric-api"
+.\ModManager.ps1 -AddModId "https://modrinth.com/shader/complementary-reimagined"
+```
+
+#### Manual add with details
+
+```powershell
+.\ModManager.ps1 -AddMod -AddModId "sodium" -AddModName "Sodium" -AddModLoader "fabric"
+```
+
+### Server Management
+
+#### Download server files
+
+```powershell
+.\ModManager.ps1 -DownloadServer
+```
+#### Download server files for specific version
+
+```powershell
+.\ModManager.ps1 -DownloadServer -GameVersion "1.21.7"
+```
+
+#### Add Minecraft server to database (uses MINECRAFT_SERVER_URL from .env)
+
+```powershell
+.\ModManager.ps1 -AddMod -AddModId "minecraft-server-1.21.7" -AddModName "Minecraft Server" -AddModType "server" -AddModGameVersion "1.21.7" -Group "required"
+```
+
+#### Add Fabric server to database (uses FABRIC_SERVER_URL from .env)
+
+```powershell
+.\ModManager.ps1 -AddMod -AddModId "fabric-server-launcher-1.21.7" -AddModName "Fabric Server" -AddModType "launcher" -AddModGameVersion "1.21.7" -AddModLoader "fabric" -Group "required"
+```
+
+#### Validate server compatibility
+
+```powershell
+.\scripts\Validate-ServerMods.ps1
+```
+
+#### Full server validation test
+
+```powershell
+.\test\tests\68-TestServerValidation.ps1
+```
+
+## 📊 Update Summary
+
+The default `.\ModManager.ps1` command shows a comprehensive update summary:
+
+```
+📊 Update Summary:
+=================
+   🕹️  Latest Game Version: 1.21.6
+   🎯 Supporting latest version: 45 mods
+   ⬆️  Have updates available: 15 mods
+   ⚠️  Not supporting latest version: 5 mods
+   ❌ Errors: 0 mods
+```
+
+**Key Features:**
+- **Latest Game Version**: Calculated from your modlist
+- **Update Detection**: Identifies mods with available updates
+- **Compatibility Check**: Shows which mods support newer game versions
+- **Error Tracking**: Reports validation issues
+
+## 📁 File Structure
+
+```
+minecraft-mods-manager/
+├── ModManager.ps1              # Main script
+├── modlist.csv                 # Mod database
+├── .env                        # Configuration (optional)
+├── src/                        # Modular source code
+├── scripts/                    # Helper scripts
+├── download/                   # Downloaded mods (auto-created)
+│   └── 1.21.6/
+│       ├── mods/              # Downloaded mod JARs
+│       ├── shaderpacks/       # Shaderpack files
+│       └── server files       # Minecraft + Fabric server
+├── apiresponse/               # API response cache
+│   ├── modrinth/             # Modrinth API responses
+│   └── curseforge/           # CurseForge API responses
+├── test/                      # Testing framework
+├── docs/                      # Documentation
+└── tools/                     # Additional tools
+```
 
 ## 🧪 Testing
 
@@ -85,629 +196,108 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
 # Run all tests
 .\test\RunAllTests.ps1 -All
 
-# Run specific test
-.\test\RunAllTests.ps1 -TestFiles "12-TestLatestWithServer.ps1"
+# Run critical server compatibility test
+.\test\tests\12-TestLatestWithServer.ps1
 
-# Run multiple specific tests
-.\test\RunAllTests.ps1 -TestFiles "01-BasicFunctionality.ps1","02-DownloadFunctionality.ps1"
+# Test CurseForge functionality
+.\test\tests\67-TestCurseForgeFunctionality.ps1
 
-# Test API response organization
-.\test\RunAllTests.ps1 -TestFiles "13-TestApiResponseOrganization.ps1"
+# Quick server mod validation (fast)
+.\scripts\Validate-ServerMods.ps1 -ShowDetails
 ```
 
-### Test Coverage
+### Server Validation Results
 
-The project includes comprehensive testing with the following test files:
-
-- **01-BasicFunctionality.ps1** - Core functionality validation
-- **02-DownloadFunctionality.ps1** - Download system testing
-- **03-SystemEntries.ps1** - System mod validation
-- **04-FilenameHandling.ps1** - File naming and organization
-- **05-ValidationTests.ps1** - Mod validation workflows
-- **06-ModpackTests.ps1** - Modpack functionality
-- **07-StartServerTests.ps1** - Server startup testing
-- **08-StartServerUnitTests.ps1** - Server unit tests
-- **09-TestCurrent.ps1** - Current mod version workflows
-- **10-TestLatest.ps1** - Latest mod version workflows
-- **11-ParameterValidation.ps1** - Parameter validation
-- **12-TestLatestWithServer.ps1** - **CRITICAL**: Latest mods with server compatibility testing
-- **13-TestApiResponseOrganization.ps1** - API response organization and environment variable testing
-
-### Mod Compatibility Testing
-
-The **12-TestLatestWithServer.ps1** test is critical for validating mod compatibility:
-
-- Downloads latest mods and server files
-- Attempts server startup
-- Detects compatibility issues (missing dependencies, version mismatches)
-- Reports specific errors that need fixing
-
-**Expected Test Results with Compatibility Issues:**
-- Total Tests: 8
-- Passed: 6 (validation, downloads, server files, start script, isolation check)
-- Failed: 2 (server startup, compatibility analysis)
-- Success Rate: 75%
-
-**Common Compatibility Issues Detected:**
-- Missing Fabric API dependencies
-- Minecraft version mismatches (mods built for 1.21.5 running on 1.21.6)
-- Specific mods that need removal or replacement
-
-### Test Output Structure
+The server validation script provides instant feedback:
 
 ```
-test/test-output/{TestName}/
-├── download/                    # Downloaded mods and server files
-├── {TestName}.log              # Individual test logs
-├── {TestName}-test-report.txt  # Test results report
-└── Server_*.log                # Server startup logs
+📊 Validation Results:
+=====================
+  Server-compatible mods: 1
+  Client-only mods: 0
+  Unknown compatibility: 67
+  Total issues found: 138
+
+🔍 Server may work but needs verification
+   67 mods have unknown server compatibility
+   Server readiness: 1.5%
 ```
 
-## 📁 File Structure
-
-```
-minecraft-mods-manager/
-├── ModManager.ps1              # Main script
-├── modlist.csv                 # Mod list (input)
-├── README.md                   # This file
-├── .gitignore                  # Git ignore rules
-├── .gitmodules                 # Git submodules
-├── .env                        # Environment configuration (optional)
-├── apiresponse/                # API response cache (organized by domain)
-│   ├── modrinth/              # Modrinth API responses
-│   │   ├── fabric-api-project.json
-│   │   ├── fabric-api-versions.json
-│   │   ├── sodium-project.json
-│   │   └── sodium-versions.json
-│   ├── curseforge/            # CurseForge API responses
-│   │   ├── 357540-curseforge-versions.json
-│   │   └── other-mod-curseforge-versions.json
-│   ├── version-validation-results.csv
-│   └── mod-download-results.csv
-├── download/                   # Downloaded content (created automatically)
-│   ├── 1.21.5/
-│   │   ├── mods/              # Mods for this version
-│   │   │   ├── block/         # Block group mods
-│   │   │   └── *.jar          # Other mods
-│   │   ├── shaderpacks/       # Shaderpacks
-│   │   ├── installer/         # Installers
-│   │   ├── minecraft_server.1.21.5.jar
-│   │   └── fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar
-│   └── 1.21.6/
-│       ├── mods/              # Mods for this version
-│       │   ├── block/         # Block group mods
-│       │   └── *.jar          # Other mods
-│       ├── shaderpacks/       # Shaderpacks
-│       ├── installer/         # Installers
-│       ├── minecraft_server.1.21.6.jar
-│       └── fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar
-├── test/                       # Test framework
-│   ├── RunAllTests.ps1        # Main test runner
-│   ├── TestFramework.ps1      # Shared test utilities
-│   ├── tests/                 # Individual test files
-│   ├── test-output/           # Test execution outputs
-│   └── apiresponse/           # Cached API responses for testing (same structure)
-├── tools/
-│   └── minecraft-mod-hash/     # Mod validation tool (submodule)
-└── backups/                    # Automatic backups
-```
-
-## 📖 Usage
-
-### Use Cases
-
-- **[Testing Latest Mod Versions](docs/USECASE_LATEST_MODS_TESTING.md)** - Complete guide for testing latest mod versions with the latest Minecraft server
-  - **Helper Script**: `.\scripts\TestLatestMods.ps1` - Automated workflow for testing latest mods
-- **Modpack Development** - Validate mod compatibility before release
-- **Server Administration** - Test updates before applying to production
-- **Quality Assurance** - Automated compatibility testing
-
-### Helper Scripts
-
-For common workflows, use the focused helper scripts in the `scripts/` folder:
-
-```powershell
-# Test latest mod versions with latest server (complete workflow)
-.\scripts\TestLatestMods.ps1
-
-# Download latest versions of all mods
-.\scripts\DownloadLatestMods.ps1
-
-# Download current versions of all mods
-.\scripts\DownloadCurrentMods.ps1
-
-# With custom options
-.\scripts\TestLatestMods.ps1 -DownloadFolder "test-latest"
-.\scripts\DownloadLatestMods.ps1 -DownloadFolder "latest-mods"
-```
-
-### Basic Commands
-
-```powershell
-# Check for mod updates and show summary (default behavior)
-.\ModManager.ps1
-# or explicitly:
-.\ModManager.ps1 -UpdateMods
-
-# Run validation and update modlist
-.\ModManager.ps1 -ValidateAllModVersions
-
-# Download all mods to download/ folder
-.\ModManager.ps1 -Download
-
-# Download latest versions instead of current versions
-.\ModManager.ps1 -Download -UseLatestVersion
-
-# Force download (overwrite existing files)
-.\ModManager.ps1 -Download -ForceDownload
-
-# Quick add mods using Modrinth URLs
-.\ModManager.ps1 -AddModID "https://modrinth.com/mod/fabric-api"
-.\ModManager.ps1 -AddModID "https://modrinth.com/shader/complementary-reimagined"
-
-# Show help
-.\ModManager.ps1 -Help
-```
-
-### Update Summary Output
-
-The default `.\ModManager.ps1` command shows a comprehensive **Update Summary** with clean, concise information:
-
-```
-📊 Update Summary:
-=================
-   🕹️  Latest Game Version: 1.21.6
-   🗂️  Latest Available Game Versions: 1.21.7, 1.21.8
-   🎯 Supporting latest version: 45 mods
-   ⬆️  Have updates available: 15 mods
-   ⚠️  Not supporting latest version: 5 mods
-   ➖ Not updated: 2 mods
-   🔄 Externally updated: 0 mods
-   ❌ Not found: 0 mods
-   ⚠️  Errors: 0 mods
-```
-
-**Key Features:**
-- **Latest Game Version**: Calculated as GameVersion + 1 from your modlist
-- **Clean Output**: Shows only counts, no verbose mod lists
-- **Status Tracking**: Clear indicators for each mod category
-- **Update Detection**: Identifies mods with available updates
-- **Compatibility Check**: Shows which mods support the latest game version
-
-**Use Cases:**
-- **Daily Check**: Quick overview of mod update status
-- **Update Planning**: Identify which mods need attention
-- **Version Compatibility**: See which mods support newer game versions
-- **Maintenance**: Track mod ecosystem health
+**For detailed testing documentation, see [test/README.md](test/README.md)**
 
 ## 📋 Complete Parameter Reference
 
 ### Core Parameters
 
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| `-Download` | Switch | Download all mods to download/ folder | `.\ModManager.ps1 -Download` |
-| `-UseLatestVersion` | Switch | Use latest versions instead of current versions | `.\ModManager.ps1 -Download -UseLatestVersion` |
-| `-ForceDownload` | Switch | Force download (overwrite existing files) | `.\ModManager.ps1 -Download -ForceDownload` |
-| `-Help` | Switch | Show help information | `.\ModManager.ps1 -Help` |
-| `-ShowHelp` | Switch | Show detailed help information | `.\ModManager.ps1 -ShowHelp` |
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| `-Download` | Download all mods | `.\ModManager.ps1 -Download` |
+| `-UseLatestVersion` | Use latest versions | `.\ModManager.ps1 -Download -UseLatestVersion` |
+| `-ValidateAllModVersions` | Validate all mods | `.\ModManager.ps1 -ValidateAllModVersions` |
+| `-DownloadServer` | Download server files | `.\ModManager.ps1 -DownloadServer` |
+| `-StartServer` | Start Minecraft server | `.\ModManager.ps1 -StartServer` |
 
-### Validation Parameters
+### Mod Management
 
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| `-ValidateMod` | Switch | Validate a specific mod and update latest version | `.\ModManager.ps1 -ValidateMod -ModID "fabric-api"` |
-| `-ModID` | String | Mod ID to validate (required with -ValidateMod) | `.\ModManager.ps1 -ValidateMod -ModID "sodium"` |
-| `-ValidateModVersion` | Switch | Validate mod version (placeholder - use -ValidateMod instead) | `.\ModManager.ps1 -ValidateModVersion` |
-| `-ValidateAllModVersions` | Switch | Validate all mods and update CSV | `.\ModManager.ps1 -ValidateAllModVersions` |
-| `-ValidateWithDownload` | Switch | Validate before downloading | `.\ModManager.ps1 -DownloadMods -ValidateWithDownload` |
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| `-AddModId` | Add mod by ID or URL | `.\ModManager.ps1 -AddModId "fabric-api"` |
+| `-AddMod` | Add mod with details | `.\ModManager.ps1 -AddMod -AddModId "sodium"` |
+| `-DeleteModID` | Remove mod | `.\ModManager.ps1 -DeleteModID "fabric-api"` |
+| `-SearchModName` | Search for mods | `.\ModManager.ps1 -SearchModName "optimization"` |
 
-### Download Parameters
+### Configuration
 
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| `-DownloadMods` | Switch | Download mods with custom settings | `.\ModManager.ps1 -DownloadMods` |
-| `-DownloadServer` | Switch | Download Minecraft server JARs and Fabric launchers | `.\ModManager.ps1 -DownloadServer` |
-| `-StartServer` | Switch | Start Minecraft server after download | `.\ModManager.ps1 -StartServer` |
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| `-DatabaseFile` | Custom database file | `.\ModManager.ps1 -DatabaseFile "my-mods.csv"` |
+| `-DownloadFolder` | Custom download folder | `.\ModManager.ps1 -Download -DownloadFolder "test"` |
+| `-UseCachedResponses` | Use cached API responses | `.\ModManager.ps1 -ValidateAllModVersions -UseCachedResponses` |
 
-### Mod Management Parameters
+## 📊 CSV Database Format
 
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| `-AddMod` | Switch | Add a new mod to the database | `.\ModManager.ps1 -AddMod -AddModID "fabric-api"` |
-| `-AddModId` | String | Mod ID (Modrinth slug or CurseForge ID) | `.\ModManager.ps1 -AddMod -AddModId "sodium"` |
-| `-AddModUrl` | String | Modrinth URL for quick add | `.\ModManager.ps1 -AddModId "https://modrinth.com/mod/fabric-api"` |
-| `-AddModName` | String | Mod display name | `.\ModManager.ps1 -AddMod -AddModName "Fabric API"` |
-| `-AddModLoader` | String | Mod loader (fabric, forge, iris, etc.) | `.\ModManager.ps1 -AddMod -AddModLoader "fabric"` |
-| `-AddModGameVersion` | String | Target Minecraft version | `.\ModManager.ps1 -AddMod -AddModGameVersion "1.21.6"` |
-| `-AddModType` | String | Mod type (mod, shaderpack, datapack, etc.) | `.\ModManager.ps1 -AddMod -AddModType "shaderpack"` |
-| `-AddModGroup` | String | Mod group (required, optional, admin, block) | `.\ModManager.ps1 -AddMod -AddModGroup "optional"` |
-| `-AddModDescription` | String | Mod description | `.\ModManager.ps1 -AddMod -AddModDescription "Required API"` |
-| `-AddModJar` | String | JAR/EXE filename (required for server/launcher/installer) | `.\ModManager.ps1 -AddMod -AddModJar "fabric-api.jar"` |
-| `-AddModUrlDirect` | String | Direct download URL (required for server/launcher/installer) | `.\ModManager.ps1 -AddMod -AddModUrlDirect "https://..."` |
-| `-AddModCategory` | String | Mod category | `.\ModManager.ps1 -AddMod -AddModCategory "Core"` |
-| `-DeleteModID` | String | Mod ID to delete | `.\ModManager.ps1 -DeleteModID "fabric-api"` |
-| `-DeleteModType` | String | Mod type for deletion (optional) | `.\ModManager.ps1 -DeleteModID "fabric-api" -DeleteModType "mod"` |
+The `modlist.csv` file contains these key columns:
 
-### Information Parameters
+| Column | Description |
+|--------|-------------|
+| `Group` | Mod category (required, optional, admin, block) |
+| `Type` | Mod type (mod, datapack, shaderpack, installer, server) |
+| `GameVersion` | Target Minecraft version |
+| `ID` | Mod ID (Modrinth slug or CurseForge ID) |
+| `Loader` | Mod loader (fabric, forge, iris, etc.) |
+| `Version` | Expected mod version |
+| `Name` | Mod display name |
+| `ServerSide` | Server compatibility (required, optional, unsupported) |
+| `ClientSide` | Client compatibility (required, optional, unsupported) |
 
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| `-GetModList` | Switch | Display mod list information | `.\ModManager.ps1 -GetModList` |
+## 🔧 Helper Scripts
 
-### Configuration Parameters
+Located in the `scripts/` folder for common workflows:
 
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| `-ModListFile` | String | Custom mod list file path | `.\ModManager.ps1 -ModListFile "custom-mods.csv"` |
-| `-DatabaseFile` | String | Custom database file path | `.\ModManager.ps1 -DatabaseFile "my-mods.csv"` |
-| `-UseCachedResponses` | Switch | Use cached API responses (faster testing) | `.\ModManager.ps1 -ValidateAllModVersions -UseCachedResponses` |
-
-### Parameter Combinations
-
-#### Quick Mod Addition
 ```powershell
-# Add Modrinth mod with URL (auto-resolves everything)
-.\ModManager.ps1 -AddModId "https://modrinth.com/mod/fabric-api"
+# Server mod validation (fast)
+.\scripts\Validate-ServerMods.ps1 -ShowDetails
 
-# Add Modrinth shaderpack with URL
-.\ModManager.ps1 -AddModId "https://modrinth.com/shader/complementary-reimagined"
-```
-
-#### Manual Mod Addition
-```powershell
-# Add mod with minimal info (auto-resolves latest version)
-.\ModManager.ps1 -AddMod -AddModId "fabric-api" -AddModName "Fabric API"
-
-# Add mod with specific settings
-.\ModManager.ps1 -AddMod -AddModId "sodium" -AddModName "Sodium" -AddModLoader "fabric" -AddModGameVersion "1.21.6" -AddModGroup "optional"
-```
-
-#### Validation Workflows
-```powershell
-# Validate specific mod and update latest version
-.\ModManager.ps1 -ValidateMod -ModID "fabric-api"
-
-# Validate all mods and update CSV
-.\ModManager.ps1 -ValidateAllModVersions
-
-# Validate with cached responses (faster)
-.\ModManager.ps1 -ValidateAllModVersions -UseCachedResponses
-```
-
-#### Download Workflows
-```powershell
-# Download current versions
-.\ModManager.ps1 -Download
+# Test latest mod versions with server
+.\scripts\TestLatestMods.ps1
 
 # Download latest versions
-.\ModManager.ps1 -Download -UseLatestVersion
+.\scripts\DownloadLatestMods.ps1
 
-# Force download (overwrite existing)
-.\ModManager.ps1 -Download -ForceDownload
-
-# Download with validation first
-.\ModManager.ps1 -DownloadMods -ValidateWithDownload
+# Download current versions
+.\scripts\DownloadCurrentMods.ps1
 ```
 
-#### Server Management
-```powershell
-# Download server files
-.\ModManager.ps1 -DownloadServer
-
-# Start server after download
-.\ModManager.ps1 -StartServer
-```
-
-#### Mod Management
-```powershell
-# Delete specific mod
-.\ModManager.ps1 -DeleteModID "fabric-api"
-
-# Delete mod with type specification
-.\ModManager.ps1 -DeleteModID "fabric-api" -DeleteModType "mod"
-
-# Show mod list
-.\ModManager.ps1 -GetModList
-```
-
-### Default Behavior
-
-When no parameters are provided, the script runs the default workflow:
-```powershell
-.\ModManager.ps1
-# Equivalent to: .\ModManager.ps1 -ValidateAllModVersions
-```
-
-This validates all mods and updates the CSV with latest version information.
-
-### Error Handling
-
-- **Missing Required Parameters**: Script shows error message and usage example
-- **Invalid Mod IDs**: Script reports "mod not found" and continues
-- **API Failures**: Script continues processing other mods
-- **File Not Found**: Script creates missing directories automatically
-
-### Performance Tips
-
-- **Use `-UseCachedResponses`** for faster testing and development
-- **Combine validation and download** with `-ValidateWithDownload`
-- **Use latest versions** with `-UseLatestVersion` for maximum compatibility
-- **Force download** with `-ForceDownload` to overwrite existing files
-
-## 🧪 Testing
-
-### Test Isolation
-All tests use isolated download folders to prevent interference with the main `download/` directory. Test outputs are contained within `test/test-output/` with each test having its own isolated download directory.
-
-**Test Isolation Guarantees:**
-- ✅ **No writes to main download folder**: Tests never write to `download/` or `test/download/`
-- ✅ **Isolated test environments**: Each test creates its own temporary download folders
-- ✅ **Automatic cleanup**: Test artifacts are cleaned up after completion
-- ✅ **Parameter-based downloads**: All download operations respect the `-DownloadFolder` parameter
-
-### Running Tests
-```powershell
-# Run all tests
-.\test\RunAllTests.ps1
-
-# Run specific test
-.\test\tests\02-DownloadFunctionality.ps1
-
-# Run E2E test with server startup
-.\test\tests\12-TestLatestWithServer.ps1
-```
-
-### Test Coverage
-- **Basic Functionality**: Core script operations and parameter handling
-- **Download Functionality**: Mod and server file downloads with isolation
-- **System Entries**: Installer, launcher, and server file management
-- **Filename Handling**: Complex filename resolution and validation
-- **Validation Tests**: API validation and version checking
-- **Modpack Tests**: Modpack download and extraction workflows
-- **Server Tests**: Server startup and log monitoring
-- **Latest Version Tests**: E2E workflows with latest version downloads
-- **Current Version Tests**: E2E workflows with current version downloads
-- **Parameter Validation**: Comprehensive parameter validation and error handling
-- **Latest with Server**: Complete E2E test including server startup and mod compatibility detection
-
-## ➕ Adding New Mods
-
-The script supports adding mods with minimal information and automatically resolves all details from the APIs.
-
-### Quick Add with Modrinth URLs (Recommended)
-
-The simplest way to add mods is to just provide the Modrinth URL:
-
-```powershell
-# Add any Modrinth mod, shaderpack, datapack, etc. with just the URL
-.\ModManager.ps1 -AddModId "https://modrinth.com/mod/fabric-api"
-.\ModManager.ps1 -AddModId "https://modrinth.com/shader/complementary-reimagined"
-.\ModManager.ps1 -AddModId "https://modrinth.com/datapack/example-datapack"
-```
-
-**Features:**
-- **Auto-detects type** (mod, shaderpack, datapack, resourcepack, plugin)
-- **Auto-detects mod ID** from the URL
-- **Fetches all metadata** (name, version, icon, description, etc.)
-- **Defaults to "optional" group** (can be overridden with `-AddModGroup`)
-- **Auto-uses "iris" loader** for shaderpacks
-- **Error handling** for unsupported Modrinth types
-
-### Adding Modrinth Mods (Traditional Method)
-
-```powershell
-# Add a Modrinth mod with minimal info (auto-resolves latest version)
-.\ModManager.ps1 -AddMod -AddModId "fabric-api" -AddModName "Fabric API"
-
-# Add with specific loader and game version
-.\ModManager.ps1 -AddMod -AddModId "sodium" -AddModName "Sodium" -AddModLoader "fabric" -AddModGameVersion "1.21.6"
-
-# Add to a specific group (required, optional, admin, block)
-.\ModManager.ps1 -AddMod -AddModId "no-chat-reports" -AddModName "No Chat Reports" -AddModGroup "block"
-```
-
-### Adding CurseForge Mods
-
-```powershell
-# Add a CurseForge mod (requires CurseForge ID)
-.\ModManager.ps1 -AddMod -AddModId "238222" -AddModName "Inventory HUD+" -AddModType "curseforge"
-
-# Add with specific loader and game version
-.\ModManager.ps1 -AddMod -AddModId "238222" -AddModName "Inventory HUD+" -AddModLoader "fabric" -AddModGameVersion "1.21.6" -AddModType "curseforge"
-```
-
-### Adding Shaderpacks
-
-```powershell
-# Add a shaderpack (uses "iris" loader automatically)
-.\ModManager.ps1 -AddMod -AddModId "complementary-reimagined" -AddModName "Complementary Reimagined" -AddModType "shaderpack"
-```
-
-### Adding Installers
-
-```powershell
-# Add the Fabric installer (predefined URL)
-.\ModManager.ps1 -AddMod -AddModId "fabric-installer-1.0.3" -AddModName "Fabric Installer" -AddModType "installer" -AddModGameVersion "1.21.5"
-
-# Add a custom installer with direct URL
-.\ModManager.ps1 -AddMod -AddModId "https://example.com/installer.exe" -AddModName "Custom Installer" -AddModType "installer" -AddModGameVersion "1.21.5"
-```
-
-**Note**: Installers are downloaded to the `installer/` subfolder within each game version folder.
-
-### Auto-Resolution Features
-
-When adding mods with minimal information, the script automatically:
-
-1. **Fetches latest version** from the appropriate API
-2. **Downloads all metadata** (description, icon, links, etc.)
-3. **Determines compatibility** (client/server side support)
-4. **Extracts download URLs** for both current and latest versions
-5. **Adds complete record** to modlist.csv with all information
-
-### Adding Server, Launcher, and Installer Mods
-
-For `server`, `launcher`, and `installer` types, you **must** provide both the direct download URL and the filename to save as. These are stored in the `Url` and `Jar` columns in the CSV.
-
-**Example: Add a Minecraft Server JAR**
-```powershell
-.\ModManager.ps1 -AddMod -AddModId "minecraft-server-1.21.5" -AddModName "Minecraft Server" -AddModType "server" -AddModGameVersion "1.21.5" -AddModUrlDirect "https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar" -AddModJar "minecraft_server.1.21.5.jar"
-```
-
-**Example: Add a Fabric Server Launcher**
-```powershell
-.\ModManager.ps1 -AddMod -AddModId "fabric-server-launcher-1.21.5" -AddModName "Fabric Server Launcher" -AddModType "launcher" -AddModGameVersion "1.21.5" -AddModUrlDirect "https://meta.fabricmc.net/v2/versions/loader/1.21.5/0.16.14/1.0.3/server/jar" -AddModJar "fabric-server-mc.1.21.5-loader.0.16.14-launcher.1.0.3.jar"
-```
-
-**Example: Add a Fabric Installer**
-```powershell
-.\ModManager.ps1 -AddMod -AddModId "fabric-installer-1.0.3" -AddModName "Fabric Installer" -AddModType "installer" -AddModGameVersion "1.21.5" -AddModUrlDirect "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe" -AddModJar "fabric-installer-1.0.3.exe"
-```
-
-**Note:**
-- The script will error if you do not provide both `-AddModUrlDirect` and `-AddModJar` for these types.
-- These values are stored in the CSV and used for all future downloads.
-
-## 📊 CSV Format
-
-The `modlist.csv` file should contain these columns (in order):
-
-| Column              | Description                                                      |
-|---------------------|------------------------------------------------------------------|
-| Group               | Mod category (required, optional, admin, block)                  |
-| Type                | Mod type (mod, datapack, shaderpack, installer, server, launcher) |
-| GameVersion         | Target Minecraft version                                         |
-| ID                  | Mod ID (Modrinth slug or CurseForge ID)                         |
-| Loader              | Mod loader (fabric, forge, iris, etc.)                          |
-| Version             | Expected mod version                                             |
-| Name                | Mod display name                                                 |
-| Description         | Mod description                                                  |
-| Jar                 | JAR/EXE filename (for server, launcher, installer: required)                        |
-| Url                 | Mod URL (for server, launcher, installer: direct download URL, required)            |
-| Category            | Mod category                                                     |
-| Version Url         | Download URL for current version                                 |
-| Latest Version Url  | Download URL for latest version                                  |
-| Latest Version      | Latest version string                                            |
-| LatestVersion       | (Alias for Latest Version)                                       |
-| VersionUrl          | (Alias for Version Url)                                          |
-| LatestVersionUrl    | (Alias for Latest Version Url)                                   |
-| ApiSource           | API source (modrinth, curseforge)                                |
-| Host                | API host (modrinth, curseforge)                                  |
-| IconUrl             | Mod icon URL                                                     |
-| ClientSide          | Client-side support info                                         |
-| ServerSide          | Server-side support info                                         |
-| Title               | Project title                                                    |
-| ProjectDescription  | Project description (from API)                                   |
-| IssuesUrl           | Issues/bug tracker URL                                           |
-| SourceUrl           | Source code URL                                                  |
-| WikiUrl             | Wiki/documentation URL                                           |
-| LatestGameVersion   | Highest supported game version (from API)                        |
-
-### Example CSV Entries
-
-#### Modrinth Mod
-```csv
-"required","mod","1.21.5","fabric-api","fabric","v0.126.0+1.21.5","Fabric API","Required by most Fabric mods","fabric-api-0.126.0%2B1.21.5.jar","https://modrinth.com/mod/fabric-api","Core & Utility","https://cdn.modrinth.com/data/P7dR8mSH/versions/B41MB8lb/fabric-api-0.126.0%2B1.21.5.jar","https://cdn.modrinth.com/data/P7dR8mSH/versions/N3z6cNQv/fabric-api-0.127.1%2B1.21.6.jar","0.127.1+1.21.6","0.127.1+1.21.6","https://cdn.modrinth.com/data/P7dR8mSH/versions/B41MB8lb/fabric-api-0.126.0%2B1.21.5.jar","https://cdn.modrinth.com/data/P7dR8mSH/versions/N3z6cNQv/fabric-api-0.127.1%2B1.21.6.jar","modrinth","modrinth","https://cdn.modrinth.com/data/P7dR8mSH/icon.png","optional","optional","Fabric API","Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.","https://github.com/FabricMC/fabric/issues","https://github.com/FabricMC/fabric","https://fabricmc.net/wiki/","1.21.6"
-```
-
-#### CurseForge Mod
-```csv
-"required","mod","1.21.5","238222","fabric","3.4.6","Inventory HUD+","Enhanced inventory display","inventory-hud-3.4.6.jar","https://www.curseforge.com/minecraft/mc-mods/inventory-hud","Interface","https://www.curseforge.com/api/v1/mods/238222/files/1234567/download","https://www.curseforge.com/api/v1/mods/238222/files/1234568/download","3.4.7","3.4.7","https://www.curseforge.com/api/v1/mods/238222/files/1234567/download","https://www.curseforge.com/api/v1/mods/238222/files/1234568/download","curseforge","curseforge","https://media.forgecdn.net/avatars/thumbnails/123/456/256/256/6361234567890.png","required","optional","Inventory HUD+","Enhanced inventory display with customizable HUD","https://github.com/example/inventory-hud/issues","https://github.com/example/inventory-hud","","1.21.6"
-```
-
-#### Shaderpack
-```csv
-"optional","shaderpack","1.21.6","complementary-reimagined","iris","","Complementary Reimagined","Beautiful shaderpack","complementary-reimagined.zip","https://modrinth.com/shader/complementary-reimagined","Shaders","","","","","","","modrinth","modrinth","https://cdn.modrinth.com/data/123456/icon.png","required","unsupported","Complementary Reimagined","A beautiful shaderpack","","","","1.21.6"
-```
-
-## 🔧 Configuration
-
-### Environment Variables
-
-The script supports several environment variables for configuration. Create a `.env` file in the project root:
-
-#### API Response Organization
-- **`APIRESPONSE_MODRINTH_SUBFOLDER`**: Subfolder name for Modrinth API responses (default: `modrinth`)
-- **`APIRESPONSE_CURSEFORGE_SUBFOLDER`**: Subfolder name for CurseForge API responses (default: `curseforge`)
-
-#### API Configuration
-- **`MODRINTH_API_BASE_URL`**: Modrinth API base URL (default: `https://api.modrinth.com/v2`)
-- **`CURSEFORGE_API_BASE_URL`**: CurseForge API base URL (default: `https://www.curseforge.com/api/v1`)
-- **`CURSEFORGE_API_KEY`**: CurseForge API key for enhanced rate limits (optional)
-
-#### Default Settings
-- **`DEFAULT_LOADER`**: Default mod loader (default: `fabric`)
-- **`DEFAULT_GAME_VERSION`**: Default game version (default: `1.21.5`)
-- **`DEFAULT_MOD_TYPE`**: Default mod type (default: `mod`)
-
-### API Response Organization
-
-API responses are automatically organized into subfolders by domain:
-
-- **Modrinth responses**: Stored in `apiresponse/modrinth/`
-  - Project info: `{modid}-project.json`
-  - Version info: `{modid}-versions.json`
-- **CurseForge responses**: Stored in `apiresponse/curseforge/`
-  - Version info: `{modid}-curseforge-versions.json`
-
-This organization:
-- **Improves performance**: Faster file lookups in smaller directories
-- **Enhances maintainability**: Clear separation between API sources
-- **Reduces conflicts**: No filename collisions between different APIs
-- **Enables customization**: Subfolder names can be configured via environment variables
-
-## 📈 Features in Detail
-
-### Majority Version Targeting
-
-When using `-UseLatestVersion`, the script:
-
-1. **Analyzes all mods** to find the most common `LatestGameVersion`
-2. **Targets the majority version** for maximum compatibility
-3. **Downloads all mods** to a single version folder (e.g., `download/1.21.6/mods/`)
-4. **Generates comprehensive README** with version distribution analysis
-
-### CurseForge Integration
-
-- **Direct API Downloads**: Uses `https://www.curseforge.com/api/v1/mods/{modId}/files/{fileId}/download`
-- **Automatic URL Construction**: Builds download URLs when direct URLs are missing
-- **File ID Extraction**: Extracts file IDs from API responses for reliable downloads
-- **ID Requirements**: CurseForge mods require numeric IDs (found in mod URLs)
-
-### Shaderpack Support
-
-- **Iris Loader**: Automatically uses "iris" loader for shaderpacks
-- **Separate Folder**: Downloads to `download/[version]/shaderpacks/` folder
-- **Modrinth Shaders**: Supports Modrinth shader downloads
-
-### Server and Launcher Downloads
-
-- **Minecraft Server JARs**: Downloads official server JARs for specific versions
-- **Fabric Launchers**: Downloads Fabric server launchers with proper naming
-- **Version-Specific**: Each download is tied to a specific game version
-
-### Comprehensive README Generation
-
-Each download creates a detailed README with:
-
-- **Game Version Analysis**: Total mods, majority version, target version
-- **Version Distribution**: Breakdown of all supported versions with mod lists
-- **Download Results**: Success/failure counts and error details
-- **Mod List**: Complete list of downloaded mods with versions and sizes
-- **Download Settings**: Flags and configuration used
-
-## 🔍 Output Files
-
-### Generated Files
-
-- **`apiresponse/version-validation-results.csv`**: Validation results
-- **`apiresponse/mod-download-results.csv`**: Download results
-
-### Backup Files
-
-- **`modlist-backup.csv`**: Backup before CSV updates
-- **`modlist-columns-backup.csv`**: Backup when adding new columns
+## 🔍 API Documentation
+
+Complete API reference with CURL and PowerShell examples:
+**[docs/API_REFERENCE.md](docs/API_REFERENCE.md)**
+
+Includes all endpoints for:
+- Modrinth API
+- CurseForge API  
+- Fabric Meta API
+- Mojang API
 
 ## 🛡️ Error Handling
 
@@ -718,106 +308,47 @@ Each download creates a detailed README with:
 
 ## 🔄 Workflow
 
-### How It Works
+### Typical Usage
 
-**Your `modlist.csv` represents your currently installed mod versions.** The Minecraft Mod Manager provides a complete automated workflow for mod lifecycle management, from update detection to testing and modpack creation.
-
-**Complete Automation Workflow:**
-
-1. **Update Detection**: Script checks each mod against Modrinth/CurseForge APIs  
-2. **Intelligent Feedback**: Provides recommendations on when upgrades should happen
-3. **Automated Downloads**: Downloads updated mods for testing
-4. **Compatibility Testing**: Tests mods with server execution and reports issues
-5. **Modpack Generation**: Creates new modpacks for current and updated versions
-6. **Continuous Integration**: Enables automated testing pipelines
-
-**Process Flow:**
-```
-Your Installed Mods → API Validation → Update Analysis → Smart Recommendations
-        ↓
-Download Updates → Server Testing → Compatibility Report → Modpack Creation
-        ↓
-Current Version Modpack ← → Updated Version Modpack → Testing Feedback
-```
-
-**Example Workflow:**
-- Your CSV: `fabric-api v0.127.1+1.21.5` (what you have installed)
-- API Response: `v0.130.0+1.21.6` is latest available  
-- **Update Detection**: **"Have updates available: 1 mod"** 
-- **Testing**: Downloads and tests new version with server startup
-- **Feedback**: Reports compatibility success/issues
-- **Output**: Creates both current and updated modpacks for comparison
-
-### Typical Usage Workflow
-
-1. **Prepare modlist.csv** with your currently installed mods and versions
-2. **Run validation**: `.\ModManager.ps1` (checks for available updates)
-3. **Review Update Summary** showing which mods have updates available
-4. **Download latest versions**: `.\ModManager.ps1 -Download -UseLatestVersion`
-5. **Check generated README** in the download folder
+1. **Prepare `modlist.csv`** with your installed mods
+2. **Run validation**: `.\ModManager.ps1` (check for updates)
+3. **Review Update Summary** 
+4. **Download updates**: `.\ModManager.ps1 -Download -UseLatestVersion`
+5. **Validate server compatibility**: `.\scripts\Validate-ServerMods.ps1`
 6. **Apply updates** to your Minecraft installation
 
-### Continuous Integration
+### Server Deployment
 
-- **Regular validation**: Check for updates weekly
-- **Version tracking**: Monitor for new mod versions
-- **Compatibility testing**: Ensure mods work with target versions
+1. **Validate mods**: `.\scripts\Validate-ServerMods.ps1 -ShowDetails`
+2. **Download server files**: `.\ModManager.ps1 -DownloadServer`
+3. **Download mods**: `.\ModManager.ps1 -DownloadMods`
+4. **Test server startup**: `.\test\tests\68-TestServerValidation.ps1`
+5. **Deploy to production**
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test thoroughly
+4. Run tests: `.\test\RunAllTests.ps1 -All`
 5. Submit a pull request
 
-### Testing
+### Testing Requirements
 
-#### Local Testing
-
-Run the complete test suite locally:
-
-```powershell
-cd test
-.\RunAllTests.ps1 -All
-```
-
-Run individual test files:
-
-```powershell
-.\RunAllTests.ps1 -TestFiles '01-BasicFunctionality.ps1'
-```
-
-#### Continuous Integration
-
-This project includes GitHub Actions workflows that automatically run the test suite on:
-
-- **Windows** (Windows Server 2022)
-- **Linux** (Ubuntu 22.04) 
-- **macOS** (macOS 13)
-
-The CI pipeline:
-- Runs on every push to `main` and `develop` branches
-- Runs on all pull requests
-- Can be manually triggered via GitHub Actions UI
-- Uploads test logs and output as artifacts
-- Supports cross-platform testing
-
-#### CI Features
-
-- **Multi-platform testing**: Ensures compatibility across Windows, Linux, and macOS
-- **Automatic PowerShell installation**: Sets up PowerShell 7 on Linux and macOS
-- **Test artifacts**: Preserves test logs and output for debugging
-- **Fail-fast protection**: Prevents broken code from being merged
-- **Manual triggering**: Allows running tests on demand
-
-#### Viewing Results
-
-1. Go to the **Actions** tab on GitHub
-2. Click on the latest workflow run
-3. View test results for each platform
-4. Download test artifacts if needed
+- All tests must pass on Windows, Linux, and macOS
+- New features require corresponding tests
+- Use test isolation to prevent interference
+- See [test/README.md](test/README.md) for detailed testing guidelines
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📚 Documentation
+
+- **[Test Documentation](test/README.md)** - Comprehensive testing guide
+- **[API Reference](docs/API_REFERENCE.md)** - Complete API documentation
+- **[Use Cases](docs/)** - Specific workflow examples
+- **[Scripts Reference](scripts/)** - Helper script documentation

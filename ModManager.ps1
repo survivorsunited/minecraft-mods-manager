@@ -23,7 +23,7 @@ param(
     [string]$AddModLoader,
     [string]$AddModGameVersion,
     [string]$AddModType,
-    [string]$AddModGroup,
+    [string]$AddModGroup = "required",
     [string]$AddModDescription,
     [string]$AddModJar,
     [string]$AddModVersion,

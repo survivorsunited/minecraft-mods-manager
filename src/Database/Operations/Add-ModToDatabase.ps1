@@ -200,6 +200,17 @@ function Add-ModToDatabase {
             }
         }
 
+        # Auto-assign URL for server types from environment variables
+        if ($AddModType -eq "server" -and -not $AddModUrl) {
+            if ($AddModId -eq "minecraft-server" -and $env:MINECRAFT_SERVER_URL) {
+                $AddModUrl = $env:MINECRAFT_SERVER_URL
+                Write-Host "  Auto-assigned Minecraft server URL from environment" -ForegroundColor Gray
+            } elseif ($AddModId -eq "fabric-server" -and $env:FABRIC_SERVER_URL) {
+                $AddModUrl = $env:FABRIC_SERVER_URL
+                Write-Host "  Auto-assigned Fabric server URL from environment" -ForegroundColor Gray
+            }
+        }
+
         # Create new mod entry
         $newMod = [PSCustomObject]@{
             Group = $AddModGroup
