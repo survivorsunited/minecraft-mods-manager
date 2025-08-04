@@ -31,6 +31,7 @@ param(
     [string]$AddModCategory,
     [switch]$DownloadServer,
     [switch]$StartServer,
+    [string]$GameVersion,
     [switch]$ClearServer,
     [switch]$AddServerStartScript,
     [string]$DeleteModID,
@@ -231,34 +232,57 @@ if ($ClearServer) {
 if ($StartServer) {
     Write-Host "Starting Minecraft server..." -ForegroundColor Yellow
     
-    # Check if server files exist
-    $versionFolders = Get-ChildItem -Path $DownloadFolder -Directory -ErrorAction SilentlyContinue | 
-                     Where-Object { $_.Name -match "^\d+\.\d+\.\d+" } |
-                     Sort-Object { [version]$_.Name } -Descending
+    # Determine target version (use parameter if provided, otherwise use next version for testing)
+    Write-Host "🔍 Determining target game version..." -ForegroundColor Cyan
     
-    $needsDownload = $false
-    if ($versionFolders.Count -eq 0) {
-        $needsDownload = $true
-        Write-Host "⚠️  No server files found. Need to download mods and server files first." -ForegroundColor Yellow
+    if ($GameVersion) {
+        $targetVersion = $GameVersion
+        Write-Host "🎯 Target version: $targetVersion (user specified)" -ForegroundColor Green
     } else {
-        # Check if the latest version folder has server files
-        $latestFolder = Join-Path $DownloadFolder $versionFolders[0].Name
-        $fabricJars = Get-ChildItem -Path $latestFolder -Filter "fabric-server*.jar" -ErrorAction SilentlyContinue
-        if ($fabricJars.Count -eq 0) {
-            $needsDownload = $true
-            Write-Host "⚠️  No Fabric server JAR found in $($versionFolders[0].Name). Need to download server files." -ForegroundColor Yellow
+        # Use next version to test if newer versions will work
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
+        $targetVersion = $nextVersionResult.NextVersion
+        
+        if ($nextVersionResult.IsHighestVersion) {
+            Write-Host "🎯 Target version: $targetVersion (highest available version)" -ForegroundColor Blue
+        } else {
+            Write-Host "🎯 Target version: $targetVersion (next version after $($nextVersionResult.MajorityVersion) for testing)" -ForegroundColor Green
+            Write-Host "   📊 Testing if $($nextVersionResult.ModCount) mods will work with next version" -ForegroundColor Gray
         }
     }
     
-    # Download if needed
+    # Check if target version folder exists and has files
+    $targetFolder = Join-Path $DownloadFolder $targetVersion
+    $needsDownload = $false
+    
+    if (-not (Test-Path $targetFolder)) {
+        $needsDownload = $true
+        Write-Host "⚠️  Target version folder $targetVersion not found. Need to download mods and server files." -ForegroundColor Yellow
+    } else {
+        # Check if the target version folder has server files
+        $fabricJars = Get-ChildItem -Path $targetFolder -Filter "fabric-server*.jar" -ErrorAction SilentlyContinue
+        if ($fabricJars.Count -eq 0) {
+            $needsDownload = $true
+            Write-Host "⚠️  No Fabric server JAR found in $targetVersion. Need to download server files." -ForegroundColor Yellow
+        }
+        
+        # Check if mods folder exists and has mods for proper testing
+        $modsFolder = Join-Path $targetFolder "mods"
+        if (-not (Test-Path $modsFolder) -or (Get-ChildItem -Path $modsFolder -Filter "*.jar" -ErrorAction SilentlyContinue).Count -eq 0) {
+            $needsDownload = $true
+            Write-Host "⚠️  No mods found in $targetVersion/mods. Need to download mods for proper server testing." -ForegroundColor Yellow
+        }
+    }
+    
+    # Download if needed (use current versions to match database)
     if ($needsDownload) {
-        Write-Host "📦 Downloading mods and server files..." -ForegroundColor Cyan
-        Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        Write-Host "📦 Downloading mods and server files for $targetVersion..." -ForegroundColor Cyan
+        Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -TargetGameVersion $targetVersion
         Write-Host "" -ForegroundColor White
     }
     
     # Now start the server
-    $serverResult = Start-MinecraftServer -DownloadFolder $DownloadFolder
+    $serverResult = Start-MinecraftServer -DownloadFolder $DownloadFolder -TargetVersion $targetVersion
     if ($serverResult) {
         Write-Host "🎉 SERVER VALIDATION SUCCESSFUL!" -ForegroundColor Green
         Exit-ModManager 0

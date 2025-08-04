@@ -38,7 +38,8 @@ function Download-Mods {
         [string]$CsvPath = $ModListPath,
         [string]$DownloadFolder = "download",
         [switch]$UseLatestVersion,
-        [switch]$ForceDownload
+        [switch]$ForceDownload,
+        [string]$TargetGameVersion = $null
     )
     
     try {
@@ -47,10 +48,32 @@ function Download-Mods {
             return
         }
         
-        # Determine target game version if using latest versions
+        # Filter mods by target version if specified
+        if ($TargetGameVersion) {
+            Write-Host "🔍 Filtering mods for target version: $TargetGameVersion" -ForegroundColor Cyan
+            $originalCount = $mods.Count
+            $mods = $mods | Where-Object { 
+                # Include mods that match the target version
+                $_.GameVersion -eq $TargetGameVersion -or
+                # Include system entries (server, launcher) that we need
+                $_.Type -in @("server", "launcher") -or
+                # Include mods with no specific version (will use latest available)
+                [string]::IsNullOrEmpty($_.GameVersion)
+            }
+            Write-Host "📊 Filtered: $originalCount mods → $($mods.Count) mods for version $TargetGameVersion" -ForegroundColor Gray
+        }
+        
+        # Determine target game version
         $targetGameVersion = $DefaultGameVersion
         $versionAnalysis = $null
-        if ($UseLatestVersion) {
+        
+        if ($TargetGameVersion) {
+            # Use specified target version
+            $targetGameVersion = $TargetGameVersion
+            Write-Host "Targeting specified game version: $targetGameVersion" -ForegroundColor Green
+            Write-Host ""
+        } elseif ($UseLatestVersion) {
+            # Use majority version for latest downloads
             $versionResult = Get-MajorityGameVersion -CsvPath $CsvPath
             $targetGameVersion = $versionResult.MajorityVersion
             $versionAnalysis = $versionResult.Analysis
@@ -66,7 +89,11 @@ function Download-Mods {
         
         # Determine which version folders need to be cleared
         $versionsToClear = @()
-        if ($UseLatestVersion) {
+        if ($TargetGameVersion) {
+            # For target version, only clear the specified version folder
+            $versionsToClear = @($targetGameVersion)
+            Write-Host "Will clear version folder: $targetGameVersion" -ForegroundColor Yellow
+        } elseif ($UseLatestVersion) {
             # For latest versions, only clear the majority version folder
             $versionsToClear = @($targetGameVersion)
             Write-Host "Will clear version folder: $targetGameVersion" -ForegroundColor Yellow

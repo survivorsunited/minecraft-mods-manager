@@ -134,10 +134,19 @@ function Download-ServerFilesFromDatabase {
                     }
                 }
                 
-                # If we resolved a URL, use it
+                # If we resolved a URL, use it and save it to database
                 if ($resolvedUrl) {
                     $entry | Add-Member -MemberType NoteProperty -Name "ResolvedUrl" -Value $resolvedUrl -Force
                     $entry | Add-Member -MemberType NoteProperty -Name "ResolvedFilename" -Value $resolvedFilename -Force
+                    
+                    # Save resolved URL back to database
+                    Write-Host "  💾 Saving resolved URL to database..." -ForegroundColor Yellow
+                    try {
+                        Update-ModUrlInDatabase -ModId $entry.ID -NewUrl $resolvedUrl -CsvPath $CsvPath
+                        Write-Host "  ✅ URL saved to database for future use" -ForegroundColor Green
+                    } catch {
+                        Write-Host "  ⚠️  Could not save URL to database: $($_.Exception.Message)" -ForegroundColor Yellow
+                    }
                 } else {
                     $skippedNoUrl++
                     $downloadResults += [PSCustomObject]@{

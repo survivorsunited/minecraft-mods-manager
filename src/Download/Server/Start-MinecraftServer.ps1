@@ -20,7 +20,8 @@
 function Start-MinecraftServer {
     param(
         [string]$DownloadFolder = "download",
-        [string]$ScriptSource = (Join-Path $PSScriptRoot "..\..\..\tools\start-server.ps1")
+        [string]$ScriptSource = (Join-Path $PSScriptRoot "..\..\..\tools\start-server.ps1"),
+        [string]$TargetVersion = $null
     )
     
     Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
@@ -82,19 +83,45 @@ function Start-MinecraftServer {
         return $false
     }
     
-    # Find the most recent version folder (sort numerically)
-    $versionFolders = Get-ChildItem -Path $DownloadFolder -Directory -ErrorAction SilentlyContinue | 
-                     Where-Object { $_.Name -match "^\d+\.\d+\.\d+" } |
-                     Sort-Object { [version]$_.Name } -Descending
+    # Determine target version (use parameter if provided, otherwise use next version for testing)
+    Write-Host "🔍 Determining target game version..." -ForegroundColor Cyan
     
-    if ($versionFolders.Count -eq 0) {
-        Write-Host "❌ No version folders found in $DownloadFolder" -ForegroundColor Red
-        Write-Host "💡 Run -DownloadMods first to download server files" -ForegroundColor Yellow
-        return $false
+    if ($TargetVersion) {
+        $targetVersion = $TargetVersion
+        Write-Host "🎯 Target version: $targetVersion (user specified)" -ForegroundColor Green
+    } else {
+        # Use next version to test if newer versions will work
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $ModListPath
+        $targetVersion = $nextVersionResult.NextVersion
+        
+        if ($nextVersionResult.IsHighestVersion) {
+            Write-Host "🎯 Target version: $targetVersion (highest available version)" -ForegroundColor Blue
+        } else {
+            Write-Host "🎯 Target version: $targetVersion (next version after $($nextVersionResult.MajorityVersion) for testing)" -ForegroundColor Green
+            Write-Host "   📊 Testing if $($nextVersionResult.ModCount) mods will work with next version" -ForegroundColor Gray
+        }
     }
     
-    $targetVersion = $versionFolders[0].Name
     $targetFolder = Join-Path $DownloadFolder $targetVersion
+    
+    # Verify the target folder exists, fallback to highest version if not
+    if (-not (Test-Path $targetFolder)) {
+        Write-Host "⚠️  Target version folder $targetVersion not found, checking for alternatives..." -ForegroundColor Yellow
+        
+        $versionFolders = Get-ChildItem -Path $DownloadFolder -Directory -ErrorAction SilentlyContinue | 
+                         Where-Object { $_.Name -match "^\d+\.\d+\.\d+" } |
+                         Sort-Object { [version]$_.Name } -Descending
+        
+        if ($versionFolders.Count -eq 0) {
+            Write-Host "❌ No version folders found in $DownloadFolder" -ForegroundColor Red
+            Write-Host "💡 Run -DownloadMods first to download server files" -ForegroundColor Yellow
+            return $false
+        }
+        
+        $targetVersion = $versionFolders[0].Name
+        $targetFolder = Join-Path $DownloadFolder $targetVersion
+        Write-Host "📁 Using fallback version: $targetVersion" -ForegroundColor Yellow
+    }
     
     Write-Host "📁 Using version folder: $targetFolder" -ForegroundColor Cyan
     

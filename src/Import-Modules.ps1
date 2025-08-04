@@ -17,6 +17,7 @@
 . "$PSScriptRoot\Data\Version\Normalize-Version.ps1"
 . "$PSScriptRoot\Data\Version\Get-MajorityGameVersion.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-LatestGameVersionFromAvailableVersions.ps1"
+. "$PSScriptRoot\Data\Version\Calculate-NextGameVersion.ps1"
 . "$PSScriptRoot\Data\Version\Filter-RelevantGameVersions.ps1"
 . "$PSScriptRoot\Data\Utility\Convert-DependenciesToJson.ps1"
 . "$PSScriptRoot\Data\Utility\Clean-SystemEntries.ps1"
@@ -28,6 +29,7 @@
 . "$PSScriptRoot\Database\CSV\Update-WithLatestVersions.ps1"
 . "$PSScriptRoot\Database\Operations\Add-ModToDatabase.ps1"
 . "$PSScriptRoot\Database\Operations\Delete-ModFromDatabase.ps1"
+. "$PSScriptRoot\Database\Operations\Update-ModUrlInDatabase.ps1"
 
 # Provider modules (consolidated from API folder)
 . "$PSScriptRoot\Provider\Common.ps1"
