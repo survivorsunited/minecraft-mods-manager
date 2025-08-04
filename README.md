@@ -30,120 +30,388 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
 
 ## 🛠️ Installation
 
-1. **Clone the repository**:
-   ```powershell
-   git clone https://github.com/yourusername/minecraft-mods-manager.git
-   cd minecraft-mods-manager
-   ```
+### Clone the repository
+```powershell
+git clone https://github.com/yourusername/minecraft-mods-manager.git
+```
 
-2. **Initialize submodules**:
-   ```powershell
-   git submodule update --init --recursive
-   ```
+### Navigate to directory
+```powershell
+cd minecraft-mods-manager
+```
 
-3. **Optional**: Create a `.env` file for configuration (server URLs already added):
-   ```env
-   # API Configuration
-   MODRINTH_API_BASE_URL=https://api.modrinth.com/v2
-   CURSEFORGE_API_BASE_URL=https://api.curseforge.com/v1
-   CURSEFORGE_API_KEY=your_api_key_here
-   
-   # Server URLs
-   MINECRAFT_SERVER_URL=https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
-   FABRIC_SERVER_URL=https://meta.fabricmc.net/v2/versions
-   
-   # Default settings
-   DEFAULT_LOADER=fabric
-   DEFAULT_GAME_VERSION=1.21.6
-   DEFAULT_MOD_TYPE=mod
-   
-   # Server requirements
-   JAVA_VERSION_MIN=17
-   ```
+### Initialize submodules
+```powershell
+git submodule update --init --recursive
+```
+
+### Create configuration file (optional)
+Create a `.env` file for API keys and settings:
+```env
+# API Configuration
+MODRINTH_API_BASE_URL=https://api.modrinth.com/v2
+CURSEFORGE_API_BASE_URL=https://api.curseforge.com/v1
+CURSEFORGE_API_KEY=your_api_key_here
+
+# Server URLs
+MINECRAFT_SERVER_URL=https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
+FABRIC_SERVER_URL=https://meta.fabricmc.net/v2/versions
+
+# Default settings
+DEFAULT_LOADER=fabric
+DEFAULT_GAME_VERSION=1.21.6
+DEFAULT_MOD_TYPE=mod
+
+# Server requirements
+JAVA_VERSION_MIN=17
+
+# Server memory settings (optional)
+MINECRAFT_MIN_MEMORY=1G
+MINECRAFT_MAX_MEMORY=4G
+```
 
 ## 📖 Quick Start
 
-### Basic Usage
-
-#### Check for mod updates (default behavior)
-
+### Check for mod updates
+Runs validation and shows update summary for all mods
 ```powershell
 .\ModManager.ps1
 ```
 
-#### Validate all mods and update database
-
+### Validate all mods and update database
+Checks all mod versions against APIs and updates database with latest information
 ```powershell
 .\ModManager.ps1 -ValidateAllModVersions
 ```
 
-#### Download all mods
-
+### Download all current mod versions
+Downloads all mods using versions specified in database
 ```powershell
 .\ModManager.ps1 -Download
 ```
 
-#### Download latest versions instead of current
-
+### Download all latest mod versions
+Downloads the latest available versions instead of database versions
 ```powershell
 .\ModManager.ps1 -Download -UseLatestVersion
 ```
 
-#### Quick server validation
-
+### Quick server validation check
+Fast validation to check server compatibility without downloading
 ```powershell
 .\scripts\Validate-ServerMods.ps1 -ShowDetails
 ```
 
-### Adding Mods
+## 🔧 Adding Items to Database
 
-#### Quick add with Modrinth URL (recommended)
+### Add mod by Modrinth URL (recommended)
+Automatically detects mod type, version, and metadata from URL
 ```powershell
 .\ModManager.ps1 -AddModId "https://modrinth.com/mod/fabric-api"
+```
+
+### Add shaderpack by Modrinth URL
+Automatically configures for iris loader
+```powershell
 .\ModManager.ps1 -AddModId "https://modrinth.com/shader/complementary-reimagined"
 ```
 
-#### Manual add with details
-
+### Add datapack by Modrinth URL
+Automatically detects datapack type and loader-agnostic settings
 ```powershell
-.\ModManager.ps1 -AddMod -AddModId "sodium" -AddModName "Sodium" -AddModLoader "fabric"
+.\ModManager.ps1 -AddModId "https://modrinth.com/datapack/vanilla-tweaks"
 ```
 
-### Server Management
-
-#### Download server files
-
+### Add mod manually with required parameters
+Specify mod details manually when URL detection isn't available
 ```powershell
-.\ModManager.ps1 -DownloadServer
-```
-#### Download server files for specific version
-
-```powershell
-.\ModManager.ps1 -DownloadServer -GameVersion "1.21.7"
+.\ModManager.ps1 -AddMod -AddModId "sodium" -AddModName "Sodium" -AddModLoader "fabric" -AddModGameVersion "1.21.6"
 ```
 
-#### Add Minecraft server to database (uses MINECRAFT_SERVER_URL from .env)
-
+### Add mod with full parameters
+Complete specification including compatibility and grouping
 ```powershell
-.\ModManager.ps1 -AddMod -AddModId "minecraft-server-1.21.7" -AddModName "Minecraft Server" -AddModType "server" -AddModGameVersion "1.21.7" -Group "required"
+.\ModManager.ps1 -AddMod -AddModId "lithium" -AddModName "Lithium" -AddModLoader "fabric" -AddModGameVersion "1.21.6" -AddModGroup "required" -AddModType "mod" -AddModDescription "Server optimization mod"
 ```
 
-#### Add Fabric server to database (uses FABRIC_SERVER_URL from .env)
-
+### Add optional mod
+Marks mod as optional (not required for server operation)
 ```powershell
-.\ModManager.ps1 -AddMod -AddModId "fabric-server-launcher-1.21.7" -AddModName "Fabric Server" -AddModType "launcher" -AddModGameVersion "1.21.7" -AddModLoader "fabric" -Group "required"
+.\ModManager.ps1 -AddMod -AddModId "journeymap" -AddModName "JourneyMap" -AddModLoader "fabric" -AddModGameVersion "1.21.6" -AddModGroup "optional"
 ```
 
-#### Validate server compatibility
+### Add server-side only mod
+Specifies mod works only on server (not client)
+```powershell
+.\ModManager.ps1 -AddMod -AddModId "anti-xray" -AddModName "Anti X-Ray" -AddModLoader "fabric" -AddModGameVersion "1.21.6" -AddModGroup "required" -AddModType "mod" -ServerSide "required" -ClientSide "unsupported"
+```
 
+### Add client-side only mod
+Specifies mod works only on client (not server)
+```powershell
+.\ModManager.ps1 -AddMod -AddModId "sodium" -AddModName "Sodium" -AddModLoader "fabric" -AddModGameVersion "1.21.6" -AddModGroup "required" -AddModType "mod" -ServerSide "unsupported" -ClientSide "required"
+```
+
+## 🏗️ Server Management
+
+### ✨ Automatic URL Resolution
+The system now automatically resolves server download URLs for all Minecraft versions. When adding server entries with empty URLs, the download process will:
+- **Minecraft Server**: Fetches the official server JAR URL from Mojang's version manifest
+- **Fabric Launcher**: Builds the download URL using the latest loader and installer versions from Fabric Meta API
+
+### Download server files for all versions in database
+Downloads Minecraft server JARs and Fabric launchers for all versions found in database
+```powershell
+.\ModManager.ps1 -DownloadMods
+```
+*Note: Server files are now downloaded automatically with mods*
+
+### Download server files for specific version
+Downloads all files including server files for the specified Minecraft version
+```powershell
+.\ModManager.ps1 -DownloadMods -GameVersion "1.21.7"
+```
+
+### Add Minecraft server to database (auto-resolves URL)
+Adds Minecraft server JAR download to database - URL will be auto-resolved during download
+```powershell
+.\ModManager.ps1 -AddMod -AddModId "minecraft-server-1.21.7" -AddModName "Minecraft Server" -AddModType "server" -AddModGameVersion "1.21.7" -AddModGroup "required"
+```
+
+### Add Fabric server launcher to database (auto-resolves URL)
+Adds Fabric server launcher to database - URL will be auto-resolved during download
+```powershell
+.\ModManager.ps1 -AddMod -AddModId "fabric-server-launcher-1.21.7" -AddModName "Fabric Server" -AddModType "launcher" -AddModGameVersion "1.21.7" -AddModLoader "fabric" -AddModGroup "required"
+```
+
+### Add Fabric installer to database
+Adds Fabric installer for client installation to database
+```powershell
+.\ModManager.ps1 -AddMod -AddModId "fabric-installer-1.21.7" -AddModName "Fabric Installer" -AddModType "installer" -AddModGameVersion "1.21.7" -AddModLoader "fabric" -AddModGroup "optional"
+```
+
+### Start Minecraft server (CI/CD Pipeline Ready) 🚀
+Starts the Minecraft server for validation testing - perfect for CI/CD pipelines
+```powershell
+.\ModManager.ps1 -StartServer
+```
+
+**Server Startup Features:**
+- **Automatic Download**: Downloads server files if not present
+- **Two-Stage Initialization**: Handles first-run setup automatically
+- **EULA Acceptance**: Automatically accepts EULA for testing
+- **Offline Mode**: Sets server to offline mode for CI/CD environments
+- **Full Validation**: Waits for server to fully load, validates success, then stops
+- **Exit Codes**: Returns 0 for success, 1 for failure (pipeline-ready)
+
+### Clear server files for fresh start
+Removes server configuration and world files while keeping JARs
+```powershell
+.\ModManager.ps1 -ClearServer
+```
+
+### Configure server memory settings
+Customize memory allocation for better server performance
+```bash
+# Set in .env file or as environment variables
+MINECRAFT_MIN_MEMORY=2G
+MINECRAFT_MAX_MEMORY=8G
+```
+
+### Pipeline Integration Example
+Perfect for automated testing in CI/CD pipelines:
+```bash
+# Download all files (auto-resolves server URLs)
+./ModManager.ps1 -DownloadMods
+
+# Validate server startup (returns proper exit codes)
+./ModManager.ps1 -StartServer
+if [ $? -eq 0 ]; then
+    echo "Server validation passed!"
+else
+    echo "Server validation failed!"
+    exit 1
+fi
+```
+
+### Validate server compatibility
+Checks which mods are compatible with server deployment
 ```powershell
 .\scripts\Validate-ServerMods.ps1
 ```
 
-#### Full server validation test
-
+### Test all server versions
+Comprehensive test for all Minecraft versions (1.21.5, 1.21.6, 1.21.7, 1.21.8)
 ```powershell
-.\test\tests\68-TestServerValidation.ps1
+.\test\test-all-versions.ps1
+```
+
+## 🔍 Mod Management
+
+### Search for mods by name
+Interactive search with selection menu
+```powershell
+.\ModManager.ps1 -SearchModName "optimization"
+```
+
+### Remove mod from database
+Deletes mod entry from database by ID
+```powershell
+.\ModManager.ps1 -DeleteModID "fabric-api"
+```
+
+### Use custom database file
+Specify alternative database file for operations
+```powershell
+.\ModManager.ps1 -DatabaseFile "my-mods.csv"
+```
+
+### Use custom download folder
+Specify alternative download location
+```powershell
+.\ModManager.ps1 -Download -DownloadFolder "test"
+```
+
+### Use cached API responses
+Speed up validation by using previously cached API responses
+```powershell
+.\ModManager.ps1 -ValidateAllModVersions -UseCachedResponses
+```
+
+## 📋 Complete Parameter Reference
+
+### Core Action Parameters
+
+| Parameter | Type | Description | Example |
+|-----------|------|-------------|---------|
+| `-Download` | Switch | Download all mods from database | `.\ModManager.ps1 -Download` |
+| `-UseLatestVersion` | Switch | Use latest versions instead of database versions | `.\ModManager.ps1 -Download -UseLatestVersion` |
+| `-ValidateAllModVersions` | Switch | Validate all mods and update database | `.\ModManager.ps1 -ValidateAllModVersions` |
+| `-DownloadServer` | Switch | Download server files from database | `.\ModManager.ps1 -DownloadServer` |
+| `-StartServer` | Switch | Start Minecraft server with downloaded files | `.\ModManager.ps1 -StartServer` |
+| `-ClearServer` | Switch | Clear server files for fresh restart | `.\ModManager.ps1 -ClearServer` |
+| `-AddMod` | Switch | Add new mod to database | `.\ModManager.ps1 -AddMod -AddModId "sodium"` |
+| `-SearchModName` | String | Search for mods interactively | `.\ModManager.ps1 -SearchModName "optimization"` |
+| `-DeleteModID` | String | Remove mod from database by ID | `.\ModManager.ps1 -DeleteModID "fabric-api"` |
+
+### Mod Addition Parameters
+
+| Parameter | Type | Default | Description | Values |
+|-----------|------|---------|-------------|---------|
+| `-AddModId` | String | - | **Required**: Mod ID or slug | `"fabric-api"`, `"sodium"` |
+| `-AddModUrl` | String | - | Alternative to ID: Full mod URL | `"https://modrinth.com/mod/fabric-api"` |
+| `-AddModName` | String | - | **Required**: Display name for mod | `"Fabric API"`, `"Sodium"` |
+| `-AddModGameVersion` | String | "1.21.5" | Target Minecraft version | `"1.21.6"`, `"1.21.7"` |
+| `-AddModLoader` | String | "fabric" | Mod loader system | `fabric`, `forge`, `iris`, `vanilla` |
+| `-AddModGroup` | String | "required" | Mod importance category | `required`, `optional`, `admin`, `block` |
+| `-AddModType` | String | "mod" | Item type | `mod`, `datapack`, `shaderpack`, `installer`, `server`, `launcher` |
+| `-AddModVersion` | String | "latest" | Specific mod version | `"latest"`, `"1.0.0"`, `"v2.1.3"` |
+| `-AddModDescription` | String | "" | Mod description text | `"Performance optimization mod"` |
+| `-AddModCategory` | String | "" | Mod category | `"Optimization"`, `"Utility"` |
+| `-AddModJar` | String | "" | Specific JAR filename | `"sodium-fabric-1.0.jar"` |
+| `-AddModUrlDirect` | String | "" | Direct download URL | `"https://cdn.modrinth.com/..."` |
+
+### Server/Client Compatibility Parameters
+
+| Parameter | Type | Default | Description | Values |
+|-----------|------|---------|-------------|---------|
+| `-ServerSide` | String | "optional" | Server compatibility | `required`, `optional`, `unsupported` |
+| `-ClientSide` | String | "optional" | Client compatibility | `required`, `optional`, `unsupported` |
+
+### Configuration Parameters
+
+| Parameter | Type | Default | Description | Example |
+|-----------|------|---------|-------------|---------|
+| `-DatabaseFile` | String | "modlist.csv" | Custom database file path | `.\ModManager.ps1 -DatabaseFile "my-mods.csv"` |
+| `-DownloadFolder` | String | "download" | Custom download directory | `.\ModManager.ps1 -Download -DownloadFolder "test"` |
+| `-ApiResponseFolder` | String | "apiresponse" | API response cache folder | `.\ModManager.ps1 -ApiResponseFolder "cache"` |
+| `-UseCachedResponses` | Switch | false | Use cached API responses | `.\ModManager.ps1 -ValidateAllModVersions -UseCachedResponses` |
+| `-ForceDownload` | Switch | false | Force re-download existing files | `.\ModManager.ps1 -Download -ForceDownload` |
+
+### Environment Variables
+
+Configure server behavior through environment variables in your `.env` file:
+
+| Variable | Default | Description | Example |
+|----------|---------|-------------|---------|
+| `MINECRAFT_MIN_MEMORY` | "1G" | Minimum memory allocation for server | `MINECRAFT_MIN_MEMORY=2G` |
+| `MINECRAFT_MAX_MEMORY` | "4G" | Maximum memory allocation for server | `MINECRAFT_MAX_MEMORY=8G` |
+| `JAVA_VERSION_MIN` | "17" | Minimum required Java version | `JAVA_VERSION_MIN=21` |
+| `CURSEFORGE_API_KEY` | - | CurseForge API key for enhanced access | `CURSEFORGE_API_KEY=your_key_here` |
+| `DEFAULT_LOADER` | "fabric" | Default mod loader | `DEFAULT_LOADER=forge` |
+| `DEFAULT_GAME_VERSION` | "1.21.6" | Default Minecraft version | `DEFAULT_GAME_VERSION=1.21.8` |
+
+### Advanced Server Management Parameters
+
+| Parameter | Type | Default | Description | Example |
+|-----------|------|---------|-------------|---------|
+| `-MonitorServerPerformance` | Switch | false | Monitor server performance | `.\ModManager.ps1 -MonitorServerPerformance` |
+| `-PerformanceSampleInterval` | Int | 5 | Performance sampling interval (seconds) | `.\ModManager.ps1 -MonitorServerPerformance -PerformanceSampleInterval 10` |
+| `-PerformanceSampleCount` | Int | 12 | Number of performance samples | `.\ModManager.ps1 -MonitorServerPerformance -PerformanceSampleCount 20` |
+| `-CreateServerBackup` | Switch | false | Create server backup | `.\ModManager.ps1 -CreateServerBackup` |
+| `-BackupPath` | String | "backups" | Backup directory path | `.\ModManager.ps1 -CreateServerBackup -BackupPath "my-backups"` |
+| `-BackupName` | String | auto | Custom backup name | `.\ModManager.ps1 -CreateServerBackup -BackupName "pre-update"` |
+| `-RestoreServerBackup` | String | - | Restore from backup name | `.\ModManager.ps1 -RestoreServerBackup "pre-update"` |
+| `-RunServerHealthCheck` | Switch | false | Run server health diagnostics | `.\ModManager.ps1 -RunServerHealthCheck` |
+| `-HealthCheckTimeout` | Int | 30 | Health check timeout (seconds) | `.\ModManager.ps1 -RunServerHealthCheck -HealthCheckTimeout 60` |
+
+### CurseForge Modpack Parameters
+
+| Parameter | Type | Default | Description | Example |
+|-----------|------|---------|-------------|---------|
+| `-DownloadCurseForgeModpack` | Switch | false | Download CurseForge modpack | `.\ModManager.ps1 -DownloadCurseForgeModpack` |
+| `-CurseForgeModpackId` | String | - | CurseForge modpack project ID | `.\ModManager.ps1 -DownloadCurseForgeModpack -CurseForgeModpackId "123456"` |
+| `-CurseForgeFileId` | String | - | Specific modpack file ID | `.\ModManager.ps1 -DownloadCurseForgeModpack -CurseForgeFileId "789012"` |
+| `-CurseForgeModpackName` | String | - | Custom modpack name | `.\ModManager.ps1 -DownloadCurseForgeModpack -CurseForgeModpackName "MyPack"` |
+
+### Cross-Platform Modpack Parameters
+
+| Parameter | Type | Default | Description | Example |
+|-----------|------|---------|-------------|---------|
+| `-ImportModpack` | String | - | Import modpack file path | `.\ModManager.ps1 -ImportModpack "pack.mrpack"` |
+| `-ModpackType` | String | "auto" | Modpack format type | `.\ModManager.ps1 -ImportModpack "pack.zip" -ModpackType "curseforge"` |
+| `-ExportModpack` | String | - | Export modpack file path | `.\ModManager.ps1 -ExportModpack "my-pack.mrpack"` |
+| `-ExportType` | String | "modrinth" | Export format type | `.\ModManager.ps1 -ExportModpack "pack.zip" -ExportType "curseforge"` |
+| `-ExportName` | String | "Exported Modpack" | Modpack display name | `.\ModManager.ps1 -ExportModpack "pack.mrpack" -ExportName "My Custom Pack"` |
+| `-ExportAuthor` | String | "ModManager" | Modpack author name | `.\ModManager.ps1 -ExportModpack "pack.mrpack" -ExportAuthor "PlayerName"` |
+
+### Database Entry Requirements
+
+When adding items manually, these parameters are required or have important defaults:
+
+#### Required Parameters
+- **AddModId** or **AddModUrl**: Unique identifier or source URL
+- **AddModName**: Display name for the item  
+- **AddModGameVersion**: Target Minecraft version (default: "1.21.5")
+
+#### Group Types
+- `required` - Essential for modpack operation
+- `optional` - Nice to have but not required
+- `admin` - Administrative/utility mods
+- `block` - Disabled/blocked items
+
+#### Type Options
+- `mod` - Standard Minecraft mod
+- `datapack` - Data pack file
+- `shaderpack` - Shader pack for graphics
+- `installer` - Installation tool
+- `server` - Server JAR file
+- `launcher` - Server launcher tool
+
+#### Loader Options
+- `fabric` - Fabric mod loader
+- `forge` - Forge mod loader  
+- `iris` - Iris shader loader
+- `vanilla` - No mod loader required
+
+#### Compatibility Values
+- `required` - Must be present
+- `optional` - Can be present
+- `unsupported` - Cannot be present
+
+### Complete Example with All Parameters
+```powershell
+.\ModManager.ps1 -AddMod -AddModId "example-mod" -AddModName "Example Mod" -AddModGameVersion "1.21.6" -AddModLoader "fabric" -AddModGroup "required" -AddModType "mod" -AddModVersion "latest" -AddModDescription "Example description" -AddModCategory "Utility" -ServerSide "required" -ClientSide "required"
 ```
 
 ## 📊 Update Summary
@@ -190,19 +458,27 @@ minecraft-mods-manager/
 
 ## 🧪 Testing
 
-### Quick Test Commands
-
+### Run all tests
+Executes complete test suite for all functionality
 ```powershell
-# Run all tests
 .\test\RunAllTests.ps1 -All
+```
 
-# Run critical server compatibility test
+### Run critical server compatibility test
+Tests server mod compatibility and deployment
+```powershell
 .\test\tests\12-TestLatestWithServer.ps1
+```
 
-# Test CurseForge functionality
+### Test CurseForge functionality
+Validates CurseForge API integration and authentication
+```powershell
 .\test\tests\67-TestCurseForgeFunctionality.ps1
+```
 
-# Quick server mod validation (fast)
+### Quick server mod validation (fast)
+Fast server compatibility check without downloads
+```powershell
 .\scripts\Validate-ServerMods.ps1 -ShowDetails
 ```
 
@@ -225,66 +501,45 @@ The server validation script provides instant feedback:
 
 **For detailed testing documentation, see [test/README.md](test/README.md)**
 
-## 📋 Complete Parameter Reference
-
-### Core Parameters
-
-| Parameter | Description | Example |
-|-----------|-------------|---------|
-| `-Download` | Download all mods | `.\ModManager.ps1 -Download` |
-| `-UseLatestVersion` | Use latest versions | `.\ModManager.ps1 -Download -UseLatestVersion` |
-| `-ValidateAllModVersions` | Validate all mods | `.\ModManager.ps1 -ValidateAllModVersions` |
-| `-DownloadServer` | Download server files | `.\ModManager.ps1 -DownloadServer` |
-| `-StartServer` | Start Minecraft server | `.\ModManager.ps1 -StartServer` |
-
-### Mod Management
-
-| Parameter | Description | Example |
-|-----------|-------------|---------|
-| `-AddModId` | Add mod by ID or URL | `.\ModManager.ps1 -AddModId "fabric-api"` |
-| `-AddMod` | Add mod with details | `.\ModManager.ps1 -AddMod -AddModId "sodium"` |
-| `-DeleteModID` | Remove mod | `.\ModManager.ps1 -DeleteModID "fabric-api"` |
-| `-SearchModName` | Search for mods | `.\ModManager.ps1 -SearchModName "optimization"` |
-
-### Configuration
-
-| Parameter | Description | Example |
-|-----------|-------------|---------|
-| `-DatabaseFile` | Custom database file | `.\ModManager.ps1 -DatabaseFile "my-mods.csv"` |
-| `-DownloadFolder` | Custom download folder | `.\ModManager.ps1 -Download -DownloadFolder "test"` |
-| `-UseCachedResponses` | Use cached API responses | `.\ModManager.ps1 -ValidateAllModVersions -UseCachedResponses` |
-
-## 📊 CSV Database Format
+## 📋 CSV Database Format
 
 The `modlist.csv` file contains these key columns:
 
-| Column | Description |
-|--------|-------------|
-| `Group` | Mod category (required, optional, admin, block) |
-| `Type` | Mod type (mod, datapack, shaderpack, installer, server) |
-| `GameVersion` | Target Minecraft version |
-| `ID` | Mod ID (Modrinth slug or CurseForge ID) |
-| `Loader` | Mod loader (fabric, forge, iris, etc.) |
-| `Version` | Expected mod version |
-| `Name` | Mod display name |
-| `ServerSide` | Server compatibility (required, optional, unsupported) |
-| `ClientSide` | Client compatibility (required, optional, unsupported) |
+| Column | Description | Values |
+|--------|-------------|---------|
+| `Group` | Mod category | required, optional, admin, block |
+| `Type` | Mod type | mod, datapack, shaderpack, installer, server, launcher |
+| `GameVersion` | Target Minecraft version | 1.21.6, 1.21.7, etc. |
+| `ID` | Mod ID | Modrinth slug or CurseForge ID |
+| `Loader` | Mod loader | fabric, forge, iris, vanilla |
+| `Version` | Expected mod version | latest, specific version |
+| `Name` | Mod display name | Human-readable name |
+| `ServerSide` | Server compatibility | required, optional, unsupported |
+| `ClientSide` | Client compatibility | required, optional, unsupported |
 
 ## 🔧 Helper Scripts
 
-Located in the `scripts/` folder for common workflows:
-
+### Server mod validation (fast)
+Quick server compatibility check
 ```powershell
-# Server mod validation (fast)
 .\scripts\Validate-ServerMods.ps1 -ShowDetails
+```
 
-# Test latest mod versions with server
+### Test latest mod versions with server
+Validates latest versions for server compatibility
+```powershell
 .\scripts\TestLatestMods.ps1
+```
 
-# Download latest versions
+### Download latest versions
+Downloads newest available versions of all mods
+```powershell
 .\scripts\DownloadLatestMods.ps1
+```
 
-# Download current versions
+### Download current versions
+Downloads currently specified versions from database
+```powershell
 .\scripts\DownloadCurrentMods.ps1
 ```
 
