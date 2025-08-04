@@ -197,9 +197,15 @@ function Download-Mods {
                             $downloadVersion = $mod.Version
                             # Keep the original jarFilename for system entries when not using latest version
                         } else {
-                            Write-Host "❌ $($mod.Name): No direct URL available for system entry" -ForegroundColor Red
-                            $errorCount++
-                            continue
+                            # For server/launcher entries with no URL, delegate to dedicated server download function
+                            if ($mod.Type -in @("launcher", "server")) {
+                                Write-Host "⏭️  $($mod.Name): Delegating to server download function for URL resolution..." -ForegroundColor Yellow
+                                continue  # Skip normal download process - server download will handle this
+                            } else {
+                                Write-Host "❌ $($mod.Name): No direct URL available for system entry" -ForegroundColor Red
+                                $errorCount++
+                                continue
+                            }
                         }
                     }
                 } elseif ($UseLatestVersion -and $mod.LatestVersionUrl) {
@@ -426,11 +432,16 @@ function Download-Mods {
         
         $downloadResults | Export-Csv -Path $downloadResultsFile -NoTypeInformation
         
+        # Download server files that were skipped due to missing URLs
+        Write-Host ""
+        Write-Host "Downloading server files from database..." -ForegroundColor Yellow
+        $serverDownloadCount = Download-ServerFilesFromDatabase -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload -CsvPath $CsvPath
+        
         # Display summary
         Write-Host ""
         Write-Host "Download Summary:" -ForegroundColor Yellow
         Write-Host "=================" -ForegroundColor Yellow
-        Write-Host "✅ Successfully downloaded: $successCount" -ForegroundColor Green
+        Write-Host "✅ Successfully downloaded: $($successCount + $serverDownloadCount)" -ForegroundColor Green
         Write-Host "⏭️  Skipped (already exists): $(($downloadResults | Where-Object { $_.Status -eq "Skipped" }).Count)" -ForegroundColor Yellow
         Write-Host "❌ Failed: $errorCount" -ForegroundColor Red
         Write-Host ""

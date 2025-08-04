@@ -31,6 +31,7 @@ param(
     [string]$AddModCategory,
     [switch]$DownloadServer,
     [switch]$StartServer,
+    [switch]$ClearServer,
     [switch]$AddServerStartScript,
     [string]$DeleteModID,
     [string]$DeleteModType,
@@ -187,11 +188,84 @@ if ($DownloadServer) {
     Exit-ModManager 0
 }
 
+# Handle ClearServer parameter
+if ($ClearServer) {
+    Write-Host "Clearing server files..." -ForegroundColor Yellow
+    
+    # Find all version folders
+    $versionFolders = Get-ChildItem -Path $DownloadFolder -Directory -ErrorAction SilentlyContinue | 
+                     Where-Object { $_.Name -match "^\d+\.\d+\.\d+" }
+    
+    if ($versionFolders.Count -eq 0) {
+        Write-Host "⚠️  No server folders found to clear." -ForegroundColor Yellow
+    } else {
+        foreach ($folder in $versionFolders) {
+            $folderPath = $folder.FullName
+            Write-Host "🗑️  Clearing server files in: $($folder.Name)" -ForegroundColor Cyan
+            
+            # Remove server-specific files and folders
+            $itemsToRemove = @(
+                "world", "world_nether", "world_the_end",
+                "logs", "crash-reports", "config",
+                "eula.txt", "server.properties", "ops.json", "whitelist.json",
+                "banned-ips.json", "banned-players.json", "usercache.json",
+                "versions", "libraries", ".fabric",
+                "*.log", "*.log.gz", "*.tmp"
+            )
+            
+            foreach ($item in $itemsToRemove) {
+                $itemPath = Join-Path $folderPath $item
+                if (Test-Path $itemPath) {
+                    Remove-Item $itemPath -Recurse -Force -ErrorAction SilentlyContinue
+                    Write-Host "   ✓ Removed: $item" -ForegroundColor Gray
+                }
+            }
+        }
+        Write-Host "✅ Server files cleared successfully!" -ForegroundColor Green
+        Write-Host "💡 Run -StartServer to start fresh." -ForegroundColor Cyan
+    }
+    Exit-ModManager 0
+}
+
 # Handle StartServer parameter
 if ($StartServer) {
     Write-Host "Starting Minecraft server..." -ForegroundColor Yellow
-    Start-MinecraftServer -DownloadFolder $DownloadFolder
-    Exit-ModManager 0
+    
+    # Check if server files exist
+    $versionFolders = Get-ChildItem -Path $DownloadFolder -Directory -ErrorAction SilentlyContinue | 
+                     Where-Object { $_.Name -match "^\d+\.\d+\.\d+" } |
+                     Sort-Object { [version]$_.Name } -Descending
+    
+    $needsDownload = $false
+    if ($versionFolders.Count -eq 0) {
+        $needsDownload = $true
+        Write-Host "⚠️  No server files found. Need to download mods and server files first." -ForegroundColor Yellow
+    } else {
+        # Check if the latest version folder has server files
+        $latestFolder = Join-Path $DownloadFolder $versionFolders[0].Name
+        $fabricJars = Get-ChildItem -Path $latestFolder -Filter "fabric-server*.jar" -ErrorAction SilentlyContinue
+        if ($fabricJars.Count -eq 0) {
+            $needsDownload = $true
+            Write-Host "⚠️  No Fabric server JAR found in $($versionFolders[0].Name). Need to download server files." -ForegroundColor Yellow
+        }
+    }
+    
+    # Download if needed
+    if ($needsDownload) {
+        Write-Host "📦 Downloading mods and server files..." -ForegroundColor Cyan
+        Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        Write-Host "" -ForegroundColor White
+    }
+    
+    # Now start the server
+    $serverResult = Start-MinecraftServer -DownloadFolder $DownloadFolder
+    if ($serverResult) {
+        Write-Host "🎉 SERVER VALIDATION SUCCESSFUL!" -ForegroundColor Green
+        Exit-ModManager 0
+    } else {
+        Write-Host "💥 SERVER VALIDATION FAILED!" -ForegroundColor Red
+        Exit-ModManager 1
+    }
 }
 
 # Handle AddServerStartScript parameter

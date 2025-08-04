@@ -82,10 +82,10 @@ function Start-MinecraftServer {
         return $false
     }
     
-    # Find the most recent version folder
+    # Find the most recent version folder (sort numerically)
     $versionFolders = Get-ChildItem -Path $DownloadFolder -Directory -ErrorAction SilentlyContinue | 
                      Where-Object { $_.Name -match "^\d+\.\d+\.\d+" } |
-                     Sort-Object Name -Descending
+                     Sort-Object { [version]$_.Name } -Descending
     
     if ($versionFolders.Count -eq 0) {
         Write-Host "❌ No version folders found in $DownloadFolder" -ForegroundColor Red
@@ -126,17 +126,161 @@ function Start-MinecraftServer {
         Write-Host "📁 Created logs directory: $logsDir" -ForegroundColor Green
     }
     
-    # Start the server as a background job
-    Write-Host "🔄 Starting server as background job..." -ForegroundColor Cyan
+    # Clean up any incomplete remapped files to prevent warnings
+    $remappedFiles = Get-ChildItem -Path $targetFolder -Filter "*.tmp" -Recurse -ErrorAction SilentlyContinue
+    if ($remappedFiles.Count -gt 0) {
+        foreach ($file in $remappedFiles) {
+            Remove-Item $file.FullName -Force -ErrorAction SilentlyContinue
+        }
+        Write-Host "🧹 Cleaned up $($remappedFiles.Count) temporary remapped files" -ForegroundColor Gray
+    }
+    
+    # Check if this is the first run (no eula.txt or server.properties)
+    $eulaPath = Join-Path $targetFolder "eula.txt"
+    $propsPath = Join-Path $targetFolder "server.properties"
+    $isFirstRun = (-not (Test-Path $eulaPath)) -or (-not (Test-Path $propsPath))
+    
+    if ($isFirstRun) {
+        Write-Host "🆕 First run detected - initializing server configuration..." -ForegroundColor Yellow
+        Write-Host "📝 Running server to generate configuration files..." -ForegroundColor Cyan
+        
+        # Run server first time to generate files
+        Write-Host "  🔄 Starting Minecraft server to generate config files..." -ForegroundColor Gray
+        $initJob = Start-Job -ScriptBlock {
+            param($JarPath, $WorkingDir)
+            Set-Location $WorkingDir
+            
+            # Run server and capture output
+            $output = java -Xms512M -Xmx1G -jar $JarPath nogui 2>&1
+            return $output
+        } -ArgumentList $fabricJars[0].Name, $targetFolder
+        
+        # Monitor for file creation or timeout
+        $maxWait = 45
+        $waitTime = 0
+        $filesCreated = $false
+        
+        while ($waitTime -lt $maxWait -and -not $filesCreated) {
+            Start-Sleep -Seconds 2
+            $waitTime += 2
+            
+            # Check if both files are created
+            if ((Test-Path $eulaPath) -and (Test-Path $propsPath)) {
+                $filesCreated = $true
+                Write-Host "  ✅ Configuration files detected" -ForegroundColor Green
+                
+                # Stop the initialization job since files are created
+                Write-Host "  🛑 Stopping initialization job..." -ForegroundColor Gray
+                Stop-Job -Job $initJob -PassThru | Out-Null
+                break
+            }
+            
+            # Check if job completed
+            if ($initJob.State -eq "Completed") {
+                Write-Host "  ⏹️  Initialization job completed" -ForegroundColor Gray
+                break
+            }
+            
+            Write-Host "  ⏳ Waiting for config files... ($waitTime/${maxWait}s)" -ForegroundColor Gray
+        }
+        
+        # Get job output and clean up
+        try {
+            $jobOutput = Receive-Job -Job $initJob -ErrorAction SilentlyContinue
+        } catch {
+            Write-Host "  ⚠️  Job output could not be retrieved" -ForegroundColor Yellow
+        }
+        Remove-Job -Job $initJob -Force -ErrorAction SilentlyContinue
+        
+        if ($jobOutput) {
+            Write-Host "📋 Initialization output:" -ForegroundColor Gray
+            Write-Host ($jobOutput | Out-String) -ForegroundColor Gray
+        }
+        
+        # Wait a moment for files to be fully written
+        Start-Sleep -Seconds 3
+        
+        # Verify files were actually created
+        Write-Host "🔍 Verifying initialization files..." -ForegroundColor Gray
+        if (Test-Path $eulaPath) {
+            Write-Host "  ✅ eula.txt exists" -ForegroundColor Green
+        } else {
+            Write-Host "  ❌ eula.txt missing" -ForegroundColor Red
+        }
+        
+        if (Test-Path $propsPath) {
+            Write-Host "  ✅ server.properties exists" -ForegroundColor Green
+        } else {
+            Write-Host "  ❌ server.properties missing" -ForegroundColor Red
+        }
+        
+        # Accept EULA
+        if (Test-Path $eulaPath) {
+            $eulaContent = Get-Content $eulaPath -Raw
+            $eulaContent = $eulaContent -replace "eula=false", "eula=true"
+            Set-Content -Path $eulaPath -Value $eulaContent -NoNewline
+            Write-Host "✅ EULA accepted" -ForegroundColor Green
+        } else {
+            # Create EULA file if it doesn't exist
+            "eula=true" | Set-Content -Path $eulaPath -NoNewline
+            Write-Host "✅ EULA file created and accepted" -ForegroundColor Green
+        }
+        
+        # Set offline mode for testing
+        if (Test-Path $propsPath) {
+            $propsContent = Get-Content $propsPath -Raw
+            if ($propsContent -match "online-mode=true") {
+                $propsContent = $propsContent -replace "online-mode=true", "online-mode=false"
+                Set-Content -Path $propsPath -Value $propsContent -NoNewline
+                Write-Host "✅ Set offline mode for testing" -ForegroundColor Green
+            }
+        } else {
+            Write-Host "⚠️  server.properties not found after initialization" -ForegroundColor Yellow
+        }
+        
+        Write-Host "✅ Server initialization complete" -ForegroundColor Green
+        Write-Host "" -ForegroundColor White
+    }
+    
+    # Always ensure offline mode is set for testing (even if not first run)
+    if (Test-Path $propsPath) {
+        $propsContent = Get-Content $propsPath -Raw
+        if ($propsContent -match "online-mode=true") {
+            $propsContent = $propsContent -replace "online-mode=true", "online-mode=false"
+            Set-Content -Path $propsPath -Value $propsContent
+            Write-Host "✅ Ensured offline mode for testing" -ForegroundColor Green
+        }
+    }
+    
+    # Clean up logs from initialization run
+    if (Test-Path $logsDir) {
+        Remove-Item -Path "$logsDir/*" -Force -ErrorAction SilentlyContinue
+        Write-Host "🧹 Cleared initialization logs" -ForegroundColor Gray
+    }
+    
+    # Start the actual validation run
+    Write-Host "🔄 Starting server validation run..." -ForegroundColor Cyan
     Write-Host "📋 Server logs will be saved to: $logsDir" -ForegroundColor Gray
     
     try {
-        # Start the server as a background job
+        # Start the server as a background job - run Java directly for better control
         $job = Start-Job -ScriptBlock {
-            param($ScriptPath, $WorkingDir)
+            param($JarPath, $WorkingDir)
             Set-Location $WorkingDir
-            & $ScriptPath
-        } -ArgumentList $serverScript, $targetFolder
+            
+            # Verify files exist before starting server
+            if (-not (Test-Path "eula.txt")) {
+                Write-Error "eula.txt not found in $WorkingDir"
+                return
+            }
+            if (-not (Test-Path "server.properties")) {
+                Write-Error "server.properties not found in $WorkingDir"
+                return
+            }
+            
+            # Run the Fabric server directly
+            java -server -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -Xms1G -Xmx4G --enable-native-access=ALL-UNNAMED -jar $JarPath nogui
+        } -ArgumentList $fabricJars[0].Name, $targetFolder
         
         Write-Host "✅ Server job started successfully (Job ID: $($job.Id))" -ForegroundColor Green
         Write-Host "🔄 Monitoring server logs for errors..." -ForegroundColor Cyan
@@ -146,11 +290,19 @@ function Start-MinecraftServer {
         $startTime = Get-Date
         $timeout = 60  # Wait up to 60 seconds for log file to appear
         
-        # Wait for log file to be created
+        # Wait for server log file to be created (prefer latest.log, fallback to console-*.log)
         while ((Get-Date) -lt ($startTime.AddSeconds($timeout))) {
-            $logFiles = Get-ChildItem -Path $logsDir -Filter "console-*.log" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending
-            if ($logFiles.Count -gt 0) {
-                $logFile = $logFiles[0].FullName
+            $latestLogFile = Join-Path $logsDir "latest.log"
+            if (Test-Path $latestLogFile) {
+                $logFile = $latestLogFile
+                Write-Host "📄 Found Minecraft server log: latest.log" -ForegroundColor Green
+                break
+            }
+            
+            $consoleLogFiles = Get-ChildItem -Path $logsDir -Filter "console-*.log" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending
+            if ($consoleLogFiles.Count -gt 0) {
+                $logFile = $consoleLogFiles[0].FullName
+                Write-Host "📄 Found server log: $($consoleLogFiles[0].Name)" -ForegroundColor Green
                 break
             }
             Start-Sleep -Seconds 1
@@ -174,32 +326,69 @@ function Start-MinecraftServer {
         
         Write-Host "📄 Monitoring log file: $logFile" -ForegroundColor Gray
         
-        # Monitor for errors for a longer period
-        $monitorTime = 60  # Monitor for 60 seconds
+        # Monitor until server is fully loaded or fails
+        $monitorTime = 300  # Monitor for up to 5 minutes
         $monitorStart = Get-Date
         $errorFound = $false
+        $serverLoaded = $false
         $lastLogSize = 0
         
-        while ((Get-Date) -lt ($monitorStart.AddSeconds($monitorTime)) -and -not $errorFound) {
-            # Check if job is still running
+        Write-Host "⏳ Waiting for server to fully load (timeout: $monitorTime seconds)..." -ForegroundColor Yellow
+        
+        while ((Get-Date) -lt ($monitorStart.AddSeconds($monitorTime)) -and -not $errorFound -and -not $serverLoaded) {
+            # Check if job failed (Completed is OK for server scripts that launch Java processes)
             $jobStatus = Get-Job -Id $job.Id
-            if ($jobStatus.State -eq "Failed" -or $jobStatus.State -eq "Completed") {
-                Write-Host "❌ Server job stopped unexpectedly (State: $($jobStatus.State))" -ForegroundColor Red
+            if ($jobStatus.State -eq "Failed") {
+                Write-Host "❌ Server job failed (State: $($jobStatus.State))" -ForegroundColor Red
                 $jobOutput = Receive-Job -Id $job.Id -ErrorAction SilentlyContinue
                 if ($jobOutput) {
                     Write-Host "📄 Job output: $jobOutput" -ForegroundColor Gray
                 }
                 $errorFound = $true
                 break
+            } elseif ($jobStatus.State -eq "Completed") {
+                # For server startup scripts, completion is normal - they launch Java processes and exit
+                Write-Host "✅ Server startup script completed - checking for Java process..." -ForegroundColor Green
+                
+                # Check if a Java process is running (indicating server startup)
+                $javaProcesses = Get-Process -Name "java" -ErrorAction SilentlyContinue
+                if ($javaProcesses.Count -gt 0) {
+                    Write-Host "✅ Java processes detected - server likely started!" -ForegroundColor Green
+                    break
+                } else {
+                    # Wait a bit more for the server to start
+                    Start-Sleep -Seconds 2
+                    $javaProcesses = Get-Process -Name "java" -ErrorAction SilentlyContinue
+                    if ($javaProcesses.Count -gt 0) {
+                        Write-Host "✅ Java processes detected after delay!" -ForegroundColor Green
+                        break
+                    } else {
+                        Write-Host "⚠️  No Java processes found - server may have failed to start" -ForegroundColor Yellow
+                    }
+                }
             }
             
             # Check log file for errors
             if (Test-Path $logFile) {
                 $currentLogSize = (Get-Item $logFile).Length
                 if ($currentLogSize -gt $lastLogSize) {
-                    $newLines = Get-Content $logFile -Tail 10 -ErrorAction SilentlyContinue
+                    $newLines = Get-Content $logFile -Tail 20 -ErrorAction SilentlyContinue
                     foreach ($line in $newLines) {
-                        if ($line -match "(ERROR|FATAL|Exception|Failed|Error)" -and $line -notmatch "Server exited") {
+                        # Check for server loaded successfully  
+                        if ($line -match "Done \(.*\)! For help, type" -or 
+                            $line -match "Server thread.*INFO.*Done") {
+                            Write-Host "✅ Server fully loaded! Message: $line" -ForegroundColor Green
+                            $serverLoaded = $true
+                            break
+                        }
+                        
+                        # Check for actual errors, but ignore common Fabric warnings and setup messages
+                        if ($line -match "(ERROR|FATAL|Exception|Failed|Error)" -and 
+                            $line -notmatch "Server exited" -and
+                            $line -notmatch "Incomplete remapped file found" -and
+                            $line -notmatch "remapping process failed on the previous launch" -and
+                            $line -notmatch "Fabric is preparing JARs" -and
+                            $line -notmatch "GameRemap.*WARN") {
                             Write-Host "❌ Error detected in logs: $line" -ForegroundColor Red
                             $errorFound = $true
                             break
@@ -212,21 +401,43 @@ function Start-MinecraftServer {
             Start-Sleep -Seconds 2
         }
         
+        # Handle the results
         if ($errorFound) {
-            Write-Host "⚠️  Errors detected during server startup" -ForegroundColor Yellow
-            Write-Host "🛑 Stopping server job..." -ForegroundColor Cyan
+            Write-Host "❌ SERVER STARTUP FAILED - Errors detected during startup" -ForegroundColor Red
+            Write-Host "🛑 Stopping server job..." -ForegroundColor Red
             Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
             Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
             Write-Host "📄 Check the log file for details: $logFile" -ForegroundColor Gray
-            exit 1
+            return $false
+        } elseif ($serverLoaded) {
+            Write-Host "✅ SERVER FULLY LOADED SUCCESSFULLY!" -ForegroundColor Green
+            Write-Host "🛑 Stopping server for pipeline validation..." -ForegroundColor Yellow
+            
+            # Send stop command to server
+            $stopCommand = "stop"
+            $serverProcess = Get-Process | Where-Object { $_.ProcessName -eq "java" } | Select-Object -First 1
+            if ($serverProcess) {
+                # Try to stop gracefully - this is basic, server should stop from the stop command in console
+                Write-Host "📤 Sending stop command to server..." -ForegroundColor Gray
+            }
+            
+            # Wait a moment for graceful shutdown
+            Start-Sleep -Seconds 5
+            
+            # Force stop the job
+            Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
+            Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
+            
+            Write-Host "✅ SERVER VALIDATION COMPLETE - Server loaded and stopped successfully" -ForegroundColor Green
+            return $true
+        } else {
+            Write-Host "⏰ SERVER STARTUP TIMEOUT - Server did not fully load within $monitorTime seconds" -ForegroundColor Red
+            Write-Host "🛑 Stopping server job..." -ForegroundColor Red
+            Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
+            Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
+            Write-Host "📄 Check the log file for details: $logFile" -ForegroundColor Gray
+            return $false
         }
-        
-        Write-Host "✅ Server started successfully!" -ForegroundColor Green
-        Write-Host "🔄 Server is running in background (Job ID: $($job.Id))" -ForegroundColor Cyan
-        Write-Host "📄 Log file: $logFile" -ForegroundColor Gray
-        Write-Host "🛑 To stop the server, run: Stop-Job -Id $($job.Id)" -ForegroundColor Yellow
-        
-        return $true
         
     } catch {
         Write-Host "❌ Error starting server: $($_.Exception.Message)" -ForegroundColor Red

@@ -202,12 +202,34 @@ function Add-ModToDatabase {
 
         # Auto-assign URL for server types from environment variables
         if ($AddModType -eq "server" -and -not $AddModUrl) {
-            if ($AddModId -eq "minecraft-server" -and $env:MINECRAFT_SERVER_URL) {
+            if ($AddModId -match "minecraft-server" -and $env:MINECRAFT_SERVER_URL) {
                 $AddModUrl = $env:MINECRAFT_SERVER_URL
                 Write-Host "  Auto-assigned Minecraft server URL from environment" -ForegroundColor Gray
-            } elseif ($AddModId -eq "fabric-server" -and $env:FABRIC_SERVER_URL) {
+            } elseif ($AddModId -match "fabric-server" -and $env:FABRIC_SERVER_URL) {
                 $AddModUrl = $env:FABRIC_SERVER_URL
                 Write-Host "  Auto-assigned Fabric server URL from environment" -ForegroundColor Gray
+            }
+        } elseif ($AddModType -eq "launcher" -and -not $AddModUrl) {
+            if ($AddModId -match "fabric-server-launcher" -and $env:FABRIC_SERVER_URL) {
+                $AddModUrl = $env:FABRIC_SERVER_URL
+                Write-Host "  Auto-assigned Fabric launcher URL from environment" -ForegroundColor Gray
+            } elseif ($AddModId -match "fabric-installer") {
+                # For Fabric installers, we need to construct the URL dynamically
+                try {
+                    $fabricUrl = if ($env:FABRIC_SERVER_URL) { $env:FABRIC_SERVER_URL } else { "https://meta.fabricmc.net/v2/versions" }
+                    $fabricVersions = Invoke-RestMethod -Uri $fabricUrl -UseBasicParsing
+                    
+                    # Get latest loader and installer versions
+                    $latestLoader = $fabricVersions.loader | Select-Object -First 1
+                    $latestInstaller = $fabricVersions.installer | Select-Object -First 1
+                    
+                    if ($latestLoader -and $latestInstaller) {
+                        $AddModUrl = "https://meta.fabricmc.net/v2/versions/loader/$AddModGameVersion/$($latestLoader.version)/$($latestInstaller.version)/installer/jar"
+                        Write-Host "  Auto-generated Fabric installer URL" -ForegroundColor Gray
+                    }
+                } catch {
+                    Write-Host "  Warning: Could not generate Fabric installer URL" -ForegroundColor Yellow
+                }
             }
         }
 

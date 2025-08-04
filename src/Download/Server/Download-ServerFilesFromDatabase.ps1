@@ -73,8 +73,8 @@ function Download-ServerFilesFromDatabase {
         $skippedNoUrl = 0
         
         foreach ($entry in $serverEntries) {
-            # Skip entries without URLs
-            if (-not $entry.Url -or $entry.Url -eq "") {
+            # Skip entries without URLs or with API base URLs that need resolution
+            if (-not $entry.Url -or $entry.Url -eq "" -or $entry.Url -eq "https://meta.fabricmc.net/v2/versions") {
                 Write-Host "⏭️  $($entry.Name) ($($entry.GameVersion)): No URL specified, attempting dynamic resolution..." -ForegroundColor Yellow
                 
                 # Try to resolve URL dynamically based on type and ID
@@ -116,14 +116,18 @@ function Download-ServerFilesFromDatabase {
                         $fabricUrl = if ($env:FABRIC_SERVER_URL) { $env:FABRIC_SERVER_URL } else { "https://meta.fabricmc.net/v2/versions" }
                         $fabricVersions = Invoke-RestMethod -Uri $fabricUrl -UseBasicParsing
                         
-                        # Get latest loader version
+                        # Get latest loader and installer versions
                         $latestLoader = $fabricVersions.loader | Select-Object -First 1
-                        $latestLauncher = $fabricVersions.launcher | Select-Object -First 1
+                        $latestInstaller = $fabricVersions.installer | Select-Object -First 1
                         
-                        if ($latestLoader -and $latestLauncher) {
-                            $resolvedUrl = "https://meta.fabricmc.net/v2/versions/loader/$($entry.GameVersion)/$($latestLoader.version)/$($latestLauncher.version)/server/jar"
-                            $resolvedFilename = "fabric-server-mc.$($entry.GameVersion)-loader.$($latestLoader.version)-launcher.$($latestLauncher.version).jar"
-                            Write-Host "  ✅ Resolved URL: $resolvedUrl" -ForegroundColor Green
+                        if ($latestLoader -and $latestInstaller) {
+                            # Use the specific format from the curl command: /loader/{mc_version}/{loader_version}/{installer_version}/server/jar
+                            $resolvedUrl = "https://meta.fabricmc.net/v2/versions/loader/$($entry.GameVersion)/$($latestLoader.version)/$($latestInstaller.version)/server/jar"
+                            $resolvedFilename = "fabric-server-mc.$($entry.GameVersion)-loader.$($latestLoader.version)-launcher.$($latestInstaller.version).jar"
+                            Write-Host "  ✅ Resolved Fabric launcher URL: $resolvedUrl" -ForegroundColor Green
+                            Write-Host "  📦 Using loader $($latestLoader.version) and installer $($latestInstaller.version)" -ForegroundColor Gray
+                        } else {
+                            Write-Host "  ❌ Could not find Fabric loader or installer versions" -ForegroundColor Red
                         }
                     } catch {
                         Write-Host "  ❌ Failed to resolve Fabric launcher URL: $($_.Exception.Message)" -ForegroundColor Red
