@@ -1,6 +1,10 @@
 # Minecraft Fabric Server Startup Script
 # Automatically finds and launches the Fabric server JAR file
 
+# Java memory settings (configurable via environment variables)
+$MinMemory = if ($env:MINECRAFT_MIN_MEMORY) { $env:MINECRAFT_MIN_MEMORY } else { "1G" }
+$MaxMemory = if ($env:MINECRAFT_MAX_MEMORY) { $env:MINECRAFT_MAX_MEMORY } else { "4G" }
+
 $JavaOpts = @(
   "-server"
   "-XX:+UseG1GC"
@@ -8,8 +12,8 @@ $JavaOpts = @(
   "-XX:MaxGCPauseMillis=200"
   "-XX:+UnlockExperimentalVMOptions"
   "-XX:+DisableExplicitGC"
-  "-Xms8G"
-  "-Xmx32G"
+  "-Xms$MinMemory"
+  "-Xmx$MaxMemory"
   "--enable-native-access=ALL-UNNAMED"
 )
 
@@ -52,6 +56,7 @@ if (-not $JarFile) {
 }
 
 Write-Host "🚀 Starting Fabric server with JAR: $JarFile" -ForegroundColor Green
+Write-Host "📊 Memory allocation: Min $MinMemory, Max $MaxMemory" -ForegroundColor Gray
 Write-Host "📊 Java options: $($JavaOpts.Count) options configured" -ForegroundColor Gray
 
 while ($true) {
