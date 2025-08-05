@@ -49,8 +49,17 @@ function Update-ModUrlInDatabase {
             throw "CSV file not found: $CsvPath"
         }
         
-        # Create backup first
-        $backupPath = "$CsvPath.backup.$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+        # Create backup first in backups folder
+        $csvDir = Split-Path $CsvPath -Parent
+        $csvName = Split-Path $CsvPath -Leaf
+        $backupDir = Join-Path $csvDir "backups"
+        
+        # Create backups directory if it doesn't exist
+        if (-not (Test-Path $backupDir)) {
+            New-Item -ItemType Directory -Path $backupDir -Force | Out-Null
+        }
+        
+        $backupPath = Join-Path $backupDir "$(Get-Date -Format 'yyyyMMdd-HHmmss')-$csvName"
         Copy-Item -Path $CsvPath -Destination $backupPath -Force
         Write-Host "    💾 Created backup: $backupPath" -ForegroundColor Gray
         
@@ -81,7 +90,7 @@ function Update-ModUrlInDatabase {
         Write-Host "    ✅ Database updated successfully" -ForegroundColor Green
         
         # Clean up old backups (keep only last 5)
-        $backupFiles = Get-ChildItem -Path "$(Split-Path $CsvPath)" -Filter "$(Split-Path $CsvPath -Leaf).backup.*" |
+        $backupFiles = Get-ChildItem -Path $backupDir -Filter "$csvName.*" |
                        Sort-Object LastWriteTime -Descending
         
         if ($backupFiles.Count -gt 5) {

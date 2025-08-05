@@ -64,11 +64,10 @@ function Download-Mods {
         }
         
         # Determine target game version
-        $targetGameVersion = $DefaultGameVersion
         $versionAnalysis = $null
         
         if ($TargetGameVersion) {
-            # Use specified target version
+            # Use specified target version (don't override!)
             $targetGameVersion = $TargetGameVersion
             Write-Host "Targeting specified game version: $targetGameVersion" -ForegroundColor Green
             Write-Host ""
@@ -78,6 +77,11 @@ function Download-Mods {
             $targetGameVersion = $versionResult.MajorityVersion
             $versionAnalysis = $versionResult.Analysis
             Write-Host "Targeting majority game version: $targetGameVersion" -ForegroundColor Green
+            Write-Host ""
+        } else {
+            # Default version only if nothing else specified
+            $targetGameVersion = $DefaultGameVersion
+            Write-Host "Targeting default game version: $targetGameVersion" -ForegroundColor Green
             Write-Host ""
         }
         
@@ -464,11 +468,15 @@ function Download-Mods {
         Write-Host "Downloading server files from database..." -ForegroundColor Yellow
         $serverDownloadCount = Download-ServerFilesFromDatabase -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload -CsvPath $CsvPath
         
+        # Ensure serverDownloadCount is a number
+        if (-not $serverDownloadCount) { $serverDownloadCount = 0 }
+        
         # Display summary
         Write-Host ""
         Write-Host "Download Summary:" -ForegroundColor Yellow
         Write-Host "=================" -ForegroundColor Yellow
-        Write-Host "✅ Successfully downloaded: $($successCount + $serverDownloadCount)" -ForegroundColor Green
+        $totalDownloaded = [int]$successCount + [int]$serverDownloadCount
+        Write-Host "✅ Successfully downloaded: $totalDownloaded" -ForegroundColor Green
         Write-Host "⏭️  Skipped (already exists): $(($downloadResults | Where-Object { $_.Status -eq "Skipped" }).Count)" -ForegroundColor Yellow
         Write-Host "❌ Failed: $errorCount" -ForegroundColor Red
         Write-Host ""
