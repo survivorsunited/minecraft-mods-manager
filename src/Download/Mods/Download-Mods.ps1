@@ -156,7 +156,7 @@ function Download-Mods {
             if ($mod.Type -eq "shaderpack") {
                 $filename = Clean-Filename $filename
             }
-            $gameVersionFolder = if ($UseLatestVersion) { Join-Path $DownloadFolder $targetGameVersion } else { Join-Path $DownloadFolder $gameVersion }
+            $gameVersionFolder = if ($UseLatestVersion -or $TargetGameVersion) { Join-Path $DownloadFolder $targetGameVersion } else { Join-Path $DownloadFolder $gameVersion }
             if ($mod.Type -eq "shaderpack") {
                 $gameVersionFolder = Join-Path $gameVersionFolder "shaderpacks"
             } elseif ($mod.Type -eq "installer") {
@@ -285,8 +285,8 @@ function Download-Mods {
                 }
                 
                 # Create game version subfolder
-                $gameVersionFolder = if ($UseLatestVersion) { 
-                    # For latest versions, use majority version for migration
+                $gameVersionFolder = if ($UseLatestVersion -or $TargetGameVersion) { 
+                    # For latest versions or when target version specified, use target version
                     Join-Path $DownloadFolder $targetGameVersion 
                 } else { 
                     # For current versions, use the GameVersion column from CSV
@@ -402,11 +402,32 @@ function Download-Mods {
                         Write-Host "  📝 Using filename from API: $filename" -ForegroundColor Gray
                     }
                     
-                    # Decode URL if it contains encoded characters
-                    $decodedUrl = [System.Web.HttpUtility]::UrlDecode($downloadUrl)
+                    # Check cache first
+                    $cacheFolder = ".cache"
+                    if (-not (Test-Path $cacheFolder)) {
+                        New-Item -ItemType Directory -Path $cacheFolder -Force | Out-Null
+                    }
                     
-                    # Use Invoke-WebRequest for better error handling
-                    $webRequest = Invoke-WebRequest -Uri $decodedUrl -OutFile $downloadPath -UseBasicParsing
+                    # Create cache path using URL hash for uniqueness
+                    $urlHash = [System.Security.Cryptography.SHA256]::Create().ComputeHash([System.Text.Encoding]::UTF8.GetBytes($downloadUrl))
+                    $hashString = [System.BitConverter]::ToString($urlHash).Replace("-", "").Substring(0, 16)
+                    $cachePath = Join-Path $cacheFolder "$hashString-$filename"
+                    
+                    # Check if file exists in cache
+                    if ((Test-Path $cachePath) -and -not $ForceDownload) {
+                        Write-Host "  📦 Found in cache, copying..." -ForegroundColor Green
+                        Copy-Item -Path $cachePath -Destination $downloadPath -Force
+                    } else {
+                        # Decode URL if it contains encoded characters
+                        $decodedUrl = [System.Web.HttpUtility]::UrlDecode($downloadUrl)
+                        
+                        # Download to cache first
+                        Write-Host "  💾 Downloading to cache..." -ForegroundColor Gray
+                        $webRequest = Invoke-WebRequest -Uri $decodedUrl -OutFile $cachePath -UseBasicParsing
+                        
+                        # Copy from cache to destination
+                        Copy-Item -Path $cachePath -Destination $downloadPath -Force
+                    }
                     
                     if (Test-Path $downloadPath) {
                         $fileSize = (Get-Item $downloadPath).Length
