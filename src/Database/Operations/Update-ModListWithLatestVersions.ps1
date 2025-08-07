@@ -84,8 +84,8 @@ function Update-ModListWithLatestVersions {
                 
                 # Update VersionUrl if available (for current expected version)
                 if ($result.VersionUrl -and $result.VersionUrl -ne $mod.VersionUrl) {
-                    $mod.VersionUrl = $result.VersionUrl
-                    $updatedFields.VersionUrl = $true
+                    $mod.CurrentVersionUrl = $result.VersionUrl
+                    $updatedFields.CurrentVersionUrl = $true
                 }
                 
                 # Update LatestVersionUrl if available

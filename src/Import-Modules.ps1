@@ -12,12 +12,14 @@
 . "$PSScriptRoot\Validation\Hash\Test-FileHash.ps1"
 . "$PSScriptRoot\Validation\Hash\Test-RecordHash.ps1"
 . "$PSScriptRoot\Validation\Mod\Validate-AllModVersions.ps1"
+. "$PSScriptRoot\Validation\Database\Validate-ModVersionUrls.ps1"
 
 # Data processing modules
 . "$PSScriptRoot\Data\Version\Normalize-Version.ps1"
 . "$PSScriptRoot\Data\Version\Get-MajorityGameVersion.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-LatestGameVersionFromAvailableVersions.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-NextGameVersion.ps1"
+. "$PSScriptRoot\Data\Version\Calculate-NextVersionData.ps1"
 . "$PSScriptRoot\Data\Version\Filter-RelevantGameVersions.ps1"
 . "$PSScriptRoot\Data\Utility\Convert-DependenciesToJson.ps1"
 . "$PSScriptRoot\Data\Utility\Clean-SystemEntries.ps1"
@@ -30,6 +32,8 @@
 . "$PSScriptRoot\Database\Operations\Add-ModToDatabase.ps1"
 . "$PSScriptRoot\Database\Operations\Delete-ModFromDatabase.ps1"
 . "$PSScriptRoot\Database\Operations\Update-ModUrlInDatabase.ps1"
+. "$PSScriptRoot\Database\Maintenance\Reorder-CsvColumns.ps1"
+. "$PSScriptRoot\Database\Migration\Migrate-ToCurrentNextLatest.ps1"
 
 # Provider modules (consolidated from API folder)
 . "$PSScriptRoot\Provider\Common.ps1"

@@ -26,7 +26,10 @@ function Update-ModListWithLatestVersions {
             
             if ($validationResult) {
                 # Update API-related fields
-                $mod.VersionUrl = $validationResult.VersionUrl
+                $mod.CurrentVersionUrl = $validationResult.VersionUrl
+                $mod.NextVersionUrl = $validationResult.NextVersionUrl ?? ""
+                $mod.NextVersion = $validationResult.NextVersion ?? ""
+                $mod.NextGameVersion = $validationResult.NextGameVersion ?? ""
                 $mod.LatestVersionUrl = $validationResult.LatestVersionUrl
                 $mod.LatestVersion = $validationResult.LatestVersion
                 $mod.LatestGameVersion = $validationResult.LatestGameVersion

@@ -5,7 +5,8 @@ function Write-DownloadReadme {
         [object]$Analysis,
         [object]$DownloadResults,
         [string]$TargetVersion,
-        [switch]$UseLatestVersion
+        [switch]$UseLatestVersion,
+        [switch]$UseNextVersion
     )
     
     $readmePath = Join-Path $FolderPath "README.md"

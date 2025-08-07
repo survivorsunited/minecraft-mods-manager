@@ -83,11 +83,21 @@ function Get-ModList {
                     # Make API call to get current data for externally modified records
                     try {
                         # Use the existing Validate-ModVersion function to get current data
-                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $changedMod.Version -Loader $changedMod.Loader -Jar $changedMod.Jar -ResponseFolder $ApiResponseFolder -Quiet
+                        # Handle both migrated and non-migrated column structures
+                        $version = if ($changedMod.PSObject.Properties.Name -contains "CurrentVersion") { $changedMod.CurrentVersion } else { $changedMod.Version }
+                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $version -Loader $changedMod.Loader -Jar $changedMod.Jar -ResponseFolder $ApiResponseFolder -Quiet
                         
                         if ($validationResult -and $validationResult.Exists) {
-                            # Update the record with current API data
-                            $changedMod.VersionUrl = $validationResult.VersionUrl
+                            # Update the record with current API data using appropriate column names
+                            $isMigrated = $changedMod.PSObject.Properties.Name -contains "CurrentVersion"
+                            
+                            if ($isMigrated) {
+                                $changedMod.CurrentVersionUrl = $validationResult.VersionUrl
+                            } else {
+                                $changedMod.VersionUrl = $validationResult.VersionUrl
+                            }
+                            
+                            # These columns are the same in both structures
                             $changedMod.LatestVersionUrl = $validationResult.LatestVersionUrl
                             $changedMod.LatestVersion = $validationResult.LatestVersion
                             $changedMod.LatestGameVersion = $validationResult.LatestGameVersion

@@ -612,6 +612,9 @@ function Test-Command {
 .PARAMETER TestFileName
     Optional test file name. If not provided, auto-detects from calling script.
 
+.PARAMETER UseMigratedSchema
+    If specified, creates database with migrated Current/Next/Latest column structure.
+
 .EXAMPLE
     Initialize-TestEnvironment "01-BasicFunctionality.ps1"
     Sets up environment for the Basic Functionality test.
@@ -619,6 +622,10 @@ function Test-Command {
 .EXAMPLE
     Initialize-TestEnvironment
     Auto-detects test file name and sets up environment.
+
+.EXAMPLE
+    Initialize-TestEnvironment -TestFileName "81-TestCurrentNextLatestWorkflow.ps1" -UseMigratedSchema
+    Sets up environment with migrated column structure.
 
 .NOTES
     This function is typically called at the beginning of each test file.
@@ -631,7 +638,10 @@ function Test-Command {
 function Initialize-TestEnvironment {
     param(
         [Parameter(Mandatory=$false)]
-        [string]$TestFileName = $null
+        [string]$TestFileName = $null,
+        
+        [Parameter(Mandatory=$false)]
+        [switch]$UseMigratedSchema
     )
     
     Write-Host "Initializing test environment..." -ForegroundColor $Colors.Info
@@ -664,8 +674,14 @@ function Initialize-TestEnvironment {
         Write-Host "Removed existing database: $TestDbPath" -ForegroundColor $Colors.Info
     }
     
-    # Create blank database with headers only (all 34 columns as per MODLIST_CSV_COLUMNS.md)
-    $headers = @("Group", "Type", "GameVersion", "ID", "Loader", "Version", "Name", "Description", "Jar", "Url", "Category", "VersionUrl", "LatestVersionUrl", "LatestVersion", "ApiSource", "Host", "IconUrl", "ClientSide", "ServerSide", "Title", "ProjectDescription", "IssuesUrl", "SourceUrl", "WikiUrl", "LatestGameVersion", "RecordHash", "UrlDirect", "AvailableGameVersions", "CurrentDependencies", "LatestDependencies", "CurrentDependenciesRequired", "CurrentDependenciesOptional", "LatestDependenciesRequired", "LatestDependenciesOptional")
+    # Create blank database with headers only
+    if ($UseMigratedSchema) {
+        # Migrated schema with Current/Next/Latest structure
+        $headers = @("Group", "Type", "CurrentGameVersion", "ID", "Loader", "CurrentVersion", "Name", "Description", "Jar", "Url", "Category", "CurrentVersionUrl", "NextVersion", "NextVersionUrl", "NextGameVersion", "LatestVersionUrl", "LatestVersion", "LatestGameVersion", "ApiSource", "Host", "IconUrl", "ClientSide", "ServerSide", "Title", "ProjectDescription", "IssuesUrl", "SourceUrl", "WikiUrl", "RecordHash", "UrlDirect", "AvailableGameVersions", "CurrentDependenciesRequired", "CurrentDependenciesOptional", "LatestDependenciesRequired", "LatestDependenciesOptional")
+    } else {
+        # Original schema (all 34 columns as per MODLIST_CSV_COLUMNS.md)
+        $headers = @("Group", "Type", "GameVersion", "ID", "Loader", "Version", "Name", "Description", "Jar", "Url", "Category", "VersionUrl", "LatestVersionUrl", "LatestVersion", "ApiSource", "Host", "IconUrl", "ClientSide", "ServerSide", "Title", "ProjectDescription", "IssuesUrl", "SourceUrl", "WikiUrl", "LatestGameVersion", "RecordHash", "UrlDirect", "AvailableGameVersions", "CurrentDependencies", "LatestDependencies", "CurrentDependenciesRequired", "CurrentDependenciesOptional", "LatestDependenciesRequired", "LatestDependenciesOptional")
+    }
     $headers -join "," | Out-File $TestDbPath -Encoding UTF8
     Write-Host "Created new database: $TestDbPath" -ForegroundColor $Colors.Info
     
@@ -755,6 +771,16 @@ function Write-TestSuiteSummary {
     } else {
         Write-Host "False" -ForegroundColor $Colors.Error
     }
+}
+
+# Alias for Show-TestSummary to maintain backward compatibility
+function Write-TestSummary {
+    param(
+        [Parameter(Mandatory=$false)]
+        [string]$TestFileName = $null
+    )
+    
+    Show-TestSummary
 }
 
 # NOTE: Download folders are intentionally preserved for post-test validation.

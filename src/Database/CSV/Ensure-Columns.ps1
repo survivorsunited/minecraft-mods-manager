@@ -42,12 +42,13 @@ function Ensure-CsvColumns {
             $mods = @()
         }
         
-        # Define required columns
+        # Define required columns (updated for Current/Next/Latest structure)
         $requiredColumns = @(
-            "ID", "Name", "Type", "Loader", "GameVersion", "Version", "Jar", "Url", "UrlDirect",
-            "Category", "Description", "Group", "VersionUrl", "LatestVersionUrl", "LatestVersion",
-            "LatestGameVersion", "IconUrl", "ClientSide", "ServerSide", "Title", "ProjectDescription",
-            "IssuesUrl", "SourceUrl", "WikiUrl", "RecordHash", "AvailableGameVersions",
+            "ID", "Name", "Type", "Loader", "CurrentGameVersion", "CurrentVersion", "Jar", "Url", "UrlDirect",
+            "Category", "Description", "Group", "CurrentVersionUrl", "NextVersion", "NextVersionUrl", 
+            "NextGameVersion", "LatestVersionUrl", "LatestVersion", "LatestGameVersion", "IconUrl", 
+            "ClientSide", "ServerSide", "Title", "ProjectDescription", "IssuesUrl", "SourceUrl", 
+            "WikiUrl", "RecordHash", "AvailableGameVersions",
             "CurrentDependenciesRequired", "CurrentDependenciesOptional", "LatestDependenciesRequired", "LatestDependenciesOptional"
         )
         

@@ -38,6 +38,7 @@ function Download-Mods {
         [string]$CsvPath = $ModListPath,
         [string]$DownloadFolder = "download",
         [switch]$UseLatestVersion,
+        [switch]$UseNextVersion,
         [switch]$ForceDownload,
         [string]$TargetGameVersion = $null
     )
@@ -48,19 +49,34 @@ function Download-Mods {
             return
         }
         
-        # Filter mods by target version if specified
+        # When target version specified, use smart version selection
         if ($TargetGameVersion) {
-            Write-Host "🔍 Filtering mods for target version: $TargetGameVersion" -ForegroundColor Cyan
-            $originalCount = $mods.Count
-            $mods = $mods | Where-Object { 
-                # Include mods that match the target version
-                $_.GameVersion -eq $TargetGameVersion -or
-                # Include system entries (server, launcher) that we need
-                $_.Type -in @("server", "launcher") -or
-                # Include mods with no specific version (will use latest available)
-                [string]::IsNullOrEmpty($_.GameVersion)
+            Write-Host "🔍 Preparing mods for target version: $TargetGameVersion" -ForegroundColor Cyan
+            Write-Host "📊 Processing $($mods.Count) total entries with smart version fallback" -ForegroundColor Gray
+            
+            # Group mods by Name to find best version for each
+            $modGroups = $mods | Group-Object Name
+            $smartMods = @()
+            
+            foreach ($group in $modGroups) {
+                # Check if target version exists for this mod
+                $targetVersionMod = $group.Group | Where-Object { $_.GameVersion -eq $TargetGameVersion } | Select-Object -First 1
+                
+                if ($targetVersionMod) {
+                    # Use the target version
+                    $smartMods += $targetVersionMod
+                } else {
+                    # Use the latest available version (highest version number)
+                    $latestMod = $group.Group | Sort-Object { [Version]($_.GameVersion -replace '[^\d.]', '') } -Descending | Select-Object -First 1
+                    if ($latestMod) {
+                        Write-Host "  ⚠️  $($latestMod.Name): No $TargetGameVersion version, using $($latestMod.GameVersion)" -ForegroundColor Yellow
+                        $smartMods += $latestMod
+                    }
+                }
             }
-            Write-Host "📊 Filtered: $originalCount mods → $($mods.Count) mods for version $TargetGameVersion" -ForegroundColor Gray
+            
+            $mods = $smartMods
+            Write-Host "📊 Smart selection: $($mods.Count) mods prepared for $TargetGameVersion" -ForegroundColor Green
         }
         
         # Determine target game version
@@ -78,6 +94,13 @@ function Download-Mods {
             $versionAnalysis = $versionResult.Analysis
             Write-Host "Targeting majority game version: $targetGameVersion" -ForegroundColor Green
             Write-Host ""
+        } elseif ($UseNextVersion) {
+            # Use next version for next version downloads
+            $nextVersionResult = Calculate-NextGameVersion -CsvPath $CsvPath
+            $targetGameVersion = $nextVersionResult.NextVersion
+            $versionAnalysis = $nextVersionResult.Analysis
+            Write-Host "Targeting next game version: $targetGameVersion" -ForegroundColor Cyan
+            Write-Host ""
         } else {
             # Default version only if nothing else specified
             $targetGameVersion = $DefaultGameVersion
@@ -91,30 +114,39 @@ function Download-Mods {
             Write-Host "Created mods folder: $DownloadFolder" -ForegroundColor Green
         }
         
-        # Determine which version folders need to be cleared
-        $versionsToClear = @()
-        if ($TargetGameVersion) {
-            # For target version, only clear the specified version folder
-            $versionsToClear = @($targetGameVersion)
-            Write-Host "Will clear version folder: $targetGameVersion" -ForegroundColor Yellow
-        } elseif ($UseLatestVersion) {
-            # For latest versions, only clear the majority version folder
-            $versionsToClear = @($targetGameVersion)
-            Write-Host "Will clear version folder: $targetGameVersion" -ForegroundColor Yellow
-        } else {
-            # For current versions, clear all version folders that will be written to
-            $versionsToClear = $mods | Where-Object { -not [string]::IsNullOrEmpty($_.GameVersion) } | 
-                              Select-Object -ExpandProperty GameVersion | Sort-Object -Unique
-            Write-Host "Will clear version folders: $($versionsToClear -join ', ')" -ForegroundColor Yellow
-        }
-        
-        # Clear the specific version folders
-        foreach ($version in $versionsToClear) {
-            $versionFolder = Join-Path $DownloadFolder $version
-            if (Test-Path $versionFolder) {
-                Remove-Item -Recurse -Force $versionFolder -ErrorAction SilentlyContinue
-                Write-Host "Cleared version folder: $version" -ForegroundColor Yellow
+        # Only clear version folders if ForceDownload is specified
+        if ($ForceDownload) {
+            # Determine which version folders need to be cleared
+            $versionsToClear = @()
+            if ($TargetGameVersion) {
+                # For target version, only clear the specified version folder
+                $versionsToClear = @($targetGameVersion)
+                Write-Host "Will clear version folder: $targetGameVersion" -ForegroundColor Yellow
+            } elseif ($UseLatestVersion) {
+                # For latest versions, only clear the majority version folder
+                $versionsToClear = @($targetGameVersion)
+                Write-Host "Will clear version folder: $targetGameVersion" -ForegroundColor Yellow
+            } elseif ($UseNextVersion) {
+                # For next versions, only clear the next version folder
+                $versionsToClear = @($targetGameVersion)
+                Write-Host "Will clear version folder: $targetGameVersion" -ForegroundColor Yellow
+            } else {
+                # For current versions, clear all version folders that will be written to
+                $versionsToClear = $mods | Where-Object { -not [string]::IsNullOrEmpty($_.GameVersion) } | 
+                                  Select-Object -ExpandProperty GameVersion | Sort-Object -Unique
+                Write-Host "Will clear version folders: $($versionsToClear -join ', ')" -ForegroundColor Yellow
             }
+            
+            # Clear the specific version folders
+            foreach ($version in $versionsToClear) {
+                $versionFolder = Join-Path $DownloadFolder $version
+                if (Test-Path $versionFolder) {
+                    Remove-Item -Recurse -Force $versionFolder -ErrorAction SilentlyContinue
+                    Write-Host "Cleared version folder: $version" -ForegroundColor Yellow
+                }
+            }
+        } else {
+            Write-Host "📦 Ensuring mods are available (using cache when possible)..." -ForegroundColor Cyan
         }
         
         $downloadResults = @()
@@ -145,7 +177,7 @@ function Download-Mods {
                         $filename = "$($mod.ID)-$($mod.Version).jar"
                     }
                 }
-            } elseif ($jarFilename -and -not $UseLatestVersion) {
+            } elseif ($jarFilename -and -not $UseLatestVersion -and -not $UseNextVersion) {
                 $filename = $jarFilename
             } else {
                 $filename = [System.IO.Path]::GetFileName($downloadUrl)
@@ -156,7 +188,7 @@ function Download-Mods {
             if ($mod.Type -eq "shaderpack") {
                 $filename = Clean-Filename $filename
             }
-            $gameVersionFolder = if ($UseLatestVersion -or $TargetGameVersion) { Join-Path $DownloadFolder $targetGameVersion } else { Join-Path $DownloadFolder $gameVersion }
+            $gameVersionFolder = if ($UseLatestVersion -or $UseNextVersion -or $TargetGameVersion) { Join-Path $DownloadFolder $targetGameVersion } else { Join-Path $DownloadFolder $gameVersion }
             if ($mod.Type -eq "shaderpack") {
                 $gameVersionFolder = Join-Path $gameVersionFolder "shaderpacks"
             } elseif ($mod.Type -eq "installer") {
@@ -198,8 +230,8 @@ function Download-Mods {
                 
                 # For system entries (installer, launcher, server), handle differently based on UseLatestVersion
                 if ($mod.Type -in @("installer", "launcher", "server")) {
-                    if ($UseLatestVersion) {
-                        # When using latest version, find system entry that matches target game version
+                    if ($UseLatestVersion -or $UseNextVersion) {
+                        # When using latest/next version, find system entry that matches target game version
                         $matchingSystemEntry = $mods | Where-Object { 
                             $_.Type -eq $mod.Type -and 
                             $_.GameVersion -eq $targetGameVersion -and
@@ -246,9 +278,16 @@ function Download-Mods {
                     if ($modHost -eq "curseforge") {
                         $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                     }
-                } elseif ($mod.VersionUrl) {
-                    $downloadUrl = $mod.VersionUrl
-                    $downloadVersion = $mod.Version
+                } elseif ($UseNextVersion -and $mod.NextVersionUrl) {
+                    $downloadUrl = $mod.NextVersionUrl
+                    $downloadVersion = $mod.NextVersion
+                    # For CurseForge mods, we still need to get the filename from API
+                    if ($modHost -eq "curseforge") {
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.NextVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                    }
+                } elseif ($mod.CurrentVersionUrl) {
+                    $downloadUrl = $mod.CurrentVersionUrl
+                    $downloadVersion = $mod.CurrentVersion
                     # For CurseForge mods, we still need to get the filename from API
                     if ($modHost -eq "curseforge") {
                         $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
@@ -267,9 +306,14 @@ function Download-Mods {
                         if ($UseLatestVersion) {
                             $downloadUrl = $result.LatestVersionUrl
                             $downloadVersion = $result.LatestVersion
+                        } elseif ($UseNextVersion) {
+                            # For UseNextVersion, we need to check if NextVersionUrl exists in the mod data
+                            # If not, fall back to the API result's latest version URL
+                            $downloadUrl = if ($mod.NextVersionUrl) { $mod.NextVersionUrl } else { $result.LatestVersionUrl }
+                            $downloadVersion = if ($mod.NextVersion) { $mod.NextVersion } else { $result.LatestVersion }
                         } else {
                             $downloadUrl = $result.VersionUrl
-                            $downloadVersion = $mod.Version
+                            $downloadVersion = $mod.CurrentVersion
                         }
                     } else {
                         Write-Host "❌ $($mod.Name): Version not found" -ForegroundColor Red
@@ -285,8 +329,8 @@ function Download-Mods {
                 }
                 
                 # Create game version subfolder
-                $gameVersionFolder = if ($UseLatestVersion -or $TargetGameVersion) { 
-                    # For latest versions or when target version specified, use target version
+                $gameVersionFolder = if ($UseLatestVersion -or $UseNextVersion -or $TargetGameVersion) { 
+                    # For latest/next versions or when target version specified, use target version
                     Join-Path $DownloadFolder $targetGameVersion 
                 } else { 
                     # For current versions, use the GameVersion column from CSV
@@ -358,7 +402,7 @@ function Download-Mods {
                             $filename = "$($mod.ID)-$downloadVersion.jar"
                         }
                     }
-                } elseif ($jarFilename -and -not $UseLatestVersion) {
+                } elseif ($jarFilename -and -not $UseLatestVersion -and -not $UseNextVersion) {
                     # Use the JAR filename from CSV if available and not using latest version
                     $filename = $jarFilename
                 } else {
@@ -402,16 +446,17 @@ function Download-Mods {
                         Write-Host "  📝 Using filename from API: $filename" -ForegroundColor Gray
                     }
                     
-                    # Check cache first
+                    # Check cache first - organize by provider
                     $cacheFolder = ".cache"
-                    if (-not (Test-Path $cacheFolder)) {
-                        New-Item -ItemType Directory -Path $cacheFolder -Force | Out-Null
+                    $providerCacheFolder = Join-Path $cacheFolder $modHost
+                    if (-not (Test-Path $providerCacheFolder)) {
+                        New-Item -ItemType Directory -Path $providerCacheFolder -Force | Out-Null
                     }
                     
                     # Create cache path using URL hash for uniqueness
                     $urlHash = [System.Security.Cryptography.SHA256]::Create().ComputeHash([System.Text.Encoding]::UTF8.GetBytes($downloadUrl))
                     $hashString = [System.BitConverter]::ToString($urlHash).Replace("-", "").Substring(0, 16)
-                    $cachePath = Join-Path $cacheFolder "$hashString-$filename"
+                    $cachePath = Join-Path $providerCacheFolder "$hashString-$filename"
                     
                     # Check if file exists in cache
                     if ((Test-Path $cachePath) -and -not $ForceDownload) {
@@ -504,7 +549,7 @@ function Download-Mods {
         Write-Host "Download results saved to: $downloadResultsFile" -ForegroundColor Cyan
         
         # Show missing system files if using latest version
-        if ($UseLatestVersion -and $missingSystemFiles.Count -gt 0) {
+        if (($UseLatestVersion -or $UseNextVersion) -and $missingSystemFiles.Count -gt 0) {
             Write-Host ""
             Write-Host "Missing System Files for ${targetGameVersion}:" -ForegroundColor Red
             Write-Host "=============================================" -ForegroundColor Red
@@ -529,7 +574,7 @@ function Download-Mods {
         # Create README file with download analysis
         if ($versionAnalysis) {
             $versionFolder = Join-Path $DownloadFolder $targetGameVersion
-            Write-DownloadReadme -FolderPath $versionFolder -Analysis $versionAnalysis -DownloadResults $downloadResults -TargetVersion $targetGameVersion -UseLatestVersion $UseLatestVersion
+            Write-DownloadReadme -FolderPath $versionFolder -Analysis $versionAnalysis -DownloadResults $downloadResults -TargetVersion $targetGameVersion -UseLatestVersion:$UseLatestVersion -UseNextVersion:$UseNextVersion
         }
         
         return

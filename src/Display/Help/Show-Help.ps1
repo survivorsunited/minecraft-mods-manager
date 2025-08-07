@@ -51,12 +51,12 @@ function Show-Help {
     Write-Host "    - Only makes API calls for mods that don't have cached responses"
     Write-Host "    - Useful for development and testing scenarios"
     Write-Host ""
-    Write-Host "  Download-Mods [-CsvPath <path>] [-UseLatestVersion] [-ForceDownload]" -ForegroundColor White
+    Write-Host "  Download-Mods [-CsvPath <path>] [-UseLatestVersion] [-UseNextVersion] [-ForceDownload]" -ForegroundColor White
     Write-Host "    - Downloads mods to local download folder organized by GameVersion"
     Write-Host "    - Creates subfolders for each GameVersion (e.g., download/1.21.5/mods/)"
     Write-Host "    - Creates block subfolder for mods in 'block' group (e.g., download/1.21.5/mods/block/)"
     Write-Host "    - Creates shaderpacks subfolder for shaderpacks (e.g., download/1.21.5/shaderpacks/)"
-    Write-Host "    - Uses VersionUrl by default, or LatestVersionUrl with -UseLatestVersion"
+    Write-Host "    - Uses CurrentVersionUrl by default, NextVersionUrl with -UseNextVersion, or LatestVersionUrl with -UseLatestVersion"
     Write-Host "    - Skips existing files unless -ForceDownload is used"
     Write-Host "    - Saves download results to CSV"
     Write-Host ""

@@ -5,6 +5,7 @@
 param(
     [switch]$Download,
     [switch]$UseLatestVersion,
+    [switch]$UseNextVersion,
     [switch]$ForceDownload,
     [switch]$Help,
     [switch]$ValidateModVersion,
@@ -83,8 +84,17 @@ param(
     [int]$DiagnosticsLogLines
 )
 
+# Save parameter values that might be overridden by environment variables
+$OriginalApiResponseFolder = $ApiResponseFolder
+
 # Import all modular functions
 . "$PSScriptRoot\src\Import-Modules.ps1"
+
+# Restore parameter values if they were provided
+if ($OriginalApiResponseFolder) {
+    $script:ApiResponseFolder = $OriginalApiResponseFolder
+    $ApiResponseFolder = $OriginalApiResponseFolder
+}
 
 # Set up logging
 $logDir = Join-Path $PSScriptRoot "logs"
@@ -161,6 +171,10 @@ if ($Download) {
         Write-Host "Using latest versions for download..." -ForegroundColor Cyan
         Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
         Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
+    } elseif ($UseNextVersion) {
+        Write-Host "Using next versions for download..." -ForegroundColor Cyan
+        Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
+        Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -ForceDownload:$ForceDownload
     } else {
         Write-Host "Using current versions for download..." -ForegroundColor Cyan
         Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
@@ -175,6 +189,10 @@ if ($DownloadMods) {
         Write-Host "Using latest versions for download..." -ForegroundColor Cyan
         Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
         Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
+    } elseif ($UseNextVersion) {
+        Write-Host "Using next versions for download..." -ForegroundColor Cyan
+        Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
+        Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -ForceDownload:$ForceDownload
     } else {
         Write-Host "Using current versions for download..." -ForegroundColor Cyan
         Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
@@ -274,12 +292,10 @@ if ($StartServer) {
         }
     }
     
-    # Download if needed (use current versions to match database)
-    if ($needsDownload) {
-        Write-Host "📦 Downloading mods and server files for $targetVersion..." -ForegroundColor Cyan
-        Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -TargetGameVersion $targetVersion
-        Write-Host "" -ForegroundColor White
-    }
+    # Always ensure mods and server files are available (download to cache if not cached, then copy)
+    Write-Host "📦 Ensuring mods and server files are available for $targetVersion..." -ForegroundColor Cyan
+    Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -TargetGameVersion $targetVersion
+    Write-Host "" -ForegroundColor White
     
     # Now start the server
     $serverResult = Start-MinecraftServer -DownloadFolder $DownloadFolder -TargetVersion $targetVersion

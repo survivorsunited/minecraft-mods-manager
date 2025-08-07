@@ -15,14 +15,29 @@
 .PARAMETER ModId
     The ID of the mod to update.
 
+.PARAMETER ModName
+    The name of the mod to update (alternative to ModId).
+
+.PARAMETER GameVersion
+    The game version to filter by when using ModName.
+
 .PARAMETER NewUrl
     The new URL to set for the mod.
+
+.PARAMETER UrlType
+    Which URL field to update (Url, VersionUrl, LatestVersionUrl).
 
 .PARAMETER CsvPath
     Path to the CSV database file.
 
+.PARAMETER BackupDatabase
+    Whether to create a backup before modifying (default: true).
+
 .EXAMPLE
     Update-ModUrlInDatabase -ModId "minecraft-server-1.21.7" -NewUrl "https://..." -CsvPath "modlist.csv"
+
+.EXAMPLE
+    Update-ModUrlInDatabase -ModName "Inventory Totem" -GameVersion "1.21.5" -NewUrl "https://..." -UrlType "VersionUrl"
 
 .NOTES
     - Reads the CSV file
@@ -32,36 +47,50 @@
 #>
 function Update-ModUrlInDatabase {
     param(
-        [Parameter(Mandatory)]
+        [Parameter(ParameterSetName="ById")]
         [string]$ModId,
+        
+        [Parameter(ParameterSetName="ByName")]
+        [string]$ModName,
+        
+        [Parameter(ParameterSetName="ByName")]
+        [string]$GameVersion,
         
         [Parameter(Mandatory)]
         [string]$NewUrl,
         
-        [string]$CsvPath = "modlist.csv"
+        [ValidateSet("Url", "VersionUrl", "CurrentVersionUrl", "NextVersionUrl", "LatestVersionUrl")]
+        [string]$UrlType = "Url",
+        
+        [string]$CsvPath = "modlist.csv",
+        
+        [bool]$BackupDatabase = $true
     )
     
     try {
-        Write-Host "    🔍 Updating URL for mod ID: $ModId" -ForegroundColor Gray
+        $searchCriteria = if ($ModId) { "mod ID: $ModId" } else { "mod name: $ModName (MC $GameVersion)" }
+        Write-Host "    🔍 Updating $UrlType for $searchCriteria" -ForegroundColor Gray
         
         # Check if file exists
         if (-not (Test-Path $CsvPath)) {
             throw "CSV file not found: $CsvPath"
         }
         
-        # Create backup first in backups folder
-        $csvDir = Split-Path $CsvPath -Parent
-        $csvName = Split-Path $CsvPath -Leaf
-        $backupDir = Join-Path $csvDir "backups"
-        
-        # Create backups directory if it doesn't exist
-        if (-not (Test-Path $backupDir)) {
-            New-Item -ItemType Directory -Path $backupDir -Force | Out-Null
+        # Create backup first in backups folder (if requested)
+        if ($BackupDatabase) {
+            $csvDir = Split-Path $CsvPath -Parent
+            $csvName = Split-Path $CsvPath -Leaf
+            $backupDir = Join-Path $csvDir "backups"
+            
+            # Create backups directory if it doesn't exist
+            if (-not (Test-Path $backupDir)) {
+                New-Item -ItemType Directory -Path $backupDir -Force | Out-Null
+            }
+            
+            $backupPath = Join-Path $backupDir "$(Get-Date -Format 'yyyyMMdd-HHmmss')-$csvName"
+            Copy-Item -Path $CsvPath -Destination $backupPath -Force
+            Write-Host "    💾 Created backup: $backupPath" -ForegroundColor Gray
         }
-        
-        $backupPath = Join-Path $backupDir "$(Get-Date -Format 'yyyyMMdd-HHmmss')-$csvName"
-        Copy-Item -Path $CsvPath -Destination $backupPath -Force
-        Write-Host "    💾 Created backup: $backupPath" -ForegroundColor Gray
         
         # Read CSV data
         $mods = Import-Csv -Path $CsvPath
@@ -69,11 +98,55 @@ function Update-ModUrlInDatabase {
         
         # Find and update the matching mod
         foreach ($mod in $mods) {
-            if ($mod.ID -eq $ModId) {
-                $oldUrl = $mod.Url
-                $mod.Url = $NewUrl
+            $isMatch = $false
+            
+            if ($ModId -and $mod.ID -eq $ModId) {
+                $isMatch = $true
+            } elseif ($ModName -and $mod.Name -eq $ModName) {
+                # Handle both migrated and non-migrated column structures
+                $modGameVersion = if ($mod.PSObject.Properties.Name -contains "CurrentGameVersion") { 
+                    $mod.CurrentGameVersion 
+                } else { 
+                    $mod.GameVersion 
+                }
+                if ($modGameVersion -eq $GameVersion) {
+                    $isMatch = $true
+                }
+            }
+            
+            if ($isMatch) {
+                # Get the current URL based on UrlType (handle both old and new column structures)
+                $oldUrl = switch ($UrlType) {
+                    "Url" { $mod.Url }
+                    "VersionUrl" { 
+                        if ($mod.PSObject.Properties.Name -contains "CurrentVersionUrl") { 
+                            $mod.CurrentVersionUrl 
+                        } else { 
+                            $mod.VersionUrl 
+                        }
+                    }
+                    "CurrentVersionUrl" { $mod.CurrentVersionUrl }
+                    "NextVersionUrl" { $mod.NextVersionUrl }
+                    "LatestVersionUrl" { $mod.LatestVersionUrl }
+                }
+                
+                # Update the appropriate URL field (handle both old and new column structures)
+                switch ($UrlType) {
+                    "Url" { $mod.Url = $NewUrl }
+                    "VersionUrl" { 
+                        if ($mod.PSObject.Properties.Name -contains "CurrentVersionUrl") { 
+                            $mod.CurrentVersionUrl = $NewUrl 
+                        } else { 
+                            $mod.VersionUrl = $NewUrl 
+                        }
+                    }
+                    "CurrentVersionUrl" { $mod.CurrentVersionUrl = $NewUrl }
+                    "NextVersionUrl" { $mod.NextVersionUrl = $NewUrl }
+                    "LatestVersionUrl" { $mod.LatestVersionUrl = $NewUrl }
+                }
+                
                 $updated = $true
-                Write-Host "    ✏️  Updated URL:" -ForegroundColor Gray
+                Write-Host "    ✏️  Updated ${UrlType}:" -ForegroundColor Gray
                 Write-Host "      Old: $oldUrl" -ForegroundColor DarkGray
                 Write-Host "      New: $NewUrl" -ForegroundColor Gray
                 break
@@ -81,7 +154,8 @@ function Update-ModUrlInDatabase {
         }
         
         if (-not $updated) {
-            Write-Host "    ⚠️  Mod ID '$ModId' not found in database" -ForegroundColor Yellow
+            $notFoundMsg = if ($ModId) { "Mod ID '$ModId'" } else { "Mod '$ModName' (MC $GameVersion)" }
+            Write-Host "    ⚠️  $notFoundMsg not found in database" -ForegroundColor Yellow
             return $false
         }
         
@@ -89,14 +163,16 @@ function Update-ModUrlInDatabase {
         $mods | Export-Csv -Path $CsvPath -NoTypeInformation
         Write-Host "    ✅ Database updated successfully" -ForegroundColor Green
         
-        # Clean up old backups (keep only last 5)
-        $backupFiles = Get-ChildItem -Path $backupDir -Filter "$csvName.*" |
-                       Sort-Object LastWriteTime -Descending
-        
-        if ($backupFiles.Count -gt 5) {
-            $filesToRemove = $backupFiles | Select-Object -Skip 5
-            foreach ($file in $filesToRemove) {
-                Remove-Item -Path $file.FullName -Force -ErrorAction SilentlyContinue
+        # Clean up old backups (keep only last 5) if we created a backup
+        if ($BackupDatabase) {
+            $backupFiles = Get-ChildItem -Path $backupDir -Filter "$csvName.*" |
+                           Sort-Object LastWriteTime -Descending
+            
+            if ($backupFiles.Count -gt 5) {
+                $filesToRemove = $backupFiles | Select-Object -Skip 5
+                foreach ($file in $filesToRemove) {
+                    Remove-Item -Path $file.FullName -Force -ErrorAction SilentlyContinue
+                }
             }
         }
         

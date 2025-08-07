@@ -51,4 +51,8 @@ download/
 
 **/test-output/*
 
+# Test artifacts that shouldn't be in root
+test-*-download/
+test-cache*/
+
 .backup/

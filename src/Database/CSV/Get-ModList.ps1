@@ -55,11 +55,11 @@ function Get-ModList {
                     # Make API call to get current data for externally modified records
                     try {
                         # Use the existing Validate-ModVersion function to get current data
-                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $changedMod.Version -Loader $changedMod.Loader -Jar $changedMod.Jar -ResponseFolder $ApiResponseFolder -Quiet
+                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $changedMod.CurrentVersion -Loader $changedMod.Loader -Jar $changedMod.Jar -ResponseFolder $ApiResponseFolder -Quiet
                         
                         if ($validationResult -and $validationResult.Exists) {
                             # Update the record with current API data
-                            $changedMod.VersionUrl = $validationResult.VersionUrl
+                            $changedMod.CurrentVersionUrl = $validationResult.VersionUrl
                             $changedMod.LatestVersionUrl = $validationResult.LatestVersionUrl
                             $changedMod.LatestVersion = $validationResult.LatestVersion
                             $changedMod.LatestGameVersion = $validationResult.LatestGameVersion

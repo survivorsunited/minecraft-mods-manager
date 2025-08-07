@@ -10,13 +10,19 @@
 
 function Test-ActualModDownloadToCorrectFolder {
     param(
-        [string]$TestDownloadFolder = "test-actual-download"
+        [string]$TestDownloadFolder = "test-output/test-actual-download"
     )
     
     Write-Host "🧪 ACTUAL TEST: Download mods to the CORRECT FUCKING FOLDER!" -ForegroundColor Cyan
     Write-Host "================================================" -ForegroundColor Cyan
     
     try {
+        # Ensure test-output directory exists
+        $testOutputDir = Split-Path $TestDownloadFolder -Parent
+        if (-not (Test-Path $testOutputDir)) {
+            New-Item -ItemType Directory -Path $testOutputDir -Force | Out-Null
+        }
+        
         # Clean up any existing test folder
         if (Test-Path $TestDownloadFolder) {
             Remove-Item -Recurse -Force $TestDownloadFolder -ErrorAction SilentlyContinue

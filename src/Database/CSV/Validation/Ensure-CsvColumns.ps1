@@ -32,12 +32,16 @@ function Ensure-CsvColumns {
         if ($mods -isnot [System.Collections.IEnumerable]) { $mods = @($mods) }
         $headers = $mods[0].PSObject.Properties.Name
         
+        # Check if database is using migrated column structure
+        $isMigrated = $headers -contains "CurrentGameVersion" -and $headers -contains "CurrentVersion"
+        
         $needsUpdate = $false
         
-        # Check if GameVersion column exists
-        if ($headers -notcontains "GameVersion") {
+        # Check if GameVersion column exists (use appropriate column name based on migration status)
+        $gameVersionColumn = if ($isMigrated) { "CurrentGameVersion" } else { "GameVersion" }
+        if ($headers -notcontains $gameVersionColumn) {
             foreach ($mod in $mods) {
-                $mod | Add-Member -MemberType NoteProperty -Name "GameVersion" -Value "1.21.5"
+                $mod | Add-Member -MemberType NoteProperty -Name $gameVersionColumn -Value "1.21.5"
             }
             $needsUpdate = $true
         }
@@ -58,10 +62,11 @@ function Ensure-CsvColumns {
             $needsUpdate = $true
         }
         
-        # Check if VersionUrl column exists
-        if ($headers -notcontains "VersionUrl") {
+        # Check if VersionUrl column exists (use appropriate column name based on migration status)
+        $versionUrlColumn = if ($isMigrated) { "CurrentVersionUrl" } else { "VersionUrl" }
+        if ($headers -notcontains $versionUrlColumn) {
             foreach ($mod in $mods) {
-                $mod | Add-Member -MemberType NoteProperty -Name "VersionUrl" -Value ""
+                $mod | Add-Member -MemberType NoteProperty -Name $versionUrlColumn -Value ""
             }
             $needsUpdate = $true
         }
@@ -114,12 +119,37 @@ function Ensure-CsvColumns {
             $needsUpdate = $true
         }
         
-        # Check if dependency columns exist
-        $dependencyColumns = @("CurrentDependencies", "LatestDependencies", "LatestDependenciesRequired", "LatestDependenciesOptional")
+        # Check if dependency columns exist (use appropriate column names based on migration status)
+        if ($isMigrated) {
+            $dependencyColumns = @("CurrentDependenciesRequired", "CurrentDependenciesOptional", "LatestDependenciesRequired", "LatestDependenciesOptional")
+        } else {
+            $dependencyColumns = @("CurrentDependencies", "LatestDependencies", "LatestDependenciesRequired", "LatestDependenciesOptional")
+        }
         foreach ($col in $dependencyColumns) {
             if ($headers -notcontains $col) {
                 foreach ($mod in $mods) {
                     $mod | Add-Member -MemberType NoteProperty -Name $col -Value ""
+                }
+                $needsUpdate = $true
+            }
+        }
+        
+        # Add migrated-specific columns if database is migrated
+        if ($isMigrated) {
+            $migratedColumns = @("CurrentVersion", "NextVersion", "NextVersionUrl", "NextGameVersion")
+            foreach ($col in $migratedColumns) {
+                if ($headers -notcontains $col) {
+                    foreach ($mod in $mods) {
+                        $mod | Add-Member -MemberType NoteProperty -Name $col -Value ""
+                    }
+                    $needsUpdate = $true
+                }
+            }
+        } else {
+            # Add original Version column for non-migrated databases
+            if ($headers -notcontains "Version") {
+                foreach ($mod in $mods) {
+                    $mod | Add-Member -MemberType NoteProperty -Name "Version" -Value ""
                 }
                 $needsUpdate = $true
             }

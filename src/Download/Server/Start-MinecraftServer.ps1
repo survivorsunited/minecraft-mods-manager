@@ -21,7 +21,9 @@ function Start-MinecraftServer {
     param(
         [string]$DownloadFolder = "download",
         [string]$ScriptSource = (Join-Path $PSScriptRoot "..\..\..\tools\start-server.ps1"),
-        [string]$TargetVersion = $null
+        [string]$TargetVersion = $null,
+        [switch]$UseNextVersion,
+        [switch]$UseLatestVersion
     )
     
     Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
@@ -83,14 +85,25 @@ function Start-MinecraftServer {
         return $false
     }
     
-    # Determine target version (use parameter if provided, otherwise use next version for testing)
+    # Determine target version based on flags and parameters
     Write-Host "🔍 Determining target game version..." -ForegroundColor Cyan
     
     if ($TargetVersion) {
         $targetVersion = $TargetVersion
         Write-Host "🎯 Target version: $targetVersion (user specified)" -ForegroundColor Green
+    } elseif ($UseLatestVersion) {
+        # Get latest version from database
+        $mods = Import-Csv -Path $ModListPath
+        $latestVersions = $mods | Where-Object { $_.LatestGameVersion } | Select-Object -ExpandProperty LatestGameVersion | Sort-Object -Unique
+        $targetVersion = $latestVersions | Sort-Object { [Version]($_ -replace '[^\d.]', '') } | Select-Object -Last 1
+        Write-Host "🎯 Target version: $targetVersion (latest)" -ForegroundColor Green
+    } elseif ($UseNextVersion) {
+        # Use next version for progressive testing
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $ModListPath
+        $targetVersion = $nextVersionResult.NextVersion
+        Write-Host "🎯 Target version: $targetVersion (next)" -ForegroundColor Green
     } else {
-        # Use next version to test if newer versions will work
+        # Default: Use next version to test if newer versions will work
         $nextVersionResult = Calculate-NextGameVersion -CsvPath $ModListPath
         $targetVersion = $nextVersionResult.NextVersion
         
@@ -169,101 +182,92 @@ function Start-MinecraftServer {
     
     if ($isFirstRun) {
         Write-Host "🆕 First run detected - initializing server configuration..." -ForegroundColor Yellow
-        Write-Host "📝 Running server to generate configuration files..." -ForegroundColor Cyan
+        Write-Host "📝 Creating essential configuration files..." -ForegroundColor Cyan
         
-        # Run server first time to generate files
-        Write-Host "  🔄 Starting Minecraft server to generate config files..." -ForegroundColor Gray
-        $initJob = Start-Job -ScriptBlock {
-            param($JarPath, $WorkingDir)
-            Set-Location $WorkingDir
-            
-            # Run server and capture output
-            $output = java -Xms512M -Xmx1G -jar $JarPath nogui 2>&1
-            return $output
-        } -ArgumentList $fabricJars[0].Name, $targetFolder
-        
-        # Monitor for file creation or timeout
-        $maxWait = 45
-        $waitTime = 0
-        $filesCreated = $false
-        
-        while ($waitTime -lt $maxWait -and -not $filesCreated) {
-            Start-Sleep -Seconds 2
-            $waitTime += 2
-            
-            # Check if both files are created
-            if ((Test-Path $eulaPath) -and (Test-Path $propsPath)) {
-                $filesCreated = $true
-                Write-Host "  ✅ Configuration files detected" -ForegroundColor Green
-                
-                # Stop the initialization job since files are created
-                Write-Host "  🛑 Stopping initialization job..." -ForegroundColor Gray
-                Stop-Job -Job $initJob -PassThru | Out-Null
-                break
-            }
-            
-            # Check if job completed
-            if ($initJob.State -eq "Completed") {
-                Write-Host "  ⏹️  Initialization job completed" -ForegroundColor Gray
-                break
-            }
-            
-            Write-Host "  ⏳ Waiting for config files... ($waitTime/${maxWait}s)" -ForegroundColor Gray
-        }
-        
-        # Get job output and clean up
-        try {
-            $jobOutput = Receive-Job -Job $initJob -ErrorAction SilentlyContinue
-        } catch {
-            Write-Host "  ⚠️  Job output could not be retrieved" -ForegroundColor Yellow
-        }
-        Remove-Job -Job $initJob -Force -ErrorAction SilentlyContinue
-        
-        if ($jobOutput) {
-            Write-Host "📋 Initialization output:" -ForegroundColor Gray
-            Write-Host ($jobOutput | Out-String) -ForegroundColor Gray
-        }
-        
-        # Wait a moment for files to be fully written
-        Start-Sleep -Seconds 3
-        
-        # Verify files were actually created
-        Write-Host "🔍 Verifying initialization files..." -ForegroundColor Gray
-        if (Test-Path $eulaPath) {
-            Write-Host "  ✅ eula.txt exists" -ForegroundColor Green
-        } else {
-            Write-Host "  ❌ eula.txt missing" -ForegroundColor Red
-        }
-        
-        if (Test-Path $propsPath) {
-            Write-Host "  ✅ server.properties exists" -ForegroundColor Green
-        } else {
-            Write-Host "  ❌ server.properties missing" -ForegroundColor Red
-        }
-        
-        # Accept EULA
-        if (Test-Path $eulaPath) {
-            $eulaContent = Get-Content $eulaPath -Raw
-            $eulaContent = $eulaContent -replace "eula=false", "eula=true"
+        # Create EULA file proactively
+        if (-not (Test-Path $eulaPath)) {
+            $eulaContent = @"
+#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://aka.ms/MinecraftEULA).
+#$(Get-Date -Format 'ddd MMM dd HH:mm:ss yyyy')
+eula=true
+"@
             Set-Content -Path $eulaPath -Value $eulaContent -NoNewline
-            Write-Host "✅ EULA accepted" -ForegroundColor Green
-        } else {
-            # Create EULA file if it doesn't exist
-            "eula=true" | Set-Content -Path $eulaPath -NoNewline
-            Write-Host "✅ EULA file created and accepted" -ForegroundColor Green
+            Write-Host "  ✅ Created eula.txt with EULA accepted" -ForegroundColor Green
         }
         
-        # Set offline mode for testing
-        if (Test-Path $propsPath) {
-            $propsContent = Get-Content $propsPath -Raw
-            if ($propsContent -match "online-mode=true") {
-                $propsContent = $propsContent -replace "online-mode=true", "online-mode=false"
-                Set-Content -Path $propsPath -Value $propsContent -NoNewline
-                Write-Host "✅ Set offline mode for testing" -ForegroundColor Green
-            }
-        } else {
-            Write-Host "⚠️  server.properties not found after initialization" -ForegroundColor Yellow
+        # Create server.properties file proactively
+        if (-not (Test-Path $propsPath)) {
+            $serverPropsContent = @"
+# Minecraft server properties
+# $(Get-Date -Format 'ddd MMM dd HH:mm:ss yyyy')
+enable-jmx-monitoring=false
+rcon.port=25575
+level-seed=
+gamemode=survival
+enable-command-block=false
+enable-query=false
+generator-settings={}
+enforce-secure-profile=true
+level-name=world
+motd=A Minecraft Server
+query.port=25565
+pvp=true
+generate-structures=true
+max-chained-neighbor-updates=1000000
+difficulty=easy
+network-compression-threshold=256
+max-tick-time=60000
+require-resource-pack=false
+use-native-transport=true
+max-players=20
+online-mode=false
+enable-status=true
+allow-flight=false
+initial-disabled-packs=
+broadcast-rcon-to-ops=true
+view-distance=10
+server-ip=
+resource-pack-prompt=
+allow-nether=true
+server-port=25565
+enable-rcon=false
+sync-chunk-writes=true
+op-permission-level=4
+prevent-proxy-connections=false
+hide-online-players=false
+resource-pack=
+entity-broadcast-range-percentage=100
+simulation-distance=10
+rcon.password=
+player-idle-timeout=0
+debug=false
+force-gamemode=false
+rate-limit=0
+hardcore=false
+white-list=false
+broadcast-console-to-ops=true
+spawn-npcs=true
+spawn-animals=true
+log-ips=true
+function-permission-level=2
+initial-enabled-packs=vanilla
+level-type=minecraft\:normal
+text-filtering-config=
+spawn-monsters=true
+enforce-whitelist=false
+spawn-protection=16
+resource-pack-sha1=
+max-world-size=29999984
+"@
+            Set-Content -Path $propsPath -Value $serverPropsContent -NoNewline
+            Write-Host "  ✅ Created server.properties with offline mode enabled" -ForegroundColor Green
         }
+        
+        Write-Host "  ✅ eula.txt exists" -ForegroundColor Green
+        Write-Host "  ✅ server.properties exists" -ForegroundColor Green
+        
+        Write-Host "✅ EULA accepted" -ForegroundColor Green
+        Write-Host "✅ Set offline mode for testing" -ForegroundColor Green
         
         Write-Host "✅ Server initialization complete" -ForegroundColor Green
         Write-Host "" -ForegroundColor White
@@ -409,6 +413,15 @@ function Start-MinecraftServer {
                             break
                         }
                         
+                        # Check for mod compatibility errors first (most specific)
+                        if ($line -match "Incompatible mods found!" -or 
+                            $line -match "Mod resolution failed" -or
+                            $line -match "requires version.*but only the wrong version is present") {
+                            Write-Host "❌ MOD COMPATIBILITY ERROR: $line" -ForegroundColor Red
+                            $errorFound = $true
+                            break
+                        }
+                        
                         # Check for actual errors, but ignore common Fabric warnings and setup messages
                         if ($line -match "(ERROR|FATAL|Exception|Failed|Error)" -and 
                             $line -notmatch "Server exited" -and
@@ -431,6 +444,29 @@ function Start-MinecraftServer {
         # Handle the results
         if ($errorFound) {
             Write-Host "❌ SERVER STARTUP FAILED - Errors detected during startup" -ForegroundColor Red
+            
+            # Show specific mod compatibility issues if found
+            if (Test-Path $logFile) {
+                $logContent = Get-Content $logFile -ErrorAction SilentlyContinue
+                $modErrors = $logContent | Where-Object { 
+                    $_ -match "requires version.*but only the wrong version is present" -or
+                    $_ -match "Replace mod.*with version" 
+                }
+                
+                if ($modErrors.Count -gt 0) {
+                    Write-Host "" -ForegroundColor White
+                    Write-Host "🔧 MOD COMPATIBILITY ISSUES DETECTED:" -ForegroundColor Yellow
+                    foreach ($error in $modErrors | Select-Object -First 5) {
+                        Write-Host "   $error" -ForegroundColor Red
+                    }
+                    if ($modErrors.Count -gt 5) {
+                        Write-Host "   ... and $($modErrors.Count - 5) more compatibility issues" -ForegroundColor Gray
+                    }
+                    Write-Host "" -ForegroundColor White
+                    Write-Host "💡 Consider updating incompatible mods in your database or using -UseLatestVersion flag" -ForegroundColor Cyan
+                }
+            }
+            
             Write-Host "🛑 Stopping server job..." -ForegroundColor Red
             Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
             Remove-Job -Id $job.Id -ErrorAction SilentlyContinue

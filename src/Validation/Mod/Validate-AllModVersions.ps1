@@ -70,25 +70,25 @@ function Validate-AllModVersions {
         # Get host from CSV, default to "modrinth" if not specified
         $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
         # Get game version from CSV, default to "1.21.5" if not specified
-        $gameVersion = if (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
+        $gameVersion = if (-not [string]::IsNullOrEmpty($mod.CurrentGameVersion)) { $mod.CurrentGameVersion } else { $DefaultGameVersion }
         # Get JAR filename from CSV
         $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
         
         # Use appropriate API based on host (suppress output)
         if ($modHost -eq "curseforge") {
-            $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+            $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
         } else {
             # If version is empty, treat as "get latest version" request
-            $versionToCheck = if ([string]::IsNullOrEmpty($mod.Version)) { "latest" } else { $mod.Version }
+            $versionToCheck = if ([string]::IsNullOrEmpty($mod.CurrentVersion)) { "latest" } else { $mod.CurrentVersion }
             $result = Validate-ModVersion -ModId $mod.ID -Version $versionToCheck -Loader $loader -GameVersion $gameVersion -ResponseFolder $ResponseFolder -Jar $jarFilename -CsvPath $effectiveModListPath -Quiet
         }
         
         # Show result with current vs latest version comparison
-        $currentVersion = $mod.Version ?? "none"
+        $currentVersion = $mod.CurrentVersion ?? "none"
         $latestVersion = $result.LatestVersion ?? "unknown"
         
         # Determine status and colors based on game version compatibility
-        $targetGameVersion = $mod.GameVersion ?? $DefaultGameVersion
+        $targetGameVersion = $mod.CurrentGameVersion ?? $DefaultGameVersion
         $currentSupportsTarget = $false
         $latestSupportsTarget = $false
         
@@ -141,6 +141,9 @@ function Validate-AllModVersions {
             LatestVersion = $result.LatestVersion
             VersionUrl = $result.VersionUrl
             LatestVersionUrl = $result.LatestVersionUrl
+            NextVersion = ""
+            NextVersionUrl = ""
+            NextGameVersion = ""
             IconUrl = $result.IconUrl
             ClientSide = $result.ClientSide
             ServerSide = $result.ServerSide
@@ -171,11 +174,30 @@ function Validate-AllModVersions {
         New-Item -ItemType Directory -Path $responseFolderDir -Force | Out-Null
     }
     
+    # Populate Next version data for all validation results
+    Write-Host "🔄 Calculating Next version data..." -ForegroundColor Cyan
+    $nextVersionResults = Calculate-NextVersionData -CsvPath $effectiveModListPath -ReturnData
+    
+    foreach ($result in $results) {
+        $nextData = $nextVersionResults | Where-Object { $_.ID -eq $result.ID } | Select-Object -First 1
+        if ($nextData) {
+            $result.NextVersion = $nextData.NextVersion ?? ""
+            $result.NextVersionUrl = $nextData.NextVersionUrl ?? ""
+            $result.NextGameVersion = $nextData.NextGameVersion ?? ""
+        }
+    }
+    
     $results | Export-Csv -Path $resultsFile -NoTypeInformation
     
     # Find most common GameVersion in database to determine target
     $mods = Get-ModList -CsvPath $effectiveModListPath
-    $gameVersions = $mods | Where-Object { $_.GameVersion -and $_.GameVersion -ne "unknown" } | Select-Object -ExpandProperty GameVersion
+    # Handle both migrated and non-migrated column structures
+    $gameVersions = $mods | Where-Object { 
+        $gameVer = if ($_.PSObject.Properties.Name -contains "CurrentGameVersion") { $_.CurrentGameVersion } else { $_.GameVersion }
+        $gameVer -and $gameVer -ne "unknown" 
+    } | ForEach-Object { 
+        if ($_.PSObject.Properties.Name -contains "CurrentGameVersion") { $_.CurrentGameVersion } else { $_.GameVersion }
+    }
     $mostCommonGameVersion = if ($gameVersions) {
         $gameVersionCounts = $gameVersions | Group-Object | Sort-Object Count -Descending
         $gameVersionCounts[0].Name
@@ -357,7 +379,7 @@ function Validate-AllModVersions {
                 # Update with latest information
                 $updatedMod = $currentMod.PSObject.Copy()
                 $updatedMod.LatestVersion = $validationResult.LatestVersion
-                $updatedMod.VersionUrl = $validationResult.VersionUrl
+                $updatedMod.CurrentVersionUrl = $validationResult.VersionUrl
                 $updatedMod.LatestVersionUrl = $validationResult.LatestVersionUrl
                 $updatedMod.IconUrl = $validationResult.IconUrl
                 $updatedMod.ClientSide = $validationResult.ClientSide
@@ -370,43 +392,43 @@ function Validate-AllModVersions {
                 $updatedMod.LatestGameVersion = $validationResult.LatestGameVersion
                 $updatedMod.CurrentDependencies = $validationResult.CurrentDependencies
                 $updatedMod.LatestDependencies = $validationResult.LatestDependencies
-                # Create new object with all properties including new dependency fields
-                $updatedMod = [PSCustomObject]@{
-                    Group = $currentMod.Group
-                    Type = $currentMod.Type
-                    GameVersion = $currentMod.GameVersion
-                    ID = $currentMod.ID
-                    Loader = $currentMod.Loader
-                    Version = $currentMod.Version
-                    Name = $currentMod.Name
-                    Description = $currentMod.Description
-                    Jar = $currentMod.Jar
-                    Url = $currentMod.Url
-                    Category = $currentMod.Category
-                    VersionUrl = $validationResult.VersionUrl
-                    LatestVersionUrl = $validationResult.LatestVersionUrl
-                    LatestVersion = $validationResult.LatestVersion
-                    ApiSource = $currentMod.ApiSource
-                    Host = $currentMod.Host
-                    IconUrl = $validationResult.IconUrl
-                    ClientSide = $validationResult.ClientSide
-                    ServerSide = $validationResult.ServerSide
-                    Title = $validationResult.Title
-                    ProjectDescription = $validationResult.ProjectDescription
-                    IssuesUrl = $validationResult.IssuesUrl
-                    SourceUrl = $validationResult.SourceUrl
-                    WikiUrl = $validationResult.WikiUrl
-                    LatestGameVersion = $validationResult.LatestGameVersion
-                    RecordHash = $currentMod.RecordHash
-                    UrlDirect = $currentMod.UrlDirect
-                    AvailableGameVersions = if ($validationResult.AvailableGameVersions) { ($validationResult.AvailableGameVersions -join ",") } else { $currentMod.AvailableGameVersions }
-                    CurrentDependencies = $validationResult.CurrentDependencies ?? ""
-                    LatestDependencies = $validationResult.LatestDependencies ?? ""
-                    CurrentDependenciesRequired = $validationResult.CurrentDependenciesRequired ?? ""
-                    CurrentDependenciesOptional = $validationResult.CurrentDependenciesOptional ?? ""
-                    LatestDependenciesRequired = $validationResult.LatestDependenciesRequired ?? ""
-                    LatestDependenciesOptional = $validationResult.LatestDependenciesOptional ?? ""
+                # Update mod in-place to preserve original column structure
+                $updatedMod = $currentMod.PSObject.Copy()
+                
+                # Update with validation results using appropriate column names
+                $isMigrated = $currentMod.PSObject.Properties.Name -contains "CurrentVersion"
+                
+                if ($isMigrated) {
+                    $updatedMod.CurrentVersionUrl = $validationResult.VersionUrl
+                } else {
+                    $updatedMod.VersionUrl = $validationResult.VersionUrl
                 }
+                
+                # Common fields that exist in both structures
+                $updatedMod.LatestVersionUrl = $validationResult.LatestVersionUrl
+                $updatedMod.LatestVersion = $validationResult.LatestVersion
+                $updatedMod.LatestGameVersion = $validationResult.LatestGameVersion
+                $updatedMod.IconUrl = $validationResult.IconUrl
+                $updatedMod.ClientSide = $validationResult.ClientSide
+                $updatedMod.ServerSide = $validationResult.ServerSide
+                $updatedMod.Title = $validationResult.Title
+                $updatedMod.ProjectDescription = $validationResult.ProjectDescription
+                $updatedMod.IssuesUrl = $validationResult.IssuesUrl
+                $updatedMod.SourceUrl = $validationResult.SourceUrl
+                $updatedMod.WikiUrl = $validationResult.WikiUrl
+                $updatedMod.AvailableGameVersions = if ($validationResult.AvailableGameVersions) { ($validationResult.AvailableGameVersions -join ",") } else { $currentMod.AvailableGameVersions }
+                
+                # Update dependency fields using appropriate column names
+                if ($isMigrated) {
+                    $updatedMod.CurrentDependenciesRequired = $validationResult.CurrentDependenciesRequired ?? ""
+                    $updatedMod.CurrentDependenciesOptional = $validationResult.CurrentDependenciesOptional ?? ""
+                } else {
+                    $updatedMod.CurrentDependencies = $validationResult.CurrentDependencies ?? ""
+                    $updatedMod.LatestDependencies = $validationResult.LatestDependencies ?? ""
+                }
+                
+                $updatedMod.LatestDependenciesRequired = $validationResult.LatestDependenciesRequired ?? ""
+                $updatedMod.LatestDependenciesOptional = $validationResult.LatestDependenciesOptional ?? ""
                 
                 if ($newMods.Count -eq 0) {
                     $newMods = @($updatedMod)
