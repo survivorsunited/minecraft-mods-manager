@@ -60,14 +60,17 @@ function Download-Mods {
             
             foreach ($group in $modGroups) {
                 # Check if target version exists for this mod
-                $targetVersionMod = $group.Group | Where-Object { $_.GameVersion -eq $TargetGameVersion } | Select-Object -First 1
+                $targetVersionMod = $group.Group | Where-Object { $_.CurrentGameVersion -eq $TargetGameVersion -or $_.GameVersion -eq $TargetGameVersion } | Select-Object -First 1
                 
                 if ($targetVersionMod) {
                     # Use the target version
                     $smartMods += $targetVersionMod
                 } else {
                     # Use the latest available version (highest version number)
-                    $latestMod = $group.Group | Sort-Object { [Version]($_.GameVersion -replace '[^\d.]', '') } -Descending | Select-Object -First 1
+                    $latestMod = $group.Group | Where-Object { ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") -or ($_.GameVersion -and $_.GameVersion -ne "") } | Sort-Object { 
+                        $version = if ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") { $_.CurrentGameVersion } else { $_.GameVersion }
+                        [Version]($version -replace '[^\d.]', '') 
+                    } -Descending | Select-Object -First 1
                     if ($latestMod) {
                         Write-Host "  ⚠️  $($latestMod.Name): No $TargetGameVersion version, using $($latestMod.GameVersion)" -ForegroundColor Yellow
                         $smartMods += $latestMod
@@ -164,7 +167,7 @@ function Download-Mods {
             # Determine filename as in the main loop
             $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
             $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
-            $gameVersion = if (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
+            $gameVersion = if (-not [string]::IsNullOrEmpty($mod.CurrentGameVersion)) { $mod.CurrentGameVersion } elseif (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
             $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
             $downloadUrl = $mod.Url
             $filename = $null
@@ -218,7 +221,7 @@ function Download-Mods {
                 $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
                 
                 # Get game version from CSV, default to "1.21.5" if not specified
-                $gameVersion = if (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
+                $gameVersion = if (-not [string]::IsNullOrEmpty($mod.CurrentGameVersion)) { $mod.CurrentGameVersion } elseif (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
                 
                 # Get JAR filename from CSV
                 $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
@@ -276,7 +279,7 @@ function Download-Mods {
                     $downloadVersion = $mod.LatestVersion
                     # For CurseForge mods, we still need to get the filename from API
                     if ($modHost -eq "curseforge") {
-                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                     }
                 } elseif ($UseNextVersion -and $mod.NextVersionUrl) {
                     $downloadUrl = $mod.NextVersionUrl
@@ -290,14 +293,14 @@ function Download-Mods {
                     $downloadVersion = $mod.CurrentVersion
                     # For CurseForge mods, we still need to get the filename from API
                     if ($modHost -eq "curseforge") {
-                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
                     }
                 } else {
                     # Need to fetch the URL from API
                     Write-Host "Fetching download URL for $($mod.Name)..." -ForegroundColor Cyan
                     
                     if ($modHost -eq "curseforge") {
-                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
                     } else {
                         $result = Validate-ModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -GameVersion $gameVersion -ResponseFolder $ApiResponseFolder -Jar $jarFilename
                     }

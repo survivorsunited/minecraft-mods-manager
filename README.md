@@ -96,6 +96,60 @@ Downloads the latest available versions instead of database versions
 .\ModManager.ps1 -Download -UseLatestVersion
 ```
 
+## 🔄 Progressive Version Testing Workflow
+
+The mod manager supports a three-tier Current → Next → Latest progression for safe compatibility testing:
+
+### Current Version Testing (Default)
+Uses stable versions from database - safest for production
+```powershell
+# Download current stable versions
+.\ModManager.ps1 -Download
+
+# Start server with current versions
+.\ModManager.ps1 -StartServer
+```
+
+### Next Version Testing (Incremental)
+Tests the next logical version for progressive compatibility validation
+```powershell
+# Download next incremental versions (e.g., 1.21.6 if current is 1.21.5)
+.\ModManager.ps1 -Download -UseNextVersion
+
+# Start server with next versions
+.\ModManager.ps1 -StartServer -UseNextVersion
+```
+
+### Latest Version Testing (Bleeding Edge)
+Tests with the newest available versions - highest risk but latest features
+```powershell
+# Update database with latest version information
+.\ModManager.ps1 -UpdateMods
+
+# Download latest versions
+.\ModManager.ps1 -Download -UseLatestVersion
+
+# Start server with latest versions
+.\ModManager.ps1 -StartServer -UseLatestVersion
+```
+
+### Complete Progressive Testing Sequence
+For comprehensive testing, run all three phases:
+```powershell
+# Phase 1: Test current stable versions
+.\ModManager.ps1 -Download
+.\ModManager.ps1 -StartServer
+
+# Phase 2: Test next incremental versions
+.\ModManager.ps1 -Download -UseNextVersion -DownloadFolder "test-next"
+.\ModManager.ps1 -StartServer -UseNextVersion -DownloadFolder "test-next"
+
+# Phase 3: Test latest bleeding edge versions
+.\ModManager.ps1 -UpdateMods
+.\ModManager.ps1 -Download -UseLatestVersion -DownloadFolder "test-latest"
+.\ModManager.ps1 -StartServer -UseLatestVersion -DownloadFolder "test-latest"
+```
+
 ### Quick server validation check
 Fast validation to check server compatibility without downloading
 ```powershell

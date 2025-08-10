@@ -67,7 +67,7 @@ function Download-Mods {
             # Determine filename as in the main loop
             $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
             $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
-            $gameVersion = if (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
+            $gameVersion = if (-not [string]::IsNullOrEmpty($mod.CurrentGameVersion)) { $mod.CurrentGameVersion } elseif (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
             $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
             $downloadUrl = $mod.Url
             $filename = $null
@@ -121,7 +121,7 @@ function Download-Mods {
                 $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
                 
                 # Get game version from CSV, default to "1.21.5" if not specified
-                $gameVersion = if (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
+                $gameVersion = if (-not [string]::IsNullOrEmpty($mod.CurrentGameVersion)) { $mod.CurrentGameVersion } elseif (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
                 
                 # Get JAR filename from CSV
                 $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
@@ -137,7 +137,7 @@ function Download-Mods {
                         # When using latest version, find system entry that matches target game version
                         $matchingSystemEntry = $mods | Where-Object { 
                             $_.Type -eq $mod.Type -and 
-                            $_.GameVersion -eq $targetGameVersion -and
+                            ($_.CurrentGameVersion -eq $targetGameVersion -or $_.GameVersion -eq $targetGameVersion) -and
                             $_.Name -eq $mod.Name 
                         } | Select-Object -First 1
                         

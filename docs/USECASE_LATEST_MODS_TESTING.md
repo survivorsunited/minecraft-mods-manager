@@ -1,14 +1,20 @@
-# Use Case: Testing Latest Mod Versions with Latest Minecraft Server
+# Use Case: Progressive Mod Version Testing (Current → Next → Latest)
 
-This guide explains how to test the latest versions of all mods with the latest Minecraft server using ModManager.ps1.
+This guide explains how to test mod versions progressively using the Current → Next → Latest workflow in ModManager.ps1.
 
 ## Overview
 
-This use case is essential for:
-- **Modpack Development**: Ensuring all mods work together at their latest versions
-- **Server Administration**: Testing compatibility before updating production servers
-- **Quality Assurance**: Identifying compatibility issues before they affect users
-- **Development Workflow**: Validating that the latest mod versions are stable
+The mod manager supports three-tier version testing for safer compatibility testing:
+
+- **Current**: Stable/default versions (e.g., 1.21.5) - production ready
+- **Next**: Next logical version (e.g., 1.21.6) - incremental testing  
+- **Latest**: Bleeding edge versions (e.g., 1.21.8) - newest available
+
+This progressive approach is essential for:
+- **Safe Compatibility Testing**: Incremental updates instead of jumping to bleeding edge
+- **Modpack Development**: Testing mod compatibility step by step
+- **Server Administration**: Validating updates before production deployment
+- **Quality Assurance**: Identifying issues early in the upgrade process
 
 ## Prerequisites
 
@@ -17,7 +23,49 @@ This use case is essential for:
 - modlist.csv database file
 - Internet connection for API access
 
-## Step-by-Step Process
+## Progressive Testing Workflows
+
+### Workflow 1: Next Version Testing (Recommended)
+
+Test the next incremental version for safer compatibility validation:
+
+#### Step 1: Download Next Version Mods
+
+```powershell
+.\ModManager.ps1 -Download -UseNextVersion -DatabaseFile "modlist.csv" -DownloadFolder "download"
+```
+
+**What this does:**
+- Downloads the next logical version of each mod (e.g., 1.21.6 if current is 1.21.5)
+- Uses incremental version progression for safer testing
+- Organizes files by the target game version
+
+#### Step 2: Start Server with Next Versions
+
+```powershell
+.\ModManager.ps1 -StartServer -UseNextVersion -DownloadFolder "download"
+```
+
+**Expected outcomes:**
+- Higher compatibility success rate than jumping to latest
+- Easier to identify specific compatibility issues
+- Safer progression path for production updates
+
+### Workflow 2: Current Version Testing (Default)
+
+Test with current stable versions (no flags needed):
+
+```powershell
+# Download current versions (default behavior)
+.\ModManager.ps1 -Download -DatabaseFile "modlist.csv" -DownloadFolder "download"
+
+# Start server with current versions
+.\ModManager.ps1 -StartServer -DownloadFolder "download"
+```
+
+### Workflow 3: Latest Version Testing (Bleeding Edge)
+
+## Step-by-Step Process (Latest Version Testing)
 
 ### Step 1: Update Mod Database to Latest Versions
 
@@ -100,6 +148,38 @@ Attempt to start the server with all latest mods:
 - **Success**: Server starts successfully (exit code 0)
 - **Compatibility Issues**: Server reports mod conflicts (exit code 1)
 - **Dependency Problems**: Missing or incompatible mods identified
+
+## Command Reference by Testing Type
+
+### Current Version Commands (Default)
+```powershell
+# Download current stable versions
+.\ModManager.ps1 -Download -DatabaseFile "modlist.csv" -DownloadFolder "download"
+
+# Start server with current versions
+.\ModManager.ps1 -StartServer -DownloadFolder "download"
+```
+
+### Next Version Commands (Incremental Testing)
+```powershell
+# Download next incremental versions
+.\ModManager.ps1 -Download -UseNextVersion -DatabaseFile "modlist.csv" -DownloadFolder "download"
+
+# Start server with next versions
+.\ModManager.ps1 -StartServer -UseNextVersion -DownloadFolder "download"
+```
+
+### Latest Version Commands (Bleeding Edge)
+```powershell
+# Update database to latest versions first
+.\ModManager.ps1 -UpdateMods -DatabaseFile "modlist.csv"
+
+# Download latest versions
+.\ModManager.ps1 -Download -UseLatestVersion -DatabaseFile "modlist.csv" -DownloadFolder "download"
+
+# Start server with latest versions
+.\ModManager.ps1 -StartServer -UseLatestVersion -DownloadFolder "download"
+```
 
 ## Complete Command Sequence
 

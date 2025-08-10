@@ -36,26 +36,26 @@ function Validate-AllModVersions {
             
             if ($modHost -eq "curseforge") {
                 Write-Host ("  🔍 Validating CurseForge mod: {0}" -f $mod.Name) -ForegroundColor DarkGray
-                $validationResult = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.Version -Loader $mod.Loader -Jar $mod.Jar -ResponseFolder $ResponseFolder
+                $validationResult = Validate-CurseForgeModVersion -ModId $mod.ID -Version $(if ($mod.CurrentVersion) { $mod.CurrentVersion } else { $mod.Version }) -Loader $mod.Loader -Jar $mod.Jar -ResponseFolder $ResponseFolder
             } else {
                 Write-Host ("  🔍 Validating Modrinth mod: {0}" -f $mod.Name) -ForegroundColor DarkGray
-                $validationResult = Validate-ModVersion -ModId $mod.ID -Version $mod.Version -Loader $mod.Loader -Jar $mod.Jar -ResponseFolder $ResponseFolder
+                $validationResult = Validate-ModVersion -ModId $mod.ID -Version $(if ($mod.CurrentVersion) { $mod.CurrentVersion } else { $mod.Version }) -Loader $mod.Loader -Jar $mod.Jar -ResponseFolder $ResponseFolder
             }
             
             if ($validationResult) {
                 # Add mod information to result
                 $validationResult | Add-Member -MemberType NoteProperty -Name "ID" -Value $mod.ID
                 $validationResult | Add-Member -MemberType NoteProperty -Name "Name" -Value $mod.Name
-                $validationResult | Add-Member -MemberType NoteProperty -Name "ExpectedVersion" -Value $mod.Version
+                $validationResult | Add-Member -MemberType NoteProperty -Name "ExpectedVersion" -Value $(if ($mod.CurrentVersion) { $mod.CurrentVersion } else { $mod.Version })
                 $validationResult | Add-Member -MemberType NoteProperty -Name "Host" -Value $modHost
                 
                 $validationResults += $validationResult
                 
                 # Display result
                 if ($validationResult.Exists) {
-                    Write-Host ("  ✅ {0}: Version {1} exists" -f $mod.Name, $mod.Version) -ForegroundColor Green
+                    Write-Host ("  ✅ {0}: Version {1} exists" -f $mod.Name, $(if ($mod.CurrentVersion) { $mod.CurrentVersion } else { $mod.Version })) -ForegroundColor Green
                 } else {
-                    Write-Host ("  ❌ {0}: Version {1} not found" -f $mod.Name, $mod.Version) -ForegroundColor Red
+                    Write-Host ("  ❌ {0}: Version {1} not found" -f $mod.Name, $(if ($mod.CurrentVersion) { $mod.CurrentVersion } else { $mod.Version })) -ForegroundColor Red
                 }
             }
         }

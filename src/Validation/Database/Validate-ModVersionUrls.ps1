@@ -80,7 +80,7 @@ function Validate-ModVersionUrls {
         
         foreach ($mod in $mods) {
             # Skip entries without version info
-            if ([string]::IsNullOrEmpty($mod.GameVersion)) {
+            if ([string]::IsNullOrEmpty($mod.CurrentGameVersion) -and [string]::IsNullOrEmpty($mod.GameVersion)) {
                 continue
             }
             

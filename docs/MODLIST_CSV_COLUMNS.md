@@ -26,13 +26,14 @@ The `modlist.csv` file is the central database for managing Minecraft mods. It c
 - **Updated By**: User input, Add-ModToDatabase.ps1
 - **Default**: `mod`
 
-#### GameVersion
+#### CurrentGameVersion
 - **Type**: String (Semantic Version)
 - **Required**: Yes
 - **Example**: `1.21.5`
-- **Description**: Target Minecraft version for the mod
+- **Description**: Target Minecraft version for the mod (current stable version)
 - **Updated By**: User input, Add-ModToDatabase.ps1
 - **Default**: `1.21.5`
+- **Migration**: Renamed from `GameVersion` in Current/Next/Latest restructure
 
 #### ID
 - **Type**: String
@@ -51,24 +52,42 @@ The `modlist.csv` file is the central database for managing Minecraft mods. It c
 
 ### Version Information Columns
 
-#### Version
+The version system uses a three-tier Current → Next → Latest progression for incremental compatibility testing:
+
+#### CurrentVersion
 - **Type**: String
 - **Required**: Yes
 - **Example**: `0.127.1+1.21.5`
-- **Description**: Expected/current version of the mod
+- **Description**: Current stable version of the mod being used
 - **Updated By**: User input, Validate-AllModVersions.ps1 (when found by JAR)
+- **Migration**: Renamed from `Version` in Current/Next/Latest restructure
+
+#### NextVersion
+- **Type**: String
+- **Required**: No
+- **Example**: `0.127.1+1.21.6`
+- **Description**: Next incremental version for compatibility testing
+- **Updated By**: Calculate-NextVersionData.ps1, Validate-AllModVersions.ps1
+- **Usage**: Used with `-UseNextVersion` flag for progressive testing
+
+#### NextGameVersion
+- **Type**: String
+- **Required**: No
+- **Example**: `1.21.6`
+- **Description**: Game version for next incremental testing phase
+- **Updated By**: Calculate-NextGameVersion.ps1, Calculate-NextVersionData.ps1
 
 #### LatestVersion
 - **Type**: String
 - **Required**: No
-- **Example**: `0.129.0+1.21.7`
-- **Description**: Latest available version from API
+- **Example**: `0.129.0+1.21.8`
+- **Description**: Latest available version from API (bleeding edge)
 - **Updated By**: Update-ModListWithLatestVersions.ps1
 
 #### LatestGameVersion
 - **Type**: String
 - **Required**: No
-- **Example**: `1.21.7`
+- **Example**: `1.21.8`
 - **Description**: Highest Minecraft version supported by the mod
 - **Updated By**: Update-ModListWithLatestVersions.ps1
 
@@ -138,16 +157,23 @@ The `modlist.csv` file is the central database for managing Minecraft mods. It c
 - **Updated By**: User input (required for system entries)
 - **Test Usage**: Used in 03-SystemEntries.ps1 for server/launcher/installer downloads
 
-#### VersionUrl
+#### CurrentVersionUrl
 - **Type**: String (URL)
 - **Required**: No
 - **Description**: Download URL for current version
 - **Updated By**: Update-ModListWithLatestVersions.ps1
+- **Migration**: Renamed from `VersionUrl` in Current/Next/Latest restructure
+
+#### NextVersionUrl
+- **Type**: String (URL)
+- **Required**: No
+- **Description**: Download URL for next version (used with `-UseNextVersion`)
+- **Updated By**: Calculate-NextVersionData.ps1, Validate-AllModVersions.ps1
 
 #### LatestVersionUrl
 - **Type**: String (URL)
 - **Required**: No
-- **Description**: Download URL for latest version
+- **Description**: Download URL for latest version (used with `-UseLatestVersion`)
 - **Updated By**: Update-ModListWithLatestVersions.ps1
 
 #### IconUrl
@@ -324,6 +350,33 @@ Tests verify that:
 - Dependency columns are properly split and populated
 - AvailableGameVersions contains valid version data
 - RecordHash is calculated correctly for change detection
+
+## Database Migration Notes
+
+### Current/Next/Latest Column Restructure
+
+The database was restructured to support incremental version testing with a Current → Next → Latest progression:
+
+**Column Renames:**
+- `GameVersion` → `CurrentGameVersion`
+- `Version` → `CurrentVersion`
+- `VersionUrl` → `CurrentVersionUrl`
+
+**New Columns Added:**
+- `NextVersion` - Incremental testing version
+- `NextVersionUrl` - Download URL for next version
+- `NextGameVersion` - Game version for next testing phase
+
+**Migration Script:** `src/Database/Migration/Migrate-ToCurrentNextLatest.ps1`
+- Automatically renames existing columns
+- Preserves all existing data
+- Creates backups before migration
+- Supports both migrated and non-migrated databases
+
+**Workflow Flags:**
+- Default: Uses Current* columns
+- `-UseNextVersion`: Uses Next* columns for progressive testing
+- `-UseLatestVersion`: Uses Latest* columns for bleeding edge testing
 
 ## Related Documentation
 

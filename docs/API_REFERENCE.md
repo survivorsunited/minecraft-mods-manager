@@ -10,6 +10,7 @@ This document lists all API calls made by the Minecraft Mod Manager with corresp
 - [Fabric Meta API](#fabric-meta-api)
 - [Mojang API](#mojang-api)
 - [Error Handling](#error-handling)
+- [Function Parameter Updates](#function-parameter-updates)
 - [Testing Scripts](#testing-scripts)
 
 ---
@@ -397,6 +398,73 @@ curl -X GET \
   -H "x-api-key: invalid-key" \
   "https://api.curseforge.com/v1/mods/357540"
 ```
+
+### New Workflow Flags
+
+The Current/Next/Latest workflow introduced new parameters to ModManager.ps1:
+
+#### `-UseNextVersion`
+- **Purpose**: Use NextVersion and NextVersionUrl columns for progressive testing
+- **Usage**: `.\ModManager.ps1 -Download -UseNextVersion -DatabaseFile "modlist.csv"`
+- **Behavior**: Downloads the next incremental version (e.g., 1.21.6 if current is 1.21.5)
+- **Recommended for**: Safer compatibility testing with smaller version jumps
+
+#### `-UseLatestVersion`
+- **Purpose**: Use LatestVersion and LatestVersionUrl columns for bleeding edge testing
+- **Usage**: `.\ModManager.ps1 -Download -UseLatestVersion -DatabaseFile "modlist.csv"`
+- **Behavior**: Downloads the newest available version from API
+- **Recommended for**: Testing cutting-edge compatibility
+
+### Updated Column References
+
+Functions now reference the restructured column names:
+
+**Database Columns:**
+- `GameVersion` → `CurrentGameVersion`
+- `Version` → `CurrentVersion`
+- `VersionUrl` → `CurrentVersionUrl`
+
+**New Columns:**
+- `NextVersion` - Incremental testing version
+- `NextVersionUrl` - Download URL for next version
+- `NextGameVersion` - Game version for next testing phase
+
+### Function Parameter Changes
+
+#### ModManager.ps1
+```powershell
+# Current version (default)
+.\ModManager.ps1 -Download -DatabaseFile "modlist.csv"
+
+# Next version testing
+.\ModManager.ps1 -Download -UseNextVersion -DatabaseFile "modlist.csv"
+
+# Latest version testing
+.\ModManager.ps1 -Download -UseLatestVersion -DatabaseFile "modlist.csv"
+```
+
+#### Validate-AllModVersions.ps1
+Now populates all three version tiers:
+- CurrentVersion/CurrentVersionUrl
+- NextVersion/NextVersionUrl (calculated)
+- LatestVersion/LatestVersionUrl (from API)
+
+#### Add-ModToDatabase.ps1
+Uses new column structure:
+```powershell
+Add-ModToDatabase -Name "Fabric API" -ID "fabric-api" -CurrentGameVersion "1.21.5"
+```
+
+### Migration Notes
+
+**Backward Compatibility:**
+- Functions automatically detect old vs new column structure
+- Migration script: `src/Database/Migration/Migrate-ToCurrentNextLatest.ps1`
+- Existing databases work without migration (legacy column support)
+
+**Breaking Changes:**
+- Direct column references in custom scripts need updating
+- Use helper functions to access version data instead of hardcoded column names
 
 ---
 

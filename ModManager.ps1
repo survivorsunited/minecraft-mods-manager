@@ -33,6 +33,7 @@ param(
     [switch]$DownloadServer,
     [switch]$StartServer,
     [string]$GameVersion,
+    [string]$TargetVersion,
     [switch]$ClearServer,
     [switch]$AddServerStartScript,
     [string]$DeleteModID,
@@ -167,7 +168,10 @@ if ($UpdateMods) {
 # Handle Download parameter
 if ($Download) {
     Write-Host "Starting mod download process..." -ForegroundColor Yellow
-    if ($UseLatestVersion) {
+    if ($TargetVersion) {
+        Write-Host "Targeting specific game version: $TargetVersion..." -ForegroundColor Cyan
+        Download-Mods -CsvPath $effectiveModListPath -TargetGameVersion $TargetVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+    } elseif ($UseLatestVersion) {
         Write-Host "Using latest versions for download..." -ForegroundColor Cyan
         Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
         Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
@@ -253,9 +257,12 @@ if ($StartServer) {
     # Determine target version (use parameter if provided, otherwise use next version for testing)
     Write-Host "🔍 Determining target game version..." -ForegroundColor Cyan
     
-    if ($GameVersion) {
+    if ($TargetVersion) {
+        $targetVersion = $TargetVersion
+        Write-Host "🎯 Target version: $targetVersion (user specified via TargetVersion)" -ForegroundColor Green
+    } elseif ($GameVersion) {
         $targetVersion = $GameVersion
-        Write-Host "🎯 Target version: $targetVersion (user specified)" -ForegroundColor Green
+        Write-Host "🎯 Target version: $targetVersion (user specified via GameVersion)" -ForegroundColor Green
     } else {
         # Use next version to test if newer versions will work
         $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath

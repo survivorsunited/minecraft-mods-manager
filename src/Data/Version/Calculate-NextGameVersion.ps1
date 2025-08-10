@@ -38,8 +38,9 @@ function Calculate-NextGameVersion {
         
         # Get all available versions from database
         $mods = Import-Csv -Path $CsvPath
-        $allVersions = $mods | Where-Object { -not [string]::IsNullOrEmpty($_.GameVersion) } |
-                       Select-Object -ExpandProperty GameVersion -Unique |
+        $allVersions = $mods | Where-Object { -not [string]::IsNullOrEmpty($_.CurrentGameVersion) -or -not [string]::IsNullOrEmpty($_.GameVersion) } |
+                       ForEach-Object { if ($_.CurrentGameVersion) { $_.CurrentGameVersion } else { $_.GameVersion } } |
+                       Select-Object -Unique |
                        Sort-Object { [version]$_ }
         
         Write-Host "📋 Available versions in database: $($allVersions -join ', ')" -ForegroundColor Gray
@@ -87,7 +88,7 @@ function Calculate-NextGameVersion {
         }
         
         # Check if next version has any mod support
-        $nextVersionMods = $mods | Where-Object { $_.GameVersion -eq $nextVersion }
+        $nextVersionMods = $mods | Where-Object { $_.CurrentGameVersion -eq $nextVersion -or $_.GameVersion -eq $nextVersion }
         $modCount = $nextVersionMods.Count
         
         $result = @{
