@@ -173,12 +173,11 @@ if ($Download) {
         Download-Mods -CsvPath $effectiveModListPath -TargetGameVersion $TargetVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
     } elseif ($UseLatestVersion) {
         Write-Host "Using latest versions for download..." -ForegroundColor Cyan
-        Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
-        Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
+        Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
     } elseif ($UseNextVersion) {
         Write-Host "Using next versions for download..." -ForegroundColor Cyan
         Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
-        Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -ForceDownload:$ForceDownload
+        Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
     } else {
         Write-Host "Using current versions for download..." -ForegroundColor Cyan
         Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
@@ -191,12 +190,11 @@ if ($DownloadMods) {
     Write-Host "Starting mod download process..." -ForegroundColor Yellow
     if ($UseLatestVersion) {
         Write-Host "Using latest versions for download..." -ForegroundColor Cyan
-        Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
-        Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload
+        Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
     } elseif ($UseNextVersion) {
         Write-Host "Using next versions for download..." -ForegroundColor Cyan
         Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
-        Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -ForceDownload:$ForceDownload
+        Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
     } else {
         Write-Host "Using current versions for download..." -ForegroundColor Cyan
         Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
@@ -207,7 +205,7 @@ if ($DownloadMods) {
 # Handle DownloadServer parameter
 if ($DownloadServer) {
     Write-Host "Starting server files download process..." -ForegroundColor Yellow
-    Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload
+    Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload -GameVersion $TargetVersion
     Exit-ModManager 0
 }
 
