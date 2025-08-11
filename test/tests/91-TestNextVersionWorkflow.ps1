@@ -28,44 +28,107 @@ New-Item -ItemType Directory -Path $TestDownloadDir -Force | Out-Null
 # Copy the main database instead of using test data
 Copy-Item -Path "$PSScriptRoot\..\..\modlist.csv" -Destination $TestDbPath -Force
 
-Write-TestHeader "Current Version Download Test"
-Test-Command "& '$ModManagerPath' -DatabaseFile '$TestDbPath' -Download -ForceDownload -DownloadFolder '$TestDownloadDir' -ApiResponseFolder '$script:TestApiResponseDir'" "Current version download" 0 $null $TestFileName
+Write-TestHeader "Server Files Download Test"
+Test-Command "& '$ModManagerPath' -DownloadServer -DownloadFolder '$TestDownloadDir' -TargetVersion '1.21.6'" "Download server files for next version" 0 $null $TestFileName
 
-Write-TestHeader "Next Version Download Test"
-# Test direct download with target version instead of UseNextVersion
-try {
-    $result = & $ModManagerPath -DatabaseFile $TestDbPath -Download -ForceDownload -DownloadFolder $TestDownloadDir -TargetVersion "1.21.6" -ApiResponseFolder $script:TestApiResponseDir
-    Write-TestResult "Next version download with TargetVersion" ($LASTEXITCODE -eq 0) $TestFileName
-} catch {
-    Write-TestResult "Next version download failed: $_" $false $TestFileName
+# Validate server files were actually downloaded
+$serverDir = Join-Path $TestDownloadDir "1.21.6"
+$serverJarExists = $false
+$fabricJarExists = $false
+
+if (Test-Path $serverDir) {
+    $serverFiles = Get-ChildItem -Path $serverDir -Filter "*.jar"
+    foreach ($file in $serverFiles) {
+        if ($file.Name -like "*minecraft_server*" -or $file.Name -eq "server.jar") {
+            $serverJarExists = $true
+            Write-Host "  ✓ Found Minecraft server: $($file.Name)" -ForegroundColor Green
+        }
+        if ($file.Name -like "*fabric-server*") {
+            $fabricJarExists = $true
+            Write-Host "  ✓ Found Fabric launcher: $($file.Name)" -ForegroundColor Green
+        }
+    }
+    
+    # Also check specific expected files
+    $mcServerFile = Join-Path $serverDir "minecraft_server.1.21.6.jar"
+    $fabricFile = Join-Path $serverDir "fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar"
+    $fabricLauncherFile = Join-Path $serverDir "fabric-server-launcher.1.21.6.jar"
+    $serverFile = Join-Path $serverDir "server.jar"
+    
+    if ((Test-Path $mcServerFile) -and -not $serverJarExists) {
+        $serverJarExists = $true
+        Write-Host "  ✓ Found specific Minecraft server: minecraft_server.1.21.6.jar" -ForegroundColor Green
+    }
+    if ((Test-Path $fabricFile) -and -not $fabricJarExists) {
+        $fabricJarExists = $true
+        Write-Host "  ✓ Found specific Fabric launcher: fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar" -ForegroundColor Green
+    }
+    if ((Test-Path $serverFile) -and -not $serverJarExists) {
+        $serverJarExists = $true
+        Write-Host "  ✓ Found generic server.jar" -ForegroundColor Green
+    }
 }
 
-Write-TestHeader "Server Files Download Test"
-# Manually download server files since DownloadServerFiles might have issues
-try {
-    # Use hardcoded next version to avoid triggering ModManager validation
-    $nextVersion = "1.21.6"
+Write-TestResult "Minecraft server JAR downloaded for 1.21.6" $serverJarExists $TestFileName
+Write-TestResult "Fabric launcher JAR downloaded for 1.21.6" $fabricJarExists $TestFileName
+
+Write-TestHeader "Next Version Mods Download Test"
+Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -DownloadFolder '$TestDownloadDir' -UseNextVersion -ApiResponseFolder '$script:TestApiResponseDir'" "Download mods for next version" 0 $null $TestFileName
+
+Write-TestHeader "CRITICAL: Verify fabric-api Downloaded Correct 1.21.6 Version"
+
+# Check that fabric-api downloaded correct 1.21.6 version
+$fabricApiModsPath = Join-Path $TestDownloadDir "1.21.6" "mods"
+if (Test-Path $fabricApiModsPath) {
+    $fabricApiFile = Get-ChildItem -Path $fabricApiModsPath -Filter "fabric-api*" -File | Select-Object -First 1
     
-    $serverDir = Join-Path $TestDownloadDir $nextVersion
-    New-Item -ItemType Directory -Path $serverDir -Force | Out-Null
-    
-    # Download Minecraft server for next version
-    $mcServerUrl = "https://piston-data.mojang.com/v1/objects/4707d00eb834b446575d89a61a11b5d548d8c001/server.jar"
-    $mcServerPath = Join-Path $serverDir "minecraft_server.$nextVersion.jar"
-    if (-not (Test-Path $mcServerPath)) {
-        Invoke-WebRequest -Uri $mcServerUrl -OutFile $mcServerPath -UseBasicParsing
+    if ($fabricApiFile) {
+        Write-Host "  Found fabric-api: $($fabricApiFile.Name)" -ForegroundColor Cyan
+        
+        # Check for correct 1.21.6 version (should be 0.128.2+1.21.6 based on our fixes)
+        if ($fabricApiFile.Name -match "0\.128\.2\+1\.21\.6" -or $fabricApiFile.Name -match "1\.21\.6") {
+            Write-TestResult "fabric-api downloaded correct 1.21.6 version" $true $TestFileName
+            Write-Host "    ✅ SUCCESS: fabric-api has correct 1.21.6 version!" -ForegroundColor Green
+            Write-Host "    Expected 0.128.2+1.21.6, got: $($fabricApiFile.Name)" -ForegroundColor Green
+        } else {
+            Write-TestResult "fabric-api downloaded correct 1.21.6 version" $false $TestFileName
+            Write-Host "    ❌ CRITICAL FAILURE: fabric-api downloaded wrong version!" -ForegroundColor Red
+            Write-Host "    Expected: 0.128.2+1.21.6 (from NextVersion field)" -ForegroundColor Red
+            Write-Host "    Got: $($fabricApiFile.Name)" -ForegroundColor Red
+            Write-Host "    This indicates NextVersion field is not being used for downloads!" -ForegroundColor Red
+        }
+    } else {
+        Write-TestResult "fabric-api downloaded for Next workflow" $false $TestFileName
+        Write-Host "    ❌ fabric-api not found in downloaded mods!" -ForegroundColor Red
     }
     
-    # Download Fabric server launcher for next version
-    $fabricUrl = "https://meta.fabricmc.net/v2/versions/loader/$nextVersion/0.16.14/1.0.3/server/jar"
-    $fabricPath = Join-Path $serverDir "fabric-server-mc.$nextVersion-loader.0.16.14-launcher.1.0.3.jar"
-    if (-not (Test-Path $fabricPath)) {
-        Invoke-WebRequest -Uri $fabricUrl -OutFile $fabricPath -UseBasicParsing
+    # Quick analysis of all mod versions
+    $allModFiles = Get-ChildItem -Path $fabricApiModsPath -Filter "*.jar" -File
+    $wrongVersionCount = 0
+    $correctVersionCount = 0
+    
+    foreach ($modFile in $allModFiles) {
+        if ($modFile.Name -match "1\.21\.5") {
+            $wrongVersionCount++
+        } elseif ($modFile.Name -match "1\.21\.6") {
+            $correctVersionCount++
+        }
     }
     
-    Write-TestResult "Server files downloaded for next version" $true $TestFileName
-} catch {
-    Write-TestResult "Server files download failed: $_" $false $TestFileName
+    Write-Host "  Mod version analysis:" -ForegroundColor Yellow
+    Write-Host "    Total mods: $($allModFiles.Count)" -ForegroundColor Gray
+    Write-Host "    Wrong versions (1.21.5): $wrongVersionCount" -ForegroundColor $(if ($wrongVersionCount -gt 0) { "Red" } else { "Green" })
+    Write-Host "    Correct versions (1.21.6): $correctVersionCount" -ForegroundColor $(if ($correctVersionCount -gt 0) { "Green" } else { "Yellow" })
+    
+    if ($wrongVersionCount -eq 0) {
+        Write-TestResult "No wrong versions downloaded" $true $TestFileName
+    } else {
+        Write-TestResult "No wrong versions downloaded" $false $TestFileName
+        Write-Host "    ❌ $wrongVersionCount mods have wrong 1.21.5 versions!" -ForegroundColor Red
+    }
+} else {
+    Write-TestResult "Mods folder exists for 1.21.6" $false $TestFileName
+    Write-Host "    ❌ Mods folder not found: $fabricApiModsPath" -ForegroundColor Red
 }
 
 Write-TestHeader "Database vs Downloads Verification"
@@ -128,32 +191,165 @@ $mcServerJar = Join-Path $serverDir "minecraft_server.1.21.6.jar"
 Write-TestResult "Fabric server JAR exists for next version" (Test-Path $fabricJar) $TestFileName
 Write-TestResult "Minecraft server JAR exists for next version" (Test-Path $mcServerJar) $TestFileName
 
-Write-TestHeader "Server Initialization Test"
-try {
-    $serverDir = Join-Path $TestDownloadDir "1.21.6"
+# Server startup test - actually start the server and validate it runs
+Write-TestHeader "Server Startup Test (Next Version)"
+Write-Host "  Starting Minecraft server with next version mods (1.21.6)..." -ForegroundColor Cyan
+
+# First create eula.txt to allow server to start
+$serverDir = Join-Path $TestDownloadDir "1.21.6"
+$eulaPath = Join-Path $serverDir "eula.txt"
+"eula=true" | Out-File -FilePath $eulaPath -Encoding utf8
+
+# Verify mods are in place before starting
+$modsPath = Join-Path $serverDir "mods"
+if (Test-Path $modsPath) {
+    $modFiles = Get-ChildItem -Path $modsPath -Filter "*.jar" -ErrorAction SilentlyContinue
+    $modCount = $modFiles.Count
+    Write-Host "  Found $modCount mods ready to load for 1.21.6" -ForegroundColor Cyan
     
-    # Create eula.txt to allow server to start
-    $eulaPath = Join-Path $serverDir "eula.txt"
-    "eula=true" | Out-File -FilePath $eulaPath -Encoding utf8
+    # CRITICAL VALIDATION: Check if mods are actually 1.21.6 versions
+    Write-TestHeader "Critical Mod Version Validation for 1.21.6"
     
-    # Create basic server.properties
-    $propsPath = Join-Path $serverDir "server.properties"
-    @"
-online-mode=false
-server-port=25566
-max-players=20
-"@ | Out-File -FilePath $propsPath -Encoding utf8
+    $wrongVersionMods = @()
+    $correctVersionMods = @()
+    $unknownVersionMods = @()
     
-    Write-TestResult "Server configuration created for next version" $true $TestFileName
+    foreach ($modFile in $modFiles) {
+        $fileName = $modFile.Name
+        if ($fileName -match "1\.21\.5") {
+            $wrongVersionMods += $fileName
+        } elseif ($fileName -match "1\.21\.6") {
+            $correctVersionMods += $fileName
+        } else {
+            $unknownVersionMods += $fileName
+        }
+    }
     
-    # Verify mods are in the right place
-    $modsPath = Join-Path $serverDir "mods"
+    # Check critical fabric-api specifically
+    $fabricApiFile = $modFiles | Where-Object { $_.Name -like "*fabric-api*" } | Select-Object -First 1
+    if ($fabricApiFile) {
+        Write-Host "  Found fabric-api: $($fabricApiFile.Name)" -ForegroundColor Cyan
+        if ($fabricApiFile.Name -match "1\.21\.6") {
+            Write-TestResult "fabric-api is correct 1.21.6 version" $true
+            Write-Host "    ✓ fabric-api version is correct for Next workflow" -ForegroundColor Green
+        } else {
+            Write-TestResult "fabric-api is correct 1.21.6 version" $false
+            Write-Host "    ❌ CRITICAL FAILURE: fabric-api is wrong version for Next workflow!" -ForegroundColor Red
+            Write-Host "    Expected: fabric-api with 1.21.6 version" -ForegroundColor Red
+            Write-Host "    Got: $($fabricApiFile.Name)" -ForegroundColor Red
+        }
+    } else {
+        Write-TestResult "fabric-api found in Next workflow" $false
+        Write-Host "    ❌ fabric-api not found!" -ForegroundColor Red
+    }
+    
+    # Report version analysis
+    Write-Host "  Mod version analysis:" -ForegroundColor Yellow
+    Write-Host "    Wrong versions (1.21.5): $($wrongVersionMods.Count)" -ForegroundColor $(if ($wrongVersionMods.Count -gt 0) { "Red" } else { "Green" })
+    Write-Host "    Correct versions (1.21.6): $($correctVersionMods.Count)" -ForegroundColor $(if ($correctVersionMods.Count -gt 0) { "Green" } else { "Red" })
+    Write-Host "    Unknown/No version: $($unknownVersionMods.Count)" -ForegroundColor Gray
+    
+    if ($wrongVersionMods.Count -gt 0) {
+        Write-TestResult "All mods are Next (1.21.6) versions" $false
+        Write-Host "    ❌ CRITICAL: Found $($wrongVersionMods.Count) mods with wrong version!" -ForegroundColor Red
+        Write-Host "    Wrong version mods (first 5):" -ForegroundColor Red
+        $wrongVersionMods | Select-Object -First 5 | ForEach-Object {
+            Write-Host "      - $_" -ForegroundColor Red
+        }
+        if ($wrongVersionMods.Count -gt 5) {
+            Write-Host "      ... and $($wrongVersionMods.Count - 5) more wrong versions" -ForegroundColor Red
+        }
+    } else {
+        Write-TestResult "All mods are Next (1.21.6) versions" $true
+        Write-Host "    ✓ All mods appear to be correct versions" -ForegroundColor Green
+    }
+}
+
+# Start the server in background and capture output
+Write-Host "  Launching server process for next version..." -ForegroundColor Yellow
+$serverProcess = Start-Process -FilePath "pwsh" -ArgumentList @(
+    "-NoProfile",
+    "-ExecutionPolicy", "Bypass",
+    "-File", $ModManagerPath,
+    "-StartServer",
+    "-DownloadFolder", $TestDownloadDir,
+    "-TargetVersion", "1.21.6",
+    "-DatabaseFile", $TestDbPath
+) -WorkingDirectory $serverDir -PassThru -RedirectStandardOutput "$TestOutputDir\server-output.log" -RedirectStandardError "$TestOutputDir\server-error.log"
+
+# Wait for server to initialize (max 60 seconds for full mod loading)
+$maxWaitTime = 60
+$waitedTime = 0
+$serverStarted = $false
+
+Write-Host "  Waiting for next version server to initialize (max $maxWaitTime seconds)..." -ForegroundColor Cyan
+
+while ($waitedTime -lt $maxWaitTime -and -not $serverStarted) {
+    Start-Sleep -Seconds 2
+    $waitedTime += 2
+    
+    # Check if server log exists and contains startup messages
+    $logPath = Join-Path $serverDir "logs\latest.log"
+    if (Test-Path $logPath) {
+        $logContent = Get-Content $logPath -ErrorAction SilentlyContinue
+        if ($logContent -match "Done \(" -or $logContent -match "Successfully loaded") {
+            $serverStarted = $true
+            Write-Host "  ✓ Next version server started successfully!" -ForegroundColor Green
+        }
+    }
+    
+    # Also check our output log
+    $outputLog = "$TestOutputDir\server-output.log"
+    if (Test-Path $outputLog) {
+        $outputContent = Get-Content $outputLog -ErrorAction SilentlyContinue
+        if ($outputContent -match "SERVER VALIDATION SUCCESSFUL" -or $outputContent -match "Server started successfully") {
+            $serverStarted = $true
+            Write-Host "  ✓ Next version server validation passed!" -ForegroundColor Green
+        }
+    }
+    
+    # Check if server process completed successfully
+    if ($serverProcess.HasExited -and $serverProcess.ExitCode -eq 0) {
+        $serverStarted = $true
+        Write-Host "  ✓ Next version server process completed successfully (exit code 0)!" -ForegroundColor Green
+        break
+    }
+    
+    # Check if process is still running
+    if ($serverProcess.HasExited) {
+        Write-Host "  Next version server process exited with code: $($serverProcess.ExitCode)" -ForegroundColor Yellow
+        break
+    }
+    
+    Write-Host "  Waited $waitedTime seconds..." -ForegroundColor Gray
+}
+
+# Stop the server if it's still running
+if (-not $serverProcess.HasExited) {
+    Write-Host "  Stopping next version server process..." -ForegroundColor Yellow
+    Stop-Process -Id $serverProcess.Id -Force -ErrorAction SilentlyContinue
+    Start-Sleep -Seconds 2
+}
+
+Write-TestResult "Next version server started successfully" $serverStarted $TestFileName
+
+# Check for any errors in server logs
+$errorLog = "$TestOutputDir\server-error.log"
+if (Test-Path $errorLog) {
+    $errors = Get-Content $errorLog -ErrorAction SilentlyContinue
+    if ($errors -and $errors.Length -gt 0) {
+        Write-Host "  ⚠️ Next version server reported errors:" -ForegroundColor Yellow
+        $errors | Select-Object -First 5 | ForEach-Object { Write-Host "    $_" -ForegroundColor Yellow }
+    }
+}
+
+# Validate server loaded mods
+if (Test-Path $modsPath) {
     $modCount = (Get-ChildItem -Path $modsPath -Filter "*.jar" -ErrorAction SilentlyContinue).Count
-    Write-TestResult "Server has mods ready for next version" ($modCount -ge 0) $TestFileName
-    
-} catch {
-    Write-TestResult "Server initialization failed: $($_.Exception.Message)" $false $TestFileName
+    Write-TestResult "Next version server loaded $modCount mods" ($modCount -gt 0) $TestFileName
+} else {
+    Write-TestResult "Next version mods folder exists" $false $TestFileName
 }
 
 # Final summary
-Write-TestSummary $TestFileName
+Show-TestSummary -WorkflowType "Next"

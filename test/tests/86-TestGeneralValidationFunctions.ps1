@@ -8,8 +8,8 @@ param(
 # Import test framework
 . "$PSScriptRoot/../TestFramework.ps1"
 
-$testName = "Next Version Validation Test"
-Initialize-Test -TestName $testName -TestDir $TestDir
+$TestFileName = "83-TestNextVersionValidation.ps1"
+Initialize-TestEnvironment $TestFileName -UseMigratedSchema
 
 try {
     Write-Host "=== Test 83: Next Version Validation Test ===" -ForegroundColor Cyan
@@ -269,5 +269,5 @@ Group,Type,CurrentGameVersion,ID,Loader,CurrentVersion,Name,Description,Jar,Url,
     Write-Host "Error: $($_.Exception.Message)" -ForegroundColor Red
     $global:FailedTests++
 } finally {
-    Finalize-Test
+    Show-TestSummary
 }

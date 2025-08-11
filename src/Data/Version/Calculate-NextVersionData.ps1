@@ -117,27 +117,73 @@ function Calculate-NextVersionData {
             $nextVersionSupported = $availableVersions | Where-Object { $_ -eq $nextGameVersion }
             
             if ($nextVersionSupported) {
-                # Mod supports next game version
+                # Mod supports next game version - QUERY API FOR ACTUAL VERSION
                 $mod.NextGameVersion = $nextGameVersion
                 
-                # For now, set Next version same as Latest if it supports next game version
-                # In a more sophisticated implementation, we'd query API for specific version
-                if ($mod.LatestGameVersion -eq $nextGameVersion -or 
-                    ($availableVersions | Where-Object { $_ -eq $nextGameVersion })) {
-                    $mod.NextVersion = $mod.LatestVersion
-                    $mod.NextVersionUrl = $mod.LatestVersionUrl
-                } else {
-                    # Use current version as fallback
-                    $mod.NextVersion = $mod.CurrentVersion  
-                    $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                # Query API to get the actual version for the next game version
+                try {
+                    Write-Host "    Querying API for $($mod.Name) version $nextGameVersion..." -ForegroundColor Gray
+                    
+                    $apiUrl = "https://api.modrinth.com/v2/project/$($mod.ID)/version?loaders=[`"fabric`"]&game_versions=[`"$nextGameVersion`"]"
+                    $headers = @{
+                        'Accept' = 'application/json'
+                        'User-Agent' = 'MinecraftModManager/1.0'
+                    }
+                    
+                    $apiResponse = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get -TimeoutSec 30
+                    
+                    if ($apiResponse -and $apiResponse.Count -gt 0) {
+                        $nextVersion = $apiResponse[0]
+                        $mod.NextVersion = $nextVersion.version_number
+                        $mod.NextVersionUrl = $nextVersion.files[0].url
+                        
+                        Write-Host "      ✓ Found $($mod.Name) $nextGameVersion version: $($mod.NextVersion)" -ForegroundColor Green
+                        
+                        $updateSummary += [PSCustomObject]@{
+                            Name = $mod.Name
+                            Action = "API Updated"
+                            NextVersion = $mod.NextVersion
+                            Supports = "Yes (API verified)"
+                        }
+                    } else {
+                        # No API response, fallback to latest if it supports next game version
+                        if ($mod.LatestGameVersion -eq $nextGameVersion) {
+                            $mod.NextVersion = $mod.LatestVersion
+                            $mod.NextVersionUrl = $mod.LatestVersionUrl
+                        } else {
+                            $mod.NextVersion = $mod.CurrentVersion
+                            $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                        }
+                        
+                        Write-Host "      ⚠ No API response, using fallback: $($mod.NextVersion)" -ForegroundColor Yellow
+                        
+                        $updateSummary += [PSCustomObject]@{
+                            Name = $mod.Name
+                            Action = "Fallback"
+                            NextVersion = $mod.NextVersion
+                            Supports = "Yes (fallback)"
+                        }
+                    }
+                } catch {
+                    # API error, use fallback
+                    Write-Host "      ❌ API error for $($mod.Name): $($_.Exception.Message)" -ForegroundColor Red
+                    
+                    if ($mod.LatestGameVersion -eq $nextGameVersion) {
+                        $mod.NextVersion = $mod.LatestVersion
+                        $mod.NextVersionUrl = $mod.LatestVersionUrl
+                    } else {
+                        $mod.NextVersion = $mod.CurrentVersion
+                        $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                    }
+                    
+                    $updateSummary += [PSCustomObject]@{
+                        Name = $mod.Name
+                        Action = "Error Fallback"
+                        NextVersion = $mod.NextVersion
+                        Supports = "Unknown"
+                    }
                 }
                 
-                $updateSummary += [PSCustomObject]@{
-                    Name = $mod.Name
-                    Action = "Updated"
-                    NextVersion = $mod.NextVersion
-                    Supports = "Yes"
-                }
                 $updateCount++
             } else {
                 # Find highest compatible version below next

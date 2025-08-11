@@ -91,11 +91,11 @@ function Download-Mods {
             Write-Host "Targeting specified game version: $targetGameVersion" -ForegroundColor Green
             Write-Host ""
         } elseif ($UseLatestVersion) {
-            # Use majority version for latest downloads
-            $versionResult = Get-MajorityGameVersion -CsvPath $CsvPath
+            # Use majority latest version for latest downloads
+            $versionResult = Get-MajorityLatestGameVersion -CsvPath $CsvPath
             $targetGameVersion = $versionResult.MajorityVersion
             $versionAnalysis = $versionResult.Analysis
-            Write-Host "Targeting majority game version: $targetGameVersion" -ForegroundColor Green
+            Write-Host "Targeting majority latest game version: $targetGameVersion" -ForegroundColor Green
             Write-Host ""
         } elseif ($UseNextVersion) {
             # Use next version for next version downloads
@@ -140,13 +140,12 @@ function Download-Mods {
                 Write-Host "Will clear version folders: $($versionsToClear -join ', ')" -ForegroundColor Yellow
             }
             
-            # Clear the specific version folders
-            foreach ($version in $versionsToClear) {
-                $versionFolder = Join-Path $DownloadFolder $version
-                if (Test-Path $versionFolder) {
-                    Remove-Item -Recurse -Force $versionFolder -ErrorAction SilentlyContinue
-                    Write-Host "Cleared version folder: $version" -ForegroundColor Yellow
-                }
+            # Clear the target version folder completely  
+            $versionFolder = Join-Path $DownloadFolder $targetGameVersion
+            if (Test-Path $versionFolder) {
+                Write-Host "🗑️ Clearing ALL files in: $versionFolder" -ForegroundColor Yellow
+                Remove-Item -Recurse -Force $versionFolder -ErrorAction SilentlyContinue
+                Write-Host "✅ Cleared version folder: $targetGameVersion" -ForegroundColor Yellow
             }
         } else {
             Write-Host "📦 Ensuring mods are available (using cache when possible)..." -ForegroundColor Cyan
@@ -162,55 +161,13 @@ function Download-Mods {
         
         # Track files that existed before the download loop
         $preExistingFiles = @{}
-        $downloadedThisRun = @{}
-        foreach ($mod in $mods) {
-            # Determine filename as in the main loop
-            $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
-            $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
-            $gameVersion = if (-not [string]::IsNullOrEmpty($mod.CurrentGameVersion)) { $mod.CurrentGameVersion } elseif (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
-            $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
-            $downloadUrl = $mod.Url
-            $filename = $null
-            if ($mod.Type -in @("installer", "launcher", "server")) {
-                if ($jarFilename) {
-                    $filename = $jarFilename
-                } else {
-                    $filename = [System.IO.Path]::GetFileName($downloadUrl)
-                    if (-not $filename -or $filename -eq "") {
-                        $filename = "$($mod.ID)-$($mod.Version).jar"
-                    }
-                }
-            } elseif ($jarFilename -and -not $UseLatestVersion -and -not $UseNextVersion) {
-                $filename = $jarFilename
-            } else {
-                $filename = [System.IO.Path]::GetFileName($downloadUrl)
-                if (-not $filename -or $filename -eq "") {
-                    $filename = "$($mod.ID)-$($mod.Version).jar"
-                }
-            }
-            if ($mod.Type -eq "shaderpack") {
-                $filename = Clean-Filename $filename
-            }
-            $gameVersionFolder = if ($UseLatestVersion -or $UseNextVersion -or $TargetGameVersion) { Join-Path $DownloadFolder $targetGameVersion } else { Join-Path $DownloadFolder $gameVersion }
-            if ($mod.Type -eq "shaderpack") {
-                $gameVersionFolder = Join-Path $gameVersionFolder "shaderpacks"
-            } elseif ($mod.Type -eq "installer") {
-                $gameVersionFolder = Join-Path $gameVersionFolder "installer"
-            } elseif ($mod.Type -eq "modpack") {
-                $gameVersionFolder = Join-Path $gameVersionFolder "modpacks"
-            } elseif ($mod.Type -eq "launcher" -or $mod.Type -eq "server") {
-                # No subfolder
-            } else {
-                $gameVersionFolder = Join-Path $gameVersionFolder "mods"
-                if ($mod.Group -eq "block") {
-                    $gameVersionFolder = Join-Path $gameVersionFolder "block"
-                }
-            }
-            $downloadPath = Join-Path $gameVersionFolder $filename
-            if (Test-Path $downloadPath) {
-                $preExistingFiles[$downloadPath] = $true
-            }
+        # Use file-based deduplication to prevent duplicates across script runs
+        $dedupFile = Join-Path $DownloadFolder ".downloaded_mods"
+        $alreadyDownloaded = @{}
+        if (Test-Path $dedupFile) {
+            $alreadyDownloaded = Get-Content $dedupFile | ConvertFrom-Json -AsHashtable
         }
+        $downloadedThisRun = @{}
         
         foreach ($mod in $mods) {
             if (-not [string]::IsNullOrEmpty($mod.ID)) {
@@ -237,13 +194,13 @@ function Download-Mods {
                         # When using latest/next version, find system entry that matches target game version
                         $matchingSystemEntry = $mods | Where-Object { 
                             $_.Type -eq $mod.Type -and 
-                            $_.GameVersion -eq $targetGameVersion -and
+                            $_.CurrentGameVersion -eq $targetGameVersion -and
                             $_.Name -eq $mod.Name 
                         } | Select-Object -First 1
                         
                         if ($matchingSystemEntry) {
                             $downloadUrl = $matchingSystemEntry.Url
-                            $downloadVersion = $matchingSystemEntry.Version
+                            $downloadVersion = $matchingSystemEntry.CurrentVersion
                             $jarFilename = $matchingSystemEntry.Jar
                         } else {
                             Write-Host "❌ $($mod.Name): No $($mod.Type) found for game version $targetGameVersion" -ForegroundColor Red
@@ -251,7 +208,7 @@ function Download-Mods {
                                 Name = $mod.Name
                                 Type = $mod.Type
                                 RequiredVersion = $targetGameVersion
-                                AvailableVersions = ($mods | Where-Object { $_.Type -eq $mod.Type -and $_.Name -eq $mod.Name } | Select-Object -ExpandProperty GameVersion) -join ", "
+                                AvailableVersions = ($mods | Where-Object { $_.Type -eq $mod.Type -and $_.Name -eq $mod.Name } | Select-Object -ExpandProperty CurrentGameVersion) -join ", "
                             }
                             $errorCount++
                             continue
@@ -260,7 +217,7 @@ function Download-Mods {
                         # For current versions, use the direct URL from the current entry
                         if ($mod.Url) {
                             $downloadUrl = $mod.Url
-                            $downloadVersion = $mod.Version
+                            $downloadVersion = $mod.CurrentVersion
                             # Keep the original jarFilename for system entries when not using latest version
                         } else {
                             # For server/launcher entries with no URL, delegate to dedicated server download function
@@ -324,6 +281,14 @@ function Download-Mods {
                         continue
                     }
                 }
+                
+                # Skip this mod entry if we already processed it (file-based deduplication)
+                if ($alreadyDownloaded[$mod.ID] -or $downloadedThisRun[$mod.ID]) {
+                    Write-Host "⏭️  $($mod.Name): Already downloaded" -ForegroundColor Yellow
+                    continue
+                }
+                $alreadyDownloaded[$mod.ID] = $true
+                $downloadedThisRun[$mod.ID] = $true
                 
                 if (-not $downloadUrl) {
                     Write-Host "❌ $($mod.Name): No download URL available" -ForegroundColor Red
@@ -421,6 +386,10 @@ function Download-Mods {
                 }
                 
                 $downloadPath = Join-Path $gameVersionFolder $filename
+                
+                # DISABLED cleanup - it's deleting the wrong files
+                # The cleanup logic is broken and deletes newly downloaded files
+                # TODO: Fix this properly to only delete OLD versions, not new ones
                 
                 # Check if file already exists
                 if ((Test-Path $downloadPath) -and -not $ForceDownload) {
@@ -520,6 +489,9 @@ function Download-Mods {
                 }
             }
         }
+        
+        # Save deduplication file
+        $alreadyDownloaded | ConvertTo-Json | Set-Content $dedupFile
         
         # Save download results to CSV
         $downloadResultsFile = Join-Path $ApiResponseFolder "mod-download-results.csv"

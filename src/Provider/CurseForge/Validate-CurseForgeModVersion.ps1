@@ -40,12 +40,42 @@ function Validate-CurseForgeModVersion {
         [string]$ResponseFolder = ".",
         [string]$Jar = "",
         [string]$ModUrl = "",
+        [string]$CsvPath = "",
         [switch]$Quiet = $false
     )
     
     try {
         if (-not $Quiet) {
-            Write-Host "Validating CurseForge mod $ModId version $Version for $Loader..." -ForegroundColor Cyan
+            # Try to get Next and Latest versions from CSV if available
+            $displayVersionInfo = "Current: $Version"
+            if ($CsvPath -and (Test-Path $CsvPath)) {
+                try {
+                    $mods = Import-Csv -Path $CsvPath
+                    $mod = $mods | Where-Object { $_.ID -eq $ModId } | Select-Object -First 1
+                    if ($mod) {
+                        # Always show Next version if available
+                        if ($mod.NextVersion -and $mod.NextVersion -ne "") {
+                            $displayVersionInfo += " | Next: $($mod.NextVersion)"
+                        } else {
+                            $displayVersionInfo += " | Next: none"
+                        }
+                        
+                        # Always show Latest version if available
+                        if ($mod.LatestVersion -and $mod.LatestVersion -ne "") {
+                            $displayVersionInfo += " | Latest: $($mod.LatestVersion)"
+                        } else {
+                            $displayVersionInfo += " | Latest: none"
+                        }
+                    }
+                } catch {
+                    # Silently ignore CSV read errors - fallback to basic display
+                    $displayVersionInfo += " | Next: unknown | Latest: unknown"
+                }
+            } else {
+                $displayVersionInfo += " | Next: unknown | Latest: unknown"
+            }
+            
+            Write-Host "Validating $ModId [$displayVersionInfo] for $Loader..." -ForegroundColor Cyan
         }
         
         # Get project info from CurseForge API
