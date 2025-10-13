@@ -83,7 +83,12 @@ param(
     [switch]$RunServerHealthCheck,
     [int]$HealthCheckTimeout,
     [switch]$RunServerDiagnostics,
-    [int]$DiagnosticsLogLines
+    [int]$DiagnosticsLogLines,
+    # Minecraft Version Sync
+    [switch]$SyncMinecraftVersions,
+    [string]$MinecraftVersionChannel = "stable",
+    [string]$MinecraftMinVersion = "1.21.5",
+    [switch]$DryRun
 )
 
 # Save parameter values that might be overridden by environment variables
@@ -379,6 +384,13 @@ if ($GetModList) {
 if ($DeleteModID) {
     Write-Host "Deleting mod..." -ForegroundColor Yellow
     Delete-ModFromDatabase -DeleteModID $DeleteModID -DeleteModType $DeleteModType -CsvPath $effectiveModListPath
+    Exit-ModManager 0
+}
+
+# Handle SyncMinecraftVersions parameter
+if ($SyncMinecraftVersions) {
+    Write-Host "Syncing Minecraft versions from mc-versions-api.net..." -ForegroundColor Yellow
+    Sync-MinecraftVersions -CsvPath $effectiveModListPath -Channel $MinecraftVersionChannel -MinVersion $MinecraftMinVersion -DryRun:$DryRun
     Exit-ModManager 0
 }
 

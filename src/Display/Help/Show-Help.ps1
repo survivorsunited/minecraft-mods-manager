@@ -71,6 +71,16 @@ function Show-Help {
     Write-Host "    - Includes Fabric launchers for 1.21.5 and 1.21.6"
     Write-Host "    - Skips existing files unless -ForceDownload is used"
     Write-Host ""
+    Write-Host "  Sync-MinecraftVersions [-MinecraftMinVersion <version>] [-MinecraftVersionChannel <channel>] [-DryRun]" -ForegroundColor White
+    Write-Host "    - Auto-discovers and adds new Minecraft versions from mc-versions-api.net"
+    Write-Host "    - Default MinVersion: 1.21.5 (only adds versions >= this)"
+    Write-Host "    - Default Channel: stable (excludes snapshots, pre-releases)"
+    Write-Host "    - Adds both server and launcher entries to database"
+    Write-Host "    - Use -DryRun to preview changes without modifying database"
+    Write-Host ""
+    Write-Host "    Example: .\ModManager.ps1 -SyncMinecraftVersions" -ForegroundColor Gray
+    Write-Host "    Example: .\ModManager.ps1 -SyncMinecraftVersions -MinecraftMinVersion \"1.21.6\" -DryRun" -ForegroundColor Gray
+    Write-Host ""
 }
 
 # Function is available for dot-sourcing 

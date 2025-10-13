@@ -34,6 +34,7 @@
 . "$PSScriptRoot\Database\Operations\Add-ModToDatabase.ps1"
 . "$PSScriptRoot\Database\Operations\Delete-ModFromDatabase.ps1"
 . "$PSScriptRoot\Database\Operations\Update-ModUrlInDatabase.ps1"
+. "$PSScriptRoot\Database\Operations\Sync-MinecraftVersions.ps1"
 . "$PSScriptRoot\Database\Maintenance\Reorder-CsvColumns.ps1"
 . "$PSScriptRoot\Database\Migration\Migrate-ToCurrentNextLatest.ps1"
 
@@ -47,6 +48,8 @@
 . "$PSScriptRoot\Provider\CurseForge\Validate-CurseForgeModVersion.ps1"
 . "$PSScriptRoot\Provider\Mojang\Get-MojangServerInfo.ps1"
 . "$PSScriptRoot\Provider\Fabric\Get-FabricLoaderInfo.ps1"
+. "$PSScriptRoot\Provider\Fabric\Get-FabricVersions.ps1"
+. "$PSScriptRoot\Provider\Minecraft\Get-MinecraftVersions.ps1"
 
 # Download modules
 . "$PSScriptRoot\Download\Mods\Download-Mods.ps1"

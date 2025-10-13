@@ -58,36 +58,10 @@ function Validate-ModrinthModVersion {
         # Use provided GameVersion or default
         $effectiveGameVersion = if (-not [string]::IsNullOrEmpty($GameVersion)) { $GameVersion } else { $DefaultGameVersion }
         
-        # Try to get Next and Latest versions from CSV if available
-        $displayVersionInfo = "Current: $Version"
-        if ($CsvPath -and (Test-Path $CsvPath)) {
-            try {
-                $mods = Import-Csv -Path $CsvPath
-                $mod = $mods | Where-Object { $_.ID -eq $ModID } | Select-Object -First 1
-                if ($mod) {
-                    # Always show Next version if available
-                    if ($mod.NextVersion -and $mod.NextVersion -ne "") {
-                        $displayVersionInfo += " | Next: $($mod.NextVersion)"
-                    } else {
-                        $displayVersionInfo += " | Next: none"
-                    }
-                    
-                    # Always show Latest version if available
-                    if ($mod.LatestVersion -and $mod.LatestVersion -ne "") {
-                        $displayVersionInfo += " | Latest: $($mod.LatestVersion)"
-                    } else {
-                        $displayVersionInfo += " | Latest: none"
-                    }
-                }
-            } catch {
-                # Silently ignore CSV read errors - fallback to basic display
-                $displayVersionInfo += " | Next: unknown | Latest: unknown"
-            }
-        } else {
-            $displayVersionInfo += " | Next: unknown | Latest: unknown"
+        # Simple validation display - detailed version info shown in summary
+        if (-not $Quiet) { 
+            Write-Host "Validating $ModID [Version: $Version] for $Loader/$effectiveGameVersion..." -ForegroundColor Cyan 
         }
-        
-        Write-Host "Validating $ModID [$displayVersionInfo] for $Loader..." -ForegroundColor Cyan
         
         # Get project info
         if (-not $Quiet) { Write-Host "DEBUG: Getting project info for $ModID" -ForegroundColor Yellow }
