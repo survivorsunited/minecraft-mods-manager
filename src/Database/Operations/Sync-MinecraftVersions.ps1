@@ -45,13 +45,16 @@ function Sync-MinecraftVersions {
     )
     
     try {
-        # Get available Minecraft versions
-        $availableVersions = Get-MinecraftVersions -Channel $Channel -MinVersion $MinVersion -Order asc
+        # Get available Minecraft versions from Mojang's official API
+        $versionObjects = Get-MojangVersions -MinVersion $MinVersion -Order asc
         
-        if (-not $availableVersions -or $availableVersions.Count -eq 0) {
+        if (-not $versionObjects -or $versionObjects.Count -eq 0) {
             Write-Host "❌ No versions found to sync" -ForegroundColor Red
             return
         }
+        
+        # Extract version IDs for display
+        $availableVersions = $versionObjects | ForEach-Object { $_.id }
         
         Write-Host ""
         Write-Host "📋 Available Minecraft Versions (>= $MinVersion):" -ForegroundColor Cyan
@@ -102,6 +105,23 @@ function Sync-MinecraftVersions {
         foreach ($version in $versionsToAddServer) {
             Write-Host "   ➕ Adding Minecraft Server $version..." -ForegroundColor Cyan
             
+            # Get version details to extract server download URL
+            $versionObj = $versionObjects | Where-Object { $_.id -eq $version } | Select-Object -First 1
+            $serverUrl = ""
+            
+            if ($versionObj -and $versionObj.url) {
+                try {
+                    Write-Host "      🔍 Fetching server download URL..." -ForegroundColor Gray
+                    $versionDetails = Invoke-RestMethod -Uri $versionObj.url -Method Get -TimeoutSec 30
+                    if ($versionDetails.downloads.server.url) {
+                        $serverUrl = $versionDetails.downloads.server.url
+                        Write-Host "      ✓ Found server download URL" -ForegroundColor Green
+                    }
+                } catch {
+                    Write-Host "      ⚠️  Could not fetch server URL: $($_.Exception.Message)" -ForegroundColor Yellow
+                }
+            }
+            
             $newServerEntry = [PSCustomObject]@{
                 Group = "server"
                 Type = "server"
@@ -119,8 +139,8 @@ function Sync-MinecraftVersions {
                 LatestVersion = ""
                 LatestVersionUrl = ""
                 LatestGameVersion = ""
-                Url = ""
-                CurrentVersionUrl = ""
+                Url = $serverUrl
+                CurrentVersionUrl = $serverUrl
                 UrlDirect = ""
                 CurrentDependencies = ""
                 CurrentDependenciesRequired = ""
@@ -158,6 +178,22 @@ function Sync-MinecraftVersions {
                 "fabric-server-mc.$version-loader.jar" 
             }
             
+            # Get installer version and construct download URL
+            $fabricUrl = ""
+            if ($fabricLoader) {
+                try {
+                    Write-Host "      🔍 Fetching Fabric installer version..." -ForegroundColor Gray
+                    $installerResponse = Invoke-RestMethod -Uri "https://meta.fabricmc.net/v2/versions/installer" -Method Get -TimeoutSec 30
+                    if ($installerResponse -and $installerResponse.Count -gt 0) {
+                        $latestInstaller = $installerResponse[0].version
+                        $fabricUrl = "https://meta.fabricmc.net/v2/versions/loader/$version/$loaderVersion/$latestInstaller/server/jar"
+                        Write-Host "      ✓ Fabric URL: .../$version/$loaderVersion/$latestInstaller/server/jar" -ForegroundColor Green
+                    }
+                } catch {
+                    Write-Host "      ⚠️  Could not construct Fabric URL: $($_.Exception.Message)" -ForegroundColor Yellow
+                }
+            }
+            
             $newLauncherEntry = [PSCustomObject]@{
                 Group = "server"
                 Type = "launcher"
@@ -175,8 +211,8 @@ function Sync-MinecraftVersions {
                 LatestVersion = ""
                 LatestVersionUrl = ""
                 LatestGameVersion = ""
-                Url = ""
-                CurrentVersionUrl = ""
+                Url = $fabricUrl
+                CurrentVersionUrl = $fabricUrl
                 UrlDirect = ""
                 CurrentDependencies = ""
                 CurrentDependenciesRequired = ""

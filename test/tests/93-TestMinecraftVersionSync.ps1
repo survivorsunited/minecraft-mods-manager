@@ -38,24 +38,24 @@ function Invoke-VersionSyncTests {
         return $false
     }
     
-    # Test 2: Test MC Versions API integration
-    Write-TestHeader "Testing MC Versions API integration"
-    $mcVersionsResult = & pwsh -NoProfile -ExecutionPolicy Bypass -Command {
+    # Test 2: Test Mojang API integration
+    Write-TestHeader "Testing Mojang Official API integration"
+    $mojangVersionsResult = & pwsh -NoProfile -ExecutionPolicy Bypass -Command {
         param($ScriptRoot)
         . "$ScriptRoot\..\..\src\Import-Modules.ps1"
-        $versions = Get-MinecraftVersions -MinVersion "1.21.5" -Channel "stable"
-        if ($versions -and $versions.Count -gt 0) {
-            Write-Output "SUCCESS: Found $($versions.Count) versions"
-            $versions | Select-Object -First 5 | ForEach-Object { Write-Output "  $_" }
+        $versions = Get-MojangVersions -MinVersion "1.21.5" -Order asc
+        if ($versions -and $versions.Count -ge 6) {
+            Write-Output "SUCCESS: Found $($versions.Count) versions (expected >= 6 for 1.21.5-1.21.10)"
+            $versions | ForEach-Object { Write-Output "  $($_.id)" }
             exit 0
         } else {
-            Write-Output "FAILED: No versions found"
+            Write-Output "FAILED: Only found $($versions.Count) versions, expected >= 6"
             exit 1
         }
     } -Args $PSScriptRoot 2>&1
     
-    Write-Host $mcVersionsResult -ForegroundColor Gray
-    Write-TestResult "MC Versions API returns stable versions >= 1.21.5" ($LASTEXITCODE -eq 0)
+    Write-Host $mojangVersionsResult -ForegroundColor Gray
+    Write-TestResult "Mojang API returns versions >= 1.21.5 (including 1.21.9, 1.21.10)" ($LASTEXITCODE -eq 0)
     
     # Test 3: Test Fabric Meta API integration
     Write-TestHeader "Testing Fabric Meta API integration"
@@ -109,11 +109,11 @@ function Invoke-VersionSyncTests {
     $entriesAdded = $afterCount -gt $beforeCount
     Write-TestResult "New entries added to database" $entriesAdded
     
-    # Test 8: Verify ALL available server entries were added (1.21.5, 1.21.6, 1.21.7, 1.21.8)
+    # Test 8: Verify ALL available server entries were added (1.21.5-1.21.10)
     Write-TestHeader "Verifying ALL server entries for versions >= 1.21.5"
     $entries = Import-Csv $TestModListPath
     $serverEntries = $entries | Where-Object { $_.Type -eq "server" }
-    $expectedVersions = @("1.21.5", "1.21.6", "1.21.7", "1.21.8")
+    $expectedVersions = @("1.21.5", "1.21.6", "1.21.7", "1.21.8", "1.21.9", "1.21.10")
     $hasAllServers = $true
     
     foreach ($version in $expectedVersions) {
@@ -125,7 +125,7 @@ function Invoke-VersionSyncTests {
             $hasAllServers = $false
         }
     }
-    Write-TestResult "All server versions (1.21.5-1.21.8) exist in database" $hasAllServers
+    Write-TestResult "All server versions (1.21.5-1.21.10) exist in database" $hasAllServers
     
     # Test 9: Verify ALL launcher entries were added
     Write-TestHeader "Verifying ALL Fabric launcher entries for versions >= 1.21.5"
@@ -142,7 +142,7 @@ function Invoke-VersionSyncTests {
             $hasAllLaunchers = $false
         }
     }
-    Write-TestResult "All launcher versions (1.21.5-1.21.8) exist in database" $hasAllLaunchers
+    Write-TestResult "All launcher versions (1.21.5-1.21.10) exist in database" $hasAllLaunchers
     
     # Test 10: Verify no duplicates on second sync
     Write-TestHeader "Testing duplicate prevention"
@@ -175,8 +175,29 @@ function Invoke-VersionSyncTests {
     }
     Write-TestResult "All Fabric loader versions are specific (not 'latest')" $hasRealVersions
     
-    # Test 12: Verify main database has all versions
-    Write-TestHeader "Verifying MAIN database has all versions"
+    # Test 12: Verify download URLs are populated
+    Write-TestHeader "Verifying download URLs are populated"
+    $serversWithUrls = $serverEntries | Where-Object { $_.Url -and $_.Url -ne "" }
+    $launchersWithUrls = $launcherEntries | Where-Object { $_.Url -and $_.Url -ne "" }
+    
+    $allHaveUrls = ($serversWithUrls.Count -eq $serverEntries.Count) -and ($launchersWithUrls.Count -eq $launcherEntries.Count)
+    
+    Write-Host "  Servers with URLs: $($serversWithUrls.Count)/$($serverEntries.Count)" -ForegroundColor Cyan
+    Write-Host "  Launchers with URLs: $($launchersWithUrls.Count)/$($launcherEntries.Count)" -ForegroundColor Cyan
+    
+    if ($serversWithUrls.Count -gt 0) {
+        $sampleServer = $serversWithUrls | Select-Object -First 1
+        Write-Host "  Sample server URL: $($sampleServer.Url.Substring(0, [Math]::Min(60, $sampleServer.Url.Length)))..." -ForegroundColor Gray
+    }
+    if ($launchersWithUrls.Count -gt 0) {
+        $sampleLauncher = $launchersWithUrls | Select-Object -First 1
+        Write-Host "  Sample launcher URL: $($sampleLauncher.Url.Substring(0, [Math]::Min(60, $sampleLauncher.Url.Length)))..." -ForegroundColor Gray
+    }
+    
+    Write-TestResult "All entries have download URLs" $allHaveUrls
+    
+    # Test 13: Verify main database has all versions
+    Write-TestHeader "Verifying MAIN database has all versions (including 1.21.9, 1.21.10)"
     $mainDbPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
     $mainEntries = Import-Csv $mainDbPath
     $mainServers = $mainEntries | Where-Object { $_.Type -eq "server" }
@@ -194,7 +215,7 @@ function Invoke-VersionSyncTests {
             $mainHasAll = $false
         }
     }
-    Write-TestResult "Main database has all versions (1.21.5-1.21.8)" $mainHasAll
+    Write-TestResult "Main database has all versions (1.21.5-1.21.10)" $mainHasAll
     
     # Show final summary
     Write-Host ""

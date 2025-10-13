@@ -47,6 +47,7 @@
 . "$PSScriptRoot\Provider\CurseForge\Get-CurseForgeFileInfo.ps1"
 . "$PSScriptRoot\Provider\CurseForge\Validate-CurseForgeModVersion.ps1"
 . "$PSScriptRoot\Provider\Mojang\Get-MojangServerInfo.ps1"
+. "$PSScriptRoot\Provider\Mojang\Get-MojangVersions.ps1"
 . "$PSScriptRoot\Provider\Fabric\Get-FabricLoaderInfo.ps1"
 . "$PSScriptRoot\Provider\Fabric\Get-FabricVersions.ps1"
 . "$PSScriptRoot\Provider\Minecraft\Get-MinecraftVersions.ps1"
