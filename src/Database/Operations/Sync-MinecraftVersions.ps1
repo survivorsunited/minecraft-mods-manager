@@ -94,6 +94,9 @@ function Sync-MinecraftVersions {
         }
         
         # Add new versions to database
+        # Convert to ArrayList for efficient appending
+        $modsList = [System.Collections.ArrayList]::new()
+        $mods | ForEach-Object { $modsList.Add($_) | Out-Null }
         $addedCount = 0
         
         foreach ($version in $versionsToAddServer) {
@@ -139,7 +142,7 @@ function Sync-MinecraftVersions {
                 RecordHash = ""
             }
             
-            $mods += $newServerEntry
+            $modsList.Add($newServerEntry) | Out-Null
             $addedCount++
         }
         
@@ -195,12 +198,12 @@ function Sync-MinecraftVersions {
                 RecordHash = ""
             }
             
-            $mods += $newLauncherEntry
+            $modsList.Add($newLauncherEntry) | Out-Null
             $addedCount++
         }
         
         # Save updated database
-        $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+        $modsList | Export-Csv -Path $CsvPath -NoTypeInformation
         
         Write-Host ""
         Write-Host "✅ Successfully synced $addedCount new Minecraft versions" -ForegroundColor Green

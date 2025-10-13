@@ -331,8 +331,22 @@ function Validate-AllModVersions {
         $_.NextVersion -and $_.NextVersion -ne "" -and $_.NextGameVersion -eq $calculatedLatestGameVersion
     }).Count
     
-    # Find the actual latest available game version from all results
-    $actualLatestVersion = if ($filteredLatestAvailableVersions -and $filteredLatestAvailableVersions.Count -gt 0) {
+    # Find the actual latest Minecraft version from server entries in database
+    $serverEntries = $mods | Where-Object { $_.Type -eq "server" -and $_.ID -like "minecraft-server*" }
+    $actualLatestVersion = if ($serverEntries -and $serverEntries.Count -gt 0) {
+        # Get the highest version from server entries
+        $serverVersions = $serverEntries | ForEach-Object {
+            $gameVer = if ($_.PSObject.Properties.Name -contains "CurrentGameVersion") { $_.CurrentGameVersion } else { $_.GameVersion }
+            $gameVer
+        } | Where-Object { $_ -match '^\d+\.\d+\.\d+$' } | Sort-Object { [System.Version]$_ }
+        
+        if ($serverVersions -and $serverVersions.Count -gt 0) {
+            $serverVersions | Select-Object -Last 1
+        } else {
+            $calculatedLatestGameVersion
+        }
+    } elseif ($filteredLatestAvailableVersions -and $filteredLatestAvailableVersions.Count -gt 0) {
+        # Fallback to available versions from mods
         ($filteredLatestAvailableVersions | Sort-Object | Select-Object -Last 1)
     } else {
         $calculatedLatestGameVersion
