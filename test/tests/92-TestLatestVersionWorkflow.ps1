@@ -96,7 +96,7 @@ Write-TestResult "Minecraft server JAR downloaded for 1.21.8" $serverJarExists $
 Write-TestResult "Fabric launcher JAR downloaded for 1.21.8" $fabricJarExists $TestFileName
 
 Write-TestHeader "Latest Version Mods Download Test"
-Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -DownloadFolder '$TestDownloadDir' -UseLatestVersion -ForceDownload -ApiResponseFolder '$script:TestApiResponseDir'" "Download mods for latest version" 0 $null $TestFileName
+Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -DownloadFolder '$TestDownloadDir' -UseLatestVersion -TargetVersion '1.21.8' -ForceDownload -ApiResponseFolder '$script:TestApiResponseDir'" "Download mods for latest version" 0 $null $TestFileName
 
 Write-TestHeader "CRITICAL: Verify fabric-api Downloaded Correct 1.21.8 Version"
 

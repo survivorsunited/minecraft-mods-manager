@@ -45,11 +45,15 @@ function Show-Help {
     Write-Host "    - -UpdateModList: Updates modlist.csv with download URLs (preserves Version column)"
     Write-Host "    - Creates backup before updating modlist"
     Write-Host ""
-    Write-Host "  [-UseCachedResponses]" -ForegroundColor White
-    Write-Host "    - Debug option: Uses existing API response files instead of making new API calls"
-    Write-Host "    - Speeds up testing by reusing cached responses from previous runs"
-    Write-Host "    - Only makes API calls for mods that don't have cached responses"
-    Write-Host "    - Useful for development and testing scenarios"
+    Write-Host "  CACHING OPTIONS:" -ForegroundColor Cyan
+    Write-Host "    Default: Uses cached API responses (only fetches data for missing entries)"
+    Write-Host "    -Online: Forces fresh API calls for all mods (ignores cache)"
+    Write-Host "    -UseCachedResponses: Explicitly use cached responses (overrides -Online)"
+    Write-Host ""
+    Write-Host "    Cache behavior:"
+    Write-Host "      • Default (no flags): Smart caching - uses existing cache, only fetches missing data"
+    Write-Host "      • -Online: Always fetch from API, update all cached responses"
+    Write-Host "      • -UseCachedResponses: Use cache exclusively, skip API calls entirely"
     Write-Host ""
     Write-Host "  Download-Mods [-CsvPath <path>] [-UseLatestVersion] [-UseNextVersion] [-ForceDownload]" -ForegroundColor White
     Write-Host "    - Downloads mods to local download folder organized by GameVersion"

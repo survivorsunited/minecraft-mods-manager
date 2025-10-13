@@ -40,7 +40,8 @@ function Download-Mods {
         [switch]$UseLatestVersion,
         [switch]$UseNextVersion,
         [switch]$ForceDownload,
-        [string]$TargetGameVersion = $null
+        [string]$TargetGameVersion = $null,
+        [string]$ApiResponseFolder
     )
     
     try {

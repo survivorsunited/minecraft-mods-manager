@@ -43,6 +43,7 @@ param(
     [string]$DownloadFolder,
     [string]$ApiResponseFolder,
     [switch]$UseCachedResponses,
+    [switch]$Online,
     [switch]$ValidateWithDownload,
     [switch]$DownloadCurseForgeModpack,
     [string]$CurseForgeModpackId,
@@ -161,7 +162,10 @@ $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -Mo
 # Handle UpdateMods parameter
 if ($UpdateMods) {
     Write-Host "Starting mod update process..." -ForegroundColor Yellow
-    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
+    # Use cache by default unless -Online is specified
+    $useCache = -not $Online
+    if ($UseCachedResponses) { $useCache = $true }  # Explicit -UseCachedResponses overrides
+    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList -UseCachedResponses:$useCache | Out-Null
     Exit-ModManager 0
 }
 
@@ -190,7 +194,11 @@ if ($DownloadMods) {
     Write-Host "Starting mod download process..." -ForegroundColor Yellow
     if ($UseLatestVersion) {
         Write-Host "Using latest versions for download..." -ForegroundColor Cyan
-        Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        if ($TargetVersion) {
+            Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -TargetGameVersion $TargetVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        } else {
+            Download-Mods -CsvPath $effectiveModListPath -UseLatestVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        }
     } elseif ($UseNextVersion) {
         Write-Host "Using next versions for download..." -ForegroundColor Cyan
         Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
@@ -346,7 +354,10 @@ if ($AddMod -or $AddModId -or $AddModUrl) {
 # Handle ValidateAllModVersions parameter
 if ($ValidateAllModVersions) {
     Write-Host "Starting mod validation process..." -ForegroundColor Yellow
-    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UseCachedResponses:$UseCachedResponses | Out-Null
+    # Use cache by default unless -Online is specified
+    $useCache = -not $Online
+    if ($UseCachedResponses) { $useCache = $true }  # Explicit -UseCachedResponses overrides
+    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UseCachedResponses:$useCache | Out-Null
     Exit-ModManager 0
 }
 
@@ -385,7 +396,11 @@ Write-Host "No parameters provided. Running default validation and update..." -F
 Write-Host ""
 
 # Run the default behavior: validate and update mods
-Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
+# Default: Use cache (only fetch data for missing entries)
+# Use -Online to force fresh API calls for all mods
+$useCache = -not $Online
+if ($UseCachedResponses) { $useCache = $true }  # Explicit -UseCachedResponses overrides
+Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList -UseCachedResponses:$useCache | Out-Null
 
 # Exit cleanly with transcript stop
 Exit-ModManager 0
