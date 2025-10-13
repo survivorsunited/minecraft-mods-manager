@@ -320,15 +320,41 @@ function Validate-AllModVersions {
         }
     }
 
+    # Calculate mod counts for each game version
+    $modsCurrentVersion = ($mods | Where-Object { 
+        $gameVer = if ($_.PSObject.Properties.Name -contains "CurrentGameVersion") { $_.CurrentGameVersion } else { $_.GameVersion }
+        $gameVer -eq $mostCommonGameVersion 
+    }).Count
+    
+    # Count mods that have NextVersion for next game version
+    $modsNextVersion = ($mods | Where-Object { 
+        $_.NextVersion -and $_.NextVersion -ne "" -and $_.NextGameVersion -eq $calculatedLatestGameVersion
+    }).Count
+    
+    # Find the actual latest available game version from all results
+    $actualLatestVersion = if ($filteredLatestAvailableVersions -and $filteredLatestAvailableVersions.Count -gt 0) {
+        ($filteredLatestAvailableVersions | Sort-Object | Select-Object -Last 1)
+    } else {
+        $calculatedLatestGameVersion
+    }
+    
+    # Count mods supporting the actual latest version
+    $modsLatestVersion = ($results | Where-Object { 
+        $_.AvailableGameVersions -contains $actualLatestVersion 
+    }).Count
+    
     # Show summary with total counts
     Write-Host ""
     Write-Host "📊 Update Summary:" -ForegroundColor Cyan
     Write-Host "=================" -ForegroundColor Cyan
-    Write-Host "   🕹️  Latest Game Version: $calculatedLatestGameVersion" -ForegroundColor Cyan
-    Write-Host "   🗂️  Latest Available Game Versions: $availableGameVersionsString" -ForegroundColor Cyan
-    Write-Host "   🎯 Supporting latest version: $($modsSupportingLatest.Count) mods" -ForegroundColor Green
+    Write-Host "   📌 Current Game Version: $mostCommonGameVersion ($modsCurrentVersion mods)" -ForegroundColor White
+    Write-Host "   🔄 Next Game Version: $calculatedLatestGameVersion ($modsNextVersion mods)" -ForegroundColor Cyan
+    Write-Host "   🚀 Latest Game Version: $actualLatestVersion ($modsLatestVersion mods)" -ForegroundColor Green
+    Write-Host ""
+    Write-Host "   🗂️  Available Versions: $availableGameVersionsString" -ForegroundColor DarkGray
     Write-Host "   ⬆️  Have updates available: $($modsWithUpdates.Count) mods" -ForegroundColor Cyan
-    Write-Host "   ⚠️  Not supporting latest version: $($modsNotSupportingLatest.Count) mods" -ForegroundColor Yellow
+    Write-Host "   🎯 Supporting latest ($actualLatestVersion): $($modsSupportingLatest.Count) mods" -ForegroundColor Green
+    Write-Host "   ⚠️  Not supporting latest: $($modsNotSupportingLatest.Count) mods" -ForegroundColor Yellow
     Write-Host "   ➖ Not updated: $($modsNotUpdated.Count) mods" -ForegroundColor Gray
     Write-Host "   🔄 Externally updated: $($modsExternallyUpdated.Count) mods" -ForegroundColor Blue
     Write-Host "   ❌ Not found: $($modsNotFound.Count) mods" -ForegroundColor Red
