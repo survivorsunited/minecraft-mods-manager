@@ -320,15 +320,16 @@ function Validate-AllModVersions {
         }
     }
 
-    # Calculate mod counts for each game version
+    # Calculate mod counts for each game version (exclude infrastructure: server, launcher, installer)
     $modsCurrentVersion = ($mods | Where-Object { 
         $gameVer = if ($_.PSObject.Properties.Name -contains "CurrentGameVersion") { $_.CurrentGameVersion } else { $_.GameVersion }
-        $gameVer -eq $mostCommonGameVersion 
+        $gameVer -eq $mostCommonGameVersion -and $_.Type -notin @("server", "launcher", "installer")
     }).Count
     
-    # Count mods that have NextVersion for next game version
+    # Count mods that have NextVersion for next game version (exclude infrastructure)
     $modsNextVersion = ($mods | Where-Object { 
-        $_.NextVersion -and $_.NextVersion -ne "" -and $_.NextGameVersion -eq $calculatedLatestGameVersion
+        $_.NextVersion -and $_.NextVersion -ne "" -and $_.NextGameVersion -eq $calculatedLatestGameVersion -and
+        $_.Type -notin @("server", "launcher", "installer")
     }).Count
     
     # Find the actual latest Minecraft version from server entries in database
@@ -352,7 +353,7 @@ function Validate-AllModVersions {
         $calculatedLatestGameVersion
     }
     
-    # Count mods supporting the actual latest version
+    # Count mods supporting the actual latest version (results already filtered, no infrastructure)
     $modsLatestVersion = ($results | Where-Object { 
         $_.AvailableGameVersions -contains $actualLatestVersion 
     }).Count
