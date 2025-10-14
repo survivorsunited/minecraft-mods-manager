@@ -1,6 +1,53 @@
 # Minecraft Fabric Server Startup Script
 # Automatically finds and launches the Fabric server JAR file
 
+param(
+    [switch]$NoAutoRestart  # Disable automatic server restart on normal exit
+)
+
+# Find bundled JDK in .cache folder (REQUIRED - uses ONLY bundled JDK)
+# IMPORTANT: Ignores JAVA_HOME and system Java to ensure consistent Java 21+ version
+$JavaExe = $null
+
+# Navigate up two levels from server folder to project root
+$ProjectRoot = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
+$JdkCacheFolder = Join-Path $ProjectRoot ".cache\jdk"
+
+Write-Host "🔍 Looking for bundled JDK in: $JdkCacheFolder" -ForegroundColor Cyan
+
+if (Test-Path $JdkCacheFolder) {
+    # Find JDK folders (prefer JDK 22 > 21, sorted descending by name)
+    $jdkFolders = Get-ChildItem $JdkCacheFolder -Directory | 
+        Where-Object { $_.Name -match "jdk-\d+" } | 
+        Sort-Object Name -Descending
+    
+    foreach ($jdkFolder in $jdkFolders) {
+        # Cross-platform Java executable detection
+        $javaExt = if ($IsWindows -or $env:OS -match "Windows") { "java.exe" } else { "java" }
+        $javaPath = Join-Path $jdkFolder.FullName "bin\$javaExt"
+        
+        if (Test-Path $javaPath) {
+            $JavaExe = $javaPath
+            Write-Host "✅ Using bundled JDK: $($jdkFolder.Name)" -ForegroundColor Green
+            Write-Host "   Location: $JavaExe" -ForegroundColor Gray
+            break
+        }
+    }
+}
+
+# Fail if no bundled JDK found (REQUIRED for consistent Java 21+ version)
+if (-not $JavaExe) {
+    Write-Host "" -ForegroundColor Red
+    Write-Host "❌ ERROR: No bundled JDK found in .cache\jdk folder!" -ForegroundColor Red
+    Write-Host "" -ForegroundColor Red
+    Write-Host "💡 Minecraft 1.21+ requires Java 21 or higher." -ForegroundColor Yellow
+    Write-Host "💡 Download bundled JDK using: .\ModManager.ps1 -DownloadMods" -ForegroundColor Yellow
+    Write-Host "   (JDK files are included in modlist.csv as infrastructure entries)" -ForegroundColor Gray
+    Write-Host "" -ForegroundColor Yellow
+    Write-Host "   Searched in: $JdkCacheFolder" -ForegroundColor DarkGray
+    exit 1
+}
+
 # Java memory settings (configurable via environment variables)
 $MinMemory = if ($env:MINECRAFT_MIN_MEMORY) { $env:MINECRAFT_MIN_MEMORY } else { "1G" }
 $MaxMemory = if ($env:MINECRAFT_MAX_MEMORY) { $env:MINECRAFT_MAX_MEMORY } else { "4G" }
@@ -59,16 +106,24 @@ Write-Host "🚀 Starting Fabric server with JAR: $JarFile" -ForegroundColor Gre
 Write-Host "📊 Memory allocation: Min $MinMemory, Max $MaxMemory" -ForegroundColor Gray
 Write-Host "📊 Java options: $($JavaOpts.Count) options configured" -ForegroundColor Gray
 
-while ($true) {
+if ($NoAutoRestart) {
+    Write-Host "⚠️  Auto-restart disabled. Server will not automatically restart after exit." -ForegroundColor Yellow
+}
+
+# Main server loop - continues running unless NoAutoRestart is set or error occurs
+$continueRunning = $true
+while ($continueRunning) {
     $Timestamp = (Get-Date).ToString("yyyy-MM-dd_HH-mm-ss")
     $LogFile = "$LogDir/console-$Timestamp.log"
-    $LaunchCmd = "java " + ($JavaOpts -join " ") + " -jar `"$JarFile`" nogui"
+    
+    # Build the launch arguments array
+    $LaunchArgs = $JavaOpts + @("-jar", $JarFile, "--nogui")
 
     # Write header to log file
     @"
 === Fabric Server Start: $Timestamp ===
 === JAR File: $JarFile ===
-=== Launch Command: $LaunchCmd ===
+=== Java Executable: $JavaExe ===
 === Java Options: $($JavaOpts -join ' ') ===
 === Log File: $LogFile ===
 
@@ -79,11 +134,9 @@ while ($true) {
     # Set console encoding for proper character handling
     [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
     
-    # Run the server command and capture ALL output (stdout and stderr) to both console and log file
-    $result = pwsh -NoProfile -Command @"
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-& $LaunchCmd 2>&1 | Tee-Object -FilePath '$LogFile' -Append
-"@
+    # Run the server command directly (not via string command) with nogui flag
+    # This ensures nogui is properly passed and prevents GUI error dialogs
+    & $JavaExe @LaunchArgs 2>&1 | Tee-Object -FilePath $LogFile -Append
     
     $exitCode = $LASTEXITCODE
     
@@ -113,9 +166,18 @@ while ($true) {
         
         exit 1
     } else {
-        $restartMsg = "`n--- Server exited with code $exitCode. Restarting in 10 seconds... ---`n"
-        Write-Host $restartMsg -ForegroundColor Yellow
-        $restartMsg | Out-File -FilePath $LogFile -Encoding utf8 -Append
-        Start-Sleep -Seconds 10
+        if ($NoAutoRestart) {
+            # If NoAutoRestart flag is set, exit normally without restarting
+            $exitMsg = "`n--- Server exited with code $exitCode. Auto-restart disabled, shutting down. ---`n"
+            Write-Host $exitMsg -ForegroundColor Green
+            $exitMsg | Out-File -FilePath $LogFile -Encoding utf8 -Append
+            $continueRunning = $false
+        } else {
+            # Default behavior: restart after 10 seconds
+            $restartMsg = "`n--- Server exited with code $exitCode. Restarting in 10 seconds... ---`n"
+            Write-Host $restartMsg -ForegroundColor Yellow
+            $restartMsg | Out-File -FilePath $LogFile -Encoding utf8 -Append
+            Start-Sleep -Seconds 10
+        }
     }
 }
