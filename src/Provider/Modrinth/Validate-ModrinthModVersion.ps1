@@ -78,8 +78,22 @@ function Validate-ModrinthModVersion {
         $versionsResponse = Invoke-RestMethod -Uri $versionsApiUrl -Method Get -TimeoutSec 30
         
         # Find the specific version by version_number with flexible matching
-        # Try exact match first
-        $versionInfo = $versionsResponse | Where-Object { $_.version_number -eq $Version }
+        # Try exact match first - PRIORITIZE versions where target game version is primary
+        $exactMatches = $versionsResponse | Where-Object { $_.version_number -eq $Version }
+        if ($exactMatches -and @($exactMatches).Count -gt 1) {
+            # Multiple versions with same version number - prioritize by game version
+            $versionInfo = $exactMatches | ForEach-Object {
+                $gameVersionIndex = $_.game_versions.IndexOf($effectiveGameVersion)
+                if ($gameVersionIndex -ge 0) {
+                    [PSCustomObject]@{
+                        VersionInfo = $_
+                        GameVersionIndex = $gameVersionIndex
+                    }
+                }
+            } | Sort-Object GameVersionIndex | Select-Object -First 1 | Select-Object -ExpandProperty VersionInfo
+        } else {
+            $versionInfo = $exactMatches
+        }
         
         # If exact match fails, try partial matches for common version format differences
         if (-not $versionInfo) {
@@ -94,9 +108,30 @@ function Validate-ModrinthModVersion {
             }
             
             # Try partial match for complex version formats
+            # PRIORITIZE by game version when multiple matches exist
             if (-not $versionInfo) {
-                $versionInfo = $versionsResponse | Where-Object { 
+                $partialMatches = $versionsResponse | Where-Object { 
                     $_.version_number -like "*$cleanVersion*" -and $_.loaders -contains $Loader 
+                }
+                
+                if ($partialMatches -and @($partialMatches).Count -gt 1) {
+                    # Multiple partial matches - prioritize by game version
+                    $versionInfo = $partialMatches | ForEach-Object {
+                        $gameVersionIndex = $_.game_versions.IndexOf($effectiveGameVersion)
+                        if ($gameVersionIndex -ge 0) {
+                            [PSCustomObject]@{
+                                VersionInfo = $_
+                                GameVersionIndex = $gameVersionIndex
+                            }
+                        }
+                    } | Sort-Object GameVersionIndex | Select-Object -First 1 | Select-Object -ExpandProperty VersionInfo
+                    
+                    # If no match with target game version, use first partial match
+                    if (-not $versionInfo) {
+                        $versionInfo = $partialMatches | Select-Object -First 1
+                    }
+                } else {
+                    $versionInfo = $partialMatches
                 }
             }
         }
@@ -105,11 +140,13 @@ function Validate-ModrinthModVersion {
             if (-not $Quiet) { Write-Host "DEBUG: Version $Version not found in $($versionsResponse.Count) versions" -ForegroundColor Red }
             
             # Try to find the closest matching version for the same loader and game version
+            # PRIORITIZE versions where the target game version is PRIMARY (first in compatibility list)
             $closeMatches = $versionsResponse | Where-Object { 
                 ($_.loaders -contains $Loader -or ($_.loaders -contains "datapack" -and $_.loaders.Count -eq 1)) -and 
                 $_.game_versions -contains $effectiveGameVersion 
             } | ForEach-Object {
                 $versionNum = $_.version_number
+                
                 # Calculate similarity score based on common prefixes
                 $similarity = 0
                 $cleanVersionParts = $cleanVersion -split '[+\-\.]'
@@ -123,17 +160,38 @@ function Validate-ModrinthModVersion {
                     }
                 }
                 
+                # Calculate game version priority score
+                # Higher score = better match (target version is earlier in compatibility list)
+                $gameVersionIndex = $_.game_versions.IndexOf($effectiveGameVersion)
+                $gameVersionPriority = if ($gameVersionIndex -eq 0) {
+                    # Target is PRIMARY version (first in list) - highest priority
+                    1000
+                } elseif ($gameVersionIndex -le 2) {
+                    # Target is in top 3 - high priority
+                    100
+                } else {
+                    # Target is somewhere in list - lower priority
+                    10
+                }
+                
+                # Combined score: game version priority is MUCH more important than version number similarity
+                $totalScore = ($gameVersionPriority * 100) + $similarity
+                
                 [PSCustomObject]@{
                     VersionInfo = $_
                     VersionNumber = $versionNum
                     Similarity = $similarity
+                    GameVersionIndex = $gameVersionIndex
+                    GameVersionPriority = $gameVersionPriority
+                    TotalScore = $totalScore
                 }
-            } | Sort-Object -Property Similarity -Descending | Select-Object -First 1
+            } | Sort-Object -Property TotalScore -Descending | Select-Object -First 1
             
-            if ($closeMatches -and $closeMatches.Similarity -gt 0) {
+            if ($closeMatches -and $closeMatches.TotalScore -gt 0) {
                 $closestMatch = $closeMatches.VersionInfo
                 if (-not $Quiet) { 
                     Write-Host "🔍 Found closest match: $($closestMatch.version_number) (requested: $Version)" -ForegroundColor Yellow 
+                    Write-Host "   Game version priority: $($closeMatches.GameVersionPriority) (index: $($closeMatches.GameVersionIndex))" -ForegroundColor Gray
                     Write-Host "   Auto-updating to use matching version..." -ForegroundColor Yellow
                 }
                 $versionInfo = $closestMatch
