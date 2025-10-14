@@ -88,6 +88,10 @@ param(
     [switch]$SyncMinecraftVersions,
     [string]$MinecraftVersionChannel = "stable",
     [string]$MinecraftMinVersion = "1.21.5",
+    # JDK Version Sync
+    [switch]$SyncJDKVersions,
+    [string[]]$JDKVersions = @("17", "21"),
+    [string[]]$JDKPlatforms = @("windows", "linux", "mac"),
     [switch]$DryRun
 )
 
@@ -391,6 +395,13 @@ if ($DeleteModID) {
 if ($SyncMinecraftVersions) {
     Write-Host "Syncing Minecraft versions from mc-versions-api.net..." -ForegroundColor Yellow
     Sync-MinecraftVersions -CsvPath $effectiveModListPath -Channel $MinecraftVersionChannel -MinVersion $MinecraftMinVersion -DryRun:$DryRun
+    Exit-ModManager 0
+}
+
+# Handle SyncJDKVersions parameter
+if ($SyncJDKVersions) {
+    Write-Host "Syncing JDK versions from Adoptium API..." -ForegroundColor Yellow
+    Sync-JDKVersions -CsvPath $effectiveModListPath -Versions $JDKVersions -Platforms $JDKPlatforms -DryRun:$DryRun
     Exit-ModManager 0
 }
 
