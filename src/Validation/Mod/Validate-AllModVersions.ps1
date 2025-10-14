@@ -52,10 +52,10 @@ function Validate-AllModVersions {
     
     $results = @()
     
-    # Count total mods to validate (excluding installer, launcher, server types)
+    # Count total mods to validate (excluding installer, launcher, server, jdk types)
     $modsToValidate = $mods | Where-Object { 
         -not [string]::IsNullOrEmpty($_.ID) -and 
-        $_.Type -notin @("installer", "launcher", "server") 
+        $_.Type -notin @("installer", "launcher", "server", "jdk") 
     }
     $totalMods = $modsToValidate.Count
     $currentMod = 0
@@ -441,6 +441,15 @@ function Validate-AllModVersions {
                 
                 if ($isMigrated) {
                     $updatedMod.CurrentVersionUrl = $validationResult.VersionUrl
+                    
+                    # CRITICAL: Update Jar column to match the actual filename from URL
+                    # This prevents filename/URL mismatches that cause wrong versions to be downloaded
+                    if ($validationResult.VersionUrl) {
+                        $urlFilename = [System.IO.Path]::GetFileName($validationResult.VersionUrl)
+                        if ($urlFilename -and $urlFilename -ne "") {
+                            $updatedMod.Jar = $urlFilename
+                        }
+                    }
                 } else {
                     $updatedMod.VersionUrl = $validationResult.VersionUrl
                 }
