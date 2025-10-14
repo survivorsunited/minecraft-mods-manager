@@ -92,6 +92,10 @@ param(
     [switch]$SyncJDKVersions,
     [string[]]$JDKVersions = @("17", "21", "22"),
     [string[]]$JDKPlatforms = @("windows", "linux", "mac"),
+    # JDK Download
+    [switch]$DownloadJDK,
+    [string]$JDKVersion = "21",
+    [string]$JDKPlatform = "",
     [switch]$DryRun
 )
 
@@ -403,6 +407,17 @@ if ($SyncJDKVersions) {
     Write-Host "Syncing JDK versions from Adoptium API..." -ForegroundColor Yellow
     Sync-JDKVersions -CsvPath $effectiveModListPath -Versions $JDKVersions -Platforms $JDKPlatforms -DryRun:$DryRun
     Exit-ModManager 0
+}
+
+# Handle DownloadJDK parameter
+if ($DownloadJDK) {
+    Write-Host "Downloading JDK..." -ForegroundColor Yellow
+    $jdkDownloadResult = Download-JDK -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -Version $JDKVersion -Platform $JDKPlatform -ForceDownload:$ForceDownload
+    if ($jdkDownloadResult) {
+        Exit-ModManager 0
+    } else {
+        Exit-ModManager 1
+    }
 }
 
 # Handle ShowHelp parameter

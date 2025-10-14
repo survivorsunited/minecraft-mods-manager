@@ -29,12 +29,31 @@ function Start-MinecraftServer {
     Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
     
     # Get minimum Java version from environment or use default
-    $minJavaVersion = [int]($env:JAVA_VERSION_MIN ?? "17")
+    $minJavaVersion = [int]($env:JAVA_VERSION_MIN ?? "21")
     
-    # Check Java version first
+    # Check for downloaded JDK in .cache folder (infrastructure)
+    $javaCommand = "java"
+    $jdkCacheFolder = ".cache\jdk"
+    $bundledJDK21 = Join-Path $jdkCacheFolder "jdk-21-windows\bin\java.exe"
+    $bundledJDK22 = Join-Path $jdkCacheFolder "jdk-22-windows\bin\java.exe"
+    
+    if (Test-Path $bundledJDK22) {
+        Write-Host "✅ Found bundled JDK 22 in .cache folder" -ForegroundColor Green
+        $javaCommand = $bundledJDK22
+        Write-Host "   Using: $bundledJDK22" -ForegroundColor Gray
+    } elseif (Test-Path $bundledJDK21) {
+        Write-Host "✅ Found bundled JDK 21 in .cache folder" -ForegroundColor Green
+        $javaCommand = $bundledJDK21
+        Write-Host "   Using: $bundledJDK21" -ForegroundColor Gray
+    } else {
+        Write-Host "ℹ️  No bundled JDK found in .cache/jdk/, using system Java" -ForegroundColor Cyan
+        Write-Host "   Tip: Run -DownloadJDK -JDKVersion '21' to download JDK 21" -ForegroundColor Gray
+    }
+    
+    # Check Java version
     Write-Host "🔍 Checking Java version..." -ForegroundColor Cyan
     try {
-        $javaVersion = java -version 2>&1 | Select-String "version" | Select-Object -First 1
+        $javaVersion = & $javaCommand -version 2>&1 | Select-String "version" | Select-Object -First 1
         if (-not $javaVersion) {
             Write-Host "❌ Java is not installed or not in PATH" -ForegroundColor Red
             Write-Host "💡 Please install Java $minJavaVersion+ and ensure it's in your PATH" -ForegroundColor Yellow
@@ -296,7 +315,7 @@ max-world-size=29999984
     try {
         # Start the server as a background job - run Java directly for better control
         $job = Start-Job -ScriptBlock {
-            param($JarPath, $WorkingDir)
+            param($JarPath, $WorkingDir, $JavaCommand)
             Set-Location $WorkingDir
             
             # Verify files exist before starting server
@@ -309,9 +328,9 @@ max-world-size=29999984
                 return
             }
             
-            # Run the Fabric server directly
-            java -server -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -Xms1G -Xmx4G --enable-native-access=ALL-UNNAMED -jar $JarPath nogui
-        } -ArgumentList $fabricJars[0].Name, $targetFolder
+            # Run the Fabric server directly with specified Java command
+            & $JavaCommand -server -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -Xms1G -Xmx4G --enable-native-access=ALL-UNNAMED -jar $JarPath nogui
+        } -ArgumentList $fabricJars[0].Name, $targetFolder, $javaCommand
         
         Write-Host "✅ Server job started successfully (Job ID: $($job.Id))" -ForegroundColor Green
         Write-Host "🔄 Monitoring server logs for errors..." -ForegroundColor Cyan
