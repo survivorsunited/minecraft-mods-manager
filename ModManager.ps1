@@ -90,7 +90,7 @@ param(
     [string]$MinecraftMinVersion = "1.21.5",
     # JDK Version Sync
     [switch]$SyncJDKVersions,
-    [string[]]$JDKVersions = @("17", "21"),
+    [string[]]$JDKVersions = @("17", "21", "22"),
     [string[]]$JDKPlatforms = @("windows", "linux", "mac"),
     [switch]$DryRun
 )
