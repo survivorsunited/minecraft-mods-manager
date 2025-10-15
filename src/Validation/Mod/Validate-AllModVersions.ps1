@@ -520,6 +520,37 @@ function Validate-AllModVersions {
                             $mod.LatestVersion = $latestVersion.version_number
                             $mod.LatestGameVersion = $latestVersion.game_versions[0]
                             $mod.LatestVersionUrl = $latestVersion.files[0].url
+                            
+                            # Verify LatestVersion is actually the newest for LatestGameVersion
+                            if ($mod.LatestGameVersion) {
+                                $latestGameVersionNewest = $allVersions | Where-Object { 
+                                    $_.loaders -contains $mod.Loader -and 
+                                    $_.game_versions -contains $mod.LatestGameVersion 
+                                } | Select-Object -First 1
+                                
+                                if ($latestGameVersionNewest -and $latestGameVersionNewest.version_number -ne $mod.LatestVersion) {
+                                    Write-Host "   🔄 $($mod.Name): Updating latest version for $($mod.LatestGameVersion) from $($mod.LatestVersion) to $($latestGameVersionNewest.version_number)" -ForegroundColor Yellow
+                                    $mod.LatestVersion = $latestGameVersionNewest.version_number
+                                    $mod.LatestVersionUrl = $latestGameVersionNewest.files[0].url
+                                }
+                            }
+                            
+                            # Check if there's a newer version for the CURRENT game version
+                            if ($mod.CurrentGameVersion) {
+                                $currentGameVersionLatest = $allVersions | Where-Object { 
+                                    $_.loaders -contains $mod.Loader -and 
+                                    $_.game_versions -contains $mod.CurrentGameVersion 
+                                } | Select-Object -First 1
+                                
+                                if ($currentGameVersionLatest -and $currentGameVersionLatest.version_number -ne $mod.CurrentVersion) {
+                                    # Update CurrentVersion to the latest for current game version
+                                    Write-Host "   🔄 $($mod.Name): Updating current version for $($mod.CurrentGameVersion) from $($mod.CurrentVersion) to $($currentGameVersionLatest.version_number)" -ForegroundColor Yellow
+                                    $mod.CurrentVersion = $currentGameVersionLatest.version_number
+                                    $mod.CurrentVersionUrl = $currentGameVersionLatest.files[0].url
+                                    $mod.Jar = $currentGameVersionLatest.files[0].filename
+                                    $apiUpdateCount++
+                                }
+                            }
                         }
                         
                         # Get next version (1.21.6 if current is 1.21.5) - filter by loader AND game version
@@ -536,6 +567,18 @@ function Validate-AllModVersions {
                                     $mod.NextVersion = $nextVersion.version_number
                                     $mod.NextGameVersion = $nextGameVersion
                                     $mod.NextVersionUrl = $nextVersion.files[0].url
+                                    
+                                    # Verify NextVersion is actually the newest for NextGameVersion
+                                    $nextGameVersionNewest = $allVersions | Where-Object { 
+                                        $_.loaders -contains $mod.Loader -and 
+                                        $_.game_versions -contains $nextGameVersion 
+                                    } | Select-Object -First 1
+                                    
+                                    if ($nextGameVersionNewest -and $nextGameVersionNewest.version_number -ne $mod.NextVersion) {
+                                        Write-Host "   🔄 $($mod.Name): Updating next version for $nextGameVersion from $($mod.NextVersion) to $($nextGameVersionNewest.version_number)" -ForegroundColor Yellow
+                                        $mod.NextVersion = $nextGameVersionNewest.version_number
+                                        $mod.NextVersionUrl = $nextGameVersionNewest.files[0].url
+                                    }
                                 } else {
                                     Write-Host "   ⚠️  $($mod.Name): No matching $($mod.Loader) version found for $nextGameVersion" -ForegroundColor Yellow
                                 }
