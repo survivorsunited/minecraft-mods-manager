@@ -246,21 +246,45 @@ function Download-Mods {
                             }
                         }
                     }
-                } elseif ($TargetGameVersion -and $mod.NextGameVersion -eq $TargetGameVersion -and $mod.NextVersionUrl) {
-                    # Target version matches NextGameVersion - use NextVersionUrl
-                    $downloadUrl = $mod.NextVersionUrl
-                    $downloadVersion = $mod.NextVersion
-                    # For CurseForge mods, we still need to get the filename from API
-                    if ($modHost -eq "curseforge") {
-                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.NextVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                } elseif ($TargetGameVersion -and $mod.NextGameVersion -eq $TargetGameVersion) {
+                    # Target version matches NextGameVersion
+                    if ($mod.NextVersionUrl) {
+                        # Use NextVersionUrl if available
+                        $downloadUrl = $mod.NextVersionUrl
+                        $downloadVersion = $mod.NextVersion
+                        # For CurseForge mods, we still need to get the filename from API
+                        if ($modHost -eq "curseforge") {
+                            $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.NextVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                        }
+                    } elseif ($mod.CurrentVersionUrl) {
+                        # Fallback to CurrentVersionUrl if NextVersionUrl is empty
+                        $downloadUrl = $mod.CurrentVersionUrl
+                        $downloadVersion = $mod.CurrentVersion
+                        Write-Host "  ℹ️  Using current version (next version URL not available)" -ForegroundColor Gray
+                        # For CurseForge mods, we still need to get the filename from API
+                        if ($modHost -eq "curseforge") {
+                            $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                        }
                     }
-                } elseif ($TargetGameVersion -and $mod.LatestGameVersion -eq $TargetGameVersion -and $mod.LatestVersionUrl) {
-                    # Target version matches LatestGameVersion - use LatestVersionUrl
-                    $downloadUrl = $mod.LatestVersionUrl
-                    $downloadVersion = $mod.LatestVersion
-                    # For CurseForge mods, we still need to get the filename from API
-                    if ($modHost -eq "curseforge") {
-                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.LatestVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                } elseif ($TargetGameVersion -and $mod.LatestGameVersion -eq $TargetGameVersion) {
+                    # Target version matches LatestGameVersion
+                    if ($mod.LatestVersionUrl) {
+                        # Use LatestVersionUrl if available
+                        $downloadUrl = $mod.LatestVersionUrl
+                        $downloadVersion = $mod.LatestVersion
+                        # For CurseForge mods, we still need to get the filename from API
+                        if ($modHost -eq "curseforge") {
+                            $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.LatestVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                        }
+                    } elseif ($mod.CurrentVersionUrl) {
+                        # Fallback to CurrentVersionUrl if LatestVersionUrl is empty
+                        $downloadUrl = $mod.CurrentVersionUrl
+                        $downloadVersion = $mod.CurrentVersion
+                        Write-Host "  ℹ️  Using current version (latest version URL not available)" -ForegroundColor Gray
+                        # For CurseForge mods, we still need to get the filename from API
+                        if ($modHost -eq "curseforge") {
+                            $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                        }
                     }
                 } elseif ($UseLatestVersion -and $mod.LatestVersionUrl) {
                     $downloadUrl = $mod.LatestVersionUrl
