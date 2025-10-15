@@ -77,14 +77,61 @@ function Download-Mods {
                     # Use the target version
                     $smartMods += $targetVersionMod
                 } else {
-                    # No exact version match - use the closest compatible version
-                    $latestMod = $group.Group | Where-Object { ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") -or ($_.GameVersion -and $_.GameVersion -ne "") } | Sort-Object { 
-                        $version = if ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") { $_.CurrentGameVersion } else { $_.GameVersion }
-                        [Version]($version -replace '[^\d.]', '') 
-                    } -Descending | Select-Object -First 1
-                    if ($latestMod) {
-                        Write-Host "  ⚠️  $($latestMod.Name): No $TargetGameVersion version, using $($latestMod.CurrentGameVersion)" -ForegroundColor Yellow
-                        $smartMods += $latestMod
+                    # No exact version match - check if we should query API for this version
+                    $firstMod = $group.Group | Select-Object -First 1
+                    
+                    # For Modrinth mods with Type="mod", query API to find version for target game version
+                    if ($firstMod.Host -eq "modrinth" -and $firstMod.Type -eq "mod" -and $firstMod.ID) {
+                        Write-Host "  🔍 $($firstMod.Name): Checking API for $TargetGameVersion version..." -ForegroundColor Cyan
+                        
+                        try {
+                            $allVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($firstMod.ID)/version" -UseBasicParsing -ErrorAction SilentlyContinue
+                            $targetApiVersion = $allVersions | Where-Object { 
+                                $_.game_versions -contains $TargetGameVersion -and 
+                                $_.loaders -contains $firstMod.Loader 
+                            } | Select-Object -First 1
+                            
+                            if ($targetApiVersion) {
+                                # Create a dynamic mod entry for this version
+                                $dynamicMod = $firstMod.PSObject.Copy()
+                                $dynamicMod.CurrentGameVersion = $TargetGameVersion
+                                $dynamicMod.CurrentVersion = $targetApiVersion.version_number
+                                $dynamicMod.CurrentVersionUrl = $targetApiVersion.files[0].url
+                                $dynamicMod.Jar = $targetApiVersion.files[0].filename
+                                Write-Host "  ✅ $($firstMod.Name): Found $TargetGameVersion version from API - $($targetApiVersion.version_number)" -ForegroundColor Green
+                                $smartMods += $dynamicMod
+                            } else {
+                                # Fallback to closest compatible version from database
+                                $latestMod = $group.Group | Where-Object { ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") -or ($_.GameVersion -and $_.GameVersion -ne "") } | Sort-Object { 
+                                    $version = if ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") { $_.CurrentGameVersion } else { $_.GameVersion }
+                                    [Version]($version -replace '[^\d.]', '') 
+                                } -Descending | Select-Object -First 1
+                                if ($latestMod) {
+                                    Write-Host "  ⚠️  $($latestMod.Name): No $TargetGameVersion version, using $($latestMod.CurrentGameVersion)" -ForegroundColor Yellow
+                                    $smartMods += $latestMod
+                                }
+                            }
+                        } catch {
+                            # Fallback to closest compatible version from database on API error
+                            $latestMod = $group.Group | Where-Object { ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") -or ($_.GameVersion -and $_.GameVersion -ne "") } | Sort-Object { 
+                                $version = if ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") { $_.CurrentGameVersion } else { $_.GameVersion }
+                                [Version]($version -replace '[^\d.]', '') 
+                            } -Descending | Select-Object -First 1
+                            if ($latestMod) {
+                                Write-Host "  ⚠️  $($latestMod.Name): API check failed, using $($latestMod.CurrentGameVersion)" -ForegroundColor Yellow
+                                $smartMods += $latestMod
+                            }
+                        }
+                    } else {
+                        # For non-Modrinth or non-mod entries, use the closest compatible version
+                        $latestMod = $group.Group | Where-Object { ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") -or ($_.GameVersion -and $_.GameVersion -ne "") } | Sort-Object { 
+                            $version = if ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") { $_.CurrentGameVersion } else { $_.GameVersion }
+                            [Version]($version -replace '[^\d.]', '') 
+                        } -Descending | Select-Object -First 1
+                        if ($latestMod) {
+                            Write-Host "  ⚠️  $($latestMod.Name): No $TargetGameVersion version, using $($latestMod.CurrentGameVersion)" -ForegroundColor Yellow
+                            $smartMods += $latestMod
+                        }
                     }
                 }
             }
