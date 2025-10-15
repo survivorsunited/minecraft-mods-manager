@@ -36,7 +36,7 @@ function Start-MinecraftServer {
     Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
     
     # Get minimum Java version from environment or use default
-    $minJavaVersion = [int]($env:JAVA_VERSION_MIN ?? "21")
+    $minJavaVersion = [int]($env:JAVA_VERSION_MIN ?? "22")
     
     # Check for downloaded JDK in .cache folder (infrastructure)
     $javaCommand = "java"
@@ -54,7 +54,7 @@ function Start-MinecraftServer {
         Write-Host "   Using: $javaCommand" -ForegroundColor Gray
     } else {
         Write-Host "ℹ️  No bundled JDK found in .cache/jdk/, using system Java" -ForegroundColor Cyan
-        Write-Host "   Tip: Run -DownloadJDK -JDKVersion '21' to download JDK 21" -ForegroundColor Gray
+        Write-Host "   Tip: Run -DownloadJDK -JDKVersion '22' to download JDK 22" -ForegroundColor Gray
     }
     
     # Check Java version
