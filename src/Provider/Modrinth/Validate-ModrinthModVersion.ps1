@@ -78,19 +78,38 @@ function Validate-ModrinthModVersion {
         $versionsResponse = Invoke-RestMethod -Uri $versionsApiUrl -Method Get -TimeoutSec 30
         
         # Find the specific version by version_number with flexible matching
-        # Try exact match first - PRIORITIZE versions where target game version is primary
+        # Try exact match first - PRIORITIZE by loader, then by game version
         $exactMatches = $versionsResponse | Where-Object { $_.version_number -eq $Version }
         if ($exactMatches -and @($exactMatches).Count -gt 1) {
-            # Multiple versions with same version number - prioritize by game version
-            $versionInfo = $exactMatches | ForEach-Object {
-                $gameVersionIndex = $_.game_versions.IndexOf($effectiveGameVersion)
-                if ($gameVersionIndex -ge 0) {
-                    [PSCustomObject]@{
-                        VersionInfo = $_
-                        GameVersionIndex = $gameVersionIndex
+            # Multiple versions with same version number - filter by loader first
+            $loaderMatches = $exactMatches | Where-Object { $_.loaders -contains $Loader }
+            
+            if ($loaderMatches -and @($loaderMatches).Count -gt 1) {
+                # Multiple loader matches - prioritize by game version
+                $versionInfo = $loaderMatches | ForEach-Object {
+                    $gameVersionIndex = $_.game_versions.IndexOf($effectiveGameVersion)
+                    if ($gameVersionIndex -ge 0) {
+                        [PSCustomObject]@{
+                            VersionInfo = $_
+                            GameVersionIndex = $gameVersionIndex
+                        }
                     }
-                }
-            } | Sort-Object GameVersionIndex | Select-Object -First 1 | Select-Object -ExpandProperty VersionInfo
+                } | Sort-Object GameVersionIndex | Select-Object -First 1 | Select-Object -ExpandProperty VersionInfo
+            } elseif ($loaderMatches) {
+                # Single loader match
+                $versionInfo = $loaderMatches
+            } else {
+                # No loader match - try game version prioritization on all matches
+                $versionInfo = $exactMatches | ForEach-Object {
+                    $gameVersionIndex = $_.game_versions.IndexOf($effectiveGameVersion)
+                    if ($gameVersionIndex -ge 0) {
+                        [PSCustomObject]@{
+                            VersionInfo = $_
+                            GameVersionIndex = $gameVersionIndex
+                        }
+                    }
+                } | Sort-Object GameVersionIndex | Select-Object -First 1 | Select-Object -ExpandProperty VersionInfo
+            }
         } else {
             $versionInfo = $exactMatches
         }

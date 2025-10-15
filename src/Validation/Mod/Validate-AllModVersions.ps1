@@ -514,25 +514,30 @@ function Validate-AllModVersions {
                 try {
                     $allVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -Method Get -TimeoutSec 30 -ErrorAction SilentlyContinue
                     if ($allVersions -and $allVersions.Count -gt 0) {
-                        # Get latest version (first in list)
-                        $latestVersion = $allVersions | Select-Object -First 1
+                        # Get latest version (filter by loader first, then select first)
+                        $latestVersion = $allVersions | Where-Object { $_.loaders -contains $mod.Loader } | Select-Object -First 1
                         if ($latestVersion) {
                             $mod.LatestVersion = $latestVersion.version_number
                             $mod.LatestGameVersion = $latestVersion.game_versions[0]
                             $mod.LatestVersionUrl = $latestVersion.files[0].url
                         }
                         
-                        # Get next version (1.21.6 if current is 1.21.5)
+                        # Get next version (1.21.6 if current is 1.21.5) - filter by loader AND game version
                         if ($mod.CurrentGameVersion) {
                             $currentGameVersionParts = $mod.CurrentGameVersion -split '\.'
                             if ($currentGameVersionParts.Count -eq 3) {
                                 $nextPatch = [int]$currentGameVersionParts[2] + 1
                                 $nextGameVersion = "$($currentGameVersionParts[0]).$($currentGameVersionParts[1]).$nextPatch"
-                                $nextVersion = $allVersions | Where-Object { $_.game_versions -contains $nextGameVersion } | Select-Object -First 1
+                                $nextVersion = $allVersions | Where-Object { 
+                                    $_.game_versions -contains $nextGameVersion -and 
+                                    $_.loaders -contains $mod.Loader 
+                                } | Select-Object -First 1
                                 if ($nextVersion) {
                                     $mod.NextVersion = $nextVersion.version_number
                                     $mod.NextGameVersion = $nextGameVersion
                                     $mod.NextVersionUrl = $nextVersion.files[0].url
+                                } else {
+                                    Write-Host "   ⚠️  $($mod.Name): No matching $($mod.Loader) version found for $nextGameVersion" -ForegroundColor Yellow
                                 }
                             }
                         }
