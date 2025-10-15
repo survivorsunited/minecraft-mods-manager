@@ -512,7 +512,8 @@ function Download-Mods {
                         }
                         
                         # If we got an actual filename that's different, update our paths
-                        if ($actualFilename -and $actualFilename -ne $filename) {
+                        # EXCEPT for server/launcher files where we already have a Jar filename - keep the database filename
+                        if ($actualFilename -and $actualFilename -ne $filename -and -not ($mod.Type -in @("launcher", "server") -and $jarFilename)) {
                             Write-Host "  📝 Server returned filename: $actualFilename" -ForegroundColor Gray
                             $filename = $actualFilename
                             $downloadPath = Join-Path $gameVersionFolder $filename
