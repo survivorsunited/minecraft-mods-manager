@@ -333,8 +333,11 @@ if ($ClearServer) {
     }
     
     # Determine current game version from database
-    $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
-    $currentGameVersion = $nextVersionResult.MajorityVersion
+    $currentGameVersion = Get-CurrentVersion -CsvPath $effectiveModListPath
+    if (-not $currentGameVersion) {
+        Write-Host "❌ Failed to determine current game version" -ForegroundColor Red
+        Exit-ModManager 1
+    }
     Write-Host "📋 Current game version: $currentGameVersion" -ForegroundColor Cyan
     
     # Download mods using current versions with ForceDownload (skip server files - handled separately)

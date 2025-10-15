@@ -42,10 +42,18 @@ function Download-Mods {
         [switch]$ForceDownload,
         [string]$TargetGameVersion = $null,
         [string]$ApiResponseFolder,
+<<<<<<< HEAD
         [switch]$SkipServerFiles  # Skip server/launcher entries (when handled separately)
+=======
+        [switch]$SkipServerFiles
+>>>>>>> 2667e21 (#58 fix(validation): add loader filtering and version detection functions)
     )
     
     try {
+        if ($SkipServerFiles) {
+            Write-Host "🔧 SkipServerFiles flag is SET - will not download server/launcher files" -ForegroundColor Cyan
+        }
+        
         $mods = Get-ModList -CsvPath $CsvPath
         if (-not $mods) {
             return
@@ -195,7 +203,11 @@ function Download-Mods {
                 $downloadVersion = $null
                 $result = $null
                 
+<<<<<<< HEAD
                 # Skip server/launcher entries if requested (when handled separately)
+=======
+                # Skip server/launcher entries if requested
+>>>>>>> 2667e21 (#58 fix(validation): add loader filtering and version detection functions)
                 if ($SkipServerFiles -and $mod.Type -in @("launcher", "server")) {
                     continue
                 }
@@ -535,10 +547,13 @@ function Download-Mods {
         
         $downloadResults | Export-Csv -Path $downloadResultsFile -NoTypeInformation
         
-        # Download server files that were skipped due to missing URLs
-        Write-Host ""
-        Write-Host "Downloading server files from database..." -ForegroundColor Yellow
-        $serverDownloadCount = Download-ServerFilesFromDatabase -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload -CsvPath $CsvPath
+        # Download server files that were skipped due to missing URLs (unless explicitly skipped)
+        $serverDownloadCount = 0
+        if (-not $SkipServerFiles) {
+            Write-Host ""
+            Write-Host "Downloading server files from database..." -ForegroundColor Yellow
+            $serverDownloadCount = Download-ServerFilesFromDatabase -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload -CsvPath $CsvPath
+        }
         
         # Ensure serverDownloadCount is a number
         if (-not $serverDownloadCount) { $serverDownloadCount = 0 }
