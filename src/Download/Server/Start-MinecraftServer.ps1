@@ -26,6 +26,7 @@ function Start-MinecraftServer {
         [string]$DownloadFolder = "download",
         [string]$ScriptSource = (Join-Path $PSScriptRoot "..\..\..\tools\start-server.ps1"),
         [string]$TargetVersion = $null,
+        [string]$CsvPath = "modlist.csv",
         [switch]$UseNextVersion,
         [switch]$UseLatestVersion,
         [switch]$UseCurrentVersion,
@@ -77,8 +78,30 @@ function Start-MinecraftServer {
                 if ($majorVersion -lt $minJavaVersion) {
                     Write-Host "❌ Java version $majorVersion is too old" -ForegroundColor Red
                     Write-Host "💡 Minecraft server requires Java $minJavaVersion+ (found version $majorVersion)" -ForegroundColor Yellow
-                    Write-Host "💡 Please upgrade to Java $minJavaVersion or later" -ForegroundColor Yellow
-                    return $false
+                    Write-Host ""
+                    Write-Host "📦 Automatically downloading JDK $minJavaVersion..." -ForegroundColor Cyan
+                    
+                    # Download JDK
+                    $jdkDownloaded = Download-JDK -CsvPath $CsvPath -Version $minJavaVersion.ToString()
+                    
+                    if ($jdkDownloaded) {
+                        Write-Host "✅ JDK $minJavaVersion downloaded successfully" -ForegroundColor Green
+                        Write-Host "🔄 Retrying server start with downloaded JDK..." -ForegroundColor Yellow
+                        
+                        # Update Java command to use downloaded JDK
+                        $jdkPath = Get-ChildItem -Path $jdkCacheFolder -Directory | Where-Object { $_.Name -like "jdk-$minJavaVersion-*" } | Select-Object -First 1
+                        if ($jdkPath) {
+                            $javaCommand = Join-Path $jdkPath.FullName "bin\java.exe"
+                            Write-Host "   Using: $javaCommand" -ForegroundColor Gray
+                        } else {
+                            Write-Host "❌ Could not find downloaded JDK folder" -ForegroundColor Red
+                            return $false
+                        }
+                    } else {
+                        Write-Host "❌ Failed to download JDK $minJavaVersion" -ForegroundColor Red
+                        Write-Host "💡 Please manually install Java $minJavaVersion or later" -ForegroundColor Yellow
+                        return $false
+                    }
                 } else {
                     Write-Host "✅ Java version $majorVersion is compatible (minimum: $minJavaVersion)" -ForegroundColor Green
                 }

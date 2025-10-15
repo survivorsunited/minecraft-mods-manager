@@ -474,6 +474,7 @@ if ($StartServer) {
     $serverParams = @{
         DownloadFolder = $DownloadFolder
         TargetVersion = $targetVersion
+        CsvPath = $effectiveModListPath
     }
     if ($NoAutoRestart) {
         $serverParams.Add("NoAutoRestart", $true)
