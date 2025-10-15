@@ -198,7 +198,24 @@ function Download-ServerFilesFromDatabase {
             Write-Host "⬇️  $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) })): Downloading..." -ForegroundColor Cyan
             
             try {
-                $webRequest = Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -UseBasicParsing
+                # Calculate cache path based on URL hash
+                $urlHash = [System.BitConverter]::ToString([System.Security.Cryptography.SHA256]::Create().ComputeHash([System.Text.Encoding]::UTF8.GetBytes($downloadUrl))).Replace("-", "").Substring(0, 16)
+                $cacheFolder = if ($entry.Type -eq "server") { ".cache\mojang" } else { ".cache\fabric" }
+                if (-not (Test-Path $cacheFolder)) {
+                    New-Item -ItemType Directory -Path $cacheFolder -Force | Out-Null
+                }
+                $cachePath = Join-Path $cacheFolder "$urlHash-$filename"
+                
+                # Download to cache if not already there
+                if (-not (Test-Path $cachePath)) {
+                    Write-Host "  💾 Downloading to cache..." -ForegroundColor Gray
+                    $webRequest = Invoke-WebRequest -Uri $downloadUrl -OutFile $cachePath -UseBasicParsing
+                } else {
+                    Write-Host "  ✓ Using cached file" -ForegroundColor Gray
+                }
+                
+                # Copy from cache to destination
+                Copy-Item -Path $cachePath -Destination $downloadPath -Force
                 
                 if (Test-Path $downloadPath) {
                     $fileSize = (Get-Item $downloadPath).Length

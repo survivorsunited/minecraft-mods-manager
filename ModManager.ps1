@@ -325,26 +325,48 @@ if ($ClearServer) {
     Write-Host ""
     Write-Host "📦 Downloading fresh mods and server files..." -ForegroundColor Cyan
     
-    # Clear the deduplication file to force fresh downloads
-    $dedupFile = Join-Path $DownloadFolder ".downloaded_mods"
-    if (Test-Path $dedupFile) {
-        Remove-Item $dedupFile -Force
-        Write-Host "   🧹 Cleared download cache to ensure fresh downloads" -ForegroundColor Gray
+    # Determine which version to use for clear/download
+    $currentGameVersion = $null
+    
+    if ($TargetVersion) {
+        # Explicit version specified
+        $currentGameVersion = $TargetVersion
+        Write-Host "📋 Target game version: $currentGameVersion (user specified)" -ForegroundColor Cyan
+    } elseif ($GameVersion) {
+        # GameVersion parameter
+        $currentGameVersion = $GameVersion
+        Write-Host "📋 Target game version: $currentGameVersion (user specified)" -ForegroundColor Cyan
+    } elseif ($UseLatestVersion) {
+        # Latest version from database
+        $currentGameVersion = Get-LatestVersion -CsvPath $effectiveModListPath
+        if (-not $currentGameVersion) {
+            Write-Host "❌ Failed to determine latest game version" -ForegroundColor Red
+            Exit-ModManager 1
+        }
+        Write-Host "📋 Target game version: $currentGameVersion (LATEST)" -ForegroundColor Cyan
+    } elseif ($UseNextVersion) {
+        # Next version (current + 1)
+        $currentGameVersion = Get-NextVersion -CsvPath $effectiveModListPath
+        if (-not $currentGameVersion) {
+            Write-Host "❌ Failed to determine next game version" -ForegroundColor Red
+            Exit-ModManager 1
+        }
+        Write-Host "📋 Target game version: $currentGameVersion (NEXT)" -ForegroundColor Cyan
+    } else {
+        # Default: Current version (majority in database)
+        $currentGameVersion = Get-CurrentVersion -CsvPath $effectiveModListPath
+        if (-not $currentGameVersion) {
+            Write-Host "❌ Failed to determine current game version" -ForegroundColor Red
+            Exit-ModManager 1
+        }
+        Write-Host "📋 Target game version: $currentGameVersion (CURRENT, default)" -ForegroundColor Cyan
     }
     
-    # Determine current game version from database
-    $currentGameVersion = Get-CurrentVersion -CsvPath $effectiveModListPath
-    if (-not $currentGameVersion) {
-        Write-Host "❌ Failed to determine current game version" -ForegroundColor Red
-        Exit-ModManager 1
-    }
-    Write-Host "📋 Current game version: $currentGameVersion" -ForegroundColor Cyan
+    # Download mods using target version (skip server files - handled separately)
+    Write-Host "Downloading mods for $currentGameVersion..." -ForegroundColor Yellow
+    Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -SkipServerFiles -TargetGameVersion $currentGameVersion
     
-    # Download mods using current versions with ForceDownload (skip server files - handled separately)
-    Write-Host "Downloading mods for current version..." -ForegroundColor Yellow
-    Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -ForceDownload -SkipServerFiles
-    
-    # Download server files ONLY for current game version
+    # Download server files ONLY for target game version
     Write-Host ""
     Write-Host "Downloading server files for $currentGameVersion only..." -ForegroundColor Yellow
     Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$false -GameVersion $currentGameVersion

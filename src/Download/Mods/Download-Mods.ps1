@@ -42,11 +42,7 @@ function Download-Mods {
         [switch]$ForceDownload,
         [string]$TargetGameVersion = $null,
         [string]$ApiResponseFolder,
-<<<<<<< HEAD
-        [switch]$SkipServerFiles  # Skip server/launcher entries (when handled separately)
-=======
         [switch]$SkipServerFiles
->>>>>>> 2667e21 (#58 fix(validation): add loader filtering and version detection functions)
     )
     
     try {
@@ -171,12 +167,6 @@ function Download-Mods {
         
         # Track files that existed before the download loop
         $preExistingFiles = @{}
-        # Use file-based deduplication to prevent duplicates across script runs
-        $dedupFile = Join-Path $DownloadFolder ".downloaded_mods"
-        $alreadyDownloaded = @{}
-        if (Test-Path $dedupFile) {
-            $alreadyDownloaded = Get-Content $dedupFile | ConvertFrom-Json -AsHashtable
-        }
         $downloadedThisRun = @{}
         
         foreach ($mod in $mods) {
@@ -203,11 +193,7 @@ function Download-Mods {
                 $downloadVersion = $null
                 $result = $null
                 
-<<<<<<< HEAD
-                # Skip server/launcher entries if requested (when handled separately)
-=======
                 # Skip server/launcher entries if requested
->>>>>>> 2667e21 (#58 fix(validation): add loader filtering and version detection functions)
                 if ($SkipServerFiles -and $mod.Type -in @("launcher", "server")) {
                     continue
                 }
@@ -306,12 +292,11 @@ function Download-Mods {
                     }
                 }
                 
-                # Skip this mod entry if we already processed it (file-based deduplication)
-                if ($alreadyDownloaded[$mod.ID] -or $downloadedThisRun[$mod.ID]) {
-                    Write-Host "⏭️  $($mod.Name): Already downloaded" -ForegroundColor Yellow
+                # Skip this mod entry if we already processed it this run
+                if ($downloadedThisRun[$mod.ID]) {
+                    Write-Host "⏭️  $($mod.Name): Already downloaded this run" -ForegroundColor Yellow
                     continue
                 }
-                $alreadyDownloaded[$mod.ID] = $true
                 $downloadedThisRun[$mod.ID] = $true
                 
                 if (-not $downloadUrl) {
@@ -459,7 +444,7 @@ function Download-Mods {
                     
                     # Check if file exists in cache
                     if ((Test-Path $cachePath) -and -not $ForceDownload) {
-                        Write-Host "  📦 Found in cache, copying..." -ForegroundColor Green
+                        Write-Host "  ✓ Using cached file" -ForegroundColor Gray
                         Copy-Item -Path $cachePath -Destination $downloadPath -Force
                     } else {
                         # Decode URL if it contains encoded characters
@@ -532,9 +517,6 @@ function Download-Mods {
                 }
             }
         }
-        
-        # Save deduplication file
-        $alreadyDownloaded | ConvertTo-Json | Set-Content $dedupFile
         
         # Save download results to CSV
         $downloadResultsFile = Join-Path $ApiResponseFolder "mod-download-results.csv"
