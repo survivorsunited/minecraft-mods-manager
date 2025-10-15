@@ -41,7 +41,8 @@ function Download-Mods {
         [switch]$UseNextVersion,
         [switch]$ForceDownload,
         [string]$TargetGameVersion = $null,
-        [string]$ApiResponseFolder
+        [string]$ApiResponseFolder,
+        [switch]$SkipServerFiles  # Skip server/launcher entries (when handled separately)
     )
     
     try {
@@ -193,6 +194,11 @@ function Download-Mods {
                 $downloadUrl = $null
                 $downloadVersion = $null
                 $result = $null
+                
+                # Skip server/launcher entries if requested (when handled separately)
+                if ($SkipServerFiles -and $mod.Type -in @("launcher", "server")) {
+                    continue
+                }
                 
                 # For system entries (installer, launcher, server), handle differently based on UseLatestVersion
                 if ($mod.Type -in @("installer", "launcher", "server")) {

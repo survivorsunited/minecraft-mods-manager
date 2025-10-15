@@ -228,7 +228,36 @@ if ($DownloadMods) {
 # Handle DownloadServer parameter
 if ($DownloadServer) {
     Write-Host "Starting server files download process..." -ForegroundColor Yellow
-    Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload -GameVersion $TargetVersion
+    
+    # Determine which version to download (same logic as mod downloads)
+    $serverVersion = $null
+    
+    if ($TargetVersion) {
+        # Explicit version specified
+        $serverVersion = $TargetVersion
+        Write-Host "📋 Downloading server files for version: $serverVersion (user specified)" -ForegroundColor Cyan
+    } elseif ($GameVersion) {
+        # GameVersion parameter
+        $serverVersion = $GameVersion
+        Write-Host "📋 Downloading server files for version: $serverVersion (user specified)" -ForegroundColor Cyan
+    } elseif ($UseLatestVersion) {
+        # Latest version from database
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
+        $serverVersion = $nextVersionResult.LatestVersion
+        Write-Host "📋 Downloading server files for LATEST version: $serverVersion" -ForegroundColor Cyan
+    } elseif ($UseNextVersion) {
+        # Next version (current + 1)
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
+        $serverVersion = $nextVersionResult.NextVersion
+        Write-Host "📋 Downloading server files for NEXT version: $serverVersion" -ForegroundColor Cyan
+    } else {
+        # Default: Current version (majority in database)
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
+        $serverVersion = $nextVersionResult.MajorityVersion
+        Write-Host "📋 Downloading server files for CURRENT version: $serverVersion (default)" -ForegroundColor Cyan
+    }
+    
+    Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload -GameVersion $serverVersion
     Exit-ModManager 0
 }
 
@@ -255,8 +284,7 @@ if ($ClearServer) {
                 "eula.txt", "server.properties", "ops.json", "whitelist.json",
                 "banned-ips.json", "banned-players.json", "usercache.json",
                 "versions", "libraries", ".fabric",
-                "mods",  # Clear mods folder for fresh download
-                "*.log", "*.log.gz", "*.tmp"
+                "mods"  # Clear mods folder for fresh download
             )
             
             foreach ($item in $itemsToRemove) {
@@ -265,6 +293,29 @@ if ($ClearServer) {
                     Remove-Item $itemPath -Recurse -Force -ErrorAction SilentlyContinue
                     Write-Host "   ✓ Removed: $item" -ForegroundColor Gray
                 }
+            }
+            
+            # Remove server JAR files (use wildcards)
+            Get-ChildItem -Path $folderPath -Filter "minecraft_server.*.jar" -ErrorAction SilentlyContinue | ForEach-Object {
+                Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
+                Write-Host "   ✓ Removed: $($_.Name)" -ForegroundColor Gray
+            }
+            
+            # Remove Fabric launcher files (use wildcards)
+            Get-ChildItem -Path $folderPath -Filter "fabric-server*.jar" -ErrorAction SilentlyContinue | ForEach-Object {
+                Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
+                Write-Host "   ✓ Removed: $($_.Name)" -ForegroundColor Gray
+            }
+            
+            # Remove log files (use wildcards)
+            Get-ChildItem -Path $folderPath -Filter "*.log" -ErrorAction SilentlyContinue | ForEach-Object {
+                Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
+            }
+            Get-ChildItem -Path $folderPath -Filter "*.log.gz" -ErrorAction SilentlyContinue | ForEach-Object {
+                Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
+            }
+            Get-ChildItem -Path $folderPath -Filter "*.tmp" -ErrorAction SilentlyContinue | ForEach-Object {
+                Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
             }
         }
         Write-Host "✅ Server files cleared successfully!" -ForegroundColor Green
@@ -286,9 +337,9 @@ if ($ClearServer) {
     $currentGameVersion = $nextVersionResult.MajorityVersion
     Write-Host "📋 Current game version: $currentGameVersion" -ForegroundColor Cyan
     
-    # Download mods using current versions with ForceDownload
+    # Download mods using current versions with ForceDownload (skip server files - handled separately)
     Write-Host "Downloading mods for current version..." -ForegroundColor Yellow
-    Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -ForceDownload
+    Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -ForceDownload -SkipServerFiles
     
     # Download server files ONLY for current game version
     Write-Host ""
