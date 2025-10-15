@@ -65,8 +65,13 @@ function Download-Mods {
             $smartMods = @()
             
             foreach ($group in $modGroups) {
-                # Check if target version exists for this mod
-                $targetVersionMod = $group.Group | Where-Object { $_.CurrentGameVersion -eq $TargetGameVersion -or $_.GameVersion -eq $TargetGameVersion } | Select-Object -First 1
+                # Check if target version exists for this mod (check Current, Next, Latest, and GameVersion columns)
+                $targetVersionMod = $group.Group | Where-Object { 
+                    $_.CurrentGameVersion -eq $TargetGameVersion -or 
+                    $_.NextGameVersion -eq $TargetGameVersion -or 
+                    $_.LatestGameVersion -eq $TargetGameVersion -or 
+                    $_.GameVersion -eq $TargetGameVersion 
+                } | Select-Object -First 1
                 
                 if ($targetVersionMod) {
                     # Use the target version
@@ -241,6 +246,22 @@ function Download-Mods {
                             }
                         }
                     }
+                } elseif ($TargetGameVersion -and $mod.NextGameVersion -eq $TargetGameVersion -and $mod.NextVersionUrl) {
+                    # Target version matches NextGameVersion - use NextVersionUrl
+                    $downloadUrl = $mod.NextVersionUrl
+                    $downloadVersion = $mod.NextVersion
+                    # For CurseForge mods, we still need to get the filename from API
+                    if ($modHost -eq "curseforge") {
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.NextVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                    }
+                } elseif ($TargetGameVersion -and $mod.LatestGameVersion -eq $TargetGameVersion -and $mod.LatestVersionUrl) {
+                    # Target version matches LatestGameVersion - use LatestVersionUrl
+                    $downloadUrl = $mod.LatestVersionUrl
+                    $downloadVersion = $mod.LatestVersion
+                    # For CurseForge mods, we still need to get the filename from API
+                    if ($modHost -eq "curseforge") {
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.LatestVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                    }
                 } elseif ($UseLatestVersion -and $mod.LatestVersionUrl) {
                     $downloadUrl = $mod.LatestVersionUrl
                     $downloadVersion = $mod.LatestVersion
@@ -382,12 +403,13 @@ function Download-Mods {
                             $filename = "$($mod.ID)-$downloadVersion.jar"
                         }
                     }
-                } elseif ($jarFilename -and -not $UseLatestVersion -and -not $UseNextVersion) {
-                    # Use the JAR filename from CSV if available and not using latest version
+                } elseif ($jarFilename -and -not $UseLatestVersion -and -not $UseNextVersion -and -not $TargetGameVersion) {
+                    # Use the JAR filename from CSV if available and not using any version override
                     $filename = $jarFilename
                 } else {
-                    # Extract filename from URL or use mod ID
-                    $filename = [System.IO.Path]::GetFileName($downloadUrl)
+                    # Extract filename from URL or use mod ID (decode URL first to get clean filename)
+                    $decodedUrl = [System.Web.HttpUtility]::UrlDecode($downloadUrl)
+                    $filename = [System.IO.Path]::GetFileName($decodedUrl)
                     if (-not $filename -or $filename -eq "") {
                         $filename = "$($mod.ID)-$downloadVersion.jar"
                     }
@@ -450,9 +472,36 @@ function Download-Mods {
                         # Decode URL if it contains encoded characters
                         $decodedUrl = [System.Web.HttpUtility]::UrlDecode($downloadUrl)
                         
-                        # Download to cache first
+                        # Download to cache first and get actual filename from response
                         Write-Host "  💾 Downloading to cache..." -ForegroundColor Gray
-                        $webRequest = Invoke-WebRequest -Uri $decodedUrl -OutFile $cachePath -UseBasicParsing
+                        $webRequest = Invoke-WebRequest -Uri $decodedUrl -UseBasicParsing
+                        
+                        # Try to get actual filename from Content-Disposition header or response URI
+                        $actualFilename = $null
+                        if ($webRequest.Headers -and $webRequest.Headers["Content-Disposition"]) {
+                            if ($webRequest.Headers["Content-Disposition"] -match 'filename="?([^"]+)"?') {
+                                $actualFilename = $matches[1]
+                            }
+                        }
+                        if (-not $actualFilename -and $webRequest.BaseResponse -and $webRequest.BaseResponse.ResponseUri) {
+                            $actualFilename = [System.IO.Path]::GetFileName($webRequest.BaseResponse.ResponseUri.AbsolutePath)
+                        }
+                        
+                        # If we got an actual filename that's different, update our paths
+                        if ($actualFilename -and $actualFilename -ne $filename) {
+                            Write-Host "  📝 Server returned filename: $actualFilename" -ForegroundColor Gray
+                            $filename = $actualFilename
+                            $downloadPath = Join-Path $gameVersionFolder $filename
+                            
+                            # Update cache path to use actual filename
+                            $newCachePath = Join-Path $providerCacheFolder "$hashString-$filename"
+                            if ($cachePath -ne $newCachePath) {
+                                $cachePath = $newCachePath
+                            }
+                        }
+                        
+                        # Save to cache
+                        [System.IO.File]::WriteAllBytes($cachePath, $webRequest.Content)
                         
                         # Copy from cache to destination
                         Copy-Item -Path $cachePath -Destination $downloadPath -Force

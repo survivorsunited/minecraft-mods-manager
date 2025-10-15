@@ -45,6 +45,7 @@ param(
     [string]$DownloadFolder,
     [string]$ApiResponseFolder,
     [switch]$UseCachedResponses,
+    [switch]$ClearCache,
     [switch]$Online,
     [switch]$ValidateWithDownload,
     [switch]$DownloadCurseForgeModpack,
@@ -174,6 +175,33 @@ $CurseForgeApiResponseSubfolder = if ($env:APIRESPONSE_CURSEFORGE_SUBFOLDER) { $
 # Get effective modlist path
 $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $ModListPath
 
+# Handle ClearCache parameter
+if ($ClearCache) {
+    Write-Host "Clearing cache..." -ForegroundColor Yellow
+    $cacheFolder = ".cache"
+    
+    if (Test-Path $cacheFolder) {
+        $cacheFolders = Get-ChildItem -Path $cacheFolder -Directory
+        $cacheFiles = Get-ChildItem -Path $cacheFolder -File
+        
+        foreach ($folder in $cacheFolders) {
+            Write-Host "  🗑️  Removing: $($folder.Name)" -ForegroundColor Gray
+            Remove-Item -Path $folder.FullName -Recurse -Force
+        }
+        
+        foreach ($file in $cacheFiles) {
+            Write-Host "  🗑️  Removing: $($file.Name)" -ForegroundColor Gray
+            Remove-Item -Path $file.FullName -Force
+        }
+        
+        Write-Host "✅ Cache cleared successfully!" -ForegroundColor Green
+    } else {
+        Write-Host "  ℹ️  Cache folder does not exist" -ForegroundColor Yellow
+    }
+    
+    Exit-ModManager 0
+}
+
 # Handle UpdateMods parameter
 if ($UpdateMods) {
     Write-Host "Starting mod update process..." -ForegroundColor Yellow
@@ -265,14 +293,35 @@ if ($DownloadServer) {
 if ($ClearServer) {
     Write-Host "Clearing server files..." -ForegroundColor Yellow
     
-    # Find all version folders
-    $versionFolders = Get-ChildItem -Path $DownloadFolder -Directory -ErrorAction SilentlyContinue | 
-                     Where-Object { $_.Name -match "^\d+\.\d+\.\d+" }
+    # Determine which version to clear
+    $versionToClear = $null
     
-    if ($versionFolders.Count -eq 0) {
-        Write-Host "⚠️  No server folders found to clear." -ForegroundColor Yellow
+    if ($TargetVersion) {
+        $versionToClear = $TargetVersion
+    } elseif ($GameVersion) {
+        $versionToClear = $GameVersion
+    } elseif ($UseLatestVersion) {
+        $versionToClear = Get-LatestVersion -CsvPath $effectiveModListPath
+    } elseif ($UseNextVersion) {
+        $versionToClear = Get-NextVersion -CsvPath $effectiveModListPath
+    } else {
+        $versionToClear = Get-CurrentVersion -CsvPath $effectiveModListPath
+    }
+    
+    if (-not $versionToClear) {
+        Write-Host "❌ Failed to determine version to clear" -ForegroundColor Red
+        Exit-ModManager 1
+    }
+    
+    # Only clear the target version folder
+    $targetFolder = Join-Path $DownloadFolder $versionToClear
+    
+    if (-not (Test-Path $targetFolder)) {
+        Write-Host "⚠️  No server folder found for $versionToClear." -ForegroundColor Yellow
         Write-Host "💡 Will download fresh server files and mods..." -ForegroundColor Cyan
     } else {
+        $versionFolders = @(Get-Item $targetFolder)
+        
         foreach ($folder in $versionFolders) {
             $folderPath = $folder.FullName
             Write-Host "🗑️  Clearing server files in: $($folder.Name)" -ForegroundColor Cyan
@@ -325,40 +374,16 @@ if ($ClearServer) {
     Write-Host ""
     Write-Host "📦 Downloading fresh mods and server files..." -ForegroundColor Cyan
     
-    # Determine which version to use for clear/download
-    $currentGameVersion = $null
+    # Use the version we already determined above
+    $currentGameVersion = $versionToClear
     
-    if ($TargetVersion) {
-        # Explicit version specified
-        $currentGameVersion = $TargetVersion
-        Write-Host "📋 Target game version: $currentGameVersion (user specified)" -ForegroundColor Cyan
-    } elseif ($GameVersion) {
-        # GameVersion parameter
-        $currentGameVersion = $GameVersion
+    if ($TargetVersion -or $GameVersion) {
         Write-Host "📋 Target game version: $currentGameVersion (user specified)" -ForegroundColor Cyan
     } elseif ($UseLatestVersion) {
-        # Latest version from database
-        $currentGameVersion = Get-LatestVersion -CsvPath $effectiveModListPath
-        if (-not $currentGameVersion) {
-            Write-Host "❌ Failed to determine latest game version" -ForegroundColor Red
-            Exit-ModManager 1
-        }
         Write-Host "📋 Target game version: $currentGameVersion (LATEST)" -ForegroundColor Cyan
     } elseif ($UseNextVersion) {
-        # Next version (current + 1)
-        $currentGameVersion = Get-NextVersion -CsvPath $effectiveModListPath
-        if (-not $currentGameVersion) {
-            Write-Host "❌ Failed to determine next game version" -ForegroundColor Red
-            Exit-ModManager 1
-        }
         Write-Host "📋 Target game version: $currentGameVersion (NEXT)" -ForegroundColor Cyan
     } else {
-        # Default: Current version (majority in database)
-        $currentGameVersion = Get-CurrentVersion -CsvPath $effectiveModListPath
-        if (-not $currentGameVersion) {
-            Write-Host "❌ Failed to determine current game version" -ForegroundColor Red
-            Exit-ModManager 1
-        }
         Write-Host "📋 Target game version: $currentGameVersion (CURRENT, default)" -ForegroundColor Cyan
     }
     
@@ -392,27 +417,28 @@ if ($StartServer) {
         Write-Host "🎯 Target version: $targetVersion (user specified via GameVersion)" -ForegroundColor Green
     } elseif ($UseNextVersion) {
         # Use next version to test if newer versions will work
-        $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
-        $targetVersion = $nextVersionResult.NextVersion
-        
-        if ($nextVersionResult.IsHighestVersion) {
-            Write-Host "🎯 Target version: $targetVersion (highest available version)" -ForegroundColor Blue
-        } else {
-            Write-Host "🎯 Target version: $targetVersion (next version after $($nextVersionResult.MajorityVersion) for testing)" -ForegroundColor Green
-            Write-Host "   📊 Testing if $($nextVersionResult.ModCount) mods will work with next version" -ForegroundColor Gray
+        $targetVersion = Get-NextVersion -CsvPath $effectiveModListPath
+        if (-not $targetVersion) {
+            Write-Host "❌ Failed to determine next game version" -ForegroundColor Red
+            Exit-ModManager 1
         }
+        Write-Host "🎯 Target version: $targetVersion (NEXT version)" -ForegroundColor Green
     } elseif ($UseCurrentVersion) {
         # Use current version (majority version from modlist)
-        $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
-        $targetVersion = $nextVersionResult.MajorityVersion
-        Write-Host "🎯 Target version: $targetVersion (current version from modlist)" -ForegroundColor Green
-        Write-Host "   📊 Using current version from $($nextVersionResult.ModCount) mods" -ForegroundColor Gray
+        $targetVersion = Get-CurrentVersion -CsvPath $effectiveModListPath
+        if (-not $targetVersion) {
+            Write-Host "❌ Failed to determine current game version" -ForegroundColor Red
+            Exit-ModManager 1
+        }
+        Write-Host "🎯 Target version: $targetVersion (CURRENT version)" -ForegroundColor Green
     } else {
         # Default: Use current version (majority version from modlist)
-        $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
-        $targetVersion = $nextVersionResult.MajorityVersion
-        Write-Host "🎯 Target version: $targetVersion (current version - default)" -ForegroundColor Green
-        Write-Host "   📊 Using current version from $($nextVersionResult.ModCount) mods" -ForegroundColor Gray
+        $targetVersion = Get-CurrentVersion -CsvPath $effectiveModListPath
+        if (-not $targetVersion) {
+            Write-Host "❌ Failed to determine current game version" -ForegroundColor Red
+            Exit-ModManager 1
+        }
+        Write-Host "🎯 Target version: $targetVersion (CURRENT version - default)" -ForegroundColor Green
         Write-Host "   💡 Use -UseNextVersion to test with next Minecraft version" -ForegroundColor Gray
     }
     
