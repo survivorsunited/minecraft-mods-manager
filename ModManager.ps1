@@ -415,6 +415,14 @@ if ($StartServer) {
     } elseif ($GameVersion) {
         $targetVersion = $GameVersion
         Write-Host "🎯 Target version: $targetVersion (user specified via GameVersion)" -ForegroundColor Green
+    } elseif ($UseLatestVersion) {
+        # Use latest version to test compatibility with newest Minecraft
+        $targetVersion = Get-LatestVersion -CsvPath $effectiveModListPath
+        if (-not $targetVersion) {
+            Write-Host "❌ Failed to determine latest game version" -ForegroundColor Red
+            Exit-ModManager 1
+        }
+        Write-Host "🎯 Target version: $targetVersion (LATEST version)" -ForegroundColor Green
     } elseif ($UseNextVersion) {
         # Use next version to test if newer versions will work
         $targetVersion = Get-NextVersion -CsvPath $effectiveModListPath
