@@ -14,8 +14,12 @@
     The download folder containing mods and server files.
 .PARAMETER ScriptSource
     Path to the start-server script (optional).
+.PARAMETER NoAutoRestart
+    Disable automatic server restart on normal exit.
 .EXAMPLE
     Start-MinecraftServer -DownloadFolder "download"
+.EXAMPLE
+    Start-MinecraftServer -DownloadFolder "download" -NoAutoRestart
 #>
 function Start-MinecraftServer {
     param(
@@ -23,7 +27,9 @@ function Start-MinecraftServer {
         [string]$ScriptSource = (Join-Path $PSScriptRoot "..\..\..\tools\start-server.ps1"),
         [string]$TargetVersion = $null,
         [switch]$UseNextVersion,
-        [switch]$UseLatestVersion
+        [switch]$UseLatestVersion,
+        [switch]$UseCurrentVersion,
+        [switch]$NoAutoRestart
     )
     
     Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
@@ -39,12 +45,12 @@ function Start-MinecraftServer {
     
     if (Test-Path $bundledJDK22) {
         Write-Host "✅ Found bundled JDK 22 in .cache folder" -ForegroundColor Green
-        $javaCommand = $bundledJDK22
-        Write-Host "   Using: $bundledJDK22" -ForegroundColor Gray
+        $javaCommand = (Resolve-Path $bundledJDK22).Path
+        Write-Host "   Using: $javaCommand" -ForegroundColor Gray
     } elseif (Test-Path $bundledJDK21) {
         Write-Host "✅ Found bundled JDK 21 in .cache folder" -ForegroundColor Green
-        $javaCommand = $bundledJDK21
-        Write-Host "   Using: $bundledJDK21" -ForegroundColor Gray
+        $javaCommand = (Resolve-Path $bundledJDK21).Path
+        Write-Host "   Using: $javaCommand" -ForegroundColor Gray
     } else {
         Write-Host "ℹ️  No bundled JDK found in .cache/jdk/, using system Java" -ForegroundColor Cyan
         Write-Host "   Tip: Run -DownloadJDK -JDKVersion '21' to download JDK 21" -ForegroundColor Gray
@@ -121,17 +127,16 @@ function Start-MinecraftServer {
         $nextVersionResult = Calculate-NextGameVersion -CsvPath $ModListPath
         $targetVersion = $nextVersionResult.NextVersion
         Write-Host "🎯 Target version: $targetVersion (next)" -ForegroundColor Green
-    } else {
-        # Default: Use next version to test if newer versions will work
+    } elseif ($UseCurrentVersion) {
+        # Use current version (majority version from modlist)
         $nextVersionResult = Calculate-NextGameVersion -CsvPath $ModListPath
-        $targetVersion = $nextVersionResult.NextVersion
-        
-        if ($nextVersionResult.IsHighestVersion) {
-            Write-Host "🎯 Target version: $targetVersion (highest available version)" -ForegroundColor Blue
-        } else {
-            Write-Host "🎯 Target version: $targetVersion (next version after $($nextVersionResult.MajorityVersion) for testing)" -ForegroundColor Green
-            Write-Host "   📊 Testing if $($nextVersionResult.ModCount) mods will work with next version" -ForegroundColor Gray
-        }
+        $targetVersion = $nextVersionResult.MajorityVersion
+        Write-Host "🎯 Target version: $targetVersion (current)" -ForegroundColor Green
+    } else {
+        # Default: Use current version (majority version from modlist)
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $ModListPath
+        $targetVersion = $nextVersionResult.MajorityVersion
+        Write-Host "🎯 Target version: $targetVersion (current - default)" -ForegroundColor Green
     }
     
     $targetFolder = Join-Path $DownloadFolder $targetVersion
@@ -313,10 +318,24 @@ max-world-size=29999984
     Write-Host "📋 Server logs will be saved to: $logsDir" -ForegroundColor Gray
     
     try {
+        # Calculate JAVA_HOME from the Java command path
+        $javaHome = if ($javaCommand -ne "java") {
+            # Extract JAVA_HOME from the java.exe path (remove \bin\java.exe)
+            Split-Path (Split-Path $javaCommand -Parent) -Parent
+        } else {
+            $null
+        }
+        
         # Start the server as a background job - run Java directly for better control
         $job = Start-Job -ScriptBlock {
-            param($JarPath, $WorkingDir, $JavaCommand)
+            param($JarPath, $WorkingDir, $JavaCommand, $JavaHome)
             Set-Location $WorkingDir
+            
+            # Set JAVA_HOME environment variable if provided
+            if ($JavaHome) {
+                $env:JAVA_HOME = $JavaHome
+                Write-Host "🔧 Set JAVA_HOME to: $JavaHome"
+            }
             
             # Verify files exist before starting server
             if (-not (Test-Path "eula.txt")) {
@@ -330,7 +349,7 @@ max-world-size=29999984
             
             # Run the Fabric server directly with specified Java command
             & $JavaCommand -server -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -Xms1G -Xmx4G --enable-native-access=ALL-UNNAMED -jar $JarPath nogui
-        } -ArgumentList $fabricJars[0].Name, $targetFolder, $javaCommand
+        } -ArgumentList $fabricJars[0].Name, $targetFolder, $javaCommand, $javaHome
         
         Write-Host "✅ Server job started successfully (Job ID: $($job.Id))" -ForegroundColor Green
         Write-Host "🔄 Monitoring server logs for errors..." -ForegroundColor Cyan

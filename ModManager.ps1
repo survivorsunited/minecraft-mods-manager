@@ -6,6 +6,7 @@ param(
     [switch]$Download,
     [switch]$UseLatestVersion,
     [switch]$UseNextVersion,
+    [switch]$UseCurrentVersion,
     [switch]$ForceDownload,
     [switch]$Help,
     [switch]$ValidateModVersion,
@@ -32,6 +33,7 @@ param(
     [string]$AddModCategory,
     [switch]$DownloadServer,
     [switch]$StartServer,
+    [switch]$NoAutoRestart,
     [string]$GameVersion,
     [string]$TargetVersion,
     [switch]$ClearServer,
@@ -240,18 +242,20 @@ if ($ClearServer) {
     
     if ($versionFolders.Count -eq 0) {
         Write-Host "⚠️  No server folders found to clear." -ForegroundColor Yellow
+        Write-Host "💡 Will download fresh server files and mods..." -ForegroundColor Cyan
     } else {
         foreach ($folder in $versionFolders) {
             $folderPath = $folder.FullName
             Write-Host "🗑️  Clearing server files in: $($folder.Name)" -ForegroundColor Cyan
             
-            # Remove server-specific files and folders
+            # Remove server-specific files and folders (including mods to ensure clean slate)
             $itemsToRemove = @(
                 "world", "world_nether", "world_the_end",
                 "logs", "crash-reports", "config",
                 "eula.txt", "server.properties", "ops.json", "whitelist.json",
                 "banned-ips.json", "banned-players.json", "usercache.json",
                 "versions", "libraries", ".fabric",
+                "mods",  # Clear mods folder for fresh download
                 "*.log", "*.log.gz", "*.tmp"
             )
             
@@ -264,8 +268,36 @@ if ($ClearServer) {
             }
         }
         Write-Host "✅ Server files cleared successfully!" -ForegroundColor Green
-        Write-Host "💡 Run -StartServer to start fresh." -ForegroundColor Cyan
     }
+    
+    # After clearing, download mods and server files
+    Write-Host ""
+    Write-Host "📦 Downloading fresh mods and server files..." -ForegroundColor Cyan
+    
+    # Clear the deduplication file to force fresh downloads
+    $dedupFile = Join-Path $DownloadFolder ".downloaded_mods"
+    if (Test-Path $dedupFile) {
+        Remove-Item $dedupFile -Force
+        Write-Host "   🧹 Cleared download cache to ensure fresh downloads" -ForegroundColor Gray
+    }
+    
+    # Determine current game version from database
+    $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
+    $currentGameVersion = $nextVersionResult.MajorityVersion
+    Write-Host "📋 Current game version: $currentGameVersion" -ForegroundColor Cyan
+    
+    # Download mods using current versions with ForceDownload
+    Write-Host "Downloading mods for current version..." -ForegroundColor Yellow
+    Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -ForceDownload
+    
+    # Download server files ONLY for current game version
+    Write-Host ""
+    Write-Host "Downloading server files for $currentGameVersion only..." -ForegroundColor Yellow
+    Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$false -GameVersion $currentGameVersion
+    
+    Write-Host ""
+    Write-Host "✅ Server cleared and mods downloaded successfully!" -ForegroundColor Green
+    Write-Host "💡 Run -StartServer to start the server" -ForegroundColor Cyan
     Exit-ModManager 0
 }
 
@@ -273,7 +305,7 @@ if ($ClearServer) {
 if ($StartServer) {
     Write-Host "Starting Minecraft server..." -ForegroundColor Yellow
     
-    # Determine target version (use parameter if provided, otherwise use next version for testing)
+    # Determine target version (use parameter if provided, otherwise use current version as default)
     Write-Host "🔍 Determining target game version..." -ForegroundColor Cyan
     
     if ($TargetVersion) {
@@ -282,7 +314,7 @@ if ($StartServer) {
     } elseif ($GameVersion) {
         $targetVersion = $GameVersion
         Write-Host "🎯 Target version: $targetVersion (user specified via GameVersion)" -ForegroundColor Green
-    } else {
+    } elseif ($UseNextVersion) {
         # Use next version to test if newer versions will work
         $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
         $targetVersion = $nextVersionResult.NextVersion
@@ -293,6 +325,19 @@ if ($StartServer) {
             Write-Host "🎯 Target version: $targetVersion (next version after $($nextVersionResult.MajorityVersion) for testing)" -ForegroundColor Green
             Write-Host "   📊 Testing if $($nextVersionResult.ModCount) mods will work with next version" -ForegroundColor Gray
         }
+    } elseif ($UseCurrentVersion) {
+        # Use current version (majority version from modlist)
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
+        $targetVersion = $nextVersionResult.MajorityVersion
+        Write-Host "🎯 Target version: $targetVersion (current version from modlist)" -ForegroundColor Green
+        Write-Host "   📊 Using current version from $($nextVersionResult.ModCount) mods" -ForegroundColor Gray
+    } else {
+        # Default: Use current version (majority version from modlist)
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $effectiveModListPath
+        $targetVersion = $nextVersionResult.MajorityVersion
+        Write-Host "🎯 Target version: $targetVersion (current version - default)" -ForegroundColor Green
+        Write-Host "   📊 Using current version from $($nextVersionResult.ModCount) mods" -ForegroundColor Gray
+        Write-Host "   💡 Use -UseNextVersion to test with next Minecraft version" -ForegroundColor Gray
     }
     
     # Check if target version folder exists and has files
@@ -324,7 +369,14 @@ if ($StartServer) {
     Write-Host "" -ForegroundColor White
     
     # Now start the server
-    $serverResult = Start-MinecraftServer -DownloadFolder $DownloadFolder -TargetVersion $targetVersion
+    $serverParams = @{
+        DownloadFolder = $DownloadFolder
+        TargetVersion = $targetVersion
+    }
+    if ($NoAutoRestart) {
+        $serverParams.Add("NoAutoRestart", $true)
+    }
+    $serverResult = Start-MinecraftServer @serverParams
     if ($serverResult) {
         Write-Host "🎉 SERVER VALIDATION SUCCESSFUL!" -ForegroundColor Green
         Exit-ModManager 0

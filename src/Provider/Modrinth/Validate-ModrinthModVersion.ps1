@@ -232,35 +232,34 @@ function Validate-ModrinthModVersion {
         }
         $gameVersionCompatible = $false
         
-        # First check for exact match
+        # CRITICAL: Check filename for actual build version
+        # A mod might be marked as "compatible" with 1.21.5 but the JAR is built for 1.21.4
+        # This causes mixin failures and server crashes!
+        $actualBuildVersion = $null
+        if ($versionInfo.files -and $versionInfo.files.Count -gt 0) {
+            $filename = $versionInfo.files[0].filename
+            # Look for MC version patterns: mc1.21.5, -1.21.5-, fabric-1.21.5, etc.
+            # Minecraft versions always start with 1.xx
+            if ($filename -match '(?:mc|fabric|forge|quilt)?[-_]?(1\.\d+\.\d+)') {
+                $actualBuildVersion = $matches[1]
+            }
+        }
+        
+        # Check if mod supports the target game version (trust mod author's compatibility claims)
         if ($versionInfo.game_versions -contains $effectiveGameVersion) {
+            # Mod author says it's compatible
+            if ($actualBuildVersion -and $actualBuildVersion -ne $effectiveGameVersion) {
+                # Warn about build version mismatch but trust compatibility claim
+                if (-not $Quiet) {
+                    Write-Host "⚠️  Version $($versionInfo.version_number): JAR built for $actualBuildVersion but marked compatible with $effectiveGameVersion" -ForegroundColor Yellow
+                }
+            }
             $gameVersionCompatible = $true
         } else {
-            # Check for compatible versions within the same major.minor version
-            # For example, 1.21.4 should be compatible with 1.21.5
-            if ($effectiveGameVersion -match '^(\d+)\.(\d+)\.(\d+)$') {
-                $targetMajor = [int]$matches[1]
-                $targetMinor = [int]$matches[2]
-                $targetPatch = [int]$matches[3]
-                
-                foreach ($supportedVersion in $versionInfo.game_versions) {
-                    if ($supportedVersion -match '^(\d+)\.(\d+)\.(\d+)') {
-                        $supportedMajor = [int]$matches[1]
-                        $supportedMinor = [int]$matches[2]
-                        $supportedPatch = [int]$matches[3]
-                        
-                        # Compatible if same major.minor and supported patch is <= target patch
-                        if ($supportedMajor -eq $targetMajor -and 
-                            $supportedMinor -eq $targetMinor -and 
-                            $supportedPatch -le $targetPatch) {
-                            $gameVersionCompatible = $true
-                            if (-not $Quiet) {
-                                Write-Host "DEBUG: Version $($versionInfo.version_number) compatible: supports $supportedVersion, requesting $effectiveGameVersion" -ForegroundColor Green
-                            }
-                            break
-                        }
-                    }
-                }
+            # Not in supported versions list - still reject this
+            $gameVersionCompatible = $false
+            if (-not $Quiet) {
+                Write-Host "⚠️  Version $($versionInfo.version_number) does not support $effectiveGameVersion (supports: $($versionInfo.game_versions -join ', '))" -ForegroundColor Yellow
             }
         }
         

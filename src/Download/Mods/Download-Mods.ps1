@@ -67,13 +67,13 @@ function Download-Mods {
                     # Use the target version
                     $smartMods += $targetVersionMod
                 } else {
-                    # Use the latest available version (highest version number)
+                    # No exact version match - use the closest compatible version
                     $latestMod = $group.Group | Where-Object { ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") -or ($_.GameVersion -and $_.GameVersion -ne "") } | Sort-Object { 
                         $version = if ($_.CurrentGameVersion -and $_.CurrentGameVersion -ne "") { $_.CurrentGameVersion } else { $_.GameVersion }
                         [Version]($version -replace '[^\d.]', '') 
                     } -Descending | Select-Object -First 1
                     if ($latestMod) {
-                        Write-Host "  ⚠️  $($latestMod.Name): No $TargetGameVersion version, using $($latestMod.GameVersion)" -ForegroundColor Yellow
+                        Write-Host "  ⚠️  $($latestMod.Name): No $TargetGameVersion version, using $($latestMod.CurrentGameVersion)" -ForegroundColor Yellow
                         $smartMods += $latestMod
                     }
                 }
@@ -172,6 +172,11 @@ function Download-Mods {
         
         foreach ($mod in $mods) {
             if (-not [string]::IsNullOrEmpty($mod.ID)) {
+                # Skip JDK entries - they have their own download function
+                if ($mod.Type -eq "jdk") {
+                    continue
+                }
+                
                 # Get loader from CSV, default to "fabric" if not specified
                 $loader = if (-not [string]::IsNullOrEmpty($mod.Loader)) { $mod.Loader.Trim() } else { $DefaultLoader }
                 
@@ -310,6 +315,9 @@ function Download-Mods {
                 if ($mod.Type -eq "shaderpack") {
                     # Shaderpacks go directly in the game version folder
                     $gameVersionFolder = Join-Path $gameVersionFolder "shaderpacks"
+                } elseif ($mod.Type -eq "datapack") {
+                    # Datapacks go in the datapacks subfolder
+                    $gameVersionFolder = Join-Path $gameVersionFolder "datapacks"
                 } elseif ($mod.Type -eq "installer") {
                     # Installers go in the installer subfolder
                     $gameVersionFolder = Join-Path $gameVersionFolder "installer"
@@ -448,6 +456,22 @@ function Download-Mods {
                     }
                     
                     if (Test-Path $downloadPath) {
+                        # Validate filename and warn about version mismatches (but still allow download)
+                        if ($mod.Type -eq "mod" -and $TargetGameVersion) {
+                            # Check if filename contains a different Minecraft version
+                            # Look for MC version patterns: mc1.21.5, -1.21.5-, fabric-1.21.5, etc.
+                            # Minecraft versions always start with 1.xx
+                            $fileVersion = $null
+                            if ($filename -match '(?:mc|fabric|forge|quilt)?[-_]?(1\.\d+\.\d+)') {
+                                $fileVersion = $matches[1]
+                            }
+                            
+                            if ($fileVersion -and $fileVersion -ne $TargetGameVersion) {
+                                # WARN but don't reject - mod author marked it as compatible
+                                Write-Host "⚠️  $($mod.Name): File version $fileVersion marked as compatible with $TargetGameVersion" -ForegroundColor Yellow
+                            }
+                        }
+                        
                         $fileSize = (Get-Item $downloadPath).Length
                         $fileSizeMB = [math]::Round($fileSize / 1MB, 2)
                         

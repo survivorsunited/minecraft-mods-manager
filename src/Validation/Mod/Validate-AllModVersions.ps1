@@ -416,6 +416,10 @@ function Validate-AllModVersions {
             # Find matching validation result
             $validationResult = $results | Where-Object { $_.ID -eq $currentMod.ID -and $_.Host -eq $currentMod.Host } | Select-Object -First 1
             
+            # REMOVED: Don't try to extract game version from JAR filenames - too error prone
+            # CurrentGameVersion in DB is the SOURCE OF TRUTH
+            # The validation result already queries API and validates against CurrentGameVersion
+            
             if ($validationResult -and $validationResult.VersionExists) {
                 # Update with latest information
                 $updatedMod = $currentMod.PSObject.Copy()
@@ -448,6 +452,10 @@ function Validate-AllModVersions {
                         $urlFilename = [System.IO.Path]::GetFileName($validationResult.VersionUrl)
                         if ($urlFilename -and $urlFilename -ne "") {
                             $updatedMod.Jar = $urlFilename
+                            
+                            # REMOVED: Don't try to parse game version from JAR filename
+                            # CurrentGameVersion in DB is the SOURCE OF TRUTH
+                            # JAR filename is just the artifact name from the API
                         }
                     }
                 } else {
@@ -495,6 +503,84 @@ function Validate-AllModVersions {
                 }
             }
         }
+        
+        # CRITICAL: Query API for all Modrinth mods to ensure Latest/Next versions and URLs are correct
+        # This runs AFTER validation results to have the final say on Latest/Next fields
+        Write-Host ""
+        Write-Host "🔄 Updating Latest/Next versions from API..." -ForegroundColor Cyan
+        $apiUpdateCount = 0
+        foreach ($mod in $newMods) {
+            if ($mod.Type -eq "mod" -and $mod.Host -eq "modrinth" -and $mod.ID -and $mod.Jar) {
+                try {
+                    $allVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -Method Get -TimeoutSec 30 -ErrorAction SilentlyContinue
+                    if ($allVersions -and $allVersions.Count -gt 0) {
+                        # Get latest version (first in list)
+                        $latestVersion = $allVersions | Select-Object -First 1
+                        if ($latestVersion) {
+                            $mod.LatestVersion = $latestVersion.version_number
+                            $mod.LatestGameVersion = $latestVersion.game_versions[0]
+                            $mod.LatestVersionUrl = $latestVersion.files[0].url
+                        }
+                        
+                        # Get next version (1.21.6 if current is 1.21.5)
+                        if ($mod.CurrentGameVersion) {
+                            $currentGameVersionParts = $mod.CurrentGameVersion -split '\.'
+                            if ($currentGameVersionParts.Count -eq 3) {
+                                $nextPatch = [int]$currentGameVersionParts[2] + 1
+                                $nextGameVersion = "$($currentGameVersionParts[0]).$($currentGameVersionParts[1]).$nextPatch"
+                                $nextVersion = $allVersions | Where-Object { $_.game_versions -contains $nextGameVersion } | Select-Object -First 1
+                                if ($nextVersion) {
+                                    $mod.NextVersion = $nextVersion.version_number
+                                    $mod.NextGameVersion = $nextGameVersion
+                                    $mod.NextVersionUrl = $nextVersion.files[0].url
+                                }
+                            }
+                        }
+                        
+                        # Update Current version/JAR/URL to match CurrentGameVersion AND Loader
+                        # Query for best version that supports both the game version AND loader from DB
+                        if ($mod.CurrentGameVersion -and $mod.Loader) {
+                            # Find all versions matching game version and loader
+                            $matchingVersions = $allVersions | Where-Object { 
+                                $_.game_versions -contains $mod.CurrentGameVersion -and
+                                $_.loaders -contains $mod.Loader
+                            }
+                            
+                            # Filter to find version where JAR filename matches loader
+                            $currentVersionMatch = $null
+                            foreach ($version in $matchingVersions) {
+                                $jarName = $version.files[0].filename
+                                $loaderMismatch = $false
+                                
+                                # Check if JAR filename contains wrong loader
+                                if ($mod.Loader -eq "fabric" -and $jarName -match "neoforge") {
+                                    $loaderMismatch = $true
+                                } elseif ($mod.Loader -eq "neoforge" -and $jarName -match "-fabric-") {
+                                    $loaderMismatch = $true
+                                }
+                                
+                                if (-not $loaderMismatch) {
+                                    $currentVersionMatch = $version
+                                    break
+                                }
+                            }
+                            
+                            if ($currentVersionMatch) {
+                                $mod.Jar = $currentVersionMatch.files[0].filename
+                                $mod.CurrentVersion = $currentVersionMatch.version_number
+                                $mod.CurrentVersionUrl = $currentVersionMatch.files[0].url
+                            } else {
+                                Write-Host "   ⚠️  $($mod.Name): No matching $($mod.Loader) version found for $($mod.CurrentGameVersion)" -ForegroundColor Yellow
+                            }
+                        }
+                        $apiUpdateCount++
+                    }
+                } catch {
+                    # Silently continue if API call fails
+                }
+            }
+        }
+        Write-Host "✅ Updated $apiUpdateCount mods with Latest/Next from API" -ForegroundColor Green
         
         # Save updated modlist
         $newMods | Export-Csv -Path $effectiveModListPath -NoTypeInformation
