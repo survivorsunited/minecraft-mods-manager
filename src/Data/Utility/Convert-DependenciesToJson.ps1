@@ -51,6 +51,10 @@ function Convert-DependenciesToJson {
             }
         }
         
+        # Sort dependencies to ensure consistent ordering (prevents false git diff changes)
+        $requiredDeps = $requiredDeps | Sort-Object | Get-Unique
+        $optionalDeps = $optionalDeps | Sort-Object | Get-Unique
+        
         # Create clean, readable format
         $result = @()
         if ($requiredDeps.Count -gt 0) {
