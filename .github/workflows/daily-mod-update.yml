@@ -167,6 +167,46 @@ jobs:
         with:
           path: artifacts/
       
+      - name: Rename Files to Include Version Numbers
+        shell: bash
+        run: |
+          echo "📝 Renaming files to include version numbers..."
+          
+          # For each artifact directory (modpack-1.21.5, modpack-1.21.8, etc.)
+          for artifact_dir in artifacts/modpack-*/; do
+            if [ -d "$artifact_dir" ]; then
+              # Extract version from directory name (modpack-1.21.5 -> 1.21.5)
+              version=$(basename "$artifact_dir" | sed 's/modpack-//')
+              echo "  Processing version: $version"
+              
+              # Rename files to include version
+              if [ -f "$artifact_dir/modpack.zip" ]; then
+                mv "$artifact_dir/modpack.zip" "$artifact_dir/modpack-$version.zip"
+                echo "    ✓ Renamed modpack.zip -> modpack-$version.zip"
+              fi
+              
+              if [ -f "$artifact_dir/hash.txt" ]; then
+                mv "$artifact_dir/hash.txt" "$artifact_dir/hash-$version.txt"
+                echo "    ✓ Renamed hash.txt -> hash-$version.txt"
+              fi
+              
+              if [ -f "$artifact_dir/README.md" ]; then
+                mv "$artifact_dir/README.md" "$artifact_dir/README-$version.md"
+                echo "    ✓ Renamed README.md -> README-$version.md"
+              fi
+              
+              # Rename signature files
+              for sig in md5 sha1 sha256 sha512; do
+                if [ -f "$artifact_dir/modpack.zip.$sig" ]; then
+                  mv "$artifact_dir/modpack.zip.$sig" "$artifact_dir/modpack-$version.zip.$sig"
+                  echo "    ✓ Renamed modpack.zip.$sig -> modpack-$version.zip.$sig"
+                fi
+              done
+            fi
+          done
+          
+          echo "✅ All files renamed successfully"
+      
       - name: Generate Release Tag and Notes
         id: release_info
         shell: bash
@@ -227,13 +267,13 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            artifacts/**/*.zip
-            artifacts/**/*.md5
-            artifacts/**/*.sha1
-            artifacts/**/*.sha256
-            artifacts/**/*.sha512
-            artifacts/**/hash.txt
-            artifacts/**/README.md
+            artifacts/*/modpack-*.zip
+            artifacts/*/modpack-*.zip.md5
+            artifacts/*/modpack-*.zip.sha1
+            artifacts/*/modpack-*.zip.sha256
+            artifacts/*/modpack-*.zip.sha512
+            artifacts/*/hash-*.txt
+            artifacts/*/README-*.md
   
   # Job 4: Summary report
   summary:
