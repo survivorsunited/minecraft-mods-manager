@@ -108,6 +108,9 @@ $OriginalApiResponseFolder = $ApiResponseFolder
 # Import all modular functions
 . "$PSScriptRoot\src\Import-Modules.ps1"
 
+# Load environment variables from .env file
+Load-EnvironmentVariables
+
 # Restore parameter values if they were provided
 if ($OriginalApiResponseFolder) {
     $script:ApiResponseFolder = $OriginalApiResponseFolder
