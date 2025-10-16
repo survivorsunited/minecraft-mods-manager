@@ -56,3 +56,6 @@ test-*-download/
 test-cache*/
 
 .backup/
+
+# Release packages
+releases/

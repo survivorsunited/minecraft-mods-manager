@@ -1,0 +1,163 @@
+name: Create Mod Release Packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_all:
+        description: 'Force create all enabled versions (ignore update check)'
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    - cron: '0 2 * * 0'  # Weekly on Sunday at 2 AM UTC
+
+jobs:
+  # Job 1: Check for mod updates
+  check-updates:
+    runs-on: windows-latest
+    outputs:
+      has_updates: ${{ steps.check_updates.outputs.has_updates }}
+      versions_matrix: ${{ steps.set_matrix.outputs.matrix }}
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Need previous commit to compare
+      
+      - name: Validate Mod Versions
+        shell: pwsh
+        run: |
+          Write-Host "🔍 Checking for mod updates..." -ForegroundColor Cyan
+          .\ModManager.ps1 -ValidateAllModVersions -UpdateModList
+      
+      - name: Check for Database Changes
+        id: check_updates
+        shell: pwsh
+        run: |
+          git diff --quiet modlist.csv
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "📦 Mod updates detected in database" -ForegroundColor Green
+            echo "has_updates=true" >> $env:GITHUB_OUTPUT
+          } else {
+            Write-Host "✅ No mod updates found" -ForegroundColor Gray
+            echo "has_updates=false" >> $env:GITHUB_OUTPUT
+          }
+      
+      - name: Read Enabled Versions from Config
+        id: set_matrix
+        shell: pwsh
+        run: |
+          $config = Get-Content release-config.json | ConvertFrom-Json
+          $enabledVersions = $config.versions | Where-Object { $_.enabled -eq $true } | Select-Object -ExpandProperty version
+          $matrixJson = $enabledVersions | ConvertTo-Json -Compress
+          echo "matrix=$matrixJson" >> $env:GITHUB_OUTPUT
+          
+          Write-Host "📋 Enabled versions for release:" -ForegroundColor Cyan
+          $enabledVersions | ForEach-Object { Write-Host "   - $_" -ForegroundColor Gray }
+      
+      - name: Commit Database Updates
+        if: steps.check_updates.outputs.has_updates == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add modlist.csv
+          git commit -m "chore: Update mod versions (automated daily update)"
+          git push
+  
+  # Job 2: Create releases for each enabled version
+  create-releases:
+    needs: check-updates
+    # Run if: updates detected OR manual force OR scheduled run
+    if: |
+      needs.check-updates.outputs.has_updates == 'true' || 
+      github.event.inputs.force_all == 'true' ||
+      github.event_name == 'schedule'
+    
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        version: ${{ fromJson(needs.check-updates.outputs.versions_matrix) }}
+      fail-fast: false  # Continue even if one version fails
+      max-parallel: 3   # Limit parallel builds
+    
+    steps:
+      - name: Checkout Repository with Submodules
+        uses: actions/checkout@v4
+        with:
+          ref: main  # Get latest with updated modlist.csv
+          submodules: true  # Clone minecraft-mod-hash submodule
+      
+      - name: Create Release Package for ${{ matrix.version }}
+        id: create_release
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          Write-Host "🚀 Creating release package for Minecraft ${{ matrix.version }}" -ForegroundColor Cyan
+          Write-Host "=================================================" -ForegroundColor Cyan
+          Write-Host ""
+          
+          # This will:
+          # 1. Download mods for the version
+          # 2. Download server files
+          # 3. Validate by starting the server
+          # 4. Organize mods (mandatory/optional)
+          # 5. Generate hashes and documentation
+          # 6. Create ZIP package
+          # 7. Exit 0 if successful, 1 if server validation fails
+          
+          .\ModManager.ps1 -CreateRelease -GameVersion "${{ matrix.version }}" -OutputPath "releases"
+      
+      - name: Check Release Creation Result
+        id: check_result
+        shell: pwsh
+        run: |
+          if ("${{ steps.create_release.outcome }}" -eq "success") {
+            Write-Host "✅ Version ${{ matrix.version }}: Release created successfully" -ForegroundColor Green
+            echo "created=true" >> $env:GITHUB_OUTPUT
+          } else {
+            Write-Host "❌ Version ${{ matrix.version }}: Server validation failed - no release created" -ForegroundColor Red
+            echo "created=false" >> $env:GITHUB_OUTPUT
+          }
+      
+      - name: Upload Release Artifact
+        if: steps.check_result.outputs.created == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: modpack-${{ matrix.version }}
+          path: releases/${{ matrix.version }}/**
+          retention-days: 90
+          compression-level: 0  # Files already compressed in ZIP
+      
+      - name: Log Validation Failure
+        if: steps.check_result.outputs.created == 'false'
+        shell: pwsh
+        run: |
+          Write-Host "❌ Release package NOT created for version ${{ matrix.version }}" -ForegroundColor Red
+          Write-Host "💡 Server validation failed - check logs for mod compatibility issues" -ForegroundColor Yellow
+  
+  # Job 3: Summary report
+  summary:
+    needs: [check-updates, create-releases]
+    if: always()
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Generate Summary
+        shell: bash
+        run: |
+          echo "## Release Creation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Mod Updates Detected:** ${{ needs.check-updates.outputs.has_updates }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Enabled Versions:** $(echo '${{ needs.check-updates.outputs.versions_matrix }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.create-releases.result }}" == "success" ]; then
+            echo "✅ Release creation completed" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.create-releases.result }}" == "skipped" ]; then
+            echo "⏭️ Release creation skipped (no updates)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ Some releases failed server validation" >> $GITHUB_STEP_SUMMARY
+          fi
+

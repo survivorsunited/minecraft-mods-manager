@@ -76,6 +76,7 @@
 . "$PSScriptRoot\Display\Summary\Show-VersionSummary.ps1"
 . "$PSScriptRoot\Display\Summary\Write-DownloadReadme.ps1"
 
-
+# Release modules
+. "$PSScriptRoot\Release\Copy-ModsToRelease.ps1"
 
 Write-Host "✅ All modular functions imported successfully" -ForegroundColor Green 
