@@ -1,127 +1,178 @@
-name: Daily Mod Update Pipeline
+name: Daily Mod Update and Release Pipeline
 
 on:
   schedule:
-    # Run daily at 2:00 AM UTC
-    - cron: '0 2 * * *'
-  workflow_dispatch: # Allow manual triggering
+    - cron: '0 2 * * *'  # Daily at 2 AM UTC
+  workflow_dispatch:
+    inputs:
+      force_all:
+        description: 'Force create all enabled versions (ignore update check)'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
   actions: read
 
 jobs:
-  update-mods:
+  # Job 1: Validate and update mod database
+  update-database:
+    runs-on: windows-latest
+    outputs:
+      has_updates: ${{ steps.check_updates.outputs.has_updates }}
+      versions_matrix: ${{ steps.set_matrix.outputs.matrix }}
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 2  # Need previous commit to compare
+      
+      - name: Validate Mod Versions
+        shell: pwsh
+        run: |
+          Write-Host "🔍 Checking for mod updates..." -ForegroundColor Cyan
+          .\ModManager.ps1 -ValidateAllModVersions -UpdateModList
+      
+      - name: Check for Database Changes
+        id: check_updates
+        shell: pwsh
+        run: |
+          git diff --quiet modlist.csv
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "📦 Mod updates detected in database" -ForegroundColor Green
+            
+            # Show what changed
+            Write-Host "📊 Changes summary:" -ForegroundColor Cyan
+            git diff --stat modlist.csv
+            
+            echo "has_updates=true" >> $env:GITHUB_OUTPUT
+          } else {
+            Write-Host "✅ No mod updates found" -ForegroundColor Gray
+            echo "has_updates=false" >> $env:GITHUB_OUTPUT
+          }
+      
+      - name: Read Enabled Versions from Config
+        id: set_matrix
+        shell: pwsh
+        run: |
+          $config = Get-Content release-config.json | ConvertFrom-Json
+          $enabledVersions = $config.versions | Where-Object { $_.enabled -eq $true } | Select-Object -ExpandProperty version
+          $matrixJson = $enabledVersions | ConvertTo-Json -Compress
+          echo "matrix=$matrixJson" >> $env:GITHUB_OUTPUT
+          
+          Write-Host "📋 Enabled versions for release:" -ForegroundColor Cyan
+          $enabledVersions | ForEach-Object { Write-Host "   - $_" -ForegroundColor Gray }
+      
+      - name: Commit Database Updates
+        if: steps.check_updates.outputs.has_updates == 'true'
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add modlist.csv
+          git commit -m "chore: Daily mod update - $(Get-Date -Format 'yyyy-MM-dd')"
+          git push
+  
+  # Job 2: Create release packages for enabled versions
+  create-releases:
+    needs: update-database
+    # Run if: updates detected OR manual force OR scheduled run
+    if: |
+      needs.update-database.outputs.has_updates == 'true' || 
+      github.event.inputs.force_all == 'true' ||
+      github.event_name == 'schedule'
+    
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        version: ${{ fromJson(needs.update-database.outputs.versions_matrix) }}
+      fail-fast: false  # Continue even if one version fails
+      max-parallel: 3   # Limit parallel builds
+    
+    steps:
+      - name: Checkout Repository with Submodules
+        uses: actions/checkout@v4
+        with:
+          ref: main  # Get latest with updated modlist.csv
+          submodules: true  # Clone minecraft-mod-hash submodule
+      
+      - name: Create Release Package for ${{ matrix.version }}
+        id: create_release
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          Write-Host "🚀 Creating release package for Minecraft ${{ matrix.version }}" -ForegroundColor Cyan
+          Write-Host "=================================================" -ForegroundColor Cyan
+          Write-Host ""
+          
+          # This will:
+          # 1. Download mods for the version
+          # 2. Download server files
+          # 3. Validate by starting the server
+          # 4. Organize mods (mandatory/optional)
+          # 5. Generate hashes and documentation
+          # 6. Create ZIP package
+          # 7. Exit 0 if successful, 1 if server validation fails
+          
+          .\ModManager.ps1 -CreateRelease -GameVersion "${{ matrix.version }}"
+      
+      - name: Check Release Creation Result
+        id: check_result
+        shell: pwsh
+        run: |
+          if ("${{ steps.create_release.outcome }}" -eq "success") {
+            Write-Host "✅ Version ${{ matrix.version }}: Release created successfully" -ForegroundColor Green
+            echo "created=true" >> $env:GITHUB_OUTPUT
+          } else {
+            Write-Host "❌ Version ${{ matrix.version }}: Server validation failed - no release created" -ForegroundColor Red
+            echo "created=false" >> $env:GITHUB_OUTPUT
+          }
+      
+      - name: Upload Release Artifact
+        if: steps.check_result.outputs.created == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: modpack-${{ matrix.version }}
+          path: releases/${{ matrix.version }}/**
+          retention-days: 90
+          compression-level: 0  # Files already compressed in ZIP
+      
+      - name: Log Validation Failure
+        if: steps.check_result.outputs.created == 'false'
+        shell: pwsh
+        run: |
+          Write-Host "❌ Release package NOT created for version ${{ matrix.version }}" -ForegroundColor Red
+          Write-Host "💡 Server validation failed - check logs for mod compatibility issues" -ForegroundColor Yellow
+  
+  # Job 3: Summary report
+  summary:
+    needs: [update-database, create-releases]
+    if: always()
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: Setup PowerShell
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
-    
-    - name: Install PowerShell Core
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y powershell
-    
-    - name: Create update script
-      run: |
-        cat > update-mods.ps1 << 'EOF'
-        # Daily Mod Update Script
-        # This script runs ModManager to update modlist.csv with latest versions
-        
-        Write-Host "🔄 Starting daily mod update pipeline..." -ForegroundColor Cyan
-        Write-Host "Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')" -ForegroundColor Gray
-        Write-Host "Working directory: $(Get-Location)" -ForegroundColor Gray
-        
-        try {
-            # Run ModManager to update all mods
-            Write-Host "📋 Running ModManager to update modlist.csv..." -ForegroundColor Yellow
-            Write-Host "Command: pwsh -NoProfile -ExecutionPolicy Bypass -File 'ModManager.ps1' -ValidateAllModVersions -UpdateMods" -ForegroundColor Gray
-            
-            $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File "ModManager.ps1" -ValidateAllModVersions -UpdateMods 2>&1
-            
-            Write-Host "ModManager output:" -ForegroundColor Cyan
-            Write-Host $result -ForegroundColor White
-            
-            if ($LASTEXITCODE -eq 0) {
-                Write-Host "✅ ModManager completed successfully" -ForegroundColor Green
-                
-                # Check if modlist.csv was modified
-                Write-Host "📋 Checking git status for modlist.csv changes..." -ForegroundColor Yellow
-                $gitStatus = git status --porcelain modlist.csv
-                Write-Host "Git status for modlist.csv: $gitStatus" -ForegroundColor Gray
-                
-                if ($gitStatus) {
-                    Write-Host "📝 Changes detected in modlist.csv" -ForegroundColor Yellow
-                    
-                    # Show what changed
-                    Write-Host "📊 Changes summary:" -ForegroundColor Cyan
-                    $diff = git diff --stat modlist.csv
-                    Write-Host $diff -ForegroundColor Gray
-                    
-                    # Show detailed changes
-                    Write-Host "📋 Detailed changes:" -ForegroundColor Cyan
-                    $detailedDiff = git diff modlist.csv
-                    Write-Host $detailedDiff -ForegroundColor Gray
-                    
-                    # Commit changes
-                    Write-Host "💾 Committing changes..." -ForegroundColor Yellow
-                    git config --local user.email "action@github.com"
-                    git config --local user.name "GitHub Action"
-                    git add modlist.csv
-                    $commitMessage = "🤖 Daily mod update - $(Get-Date -Format 'yyyy-MM-dd')"
-                    Write-Host "Commit message: $commitMessage" -ForegroundColor Gray
-                    git commit -m $commitMessage
-                    
-                    # Push changes
-                    Write-Host "🚀 Pushing changes to repository..." -ForegroundColor Yellow
-                    $pushResult = git push 2>&1
-                    Write-Host "Push result: $pushResult" -ForegroundColor Gray
-                    
-                    Write-Host "✅ Daily mod update completed successfully" -ForegroundColor Green
-                    Write-Host "📊 Changes committed and pushed to repository" -ForegroundColor Green
-                } else {
-                    Write-Host "ℹ️  No changes detected in modlist.csv" -ForegroundColor Blue
-                    Write-Host "📊 All mods are already up to date" -ForegroundColor Blue
-                }
-            } else {
-                Write-Host "❌ ModManager failed with exit code: $LASTEXITCODE" -ForegroundColor Red
-                Write-Host "Error output: $result" -ForegroundColor Red
-                exit 1
-            }
-        }
-        catch {
-            Write-Host "❌ Error during daily mod update: $($_.Exception.Message)" -ForegroundColor Red
-            Write-Host "Stack trace: $($_.ScriptStackTrace)" -ForegroundColor Red
-            exit 1
-        }
-        
-        Write-Host "🏁 Daily mod update pipeline completed" -ForegroundColor Cyan
-        Write-Host "Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')" -ForegroundColor Gray
-        EOF
-    
-    - name: Run daily mod update
-      run: pwsh -File update-mods.ps1
-    
-    - name: Create summary report
-      if: always()
-      run: |
-        echo "## Daily Mod Update Summary" >> $GITHUB_STEP_SUMMARY
-        echo "**Run Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-        echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
-        
-        if [ "${{ job.status }}" == "success" ]; then
-          echo "✅ **Result:** Daily mod update completed successfully" >> $GITHUB_STEP_SUMMARY
-        else
-          echo "❌ **Result:** Daily mod update failed" >> $GITHUB_STEP_SUMMARY
-        fi
-        
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**Next Run:** Tomorrow at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY 
+      - name: Generate Pipeline Summary
+        shell: bash
+        run: |
+          echo "## Daily Mod Update and Release Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Run Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Mod Updates Detected:** ${{ needs.update-database.outputs.has_updates }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Enabled Versions:** $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.create-releases.result }}" == "success" ]; then
+            echo "✅ **Release Creation:** Completed successfully" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.create-releases.result }}" == "skipped" ]; then
+            echo "⏭️ **Release Creation:** Skipped (no updates)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ **Release Creation:** Some versions failed server validation" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Next Run:** Tomorrow at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY 
