@@ -25,21 +25,21 @@ jobs:
     
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 2  # Need previous commit to compare
       
       - name: Validate Mod Versions
         shell: pwsh
-        run: |
+      run: |
           Write-Host "🔍 Checking for mod updates..." -ForegroundColor Cyan
           .\ModManager.ps1 -ValidateAllModVersions -UpdateModList
-      
+    
       - name: Check for Database Changes
         id: check_updates
         shell: pwsh
-        run: |
+      run: |
           git diff --quiet modlist.csv
           if ($LASTEXITCODE -ne 0) {
             Write-Host "📦 Mod updates detected in database" -ForegroundColor Green
@@ -126,7 +126,7 @@ jobs:
           if ("${{ steps.create_release.outcome }}" -eq "success") {
             Write-Host "✅ Version ${{ matrix.version }}: Release created successfully" -ForegroundColor Green
             echo "created=true" >> $env:GITHUB_OUTPUT
-          } else {
+                } else {
             Write-Host "❌ Version ${{ matrix.version }}: Server validation failed - no release created" -ForegroundColor Red
             echo "created=false" >> $env:GITHUB_OUTPUT
           }
@@ -147,19 +147,107 @@ jobs:
           Write-Host "❌ Release package NOT created for version ${{ matrix.version }}" -ForegroundColor Red
           Write-Host "💡 Server validation failed - check logs for mod compatibility issues" -ForegroundColor Yellow
   
-  # Job 3: Summary report
-  summary:
+  # Job 3: Create GitHub Release with artifacts
+  publish-release:
     needs: [update-database, create-releases]
+    if: needs.create-releases.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      tag: ${{ steps.release_info.outputs.tag }}
+      timestamp: ${{ steps.release_info.outputs.timestamp }}
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+      
+      - name: Generate Release Tag and Notes
+        id: release_info
+        shell: bash
+        run: |
+          # Generate timestamp-based tag
+          TIMESTAMP=$(date -u '+%Y.%m.%d-%H%M%S')
+          TAG="release-${TIMESTAMP}"
+          echo "tag=${TAG}" >> $GITHUB_OUTPUT
+          echo "timestamp=${TIMESTAMP}" >> $GITHUB_OUTPUT
+          
+          # Generate release notes
+          cat > release-notes.md << EOF
+          # Minecraft Modpack Release - ${TIMESTAMP}
+          
+          ## 📦 Included Versions
+          $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '.[] | "- **" + . + "**"')
+          
+          ## 📋 Changes
+          - Mod database updated: ${{ needs.update-database.outputs.has_updates }}
+          - Server validation: All enabled versions passed
+          
+          ## 📥 Download Instructions
+          
+          1. Download the ZIP file for your Minecraft version
+          2. Extract to your \`.minecraft\` folder
+          3. Install required mods from the \`mods/\` directory
+          4. Optional mods are in \`mods/optional/\`
+          5. See \`README.md\` for complete installation guide
+          
+          ## 🔐 Hash Verification
+          
+          Each package includes signature files:
+          - \`modpack.zip.md5\` - MD5 checksum
+          - \`modpack.zip.sha1\` - SHA1 checksum
+          - \`modpack.zip.sha256\` - SHA256 checksum
+          - \`modpack.zip.sha512\` - SHA512 checksum
+          
+          ## ℹ️ Release Information
+          
+          - **Created**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          - **Workflow**: Daily Mod Update Pipeline
+          - **Validation**: Server startup tested for each version
+          
+          ## 🔗 InertiaAntiCheat Integration
+          
+          Use \`hash.txt\` to configure InertiaAntiCheat server validation.
+          See included \`README.md\` for details.
+          EOF
+          
+          cat release-notes.md
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release_info.outputs.tag }}
+          name: Modpack Release ${{ steps.release_info.outputs.timestamp }}
+          body_path: release-notes.md
+          draft: false
+          prerelease: false
+          files: |
+            artifacts/**/*.zip
+            artifacts/**/*.md5
+            artifacts/**/*.sha1
+            artifacts/**/*.sha256
+            artifacts/**/*.sha512
+            artifacts/**/hash.txt
+            artifacts/**/README.md
+  
+  # Job 4: Summary report
+  summary:
+    needs: [update-database, create-releases, publish-release]
     if: always()
     runs-on: ubuntu-latest
     
     steps:
       - name: Generate Pipeline Summary
         shell: bash
-        run: |
+      run: |
           echo "## Daily Mod Update and Release Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Run Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+        echo "**Run Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Mod Updates Detected:** ${{ needs.update-database.outputs.has_updates }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -174,5 +262,15 @@ jobs:
             echo "⚠️ **Release Creation:** Some versions failed server validation" >> $GITHUB_STEP_SUMMARY
           fi
           
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Next Run:** Tomorrow at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY 
+          if [ "${{ needs.publish-release.result }}" == "success" ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "✅ **GitHub Release:** Published successfully" >> $GITHUB_STEP_SUMMARY
+            echo "🔗 **Release Tag:** \`${{ needs.publish-release.outputs.tag }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "🏷️ **Timestamp:** ${{ needs.publish-release.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.publish-release.result }}" == "skipped" ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "⏭️ **GitHub Release:** Skipped" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Next Run:** Tomorrow at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY 
