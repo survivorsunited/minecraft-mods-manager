@@ -25,34 +25,34 @@ jobs:
     
     steps:
       - name: Checkout Repository
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 2  # Need previous commit to compare
       
       - name: Validate Mod Versions
         shell: pwsh
-      run: |
-          Write-Host "🔍 Checking for mod updates..." -ForegroundColor Cyan
-          .\ModManager.ps1 -ValidateAllModVersions -UpdateModList
+        run: |
+            Write-Host "🔍 Checking for mod updates..." -ForegroundColor Cyan
+            .\ModManager.ps1 -ValidateAllModVersions -UpdateModList
     
       - name: Check for Database Changes
         id: check_updates
         shell: pwsh
-      run: |
-          git diff --quiet modlist.csv
-          if ($LASTEXITCODE -ne 0) {
-            Write-Host "📦 Mod updates detected in database" -ForegroundColor Green
-            
-            # Show what changed
-            Write-Host "📊 Changes summary:" -ForegroundColor Cyan
-            git diff --stat modlist.csv
-            
-            echo "has_updates=true" >> $env:GITHUB_OUTPUT
-          } else {
-            Write-Host "✅ No mod updates found" -ForegroundColor Gray
-            echo "has_updates=false" >> $env:GITHUB_OUTPUT
-          }
+        run: |
+            git diff --quiet modlist.csv
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "📦 Mod updates detected in database" -ForegroundColor Green
+              
+              # Show what changed
+              Write-Host "📊 Changes summary:" -ForegroundColor Cyan
+              git diff --stat modlist.csv
+              
+              echo "has_updates=true" >> $env:GITHUB_OUTPUT
+            } else {
+              Write-Host "✅ No mod updates found" -ForegroundColor Gray
+              echo "has_updates=false" >> $env:GITHUB_OUTPUT
+            }
       
       - name: Read Enabled Versions from Config
         id: set_matrix
@@ -244,33 +244,33 @@ jobs:
     steps:
       - name: Generate Pipeline Summary
         shell: bash
-      run: |
-          echo "## Daily Mod Update and Release Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**Run Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Mod Updates Detected:** ${{ needs.update-database.outputs.has_updates }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Enabled Versions:** $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          if [ "${{ needs.create-releases.result }}" == "success" ]; then
-            echo "✅ **Release Creation:** Completed successfully" >> $GITHUB_STEP_SUMMARY
-          elif [ "${{ needs.create-releases.result }}" == "skipped" ]; then
-            echo "⏭️ **Release Creation:** Skipped (no updates)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "⚠️ **Release Creation:** Some versions failed server validation" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          if [ "${{ needs.publish-release.result }}" == "success" ]; then
+        run: |
+            echo "## Daily Mod Update and Release Summary" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "✅ **GitHub Release:** Published successfully" >> $GITHUB_STEP_SUMMARY
-            echo "🔗 **Release Tag:** \`${{ needs.publish-release.outputs.tag }}\`" >> $GITHUB_STEP_SUMMARY
-            echo "🏷️ **Timestamp:** ${{ needs.publish-release.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
-          elif [ "${{ needs.publish-release.result }}" == "skipped" ]; then
+            echo "**Run Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "⏭️ **GitHub Release:** Skipped" >> $GITHUB_STEP_SUMMARY
-        fi
-        
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**Next Run:** Tomorrow at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY 
+            echo "**Mod Updates Detected:** ${{ needs.update-database.outputs.has_updates }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Enabled Versions:** $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            if [ "${{ needs.create-releases.result }}" == "success" ]; then
+              echo "✅ **Release Creation:** Completed successfully" >> $GITHUB_STEP_SUMMARY
+            elif [ "${{ needs.create-releases.result }}" == "skipped" ]; then
+              echo "⏭️ **Release Creation:** Skipped (no updates)" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "⚠️ **Release Creation:** Some versions failed server validation" >> $GITHUB_STEP_SUMMARY
+            fi
+            
+            if [ "${{ needs.publish-release.result }}" == "success" ]; then
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "✅ **GitHub Release:** Published successfully" >> $GITHUB_STEP_SUMMARY
+              echo "🔗 **Release Tag:** \`${{ needs.publish-release.outputs.tag }}\`" >> $GITHUB_STEP_SUMMARY
+              echo "🏷️ **Timestamp:** ${{ needs.publish-release.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
+            elif [ "${{ needs.publish-release.result }}" == "skipped" ]; then
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "⏭️ **GitHub Release:** Skipped" >> $GITHUB_STEP_SUMMARY
+            fi
+            
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Next Run:** Tomorrow at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY 
