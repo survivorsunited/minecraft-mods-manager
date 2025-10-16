@@ -591,153 +591,27 @@ if ($DownloadJDK) {
 
 # Handle CreateRelease parameter
 if ($CreateRelease) {
-    Write-Host "Creating release package..." -ForegroundColor Cyan
-    Write-Host "" -ForegroundColor White
-    
-    # Determine target version
-    if ($TargetVersion) {
-        $targetVersion = $TargetVersion
-        Write-Host "🎯 Target version: $targetVersion (user specified via TargetVersion)" -ForegroundColor Green
-    } elseif ($GameVersion) {
-        $targetVersion = $GameVersion
-        Write-Host "🎯 Target version: $targetVersion (user specified via GameVersion)" -ForegroundColor Green
-    } elseif ($UseLatestVersion) {
-        $targetVersion = Get-LatestVersion -CsvPath $effectiveModListPath
-        if (-not $targetVersion) {
-            Write-Host "❌ Failed to determine latest game version" -ForegroundColor Red
-            Exit-ModManager 1
-        }
-        Write-Host "🎯 Target version: $targetVersion (LATEST version)" -ForegroundColor Green
-    } elseif ($UseNextVersion) {
-        $targetVersion = Get-NextVersion -CsvPath $effectiveModListPath
-        if (-not $targetVersion) {
-            Write-Host "❌ Failed to determine next game version" -ForegroundColor Red
-            Exit-ModManager 1
-        }
-        Write-Host "🎯 Target version: $targetVersion (NEXT version)" -ForegroundColor Green
-    } else {
-        $targetVersion = Get-CurrentVersion -CsvPath $effectiveModListPath
-        if (-not $targetVersion) {
-            Write-Host "❌ Failed to determine current game version" -ForegroundColor Red
-            Exit-ModManager 1
-        }
-        Write-Host "🎯 Target version: $targetVersion (CURRENT version - default)" -ForegroundColor Green
-    }
-    
-    Write-Host "" -ForegroundColor White
-    
-    # Step 1: Download mods for target version
-    Write-Host "📦 Downloading mods for version $targetVersion..." -ForegroundColor Cyan
-    Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -TargetGameVersion $targetVersion
-    
-    Write-Host "" -ForegroundColor White
-    
-    # Step 2: Download server files
-    Write-Host "📦 Downloading server files for version $targetVersion..." -ForegroundColor Cyan
-    Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$false -GameVersion $targetVersion
-    
-    Write-Host "" -ForegroundColor White
-    
-    # Step 3: VALIDATION GATE - Start server to verify compatibility
-    Write-Host "🧪 Validating mods by starting server..." -ForegroundColor Yellow
-    Write-Host "   This ensures all mods are compatible before creating release package" -ForegroundColor Gray
-    Write-Host "" -ForegroundColor White
-    
-    $serverParams = @{
-        DownloadFolder = $DownloadFolder
-        TargetVersion = $targetVersion
+    $releaseParams = @{
         CsvPath = $effectiveModListPath
-    }
-    if ($NoAutoRestart) {
-        $serverParams.Add("NoAutoRestart", $true)
+        DownloadFolder = $DownloadFolder
+        ApiResponseFolder = $ApiResponseFolder
+        ReleasePath = $ReleasePath
+        ProjectRoot = $PSScriptRoot
     }
     
-    $serverResult = Start-MinecraftServer @serverParams
+    if ($TargetVersion) { $releaseParams.Add("TargetVersion", $TargetVersion) }
+    if ($GameVersion) { $releaseParams.Add("GameVersion", $GameVersion) }
+    if ($UseLatestVersion) { $releaseParams.Add("UseLatestVersion", $true) }
+    if ($UseNextVersion) { $releaseParams.Add("UseNextVersion", $true) }
+    if ($NoAutoRestart) { $releaseParams.Add("NoAutoRestart", $true) }
     
-    if (-not $serverResult) {
-        Write-Host "" -ForegroundColor White
-        Write-Host "❌ SERVER VALIDATION FAILED - Release creation aborted!" -ForegroundColor Red
-        Write-Host "💡 This version has mod compatibility issues and cannot be released." -ForegroundColor Yellow
-        Write-Host "💡 Fix the mod compatibility issues before creating a release package." -ForegroundColor Yellow
+    $result = New-Release @releaseParams
+    
+    if ($result) {
+        Exit-ModManager 0
+    } else {
         Exit-ModManager 1
     }
-    
-    Write-Host "" -ForegroundColor White
-    Write-Host "✅ Server validation passed - proceeding with release creation" -ForegroundColor Green
-    Write-Host "" -ForegroundColor White
-    
-    # Step 4: Create release directory structure
-    $releaseDir = Join-Path $ReleasePath $targetVersion
-    $releaseModsPath = Join-Path $releaseDir "mods"
-    
-    Write-Host "📁 Creating release directory: $releaseDir" -ForegroundColor Cyan
-    New-Item -ItemType Directory -Path $releaseDir -Force | Out-Null
-    
-    # Step 5: Organize mods into mandatory/optional structure
-    $sourceModsPath = Join-Path $DownloadFolder "$targetVersion\mods"
-    $organizeResult = Copy-ModsToRelease -SourcePath $sourceModsPath -DestinationPath $releaseModsPath -CsvPath $effectiveModListPath -TargetGameVersion $targetVersion
-    
-    if (-not $organizeResult) {
-        Write-Host "❌ Failed to organize mods for release" -ForegroundColor Red
-        Exit-ModManager 1
-    }
-    
-    Write-Host "" -ForegroundColor White
-    
-    # Step 6: Run hash generator to create documentation and ZIP
-    Write-Host "📦 Generating hashes and documentation..." -ForegroundColor Cyan
-    $hashScriptPath = Join-Path $PSScriptRoot "tools\minecraft-mod-hash\hash.ps1"
-    
-    if (-not (Test-Path $hashScriptPath)) {
-        Write-Host "❌ Hash generator not found: $hashScriptPath" -ForegroundColor Red
-        Write-Host "💡 Ensure the minecraft-mod-hash submodule is initialized:" -ForegroundColor Yellow
-        Write-Host "   git submodule update --init --recursive" -ForegroundColor Gray
-        Exit-ModManager 1
-    }
-    
-    try {
-        & $hashScriptPath -ModsPath $releaseModsPath -OutputPath $releaseDir -CreateZip -UpdateConfig
-        
-        # Verify critical files were created (don't rely on exit code)
-        $hashFile = Join-Path $releaseDir "hash.txt"
-        $readmeFile = Join-Path $releaseDir "README.md"
-        $zipFiles = Get-ChildItem -Path $releaseDir -Filter "*.zip" -File -ErrorAction SilentlyContinue
-        
-        if (-not (Test-Path $hashFile)) {
-            Write-Host "❌ Hash file not created: $hashFile" -ForegroundColor Red
-            Exit-ModManager 1
-        }
-        if (-not (Test-Path $readmeFile)) {
-            Write-Host "❌ README file not created: $readmeFile" -ForegroundColor Red
-            Exit-ModManager 1
-        }
-        if ($zipFiles.Count -eq 0) {
-            Write-Host "❌ ZIP package not created" -ForegroundColor Red
-            Exit-ModManager 1
-        }
-    } catch {
-        Write-Host "❌ Error running hash generator: $($_.Exception.Message)" -ForegroundColor Red
-        Exit-ModManager 1
-    }
-    
-    Write-Host "" -ForegroundColor White
-    Write-Host "✅ Release package created successfully!" -ForegroundColor Green
-    Write-Host "📂 Location: $releaseDir" -ForegroundColor Cyan
-    Write-Host "" -ForegroundColor White
-    Write-Host "📦 Package contents:" -ForegroundColor Cyan
-    Write-Host "   - mods/ (mandatory mods)" -ForegroundColor Gray
-    Write-Host "   - mods/optional/ (optional mods)" -ForegroundColor Gray
-    Write-Host "   - hash.txt (MD5 hashes)" -ForegroundColor Gray
-    Write-Host "   - README.md (documentation)" -ForegroundColor Gray
-    Write-Host "   - InertiaAntiCheat.toml (IAC config)" -ForegroundColor Gray
-    
-    # Check if ZIP was created
-    $zipFiles = Get-ChildItem -Path $releaseDir -Filter "*.zip" -File -ErrorAction SilentlyContinue
-    if ($zipFiles.Count -gt 0) {
-        Write-Host "   - $($zipFiles[0].Name) (packaged release)" -ForegroundColor Gray
-    }
-    
-    Exit-ModManager 0
 }
 
 # Handle ShowHelp parameter

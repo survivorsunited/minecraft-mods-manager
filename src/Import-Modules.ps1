@@ -78,5 +78,6 @@
 
 # Release modules
 . "$PSScriptRoot\Release\Copy-ModsToRelease.ps1"
+. "$PSScriptRoot\Release\New-Release.ps1"
 
 Write-Host "✅ All modular functions imported successfully" -ForegroundColor Green 
