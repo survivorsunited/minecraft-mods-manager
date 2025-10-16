@@ -167,10 +167,10 @@ jobs:
         with:
           path: artifacts/
       
-      - name: Rename Files to Include Version Numbers
+      - name: Package Release Files
         shell: bash
         run: |
-          echo "📝 Renaming files to include version numbers..."
+          echo "📦 Creating versioned release packages..."
           
           # For each artifact directory (modpack-1.21.5, modpack-1.21.8, etc.)
           for artifact_dir in artifacts/modpack-*/; do
@@ -179,33 +179,16 @@ jobs:
               version=$(basename "$artifact_dir" | sed 's/modpack-//')
               echo "  Processing version: $version"
               
-              # Rename files to include version
-              if [ -f "$artifact_dir/modpack.zip" ]; then
-                mv "$artifact_dir/modpack.zip" "$artifact_dir/modpack-$version.zip"
-                echo "    ✓ Renamed modpack.zip -> modpack-$version.zip"
-              fi
+              # Create versioned zip from all files in the directory
+              cd "$artifact_dir"
+              zip -r "../../modpack-$version.zip" *
+              cd ../..
               
-              if [ -f "$artifact_dir/hash.txt" ]; then
-                mv "$artifact_dir/hash.txt" "$artifact_dir/hash-$version.txt"
-                echo "    ✓ Renamed hash.txt -> hash-$version.txt"
-              fi
-              
-              if [ -f "$artifact_dir/README.md" ]; then
-                mv "$artifact_dir/README.md" "$artifact_dir/README-$version.md"
-                echo "    ✓ Renamed README.md -> README-$version.md"
-              fi
-              
-              # Rename signature files
-              for sig in md5 sha1 sha256 sha512; do
-                if [ -f "$artifact_dir/modpack.zip.$sig" ]; then
-                  mv "$artifact_dir/modpack.zip.$sig" "$artifact_dir/modpack-$version.zip.$sig"
-                  echo "    ✓ Renamed modpack.zip.$sig -> modpack-$version.zip.$sig"
-                fi
-              done
+              echo "    ✓ Created modpack-$version.zip"
             fi
           done
           
-          echo "✅ All files renamed successfully"
+          echo "✅ All release packages created"
       
       - name: Generate Release Tag and Notes
         id: release_info
@@ -222,7 +205,7 @@ jobs:
           # Minecraft Modpack Release - ${TIMESTAMP}
           
           ## 📦 Included Versions
-          $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '.[] | "- **" + . + "**"')
+          $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '.[] | "- **modpack-" + . + ".zip**"')
           
           ## 📋 Changes
           - Mod database updated: ${{ needs.update-database.outputs.has_updates }}
@@ -230,19 +213,12 @@ jobs:
           
           ## 📥 Download Instructions
           
-          1. Download the ZIP file for your Minecraft version
-          2. Extract to your \`.minecraft\` folder
-          3. Install required mods from the \`mods/\` directory
+          1. Download \`modpack-[version].zip\` for your Minecraft version
+          2. Extract the ZIP file
+          3. Install mods from the \`mods/\` directory to \`.minecraft/mods/\`
           4. Optional mods are in \`mods/optional/\`
-          5. See \`README.md\` for complete installation guide
-          
-          ## 🔐 Hash Verification
-          
-          Each package includes signature files:
-          - \`modpack.zip.md5\` - MD5 checksum
-          - \`modpack.zip.sha1\` - SHA1 checksum
-          - \`modpack.zip.sha256\` - SHA256 checksum
-          - \`modpack.zip.sha512\` - SHA512 checksum
+          5. Check \`hash.txt\` for file verification
+          6. See \`README.md\` for complete installation guide
           
           ## ℹ️ Release Information
           
@@ -252,8 +228,8 @@ jobs:
           
           ## 🔗 InertiaAntiCheat Integration
           
-          Use \`hash.txt\` to configure InertiaAntiCheat server validation.
-          See included \`README.md\` for details.
+          Use included \`hash.txt\` to configure InertiaAntiCheat server validation.
+          See \`README.md\` for details.
           EOF
           
           cat release-notes.md
@@ -267,13 +243,7 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            artifacts/*/modpack-*.zip
-            artifacts/*/modpack-*.zip.md5
-            artifacts/*/modpack-*.zip.sha1
-            artifacts/*/modpack-*.zip.sha256
-            artifacts/*/modpack-*.zip.sha512
-            artifacts/*/hash-*.txt
-            artifacts/*/README-*.md
+            modpack-*.zip
   
   # Job 4: Summary report
   summary:
