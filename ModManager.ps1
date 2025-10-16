@@ -696,7 +696,7 @@ if ($CreateRelease) {
     }
     
     try {
-        & $hashScriptPath -ModsPath $releaseModsPath -OutputPath $releaseDir -CreateZip
+        & $hashScriptPath -ModsPath $releaseModsPath -OutputPath $releaseDir -CreateZip -UpdateConfig
         
         # Verify critical files were created (don't rely on exit code)
         $hashFile = Join-Path $releaseDir "hash.txt"
@@ -728,7 +728,8 @@ if ($CreateRelease) {
     Write-Host "   - mods/ (mandatory mods)" -ForegroundColor Gray
     Write-Host "   - mods/optional/ (optional mods)" -ForegroundColor Gray
     Write-Host "   - hash.txt (MD5 hashes)" -ForegroundColor Gray
-    Write-Host "   - README-MOD.md (documentation)" -ForegroundColor Gray
+    Write-Host "   - README.md (documentation)" -ForegroundColor Gray
+    Write-Host "   - InertiaAntiCheat.toml (IAC config)" -ForegroundColor Gray
     
     # Check if ZIP was created
     $zipFiles = Get-ChildItem -Path $releaseDir -Filter "*.zip" -File -ErrorAction SilentlyContinue
