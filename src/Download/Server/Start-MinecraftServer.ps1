@@ -349,16 +349,10 @@ max-world-size=29999984
             $null
         }
         
-        # Start the server as a background job - run Java directly for better control
+        # Start the server using the start-server.ps1 script (respects user configurations)
         $job = Start-Job -ScriptBlock {
-            param($JarPath, $WorkingDir, $JavaCommand, $JavaHome)
+            param($WorkingDir, $NoAutoRestart)
             Set-Location $WorkingDir
-            
-            # Set JAVA_HOME environment variable if provided
-            if ($JavaHome) {
-                $env:JAVA_HOME = $JavaHome
-                Write-Host "🔧 Set JAVA_HOME to: $JavaHome"
-            }
             
             # Verify files exist before starting server
             if (-not (Test-Path "eula.txt")) {
@@ -369,10 +363,18 @@ max-world-size=29999984
                 Write-Error "server.properties not found in $WorkingDir"
                 return
             }
+            if (-not (Test-Path "start-server.ps1")) {
+                Write-Error "start-server.ps1 not found in $WorkingDir"
+                return
+            }
             
-            # Run the Fabric server directly with specified Java command
-            & $JavaCommand -server -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -Xms1G -Xmx4G --enable-native-access=ALL-UNNAMED -jar $JarPath nogui
-        } -ArgumentList $fabricJars[0].Name, $targetFolder, $javaCommand, $javaHome
+            # Run the start-server.ps1 script with NoAutoRestart flag
+            if ($NoAutoRestart) {
+                & .\start-server.ps1 -NoAutoRestart
+            } else {
+                & .\start-server.ps1
+            }
+        } -ArgumentList $targetFolder, $NoAutoRestart
         
         Write-Host "✅ Server job started successfully (Job ID: $($job.Id))" -ForegroundColor Green
         Write-Host "🔄 Monitoring server logs for errors..." -ForegroundColor Cyan
@@ -489,7 +491,12 @@ max-world-size=29999984
                             $line -notmatch "Incomplete remapped file found" -and
                             $line -notmatch "remapping process failed on the previous launch" -and
                             $line -notmatch "Fabric is preparing JARs" -and
-                            $line -notmatch "GameRemap.*WARN") {
+                            $line -notmatch "GameRemap.*WARN" -and
+                            $line -notmatch "Error loading class" -and
+                            $line -notmatch "ClassNotFoundException" -and
+                            $line -notmatch "was not found.*from mod" -and
+                            $line -notmatch "Missing bot token.*Mod will be disabled" -and
+                            $line -notmatch "simple-discord-link") {
                             Write-Host "❌ Error detected in logs: $line" -ForegroundColor Red
                             $errorFound = $true
                             break
