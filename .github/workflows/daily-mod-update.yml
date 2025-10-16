@@ -33,26 +33,26 @@ jobs:
       - name: Validate Mod Versions
         shell: pwsh
         run: |
-            Write-Host "🔍 Checking for mod updates..." -ForegroundColor Cyan
-            .\ModManager.ps1 -ValidateAllModVersions -UpdateModList
-    
+          Write-Host "🔍 Checking for mod updates..." -ForegroundColor Cyan
+          .\ModManager.ps1 -ValidateAllModVersions -UpdateModList
+      
       - name: Check for Database Changes
         id: check_updates
         shell: pwsh
         run: |
-            git diff --quiet modlist.csv
-            if ($LASTEXITCODE -ne 0) {
-              Write-Host "📦 Mod updates detected in database" -ForegroundColor Green
-              
-              # Show what changed
-              Write-Host "📊 Changes summary:" -ForegroundColor Cyan
-              git diff --stat modlist.csv
-              
-              echo "has_updates=true" >> $env:GITHUB_OUTPUT
-            } else {
-              Write-Host "✅ No mod updates found" -ForegroundColor Gray
-              echo "has_updates=false" >> $env:GITHUB_OUTPUT
-            }
+          git diff --quiet modlist.csv
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "📦 Mod updates detected in database" -ForegroundColor Green
+            
+            # Show what changed
+            Write-Host "📊 Changes summary:" -ForegroundColor Cyan
+            git diff --stat modlist.csv
+            
+            echo "has_updates=true" >> $env:GITHUB_OUTPUT
+          } else {
+            Write-Host "✅ No mod updates found" -ForegroundColor Gray
+            echo "has_updates=false" >> $env:GITHUB_OUTPUT
+          }
       
       - name: Read Enabled Versions from Config
         id: set_matrix
@@ -131,14 +131,46 @@ jobs:
             echo "created=false" >> $env:GITHUB_OUTPUT
           }
       
-      - name: Cleanup Duplicate Mods Folder
+      - name: Cleanup Duplicate Modpack Files
         if: steps.check_result.outputs.created == 'true'
         shell: pwsh
         run: |
-          $modsPath = "releases/${{ matrix.version }}/mods"
-          if (Test-Path $modsPath) {
-            Remove-Item -Path $modsPath -Recurse -Force
-            Write-Host "✓ Cleaned up duplicate mods folder (already in ZIP)" -ForegroundColor Green
+          $releasePath = "releases/${{ matrix.version }}"
+          $modpackFiles = Get-ChildItem -Path $releasePath -Filter "modpack.*" -File -ErrorAction SilentlyContinue
+          foreach ($file in $modpackFiles) {
+            Remove-Item -Path $file.FullName -Force
+            Write-Host "✓ Removed: $($file.Name)" -ForegroundColor Green
+          }
+          if ($modpackFiles.Count -gt 0) {
+            Write-Host "✓ Cleaned up $($modpackFiles.Count) modpack file(s)" -ForegroundColor Green
+          }
+      
+      - name: Copy Server JARs to Release
+        if: steps.check_result.outputs.created == 'true'
+        shell: pwsh
+        run: |
+          $version = "${{ matrix.version }}"
+          $serverPath = "download/$version"
+          $releasePath = "releases/$version"
+          
+          Write-Host "📦 Copying server JARs to release folder..." -ForegroundColor Cyan
+          
+          # Copy Minecraft server JAR
+          $minecraftJar = Get-ChildItem -Path $serverPath -Filter "minecraft_server*.jar" -File -ErrorAction SilentlyContinue | Select-Object -First 1
+          if ($minecraftJar) {
+            Copy-Item -Path $minecraftJar.FullName -Destination $releasePath -Force
+            Write-Host "  ✓ Copied: $($minecraftJar.Name)" -ForegroundColor Green
+                } else {
+            Write-Host "  ⚠️  Warning: Minecraft server JAR not found" -ForegroundColor Yellow
+          }
+          
+          # Copy Fabric launcher JAR
+          $fabricJar = Get-ChildItem -Path $serverPath -Filter "fabric-server*.jar" -File -ErrorAction SilentlyContinue | Select-Object -First 1
+          if ($fabricJar) {
+            Copy-Item -Path $fabricJar.FullName -Destination $releasePath -Force
+            Write-Host "  ✓ Copied: $($fabricJar.Name)" -ForegroundColor Green
+            } else {
+            Write-Host "  ⚠️  Warning: Fabric launcher JAR not found" -ForegroundColor Yellow
           }
       
       - name: Upload Release Artifact
@@ -265,32 +297,32 @@ jobs:
       - name: Generate Pipeline Summary
         shell: bash
         run: |
-            echo "## Daily Mod Update and Release Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## Daily Mod Update and Release Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Run Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Mod Updates Detected:** ${{ needs.update-database.outputs.has_updates }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Enabled Versions:** $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.create-releases.result }}" == "success" ]; then
+            echo "✅ **Release Creation:** Completed successfully" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.create-releases.result }}" == "skipped" ]; then
+            echo "⏭️ **Release Creation:** Skipped (no updates)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ **Release Creation:** Some versions failed server validation" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.publish-release.result }}" == "success" ]; then
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "**Run Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+            echo "✅ **GitHub Release:** Published successfully" >> $GITHUB_STEP_SUMMARY
+            echo "🔗 **Release Tag:** \`${{ needs.publish-release.outputs.tag }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "🏷️ **Timestamp:** ${{ needs.publish-release.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.publish-release.result }}" == "skipped" ]; then
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "**Mod Updates Detected:** ${{ needs.update-database.outputs.has_updates }}" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "**Enabled Versions:** $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            
-            if [ "${{ needs.create-releases.result }}" == "success" ]; then
-              echo "✅ **Release Creation:** Completed successfully" >> $GITHUB_STEP_SUMMARY
-            elif [ "${{ needs.create-releases.result }}" == "skipped" ]; then
-              echo "⏭️ **Release Creation:** Skipped (no updates)" >> $GITHUB_STEP_SUMMARY
-            else
-              echo "⚠️ **Release Creation:** Some versions failed server validation" >> $GITHUB_STEP_SUMMARY
-            fi
-            
-            if [ "${{ needs.publish-release.result }}" == "success" ]; then
-              echo "" >> $GITHUB_STEP_SUMMARY
-              echo "✅ **GitHub Release:** Published successfully" >> $GITHUB_STEP_SUMMARY
-              echo "🔗 **Release Tag:** \`${{ needs.publish-release.outputs.tag }}\`" >> $GITHUB_STEP_SUMMARY
-              echo "🏷️ **Timestamp:** ${{ needs.publish-release.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
-            elif [ "${{ needs.publish-release.result }}" == "skipped" ]; then
-              echo "" >> $GITHUB_STEP_SUMMARY
-              echo "⏭️ **GitHub Release:** Skipped" >> $GITHUB_STEP_SUMMARY
-            fi
-            
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "**Next Run:** Tomorrow at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY 
+            echo "⏭️ **GitHub Release:** Skipped" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Next Run:** Tomorrow at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY 
