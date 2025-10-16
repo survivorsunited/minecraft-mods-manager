@@ -1,6 +1,3 @@
-[submodule "minecraft-mod-hash"]
-	path = minecraft-mod-hash
-	url = https://github.com/wildone/minecraft-mod-hash.git
 [submodule "tools/minecraft-mod-hash"]
 	path = tools/minecraft-mod-hash
-	url = https://github.com/wildone/minecraft-mod-hash.git
+	url = https://github.com/survivorsunited/minecraft-mod-hash.git
