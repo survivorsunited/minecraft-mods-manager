@@ -126,9 +126,19 @@ jobs:
           if ("${{ steps.create_release.outcome }}" -eq "success") {
             Write-Host "✅ Version ${{ matrix.version }}: Release created successfully" -ForegroundColor Green
             echo "created=true" >> $env:GITHUB_OUTPUT
-                } else {
+          } else {
             Write-Host "❌ Version ${{ matrix.version }}: Server validation failed - no release created" -ForegroundColor Red
             echo "created=false" >> $env:GITHUB_OUTPUT
+          }
+      
+      - name: Cleanup Duplicate Mods Folder
+        if: steps.check_result.outputs.created == 'true'
+        shell: pwsh
+        run: |
+          $modsPath = "releases/${{ matrix.version }}/mods"
+          if (Test-Path $modsPath) {
+            Remove-Item -Path $modsPath -Recurse -Force
+            Write-Host "✓ Cleaned up duplicate mods folder (already in ZIP)" -ForegroundColor Green
           }
       
       - name: Upload Release Artifact
