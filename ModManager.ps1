@@ -297,115 +297,24 @@ if ($DownloadServer) {
 
 # Handle ClearServer parameter
 if ($ClearServer) {
-    Write-Host "Clearing server files..." -ForegroundColor Yellow
-    
-    # Determine which version to clear
-    $versionToClear = $null
-    
-    if ($TargetVersion) {
-        $versionToClear = $TargetVersion
-    } elseif ($GameVersion) {
-        $versionToClear = $GameVersion
-    } elseif ($UseLatestVersion) {
-        $versionToClear = Get-LatestVersion -CsvPath $effectiveModListPath
-    } elseif ($UseNextVersion) {
-        $versionToClear = Get-NextVersion -CsvPath $effectiveModListPath
-    } else {
-        $versionToClear = Get-CurrentVersion -CsvPath $effectiveModListPath
+    $clearParams = @{
+        CsvPath = $effectiveModListPath
+        DownloadFolder = $DownloadFolder
+        ApiResponseFolder = $ApiResponseFolder
     }
     
-    if (-not $versionToClear) {
-        Write-Host "❌ Failed to determine version to clear" -ForegroundColor Red
+    if ($TargetVersion) { $clearParams.Add("TargetVersion", $TargetVersion) }
+    if ($GameVersion) { $clearParams.Add("GameVersion", $GameVersion) }
+    if ($UseLatestVersion) { $clearParams.Add("UseLatestVersion", $true) }
+    if ($UseNextVersion) { $clearParams.Add("UseNextVersion", $true) }
+    
+    $result = Clear-ServerFiles @clearParams
+    
+    if ($result) {
+        Exit-ModManager 0
+    } else {
         Exit-ModManager 1
     }
-    
-    # Only clear the target version folder
-    $targetFolder = Join-Path $DownloadFolder $versionToClear
-    
-    if (-not (Test-Path $targetFolder)) {
-        Write-Host "⚠️  No server folder found for $versionToClear." -ForegroundColor Yellow
-        Write-Host "💡 Will download fresh server files and mods..." -ForegroundColor Cyan
-    } else {
-        $versionFolders = @(Get-Item $targetFolder)
-        
-        foreach ($folder in $versionFolders) {
-            $folderPath = $folder.FullName
-            Write-Host "🗑️  Clearing server files in: $($folder.Name)" -ForegroundColor Cyan
-            
-            # Remove server-specific files and folders (including mods to ensure clean slate)
-            $itemsToRemove = @(
-                "world", "world_nether", "world_the_end",
-                "logs", "crash-reports", "config",
-                "eula.txt", "server.properties", "ops.json", "whitelist.json",
-                "banned-ips.json", "banned-players.json", "usercache.json",
-                "versions", "libraries", ".fabric",
-                "mods"  # Clear mods folder for fresh download
-            )
-            
-            foreach ($item in $itemsToRemove) {
-                $itemPath = Join-Path $folderPath $item
-                if (Test-Path $itemPath) {
-                    Remove-Item $itemPath -Recurse -Force -ErrorAction SilentlyContinue
-                    Write-Host "   ✓ Removed: $item" -ForegroundColor Gray
-                }
-            }
-            
-            # Remove server JAR files (use wildcards)
-            Get-ChildItem -Path $folderPath -Filter "minecraft_server.*.jar" -ErrorAction SilentlyContinue | ForEach-Object {
-                Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
-                Write-Host "   ✓ Removed: $($_.Name)" -ForegroundColor Gray
-            }
-            
-            # Remove Fabric launcher files (use wildcards)
-            Get-ChildItem -Path $folderPath -Filter "fabric-server*.jar" -ErrorAction SilentlyContinue | ForEach-Object {
-                Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
-                Write-Host "   ✓ Removed: $($_.Name)" -ForegroundColor Gray
-            }
-            
-            # Remove log files (use wildcards)
-            Get-ChildItem -Path $folderPath -Filter "*.log" -ErrorAction SilentlyContinue | ForEach-Object {
-                Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
-            }
-            Get-ChildItem -Path $folderPath -Filter "*.log.gz" -ErrorAction SilentlyContinue | ForEach-Object {
-                Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
-            }
-            Get-ChildItem -Path $folderPath -Filter "*.tmp" -ErrorAction SilentlyContinue | ForEach-Object {
-                Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue
-            }
-        }
-        Write-Host "✅ Server files cleared successfully!" -ForegroundColor Green
-    }
-    
-    # After clearing, download mods and server files
-    Write-Host ""
-    Write-Host "📦 Downloading fresh mods and server files..." -ForegroundColor Cyan
-    
-    # Use the version we already determined above
-    $currentGameVersion = $versionToClear
-    
-    if ($TargetVersion -or $GameVersion) {
-        Write-Host "📋 Target game version: $currentGameVersion (user specified)" -ForegroundColor Cyan
-    } elseif ($UseLatestVersion) {
-        Write-Host "📋 Target game version: $currentGameVersion (LATEST)" -ForegroundColor Cyan
-    } elseif ($UseNextVersion) {
-        Write-Host "📋 Target game version: $currentGameVersion (NEXT)" -ForegroundColor Cyan
-    } else {
-        Write-Host "📋 Target game version: $currentGameVersion (CURRENT, default)" -ForegroundColor Cyan
-    }
-    
-    # Download mods using target version (skip server files - handled separately)
-    Write-Host "Downloading mods for $currentGameVersion..." -ForegroundColor Yellow
-    Download-Mods -CsvPath $effectiveModListPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -SkipServerFiles -TargetGameVersion $currentGameVersion
-    
-    # Download server files ONLY for target game version
-    Write-Host ""
-    Write-Host "Downloading server files for $currentGameVersion only..." -ForegroundColor Yellow
-    Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$false -GameVersion $currentGameVersion
-    
-    Write-Host ""
-    Write-Host "✅ Server cleared and mods downloaded successfully!" -ForegroundColor Green
-    Write-Host "💡 Run -StartServer to start the server" -ForegroundColor Cyan
-    Exit-ModManager 0
 }
 
 # Handle StartServer parameter

@@ -63,6 +63,7 @@
 . "$PSScriptRoot\Download\Server\Download-ServerFiles.ps1"
 . "$PSScriptRoot\Download\Server\Download-ServerFilesFromDatabase.ps1"
 . "$PSScriptRoot\Download\Server\Start-MinecraftServer.ps1"
+. "$PSScriptRoot\Download\Server\Clear-ServerFiles.ps1"
 . "$PSScriptRoot\Download\JDK\Download-JDK.ps1"
 
 # File utility modules
