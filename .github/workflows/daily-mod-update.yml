@@ -160,7 +160,7 @@ jobs:
           if ($minecraftJar) {
             Copy-Item -Path $minecraftJar.FullName -Destination $releasePath -Force
             Write-Host "  ✓ Copied: $($minecraftJar.Name)" -ForegroundColor Green
-                } else {
+          } else {
             Write-Host "  ⚠️  Warning: Minecraft server JAR not found" -ForegroundColor Yellow
           }
           
@@ -169,8 +169,22 @@ jobs:
           if ($fabricJar) {
             Copy-Item -Path $fabricJar.FullName -Destination $releasePath -Force
             Write-Host "  ✓ Copied: $($fabricJar.Name)" -ForegroundColor Green
-            } else {
+          } else {
             Write-Host "  ⚠️  Warning: Fabric launcher JAR not found" -ForegroundColor Yellow
+          }
+          
+          # Copy Fabric installer
+          $installerPath = Join-Path $serverPath "installer"
+          if (Test-Path $installerPath) {
+            $fabricInstaller = Get-ChildItem -Path $installerPath -Filter "fabric-installer-*.exe" -File -ErrorAction SilentlyContinue | Select-Object -First 1
+            if ($fabricInstaller) {
+              Copy-Item -Path $fabricInstaller.FullName -Destination $releasePath -Force
+              Write-Host "  ✓ Copied: $($fabricInstaller.Name)" -ForegroundColor Green
+            } else {
+              Write-Host "  ⚠️  Warning: Fabric installer not found" -ForegroundColor Yellow
+            }
+          } else {
+            Write-Host "  ⚠️  Warning: Installer directory not found" -ForegroundColor Yellow
           }
       
       - name: Upload Release Artifact
