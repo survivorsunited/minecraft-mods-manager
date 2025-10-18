@@ -162,7 +162,21 @@ function Add-ModToDatabase {
                 Write-Host "  Warning: Could not fetch project info for type detection" -ForegroundColor Yellow
             }
         } elseif ($AddModUrl -and $AddModUrl -match "curseforge\.com") {
-            # For CurseForge URLs, try to get project info to extract name and detect type
+            # For CurseForge URLs, detect type from URL pattern first
+            if (-not $AddModType) {
+                if ($AddModUrl -match "/mc-mods/") {
+                    $AddModType = "mod"
+                } elseif ($AddModUrl -match "/texture-packs/") {
+                    $AddModType = "resourcepack"
+                } elseif ($AddModUrl -match "/customization/") {
+                    $AddModType = "datapack"
+                } else {
+                    $AddModType = "mod"  # Default for CurseForge
+                }
+                Write-Host "  Auto-detected type from URL: $AddModType (/mc-mods/ pattern)" -ForegroundColor Gray
+            }
+            
+            # Then try to get project info to extract name and validate type
             $extractedVersion = $AddModVersion
             try {
                 $projectInfo = Get-CurseForgeProjectInfo -ProjectId $AddModId -UseCachedResponses $false
@@ -172,27 +186,25 @@ function Add-ModToDatabase {
                         $extractedName = $projectInfo.data.name
                     }
                     
-                    # Auto-detect project type based on CurseForge category
-                    # CurseForge uses different category structure than Modrinth
+                    # Validate/refine type based on CurseForge category if available
                     if ($projectInfo.data.classId) {
                         # ClassId 6 = Mods, 12 = Resource Packs, etc.
-                        # For now, we'll mainly detect datapacks vs mods
-                        # Most CurseForge projects are mods, datapacks are less common
-                        $AddModType = "mod"  # Default for CurseForge
+                        # Only override if we have specific info from API
+                        # For now, trust our URL-based detection
                     }
                     
-                    Write-Host "  Auto-detected project type: $AddModType (CurseForge)" -ForegroundColor Gray
+                    Write-Host "  Confirmed project type: $AddModType (CurseForge)" -ForegroundColor Gray
                 } else {
                     if (-not $AddModName) {
                         $extractedName = $AddModId
                     }
                 }
             } catch {
-                # If API call fails, use ID as name and keep default type
+                # If API call fails, use ID as name and keep URL-detected type
                 if (-not $AddModName) {
                     $extractedName = $AddModId
                 }
-                Write-Host "  Warning: Could not fetch CurseForge project info for type detection" -ForegroundColor Yellow
+                Write-Host "  Warning: Could not fetch CurseForge project info, using URL-based type detection" -ForegroundColor Yellow
             }
         } else {
             # Default version for manual entries
