@@ -341,6 +341,9 @@ Speed up validation by using previously cached API responses
 | `-Download` | Switch | Download all mods from database | `.\ModManager.ps1 -Download` |
 | `-UseLatestVersion` | Switch | Use latest versions instead of database versions | `.\ModManager.ps1 -Download -UseLatestVersion` |
 | `-ValidateAllModVersions` | Switch | Validate all mods and update database | `.\ModManager.ps1 -ValidateAllModVersions` |
+| `-RolloverMods` | Switch | Rollover mods to next/specified version | `.\ModManager.ps1 -RolloverMods -DryRun` |
+| `-RolloverToVersion` | String | Target version for rollover | `.\ModManager.ps1 -RolloverMods -RolloverToVersion "1.21.9"` |
+| `-DryRun` | Switch | Preview changes without modifying database | `.\ModManager.ps1 -RolloverMods -DryRun` |
 | `-DownloadServer` | Switch | Download server files from database | `.\ModManager.ps1 -DownloadServer` |
 | `-StartServer` | Switch | Start Minecraft server with downloaded files | `.\ModManager.ps1 -StartServer` |
 | `-ClearServer` | Switch | Clear server files for fresh restart | `.\ModManager.ps1 -ClearServer` |

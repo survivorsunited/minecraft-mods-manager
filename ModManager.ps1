@@ -14,6 +14,8 @@ param(
     [string]$ModID,
     [switch]$ValidateAllModVersions,
     [switch]$UpdateMods,
+    [switch]$RolloverMods,
+    [string]$RolloverToVersion,
     [switch]$DownloadMods,
     [switch]$GetModList,
     [switch]$ShowHelp,
@@ -99,10 +101,11 @@ param(
     [switch]$DownloadJDK,
     [string]$JDKVersion = "21",
     [string]$JDKPlatform = "",
-    [switch]$DryRun,
     # Release Creation
     [switch]$CreateRelease,
-    [string]$ReleasePath = "releases"
+    [string]$ReleasePath = "releases",
+    # General Options
+    [switch]$DryRun
 )
 
 # Save parameter values that might be overridden by environment variables
@@ -216,6 +219,17 @@ if ($UpdateMods) {
     if ($UseCachedResponses) { $useCache = $true }  # Explicit -UseCachedResponses overrides
     Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList -UseCachedResponses:$useCache | Out-Null
     Exit-ModManager 0
+}
+
+# Handle RolloverMods parameter
+if ($RolloverMods) {
+    Write-Host "Starting mod rollover process..." -ForegroundColor Yellow
+    $result = Rollover-ModsToNextVersion -CsvPath $effectiveModListPath -RolloverToVersion $RolloverToVersion -DryRun:$DryRun
+    if ($result) {
+        Exit-ModManager 0
+    } else {
+        Exit-ModManager 1
+    }
 }
 
 # Handle Download parameter

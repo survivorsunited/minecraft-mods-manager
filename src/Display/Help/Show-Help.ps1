@@ -81,6 +81,16 @@ function Show-Help {
     Write-Host "    Example: .\ModManager.ps1 -SyncMinecraftVersions" -ForegroundColor Gray
     Write-Host "    Example: .\ModManager.ps1 -SyncMinecraftVersions -MinecraftMinVersion \"1.21.6\" -DryRun" -ForegroundColor Gray
     Write-Host ""
+    Write-Host "  Rollover-Mods [-RolloverToVersion <version>] [-DryRun]" -ForegroundColor White
+    Write-Host "    - Rolls over mods from Current to Next versions"
+    Write-Host "    - Without -RolloverToVersion: Uses NextVersion data from database"
+    Write-Host "    - With -RolloverToVersion: Updates all mods to specified game version"
+    Write-Host "    - Use -DryRun to preview changes without modifying database"
+    Write-Host "    - Creates backup before making changes"
+    Write-Host ""
+    Write-Host "    Example: .\ModManager.ps1 -RolloverMods -DryRun" -ForegroundColor Gray
+    Write-Host "    Example: .\ModManager.ps1 -RolloverMods -RolloverToVersion \"1.21.9\"" -ForegroundColor Gray
+    Write-Host ""
 }
 
 # Function is available for dot-sourcing 

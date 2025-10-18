@@ -37,6 +37,7 @@
 . "$PSScriptRoot\Database\Operations\Add-ModToDatabase.ps1"
 . "$PSScriptRoot\Database\Operations\Delete-ModFromDatabase.ps1"
 . "$PSScriptRoot\Database\Operations\Update-ModUrlInDatabase.ps1"
+. "$PSScriptRoot\Database\Operations\Rollover-ModsToNextVersion.ps1"
 . "$PSScriptRoot\Database\Operations\Sync-MinecraftVersions.ps1"
 . "$PSScriptRoot\Database\Operations\Sync-JDKVersions.ps1"
 . "$PSScriptRoot\Database\Maintenance\Reorder-CsvColumns.ps1"
