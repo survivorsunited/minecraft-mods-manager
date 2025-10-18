@@ -65,9 +65,40 @@ function Validate-ModVersion {
         # Route to appropriate provider function
         switch ($provider) {
             "modrinth" {
-                # Handle "latest" version specially
-                if ($Version -eq "latest") {
-                    # Get project info to find latest version
+                # Handle version keywords: "current", "next", "latest"
+                # Pass these through to Validate-ModrinthModVersion which handles them properly
+                if ($Version -in @("current", "next", "latest")) {
+                    # Keywords are handled by Validate-ModrinthModVersion
+                    $result = Validate-ModrinthModVersion -ModID $ModId -Version $Version -Loader $Loader -GameVersion $GameVersion -UseCachedResponses $false -CsvPath $CsvPath -Quiet:$Quiet
+                    
+                    # Transform result to expected format
+                    if ($result.Success) {
+                        return @{
+                            Exists = $true
+                            LatestVersion = $result.Version
+                            VersionUrl = $result.DownloadUrl
+                            LatestVersionUrl = $result.DownloadUrl
+                            LatestGameVersion = $GameVersion
+                            CurrentDependencies = $result.Dependencies
+                            LatestDependencies = $result.Dependencies
+                            Jar = $result.Jar
+                            Title = $result.Title
+                            ProjectDescription = $result.ProjectDescription
+                            IconUrl = $result.IconUrl
+                            IssuesUrl = $result.IssuesUrl
+                            SourceUrl = $result.SourceUrl
+                            WikiUrl = $result.WikiUrl
+                            ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                        }
+                    } else {
+                        return @{
+                            Exists = $false
+                            Error = $result.Error
+                            ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                        }
+                    }
+                } elseif ($Version -eq "latest-old-logic") {
+                    # OLD LOGIC - kept for reference but not used
                     $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModId -UseCachedResponses $false
                     if ($projectInfo -and $projectInfo.versions) {
                         # Find the latest version for the specified loader

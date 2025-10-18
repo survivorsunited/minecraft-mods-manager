@@ -45,8 +45,8 @@ function Add-ModToDatabase {
         [string]$AddModUrl,
         [string]$AddModName,
         [string]$AddModLoader = "fabric",
-        [string]$AddModGameVersion = "1.21.5",
-        [string]$AddModVersion = "latest",
+        [string]$AddModGameVersion = "1.21.8",
+        [string]$AddModVersion = "current",
         [string]$AddModType = "mod",
         [string]$AddModGroup = "required",
         [string]$AddModDescription = "",
@@ -73,6 +73,8 @@ function Add-ModToDatabase {
             } elseif ($AddModUrl -match "modrinth\.com/datapack/([^/]+)") {
                 $AddModId = $matches[1]
             } elseif ($AddModUrl -match "modrinth\.com/resourcepack/([^/]+)") {
+                $AddModId = $matches[1]
+            } elseif ($AddModUrl -match "modrinth\.com/plugin/([^/]+)") {
                 $AddModId = $matches[1]
             } elseif ($AddModUrl -match "curseforge\.com/minecraft/mc-mods/([^/]+)") {
                 $AddModId = $matches[1]

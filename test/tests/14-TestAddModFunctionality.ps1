@@ -277,6 +277,31 @@ function Invoke-TestAddModFunctionality {
     }
     $script:TestResults.Total++
     
+    # Test 16: Default parameter values validation
+    Write-TestStep "Testing default parameter values (GameVersion=1.21.8, Loader=fabric)"
+    $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
+        -AddMod -AddModUrl "https://modrinth.com/mod/entityculling" `
+        -DatabaseFile $TestModListPath `
+        -UseCachedResponses -ApiResponseFolder $TestApiResponseDir
+    
+    if ($LASTEXITCODE -eq 0) {
+        # Verify the defaults were applied
+        $mods = Import-Csv -Path $TestModListPath
+        $addedMod = $mods | Where-Object { $_.ID -eq "entityculling" } | Select-Object -First 1
+        
+        if ($addedMod.CurrentGameVersion -eq "1.21.8" -and $addedMod.Loader -eq "fabric") {
+            Write-TestResult "Default Parameters" $true "Defaults applied correctly (GameVersion=1.21.8, Loader=fabric)"
+            $script:TestResults.Passed++
+        } else {
+            Write-TestResult "Default Parameters" $false "Defaults not applied: GameVersion='$($addedMod.CurrentGameVersion)', Loader='$($addedMod.Loader)'"
+            $script:TestResults.Failed++
+        }
+    } else {
+        Write-TestResult "Default Parameters" $false "Failed to add mod for default validation"
+        $script:TestResults.Failed++
+    }
+    $script:TestResults.Total++
+    
     Write-TestSuiteSummary "Test Add Mod Functionality"
     
     return ($script:TestResults.Failed -eq 0)

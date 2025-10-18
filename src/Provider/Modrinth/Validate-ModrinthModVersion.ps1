@@ -77,9 +77,48 @@ function Validate-ModrinthModVersion {
         $versionsApiUrl = "https://api.modrinth.com/v2/project/$ModID/version"
         $versionsResponse = Invoke-RestMethod -Uri $versionsApiUrl -Method Get -TimeoutSec 30
         
-        # Find the specific version by version_number with flexible matching
-        # Try exact match first - PRIORITIZE by loader, then by game version
-        $exactMatches = $versionsResponse | Where-Object { $_.version_number -eq $Version }
+        # Handle version keywords: "current", "next", "latest"
+        if ($Version -in @("current", "next", "latest") -or [string]::IsNullOrEmpty($Version)) {
+            # Determine target game version based on keyword
+            $targetGameVersion = $effectiveGameVersion
+            
+            if ($Version -eq "next") {
+                # Calculate next game version (increment patch version)
+                if ($effectiveGameVersion -match '^(\d+)\.(\d+)\.(\d+)$') {
+                    $major = [int]$matches[1]
+                    $minor = [int]$matches[2]
+                    $patch = [int]$matches[3]
+                    $targetGameVersion = "$major.$minor.$($patch + 1)"
+                }
+            } elseif ($Version -eq "latest") {
+                # For "latest", ignore game version - get absolute newest
+                $targetGameVersion = $null
+            }
+            # For "current" or empty, use $effectiveGameVersion as-is
+            
+            # Filter versions by loader and optionally by game version
+            if ($targetGameVersion) {
+                $filteredVersions = $versionsResponse | Where-Object {
+                    $_.loaders -contains $Loader -and
+                    $_.game_versions -contains $targetGameVersion
+                } | Sort-Object date_published -Descending
+            } else {
+                # "latest" - just filter by loader
+                $filteredVersions = $versionsResponse | Where-Object {
+                    $_.loaders -contains $Loader
+                } | Sort-Object date_published -Descending
+            }
+            
+            $versionInfo = $filteredVersions | Select-Object -First 1
+            
+            if (-not $versionInfo -and -not $Quiet) {
+                $gameVerMsg = if ($targetGameVersion) { " and game version: $targetGameVersion" } else { "" }
+                Write-Host "DEBUG: No versions found for loader: $Loader$gameVerMsg" -ForegroundColor Yellow
+            }
+        } else {
+            # Find the specific version by version_number with flexible matching
+            # Try exact match first - PRIORITIZE by loader, then by game version
+            $exactMatches = $versionsResponse | Where-Object { $_.version_number -eq $Version }
         if ($exactMatches -and @($exactMatches).Count -gt 1) {
             # Multiple versions with same version number - filter by loader first
             $loaderMatches = $exactMatches | Where-Object { $_.loaders -contains $Loader }
@@ -154,6 +193,7 @@ function Validate-ModrinthModVersion {
                 }
             }
         }
+        } # Close the else block for non-latest version handling
         
         if (-not $versionInfo) {
             if (-not $Quiet) { Write-Host "DEBUG: Version $Version not found in $($versionsResponse.Count) versions" -ForegroundColor Red }
@@ -336,12 +376,27 @@ function Validate-ModrinthModVersion {
             if (-not $Quiet) { Write-Host "DEBUG: Created response file: $responseFile" -ForegroundColor Green }
         }
         
+        # Get project info for additional metadata
+        $projectInfo = Get-ModrinthProjectInfo -ProjectId $ModID -UseCachedResponses $true -Quiet:$Quiet
+        
         return @{ 
-            Success = $true; 
-            Version = $Version;
-            Dependencies = $dependenciesJson;
-            DownloadUrl = $versionInfo.files[0].url;
+            Success = $true
+            Exists = $true
+            Version = $versionInfo.version_number
+            LatestVersion = $versionInfo.version_number
+            VersionUrl = $versionInfo.files[0].url
+            LatestVersionUrl = $versionInfo.files[0].url
+            DownloadUrl = $versionInfo.files[0].url
+            Dependencies = $dependenciesJson
             FileSize = $versionInfo.files[0].size
+            Jar = $versionInfo.files[0].filename
+            LatestGameVersion = $versionInfo.game_versions[0]
+            Title = if ($projectInfo) { $projectInfo.title } else { "" }
+            ProjectDescription = if ($projectInfo) { $projectInfo.description } else { "" }
+            IconUrl = if ($projectInfo) { $projectInfo.icon_url } else { "" }
+            IssuesUrl = if ($projectInfo) { $projectInfo.issues_url } else { "" }
+            SourceUrl = if ($projectInfo) { $projectInfo.source_url } else { "" }
+            WikiUrl = if ($projectInfo) { $projectInfo.wiki_url } else { "" }
         }
         
     } catch {

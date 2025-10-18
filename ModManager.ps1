@@ -22,8 +22,8 @@ param(
     [string]$AddModUrl,
     [string]$AddModName,
     [string]$SearchModName,
-    [string]$AddModLoader,
-    [string]$AddModGameVersion,
+    [string]$AddModLoader = "fabric",
+    [string]$AddModGameVersion = "1.21.8",
     [string]$AddModType,
     [string]$AddModGroup = "required",
     [string]$AddModDescription,
@@ -450,6 +450,60 @@ if ($ValidateAllModVersions) {
     if ($UseCachedResponses) { $useCache = $true }  # Explicit -UseCachedResponses overrides
     Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UseCachedResponses:$useCache | Out-Null
     Exit-ModManager 0
+}
+
+# Handle ValidateMod parameter (single mod validation and update)
+if ($ValidateMod -and $ModID) {
+    Write-Host "Validating and updating single mod '$ModID'..." -ForegroundColor Yellow
+    
+    # Load the mod list
+    $mods = Import-Csv -Path $effectiveModListPath
+    $mod = $mods | Where-Object { $_.ID -eq $ModID } | Select-Object -First 1
+    
+    if (-not $mod) {
+        Write-Host "Error: Mod with ID '$ModID' not found in database" -ForegroundColor Red
+        Exit-ModManager 1
+    }
+    
+    # Validate just this one mod
+    $loader = if ($mod.Loader) { $mod.Loader } else { "fabric" }
+    $gameVersion = if ($mod.CurrentGameVersion) { $mod.CurrentGameVersion } else { "1.21.8" }
+    $version = if ([string]::IsNullOrEmpty($mod.CurrentVersion)) { "current" } else { $mod.CurrentVersion }
+    
+    # Handle version keywords: "current", "next", "latest"
+    # - "current" = latest version for current game version
+    # - "next" = latest version for next game version  
+    # - "latest" = absolute latest version (any game version)
+    
+    Write-Host "  Validating: ID=$ModID, Version=$version, Loader=$loader, GameVersion=$gameVersion" -ForegroundColor Gray
+    $result = Validate-ModVersion -ModId $ModID -Version $version -Loader $loader -GameVersion $gameVersion -ResponseFolder $ApiResponseFolder -CsvPath $effectiveModListPath
+    
+    if ($result.Exists) {
+        # Update the mod entry with validation results
+        $mod.CurrentVersion = $result.LatestVersion
+        $mod.CurrentVersionUrl = $result.VersionUrl
+        $mod.LatestVersion = $result.LatestVersion
+        $mod.LatestVersionUrl = $result.LatestVersionUrl
+        $mod.LatestGameVersion = $result.LatestGameVersion
+        $mod.Jar = $result.Jar ?? $mod.Jar
+        $mod.Title = $result.Title ?? $mod.Title
+        $mod.ProjectDescription = $result.ProjectDescription ?? $mod.ProjectDescription
+        $mod.IconUrl = $result.IconUrl ?? $mod.IconUrl
+        $mod.IssuesUrl = $result.IssuesUrl ?? $mod.IssuesUrl
+        $mod.SourceUrl = $result.SourceUrl ?? $mod.SourceUrl
+        $mod.WikiUrl = $result.WikiUrl ?? $mod.WikiUrl
+        
+        # Save back to CSV
+        $mods | Export-Csv -Path $effectiveModListPath -NoTypeInformation
+        
+        Write-Host "✅ Successfully validated and updated mod '$ModID'" -ForegroundColor Green
+        Write-Host "   Current Version: $($result.LatestVersion)" -ForegroundColor Cyan
+        Write-Host "   Game Version: $($result.LatestGameVersion)" -ForegroundColor Cyan
+        Exit-ModManager 0
+    } else {
+        Write-Host "❌ Failed to validate mod '$ModID': $($result.Error ?? 'Unknown error')" -ForegroundColor Red
+        Exit-ModManager 1
+    }
 }
 
 # Handle ValidateModVersion parameters
