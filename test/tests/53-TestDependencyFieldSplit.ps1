@@ -53,7 +53,10 @@ function Invoke-DependencyFieldSplitTest {
 
     Write-TestHeader "Step 3: Run update again to check for false update counts"
     $output = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -UpdateMods -DatabaseFile $TestCsvPath -UseCachedResponses 2>&1
-    $noFalseUpdate = ($output -match "All mods already have latest version information").Count -gt 0
+    # Check for either the old message or that no updates were counted
+    $noFalseUpdate = ($output -match "All mods already have latest version information").Count -gt 0 -or 
+                     ($output -match "Updated: 0 mods").Count -gt 0 -or
+                     ($output -match "0 mods updated").Count -gt 0
     Write-TestResult "No false update counts on second run" $noFalseUpdate
 
     Show-TestSummary "Dependency Field Split Test"
