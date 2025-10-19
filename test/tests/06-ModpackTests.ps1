@@ -54,4 +54,8 @@ Write-TestHeader "Verify Modpack Structure (SKIPPED)"
 Write-Host "⚠️  WARNING: Modpack structure validation not implemented yet" -ForegroundColor Yellow
 Write-Host "✓ PASS: Skipped modpack structure validation test" -ForegroundColor Green
 
-Write-Host "`nModpack Tests Complete" -ForegroundColor $Colors.Info 
+Write-Host "`nModpack Tests Complete" -ForegroundColor $Colors.Info
+
+Show-TestSummary "Modpack Tests"
+
+return ($script:TestResults.Failed -eq 0) 
