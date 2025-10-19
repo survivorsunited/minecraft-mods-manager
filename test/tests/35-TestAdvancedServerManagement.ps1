@@ -17,11 +17,14 @@ $TestDownloadDir = Join-Path $TestOutputDir "download"
 Write-Host "Minecraft Mod Manager - Advanced Server Management Tests" -ForegroundColor $Colors.Header
 Write-Host "=======================================================" -ForegroundColor $Colors.Header
 
-# Test 1: Server Performance Monitoring Function
-Write-TestHeader "Server Performance Monitoring Function"
-$scriptContent = Get-Content $ModManagerPath -Raw
-$result1 = $scriptContent -match "function Get-ServerPerformance"
-Write-TestResult "Server performance monitoring function" $result1 "Function availability check"
+function Invoke-TestAdvancedServerManagement {
+    param([string]$TestFileName = $null)
+    
+    # Test 1: Server Performance Monitoring Function
+    Write-TestHeader "Server Performance Monitoring Function"
+    $scriptContent = Get-Content $ModManagerPath -Raw
+    $result1 = $scriptContent -match "function Get-ServerPerformance"
+    Write-TestResult "Server performance monitoring function" $result1 "Function availability check"
 
 # Test 2: Server Backup Function
 Write-TestHeader "Server Backup Function"
@@ -332,15 +335,19 @@ foreach ($pattern in $integrationPatterns) {
 $result25 = $missingPatterns.Count -eq 0
 Write-TestResult "Function integration test" $result25 "Function integration pattern check"
 
-# Summary
-Write-TestSuiteSummary "Advanced Server Management Tests"
-
-# Log file verification
-$expectedLogPath = Join-Path $TestOutputDir "$([IO.Path]::GetFileNameWithoutExtension($TestFileName)).log"
-if (Test-Path $expectedLogPath) {
-    Write-Host "✓ Console log created: $expectedLogPath" -ForegroundColor Green
-} else {
-    Write-Host "✗ Console log missing: $expectedLogPath" -ForegroundColor Red
+    # Summary
+    Write-TestSuiteSummary "Advanced Server Management Tests"
+    
+    # Log file verification
+    $expectedLogPath = Join-Path $TestOutputDir "$([IO.Path]::GetFileNameWithoutExtension($TestFileName)).log"
+    if (Test-Path $expectedLogPath) {
+        Write-Host "✓ Console log created: $expectedLogPath" -ForegroundColor Green
+    } else {
+        Write-Host "✗ Console log missing: $expectedLogPath" -ForegroundColor Red
+    }
+    
+    return ($script:TestResults.Failed -eq 0)
 }
 
-return ($script:TestResults.Failed -eq 0) 
+# Always execute tests when this file is run
+Invoke-TestAdvancedServerManagement -TestFileName $TestFileName 

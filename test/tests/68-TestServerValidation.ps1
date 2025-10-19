@@ -7,20 +7,26 @@
 # Set the test file name for use throughout the script
 $TestFileName = "68-TestServerValidation.ps1"
 
-Write-Host "Minecraft Mod Manager - Server Validation Tests" -ForegroundColor $Colors.Header
-Write-Host "===============================================" -ForegroundColor $Colors.Header
-
+# Initialize test environment
 Initialize-TestEnvironment $TestFileName
 
 # Helper to get the full path to ModManager.ps1
 $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
+
+# Set up isolated paths
 $TestOutputDir = Get-TestOutputFolder $TestFileName
 $script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
-
-# Set up test directories
 $TestDownloadDir = Join-Path $TestOutputDir "download"
-$TestServerDir = Join-Path $TestDownloadDir "1.21.6"
-$TestDbPath = Join-Path $TestOutputDir "server-validation.csv"
+
+Write-Host "Minecraft Mod Manager - Server Validation Tests" -ForegroundColor $Colors.Header
+Write-Host "===============================================" -ForegroundColor $Colors.Header
+
+function Invoke-TestServerValidation {
+    param([string]$TestFileName = $null)
+    
+    # Set up test directories
+    $TestServerDir = Join-Path $TestDownloadDir "1.21.6"
+    $TestDbPath = Join-Path $TestOutputDir "server-validation.csv"
 
 Write-TestHeader "Test Environment Setup"
 
@@ -323,8 +329,12 @@ if ($validationErrors -eq 0 -and $modsDownloaded -gt 0 -and $minecraftServerExis
     Write-Host "`n❌ Server setup incomplete - missing required components" -ForegroundColor Red
 }
 
-Show-TestSummary "Server Validation Tests"
+    Show-TestSummary "Server Validation Tests"
+    
+    Write-Host "`nServer Validation Tests Complete" -ForegroundColor $Colors.Info
+    
+    return ($script:TestResults.Failed -eq 0)
+}
 
-Write-Host "`nServer Validation Tests Complete" -ForegroundColor $Colors.Info
-
-return ($script:TestResults.Failed -eq 0)
+# Always execute tests when this file is run
+Invoke-TestServerValidation -TestFileName $TestFileName

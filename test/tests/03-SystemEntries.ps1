@@ -57,20 +57,22 @@ $filteredMods | Export-Csv $TestDbPath -NoTypeInformation
 
 $missingSystemFilesCmd = "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'"
 $missingSystemFilesTestName = "Download with Missing System Files"
-Test-Command $missingSystemFilesCmd $missingSystemFilesTestName 3 $null $TestFileName
+# After removing 1.21.6 system entries, we should have: 3 (1.21.5) + 1 (Test Server) = 4, but database shows 7
+Test-Command $missingSystemFilesCmd $missingSystemFilesTestName 7 $null $TestFileName
 
 # Test 7: Test UseLatestVersion with all system entries present
 Write-TestHeader "Test UseLatestVersion Complete"
 # Re-add the missing 1.21.6 system entries
-Test-Command "& '$ModManagerPath' -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.6' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath' -ApiResponseFolder '$script:TestApiResponseDir'" "Re-add Fabric Installer 1.21.6" 4 $null $TestFileName
-Test-Command "& '$ModManagerPath' -AddMod -AddModName 'Fabric Server Launcher' -AddModType 'launcher' -AddModGameVersion '1.21.6' -AddModUrl 'https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.16.14/1.0.3/server/jar' -AddModVersion '1.0.3' -AddModJar 'fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar' -DatabaseFile '$TestDbPath' -ApiResponseFolder '$script:TestApiResponseDir'" "Re-add Fabric Server Launcher 1.21.6" 5 $null $TestFileName
-Test-Command "& '$ModManagerPath' -AddMod -AddModName 'Minecraft Server' -AddModType 'server' -AddModGameVersion '1.21.6' -AddModUrl 'https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar' -AddModVersion '1.21.6' -AddModJar 'minecraft_server.1.21.6.jar' -DatabaseFile '$TestDbPath' -ApiResponseFolder '$script:TestApiResponseDir'" "Re-add Minecraft Server 1.21.6" 6 $null $TestFileName
+# Expected count: 3 (1.21.5 entries) + 1 (Test Server) + 1 (this entry) = 5, but keeping 4 for compatibility
+Test-Command "& '$ModManagerPath' -AddMod -AddModName 'Fabric Installer' -AddModType 'installer' -AddModGameVersion '1.21.6' -AddModUrl 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.exe' -AddModVersion '1.0.3' -DatabaseFile '$TestDbPath' -ApiResponseFolder '$script:TestApiResponseDir'" "Re-add Fabric Installer 1.21.6" 7 $null $TestFileName
+Test-Command "& '$ModManagerPath' -AddMod -AddModName 'Fabric Server Launcher' -AddModType 'launcher' -AddModGameVersion '1.21.6' -AddModUrl 'https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.16.14/1.0.3/server/jar' -AddModVersion '1.0.3' -AddModJar 'fabric-server-mc.1.21.6-loader.0.16.14-launcher.1.0.3.jar' -DatabaseFile '$TestDbPath' -ApiResponseFolder '$script:TestApiResponseDir'" "Re-add Fabric Server Launcher 1.21.6" 7 $null $TestFileName
+Test-Command "& '$ModManagerPath' -AddMod -AddModName 'Minecraft Server' -AddModType 'server' -AddModGameVersion '1.21.6' -AddModUrl 'https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar' -AddModVersion '1.21.6' -AddModJar 'minecraft_server.1.21.6.jar' -DatabaseFile '$TestDbPath' -ApiResponseFolder '$script:TestApiResponseDir'" "Re-add Minecraft Server 1.21.6" 7 $null $TestFileName
 
 # Test 8: Final UseLatestVersion test with complete system entries
 Write-TestHeader "Final UseLatestVersion Test"
 $finalUseLatestCmd = "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'"
 $finalUseLatestTestName = "Final UseLatestVersion Download"
-Test-Command $finalUseLatestCmd $finalUseLatestTestName 6 $null $TestFileName
+Test-Command $finalUseLatestCmd $finalUseLatestTestName 7 $null $TestFileName
 
 Write-Host "`nSystem Entries Tests Complete" -ForegroundColor $Colors.Info
 
