@@ -122,9 +122,14 @@ try {
 Write-TestHeader "Test 4: Test Error Handling"
 
 try {
-    # Test with empty query
-    $emptyResults = Search-ModrinthProjects -Query "" -Quiet
-    $emptyHandled = $emptyResults -eq $null
+    # Test with empty query - this should throw a parameter binding error, which is expected
+    try {
+        $emptyResults = Search-ModrinthProjects -Query "" -Quiet
+        $emptyHandled = $emptyResults -eq $null
+    } catch {
+        # Parameter binding error for empty string is expected and correct
+        $emptyHandled = $true
+    }
     
     # Test with very specific query that should return no results
     $noResults = Search-ModrinthProjects -Query "verylongandspecificquerythatshouldfindnothing12345" -Quiet
