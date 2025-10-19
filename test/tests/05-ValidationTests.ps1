@@ -63,4 +63,8 @@ if ($missing) {
     Write-Host "✓ PASS: All validation tests passed" -ForegroundColor Green
 }
 
-Write-Host "`nValidation Tests Complete" -ForegroundColor $Colors.Info 
+Write-Host "`nValidation Tests Complete" -ForegroundColor $Colors.Info
+
+Show-TestSummary "Validation Tests"
+
+return ($script:TestResults.Failed -eq 0) 
