@@ -31,9 +31,13 @@ if (-not (Test-Path $mainModlistPath)) {
     return $false
 }
 
-# Copy only 1.21.8 entries from main database
+# Copy 1.21.8 entries AND server/launcher entries from main database
 $allMods = Import-Csv -Path $mainModlistPath
-$mods1218 = $allMods | Where-Object { $_.CurrentGameVersion -eq "1.21.8" -or $_.GameVersion -eq "1.21.8" }
+$mods1218 = $allMods | Where-Object { 
+    ($_.CurrentGameVersion -eq "1.21.8" -or $_.GameVersion -eq "1.21.8") -or 
+    ($_.Type -eq "server" -and $_.GameVersion -eq "1.21.8") -or
+    ($_.Type -eq "launcher" -and $_.GameVersion -eq "1.21.8")
+}
 
 if ($mods1218.Count -eq 0) {
     Write-Host "❌ No 1.21.8 mods found in database" -ForegroundColor Red
@@ -76,6 +80,7 @@ Write-TestHeader "Test 2: Download Server Files for Release"
 $serverOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
     -DownloadServer `
     -DownloadFolder $TestDownloadDir `
+    -DatabaseFile $TestDbPath `
     -GameVersion "1.21.8" 2>&1
 
 $serverDownloadSucceeded = ($LASTEXITCODE -eq 0)
