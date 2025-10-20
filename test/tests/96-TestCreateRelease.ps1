@@ -53,6 +53,7 @@ $downloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPat
     -DownloadMods `
     -DatabaseFile $TestDbPath `
     -DownloadFolder $TestDownloadDir `
+    -TargetVersion "1.21.8" `
     -UseCachedResponses `
     -ApiResponseFolder $script:TestApiResponseDir 2>&1
 

@@ -60,10 +60,19 @@ Write-TestResult "CurseForge API Key Available" $apiKeyAvailable
 if ($apiKeyAvailable) {
     Write-Host "  API Key Length: $($env:CURSEFORGE_API_KEY.Length) characters" -ForegroundColor Green
 } else {
-    Write-Host "  ❌ No API key found in environment" -ForegroundColor Red
+    Write-Host "  ❌ No API key found in environment" -ForegroundColor Yellow
+    Write-Host "  ⏭️  Skipping remaining CurseForge tests (API key required)" -ForegroundColor Yellow
     if ($apiKeyError) {
-        Write-Host "  Error: $apiKeyError" -ForegroundColor Red
+        Write-Host "  Error: $apiKeyError" -ForegroundColor Yellow
     }
+    Write-Host "" -ForegroundColor Gray
+    Write-Host "To run CurseForge tests, set the CURSEFORGE_API_KEY environment variable." -ForegroundColor Gray
+    Write-Host "You can get an API key from: https://console.curseforge.com" -ForegroundColor Gray
+    Write-Host "" -ForegroundColor Gray
+    
+    # Show test summary and exit gracefully
+    Show-TestSummary "CurseForge Functionality Tests"
+    return $true
 }
 
 # Test 2: Direct CurseForge API Test

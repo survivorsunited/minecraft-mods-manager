@@ -31,12 +31,18 @@ function Invoke-TestNextVersionDownloads {
         Remove-Item -Path $TestCacheDir -Recurse -Force
     }
     
+    # Use the main modlist which has NextVersionUrl populated
+    $mainModlistPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
+    
     # Run ModManager to download 1.21.6 mods
-    Write-Host "  Running: ModManager -ClearServer -GameVersion `"1.21.6`"" -ForegroundColor Cyan
+    Write-Host "  Running: ModManager -DownloadMods -UseNextVersion -TargetVersion `"1.21.6`"" -ForegroundColor Cyan
     $output = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
-        -ClearServer `
-        -GameVersion "1.21.6" `
-        -DownloadFolder $TestDownloadDir 2>&1
+        -DownloadMods `
+        -UseNextVersion `
+        -TargetVersion "1.21.6" `
+        -DatabaseFile $mainModlistPath `
+        -DownloadFolder $TestDownloadDir `
+        -UseCachedResponses 2>&1
     
     $exitCode = $LASTEXITCODE
     
