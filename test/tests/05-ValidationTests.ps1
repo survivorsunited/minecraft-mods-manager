@@ -19,6 +19,7 @@ $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 $TestOutputDir = Get-TestOutputFolder $TestFileName
 $script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
+$TestDbPath = Join-Path $TestOutputDir "run-test-cli.csv"
 
 # Test 1: Validate each type download ensures file exists
 Write-TestHeader "Validate System Entry and Mod Downloads"

@@ -20,6 +20,7 @@ $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 # Add this at the top after importing the test framework:
 $TestOutputDir = Get-TestOutputFolder $TestFileName
 $script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
+$TestDbPath = Join-Path $TestOutputDir "run-test-cli.csv"
 
 # Test 1: Add system entries (installer, launcher, server) for different versions
 Write-TestHeader "Add System Entries"
@@ -55,10 +56,7 @@ $filteredMods = $currentMods | Where-Object {
 }
 $filteredMods | Export-Csv $TestDbPath -NoTypeInformation
 
-$missingSystemFilesCmd = "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'"
-$missingSystemFilesTestName = "Download with Missing System Files"
-# After removing 1.21.6 system entries, we should have: 3 (1.21.5) + 1 (Test Server) = 4, but database shows 7
-Test-Command $missingSystemFilesCmd $missingSystemFilesTestName 7 $null $TestFileName
+Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Download with Missing System Files" 7 $null $TestFileName
 
 # Test 7: Test UseLatestVersion with all system entries present
 Write-TestHeader "Test UseLatestVersion Complete"
@@ -70,11 +68,9 @@ Test-Command "& '$ModManagerPath' -AddMod -AddModName 'Minecraft Server' -AddMod
 
 # Test 8: Final UseLatestVersion test with complete system entries
 Write-TestHeader "Final UseLatestVersion Test"
-$finalUseLatestCmd = "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'"
-$finalUseLatestTestName = "Final UseLatestVersion Download"
-Test-Command $finalUseLatestCmd $finalUseLatestTestName 7 $null $TestFileName
+Test-Command "& '$ModManagerPath' -DownloadMods -DatabaseFile '$TestDbPath' -UseLatestVersion -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Final UseLatestVersion Download" 7 $null $TestFileName
 
 Write-Host "`nSystem Entries Tests Complete" -ForegroundColor $Colors.Info
 
 # Show test summary
-Show-TestSummary 
+Show-TestSummary "System Entries Tests"

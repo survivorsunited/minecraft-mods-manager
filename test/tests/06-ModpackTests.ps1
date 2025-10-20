@@ -19,8 +19,10 @@ $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 
 # Use the test output download directory (from framework)
 $TestOutputDir = Get-TestOutputFolder $TestFileName
+$script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
 $TestDownloadDir = Join-Path $TestOutputDir "download/1.21.5"
 $ModpackDir = Join-Path $TestDownloadDir "modpacks/Fabulously Optimized"
+$TestDbPath = Join-Path $TestOutputDir "run-test-cli.csv"
 
 # Test 1: Add modpack by URL
 Write-TestHeader "Add Modpack by URL"
