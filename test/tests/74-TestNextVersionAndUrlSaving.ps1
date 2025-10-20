@@ -6,7 +6,19 @@
 # 2. Resolved URLs are saved back to database
 # =============================================================================
 
-# Import modules first
+# Import test framework
+. "$PSScriptRoot\..\TestFramework.ps1"
+
+# Set the test file name
+$TestFileName = "74-TestNextVersionAndUrlSaving.ps1"
+
+# Initialize test environment
+Initialize-TestEnvironment $TestFileName
+
+# Get test output folder
+$TestOutputDir = Get-TestOutputFolder $TestFileName
+
+# Import modules
 . "$PSScriptRoot\..\..\src\Import-Modules.ps1"
 
 function Test-NextVersionAndUrlSaving {
@@ -47,8 +59,8 @@ function Test-NextVersionAndUrlSaving {
         # Test 3: Test URL saving function
         Write-Host "🔍 Test 3: Testing Update-ModUrlInDatabase function..." -ForegroundColor Yellow
         
-        # Create a test CSV file
-        $testCsvPath = "test-modlist.csv"
+        # Create a test CSV file in test output directory
+        $testCsvPath = Join-Path $TestOutputDir "test-modlist.csv"
         $testData = @"
 Group,Type,GameVersion,ID,Loader,Name,Version,Url,Jar,VersionUrl,LatestVersion,LatestVersionUrl,LatestGameVersion,ClientSide,ServerSide,Host,ProjectUrl,IconUrl,Description,Category
 required,server,1.21.7,minecraft-server-1.21.7,fabric,Minecraft Server,1.21.7,,minecraft_server.1.21.7.jar,,,1.21.7,required,required,mojang,https://minecraft.net,,"Official Minecraft server",server
