@@ -305,7 +305,7 @@ if ($DownloadServer) {
         Write-Host "📋 Downloading server files for CURRENT version: $serverVersion (default)" -ForegroundColor Cyan
     }
     
-    Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload -GameVersion $serverVersion
+    Download-ServerFiles -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload -CsvPath $effectiveModListPath -GameVersion $serverVersion
     Exit-ModManager 0
 }
 

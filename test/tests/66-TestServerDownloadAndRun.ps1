@@ -23,9 +23,11 @@ $TestDbPath = Join-Path $TestOutputDir "server-test.csv"
 
 Write-TestHeader "Test Environment Setup"
 
-# Create test database with server-side mods
+# Create test database with server-side mods AND server/launcher entries
 $serverModlistContent = @'
 Group,Type,GameVersion,ID,Loader,Version,Name,Description,Jar,Url,Category,VersionUrl,LatestVersionUrl,LatestVersion,ApiSource,Host,IconUrl,ClientSide,ServerSide,Title,ProjectDescription,IssuesUrl,SourceUrl,WikiUrl,LatestGameVersion,RecordHash,UrlDirect,AvailableGameVersions,CurrentDependencies,LatestDependencies,CurrentDependenciesRequired,CurrentDependenciesOptional,LatestDependenciesRequired,LatestDependenciesOptional
+system,server,1.21.6,minecraft-server,vanilla,1.21.6,Minecraft Server 1.21.6,Official Minecraft server,minecraft_server.1.21.6.jar,https://piston-data.mojang.com/v1/objects/11df58cb91c330b5107573d1d9d73cc5f3b7e1f0/server.jar,Infrastructure,,,,mojang,mojang,,,required,required,Minecraft Server,Official server software,,,,,,,,,,,
+system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Server Launcher 1.21.6,Fabric server launcher,fabric-server-mc.1.21.6-loader.0.17.3-launcher.1.1.0.jar,https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.17.3/1.1.0/server/jar,Infrastructure,,,,fabric,fabric,,,required,required,Fabric Launcher,Fabric server launcher,,,,,,,,,,,
 required,mod,1.21.6,fabric-api,fabric,latest,Fabric API,Essential hooks for modding with Fabric,fabric-api.jar,https://modrinth.com/mod/fabric-api,Core Library,,,,modrinth,modrinth,,,required,required,Fabric API,Essential hooks for modding with Fabric,,,,,,,,,,,
 required,mod,1.21.6,lithium,fabric,latest,Lithium,Server optimization mod,lithium.jar,https://modrinth.com/mod/lithium,Performance,,,,modrinth,modrinth,,,optional,required,Lithium,Server optimization mod,,,,,,,,,,,
 required,mod,1.21.6,ledger,fabric,latest,Ledger,Server logging mod,ledger.jar,https://modrinth.com/mod/ledger,Utility,,,,modrinth,modrinth,,,optional,required,Ledger,Server logging mod,,,,,,,,,,,
