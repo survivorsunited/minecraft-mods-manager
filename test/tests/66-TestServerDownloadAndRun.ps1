@@ -42,7 +42,7 @@ Write-Host "    - Ledger (logging)" -ForegroundColor Gray
 # Test 1: Download Server Files
 Write-TestHeader "Test 1: Download Server Files"
 
-$serverDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir 2>&1
+$serverDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -TargetVersion "1.21.6" -DatabaseFile $TestDbPath 2>&1
 
 # Check if server download was attempted
 $serverDownloadAttempted = ($serverDownloadOutput -match "Starting server files download process").Count -gt 0
@@ -69,7 +69,7 @@ if ($serverFilesPresent) {
 # Test 2: Download Mods for Server
 Write-TestHeader "Test 2: Download Server Mods"
 
-$modsDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $TestDbPath -DownloadFolder $TestDownloadDir -UseCachedResponses -ApiResponseFolder $script:TestApiResponseDir 2>&1
+$modsDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $TestDbPath -DownloadFolder $TestDownloadDir -TargetVersion "1.21.6" -UseCachedResponses -ApiResponseFolder $script:TestApiResponseDir 2>&1
 
 # Check if mod download was attempted
 $modsDownloadAttempted = ($modsDownloadOutput -match "Starting mod download process").Count -gt 0
@@ -97,7 +97,7 @@ if ($modsDirectoryCreated) {
 # Test 3: Add Server Start Script
 Write-TestHeader "Test 3: Add Server Start Script"
 
-$startScriptOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddServerStartScript -DownloadFolder $TestDownloadDir 2>&1
+$startScriptOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddServerStartScript -DownloadFolder $TestDownloadDir -TargetVersion "1.21.6" 2>&1
 
 # Check if start script creation was attempted
 $startScriptAttempted = ($startScriptOutput -match "Adding server start script").Count -gt 0
