@@ -118,12 +118,17 @@ jobs:
         Write-Host "=== Test Suite Completed ===" -ForegroundColor Cyan
         
         # Find the most recent test run log
-        $latestLog = Get-ChildItem -Path "test/test-output" -Filter "test-run-*.log" -File | 
+        $latestLog = Get-ChildItem -Path "test/test-output" -Filter "test-run-*.log" -File -ErrorAction SilentlyContinue | 
                      Sort-Object LastWriteTime -Descending | 
                      Select-Object -First 1
         
         if ($latestLog) {
-          Write-Host "Log file: $($latestLog.FullName.Replace((Get-Location).Path + '\', ''))" -ForegroundColor Gray
+          # Get relative path from repository root
+          $relativePath = $latestLog.FullName.Replace((Get-Location).Path, '').TrimStart('\', '/')
+          Write-Host "Log file: $relativePath" -ForegroundColor Gray
+          Write-Host "Full path: $($latestLog.FullName)" -ForegroundColor Gray
+        } else {
+          Write-Host "⚠️  No test log file found in test/test-output/" -ForegroundColor Yellow
         }
         
         if ($testExitCode -ne 0) {

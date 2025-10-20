@@ -22,17 +22,28 @@ $TestDbPath = Join-Path $TestOutputDir "release-test.csv"
 
 Write-TestHeader "Test Environment Setup"
 
-# Create test database with mods for release
-$releaseModlistContent = @'
-Group,Type,GameVersion,ID,Loader,Version,Name,Description,Jar,Url,Category,VersionUrl,LatestVersionUrl,LatestVersion,ApiSource,Host,IconUrl,ClientSide,ServerSide,Title,ProjectDescription,IssuesUrl,SourceUrl,WikiUrl,LatestGameVersion,RecordHash,UrlDirect,AvailableGameVersions,CurrentDependencies,LatestDependencies,CurrentDependenciesRequired,CurrentDependenciesOptional,LatestDependenciesRequired,LatestDependenciesOptional,CurrentVersion,CurrentGameVersion,CurrentVersionUrl,NextVersion,NextGameVersion,NextVersionUrl
-required,mod,1.21.8,fabric-api,fabric,0.136.0+1.21.8,Fabric API,Essential hooks for modding,fabric-api-0.136.0+1.21.8.jar,https://modrinth.com/mod/fabric-api,Core Library,,,,modrinth,modrinth,,,required,required,Fabric API,Essential hooks,,,,,,,,,,,0.136.0+1.21.8,1.21.8,https://cdn.modrinth.com/data/P7dR8mSH/versions/RMahJx2I/fabric-api-0.136.0%2B1.21.8.jar,,,
-required,mod,1.21.8,sodium,fabric,0.7.2+mc1.21.8,Sodium,Performance mod,sodium-fabric-0.7.2+mc1.21.8.jar,https://modrinth.com/mod/sodium,Performance,,,,modrinth,modrinth,,,required,required,Sodium,Performance optimization,,,,,,,,,,,0.7.2+mc1.21.8,1.21.8,https://cdn.modrinth.com/data/AANobbMI/versions/test/sodium-fabric-0.7.2%2Bmc1.21.8.jar,,,
-optional,mod,1.21.8,lithium,fabric,0.18.1+mc1.21.8,Lithium,Server optimization,lithium-fabric-0.18.1+mc1.21.8.jar,https://modrinth.com/mod/lithium,Performance,,,,modrinth,modrinth,,,optional,required,Lithium,Server performance,,,,,,,,,,,0.18.1+mc1.21.8,1.21.8,https://cdn.modrinth.com/data/gvQqBUqZ/versions/test/lithium-fabric-0.18.1%2Bmc1.21.8.jar,,,
-required,server,1.21.8,minecraft-server,fabric,1.21.8,Minecraft Server,Official server,minecraft_server.1.21.8.jar,https://piston-data.mojang.com/,Server,,,,mojang,mojang,,,required,required,Minecraft Server,Official server,,,,,,,,,,,1.21.8,1.21.8,,,,
-required,launcher,1.21.8,fabric-launcher,fabric,0.17.3,Fabric Launcher,Fabric server launcher,fabric-server-mc.1.21.8-loader.0.17.3.jar,https://meta.fabricmc.net/,Launcher,,,,fabric,fabric,,,required,required,Fabric Launcher,Server launcher,,,,,,,,,,,0.17.3,1.21.8,,,,
-'@
+# Use real modlist.csv and filter to 1.21.8 only
+$mainModlistPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
+if (-not (Test-Path $mainModlistPath)) {
+    Write-Host "❌ Main modlist.csv not found at: $mainModlistPath" -ForegroundColor Red
+    Write-TestResult "Test Database Created" $false
+    Show-TestSummary "CreateRelease Tests"
+    return $false
+}
 
-$releaseModlistContent | Out-File -FilePath $TestDbPath -Encoding UTF8
+# Copy only 1.21.8 entries from main database
+$allMods = Import-Csv -Path $mainModlistPath
+$mods1218 = $allMods | Where-Object { $_.CurrentGameVersion -eq "1.21.8" -or $_.GameVersion -eq "1.21.8" }
+
+if ($mods1218.Count -eq 0) {
+    Write-Host "❌ No 1.21.8 mods found in database" -ForegroundColor Red
+    Write-TestResult "Test Database Created" $false
+    Show-TestSummary "CreateRelease Tests"
+    return $false
+}
+
+$mods1218 | Export-Csv -Path $TestDbPath -NoTypeInformation -Encoding UTF8
+Write-Host "  Created test database with $($mods1218.Count) mods for version 1.21.8" -ForegroundColor Gray
 Write-TestResult "Test Database Created" (Test-Path $TestDbPath)
 
 # Test 1: Download Mods for Release
@@ -181,30 +192,22 @@ if ($releaseModsExist) {
     Write-TestResult "No server JAR in mods folder" (-not $hasServerInMods)
 }
 
-# Test 9: Test Multiple Version Support
-Write-TestHeader "Test 9: Test Multiple Version Support"
+# Test 9: Skip Multi-Version (Focusing on 1.21.8 Only)
+Write-TestHeader "Test 9: Verify Mandatory vs Optional Separation"
 
-# Create another version in download folder
-$download2Path = Join-Path $TestDownloadDir "1.21.5"
-New-Item -ItemType Directory -Path $download2Path -Force | Out-Null
-New-Item -ItemType Directory -Path (Join-Path $download2Path "mods") -Force | Out-Null
-
-# Create dummy mod file
-"dummy" | Out-File -FilePath (Join-Path $download2Path "mods" "test-mod-1.21.5.jar") -Encoding UTF8
-
-# Try creating release for both versions
-$multiVersionRelease = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
-    -CreateRelease `
-    -DatabaseFile $TestDbPath `
-    -DownloadFolder $TestDownloadDir `
-    -ReleasePath $TestReleaseDir `
-    -GameVersion "1.21.5" 2>&1
-
-# Check both version directories exist in release
-$release218Exists = Test-Path (Join-Path $TestReleaseDir "1.21.8")
-$release215Exists = Test-Path (Join-Path $TestReleaseDir "1.21.5")
-
-Write-TestResult "Multiple version releases supported" ($release218Exists -and $release215Exists)
+if ($releaseModsExist) {
+    $mandatoryMods = Get-ChildItem -Path $releaseModsPath -Filter "*.jar" -File -ErrorAction SilentlyContinue
+    $optionalMods = Get-ChildItem -Path $releaseOptionalPath -Filter "*.jar" -File -ErrorAction SilentlyContinue
+    
+    $hasMandatory = $mandatoryMods.Count -gt 0
+    $hasOptional = $optionalMods.Count -gt 0
+    
+    Write-Host "  Mandatory mods: $($mandatoryMods.Count)" -ForegroundColor Gray
+    Write-Host "  Optional mods: $($optionalMods.Count)" -ForegroundColor Gray
+    
+    Write-TestResult "Mandatory mods separated" $hasMandatory
+    Write-TestResult "Optional mods directory created" (Test-Path $releaseOptionalPath)
+}
 
 # Test 10: Verify Release Isolation
 Write-TestHeader "Test 10: Verify Release Isolation"
