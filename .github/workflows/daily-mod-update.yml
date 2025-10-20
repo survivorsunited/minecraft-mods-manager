@@ -74,15 +74,34 @@ jobs:
           $enabledVersions | ForEach-Object { Write-Host "   - $_" -ForegroundColor Gray }
           Write-Host "📊 Matrix JSON: $matrixJson" -ForegroundColor Gray
       
+      - name: Log No Updates
+        if: steps.check_updates.outputs.has_updates != 'true'
+        shell: pwsh
+        run: |
+          Write-Host "" -ForegroundColor White
+          Write-Host "ℹ️  ============================================" -ForegroundColor Cyan
+          Write-Host "ℹ️  NO MOD UPDATES DETECTED" -ForegroundColor Cyan
+          Write-Host "ℹ️  ============================================" -ForegroundColor Cyan
+          Write-Host "" -ForegroundColor White
+          Write-Host "📋 Workflow will skip:" -ForegroundColor Yellow
+          Write-Host "   • Commit Database Updates (no changes to commit)" -ForegroundColor Gray
+          Write-Host "   • Create Release Packages (database unchanged)" -ForegroundColor Gray
+          Write-Host "   • Publish Release (no new packages)" -ForegroundColor Gray
+          Write-Host "" -ForegroundColor White
+          Write-Host "💡 This is normal behavior when mods are up-to-date" -ForegroundColor Green
+          Write-Host "" -ForegroundColor White
+      
       - name: Commit Database Updates
         if: steps.check_updates.outputs.has_updates == 'true'
         shell: pwsh
         run: |
+          Write-Host "💾 Committing database updates..." -ForegroundColor Cyan
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add modlist.csv
           git commit -m "chore: Daily mod update - $(Get-Date -Format 'yyyy-MM-dd')"
           git push
+          Write-Host "✅ Database changes committed and pushed" -ForegroundColor Green
   
   # Job 2: Create release packages for enabled versions
   create-releases:
@@ -94,6 +113,9 @@ jobs:
       github.event_name == 'schedule'
     
     runs-on: windows-latest
+    
+    env:
+      SKIP_REASON: ${{ needs.update-database.outputs.has_updates != 'true' && '⏭️ SKIPPED: No mod updates detected' || '' }}
     strategy:
       matrix:
         version: ${{ fromJson(needs.update-database.outputs.versions_matrix) }}
@@ -222,6 +244,9 @@ jobs:
     needs: [update-database, create-releases]
     if: needs.create-releases.result == 'success'
     runs-on: ubuntu-latest
+    
+    env:
+      SKIP_REASON: ${{ needs.create-releases.result != 'success' && '⏭️ SKIPPED: No releases created (no updates or validation failures)' || '' }}
     permissions:
       contents: write
     outputs:
@@ -331,6 +356,19 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Mod Updates Detected:** ${{ needs.update-database.outputs.has_updates }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Show why stages were skipped if no updates
+          if [ "${{ needs.update-database.outputs.has_updates }}" != "true" ]; then
+            echo "### ℹ️ No Updates Detected" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "The mod database is already up-to-date. The following stages were skipped:" >> $GITHUB_STEP_SUMMARY
+            echo "- ⏭️ **Create Release Packages** - No database changes to package" >> $GITHUB_STEP_SUMMARY
+            echo "- ⏭️ **Publish Release** - No new packages to publish" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "💡 This is expected behavior when all mods are at their latest versions." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+          
           echo "**Enabled Versions:** $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
