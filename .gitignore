@@ -63,3 +63,4 @@ releases/
 # Test temp folders (from failed tests)
 nonexistent-folder/
 test-*/
+config/
