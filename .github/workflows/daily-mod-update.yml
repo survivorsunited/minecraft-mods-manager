@@ -60,11 +60,19 @@ jobs:
         run: |
           $config = Get-Content release-config.json | ConvertFrom-Json
           $enabledVersions = $config.versions | Where-Object { $_.enabled -eq $true } | Select-Object -ExpandProperty version
-          $matrixJson = $enabledVersions | ConvertTo-Json -Compress
+          
+          # Ensure output is always a JSON array (even for single item)
+          if ($enabledVersions.Count -eq 1) {
+            $matrixJson = "[$($enabledVersions | ConvertTo-Json -Compress)]"
+          } else {
+            $matrixJson = $enabledVersions | ConvertTo-Json -Compress
+          }
+          
           echo "matrix=$matrixJson" >> $env:GITHUB_OUTPUT
           
           Write-Host "📋 Enabled versions for release:" -ForegroundColor Cyan
           $enabledVersions | ForEach-Object { Write-Host "   - $_" -ForegroundColor Gray }
+          Write-Host "📊 Matrix JSON: $matrixJson" -ForegroundColor Gray
       
       - name: Commit Database Updates
         if: steps.check_updates.outputs.has_updates == 'true'
