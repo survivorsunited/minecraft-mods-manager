@@ -30,29 +30,19 @@ function Invoke-TestServerValidation {
 
 Write-TestHeader "Test Environment Setup"
 
-# Get current database mods (from actual modlist.csv)
-$MainDbPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
-if (Test-Path $MainDbPath) {
-    # Copy main database to test location
-    Copy-Item -Path $MainDbPath -Destination $TestDbPath -Force
-    Write-TestResult "Main Database Copied" (Test-Path $TestDbPath)
-    
-    # Read mod count
-    $modCount = (Import-Csv $TestDbPath).Count
-    Write-Host "  Found $modCount mods in database" -ForegroundColor Gray
-} else {
-    # Create minimal test database if main doesn't exist
-    $serverModlistContent = @'
+# Create isolated test database with server-side mods AND server/launcher entries
+$serverModlistContent = @'
 Group,Type,GameVersion,ID,Loader,Version,Name,Description,Jar,Url,Category,VersionUrl,LatestVersionUrl,LatestVersion,ApiSource,Host,IconUrl,ClientSide,ServerSide,Title,ProjectDescription,IssuesUrl,SourceUrl,WikiUrl,LatestGameVersion,RecordHash,UrlDirect,AvailableGameVersions,CurrentDependencies,LatestDependencies,CurrentDependenciesRequired,CurrentDependenciesOptional,LatestDependenciesRequired,LatestDependenciesOptional
+system,server,1.21.6,minecraft-server,vanilla,1.21.6,Minecraft Server 1.21.6,Official Minecraft server,minecraft_server.1.21.6.jar,https://piston-data.mojang.com/v1/objects/11df58cb91c330b5107573d1d9d73cc5f3b7e1f0/server.jar,Infrastructure,,,,mojang,mojang,,,required,required,Minecraft Server,Official server software,,,,,,,,,,,
+system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Server Launcher 1.21.6,Fabric server launcher,fabric-server-mc.1.21.6-loader.0.17.3-launcher.1.1.0.jar,https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.17.3/1.1.0/server/jar,Infrastructure,,,,fabric,fabric,,,required,required,Fabric Launcher,Fabric server launcher,,,,,,,,,,,
 required,mod,1.21.6,fabric-api,fabric,latest,Fabric API,Essential hooks for modding with Fabric,fabric-api.jar,https://modrinth.com/mod/fabric-api,Core Library,,,,modrinth,modrinth,,,required,required,Fabric API,Essential hooks for modding with Fabric,,,,,,,,,,,
 required,mod,1.21.6,lithium,fabric,latest,Lithium,Server optimization mod,lithium.jar,https://modrinth.com/mod/lithium,Performance,,,,modrinth,modrinth,,,optional,required,Lithium,Server optimization mod,,,,,,,,,,,
 required,mod,1.21.6,ledger,fabric,latest,Ledger,Server logging mod,ledger.jar,https://modrinth.com/mod/ledger,Utility,,,,modrinth,modrinth,,,optional,required,Ledger,Server logging mod,,,,,,,,,,,
 '@
-    
-    $serverModlistContent | Out-File -FilePath $TestDbPath -Encoding UTF8
-    Write-TestResult "Test Database Created" (Test-Path $TestDbPath)
-    Write-Host "  Using minimal test database (3 mods)" -ForegroundColor Yellow
-}
+
+$serverModlistContent | Out-File -FilePath $TestDbPath -Encoding UTF8
+Write-TestResult "Test Database Created" (Test-Path $TestDbPath)
+Write-Host "  Using isolated test database (5 entries: 3 mods + server + launcher)" -ForegroundColor Gray
 
 # Test 1: Validate All Mods
 Write-TestHeader "Test 1: Validate All Current Mods"
@@ -92,7 +82,7 @@ if ($validationCompleted) {
 Write-TestHeader "Test 2: Download Server Files"
 
 Write-Host "  Downloading server files to: $TestDownloadDir" -ForegroundColor Gray
-$serverDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir 2>&1
+$serverDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -DatabaseFile $TestDbPath -TargetVersion "1.21.6" 2>&1
 
 # Check server download results
 $serverDownloadAttempted = ($serverDownloadOutput -match "Starting server files download process").Count -gt 0
@@ -147,7 +137,7 @@ if ($modsDownloaded -gt 0) {
 # Test 4: Add Server Start Script
 Write-TestHeader "Test 4: Add Server Start Script"
 
-$startScriptOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddServerStartScript -DownloadFolder $TestDownloadDir 2>&1
+$startScriptOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -AddServerStartScript -DownloadFolder $TestDownloadDir -TargetVersion "1.21.6" 2>&1
 $startScriptExists = Test-Path (Join-Path $TestServerDir "start-server.ps1")
 
 Write-TestResult "Start Script Created" $startScriptExists

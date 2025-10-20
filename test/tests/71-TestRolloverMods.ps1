@@ -35,18 +35,21 @@ function Invoke-TestRolloverMods {
     # Test 1: Setup test database with mods that have NextVersion data
     Write-TestStep "Setting up test database with NextVersion data"
     
-    # Copy a few mods from main database that have NextVersion populated
-    $mainMods = Import-Csv "modlist.csv"
-    $testMods = $mainMods | Where-Object { $_.NextVersion -and $_.NextVersion -ne "" } | Select-Object -First 5
+    # Create isolated test data with NextVersion populated
+    $testData = @'
+Group,Type,GameVersion,ID,Loader,Version,Name,Jar,Url,NextGameVersion,NextVersion,NextVersionUrl
+required,mod,1.21.5,fabric-api,fabric,0.113.0+1.21.5,Fabric API,fabric-api-0.113.0+1.21.5.jar,https://modrinth.com/mod/fabric-api,1.21.6,0.114.0+1.21.6,https://cdn.modrinth.com/data/P7dR8mSH/versions/1.21.6.jar
+required,mod,1.21.5,lithium,fabric,mc1.21.5-0.14.5,Lithium,lithium-fabric-0.14.5+mc1.21.5.jar,https://modrinth.com/mod/lithium,1.21.6,mc1.21.6-0.14.6,https://cdn.modrinth.com/data/gvQqBUqZ/versions/1.21.6.jar
+required,mod,1.21.5,sodium,fabric,mc1.21.5-0.6.3,Sodium,sodium-fabric-0.6.3+mc1.21.5.jar,https://modrinth.com/mod/sodium,1.21.6,mc1.21.6-0.6.4,https://cdn.modrinth.com/data/AANobbMI/versions/1.21.6.jar
+required,mod,1.21.5,iris,fabric,mc1.21.5-1.8.3,Iris,iris-fabric-1.8.3+mc1.21.5.jar,https://modrinth.com/mod/iris,1.21.6,mc1.21.6-1.8.4,https://cdn.modrinth.com/data/YL57xq9U/versions/1.21.6.jar
+required,mod,1.21.5,modmenu,fabric,11.0.1,Mod Menu,modmenu-11.0.1.jar,https://modrinth.com/mod/modmenu,1.21.6,11.0.2,https://cdn.modrinth.com/data/mOgUt4GM/versions/1.21.6.jar
+'@
     
-    if ($testMods.Count -ge 5) {
-        $testMods | Export-Csv -Path $TestModListPath -NoTypeInformation
-        Write-TestResult "Database Setup" $true "Created test database with $($testMods.Count) mods"
-        $script:TestResults.Passed++
-    } else {
-        Write-TestResult "Database Setup" $false "Insufficient mods with NextVersion data"
-        $script:TestResults.Failed++
-    }
+    $testData | Out-File -FilePath $TestModListPath -Encoding UTF8
+    $testMods = Import-Csv -Path $TestModListPath
+    
+    Write-TestResult "Database Setup" $true "Created isolated test database with $($testMods.Count) mods with NextVersion data"
+    $script:TestResults.Passed++
     $script:TestResults.Total++
     
     # Test 2: Dry run rollover to NextVersion
