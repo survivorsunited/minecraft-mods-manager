@@ -827,9 +827,9 @@ function Show-VersionMatrix {
     
     Write-Host ("-" * 80) -ForegroundColor $Colors.Muted
     Write-Host "EXPECTED BEHAVIOR:" -ForegroundColor $Colors.Info
-    Write-Host "Current (1.21.5)  : All mods should be 1.21.5 versions" -ForegroundColor $Colors.Muted
-    Write-Host "Next (1.21.6)     : Mix of 1.21.5 (current) + 1.21.6 (next) versions" -ForegroundColor $Colors.Muted  
-    Write-Host "Latest (1.21.8)   : Mix of 1.21.5 + 1.21.6 + 1.21.8 versions" -ForegroundColor $Colors.Muted
+    Write-Host "Current (1.21.8)  : All mods should be 1.21.8 versions" -ForegroundColor $Colors.Muted
+    Write-Host "Next (1.21.9)     : Mix of 1.21.8 (current) + 1.21.9 (next) versions" -ForegroundColor $Colors.Muted  
+    Write-Host "Latest (1.21.10+) : Mix of 1.21.8 + 1.21.9 + 1.21.10+ versions" -ForegroundColor $Colors.Muted
     Write-Host ""
 }
 
