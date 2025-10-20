@@ -50,8 +50,11 @@ Create a `.env` file for API keys and settings:
 ```env
 # API Configuration
 MODRINTH_API_BASE_URL=https://api.modrinth.com/v2
+APIRESPONSE_MODRINTH_SUBFOLDER
+
 CURSEFORGE_API_BASE_URL=https://api.curseforge.com/v1
 CURSEFORGE_API_KEY=your_api_key_here
+APIRESPONSE_CURSEFORGE_SUBFOLDER=curseforge
 
 # Server URLs
 MINECRAFT_SERVER_URL=https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
@@ -59,15 +62,12 @@ FABRIC_SERVER_URL=https://meta.fabricmc.net/v2/versions
 
 # Default settings
 DEFAULT_LOADER=fabric
-DEFAULT_GAME_VERSION=1.21.6
+DEFAULT_GAME_VERSION=1.21.8
 DEFAULT_MOD_TYPE=mod
 
 # Server requirements
-JAVA_VERSION_MIN=17
+JAVA_VERSION_MIN=22
 
-# Server memory settings (optional)
-MINECRAFT_MIN_MEMORY=1G
-MINECRAFT_MAX_MEMORY=4G
 ```
 
 ## 📖 Quick Start
@@ -393,10 +393,10 @@ Configure server behavior through environment variables in your `.env` file:
 |----------|---------|-------------|---------|
 | `MINECRAFT_MIN_MEMORY` | "1G" | Minimum memory allocation for server | `MINECRAFT_MIN_MEMORY=2G` |
 | `MINECRAFT_MAX_MEMORY` | "4G" | Maximum memory allocation for server | `MINECRAFT_MAX_MEMORY=8G` |
-| `JAVA_VERSION_MIN` | "17" | Minimum required Java version | `JAVA_VERSION_MIN=21` |
+| `JAVA_VERSION_MIN` | "21" | Minimum required Java version | `JAVA_VERSION_MIN=21` |
 | `CURSEFORGE_API_KEY` | - | CurseForge API key for enhanced access | `CURSEFORGE_API_KEY=your_key_here` |
 | `DEFAULT_LOADER` | "fabric" | Default mod loader | `DEFAULT_LOADER=forge` |
-| `DEFAULT_GAME_VERSION` | "1.21.6" | Default Minecraft version | `DEFAULT_GAME_VERSION=1.21.8` |
+| `DEFAULT_GAME_VERSION` | "1.21.8" | Default Minecraft version | `DEFAULT_GAME_VERSION=1.21.8` |
 
 ### Advanced Server Management Parameters
 
