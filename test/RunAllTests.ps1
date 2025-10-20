@@ -15,7 +15,8 @@ param(
 # Setup logging
 $LogTimestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
 $LogFileName = "test-run-$LogTimestamp.log"
-$TestOutputDir = "test-output"
+# Use PSScriptRoot to ensure test-output is created relative to the script location, not current directory
+$TestOutputDir = Join-Path $PSScriptRoot "test-output"
 $LogFilePath = Join-Path $TestOutputDir $LogFileName
 
 # Create test output directory if it doesn't exist
