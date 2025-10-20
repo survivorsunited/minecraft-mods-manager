@@ -113,9 +113,6 @@ jobs:
       github.event_name == 'schedule'
     
     runs-on: windows-latest
-    
-    env:
-      SKIP_REASON: ${{ needs.update-database.outputs.has_updates != 'true' && '⏭️ SKIPPED: No mod updates detected' || '' }}
     strategy:
       matrix:
         version: ${{ fromJson(needs.update-database.outputs.versions_matrix) }}
@@ -244,9 +241,6 @@ jobs:
     needs: [update-database, create-releases]
     if: needs.create-releases.result == 'success'
     runs-on: ubuntu-latest
-    
-    env:
-      SKIP_REASON: ${{ needs.create-releases.result != 'success' && '⏭️ SKIPPED: No releases created (no updates or validation failures)' || '' }}
     permissions:
       contents: write
     outputs:
