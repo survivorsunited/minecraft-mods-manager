@@ -31,8 +31,16 @@ function Invoke-TestNextVersionDownloads {
         Remove-Item -Path $TestCacheDir -Recurse -Force
     }
     
-    # Use the main modlist which has NextVersionUrl populated
-    $mainModlistPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
+    # Create test database with 1.21.5 as current so 1.21.6 is next version
+    $TestDbPath = Join-Path $TestOutputDir "test-modlist.csv"
+    $testData = @'
+Group,Type,GameVersion,ID,Loader,Version,Name,Jar,Url,NextGameVersion,NextVersionUrl
+required,mod,1.21.5,fabric-api,fabric,0.113.0+1.21.5,Fabric API,fabric-api-0.113.0+1.21.5.jar,https://modrinth.com/mod/fabric-api,1.21.6,https://cdn.modrinth.com/data/P7dR8mSH/versions/1.21.6.jar
+required,mod,1.21.5,lithium,fabric,mc1.21.5-0.14.5,Lithium,lithium-fabric-0.14.5+mc1.21.5.jar,https://modrinth.com/mod/lithium,1.21.6,https://cdn.modrinth.com/data/gvQqBUqZ/versions/1.21.6.jar
+system,server,1.21.6,minecraft-server,vanilla,1.21.6,Minecraft Server,minecraft_server.1.21.6.jar,https://piston-data.mojang.com/v1/objects/11df58cb91c330b5107573d1d9d73cc5f3b7e1f0/server.jar,,
+system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-server-mc.1.21.6-loader.0.17.3-launcher.1.1.0.jar,https://meta.fabricmc.net/v2/versions/loader/1.21.6/0.17.3/1.1.0/server/jar,,
+'@
+    $testData | Out-File -FilePath $TestDbPath -Encoding UTF8
     
     # Run ModManager to download 1.21.6 mods
     Write-Host "  Running: ModManager -DownloadMods -UseNextVersion -TargetVersion `"1.21.6`"" -ForegroundColor Cyan
@@ -40,7 +48,7 @@ function Invoke-TestNextVersionDownloads {
         -DownloadMods `
         -UseNextVersion `
         -TargetVersion "1.21.6" `
-        -DatabaseFile $mainModlistPath `
+        -DatabaseFile $TestDbPath `
         -DownloadFolder $TestDownloadDir `
         -UseCachedResponses 2>&1
     
@@ -74,8 +82,8 @@ function Invoke-TestNextVersionDownloads {
     $modCount = $modFiles.Count
     Write-Host "  Found $modCount mod files" -ForegroundColor Gray
     
-    if ($modCount -lt 50) {
-        Write-TestResult "Sufficient mods downloaded" $false "Expected >= 50, got $modCount"
+    if ($modCount -lt 2) {
+        Write-TestResult "Sufficient mods downloaded" $false "Expected >= 2, got $modCount"
         return $false
     }
     Write-TestResult "Sufficient mods downloaded" $true
