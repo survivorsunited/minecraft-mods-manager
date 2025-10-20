@@ -1,0 +1,135 @@
+# Test Rule: Data Isolation
+
+## CRITICAL: Test Data Independence
+
+**MANDATORY**: All tests MUST use isolated test data - NEVER use the main `modlist.csv` database.
+
+### FORBIDDEN:
+- ❌ Reading from `modlist.csv` in tests
+- ❌ Writing to `modlist.csv` in tests
+- ❌ Modifying the main database during tests
+- ❌ Depending on main database state in tests
+
+### REQUIRED:
+- ✅ Create test-specific CSV data in test output folders
+- ✅ Use `$TestDbPath = Join-Path $TestOutputDir "test-database.csv"`
+- ✅ Generate minimal test data for each test
+- ✅ Clean up test data after test completion
+- ✅ Pass `-DatabaseFile $TestDbPath` to all ModManager calls
+
+## Test Data Pattern
+
+### Standard Test Data Setup
+```powershell
+# Initialize test environment
+Initialize-TestEnvironment $TestFileName
+
+# Set up isolated paths
+$TestOutputDir = Get-TestOutputFolder $TestFileName
+$TestDbPath = Join-Path $TestOutputDir "test-modlist.csv"
+
+# Create test-specific data
+$testData = @'
+Group,Type,GameVersion,ID,Loader,Version,Name,Jar,Url
+required,mod,1.21.8,fabric-api,fabric,latest,Fabric API,fabric-api.jar,https://modrinth.com/mod/fabric-api
+'@
+
+$testData | Out-File -FilePath $TestDbPath -Encoding UTF8
+```
+
+### Server/Launcher Entries
+For tests that need server files, include server and launcher entries:
+```powershell
+$testData = @'
+Group,Type,GameVersion,ID,Loader,Version,Name,Jar,Url
+system,server,1.21.8,minecraft-server,vanilla,1.21.8,Minecraft Server,minecraft_server.1.21.8.jar,https://piston-data.mojang.com/...
+system,launcher,1.21.8,fabric-launcher,fabric,0.17.3,Fabric Server,fabric-server.jar,https://meta.fabricmc.net/...
+required,mod,1.21.8,fabric-api,fabric,latest,Fabric API,fabric-api.jar,https://modrinth.com/mod/fabric-api
+'@
+```
+
+### Using Main Database (ONLY when needed)
+If a test MUST reference main database data (e.g., validation tests):
+1. **Copy specific entries** to test database
+2. **Never modify** the main database
+3. **Document why** main database is referenced
+
+```powershell
+# Copy specific mod from main database
+$mainDb = Import-Csv "..\..\modlist.csv"
+$testMod = $mainDb | Where-Object { $_.ID -eq "fabric-api" }
+$testMod | Export-Csv -Path $TestDbPath -NoTypeInformation
+```
+
+## Test Database Requirements
+
+### Minimal Test Data
+- Include ONLY the mods/entries needed for the specific test
+- Use 3-5 mods maximum unless testing bulk operations
+- Include server/launcher entries only when testing server features
+
+### Version Consistency
+- Use appropriate game versions for test scenario
+- Current version tests: Use 1.21.8
+- Next version tests: Use 1.21.9
+- Latest version tests: Use 1.21.10+
+
+### CSV Structure
+All test databases must include required CSV columns:
+- `Group`, `Type`, `GameVersion`, `ID`, `Loader`, `Version`, `Name`, `Jar`, `Url`
+- Optional columns as needed: `VersionUrl`, `LatestVersionUrl`, `LatestVersion`, etc.
+
+## Test Isolation Benefits
+
+### Why Test Data Isolation Matters:
+1. **Predictability**: Tests always use known data
+2. **Speed**: Tests don't load unnecessary data
+3. **Safety**: Main database never corrupted by tests
+4. **Clarity**: Test intent is clear from test data
+5. **Parallelization**: Tests can run in parallel without conflicts
+
+### Example: Good vs Bad
+
+**❌ BAD - Using Main Database:**
+```powershell
+$result = & $ModManagerPath -DownloadMods  # Uses modlist.csv by default
+```
+
+**✅ GOOD - Using Test Database:**
+```powershell
+$TestDbPath = Join-Path $TestOutputDir "test.csv"
+# Create minimal test data
+$testData | Out-File -FilePath $TestDbPath -Encoding UTF8
+# Use test database
+$result = & $ModManagerPath -DownloadMods -DatabaseFile $TestDbPath
+```
+
+## Exception Cases
+
+### When Main Database CAN Be Used:
+1. **Read-only validation tests** - Verifying main database structure
+2. **Integration tests** - Testing with full dataset (mark clearly)
+3. **Performance tests** - Benchmarking with realistic data (read-only)
+
+**ALWAYS** document why main database is used and ensure it's read-only.
+
+## Enforcement
+
+### Pre-Test Checklist:
+- [ ] Test database path defined: `$TestDbPath = Join-Path $TestOutputDir "..."`
+- [ ] Test data created in isolated location
+- [ ] All ModManager calls use `-DatabaseFile $TestDbPath`
+- [ ] No references to `modlist.csv` in test
+- [ ] Test cleans up after itself
+
+### Review Questions:
+1. Does this test create its own data?
+2. Could this test corrupt the main database?
+3. Will this test work if main database changes?
+4. Is the test data minimal and clear?
+
+## Summary
+
+**GOLDEN RULE**: If you're writing a test and you see `modlist.csv`, you're doing it wrong.
+
+Every test should be self-contained with its own minimal, purpose-built test data.
