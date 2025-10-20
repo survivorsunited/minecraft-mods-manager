@@ -111,13 +111,45 @@ jobs:
         Write-Host "Starting test suite execution..."
         $result = .\RunAllTests.ps1 -All
         
-        # Check exit code
-        if ($LASTEXITCODE -ne 0) {
-          Write-Host "Test suite failed with exit code: $LASTEXITCODE"
-          exit $LASTEXITCODE
+        # Capture the exit code
+        $testExitCode = $LASTEXITCODE
+        
+        Write-Host ""
+        Write-Host "=== Test Suite Completed ===" -ForegroundColor Cyan
+        
+        # Find the most recent test run log
+        $latestLog = Get-ChildItem -Path "test/test-output" -Filter "test-run-*.log" -File | 
+                     Sort-Object LastWriteTime -Descending | 
+                     Select-Object -First 1
+        
+        if ($latestLog) {
+          Write-Host "Log file: $($latestLog.FullName.Replace((Get-Location).Path + '\', ''))" -ForegroundColor Gray
         }
         
-        Write-Host "Test suite completed successfully!"
+        if ($testExitCode -ne 0) {
+          Write-Host "Test suite failed with exit code: $testExitCode" -ForegroundColor Red
+          
+          # Add to GitHub step summary
+          echo "## ❌ Test Suite Failed" >> $env:GITHUB_STEP_SUMMARY
+          echo "" >> $env:GITHUB_STEP_SUMMARY
+          echo "**Exit Code:** $testExitCode" >> $env:GITHUB_STEP_SUMMARY
+          if ($latestLog) {
+            echo "**Log File:** \`$($latestLog.Name)\`" >> $env:GITHUB_STEP_SUMMARY
+          }
+          echo "" >> $env:GITHUB_STEP_SUMMARY
+          
+          exit $testExitCode
+        } else {
+          Write-Host "Test suite completed successfully!" -ForegroundColor Green
+          
+          # Add to GitHub step summary
+          echo "## ✅ Test Suite Passed" >> $env:GITHUB_STEP_SUMMARY
+          echo "" >> $env:GITHUB_STEP_SUMMARY
+          if ($latestLog) {
+            echo "**Log File:** \`$($latestLog.Name)\`" >> $env:GITHUB_STEP_SUMMARY
+          }
+          echo "" >> $env:GITHUB_STEP_SUMMARY
+        }
         
     - name: Generate test summary report
       if: always()
