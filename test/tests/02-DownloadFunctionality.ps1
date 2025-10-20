@@ -10,9 +10,6 @@ $TestFileName = "02-DownloadFunctionality.ps1"
 Write-Host "Minecraft Mod Manager - Download Functionality Tests" -ForegroundColor $Colors.Header
 Write-Host "=====================================================" -ForegroundColor $Colors.Header
 
-# Note: This test file assumes a database with mods already exists
-# It should be run after 01-BasicFunctionality.ps1
-
 Initialize-TestEnvironment $TestFileName
 
 # Helper to get the full path to ModManager.ps1
@@ -22,6 +19,9 @@ $ModManagerPath = Join-Path $PSScriptRoot "..\..\ModManager.ps1"
 $TestOutputDir = Get-TestOutputFolder $TestFileName
 $script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
+
+function Invoke-DownloadFunctionalityTests {
+    param([string]$TestFileName = $null)
 
 # SETUP: Add required mods to the database
 Test-Command "& '$ModManagerPath' -AddMod -AddModUrl 'https://modrinth.com/mod/fabric-api' -DatabaseFile '$TestDbPath' -UseCachedResponses -ApiResponseFolder '$script:TestApiResponseDir'" "Add Fabric API by URL" 1 @("Fabric API") $TestFileName
@@ -69,9 +69,15 @@ if ($sharedApiResponseExists) {
     Write-TestResult "shared apiresponse folder isolation" $true "No shared apiresponse folder exists"
 }
 
-Write-Host "`nDownload Functionality Tests Complete" -ForegroundColor $Colors.Info
+    Write-Host "`nDownload Functionality Tests Complete" -ForegroundColor $Colors.Info
 
-# Show test summary
-Show-TestSummary 
+    # Show test summary
+    Show-TestSummary "Download Functionality Tests"
+    
+    return ($script:TestResults.Failed -eq 0)
+}
+
+# Always execute tests when this file is run
+Invoke-DownloadFunctionalityTests -TestFileName $TestFileName
 
 # NOTE: Download folder is intentionally preserved for post-test validation.
