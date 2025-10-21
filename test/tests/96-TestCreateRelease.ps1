@@ -47,6 +47,42 @@ if ($mods1218.Count -eq 0) {
 }
 
 $mods1218 | Export-Csv -Path $TestDbPath -NoTypeInformation -Encoding UTF8
+
+Write-Host ""
+Write-Host "  🔍 DEBUG: Test Database Analysis" -ForegroundColor Cyan
+Write-Host "    Database path: $TestDbPath" -ForegroundColor Gray
+Write-Host "    Database exists: $(Test-Path $TestDbPath)" -ForegroundColor Gray
+Write-Host "    Total entries: $($mods1218.Count)" -ForegroundColor Gray
+Write-Host ""
+
+# Analyze database content
+Write-Host "    📊 DATABASE BREAKDOWN:" -ForegroundColor Cyan
+$typeBreakdown = $mods1218 | Group-Object -Property Type
+foreach ($typeGroup in $typeBreakdown) {
+    Write-Host "      $($typeGroup.Name): $($typeGroup.Count)" -ForegroundColor Gray
+}
+Write-Host ""
+
+# Check for server/launcher entries
+$serverEntry = $mods1218 | Where-Object { $_.Type -eq "server" } | Select-Object -First 1
+$launcherEntry = $mods1218 | Where-Object { $_.Type -eq "launcher" } | Select-Object -First 1
+
+Write-Host "    🔍 SERVER/LAUNCHER CHECK:" -ForegroundColor Cyan
+Write-Host "      Server entry exists: $($null -ne $serverEntry)" -ForegroundColor $(if ($serverEntry) { "Green" } else { "Red" })
+if ($null -ne $serverEntry) {
+    Write-Host "        Name: $($serverEntry.Name)" -ForegroundColor DarkGray
+    Write-Host "        Version: $($serverEntry.Version)" -ForegroundColor DarkGray
+    Write-Host "        Url: $($serverEntry.Url)" -ForegroundColor DarkGray
+}
+
+Write-Host "      Launcher entry exists: $($null -ne $launcherEntry)" -ForegroundColor $(if ($launcherEntry) { "Green" } else { "Red" })
+if ($null -ne $launcherEntry) {
+    Write-Host "        Name: $($launcherEntry.Name)" -ForegroundColor DarkGray
+    Write-Host "        Version: $($launcherEntry.Version)" -ForegroundColor DarkGray
+    Write-Host "        Url: $($launcherEntry.Url)" -ForegroundColor DarkGray
+}
+Write-Host ""
+
 Write-Host "  Created test database with $($mods1218.Count) mods for version 1.21.8" -ForegroundColor Gray
 Write-TestResult "Test Database Created" (Test-Path $TestDbPath)
 
@@ -129,6 +165,13 @@ if ($modsExist) {
 # Test 2: Download Server Files
 Write-TestHeader "Test 2: Download Server Files for Release"
 
+Write-Host ""
+Write-Host "  🔍 DEBUG: Server Download Command" -ForegroundColor Cyan
+Write-Host "    DownloadFolder: $TestDownloadDir" -ForegroundColor Gray
+Write-Host "    DatabaseFile: $TestDbPath" -ForegroundColor Gray
+Write-Host "    GameVersion: 1.21.8" -ForegroundColor Gray
+Write-Host ""
+
 $serverOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
     -DownloadServer `
     -DownloadFolder $TestDownloadDir `
@@ -136,6 +179,18 @@ $serverOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath 
     -GameVersion "1.21.8" 2>&1
 
 $serverDownloadSucceeded = ($LASTEXITCODE -eq 0)
+
+Write-Host ""
+Write-Host "  📊 SERVER DOWNLOAD RESULTS:" -ForegroundColor Yellow
+Write-Host "    Exit Code: $LASTEXITCODE" -ForegroundColor $(if ($serverDownloadSucceeded) { "Green" } else { "Red" })
+Write-Host ""
+
+if (-not $serverDownloadSucceeded) {
+    Write-Host "  ❌ SERVER DOWNLOAD FAILED - OUTPUT:" -ForegroundColor Red
+    $serverOutput | ForEach-Object { Write-Host "    $_" -ForegroundColor Gray }
+    Write-Host ""
+}
+
 Write-TestResult "Server files downloaded" $serverDownloadSucceeded
 
 # Verify server files exist

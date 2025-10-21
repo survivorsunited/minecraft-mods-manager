@@ -70,15 +70,36 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
     Write-Host "  Command: ModManager -DownloadMods -UseNextVersion -TargetVersion `"1.21.6`"" -ForegroundColor Cyan
     Write-Host ""
     
-    $output = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
-        -DownloadMods `
-        -UseNextVersion `
-        -TargetVersion "1.21.6" `
-        -DatabaseFile $TestDbPath `
-        -DownloadFolder $TestDownloadDir `
-        -UseCachedResponses 2>&1
+    Write-Host "  🔍 DEBUG: Command parameters:" -ForegroundColor Cyan
+    Write-Host "    ModManagerPath: $ModManagerPath" -ForegroundColor Gray
+    Write-Host "    DatabaseFile: $TestDbPath" -ForegroundColor Gray
+    Write-Host "    DownloadFolder: $TestDownloadDir" -ForegroundColor Gray
+    Write-Host "    Database exists: $(Test-Path $TestDbPath)" -ForegroundColor Gray
     
-    $exitCode = $LASTEXITCODE
+    # Read and display database contents
+    Write-Host ""
+    Write-Host "  📊 DATABASE CONTENTS:" -ForegroundColor Cyan
+    $dbContent = Get-Content $TestDbPath
+    $dbContent | ForEach-Object { Write-Host "    $_" -ForegroundColor DarkGray }
+    Write-Host ""
+    
+    try {
+        $output = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
+            -DownloadMods `
+            -UseNextVersion `
+            -TargetVersion "1.21.6" `
+            -DatabaseFile $TestDbPath `
+            -DownloadFolder $TestDownloadDir `
+            -UseCachedResponses 2>&1
+        
+        $exitCode = $LASTEXITCODE
+    } catch {
+        Write-Host "  ❌ EXCEPTION CAUGHT:" -ForegroundColor Red
+        Write-Host "    Message: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "    StackTrace: $($_.ScriptStackTrace)" -ForegroundColor Red
+        $exitCode = 1
+        $output = @("EXCEPTION: $($_.Exception.Message)")
+    }
     
     Write-Host ""
     Write-Host "  📊 COMMAND RESULTS:" -ForegroundColor Yellow

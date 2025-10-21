@@ -42,6 +42,40 @@ required,mod,1.21.6,ledger,fabric,1.3.5,Ledger,Server logging mod,ledger-1.3.5.j
 '@
 
 $serverModlistContent | Out-File -FilePath $TestDbPath -Encoding UTF8
+
+Write-Host ""
+Write-Host "  🔍 DEBUG: Database Creation" -ForegroundColor Cyan
+Write-Host "    Database path: $TestDbPath" -ForegroundColor Gray
+Write-Host "    Database exists: $(Test-Path $TestDbPath)" -ForegroundColor Gray
+
+if (Test-Path $TestDbPath) {
+    $dbContent = Get-Content $TestDbPath
+    Write-Host "    Database lines: $($dbContent.Count)" -ForegroundColor Gray
+    Write-Host ""
+    Write-Host "    📊 DATABASE CONTENTS:" -ForegroundColor Cyan
+    $dbContent | ForEach-Object { Write-Host "      $_" -ForegroundColor DarkGray }
+    Write-Host ""
+    
+    # Parse and validate CSV structure
+    try {
+        $csvData = Import-Csv -Path $TestDbPath
+        Write-Host "    CSV rows parsed: $($csvData.Count)" -ForegroundColor Gray
+        Write-Host ""
+        Write-Host "    📊 PARSED DATA ANALYSIS:" -ForegroundColor Cyan
+        foreach ($row in $csvData) {
+            Write-Host "      - $($row.Name)" -ForegroundColor Gray
+            Write-Host "        Type: $($row.Type)" -ForegroundColor DarkGray
+            Write-Host "        ID: $($row.ID)" -ForegroundColor DarkGray
+            Write-Host "        Version: [$($row.Version)]" -ForegroundColor $(if ($row.Version) { "Green" } else { "Red" })
+            Write-Host "        GameVersion: [$($row.GameVersion)]" -ForegroundColor $(if ($row.GameVersion) { "Green" } else { "Red" })
+            Write-Host "        Url: [$($row.Url)]" -ForegroundColor $(if ($row.Url) { "DarkGray" } else { "Yellow" })
+        }
+    } catch {
+        Write-Host "    ❌ CSV PARSE ERROR: $($_.Exception.Message)" -ForegroundColor Red
+    }
+}
+Write-Host ""
+
 Write-TestResult "Test Database Created" (Test-Path $TestDbPath)
 Write-Host "  Using isolated test database (5 entries: 3 mods + server + launcher)" -ForegroundColor Gray
 
