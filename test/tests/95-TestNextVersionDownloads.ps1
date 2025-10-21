@@ -44,7 +44,32 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
     $testData | Out-File -FilePath $TestDbPath -Encoding UTF8
     
     # Run ModManager to download 1.21.6 mods
-    Write-Host "  Running: ModManager -DownloadMods -UseNextVersion -TargetVersion `"1.21.6`"" -ForegroundColor Cyan
+    Write-Host ""
+    Write-Host "  ============================================" -ForegroundColor Cyan
+    Write-Host "  DETAILED LOGGING: Next Version Download" -ForegroundColor Cyan
+    Write-Host "  ============================================" -ForegroundColor Cyan
+    Write-Host ""
+    
+    # Check API key status
+    Write-Host "  🔑 API KEY STATUS:" -ForegroundColor Yellow
+    if ($env:MODRINTH_API_KEY) {
+        Write-Host "    ✅ MODRINTH_API_KEY: PRESENT (length: $($env:MODRINTH_API_KEY.Length))" -ForegroundColor Green
+    } else {
+        Write-Host "    ❌ MODRINTH_API_KEY: MISSING (downloads will FAIL!)" -ForegroundColor Red
+    }
+    Write-Host ""
+    
+    Write-Host "  📊 TEST CONFIGURATION:" -ForegroundColor Yellow
+    Write-Host "    Database: $TestDbPath" -ForegroundColor Gray
+    Write-Host "    Download Folder: $TestDownloadDir" -ForegroundColor Gray
+    Write-Host "    Target Version: 1.21.6" -ForegroundColor Gray
+    Write-Host "    Using NextVersionUrl from DB: YES" -ForegroundColor Gray
+    Write-Host ""
+    
+    Write-Host "  🚀 EXECUTING DOWNLOAD COMMAND..." -ForegroundColor Yellow
+    Write-Host "  Command: ModManager -DownloadMods -UseNextVersion -TargetVersion `"1.21.6`"" -ForegroundColor Cyan
+    Write-Host ""
+    
     $output = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
         -DownloadMods `
         -UseNextVersion `
@@ -55,8 +80,20 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
     
     $exitCode = $LASTEXITCODE
     
+    Write-Host ""
+    Write-Host "  📊 COMMAND RESULTS:" -ForegroundColor Yellow
+    Write-Host "    Exit Code: $exitCode" -ForegroundColor $(if ($exitCode -eq 0) { "Green" } else { "Red" })
+    Write-Host ""
+    
+    Write-Host "  📝 COMMAND OUTPUT (last 30 lines):" -ForegroundColor Yellow
+    $output | Select-Object -Last 30 | ForEach-Object { Write-Host "    $_" -ForegroundColor Gray }
+    Write-Host ""
+    
     # Check exit code
     if ($exitCode -ne 0) {
+        Write-Host "  ❌ FAILURE ANALYSIS:" -ForegroundColor Red
+        Write-Host "    Exit code indicates download failure" -ForegroundColor Red
+        Write-Host "    This is likely due to missing API keys or unavailable URLs" -ForegroundColor Red
         Write-TestResult "ModManager exit code" $false "Expected 0, got $exitCode"
         return $false
     }

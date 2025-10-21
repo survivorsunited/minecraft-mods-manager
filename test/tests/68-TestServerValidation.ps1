@@ -103,9 +103,37 @@ if ($minecraftServerExists -and $fabricServerExists) {
 # Test 3: Download Mods to Server
 Write-TestHeader "Test 3: Download Mods for Server"
 
+Write-Host "  ============================================" -ForegroundColor Cyan
+Write-Host "  DETAILED LOGGING: Mod Download Process" -ForegroundColor Cyan
+Write-Host "  ============================================" -ForegroundColor Cyan
+Write-Host ""
+
+# Check API key status
+Write-Host "  🔑 API KEY STATUS:" -ForegroundColor Yellow
+if ($env:MODRINTH_API_KEY) {
+    Write-Host "    ✅ MODRINTH_API_KEY: PRESENT (length: $($env:MODRINTH_API_KEY.Length))" -ForegroundColor Green
+} else {
+    Write-Host "    ⚠️  MODRINTH_API_KEY: MISSING (may limit download speed)" -ForegroundColor Yellow
+}
+
+if ($env:CURSEFORGE_API_KEY) {
+    Write-Host "    ✅ CURSEFORGE_API_KEY: PRESENT (length: $($env:CURSEFORGE_API_KEY.Length))" -ForegroundColor Green
+} else {
+    Write-Host "    ❌ CURSEFORGE_API_KEY: MISSING (cannot download CurseForge mods)" -ForegroundColor Red
+}
+Write-Host ""
+
 $modDownloadDir = Join-Path $TestServerDir "mods"
-Write-Host "  Downloading mods to: $modDownloadDir" -ForegroundColor Gray
+Write-Host "  📁 Target Directory: $modDownloadDir" -ForegroundColor Gray
+Write-Host "  📊 Database: $TestDbPath" -ForegroundColor Gray
+Write-Host "  🗂️  API Response Cache: $script:TestApiResponseDir" -ForegroundColor Gray
+Write-Host ""
+
+Write-Host "  🚀 EXECUTING DOWNLOAD COMMAND..." -ForegroundColor Yellow
 $modDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $TestDbPath -DownloadFolder $modDownloadDir -ApiResponseFolder $script:TestApiResponseDir 2>&1
+
+Write-Host ""
+Write-Host "  📊 DOWNLOAD RESULTS ANALYSIS:" -ForegroundColor Yellow
 
 # Check mod download results
 $modDownloadAttempted = ($modDownloadOutput -match "Starting mod download process").Count -gt 0
@@ -113,6 +141,15 @@ $modsDownloaded = 0
 if (Test-Path $modDownloadDir) {
     $modsDownloaded = (Get-ChildItem -Path $modDownloadDir -Filter "*.jar" -ErrorAction SilentlyContinue).Count
 }
+
+Write-Host "    Download process started: $modDownloadAttempted" -ForegroundColor Gray
+Write-Host "    JARs found in mods folder: $modsDownloaded" -ForegroundColor Gray
+
+# Show detailed download output
+Write-Host ""
+Write-Host "  📝 DOWNLOAD COMMAND OUTPUT (last 20 lines):" -ForegroundColor Yellow
+$modDownloadOutput | Select-Object -Last 20 | ForEach-Object { Write-Host "    $_" -ForegroundColor Gray }
+Write-Host ""
 
 Write-TestResult "Mod Download Started" $modDownloadAttempted
 Write-TestResult "Mods Downloaded Successfully" ($modsDownloaded -gt 0)

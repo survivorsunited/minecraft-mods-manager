@@ -107,31 +107,110 @@ jobs:
         CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
         MODRINTH_API_KEY: ${{ secrets.MODRINTH_API_KEY }}
       run: |
+        # ============================================================================
+        # COMPREHENSIVE LOGGING: Environment and API Key Status
+        # ============================================================================
+        Write-Host "============================================================================" -ForegroundColor Cyan
+        Write-Host "TEST SUITE EXECUTION - DETAILED LOGGING" -ForegroundColor Cyan
+        Write-Host "============================================================================" -ForegroundColor Cyan
+        Write-Host ""
+        
+        Write-Host "📊 ENVIRONMENT STATUS:" -ForegroundColor Yellow
+        Write-Host "  OS: ${{ matrix.os }}"
+        Write-Host "  PowerShell: $($PSVersionTable.PSVersion)"
+        Write-Host "  Working Directory: $(Get-Location)"
+        Write-Host "  Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+        Write-Host ""
+        
+        Write-Host "🔑 API KEY STATUS:" -ForegroundColor Yellow
+        if ($env:CURSEFORGE_API_KEY) {
+            Write-Host "  ✅ CURSEFORGE_API_KEY: PRESENT (length: $($env:CURSEFORGE_API_KEY.Length))" -ForegroundColor Green
+        } else {
+            Write-Host "  ❌ CURSEFORGE_API_KEY: MISSING" -ForegroundColor Red
+        }
+        
+        if ($env:MODRINTH_API_KEY) {
+            Write-Host "  ✅ MODRINTH_API_KEY: PRESENT (length: $($env:MODRINTH_API_KEY.Length))" -ForegroundColor Green
+        } else {
+            Write-Host "  ⚠️  MODRINTH_API_KEY: MISSING (optional)" -ForegroundColor Yellow
+        }
+        Write-Host ""
+        
+        Write-Host "📁 FILE SYSTEM CHECK:" -ForegroundColor Yellow
+        Write-Host "  Test directory exists: $(Test-Path 'test')"
+        Write-Host "  RunAllTests.ps1 exists: $(Test-Path 'test/RunAllTests.ps1')"
+        Write-Host "  ModManager.ps1 exists: $(Test-Path 'ModManager.ps1')"
+        Write-Host ""
+        
+        Write-Host "============================================================================" -ForegroundColor Cyan
+        Write-Host "STARTING TEST EXECUTION" -ForegroundColor Cyan
+        Write-Host "============================================================================" -ForegroundColor Cyan
+        Write-Host ""
+        
         # Change to test directory
         Set-Location test
         
         # Run all tests with detailed output
-        Write-Host "Starting test suite execution..."
+        Write-Host "🚀 Executing: .\RunAllTests.ps1 -All" -ForegroundColor Green
+        Write-Host ""
         $result = .\RunAllTests.ps1 -All
         
         # Capture the exit code
         $testExitCode = $LASTEXITCODE
+        Write-Host ""
+        Write-Host "============================================================================" -ForegroundColor Cyan
+        Write-Host "TEST EXECUTION COMPLETED" -ForegroundColor Cyan
+        Write-Host "============================================================================" -ForegroundColor Cyan
+        Write-Host "Exit Code: $testExitCode" -ForegroundColor $(if ($testExitCode -eq 0) { "Green" } else { "Red" })
         
         Write-Host ""
-        Write-Host "=== Test Suite Completed ===" -ForegroundColor Cyan
+        Write-Host "============================================================================" -ForegroundColor Cyan
+        Write-Host "TEST RESULTS ANALYSIS" -ForegroundColor Cyan
+        Write-Host "============================================================================" -ForegroundColor Cyan
         
         # Find the most recent test run log
-        $latestLog = Get-ChildItem -Path "test/test-output" -Filter "test-run-*.log" -File -ErrorAction SilentlyContinue | 
+        $latestLog = Get-ChildItem -Path "test-output" -Filter "test-run-*.log" -File -ErrorAction SilentlyContinue | 
                      Sort-Object LastWriteTime -Descending | 
                      Select-Object -First 1
         
         if ($latestLog) {
-          # Get relative path from repository root
-          $relativePath = $latestLog.FullName.Replace((Get-Location).Path, '').TrimStart('\', '/')
-          Write-Host "Log file: $relativePath" -ForegroundColor Gray
-          Write-Host "Full path: $($latestLog.FullName)" -ForegroundColor Gray
+          Write-Host "📄 LOG FILE FOUND:" -ForegroundColor Yellow
+          Write-Host "  File: $($latestLog.Name)" -ForegroundColor Gray
+          Write-Host "  Size: $([math]::Round($latestLog.Length / 1KB, 2)) KB" -ForegroundColor Gray
+          Write-Host "  Created: $($latestLog.LastWriteTime)" -ForegroundColor Gray
+          Write-Host ""
+          
+          # Extract test summary from log
+          Write-Host "📊 TEST SUMMARY FROM LOG:" -ForegroundColor Yellow
+          $logContent = Get-Content $latestLog.FullName -Raw
+          
+          # Extract final summary
+          if ($logContent -match "=== Final Test Summary ===[\s\S]*?Total Tests:\s*(\d+)[\s\S]*?Passed:\s*(\d+)[\s\S]*?Failed:\s*(\d+)[\s\S]*?Success Rate:\s*([\d.]+)%") {
+            Write-Host "  Total Tests: $($Matches[1])" -ForegroundColor Cyan
+            Write-Host "  Passed: $($Matches[2])" -ForegroundColor Green
+            Write-Host "  Failed: $($Matches[3])" -ForegroundColor $(if ([int]$Matches[3] -eq 0) { "Green" } else { "Red" })
+            Write-Host "  Success Rate: $($Matches[4])%" -ForegroundColor $(if ([double]$Matches[4] -eq 100.0) { "Green" } else { "Yellow" })
+          }
+          Write-Host ""
+          
+          # Find failed tests
+          Write-Host "❌ FAILED TESTS DETAIL:" -ForegroundColor Red
+          $failedTests = $logContent | Select-String -Pattern "❌\s+([\w-]+\.ps1):\s+(\d+)/(\d+)\s+passed" -AllMatches
+          if ($failedTests.Matches.Count -gt 0) {
+            foreach ($match in $failedTests.Matches) {
+              $testName = $match.Groups[1].Value
+              $passed = $match.Groups[2].Value
+              $total = $match.Groups[3].Value
+              $failed = [int]$total - [int]$passed
+              Write-Host "  ❌ $testName : $passed/$total passed ($failed failures)" -ForegroundColor Red
+            }
+          } else {
+            Write-Host "  ✅ NO FAILED TESTS!" -ForegroundColor Green
+          }
+          Write-Host ""
+          
         } else {
-          Write-Host "⚠️  No test log file found in test/test-output/" -ForegroundColor Yellow
+          Write-Host "⚠️  No test log file found in test-output/" -ForegroundColor Yellow
         }
         
         if ($testExitCode -ne 0) {

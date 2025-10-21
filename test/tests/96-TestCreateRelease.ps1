@@ -53,6 +53,37 @@ Write-TestResult "Test Database Created" (Test-Path $TestDbPath)
 # Test 1: Download Mods for Release
 Write-TestHeader "Test 1: Download Mods for Release Testing"
 
+Write-Host ""
+Write-Host "  ============================================" -ForegroundColor Cyan
+Write-Host "  DETAILED LOGGING: Mod Download for Release" -ForegroundColor Cyan
+Write-Host "  ============================================" -ForegroundColor Cyan
+Write-Host ""
+
+# Check API key status
+Write-Host "  🔑 API KEY STATUS:" -ForegroundColor Yellow
+if ($env:MODRINTH_API_KEY) {
+    Write-Host "    ✅ MODRINTH_API_KEY: PRESENT (length: $($env:MODRINTH_API_KEY.Length))" -ForegroundColor Green
+} else {
+    Write-Host "    ❌ MODRINTH_API_KEY: MISSING (downloads may FAIL!)" -ForegroundColor Red
+}
+
+if ($env:CURSEFORGE_API_KEY) {
+    Write-Host "    ✅ CURSEFORGE_API_KEY: PRESENT (length: $($env:CURSEFORGE_API_KEY.Length))" -ForegroundColor Green
+} else {
+    Write-Host "    ⚠️  CURSEFORGE_API_KEY: MISSING" -ForegroundColor Yellow
+}
+Write-Host ""
+
+Write-Host "  📊 TEST CONFIGURATION:" -ForegroundColor Yellow
+Write-Host "    Database: $TestDbPath" -ForegroundColor Gray
+Write-Host "    Download Folder: $TestDownloadDir" -ForegroundColor Gray
+Write-Host "    Target Version: 1.21.8" -ForegroundColor Gray
+Write-Host "    Using Cached Responses: YES" -ForegroundColor Gray
+Write-Host "    API Response Folder: $script:TestApiResponseDir" -ForegroundColor Gray
+Write-Host ""
+
+Write-Host "  🚀 EXECUTING DOWNLOAD COMMAND..." -ForegroundColor Yellow
+
 $downloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
     -DownloadMods `
     -DatabaseFile $TestDbPath `
@@ -62,6 +93,17 @@ $downloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPat
     -ApiResponseFolder $script:TestApiResponseDir 2>&1
 
 $downloadSucceeded = ($LASTEXITCODE -eq 0)
+
+Write-Host ""
+Write-Host "  📊 DOWNLOAD RESULTS:" -ForegroundColor Yellow
+Write-Host "    Exit Code: $LASTEXITCODE" -ForegroundColor $(if ($downloadSucceeded) { "Green" } else { "Red" })
+Write-Host "    Success: $downloadSucceeded" -ForegroundColor $(if ($downloadSucceeded) { "Green" } else { "Red" })
+Write-Host ""
+
+Write-Host "  📝 DOWNLOAD OUTPUT (last 30 lines):" -ForegroundColor Yellow
+$downloadOutput | Select-Object -Last 30 | ForEach-Object { Write-Host "    $_" -ForegroundColor Gray }
+Write-Host ""
+
 Write-TestResult "Download mods for testing" $downloadSucceeded
 
 # Verify mods directory exists
@@ -71,7 +113,17 @@ Write-TestResult "Mods directory created" $modsExist
 
 if ($modsExist) {
     $modCount = (Get-ChildItem -Path $modsPath -Filter "*.jar" -ErrorAction SilentlyContinue).Count
-    Write-Host "  Downloaded $modCount mod files" -ForegroundColor Gray
+    Write-Host "  Downloaded $modCount mod files" -ForegroundColor $(if ($modCount -gt 0) { "Green" } else { "Red" })
+    
+    if ($modCount -eq 0) {
+        Write-Host "  ❌ FAILURE: No mods downloaded!" -ForegroundColor Red
+        Write-Host "    This is likely due to:" -ForegroundColor Red
+        Write-Host "    1. Missing API keys" -ForegroundColor Red
+        Write-Host "    2. Unavailable cached responses" -ForegroundColor Red
+        Write-Host "    3. Invalid URLs in database" -ForegroundColor Red
+    }
+} else {
+    Write-Host "  ❌ FAILURE: Mods directory not created!" -ForegroundColor Red
 }
 
 # Test 2: Download Server Files
