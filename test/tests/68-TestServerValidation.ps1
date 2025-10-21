@@ -164,7 +164,9 @@ Write-Host "  🗂️  API Response Cache: $script:TestApiResponseDir" -Foregrou
 Write-Host ""
 
 Write-Host "  🚀 EXECUTING DOWNLOAD COMMAND..." -ForegroundColor Yellow
-$modDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $TestDbPath -DownloadFolder $modDownloadDir -ApiResponseFolder $script:TestApiResponseDir 2>&1
+Write-Host "  📝 Passing BASE download folder (not mods subfolder): $TestDownloadDir" -ForegroundColor Gray
+Write-Host "  📝 Targeting version 1.21.6 explicitly" -ForegroundColor Gray
+$modDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $TestDbPath -DownloadFolder $TestDownloadDir -TargetVersion "1.21.6" -ApiResponseFolder $script:TestApiResponseDir 2>&1
 
 Write-Host ""
 Write-Host "  📊 DOWNLOAD RESULTS ANALYSIS:" -ForegroundColor Yellow

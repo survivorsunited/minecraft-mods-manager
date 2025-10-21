@@ -244,10 +244,18 @@ if ($Download) {
     } elseif ($UseNextVersion) {
         Write-Host "Using next versions for download..." -ForegroundColor Cyan
         Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
-        Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        if ($TargetVersion) {
+            Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -TargetGameVersion $TargetVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        } else {
+            Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        }
     } else {
         Write-Host "Using current versions for download..." -ForegroundColor Cyan
-        Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
+        if ($TargetVersion) {
+            Download-Mods -CsvPath $effectiveModListPath -TargetGameVersion $TargetVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        } else {
+            Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        }
     }
     Exit-ModManager 0
 }
@@ -265,10 +273,18 @@ if ($DownloadMods) {
     } elseif ($UseNextVersion) {
         Write-Host "Using next versions for download..." -ForegroundColor Cyan
         Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
-        Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        if ($TargetVersion) {
+            Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -TargetGameVersion $TargetVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        } else {
+            Download-Mods -CsvPath $effectiveModListPath -UseNextVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        }
     } else {
         Write-Host "Using current versions for download..." -ForegroundColor Cyan
-        Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload
+        if ($TargetVersion) {
+            Download-Mods -CsvPath $effectiveModListPath -TargetGameVersion $TargetVersion -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        } else {
+            Download-Mods -CsvPath $effectiveModListPath -ForceDownload:$ForceDownload -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder
+        }
     }
     Exit-ModManager 0
 }

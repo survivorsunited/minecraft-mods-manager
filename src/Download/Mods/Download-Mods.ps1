@@ -234,8 +234,23 @@ function Download-Mods {
                 # Get host from CSV, default to "modrinth" if not specified
                 $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
                 
-                # Get game version from CSV, default to "1.21.5" if not specified
-                $gameVersion = if (-not [string]::IsNullOrEmpty($mod.CurrentGameVersion)) { $mod.CurrentGameVersion } elseif (-not [string]::IsNullOrEmpty($mod.GameVersion)) { $mod.GameVersion } else { $DefaultGameVersion }
+                # Get game version - use target version when specified, otherwise use CSV game version
+                if ($TargetGameVersion) {
+                    # When targeting a specific version, use that for all mods
+                    $gameVersion = $TargetGameVersion
+                } elseif ($UseNextVersion -and -not [string]::IsNullOrEmpty($mod.NextGameVersion)) {
+                    # For next version downloads, use NextGameVersion from CSV
+                    $gameVersion = $mod.NextGameVersion
+                } elseif (-not [string]::IsNullOrEmpty($mod.CurrentGameVersion)) {
+                    # Use CurrentGameVersion if available
+                    $gameVersion = $mod.CurrentGameVersion
+                } elseif (-not [string]::IsNullOrEmpty($mod.GameVersion)) {
+                    # Fall back to GameVersion column
+                    $gameVersion = $mod.GameVersion
+                } else {
+                    # Final fallback to default
+                    $gameVersion = $DefaultGameVersion
+                }
                 
                 # Get JAR filename from CSV
                 $jarFilename = if (-not [string]::IsNullOrEmpty($mod.Jar)) { $mod.Jar } else { "" }
