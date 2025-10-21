@@ -756,7 +756,7 @@ function Show-VersionMatrix {
     Write-Host ("=" * 80) -ForegroundColor $Colors.Header
     
     # Check all version folders
-    $versionFolders = @("1.21.5", "1.21.6", "1.21.8")
+    $versionFolders = @("1.21.8", "1.21.9", "1.21.10")
     $matrix = @{}
     
     foreach ($version in $versionFolders) {
@@ -765,10 +765,10 @@ function Show-VersionMatrix {
             $modFiles = Get-ChildItem -Path $versionPath -Filter "*.jar" -Recurse -ErrorAction SilentlyContinue
             
             $versionCounts = @{
-                "1.21.5" = 0
-                "1.21.6" = 0
-                "1.21.7" = 0
                 "1.21.8" = 0
+                "1.21.9" = 0
+                "1.21.10" = 0
+                "1.21.11" = 0
                 "unknown" = 0
             }
             
@@ -776,7 +776,7 @@ function Show-VersionMatrix {
                 $fileName = $mod.Name
                 $matched = $false
                 
-                foreach ($checkVersion in @("1.21.5", "1.21.6", "1.21.7", "1.21.8")) {
+                foreach ($checkVersion in @("1.21.8", "1.21.9", "1.21.10", "1.21.11")) {
                     if ($fileName -match $checkVersion.Replace(".", "\.")) {
                         $versionCounts[$checkVersion]++
                         $matched = $true
@@ -792,13 +792,13 @@ function Show-VersionMatrix {
             $matrix[$version] = $versionCounts
         } else {
             $matrix[$version] = @{
-                "1.21.5" = 0; "1.21.6" = 0; "1.21.7" = 0; "1.21.8" = 0; "unknown" = 0
+                "1.21.8" = 0; "1.21.9" = 0; "1.21.10" = 0; "1.21.11" = 0; "unknown" = 0
             }
         }
     }
     
     # Display matrix
-    Write-Host "Download Folder | 1.21.5 Mods | 1.21.6 Mods | 1.21.7 Mods | 1.21.8 Mods | Unknown" -ForegroundColor $Colors.Info
+    Write-Host "Download Folder | 1.21.8 Mods | 1.21.9 Mods | 1.21.10 Mods | 1.21.11 Mods | Unknown" -ForegroundColor $Colors.Info
     Write-Host ("-" * 80) -ForegroundColor $Colors.Muted
     
     foreach ($folder in $versionFolders) {
@@ -807,19 +807,19 @@ function Show-VersionMatrix {
         $counts = $matrix[$folder]
         $total = ($counts.Values | Measure-Object -Sum).Sum
         
-        $line = "{0,-15} | {1,11} | {2,11} | {3,11} | {4,11} | {5,7}" -f @(
+        $line = "{0,-15} | {1,11} | {2,12} | {3,12} | {4,12} | {5,7}" -f @(
             $folder,
-            $counts["1.21.5"],
-            $counts["1.21.6"], 
-            $counts["1.21.7"],
             $counts["1.21.8"],
+            $counts["1.21.9"], 
+            $counts["1.21.10"],
+            $counts["1.21.11"],
             $counts["unknown"]
         )
         
         $color = $Colors.Muted
-        if ($folder -eq "1.21.5" -and $counts["1.21.5"] -gt $counts["1.21.6"]) { $color = $Colors.Success }
-        elseif ($folder -eq "1.21.6" -and $counts["1.21.6"] -gt 0) { $color = $Colors.Success }
-        elseif ($folder -eq "1.21.8" -and $counts["1.21.8"] -gt 0) { $color = $Colors.Success }
+        if ($folder -eq "1.21.8" -and $counts["1.21.8"] -gt $counts["1.21.9"]) { $color = $Colors.Success }
+        elseif ($folder -eq "1.21.9" -and $counts["1.21.9"] -gt 0) { $color = $Colors.Success }
+        elseif ($folder -eq "1.21.10" -and $counts["1.21.10"] -gt 0) { $color = $Colors.Success }
         elseif ($total -gt 0) { $color = $Colors.Warning }
         
         Write-Host $line -ForegroundColor $color
