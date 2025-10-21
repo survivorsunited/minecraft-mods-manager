@@ -36,13 +36,14 @@ function Invoke-TestRolloverMods {
     Write-TestStep "Setting up test database with NextVersion data"
     
     # Create isolated test data with NextVersion populated
+    # Include all required columns for rollover: CurrentGameVersion, CurrentVersion, CurrentVersionUrl
     $testData = @'
-Group,Type,GameVersion,ID,Loader,Version,Name,Jar,Url,NextGameVersion,NextVersion,NextVersionUrl
-required,mod,1.21.5,fabric-api,fabric,0.113.0+1.21.5,Fabric API,fabric-api-0.113.0+1.21.5.jar,https://modrinth.com/mod/fabric-api,1.21.6,0.114.0+1.21.6,https://cdn.modrinth.com/data/P7dR8mSH/versions/1.21.6.jar
-required,mod,1.21.5,lithium,fabric,mc1.21.5-0.14.5,Lithium,lithium-fabric-0.14.5+mc1.21.5.jar,https://modrinth.com/mod/lithium,1.21.6,mc1.21.6-0.14.6,https://cdn.modrinth.com/data/gvQqBUqZ/versions/1.21.6.jar
-required,mod,1.21.5,sodium,fabric,mc1.21.5-0.6.3,Sodium,sodium-fabric-0.6.3+mc1.21.5.jar,https://modrinth.com/mod/sodium,1.21.6,mc1.21.6-0.6.4,https://cdn.modrinth.com/data/AANobbMI/versions/1.21.6.jar
-required,mod,1.21.5,iris,fabric,mc1.21.5-1.8.3,Iris,iris-fabric-1.8.3+mc1.21.5.jar,https://modrinth.com/mod/iris,1.21.6,mc1.21.6-1.8.4,https://cdn.modrinth.com/data/YL57xq9U/versions/1.21.6.jar
-required,mod,1.21.5,modmenu,fabric,11.0.1,Mod Menu,modmenu-11.0.1.jar,https://modrinth.com/mod/modmenu,1.21.6,11.0.2,https://cdn.modrinth.com/data/mOgUt4GM/versions/1.21.6.jar
+Group,Type,CurrentGameVersion,ID,Loader,CurrentVersion,Name,Jar,CurrentVersionUrl,NextGameVersion,NextVersion,NextVersionUrl
+required,mod,1.21.5,fabric-api,fabric,0.113.0+1.21.5,Fabric API,fabric-api-0.113.0+1.21.5.jar,https://cdn.modrinth.com/data/P7dR8mSH/versions/fabric-api-0.113.0+1.21.5.jar,1.21.6,0.114.0+1.21.6,https://cdn.modrinth.com/data/P7dR8mSH/versions/fabric-api-0.114.0+1.21.6.jar
+required,mod,1.21.5,lithium,fabric,mc1.21.5-0.14.5,Lithium,lithium-fabric-0.14.5+mc1.21.5.jar,https://cdn.modrinth.com/data/gvQqBUqZ/versions/mc1.21.5-0.14.5.jar,1.21.6,mc1.21.6-0.14.6,https://cdn.modrinth.com/data/gvQqBUqZ/versions/mc1.21.6-0.14.6.jar
+required,mod,1.21.5,sodium,fabric,mc1.21.5-0.6.3,Sodium,sodium-fabric-0.6.3+mc1.21.5.jar,https://cdn.modrinth.com/data/AANobbMI/versions/mc1.21.5-0.6.3.jar,1.21.6,mc1.21.6-0.6.4,https://cdn.modrinth.com/data/AANobbMI/versions/mc1.21.6-0.6.4.jar
+required,mod,1.21.5,iris,fabric,mc1.21.5-1.8.3,Iris,iris-fabric-1.8.3+mc1.21.5.jar,https://cdn.modrinth.com/data/YL57xq9U/versions/mc1.21.5-1.8.3.jar,1.21.6,mc1.21.6-1.8.4,https://cdn.modrinth.com/data/YL57xq9U/versions/mc1.21.6-1.8.4.jar
+required,mod,1.21.5,modmenu,fabric,11.0.1,Mod Menu,modmenu-11.0.1.jar,https://cdn.modrinth.com/data/mOgUt4GM/versions/11.0.1.jar,1.21.6,11.0.2,https://cdn.modrinth.com/data/mOgUt4GM/versions/11.0.2.jar
 '@
     
     $testData | Out-File -FilePath $TestModListPath -Encoding UTF8
