@@ -103,6 +103,9 @@ jobs:
         
     - name: Run test suite
       shell: pwsh
+      env:
+        CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+        MODRINTH_API_KEY: ${{ secrets.MODRINTH_API_KEY }}
       run: |
         # Change to test directory
         Set-Location test
