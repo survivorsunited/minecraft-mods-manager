@@ -24,5 +24,6 @@ All project-specific rules, patterns, and requirements are defined in the Cursor
 - [proj-03-development.mdc](mdc:.cursor/rules/proj-03-development.mdc) - Project development workflow
 - [proj-04-testing.mdc](mdc:.cursor/rules/proj-04-testing.mdc) - Project-specific testing patterns
 - [proj-05-api.mdc](mdc:.cursor/rules/proj-05-api.mdc) - API integration patterns
+- [pipeline-monitoring.mdc](mdc:.cursor/rules/pipeline-monitoring.mdc) - Pipeline monitoring and log management
 
 **Always consult the appropriate Cursor rule for detailed guidance before implementing any feature or test.**

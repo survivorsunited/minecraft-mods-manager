@@ -1,0 +1,207 @@
+# Project: Pipeline Monitoring and Log Management
+
+## Pipeline Monitoring Script
+
+### Primary Tool: `tools/get-action-logs.ps1`
+This script provides comprehensive GitHub Actions pipeline monitoring and log management capabilities.
+
+### Key Features
+- **Current Commit Mode**: Automatically finds workflow runs for the current git commit
+- **Real-time Monitoring**: Live progress tracking with status updates
+- **Log Management**: Organized storage in `logs/` folder with descriptive filenames
+- **Wait for Completion**: Monitor running pipelines until completion
+- **Multiple Output Modes**: View logs, download logs, or save to files
+
+## MANDATORY: Pipeline Monitoring Workflow
+
+### After Every Commit
+**REQUIRED**: Use the pipeline monitoring script to check results:
+
+```powershell
+# Get current commit's pipeline results and save logs
+.\tools\get-action-logs.ps1
+
+# Show logs for current commit AND save them (recommended)
+.\tools\get-action-logs.ps1 -ShowLogs
+
+# Wait for current commit's pipeline to complete, then show results
+.\tools\get-action-logs.ps1 -WaitForCompletion -ShowLogs
+```
+
+### When Monitoring Running Pipelines
+```powershell
+# Watch a running pipeline in real-time
+.\tools\get-action-logs.ps1 -Watch
+
+# Wait for specific pipeline to complete
+.\tools\get-action-logs.ps1 -RunId <run-id> -WaitForCompletion -ViewLogs
+```
+
+### When Investigating Failures
+```powershell
+# List recent failed runs
+.\tools\get-action-logs.ps1 -Status failure -Limit 5
+
+# View logs for specific failed run
+.\tools\get-action-logs.ps1 -RunId <run-id> -ViewLogs
+
+# Download logs for detailed analysis
+.\tools\get-action-logs.ps1 -RunId <run-id> -Download
+```
+
+## Log File Organization
+
+### Automatic Log Storage
+- **Location**: `logs/` directory
+- **Naming**: `run-{id}-{sha}-{workflow}-{conclusion}.log`
+- **Examples**:
+  - `logs/run-18722062817-39cdbec-Test_Suite-success.log`
+  - `logs/run-1872194-88b4461-Test_Suite-failure.log`
+
+### Log File Benefits
+- **Persistent Storage**: Logs saved locally for offline analysis
+- **Version Control**: Each commit's pipeline results preserved
+- **Easy Reference**: Descriptive filenames with status indicators
+- **Avoid Re-downloading**: Script skips existing logs unless `-Force` used
+
+## Pipeline Status Monitoring
+
+### Status Icons and Colors
+- **✓ Green**: Success
+- **✗ Red**: Failure  
+- **⊘ Yellow**: Cancelled
+- **⊖ Dark Gray**: Skipped
+- **● Cyan**: In Progress/Unknown
+
+### Real-time Progress Display
+- **Spinner Animation**: Visual progress indicator
+- **Elapsed Time**: Minutes and seconds tracking
+- **Status Updates**: Live status changes during execution
+
+## Integration with Development Workflow
+
+### Pre-Commit Pipeline Check
+```powershell
+# Check if current commit has pipeline results
+.\tools\get-action-logs.ps1 -CurrentCommit
+```
+
+### Post-Commit Pipeline Monitoring
+```powershell
+# Wait for pipeline completion and show results
+.\tools\get-action-logs.ps1 -WaitForCompletion -ShowLogs
+```
+
+### Failure Investigation
+```powershell
+# Find and analyze failed runs
+.\tools\get-action-logs.ps1 -Status failure -Limit 3
+.\tools\get-action-logs.ps1 -RunId <failed-run-id> -ViewLogs
+```
+
+## Common Use Cases
+
+### 1. Quick Status Check
+```powershell
+.\tools\get-action-logs.ps1
+```
+- Shows current commit's pipeline status
+- Saves logs automatically
+- No parameters needed
+
+### 2. Detailed Analysis
+```powershell
+.\tools\get-action-logs.ps1 -ShowLogs
+```
+- Displays logs in console
+- Saves logs to file
+- Best for immediate analysis
+
+### 3. Wait for Completion
+```powershell
+.\tools\get-action-logs.ps1 -WaitForCompletion -ShowLogs
+```
+- Monitors pipeline until completion
+- Shows real-time progress
+- Displays results when done
+
+### 4. Historical Analysis
+```powershell
+.\tools\get-action-logs.ps1 -Limit 10 -Status failure
+```
+- Lists recent failed runs
+- Helps identify patterns
+- Useful for debugging
+
+## Error Handling and Troubleshooting
+
+### Common Issues
+- **Authentication**: Ensure `gh auth login` completed
+- **Repository**: Must be in git repository with remote
+- **Network**: Requires internet connection for API calls
+- **Permissions**: Need read access to repository
+
+### Troubleshooting Commands
+```powershell
+# Check GitHub CLI authentication
+gh auth status
+
+# Verify repository connection
+git remote -v
+
+# Test GitHub CLI functionality
+gh run list --limit 1
+```
+
+## Best Practices
+
+### Regular Monitoring
+- **Check pipeline status** after every commit
+- **Monitor running pipelines** during development
+- **Investigate failures immediately** when they occur
+
+### Log Management
+- **Save logs locally** for offline analysis
+- **Use descriptive commit messages** for easy log identification
+- **Clean up old logs** periodically to save space
+
+### Team Collaboration
+- **Share log files** when investigating issues
+- **Reference run IDs** in issue discussions
+- **Use consistent monitoring patterns** across team
+
+## Integration with Test Results
+
+### Test Suite Monitoring
+- **Monitor test execution** in real-time
+- **Analyze test failures** from saved logs
+- **Track success rate improvements** over time
+
+### Performance Tracking
+- **Monitor pipeline duration** trends
+- **Identify slow test suites** or steps
+- **Optimize based on timing data**
+
+## Automation Opportunities
+
+### Script Integration
+- **Include in CI/CD scripts** for automated monitoring
+- **Add to pre-commit hooks** for status validation
+- **Integrate with notification systems** for alerts
+
+### Reporting
+- **Generate summary reports** from log data
+- **Create trend analysis** from historical runs
+- **Export data for external analysis**
+
+## Summary
+
+The `tools/get-action-logs.ps1` script is the **primary tool for pipeline monitoring** in this project. It provides comprehensive functionality for:
+
+- **Real-time monitoring** of running pipelines
+- **Historical analysis** of completed runs
+- **Log management** with organized storage
+- **Status tracking** with visual indicators
+- **Integration** with development workflow
+
+**MANDATORY**: Use this script after every commit to monitor pipeline results and ensure test suite success.
