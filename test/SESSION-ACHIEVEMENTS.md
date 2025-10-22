@@ -162,7 +162,6 @@ Total commits made: **10**
 1. **Add GitHub Secrets**:
    - Go to repository Settings → Secrets and variables → Actions
    - Add `CURSEFORGE_API_KEY` with your CurseForge API key
-   - Add `MODRINTH_API_KEY` if you have one (optional - Modrinth works without)
 
 2. **Run Pipeline**:
    - Push any change to trigger workflow

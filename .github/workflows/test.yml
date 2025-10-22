@@ -105,7 +105,6 @@ jobs:
       shell: pwsh
       env:
         CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
-        MODRINTH_API_KEY: ${{ secrets.MODRINTH_TOKEN }}
       run: |
         # ============================================================================
         # COMPREHENSIVE LOGGING: Environment and API Key Status
@@ -128,13 +127,6 @@ jobs:
         } else {
             Write-Host "  ❌ CURSEFORGE_API_KEY: MISSING" -ForegroundColor Red
         }
-        
-        if ($env:MODRINTH_API_KEY) {
-            Write-Host "  ✅ MODRINTH_API_KEY: PRESENT (length: $($env:MODRINTH_API_KEY.Length))" -ForegroundColor Green
-        } else {
-            Write-Host "  ⚠️  MODRINTH_API_KEY: MISSING (optional)" -ForegroundColor Yellow
-        }
-        Write-Host ""
         
         Write-Host "📁 FILE SYSTEM CHECK:" -ForegroundColor Yellow
         Write-Host "  Test directory exists: $(Test-Path 'test')"
