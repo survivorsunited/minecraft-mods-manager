@@ -105,7 +105,7 @@ jobs:
       shell: pwsh
       env:
         CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
-        MODRINTH_API_KEY: ${{ secrets.MODRINTH_API_KEY }}
+        MODRINTH_API_KEY: ${{ secrets.MODRINTH_TOKEN }}
       run: |
         # ============================================================================
         # COMPREHENSIVE LOGGING: Environment and API Key Status
