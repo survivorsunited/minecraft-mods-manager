@@ -50,12 +50,12 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
     Write-Host "  ============================================" -ForegroundColor Cyan
     Write-Host ""
     
-    # Check API key status
+    # Check API key status (informational only - not used by Modrinth API)
     Write-Host "  🔑 API KEY STATUS:" -ForegroundColor Yellow
     if ($env:MODRINTH_API_KEY) {
         Write-Host "    ✅ MODRINTH_API_KEY: PRESENT (length: $($env:MODRINTH_API_KEY.Length))" -ForegroundColor Green
     } else {
-        Write-Host "    ❌ MODRINTH_API_KEY: MISSING (downloads will FAIL!)" -ForegroundColor Red
+        Write-Host "    ⚠️  MODRINTH_API_KEY: MISSING (not required - Modrinth API works without auth)" -ForegroundColor Yellow
     }
     Write-Host ""
     
