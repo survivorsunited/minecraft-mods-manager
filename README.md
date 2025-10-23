@@ -26,7 +26,7 @@ A powerful PowerShell script for managing Minecraft mods across multiple platfor
 - **PowerShell 5.1+** (Windows, Linux, macOS)
 - **Internet Connection** for API access
 - **Optional**: CurseForge API key for enhanced access
-- **Java 17+** for server testing (22+ for MC 1.21.6+)
+- **Java 17+** for server testing (21+ for MC 1.21.8+)
 
 ## 🛠️ Installation
 
@@ -66,7 +66,7 @@ DEFAULT_GAME_VERSION=1.21.8
 DEFAULT_MOD_TYPE=mod
 
 # Server requirements
-JAVA_VERSION_MIN=22
+JAVA_VERSION_MIN=21
 
 ```
 

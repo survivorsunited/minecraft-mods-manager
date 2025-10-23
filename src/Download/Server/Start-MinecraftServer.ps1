@@ -35,8 +35,35 @@ function Start-MinecraftServer {
     
     Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
     
-    # Get minimum Java version from environment or use default
-    $minJavaVersion = [int]($env:JAVA_VERSION_MIN ?? "22")
+    # Load environment variables from release-config.json based on Minecraft version
+    $configPath = "release-config.json"
+    $minJavaVersion = 21  # Default fallback
+    
+    if (Test-Path $configPath) {
+        try {
+            $config = Get-Content $configPath | ConvertFrom-Json
+            $currentVersion = $GameVersion ?? "1.21.8"  # Default to 1.21.8 if not specified
+            
+            # Find the version configuration
+            $versionConfig = $config.versions | Where-Object { $_.version -eq $currentVersion }
+            if ($versionConfig -and $versionConfig.env -and $versionConfig.env.JAVA_VERSION_MIN) {
+                $minJavaVersion = [int]$versionConfig.env.JAVA_VERSION_MIN
+                Write-Host "📋 Using Java version requirement from config: $minJavaVersion (for MC $currentVersion)" -ForegroundColor Gray
+            } else {
+                Write-Host "ℹ️  No specific Java version config for MC $currentVersion, using default: $minJavaVersion" -ForegroundColor Cyan
+            }
+        } catch {
+            Write-Host "⚠️  Could not load release-config.json, using default Java version: $minJavaVersion" -ForegroundColor Yellow
+        }
+    } else {
+        Write-Host "ℹ️  No release-config.json found, using default Java version: $minJavaVersion" -ForegroundColor Cyan
+    }
+    
+    # Override with environment variable if set
+    if ($env:JAVA_VERSION_MIN) {
+        $minJavaVersion = [int]$env:JAVA_VERSION_MIN
+        Write-Host "🔧 Overriding with environment variable JAVA_VERSION_MIN: $minJavaVersion" -ForegroundColor Yellow
+    }
     
     # Check for downloaded JDK in .cache folder (infrastructure)
     $javaCommand = "java"
@@ -54,7 +81,7 @@ function Start-MinecraftServer {
         Write-Host "   Using: $javaCommand" -ForegroundColor Gray
     } else {
         Write-Host "ℹ️  No bundled JDK found in .cache/jdk/, using system Java" -ForegroundColor Cyan
-        Write-Host "   Tip: Run -DownloadJDK -JDKVersion '22' to download JDK 22" -ForegroundColor Gray
+        Write-Host "   Tip: Run -DownloadJDK -JDKVersion '21' to download JDK 21" -ForegroundColor Gray
     }
     
     # Check Java version

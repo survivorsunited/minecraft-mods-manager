@@ -3,12 +3,18 @@
       {
         "version": "1.21.8",
         "enabled": true,
-        "description": "Tested and working with Fabric Loader 0.17.3"
+        "description": "Tested and working with Fabric Loader 0.17.3",
+        "env": {
+          "JAVA_VERSION_MIN": "21"
+        }
       },
       {
         "version": "1.21.9",
         "enabled": false,
-        "description": "Future version"
+        "description": "Future version",
+        "env": {
+          "JAVA_VERSION_MIN": "21"
+        }
       }
     ]
   }
