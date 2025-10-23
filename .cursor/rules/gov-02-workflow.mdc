@@ -56,8 +56,8 @@ When working on any task, you MUST use existing tickets:
 3. **Update Ticket**: Use 3-step ticket management process
 4. **Commit Changes**: `git commit -m "#[issue-number] type(scope): description"`
 5. **Push Code**: `git push`
-6. **Wait for Pipeline**: `.\tools\get-action-logs.ps1 -WaitForCompletion`
-7. **Review Logs**: `.\tools\get-action-logs.ps1 -ShowLogs`
+6. **Wait for Pipeline**: `.\scripts\get-action-logs.ps1 -WaitForCompletion`
+7. **Review Logs**: `.\scripts\get-action-logs.ps1 -ShowLogs`
 
 ### NO REMINDERS NEEDED
 - **Never wait for user reminders** to create issues, commit, push, or close issues
@@ -105,8 +105,8 @@ When working on any task, you MUST use existing tickets:
 **MANDATORY SEQUENCE:**
 1. **Commit**: `git commit -m "#[issue-number] type(scope): description"`
 2. **Push**: `git push`
-3. **Wait for Completion**: `.\tools\get-action-logs.ps1 -WaitForCompletion`
-4. **Review Logs**: `.\tools\get-action-logs.ps1 -ShowLogs`
+3. **Wait for Completion**: `.\scripts\get-action-logs.ps1 -WaitForCompletion`
+4. **Review Logs**: `.\scripts\get-action-logs.ps1 -ShowLogs`
 
 **FORBIDDEN:**
 - ❌ Skipping pipeline monitoring
