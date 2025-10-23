@@ -285,7 +285,7 @@ Write-TestResult "Fabric API Present" $fabricApiDownloaded
 Write-TestHeader "Test 6: Quick Server Start Test"
 
 if ($startScriptExists -and $eulaExists -and $modsDownloaded -gt 0) {
-    Write-Host "  Testing server startup (quick test - 30 seconds max)..." -ForegroundColor Gray
+    Write-Host "  Testing server startup (extended test - 10 minutes max)..." -ForegroundColor Gray
     
     try {
         # Change to server directory
@@ -294,24 +294,58 @@ if ($startScriptExists -and $eulaExists -and $modsDownloaded -gt 0) {
         # Start server with timeout for testing
         $serverProcess = Start-Process -FilePath "pwsh" -ArgumentList "-NoProfile", "-File", "start-server.ps1" -PassThru -WindowStyle Hidden
         
-        # Wait up to 30 seconds for server to start
-        $timeout = 30
+        # Wait up to 10 minutes for server to start (Minecraft servers with mods can take 5-10 minutes)
+        $timeout = 600  # 10 minutes
         $started = $false
+        $checkInterval = 5  # Check every 5 seconds
+        $totalChecks = $timeout / $checkInterval
         
-        for ($i = 0; $i -lt $timeout; $i++) {
-            Start-Sleep -Seconds 1
+        Write-Host "  ⏳ Waiting for server startup (checking every $checkInterval seconds, max $($timeout/60) minutes)..." -ForegroundColor Yellow
+        
+        for ($check = 0; $check -lt $totalChecks; $check++) {
+            Start-Sleep -Seconds $checkInterval
             
             # Check for server startup indicators
+            $logFound = $false
+            $logContent = $null
+            
+            # Check for latest.log first
             if (Test-Path "logs\latest.log") {
                 $logContent = Get-Content "logs\latest.log" -ErrorAction SilentlyContinue
-                if ($logContent -match "Done \(" -or $logContent -match "Fabric API") {
+                $logFound = $true
+                Write-Host "  📄 Found latest.log" -ForegroundColor Green
+            }
+            # Fallback to console logs
+            elseif ((Get-ChildItem "logs\console-*.log" -ErrorAction SilentlyContinue).Count -gt 0) {
+                $latestConsoleLog = Get-ChildItem "logs\console-*.log" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+                $logContent = Get-Content $latestConsoleLog.FullName -ErrorAction SilentlyContinue
+                $logFound = $true
+                Write-Host "  📄 Found console log: $($latestConsoleLog.Name)" -ForegroundColor Green
+            }
+            
+            if ($logFound -and $logContent) {
+                # Check for server startup completion indicators
+                if ($logContent -match "Done \(" -or $logContent -match "Fabric API" -or $logContent -match "Server thread.*INFO.*Done") {
                     $started = $true
+                    Write-Host "  ✅ Server fully started! (found startup indicator in logs)" -ForegroundColor Green
                     break
                 }
+                # Check for errors that would prevent startup
+                elseif ($logContent -match "ERROR" -or $logContent -match "FATAL" -or $logContent -match "Exception") {
+                    Write-Host "  ❌ Server error detected in logs" -ForegroundColor Red
+                    break
+                }
+                else {
+                    Write-Host "  ⏳ Server starting... (logs found, waiting for completion)" -ForegroundColor Yellow
+                }
+            }
+            else {
+                Write-Host "  ⏳ Waiting for server logs... ($(($check + 1) * $checkInterval)s elapsed)" -ForegroundColor Gray
             }
             
             # Check if process is still running
             if ($serverProcess.HasExited) {
+                Write-Host "  ⚠️ Server process exited unexpectedly" -ForegroundColor Yellow
                 break
             }
         }

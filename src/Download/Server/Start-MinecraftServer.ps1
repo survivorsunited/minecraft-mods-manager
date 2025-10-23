@@ -409,10 +409,17 @@ max-world-size=29999984
         # Monitor logs for errors
         $logFile = $null
         $startTime = Get-Date
-        $timeout = 60  # Wait up to 60 seconds for log file to appear
+        $timeout = 300  # Wait up to 5 minutes for log file to appear
         
         # Wait for server log file to be created (prefer latest.log, fallback to console-*.log)
-        while ((Get-Date) -lt ($startTime.AddSeconds($timeout))) {
+        $checkInterval = 5  # Check every 5 seconds
+        $totalChecks = $timeout / $checkInterval
+        
+        Write-Host "⏳ Waiting for server log file (checking every $checkInterval seconds, max $($timeout/60) minutes)..." -ForegroundColor Yellow
+        
+        for ($check = 0; $check -lt $totalChecks; $check++) {
+            Start-Sleep -Seconds $checkInterval
+            
             $latestLogFile = Join-Path $logsDir "latest.log"
             if (Test-Path $latestLogFile) {
                 $logFile = $latestLogFile
@@ -426,7 +433,8 @@ max-world-size=29999984
                 Write-Host "📄 Found server log: $($consoleLogFiles[0].Name)" -ForegroundColor Green
                 break
             }
-            Start-Sleep -Seconds 1
+            
+            Write-Host "⏳ Waiting for server logs... ($(($check + 1) * $checkInterval)s elapsed)" -ForegroundColor Gray
         }
         
         if (-not $logFile) {
