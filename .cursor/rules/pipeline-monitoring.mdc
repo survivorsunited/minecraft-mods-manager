@@ -14,6 +14,12 @@ This script provides comprehensive GitHub Actions pipeline monitoring and log ma
 
 ## MANDATORY: Pipeline Monitoring Workflow
 
+### CRITICAL RULE: NO ROGUE COMMANDS
+**FORBIDDEN**: Never run rogue commands like `Start-Sleep` combined with script execution
+**REQUIRED**: Use ONLY the built-in functionality of the get-action-logs.ps1 script
+**EXAMPLE OF WRONG**: `Start-Sleep -Seconds 30; .\tools\get-action-logs.ps1` ❌
+**EXAMPLE OF RIGHT**: `.\tools\get-action-logs.ps1 -WaitForCompletion -ViewLogs` ✅
+
 ### After Every Commit
 **REQUIRED**: Use the pipeline monitoring script to check results:
 
