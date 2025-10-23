@@ -56,6 +56,8 @@ When working on any task, you MUST use existing tickets:
 3. **Update Ticket**: Use 3-step ticket management process
 4. **Commit Changes**: `git commit -m "#[issue-number] type(scope): description"`
 5. **Push Code**: `git push`
+6. **Wait for Pipeline**: `.\tools\get-action-logs.ps1 -WaitForCompletion`
+7. **Review Logs**: `.\tools\get-action-logs.ps1 -ShowLogs`
 
 ### NO REMINDERS NEEDED
 - **Never wait for user reminders** to create issues, commit, push, or close issues
@@ -88,6 +90,7 @@ When working on any task, you MUST use existing tickets:
 - **Immediate Commits**: Commit code immediately after completing work on an issue
 - **Test Before Commit**: Ensure all tests pass before committing
 - **Automatic Push**: Push immediately after commit without waiting for user instruction
+- **Mandatory Pipeline Monitoring**: Wait for pipeline completion and review logs after every push
 
 ### Enforcement:
 - **Pre-commit Check**: Verify commit starts with issue number before committing
@@ -95,12 +98,57 @@ When working on any task, you MUST use existing tickets:
 - **Traceability**: Every code change must be traceable to a GitHub issue
 - **Automatic Execution**: Complete full workflow without user prompts
 
+## MANDATORY: Post-Commit Pipeline Monitoring
+
+**CRITICAL RULE**: After every commit and push, you MUST monitor the pipeline and review logs.
+
+**MANDATORY SEQUENCE:**
+1. **Commit**: `git commit -m "#[issue-number] type(scope): description"`
+2. **Push**: `git push`
+3. **Wait for Completion**: `.\tools\get-action-logs.ps1 -WaitForCompletion`
+4. **Review Logs**: `.\tools\get-action-logs.ps1 -ShowLogs`
+
+**FORBIDDEN:**
+- ❌ Skipping pipeline monitoring
+- ❌ Proceeding to next task without knowing pipeline result
+- ❌ Assuming pipeline succeeded without verification
+- ❌ Not reviewing logs after completion
+
+**REQUIRED:**
+- ✅ Wait for pipeline completion after every push
+- ✅ Review logs to verify success/failure
+- ✅ Know final result before proceeding
+- ✅ Handle pipeline failures appropriately
+
+**Pipeline Monitoring Output:**
+```
+⏳ Waiting for workflow run to complete...
+Run ID: 12345678
+Poll interval: 10 seconds
+
+| Status: in_progress | Elapsed: 0m 15s 
+/ Status: in_progress | Elapsed: 0m 25s 
+- Status: completed | Elapsed: 1m 25s 
+
+✓ Workflow completed!
+Workflow: test
+Title: Test latest mods with server startup
+Conclusion: success
+Total time: 1m 25s
+```
+
+**Enforcement:**
+- This sequence is NON-NEGOTIABLE
+- NO EXCEPTIONS, NO SHORTCUTS, NO SKIPPING
+- Every commit must go through complete validation cycle
+- Pipeline success/failure determines next actions
+
 When a new task is given:
 - Acknowledge: "✅ Task added: [task]." (purpose: confirm receipt)
 - Find existing ticket: `.\scripts\tasks\Get-Next-Ticket.ps1` (purpose: find appropriate work)
 - Update task list status (purpose: maintain high-level overview)
 - Execute immediately (purpose: maintain momentum)
-- Complete full workflow: implement → update ticket → commit → push
+- Complete full workflow: implement → update ticket → commit → push → wait for pipeline → review logs
 
 **Communication Rules**: No "proceeding," "on it," or clarification requests. Execute next step immediately.
 
