@@ -673,8 +673,12 @@ function Download-Mods {
             $serverDownloadCount = Download-ServerFilesFromDatabase -DownloadFolder $DownloadFolder -ForceDownload:$ForceDownload -CsvPath $CsvPath
         }
         
-        # Ensure serverDownloadCount is a number
+        # Ensure serverDownloadCount is a number (handle array returns)
+        if ($serverDownloadCount -is [array]) {
+            $serverDownloadCount = $serverDownloadCount[-1]  # Get last element if array
+        }
         if (-not $serverDownloadCount) { $serverDownloadCount = 0 }
+        $serverDownloadCount = [int]$serverDownloadCount
         
         # Display summary
         Write-Host ""

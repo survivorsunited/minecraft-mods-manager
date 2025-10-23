@@ -21,7 +21,7 @@ Write-Host "=====================================================" -ForegroundCo
 function Invoke-TestNextVersionDownloads {
     param([string]$TestFileName = $null)
     
-    Write-TestHeader "Test 1: Download 1.21.6 mods using NextVersionUrl from database"
+    Write-TestHeader "Test 1: Download 1.21.9 mods using NextVersionUrl from database"
     
     # Clean test directories
     if (Test-Path $TestDownloadDir) {
@@ -31,19 +31,20 @@ function Invoke-TestNextVersionDownloads {
         Remove-Item -Path $TestCacheDir -Recurse -Force
     }
     
-    # Create test database with 1.21.5 as current so 1.21.6 is next version
+    # Create test database with 1.21.8 as current so 1.21.9 is next version
     # Empty server/launcher URLs will trigger auto-resolution
+    # Use real URLs from main database
     $TestDbPath = Join-Path $TestOutputDir "test-modlist.csv"
     $testData = @'
 Group,Type,GameVersion,ID,Loader,Version,Name,Jar,Url,NextGameVersion,NextVersionUrl
-required,mod,1.21.5,fabric-api,fabric,0.113.0+1.21.5,Fabric API,fabric-api-0.113.0+1.21.5.jar,https://modrinth.com/mod/fabric-api,1.21.6,https://cdn.modrinth.com/data/P7dR8mSH/versions/fabric-api-0.114.0+1.21.6.jar
-required,mod,1.21.5,lithium,fabric,mc1.21.5-0.14.5,Lithium,lithium-fabric-0.14.5+mc1.21.5.jar,https://modrinth.com/mod/lithium,1.21.6,https://cdn.modrinth.com/data/gvQqBUqZ/versions/mc1.21.6-0.14.6.jar
-system,server,1.21.6,minecraft-server,vanilla,1.21.6,Minecraft Server,minecraft_server.1.21.6.jar,,,
-system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-server-mc.1.21.6-loader.0.17.3-launcher.1.1.0.jar,,,
+required,mod,1.21.8,fabric-api,fabric,0.136.0+1.21.8,Fabric API,fabric-api-0.136.0+1.21.8.jar,https://modrinth.com/mod/fabric-api,1.21.9,https://cdn.modrinth.com/data/P7dR8mSH/versions/iHrvVvaM/fabric-api-0.134.0%2B1.21.9.jar
+required,mod,1.21.8,lithium,fabric,mc1.21.8-0.18.1,Lithium,lithium-fabric-0.18.1+mc1.21.8.jar,https://modrinth.com/mod/lithium,1.21.9,https://cdn.modrinth.com/data/gvQqBUqZ/versions/L1sSIxFm/lithium-fabric-0.19.2%2Bmc1.21.9.jar
+system,server,1.21.9,minecraft-server,vanilla,1.21.9,Minecraft Server,minecraft_server.1.21.9.jar,,,
+system,launcher,1.21.9,fabric-server-launcher,fabric,0.17.3,Fabric Launcher,fabric-server-mc.1.21.9-loader.0.17.3-launcher.1.1.0.jar,,,
 '@
     $testData | Out-File -FilePath $TestDbPath -Encoding UTF8
     
-    # Run ModManager to download 1.21.6 mods
+    # Run ModManager to download 1.21.9 mods
     Write-Host ""
     Write-Host "  ============================================" -ForegroundColor Cyan
     Write-Host "  DETAILED LOGGING: Next Version Download" -ForegroundColor Cyan
@@ -53,12 +54,12 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
     Write-Host "  📊 TEST CONFIGURATION:" -ForegroundColor Yellow
     Write-Host "    Database: $TestDbPath" -ForegroundColor Gray
     Write-Host "    Download Folder: $TestDownloadDir" -ForegroundColor Gray
-    Write-Host "    Target Version: 1.21.6" -ForegroundColor Gray
+    Write-Host "    Target Version: 1.21.9" -ForegroundColor Gray
     Write-Host "    Using NextVersionUrl from DB: YES" -ForegroundColor Gray
     Write-Host ""
     
     Write-Host "  🚀 EXECUTING DOWNLOAD COMMAND..." -ForegroundColor Yellow
-    Write-Host "  Command: ModManager -DownloadMods -UseNextVersion -TargetVersion `"1.21.6`"" -ForegroundColor Cyan
+    Write-Host "  Command: ModManager -DownloadMods -UseNextVersion -TargetVersion `"1.21.9`"" -ForegroundColor Cyan
     Write-Host ""
     
     Write-Host "  🔍 DEBUG: Command parameters:" -ForegroundColor Cyan
@@ -86,7 +87,7 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
     Write-Host "  📋 PARAMETER VALIDATION:" -ForegroundColor Cyan
     Write-Host "    -DownloadMods: [switch]" -ForegroundColor Gray
     Write-Host "    -UseNextVersion: [switch]" -ForegroundColor Gray
-    Write-Host "    -TargetVersion: '1.21.6'" -ForegroundColor Gray
+    Write-Host "    -TargetVersion: '1.21.9'" -ForegroundColor Gray
     Write-Host "    -DatabaseFile: '$TestDbPath'" -ForegroundColor Gray
     Write-Host "    -DownloadFolder: '$TestDownloadDir'" -ForegroundColor Gray
     Write-Host "    -UseCachedResponses: [switch]" -ForegroundColor Gray
@@ -102,7 +103,7 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
         $output = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
             -DownloadMods `
             -UseNextVersion `
-            -TargetVersion "1.21.6" `
+            -TargetVersion "1.21.9" `
             -DatabaseFile $TestDbPath `
             -DownloadFolder $TestDownloadDir `
             -UseCachedResponses 2>&1
@@ -144,16 +145,16 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
     }
     Write-TestResult "ModManager exit code" $true
     
-    # Check that 1.21.6 folder exists
-    $version126Folder = Join-Path $TestDownloadDir "1.21.6"
-    if (-not (Test-Path $version126Folder)) {
-        Write-TestResult "1.21.6 folder created" $false
+    # Check that 1.21.9 folder exists
+    $version129Folder = Join-Path $TestDownloadDir "1.21.9"
+    if (-not (Test-Path $version129Folder)) {
+        Write-TestResult "1.21.9 folder created" $false
         return $false
     }
-    Write-TestResult "1.21.6 folder created" $true
+    Write-TestResult "1.21.9 folder created" $true
     
     # Check that mods folder exists
-    $modsFolder = Join-Path $version126Folder "mods"
+    $modsFolder = Join-Path $version129Folder "mods"
     if (-not (Test-Path $modsFolder)) {
         Write-TestResult "Mods folder created" $false
         return $false
@@ -171,7 +172,7 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
     }
     Write-TestResult "Sufficient mods downloaded" $true
     
-    # Check specific mods that should have 1.21.6 versions in database
+    # Check specific mods that should have 1.21.9 versions in database
     $fabricApiFile = Get-ChildItem -Path $modsFolder -Recurse -Filter "fabric-api*.jar" | Select-Object -First 1
     if (-not $fabricApiFile) {
         Write-TestResult "Fabric API downloaded" $false
@@ -181,23 +182,23 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
     Write-Host "  Fabric API filename: $($fabricApiFile.Name)" -ForegroundColor Gray
     
     # Check server files
-    $minecraftServer = Get-ChildItem -Path $version126Folder -Filter "minecraft_server.1.21.6.jar"
+    $minecraftServer = Get-ChildItem -Path $version129Folder -Filter "minecraft_server.1.21.9.jar"
     if (-not $minecraftServer) {
-        Write-TestResult "Minecraft Server 1.21.6 downloaded" $false
+        Write-TestResult "Minecraft Server 1.21.9 downloaded" $false
         return $false
     }
-    Write-TestResult "Minecraft Server 1.21.6 downloaded" $true
+    Write-TestResult "Minecraft Server 1.21.9 downloaded" $true
     
-    $fabricLauncher = Get-ChildItem -Path $version126Folder -Filter "fabric-server*.jar"
+    $fabricLauncher = Get-ChildItem -Path $version129Folder -Filter "fabric-server*.jar"
     if (-not $fabricLauncher) {
-        Write-TestResult "Fabric Launcher 1.21.6 downloaded" $false
+        Write-TestResult "Fabric Launcher 1.21.9 downloaded" $false
         return $false
     }
-    Write-TestResult "Fabric Launcher 1.21.6 downloaded" $true
+    Write-TestResult "Fabric Launcher 1.21.9 downloaded" $true
     
     # Verify no other version JARs exist in the folder
-    $otherVersionServers = Get-ChildItem -Path $version126Folder -Filter "minecraft_server*.jar" | 
-        Where-Object { $_.Name -notmatch "1\.21\.6" }
+    $otherVersionServers = Get-ChildItem -Path $version129Folder -Filter "minecraft_server*.jar" | 
+        Where-Object { $_.Name -notmatch "1\.21\.9" }
     
     if ($otherVersionServers) {
         Write-TestResult "No other version server JARs" $false "Found: $($otherVersionServers.Name -join ', ')"
