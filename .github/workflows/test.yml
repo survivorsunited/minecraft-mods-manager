@@ -146,7 +146,7 @@ jobs:
         Write-Host "🚀 Executing: .\RunAllTests.ps1 -TestFiles (68,95,96)" -ForegroundColor Green
         Write-Host "🔧 DEBUGGING MODE: Running only failing tests" -ForegroundColor Yellow
         Write-Host ""
-        $result = & pwsh -NoProfile -ExecutionPolicy Bypass -File ".\RunAllTests.ps1" -TestFiles "68-TestServerValidation.ps1","95-TestNextVersionDownloads.ps1","96-TestCreateRelease.ps1"
+        $result = .\RunAllTests.ps1 -All
         
         # Capture the exit code
         $testExitCode = $LASTEXITCODE
