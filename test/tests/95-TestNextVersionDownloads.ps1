@@ -74,7 +74,31 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
     $dbContent | ForEach-Object { Write-Host "    $_" -ForegroundColor DarkGray }
     Write-Host ""
     
+    # Enhanced logging for debugging System.Object[] conversion error
+    Write-Host "  🔍 ENHANCED DEBUGGING:" -ForegroundColor Cyan
+    Write-Host "    ModManagerPath type: $($ModManagerPath.GetType().Name)" -ForegroundColor Gray
+    Write-Host "    ModManagerPath exists: $(Test-Path $ModManagerPath)" -ForegroundColor Gray
+    Write-Host "    TestDbPath exists: $(Test-Path $TestDbPath)" -ForegroundColor Gray
+    Write-Host "    TestDownloadDir exists: $(Test-Path $TestDownloadDir)" -ForegroundColor Gray
+    Write-Host ""
+    
+    # Pre-flight parameter validation
+    Write-Host "  📋 PARAMETER VALIDATION:" -ForegroundColor Cyan
+    Write-Host "    -DownloadMods: [switch]" -ForegroundColor Gray
+    Write-Host "    -UseNextVersion: [switch]" -ForegroundColor Gray
+    Write-Host "    -TargetVersion: '1.21.6'" -ForegroundColor Gray
+    Write-Host "    -DatabaseFile: '$TestDbPath'" -ForegroundColor Gray
+    Write-Host "    -DownloadFolder: '$TestDownloadDir'" -ForegroundColor Gray
+    Write-Host "    -UseCachedResponses: [switch]" -ForegroundColor Gray
+    Write-Host ""
+    
     try {
+        Write-Host "  🚀 EXECUTING COMMAND WITH ENHANCED LOGGING..." -ForegroundColor Yellow
+        
+        # Start transcript for detailed logging
+        $logPath = Join-Path $TestOutputDir "modmanager-debug.log"
+        Start-Transcript -Path $logPath -Append
+        
         $output = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
             -DownloadMods `
             -UseNextVersion `
@@ -83,13 +107,22 @@ system,launcher,1.21.6,fabric-launcher,fabric,0.17.3,Fabric Launcher,fabric-serv
             -DownloadFolder $TestDownloadDir `
             -UseCachedResponses 2>&1
         
+        Stop-Transcript
+        
         $exitCode = $LASTEXITCODE
+        
+        Write-Host "  📝 TRANSCRIPT SAVED TO: $logPath" -ForegroundColor Cyan
+        
     } catch {
         Write-Host "  ❌ EXCEPTION CAUGHT:" -ForegroundColor Red
         Write-Host "    Message: $($_.Exception.Message)" -ForegroundColor Red
         Write-Host "    StackTrace: $($_.ScriptStackTrace)" -ForegroundColor Red
+        Write-Host "    Exception Type: $($_.Exception.GetType().Name)" -ForegroundColor Red
         $exitCode = 1
         $output = @("EXCEPTION: $($_.Exception.Message)")
+        
+        # Try to stop transcript if it's running
+        try { Stop-Transcript -ErrorAction SilentlyContinue } catch {}
     }
     
     Write-Host ""

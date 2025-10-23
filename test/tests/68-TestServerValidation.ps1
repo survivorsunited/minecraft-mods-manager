@@ -158,7 +158,37 @@ Write-Host ""
 Write-Host "  🚀 EXECUTING DOWNLOAD COMMAND..." -ForegroundColor Yellow
 Write-Host "  📝 Passing BASE download folder (not mods subfolder): $TestDownloadDir" -ForegroundColor Gray
 Write-Host "  📝 Targeting version 1.21.6 explicitly" -ForegroundColor Gray
-$modDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $TestDbPath -DownloadFolder $TestDownloadDir -TargetVersion "1.21.6" -ApiResponseFolder $script:TestApiResponseDir 2>&1
+# Enhanced logging for debugging server validation
+Write-Host "  🔍 ENHANCED DEBUGGING FOR SERVER VALIDATION:" -ForegroundColor Cyan
+Write-Host "    ModManagerPath: $ModManagerPath" -ForegroundColor Gray
+Write-Host "    TestDbPath: $TestDbPath" -ForegroundColor Gray
+Write-Host "    TestDownloadDir: $TestDownloadDir" -ForegroundColor Gray
+Write-Host "    TargetVersion: 1.21.6" -ForegroundColor Gray
+Write-Host "    ApiResponseFolder: $script:TestApiResponseDir" -ForegroundColor Gray
+Write-Host ""
+
+try {
+    # Start transcript for detailed logging
+    $logPath = Join-Path $TestOutputDir "server-validation-debug.log"
+    Start-Transcript -Path $logPath -Append
+    
+    Write-Host "  🚀 EXECUTING MOD DOWNLOAD WITH ENHANCED LOGGING..." -ForegroundColor Yellow
+    
+    $modDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $TestDbPath -DownloadFolder $TestDownloadDir -TargetVersion "1.21.6" -ApiResponseFolder $script:TestApiResponseDir 2>&1
+    
+    Stop-Transcript
+    
+    Write-Host "  📝 SERVER VALIDATION TRANSCRIPT SAVED TO: $logPath" -ForegroundColor Cyan
+    
+} catch {
+    Write-Host "  ❌ MOD DOWNLOAD EXCEPTION:" -ForegroundColor Red
+    Write-Host "    Message: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "    StackTrace: $($_.ScriptStackTrace)" -ForegroundColor Red
+    $modDownloadOutput = @("EXCEPTION: $($_.Exception.Message)")
+    
+    # Try to stop transcript if it's running
+    try { Stop-Transcript -ErrorAction SilentlyContinue } catch {}
+}
 
 Write-Host ""
 Write-Host "  📊 DOWNLOAD RESULTS ANALYSIS:" -ForegroundColor Yellow

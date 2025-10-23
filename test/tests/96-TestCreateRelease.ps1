@@ -196,15 +196,64 @@ Write-TestResult "Fabric launcher JAR exists" ($fabricJar -ne $null)
 # Test 3: Create Release Package
 Write-TestHeader "Test 3: Create Release Package"
 
-$releaseOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
-    -CreateRelease `
-    -DatabaseFile $TestDbPath `
-    -DownloadFolder $TestDownloadDir `
-    -ReleasePath $TestReleaseDir `
-    -GameVersion "1.21.8" 2>&1
+# Enhanced logging for debugging release creation
+Write-Host "  🔍 ENHANCED DEBUGGING FOR RELEASE CREATION:" -ForegroundColor Cyan
+Write-Host "    ModManagerPath: $ModManagerPath" -ForegroundColor Gray
+Write-Host "    TestDbPath: $TestDbPath" -ForegroundColor Gray
+Write-Host "    TestDownloadDir: $TestDownloadDir" -ForegroundColor Gray
+Write-Host "    TestReleaseDir: $TestReleaseDir" -ForegroundColor Gray
+Write-Host "    GameVersion: 1.21.8" -ForegroundColor Gray
+Write-Host ""
+
+Write-Host "  📋 RELEASE CREATION COMMAND:" -ForegroundColor Cyan
+Write-Host "    Command: ModManager -CreateRelease -GameVersion 1.21.8" -ForegroundColor Gray
+Write-Host ""
+
+try {
+    # Start transcript for detailed logging
+    $logPath = Join-Path $TestOutputDir "release-creation-debug.log"
+    Start-Transcript -Path $logPath -Append
+    
+    Write-Host "  🚀 EXECUTING RELEASE CREATION..." -ForegroundColor Yellow
+    
+    $releaseOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
+        -CreateRelease `
+        -DatabaseFile $TestDbPath `
+        -DownloadFolder $TestDownloadDir `
+        -ReleasePath $TestReleaseDir `
+        -GameVersion "1.21.8" 2>&1
+    
+    Stop-Transcript
+    
+    Write-Host "  📝 RELEASE CREATION TRANSCRIPT SAVED TO: $logPath" -ForegroundColor Cyan
+    
+} catch {
+    Write-Host "  ❌ RELEASE CREATION EXCEPTION:" -ForegroundColor Red
+    Write-Host "    Message: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "    StackTrace: $($_.ScriptStackTrace)" -ForegroundColor Red
+    $releaseOutput = @("EXCEPTION: $($_.Exception.Message)")
+    
+    # Try to stop transcript if it's running
+    try { Stop-Transcript -ErrorAction SilentlyContinue } catch {}
+}
+
+Write-Host ""
+Write-Host "  📊 RELEASE CREATION OUTPUT (last 20 lines):" -ForegroundColor Yellow
+$releaseOutput | Select-Object -Last 20 | ForEach-Object { Write-Host "    $_" -ForegroundColor Gray }
+Write-Host ""
 
 $releaseCreated = ($LASTEXITCODE -eq 0)
 Write-TestResult "CreateRelease executed successfully" $releaseCreated
+
+# Debug directory structure after release creation
+Write-Host "  🔍 POST-RELEASE DIRECTORY ANALYSIS:" -ForegroundColor Cyan
+Write-Host "    TestReleaseDir exists: $(Test-Path $TestReleaseDir)" -ForegroundColor Gray
+if (Test-Path $TestReleaseDir) {
+    $releaseContents = Get-ChildItem -Path $TestReleaseDir -Recurse -ErrorAction SilentlyContinue
+    Write-Host "    Release directory contents:" -ForegroundColor Gray
+    $releaseContents | ForEach-Object { Write-Host "      $($_.FullName)" -ForegroundColor DarkGray }
+}
+Write-Host ""
 
 # Test 4: Verify Release Directory Structure
 Write-TestHeader "Test 4: Verify Release Directory Structure"

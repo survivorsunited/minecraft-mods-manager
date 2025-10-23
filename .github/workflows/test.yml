@@ -142,10 +142,11 @@ jobs:
         # Change to test directory
         Set-Location test
         
-        # Run all tests with detailed output
-        Write-Host "🚀 Executing: .\RunAllTests.ps1 -All" -ForegroundColor Green
+        # Run only failing tests for debugging
+        Write-Host "🚀 Executing: .\RunAllTests.ps1 -TestFiles (68,95,96)" -ForegroundColor Green
+        Write-Host "🔧 DEBUGGING MODE: Running only failing tests" -ForegroundColor Yellow
         Write-Host ""
-        $result = .\RunAllTests.ps1 -All
+        $result = .\RunAllTests.ps1 -TestFiles "68-TestServerValidation.ps1","95-TestNextVersionDownloads.ps1","96-TestCreateRelease.ps1"
         
         # Capture the exit code
         $testExitCode = $LASTEXITCODE
