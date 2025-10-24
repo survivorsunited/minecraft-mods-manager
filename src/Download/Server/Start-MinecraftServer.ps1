@@ -409,7 +409,7 @@ max-world-size=29999984
         # Monitor logs for errors
         $logFile = $null
         $startTime = Get-Date
-        $timeout = 300  # Wait up to 5 minutes for log file to appear
+        $timeout = 600  # Wait up to 10 minutes for log file to appear
         
         # Wait for server log file to be created (prefer latest.log, fallback to console-*.log)
         $checkInterval = 5  # Check every 5 seconds
@@ -456,7 +456,7 @@ max-world-size=29999984
         Write-Host "📄 Monitoring log file: $logFile" -ForegroundColor Gray
         
         # Monitor until server is fully loaded or fails
-        $monitorTime = 300  # Monitor for up to 5 minutes
+        $monitorTime = 600  # Monitor for up to 10 minutes
         $monitorStart = Get-Date
         $errorFound = $false
         $serverLoaded = $false
