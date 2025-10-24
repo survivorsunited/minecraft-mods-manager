@@ -31,12 +31,13 @@ if (-not (Test-Path $mainModlistPath)) {
     return $false
 }
 
-# Copy 1.21.8 entries AND server/launcher entries from main database
+# Copy 1.21.8 entries AND server/launcher entries AND JDK entries from main database
 $allMods = Import-Csv -Path $mainModlistPath
 $mods1218 = $allMods | Where-Object { 
     ($_.CurrentGameVersion -eq "1.21.8" -or $_.GameVersion -eq "1.21.8") -or 
     ($_.Type -eq "server" -and $_.GameVersion -eq "1.21.8") -or
-    ($_.Type -eq "launcher" -and $_.GameVersion -eq "1.21.8")
+    ($_.Type -eq "launcher" -and $_.GameVersion -eq "1.21.8") -or
+    ($_.Type -eq "jdk")  # Include all JDK entries for auto-download
 }
 
 if ($mods1218.Count -eq 0) {
