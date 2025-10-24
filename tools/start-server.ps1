@@ -9,8 +9,21 @@ param(
 # IMPORTANT: Ignores JAVA_HOME and system Java to ensure consistent Java 21+ version
 $JavaExe = $null
 
-# Navigate up two levels from server folder to project root
-$ProjectRoot = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
+# Navigate up to project root from server folder
+# Server folder is typically: project/download/version/ or project/test/test-output/testname/download/version/
+$currentPath = $PSScriptRoot
+$ProjectRoot = $currentPath
+
+# Keep going up until we find the project root (contains ModManager.ps1)
+while ($ProjectRoot -and -not (Test-Path (Join-Path $ProjectRoot "ModManager.ps1"))) {
+    $parentPath = Split-Path $ProjectRoot -Parent
+    if ($parentPath -eq $ProjectRoot) {
+        # Reached root of filesystem, stop
+        break
+    }
+    $ProjectRoot = $parentPath
+}
+
 $JdkCacheFolder = Join-Path $ProjectRoot ".cache\jdk"
 
 Write-Host "🔍 Looking for bundled JDK in: $JdkCacheFolder" -ForegroundColor Cyan
