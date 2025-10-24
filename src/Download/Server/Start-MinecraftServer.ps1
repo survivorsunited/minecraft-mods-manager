@@ -30,7 +30,9 @@ function Start-MinecraftServer {
         [switch]$UseNextVersion,
         [switch]$UseLatestVersion,
         [switch]$UseCurrentVersion,
-        [switch]$NoAutoRestart
+        [switch]$NoAutoRestart,
+        [int]$LogFileTimeout = 600,  # Default 10 minutes for log file detection
+        [int]$ServerMonitorTimeout = 600  # Default 10 minutes for server monitoring
     )
     
     Write-Host "🚀 Starting Minecraft server..." -ForegroundColor Green
@@ -409,7 +411,7 @@ max-world-size=29999984
         # Monitor logs for errors
         $logFile = $null
         $startTime = Get-Date
-        $timeout = 600  # Wait up to 10 minutes for log file to appear
+        $timeout = $LogFileTimeout  # Use parameter for log file detection timeout
         
         # Wait for server log file to be created (prefer latest.log, fallback to console-*.log)
         $checkInterval = 5  # Check every 5 seconds
@@ -456,7 +458,7 @@ max-world-size=29999984
         Write-Host "📄 Monitoring log file: $logFile" -ForegroundColor Gray
         
         # Monitor until server is fully loaded or fails
-        $monitorTime = 600  # Monitor for up to 10 minutes
+        $monitorTime = $ServerMonitorTimeout  # Use parameter for server monitoring timeout
         $monitorStart = Get-Date
         $errorFound = $false
         $serverLoaded = $false

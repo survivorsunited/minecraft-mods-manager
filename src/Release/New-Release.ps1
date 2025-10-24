@@ -145,6 +145,8 @@ function New-Release {
         DownloadFolder = $DownloadFolder
         TargetVersion = $targetVersion
         CsvPath = $CsvPath
+        LogFileTimeout = 600  # 10 minutes for log file detection
+        ServerMonitorTimeout = 600  # 10 minutes for server monitoring
     }
     if ($NoAutoRestart) {
         $serverParams.Add("NoAutoRestart", $true)
