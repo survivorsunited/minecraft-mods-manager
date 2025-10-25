@@ -292,7 +292,7 @@ if ($startScriptExists -and $eulaExists -and $modsDownloaded -gt 0) {
         Push-Location $TestServerDir
         
         # Start server with timeout for testing
-        $serverProcess = Start-Process -FilePath "pwsh" -ArgumentList "-NoProfile", "-File", "start-server.ps1" -PassThru -WindowStyle Hidden
+        $serverProcess = Start-Process -FilePath "pwsh" -ArgumentList "-NoProfile", "-File", "start-server.ps1" -PassThru
         
         # Wait up to 10 minutes for server to start (Minecraft servers with mods can take 5-10 minutes)
         $timeout = 600  # 10 minutes
