@@ -142,11 +142,19 @@ jobs:
         # Change to test directory
         Set-Location test
         
-        # Run only failing tests for debugging
-        Write-Host "🚀 Executing: .\RunAllTests.ps1 -TestFiles (68,95,96)" -ForegroundColor Green
-        Write-Host "🔧 DEBUGGING MODE: Running only failing tests" -ForegroundColor Yellow
+        # Run only test 68 for debugging
+        Write-Host "🚀 Executing: .\RunAllTests.ps1 -TestFiles (68)" -ForegroundColor Green
+        Write-Host "🔧 DEBUGGING MODE: Running only test 68 with enhanced logging" -ForegroundColor Yellow
         Write-Host ""
-        $result = .\RunAllTests.ps1 -TestFiles "68-TestServerValidation.ps1","95-TestNextVersionDownloads.ps1","96-TestCreateRelease.ps1"
+        
+        # Enhanced logging for test 68
+        Write-Host "📋 TEST 68 ENHANCED LOGGING:" -ForegroundColor Cyan
+        Write-Host "  Test File: 68-TestServerValidation.ps1" -ForegroundColor Gray
+        Write-Host "  Expected Issues: Start-Process -WindowStyle parameter on Linux" -ForegroundColor Gray
+        Write-Host "  Focus: Server startup and validation" -ForegroundColor Gray
+        Write-Host ""
+        
+        $result = .\RunAllTests.ps1 -TestFiles "68-TestServerValidation.ps1"
         
         # Capture the exit code
         $testExitCode = $LASTEXITCODE
@@ -158,8 +166,15 @@ jobs:
         
         Write-Host ""
         Write-Host "============================================================================" -ForegroundColor Cyan
-        Write-Host "TEST RESULTS ANALYSIS" -ForegroundColor Cyan
+        Write-Host "TEST 68 DETAILED ANALYSIS" -ForegroundColor Cyan
         Write-Host "============================================================================" -ForegroundColor Cyan
+        
+        # Enhanced analysis for test 68
+        Write-Host "🔍 ANALYZING TEST 68 FAILURE:" -ForegroundColor Yellow
+        Write-Host "  Looking for Start-Process -WindowStyle errors..." -ForegroundColor Gray
+        Write-Host "  Checking server startup logs..." -ForegroundColor Gray
+        Write-Host "  Validating PowerShell compatibility..." -ForegroundColor Gray
+        Write-Host ""
         
         # Find the most recent test run log
         $latestLog = Get-ChildItem -Path "test-output" -Filter "test-run-*.log" -File -ErrorAction SilentlyContinue | 
@@ -185,6 +200,14 @@ jobs:
             Write-Host "  Success Rate: $($Matches[4])%" -ForegroundColor $(if ([double]$Matches[4] -eq 100.0) { "Green" } else { "Yellow" })
           }
           Write-Host ""
+          
+          # Check for specific Start-Process error
+          if ($logContent -match "WindowStyle.*not supported") {
+            Write-Host "🎯 IDENTIFIED ISSUE: Start-Process -WindowStyle not supported on Linux" -ForegroundColor Red
+            Write-Host "  This is a PowerShell Core compatibility issue" -ForegroundColor Yellow
+            Write-Host "  Solution: Remove -WindowStyle parameter for cross-platform compatibility" -ForegroundColor Green
+            Write-Host ""
+          }
           
           # Find failed tests
           Write-Host "❌ FAILED TESTS DETAIL:" -ForegroundColor Red
