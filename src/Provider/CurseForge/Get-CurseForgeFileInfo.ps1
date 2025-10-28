@@ -40,16 +40,25 @@ function Get-CurseForgeFileInfo {
     )
     
     try {
-        $apiUrl = "https://api.curseforge.com/v1/mods/$ModID/files/$FileID"
+        # Resolve slug to numeric ID if necessary
+        $cfModId = $ModID
+        if ($ModID -notmatch '^\d+$') {
+            try {
+                $resolved = Resolve-CurseForgeProjectId -Identifier $ModID -Quiet
+                if ($resolved) { $cfModId = $resolved }
+            } catch {}
+        }
+
+        $apiUrl = "https://api.curseforge.com/v1/mods/$cfModId/files/$FileID"
         
         # Determine cache path - use script variable if available, otherwise use current directory
         $cacheDir = if ($script:TestApiResponseDir) { $script:TestApiResponseDir } else { ".cache/apiresponse" }
-        $cachePath = Join-Path $cacheDir "curseforge" "$ModID-$FileID.json"
+    $cachePath = Join-Path $cacheDir "curseforge" "$cfModId-$FileID.json"
         
         # Use cached response if available and requested
         if ($UseCachedResponses -and (Test-Path $cachePath)) {
             $response = Get-Content $cachePath | ConvertFrom-Json
-            if (-not $Quiet) { Write-Host "Using cached response for CurseForge file $ModID-$FileID" -ForegroundColor Gray }
+            if (-not $Quiet) { Write-Host "Using cached response for CurseForge file $cfModId-$FileID" -ForegroundColor Gray }
             return $response
         }
         
@@ -77,7 +86,7 @@ function Get-CurseForgeFileInfo {
         
         return $response
     } catch {
-        Write-Host "Failed to get CurseForge file info for $ModID-$FileID : $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "Failed to get CurseForge file info for $cfModId-$FileID : $($_.Exception.Message)" -ForegroundColor Red
         return $null
     }
 }

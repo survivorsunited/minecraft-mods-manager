@@ -45,6 +45,15 @@ function Validate-CurseForgeModVersion {
     )
     
     try {
+        # Resolve slug to numeric ID if necessary
+        $cfModId = $ModId
+        if ($ModId -notmatch '^\d+$') {
+            try {
+                $resolved = Resolve-CurseForgeProjectId -Identifier $ModId -Quiet
+                if ($resolved) { $cfModId = $resolved }
+            } catch {}
+        }
+
         if (-not $Quiet) {
             # Try to get Next and Latest versions from CSV if available
             $displayVersionInfo = "Current: $Version"
@@ -80,12 +89,12 @@ function Validate-CurseForgeModVersion {
         
         # Get project info from CurseForge API
         Load-EnvironmentVariables
-        $projectInfo = Get-CurseForgeProjectInfo -ProjectId $ModId -UseCachedResponses $false -Quiet:$Quiet
+    $projectInfo = Get-CurseForgeProjectInfo -ProjectId $cfModId -UseCachedResponses $false -Quiet:$Quiet
         
         if (-not $projectInfo -or -not $projectInfo.data) {
             return @{
                 Success = $false
-                ModId = $ModId
+                ModId = $cfModId
                 Version = $Version
                 Loader = $Loader
                 Found = $false
@@ -99,13 +108,11 @@ function Validate-CurseForgeModVersion {
         # Extract project data
         $project = $projectInfo.data
         
-        if (-not $Quiet) {
-            Write-Host "DEBUG: Found CurseForge project: $($project.name)" -ForegroundColor Yellow
-        }
+        if (-not $Quiet) { Write-Host "DEBUG: Found CurseForge project: $($project.name)" -ForegroundColor Yellow }
         
         # Get versions/files for this mod
         try {
-            $apiUrl = "https://api.curseforge.com/v1/mods/$ModId/files"
+            $apiUrl = "https://api.curseforge.com/v1/mods/$cfModId/files"
             $apiKey = $env:CURSEFORGE_API_KEY
             if (-not $apiKey) {
                 throw "CurseForge API key not found. Please set CURSEFORGE_API_KEY environment variable."
@@ -158,7 +165,7 @@ function Validate-CurseForgeModVersion {
             }
             
             # Determine if the requested version exists
-            $found = $requestedFile -ne $null
+            $found = $null -ne $requestedFile
             $versionUrl = if ($requestedFile) { $requestedFile.downloadUrl } else { "" }
             $latestVersion = if ($latestFile) { $latestFile.displayName } else { "" }
             $latestVersionUrl = if ($latestFile) { $latestFile.downloadUrl } else { "" }
@@ -170,7 +177,7 @@ function Validate-CurseForgeModVersion {
             
             return @{
                 Success = $true
-                ModId = $ModId
+                ModId = $cfModId
                 Version = $Version
                 Loader = $Loader
                 Found = $found
@@ -193,7 +200,7 @@ function Validate-CurseForgeModVersion {
             }
             return @{
                 Success = $false
-                ModId = $ModId
+                ModId = $cfModId
                 Version = $Version
                 Loader = $Loader
                 Found = $false
@@ -208,7 +215,7 @@ function Validate-CurseForgeModVersion {
         Write-Host "CurseForge validation failed: $($_.Exception.Message)" -ForegroundColor Red
         return @{ 
             Success = $false
-            ModId = $ModId
+            ModId = $cfModId
             Version = $Version
             Loader = $Loader
             Found = $false

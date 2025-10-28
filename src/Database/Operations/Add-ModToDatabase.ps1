@@ -176,6 +176,17 @@ function Add-ModToDatabase {
                 Write-Host "  Auto-detected type from URL: $AddModType (/mc-mods/ pattern)" -ForegroundColor Gray
             }
             
+            # Resolve slug to numeric ID when necessary
+            if ($AddModId -and ($AddModId -notmatch '^\d+$')) {
+                $resolvedId = Resolve-CurseForgeProjectId -Identifier $AddModId -Quiet
+                if ($resolvedId) {
+                    Write-Host "  Resolved CurseForge ID: $AddModId -> $resolvedId" -ForegroundColor Gray
+                    $AddModId = $resolvedId
+                } else {
+                    Write-Host "  Warning: Could not resolve numeric CurseForge ID for slug '$AddModId'" -ForegroundColor Yellow
+                }
+            }
+            
             # Then try to get project info to extract name and validate type
             $extractedVersion = $AddModVersion
             try {
@@ -195,16 +206,13 @@ function Add-ModToDatabase {
                     
                     Write-Host "  Confirmed project type: $AddModType (CurseForge)" -ForegroundColor Gray
                 } else {
-                    if (-not $AddModName) {
-                        $extractedName = $AddModId
-                    }
+                    Write-Host "❌ Error: Project not found on CurseForge (ID/slug: $AddModId)" -ForegroundColor Red
+                    Write-Host "   The project ID may be incorrect or the mod may not exist" -ForegroundColor Yellow
+                    # Don't hard fail; allow adding by ID/URL so user can fix later
                 }
             } catch {
-                # If API call fails, use ID as name and keep URL-detected type
-                if (-not $AddModName) {
-                    $extractedName = $AddModId
-                }
-                Write-Host "  Warning: Could not fetch CurseForge project info, using URL-based type detection" -ForegroundColor Yellow
+                Write-Host "❌ Error: Failed to fetch CurseForge project info: $($_.Exception.Message)" -ForegroundColor Red
+                Write-Host "   Proceeding to add entry with provided information" -ForegroundColor Yellow
             }
         } else {
             # Default version for manual entries
@@ -247,6 +255,17 @@ function Add-ModToDatabase {
             }
         }
 
+        # Re-check if mod exists after any ID normalization (e.g., CurseForge slug -> numeric ID)
+        $existingModPost = $mods | Where-Object { $_.ID -eq $AddModId }
+        if ($existingModPost) {
+            Write-Host "Warning: Mod with ID '$AddModId' already exists in database" -ForegroundColor Yellow
+            return $false
+        }
+
+        # Determine source/host based on URL
+    $apiSource = if ($AddModUrl -and $AddModUrl -match "curseforge\.com") { "curseforge" } else { "modrinth" }
+    $providerHost = $apiSource
+
         # Create new mod entry
         $newMod = [PSCustomObject]@{
             Group = $AddModGroup
@@ -266,8 +285,8 @@ function Add-ModToDatabase {
             NextGameVersion = ""
             LatestVersionUrl = ""
             LatestVersion = ""
-            ApiSource = "modrinth"
-            Host = "modrinth"
+            ApiSource = $apiSource
+            Host = $providerHost
             IconUrl = ""
             ClientSide = "optional"
             ServerSide = "optional"

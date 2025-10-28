@@ -44,6 +44,7 @@ function Validate-ModVersionUrls {
     $scriptRoot = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
     . "$scriptRoot\Provider\Modrinth\Get-ModrinthProjectInfo.ps1"
     . "$scriptRoot\Provider\CurseForge\Get-CurseForgeProjectInfo.ps1"
+    . "$scriptRoot\Provider\CurseForge\Resolve-CurseForgeProjectId.ps1"
     . "$scriptRoot\Database\Operations\Update-ModUrlInDatabase.ps1"
     
     try {
@@ -214,12 +215,17 @@ function Validate-ModVersionUrls {
                     try {
                         # Query the appropriate API based on host
                         $projectInfo = $null
-                        if ($issue.Host -eq "modrinth.com") {
+                        if ($issue.Host -in @("modrinth.com","modrinth")) {
                             Write-Host "   📡 Querying Modrinth API..." -ForegroundColor Gray
                             $projectInfo = Get-ModrinthProjectInfo -ProjectId $issue.ID
-                        } elseif ($issue.Host -eq "curseforge.com") {
+                        } elseif ($issue.Host -in @("curseforge.com","curseforge")) {
                             Write-Host "   📡 Querying CurseForge API..." -ForegroundColor Gray
-                            $projectInfo = Get-CurseForgeProjectInfo -ProjectId $issue.ID
+                            $resolvedId = $issue.ID
+                            if ($resolvedId -notmatch '^\d+$') {
+                                $resolvedId = Resolve-CurseForgeProjectId -Identifier $issue.ID -Quiet
+                                if (-not $resolvedId) { $resolvedId = $issue.ID }
+                            }
+                            $projectInfo = Get-CurseForgeProjectInfo -ProjectId $resolvedId
                         }
                         
                         if (-not $projectInfo) {

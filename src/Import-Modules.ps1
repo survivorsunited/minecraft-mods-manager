@@ -49,6 +49,7 @@
 . "$PSScriptRoot\Provider\Modrinth\Validate-ModrinthModVersion.ps1"
 . "$PSScriptRoot\Provider\Modrinth\Search-ModrinthProjects.ps1"
 . "$PSScriptRoot\Provider\CurseForge\Get-CurseForgeProjectInfo.ps1"
+. "$PSScriptRoot\Provider\CurseForge\Resolve-CurseForgeProjectId.ps1"
 . "$PSScriptRoot\Provider\CurseForge\Get-CurseForgeFileInfo.ps1"
 . "$PSScriptRoot\Provider\CurseForge\Validate-CurseForgeModVersion.ps1"
 . "$PSScriptRoot\Provider\Mojang\Get-MojangServerInfo.ps1"
