@@ -53,16 +53,16 @@ if (-not $JavaExe) {
     try {
         $javaCheck = & java -version 2>&1 | Select-String "version" | Select-Object -First 1
         if ($javaCheck) {
-            # Parse major version (supports formats like: java version "17.0.16" or openjdk version "17.0.16")
+            # Parse major version (supports formats like: java version "21.0.4" or openjdk version "21.0.4")
             if ($javaCheck.ToString() -match '"(\d+)') {
                 $javaMajor = [int]$Matches[1]
                 Write-Host "✅ System Java detected (major: $javaMajor)" -ForegroundColor Green
-                # Allow Java 17+ for test environments; production can enforce 21 using other entrypoints
-                if ($javaMajor -ge 17) {
+                # Require Java 21+ for all environments
+                if ($javaMajor -ge 21) {
                     $JavaExe = "java"
                     Write-Host "   Using system Java from PATH" -ForegroundColor Gray
                 } else {
-                    Write-Host "❌ System Java version too low (found $javaMajor, need >= 17)" -ForegroundColor Red
+                    Write-Host "❌ System Java version too low (found $javaMajor, need >= 21)" -ForegroundColor Red
                 }
             } else {
                 Write-Host "⚠️  Could not parse system Java version" -ForegroundColor Yellow
@@ -80,10 +80,10 @@ if (-not $JavaExe) {
     Write-Host "" -ForegroundColor Red
     Write-Host "❌ ERROR: No suitable Java found (bundled or system)!" -ForegroundColor Red
     Write-Host "" -ForegroundColor Red
-    Write-Host "💡 Minecraft 1.21+ typically requires Java 21 or higher; this test script accepts Java 17+ if necessary." -ForegroundColor Yellow
+    Write-Host "💡 Minecraft 1.21+ requires Java 21 or higher." -ForegroundColor Yellow
     Write-Host "💡 Options:" -ForegroundColor Yellow
     Write-Host "   - Download bundled JDK: .\ModManager.ps1 -DownloadJDK -JDKVersion 21" -ForegroundColor Gray
-    Write-Host "   - Or install Java 17+ and ensure it is in PATH" -ForegroundColor Gray
+    Write-Host "   - Or install Java 21+ and ensure it is in PATH" -ForegroundColor Gray
     Write-Host "" -ForegroundColor Yellow
     Write-Host "   Searched bundled path: $JdkCacheFolder" -ForegroundColor DarkGray
     exit 1
