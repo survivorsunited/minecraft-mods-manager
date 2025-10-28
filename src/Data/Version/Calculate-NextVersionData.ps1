@@ -101,12 +101,32 @@ function Calculate-NextVersionData {
                 continue
             }
             
-            # Skip if no available versions data
+            # If no available versions metadata, still populate sensible fallbacks for Next fields
             if ([string]::IsNullOrEmpty($mod.AvailableGameVersions)) {
                 $mod.NextGameVersion = $nextGameVersion
-                $mod.NextVersion = ""
-                $mod.NextVersionUrl = ""
-                $skipCount++
+
+                # Prefer Latest when it matches the calculated next game version; otherwise fallback to Current
+                if (-not [string]::IsNullOrEmpty($mod.LatestGameVersion) -and $mod.LatestGameVersion -eq $nextGameVersion -and -not [string]::IsNullOrEmpty($mod.LatestVersion)) {
+                    $mod.NextVersion = $mod.LatestVersion
+                    $mod.NextVersionUrl = $mod.LatestVersionUrl
+                    $updateSummary += [PSCustomObject]@{
+                        Name = $mod.Name
+                        Action = "No metadata (used latest)"
+                        NextVersion = $mod.NextVersion
+                        Supports = "Unknown (no AvailableGameVersions)"
+                    }
+                } else {
+                    $mod.NextVersion = $mod.CurrentVersion
+                    $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                    $updateSummary += [PSCustomObject]@{
+                        Name = $mod.Name
+                        Action = "No metadata (used current)"
+                        NextVersion = $mod.NextVersion
+                        Supports = "Unknown (no AvailableGameVersions)"
+                    }
+                }
+
+                $updateCount++
                 continue
             }
             
@@ -191,12 +211,15 @@ function Calculate-NextVersionData {
                     $vParts = $_ -split '\.'
                     if ($vParts.Count -ge 3) {
                         $major = [int]$vParts[0]
-                        $minor = [int]$vParts[1] 
-                        $patch = [int]$vParts[2]
+                        $minor = [int]$vParts[1]
+                        # Handle patches like '4-pre3' by extracting numeric portion
+                        $patchToken = [string]$vParts[2]
+                        $patchMatch = [regex]::Match($patchToken, '\d+')
+                        $patch = if ($patchMatch.Success) { [int]$patchMatch.Value } else { -1 }
                         
                         $major -eq [int]$versionParts[0] -and 
                         $minor -eq [int]$versionParts[1] -and
-                        $patch -le [int]$nextPatchVersion
+                        $patch -ge 0 -and $patch -le [int]$nextPatchVersion
                     }
                 } | Sort-Object { [Version]($_ -replace '[^\d.]', '') } -Descending
                 

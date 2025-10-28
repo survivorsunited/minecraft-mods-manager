@@ -56,6 +56,8 @@ param(
     [string]$CurseForgeModpackName,
     [string]$CurseForgeGameVersion,
     [switch]$ValidateCurseForgeModpack,
+    # Next Version Data
+    [switch]$CalculateNextVersionData,
     # Cross-Platform Modpack Integration
     [string]$ImportModpack,
     [string]$ModpackType,
@@ -137,6 +139,121 @@ function Exit-ModManager {
     param([int]$ExitCode = 0)
     Stop-Transcript
     exit $ExitCode
+}
+
+# Helper: After adding a mod, immediately validate it and populate Current/Latest and Next* fields
+function Complete-NewModRecord {
+    param(
+        [string]$CsvPath,
+        [string]$ApiResponseFolder,
+        [string]$AddModId,
+        [string]$AddModUrl,
+        [string]$AddModGameVersion
+    )
+
+    try {
+        # Derive the new mod ID if not explicitly provided
+        $newModId = $AddModId
+
+        if (-not $newModId) {
+            if ($AddModUrl -match "modrinth\.com/(mod|shader|datapack|resourcepack|plugin)/([^/]+)") {
+                $newModId = $matches[2]
+            } elseif ($AddModUrl -match "curseforge\.com/minecraft/mc-mods/([^/]+)") {
+                $newModId = $matches[1]
+            } elseif ($AddModUrl -match "maven\.fabricmc\.net") {
+                $newModId = "fabric-installer-$AddModGameVersion"
+            } elseif ($AddModUrl -match "meta\.fabricmc\.net") {
+                $newModId = "fabric-server-launcher-$AddModGameVersion"
+            } elseif ($AddModUrl -match "piston-data\.mojang\.com") {
+                $newModId = "minecraft-server-$AddModGameVersion"
+            } else {
+                $newModId = $null
+            }
+        }
+
+        # If CurseForge and ID is a slug, resolve to numeric to match database row
+        if ($newModId -and $AddModUrl -match "curseforge\.com" -and ($newModId -notmatch '^\d+$')) {
+            try {
+                $resolvedId = Resolve-CurseForgeProjectId -Identifier $newModId -Quiet
+                if ($resolvedId) { $newModId = $resolvedId }
+            } catch { }
+        }
+
+        # Load database and locate the added mod
+        if (-not (Test-Path $CsvPath)) { return }
+        $mods = Import-Csv -Path $CsvPath
+
+        $mod = $null
+        if ($newModId) {
+            $mod = $mods | Where-Object { $_.ID -eq $newModId } | Select-Object -First 1
+        }
+        if (-not $mod -and $AddModUrl) {
+            # Fallback: match by Url and game version if possible
+            $mod = $mods | Where-Object { $_.Url -eq $AddModUrl -and $_.CurrentGameVersion -eq $AddModGameVersion } | Select-Object -First 1
+            if (-not $mod) {
+                $mod = $mods | Where-Object { $_.Url -eq $AddModUrl } | Select-Object -First 1
+            }
+        }
+        if (-not $mod) { return }
+
+        $targetId = $mod.ID
+        $loader = if ($mod.Loader) { $mod.Loader } else { "fabric" }
+        $gameVersion = if ($mod.CurrentGameVersion) { $mod.CurrentGameVersion } else { $AddModGameVersion }
+        $version = if ([string]::IsNullOrEmpty($mod.CurrentVersion)) { "current" } else { $mod.CurrentVersion }
+
+        # Validate and map fields just like -ValidateMod path
+        $result = $null
+        try {
+            $result = Validate-ModVersion -ModId $targetId -Version $version -Loader $loader -GameVersion $gameVersion -ResponseFolder $ApiResponseFolder -CsvPath $CsvPath
+        } catch { $result = $null }
+
+        if ($result -and $result.Exists) {
+            $mod.CurrentVersion = $result.LatestVersion
+            if ($result.VersionUrl -and $result.VersionUrl.Trim() -ne "") {
+                $mod.CurrentVersionUrl = $result.VersionUrl
+            } elseif ($result.LatestVersionUrl -and $result.LatestVersionUrl.Trim() -ne "") {
+                $mod.CurrentVersionUrl = $result.LatestVersionUrl
+            }
+            $mod.LatestVersion = $result.LatestVersion
+            $mod.LatestVersionUrl = $result.LatestVersionUrl
+            $mod.LatestGameVersion = $result.LatestGameVersion
+            $mod.Jar = $result.Jar ?? $mod.Jar
+            $mod.Title = $result.Title ?? $mod.Title
+            $mod.ProjectDescription = $result.ProjectDescription ?? $mod.ProjectDescription
+            $mod.IconUrl = $result.IconUrl ?? $mod.IconUrl
+            $mod.IssuesUrl = $result.IssuesUrl ?? $mod.IssuesUrl
+            $mod.SourceUrl = $result.SourceUrl ?? $mod.SourceUrl
+            $mod.WikiUrl = $result.WikiUrl ?? $mod.WikiUrl
+
+            # Refresh Next* for this single mod without scanning the whole DB
+            try {
+                $nextInfo = Calculate-NextGameVersion -CsvPath $CsvPath
+                $nextGameVersion = $nextInfo.NextVersion
+                if ($nextGameVersion) {
+                    $mod.NextGameVersion = $nextGameVersion
+                    # Ask provider for latest version targeting the next game version
+                    $nextRes = $null
+                    try {
+                        $nextRes = Validate-ModVersion -ModId $targetId -Version "latest" -Loader $loader -GameVersion $nextGameVersion -ResponseFolder $ApiResponseFolder -CsvPath $CsvPath
+                    } catch { $nextRes = $null }
+                    if ($nextRes -and $nextRes.Exists) {
+                        $mod.NextVersion = $nextRes.LatestVersion
+                        $mod.NextVersionUrl = if ($nextRes.VersionUrl -and $nextRes.VersionUrl.Trim() -ne "") { $nextRes.VersionUrl } else { $nextRes.LatestVersionUrl }
+                    } elseif (-not $mod.NextVersion) {
+                        # If provider couldn't resolve, at least set NextGameVersion and leave version/url blank
+                        $mod.NextVersion = $mod.NextVersion
+                        $mod.NextVersionUrl = $mod.NextVersionUrl
+                    }
+                }
+            } catch { }
+
+            # Stamp RecordHash
+            try { $mod.RecordHash = Calculate-RecordHash -Record $mod } catch { }
+
+            # Save back to CSV
+            $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+        }
+    } catch { }
 }
 
 # Output script header
@@ -458,7 +575,9 @@ if ($SearchModName) {
         # User selected a project, now add it to database
         $projectUrl = "https://modrinth.com/$($searchResult.project_type)/$($searchResult.slug)"
         Write-Host "Adding selected mod to database..." -ForegroundColor Green
-        Add-ModToDatabase -AddModUrl $projectUrl -AddModName $searchResult.title -AddModLoader $AddModLoader -AddModGameVersion $AddModGameVersion -AddModType $AddModType -AddModGroup $AddModGroup -AddModDescription $searchResult.description -AddModJar $AddModJar -AddModUrlDirect $AddModUrlDirect -AddModCategory $AddModCategory -ForceDownload:$ForceDownload -CsvPath $effectiveModListPath
+    $addResult = Add-ModToDatabase -AddModUrl $projectUrl -AddModName $searchResult.title -AddModLoader $AddModLoader -AddModGameVersion $AddModGameVersion -AddModType $AddModType -AddModGroup $AddModGroup -AddModDescription $searchResult.description -AddModJar $AddModJar -AddModUrlDirect $AddModUrlDirect -AddModCategory $AddModCategory -ForceDownload:$ForceDownload -CsvPath $effectiveModListPath
+    # Auto-complete the record so it's ready immediately (Current/Latest/Next and URLs)
+    Complete-NewModRecord -CsvPath $effectiveModListPath -ApiResponseFolder $ApiResponseFolder -AddModId $null -AddModUrl $projectUrl -AddModGameVersion $AddModGameVersion
     } else {
         Write-Host "No mod selected or search cancelled" -ForegroundColor Yellow
     }
@@ -468,7 +587,9 @@ if ($SearchModName) {
 # Handle AddMod parameters
 if ($AddMod -or $AddModId -or $AddModUrl) {
     Write-Host "Adding new mod..." -ForegroundColor Yellow
-    Add-ModToDatabase -AddModId $AddModId -AddModUrl $AddModUrl -AddModName $AddModName -AddModLoader $AddModLoader -AddModGameVersion $AddModGameVersion -AddModType $AddModType -AddModGroup $AddModGroup -AddModDescription $AddModDescription -AddModJar $AddModJar -AddModUrlDirect $AddModUrlDirect -AddModCategory $AddModCategory -ForceDownload:$ForceDownload -CsvPath $effectiveModListPath
+    $addResult = Add-ModToDatabase -AddModId $AddModId -AddModUrl $AddModUrl -AddModName $AddModName -AddModLoader $AddModLoader -AddModGameVersion $AddModGameVersion -AddModType $AddModType -AddModGroup $AddModGroup -AddModDescription $AddModDescription -AddModJar $AddModJar -AddModUrlDirect $AddModUrlDirect -AddModCategory $AddModCategory -ForceDownload:$ForceDownload -CsvPath $effectiveModListPath
+    # Auto-complete the record so it's ready immediately (Current/Latest/Next and URLs)
+    Complete-NewModRecord -CsvPath $effectiveModListPath -ApiResponseFolder $ApiResponseFolder -AddModId $AddModId -AddModUrl $AddModUrl -AddModGameVersion $AddModGameVersion
     Exit-ModManager 0
 }
 
@@ -511,7 +632,15 @@ if ($ValidateMod -and $ModID) {
     if ($result.Exists) {
         # Update the mod entry with validation results
         $mod.CurrentVersion = $result.LatestVersion
-        $mod.CurrentVersionUrl = $result.VersionUrl
+        # Prefer the specific version's URL when available, otherwise fall back to the latest URL
+        if ($result.VersionUrl -and $result.VersionUrl.Trim() -ne "") {
+            $mod.CurrentVersionUrl = $result.VersionUrl
+        } elseif ($result.LatestVersionUrl -and $result.LatestVersionUrl.Trim() -ne "") {
+            $mod.CurrentVersionUrl = $result.LatestVersionUrl
+        } else {
+            # Leave existing value if neither is available
+            $mod.CurrentVersionUrl = $mod.CurrentVersionUrl
+        }
         $mod.LatestVersion = $result.LatestVersion
         $mod.LatestVersionUrl = $result.LatestVersionUrl
         $mod.LatestGameVersion = $result.LatestGameVersion
@@ -522,6 +651,23 @@ if ($ValidateMod -and $ModID) {
         $mod.IssuesUrl = $result.IssuesUrl ?? $mod.IssuesUrl
         $mod.SourceUrl = $result.SourceUrl ?? $mod.SourceUrl
         $mod.WikiUrl = $result.WikiUrl ?? $mod.WikiUrl
+
+        # Also refresh Next* fields for this mod with a single-row operation (no full DB scan)
+        try {
+            $nextInfo = Calculate-NextGameVersion -CsvPath $effectiveModListPath
+            $nextGameVersion = $nextInfo.NextVersion
+            if ($nextGameVersion) {
+                $mod.NextGameVersion = $nextGameVersion
+                $nextRes = $null
+                try {
+                    $nextRes = Validate-ModVersion -ModId $ModID -Version "latest" -Loader $loader -GameVersion $nextGameVersion -ResponseFolder $ApiResponseFolder -CsvPath $effectiveModListPath
+                } catch { $nextRes = $null }
+                if ($nextRes -and $nextRes.Exists) {
+                    $mod.NextVersion = $nextRes.LatestVersion
+                    $mod.NextVersionUrl = if ($nextRes.VersionUrl -and $nextRes.VersionUrl.Trim() -ne "") { $nextRes.VersionUrl } else { $nextRes.LatestVersionUrl }
+                }
+            }
+        } catch { }
         
         # Compute and stamp record hash before saving
         try {
@@ -534,6 +680,9 @@ if ($ValidateMod -and $ModID) {
         Write-Host "✅ Successfully validated and updated mod '$ModID'" -ForegroundColor Green
         Write-Host "   Current Version: $($result.LatestVersion)" -ForegroundColor Cyan
         Write-Host "   Game Version: $($result.LatestGameVersion)" -ForegroundColor Cyan
+        if ($mod.NextGameVersion -or $mod.NextVersion -or $mod.NextVersionUrl) {
+            Write-Host "   Next: $($mod.NextVersion) [$($mod.NextGameVersion)]" -ForegroundColor Gray
+        }
         Exit-ModManager 0
     } else {
         Write-Host "❌ Failed to validate mod '$ModID': $($result.Error ?? 'Unknown error')" -ForegroundColor Red
@@ -616,6 +765,18 @@ if ($CreateRelease) {
 if ($ShowHelp) {
     Show-Help
     Exit-ModManager 0
+}
+
+# Handle CalculateNextVersionData parameter
+if ($CalculateNextVersionData) {
+    Write-Host "Calculating Next version data..." -ForegroundColor Yellow
+    $ok = $false
+    try {
+        $ok = Calculate-NextVersionData -CsvPath $effectiveModListPath
+    } catch {
+        $ok = $false
+    }
+    if ($ok) { Exit-ModManager 0 } else { Exit-ModManager 1 }
 }
 
 # Default behavior when no parameters are provided
