@@ -58,9 +58,24 @@ function Validate-ModVersion {
     )
     
     try {
-        # Determine the provider based on the mod ID or other criteria
-        # For now, assume Modrinth for most cases
+        # Determine provider using CSV when available, else infer from ID pattern
         $provider = "modrinth"
+        if ($CsvPath -and (Test-Path $CsvPath)) {
+            try {
+                $mods = Import-Csv -Path $CsvPath
+                $row = $mods | Where-Object { $_.ID -eq $ModId } | Select-Object -First 1
+                if ($row -and $row.ApiSource) {
+                    $provider = $row.ApiSource.ToLower()
+                } elseif ($row -and $row.Host) {
+                    $provider = $row.Host.ToLower()
+                } elseif ($row -and $row.Url -match 'curseforge\.com') {
+                    $provider = 'curseforge'
+                }
+            } catch { }
+        } else {
+            # Fallback inference: numeric IDs are typically CurseForge
+            if ($ModId -match '^[0-9]+$') { $provider = 'curseforge' }
+        }
         
         # Route to appropriate provider function
         switch ($provider) {
@@ -169,16 +184,22 @@ function Validate-ModVersion {
                 }
             }
             "curseforge" {
-                $result = Validate-CurseForgeModVersion -ModID $ModId -Version $Version -Loader $Loader
+                $result = Validate-CurseForgeModVersion -ModID $ModId -Version $Version -Loader $Loader -CsvPath $CsvPath -Quiet:$Quiet
                 if ($result.Success) {
                     return @{
                         Exists = $true
-                        LatestVersion = $result.Version
-                        VersionUrl = $result.DownloadUrl
-                        LatestVersionUrl = $result.DownloadUrl
-                        LatestGameVersion = "1.21.5"  # Default for now
-                        CurrentDependencies = $result.Dependencies
-                        LatestDependencies = $result.Dependencies
+                        LatestVersion = $result.LatestVersion
+                        VersionUrl = $result.VersionUrl
+                        LatestVersionUrl = $result.LatestVersionUrl
+                        LatestGameVersion = $result.LatestGameVersion
+                        CurrentDependencies = $result.CurrentDependencies
+                        LatestDependencies = $result.LatestDependencies
+                        Title = $result.Title
+                        ProjectDescription = $result.ProjectDescription
+                        IconUrl = $result.IconUrl
+                        IssuesUrl = $result.IssuesUrl
+                        SourceUrl = $result.SourceUrl
+                        WikiUrl = $result.WikiUrl
                         ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
                     }
                 } else {

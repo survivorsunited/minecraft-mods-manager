@@ -92,10 +92,10 @@ param(
     # Minecraft Version Sync
     [switch]$SyncMinecraftVersions,
     [string]$MinecraftVersionChannel = "stable",
-    [string]$MinecraftMinVersion = "1.21.5",
+    [string]$MinecraftMinVersion = "1.21.8",
     # JDK Version Sync
     [switch]$SyncJDKVersions,
-    [string[]]$JDKVersions = @("17", "21"),
+    [string[]]$JDKVersions = @("21"),
     [string[]]$JDKPlatforms = @("windows", "linux", "mac"),
     # JDK Download
     [switch]$DownloadJDK,
@@ -523,6 +523,11 @@ if ($ValidateMod -and $ModID) {
         $mod.SourceUrl = $result.SourceUrl ?? $mod.SourceUrl
         $mod.WikiUrl = $result.WikiUrl ?? $mod.WikiUrl
         
+        # Compute and stamp record hash before saving
+        try {
+            $mod.RecordHash = Calculate-RecordHash -Record $mod
+        } catch { }
+
         # Save back to CSV
         $mods | Export-Csv -Path $effectiveModListPath -NoTypeInformation
         

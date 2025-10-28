@@ -26,7 +26,7 @@ function Get-ModList {
                 $mod | Add-Member -MemberType NoteProperty -Name 'RecordHash' -Value $null
             }
             
-            $recordHash = Calculate-RecordHash -Mod $mod
+            $recordHash = Calculate-RecordHash -Record $mod
             
             # Check if record has been modified externally
             if ($mod.RecordHash -and $mod.RecordHash -ne $recordHash) {
@@ -55,7 +55,7 @@ function Get-ModList {
                     # Make API call to get current data for externally modified records
                     try {
                         # Use the existing Validate-ModVersion function to get current data
-                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $changedMod.CurrentVersion -Loader $changedMod.Loader -Jar $changedMod.Jar -ResponseFolder $ApiResponseFolder -Quiet
+                        $validationResult = Validate-ModVersion -ModId $changedMod.ID -Version $changedMod.CurrentVersion -Loader $changedMod.Loader -Jar $changedMod.Jar -ResponseFolder $ApiResponseFolder -CsvPath $CsvPath -Quiet
                         
                         if ($validationResult -and $validationResult.Exists) {
                             # Update the record with current API data

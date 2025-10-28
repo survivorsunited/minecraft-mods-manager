@@ -87,9 +87,10 @@ function Validate-CurseForgeModVersion {
             Write-Host "Validating $ModId [$displayVersionInfo] for $Loader..." -ForegroundColor Cyan
         }
         
-        # Get project info from CurseForge API
+        # Get project info from CurseForge API (prefer cache when available)
         Load-EnvironmentVariables
-    $projectInfo = Get-CurseForgeProjectInfo -ProjectId $cfModId -UseCachedResponses $false -Quiet:$Quiet
+        # Prefer cached project info to reduce API/key dependency; live calls will still be used for files below
+        $projectInfo = Get-CurseForgeProjectInfo -ProjectId $cfModId -UseCachedResponses $true -Quiet:$Quiet
         
         if (-not $projectInfo -or -not $projectInfo.data) {
             return @{
@@ -114,67 +115,73 @@ function Validate-CurseForgeModVersion {
         try {
             $apiUrl = "https://api.curseforge.com/v1/mods/$cfModId/files"
             $apiKey = $env:CURSEFORGE_API_KEY
-            if (-not $apiKey) {
-                throw "CurseForge API key not found. Please set CURSEFORGE_API_KEY environment variable."
+            $headers = @{ "Accept" = "application/json" }
+            if ($apiKey) { $headers["x-api-key"] = $apiKey }
+
+            $files = $null
+            $filesResponse = $null
+            try {
+                $filesResponse = Invoke-RestMethod -Uri $apiUrl -Method Get -Headers $headers -TimeoutSec 30
+                if ($filesResponse -and $filesResponse.data) {
+                    $files = $filesResponse.data
+                }
+            } catch {
+                if (-not $Quiet) { Write-Host "DEBUG: Live files API failed, will try project.latestFiles fallback: $($_.Exception.Message)" -ForegroundColor DarkYellow }
             }
-            
-            $headers = @{
-                "Accept" = "application/json"
-                "x-api-key" = $apiKey
+
+            # Fallback: use latestFiles from project info when live API isn't available
+            if (-not $files -and $project -and $project.latestFiles) {
+                $files = $project.latestFiles
             }
-            
-            $filesResponse = Invoke-RestMethod -Uri $apiUrl -Method Get -Headers $headers -TimeoutSec 30
-            
-            if (-not $filesResponse -or -not $filesResponse.data) {
-                throw "No files found for mod $ModId"
+
+            if (-not $files) {
+                throw "No files available for mod $ModId"
             }
-            
-            $files = $filesResponse.data
-            if (-not $Quiet) {
-                Write-Host "DEBUG: Found $($files.Count) files for mod $ModId" -ForegroundColor Yellow
-            }
-            
-            # Find the latest version for the specified loader and game version
+
+            if (-not $Quiet) { Write-Host "DEBUG: Found $($files.Count) files for mod $ModId" -ForegroundColor Yellow }
+
+            # Find the latest version for the specified loader; fallback to any latest when no match
             $latestFile = $null
+            $latestAnyFile = $null
             $requestedFile = $null
-            
+
             foreach ($file in $files) {
+                # Track absolute latest as fallback
+                if (-not $latestAnyFile -or $file.fileDate -gt $latestAnyFile.fileDate) { $latestAnyFile = $file }
+
                 # Check if file supports the requested loader
                 $supportsLoader = $false
                 if ($file.gameVersions) {
-                    # Check if any game version entry contains the loader
                     foreach ($gameVer in $file.gameVersions) {
-                        if ($gameVer -eq $Loader -or $gameVer -like "*$Loader*") {
-                            $supportsLoader = $true
-                            break
-                        }
+                        if ($gameVer -eq $Loader -or $gameVer -like "*$Loader*") { $supportsLoader = $true; break }
                     }
                 }
-                
+
                 if ($supportsLoader) {
-                    # This is a potential latest file
-                    if (-not $latestFile -or $file.fileDate -gt $latestFile.fileDate) {
-                        $latestFile = $file
-                    }
-                    
-                    # Check if this matches the requested version
-                    if ($file.displayName -like "*$Version*" -or $file.fileName -like "*$Version*") {
-                        $requestedFile = $file
-                    }
+                    if (-not $latestFile -or $file.fileDate -gt $latestFile.fileDate) { $latestFile = $file }
+                    if ($file.displayName -like "*$Version*" -or $file.fileName -like "*$Version*") { $requestedFile = $file }
                 }
             }
-            
+
+            if (-not $latestFile) { $latestFile = $latestAnyFile }
+
             # Determine if the requested version exists
             $found = $null -ne $requestedFile
-            $versionUrl = if ($requestedFile) { $requestedFile.downloadUrl } else { "" }
-            $latestVersion = if ($latestFile) { $latestFile.displayName } else { "" }
-            $latestVersionUrl = if ($latestFile) { $latestFile.downloadUrl } else { "" }
-            
+            $versionUrl = if ($requestedFile -and $requestedFile.downloadUrl) { $requestedFile.downloadUrl } else { "" }
+            $latestVersion = if ($latestFile -and $latestFile.displayName) { $latestFile.displayName } elseif ($latestFile -and $latestFile.fileName) { $latestFile.fileName } else { "" }
+            $latestVersionUrl = if ($latestFile -and $latestFile.downloadUrl) { $latestFile.downloadUrl } else { "" }
+            $latestGameVersion = ""
+            if ($latestFile -and $latestFile.gameVersions -and $latestFile.gameVersions.Count -gt 0) {
+                # Prefer the first semantic-looking game version
+                $latestGameVersion = ($latestFile.gameVersions | Where-Object { $_ -match '^[0-9]+\.[0-9]+' } | Select-Object -First 1)
+                if (-not $latestGameVersion) { $latestGameVersion = $latestFile.gameVersions[0] }
+            }
+
             if (-not $Quiet) {
                 Write-Host "DEBUG: Requested version found: $found" -ForegroundColor Yellow
                 Write-Host "DEBUG: Latest version: $latestVersion" -ForegroundColor Yellow
             }
-            
+
             return @{
                 Success = $true
                 ModId = $cfModId
@@ -185,6 +192,7 @@ function Validate-CurseForgeModVersion {
                 VersionUrl = $versionUrl
                 LatestVersion = $latestVersion
                 LatestVersionUrl = $latestVersionUrl
+                LatestGameVersion = $latestGameVersion
                 Error = $null
                 Title = $project.name
                 ProjectDescription = $project.summary
@@ -193,11 +201,9 @@ function Validate-CurseForgeModVersion {
                 SourceUrl = if ($project.links -and $project.links.sourceUrl) { $project.links.sourceUrl } else { "" }
                 WikiUrl = if ($project.links -and $project.links.wikiUrl) { $project.links.wikiUrl } else { "" }
             }
-            
+
         } catch {
-            if (-not $Quiet) {
-                Write-Host "DEBUG: Failed to get files for mod $ModId : $($_.Exception.Message)" -ForegroundColor Red
-            }
+            if (-not $Quiet) { Write-Host "DEBUG: Failed to get files for mod $ModId : $($_.Exception.Message)" -ForegroundColor Red }
             return @{
                 Success = $false
                 ModId = $cfModId
