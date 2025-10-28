@@ -779,19 +779,25 @@ if ($CalculateNextVersionData) {
     if ($ok) { Exit-ModManager 0 } else { Exit-ModManager 1 }
 }
 
-# Default behavior when no parameters are provided
-Write-Host "Minecraft Mod Manager" -ForegroundColor Magenta
-Write-Host "====================" -ForegroundColor Magenta
-Write-Host ""
-Write-Host "No parameters provided. Running default validation and update..." -ForegroundColor Yellow
-Write-Host ""
+# Default behavior only when truly no parameters are provided (prevents accidental full-DB runs)
+if ($PSBoundParameters.Count -eq 0) {
+    Write-Host "Minecraft Mod Manager" -ForegroundColor Magenta
+    Write-Host "====================" -ForegroundColor Magenta
+    Write-Host ""
+    Write-Host "No parameters provided. Running default validation and update..." -ForegroundColor Yellow
+    Write-Host ""
 
-# Run the default behavior: validate and update mods
-# Default: Use cache (only fetch data for missing entries)
-# Use -Online to force fresh API calls for all mods
-$useCache = -not $Online
-if ($UseCachedResponses) { $useCache = $true }  # Explicit -UseCachedResponses overrides
-Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList -UseCachedResponses:$useCache | Out-Null
+    # Run the default behavior: validate and update mods
+    # Default: Use cache (only fetch data for missing entries)
+    # Use -Online to force fresh API calls for all mods
+    $useCache = -not $Online
+    if ($UseCachedResponses) { $useCache = $true }  # Explicit -UseCachedResponses overrides
+    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UpdateModList -UseCachedResponses:$useCache | Out-Null
 
-# Exit cleanly with transcript stop
+    # Exit cleanly with transcript stop
+    Exit-ModManager 0
+}
+
+# If we reached here with parameters bound, we've handled all known switches above.
+# Do not run a full validation fallback.
 Exit-ModManager 0
