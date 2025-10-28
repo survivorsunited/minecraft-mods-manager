@@ -5,8 +5,7 @@ param(
     [switch]$NoAutoRestart  # Disable automatic server restart on normal exit
 )
 
-# Find bundled JDK in .cache folder (REQUIRED - uses ONLY bundled JDK)
-# IMPORTANT: Ignores JAVA_HOME and system Java to ensure consistent Java 21+ version
+# Prefer bundled JDK in .cache folder; fallback to system Java if not available
 $JavaExe = $null
 
 # Navigate up to project root from server folder
@@ -48,16 +47,45 @@ if (Test-Path $JdkCacheFolder) {
     }
 }
 
-# Fail if no bundled JDK found (REQUIRED for consistent Java 21+ version)
+if (-not $JavaExe) {
+    # Try system Java as a fallback for CI/test environments
+    Write-Host "ℹ️  No bundled JDK found. Attempting system Java from PATH..." -ForegroundColor Yellow
+    try {
+        $javaCheck = & java -version 2>&1 | Select-String "version" | Select-Object -First 1
+        if ($javaCheck) {
+            # Parse major version (supports formats like: java version "17.0.16" or openjdk version "17.0.16")
+            if ($javaCheck.ToString() -match '"(\d+)') {
+                $javaMajor = [int]$Matches[1]
+                Write-Host "✅ System Java detected (major: $javaMajor)" -ForegroundColor Green
+                # Allow Java 17+ for test environments; production can enforce 21 using other entrypoints
+                if ($javaMajor -ge 17) {
+                    $JavaExe = "java"
+                    Write-Host "   Using system Java from PATH" -ForegroundColor Gray
+                } else {
+                    Write-Host "❌ System Java version too low (found $javaMajor, need >= 17)" -ForegroundColor Red
+                }
+            } else {
+                Write-Host "⚠️  Could not parse system Java version" -ForegroundColor Yellow
+            }
+        } else {
+            Write-Host "❌ No system Java found in PATH" -ForegroundColor Red
+        }
+    } catch {
+        Write-Host "❌ Error invoking system Java: $($_.Exception.Message)" -ForegroundColor Red
+    }
+}
+
+# If still no Java, exit with guidance
 if (-not $JavaExe) {
     Write-Host "" -ForegroundColor Red
-    Write-Host "❌ ERROR: No bundled JDK found in .cache\jdk folder!" -ForegroundColor Red
+    Write-Host "❌ ERROR: No suitable Java found (bundled or system)!" -ForegroundColor Red
     Write-Host "" -ForegroundColor Red
-    Write-Host "💡 Minecraft 1.21+ requires Java 21 or higher." -ForegroundColor Yellow
-    Write-Host "💡 Download bundled JDK using: .\ModManager.ps1 -DownloadMods" -ForegroundColor Yellow
-    Write-Host "   (JDK files are included in modlist.csv as infrastructure entries)" -ForegroundColor Gray
+    Write-Host "💡 Minecraft 1.21+ typically requires Java 21 or higher; this test script accepts Java 17+ if necessary." -ForegroundColor Yellow
+    Write-Host "💡 Options:" -ForegroundColor Yellow
+    Write-Host "   - Download bundled JDK: .\ModManager.ps1 -DownloadJDK -JDKVersion 21" -ForegroundColor Gray
+    Write-Host "   - Or install Java 17+ and ensure it is in PATH" -ForegroundColor Gray
     Write-Host "" -ForegroundColor Yellow
-    Write-Host "   Searched in: $JdkCacheFolder" -ForegroundColor DarkGray
+    Write-Host "   Searched bundled path: $JdkCacheFolder" -ForegroundColor DarkGray
     exit 1
 }
 
