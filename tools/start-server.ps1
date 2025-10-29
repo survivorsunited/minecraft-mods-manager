@@ -3,14 +3,41 @@
 
 param(
     [switch]$NoAutoRestart,  # Disable automatic server restart on normal exit
-    [int]$MinJavaMajor = $(if ($env:JDK_MIN_MAJOR) { [int]$env:JDK_MIN_MAJOR } else { 21 }),
-    [int[]]$AllowedJavaMajors = $(if ($env:JDK_ALLOWED_MAJORS) { ($env:JDK_ALLOWED_MAJORS -split '[,; ]+' | Where-Object { $_ -match '^\d+$' } | ForEach-Object { [int]$_ }) } else { @() }),
-    [string]$JdkCacheDir = $(if ($env:JDK_CACHE_DIR) { $env:JDK_CACHE_DIR } else { '' }),
-    [string]$JdkCacheRelative = $(if ($env:JDK_CACHE_RELATIVE) { $env:JDK_CACHE_RELATIVE } else { ".cache\jdk" })
+    [int]$MinJavaMajor = 21,
+    [int[]]$AllowedJavaMajors = @(),
+    [string]$JdkCacheDir,
+    [string]$JdkCacheRelative = ".cache\jdk"
 )
 
 # Configuration: prefer bundled JDK in .cache folder; fallback to system Java if not available
 $JavaExe = $null
+
+# Environment overrides (only if caller didn't pass the parameter explicitly)
+try {
+    if (-not $PSBoundParameters.ContainsKey('MinJavaMajor') -and $env:JDK_MIN_MAJOR) {
+        $MinJavaMajor = [int]$env:JDK_MIN_MAJOR
+    }
+} catch {}
+
+try {
+    if (-not $PSBoundParameters.ContainsKey('AllowedJavaMajors') -and $env:JDK_ALLOWED_MAJORS) {
+        $AllowedJavaMajors = $env:JDK_ALLOWED_MAJORS -split '[,; ]+' |
+            Where-Object { $_ -match '^\d+$' } |
+            ForEach-Object { [int]$_ }
+    }
+} catch {}
+
+try {
+    if (-not $PSBoundParameters.ContainsKey('JdkCacheDir') -and $env:JDK_CACHE_DIR) {
+        $JdkCacheDir = $env:JDK_CACHE_DIR
+    }
+} catch {}
+
+try {
+    if (-not $PSBoundParameters.ContainsKey('JdkCacheRelative') -and $env:JDK_CACHE_RELATIVE) {
+        $JdkCacheRelative = $env:JDK_CACHE_RELATIVE
+    }
+} catch {}
 
 function Test-JavaMajorOk {
     param([int]$Major)
