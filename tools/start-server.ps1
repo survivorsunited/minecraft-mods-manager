@@ -19,6 +19,23 @@ try {
     }
 } catch {}
 
+function Resolve-CacheDirectory {
+    param(
+        [string]$BasePath,
+        [string]$RelativePath,
+        [string]$ProjectRoot
+    )
+    # Prefer explicit base path; support relative values by anchoring to ProjectRoot
+    if ($BasePath -and $BasePath.Trim() -ne "") {
+        if ([System.IO.Path]::IsPathRooted($BasePath)) { return $BasePath }
+        return (Join-Path -Path $ProjectRoot -ChildPath $BasePath)
+    }
+    # Fall back to relative setting or default
+    $rel = if ($RelativePath -and $RelativePath.Trim() -ne "") { $RelativePath } else { ".cache\\jdk" }
+    if ([System.IO.Path]::IsPathRooted($rel)) { return $rel }
+    return (Join-Path -Path $ProjectRoot -ChildPath $rel)
+}
+
 try {
     if (-not $PSBoundParameters.ContainsKey('AllowedJavaMajors') -and $env:JDK_ALLOWED_MAJORS) {
         $AllowedJavaMajors = $env:JDK_ALLOWED_MAJORS -split '[,; ]+' |
@@ -62,7 +79,7 @@ while ($ProjectRoot -and -not (Test-Path (Join-Path $ProjectRoot "ModManager.ps1
     $ProjectRoot = $parentPath
 }
 
-$JdkCacheFolder = if ($JdkCacheDir -and (Test-Path $JdkCacheDir)) { $JdkCacheDir } else { Join-Path $ProjectRoot $JdkCacheRelative }
+$JdkCacheFolder = Resolve-CacheDirectory -BasePath $JdkCacheDir -RelativePath $JdkCacheRelative -ProjectRoot $ProjectRoot
 
 Write-Host "🔍 Looking for bundled JDK in: $JdkCacheFolder" -ForegroundColor Cyan
 
