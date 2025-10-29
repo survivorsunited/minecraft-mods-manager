@@ -5,7 +5,8 @@ param(
     [switch]$NoAutoRestart,  # Disable automatic server restart on normal exit
     [int]$MinJavaMajor = $(if ($env:JDK_MIN_MAJOR) { [int]$env:JDK_MIN_MAJOR } else { 21 }),
     [int[]]$AllowedJavaMajors = $(if ($env:JDK_ALLOWED_MAJORS) { ($env:JDK_ALLOWED_MAJORS -split '[,; ]+' | Where-Object { $_ -match '^\d+$' } | ForEach-Object { [int]$_ }) } else { @() }),
-    [string]$JdkCacheDir = $(if ($env:JDK_CACHE_DIR) { $env:JDK_CACHE_DIR } else { '' })
+    [string]$JdkCacheDir = $(if ($env:JDK_CACHE_DIR) { $env:JDK_CACHE_DIR } else { '' }),
+    [string]$JdkCacheRelative = $(if ($env:JDK_CACHE_RELATIVE) { $env:JDK_CACHE_RELATIVE } else { ".cache\jdk" })
 )
 
 # Configuration: prefer bundled JDK in .cache folder; fallback to system Java if not available
@@ -34,7 +35,7 @@ while ($ProjectRoot -and -not (Test-Path (Join-Path $ProjectRoot "ModManager.ps1
     $ProjectRoot = $parentPath
 }
 
-$JdkCacheFolder = if ($JdkCacheDir -and (Test-Path $JdkCacheDir)) { $JdkCacheDir } else { Join-Path $ProjectRoot ".cache\jdk" }
+$JdkCacheFolder = if ($JdkCacheDir -and (Test-Path $JdkCacheDir)) { $JdkCacheDir } else { Join-Path $ProjectRoot $JdkCacheRelative }
 
 Write-Host "🔍 Looking for bundled JDK in: $JdkCacheFolder" -ForegroundColor Cyan
 
