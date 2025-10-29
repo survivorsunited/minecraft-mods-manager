@@ -3,66 +3,15 @@
 
 param(
     [switch]$NoAutoRestart,  # Disable automatic server restart on normal exit
-    [int]$MinJavaMajor = 21,
-    [int[]]$AllowedJavaMajors = @(),
-    [string]$JdkCacheDir,
-    [string]$JdkCacheRelative = ".cache\jdk"
+    [string]$JdkCacheDir = ".cache\jdk"  # Bundled JDK directory (relative or absolute). Empty string disables bundled search.
 )
 
 # Configuration: prefer bundled JDK in .cache folder; fallback to system Java if not available
 $JavaExe = $null
 
-# Environment overrides (only if caller didn't pass the parameter explicitly)
-try {
-    if (-not $PSBoundParameters.ContainsKey('MinJavaMajor') -and $env:JDK_MIN_MAJOR) {
-        $MinJavaMajor = [int]$env:JDK_MIN_MAJOR
-    }
-} catch {}
+ 
 
-function Resolve-CacheDirectory {
-    param(
-        [string]$BasePath,
-        [string]$RelativePath,
-        [string]$ProjectRoot
-    )
-    # Prefer explicit base path; support relative values by anchoring to ProjectRoot
-    if ($BasePath -and $BasePath.Trim() -ne "") {
-        if ([System.IO.Path]::IsPathRooted($BasePath)) { return $BasePath }
-        return (Join-Path -Path $ProjectRoot -ChildPath $BasePath)
-    }
-    # Fall back to relative setting or default
-    $rel = if ($RelativePath -and $RelativePath.Trim() -ne "") { $RelativePath } else { ".cache\\jdk" }
-    if ([System.IO.Path]::IsPathRooted($rel)) { return $rel }
-    return (Join-Path -Path $ProjectRoot -ChildPath $rel)
-}
-
-try {
-    if (-not $PSBoundParameters.ContainsKey('AllowedJavaMajors') -and $env:JDK_ALLOWED_MAJORS) {
-        $AllowedJavaMajors = $env:JDK_ALLOWED_MAJORS -split '[,; ]+' |
-            Where-Object { $_ -match '^\d+$' } |
-            ForEach-Object { [int]$_ }
-    }
-} catch {}
-
-try {
-    if (-not $PSBoundParameters.ContainsKey('JdkCacheDir') -and $env:JDK_CACHE_DIR) {
-        $JdkCacheDir = $env:JDK_CACHE_DIR
-    }
-} catch {}
-
-try {
-    if (-not $PSBoundParameters.ContainsKey('JdkCacheRelative') -and $env:JDK_CACHE_RELATIVE) {
-        $JdkCacheRelative = $env:JDK_CACHE_RELATIVE
-    }
-} catch {}
-
-function Test-JavaMajorOk {
-    param([int]$Major)
-    if ($AllowedJavaMajors -and $AllowedJavaMajors.Count -gt 0) {
-        return ($AllowedJavaMajors -contains $Major)
-    }
-    return ($Major -ge $MinJavaMajor)
-}
+# No version gating: pick bundled or PATH java if available (no explicit path parameter)
 
 # Navigate up to project root from server folder
 # Server folder is typically: project/download/version/ or project/test/test-output/testname/download/version/
@@ -79,11 +28,23 @@ while ($ProjectRoot -and -not (Test-Path (Join-Path $ProjectRoot "ModManager.ps1
     $ProjectRoot = $parentPath
 }
 
-$JdkCacheFolder = Resolve-CacheDirectory -BasePath $JdkCacheDir -RelativePath $JdkCacheRelative -ProjectRoot $ProjectRoot
+# Resolve JDK cache folder: if relative, anchor to project root; if absolute, use as-is
+$UseBundled = $true
+if (-not $JdkCacheDir -or $JdkCacheDir.Trim() -eq "") {
+    $UseBundled = $false
+} elseif ([System.IO.Path]::IsPathRooted($JdkCacheDir)) {
+    $JdkCacheFolder = $JdkCacheDir
+} else {
+    $JdkCacheFolder = Join-Path -Path $ProjectRoot -ChildPath $JdkCacheDir
+}
 
-Write-Host "🔍 Looking for bundled JDK in: $JdkCacheFolder" -ForegroundColor Cyan
+if ($UseBundled) {
+    Write-Host "🔍 Looking for bundled JDK in: $JdkCacheFolder" -ForegroundColor Cyan
+} else {
+    Write-Host "🔍 Bundled JDK search disabled (JdkCacheDir empty)." -ForegroundColor Cyan
+}
 
-if (Test-Path $JdkCacheFolder) {
+if (-not $JavaExe -and $UseBundled -and (Test-Path $JdkCacheFolder)) {
     # Find JDK folders (prefer JDK 22 > 21, sorted descending by name)
     $jdkFolders = Get-ChildItem $JdkCacheFolder -Directory | 
         Where-Object { $_.Name -match "jdk-\d+" } | 
@@ -93,49 +54,48 @@ if (Test-Path $JdkCacheFolder) {
         # Cross-platform Java executable detection
         $javaExt = if ($IsWindows -or $env:OS -match "Windows") { "java.exe" } else { "java" }
         $javaPath = Join-Path $jdkFolder.FullName "bin\$javaExt"
-        
+
         if (Test-Path $javaPath) {
-            # Verify bundled JDK meets version policy
+            # Use first valid bundled JDK; version is informational only
             try {
                 $verLine = & $javaPath -version 2>&1 | Select-String "version" | Select-Object -First 1
-                if ($verLine -and $verLine.ToString() -match '"(\d+)') {
-                    $bundledMajor = [int]$Matches[1]
-                    if (Test-JavaMajorOk -Major $bundledMajor) {
-                        $JavaExe = $javaPath
-                        Write-Host "✅ Using bundled JDK: $($jdkFolder.Name) (major: $bundledMajor)" -ForegroundColor Green
-                        Write-Host "   Location: $JavaExe" -ForegroundColor Gray
-                        break
-                    } else {
-                        Write-Host "⚠️  Skipping bundled JDK (major $bundledMajor) not allowed by policy" -ForegroundColor Yellow
-                    }
+                $infoMajor = $null
+                if ($verLine -and $verLine.ToString() -match '"(\d+)') { $infoMajor = [int]$Matches[1] }
+                $JavaExe = $javaPath
+                if ($infoMajor) {
+                    Write-Host "✅ Using bundled JDK: $($jdkFolder.Name) (major: $infoMajor)" -ForegroundColor Green
+                } else {
+                    Write-Host "✅ Using bundled JDK: $($jdkFolder.Name)" -ForegroundColor Green
                 }
+                Write-Host "   Location: $JavaExe" -ForegroundColor Gray
+                break
             } catch {
-                Write-Host "⚠️  Could not read version from bundled JDK at $javaPath" -ForegroundColor Yellow
+                # Even if version check fails, we can still try to use it
+                $JavaExe = $javaPath
+                Write-Host "✅ Using bundled JDK: $($jdkFolder.Name)" -ForegroundColor Green
+                Write-Host "   Location: $JavaExe" -ForegroundColor Gray
+                break
             }
         }
     }
 }
 
 if (-not $JavaExe) {
-    # Try system Java as a fallback for CI/test environments
+    # Try system Java from PATH as a fallback
     Write-Host "ℹ️  No bundled JDK found. Attempting system Java from PATH..." -ForegroundColor Yellow
     try {
         $javaCheck = & java -version 2>&1 | Select-String "version" | Select-Object -First 1
         if ($javaCheck) {
-            # Parse major version (supports formats like: java version "21.0.4" or openjdk version "21.0.4")
-            if ($javaCheck.ToString() -match '"(\d+)') {
-                $javaMajor = [int]$Matches[1]
-                Write-Host "✅ System Java detected (major: $javaMajor)" -ForegroundColor Green
-                if (Test-JavaMajorOk -Major $javaMajor) {
-                    $JavaExe = "java"
-                    Write-Host "   Using system Java from PATH" -ForegroundColor Gray
-                } else {
-                    $policy = if ($AllowedJavaMajors -and $AllowedJavaMajors.Count -gt 0) { "one of: $($AllowedJavaMajors -join ', ')" } else { ">= $MinJavaMajor" }
-                    Write-Host "❌ System Java version does not meet policy (found $javaMajor, need $policy)" -ForegroundColor Red
-                }
+            # Parse major version for informational logging only
+            $infoMajor = $null
+            if ($javaCheck.ToString() -match '"(\d+)') { $infoMajor = [int]$Matches[1] }
+            if ($infoMajor) {
+                Write-Host "✅ System Java detected (major: $infoMajor)" -ForegroundColor Green
             } else {
-                Write-Host "⚠️  Could not parse system Java version" -ForegroundColor Yellow
+                Write-Host "✅ System Java detected" -ForegroundColor Green
             }
+            $JavaExe = "java"
+            Write-Host "   Using system Java from PATH" -ForegroundColor Gray
         } else {
             Write-Host "❌ No system Java found in PATH" -ForegroundColor Red
         }
@@ -149,13 +109,16 @@ if (-not $JavaExe) {
     Write-Host "" -ForegroundColor Red
     Write-Host "❌ ERROR: No suitable Java found (bundled or system)!" -ForegroundColor Red
     Write-Host "" -ForegroundColor Red
-    $policyMsg = if ($AllowedJavaMajors -and $AllowedJavaMajors.Count -gt 0) { "Java versions: $($AllowedJavaMajors -join ', ')" } else { "Java $MinJavaMajor or higher" }
-    Write-Host "💡 Minecraft 1.21+ requires $policyMsg." -ForegroundColor Yellow
+    Write-Host "💡 Minecraft 1.21+ requires Java 21 or higher." -ForegroundColor Yellow
     Write-Host "💡 Options:" -ForegroundColor Yellow
-    Write-Host "   - Download bundled JDK: .\ModManager.ps1 -DownloadJDK -JDKVersion $MinJavaMajor" -ForegroundColor Gray
-    Write-Host "   - Or install $policyMsg and ensure it is in PATH" -ForegroundColor Gray
+    Write-Host "   - Download bundled JDK: .\ModManager.ps1 -DownloadJDK -JDKVersion 21" -ForegroundColor Gray
+    Write-Host "   - Or install Java 21+ and ensure it is in PATH" -ForegroundColor Gray
     Write-Host "" -ForegroundColor Yellow
-    Write-Host "   Searched bundled path: $JdkCacheFolder" -ForegroundColor DarkGray
+    if ($UseBundled) {
+        Write-Host "   Searched bundled path: $JdkCacheFolder" -ForegroundColor DarkGray
+    } else {
+        Write-Host "   Bundled JDK search was disabled (JdkCacheDir empty)." -ForegroundColor DarkGray
+    }
     exit 1
 }
 
