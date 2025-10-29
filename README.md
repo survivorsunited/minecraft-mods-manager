@@ -578,24 +578,67 @@ The `modlist.csv` file contains these key columns:
 
 ### Server mod validation (fast)
 Quick server compatibility check
+
 ```powershell
 .\scripts\Validate-ServerMods.ps1 -ShowDetails
 ```
 
+### Build release from cached downloads
+
+Package an already-downloaded version (no network) into a timestamped release folder with verification.
+ 
+```powershell
+.# Strict (default): fail on any difference vs CSV
+./scripts/Build-ReleaseFromCache.ps1 -Version 1.21.8
+
+.# Warn only: report diffs but continue building artifacts
+./scripts/Build-ReleaseFromCache.ps1 -Version 1.21.8 -VerificationMode warn
+
+.# Relaxed version: ignore version-only differences for mods (treat older/newer JAR names as matched by base)
+./scripts/Build-ReleaseFromCache.ps1 -Version 1.21.8 -VerificationMode relaxed-version
+```
+
+Artifacts are written under `releases/<version>/<timestamp>/`. When verification finds differences, details are saved to:
+
+- `verification-missing.txt` – expected but not found
+- `verification-extra.txt` – present but not expected
+
+### Reconcile CSV vs cache (report)
+
+Generate a report comparing what the CSV expects vs what’s in `download/<version>`.
+
+```powershell
+./scripts/Reconcile-ExpectedVsCache.ps1 -Version 1.21.8                      # exact comparison
+./scripts/Reconcile-ExpectedVsCache.ps1 -Version 1.21.8 -Mode relaxed-version # pair version-only differences for mods
+```
+
+Outputs are written to `releases/<version>/reconcile-<timestamp>/`:
+
+- `reconciliation-report.txt` – human-readable summary
+- `expected.txt` / `actual.txt` – raw lists
+- `missing.txt` / `extra.txt` – diffs for automation
+
+
 ### Test latest mod versions with server
+
 Validates latest versions for server compatibility
+
 ```powershell
 .\scripts\TestLatestMods.ps1
 ```
 
 ### Download latest versions
+
 Downloads newest available versions of all mods
+
 ```powershell
 .\scripts\DownloadLatestMods.ps1
 ```
 
 ### Download current versions
+
 Downloads currently specified versions from database
+
 ```powershell
 .\scripts\DownloadCurrentMods.ps1
 ```
@@ -606,6 +649,7 @@ Complete API reference with CURL and PowerShell examples:
 **[docs/API_REFERENCE.md](docs/API_REFERENCE.md)**
 
 Includes all endpoints for:
+
 - Modrinth API
 - CurseForge API  
 - Fabric Meta API
@@ -624,7 +668,7 @@ Includes all endpoints for:
 
 1. **Prepare `modlist.csv`** with your installed mods
 2. **Run validation**: `.\ModManager.ps1` (check for updates)
-3. **Review Update Summary** 
+3. **Review Update Summary**
 4. **Download updates**: `.\ModManager.ps1 -Download -UseLatestVersion`
 5. **Validate server compatibility**: `.\scripts\Validate-ServerMods.ps1`
 6. **Apply updates** to your Minecraft installation

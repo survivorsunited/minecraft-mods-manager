@@ -3,7 +3,13 @@
 param(
     [Parameter(Mandatory=$true)]
     [string]$Version,
-    [string]$CsvPath = "modlist.csv"
+    [string]$CsvPath = "modlist.csv",
+    # Verification behavior:
+    # - strict: require exact match of expected vs actual (default)
+    # - warn: report differences but continue
+    # - relaxed-version: ignore version-only differences for mods (treat as match if base mod name matches)
+    [ValidateSet('strict','warn','relaxed-version')]
+    [string]$VerificationMode = 'strict'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -78,7 +84,7 @@ $actualList | Sort-Object | Out-File -FilePath $actualFile -Encoding UTF8
 $expectedCompare = Get-Content -Path $expectedFile | Where-Object { (($_ -like 'mods/*') -or ($_ -like 'shaderpacks/*')) -and ($_ -notlike 'mods/block/*') }
 $actualCompare = Get-Content -Path $actualFile
 
-# Compute set differences
+# Compute set differences (exact path comparison)
 $expectedSet = New-Object System.Collections.Generic.HashSet[string]
 $null = $expectedCompare | ForEach-Object { $expectedSet.Add($_) | Out-Null }
 $actualSet = New-Object System.Collections.Generic.HashSet[string]
@@ -89,17 +95,94 @@ foreach ($e in $expectedSet) { if (-not $actualSet.Contains($e)) { $missing += $
 $extra = @()
 foreach ($a in $actualSet) { if (-not $expectedSet.Contains($a)) { $extra += $a } }
 
+# If in relaxed-version mode, attempt to pair up missing/extra mods that differ only by version in file name
+if ($VerificationMode -eq 'relaxed-version') {
+    function Get-BaseModKey([string]$relPath) {
+        # Only apply to mods (mods/ or mods/optional/). Keep folder prefix to avoid clashes.
+        if ($relPath -notlike 'mods/*') { return $null }
+        # Extract folder and file
+        $folder = if ($relPath.StartsWith('mods/optional/')) { 'mods/optional/' } else { 'mods/' }
+        $file = $relPath.Substring($folder.Length)
+        # Remove extension
+        $name = [System.IO.Path]::GetFileNameWithoutExtension($file)
+        # Heuristic: base is substring before first numeric version token (digits) that appears after a hyphen/underscore
+        # Examples:
+        #  - fabric-api-0.134.0+1.21.8 => fabric-api
+        #  - litematica-fabric-1.21.4-0.23.4 => litematica-fabric
+        #  - sodium-fabric-mc1.21.4-0.6.0 => sodium-fabric-mc
+        $base = $name
+        $m = [System.Text.RegularExpressions.Regex]::Match($name, '^(.*?)(?:[-_]?)(?=\d)')
+        if ($m.Success -and $m.Groups.Count -gt 1 -and $m.Groups[1].Value.Trim().Length -gt 0) {
+            $base = $m.Groups[1].Value.TrimEnd('-','_')
+        }
+        return $folder + $base.ToLower()
+    }
+
+    # Build lookup of bases present in expected and actual
+    $expectedByBase = @{}
+    foreach ($e in $missing) {
+        $k = Get-BaseModKey $e
+        if ($null -ne $k) {
+            if (-not $expectedByBase.ContainsKey($k)) { $expectedByBase[$k] = @() }
+            $expectedByBase[$k] += $e
+        }
+    }
+    $actualByBase = @{}
+    foreach ($a in $extra) {
+        $k = Get-BaseModKey $a
+        if ($null -ne $k) {
+            if (-not $actualByBase.ContainsKey($k)) { $actualByBase[$k] = @() }
+            $actualByBase[$k] += $a
+        }
+    }
+
+    $pairedMissing = New-Object System.Collections.Generic.HashSet[string]
+    $pairedExtra = New-Object System.Collections.Generic.HashSet[string]
+
+    foreach ($k in $expectedByBase.Keys) {
+        if ($actualByBase.ContainsKey($k)) {
+            # We have an expected and an actual with same base in same folder; treat as version drift
+            foreach ($eItem in $expectedByBase[$k]) { $pairedMissing.Add($eItem) | Out-Null }
+            foreach ($aItem in $actualByBase[$k]) { $pairedExtra.Add($aItem) | Out-Null }
+        }
+    }
+
+    if ($pairedMissing.Count -gt 0 -or $pairedExtra.Count -gt 0) {
+        # Filter out paired items from missing/extra
+        $missing = $missing | Where-Object { -not $pairedMissing.Contains($_) }
+        $extra = $extra | Where-Object { -not $pairedExtra.Contains($_) }
+
+        Write-Host "  ⚠️  Ignoring version-only differences for mods (relaxed-version):" -ForegroundColor DarkYellow
+        foreach ($k in $expectedByBase.Keys) {
+            if ($actualByBase.ContainsKey($k)) {
+                $expList = ($expectedByBase[$k] | Sort-Object) -join ', '
+                $actList = ($actualByBase[$k] | Sort-Object) -join ', '
+                Write-Host "     base '$k' -> expected: [$expList] vs actual: [$actList]" -ForegroundColor DarkYellow
+            }
+        }
+    }
+}
+
 if ($missing.Count -gt 0 -or $extra.Count -gt 0) {
     Write-Host "Verification differences detected:" -ForegroundColor Yellow
+    $missingPath = Join-Path $releaseDir 'verification-missing.txt'
+    $extraPath = Join-Path $releaseDir 'verification-extra.txt'
     if ($missing.Count -gt 0) {
         Write-Host "  Missing (expected but not found):" -ForegroundColor Red
         $missing | ForEach-Object { Write-Host "    - $_" -ForegroundColor Red }
-    }
+        $missing | Out-File -FilePath $missingPath -Encoding UTF8
+    } else { '' | Out-File -FilePath $missingPath -Encoding UTF8 }
     if ($extra.Count -gt 0) {
         Write-Host "  Unexpected (present but not expected):" -ForegroundColor DarkYellow
         $extra | ForEach-Object { Write-Host "    - $_" -ForegroundColor DarkYellow }
+        $extra | Out-File -FilePath $extraPath -Encoding UTF8
+    } else { '' | Out-File -FilePath $extraPath -Encoding UTF8 }
+
+    if ($VerificationMode -eq 'warn') {
+        Write-Host "⚠️  Continuing despite differences (verification mode: warn)" -ForegroundColor DarkYellow
+    } else {
+        throw "Release file verification failed (mode: $VerificationMode)"
     }
-    throw "Release file verification failed"
 } else {
     Write-Host "✓ Release files verified against DB expectations" -ForegroundColor Green
 }
