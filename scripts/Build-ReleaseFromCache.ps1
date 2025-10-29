@@ -21,11 +21,15 @@ if (-not (Test-Path $sourceMods)) {
     throw "No mods folder found at $sourceMods"
 }
 
+# Shaderpacks source (optional)
+$sourceShaderpacks = Join-Path $downloadPath 'shaderpacks'
+
 # Create isolated, timestamped run directory to avoid overwriting previous runs
 $baseReleaseDir = Join-Path $repoRoot (Join-Path 'releases' $Version)
 $runStamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 $releaseDir = Join-Path $baseReleaseDir $runStamp
 $releaseMods = Join-Path $releaseDir 'mods'
+$releaseShaderpacks = Join-Path $releaseDir 'shaderpacks'
 New-Item -ItemType Directory -Path $releaseMods -Force | Out-Null
 
 # Import Copy-ModsToRelease and run
@@ -33,15 +37,28 @@ New-Item -ItemType Directory -Path $releaseMods -Force | Out-Null
 $ok = Copy-ModsToRelease -SourcePath $sourceMods -DestinationPath $releaseMods -CsvPath (Join-Path $repoRoot $CsvPath) -TargetGameVersion $Version
 if (-not $ok) { throw "Copy-ModsToRelease failed" }
 
+# Copy shaderpacks if present (as-is, no optional/block grouping)
+if (Test-Path $sourceShaderpacks) {
+    New-Item -ItemType Directory -Path $releaseShaderpacks -Force | Out-Null
+    $shaderFiles = Get-ChildItem -Path $sourceShaderpacks -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.zip','.jar') }
+    foreach ($sp in $shaderFiles) {
+        Copy-Item -Path $sp.FullName -Destination (Join-Path $releaseShaderpacks $sp.Name) -Force
+    }
+    Write-Host "Copied $($shaderFiles.Count) shaderpack file(s) to $releaseShaderpacks" -ForegroundColor Gray
+} else {
+    Write-Host "No shaderpacks source found at $sourceShaderpacks (skipping)" -ForegroundColor DarkGray
+}
+
 # Generate expected file list from DB and verify against actual
 $expectedScript = Join-Path $repoRoot 'scripts/Get-ExpectedReleaseFiles.ps1'
 if (-not (Test-Path $expectedScript)) { throw "Get-ExpectedReleaseFiles.ps1 not found at $expectedScript" }
 
 $expectedFile = Join-Path $releaseDir 'expected-release-files.txt'
 $expected = & $expectedScript -Version $Version -CsvPath (Join-Path $repoRoot $CsvPath) -OutputPath $expectedFile
-if ($LASTEXITCODE -ne 0) { throw "Get-ExpectedReleaseFiles.ps1 failed with exit code $LASTEXITCODE" }
+# Don't trust $LASTEXITCODE for PowerShell scripts; validate output file instead
+if (-not (Test-Path $expectedFile)) { throw "Get-ExpectedReleaseFiles.ps1 did not produce expected file at $expectedFile" }
 
-# Build actual file listing (relative to release root) for required+optional
+# Build actual file listing (relative to release root) for required+optional mods and shaderpacks
 $actualList = @()
 if (Test-Path $releaseMods) {
     $actualList += (Get-ChildItem -Path $releaseMods -Filter '*.jar' -File -ErrorAction SilentlyContinue | ForEach-Object { "mods/" + $_.Name })
@@ -50,11 +67,15 @@ $optionalModsPath = Join-Path $releaseMods 'optional'
 if (Test-Path $optionalModsPath) {
     $actualList += (Get-ChildItem -Path $optionalModsPath -Filter '*.jar' -File -ErrorAction SilentlyContinue | ForEach-Object { "mods/optional/" + $_.Name })
 }
+# Shaderpacks (zip/jar)
+if (Test-Path $releaseShaderpacks) {
+    $actualList += (Get-ChildItem -Path $releaseShaderpacks -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.zip','.jar') } | ForEach-Object { "shaderpacks/" + $_.Name })
+}
 $actualFile = Join-Path $releaseDir 'actual-release-files.txt'
 $actualList | Sort-Object | Out-File -FilePath $actualFile -Encoding UTF8
 
-# Filter expected to required+optional only for comparison
-$expectedCompare = Get-Content -Path $expectedFile | Where-Object { ($_ -like 'mods/*') -and ($_ -notlike 'mods/block/*') }
+# Filter expected to required+optional mods and shaderpacks only for comparison
+$expectedCompare = Get-Content -Path $expectedFile | Where-Object { (($_ -like 'mods/*') -or ($_ -like 'shaderpacks/*')) -and ($_ -notlike 'mods/block/*') }
 $actualCompare = Get-Content -Path $actualFile
 
 # Compute set differences

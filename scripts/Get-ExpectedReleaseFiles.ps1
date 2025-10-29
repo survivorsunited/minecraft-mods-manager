@@ -50,30 +50,46 @@ $versionFilter = {
     return $false
 }
 
-# Groups of interest
+# Groups of interest (for mods)
 $desiredGroups = @('required','optional')
 if ($IncludeBlocked) { $desiredGroups += 'block' }
 
-# Filter rows
+# Filter mod rows (JARs under mods/ structure)
 $mods = $rows | Where-Object {
     (Normalize $_.Type) -eq 'mod' -and
     $desiredGroups -contains ((Normalize $_.Group) ?? 'required') -and
     (& $versionFilter $_)
 }
 
+# Filter shaderpack rows (ZIPs under shaderpacks/)
+$shaderpacks = $rows | Where-Object {
+    (Normalize $_.Type) -eq 'shaderpack' -and
+    (& $versionFilter $_)
+}
+
 # Build expected relative paths using the Jar column and Group
 $seen = New-Object System.Collections.Generic.HashSet[string]
 $expected = @()
+
+# Mods -> mods/, mods/optional/, mods/block/
 foreach ($m in $mods) {
     $jar = Normalize $m.Jar
     if ([string]::IsNullOrWhiteSpace($jar)) { continue }
     $grp = (Normalize $m.Group)
     if ([string]::IsNullOrWhiteSpace($grp)) { $grp = 'required' }
     switch ($grp.ToLower()) {
-        'optional' { $rel = Join-Path 'mods/optional' $jar }
-        'block'    { $rel = Join-Path 'mods/block' $jar }
-        default    { $rel = Join-Path 'mods' $jar }
+        'optional' { $rel = "mods/optional/$jar" }
+        'block'    { $rel = "mods/block/$jar" }
+        default    { $rel = "mods/$jar" }
     }
+    if ($seen.Add($rel)) { $expected += $rel }
+}
+
+# Shaderpacks -> shaderpacks/
+foreach ($s in $shaderpacks) {
+    $zipName = Normalize $s.Jar
+    if ([string]::IsNullOrWhiteSpace($zipName)) { continue }
+    $rel = "shaderpacks/$zipName"
     if ($seen.Add($rel)) { $expected += $rel }
 }
 
