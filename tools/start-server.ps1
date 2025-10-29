@@ -3,20 +3,13 @@
 
 param(
     [switch]$NoAutoRestart,  # Disable automatic server restart on normal exit
-    [int]$MinJavaMajorParam  # Optional override for minimum required Java major version (defaults via env or 21)
+    [int]$MinJavaMajor = $(if ($env:JDK_MIN_MAJOR) { [int]$env:JDK_MIN_MAJOR } else { 21 }),
+    [int[]]$AllowedJavaMajors = $(if ($env:JDK_ALLOWED_MAJORS) { ($env:JDK_ALLOWED_MAJORS -split '[,; ]+' | Where-Object { $_ -match '^\d+$' } | ForEach-Object { [int]$_ }) } else { @() }),
+    [string]$JdkCacheDir = $(if ($env:JDK_CACHE_DIR) { $env:JDK_CACHE_DIR } else { '' })
 )
 
 # Configuration: prefer bundled JDK in .cache folder; fallback to system Java if not available
 $JavaExe = $null
-
-# Determine required Java version policy
-$AllowedJavaMajors = @()
-if ($env:JDK_ALLOWED_MAJORS) {
-    $AllowedJavaMajors = $env:JDK_ALLOWED_MAJORS -split '[,; ]+' | Where-Object { $_ -ne '' } | ForEach-Object { [int]$_ }
-}
-$MinJavaMajor = if ($MinJavaMajorParam) { $MinJavaMajorParam }
-                elseif ($env:JDK_MIN_MAJOR) { [int]$env:JDK_MIN_MAJOR }
-                else { 21 }
 
 function Test-JavaMajorOk {
     param([int]$Major)
@@ -41,7 +34,7 @@ while ($ProjectRoot -and -not (Test-Path (Join-Path $ProjectRoot "ModManager.ps1
     $ProjectRoot = $parentPath
 }
 
-$JdkCacheFolder = if ($env:JDK_CACHE_DIR -and (Test-Path $env:JDK_CACHE_DIR)) { $env:JDK_CACHE_DIR } else { Join-Path $ProjectRoot ".cache\jdk" }
+$JdkCacheFolder = if ($JdkCacheDir -and (Test-Path $JdkCacheDir)) { $JdkCacheDir } else { Join-Path $ProjectRoot ".cache\jdk" }
 
 Write-Host "🔍 Looking for bundled JDK in: $JdkCacheFolder" -ForegroundColor Cyan
 
