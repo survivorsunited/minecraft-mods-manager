@@ -106,11 +106,10 @@ jobs:
   # Job 2: Create release packages for enabled versions
   create-releases:
     needs: update-database
-    # Run if: updates detected OR manual force OR scheduled run
+    # Run if: updates detected OR manual force
     if: |
       needs.update-database.outputs.has_updates == 'true' || 
-      github.event.inputs.force_all == 'true' ||
-      github.event_name == 'schedule'
+      github.event.inputs.force_all == 'true'
     
     runs-on: windows-latest
     strategy:
