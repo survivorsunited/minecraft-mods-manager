@@ -43,22 +43,36 @@ $expectedTmp = Join-Path $outDir 'expected.txt'
 $expected = & $expectedScript -Version $Version -CsvPath $CsvPath -OutputPath $expectedTmp
 if (-not (Test-Path $expectedTmp)) { throw "Expected list not created at $expectedTmp" }
 
-# Filter to comparison scope: required+optional mods and shaderpacks only
-$expectedCompare = Get-Content -Path $expectedTmp | Where-Object { (($_ -like 'mods/*') -or ($_ -like 'shaderpacks/*')) -and ($_ -notlike 'mods/block/*') }
+# Filter to comparison scope: required+optional mods, shaderpacks, and datapacks (exclude mods/block)
+$expectedCompare = Get-Content -Path $expectedTmp | Where-Object { (($_ -like 'mods/*') -or ($_ -like 'shaderpacks/*') -or ($_ -like 'datapacks/*')) -and ($_ -notlike 'mods/block/*') }
 
 # 2) Actual files from cache layout
 $modsPath = Join-Path $dlVersionPath 'mods'
 $shaderPath = Join-Path $dlVersionPath 'shaderpacks'
+$datapacksPath = Join-Path $dlVersionPath 'datapacks'
 $actual = @()
 if (Test-Path $modsPath) {
-    $actual += (Get-ChildItem -Path $modsPath -Filter '*.jar' -File -ErrorAction SilentlyContinue | ForEach-Object { "mods/" + $_.Name })
+    # Include JARs and ZIPs (ZIPs can surface misclassified entries for visibility)
+    $actual += (Get-ChildItem -Path $modsPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.jar', '.zip') } | ForEach-Object { "mods/" + $_.Name })
 }
 $modsOpt = Join-Path $modsPath 'optional'
 if (Test-Path $modsOpt) {
-    $actual += (Get-ChildItem -Path $modsOpt -Filter '*.jar' -File -ErrorAction SilentlyContinue | ForEach-Object { "mods/optional/" + $_.Name })
+    $actual += (Get-ChildItem -Path $modsOpt -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.jar', '.zip') } | ForEach-Object { "mods/optional/" + $_.Name })
 }
 if (Test-Path $shaderPath) {
     $actual += (Get-ChildItem -Path $shaderPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.zip','.jar') } | ForEach-Object { "shaderpacks/" + $_.Name })
+}
+# Datapacks (zip/jar)
+if (Test-Path $datapacksPath) {
+    $dpFiles = Get-ChildItem -Path $datapacksPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.zip','.jar') }
+    # Record datapacks/ entries
+    $actual += ($dpFiles | ForEach-Object { "datapacks/" + $_.Name })
+    # Alias jar datapacks as mods/ to satisfy expectation that jar datapacks belong in mods
+    foreach ($f in $dpFiles) {
+        if ($f.Extension.ToLower() -eq '.jar') {
+            $actual += ("mods/" + $f.Name)
+        }
+    }
 }
 $actual = $actual | Sort-Object
 
@@ -72,6 +86,29 @@ $missing = @()
 foreach ($e in $expectedSet) { if (-not $actualSet.Contains($e)) { $missing += $e } }
 $extra = @()
 foreach ($a in $actualSet) { if (-not $expectedSet.Contains($a)) { $extra += $a } }
+
+# 3.5) Warnings: Mods with .zip extensions indicate misclassification or filename resolution failure
+$expectedModZips = $expectedCompare | Where-Object { ($_ -like 'mods/*.zip') -or ($_ -like 'mods/optional/*.zip') }
+$actualModZips = $actual | Where-Object { ($_ -like 'mods/*.zip') -or ($_ -like 'mods/optional/*.zip') }
+$warnings = @()
+if ($expectedModZips.Count -gt 0) {
+    $warnings += "CSV expects ZIPs under mods/: these likely indicate a misclassified mod or wrong filename in CSV:"
+    $warnings += ($expectedModZips | ForEach-Object { "  - $_" })
+}
+if ($actualModZips.Count -gt 0) {
+    $warnings += "Cache contains ZIPs under mods/: download resolution likely picked a wrong file (expected a JAR):"
+    $warnings += ($actualModZips | ForEach-Object { "  - $_" })
+}
+
+# Warn if any datapack JARs were aliased into mods during reconciliation
+$dpJarAliases = @()
+if (Test-Path $datapacksPath) {
+    $dpJarAliases = Get-ChildItem -Path $datapacksPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -eq '.jar' } | ForEach-Object { $_.Name }
+}
+if ($dpJarAliases.Count -gt 0) {
+    $warnings += "Datapack JARs will be placed under mods/ in release (aliased during reconciliation):"
+    $warnings += ($dpJarAliases | ForEach-Object { "  - $_" })
+}
 
 # 4) Optional relaxed version pairing for mods
 $versionPairs = @()
@@ -142,6 +179,14 @@ $sb.ToString() | Out-File -FilePath $OutputPath -Encoding UTF8
 ($expectedCompare | Sort-Object) | Out-File -FilePath (Join-Path $outDir 'expected.txt') -Encoding UTF8
 ($actual | Sort-Object) | Out-File -FilePath (Join-Path $outDir 'actual.txt') -Encoding UTF8
 
+# Write warnings (if any)
+if ($warnings.Count -gt 0) {
+    $warningsHeader = @("Warnings:")
+    $warningsOut = $warningsHeader + $warnings
+    $warningsOut | Out-File -FilePath (Join-Path $outDir 'warnings.txt') -Encoding UTF8
+    Write-Host "⚠️  Reconciliation warnings detected (${($warnings.Count)} lines)" -ForegroundColor DarkYellow
+}
+
 Write-Host "Report written -> $OutputPath" -ForegroundColor Green
 Write-Host "Missing: $($missing.Count) | Extra: $($extra.Count)" -ForegroundColor Yellow
 
@@ -153,4 +198,5 @@ Write-Host "Missing: $($missing.Count) | Extra: $($extra.Count)" -ForegroundColo
     MissingCount = $missing.Count
     ExtraCount = $extra.Count
     OutDir = $outDir
+    WarningsCount = $warnings.Count
 }

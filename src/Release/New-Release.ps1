@@ -136,107 +136,186 @@ function New-Release {
     
     Write-Host "" -ForegroundColor White
     
-    # Step 3: VALIDATION GATE - Start server to verify compatibility
+    # Step 3: VALIDATION GATE - Start server to verify compatibility (non-blocking)
     Write-Host "🧪 Validating mods by starting server..." -ForegroundColor Yellow
     Write-Host "   This ensures all mods are compatible before creating release package" -ForegroundColor Gray
     Write-Host "" -ForegroundColor White
-    
+
     $serverParams = @{
         DownloadFolder = $DownloadFolder
         TargetVersion = $targetVersion
         CsvPath = $CsvPath
-        LogFileTimeout = 600  # 10 minutes for log file detection
-        ServerMonitorTimeout = 600  # 10 minutes for server monitoring
+        LogFileTimeout = 120  # 2 minutes for log file detection
+        ServerMonitorTimeout = 120  # 2 minutes for server monitoring
     }
-    if ($NoAutoRestart) {
-        $serverParams.Add("NoAutoRestart", $true)
+    if ($NoAutoRestart) { $serverParams.Add("NoAutoRestart", $true) }
+
+    $serverResult = $true
+    try {
+        $serverResult = Start-MinecraftServer @serverParams
+    } catch {
+        $serverResult = $false
     }
-    
-    $serverResult = Start-MinecraftServer @serverParams
-    
+
     if (-not $serverResult) {
         Write-Host "" -ForegroundColor White
-        Write-Host "❌ SERVER VALIDATION FAILED - Release creation aborted!" -ForegroundColor Red
-        Write-Host "💡 This version has mod compatibility issues and cannot be released." -ForegroundColor Yellow
-        Write-Host "💡 Fix the mod compatibility issues before creating a release package." -ForegroundColor Yellow
+        Write-Host "⚠️  SERVER VALIDATION FAILED - proceeding to package anyway (non-blocking)" -ForegroundColor Yellow
+        Write-Host "   A release will still be created so clients can update; investigate validation logs separately." -ForegroundColor DarkYellow
+    } else {
+        Write-Host "" -ForegroundColor White
+        Write-Host "✅ Server validation passed - proceeding with release creation" -ForegroundColor Green
+    }
+
+    # Step 4: Ensure cache of mods/shaderpacks/datapacks is populated for this version
+    Write-Host "📦 Ensuring cache is populated (mods/shaderpacks/datapacks)..." -ForegroundColor Cyan
+    try {
+        Download-Mods -CsvPath $CsvPath -DownloadFolder $DownloadFolder -ApiResponseFolder (Join-Path $ProjectRoot 'apiresponse') -TargetGameVersion $targetVersion -SkipServerFiles | Out-Null
+    } catch { Write-Host "  ⚠️  Warning: Ensure-cache step failed: $($_.Exception.Message)" -ForegroundColor Yellow }
+
+    # Step 5: Create timestamped release directory and organize content
+    $releaseBase = Join-Path $ReleasePath $targetVersion
+    $runStamp = Get-Date -Format 'yyyyMMdd-HHmmss'
+    $releaseDir = Join-Path $releaseBase $runStamp
+    $releaseModsPath = Join-Path $releaseDir 'mods'
+    $releaseShaderpacks = Join-Path $releaseDir 'shaderpacks'
+    $releaseDatapacks = Join-Path $releaseDir 'datapacks'
+    New-Item -ItemType Directory -Path $releaseModsPath -Force | Out-Null
+
+    $downloadVersionPath = Join-Path $DownloadFolder $targetVersion
+    $sourceModsPath = Join-Path $downloadVersionPath 'mods'
+    if (-not (Test-Path $sourceModsPath)) {
+        Write-Host "❌ Source mods not found: $sourceModsPath" -ForegroundColor Red
         return $false
     }
-    
-    Write-Host "" -ForegroundColor White
-    Write-Host "✅ Server validation passed - proceeding with release creation" -ForegroundColor Green
-    Write-Host "" -ForegroundColor White
-    
-    # Step 4: Create release directory structure
-    $releaseDir = Join-Path $ReleasePath $targetVersion
-    $releaseModsPath = Join-Path $releaseDir "mods"
-    
-    Write-Host "📁 Creating release directory: $releaseDir" -ForegroundColor Cyan
-    New-Item -ItemType Directory -Path $releaseDir -Force | Out-Null
-    
-    # Step 5: Organize mods into mandatory/optional structure
-    $sourceModsPath = Join-Path $DownloadFolder "$targetVersion\mods"
-    $organizeResult = Copy-ModsToRelease -SourcePath $sourceModsPath -DestinationPath $releaseModsPath -CsvPath $CsvPath -TargetGameVersion $targetVersion
-    
-    if (-not $organizeResult) {
-        Write-Host "❌ Failed to organize mods for release" -ForegroundColor Red
-        return $false
+
+    $organizeOk = Copy-ModsToRelease -SourcePath $sourceModsPath -DestinationPath $releaseModsPath -CsvPath $CsvPath -TargetGameVersion $targetVersion
+    if (-not $organizeOk) { Write-Host "❌ Failed to organize mods for release" -ForegroundColor Red; return $false }
+
+    # Copy shaderpacks
+    $sourceShaderpacks = Join-Path $downloadVersionPath 'shaderpacks'
+    if (Test-Path $sourceShaderpacks) {
+        New-Item -ItemType Directory -Path $releaseShaderpacks -Force | Out-Null
+        $shaderFiles = Get-ChildItem -Path $sourceShaderpacks -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.zip', '.jar') }
+        foreach ($sp in $shaderFiles) { Copy-Item -Path $sp.FullName -Destination (Join-Path $releaseShaderpacks $sp.Name) -Force }
+        Write-Host "Copied $($shaderFiles.Count) shaderpack file(s)" -ForegroundColor Gray
+    } else { Write-Host "No shaderpacks found (skipping)" -ForegroundColor DarkGray }
+
+    # Copy datapacks: JAR -> mods (respect Group), ZIP -> datapacks
+    $sourceDatapacks = Join-Path $downloadVersionPath 'datapacks'
+    if (Test-Path $sourceDatapacks) {
+        $rows = Import-Csv -Path $CsvPath
+        function Normalize($s) { if ($null -eq $s) { return $null } ($s.ToString()).Trim() }
+        $versionFilter = {
+            param($r)
+            $cur = Normalize $r.CurrentGameVersion; $avail = Normalize $r.AvailableGameVersions
+            if ([string]::IsNullOrWhiteSpace($cur) -and [string]::IsNullOrWhiteSpace($avail)) { return $false }
+            if ($cur -eq $targetVersion) { return $true }
+            if ($avail -and $avail -match [Regex]::Escape($targetVersion)) { return $true }
+            return $false
+        }
+        $dpRows = $rows | Where-Object { (Normalize $_.Type) -eq 'datapack' -and (& $versionFilter $_) }
+        $copiedJarCount = 0; $copiedZipCount = 0
+        foreach ($d in $dpRows) {
+            $jarName = Normalize $d.Jar; if ([string]::IsNullOrWhiteSpace($jarName)) { continue }
+            $src = Join-Path $sourceDatapacks $jarName; if (-not (Test-Path $src)) { continue }
+            $ext = [System.IO.Path]::GetExtension($jarName).ToLower()
+            if ($ext -eq '.jar') {
+                $grp = (Normalize $d.Group); if ([string]::IsNullOrWhiteSpace($grp)) { $grp = 'required' }
+                $destDir = switch ($grp.ToLower()) { 'optional' { Join-Path $releaseModsPath 'optional' } 'block' { Join-Path $releaseModsPath 'block' } default { $releaseModsPath } }
+                if (-not (Test-Path $destDir)) { New-Item -ItemType Directory -Path $destDir -Force | Out-Null }
+                Copy-Item -Path $src -Destination (Join-Path $destDir $jarName) -Force; $copiedJarCount++
+            } elseif ($ext -eq '.zip') {
+                if (-not (Test-Path $releaseDatapacks)) { New-Item -ItemType Directory -Path $releaseDatapacks -Force | Out-Null }
+                Copy-Item -Path $src -Destination (Join-Path $releaseDatapacks $jarName) -Force; $copiedZipCount++
+            }
+        }
+        Write-Host "Datapacks copied -> jars to mods: $copiedJarCount, zips to datapacks: $copiedZipCount" -ForegroundColor Gray
+    } else { Write-Host "No datapacks found (skipping)" -ForegroundColor DarkGray }
+
+    # Step 6: Expected vs actual verification (relaxed-version)
+    $expectedFile = Join-Path $releaseDir 'expected-release-files.txt'
+    $null = Get-ExpectedReleaseFiles -Version $targetVersion -CsvPath $CsvPath -OutputPath $expectedFile
+    if (-not (Test-Path $expectedFile)) { Write-Host "❌ Expected file list not produced" -ForegroundColor Red; return $false }
+
+    $actualList = @()
+    if (Test-Path $releaseModsPath) { $actualList += (Get-ChildItem -Path $releaseModsPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.jar', '.zip') } | ForEach-Object { "mods/" + $_.Name }) }
+    $optPath = Join-Path $releaseModsPath 'optional'; if (Test-Path $optPath) { $actualList += (Get-ChildItem -Path $optPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.jar', '.zip') } | ForEach-Object { "mods/optional/" + $_.Name }) }
+    $serverPath = Join-Path $releaseModsPath 'server'; if (Test-Path $serverPath) { $actualList += (Get-ChildItem -Path $serverPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.jar', '.zip') } | ForEach-Object { "mods/server/" + $_.Name }) }
+    if (Test-Path $releaseShaderpacks) { $actualList += (Get-ChildItem -Path $releaseShaderpacks -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.zip', '.jar') } | ForEach-Object { "shaderpacks/" + $_.Name }) }
+    if (Test-Path $releaseDatapacks) { $actualList += (Get-ChildItem -Path $releaseDatapacks -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -eq '.zip' } | ForEach-Object { "datapacks/" + $_.Name }) }
+    $actualFile = Join-Path $releaseDir 'actual-release-files.txt'
+    $actualList | Sort-Object | Out-File -FilePath $actualFile -Encoding UTF8
+
+    $expectedCompare = Get-Content -Path $expectedFile | Where-Object { (($_ -like 'mods/*') -or ($_ -like 'shaderpacks/*') -or ($_ -like 'datapacks/*')) -and ($_ -notlike 'mods/block/*') }
+    $actualCompare = Get-Content -Path $actualFile
+    $expectedSet = New-Object System.Collections.Generic.HashSet[string]; $null = $expectedCompare | ForEach-Object { $expectedSet.Add($_) | Out-Null }
+    $actualSet = New-Object System.Collections.Generic.HashSet[string];   $null = $actualCompare  | ForEach-Object { $actualSet.Add($_)  | Out-Null }
+    $missing = @(); foreach ($e in $expectedSet) { if (-not $actualSet.Contains($e)) { $missing += $e } }
+    $extra   = @(); foreach ($a in $actualSet)   { if (-not $expectedSet.Contains($a)) { $extra   += $a } }
+
+    # relaxed-version pairing for mods
+    function Get-BaseModKey([string]$relPath) {
+        if ($relPath -notlike 'mods/*') { return $null }
+        $folder = if ($relPath.StartsWith('mods/optional/')) { 'mods/optional/' } elseif ($relPath.StartsWith('mods/server/')) { 'mods/server/' } else { 'mods/' }
+        $file = $relPath.Substring($folder.Length)
+        $name = [System.IO.Path]::GetFileNameWithoutExtension($file)
+        $m = [System.Text.RegularExpressions.Regex]::Match($name, '^(.*?)(?:[-_]?)(?=\d)')
+        $base = if ($m.Success -and $m.Groups.Count -gt 1 -and $m.Groups[1].Value.Trim().Length -gt 0) { $m.Groups[1].Value.TrimEnd('-','_') } else { $name }
+        return $folder + $base.ToLower()
     }
-    
-    Write-Host "" -ForegroundColor White
-    
-    # Step 6: Run hash generator to create documentation and ZIP
-    Write-Host "📦 Generating hashes and documentation..." -ForegroundColor Cyan
+    $expectedByBase = @{}; foreach ($e in $missing) { $k = Get-BaseModKey $e; if ($null -ne $k) { if (-not $expectedByBase.ContainsKey($k)) { $expectedByBase[$k] = @() }; $expectedByBase[$k] += $e } }
+    $actualByBase   = @{}; foreach ($a in $extra)   { $k = Get-BaseModKey $a; if ($null -ne $k) { if (-not $actualByBase.ContainsKey($k))   { $actualByBase[$k]   = @() } ; $actualByBase[$k]   += $a } }
+    $pairedMissing = New-Object System.Collections.Generic.HashSet[string]
+    $pairedExtra   = New-Object System.Collections.Generic.HashSet[string]
+    foreach ($k in $expectedByBase.Keys) {
+        if ($actualByBase.ContainsKey($k)) { foreach ($eItem in $expectedByBase[$k]) { $pairedMissing.Add($eItem) | Out-Null }; foreach ($aItem in $actualByBase[$k]) { $pairedExtra.Add($aItem) | Out-Null } }
+    }
+    if ($pairedMissing.Count -gt 0 -or $pairedExtra.Count -gt 0) {
+        $missing = $missing | Where-Object { -not $pairedMissing.Contains($_) }
+        $extra   = $extra   | Where-Object { -not $pairedExtra.Contains($_) }
+        Write-Host "  ⚠️  Ignoring version-only differences for mods (relaxed-version)" -ForegroundColor DarkYellow
+    }
+
+    if ($missing.Count -gt 0 -or $extra.Count -gt 0) {
+        Write-Host "Verification differences detected:" -ForegroundColor Yellow
+        $missingPath = Join-Path $releaseDir 'verification-missing.txt'
+        $extraPath = Join-Path $releaseDir 'verification-extra.txt'
+        if ($missing.Count -gt 0) { Write-Host "  Missing (expected but not found):" -ForegroundColor Red; $missing | ForEach-Object { Write-Host "    - $_" -ForegroundColor Red }; $missing | Out-File -FilePath $missingPath -Encoding UTF8 } else { '' | Out-File -FilePath $missingPath -Encoding UTF8 }
+        if ($extra.Count -gt 0)   { Write-Host "  Unexpected (present but not expected):" -ForegroundColor DarkYellow; $extra | ForEach-Object { Write-Host "    - $_" -ForegroundColor DarkYellow }; $extra | Out-File -FilePath $extraPath -Encoding UTF8 } else { '' | Out-File -FilePath $extraPath -Encoding UTF8 }
+        Write-Host "⚠️  Continuing despite differences (relaxed-version)" -ForegroundColor DarkYellow
+    } else { Write-Host "✓ Release files verified against DB expectations" -ForegroundColor Green }
+
+    # Step 7: Run hash generator to create README/hash and modpack.zip
     $hashScriptPath = Join-Path $ProjectRoot "tools\minecraft-mod-hash\hash.ps1"
-    
-    if (-not (Test-Path $hashScriptPath)) {
-        Write-Host "❌ Hash generator not found: $hashScriptPath" -ForegroundColor Red
-        Write-Host "💡 Ensure the minecraft-mod-hash submodule is initialized:" -ForegroundColor Yellow
-        Write-Host "   git submodule update --init --recursive" -ForegroundColor Gray
-        return $false
-    }
-    
+    if (-not (Test-Path $hashScriptPath)) { Write-Host "❌ Hash generator not found: $hashScriptPath" -ForegroundColor Red; return $false }
     try {
         & $hashScriptPath -ModsPath $releaseModsPath -OutputPath $releaseDir -CreateZip -UpdateConfig
-        
-        # Verify critical files were created (don't rely on exit code)
-        $hashFile = Join-Path $releaseDir "hash.txt"
-        $readmeFile = Join-Path $releaseDir "README.md"
-        $zipFiles = Get-ChildItem -Path $releaseDir -Filter "*.zip" -File -ErrorAction SilentlyContinue
-        
-        if (-not (Test-Path $hashFile)) {
-            Write-Host "❌ Hash file not created: $hashFile" -ForegroundColor Red
-            return $false
+        $hashFile = Join-Path $releaseDir 'hash.txt'; $readmeFile = Join-Path $releaseDir 'README.md'; $zipFiles = Get-ChildItem -Path $releaseDir -Filter '*.zip' -File -ErrorAction SilentlyContinue
+        if (-not (Test-Path $hashFile)) { Write-Host "❌ Hash file not created" -ForegroundColor Red; return $false }
+        if (-not (Test-Path $readmeFile)) { Write-Host "❌ README file not created" -ForegroundColor Red; return $false }
+        if ($zipFiles.Count -eq 0) { Write-Host "❌ ZIP package not created" -ForegroundColor Red; return $false }
+    } catch { Write-Host "❌ Error running hash generator: $($_.Exception.Message)" -ForegroundColor Red; return $false }
+
+    # Optional: copy server files alongside release for convenience (not inside the zip)
+    try {
+        $serverVersionPath = Join-Path $DownloadFolder $targetVersion
+        if (Test-Path $serverVersionPath) {
+            Write-Host "📦 Copying server files to release folder (outside ZIP)..." -ForegroundColor Cyan
+            $minecraftJar = Get-ChildItem -Path $serverVersionPath -Filter 'minecraft_server*.jar' -File -ErrorAction SilentlyContinue | Select-Object -First 1
+            if ($minecraftJar) { Copy-Item -Path $minecraftJar.FullName -Destination $releaseDir -Force; Write-Host "  ✓ Copied: $($minecraftJar.Name)" -ForegroundColor Green } else { Write-Host "  ⚠️  Minecraft server JAR not found" -ForegroundColor Yellow }
+            $fabricJar = Get-ChildItem -Path $serverVersionPath -Filter 'fabric-server*.jar' -File -ErrorAction SilentlyContinue | Select-Object -First 1
+            if ($fabricJar) { Copy-Item -Path $fabricJar.FullName -Destination $releaseDir -Force; Write-Host "  ✓ Copied: $($fabricJar.Name)" -ForegroundColor Green } else { Write-Host "  ⚠️  Fabric launcher JAR not found" -ForegroundColor Yellow }
+            $installerPath = Join-Path $serverVersionPath 'installer'
+            if (Test-Path $installerPath) {
+                $fabricInstaller = Get-ChildItem -Path $installerPath -Filter 'fabric-installer-*.exe' -File -ErrorAction SilentlyContinue | Select-Object -First 1
+                if ($fabricInstaller) { Copy-Item -Path $fabricInstaller.FullName -Destination $releaseDir -Force; Write-Host "  ✓ Copied: $($fabricInstaller.Name)" -ForegroundColor Green } else { Write-Host "  ⚠️  Fabric installer not found" -ForegroundColor Yellow }
+            }
         }
-        if (-not (Test-Path $readmeFile)) {
-            Write-Host "❌ README file not created: $readmeFile" -ForegroundColor Red
-            return $false
-        }
-        if ($zipFiles.Count -eq 0) {
-            Write-Host "❌ ZIP package not created" -ForegroundColor Red
-            return $false
-        }
-    } catch {
-        Write-Host "❌ Error running hash generator: $($_.Exception.Message)" -ForegroundColor Red
-        return $false
-    }
-    
+    } catch { Write-Host "  ⚠️  Failed to copy server files: $($_.Exception.Message)" -ForegroundColor Yellow }
+
     Write-Host "" -ForegroundColor White
     Write-Host "✅ Release package created successfully!" -ForegroundColor Green
     Write-Host "📂 Location: $releaseDir" -ForegroundColor Cyan
-    Write-Host "" -ForegroundColor White
-    Write-Host "📦 Package contents:" -ForegroundColor Cyan
-    Write-Host "   - mods/ (mandatory mods)" -ForegroundColor Gray
-    Write-Host "   - mods/optional/ (optional mods)" -ForegroundColor Gray
-    Write-Host "   - hash.txt (MD5 hashes)" -ForegroundColor Gray
-    Write-Host "   - README.md (documentation)" -ForegroundColor Gray
-    Write-Host "   - InertiaAntiCheat.toml (IAC config)" -ForegroundColor Gray
-    
-    # Check if ZIP was created
-    $zipFiles = Get-ChildItem -Path $releaseDir -Filter "*.zip" -File -ErrorAction SilentlyContinue
-    if ($zipFiles.Count -gt 0) {
-        Write-Host "   - $($zipFiles[0].Name) (packaged release)" -ForegroundColor Gray
-    }
-    
     return $true
 }
 

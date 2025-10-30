@@ -221,7 +221,7 @@ function Download-Mods {
         $preExistingFiles = @{}
         $downloadedThisRun = @{}
         
-        foreach ($mod in $mods) {
+    foreach ($mod in $mods) {
             if (-not [string]::IsNullOrEmpty($mod.ID)) {
                 # Skip JDK entries - they have their own download function
                 if ($mod.Type -eq "jdk") {
@@ -259,14 +259,33 @@ function Download-Mods {
                 $downloadUrl = $null
                 $downloadVersion = $null
                 $result = $null
+                $resolvedByApi = $false
                 
                 # Skip server/launcher entries if requested
                 if ($SkipServerFiles -and $mod.Type -in @("launcher", "server")) {
                     continue
                 }
                 
+                # If targeting a specific version and this is a Modrinth MOD, resolve from API FIRST to ensure the URL matches the target game version
+                if ($TargetGameVersion -and $modHost -eq 'modrinth' -and $mod.Type -eq 'mod' -and $mod.ID) {
+                    try {
+                        $allVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -UseBasicParsing -ErrorAction SilentlyContinue
+                        $targetApiVersion = $allVersions | Where-Object { $_.game_versions -contains $TargetGameVersion -and $_.loaders -contains $loader } | Select-Object -First 1
+                        if ($targetApiVersion -and $targetApiVersion.files -and $targetApiVersion.files.Count -gt 0) {
+                            $downloadUrl = $targetApiVersion.files[0].url
+                            $downloadVersion = $targetApiVersion.version_number
+                            # Use the exact filename from API for target version
+                            $jarFilename = $targetApiVersion.files[0].filename
+                            $resolvedByApi = $true
+                            Write-Host "  ✅ $($mod.Name): Resolved URL from API for $TargetGameVersion ($downloadVersion)" -ForegroundColor Green
+                        }
+                    } catch {
+                        Write-Host "  ⚠️  $($mod.Name): API resolution failed, will fall back to DB URLs" -ForegroundColor DarkYellow
+                    }
+                }
+
                 # For system entries (installer, launcher, server), handle differently based on UseLatestVersion
-                if ($mod.Type -in @("installer", "launcher", "server")) {
+                if (-not $resolvedByApi -and ($mod.Type -in @("installer", "launcher", "server"))) {
                     if ($UseLatestVersion -or $UseNextVersion) {
                         # When using latest/next version, find system entry that matches target game version
                         $matchingSystemEntry = $mods | Where-Object { 
@@ -308,7 +327,7 @@ function Download-Mods {
                             }
                         }
                     }
-                } elseif ($TargetGameVersion -and $mod.NextGameVersion -eq $TargetGameVersion) {
+                } elseif (-not $resolvedByApi -and $TargetGameVersion -and $mod.NextGameVersion -eq $TargetGameVersion) {
                     # Target version matches NextGameVersion
                     if ($mod.NextVersionUrl) {
                         # Use NextVersionUrl if available
@@ -328,7 +347,7 @@ function Download-Mods {
                             $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                         }
                     }
-                } elseif ($TargetGameVersion -and $mod.LatestGameVersion -eq $TargetGameVersion) {
+                } elseif (-not $resolvedByApi -and $TargetGameVersion -and $mod.LatestGameVersion -eq $TargetGameVersion) {
                     # Target version matches LatestGameVersion
                     if ($mod.LatestVersionUrl) {
                         # Use LatestVersionUrl if available
@@ -348,38 +367,43 @@ function Download-Mods {
                             $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                         }
                     }
-                } elseif ($UseLatestVersion -and $mod.LatestVersionUrl) {
+                } elseif (-not $resolvedByApi -and $UseLatestVersion -and $mod.LatestVersionUrl) {
                     $downloadUrl = $mod.LatestVersionUrl
                     $downloadVersion = $mod.LatestVersion
                     # For CurseForge mods, we still need to get the filename from API
                     if ($modHost -eq "curseforge") {
-                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
+                        $cfVersion = if (-not [string]::IsNullOrEmpty($mod.LatestVersion)) { $mod.LatestVersion } elseif (-not [string]::IsNullOrEmpty($mod.CurrentVersion)) { $mod.CurrentVersion } else { $jarFilename }
+                        if ([string]::IsNullOrEmpty($cfVersion)) { $cfVersion = "latest" }
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $cfVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                     }
-                } elseif ($UseNextVersion -and $mod.NextVersionUrl) {
+                } elseif (-not $resolvedByApi -and $UseNextVersion -and $mod.NextVersionUrl) {
                     $downloadUrl = $mod.NextVersionUrl
                     $downloadVersion = $mod.NextVersion
                     # For CurseForge mods, we still need to get the filename from API
                     if ($modHost -eq "curseforge") {
                         $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.NextVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                     }
-                } elseif ($mod.CurrentVersionUrl) {
+                } elseif (-not $resolvedByApi -and $mod.CurrentVersionUrl) {
                     $downloadUrl = $mod.CurrentVersionUrl
                     $downloadVersion = $mod.CurrentVersion
                     # For CurseForge mods, we still need to get the filename from API
                     if ($modHost -eq "curseforge") {
                         $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
                     }
-                } else {
+                } elseif (-not $resolvedByApi) {
                     # Need to fetch the URL from API
                     Write-Host "Fetching download URL for $($mod.Name)..." -ForegroundColor Cyan
                     
                     if ($modHost -eq "curseforge") {
-                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
+                        $cfVersion = if (-not [string]::IsNullOrEmpty($mod.CurrentVersion)) { $mod.CurrentVersion } elseif (-not [string]::IsNullOrEmpty($mod.LatestVersion)) { $mod.LatestVersion } elseif (-not [string]::IsNullOrEmpty($jarFilename)) { $jarFilename } else { "latest" }
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $cfVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL
                     } else {
-                        $result = Validate-ModVersion -ModId $mod.ID -Version $mod.Version -Loader $loader -GameVersion $gameVersion -ResponseFolder $ApiResponseFolder -Jar $jarFilename
+                        # Use semantic keywords so provider resolves correctly for the specified GameVersion
+                        $versionKeyword = if ($UseLatestVersion) { "latest" } else { "current" }
+                        $result = Validate-ModVersion -ModId $mod.ID -Version $versionKeyword -Loader $loader -GameVersion $gameVersion -ResponseFolder $ApiResponseFolder -Jar $jarFilename -CsvPath $CsvPath
                     }
                     
-                    if ($result.Exists) {
+                    if (-not $resolvedByApi -and $result.Exists) {
                         if ($UseLatestVersion) {
                             $downloadUrl = $result.LatestVersionUrl
                             $downloadVersion = $result.LatestVersion
@@ -478,6 +502,33 @@ function Download-Mods {
                     New-Item -ItemType Directory -Path $gameVersionFolder -Force | Out-Null
                 }
                 
+                # If targeting a specific version and this looks like a Modrinth MOD, ensure the file actually matches the target MC version.
+                # This guards against stale DB URLs or mis-mapped Current/Next/Latest fields.
+                if (-not $resolvedByApi -and $TargetGameVersion -and $mod.Type -eq 'mod' -and $modHost -eq 'modrinth' -and $downloadUrl) {
+                    try {
+                        # Peek at the filename the current URL would yield
+                        $peekFileName = [System.IO.Path]::GetFileName([System.Web.HttpUtility]::UrlDecode($downloadUrl))
+                        $mcToken = $null
+                        $tokens = [System.Text.RegularExpressions.Regex]::Matches($peekFileName, '1\.\d+\.\d+') | ForEach-Object { $_.Value }
+                        if ($tokens -and $tokens.Count -gt 0) { $mcToken = $tokens[-1] }
+                        if ($mcToken -and $mcToken -ne $TargetGameVersion) {
+                            Write-Host "  🔁 $($mod.Name): Current URL appears for $mcToken, searching API for $TargetGameVersion..." -ForegroundColor Yellow
+                            $allVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -UseBasicParsing -ErrorAction SilentlyContinue
+                            $targetApiVersion = $allVersions | Where-Object { $_.game_versions -contains $TargetGameVersion -and $_.loaders -contains $loader } | Select-Object -First 1
+                            if ($targetApiVersion -and $targetApiVersion.files -and $targetApiVersion.files.Count -gt 0) {
+                                $downloadUrl = $targetApiVersion.files[0].url
+                                $downloadVersion = $targetApiVersion.version_number
+                                $jarFilename = $targetApiVersion.files[0].filename
+                                Write-Host "  ✅ $($mod.Name): Switched to $TargetGameVersion file from API ($downloadVersion)" -ForegroundColor Green
+                            } else {
+                                Write-Host "  ⚠️  $($mod.Name): No API file found for $TargetGameVersion; proceeding with compatible file ($mcToken)" -ForegroundColor DarkYellow
+                            }
+                        }
+                    } catch {
+                        Write-Host "  ⚠️  $($mod.Name): API check failed ($($_.Exception.Message)); proceeding with existing URL" -ForegroundColor DarkYellow
+                    }
+                }
+
                 # Determine filename for download
                 $filename = $null
                 if ($mod.Type -in @("installer", "launcher", "server")) {

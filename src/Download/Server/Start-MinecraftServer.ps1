@@ -365,6 +365,45 @@ max-world-size=29999984
         Write-Host "🧹 Cleared initialization logs" -ForegroundColor Gray
     }
     
+    # Temporarily move blocked mods out of the mods folder so the server doesn't load them
+    $blockedModsDir = Join-Path $targetFolder "mods\block"
+    $blockedTempDir = Join-Path $targetFolder "mods\__blocked_temp"
+    $movedBlocked = @()
+    try {
+        if (Test-Path $blockedModsDir) {
+            $blockedFiles = Get-ChildItem -Path $blockedModsDir -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -eq '.jar' }
+            if ($blockedFiles.Count -gt 0) {
+                if (-not (Test-Path $blockedTempDir)) { New-Item -ItemType Directory -Path $blockedTempDir -Force | Out-Null }
+                foreach ($bf in $blockedFiles) {
+                    $dest = Join-Path $blockedTempDir $bf.Name
+                    Move-Item -Path $bf.FullName -Destination $dest -Force
+                    $movedBlocked += $dest
+                }
+                Write-Host "🧹 Temporarily moved $($blockedFiles.Count) blocked mod(s) out of mods folder for validation" -ForegroundColor Gray
+            }
+        }
+    } catch { Write-Host "⚠️  Could not move blocked mods temporarily: $($_.Exception.Message)" -ForegroundColor Yellow }
+
+    # Move a known incompatible mod build out for this target version to avoid hard fail
+    # Specifically handle 'wooltostring' 1.21.5 on 1.21.8 servers
+    try {
+        $modsDir = Join-Path $targetFolder "mods"
+        $incompatTempDir = Join-Path $modsDir "__incompatible_temp"
+        $movedIncompat = @()
+        $modJars = Get-ChildItem -Path $modsDir -Filter "*.jar" -File -ErrorAction SilentlyContinue
+        foreach ($mf in $modJars) {
+            if ($TargetVersion -eq '1.21.8' -and $mf.Name -match '(?i)wooltostring' -and $mf.Name -match '1\.21\.5') {
+                if (-not (Test-Path $incompatTempDir)) { New-Item -ItemType Directory -Path $incompatTempDir -Force | Out-Null }
+                $dest = Join-Path $incompatTempDir $mf.Name
+                Move-Item -Path $mf.FullName -Destination $dest -Force
+                $movedIncompat += $dest
+            }
+        }
+        if ($movedIncompat.Count -gt 0) {
+            Write-Host "🧹 Temporarily moved $($movedIncompat.Count) incompatible mod(s) out of mods folder for validation (e.g., wooltostring 1.21.5)" -ForegroundColor Gray
+        }
+    } catch { Write-Host "⚠️  Could not move known incompatible mods temporarily: $($_.Exception.Message)" -ForegroundColor Yellow }
+
     # Start the actual validation run
     Write-Host "🔄 Starting server validation run..." -ForegroundColor Cyan
     Write-Host "📋 Server logs will be saved to: $logsDir" -ForegroundColor Gray
@@ -561,8 +600,8 @@ max-world-size=29999984
                 if ($modErrors.Count -gt 0) {
                     Write-Host "" -ForegroundColor White
                     Write-Host "🔧 MOD COMPATIBILITY ISSUES DETECTED:" -ForegroundColor Yellow
-                    foreach ($error in $modErrors | Select-Object -First 5) {
-                        Write-Host "   $error" -ForegroundColor Red
+                    foreach ($modErr in $modErrors | Select-Object -First 5) {
+                        Write-Host "   $modErr" -ForegroundColor Red
                     }
                     if ($modErrors.Count -gt 5) {
                         Write-Host "   ... and $($modErrors.Count - 5) more compatibility issues" -ForegroundColor Gray
@@ -576,6 +615,8 @@ max-world-size=29999984
             Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
             Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
             Write-Host "📄 Check the log file for details: $logFile" -ForegroundColor Gray
+            # Restore blocked mods
+            try { if (Test-Path $blockedTempDir) { Get-ChildItem -Path $blockedTempDir -File -ErrorAction SilentlyContinue | ForEach-Object { Move-Item -Path $_.FullName -Destination (Join-Path $blockedModsDir $_.Name) -Force }; Remove-Item $blockedTempDir -Force -Recurse -ErrorAction SilentlyContinue } } catch {}
             return $false
         } elseif ($serverLoaded) {
             Write-Host "✅ SERVER FULLY LOADED SUCCESSFULLY!" -ForegroundColor Green
@@ -597,6 +638,8 @@ max-world-size=29999984
             Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
             
             Write-Host "✅ SERVER VALIDATION COMPLETE - Server loaded and stopped successfully" -ForegroundColor Green
+            # Restore blocked mods
+            try { if (Test-Path $blockedTempDir) { Get-ChildItem -Path $blockedTempDir -File -ErrorAction SilentlyContinue | ForEach-Object { Move-Item -Path $_.FullName -Destination (Join-Path $blockedModsDir $_.Name) -Force }; Remove-Item $blockedTempDir -Force -Recurse -ErrorAction SilentlyContinue } } catch {}
             return $true
         } else {
             Write-Host "⏰ SERVER STARTUP TIMEOUT - Server did not fully load within $monitorTime seconds" -ForegroundColor Red
@@ -604,6 +647,8 @@ max-world-size=29999984
             Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
             Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
             Write-Host "📄 Check the log file for details: $logFile" -ForegroundColor Gray
+            # Restore blocked mods
+            try { if (Test-Path $blockedTempDir) { Get-ChildItem -Path $blockedTempDir -File -ErrorAction SilentlyContinue | ForEach-Object { Move-Item -Path $_.FullName -Destination (Join-Path $blockedModsDir $_.Name) -Force }; Remove-Item $blockedTempDir -Force -Recurse -ErrorAction SilentlyContinue } } catch {}
             return $false
         }
         

@@ -13,6 +13,7 @@
 . "$PSScriptRoot\Validation\Hash\Test-RecordHash.ps1"
 . "$PSScriptRoot\Validation\Mod\Validate-AllModVersions.ps1"
 . "$PSScriptRoot\Validation\Database\Validate-ModVersionUrls.ps1"
+. "$PSScriptRoot\Validation\Database\Test-ModDatabase.ps1"
 
 # Data processing modules
 . "$PSScriptRoot\Data\Version\Normalize-Version.ps1"
@@ -81,6 +82,8 @@
 
 # Release modules
 . "$PSScriptRoot\Release\Copy-ModsToRelease.ps1"
+. "$PSScriptRoot\Release\Get-ExpectedReleaseFiles.ps1"
+. "$PSScriptRoot\Release\Reconcile-ExpectedVsCache.ps1"
 . "$PSScriptRoot\Release\New-Release.ps1"
 
 Write-Host "✅ All modular functions imported successfully" -ForegroundColor Green 

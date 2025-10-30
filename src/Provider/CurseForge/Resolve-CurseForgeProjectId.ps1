@@ -81,9 +81,9 @@ function Resolve-CurseForgeProjectId {
             throw "No CurseForge project found for slug '$slug'"
         }
 
-        # Prefer exact slug match, otherwise first result
-        $match = $resp.data | Where-Object { $_.slug -eq $slug } | Select-Object -First 1
-        if (-not $match) { $match = $resp.data | Select-Object -First 1 }
+    # Prefer exact slug match ONLY; do not fallback to first result to avoid wrong projects
+    $match = $resp.data | Where-Object { $_.slug -eq $slug } | Select-Object -First 1
+    if (-not $match) { throw "No exact CurseForge slug match for '$slug'" }
 
         if (-not $match -or -not $match.id) {
             throw "Failed to resolve numeric ID for slug '$slug'"
@@ -93,7 +93,7 @@ function Resolve-CurseForgeProjectId {
         if (-not $Quiet) { Write-Host "  Resolved CurseForge slug '$slug' -> ID $id" -ForegroundColor Gray }
         return $id
     } catch {
-        if (-not $Quiet) { Write-Host "  Warning: Could not resolve CurseForge ID: $($_.Exception.Message)" -ForegroundColor Yellow }
+    if (-not $Quiet) { Write-Host "  Warning: Could not resolve CurseForge ID: $($_.Exception.Message)" -ForegroundColor Yellow }
         return $null
     }
 }

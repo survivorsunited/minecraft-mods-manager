@@ -262,9 +262,20 @@ function Add-ModToDatabase {
             return $false
         }
 
-        # Determine source/host based on URL
-    $apiSource = if ($AddModUrl -and $AddModUrl -match "curseforge\.com") { "curseforge" } else { "modrinth" }
-    $providerHost = $apiSource
+        # Determine source/host based on URL or ID pattern
+        # Priority: explicit CurseForge URL -> curseforge
+        # Otherwise: numeric ID implies CurseForge -> curseforge
+        # Fallback: modrinth
+        $apiSource = "modrinth"
+        $providerHost = "modrinth"
+        if ($AddModUrl -and $AddModUrl -match "curseforge\.com") {
+            $apiSource = "curseforge"
+            $providerHost = "curseforge"
+        } elseif ($AddModId -and $AddModId -match '^[0-9]+$') {
+            # Numeric IDs are used for CurseForge projects
+            $apiSource = "curseforge"
+            $providerHost = "curseforge"
+        }
 
         # Create new mod entry
         $newMod = [PSCustomObject]@{

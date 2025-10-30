@@ -170,7 +170,7 @@ function Validate-ModVersion {
                         LatestVersion = $result.Version
                         VersionUrl = $result.DownloadUrl
                         LatestVersionUrl = $result.DownloadUrl
-                        LatestGameVersion = "1.21.5"  # Default for now
+                        LatestGameVersion = if ($result.LatestGameVersion) { $result.LatestGameVersion } else { $GameVersion }
                         CurrentDependencies = $result.Dependencies
                         LatestDependencies = $result.Dependencies
                         ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"

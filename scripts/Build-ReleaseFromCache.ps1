@@ -22,6 +22,21 @@ if (-not (Test-Path $downloadPath)) {
     throw "download/$Version not found at $downloadPath"
 }
 
+# Ensure cache is populated for this version (mods, shaderpacks, datapacks) before building
+try {
+    Write-Host "Ensuring cache is populated for $Version (downloading any missing files)..." -ForegroundColor Cyan
+    # Import modular functions and run the downloader targeting this version; skip server files for cache-only build
+    . (Join-Path $repoRoot 'src/Import-Modules.ps1') | Out-Null
+    $csvResolved = (Join-Path $repoRoot $CsvPath)
+    $apiResponse = Join-Path $repoRoot 'apiresponse'
+    $dlRoot = Join-Path $repoRoot 'download'
+    Download-Mods -CsvPath $csvResolved -DownloadFolder $dlRoot -ApiResponseFolder $apiResponse -TargetGameVersion $Version -SkipServerFiles | Out-Null
+    Write-Host "✓ Cache ensured for $Version" -ForegroundColor Green
+} catch {
+    Write-Host "⚠️  Warning: Failed to pre-download missing files: $($_.Exception.Message)" -ForegroundColor Yellow
+    Write-Host "    Continuing with existing cache contents..." -ForegroundColor Yellow
+}
+
 $sourceMods = Join-Path $downloadPath 'mods'
 if (-not (Test-Path $sourceMods)) {
     throw "No mods folder found at $sourceMods"
@@ -29,6 +44,8 @@ if (-not (Test-Path $sourceMods)) {
 
 # Shaderpacks source (optional)
 $sourceShaderpacks = Join-Path $downloadPath 'shaderpacks'
+ # Datapacks source (optional)
+$sourceDatapacks = Join-Path $downloadPath 'datapacks'
 
 # Create isolated, timestamped run directory to avoid overwriting previous runs
 $baseReleaseDir = Join-Path $repoRoot (Join-Path 'releases' $Version)
@@ -36,6 +53,7 @@ $runStamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 $releaseDir = Join-Path $baseReleaseDir $runStamp
 $releaseMods = Join-Path $releaseDir 'mods'
 $releaseShaderpacks = Join-Path $releaseDir 'shaderpacks'
+$releaseDatapacks = Join-Path $releaseDir 'datapacks'
 New-Item -ItemType Directory -Path $releaseMods -Force | Out-Null
 
 # Import Copy-ModsToRelease and run
@@ -55,33 +73,85 @@ if (Test-Path $sourceShaderpacks) {
     Write-Host "No shaderpacks source found at $sourceShaderpacks (skipping)" -ForegroundColor DarkGray
 }
 
+# Copy datapack JARs into mods (respect Group from CSV) and ZIPs into datapacks
+if (Test-Path $sourceDatapacks) {
+    # Load CSV and filter datapacks for this version
+    $csvPathResolved = (Join-Path $repoRoot $CsvPath)
+    $rows = Import-Csv -Path $csvPathResolved
+    function Normalize($s) { if ($null -eq $s) { return $null } ($s.ToString()).Trim() }
+    $versionFilter = {
+        param($r)
+        $cur = Normalize $r.CurrentGameVersion
+        $avail = Normalize $r.AvailableGameVersions
+        if ([string]::IsNullOrWhiteSpace($cur) -and [string]::IsNullOrWhiteSpace($avail)) { return $false }
+        if ($cur -eq $Version) { return $true }
+        if ($avail -and $avail -match [Regex]::Escape($Version)) { return $true }
+        return $false
+    }
+    $dpRows = $rows | Where-Object { (Normalize $_.Type) -eq 'datapack' -and (& $versionFilter $_) }
+
+    $copiedJarCount = 0
+    $copiedZipCount = 0
+    foreach ($d in $dpRows) {
+        $jarName = Normalize $d.Jar
+        if ([string]::IsNullOrWhiteSpace($jarName)) { continue }
+        $src = Join-Path $sourceDatapacks $jarName
+        if (-not (Test-Path $src)) { continue }
+        $ext = [System.IO.Path]::GetExtension($jarName).ToLower()
+        if ($ext -eq '.jar') {
+            $grp = (Normalize $d.Group)
+            if ([string]::IsNullOrWhiteSpace($grp)) { $grp = 'required' }
+            $destDir = switch ($grp.ToLower()) {
+                'optional' { Join-Path $releaseMods 'optional' }
+                'block'    { Join-Path $releaseMods 'block' }
+                default    { $releaseMods }
+            }
+            if (-not (Test-Path $destDir)) { New-Item -ItemType Directory -Path $destDir -Force | Out-Null }
+            Copy-Item -Path $src -Destination (Join-Path $destDir $jarName) -Force
+            $copiedJarCount++
+        } elseif ($ext -eq '.zip') {
+            if (-not (Test-Path $releaseDatapacks)) { New-Item -ItemType Directory -Path $releaseDatapacks -Force | Out-Null }
+            Copy-Item -Path $src -Destination (Join-Path $releaseDatapacks $jarName) -Force
+            $copiedZipCount++
+        }
+    }
+    Write-Host "Datapacks copied -> jars to mods: $copiedJarCount, zips to datapacks: $copiedZipCount" -ForegroundColor Gray
+} else {
+    Write-Host "No datapacks source found at $sourceDatapacks (skipping)" -ForegroundColor DarkGray
+}
+
 # Generate expected file list from DB and verify against actual
 $expectedScript = Join-Path $repoRoot 'scripts/Get-ExpectedReleaseFiles.ps1'
 if (-not (Test-Path $expectedScript)) { throw "Get-ExpectedReleaseFiles.ps1 not found at $expectedScript" }
 
 $expectedFile = Join-Path $releaseDir 'expected-release-files.txt'
-$expected = & $expectedScript -Version $Version -CsvPath (Join-Path $repoRoot $CsvPath) -OutputPath $expectedFile
+& $expectedScript -Version $Version -CsvPath (Join-Path $repoRoot $CsvPath) -OutputPath $expectedFile
 # Don't trust $LASTEXITCODE for PowerShell scripts; validate output file instead
 if (-not (Test-Path $expectedFile)) { throw "Get-ExpectedReleaseFiles.ps1 did not produce expected file at $expectedFile" }
 
-# Build actual file listing (relative to release root) for required+optional mods and shaderpacks
+# Build actual file listing (relative to release root) for required+optional mods, shaderpacks, and datapacks
 $actualList = @()
 if (Test-Path $releaseMods) {
-    $actualList += (Get-ChildItem -Path $releaseMods -Filter '*.jar' -File -ErrorAction SilentlyContinue | ForEach-Object { "mods/" + $_.Name })
+    # Include JARs and ZIPs to surface any misclassified artifacts
+    $actualList += (Get-ChildItem -Path $releaseMods -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.jar', '.zip') } | ForEach-Object { "mods/" + $_.Name })
 }
 $optionalModsPath = Join-Path $releaseMods 'optional'
 if (Test-Path $optionalModsPath) {
-    $actualList += (Get-ChildItem -Path $optionalModsPath -Filter '*.jar' -File -ErrorAction SilentlyContinue | ForEach-Object { "mods/optional/" + $_.Name })
+    $actualList += (Get-ChildItem -Path $optionalModsPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.jar', '.zip') } | ForEach-Object { "mods/optional/" + $_.Name })
 }
 # Shaderpacks (zip/jar)
 if (Test-Path $releaseShaderpacks) {
     $actualList += (Get-ChildItem -Path $releaseShaderpacks -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.zip','.jar') } | ForEach-Object { "shaderpacks/" + $_.Name })
 }
+# Datapacks (zip only) — jar datapacks are placed under mods
+if (Test-Path $releaseDatapacks) {
+    $actualList += (Get-ChildItem -Path $releaseDatapacks -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.zip') } | ForEach-Object { "datapacks/" + $_.Name })
+}
 $actualFile = Join-Path $releaseDir 'actual-release-files.txt'
 $actualList | Sort-Object | Out-File -FilePath $actualFile -Encoding UTF8
 
-# Filter expected to required+optional mods and shaderpacks only for comparison
-$expectedCompare = Get-Content -Path $expectedFile | Where-Object { (($_ -like 'mods/*') -or ($_ -like 'shaderpacks/*')) -and ($_ -notlike 'mods/block/*') }
+# Filter expected to required+optional mods, shaderpacks, and datapacks (exclude mods/block)
+$expectedCompare = Get-Content -Path $expectedFile | Where-Object { (($_ -like 'mods/*') -or ($_ -like 'shaderpacks/*') -or ($_ -like 'datapacks/*')) -and ($_ -notlike 'mods/block/*') }
 $actualCompare = Get-Content -Path $actualFile
 
 # Compute set differences (exact path comparison)
@@ -192,7 +262,8 @@ $hashScript = Join-Path $repoRoot 'tools/minecraft-mod-hash/hash.ps1'
 if (-not (Test-Path $hashScript)) { throw "hash.ps1 not found at $hashScript" }
 
 & $hashScript -ModsPath $releaseMods -OutputPath $releaseDir -CreateZip -UpdateConfig
-if ($LASTEXITCODE -ne 0) { throw "hash.ps1 failed with exit code $LASTEXITCODE" }
+# Only enforce exit code if it's set and non-zero (PowerShell scripts may not set $LASTEXITCODE)
+if ($null -ne $LASTEXITCODE -and $LASTEXITCODE -ne 0) { throw "hash.ps1 failed with exit code $LASTEXITCODE" }
 
 # Summarize results
 $zip = Get-ChildItem -Path $releaseDir -Filter '*.zip' -File -ErrorAction SilentlyContinue | Select-Object -First 1

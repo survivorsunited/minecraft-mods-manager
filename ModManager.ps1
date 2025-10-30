@@ -106,6 +106,9 @@ param(
     # Release Creation
     [switch]$CreateRelease,
     [string]$ReleasePath = "releases",
+    # CI/Validation helpers
+    [switch]$TestDatabase,
+    [switch]$GitHubActions,
     # General Options
     [switch]$DryRun
 )
@@ -601,6 +604,19 @@ if ($ValidateAllModVersions) {
     if ($UseCachedResponses) { $useCache = $true }  # Explicit -UseCachedResponses overrides
     Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UseCachedResponses:$useCache | Out-Null
     Exit-ModManager 0
+}
+
+# Handle TestDatabase (lint DB for common issues like misclassified ZIP mods)
+if ($TestDatabase) {
+    Write-Host "Testing database for common issues..." -ForegroundColor Yellow
+    $res = Test-ModDatabase -CsvPath $effectiveModListPath -GitHubActions:$GitHubActions
+    if ($res.IssueCount -gt 0) {
+        Write-Host ("⚠️  Database issues found: {0}" -f $res.IssueCount) -ForegroundColor DarkYellow
+        Exit-ModManager 0
+    } else {
+        Write-Host "✅ No database issues detected" -ForegroundColor Green
+        Exit-ModManager 0
+    }
 }
 
 # Handle ValidateMod parameter (single mod validation and update)

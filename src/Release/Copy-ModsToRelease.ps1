@@ -54,19 +54,65 @@ function Copy-ModsToRelease {
     New-Item -ItemType Directory -Path $DestinationPath -Force | Out-Null
     New-Item -ItemType Directory -Path (Join-Path $DestinationPath "optional") -Force | Out-Null
     New-Item -ItemType Directory -Path (Join-Path $DestinationPath "block") -Force | Out-Null
+    New-Item -ItemType Directory -Path (Join-Path $DestinationPath "server") -Force | Out-Null
     
     # Read mod database
     $mods = Import-Csv -Path $CsvPath
 
+    # Build expected file sets to avoid copying extras/duplicates
+    $expectedList = Get-ExpectedReleaseFiles -Version $TargetGameVersion -CsvPath $CsvPath
+    $expectedModsSet = New-Object System.Collections.Generic.HashSet[string]
+    $expectedModsBaseSet = New-Object System.Collections.Generic.HashSet[string]
+    $expectedOptSet = New-Object System.Collections.Generic.HashSet[string]
+    $expectedServerSet = New-Object System.Collections.Generic.HashSet[string]
+    $expectedServerBaseSet = New-Object System.Collections.Generic.HashSet[string]
+    function Get-BaseName([string]$fileName) {
+        $name = [System.IO.Path]::GetFileNameWithoutExtension($fileName)
+        $m = [System.Text.RegularExpressions.Regex]::Match($name, '^(.*?)(?:[-_]?)(?=\d)')
+        $base = if ($m.Success -and $m.Groups.Count -gt 1 -and $m.Groups[1].Value.Trim().Length -gt 0) { $m.Groups[1].Value.TrimEnd('-','_') } else { $name }
+        return $base.ToLower()
+    }
+    foreach ($rel in $expectedList) {
+        if ($rel -like 'mods/*' -and $rel -notlike 'mods/optional/*' -and $rel -notlike 'mods/block/*' -and $rel -notlike 'mods/server/*') {
+            $expectedModsSet.Add($rel.Substring(5)) | Out-Null  # store filename
+            $expectedModsBaseSet.Add((Get-BaseName ($rel.Substring(5)))) | Out-Null
+        } elseif ($rel -like 'mods/optional/*') {
+            $expectedOptSet.Add($rel.Substring(14)) | Out-Null
+        } elseif ($rel -like 'mods/server/*') {
+            $expectedServerSet.Add($rel.Substring(12)) | Out-Null
+            $expectedServerBaseSet.Add((Get-BaseName ($rel.Substring(12)))) | Out-Null
+        }
+    }
+
+    # Calculate which exact expected mod filenames are actually available in source (to avoid copying relaxed duplicates when exact exists)
+    $sourceJarNamesSet = New-Object System.Collections.Generic.HashSet[string]
+    $sourceJarFiles = Get-ChildItem -Path $SourcePath -Filter "*.jar" -File -ErrorAction SilentlyContinue
+    foreach ($sf in $sourceJarFiles) { [void]$sourceJarNamesSet.Add($sf.Name) }
+    $expectedExactAvailableSet = New-Object System.Collections.Generic.HashSet[string]
+    foreach ($fname in $expectedModsSet) { if ($sourceJarNamesSet.Contains($fname)) { [void]$expectedExactAvailableSet.Add($fname) } }
+    $expectedExactBasesAvailable = New-Object System.Collections.Generic.HashSet[string]
+    foreach ($fname in $expectedExactAvailableSet) { [void]$expectedExactBasesAvailable.Add((Get-BaseName $fname)) }
+    $copiedBasesSet = New-Object System.Collections.Generic.HashSet[string]
+
     # Build lookup maps for fast classification
     $groupById = @{}
     $groupByName = @{}
+    $clientSideById = @{}
+    $clientSideByName = @{}
+    $typeById = @{}
+    $typeByName = @{}
     foreach ($m in $mods) {
         $idKey = if ($m.ID) { $m.ID.Trim().ToLower() } else { $null }
         $nameKey = if ($m.Name) { $m.Name.Trim().ToLower() } else { $null }
         $grp = if ($m.Group) { $m.Group.Trim().ToLower() } else { "required" }
+        $clientSide = if ($m.ClientSide) { $m.ClientSide.Trim().ToLower() } else { $null }
+        $type = if ($m.Type) { $m.Type.Trim().ToLower() } else { $null }
         if ($idKey -and -not $groupById.ContainsKey($idKey)) { $groupById[$idKey] = $grp }
         if ($nameKey -and -not $groupByName.ContainsKey($nameKey)) { $groupByName[$nameKey] = $grp }
+        if ($idKey -and -not $clientSideById.ContainsKey($idKey)) { $clientSideById[$idKey] = $clientSide }
+        if ($nameKey -and -not $clientSideByName.ContainsKey($nameKey)) { $clientSideByName[$nameKey] = $clientSide }
+        if ($idKey -and -not $typeById.ContainsKey($idKey)) { $typeById[$idKey] = $type }
+        if ($nameKey -and -not $typeByName.ContainsKey($nameKey)) { $typeByName[$nameKey] = $type }
     }
 
     function Get-JarModIdAndName {
@@ -106,6 +152,7 @@ function Copy-ModsToRelease {
     $mandatoryCount = 0
     $optionalCount = 0
     $blockedCount = 0
+    $serverOnlyCount = 0
     
     foreach ($jarFile in $sourceJars) {
         # Classify each JAR using CSV Group, defaulting to required
@@ -113,13 +160,47 @@ function Copy-ModsToRelease {
         $idKey = if ($info.Id) { $info.Id.Trim().ToLower() } else { $null }
         $nameKey = if ($info.Name) { $info.Name.Trim().ToLower() } else { $null }
 
-        $grp = $null
+    $grp = $null
+    $clientSide = $null
+    $type = $null
         if ($idKey -and $groupById.ContainsKey($idKey)) { $grp = $groupById[$idKey] }
         elseif ($nameKey -and $groupByName.ContainsKey($nameKey)) { $grp = $groupByName[$nameKey] }
         if (-not $grp) { $grp = "required" }
 
+    if ($idKey -and $clientSideById.ContainsKey($idKey)) { $clientSide = $clientSideById[$idKey] }
+    elseif ($nameKey -and $clientSideByName.ContainsKey($nameKey)) { $clientSide = $clientSideByName[$nameKey] }
+    if ($idKey -and $typeById.ContainsKey($idKey)) { $type = $typeById[$idKey] }
+    elseif ($nameKey -and $typeByName.ContainsKey($nameKey)) { $type = $typeByName[$nameKey] }
+
+    $isServerOnly = $false
+    if ($clientSide -eq 'unsupported' -or $grp -eq 'admin') { $isServerOnly = $true }
+    # Types server/launcher/installer should never be here (not in mods folder), but guard anyway
+    if ($type -in @('server','launcher','installer')) { $isServerOnly = $true }
+
+        if ($isServerOnly) {
+            # Only copy server-only files that are expected; allow relaxed-version fallback if the exact expected isn't available
+            $serverDestDir = Join-Path $DestinationPath 'server'
+            $base = Get-BaseName $jarFile.Name
+            $shouldCopyServer = $false
+            if ($expectedServerSet.Contains($jarFile.Name)) {
+                $shouldCopyServer = $true
+            } elseif ($expectedServerBaseSet.Contains($base) -and -not $expectedExactBasesAvailable.Contains($base)) {
+                # Exact expected server file not present in source; allow relaxed fallback
+                $shouldCopyServer = -not $copiedBasesSet.Contains("server::" + $base)
+            }
+            if (-not $shouldCopyServer) { continue }
+            if (-not (Test-Path $serverDestDir)) { New-Item -ItemType Directory -Path $serverDestDir -Force | Out-Null }
+            $destination = Join-Path $serverDestDir $jarFile.Name
+            Copy-Item -Path $jarFile.FullName -Destination $destination -Force
+            Write-Host "  🛡️  Server-only: $($jarFile.Name)" -ForegroundColor DarkCyan
+            [void]$copiedBasesSet.Add("server::" + $base)
+            $serverOnlyCount++
+            continue
+        }
+
         switch ($grp) {
             "optional" {
+                if (-not $expectedOptSet.Contains($jarFile.Name)) { continue }
                 $destination = Join-Path (Join-Path $DestinationPath "optional") $jarFile.Name
                 Copy-Item -Path $jarFile.FullName -Destination $destination -Force
                 Write-Host "  📦 Optional: $($jarFile.Name)" -ForegroundColor Yellow
@@ -132,9 +213,20 @@ function Copy-ModsToRelease {
                 $blockedCount++
             }
             default {
+                $base = Get-BaseName $jarFile.Name
+                $isExactExpected = $expectedModsSet.Contains($jarFile.Name)
+                if (-not $isExactExpected) {
+                    # Allow relaxed-version only if base is expected AND an exact expected for this base is NOT available in source
+                    if (-not $expectedModsBaseSet.Contains($base)) { continue }
+                    if ($expectedExactBasesAvailable.Contains($base)) { continue }
+                    # Avoid copying multiple relaxed variants for the same base
+                    if ($copiedBasesSet.Contains($base)) { continue }
+                    Write-Host "  ✓ Required (relaxed-version): $($jarFile.Name)" -ForegroundColor DarkGreen
+                }
                 $destination = Join-Path $DestinationPath $jarFile.Name
                 Copy-Item -Path $jarFile.FullName -Destination $destination -Force
                 Write-Host "  ✓ Required: $($jarFile.Name)" -ForegroundColor Green
+                [void]$copiedBasesSet.Add($base)
                 $mandatoryCount++
             }
         }
@@ -145,6 +237,7 @@ function Copy-ModsToRelease {
     Write-Host "   ✓ Mandatory mods: $mandatoryCount" -ForegroundColor Green
     Write-Host "   📦 Optional mods: $optionalCount" -ForegroundColor Gray
     Write-Host "   ⛔ Blocked mods:  $blockedCount" -ForegroundColor DarkGray
+    Write-Host "   🛡️  Server-only:   $serverOnlyCount" -ForegroundColor DarkCyan
     
     return $true
 }

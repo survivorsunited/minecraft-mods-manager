@@ -67,6 +67,12 @@ $shaderpacks = $rows | Where-Object {
     (& $versionFilter $_)
 }
 
+# Filter datapack rows (ZIPs/JARs under datapacks/)
+$datapacks = $rows | Where-Object {
+    (Normalize $_.Type) -eq 'datapack' -and
+    (& $versionFilter $_)
+}
+
 # Build expected relative paths using the Jar column and Group
 $seen = New-Object System.Collections.Generic.HashSet[string]
 $expected = @()
@@ -90,6 +96,27 @@ foreach ($s in $shaderpacks) {
     $zipName = Normalize $s.Jar
     if ([string]::IsNullOrWhiteSpace($zipName)) { continue }
     $rel = "shaderpacks/$zipName"
+    if ($seen.Add($rel)) { $expected += $rel }
+}
+
+# Datapacks:
+# - If JAR, treat as mods (respect Group like mods)
+# - If ZIP, treat as datapacks/
+foreach ($d in $datapacks) {
+    $dpName = Normalize $d.Jar
+    if ([string]::IsNullOrWhiteSpace($dpName)) { continue }
+    $ext = [System.IO.Path]::GetExtension($dpName).ToLower()
+    if ($ext -eq '.jar') {
+        $grp = (Normalize $d.Group)
+        if ([string]::IsNullOrWhiteSpace($grp)) { $grp = 'required' }
+        switch ($grp.ToLower()) {
+            'optional' { $rel = "mods/optional/$dpName" }
+            'block'    { $rel = "mods/block/$dpName" }
+            default    { $rel = "mods/$dpName" }
+        }
+    } else {
+        $rel = "datapacks/$dpName"
+    }
     if ($seen.Add($rel)) { $expected += $rel }
 }
 
