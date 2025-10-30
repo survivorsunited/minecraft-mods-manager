@@ -35,6 +35,26 @@ jobs:
         run: |
           Write-Host "🔍 Checking for mod updates..." -ForegroundColor Cyan
           .\ModManager.ps1 -ValidateAllModVersions -UpdateModList
+
+      - name: Scan Database for Misclassified ZIP Mods
+        shell: pwsh
+        run: |
+          $db = Import-Csv modlist.csv
+          $zipMods = $db | Where-Object { $_.Type -eq 'mod' -and (([string]::IsNullOrWhiteSpace($_.Jar) -eq $false -and $_.Jar.ToLower().EndsWith('.zip')) -or ($_.CurrentVersionUrl -match '\.zip$') -or ($_.LatestVersionUrl -match '\.zip$') -or ($_.NextVersionUrl -match '\.zip$')) }
+          if ($zipMods -and $zipMods.Count -gt 0) {
+            Write-Host "⚠️  Found mods with ZIP artifacts (likely misclassification or filename resolution issue):" -ForegroundColor Yellow
+            foreach ($m in $zipMods) {
+              $id = if ($m.ID) { $m.ID } else { $m.Name }
+              $jar = if ($m.Jar) { $m.Jar } else { '(none)' }
+              echo "::warning title=ZIP artifact under mod type::$($m.Name) [ID: $id] -> Jar: $jar"
+            }
+            # Add to summary
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "### ZIP Artifacts Detected in Database (Type=mod)"
+            $zipMods | ForEach-Object { Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- $($_.Name) (ID: $($_.ID)) Jar: $($_.Jar)" }
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ""
+          } else {
+            Write-Host "✅ No misclassified ZIP mods found in database" -ForegroundColor Green
+          }
       
       - name: Check for Database Changes
         id: check_updates
@@ -227,6 +247,30 @@ jobs:
           $res = .\scripts\Reconcile-ExpectedVsCache.ps1 -Version "${{ matrix.version }}" -Mode relaxed-version
           Write-Host "Reconcile OutDir: $($res.OutDir)"
           echo "outdir=$($res.OutDir)" >> $env:GITHUB_OUTPUT
+
+      - name: Annotate Reconciliation Warnings
+        if: steps.check_result.outputs.created == 'true'
+        shell: pwsh
+        run: |
+          $outDir = "${{ steps.reconcile.outputs.outdir }}"
+          $warningsFile = Join-Path $outDir 'warnings.txt'
+          if (Test-Path $warningsFile) {
+            Write-Host "⚠️  Reconciliation warnings found:" -ForegroundColor Yellow
+            $warnings = Get-Content $warningsFile
+            foreach ($line in $warnings) {
+              if ($line -and $line.Trim().Length -gt 0) {
+                echo "::warning::$line"
+              }
+            }
+            # Add to job summary
+            $summaryPath = $env:GITHUB_STEP_SUMMARY
+            Add-Content -Path $summaryPath -Value "### Reconciliation Warnings for ${{ matrix.version }}"
+            Add-Content -Path $summaryPath -Value ""
+            $warnings | ForEach-Object { Add-Content -Path $summaryPath -Value $_ }
+            Add-Content -Path $summaryPath -Value ""
+          } else {
+            Write-Host "✅ No reconciliation warnings" -ForegroundColor Green
+          }
       
       - name: Upload Reconciliation Artifact
         if: steps.check_result.outputs.created == 'true'
