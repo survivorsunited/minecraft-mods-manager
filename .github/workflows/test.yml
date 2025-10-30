@@ -154,7 +154,8 @@ jobs:
         Write-Host "  Focus: Server startup and validation" -ForegroundColor Gray
         Write-Host ""
         
-        $result = .\RunAllTests.ps1 -TestFiles "68-TestServerValidation.ps1"
+        #$result = .\RunAllTests.ps1 -TestFiles "68-TestServerValidation.ps1"
+        $result = .\RunAllTests.ps1
         
         # Capture the exit code
         $testExitCode = $LASTEXITCODE
