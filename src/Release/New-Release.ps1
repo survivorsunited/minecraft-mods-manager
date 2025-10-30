@@ -124,6 +124,25 @@ function New-Release {
     
     Write-Host "" -ForegroundColor White
     
+    # Pre-step: Single DB validation pass to refresh URLs and classifications (ClientSide/ServerSide)
+    Write-Host "🧹 Validating database (URLs, versions, classifications) before release..." -ForegroundColor Cyan
+    try {
+        # Update CSV with latest validated data, including ClientSide/ServerSide from providers
+        Validate-AllModVersions -CsvPath $CsvPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
+    } catch { Write-Host "  ⚠️  Validation update failed: $($_.Exception.Message)" -ForegroundColor Yellow }
+    try {
+        # Fix version/URL mismatches discovered in DB
+        if (Get-Command Validate-ModVersionUrls -ErrorAction SilentlyContinue) {
+            $null = Validate-ModVersionUrls -CsvPath $CsvPath
+        }
+    } catch { Write-Host "  ⚠️  URL mismatch validator failed: $($_.Exception.Message)" -ForegroundColor Yellow }
+    try {
+        # Lint for common DB issues (e.g., ZIPs under mods)
+        if (Get-Command Test-ModDatabase -ErrorAction SilentlyContinue) {
+            $null = Test-ModDatabase -CsvPath $CsvPath
+        }
+    } catch { Write-Host "  ⚠️  Database lint failed: $($_.Exception.Message)" -ForegroundColor Yellow }
+    
     # Step 1: Download mods for target version
     Write-Host "📦 Downloading mods for version $targetVersion..." -ForegroundColor Cyan
     Download-Mods -CsvPath $CsvPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -TargetGameVersion $targetVersion

@@ -397,6 +397,8 @@ function Validate-ModrinthModVersion {
             IssuesUrl = if ($projectInfo) { $projectInfo.issues_url } else { "" }
             SourceUrl = if ($projectInfo) { $projectInfo.source_url } else { "" }
             WikiUrl = if ($projectInfo) { $projectInfo.wiki_url } else { "" }
+            ClientSide = if ($projectInfo -and $projectInfo.client_side) { $projectInfo.client_side } else { $null }
+            ServerSide = if ($projectInfo -and $projectInfo.server_side) { $projectInfo.server_side } else { $null }
         }
         
     } catch {

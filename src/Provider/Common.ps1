@@ -103,6 +103,8 @@ function Validate-ModVersion {
                             IssuesUrl = $result.IssuesUrl
                             SourceUrl = $result.SourceUrl
                             WikiUrl = $result.WikiUrl
+                            ClientSide = $result.ClientSide
+                            ServerSide = $result.ServerSide
                             ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
                         }
                     } else {
@@ -173,6 +175,15 @@ function Validate-ModVersion {
                         LatestGameVersion = if ($result.LatestGameVersion) { $result.LatestGameVersion } else { $GameVersion }
                         CurrentDependencies = $result.Dependencies
                         LatestDependencies = $result.Dependencies
+                        Jar = $result.Jar
+                        Title = $result.Title
+                        ProjectDescription = $result.ProjectDescription
+                        IconUrl = $result.IconUrl
+                        IssuesUrl = $result.IssuesUrl
+                        SourceUrl = $result.SourceUrl
+                        WikiUrl = $result.WikiUrl
+                        ClientSide = $result.ClientSide
+                        ServerSide = $result.ServerSide
                         ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
                     }
                 } else {
