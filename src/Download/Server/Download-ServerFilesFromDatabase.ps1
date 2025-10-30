@@ -1,16 +1,17 @@
 # =============================================================================
 # Server Files Download From Database Module
 # =============================================================================
-# This module handles downloading server and launcher files based on database entries.
+# This module handles downloading server, launcher, and installer files based on database entries.
 # =============================================================================
 
 <#
 .SYNOPSIS
-    Downloads server JARs and launchers based on database entries.
+    Downloads server, launcher, and installer artifacts based on database entries.
 
 .DESCRIPTION
-    Downloads all server and launcher entries found in the mod database
-    instead of using hardcoded values.
+    Reads server-related entries (Type in server|launcher|installer) from the CSV database
+    and downloads the required artifacts into download/<version>/, placing installer artifacts
+    under download/<version>/installer/.
 
 .PARAMETER DownloadFolder
     The base download folder.
@@ -22,16 +23,15 @@
     Path to the CSV database file.
 
 .PARAMETER GameVersion
-    Optional specific game version to download.
+    Optional specific game version to filter entries.
 
 .EXAMPLE
     Download-ServerFilesFromDatabase -DownloadFolder "download" -CsvPath "modlist.csv"
 
 .NOTES
-    - Reads server and launcher entries from database
-    - Downloads based on URL field in database
-    - Creates organized folder structure by version
-    - Handles missing URLs gracefully
+    - Resolves URLs dynamically when the CSV contains placeholders or API base URLs
+    - Uses a simple cache in .cache/ to avoid repeated downloads
+    - Returns the count of successful downloads
 #>
 function Download-ServerFilesFromDatabase {
     param(
@@ -40,92 +40,69 @@ function Download-ServerFilesFromDatabase {
         [string]$CsvPath = "modlist.csv",
         [string]$GameVersion = ""
     )
-    
+
     try {
         Write-Host "Downloading server files from database..." -ForegroundColor Yellow
-        
-        # Create download folder if it doesn't exist
+
         if (-not (Test-Path $DownloadFolder)) {
             New-Item -ItemType Directory -Path $DownloadFolder -Force | Out-Null
         }
-        
-        # Load database
+
         if (-not (Test-Path $CsvPath)) {
             Write-Host "❌ Database file not found: $CsvPath" -ForegroundColor Red
             return 0
         }
-        
+
         $database = Import-Csv -Path $CsvPath
-        
-    # Filter for server, launcher and installer entries
-    $serverEntries = $database | Where-Object { $_.Type -in @("server", "launcher", "installer") }
-        
-        # Filter by game version if specified
+        $serverEntries = $database | Where-Object { $_.Type -in @('server','launcher','installer') }
         if ($GameVersion) {
             $serverEntries = $serverEntries | Where-Object { $_.CurrentGameVersion -eq $GameVersion -or $_.GameVersion -eq $GameVersion }
         }
-        
-        Write-Host "Found $($serverEntries.Count) server/launcher entries in database" -ForegroundColor Cyan
-        
+
+        Write-Host "Found $($serverEntries.Count) server/launcher/installer entries in database" -ForegroundColor Cyan
+
         $downloadResults = @()
         $successCount = 0
         $errorCount = 0
         $skippedNoUrl = 0
-        
-    foreach ($entry in $serverEntries) {
-            # Skip entries without URLs or with API base URLs that need resolution
-            if (-not $entry.Url -or $entry.Url -eq "" -or $entry.Url -eq "https://meta.fabricmc.net/v2/versions") {
-                Write-Host "⏭️  $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) })): No URL specified, attempting dynamic resolution..." -ForegroundColor Yellow
-                
-                # Try to resolve URL dynamically based on type and ID
-                $resolvedUrl = $null
-                $resolvedFilename = $null
-        $resolvedUrls = @()
-        $resolvedFilenames = @()
-                
-                if ($entry.Type -eq "server" -and $entry.ID -match "minecraft-server") {
-                    # For Minecraft server, we need to fetch from Mojang API
-                    Write-Host "  🔍 Fetching Minecraft server URL for version $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) })..." -ForegroundColor Gray
-                    
+
+        foreach ($entry in $serverEntries) {
+            # Resolve URLs when missing or pointing to API base
+            $needsResolution = (-not $entry.Url) -or $entry.Url -eq '' -or $entry.Url -eq 'https://meta.fabricmc.net/v2/versions'
+            $resolvedUrl = $null
+            $resolvedFilename = $null
+            $resolvedUrls = @()
+            $resolvedFilenames = @()
+
+            if ($needsResolution -or $entry.Type -eq 'installer') {
+                Write-Host "⏭️  $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })): No URL specified, attempting dynamic resolution..." -ForegroundColor Yellow
+                $mcVer = if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }
+
+                if ($entry.Type -eq 'server' -and $entry.ID -match 'minecraft-server') {
                     try {
-                        # Get version manifest
-                        $manifestUrl = if ($env:MINECRAFT_SERVER_URL) { $env:MINECRAFT_SERVER_URL } else { "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json" }
+                        $manifestUrl = if ($env:MINECRAFT_SERVER_URL) { $env:MINECRAFT_SERVER_URL } else { 'https://piston-meta.mojang.com/mc/game/version_manifest_v2.json' }
                         $manifest = Invoke-RestMethod -Uri $manifestUrl -UseBasicParsing
-                        
-                        # Find the version
-                        $versionInfo = $manifest.versions | Where-Object { $_.id -eq $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) }
-                        
+                        $versionInfo = $manifest.versions | Where-Object { $_.id -eq $mcVer } | Select-Object -First 1
                         if ($versionInfo) {
-                            # Get version details
                             $versionDetails = Invoke-RestMethod -Uri $versionInfo.url -UseBasicParsing
-                            
                             if ($versionDetails.downloads.server.url) {
                                 $resolvedUrl = $versionDetails.downloads.server.url
-                                $resolvedFilename = "minecraft_server.$(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) }).jar"
+                                $resolvedFilename = "minecraft_server.$mcVer.jar"
                                 Write-Host "  ✅ Resolved URL: $resolvedUrl" -ForegroundColor Green
                             }
                         }
                     } catch {
                         Write-Host "  ❌ Failed to resolve Minecraft server URL: $($_.Exception.Message)" -ForegroundColor Red
                     }
-                    
-                } elseif ($entry.Type -eq "launcher" -and $entry.ID -match "fabric-server-launcher") {
-                    # For Fabric launcher, we need to fetch from Fabric API
-                    Write-Host "  🔍 Fetching Fabric launcher URL for version $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) })..." -ForegroundColor Gray
-                    
+                } elseif ($entry.Type -eq 'launcher' -and $entry.ID -match 'fabric-server-launcher') {
                     try {
-                        # Get Fabric versions
-                        $fabricUrl = if ($env:FABRIC_SERVER_URL) { $env:FABRIC_SERVER_URL } else { "https://meta.fabricmc.net/v2/versions" }
+                        $fabricUrl = if ($env:FABRIC_SERVER_URL) { $env:FABRIC_SERVER_URL } else { 'https://meta.fabricmc.net/v2/versions' }
                         $fabricVersions = Invoke-RestMethod -Uri $fabricUrl -UseBasicParsing
-                        
-                        # Get latest loader and installer versions
                         $latestLoader = $fabricVersions.loader | Select-Object -First 1
                         $latestInstaller = $fabricVersions.installer | Select-Object -First 1
-                        
                         if ($latestLoader -and $latestInstaller) {
-                            # Use the specific format from the curl command: /loader/{mc_version}/{loader_version}/{installer_version}/server/jar
-                            $resolvedUrl = "https://meta.fabricmc.net/v2/versions/loader/$(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) })/$($latestLoader.version)/$($latestInstaller.version)/server/jar"
-                            $resolvedFilename = "fabric-server-mc.$(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) })-loader.$($latestLoader.version)-launcher.$($latestInstaller.version).jar"
+                            $resolvedUrl = "https://meta.fabricmc.net/v2/versions/loader/$mcVer/$($latestLoader.version)/$($latestInstaller.version)/server/jar"
+                            $resolvedFilename = "fabric-server-mc.$mcVer-loader.$($latestLoader.version)-launcher.$($latestInstaller.version).jar"
                             Write-Host "  ✅ Resolved Fabric launcher URL: $resolvedUrl" -ForegroundColor Green
                             Write-Host "  📦 Using loader $($latestLoader.version) and installer $($latestInstaller.version)" -ForegroundColor Gray
                         } else {
@@ -134,15 +111,24 @@ function Download-ServerFilesFromDatabase {
                     } catch {
                         Write-Host "  ❌ Failed to resolve Fabric launcher URL: $($_.Exception.Message)" -ForegroundColor Red
                     }
-                } elseif ($entry.Type -eq "installer" -and $entry.ID -match "fabric-installer") {
-                    # For Fabric installer, resolve both JAR and EXE from Maven (latest installer version)
-                    Write-Host "  🔍 Fetching Fabric installer artifacts (JAR and EXE)..." -ForegroundColor Gray
+                } elseif ($entry.Type -eq 'installer') {
                     try {
-                        $fabricUrl = if ($env:FABRIC_SERVER_URL) { $env:FABRIC_SERVER_URL } else { "https://meta.fabricmc.net/v2/versions" }
-                        $fabricVersions = Invoke-RestMethod -Uri $fabricUrl -UseBasicParsing
-                        $latestInstaller = $fabricVersions.installer | Select-Object -First 1
-                        if ($latestInstaller -and $latestInstaller.version) {
-                            $ver = $latestInstaller.version
+                        # Try to parse version from URL or ID/name fields
+                        $ver = $null
+                        if ($entry.Url -and ($entry.Url -match '/fabric-installer/([0-9.]+)/')) { $ver = $matches[1] }
+                        if (-not $ver -and $entry.Jar -and ($entry.Jar -match 'fabric-installer-([0-9.]+)\.(jar|exe)$')) { $ver = $matches[1] }
+                        if (-not $ver -and $entry.ID -and ($entry.ID -match 'fabric-installer-([0-9.]+)$')) { $ver = $matches[1] }
+                        if (-not $ver -and $entry.Name -and ($entry.Name -match '([0-9.]+)')) { $ver = $matches[1] }
+
+                        if (-not $ver) {
+                            # Fallback to meta latest
+                            $fabricUrl = if ($env:FABRIC_SERVER_URL) { $env:FABRIC_SERVER_URL } else { 'https://meta.fabricmc.net/v2/versions' }
+                            $fabricVersions = Invoke-RestMethod -Uri $fabricUrl -UseBasicParsing
+                            $latestInstaller = $fabricVersions.installer | Select-Object -First 1
+                            if ($latestInstaller -and $latestInstaller.version) { $ver = $latestInstaller.version }
+                        }
+
+                        if ($ver) {
                             $mavenBase = "https://maven.fabricmc.net/net/fabricmc/fabric-installer/$ver"
                             $resolvedUrls = @(
                                 "$mavenBase/fabric-installer-$ver.jar",
@@ -154,176 +140,154 @@ function Download-ServerFilesFromDatabase {
                             )
                             Write-Host "  ✅ Resolved Fabric installer: version $ver (JAR and EXE)" -ForegroundColor Green
                         } else {
-                            Write-Host "  ❌ Could not find Fabric installer version" -ForegroundColor Red
+                            Write-Host "  ❌ Could not determine Fabric installer version" -ForegroundColor Red
                         }
                     } catch {
                         Write-Host "  ❌ Failed to resolve Fabric installer artifacts: $($_.Exception.Message)" -ForegroundColor Red
                     }
                 }
-                
-                # If we resolved a URL, use it and save it to database
+
                 if ($resolvedUrl) {
-                    $entry | Add-Member -MemberType NoteProperty -Name "ResolvedUrl" -Value $resolvedUrl -Force
-                    $entry | Add-Member -MemberType NoteProperty -Name "ResolvedFilename" -Value $resolvedFilename -Force
-                    
-                    # Save resolved URL back to database
-                    Write-Host "  💾 Saving resolved URL to database..." -ForegroundColor Yellow
-                    try {
-                        Update-ModUrlInDatabase -ModId $entry.ID -NewUrl $resolvedUrl -CsvPath $CsvPath
-                        Write-Host "  ✅ URL saved to database for future use" -ForegroundColor Green
-                    } catch {
-                        Write-Host "  ⚠️  Could not save URL to database: $($_.Exception.Message)" -ForegroundColor Yellow
-                    }
+                    $entry | Add-Member -MemberType NoteProperty -Name 'ResolvedUrl' -Value $resolvedUrl -Force
+                    $entry | Add-Member -MemberType NoteProperty -Name 'ResolvedFilename' -Value $resolvedFilename -Force
+                    try { Update-ModUrlInDatabase -ModId $entry.ID -NewUrl $resolvedUrl -CsvPath $CsvPath | Out-Null } catch { }
                 } elseif ($resolvedUrls -and $resolvedUrls.Count -gt 0) {
-                    # Multiple artifacts (installer jar and exe)
-                    $entry | Add-Member -MemberType NoteProperty -Name "ResolvedUrls" -Value $resolvedUrls -Force
-                    $entry | Add-Member -MemberType NoteProperty -Name "ResolvedFilenames" -Value $resolvedFilenames -Force
+                    $entry | Add-Member -MemberType NoteProperty -Name 'ResolvedUrls' -Value $resolvedUrls -Force
+                    $entry | Add-Member -MemberType NoteProperty -Name 'ResolvedFilenames' -Value $resolvedFilenames -Force
                 } else {
                     $skippedNoUrl++
                     $downloadResults += [PSCustomObject]@{
                         Name = $entry.Name
-                        Status = "Skipped"
+                        Status = 'Skipped'
                         Version = $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })
-                        File = ""
-                        Path = ""
-                        Error = "No URL available"
+                        File = ''
+                        Path = ''
+                        Error = 'No URL available'
                     }
                     continue
                 }
             }
-            
-            # Determine download URLs and filenames (support multiple for installer)
+
+            # Determine download URLs and target filenames
             $downloadUrls = @()
             $filenames = @()
-            if ($entry.ResolvedUrls -and $entry.ResolvedFilenames) {
+            if ($entry.PSObject.Properties.Match('ResolvedUrls').Count -gt 0 -and $entry.PSObject.Properties.Match('ResolvedFilenames').Count -gt 0) {
                 $downloadUrls = $entry.ResolvedUrls
                 $filenames = $entry.ResolvedFilenames
             } else {
-                $downloadUrl = if ($entry.ResolvedUrl) { $entry.ResolvedUrl } else { $entry.Url }
-                $filename = if ($entry.ResolvedFilename) { $entry.ResolvedFilename } elseif ($entry.Jar) { $entry.Jar } else {
-                    # Generate filename from entry data
-                    if ($entry.Type -eq "server") {
-                        "minecraft_server.$(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) }).jar"
-                    } elseif ($entry.Type -eq "launcher") {
-                        "fabric-server-launcher.$(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) }).jar"
+                $downloadUrl = if ($entry.PSObject.Properties.Match('ResolvedUrl').Count -gt 0) { $entry.ResolvedUrl } else { $entry.Url }
+                $filename = if ($entry.PSObject.Properties.Match('ResolvedFilename').Count -gt 0) { $entry.ResolvedFilename } elseif ($entry.Jar) { $entry.Jar } else {
+                    if ($entry.Type -eq 'server') {
+                        "minecraft_server.$(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }).jar"
+                    } elseif ($entry.Type -eq 'launcher') {
+                        "fabric-server-launcher.$(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }).jar"
                     } else {
-                        # default for installer if we somehow got here without resolved URLs
-                        "fabric-installer-latest.jar"
+                        'fabric-installer-latest.jar'
                     }
                 }
                 $downloadUrls = @($downloadUrl)
                 $filenames = @($filename)
             }
-            
-            # Create version folder
-            $versionFolder = Join-Path $DownloadFolder $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })
-            if (-not (Test-Path $versionFolder)) {
-                New-Item -ItemType Directory -Path $versionFolder -Force | Out-Null
-            }
-            
-            $downloadPath = Join-Path $versionFolder $filename
-            
-            # Check if file already exists
-            if ((Test-Path $downloadPath) -and -not $ForceDownload) {
-                Write-Host "⏭️  $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) })): Already exists" -ForegroundColor Yellow
-                $downloadResults += [PSCustomObject]@{
-                    Name = $entry.Name
-                    Status = "Skipped"
-                    Version = $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })
-                    File = $filename
-                    Path = $downloadPath
-                    Error = "File already exists"
-                }
-                continue
-            }
-            
-            # Download the file
-            Write-Host "⬇️  $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion }) })): Downloading..." -ForegroundColor Cyan
-            
-            try {
-                # Create version folder (and installer subfolder when needed)
-                $versionFolder = Join-Path $DownloadFolder $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })
-                $cacheFolder = if ($entry.Type -eq "server") { ".cache\mojang" } else { ".cache\fabric" }
-                if (-not (Test-Path $cacheFolder)) {
-                    New-Item -ItemType Directory -Path $cacheFolder -Force | Out-Null
-                $targetFolder = if ($entry.Type -eq 'installer') { $installerFolder = Join-Path $versionFolder 'installer'; if (-not (Test-Path $installerFolder)) { New-Item -ItemType Directory -Path $installerFolder -Force | Out-Null }; $installerFolder } else { $versionFolder }
-                
-                # Iterate over one or more artifacts for this entry
-                for ($i = 0; $i -lt $downloadUrls.Count; $i++) {
-                    $downloadUrl = $downloadUrls[$i]
-                    $filename = $filenames[$i]
-                    $downloadPath = Join-Path $targetFolder $filename
 
-                    # Check if file already exists
-                    if ((Test-Path $downloadPath) -and -not $ForceDownload) {
-                        Write-Host "⏭️  $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })): Already exists" -ForegroundColor Yellow
+            # Create version folder and target subfolder
+            $verFolder = Join-Path $DownloadFolder $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })
+            if (-not (Test-Path $verFolder)) { New-Item -ItemType Directory -Path $verFolder -Force | Out-Null }
+            $targetFolder = if ($entry.Type -eq 'installer') {
+                $installerFolder = Join-Path $verFolder 'installer'
+                if (-not (Test-Path $installerFolder)) { New-Item -ItemType Directory -Path $installerFolder -Force | Out-Null }
+                $installerFolder
+            } else { $verFolder }
+
+            # Download artifacts
+            for ($i = 0; $i -lt $downloadUrls.Count; $i++) {
+                $downloadUrl = $downloadUrls[$i]
+                $filename = $filenames[$i]
+                $downloadPath = Join-Path $targetFolder $filename
+
+                if ((Test-Path $downloadPath) -and -not $ForceDownload) {
+                    Write-Host "⏭️  $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })): Already exists" -ForegroundColor Yellow
+                    $downloadResults += [PSCustomObject]@{
+                        Name = $entry.Name
+                        Status = 'Skipped'
+                        Version = $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })
+                        File = $filename
+                        Path = $downloadPath
+                        Error = 'File already exists'
+                    }
+                    continue
+                }
+
+                Write-Host "⬇️  $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })): Downloading $filename..." -ForegroundColor Cyan
+                try {
+                    $urlHash = [System.BitConverter]::ToString([System.Security.Cryptography.SHA256]::Create().ComputeHash([System.Text.Encoding]::UTF8.GetBytes($downloadUrl))).Replace('-', '').Substring(0, 16)
+                    $cacheFolder = if ($entry.Type -eq 'server') { '.cache\mojang' } else { '.cache\fabric' }
+                    if (-not (Test-Path $cacheFolder)) { New-Item -ItemType Directory -Path $cacheFolder -Force | Out-Null }
+                    $cachePath = Join-Path $cacheFolder ("$urlHash-$filename")
+
+                    if (-not (Test-Path $cachePath)) {
+                        Write-Host "  💾 Downloading to cache..." -ForegroundColor Gray
+                        $null = Invoke-WebRequest -Uri $downloadUrl -OutFile $cachePath -UseBasicParsing
+                    } else {
+                        Write-Host "  ✓ Using cached file" -ForegroundColor Gray
+                    }
+
+                    Copy-Item -Path $cachePath -Destination $downloadPath -Force
+                    if (Test-Path $downloadPath) {
+                        $fileSize = (Get-Item $downloadPath).Length
+                        $fileSizeMB = [math]::Round($fileSize / 1MB, 2)
+                        Write-Host "✅ $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })): Downloaded successfully ($fileSizeMB MB) -> $filename" -ForegroundColor Green
                         $downloadResults += [PSCustomObject]@{
                             Name = $entry.Name
-                            Status = "Skipped"
+                            Status = 'Success'
                             Version = $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })
                             File = $filename
                             Path = $downloadPath
-                            Error = "File already exists"
+                            Size = "$fileSizeMB MB"
+                            Error = $null
                         }
-                        continue
+                        $successCount++
+                    } else {
+                        throw 'File was not created'
                     }
-
-                    # Download the file
-                    Write-Host "⬇️  $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })): Downloading $filename..." -ForegroundColor Cyan
-
-                    try {
-                        # Calculate cache path based on URL hash
-                        $urlHash = [System.BitConverter]::ToString([System.Security.Cryptography.SHA256]::Create().ComputeHash([System.Text.Encoding]::UTF8.GetBytes($downloadUrl))).Replace("-", "").Substring(0, 16)
-                        $cacheFolder = if ($entry.Type -eq "server") { ".cache\mojang" } else { ".cache\fabric" }
-                        if (-not (Test-Path $cacheFolder)) {
-                            New-Item -ItemType Directory -Path $cacheFolder -Force | Out-Null
-                        }
-                        $cachePath = Join-Path $cacheFolder "$urlHash-$filename"
-
-                        # Download to cache if not already there
-                        if (-not (Test-Path $cachePath)) {
-                            Write-Host "  💾 Downloading to cache..." -ForegroundColor Gray
-                            $webRequest = Invoke-WebRequest -Uri $downloadUrl -OutFile $cachePath -UseBasicParsing
-                        } else {
-                            Write-Host "  ✓ Using cached file" -ForegroundColor Gray
-                        }
-
-                        # Copy from cache to destination
-                        Copy-Item -Path $cachePath -Destination $downloadPath -Force
-
-                        if (Test-Path $downloadPath) {
-                            $fileSize = (Get-Item $downloadPath).Length
-                            $fileSizeMB = [math]::Round($fileSize / 1MB, 2)
-                            Write-Host "✅ $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })): Downloaded successfully ($fileSizeMB MB) -> $filename" -ForegroundColor Green
-                            $downloadResults += [PSCustomObject]@{
-                                Name = $entry.Name
-                                Status = "Success"
-                                Version = $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })
-                                File = $filename
-                                Path = $downloadPath
-                                Size = "$fileSizeMB MB"
-                                Error = $null
-                            }
-                            $successCount++
-                        } else {
-                            throw "File was not created"
-                        }
+                } catch {
+                    Write-Host "❌ $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })): Download failed - $($_.Exception.Message)" -ForegroundColor Red
+                    if (Test-Path $downloadPath) { Remove-Item $downloadPath -Force }
+                    $downloadResults += [PSCustomObject]@{
+                        Name = $entry.Name
+                        Status = 'Failed'
+                        Version = $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })
+                        File = $filename
+                        Path = $downloadPath
+                        Size = $null
+                        Error = $_.Exception.Message
                     }
-                    catch {
-                        Write-Host "❌ $($entry.Name) ($(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })): Download failed - $($_.Exception.Message)" -ForegroundColor Red
-                        if (Test-Path $downloadPath) { Remove-Item $downloadPath -Force }
-                        $downloadResults += [PSCustomObject]@{
-                            Name = $entry.Name
-                            Status = "Failed"
-                            Version = $(if ($entry.CurrentGameVersion) { $entry.CurrentGameVersion } else { $entry.GameVersion })
-                            File = $filename
-                            Path = $downloadPath
-                            Size = $null
-                            Error = $_.Exception.Message
-                        }
-                        $errorCount++
-                    }
+                    $errorCount++
                 }
+            }
+        }
+
+        # Summary
+        Write-Host "" -ForegroundColor White
+        Write-Host "Server Files Download Summary:" -ForegroundColor Yellow
+        Write-Host "=============================" -ForegroundColor Yellow
+        Write-Host "✅ Successfully downloaded: $successCount" -ForegroundColor Green
+        Write-Host ("⏭️  Skipped (already exists): {0}" -f (($downloadResults | Where-Object { $_.Status -eq 'Skipped' -and $_.Error -eq 'File already exists' }).Count)) -ForegroundColor Yellow
+        Write-Host "⏭️  Skipped (no URL): $skippedNoUrl" -ForegroundColor Yellow
+        Write-Host "❌ Failed: $errorCount" -ForegroundColor Red
+
+        if ($errorCount -gt 0) {
+            Write-Host "" -ForegroundColor White
+            Write-Host "Failed downloads:" -ForegroundColor Red
+            foreach ($r in $downloadResults | Where-Object { $_.Status -eq 'Failed' }) {
+                Write-Host "  ❌ $($r.Name): $($r.Error)" -ForegroundColor Red
+            }
+        }
+
+        return $successCount
+    } catch {
+        Write-Error ("Failed to download server files: {0}" -f $_.Exception.Message)
+        return 0
+    }
 }
 
 # Function is available for dot-sourcing
