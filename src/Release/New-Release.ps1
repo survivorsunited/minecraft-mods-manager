@@ -126,22 +126,30 @@ function New-Release {
     
     # Pre-step: Single DB validation pass to refresh URLs and classifications (ClientSide/ServerSide)
     Write-Host "🧹 Validating database (URLs, versions, classifications) before release..." -ForegroundColor Cyan
+    # Be resilient to terminating errors from validation helpers: suppress progress and continue on errors
+    $prevEAP = $ErrorActionPreference
+    $prevPP = $ProgressPreference
     try {
+        $ErrorActionPreference = 'Continue'
+        $ProgressPreference = 'SilentlyContinue'
         # Update CSV with latest validated data, including ClientSide/ServerSide from providers
-        Validate-AllModVersions -CsvPath $CsvPath -ResponseFolder $ApiResponseFolder -UpdateModList | Out-Null
-    } catch { Write-Host "  ⚠️  Validation update failed: $($_.Exception.Message)" -ForegroundColor Yellow }
-    try {
-        # Fix version/URL mismatches discovered in DB
-        if (Get-Command Validate-ModVersionUrls -ErrorAction SilentlyContinue) {
-            $null = Validate-ModVersionUrls -CsvPath $CsvPath
-        }
-    } catch { Write-Host "  ⚠️  URL mismatch validator failed: $($_.Exception.Message)" -ForegroundColor Yellow }
-    try {
-        # Lint for common DB issues (e.g., ZIPs under mods)
-        if (Get-Command Test-ModDatabase -ErrorAction SilentlyContinue) {
-            $null = Test-ModDatabase -CsvPath $CsvPath
-        }
-    } catch { Write-Host "  ⚠️  Database lint failed: $($_.Exception.Message)" -ForegroundColor Yellow }
+        try { Validate-AllModVersions -CsvPath $CsvPath -ResponseFolder $ApiResponseFolder -UpdateModList -ErrorAction Continue | Out-Null } catch { Write-Host "  ⚠️  Validation update failed: $($_.Exception.Message)" -ForegroundColor Yellow }
+        try {
+            # Fix version/URL mismatches discovered in DB
+            if (Get-Command Validate-ModVersionUrls -ErrorAction SilentlyContinue) {
+                $null = Validate-ModVersionUrls -CsvPath $CsvPath -ErrorAction Continue
+            }
+        } catch { Write-Host "  ⚠️  URL mismatch validator failed: $($_.Exception.Message)" -ForegroundColor Yellow }
+        try {
+            # Lint for common DB issues (e.g., ZIPs under mods)
+            if (Get-Command Test-ModDatabase -ErrorAction SilentlyContinue) {
+                $null = Test-ModDatabase -CsvPath $CsvPath -ErrorAction Continue
+            }
+        } catch { Write-Host "  ⚠️  Database lint failed: $($_.Exception.Message)" -ForegroundColor Yellow }
+    } finally {
+        $ErrorActionPreference = $prevEAP
+        $ProgressPreference = $prevPP
+    }
     
     # Step 1: Download mods for target version
     Write-Host "📦 Downloading mods for version $targetVersion..." -ForegroundColor Cyan
@@ -165,7 +173,7 @@ function New-Release {
         TargetVersion = $targetVersion
         CsvPath = $CsvPath
         LogFileTimeout = 120  # 2 minutes for log file detection
-        ServerMonitorTimeout = 120  # 2 minutes for server monitoring
+        ServerMonitorTimeout = 300  # 5 minutes for server startup monitoring
     }
     if ($NoAutoRestart) { $serverParams.Add("NoAutoRestart", $true) }
 
@@ -304,7 +312,52 @@ function New-Release {
         Write-Host "⚠️  Continuing despite differences (relaxed-version)" -ForegroundColor DarkYellow
     } else { Write-Host "✓ Release files verified against DB expectations" -ForegroundColor Green }
 
-    # Step 7: Run hash generator to create README/hash and modpack.zip
+    # Stage server jars, installer, and IAC config before packaging (so zip can include them)
+    try {
+        $serverVersionPath = Join-Path $DownloadFolder $targetVersion
+        if (Test-Path $serverVersionPath) {
+            Write-Host "📦 Staging server jars, installer, and config for packaging..." -ForegroundColor Cyan
+            # Copy server jars to release root
+            $minecraftJar = Get-ChildItem -Path $serverVersionPath -Filter 'minecraft_server*.jar' -File -ErrorAction SilentlyContinue | Select-Object -First 1
+            if ($minecraftJar) { Copy-Item -Path $minecraftJar.FullName -Destination $releaseDir -Force; Write-Host "  ✓ Copied: $($minecraftJar.Name)" -ForegroundColor Green } else { Write-Host "  ⚠️  Minecraft server JAR not found" -ForegroundColor Yellow }
+            $fabricJar = Get-ChildItem -Path $serverVersionPath -Filter 'fabric-server*.jar' -File -ErrorAction SilentlyContinue | Select-Object -First 1
+            if ($fabricJar) { Copy-Item -Path $fabricJar.FullName -Destination $releaseDir -Force; Write-Host "  ✓ Copied: $($fabricJar.Name)" -ForegroundColor Green } else { Write-Host "  ⚠️  Fabric launcher JAR not found" -ForegroundColor Yellow }
+
+            # Stage installer in install/ folder within release (and keep copy at root)
+            $installerPath = Join-Path $serverVersionPath 'installer'
+            if (Test-Path $installerPath) {
+                $installDir = Join-Path $releaseDir 'install'
+                if (-not (Test-Path $installDir)) { New-Item -ItemType Directory -Path $installDir -Force | Out-Null }
+                # Stage EXE installer
+                $fabricInstallerExe = Get-ChildItem -Path $installerPath -Filter 'fabric-installer-*.exe' -File -ErrorAction SilentlyContinue | Select-Object -First 1
+                if ($fabricInstallerExe) {
+                    Copy-Item -Path $fabricInstallerExe.FullName -Destination $releaseDir -Force
+                    Copy-Item -Path $fabricInstallerExe.FullName -Destination (Join-Path $installDir $fabricInstallerExe.Name) -Force
+                    Write-Host "  ✓ Staged installer EXE: $($fabricInstallerExe.Name) (root and install/)" -ForegroundColor Green
+                } else { Write-Host "  ⚠️  Fabric installer EXE not found" -ForegroundColor Yellow }
+                # Stage JAR installer
+                $fabricInstallerJar = Get-ChildItem -Path $installerPath -Filter 'fabric-installer-*.jar' -File -ErrorAction SilentlyContinue | Select-Object -First 1
+                if ($fabricInstallerJar) {
+                    # Keep JAR only under install/
+                    Copy-Item -Path $fabricInstallerJar.FullName -Destination (Join-Path $installDir $fabricInstallerJar.Name) -Force
+                    Write-Host "  ✓ Staged installer JAR: $($fabricInstallerJar.Name) (install/)" -ForegroundColor Green
+                } else { Write-Host "  ⚠️  Fabric installer JAR not found" -ForegroundColor Yellow }
+            }
+        }
+
+        # Copy InertiaAntiCheat config from repository config folder into release (if present)
+        $repoIacConfig = Join-Path $ProjectRoot 'config\InertiaAntiCheat\InertiaAntiCheat.toml'
+        if (Test-Path $repoIacConfig) {
+            $releaseIacDir = Join-Path $releaseDir 'config\InertiaAntiCheat'
+            if (-not (Test-Path $releaseIacDir)) { New-Item -ItemType Directory -Path $releaseIacDir -Force | Out-Null }
+            Copy-Item -Path $repoIacConfig -Destination (Join-Path $releaseIacDir 'InertiaAntiCheat.toml') -Force
+            Write-Host "  ✓ Included IAC config: config/InertiaAntiCheat/InertiaAntiCheat.toml" -ForegroundColor Green
+        } else {
+            Write-Host "  ⚠️  Repo IAC config not found at config/InertiaAntiCheat/InertiaAntiCheat.toml" -ForegroundColor Yellow
+        }
+    } catch { Write-Host "  ⚠️  Failed to stage server/installer/config: $($_.Exception.Message)" -ForegroundColor Yellow }
+
+    # Step 7: Run hash generator to create README/hash and modpack.zip (now includes install/, server jars, and config)
     $hashScriptPath = Join-Path $ProjectRoot "tools\minecraft-mod-hash\hash.ps1"
     if (-not (Test-Path $hashScriptPath)) { Write-Host "❌ Hash generator not found: $hashScriptPath" -ForegroundColor Red; return $false }
     try {
@@ -314,23 +367,6 @@ function New-Release {
         if (-not (Test-Path $readmeFile)) { Write-Host "❌ README file not created" -ForegroundColor Red; return $false }
         if ($zipFiles.Count -eq 0) { Write-Host "❌ ZIP package not created" -ForegroundColor Red; return $false }
     } catch { Write-Host "❌ Error running hash generator: $($_.Exception.Message)" -ForegroundColor Red; return $false }
-
-    # Optional: copy server files alongside release for convenience (not inside the zip)
-    try {
-        $serverVersionPath = Join-Path $DownloadFolder $targetVersion
-        if (Test-Path $serverVersionPath) {
-            Write-Host "📦 Copying server files to release folder (outside ZIP)..." -ForegroundColor Cyan
-            $minecraftJar = Get-ChildItem -Path $serverVersionPath -Filter 'minecraft_server*.jar' -File -ErrorAction SilentlyContinue | Select-Object -First 1
-            if ($minecraftJar) { Copy-Item -Path $minecraftJar.FullName -Destination $releaseDir -Force; Write-Host "  ✓ Copied: $($minecraftJar.Name)" -ForegroundColor Green } else { Write-Host "  ⚠️  Minecraft server JAR not found" -ForegroundColor Yellow }
-            $fabricJar = Get-ChildItem -Path $serverVersionPath -Filter 'fabric-server*.jar' -File -ErrorAction SilentlyContinue | Select-Object -First 1
-            if ($fabricJar) { Copy-Item -Path $fabricJar.FullName -Destination $releaseDir -Force; Write-Host "  ✓ Copied: $($fabricJar.Name)" -ForegroundColor Green } else { Write-Host "  ⚠️  Fabric launcher JAR not found" -ForegroundColor Yellow }
-            $installerPath = Join-Path $serverVersionPath 'installer'
-            if (Test-Path $installerPath) {
-                $fabricInstaller = Get-ChildItem -Path $installerPath -Filter 'fabric-installer-*.exe' -File -ErrorAction SilentlyContinue | Select-Object -First 1
-                if ($fabricInstaller) { Copy-Item -Path $fabricInstaller.FullName -Destination $releaseDir -Force; Write-Host "  ✓ Copied: $($fabricInstaller.Name)" -ForegroundColor Green } else { Write-Host "  ⚠️  Fabric installer not found" -ForegroundColor Yellow }
-            }
-        }
-    } catch { Write-Host "  ⚠️  Failed to copy server files: $($_.Exception.Message)" -ForegroundColor Yellow }
 
     Write-Host "" -ForegroundColor White
     Write-Host "✅ Release package created successfully!" -ForegroundColor Green

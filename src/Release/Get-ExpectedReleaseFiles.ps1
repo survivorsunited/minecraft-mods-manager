@@ -98,14 +98,13 @@ function Get-ExpectedReleaseFiles {
         $serverSide = (Normalize $m.ServerSide)
         $isServerOnly = $false
         if ($clientSide -and $clientSide.ToLower() -eq 'unsupported') { $isServerOnly = $true }
-        if ($grp -and $grp.ToLower() -eq 'admin') { $isServerOnly = $true }
         if (-not $isServerOnly -and $serverSide -and $serverSide.ToLower() -eq 'required' -and ($clientSide -ne 'required')) { $isServerOnly = $true }
 
         if ($isServerOnly) {
             $rel = "mods/server/$jar"
         } else {
             switch ($grp.ToLower()) {
-                'optional' { $rel = "mods/optional/$jar" }
+                'admin'    { $rel = "mods/optional/$jar" }
                 'block'    { $rel = "mods/block/$jar" }
                 default    { $rel = "mods/$jar" }
             }

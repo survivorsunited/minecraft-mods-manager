@@ -99,6 +99,8 @@ function Copy-ModsToRelease {
     $groupByName = @{}
     $clientSideById = @{}
     $clientSideByName = @{}
+    $serverSideById = @{}
+    $serverSideByName = @{}
     $typeById = @{}
     $typeByName = @{}
     foreach ($m in $mods) {
@@ -106,11 +108,14 @@ function Copy-ModsToRelease {
         $nameKey = if ($m.Name) { $m.Name.Trim().ToLower() } else { $null }
         $grp = if ($m.Group) { $m.Group.Trim().ToLower() } else { "required" }
         $clientSide = if ($m.ClientSide) { $m.ClientSide.Trim().ToLower() } else { $null }
+        $serverSide = if ($m.ServerSide) { $m.ServerSide.Trim().ToLower() } else { $null }
         $type = if ($m.Type) { $m.Type.Trim().ToLower() } else { $null }
         if ($idKey -and -not $groupById.ContainsKey($idKey)) { $groupById[$idKey] = $grp }
         if ($nameKey -and -not $groupByName.ContainsKey($nameKey)) { $groupByName[$nameKey] = $grp }
         if ($idKey -and -not $clientSideById.ContainsKey($idKey)) { $clientSideById[$idKey] = $clientSide }
         if ($nameKey -and -not $clientSideByName.ContainsKey($nameKey)) { $clientSideByName[$nameKey] = $clientSide }
+        if ($idKey -and -not $serverSideById.ContainsKey($idKey)) { $serverSideById[$idKey] = $serverSide }
+        if ($nameKey -and -not $serverSideByName.ContainsKey($nameKey)) { $serverSideByName[$nameKey] = $serverSide }
         if ($idKey -and -not $typeById.ContainsKey($idKey)) { $typeById[$idKey] = $type }
         if ($nameKey -and -not $typeByName.ContainsKey($nameKey)) { $typeByName[$nameKey] = $type }
     }
@@ -162,18 +167,36 @@ function Copy-ModsToRelease {
 
     $grp = $null
     $clientSide = $null
+    $serverSide = $null
     $type = $null
         if ($idKey -and $groupById.ContainsKey($idKey)) { $grp = $groupById[$idKey] }
         elseif ($nameKey -and $groupByName.ContainsKey($nameKey)) { $grp = $groupByName[$nameKey] }
         if (-not $grp) { $grp = "required" }
 
+    # If this JAR is expected to be server-only (per expected list), honor that ahead of classification
+    $base = Get-BaseName $jarFile.Name
+    if ($expectedServerSet.Contains($jarFile.Name) -or ($expectedServerBaseSet.Contains($base) -and -not $expectedExactBasesAvailable.Contains($base) -and -not $copiedBasesSet.Contains("server::" + $base))) {
+        $serverDestDir = Join-Path $DestinationPath 'server'
+        if (-not (Test-Path $serverDestDir)) { New-Item -ItemType Directory -Path $serverDestDir -Force | Out-Null }
+        $destination = Join-Path $serverDestDir $jarFile.Name
+        Copy-Item -Path $jarFile.FullName -Destination $destination -Force
+        Write-Host "  🛡️  Server-only: $($jarFile.Name)" -ForegroundColor DarkCyan
+        [void]$copiedBasesSet.Add("server::" + $base)
+        $serverOnlyCount++
+        continue
+    }
+
     if ($idKey -and $clientSideById.ContainsKey($idKey)) { $clientSide = $clientSideById[$idKey] }
     elseif ($nameKey -and $clientSideByName.ContainsKey($nameKey)) { $clientSide = $clientSideByName[$nameKey] }
+    if ($idKey -and $serverSideById.ContainsKey($idKey)) { $serverSide = $serverSideById[$idKey] }
+    elseif ($nameKey -and $serverSideByName.ContainsKey($nameKey)) { $serverSide = $serverSideByName[$nameKey] }
     if ($idKey -and $typeById.ContainsKey($idKey)) { $type = $typeById[$idKey] }
     elseif ($nameKey -and $typeByName.ContainsKey($nameKey)) { $type = $typeByName[$nameKey] }
 
     $isServerOnly = $false
-    if ($clientSide -eq 'unsupported' -or $grp -eq 'admin') { $isServerOnly = $true }
+    if ($clientSide -eq 'unsupported') { $isServerOnly = $true }
+    # Align with expected files logic: serverSide=required and clientSide!=required -> treat as server-only
+    if (-not $isServerOnly -and $serverSide -eq 'required' -and $clientSide -ne 'required') { $isServerOnly = $true }
     # Types server/launcher/installer should never be here (not in mods folder), but guard anyway
     if ($type -in @('server','launcher','installer')) { $isServerOnly = $true }
 
@@ -199,7 +222,7 @@ function Copy-ModsToRelease {
         }
 
         switch ($grp) {
-            "optional" {
+            "admin" {
                 if (-not $expectedOptSet.Contains($jarFile.Name)) { continue }
                 $destination = Join-Path (Join-Path $DestinationPath "optional") $jarFile.Name
                 Copy-Item -Path $jarFile.FullName -Destination $destination -Force
