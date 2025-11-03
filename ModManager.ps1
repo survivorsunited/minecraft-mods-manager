@@ -705,6 +705,12 @@ if ($ValidateMod -and $ModID) {
         Exit-ModManager 1
     }
 }
+elseif ($ValidateMod -and -not $ModID) {
+    # Provide a clear, user-friendly error when required parameter is missing
+    Write-Host "Error: -ValidateMod requires -ModID <mod_identifier>" -ForegroundColor Red
+    Write-Host "Usage: .\\ModManager.ps1 -ValidateMod -ModID <id> [-DatabaseFile <path>] [-ApiResponseFolder <path>]" -ForegroundColor Gray
+    Exit-ModManager 1
+}
 
 # Handle ValidateModVersion parameters
 if ($ValidateModVersion -and $ModID -and $AddModVersion) {

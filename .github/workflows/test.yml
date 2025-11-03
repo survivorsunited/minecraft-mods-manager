@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ main, develop ]
   workflow_dispatch: # Allow manual triggering
+    inputs:
+      testFiles:
+        description: 'Comma-separated test files to run (e.g., 17-TestErrorHandling.ps1,68-TestServerValidation.ps1,96-TestCreateRelease.ps1). Leave empty to run all.'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -141,21 +146,17 @@ jobs:
         
         # Change to test directory
         Set-Location test
-        
-        # Run only test 68 for debugging
-        Write-Host "🚀 Executing: .\RunAllTests.ps1 -TestFiles (68)" -ForegroundColor Green
-        Write-Host "🔧 DEBUGGING MODE: Running only test 68 with enhanced logging" -ForegroundColor Yellow
-        Write-Host ""
-        
-        # Enhanced logging for test 68
-        Write-Host "📋 TEST 68 ENHANCED LOGGING:" -ForegroundColor Cyan
-        Write-Host "  Test File: 68-TestServerValidation.ps1" -ForegroundColor Gray
-        Write-Host "  Expected Issues: Start-Process -WindowStyle parameter on Linux" -ForegroundColor Gray
-        Write-Host "  Focus: Server startup and validation" -ForegroundColor Gray
-        Write-Host ""
-        
-        #$result = .\RunAllTests.ps1 -TestFiles "68-TestServerValidation.ps1"
-        $result = .\RunAllTests.ps1
+
+        # Determine which tests to run based on workflow input
+        $testFilesInput = '${{ github.event.inputs.testFiles }}'
+        if ($null -ne $testFilesInput -and $testFilesInput.Trim() -ne '') {
+          Write-Host "🚀 Executing selected tests: $testFilesInput" -ForegroundColor Green
+          $testFiles = $testFilesInput.Split(',') | ForEach-Object { $_.Trim() }
+          $result = .\RunAllTests.ps1 -TestFiles $testFiles
+        } else {
+          Write-Host "🚀 Executing full test suite" -ForegroundColor Green
+          $result = .\RunAllTests.ps1
+        }
         
         # Capture the exit code
         $testExitCode = $LASTEXITCODE
@@ -163,19 +164,15 @@ jobs:
         Write-Host "============================================================================" -ForegroundColor Cyan
         Write-Host "TEST EXECUTION COMPLETED" -ForegroundColor Cyan
         Write-Host "============================================================================" -ForegroundColor Cyan
-        Write-Host "Exit Code: $testExitCode" -ForegroundColor $(if ($testExitCode -eq 0) { "Green" } else { "Red" })
+    Write-Host "Exit Code: $testExitCode" -ForegroundColor $(if ($testExitCode -eq 0) { "Green" } else { "Red" })
         
-        Write-Host ""
-        Write-Host "============================================================================" -ForegroundColor Cyan
-        Write-Host "TEST 68 DETAILED ANALYSIS" -ForegroundColor Cyan
-        Write-Host "============================================================================" -ForegroundColor Cyan
+    Write-Host ""
+    Write-Host "============================================================================" -ForegroundColor Cyan
+    Write-Host "DETAILED ANALYSIS" -ForegroundColor Cyan
+    Write-Host "============================================================================" -ForegroundColor Cyan
         
-        # Enhanced analysis for test 68
-        Write-Host "🔍 ANALYZING TEST 68 FAILURE:" -ForegroundColor Yellow
-        Write-Host "  Looking for Start-Process -WindowStyle errors..." -ForegroundColor Gray
-        Write-Host "  Checking server startup logs..." -ForegroundColor Gray
-        Write-Host "  Validating PowerShell compatibility..." -ForegroundColor Gray
-        Write-Host ""
+    # Enhanced analysis: surface failed tests from the latest log
+    Write-Host "🔍 Analyzing last test run log for failures..." -ForegroundColor Yellow
         
         # Find the most recent test run log
         $latestLog = Get-ChildItem -Path "test-output" -Filter "test-run-*.log" -File -ErrorAction SilentlyContinue | 
@@ -201,14 +198,6 @@ jobs:
             Write-Host "  Success Rate: $($Matches[4])%" -ForegroundColor $(if ([double]$Matches[4] -eq 100.0) { "Green" } else { "Yellow" })
           }
           Write-Host ""
-          
-          # Check for specific Start-Process error
-          if ($logContent -match "WindowStyle.*not supported") {
-            Write-Host "🎯 IDENTIFIED ISSUE: Start-Process -WindowStyle not supported on Linux" -ForegroundColor Red
-            Write-Host "  This is a PowerShell Core compatibility issue" -ForegroundColor Yellow
-            Write-Host "  Solution: Remove -WindowStyle parameter for cross-platform compatibility" -ForegroundColor Green
-            Write-Host ""
-          }
           
           # Find failed tests
           Write-Host "❌ FAILED TESTS DETAIL:" -ForegroundColor Red

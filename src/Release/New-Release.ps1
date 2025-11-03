@@ -199,14 +199,12 @@ function New-Release {
         Download-Mods -CsvPath $CsvPath -DownloadFolder $DownloadFolder -ApiResponseFolder (Join-Path $ProjectRoot 'apiresponse') -TargetGameVersion $targetVersion -SkipServerFiles | Out-Null
     } catch { Write-Host "  ⚠️  Warning: Ensure-cache step failed: $($_.Exception.Message)" -ForegroundColor Yellow }
 
-    # Step 5: Create timestamped release directory and organize content
-    $releaseBase = Join-Path $ReleasePath $targetVersion
-    $runStamp = Get-Date -Format 'yyyyMMdd-HHmmss'
-    $releaseDir = Join-Path $releaseBase $runStamp
+    # Step 5: Create release directory (no timestamp; tests expect stable version path)
+    $releaseDir = Join-Path $ReleasePath $targetVersion
     $releaseModsPath = Join-Path $releaseDir 'mods'
     $releaseShaderpacks = Join-Path $releaseDir 'shaderpacks'
     $releaseDatapacks = Join-Path $releaseDir 'datapacks'
-    New-Item -ItemType Directory -Path $releaseModsPath -Force | Out-Null
+    if (-not (Test-Path $releaseModsPath)) { New-Item -ItemType Directory -Path $releaseModsPath -Force | Out-Null }
 
     $downloadVersionPath = Join-Path $DownloadFolder $targetVersion
     $sourceModsPath = Join-Path $downloadVersionPath 'mods'

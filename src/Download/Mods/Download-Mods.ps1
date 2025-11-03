@@ -209,7 +209,7 @@ function Download-Mods {
             Write-Host "📦 Ensuring mods are available (using cache when possible)..." -ForegroundColor Cyan
         }
         
-        $downloadResults = @()
+    $downloadResults = @()
         $successCount = 0
         $errorCount = 0
         $missingSystemFiles = @()
@@ -260,6 +260,7 @@ function Download-Mods {
                 $downloadVersion = $null
                 $result = $null
                 $resolvedByApi = $false
+                $resolvedApiVersionObject = $null
                 
                 # Skip server/launcher entries if requested
                 if ($SkipServerFiles -and $mod.Type -in @("launcher", "server")) {
@@ -277,6 +278,7 @@ function Download-Mods {
                             # Use the exact filename from API for target version
                             $jarFilename = $targetApiVersion.files[0].filename
                             $resolvedByApi = $true
+                            $resolvedApiVersionObject = $targetApiVersion
                             Write-Host "  ✅ $($mod.Name): Resolved URL from API for $TargetGameVersion ($downloadVersion)" -ForegroundColor Green
                         }
                     } catch {
@@ -416,6 +418,10 @@ function Download-Mods {
                             $downloadUrl = $result.VersionUrl
                             $downloadVersion = $mod.CurrentVersion
                         }
+                    } elseif (-not $resolvedByApi -and $mod.PSObject.Properties.Match('VersionUrl').Count -gt 0 -and -not [string]::IsNullOrEmpty($mod.VersionUrl)) {
+                        # Fallback: honor generic VersionUrl column if present in CSV (test data often uses this)
+                        $downloadUrl = $mod.VersionUrl
+                        $downloadVersion = if (-not [string]::IsNullOrEmpty($mod.Version)) { $mod.Version } elseif (-not [string]::IsNullOrEmpty($mod.CurrentVersion)) { $mod.CurrentVersion } else { "current" }
                     } else {
                         Write-Host "❌ $($mod.Name): Version not found" -ForegroundColor Red
                         $errorCount++
@@ -519,6 +525,7 @@ function Download-Mods {
                                 $downloadUrl = $targetApiVersion.files[0].url
                                 $downloadVersion = $targetApiVersion.version_number
                                 $jarFilename = $targetApiVersion.files[0].filename
+                                $resolvedApiVersionObject = $targetApiVersion
                                 Write-Host "  ✅ $($mod.Name): Switched to $TargetGameVersion file from API ($downloadVersion)" -ForegroundColor Green
                             } else {
                                 Write-Host "  ⚠️  $($mod.Name): No API file found for $TargetGameVersion; proceeding with compatible file ($mcToken)" -ForegroundColor DarkYellow
@@ -679,6 +686,89 @@ function Download-Mods {
                         $successCount++
                         $preExistingFiles[$downloadPath] = $true
                         $downloadedThisRun[$downloadPath] = $true
+
+                        # If resolved from Modrinth API, attempt to fetch required dependencies (e.g., fabric-language-kotlin)
+                        if ($mod.Type -eq 'mod' -and $modHost -eq 'modrinth' -and $resolvedApiVersionObject -and $resolvedApiVersionObject.dependencies) {
+                            foreach ($dep in $resolvedApiVersionObject.dependencies) {
+                                try {
+                                    if ($dep.dependency_type -ne 'required') { continue }
+                                    if (-not $dep.project_id) { continue }
+                                    # Skip if already downloaded in this run by project id
+                                    if ($downloadedThisRun[$dep.project_id]) { continue }
+
+                                    Write-Host "  🔗 Dependency detected: $($dep.project_id) (required)" -ForegroundColor Cyan
+                                    # Query Modrinth for dependency versions
+                                    $depVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($dep.project_id)/version" -UseBasicParsing -ErrorAction SilentlyContinue
+                                    if (-not $depVersions) { continue }
+
+                                    $depTarget = $null
+                                    if ($TargetGameVersion) {
+                                        $depTarget = $depVersions | Where-Object { $_.game_versions -contains $TargetGameVersion -and $_.loaders -contains $loader } | Select-Object -First 1
+                                    }
+                                    if (-not $depTarget) {
+                                        # Fallback: any version matching loader
+                                        $depTarget = $depVersions | Where-Object { $_.loaders -contains $loader } | Select-Object -First 1
+                                    }
+                                    if (-not $depTarget) { continue }
+
+                                    $depFile = $depTarget.files | Select-Object -First 1
+                                    if (-not $depFile) { continue }
+
+                                    $depFileName = $depFile.filename
+                                    $depUrl = $depFile.url
+
+                                    # Ensure we're downloading into the mods folder for this game version
+                                    $depFolder = $gameVersionFolder
+                                    if (-not (Test-Path $depFolder)) { New-Item -ItemType Directory -Path $depFolder -Force | Out-Null }
+                                    $depPath = Join-Path $depFolder $depFileName
+
+                                    if ((Test-Path $depPath) -and -not $ForceDownload) {
+                                        Write-Host "  ⏭️  Dependency: Already exists ($depFileName)" -ForegroundColor Yellow
+                                        $downloadedThisRun[$dep.project_id] = $true
+                                        continue
+                                    }
+
+                                    Write-Host "  ⬇️  Downloading dependency: $depFileName" -ForegroundColor Cyan
+
+                                    # Use cache like main download
+                                    $cacheFolder = ".cache"
+                                    $providerCacheFolder = Join-Path $cacheFolder 'modrinth'
+                                    if (-not (Test-Path $providerCacheFolder)) { New-Item -ItemType Directory -Path $providerCacheFolder -Force | Out-Null }
+                                    $urlHash = [System.Security.Cryptography.SHA256]::Create().ComputeHash([System.Text.Encoding]::UTF8.GetBytes($depUrl))
+                                    $hashString = [System.BitConverter]::ToString($urlHash).Replace("-", "").Substring(0, 16)
+                                    $depCachePath = Join-Path $providerCacheFolder "$hashString-$depFileName"
+
+                                    if ((Test-Path $depCachePath) -and -not $ForceDownload) {
+                                        Write-Host "    ✓ Using cached file" -ForegroundColor Gray
+                                        Copy-Item -Path $depCachePath -Destination $depPath -Force
+                                    } else {
+                                        $decodedDepUrl = [System.Web.HttpUtility]::UrlDecode($depUrl)
+                                        Write-Host "    💾 Downloading to cache..." -ForegroundColor Gray
+                                        $depResponse = Invoke-WebRequest -Uri $decodedDepUrl -UseBasicParsing
+                                        [System.IO.File]::WriteAllBytes($depCachePath, $depResponse.Content)
+                                        Copy-Item -Path $depCachePath -Destination $depPath -Force
+                                    }
+
+                                    if (Test-Path $depPath) {
+                                        $depSizeMB = [math]::Round((Get-Item $depPath).Length / 1MB, 2)
+                                        Write-Host "  ✅ Dependency downloaded: $depFileName ($depSizeMB MB)" -ForegroundColor Green
+                                        $downloadResults += [PSCustomObject]@{
+                                            Name = "[dependency] $($dep.project_id)"
+                                            Status = "Success"
+                                            Version = $depTarget.version_number
+                                            File = $depFileName
+                                            Path = $depPath
+                                            Size = "$depSizeMB MB"
+                                            Error = $null
+                                        }
+                                        $successCount++
+                                        $downloadedThisRun[$dep.project_id] = $true
+                                    }
+                                } catch {
+                                    Write-Host "  ❌ Dependency download failed for $($dep.project_id): $($_.Exception.Message)" -ForegroundColor Red
+                                }
+                            }
+                        }
                     } else {
                         throw "File was not created"
                     }
