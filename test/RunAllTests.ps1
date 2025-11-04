@@ -9,8 +9,20 @@ param(
     [switch]$NoLog
 )
 
-# Import test framework
-. ".\TestFramework.ps1"
+# Import test framework (always relative to this script's folder)
+. "$PSScriptRoot\TestFramework.ps1"
+
+# Ensure the working directory is the repository root so relative paths like
+# 'src/...', 'ModManager.ps1', and 'modlist.csv' resolve correctly from tests
+try {
+    $RepoRoot = Split-Path -Path $PSScriptRoot -Parent
+    if (Test-Path $RepoRoot) {
+        Set-Location -Path $RepoRoot
+        Write-Host "Working directory set to repo root: $RepoRoot" -ForegroundColor Cyan
+    }
+} catch {
+    Write-Host "Warning: failed to set working directory to repo root: $($_.Exception.Message)" -ForegroundColor Yellow
+}
 
 # Setup logging
 $LogTimestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"

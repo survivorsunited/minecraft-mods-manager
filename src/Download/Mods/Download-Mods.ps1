@@ -41,7 +41,7 @@ function Download-Mods {
         [switch]$UseNextVersion,
         [switch]$ForceDownload,
         [string]$TargetGameVersion = $null,
-        [string]$ApiResponseFolder,
+        [string]$ApiResponseFolder = $null,
         [switch]$SkipServerFiles
     )
     
@@ -53,6 +53,15 @@ function Download-Mods {
         $mods = Get-ModList -CsvPath $CsvPath
         if (-not $mods) {
             return
+        }
+
+        # Ensure ApiResponseFolder has a sensible default and exists before using it
+        if ([string]::IsNullOrWhiteSpace($ApiResponseFolder)) {
+            $ApiResponseFolder = "apiresponse"
+        }
+        if (-not (Test-Path $ApiResponseFolder)) {
+            New-Item -ItemType Directory -Path $ApiResponseFolder -Force | Out-Null
+            Write-Host "Created API response directory: $ApiResponseFolder" -ForegroundColor Cyan
         }
         
         # When target version specified, use smart version selection
@@ -797,12 +806,6 @@ function Download-Mods {
         
         # Save download results to CSV
         $downloadResultsFile = Join-Path $ApiResponseFolder "mod-download-results.csv"
-        
-        # Ensure the ApiResponseFolder directory exists
-        if (-not (Test-Path $ApiResponseFolder)) {
-            New-Item -ItemType Directory -Path $ApiResponseFolder -Force | Out-Null
-            Write-Host "Created API response directory: $ApiResponseFolder" -ForegroundColor Cyan
-        }
         
         $downloadResults | Export-Csv -Path $downloadResultsFile -NoTypeInformation
         

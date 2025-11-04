@@ -81,10 +81,10 @@ function Download-ServerFilesFromDatabase {
                 if ($entry.Type -eq 'server' -and $entry.ID -match 'minecraft-server') {
                     try {
                         $manifestUrl = if ($env:MINECRAFT_SERVER_URL) { $env:MINECRAFT_SERVER_URL } else { 'https://piston-meta.mojang.com/mc/game/version_manifest_v2.json' }
-                        $manifest = Invoke-RestMethod -Uri $manifestUrl -UseBasicParsing
+                        $manifest = Invoke-RestMethodWithRetry -Uri $manifestUrl -Method Get
                         $versionInfo = $manifest.versions | Where-Object { $_.id -eq $mcVer } | Select-Object -First 1
                         if ($versionInfo) {
-                            $versionDetails = Invoke-RestMethod -Uri $versionInfo.url -UseBasicParsing
+                            $versionDetails = Invoke-RestMethodWithRetry -Uri $versionInfo.url -Method Get
                             if ($versionDetails.downloads.server.url) {
                                 $resolvedUrl = $versionDetails.downloads.server.url
                                 $resolvedFilename = "minecraft_server.$mcVer.jar"
@@ -97,7 +97,7 @@ function Download-ServerFilesFromDatabase {
                 } elseif ($entry.Type -eq 'launcher' -and $entry.ID -match 'fabric-server-launcher') {
                     try {
                         $fabricUrl = if ($env:FABRIC_SERVER_URL) { $env:FABRIC_SERVER_URL } else { 'https://meta.fabricmc.net/v2/versions' }
-                        $fabricVersions = Invoke-RestMethod -Uri $fabricUrl -UseBasicParsing
+                        $fabricVersions = Invoke-RestMethodWithRetry -Uri $fabricUrl -Method Get
                         $latestLoader = $fabricVersions.loader | Select-Object -First 1
                         $latestInstaller = $fabricVersions.installer | Select-Object -First 1
                         if ($latestLoader -and $latestInstaller) {
@@ -123,7 +123,7 @@ function Download-ServerFilesFromDatabase {
                         if (-not $ver) {
                             # Fallback to meta latest
                             $fabricUrl = if ($env:FABRIC_SERVER_URL) { $env:FABRIC_SERVER_URL } else { 'https://meta.fabricmc.net/v2/versions' }
-                            $fabricVersions = Invoke-RestMethod -Uri $fabricUrl -UseBasicParsing
+                            $fabricVersions = Invoke-RestMethodWithRetry -Uri $fabricUrl -Method Get
                             $latestInstaller = $fabricVersions.installer | Select-Object -First 1
                             if ($latestInstaller -and $latestInstaller.version) { $ver = $latestInstaller.version }
                         }
