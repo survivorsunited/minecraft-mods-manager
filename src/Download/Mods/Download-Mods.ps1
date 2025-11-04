@@ -85,7 +85,7 @@ function Download-Mods {
                         Write-Host "  🔍 $($firstMod.Name): Checking API for $TargetGameVersion version..." -ForegroundColor Cyan
                         
                         try {
-                            $allVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($firstMod.ID)/version" -UseBasicParsing -ErrorAction SilentlyContinue
+                            $allVersions = Invoke-RestMethodWithRetry -Uri "https://api.modrinth.com/v2/project/$($firstMod.ID)/version" -Method Get -ErrorAction SilentlyContinue
                             $targetApiVersion = $allVersions | Where-Object { 
                                 $_.game_versions -contains $TargetGameVersion -and 
                                 $_.loaders -contains $firstMod.Loader 
@@ -270,7 +270,7 @@ function Download-Mods {
                 # If targeting a specific version and this is a Modrinth MOD, resolve from API FIRST to ensure the URL matches the target game version
                 if ($TargetGameVersion -and $modHost -eq 'modrinth' -and $mod.Type -eq 'mod' -and $mod.ID) {
                     try {
-                        $allVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -UseBasicParsing -ErrorAction SilentlyContinue
+                        $allVersions = Invoke-RestMethodWithRetry -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -Method Get -ErrorAction SilentlyContinue
                         $targetApiVersion = $allVersions | Where-Object { $_.game_versions -contains $TargetGameVersion -and $_.loaders -contains $loader } | Select-Object -First 1
                         if ($targetApiVersion -and $targetApiVersion.files -and $targetApiVersion.files.Count -gt 0) {
                             $downloadUrl = $targetApiVersion.files[0].url
@@ -519,7 +519,7 @@ function Download-Mods {
                         if ($tokens -and $tokens.Count -gt 0) { $mcToken = $tokens[-1] }
                         if ($mcToken -and $mcToken -ne $TargetGameVersion) {
                             Write-Host "  🔁 $($mod.Name): Current URL appears for $mcToken, searching API for $TargetGameVersion..." -ForegroundColor Yellow
-                            $allVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -UseBasicParsing -ErrorAction SilentlyContinue
+                            $allVersions = Invoke-RestMethodWithRetry -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -Method Get -ErrorAction SilentlyContinue
                             $targetApiVersion = $allVersions | Where-Object { $_.game_versions -contains $TargetGameVersion -and $_.loaders -contains $loader } | Select-Object -First 1
                             if ($targetApiVersion -and $targetApiVersion.files -and $targetApiVersion.files.Count -gt 0) {
                                 $downloadUrl = $targetApiVersion.files[0].url
@@ -698,7 +698,7 @@ function Download-Mods {
 
                                     Write-Host "  🔗 Dependency detected: $($dep.project_id) (required)" -ForegroundColor Cyan
                                     # Query Modrinth for dependency versions
-                                    $depVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($dep.project_id)/version" -UseBasicParsing -ErrorAction SilentlyContinue
+                                    $depVersions = Invoke-RestMethodWithRetry -Uri "https://api.modrinth.com/v2/project/$($dep.project_id)/version" -Method Get -ErrorAction SilentlyContinue
                                     if (-not $depVersions) { continue }
 
                                     $depTarget = $null

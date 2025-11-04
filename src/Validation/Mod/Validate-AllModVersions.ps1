@@ -512,7 +512,7 @@ function Validate-AllModVersions {
         foreach ($mod in $newMods) {
             if ($mod.Type -eq "mod" -and $mod.Host -eq "modrinth" -and $mod.ID -and $mod.Jar) {
                 try {
-                    $allVersions = Invoke-RestMethod -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -Method Get -TimeoutSec 30 -ErrorAction SilentlyContinue
+                    $allVersions = Invoke-RestMethodWithRetry -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -Method Get -TimeoutSec 30 -ErrorAction SilentlyContinue
                     if ($allVersions -and $allVersions.Count -gt 0) {
                         # Get latest version (filter by loader first, then select first)
                         $latestVersion = $allVersions | Where-Object { $_.loaders -contains $mod.Loader } | Select-Object -First 1

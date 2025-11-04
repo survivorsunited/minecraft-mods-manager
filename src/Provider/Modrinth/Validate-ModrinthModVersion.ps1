@@ -74,8 +74,8 @@ function Validate-ModrinthModVersion {
         if (-not $Quiet) { Write-Host "DEBUG: Found project info for $ModID with $($projectInfo.versions.Count) versions" -ForegroundColor Yellow }
         
         # Get all version details to find the specific version
-        $versionsApiUrl = "https://api.modrinth.com/v2/project/$ModID/version"
-        $versionsResponse = Invoke-RestMethod -Uri $versionsApiUrl -Method Get -TimeoutSec 30
+    $versionsApiUrl = "https://api.modrinth.com/v2/project/$ModID/version"
+    $versionsResponse = Invoke-RestMethodWithRetry -Uri $versionsApiUrl -Method Get -TimeoutSec 30
         
         # Handle version keywords: "current", "next", "latest"
         if ($Version -in @("current", "next", "latest") -or [string]::IsNullOrEmpty($Version)) {

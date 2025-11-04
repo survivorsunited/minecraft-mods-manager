@@ -74,8 +74,8 @@ function Get-CurseForgeFileInfo {
             "x-api-key" = $apiKey
         }
         
-        # Make API request
-        $response = Invoke-RestMethod -Uri $apiUrl -Method Get -Headers $headers -TimeoutSec 30
+    # Make API request with retry/backoff
+    $response = Invoke-RestMethodWithRetry -Uri $apiUrl -Method Get -Headers $headers -TimeoutSec 30
         
         # Cache response if directory exists, create it if needed
         $cacheDirPath = Split-Path $cachePath

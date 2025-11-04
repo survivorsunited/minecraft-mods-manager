@@ -5,6 +5,7 @@
 . "$PSScriptRoot\Core\Environment\Load-EnvironmentVariables.ps1"
 . "$PSScriptRoot\Core\Paths\Get-EffectiveModListPath.ps1"
 . "$PSScriptRoot\Core\Paths\Get-ApiResponsePath.ps1"
+. "$PSScriptRoot\Net\Invoke-RestMethodWithRetry.ps1"
 
 # Validation modules
 . "$PSScriptRoot\Validation\Hash\Get-FileHash.ps1"
