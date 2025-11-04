@@ -246,6 +246,19 @@ function Download-ServerFilesFromDatabase {
                             Error = $null
                         }
                         $successCount++
+
+                        # Compatibility: some tests expect files at the root when GameVersion is empty
+                        try {
+                            if ([string]::IsNullOrWhiteSpace($entry.GameVersion) -and ($entry.Type -in @('server','launcher'))) {
+                                $legacyTarget = Join-Path $DownloadFolder $filename
+                                if (-not (Test-Path $legacyTarget) -or $ForceDownload) {
+                                    Copy-Item -Path $downloadPath -Destination $legacyTarget -Force
+                                    if (Test-Path $legacyTarget) {
+                                        Write-Host "  ↪️  Placed copy for legacy layout: $([System.IO.Path]::GetFileName($legacyTarget)) at root of '$DownloadFolder'" -ForegroundColor DarkGray
+                                    }
+                                }
+                            }
+                        } catch { }
                     } else {
                         throw 'File was not created'
                     }

@@ -1,0 +1,863 @@
+{
+  "PowerShellVersion": "7.5.4",
+  "Summary": {
+    "TotalTests": 56,
+    "FailedTests": 2,
+    "SuccessRate": 1.79,
+    "PassedTests": 1
+  },
+  "OS": "macos-latest",
+  "TestResults": [
+    {
+      "DownloadFolders": [],
+      "TestName": "01-BasicFunctionality",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 410740,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/01-BasicFunctionality/01-BasicFunctionality.log",
+          "Name": "01-BasicFunctionality.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "02-DownloadFunctionality",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 409392,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/02-DownloadFunctionality/02-DownloadFunctionality.log",
+          "Name": "02-DownloadFunctionality.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "03-SystemEntries",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 408067,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/03-SystemEntries/03-SystemEntries.log",
+          "Name": "03-SystemEntries.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "04-FilenameHandling",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 406755,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/04-FilenameHandling/04-FilenameHandling.log",
+          "Name": "04-FilenameHandling.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "05-ValidationTests",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 405450,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/05-ValidationTests/05-ValidationTests.log",
+          "Name": "05-ValidationTests.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "06-ModpackTests",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 404160,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/06-ModpackTests/06-ModpackTests.log",
+          "Name": "06-ModpackTests.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "07-StartServerTests",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 402947,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/07-StartServerTests/07-StartServerTests.log",
+          "Name": "07-StartServerTests.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "08-StartServerUnitTests",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 401620,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/08-StartServerUnitTests/08-StartServerUnitTests.log",
+          "Name": "08-StartServerUnitTests.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "09-TestCurrent",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 400292,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/09-TestCurrent/09-TestCurrent.log",
+          "Name": "09-TestCurrent.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "10-TestLatest",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 398994,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/10-TestLatest/10-TestLatest.log",
+          "Name": "10-TestLatest.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "11-ParameterValidation",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 397781,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/11-ParameterValidation/11-ParameterValidation.log",
+          "Name": "11-ParameterValidation.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "12-TestLatestWithServer",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 396539,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/12-TestLatestWithServer/12-TestLatestWithServer.log",
+          "Name": "12-TestLatestWithServer.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "13-TestApiResponseOrganization",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 395280,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/13-TestApiResponseOrganization/13-TestApiResponseOrganization.log",
+          "Name": "13-TestApiResponseOrganization.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "14-TestAddModFunctionality",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 393904,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/14-TestAddModFunctionality/14-TestAddModFunctionality.log",
+          "Name": "14-TestAddModFunctionality.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "15-TestDeleteModFunctionality",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 392529,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/15-TestDeleteModFunctionality/15-TestDeleteModFunctionality.log",
+          "Name": "15-TestDeleteModFunctionality.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "16-TestEnvironmentVariables",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 391155,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/16-TestEnvironmentVariables/16-TestEnvironmentVariables.log",
+          "Name": "16-TestEnvironmentVariables.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "17-TestErrorHandling",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 389731,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/17-TestErrorHandling/17-TestErrorHandling.log",
+          "Name": "17-TestErrorHandling.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "18-TestDependencyDetection",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 388223,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/18-TestDependencyDetection/18-TestDependencyDetection.log",
+          "Name": "18-TestDependencyDetection.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "18-TestSwitchParameters",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 386969,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/18-TestSwitchParameters/18-TestSwitchParameters.log",
+          "Name": "18-TestSwitchParameters.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "32-TestCurseForgeModpackSupport",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 385708,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/32-TestCurseForgeModpackSupport/32-TestCurseForgeModpackSupport.log",
+          "Name": "32-TestCurseForgeModpackSupport.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "33-TestCrossPlatformModpackIntegration",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 384409,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/33-TestCrossPlatformModpackIntegration/33-TestCrossPlatformModpackIntegration.log",
+          "Name": "33-TestCrossPlatformModpackIntegration.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "35-TestAdvancedServerManagement",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 382687,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/35-TestAdvancedServerManagement/35-TestAdvancedServerManagement.log",
+          "Name": "35-TestAdvancedServerManagement.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "53-TestDependencyFieldSplit",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 381410,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/53-TestDependencyFieldSplit/53-TestDependencyFieldSplit.log",
+          "Name": "53-TestDependencyFieldSplit.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "54-TestUpdateSummaryLogic",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 380149,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/54-TestUpdateSummaryLogic/54-TestUpdateSummaryLogic.log",
+          "Name": "54-TestUpdateSummaryLogic.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "55-TestCompleteModlistValidation",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 378880,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/55-TestCompleteModlistValidation/55-TestCompleteModlistValidation.log",
+          "Name": "55-TestCompleteModlistValidation.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "55-TestModularStructure",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 377608,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/55-TestModularStructure/55-TestModularStructure.log",
+          "Name": "55-TestModularStructure.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "56-TestProviderUnitTests",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 376361,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/56-TestProviderUnitTests/56-TestProviderUnitTests.log",
+          "Name": "56-TestProviderUnitTests.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "57-TestProviderFunctionalTests",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 375099,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/57-TestProviderFunctionalTests/57-TestProviderFunctionalTests.log",
+          "Name": "57-TestProviderFunctionalTests.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "59-TestCacheLocationCompliance",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 300379,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/59-TestCacheLocationCompliance/59-TestCacheLocationCompliance.log",
+          "Name": "59-TestCacheLocationCompliance.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "61-TestDatapackValidation",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 299009,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/61-TestDatapackValidation/61-TestDatapackValidation.log",
+          "Name": "61-TestDatapackValidation.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "62-TestTypeDetectionWhenAddingViaUrl",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 297602,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/62-TestTypeDetectionWhenAddingViaUrl/62-TestTypeDetectionWhenAddingViaUrl.log",
+          "Name": "62-TestTypeDetectionWhenAddingViaUrl.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "63-TestGameVersionBasedVersionDetection",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 296151,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/63-TestGameVersionBasedVersionDetection/63-TestGameVersionBasedVersionDetection.log",
+          "Name": "63-TestGameVersionBasedVersionDetection.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "64-TestModSearchFunctionality",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 294736,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/64-TestModSearchFunctionality/64-TestModSearchFunctionality.log",
+          "Name": "64-TestModSearchFunctionality.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "65-TestFileCreationCompliance",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 293341,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/65-TestFileCreationCompliance/65-TestFileCreationCompliance.log",
+          "Name": "65-TestFileCreationCompliance.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "66-TestServerDownloadAndRun",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 291963,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/66-TestServerDownloadAndRun/66-TestServerDownloadAndRun.log",
+          "Name": "66-TestServerDownloadAndRun.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "67-TestCurseForgeFunctionality",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 290582,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/67-TestCurseForgeFunctionality/67-TestCurseForgeFunctionality.log",
+          "Name": "67-TestCurseForgeFunctionality.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "68-TestServerValidation",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 289316,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/68-TestServerValidation/68-TestServerValidation.log",
+          "Name": "68-TestServerValidation.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "69-TestServerURLConfiguration",
+      "ReportFiles": [],
+      "Status": "Failed",
+      "LogFiles": [
+        {
+          "Size": 12996,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/69-TestServerURLConfiguration/69-TestServerURLConfiguration.log",
+          "Name": "69-TestServerURLConfiguration.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "70-TestAddModGroupParameter",
+      "ReportFiles": [],
+      "Status": "Passed",
+      "LogFiles": [
+        {
+          "Size": 15136,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/70-TestAddModGroupParameter/70-TestAddModGroupParameter.log",
+          "Name": "70-TestAddModGroupParameter.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [
+        {
+          "ModCount": 14,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/71-TestDownloadServerFromDatabase/download",
+          "Name": "download"
+        }
+      ],
+      "TestName": "71-TestDownloadServerFromDatabase",
+      "ReportFiles": [],
+      "Status": "Failed",
+      "LogFiles": [
+        {
+          "Size": 16823,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/71-TestDownloadServerFromDatabase/71-TestDownloadServerFromDatabase.log",
+          "Name": "71-TestDownloadServerFromDatabase.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "71-TestRolloverMods",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 243245,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/71-TestRolloverMods/71-TestRolloverMods.log",
+          "Name": "71-TestRolloverMods.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "74-TestNextVersionAndUrlSaving",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 237078,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/74-TestNextVersionAndUrlSaving/74-TestNextVersionAndUrlSaving.log",
+          "Name": "74-TestNextVersionAndUrlSaving.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [
+        {
+          "ModCount": 4,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/81-TestCurrentNextLatestWorkflow/download",
+          "Name": "download"
+        }
+      ],
+      "TestName": "81-TestCurrentNextLatestWorkflow",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 124316,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/81-TestCurrentNextLatestWorkflow/81-TestCurrentNextLatestWorkflow.log",
+          "Name": "81-TestCurrentNextLatestWorkflow.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "82-TestDatabaseMigration",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 117890,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/82-TestDatabaseMigration/82-TestDatabaseMigration.log",
+          "Name": "82-TestDatabaseMigration.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "83-TestFabricApiCurrentValidation",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 113681,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/83-TestFabricApiCurrentValidation/83-TestFabricApiCurrentValidation.log",
+          "Name": "83-TestFabricApiCurrentValidation.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "83-TestNextVersionValidation",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 93752,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/83-TestNextVersionValidation/83-TestNextVersionValidation.log",
+          "Name": "83-TestNextVersionValidation.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "84-TestFabricApiNextValidation",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 108985,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/84-TestFabricApiNextValidation/84-TestFabricApiNextValidation.log",
+          "Name": "84-TestFabricApiNextValidation.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "85-TestFabricApiLatestValidation",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 98478,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/85-TestFabricApiLatestValidation/85-TestFabricApiLatestValidation.log",
+          "Name": "85-TestFabricApiLatestValidation.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "87-TestValidationDisplay",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 92073,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/87-TestValidationDisplay/87-TestValidationDisplay.log",
+          "Name": "87-TestValidationDisplay.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [
+        {
+          "ModCount": 172,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/90-TestCurrentVersionWorkflow/download",
+          "Name": "download"
+        }
+      ],
+      "TestName": "90-TestCurrentVersionWorkflow",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 82917,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/90-TestCurrentVersionWorkflow/90-TestCurrentVersionWorkflow.log",
+          "Name": "90-TestCurrentVersionWorkflow.log"
+        },
+        {
+          "Size": 0,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/90-TestCurrentVersionWorkflow/server-error.log",
+          "Name": "server-error.log"
+        },
+        {
+          "Size": 17974,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/90-TestCurrentVersionWorkflow/server-output.log",
+          "Name": "server-output.log"
+        },
+        {
+          "Size": 28870,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/90-TestCurrentVersionWorkflow/download/1.21.5/logs/console-2025-11-04_12-48-13.log",
+          "Name": "console-2025-11-04_12-48-13.log"
+        },
+        {
+          "Size": 19276,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/90-TestCurrentVersionWorkflow/download/1.21.5/logs/latest.log",
+          "Name": "latest.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [
+        {
+          "ModCount": 222,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/91-TestNextVersionWorkflow/download",
+          "Name": "download"
+        }
+      ],
+      "TestName": "91-TestNextVersionWorkflow",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 73666,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/91-TestNextVersionWorkflow/91-TestNextVersionWorkflow.log",
+          "Name": "91-TestNextVersionWorkflow.log"
+        },
+        {
+          "Size": 0,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/91-TestNextVersionWorkflow/server-error.log",
+          "Name": "server-error.log"
+        },
+        {
+          "Size": 33670,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/91-TestNextVersionWorkflow/server-output.log",
+          "Name": "server-output.log"
+        },
+        {
+          "Size": 9766,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/91-TestNextVersionWorkflow/download/1.21.6/logs/console-2025-11-04_12-51-18.log",
+          "Name": "console-2025-11-04_12-51-18.log"
+        },
+        {
+          "Size": 172,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/91-TestNextVersionWorkflow/download/1.21.6/logs/latest.log",
+          "Name": "latest.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [
+        {
+          "ModCount": 223,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/92-TestLatestVersionWorkflow/download",
+          "Name": "download"
+        }
+      ],
+      "TestName": "92-TestLatestVersionWorkflow",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 67370,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/92-TestLatestVersionWorkflow/92-TestLatestVersionWorkflow.log",
+          "Name": "92-TestLatestVersionWorkflow.log"
+        },
+        {
+          "Size": 0,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/92-TestLatestVersionWorkflow/server-error.log",
+          "Name": "server-error.log"
+        },
+        {
+          "Size": 26650,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/92-TestLatestVersionWorkflow/server-output.log",
+          "Name": "server-output.log"
+        },
+        {
+          "Size": 12443,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/92-TestLatestVersionWorkflow/download/1.21.9/logs/console-2025-11-04_12-52-47.log",
+          "Name": "console-2025-11-04_12-52-47.log"
+        },
+        {
+          "Size": 2566,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/92-TestLatestVersionWorkflow/download/1.21.9/logs/latest.log",
+          "Name": "latest.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "93-TestMinecraftVersionSync",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 56963,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/93-TestMinecraftVersionSync/93-TestMinecraftVersionSync.log",
+          "Name": "93-TestMinecraftVersionSync.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [],
+      "TestName": "94-TestVersionFunctions",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 44819,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/94-TestVersionFunctions/94-TestVersionFunctions.log",
+          "Name": "94-TestVersionFunctions.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [
+        {
+          "ModCount": 4,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/95-TestNextVersionDownloads/download",
+          "Name": "download"
+        }
+      ],
+      "TestName": "95-TestNextVersionDownloads",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 40811,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/95-TestNextVersionDownloads/95-TestNextVersionDownloads.log",
+          "Name": "95-TestNextVersionDownloads.log"
+        },
+        {
+          "Size": 964,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/95-TestNextVersionDownloads/modmanager-debug.log",
+          "Name": "modmanager-debug.log"
+        }
+      ]
+    },
+    {
+      "DownloadFolders": [
+        {
+          "ModCount": 155,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/96-TestCreateRelease/download",
+          "Name": "download"
+        }
+      ],
+      "TestName": "96-TestCreateRelease",
+      "ReportFiles": [],
+      "Status": "Unknown",
+      "LogFiles": [
+        {
+          "Size": 34971,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/96-TestCreateRelease/96-TestCreateRelease.log",
+          "Name": "96-TestCreateRelease.log"
+        },
+        {
+          "Size": 1001,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/96-TestCreateRelease/release-creation-debug.log",
+          "Name": "release-creation-debug.log"
+        },
+        {
+          "Size": 40844,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/96-TestCreateRelease/download/1.21.8/logs/console-2025-11-04_12-55-11.log",
+          "Name": "console-2025-11-04_12-55-11.log"
+        },
+        {
+          "Size": 31250,
+          "Path": "/Users/runner/work/minecraft-mods-manager/minecraft-mods-manager/test/test-output/96-TestCreateRelease/download/1.21.8/logs/latest.log",
+          "Name": "latest.log"
+        }
+      ]
+    }
+  ],
+  "Timestamp": "2025-11-04 13:07:41 UTC"
+}

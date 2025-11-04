@@ -110,6 +110,9 @@ jobs:
       shell: pwsh
       env:
         CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+        # Ensure server resolver environment variables are available for tests (e.g., Test 69)
+        MINECRAFT_SERVER_URL: https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
+        FABRIC_SERVER_URL: https://meta.fabricmc.net/v2/versions
       run: |
         # ============================================================================
         # COMPREHENSIVE LOGGING: Environment and API Key Status

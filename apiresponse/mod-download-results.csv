@@ -1,0 +1,4 @@
+"Name","Status","Version","File","Path","Size","Error"
+"Fabric API","Success","0.128.2+1.21.5","fabric-api-0.128.2+1.21.5.jar","test-version-targeting\1.21.5\mods\fabric-api-0.128.2+1.21.5.jar","2.14 MB",
+"Minecraft Server","Failed","","minecraft_server.1.21.6.jar","test-version-targeting\1.21.5\minecraft_server.1.21.6.jar",,"Response status code does not indicate success: 404 (The specified blob does not exist.)."
+"Sodium","Success","mc1.21.5-0.6.13-fabric","sodium-fabric-0.6.13+mc1.21.5.jar","test-version-targeting\1.21.5\mods\sodium-fabric-0.6.13+mc1.21.5.jar","1.27 MB",
