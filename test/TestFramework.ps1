@@ -670,9 +670,9 @@ function Initialize-TestEnvironment {
         Start-TestLogging -TestOutputDir $outputFolder
     }
     
-    # Clean up previous test files
-    if (Test-Path $TestDbPath) {
-        Write-Host "Removed existing database: $TestDbPath" -ForegroundColor $Colors.Info
+    # Clean up previous test files (use script-scoped TestDbPath)
+    if ($script:TestDbPath -and (Test-Path $script:TestDbPath)) {
+        Write-Host "Removed existing database: $script:TestDbPath" -ForegroundColor $Colors.Info
     }
     
     # Create blank database with headers only
@@ -683,13 +683,14 @@ function Initialize-TestEnvironment {
         # Original schema (all 34 columns as per MODLIST_CSV_COLUMNS.md)
         $headers = @("Group", "Type", "GameVersion", "ID", "Loader", "Version", "Name", "Description", "Jar", "Url", "Category", "VersionUrl", "LatestVersionUrl", "LatestVersion", "ApiSource", "Host", "IconUrl", "ClientSide", "ServerSide", "Title", "ProjectDescription", "IssuesUrl", "SourceUrl", "WikiUrl", "LatestGameVersion", "RecordHash", "UrlDirect", "AvailableGameVersions", "CurrentDependencies", "LatestDependencies", "CurrentDependenciesRequired", "CurrentDependenciesOptional", "LatestDependenciesRequired", "LatestDependenciesOptional")
     }
-    $headers -join "," | Out-File $TestDbPath -Encoding UTF8
+    $headers -join "," | Out-File $script:TestDbPath -Encoding UTF8
     Write-Host "Created new database: $TestDbPath" -ForegroundColor $Colors.Info
     
     # Create output folder for this test file
     if ($TestFileName) {
-        $outputFolder = Get-TestOutputFolder $TestFileName
-        Write-Host "Test output folder: $outputFolder" -ForegroundColor $Colors.Info
+    $outputFolder = Get-TestOutputFolder $TestFileName
+    $script:TestOutputDir = $outputFolder
+    Write-Host "Test output folder: $outputFolder" -ForegroundColor $Colors.Info
     }
     Write-TestResult "Environment Setup" $true "Test database created"
 }

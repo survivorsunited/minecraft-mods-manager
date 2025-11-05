@@ -409,13 +409,55 @@ max-world-size=29999984
     Write-Host "📋 Server logs will be saved to: $logsDir" -ForegroundColor Gray
     
     try {
-        # Calculate JAVA_HOME from the Java command path
-        $javaHome = if ($javaCommand -ne "java") {
-            # Extract JAVA_HOME from the java.exe path (remove \bin\java.exe)
-            Split-Path (Split-Path $javaCommand -Parent) -Parent
-        } else {
-            $null
+        # Helper: stop Fabric/Minecraft Java processes for this validation run
+        function Stop-FabricServerProcesses {
+            param(
+                [string]$TargetFolder
+            )
+            $stopped = 0
+            Write-Host "🔻 Attempting to stop running Fabric server process(es)..." -ForegroundColor Yellow
+
+            try {
+                # Windows: use CIM to get command line and filter on fabric-server jar
+                if ($IsWindows -or ($env:OS -match 'Windows')) {
+                    $procs = Get-CimInstance -ClassName Win32_Process -ErrorAction SilentlyContinue |
+                        Where-Object { $_.Name -match '^java(\.exe)?$' -and $_.CommandLine -match 'fabric-server.*\.jar' }
+                    foreach ($p in $procs) {
+                        try {
+                            Stop-Process -Id $p.ProcessId -Force -ErrorAction SilentlyContinue
+                            $stopped++
+                        } catch {}
+                    }
+                }
+                else {
+                    # Cross-platform: fall back to parsing `ps` command output to find fabric-server java processes
+                    $javaProcs = Get-Process -Name 'java' -ErrorAction SilentlyContinue
+                    $psCmdPath = @('/bin/ps','/usr/bin/ps') | Where-Object { Test-Path $_ } | Select-Object -First 1
+                    foreach ($jp in $javaProcs) {
+                        try {
+                            if ($psCmdPath) {
+                                $line = & $psCmdPath -o pid=,command= -p $jp.Id 2>$null
+                                if ($line -and ($line -match 'fabric-server.*\.jar')) {
+                                    Stop-Process -Id $jp.Id -Force -ErrorAction SilentlyContinue
+                                    $stopped++
+                                }
+                            }
+                        } catch {}
+                    }
+                }
+            } catch {
+                Write-Host "⚠️  Error while attempting to stop Fabric server processes: $($_.Exception.Message)" -ForegroundColor Yellow
+            }
+
+            if ($stopped -gt 0) {
+                Write-Host "✅ Stopped $stopped Fabric/Minecraft server process(es)" -ForegroundColor Green
+            } else {
+                Write-Host "ℹ️  No matching Fabric server processes found to stop" -ForegroundColor Cyan
+            }
+            return $stopped -gt 0
         }
+
+        # NOTE: JAVA_HOME not required here; child script resolves its own Java
         
         # Start the server using the start-server.ps1 script (respects user configurations)
         $job = Start-Job -ScriptBlock {
@@ -436,12 +478,8 @@ max-world-size=29999984
                 return
             }
             
-            # Run the start-server.ps1 script with NoAutoRestart flag
-            if ($NoAutoRestart) {
-                & .\start-server.ps1 -NoAutoRestart
-            } else {
-                & .\start-server.ps1
-            }
+            # Always disable auto-restart for validation runs to ensure clean shutdown
+            & .\start-server.ps1 -NoAutoRestart
         } -ArgumentList $targetFolder, $NoAutoRestart
         
         Write-Host "✅ Server job started successfully (Job ID: $($job.Id))" -ForegroundColor Green
@@ -449,7 +487,7 @@ max-world-size=29999984
         
         # Monitor logs for errors
         $logFile = $null
-        $startTime = Get-Date
+    # Start time not tracked; using explicit timeouts only
         $timeout = $LogFileTimeout  # Use parameter for log file detection timeout
         
         # Wait for server log file to be created (prefer latest.log, fallback to console-*.log)
@@ -612,6 +650,9 @@ max-world-size=29999984
             }
             
             Write-Host "🛑 Stopping server job..." -ForegroundColor Red
+            # First try to stop any matching server Java processes
+            Stop-FabricServerProcesses -TargetFolder $targetFolder | Out-Null
+            # Then stop the PowerShell job hosting the startup script
             Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
             Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
             Write-Host "📄 Check the log file for details: $logFile" -ForegroundColor Gray
@@ -622,8 +663,7 @@ max-world-size=29999984
             Write-Host "✅ SERVER FULLY LOADED SUCCESSFULLY!" -ForegroundColor Green
             Write-Host "🛑 Stopping server for pipeline validation..." -ForegroundColor Yellow
             
-            # Send stop command to server
-            $stopCommand = "stop"
+            # Send stop command to server (informational only)
             $serverProcess = Get-Process | Where-Object { $_.ProcessName -eq "java" } | Select-Object -First 1
             if ($serverProcess) {
                 # Try to stop gracefully - this is basic, server should stop from the stop command in console
@@ -633,7 +673,10 @@ max-world-size=29999984
             # Wait a moment for graceful shutdown
             Start-Sleep -Seconds 5
             
-            # Force stop the job
+            # First try to stop any matching server Java processes
+            Stop-FabricServerProcesses -TargetFolder $targetFolder | Out-Null
+
+            # Then stop the PowerShell job hosting the startup script
             Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
             Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
             
@@ -644,6 +687,9 @@ max-world-size=29999984
         } else {
             Write-Host "⏰ SERVER STARTUP TIMEOUT - Server did not fully load within $monitorTime seconds" -ForegroundColor Red
             Write-Host "🛑 Stopping server job..." -ForegroundColor Red
+            # First try to stop any matching server Java processes
+            Stop-FabricServerProcesses -TargetFolder $targetFolder | Out-Null
+            # Then stop the PowerShell job hosting the startup script
             Stop-Job -Id $job.Id -ErrorAction SilentlyContinue
             Remove-Job -Id $job.Id -ErrorAction SilentlyContinue
             Write-Host "📄 Check the log file for details: $logFile" -ForegroundColor Gray

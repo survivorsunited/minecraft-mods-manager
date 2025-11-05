@@ -19,6 +19,19 @@ $ModListPath = Join-Path $TestOutputDir "run-test-cli.csv"
 Write-Host "Minecraft Mod Manager - Cross-Platform Modpack Integration Tests" -ForegroundColor $Colors.Header
 Write-Host "===============================================================" -ForegroundColor $Colors.Header
 
+function New-PortableTempDir {
+    param(
+        [Parameter(Mandatory=$true)][string]$Prefix
+    )
+    # Determine a cross-platform temp base path
+    $base = $env:TEMP
+    if ([string]::IsNullOrWhiteSpace($base)) { $base = $env:TMPDIR }
+    if ([string]::IsNullOrWhiteSpace($base)) { $base = [System.IO.Path]::GetTempPath() }
+    $dir = Join-Path $base ("{0}-{1}" -f $Prefix, (Get-Random))
+    New-Item -ItemType Directory -Path $dir -Force | Out-Null
+    return $dir
+}
+
 function Invoke-TestCrossPlatformModpackIntegration {
     param([string]$TestFileName = $null)
     
@@ -69,8 +82,7 @@ function Test-ModpackTypeDetection {
     $testCurseForgePath = Join-Path $TestOutputDir "test-curseforge.zip"
     
     # Create a simple .mrpack file (just a ZIP with different extension)
-    $tempDir = Join-Path $env:TEMP "test-modrinth-$(Get-Random)"
-    New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+    $tempDir = New-PortableTempDir -Prefix "test-modrinth"
     
     try {
         # Create modrinth.index.json
@@ -87,11 +99,10 @@ function Test-ModpackTypeDetection {
         }
         $index | ConvertTo-Json -Depth 10 | Out-File -FilePath (Join-Path $tempDir "modrinth.index.json") -Encoding UTF8
         
-        Compress-Archive -Path "$tempDir\*" -DestinationPath $testModrinthPath -Force
+    Compress-Archive -Path "$tempDir\*" -DestinationPath $testModrinthPath -Force
         
         # Create a CurseForge modpack
-        $tempDir2 = Join-Path $env:TEMP "test-curseforge-$(Get-Random)"
-        New-Item -ItemType Directory -Path $tempDir2 -Force | Out-Null
+    $tempDir2 = New-PortableTempDir -Prefix "test-curseforge"
         
         try {
             # Create manifest.json
@@ -145,8 +156,7 @@ function Test-UnifiedModpackImport {
     
     # Create a test modpack for import
     $testModpackPath = Join-Path $TestOutputDir "test-import.mrpack"
-    $tempDir = Join-Path $env:TEMP "test-import-$(Get-Random)"
-    New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+    $tempDir = New-PortableTempDir -Prefix "test-import"
     
     try {
         # Create modrinth.index.json
@@ -271,8 +281,7 @@ function Test-CrossModpackDependencyAnalysis {
     $modpack2Path = Join-Path $TestOutputDir "modpack2.mrpack"
     
     # Create modpack 1
-    $tempDir1 = Join-Path $env:TEMP "modpack1-$(Get-Random)"
-    New-Item -ItemType Directory -Path $tempDir1 -Force | Out-Null
+    $tempDir1 = New-PortableTempDir -Prefix "modpack1"
     
     try {
         $index1 = @{
@@ -301,8 +310,7 @@ function Test-CrossModpackDependencyAnalysis {
     }
     
     # Create modpack 2
-    $tempDir2 = Join-Path $env:TEMP "modpack2-$(Get-Random)"
-    New-Item -ItemType Directory -Path $tempDir2 -Force | Out-Null
+    $tempDir2 = New-PortableTempDir -Prefix "modpack2"
     
     try {
         $index2 = @{
@@ -395,8 +403,7 @@ function Test-ModpackIntegrityChecking {
     
     # Create a valid modpack
     $validModpackPath = Join-Path $TestOutputDir "valid-modpack.mrpack"
-    $tempDir = Join-Path $env:TEMP "valid-modpack-$(Get-Random)"
-    New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+    $tempDir = New-PortableTempDir -Prefix "valid-modpack"
     
     try {
         $index = @{
