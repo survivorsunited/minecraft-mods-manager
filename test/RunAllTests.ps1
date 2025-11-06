@@ -85,7 +85,17 @@ function Write-Log {
     # Write to log file (without color codes)
     if (-not $NoLog) {
         $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-        "$timestamp - $Message" | Out-File -FilePath $LogFilePath -Append -Encoding UTF8
+        try {
+            # Ensure the log directory exists (cleanup may have removed it)
+            $logDir = Split-Path -Path $LogFilePath -Parent
+            if (-not (Test-Path $logDir)) {
+                New-Item -ItemType Directory -Path $logDir -Force | Out-Null
+            }
+            "$timestamp - $Message" | Out-File -FilePath $LogFilePath -Append -Encoding UTF8
+        } catch {
+            # Fallback: don't break the run if we can't write the log file
+            Write-Host "Warning: failed to write to log file '$LogFilePath': $($_.Exception.Message)" -ForegroundColor Yellow
+        }
     }
 }
 

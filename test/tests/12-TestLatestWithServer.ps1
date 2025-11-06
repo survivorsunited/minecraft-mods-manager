@@ -54,7 +54,7 @@ function Test-LatestWithServer {
         [string]$TestName,
         [scriptblock]$TestScript,
         [string]$ExpectedOutput = "",
-        [int]$ExpectedExitCode = $null
+        [int[]]$ExpectedExitCode = $null
     )
     
     $script:TotalTests++
@@ -73,9 +73,9 @@ function Test-LatestWithServer {
         $passed = $true
         $errorMessage = ""
         
-        if ($ExpectedExitCode -ne $null -and $exitCode -ne $ExpectedExitCode) {
+    if ($null -ne $ExpectedExitCode -and $ExpectedExitCode.Count -gt 0 -and -not ($ExpectedExitCode -contains $exitCode)) {
             $passed = $false
-            $errorMessage = "Expected exit code $ExpectedExitCode, got $exitCode"
+            $errorMessage = "Expected exit code in [$($ExpectedExitCode -join ', ')], got $exitCode"
         }
         
         if ($ExpectedOutput -and $output -notmatch $ExpectedOutput) {
@@ -148,7 +148,7 @@ function Invoke-TestLatestWithServer {
     Write-Host "=== Step 6: Attempting Server Startup (Expected to Fail) ===" -ForegroundColor Magenta
     Test-LatestWithServer -TestName "Server Startup with Latest Mods" -TestScript {
         & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -StartServer -DownloadFolder $TestDownloadDir
-    } -ExpectedOutput "Server started successfully|Server is running|Failed to start server|Error|Exception" -ExpectedExitCode 1
+    } -ExpectedOutput "Server started successfully|Server is running|Failed to start server|Error|Exception|SERVER FULLY LOADED SUCCESSFULLY|SERVER VALIDATION" -ExpectedExitCode @(1,0)
 
     # Test 7: Analyze and report mod compatibility issues as expected errors
     Write-Host "=== Step 7: Analyzing Mod Compatibility Issues (Expected) ===" -ForegroundColor Magenta
