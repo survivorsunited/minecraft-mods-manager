@@ -110,8 +110,8 @@ function Start-MinecraftServer {
                     Write-Host ""
                     Write-Host "📦 Automatically downloading JDK $minJavaVersion..." -ForegroundColor Cyan
                     
-                    # Download JDK
-                    $jdkDownloaded = Download-JDK -CsvPath $CsvPath -Version $minJavaVersion.ToString()
+                    # Download JDK (honor DownloadFolder to avoid polluting default test/download)
+                    $jdkDownloaded = Download-JDK -CsvPath $CsvPath -DownloadFolder $DownloadFolder -Version $minJavaVersion.ToString()
                     
                     if ($jdkDownloaded) {
                         Write-Host "✅ JDK $minJavaVersion downloaded successfully" -ForegroundColor Green
@@ -170,23 +170,23 @@ function Start-MinecraftServer {
         Write-Host "🎯 Target version: $targetVersion (user specified)" -ForegroundColor Green
     } elseif ($UseLatestVersion) {
         # Get latest version from database
-        $mods = Import-Csv -Path $ModListPath
+        $mods = Import-Csv -Path $CsvPath
         $latestVersions = $mods | Where-Object { $_.LatestGameVersion } | Select-Object -ExpandProperty LatestGameVersion | Sort-Object -Unique
         $targetVersion = $latestVersions | Sort-Object { [Version]($_ -replace '[^\d.]', '') } | Select-Object -Last 1
         Write-Host "🎯 Target version: $targetVersion (latest)" -ForegroundColor Green
     } elseif ($UseNextVersion) {
         # Use next version for progressive testing
-        $nextVersionResult = Calculate-NextGameVersion -CsvPath $ModListPath
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $CsvPath
         $targetVersion = $nextVersionResult.NextVersion
         Write-Host "🎯 Target version: $targetVersion (next)" -ForegroundColor Green
     } elseif ($UseCurrentVersion) {
         # Use current version (majority version from modlist)
-        $nextVersionResult = Calculate-NextGameVersion -CsvPath $ModListPath
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $CsvPath
         $targetVersion = $nextVersionResult.MajorityVersion
         Write-Host "🎯 Target version: $targetVersion (current)" -ForegroundColor Green
     } else {
         # Default: Use current version (majority version from modlist)
-        $nextVersionResult = Calculate-NextGameVersion -CsvPath $ModListPath
+        $nextVersionResult = Calculate-NextGameVersion -CsvPath $CsvPath
         $targetVersion = $nextVersionResult.MajorityVersion
         Write-Host "🎯 Target version: $targetVersion (current - default)" -ForegroundColor Green
     }
@@ -555,25 +555,9 @@ max-world-size=29999984
                 $errorFound = $true
                 break
             } elseif ($jobStatus.State -eq "Completed") {
-                # For server startup scripts, completion is normal - they launch Java processes and exit
-                Write-Host "✅ Server startup script completed - checking for Java process..." -ForegroundColor Green
-                
-                # Check if a Java process is running (indicating server startup)
-                $javaProcesses = Get-Process -Name "java" -ErrorAction SilentlyContinue
-                if ($javaProcesses.Count -gt 0) {
-                    Write-Host "✅ Java processes detected - server likely started!" -ForegroundColor Green
-                    break
-                } else {
-                    # Wait a bit more for the server to start
-                    Start-Sleep -Seconds 2
-                    $javaProcesses = Get-Process -Name "java" -ErrorAction SilentlyContinue
-                    if ($javaProcesses.Count -gt 0) {
-                        Write-Host "✅ Java processes detected after delay!" -ForegroundColor Green
-                        break
-                    } else {
-                        Write-Host "⚠️  No Java processes found - server may have failed to start" -ForegroundColor Yellow
-                    }
-                }
+                # For server startup scripts, completion is normal — they launch Java and exit.
+                # Do not infer success from presence of any java.exe; rely on log-based readiness only.
+                Write-Host "ℹ️  Server startup script completed. Continuing to monitor logs for readiness/errors..." -ForegroundColor Cyan
             }
             
             # Check log file for errors

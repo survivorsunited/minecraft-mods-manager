@@ -48,6 +48,30 @@ $Colors = @{
 # Store the original script root at the start
 $OriginalScriptRoot = $PSScriptRoot
 
+# Optional: allow CI to select tests via env var or repo file
+try {
+    # Highest priority: environment variable TEST_FILES (comma-separated)
+    if (-not $All -and ($TestFiles.Count -eq 0) -and $env:TEST_FILES) {
+        $envList = $env:TEST_FILES -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' }
+        if ($envList.Count -gt 0) {
+            Write-Log "Using TEST_FILES from environment: $($envList -join ', ')" $Colors.Info
+            $script:EnvSelectedTests = $envList
+        }
+    }
+
+    # Next: file-based selection (ci-artifacts/test-selection.txt)
+    if (-not $All -and ($TestFiles.Count -eq 0) -and (-not $script:EnvSelectedTests)) {
+        $selectionFile = Join-Path (Split-Path $OriginalScriptRoot -Parent) "ci-artifacts/test-selection.txt"
+        if (Test-Path $selectionFile) {
+            $fileList = Get-Content -Path $selectionFile | ForEach-Object { $_.Trim() } | Where-Object { $_ -and ($_ -notmatch '^#') }
+            if ($fileList.Count -gt 0) {
+                Write-Log "Using test-selection.txt: $($fileList -join ', ')" $Colors.Info
+                $script:FileSelectedTests = $fileList
+            }
+        }
+    }
+} catch { }
+
 function Write-Log {
     param([string]$Message, [string]$Color = "White")
     
@@ -131,10 +155,15 @@ function Get-AllTestFiles {
 function Get-TestFilesToRun {
     param([string[]]$TestFiles, [switch]$All)
     
-    if ($All) {
-        return Get-AllTestFiles
+    # Highest priority: explicit selection via env or file
+    if ($script:EnvSelectedTests) {
+        return $script:EnvSelectedTests
+    } elseif ($script:FileSelectedTests) {
+        return $script:FileSelectedTests
     } elseif ($TestFiles.Count -gt 0) {
         return $TestFiles
+    } elseif ($All) {
+        return Get-AllTestFiles
     } else {
         return Get-AllTestFiles
     }
