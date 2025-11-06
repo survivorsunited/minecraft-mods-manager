@@ -64,7 +64,8 @@ function Get-ApiResponsePath {
 
 # Configuration constants
 $ScriptPath = "..\ModManager.ps1"
-$TestDbPath = "test-output\run-test-cli.csv"  # Will be set to output folder path in Initialize-TestEnvironment
+# Default DB path anchored to this framework folder to avoid CWD issues in CI
+$TestDbPath = Join-Path $PSScriptRoot "test-output\run-test-cli.csv"  # Will be overridden per-test in Initialize-TestEnvironment
 $TestRoot = Join-Path $PSScriptRoot "tests"
 
 # Test counter (shared across all test files) - Use script scope for persistence
@@ -433,12 +434,12 @@ function Test-DatabaseState {
         [string]$TestName = "Database State"
     )
     
-    if (-not (Test-Path $TestDbPath)) {
-        Write-TestResult $TestName $false "Database file not found"
+    if (-not (Test-Path $script:TestDbPath)) {
+        Write-TestResult $TestName $false "Database file not found: $script:TestDbPath"
         return
     }
     
-    $mods = Import-Csv $TestDbPath
+    $mods = Import-Csv $script:TestDbPath
     $actualCount = $mods.Count
     
     if ($actualCount -eq $ExpectedModCount) {
@@ -449,7 +450,7 @@ function Test-DatabaseState {
     
     # Check for specific mods if provided
     foreach ($expectedMod in $ExpectedMods) {
-        $found = $mods | Where-Object { $_.Name -eq $expectedMod }
+    $found = $mods | Where-Object { $_.Name -eq $expectedMod }
         if ($found) {
             Write-TestResult "Contains $expectedMod" $true
         } else {
@@ -684,7 +685,7 @@ function Initialize-TestEnvironment {
         $headers = @("Group", "Type", "GameVersion", "ID", "Loader", "Version", "Name", "Description", "Jar", "Url", "Category", "VersionUrl", "LatestVersionUrl", "LatestVersion", "ApiSource", "Host", "IconUrl", "ClientSide", "ServerSide", "Title", "ProjectDescription", "IssuesUrl", "SourceUrl", "WikiUrl", "LatestGameVersion", "RecordHash", "UrlDirect", "AvailableGameVersions", "CurrentDependencies", "LatestDependencies", "CurrentDependenciesRequired", "CurrentDependenciesOptional", "LatestDependenciesRequired", "LatestDependenciesOptional")
     }
     $headers -join "," | Out-File $script:TestDbPath -Encoding UTF8
-    Write-Host "Created new database: $TestDbPath" -ForegroundColor $Colors.Info
+    Write-Host "Created new database: $script:TestDbPath" -ForegroundColor $Colors.Info
     
     # Create output folder for this test file
     if ($TestFileName) {
