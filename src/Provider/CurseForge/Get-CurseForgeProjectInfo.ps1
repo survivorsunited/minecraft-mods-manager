@@ -28,6 +28,13 @@
     - Handles API rate limiting automatically
     - Returns null if project not found or API unavailable
 #>
+# Ensure dependent helpers are available when dot-sourced directly (outside Import-Modules)
+try {
+    if (-not (Get-Command Invoke-RestMethodWithRetry -ErrorAction SilentlyContinue)) {
+        . "$PSScriptRoot\..\..\Net\Invoke-RestMethodWithRetry.ps1"
+    }
+} catch { }
+
 function Get-CurseForgeProjectInfo {
     param(
         [Parameter(Mandatory=$true)]

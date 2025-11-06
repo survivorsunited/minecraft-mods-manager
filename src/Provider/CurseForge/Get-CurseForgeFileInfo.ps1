@@ -29,6 +29,16 @@
     - Handles API rate limiting
     - Returns null if file not found or API unavailable
 #>
+# Ensure dependent helpers are available when dot-sourced directly (outside Import-Modules)
+try {
+    if (-not (Get-Command Invoke-RestMethodWithRetry -ErrorAction SilentlyContinue)) {
+        . "$PSScriptRoot\..\..\Net\Invoke-RestMethodWithRetry.ps1"
+    }
+    if (-not (Get-Command Resolve-CurseForgeProjectId -ErrorAction SilentlyContinue)) {
+        . "$PSScriptRoot\Resolve-CurseForgeProjectId.ps1"
+    }
+} catch { }
+
 function Get-CurseForgeFileInfo {
     param(
         [Parameter(Mandatory=$true)]
