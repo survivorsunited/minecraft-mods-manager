@@ -59,7 +59,7 @@ test-cache*/
 
 # Release packages
 releases/
-src/releases/**
+src/releases/
 
 # Test temp folders (from failed tests)
 nonexistent-folder/

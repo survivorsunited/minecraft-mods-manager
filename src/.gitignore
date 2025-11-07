@@ -1,2 +1,5 @@
-#include everything
+# include everything by default, then explicitly ignore generated releases here
 !*
+
+# ignore generated artifacts in this folder
+releases/
