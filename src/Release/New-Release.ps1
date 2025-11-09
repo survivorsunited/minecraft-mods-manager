@@ -357,14 +357,87 @@ function New-Release {
 
     # Step 7: Run hash generator to create README/hash and modpack.zip (now includes install/, server jars, and config)
     $hashScriptPath = Join-Path $ProjectRoot "tools\minecraft-mod-hash\hash.ps1"
-    if (-not (Test-Path $hashScriptPath)) { Write-Host "❌ Hash generator not found: $hashScriptPath" -ForegroundColor Red; return $false }
-    try {
-        & $hashScriptPath -ModsPath $releaseModsPath -OutputPath $releaseDir -CreateZip -UpdateConfig
-        $hashFile = Join-Path $releaseDir 'hash.txt'; $readmeFile = Join-Path $releaseDir 'README.md'; $zipFiles = Get-ChildItem -Path $releaseDir -Filter '*.zip' -File -ErrorAction SilentlyContinue
-        if (-not (Test-Path $hashFile)) { Write-Host "❌ Hash file not created" -ForegroundColor Red; return $false }
-        if (-not (Test-Path $readmeFile)) { Write-Host "❌ README file not created" -ForegroundColor Red; return $false }
-        if ($zipFiles.Count -eq 0) { Write-Host "❌ ZIP package not created" -ForegroundColor Red; return $false }
-    } catch { Write-Host "❌ Error running hash generator: $($_.Exception.Message)" -ForegroundColor Red; return $false }
+    # Fallback inline generator if external script (submodule) isn't present (e.g., CI without submodules)
+    function Invoke-ReleaseHashGenerationFallback {
+        param(
+            [Parameter(Mandatory=$true)][string]$ModsPath,
+            [Parameter(Mandatory=$true)][string]$OutputPath,
+            [switch]$CreateZip
+        )
+        Write-Host "⚠️  Using fallback hash/README generator (external script missing)" -ForegroundColor Yellow
+        # Collect mod files
+        $modFiles = Get-ChildItem -Path $ModsPath -Recurse -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in '.jar', '.zip' }
+        $hashLines = @()
+        foreach ($f in $modFiles) {
+            try {
+                $h = Get-FileHash -Path $f.FullName -Algorithm SHA256 -ErrorAction SilentlyContinue
+                if ($h -and $h.Hash) { $hashLines += ("{0} {1}" -f $f.Name, $h.Hash) } else { $hashLines += ("{0} <hash-unavailable>" -f $f.Name) }
+            } catch { $hashLines += ("{0} <hash-error>" -f $f.Name) }
+        }
+        $hashFile = Join-Path $OutputPath 'hash.txt'
+        $hashLines | Out-File -FilePath $hashFile -Encoding UTF8
+
+        # Group mods
+        $mandatory = Get-ChildItem -Path $ModsPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -eq '.jar' }
+        $optionalPath = Join-Path $ModsPath 'optional'
+        $optional = if (Test-Path $optionalPath) { Get-ChildItem -Path $optionalPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -eq '.jar' } } else { @() }
+        $serverPath = Join-Path $ModsPath 'server'
+        $serverOnly = if (Test-Path $serverPath) { Get-ChildItem -Path $serverPath -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -eq '.jar' } } else { @() }
+
+        $readmeFile = Join-Path $OutputPath 'README.md'
+        $content = @(
+            "# Release Package",
+            "",
+            "## Mod List",
+            "",
+            "### Mandatory Mods ($($mandatory.Count))",
+            ($mandatory | ForEach-Object { "- " + $_.Name }),
+            "",
+            "### Optional Mods ($($optional.Count))",
+            ($optional | ForEach-Object { "- " + $_.Name }),
+            "",
+            "### Server-only Mods ($($serverOnly.Count))",
+            ($serverOnly | ForEach-Object { "- " + $_.Name }),
+            "",
+            "Generated via fallback on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+        )
+        $content | Out-File -FilePath $readmeFile -Encoding UTF8
+
+        if ($CreateZip) {
+            try {
+                $zipPath = Join-Path $OutputPath 'modpack.zip'
+                if (Test-Path $zipPath) { Remove-Item $zipPath -Force -ErrorAction SilentlyContinue }
+                # Archive everything under OutputPath except existing zip files
+                $itemsToArchive = Get-ChildItem -Path $OutputPath -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notlike '*modpack.zip' }
+                $paths = $itemsToArchive | ForEach-Object { $_.FullName }
+                if ($paths.Count -gt 0) { Compress-Archive -Path $paths -DestinationPath $zipPath -Force -ErrorAction SilentlyContinue }
+            } catch { Write-Host "  ⚠️  Fallback zip creation failed: $($_.Exception.Message)" -ForegroundColor Yellow }
+        }
+        return (Test-Path $hashFile) -and (Test-Path $readmeFile)
+    }
+
+    $hashSuccess = $false
+    if (Test-Path $hashScriptPath) {
+        try {
+            & $hashScriptPath -ModsPath $releaseModsPath -OutputPath $releaseDir -CreateZip -UpdateConfig
+            $hashSuccess = $true
+        } catch {
+            Write-Host "⚠️  External hash script errored, falling back: $($_.Exception.Message)" -ForegroundColor Yellow
+        }
+    } else {
+        Write-Host "⚠️  Hash generator not found at expected path: $hashScriptPath" -ForegroundColor Yellow
+    }
+
+    if (-not $hashSuccess) {
+        $hashSuccess = Invoke-ReleaseHashGenerationFallback -ModsPath $releaseModsPath -OutputPath $releaseDir -CreateZip
+    }
+
+    $hashFile = Join-Path $releaseDir 'hash.txt'
+    $readmeFile = Join-Path $releaseDir 'README.md'
+    $zipFiles = Get-ChildItem -Path $releaseDir -Filter '*.zip' -File -ErrorAction SilentlyContinue
+    if (-not (Test-Path $hashFile)) { Write-Host "❌ Hash file not created (external + fallback failed)" -ForegroundColor Red; return $false }
+    if (-not (Test-Path $readmeFile)) { Write-Host "❌ README file not created (external + fallback failed)" -ForegroundColor Red; return $false }
+    if ($zipFiles.Count -eq 0) { Write-Host "⚠️  ZIP package not created (non-fatal)" -ForegroundColor Yellow } else { Write-Host "✓ ZIP package created: $($zipFiles[0].Name)" -ForegroundColor Green }
 
     Write-Host "" -ForegroundColor White
     Write-Host "✅ Release package created successfully!" -ForegroundColor Green

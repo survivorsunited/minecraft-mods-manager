@@ -48,29 +48,7 @@ $Colors = @{
 # Store the original script root at the start
 $OriginalScriptRoot = $PSScriptRoot
 
-# Optional: allow CI to select tests via env var or repo file
-try {
-    # Highest priority: environment variable TEST_FILES (comma-separated)
-    if (-not $All -and ($TestFiles.Count -eq 0) -and $env:TEST_FILES) {
-        $envList = $env:TEST_FILES -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' }
-        if ($envList.Count -gt 0) {
-            Write-Log "Using TEST_FILES from environment: $($envList -join ', ')" $Colors.Info
-            $script:EnvSelectedTests = $envList
-        }
-    }
-
-    # Next: file-based selection (ci-artifacts/test-selection.txt)
-    if (-not $All -and ($TestFiles.Count -eq 0) -and (-not $script:EnvSelectedTests)) {
-        $selectionFile = Join-Path (Split-Path $OriginalScriptRoot -Parent) "ci-artifacts/test-selection.txt"
-        if (Test-Path $selectionFile) {
-            $fileList = Get-Content -Path $selectionFile | ForEach-Object { $_.Trim() } | Where-Object { $_ -and ($_ -notmatch '^#') }
-            if ($fileList.Count -gt 0) {
-                Write-Log "Using test-selection.txt: $($fileList -join ', ')" $Colors.Info
-                $script:FileSelectedTests = $fileList
-            }
-        }
-    }
-} catch { }
+# NOTE: Test selection resolution moved below Write-Log definition so we can emit diagnostics.
 
 function Write-Log {
     param([string]$Message, [string]$Color = "White")
@@ -96,6 +74,54 @@ function Write-Log {
             # Fallback: don't break the run if we can't write the log file
             Write-Host "Warning: failed to write to log file '$LogFilePath': $($_.Exception.Message)" -ForegroundColor Yellow
         }
+    }
+}
+
+function Resolve-TestSelection {
+    param()
+    # Highest priority: environment variable TEST_FILES (comma-separated)
+    try {
+        if (-not $All -and ($TestFiles.Count -eq 0) -and $env:TEST_FILES) {
+            $envList = $env:TEST_FILES -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' }
+            if ($envList.Count -gt 0) {
+                $script:SelectionSource = 'ENV'
+                $script:EnvSelectedTests = $envList
+                Write-Log "[Selection] Using TEST_FILES from environment: $($envList -join ', ')" $Colors.Info
+                return
+            }
+        }
+
+        # Next: file-based selection (ci-artifacts/test-selection.txt)
+        if (-not $All -and ($TestFiles.Count -eq 0) -and (-not $script:EnvSelectedTests)) {
+            $selectionFile = Join-Path (Split-Path $OriginalScriptRoot -Parent) "ci-artifacts/test-selection.txt"
+            if (Test-Path $selectionFile) {
+                $fileList = Get-Content -Path $selectionFile | ForEach-Object { $_.Trim() } | Where-Object { $_ -and ($_ -notmatch '^#') }
+                if ($fileList.Count -gt 0) {
+                    $script:SelectionSource = 'FILE'
+                    $script:FileSelectedTests = $fileList
+                    Write-Log "[Selection] Using test-selection.txt: $($fileList -join ', ')" $Colors.Info
+                    return
+                } else {
+                    Write-Log "[Selection] test-selection.txt present but empty; falling back to ALL" $Colors.Warning
+                }
+            } else {
+                Write-Log "[Selection] test-selection.txt not found at expected path; falling back" $Colors.Warning
+            }
+        }
+
+        # Explicit parameter
+        if ($TestFiles.Count -gt 0) {
+            $script:SelectionSource = 'PARAM'
+            Write-Log "[Selection] Using -TestFiles parameter: $($TestFiles -join ', ')" $Colors.Info
+            return
+        }
+
+        # All tests (default)
+        $script:SelectionSource = 'ALL'
+        Write-Log "[Selection] No selection source provided; running ALL tests" $Colors.Info
+    } catch {
+        Write-Log "[Selection] Exception during selection resolution: $($_.Exception.Message)" $Colors.Fail
+        $script:SelectionSource = 'ERROR'
     }
 }
 
@@ -365,6 +391,9 @@ if ($Cleanup) {
     Cleanup-TestFiles
 }
 
+# Resolve selection AFTER logging is available
+Resolve-TestSelection
+
 # Get test files to run
 $testFilesToRun = Get-TestFilesToRun -TestFiles $TestFiles -All:$All
 
@@ -383,6 +412,9 @@ foreach ($testFile in $testFilesToRun) {
 Show-TestSummary -GlobalTestResults $GlobalTestResults
 
 Write-Log "=== Test Suite Completed ===" $Colors.Header
+Write-Log "Selection Source Used: $script:SelectionSource" $Colors.Info
+if ($script:SelectionSource -eq 'FILE') { Write-Log "Selected Tests: $($script:FileSelectedTests -join ', ')" $Colors.Info }
+if ($script:SelectionSource -eq 'ENV') { Write-Log "Selected Tests: $($script:EnvSelectedTests -join ', ')" $Colors.Info }
 Write-Log "Log file: $LogFilePath" $Colors.Info
 
 # Exit with appropriate code

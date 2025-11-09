@@ -1,3 +1,3 @@
 # List of tests to run (one per line)
 # Example: 12-TestLatestWithServer.ps1
-85-TestFabricApiLatestValidation.ps1
+96-TestCreateRelease.ps1

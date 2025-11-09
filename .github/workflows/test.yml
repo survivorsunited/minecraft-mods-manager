@@ -105,70 +105,78 @@ jobs:
         }
         
         Write-Host "macOS environment setup complete"
+
+    - name: Resolve test selection (optional)
+      shell: pwsh
+      run: |
+        # Detect ci-artifacts/test-selection.txt and expose as TEST_FILES for the runner
+        if (Test-Path 'ci-artifacts/test-selection.txt') {
+          $list = Get-Content 'ci-artifacts/test-selection.txt' | ForEach-Object { $_.Trim() } | Where-Object { $_ -and ($_ -notmatch '^#') }
+          if ($list -and $list.Count -gt 0) {
+            Write-Host "Detected test-selection.txt: $($list -join ', ')" -ForegroundColor Green
+            $joined = ($list -join ',')
+            "TEST_FILES=$joined" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          } else {
+            Write-Host "test-selection.txt is present but empty; will run full suite" -ForegroundColor Yellow
+          }
+        } else {
+          Write-Host "No ci-artifacts/test-selection.txt found; will run full suite" -ForegroundColor Yellow
+        }
         
     - name: Run test suite
       shell: pwsh
       env:
         CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
-        # Ensure server resolver environment variables are available for tests (e.g., Test 69)
         MINECRAFT_SERVER_URL: https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
         FABRIC_SERVER_URL: https://meta.fabricmc.net/v2/versions
+        TEST_FILES: ${{ env.TEST_FILES }}
       run: |
-        # ============================================================================
-        # COMPREHENSIVE LOGGING: Environment and API Key Status
-        # ============================================================================
+        $ErrorActionPreference = 'Stop'
         Write-Host "============================================================================" -ForegroundColor Cyan
         Write-Host "TEST SUITE EXECUTION - DETAILED LOGGING" -ForegroundColor Cyan
         Write-Host "============================================================================" -ForegroundColor Cyan
         Write-Host ""
-        
         Write-Host "📊 ENVIRONMENT STATUS:" -ForegroundColor Yellow
         Write-Host "  OS: ${{ matrix.os }}"
         Write-Host "  PowerShell: $($PSVersionTable.PSVersion)"
         Write-Host "  Working Directory: $(Get-Location)"
         Write-Host "  Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
         Write-Host ""
-        
         Write-Host "🔑 API KEY STATUS:" -ForegroundColor Yellow
         if ($env:CURSEFORGE_API_KEY) {
-            Write-Host "  ✅ CURSEFORGE_API_KEY: PRESENT (length: $($env:CURSEFORGE_API_KEY.Length))" -ForegroundColor Green
+          Write-Host "  API key present (length: $($env:CURSEFORGE_API_KEY.Length))" -ForegroundColor Green
         } else {
-            Write-Host "  ❌ CURSEFORGE_API_KEY: MISSING" -ForegroundColor Red
+          Write-Host "  API key missing" -ForegroundColor Red
         }
-        
         Write-Host "📁 FILE SYSTEM CHECK:" -ForegroundColor Yellow
-        Write-Host "  Test directory exists: $(Test-Path 'test')"
-        Write-Host "  RunAllTests.ps1 exists: $(Test-Path 'test/RunAllTests.ps1')"
-        Write-Host "  ModManager.ps1 exists: $(Test-Path 'ModManager.ps1')"
+        Write-Host "  Test dir: $(Test-Path 'test')"
+        Write-Host "  RunAllTests.ps1: $(Test-Path 'test/RunAllTests.ps1')"
+        Write-Host "  ModManager.ps1: $(Test-Path 'ModManager.ps1')"
+        Write-Host "  ci-artifacts selection file: $(Test-Path 'ci-artifacts/test-selection.txt')"
+        Write-Host "  TEST_FILES env: '$env:TEST_FILES'"
         Write-Host ""
-        
         Write-Host "============================================================================" -ForegroundColor Cyan
         Write-Host "STARTING TEST EXECUTION" -ForegroundColor Cyan
         Write-Host "============================================================================" -ForegroundColor Cyan
         Write-Host ""
-        
-        # Change to test directory
         Set-Location test
-
-        # Determine which tests to run based on workflow input
         $testFilesInput = '${{ github.event.inputs.testFiles }}'
-        if ($null -ne $testFilesInput -and $testFilesInput.Trim() -ne '') {
-          Write-Host "🚀 Executing selected tests: $testFilesInput" -ForegroundColor Green
-          $testFiles = $testFilesInput.Split(',') | ForEach-Object { $_.Trim() }
-          $result = .\RunAllTests.ps1 -TestFiles $testFiles
+        if ($testFilesInput -and $testFilesInput.Trim() -ne '') {
+          Write-Host "Running workflow input tests: $testFilesInput" -ForegroundColor Green
+          $list = $testFilesInput.Split(',') | ForEach-Object { $_.Trim() } | Where-Object { $_ }
+          .\RunAllTests.ps1 -TestFiles $list
+        } elseif ($env:TEST_FILES) {
+          Write-Host "Running tests from TEST_FILES env: $env:TEST_FILES" -ForegroundColor Green
+          .\RunAllTests.ps1
         } else {
-          Write-Host "🚀 Executing full test suite" -ForegroundColor Green
-          $result = .\RunAllTests.ps1
+          Write-Host "Running full suite (no selection provided)" -ForegroundColor Yellow
+          .\RunAllTests.ps1
         }
-        
-        # Capture the exit code
-        $testExitCode = $LASTEXITCODE
-        Write-Host ""
+        $code = $LASTEXITCODE
         Write-Host "============================================================================" -ForegroundColor Cyan
-        Write-Host "TEST EXECUTION COMPLETED" -ForegroundColor Cyan
+        Write-Host "TEST EXECUTION COMPLETED (ExitCode=$code)" -ForegroundColor Cyan
         Write-Host "============================================================================" -ForegroundColor Cyan
-        Write-Host "Exit Code: $testExitCode"
-        if ($testExitCode -ne 0) { exit $testExitCode }
+        if ($code -ne 0) { exit $code }
         
     - name: Generate test summary report
       if: always()
