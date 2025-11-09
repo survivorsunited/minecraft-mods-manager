@@ -301,31 +301,92 @@ jobs:
       packages: write
     
     steps:
-    - name: Checkout code
+    - name: Checkout code (with submodules)
       uses: actions/checkout@v4
-      
-    - name: Download all test artifacts
-      uses: actions/download-artifact@v4
       with:
-        path: artifacts
-        
-    - name: Generate release notes
+        submodules: true
+
+    - name: Read Enabled Versions from Config
+      id: set_versions
       shell: pwsh
       run: |
-        # Generate comprehensive release notes from actual test results
-        Set-Location test
-        .\GenerateReleaseNotes.ps1 -OutputFile "../RELEASE_NOTES.md" -ArtifactsPath "../artifacts"
-        
-    - name: Create Release
+        $config = Get-Content release-config.json | ConvertFrom-Json
+        $enabledVersions = $config.versions | Where-Object { $_.enabled -eq $true } | Select-Object -ExpandProperty version
+        if ($enabledVersions.Count -eq 1) {
+          $matrixJson = "[$($enabledVersions | ConvertTo-Json -Compress)]"
+        } else {
+          $matrixJson = $enabledVersions | ConvertTo-Json -Compress
+        }
+        echo "versions=$matrixJson" >> $env:GITHUB_OUTPUT
+        Write-Host "Enabled versions: $($enabledVersions -join ', ')" -ForegroundColor Cyan
+
+    - name: Create Release Packages (All Enabled Versions)
+      shell: pwsh
+      run: |
+        $versionsJson = '${{ steps.set_versions.outputs.versions }}'
+        $versions = ($versionsJson | ConvertFrom-Json)
+        foreach ($v in $versions) {
+          Write-Host "🚀 Creating test release package for $v" -ForegroundColor Cyan
+          .\ModManager.ps1 -CreateRelease -GameVersion $v
+        }
+
+    - name: Package Modpacks
+      shell: bash
+      run: |
+        echo "📦 Packaging modpacks..."
+        for d in releases/*/; do
+          [ -d "$d" ] || continue
+          ver=$(basename "$d")
+          echo "  Processing $ver"
+          cd "$d"
+          zip -r "../../modpack-$ver.zip" *
+          cd - >/dev/null
+          echo "    ✓ Created modpack-$ver.zip"
+        done
+        echo "✅ Packaging complete"
+
+    - name: Generate Test Release Notes
+      id: notes
+      shell: bash
+      run: |
+        TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+        echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
+        echo "# Test Release" > RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "Generated from test pipeline after successful suite." >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "## Included Versions" >> RELEASE_NOTES.md
+        echo '${{ steps.set_versions.outputs.versions }}' | jq -r '.[] | "- modpack-" + . + ".zip"' >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "## Hash & README" >> RELEASE_NOTES.md
+        echo "Each version folder contains hash.txt and README.md (fallback generator used if external tool missing)." >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        cat RELEASE_NOTES.md
+
+    - name: Upload Release Artifacts (Raw Folders)
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-release-folders
+        path: releases/**/*
+        retention-days: 14
+
+    - name: Upload Packaged Modpacks
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-modpacks
+        path: modpack-*.zip
+        retention-days: 30
+
+    - name: Publish Test Release
       uses: softprops/action-gh-release@v2
       with:
         tag_name: test-release-${{ github.run_number }}
-        name: Test Release ${{ github.run_number }}
+        name: Test Release ${{ steps.notes.outputs.timestamp }}
         body_path: RELEASE_NOTES.md
         draft: false
         prerelease: true
         files: |
-          artifacts/**/*
+          modpack-*.zip
         generate_release_notes: false
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
