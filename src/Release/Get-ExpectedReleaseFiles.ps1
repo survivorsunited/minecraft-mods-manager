@@ -96,9 +96,9 @@ function Get-ExpectedReleaseFiles {
         # Determine if this is server-only (don't expect it in root mods folder)
         $clientSide = (Normalize $m.ClientSide)
         $serverSide = (Normalize $m.ServerSide)
-        $isServerOnly = $false
-        if ($clientSide -and $clientSide.ToLower() -eq 'unsupported') { $isServerOnly = $true }
-        if (-not $isServerOnly -and $serverSide -and $serverSide.ToLower() -eq 'required' -and ($clientSide -ne 'required')) { $isServerOnly = $true }
+    # Simplified server-only logic: only treat as server-only if client_side is unsupported
+    $isServerOnly = $false
+    if ($clientSide -and $clientSide.ToLower() -eq 'unsupported') { $isServerOnly = $true }
 
         if ($isServerOnly) {
             $rel = "mods/server/$jar"

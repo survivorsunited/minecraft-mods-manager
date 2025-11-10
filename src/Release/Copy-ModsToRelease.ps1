@@ -193,11 +193,9 @@ function Copy-ModsToRelease {
     if ($idKey -and $typeById.ContainsKey($idKey)) { $type = $typeById[$idKey] }
     elseif ($nameKey -and $typeByName.ContainsKey($nameKey)) { $type = $typeByName[$nameKey] }
 
+    # Server-only classification rule (simplified): only when client_side == unsupported OR type explicitly server/launcher/installer
     $isServerOnly = $false
     if ($clientSide -eq 'unsupported') { $isServerOnly = $true }
-    # Align with expected files logic: serverSide=required and clientSide!=required -> treat as server-only
-    if (-not $isServerOnly -and $serverSide -eq 'required' -and $clientSide -ne 'required') { $isServerOnly = $true }
-    # Types server/launcher/installer should never be here (not in mods folder), but guard anyway
     if ($type -in @('server','launcher','installer')) { $isServerOnly = $true }
 
         if ($isServerOnly) {
