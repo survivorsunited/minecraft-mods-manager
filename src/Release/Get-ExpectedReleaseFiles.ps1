@@ -71,7 +71,8 @@ function Get-ExpectedReleaseFiles {
     }
 
     # Groups of interest (for mods)
-    $desiredGroups = @('required','optional')
+    # Treat 'admin' like optional for packaging purposes
+    $desiredGroups = @('required','optional','admin')
     if ($IncludeBlocked) { $desiredGroups += 'block' }
 
     # Filter rows
@@ -94,11 +95,18 @@ function Get-ExpectedReleaseFiles {
         $grp = (Normalize $m.Group)
         if ([string]::IsNullOrWhiteSpace($grp)) { $grp = 'required' }
         # Determine if this is server-only (don't expect it in root mods folder)
-        $clientSide = (Normalize $m.ClientSide)
-        $serverSide = (Normalize $m.ServerSide)
-    # Simplified server-only logic: only treat as server-only if client_side is unsupported
-    $isServerOnly = $false
-    if ($clientSide -and $clientSide.ToLower() -eq 'unsupported') { $isServerOnly = $true }
+    $clientSide = (Normalize $m.ClientSide)
+    # $serverSide previously used in older logic; retained classification no longer needs it
+        $type = (Normalize $m.Type)
+        # Simplified and aligned server-only logic:
+        # - server-only when client_side == 'unsupported'
+        # - OR explicit type in (server, launcher, installer)
+        $isServerOnly = $false
+        if ($clientSide -and $clientSide.ToLower() -eq 'unsupported') { $isServerOnly = $true }
+        if ($type) {
+            $t = $type.ToLower()
+            if ($t -in @('server','launcher','installer')) { $isServerOnly = $true }
+        }
 
         if ($isServerOnly) {
             $rel = "mods/server/$jar"

@@ -6,6 +6,9 @@
 #   - invalid case (both sides unsupported) should be skipped from mods/server and logged (implicitly by absence)
 
 . "$PSScriptRoot\..\TestFramework.ps1"
+# Import functions under test
+. "$PSScriptRoot\..\..\src\Release\Get-ExpectedReleaseFiles.ps1"
+. "$PSScriptRoot\..\..\src\Release\Copy-ModsToRelease.ps1"
 
 $TestFileName = "97-TestServerOnlyClassification.ps1"
 Write-Host "Server-Only Classification Tests" -ForegroundColor $Colors.Header
@@ -56,7 +59,7 @@ Write-TestHeader "Assertions"
 # Paths
 $serverDir = Join-Path $releaseModsDir 'server'
 $optionalDir = Join-Path $releaseModsDir 'optional'
-$blockDir = Join-Path $releaseModsDir 'block'
+# $blockDir reserved for future assertions on blocked mods
 
 function ExistsIn($dir, $name) { Test-Path (Join-Path $dir $name) }
 
