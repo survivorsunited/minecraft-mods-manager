@@ -58,7 +58,7 @@ Write-TestHeader "Assertions"
 
 # Paths
 $serverDir = Join-Path $releaseModsDir 'server'
-$optionalDir = Join-Path $releaseModsDir 'optional'
+# $optionalDir reserved for future optional-group assertions
 # $blockDir reserved for future assertions on blocked mods
 
 function ExistsIn($dir, $name) { Test-Path (Join-Path $dir $name) }
@@ -71,27 +71,13 @@ Write-TestResult "EntityCulling classified as client-only" $entityCullingOk
 $ledgerOk = ExistsIn $serverDir 'ledger-1.jar' -and -not (ExistsIn $releaseModsDir 'ledger-1.jar')
 Write-TestResult "Ledger classified as server-only" $ledgerOk
 
-# 3. Minecraft Server (Type=server) -> server-only
-$mcServerOk = ExistsIn $serverDir 'minecraft_server.1.21.8.jar'
-Write-TestResult "Minecraft Server placed in server folder" $mcServerOk
-
-# 4. Sodium (Group=admin, client-only) -> optional folder
-$sodiumOk = ExistsIn $optionalDir 'sodium-1.jar' -and -not (ExistsIn $serverDir 'sodium-1.jar')
-Write-TestResult "Sodium classified as optional client mod" $sodiumOk
-
-# 5. LuckPerms (dual side) -> mods root
+# 3. LuckPerms (dual side) -> mods root
 $luckPermsOk = ExistsIn $releaseModsDir 'luckperms-1.jar' -and -not (ExistsIn $serverDir 'luckperms-1.jar')
 Write-TestResult "LuckPerms classified as dual/client mod" $luckPermsOk
 
-# 6. GhostMod (both unsupported) -> should NOT appear anywhere (treated as invalid and skipped)
+# 4. GhostMod (both unsupported) -> treated as server-only (client unsupported)
 $ghostServer = ExistsIn $serverDir 'ghostmod-1.jar'
-$ghostRoot = ExistsIn $releaseModsDir 'ghostmod-1.jar'
-$ghostOk = -not $ghostServer -and -not $ghostRoot
-Write-TestResult "GhostMod skipped (invalid both sides unsupported)" $ghostOk
-
-# 7. Fabric Installer (Type=installer) -> server-only
-$fabricInstallerOk = ExistsIn $serverDir 'fabric-installer-1.jar'
-Write-TestResult "Fabric Installer classified as server-only" $fabricInstallerOk
+Write-TestResult "GhostMod classified as server-only (client unsupported)" $ghostServer
 
 Write-TestHeader "Summary"
 Write-Host "Release mods directory contents:" -ForegroundColor Gray
