@@ -113,10 +113,21 @@ function Get-ExpectedReleaseFiles {
         } else {
             switch ($grp.ToLower()) {
                 'admin'    { $rel = "mods/optional/$jar" }
+                'optional' { $rel = "mods/optional/$jar" }
                 'block'    { $rel = "mods/block/$jar" }
                 default    { $rel = "mods/$jar" }
             }
         }
+        if ($seen.Add($rel)) { $expected += $rel }
+    }
+
+    # Explicit server-like artifacts (server/launcher/installer) should be included under mods/server
+    $serverLike = $rows | Where-Object { (Normalize $_.Type) -in @('server','launcher','installer') -and (& $versionFilter $_) }
+    foreach ($sv in $serverLike) {
+        $name = Get-ArtifactFilename -row $sv
+        if ([string]::IsNullOrWhiteSpace($name)) { continue }
+        if ([System.IO.Path]::GetExtension($name).ToLower() -eq '.zip') { continue }
+        $rel = "mods/server/$name"
         if ($seen.Add($rel)) { $expected += $rel }
     }
 
