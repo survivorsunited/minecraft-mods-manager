@@ -407,8 +407,19 @@ function New-Release {
             try {
                 $zipPath = Join-Path $OutputPath 'modpack.zip'
                 if (Test-Path $zipPath) { Remove-Item $zipPath -Force -ErrorAction SilentlyContinue }
-                # Archive everything under OutputPath except existing zip files
-                $itemsToArchive = Get-ChildItem -Path $OutputPath -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notlike '*modpack.zip' }
+                # Archive everything under OutputPath except existing zip files and verification/reconcile files
+                $excludePatterns = @('*modpack.zip', '*reconcile-*', '*expected-release-files.txt', '*actual-release-files.txt', '*verification-missing.txt', '*verification-extra.txt')
+                $itemsToArchive = Get-ChildItem -Path $OutputPath -Recurse -ErrorAction SilentlyContinue | Where-Object {
+                    $item = $_
+                    $shouldExclude = $false
+                    foreach ($pattern in $excludePatterns) {
+                        if ($item.FullName -like $pattern -or $item.Name -like $pattern) {
+                            $shouldExclude = $true
+                            break
+                        }
+                    }
+                    -not $shouldExclude
+                }
                 $paths = $itemsToArchive | ForEach-Object { $_.FullName }
                 if ($paths.Count -gt 0) { Compress-Archive -Path $paths -DestinationPath $zipPath -Force -ErrorAction SilentlyContinue }
             } catch { Write-Host "  ⚠️  Fallback zip creation failed: $($_.Exception.Message)" -ForegroundColor Yellow }
