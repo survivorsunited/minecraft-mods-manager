@@ -5,9 +5,50 @@ alwaysApply: true
 ---
 # Governance: Universal Testing Principles
 
+## ⚠️ CRITICAL: TEST-FIRST MANDATORY RULE ⚠️
+
+**HIGHEST PRIORITY**: When given any task, bug fix, or feature request:
+1. **STOP** - Do not write any code yet
+2. **WRITE TEST FIRST** - Create a test that validates the issue/requirement
+3. **VERIFY TEST FAILS** - Confirm the test catches the problem
+4. **THEN** write code to make the test pass
+
+**This rule applies to ALL work - no exceptions.**
+
 ## Core Testing Philosophy
 
-### Test-Driven Development (TDD)
+### MANDATORY: Test-Driven Development (TDD) - HIGHEST PRIORITY
+
+**CRITICAL RULE**: Tests MUST be written FIRST before any code changes. This is the HIGHEST PRIORITY workflow requirement.
+
+**FORBIDDEN:**
+- ❌ Writing code before writing tests
+- ❌ Making code changes without a test to validate the issue
+- ❌ Skipping test creation "to save time"
+- ❌ Writing tests after code is "done"
+
+**REQUIRED:**
+- ✅ Write test FIRST to validate the issue/problem
+- ✅ Test must FAIL initially (red phase)
+- ✅ Write minimal code to make test pass (green phase)
+- ✅ Refactor if needed (refactor phase)
+- ✅ Test must be isolated and use clean database
+
+**TDD Workflow (MANDATORY):**
+1. **RED**: Write failing test that validates the issue/requirement
+2. **GREEN**: Write minimal code to make test pass
+3. **REFACTOR**: Improve code while keeping tests passing
+4. **REPEAT**: Continue cycle for each new requirement
+
+**Test-First Checklist:**
+- [ ] Test written before any code changes
+- [ ] Test validates the specific issue/requirement
+- [ ] Test uses isolated database (clean state)
+- [ ] Test fails initially (proves it catches the issue)
+- [ ] Code written to make test pass
+- [ ] All tests pass after implementation
+
+### Test-Driven Development (TDD) Details
 1. **E2E Test First**: Create end-to-end test that reflects real user flow
 2. **Minimal Implementation**: Implement only what makes the E2E test pass
 3. **Unit Test Coverage**: Add unit tests for reusable logic

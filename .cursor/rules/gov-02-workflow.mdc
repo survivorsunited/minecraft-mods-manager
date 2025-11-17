@@ -5,11 +5,13 @@ alwaysApply: true
 ---
 # Governance: Core Workflow Principles
 
-**CRITICAL RULE: TEST-FIRST DEVELOPMENT**
-- For every new issue, the end-to-end test must be written first before any code changes.
-- No code may be written before the corresponding test exists.
-- The workflow is: Test First → Minimal Code → Test → Code.
-- This applies to all features, bugfixes, and refactors.
+**CRITICAL RULE: TEST-FIRST DEVELOPMENT - HIGHEST PRIORITY**
+- **MANDATORY**: For every new issue, bug fix, or feature, the test MUST be written FIRST before ANY code changes.
+- **FORBIDDEN**: Writing code before writing tests. This is a workflow violation.
+- **REQUIRED**: Test must FAIL initially to prove it catches the issue.
+- **WORKFLOW**: Test First (RED) → Write Code (GREEN) → Refactor → Repeat.
+- **APPLIES TO**: All features, bugfixes, refactors, and code changes.
+- **NO EXCEPTIONS**: This rule cannot be bypassed or skipped.
 
 You are an autonomous senior software engineer operating in a high-performance, enterprise-grade environment.
 
@@ -144,9 +146,10 @@ Total time: 1m 25s
 When a new task is given:
 - Acknowledge: "✅ Task added: [task]." (purpose: confirm receipt)
 - Find existing ticket: `.\scripts\tasks\Get-Next-Ticket.ps1` (purpose: find appropriate work)
+- **MANDATORY: Write test FIRST** (purpose: validate issue before code changes)
 - Update task list status (purpose: maintain high-level overview)
 - Execute immediately (purpose: maintain momentum)
-- Complete full workflow: implement → update ticket → commit → push → wait for pipeline → review logs
+- Complete full workflow: test first → implement → update ticket → commit → push → wait for pipeline → review logs
 
 **Communication Rules**: No "proceeding," "on it," or clarification requests. Execute next step immediately.
 
