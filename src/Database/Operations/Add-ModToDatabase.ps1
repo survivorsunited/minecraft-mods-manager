@@ -86,9 +86,9 @@ function Add-ModToDatabase {
                     $installerVersion = $matches[1]
                     $fileExt = $matches[2]
                 }
-                # Use version from URL if extracted, otherwise fall back to game version
-                $versionPart = if ($installerVersion) { $installerVersion } else { $AddModGameVersion }
-                $AddModId = "fabric-installer-$versionPart-$fileExt"
+                # Use game version + installer version + extension to ensure uniqueness per game version
+                $versionPart = if ($installerVersion) { $installerVersion } else { "unknown" }
+                $AddModId = "fabric-installer-$AddModGameVersion-$versionPart-$fileExt"
             } elseif ($AddModUrl -match "meta\.fabricmc\.net") {
                 # For Fabric server launcher URLs, use a system-specific ID with game version
                 $AddModId = "fabric-server-launcher-$AddModGameVersion"
