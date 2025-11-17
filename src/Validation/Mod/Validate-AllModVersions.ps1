@@ -630,6 +630,17 @@ function Validate-AllModVersions {
         }
         Write-Host "✅ Updated $apiUpdateCount mods with Latest/Next from API" -ForegroundColor Green
         
+        # Recalculate RecordHash for all updated mods
+        if (Get-Command Calculate-RecordHash -ErrorAction SilentlyContinue) {
+            foreach ($mod in $newMods) {
+                try {
+                    $mod.RecordHash = Calculate-RecordHash -Record $mod
+                } catch {
+                    # Leave existing hash or empty on error
+                }
+            }
+        }
+        
         # Save updated modlist
         $newMods | Export-Csv -Path $effectiveModListPath -NoTypeInformation
         

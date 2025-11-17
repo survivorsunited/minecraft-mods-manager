@@ -79,8 +79,16 @@ function Add-ModToDatabase {
             } elseif ($AddModUrl -match "curseforge\.com/minecraft/mc-mods/([^/]+)") {
                 $AddModId = $matches[1]
             } elseif ($AddModUrl -match "maven\.fabricmc\.net") {
-                # For Fabric installer URLs, use a system-specific ID with game version
-                $AddModId = "fabric-installer-$AddModGameVersion"
+                # For Fabric installer URLs, extract version from filename first
+                $installerVersion = ""
+                $fileExt = "exe"
+                if ($AddModUrl -match "fabric-installer-([\d\.]+)\.(exe|jar)") {
+                    $installerVersion = $matches[1]
+                    $fileExt = $matches[2]
+                }
+                # Use version from URL if extracted, otherwise fall back to game version
+                $versionPart = if ($installerVersion) { $installerVersion } else { $AddModGameVersion }
+                $AddModId = "fabric-installer-$versionPart-$fileExt"
             } elseif ($AddModUrl -match "meta\.fabricmc\.net") {
                 # For Fabric server launcher URLs, use a system-specific ID with game version
                 $AddModId = "fabric-server-launcher-$AddModGameVersion"
@@ -110,13 +118,43 @@ function Add-ModToDatabase {
             return $false
         }
 
-        # Extract version and name from URL if provided
+        # Initialize extracted version and name
         $extractedVersion = ""
         $extractedName = $AddModName
+
+        # Detect Fabric installer from maven.fabricmc.net URLs FIRST (before other URL processing)
+        $isFabricInstaller = $false
+        if ($AddModUrl -and $AddModUrl -match "maven\.fabricmc\.net.*fabric-installer") {
+            $isFabricInstaller = $true
+            if (-not $AddModCategory) { $AddModCategory = "Infrastructure" }
+            
+            # Extract version and name from filename (e.g., fabric-installer-1.1.0.exe -> 1.1.0)
+            if ($AddModUrl -match "fabric-installer-([\d\.]+)\.(exe|jar)") {
+                $extractedVersion = $matches[1]
+                $fileExt = $matches[2]
+                Write-Host "  Detected Fabric installer, extracted version from URL: $extractedVersion" -ForegroundColor Gray
+                
+                # Extract name from URL filename if name not provided
+                if ([string]::IsNullOrEmpty($AddModName)) {
+                    # Get filename from URL (e.g., fabric-installer-1.1.0.exe)
+                    $urlParts = $AddModUrl -split '/'
+                    $filename = $urlParts[-1]
+                    # Remove extension for cleaner name (e.g., fabric-installer-1.1.0)
+                    $extractedName = $filename -replace '\.(exe|jar)$', ''
+                    Write-Host "  Extracted name from URL: $extractedName" -ForegroundColor Gray
+                }
+            }
+        }
         
-        if ($AddModUrl -and $AddModUrl -match "modrinth\.com") {
+        if ($AddModUrl -and $AddModUrl -match "modrinth\.com" -and -not $isFabricInstaller) {
             # For Modrinth URLs, try to get project info to extract name, detect type, and find best version
-            $extractedVersion = $AddModVersion
+            # Only set version if not already extracted (e.g., from Fabric installer URL)
+            if ([string]::IsNullOrEmpty($extractedVersion)) {
+                # Only set version if not already extracted (e.g., from Fabric installer URL)
+            if ([string]::IsNullOrEmpty($extractedVersion)) {
+                $extractedVersion = $AddModVersion
+            }
+            }
             try {
                 $projectInfo = Get-ModrinthProjectInfo -ProjectId $AddModId -UseCachedResponses $false
                 if ($projectInfo) {
@@ -188,7 +226,10 @@ function Add-ModToDatabase {
             }
             
             # Then try to get project info to extract name and validate type
-            $extractedVersion = $AddModVersion
+            # Only set version if not already extracted (e.g., from Fabric installer URL)
+            if ([string]::IsNullOrEmpty($extractedVersion)) {
+                $extractedVersion = $AddModVersion
+            }
             try {
                 $projectInfo = Get-CurseForgeProjectInfo -ProjectId $AddModId -UseCachedResponses $false
                 if ($projectInfo -and $projectInfo.data) {
@@ -216,8 +257,12 @@ function Add-ModToDatabase {
             }
         } else {
             # Default version for manual entries
-            $extractedVersion = $AddModVersion
-            if (-not $AddModName) {
+            # Only set version if not already extracted (e.g., from Fabric installer URL)
+            if ([string]::IsNullOrEmpty($extractedVersion)) {
+                $extractedVersion = $AddModVersion
+            }
+            # Only set name if not already extracted (e.g., from Fabric installer URL)
+            if (-not $AddModName -and [string]::IsNullOrEmpty($extractedName)) {
                 $extractedName = $AddModId
             }
         }
@@ -263,12 +308,16 @@ function Add-ModToDatabase {
         }
 
         # Determine source/host based on URL or ID pattern
-        # Priority: explicit CurseForge URL -> curseforge
+        # Priority: Fabric installer (maven.fabricmc.net) -> direct
+        # Then: explicit CurseForge URL -> curseforge
         # Otherwise: numeric ID implies CurseForge -> curseforge
         # Fallback: modrinth
         $apiSource = "modrinth"
         $providerHost = "modrinth"
-        if ($AddModUrl -and $AddModUrl -match "curseforge\.com") {
+        if ($isFabricInstaller) {
+            $apiSource = "direct"
+            $providerHost = "direct"
+        } elseif ($AddModUrl -and $AddModUrl -match "curseforge\.com") {
             $apiSource = "curseforge"
             $providerHost = "curseforge"
         } elseif ($AddModId -and $AddModId -match '^[0-9]+$') {
@@ -299,8 +348,8 @@ function Add-ModToDatabase {
             ApiSource = $apiSource
             Host = $providerHost
             IconUrl = ""
-            ClientSide = "optional"
-            ServerSide = "optional"
+            ClientSide = if ($isFabricInstaller) { "" } else { "optional" }
+            ServerSide = if ($isFabricInstaller) { "" } else { "optional" }
             Title = $extractedName
             ProjectDescription = $AddModDescription
             IssuesUrl = ""
@@ -314,6 +363,29 @@ function Add-ModToDatabase {
             CurrentDependenciesOptional = ""
             LatestDependenciesRequired = ""
             LatestDependenciesOptional = ""
+        }
+
+        # Compute and set RecordHash
+        try {
+            $hashValue = $null
+            if (Get-Command Calculate-RecordHash -ErrorAction SilentlyContinue) {
+                $hashValue = Calculate-RecordHash -Record $newMod
+            } else {
+                # Inline fallback: compute SHA256 over sorted key=value (excluding RecordHash)
+                $kv = @()
+                $newMod.PSObject.Properties |
+                    Where-Object { $_.Name -ne 'RecordHash' } |
+                    ForEach-Object { $kv += (\"$($_.Name)=$($_.Value)\") }
+                $kv = $kv | Sort-Object
+                $recordString = ($kv -join '|')
+                $bytes = [System.Text.Encoding]::UTF8.GetBytes($recordString)
+                $sha256 = [System.Security.Cryptography.SHA256]::Create()
+                $hashBytes = $sha256.ComputeHash($bytes)
+                $hashValue = ([System.BitConverter]::ToString($hashBytes) -replace '-', '').ToLower()
+            }
+            if ($hashValue) { $newMod.RecordHash = $hashValue }
+        } catch {
+            # leave RecordHash empty on error
         }
 
         # Add to mods array

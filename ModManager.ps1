@@ -164,7 +164,16 @@ function Complete-NewModRecord {
             } elseif ($AddModUrl -match "curseforge\.com/minecraft/mc-mods/([^/]+)") {
                 $newModId = $matches[1]
             } elseif ($AddModUrl -match "maven\.fabricmc\.net") {
-                $newModId = "fabric-installer-$AddModGameVersion"
+                # For Fabric installer URLs, extract version from filename first
+                $installerVersion = ""
+                $fileExt = "exe"
+                if ($AddModUrl -match "fabric-installer-([\d\.]+)\.(exe|jar)") {
+                    $installerVersion = $matches[1]
+                    $fileExt = $matches[2]
+                }
+                # Use version from URL if extracted, otherwise fall back to game version
+                $versionPart = if ($installerVersion) { $installerVersion } else { $AddModGameVersion }
+                $newModId = "fabric-installer-$versionPart-$fileExt"
             } elseif ($AddModUrl -match "meta\.fabricmc\.net") {
                 $newModId = "fabric-server-launcher-$AddModGameVersion"
             } elseif ($AddModUrl -match "piston-data\.mojang\.com") {
@@ -202,6 +211,21 @@ function Complete-NewModRecord {
         $targetId = $mod.ID
         $loader = if ($mod.Loader) { $mod.Loader } else { "fabric" }
         $gameVersion = if ($mod.CurrentGameVersion) { $mod.CurrentGameVersion } else { $AddModGameVersion }
+        
+        # For direct downloads (maven.fabricmc.net), preserve existing fields and skip API validation
+        # Check this BEFORE setting version to "current" so extracted versions are preserved
+        $isDirectDownload = ($mod.Host -eq "direct" -or $mod.ApiSource -eq "direct") -or ($mod.Url -and $mod.Url -match "maven\.fabricmc\.net")
+        
+        if ($isDirectDownload) {
+            # Preserve direct download fields - don't overwrite with API results
+            # Only update RecordHash
+            try { $mod.RecordHash = Calculate-RecordHash -Record $mod } catch { }
+            $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+            Write-Host "✅ Direct download entry preserved (no API validation needed)" -ForegroundColor Green
+            return
+        }
+        
+        # Only set version to "current" if not a direct download and version is empty
         $version = if ([string]::IsNullOrEmpty($mod.CurrentVersion)) { "current" } else { $mod.CurrentVersion }
 
         # Validate and map fields just like -ValidateMod path
@@ -254,6 +278,10 @@ function Complete-NewModRecord {
             try { $mod.RecordHash = Calculate-RecordHash -Record $mod } catch { }
 
             # Save back to CSV
+            $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+        } else {
+            # Even if validation fails, ensure RecordHash is set
+            try { $mod.RecordHash = Calculate-RecordHash -Record $mod } catch { }
             $mods | Export-Csv -Path $CsvPath -NoTypeInformation
         }
     } catch { }
