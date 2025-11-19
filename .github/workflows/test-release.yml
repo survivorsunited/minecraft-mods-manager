@@ -22,6 +22,10 @@ jobs:
   test-release:
     runs-on: windows-latest
     timeout-minutes: 120
+    env:
+      CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+      MINECRAFT_SERVER_URL: ${{ secrets.MINECRAFT_SERVER_URL }}
+      FABRIC_SERVER_URL: ${{ secrets.FABRIC_SERVER_URL }}
     
     steps:
       - name: Checkout Repository with Submodules
@@ -43,10 +47,6 @@ jobs:
         id: create_release
         shell: pwsh
         continue-on-error: true
-        env:
-          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
-          MINECRAFT_SERVER_URL: https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
-          FABRIC_SERVER_URL: https://meta.fabricmc.net/v2/versions
         run: |
           $version = "${{ github.event.inputs.version }}"
           Write-Host "🚀 Creating test release package for Minecraft $version" -ForegroundColor Cyan
