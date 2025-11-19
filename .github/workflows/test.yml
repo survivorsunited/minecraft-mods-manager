@@ -127,8 +127,8 @@ jobs:
       shell: pwsh
       env:
         CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
-        MINECRAFT_SERVER_URL: https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
-        FABRIC_SERVER_URL: https://meta.fabricmc.net/v2/versions
+        MINECRAFT_SERVER_URL: ${{ secrets.MINECRAFT_SERVER_URL }}
+        FABRIC_SERVER_URL: ${{ secrets.FABRIC_SERVER_URL }}
         TEST_FILES: ${{ env.TEST_FILES }}
       run: |
         $ErrorActionPreference = 'Stop'

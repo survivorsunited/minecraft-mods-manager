@@ -153,6 +153,10 @@ jobs:
     
     runs-on: windows-latest
     timeout-minutes: 120
+    env:
+      CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+      MINECRAFT_SERVER_URL: ${{ secrets.MINECRAFT_SERVER_URL }}
+      FABRIC_SERVER_URL: ${{ secrets.FABRIC_SERVER_URL }}
     strategy:
       matrix:
         version: ${{ fromJson(needs.update-database.outputs.versions_matrix) }}
