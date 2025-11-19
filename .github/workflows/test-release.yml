@@ -43,6 +43,10 @@ jobs:
         id: create_release
         shell: pwsh
         continue-on-error: true
+        env:
+          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+          MINECRAFT_SERVER_URL: https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
+          FABRIC_SERVER_URL: https://meta.fabricmc.net/v2/versions
         run: |
           $version = "${{ github.event.inputs.version }}"
           Write-Host "🚀 Creating test release package for Minecraft $version" -ForegroundColor Cyan
@@ -109,53 +113,78 @@ jobs:
       
       - name: Extract README for Artifact
         if: steps.create_release.outputs.created == 'true'
-        shell: bash
+        shell: pwsh
         run: |
-          version="${{ github.event.inputs.version }}"
-          release_path="releases/$version"
-          readme_src="$release_path/README.md"
-          readme_dest="README-${version}.md"
+          $version = "${{ github.event.inputs.version }}"
+          $releasePath = "releases/$version"
+          $readmeSrc = Join-Path $releasePath 'README.md'
+          $readmeDest = "README-${version}.md"
           
-          if [ -f "$readme_src" ]; then
-            cp "$readme_src" "$readme_dest"
-            echo "✓ Extracted README.md → $readme_dest"
-            ls -lh "$readme_dest"
-          else
-            echo "⚠️  README.md not found at $readme_src"
-          fi
+          if (Test-Path $readmeSrc) {
+            Copy-Item -Path $readmeSrc -Destination $readmeDest -Force
+            Write-Host "✓ Extracted README.md → $readmeDest" -ForegroundColor Green
+            $fileInfo = Get-Item $readmeDest
+            Write-Host "  Size: $($fileInfo.Length) bytes" -ForegroundColor Gray
+          } else {
+            Write-Host "⚠️  README.md not found at $readmeSrc" -ForegroundColor Yellow
+          }
       
       - name: Package Modpack ZIP
         if: steps.create_release.outputs.created == 'true'
-        shell: bash
+        shell: pwsh
         run: |
-          version="${{ github.event.inputs.version }}"
-          release_path="releases/$version"
+          $version = "${{ github.event.inputs.version }}"
+          $releasePath = "releases/$version"
+          $zipPath = "modpack-${version}.zip"
           
-          echo "📦 Creating modpack ZIP..."
-          cd "$release_path"
-          zip -r "../../modpack-$version.zip" * -x "*.zip" "reconcile-*" "*expected-release-files.txt" "*actual-release-files.txt" "*verification-*.txt"
-          cd ../..
+          Write-Host "📦 Creating modpack ZIP..." -ForegroundColor Cyan
           
-          if [ -f "modpack-$version.zip" ]; then
-            zip_size=$(du -h "modpack-$version.zip" | cut -f1)
-            echo "✓ Created modpack-$version.zip ($zip_size)"
-            ls -lh "modpack-$version.zip"
-          else
-            echo "❌ Failed to create modpack ZIP"
+          # Remove existing ZIP if present
+          if (Test-Path $zipPath) {
+            Remove-Item $zipPath -Force
+          }
+          
+          # Get all files to include (exclude certain patterns)
+          $excludePatterns = @('*.zip', '*reconcile-*', '*expected-release-files.txt', '*actual-release-files.txt', '*verification-*.txt')
+          $itemsToArchive = Get-ChildItem -Path $releasePath -Recurse -ErrorAction SilentlyContinue | Where-Object {
+            $item = $_
+            $shouldExclude = $false
+            foreach ($pattern in $excludePatterns) {
+              if ($item.FullName -like "*$pattern*" -or $item.Name -like $pattern) {
+                $shouldExclude = $true
+                break
+              }
+            }
+            -not $shouldExclude
+          }
+          
+          if ($itemsToArchive.Count -gt 0) {
+            $paths = $itemsToArchive | ForEach-Object { $_.FullName }
+            Compress-Archive -Path $paths -DestinationPath $zipPath -Force
+            $zipInfo = Get-Item $zipPath
+            $zipSizeMB = [math]::Round($zipInfo.Length / 1MB, 2)
+            Write-Host "✓ Created $zipPath ($zipSizeMB MB)" -ForegroundColor Green
+          } else {
+            Write-Host "❌ No files to archive" -ForegroundColor Red
             exit 1
-          fi
+          }
       
       - name: Generate Checksum
         if: steps.create_release.outputs.created == 'true'
-        shell: bash
+        shell: pwsh
         run: |
-          version="${{ github.event.inputs.version }}"
-          if [ -f "modpack-$version.zip" ]; then
-            echo "📐 Computing SHA256 checksum..."
-            sha256sum "modpack-$version.zip" > "release-hash-$version.txt"
-            echo "✓ Checksum:"
-            cat "release-hash-$version.txt"
-          fi
+          $version = "${{ github.event.inputs.version }}"
+          $zipPath = "modpack-${version}.zip"
+          $hashPath = "release-hash-${version}.txt"
+          
+          if (Test-Path $zipPath) {
+            Write-Host "📐 Computing SHA256 checksum..." -ForegroundColor Cyan
+            $hash = Get-FileHash -Path $zipPath -Algorithm SHA256
+            $hashLine = "$($hash.Hash)  $zipPath"
+            $hashLine | Out-File -FilePath $hashPath -Encoding UTF8 -NoNewline
+            Write-Host "✓ Checksum:" -ForegroundColor Green
+            Write-Host $hashLine -ForegroundColor Gray
+          }
       
       - name: Upload Release Directory Artifact
         if: steps.create_release.outputs.created == 'true'
@@ -194,27 +223,35 @@ jobs:
       
       - name: Test Summary
         if: always()
-        shell: bash
+        shell: pwsh
         run: |
-          echo "## 🧪 Test Release Creation Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Version**: ${{ github.event.inputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Status**: ${{ steps.create_release.outcome }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
+          $summary = @"
+          ## 🧪 Test Release Creation Summary
           
-          if [ "${{ steps.create_release.outcome }}" == "success" ]; then
-            echo "✅ **Release created successfully**" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "**Artifacts uploaded:**" >> $GITHUB_STEP_SUMMARY
-            echo "- Release directory (full contents)" >> $GITHUB_STEP_SUMMARY
-            echo "- Modpack ZIP file" >> $GITHUB_STEP_SUMMARY
-            echo "- README.md (extracted)" >> $GITHUB_STEP_SUMMARY
-            echo "- SHA256 checksum" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "💡 **Note**: This is a test run. No GitHub Release was created." >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ **Release creation failed**" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "Check the logs above for error details." >> $GITHUB_STEP_SUMMARY
-          fi
+          **Version**: ${{ github.event.inputs.version }}
+          **Status**: ${{ steps.create_release.outcome }}
+          
+          "@
+          
+          if ("${{ steps.create_release.outcome }}" -eq "success") {
+            $summary += @"
+          ✅ **Release created successfully**
+          
+          **Artifacts uploaded:**
+          - Release directory (full contents)
+          - Modpack ZIP file
+          - README.md (extracted)
+          - SHA256 checksum
+          
+          💡 **Note**: This is a test run. No GitHub Release was created.
+          "@
+          } else {
+            $summary += @"
+          ❌ **Release creation failed**
+          
+          Check the logs above for error details.
+          "@
+          }
+          
+          $summary | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Encoding UTF8 -Append
 
