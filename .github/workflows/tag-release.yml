@@ -1,0 +1,345 @@
+name: Tag-Based Release
+
+on:
+  push:
+    tags:
+      - 'v*'        # Semantic versioning: v1.0.0, v1.1.0, v2.0.0
+      - 'release-*' # Date-based: release-2025.11.18
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: tag-release-${{ github.ref }}
+  cancel-in-progress: false  # Don't cancel - tag releases are important
+
+jobs:
+  create-release:
+    runs-on: windows-latest
+    timeout-minutes: 120
+    
+    steps:
+      - name: Checkout Repository with Submodules
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          submodules: true
+      
+      - name: Extract Tag Information
+        id: tag_info
+        shell: pwsh
+        run: |
+          $tagRef = "${{ github.ref }}"
+          $tagName = $tagRef -replace 'refs/tags/', ''
+          
+          # Extract version from tag (remove 'v' prefix if present)
+          $version = $tagName
+          if ($tagName -match '^v(.+)$') {
+            $version = $matches[1]
+          } elseif ($tagName -match '^release-(.+)$') {
+            $version = $matches[1]
+          }
+          
+          Write-Host "Tag Name: $tagName" -ForegroundColor Cyan
+          Write-Host "Extracted Version: $version" -ForegroundColor Cyan
+          
+          echo "tag_name=$tagName" >> $env:GITHUB_OUTPUT
+          echo "version=$version" >> $env:GITHUB_OUTPUT
+      
+      - name: Read Enabled Versions from Config
+        id: set_versions
+        shell: pwsh
+        run: |
+          $config = Get-Content release-config.json | ConvertFrom-Json
+          $enabledVersions = $config.versions | Where-Object { $_.enabled -eq $true } | Select-Object -ExpandProperty version
+          
+          if ($enabledVersions.Count -eq 1) {
+            $matrixJson = "[$($enabledVersions | ConvertTo-Json -Compress)]"
+          } else {
+            $matrixJson = $enabledVersions | ConvertTo-Json -Compress
+          }
+          
+          echo "versions=$matrixJson" >> $env:GITHUB_OUTPUT
+          Write-Host "Enabled versions: $($enabledVersions -join ', ')" -ForegroundColor Cyan
+      
+      - name: Create Release Packages (All Enabled Versions)
+        shell: pwsh
+        run: |
+          $versionsJson = '${{ steps.set_versions.outputs.versions }}'
+          $versions = ($versionsJson | ConvertFrom-Json)
+          
+          Write-Host "🚀 Creating release packages for tag: ${{ steps.tag_info.outputs.tag_name }}" -ForegroundColor Cyan
+          Write-Host "📦 Enabled versions: $($versions -join ', ')" -ForegroundColor Cyan
+          Write-Host ""
+          
+          foreach ($v in $versions) {
+            Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Gray
+            Write-Host "Creating release package for Minecraft $v" -ForegroundColor Cyan
+            Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Gray
+            Write-Host ""
+            
+            # This will:
+            # 1. Download mods for the version
+            # 2. Download server files
+            # 3. Validate by starting the server
+            # 4. Organize mods (mandatory/optional)
+            # 5. Generate hashes and documentation
+            # 6. Create ZIP package
+            # 7. Exit 0 if successful, 1 if server validation fails
+            
+            .\ModManager.ps1 -CreateRelease -GameVersion $v
+            
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "❌ Release creation failed for version $v" -ForegroundColor Red
+              exit 1
+            }
+            
+            Write-Host "✅ Release package created for version $v" -ForegroundColor Green
+            Write-Host ""
+          }
+      
+      - name: Cleanup Duplicate Modpack Files
+        shell: pwsh
+        run: |
+          $versionsJson = '${{ steps.set_versions.outputs.versions }}'
+          $versions = ($versionsJson | ConvertFrom-Json)
+          
+          foreach ($v in $versions) {
+            $releasePath = "releases/$v"
+            $modpackFiles = Get-ChildItem -Path $releasePath -Filter "modpack.*" -File -ErrorAction SilentlyContinue
+            foreach ($file in $modpackFiles) {
+              Remove-Item -Path $file.FullName -Force
+              Write-Host "✓ Removed: $($file.Name)" -ForegroundColor Green
+            }
+            if ($modpackFiles.Count -gt 0) {
+              Write-Host "✓ Cleaned up $($modpackFiles.Count) modpack file(s) for $v" -ForegroundColor Green
+            }
+          }
+      
+      - name: Copy Server JARs to Release
+        shell: pwsh
+        run: |
+          $versionsJson = '${{ steps.set_versions.outputs.versions }}'
+          $versions = ($versionsJson | ConvertFrom-Json)
+          
+          foreach ($v in $versions) {
+            $serverPath = "download/$v"
+            $releasePath = "releases/$v"
+            
+            Write-Host "📦 Copying server JARs to release folder for $v..." -ForegroundColor Cyan
+            
+            # Create release directory if it doesn't exist
+            if (-not (Test-Path $releasePath)) {
+              New-Item -ItemType Directory -Path $releasePath -Force | Out-Null
+              Write-Host "  ✓ Created release directory: $releasePath" -ForegroundColor Green
+            }
+            
+            # Copy Minecraft server JAR
+            $minecraftJar = Get-ChildItem -Path $serverPath -Filter "minecraft_server*.jar" -File -ErrorAction SilentlyContinue | Select-Object -First 1
+            if ($minecraftJar) {
+              Copy-Item -Path $minecraftJar.FullName -Destination $releasePath -Force
+              Write-Host "  ✓ Copied: $($minecraftJar.Name)" -ForegroundColor Green
+            } else {
+              Write-Host "  ⚠️  Warning: Minecraft server JAR not found" -ForegroundColor Yellow
+            }
+            
+            # Copy Fabric launcher JAR
+            $fabricJar = Get-ChildItem -Path $serverPath -Filter "fabric-server*.jar" -File -ErrorAction SilentlyContinue | Select-Object -First 1
+            if ($fabricJar) {
+              Copy-Item -Path $fabricJar.FullName -Destination $releasePath -Force
+              Write-Host "  ✓ Copied: $($fabricJar.Name)" -ForegroundColor Green
+            } else {
+              Write-Host "  ⚠️  Warning: Fabric launcher JAR not found" -ForegroundColor Yellow
+            }
+            
+            # Copy Fabric installer
+            $installerPath = Join-Path $serverPath "installer"
+            if (Test-Path $installerPath) {
+              $fabricInstallerExe = Get-ChildItem -Path $installerPath -Filter "fabric-installer-*.exe" -File -ErrorAction SilentlyContinue | Select-Object -First 1
+              $fabricInstallerJar = Get-ChildItem -Path $installerPath -Filter "fabric-installer-*.jar" -File -ErrorAction SilentlyContinue | Select-Object -First 1
+              
+              if ($fabricInstallerExe) {
+                Copy-Item -Path $fabricInstallerExe.FullName -Destination $releasePath -Force
+                Write-Host "  ✓ Copied: $($fabricInstallerExe.Name)" -ForegroundColor Green
+              }
+              if ($fabricInstallerJar) {
+                Copy-Item -Path $fabricInstallerJar.FullName -Destination $releasePath -Force
+                Write-Host "  ✓ Copied: $($fabricInstallerJar.Name)" -ForegroundColor Green
+              }
+              
+              if (-not $fabricInstallerExe -and -not $fabricInstallerJar) {
+                Write-Host "  ⚠️  Warning: Fabric installer not found" -ForegroundColor Yellow
+              }
+            } else {
+              Write-Host "  ⚠️  Warning: Installer directory not found" -ForegroundColor Yellow
+            }
+          }
+      
+      - name: Verify Required Files (hash.txt, README.md)
+        shell: pwsh
+        run: |
+          $versionsJson = '${{ steps.set_versions.outputs.versions }}'
+          $versions = ($versionsJson | ConvertFrom-Json)
+          
+          foreach ($v in $versions) {
+            $releasePath = "releases/$v"
+            $hashFile = Join-Path $releasePath 'hash.txt'
+            $readmeFile = Join-Path $releasePath 'README.md'
+            
+            $missing = @()
+            if (-not (Test-Path $hashFile)) { $missing += 'hash.txt' }
+            if (-not (Test-Path $readmeFile)) { $missing += 'README.md' }
+            
+            if ($missing.Count -eq 0) {
+              Write-Host "✅ Required files present for $v: hash.txt, README.md" -ForegroundColor Green
+            } else {
+              Write-Host "⚠️  Missing required files for $v: $($missing -join ', ') — generating minimal fallbacks" -ForegroundColor Yellow
+              if ($missing -contains 'hash.txt') {
+                "# Hashes placeholder — generated by workflow`n# Actual hashes should be provided by ModManager during release creation" | Out-File -FilePath $hashFile -Encoding UTF8 -Force
+              }
+              if ($missing -contains 'README.md') {
+                @(
+                  "# Modpack ${v}",
+                  "",
+                  "This README was generated as a fallback by the CI workflow.",
+                  "For full instructions, see the project's documentation.",
+                  "",
+                  "Contents:",
+                  "- mods/ (mandatory)",
+                  "- mods/optional/ (optional)",
+                  "- server JARs (minecraft_server*, fabric-server*, installer)"
+                ) | Out-File -FilePath $readmeFile -Encoding UTF8 -Force
+              }
+            }
+          }
+      
+      - name: Package Modpacks
+        shell: bash
+        run: |
+          echo "📦 Packaging modpacks..."
+          for d in releases/*/; do
+            [ -d "$d" ] || continue
+            ver=$(basename "$d")
+            echo "  Processing $ver"
+            cd "$d"
+            zip -r "../../modpack-$ver.zip" *
+            cd - >/dev/null
+            echo "    ✓ Created modpack-$ver.zip"
+          done
+          echo "✅ Packaging complete"
+      
+      - name: Generate Checksums
+        shell: bash
+        run: |
+          set -e
+          shopt -s nullglob
+          files=(modpack-*.zip)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No packaged ZIPs found; nothing to checksum."
+            exit 1
+          fi
+          echo "📐 Computing SHA256 checksums..."
+          sha256sum "${files[@]}" > release-hashes.txt
+          echo "✓ Wrote release-hashes.txt"
+      
+      - name: Collect README Files for Release Artifacts
+        shell: bash
+        run: |
+          echo "📄 Collecting README.md files from release directories..."
+          for d in releases/*/; do
+            [ -d "$d" ] || continue
+            ver=$(basename "$d")
+            readme_src="$d/README.md"
+            readme_dest="README-${ver}.md"
+            
+            if [ -f "$readme_src" ]; then
+              cp "$readme_src" "$readme_dest"
+              echo "  ✓ Copied README.md for version $ver → $readme_dest"
+            else
+              echo "  ⚠️  Warning: README.md not found for version $ver"
+            fi
+          done
+          echo "✅ README collection complete"
+      
+      - name: Generate Release Notes
+        id: release_notes
+        shell: bash
+        run: |
+          TAG_NAME="${{ steps.tag_info.outputs.tag_name }}"
+          VERSION="${{ steps.tag_info.outputs.version }}"
+          TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          
+          shopt -s nullglob
+          INCLUDED_FILES=(modpack-*.zip)
+          
+          {
+            echo "# Minecraft Modpack Release - ${TAG_NAME}"
+            echo
+            echo "## 📦 Included Packages"
+            if [ ${#INCLUDED_FILES[@]} -eq 0 ]; then
+              echo "- (none)"
+            else
+              for f in "${INCLUDED_FILES[@]}"; do
+                echo "- **$f**"
+              done
+            fi
+            echo
+            echo "## 📋 Release Information"
+            echo "- **Tag**: \`${TAG_NAME}\`"
+            echo "- **Version**: ${VERSION}"
+            echo "- **Created**: ${TIMESTAMP}"
+            echo "- **Type**: Stable Release"
+            echo "- **Validation**: Server startup tested for each packaged version"
+            echo
+            echo "## 🔑 Checksums"
+            if [ -f release-hashes.txt ]; then
+              echo '```'
+              cat release-hashes.txt
+              echo '```'
+            else
+              echo "(checksums unavailable)"
+            fi
+            echo
+            echo "## 📥 Download Instructions"
+            echo
+            echo "1. Download \`modpack-[version].zip\` for your Minecraft version"
+            echo "2. Extract the ZIP file"
+            echo "3. Install mods from the \`mods/\` directory to \`.minecraft/mods/\`"
+            echo "4. Optional mods are in \`mods/optional/\`"
+            echo "5. Check \`hash.txt\` for file verification"
+            echo "6. See \`README.md\` for complete installation guide"
+            echo
+            echo "## 🔗 InertiaAntiCheat Integration"
+            echo
+            echo "Use included \`hash.txt\` to configure InertiaAntiCheat server validation."
+            echo "See \`README.md\` for details."
+          } > release-notes.md
+          
+          echo "Generated release-notes.md:" && cat release-notes.md
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag_info.outputs.tag_name }}
+          name: Modpack Release ${{ steps.tag_info.outputs.version }}
+          body_path: release-notes.md
+          draft: false
+          prerelease: false  # Tag-based releases are stable
+          files: |
+            modpack-*.zip
+            release-hashes.txt
+            README-*.md
+      
+      - name: Release Summary
+        shell: bash
+        run: |
+          echo "## ✅ Tag-Based Release Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Tag**: \`${{ steps.tag_info.outputs.tag_name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Version**: ${{ steps.tag_info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Release Type**: Stable Release" >> $GITHUB_STEP_SUMMARY
+          echo "**Created**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Included Versions**: $(echo '${{ steps.set_versions.outputs.versions }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
+

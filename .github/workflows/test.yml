@@ -377,6 +377,25 @@ jobs:
         path: modpack-*.zip
         retention-days: 30
 
+    - name: Collect README Files for Release Artifacts
+      shell: bash
+      run: |
+        echo "📄 Collecting README.md files from release directories..."
+        for d in releases/*/; do
+          [ -d "$d" ] || continue
+          ver=$(basename "$d")
+          readme_src="$d/README.md"
+          readme_dest="README-${ver}.md"
+          
+          if [ -f "$readme_src" ]; then
+            cp "$readme_src" "$readme_dest"
+            echo "  ✓ Copied README.md for version $ver → $readme_dest"
+          else
+            echo "  ⚠️  Warning: README.md not found for version $ver"
+          fi
+        done
+        echo "✅ README collection complete"
+
     - name: Publish Test Release
       uses: softprops/action-gh-release@v2
       with:
@@ -387,6 +406,7 @@ jobs:
         prerelease: true
         files: |
           modpack-*.zip
+          README-*.md
         generate_release_notes: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
