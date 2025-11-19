@@ -277,7 +277,7 @@ jobs:
         run: |
           $TAG_NAME = "${{ steps.tag_info.outputs.tag_name }}"
           $VERSION = "${{ steps.tag_info.outputs.version }}"
-          $TIMESTAMP = (Get-Date -Utc).ToString("yyyy-MM-dd HH:mm:ss UTC")
+          $TIMESTAMP = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss UTC")
           
           $includedFiles = Get-ChildItem -Path "." -Filter "modpack-*.zip" -File
           
@@ -362,7 +362,7 @@ jobs:
           **Tag**: ``${{ steps.tag_info.outputs.tag_name }}``
           **Version**: ${{ steps.tag_info.outputs.version }}
           **Release Type**: Stable Release
-          **Created**: $((Get-Date -Utc).ToString("yyyy-MM-dd HH:mm:ss UTC"))
+          **Created**: $((Get-Date).ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss UTC"))
           
           **Included Versions**: $versionsList
           "@
