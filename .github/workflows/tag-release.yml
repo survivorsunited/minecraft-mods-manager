@@ -256,6 +256,14 @@ jobs:
         shell: pwsh
         run: |
           Write-Host "📄 Collecting README.md files from release directories..." -ForegroundColor Cyan
+          # Clean up any leftover versioned README files from previous runs
+          $oldReadmes = Get-ChildItem -Path "." -Filter "README-*.md" -File -ErrorAction SilentlyContinue
+          if ($oldReadmes) {
+            foreach ($old in $oldReadmes) {
+              Remove-Item -Path $old.FullName -Force
+              Write-Host "  🗑️  Removed leftover: $($old.Name)" -ForegroundColor Gray
+            }
+          }
           $releaseDirs = Get-ChildItem -Path "releases" -Directory
           if ($releaseDirs.Count -eq 1) {
             # Single version - use README.md
