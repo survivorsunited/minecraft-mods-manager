@@ -257,16 +257,31 @@ jobs:
         run: |
           Write-Host "📄 Collecting README.md files from release directories..." -ForegroundColor Cyan
           $releaseDirs = Get-ChildItem -Path "releases" -Directory
-          foreach ($dir in $releaseDirs) {
-            $ver = $dir.Name
+          if ($releaseDirs.Count -eq 1) {
+            # Single version - use README.md
+            $dir = $releaseDirs[0]
             $readmeSrc = Join-Path $dir.FullName "README.md"
-            $readmeDest = "README-$ver.md"
+            $readmeDest = "README.md"
             
             if (Test-Path $readmeSrc) {
               Copy-Item -Path $readmeSrc -Destination $readmeDest -Force
-              Write-Host "  ✓ Copied README.md for version $ver → $readmeDest" -ForegroundColor Green
+              Write-Host "  ✓ Copied README.md for version $($dir.Name) → $readmeDest" -ForegroundColor Green
             } else {
-              Write-Host "  ⚠️  Warning: README.md not found for version $ver" -ForegroundColor Yellow
+              Write-Host "  ⚠️  Warning: README.md not found for version $($dir.Name)" -ForegroundColor Yellow
+            }
+          } else {
+            # Multiple versions - use versioned names
+            foreach ($dir in $releaseDirs) {
+              $ver = $dir.Name
+              $readmeSrc = Join-Path $dir.FullName "README.md"
+              $readmeDest = "README-$ver.md"
+              
+              if (Test-Path $readmeSrc) {
+                Copy-Item -Path $readmeSrc -Destination $readmeDest -Force
+                Write-Host "  ✓ Copied README.md for version $ver → $readmeDest" -ForegroundColor Green
+              } else {
+                Write-Host "  ⚠️  Warning: README.md not found for version $ver" -ForegroundColor Yellow
+              }
             }
           }
           Write-Host "✅ README collection complete" -ForegroundColor Green
@@ -347,6 +362,7 @@ jobs:
           files: |
             modpack-*.zip
             release-hashes.txt
+            README.md
             README-*.md
       
       - name: Release Summary
