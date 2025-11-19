@@ -196,7 +196,7 @@ jobs:
             if (-not (Test-Path $readmeFile)) { $missing += 'README.md' }
             
             if ($missing.Count -eq 0) {
-              Write-Host "✅ Required files present for $v: hash.txt, README.md" -ForegroundColor Green
+              Write-Host "✅ Required files present for $v - hash.txt, README.md" -ForegroundColor Green
             } else {
               Write-Host "⚠️  Missing required files for $v: $($missing -join ', ') — generating minimal fallbacks" -ForegroundColor Yellow
               if ($missing -contains 'hash.txt') {
@@ -219,108 +219,122 @@ jobs:
           }
       
       - name: Package Modpacks
-        shell: bash
+        shell: pwsh
         run: |
-          echo "📦 Packaging modpacks..."
-          for d in releases/*/; do
-            [ -d "$d" ] || continue
-            ver=$(basename "$d")
-            echo "  Processing $ver"
-            cd "$d"
-            zip -r "../../modpack-$ver.zip" *
-            cd - >/dev/null
-            echo "    ✓ Created modpack-$ver.zip"
-          done
-          echo "✅ Packaging complete"
+          Write-Host "📦 Packaging modpacks..." -ForegroundColor Cyan
+          $releaseDirs = Get-ChildItem -Path "releases" -Directory
+          foreach ($dir in $releaseDirs) {
+            $ver = $dir.Name
+            Write-Host "  Processing $ver" -ForegroundColor Yellow
+            $zipPath = "modpack-$ver.zip"
+            if (Test-Path $zipPath) {
+              Remove-Item $zipPath -Force
+            }
+            Compress-Archive -Path "$($dir.FullName)\*" -DestinationPath $zipPath -Force
+            Write-Host "    ✓ Created $zipPath" -ForegroundColor Green
+          }
+          Write-Host "✅ Packaging complete" -ForegroundColor Green
       
       - name: Generate Checksums
-        shell: bash
+        shell: pwsh
         run: |
-          set -e
-          shopt -s nullglob
-          files=(modpack-*.zip)
-          if [ ${#files[@]} -eq 0 ]; then
-            echo "No packaged ZIPs found; nothing to checksum."
+          $zipFiles = Get-ChildItem -Path "." -Filter "modpack-*.zip" -File
+          if ($zipFiles.Count -eq 0) {
+            Write-Host "No packaged ZIPs found; nothing to checksum." -ForegroundColor Red
             exit 1
-          fi
-          echo "📐 Computing SHA256 checksums..."
-          sha256sum "${files[@]}" > release-hashes.txt
-          echo "✓ Wrote release-hashes.txt"
+          }
+          Write-Host "📐 Computing SHA256 checksums..." -ForegroundColor Cyan
+          $hashLines = @()
+          foreach ($file in $zipFiles) {
+            $hash = Get-FileHash -Path $file.FullName -Algorithm SHA256
+            $hashLines += "$($hash.Hash)  $($file.Name)"
+          }
+          $hashLines | Out-File -FilePath "release-hashes.txt" -Encoding UTF8
+          Write-Host "✓ Wrote release-hashes.txt" -ForegroundColor Green
       
       - name: Collect README Files for Release Artifacts
-        shell: bash
+        shell: pwsh
         run: |
-          echo "📄 Collecting README.md files from release directories..."
-          for d in releases/*/; do
-            [ -d "$d" ] || continue
-            ver=$(basename "$d")
-            readme_src="$d/README.md"
-            readme_dest="README-${ver}.md"
+          Write-Host "📄 Collecting README.md files from release directories..." -ForegroundColor Cyan
+          $releaseDirs = Get-ChildItem -Path "releases" -Directory
+          foreach ($dir in $releaseDirs) {
+            $ver = $dir.Name
+            $readmeSrc = Join-Path $dir.FullName "README.md"
+            $readmeDest = "README-$ver.md"
             
-            if [ -f "$readme_src" ]; then
-              cp "$readme_src" "$readme_dest"
-              echo "  ✓ Copied README.md for version $ver → $readme_dest"
-            else
-              echo "  ⚠️  Warning: README.md not found for version $ver"
-            fi
-          done
-          echo "✅ README collection complete"
+            if (Test-Path $readmeSrc) {
+              Copy-Item -Path $readmeSrc -Destination $readmeDest -Force
+              Write-Host "  ✓ Copied README.md for version $ver → $readmeDest" -ForegroundColor Green
+            } else {
+              Write-Host "  ⚠️  Warning: README.md not found for version $ver" -ForegroundColor Yellow
+            }
+          }
+          Write-Host "✅ README collection complete" -ForegroundColor Green
       
       - name: Generate Release Notes
         id: release_notes
-        shell: bash
+        shell: pwsh
         run: |
-          TAG_NAME="${{ steps.tag_info.outputs.tag_name }}"
-          VERSION="${{ steps.tag_info.outputs.version }}"
-          TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          $TAG_NAME = "${{ steps.tag_info.outputs.tag_name }}"
+          $VERSION = "${{ steps.tag_info.outputs.version }}"
+          $TIMESTAMP = (Get-Date -Utc).ToString("yyyy-MM-dd HH:mm:ss UTC")
           
-          shopt -s nullglob
-          INCLUDED_FILES=(modpack-*.zip)
+          $includedFiles = Get-ChildItem -Path "." -Filter "modpack-*.zip" -File
           
-          {
-            echo "# Minecraft Modpack Release - ${TAG_NAME}"
-            echo
-            echo "## 📦 Included Packages"
-            if [ ${#INCLUDED_FILES[@]} -eq 0 ]; then
-              echo "- (none)"
-            else
-              for f in "${INCLUDED_FILES[@]}"; do
-                echo "- **$f**"
-              done
-            fi
-            echo
-            echo "## 📋 Release Information"
-            echo "- **Tag**: \`${TAG_NAME}\`"
-            echo "- **Version**: ${VERSION}"
-            echo "- **Created**: ${TIMESTAMP}"
-            echo "- **Type**: Stable Release"
-            echo "- **Validation**: Server startup tested for each packaged version"
-            echo
-            echo "## 🔑 Checksums"
-            if [ -f release-hashes.txt ]; then
-              echo '```'
-              cat release-hashes.txt
-              echo '```'
-            else
-              echo "(checksums unavailable)"
-            fi
-            echo
-            echo "## 📥 Download Instructions"
-            echo
-            echo "1. Download \`modpack-[version].zip\` for your Minecraft version"
-            echo "2. Extract the ZIP file"
-            echo "3. Install mods from the \`mods/\` directory to \`.minecraft/mods/\`"
-            echo "4. Optional mods are in \`mods/optional/\`"
-            echo "5. Check \`hash.txt\` for file verification"
-            echo "6. See \`README.md\` for complete installation guide"
-            echo
-            echo "## 🔗 InertiaAntiCheat Integration"
-            echo
-            echo "Use included \`hash.txt\` to configure InertiaAntiCheat server validation."
-            echo "See \`README.md\` for details."
-          } > release-notes.md
+          $notes = @"
+          # Minecraft Modpack Release - $TAG_NAME
           
-          echo "Generated release-notes.md:" && cat release-notes.md
+          ## 📦 Included Packages
+          "@
+          
+          if ($includedFiles.Count -eq 0) {
+            $notes += "`n- (none)"
+          } else {
+            foreach ($f in $includedFiles) {
+              $notes += "`n- **$($f.Name)**"
+            }
+          }
+          
+          $notes += @"
+          
+          ## 📋 Release Information
+          - **Tag**: ``$TAG_NAME``
+          - **Version**: $VERSION
+          - **Created**: $TIMESTAMP
+          - **Type**: Stable Release
+          - **Validation**: Server startup tested for each packaged version
+          
+          ## 🔑 Checksums
+          "@
+          
+          if (Test-Path "release-hashes.txt") {
+            $notes += "`n``````"
+            $notes += (Get-Content "release-hashes.txt" -Raw)
+            $notes += "``````"
+          } else {
+            $notes += "`n(checksums unavailable)"
+          }
+          
+          $notes += @"
+          
+          ## 📥 Download Instructions
+          
+          1. Download ``modpack-[version].zip`` for your Minecraft version
+          2. Extract the ZIP file
+          3. Install mods from the ``mods/`` directory to ``.minecraft/mods/``
+          4. Optional mods are in ``mods/optional/``
+          5. Check ``hash.txt`` for file verification
+          6. See ``README.md`` for complete installation guide
+          
+          ## 🔗 InertiaAntiCheat Integration
+          
+          Use included ``hash.txt`` to configure InertiaAntiCheat server validation.
+          See ``README.md`` for details.
+          "@
+          
+          $notes | Out-File -FilePath "release-notes.md" -Encoding UTF8
+          Write-Host "Generated release-notes.md:" -ForegroundColor Cyan
+          Get-Content "release-notes.md"
       
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -336,14 +350,21 @@ jobs:
             README-*.md
       
       - name: Release Summary
-        shell: bash
+        shell: pwsh
         run: |
-          echo "## ✅ Tag-Based Release Complete" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Tag**: \`${{ steps.tag_info.outputs.tag_name }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "**Version**: ${{ steps.tag_info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Release Type**: Stable Release" >> $GITHUB_STEP_SUMMARY
-          echo "**Created**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Included Versions**: $(echo '${{ steps.set_versions.outputs.versions }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
+          $versionsJson = '${{ steps.set_versions.outputs.versions }}'
+          $versions = ($versionsJson | ConvertFrom-Json)
+          $versionsList = $versions -join ", "
+          
+          $summary = @"
+          ## ✅ Tag-Based Release Complete
+          
+          **Tag**: ``${{ steps.tag_info.outputs.tag_name }}``
+          **Version**: ${{ steps.tag_info.outputs.version }}
+          **Release Type**: Stable Release
+          **Created**: $((Get-Date -Utc).ToString("yyyy-MM-dd HH:mm:ss UTC"))
+          
+          **Included Versions**: $versionsList
+          "@
+          $summary | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append -Encoding UTF8
 

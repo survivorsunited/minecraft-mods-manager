@@ -1,16 +1,16 @@
 Param(
-  [string]$VERSION = "2023.3.31"
+  [Parameter(Mandatory=$true)]
+  [string]$Version
 )
 
-git checkout master
+# Ensure we're on main branch
+git checkout main
 git pull
 
-# delete old tag
-git tag -d v${VERSION}
-git push --delete origin v${VERSION}
+# Create and push tag (this will trigger tag-release.yml workflow)
+Write-Host "Creating release tag: v$Version" -ForegroundColor Cyan
+git tag -a "v$Version" -m "Release v$Version"
+git push origin "v$Version"
 
-# create new tag
-npm version ${VERSION}
-git commit -s -a -m "chore: release v${VERSION}"
-git tag -s -a v${VERSION} -m "v${VERSION}"
-git push && git push --tags
+Write-Host "✅ Tag v$Version pushed successfully" -ForegroundColor Green
+Write-Host "The tag-release workflow will automatically create the GitHub Release" -ForegroundColor Yellow
