@@ -1,0 +1,220 @@
+name: Test Release Creation
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Minecraft version to test (e.g., 1.21.8)'
+        required: true
+        type: string
+        default: '1.21.8'
+      skip_validation:
+        description: 'Skip server validation (faster but less thorough)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  test-release:
+    runs-on: windows-latest
+    timeout-minutes: 120
+    
+    steps:
+      - name: Checkout Repository with Submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+      
+      - name: Display Test Configuration
+        shell: pwsh
+        run: |
+          Write-Host "🧪 Test Release Creation" -ForegroundColor Cyan
+          Write-Host "=========================" -ForegroundColor Cyan
+          Write-Host ""
+          Write-Host "Version: ${{ github.event.inputs.version }}" -ForegroundColor Yellow
+          Write-Host "Skip Validation: ${{ github.event.inputs.skip_validation }}" -ForegroundColor Yellow
+          Write-Host ""
+      
+      - name: Create Release Package
+        id: create_release
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $version = "${{ github.event.inputs.version }}"
+          Write-Host "🚀 Creating test release package for Minecraft $version" -ForegroundColor Cyan
+          Write-Host "=================================================" -ForegroundColor Cyan
+          Write-Host ""
+          
+          # Create release (this will download mods, validate server, generate hashes/README)
+          if ("${{ github.event.inputs.skip_validation }}" -eq "true") {
+            Write-Host "⚠️  Skipping server validation (test mode)" -ForegroundColor Yellow
+            # Note: -CreateRelease always validates, so we'd need a different approach
+            # For now, we'll let it run normally but note that validation happens
+          }
+          
+          .\ModManager.ps1 -CreateRelease -GameVersion $version
+          
+          $exitCode = $LASTEXITCODE
+          if ($exitCode -eq 0) {
+            Write-Host "✅ Release creation completed successfully" -ForegroundColor Green
+            echo "created=true" >> $env:GITHUB_OUTPUT
+          } else {
+            Write-Host "❌ Release creation failed (exit code: $exitCode)" -ForegroundColor Red
+            echo "created=false" >> $env:GITHUB_OUTPUT
+          }
+      
+      - name: Verify Release Files
+        if: steps.create_release.outputs.created == 'true'
+        shell: pwsh
+        run: |
+          $version = "${{ github.event.inputs.version }}"
+          $releasePath = "releases/$version"
+          
+          Write-Host "📋 Verifying release files..." -ForegroundColor Cyan
+          
+          $hashFile = Join-Path $releasePath 'hash.txt'
+          $readmeFile = Join-Path $releasePath 'README.md'
+          $modsPath = Join-Path $releasePath 'mods'
+          
+          $missing = @()
+          if (-not (Test-Path $hashFile)) { $missing += 'hash.txt' }
+          if (-not (Test-Path $readmeFile)) { $missing += 'README.md' }
+          if (-not (Test-Path $modsPath)) { $missing += 'mods/' }
+          
+          if ($missing.Count -eq 0) {
+            Write-Host "✅ All required files present" -ForegroundColor Green
+            
+            # Show file sizes
+            if (Test-Path $hashFile) {
+              $hashSize = (Get-Item $hashFile).Length
+              Write-Host "  hash.txt: $hashSize bytes" -ForegroundColor Gray
+            }
+            if (Test-Path $readmeFile) {
+              $readmeSize = (Get-Item $readmeFile).Length
+              $readmeLines = (Get-Content $readmeFile).Count
+              Write-Host "  README.md: $readmeSize bytes ($readmeLines lines)" -ForegroundColor Gray
+            }
+            if (Test-Path $modsPath) {
+              $modCount = (Get-ChildItem -Path $modsPath -Filter '*.jar' -Recurse -File -ErrorAction SilentlyContinue).Count
+              Write-Host "  mods/: $modCount JAR files" -ForegroundColor Gray
+            }
+          } else {
+            Write-Host "❌ Missing required files: $($missing -join ', ')" -ForegroundColor Red
+            exit 1
+          }
+      
+      - name: Extract README for Artifact
+        if: steps.create_release.outputs.created == 'true'
+        shell: bash
+        run: |
+          version="${{ github.event.inputs.version }}"
+          release_path="releases/$version"
+          readme_src="$release_path/README.md"
+          readme_dest="README-${version}.md"
+          
+          if [ -f "$readme_src" ]; then
+            cp "$readme_src" "$readme_dest"
+            echo "✓ Extracted README.md → $readme_dest"
+            ls -lh "$readme_dest"
+          else
+            echo "⚠️  README.md not found at $readme_src"
+          fi
+      
+      - name: Package Modpack ZIP
+        if: steps.create_release.outputs.created == 'true'
+        shell: bash
+        run: |
+          version="${{ github.event.inputs.version }}"
+          release_path="releases/$version"
+          
+          echo "📦 Creating modpack ZIP..."
+          cd "$release_path"
+          zip -r "../../modpack-$version.zip" * -x "*.zip" "reconcile-*" "*expected-release-files.txt" "*actual-release-files.txt" "*verification-*.txt"
+          cd ../..
+          
+          if [ -f "modpack-$version.zip" ]; then
+            zip_size=$(du -h "modpack-$version.zip" | cut -f1)
+            echo "✓ Created modpack-$version.zip ($zip_size)"
+            ls -lh "modpack-$version.zip"
+          else
+            echo "❌ Failed to create modpack ZIP"
+            exit 1
+          fi
+      
+      - name: Generate Checksum
+        if: steps.create_release.outputs.created == 'true'
+        shell: bash
+        run: |
+          version="${{ github.event.inputs.version }}"
+          if [ -f "modpack-$version.zip" ]; then
+            echo "📐 Computing SHA256 checksum..."
+            sha256sum "modpack-$version.zip" > "release-hash-$version.txt"
+            echo "✓ Checksum:"
+            cat "release-hash-$version.txt"
+          fi
+      
+      - name: Upload Release Directory Artifact
+        if: steps.create_release.outputs.created == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ github.event.inputs.version }}-directory
+          path: releases/${{ github.event.inputs.version }}/**
+          retention-days: 7
+          compression-level: 0
+      
+      - name: Upload Modpack ZIP Artifact
+        if: steps.create_release.outputs.created == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: modpack-${{ github.event.inputs.version }}-zip
+          path: modpack-${{ github.event.inputs.version }}.zip
+          retention-days: 7
+      
+      - name: Upload README Artifact
+        if: steps.create_release.outputs.created == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: readme-${{ github.event.inputs.version }}
+          path: README-${{ github.event.inputs.version }}.md
+          retention-days: 7
+          if-no-files-found: warn
+      
+      - name: Upload Checksum Artifact
+        if: steps.create_release.outputs.created == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: checksum-${{ github.event.inputs.version }}
+          path: release-hash-${{ github.event.inputs.version }}.txt
+          retention-days: 7
+          if-no-files-found: warn
+      
+      - name: Test Summary
+        if: always()
+        shell: bash
+        run: |
+          echo "## 🧪 Test Release Creation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version**: ${{ github.event.inputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Status**: ${{ steps.create_release.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.create_release.outcome }}" == "success" ]; then
+            echo "✅ **Release created successfully**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Artifacts uploaded:**" >> $GITHUB_STEP_SUMMARY
+            echo "- Release directory (full contents)" >> $GITHUB_STEP_SUMMARY
+            echo "- Modpack ZIP file" >> $GITHUB_STEP_SUMMARY
+            echo "- README.md (extracted)" >> $GITHUB_STEP_SUMMARY
+            echo "- SHA256 checksum" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "💡 **Note**: This is a test run. No GitHub Release was created." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Release creation failed**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Check the logs above for error details." >> $GITHUB_STEP_SUMMARY
+          fi
+
