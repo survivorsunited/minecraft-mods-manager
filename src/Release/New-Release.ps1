@@ -430,7 +430,8 @@ function New-Release {
     $hashSuccess = $false
     if (Test-Path $hashScriptPath) {
         try {
-            & $hashScriptPath -ModsPath $releaseModsPath -OutputPath $releaseDir -CreateZip -UpdateConfig
+            # Config output should preserve directory structure in release directory
+            & $hashScriptPath -ModsPath $releaseModsPath -OutputPath $releaseDir -OutputConfig "config\InertiaAntiCheat\InertiaAntiCheat.toml" -CreateZip -UpdateConfig
             $hashSuccess = $true
         } catch {
             Write-Host "⚠️  External hash script errored, falling back: $($_.Exception.Message)" -ForegroundColor Yellow
