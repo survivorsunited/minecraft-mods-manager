@@ -363,7 +363,6 @@ jobs:
             modpack-*.zip
             release-hashes.txt
             README.md
-            README-*.md
       
       - name: Release Summary
         shell: pwsh
