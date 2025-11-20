@@ -391,6 +391,26 @@ jobs:
           }
           Write-Host "`n✅ Cleanup verified - only README.md exists" -ForegroundColor Green
       
+      - name: Final README Cleanup Before Release
+        shell: pwsh
+        run: |
+          # One final check and cleanup right before release creation
+          Write-Host "🔍 Final README cleanup check..." -ForegroundColor Cyan
+          $allReadmes = Get-ChildItem -Path "." -Filter "README*.md" -File -ErrorAction SilentlyContinue
+          foreach ($file in $allReadmes) {
+            if ($file.Name -ne "README.md") {
+              Write-Host "  🗑️  Removing: $($file.Name)" -ForegroundColor Red
+              Remove-Item -Path $file.FullName -Force
+            }
+          }
+          # Verify
+          $remaining = Get-ChildItem -Path "." -Filter "README*.md" -File -ErrorAction SilentlyContinue
+          if (($remaining | Where-Object { $_.Name -ne "README.md" }).Count -gt 0) {
+            Write-Host "❌ ERROR: Versioned README files still exist!" -ForegroundColor Red
+            exit 1
+          }
+          Write-Host "✅ Only README.md remains" -ForegroundColor Green
+      
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -403,9 +423,6 @@ jobs:
             modpack-*.zip
             release-hashes.txt
             README.md
-          # Explicitly exclude versioned README files
-          exclude: |
-            README-*.md
       
       - name: Release Summary
         shell: pwsh
