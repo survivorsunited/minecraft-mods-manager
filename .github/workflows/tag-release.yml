@@ -403,6 +403,9 @@ jobs:
             modpack-*.zip
             release-hashes.txt
             README.md
+          # Explicitly exclude versioned README files
+          exclude: |
+            README-*.md
       
       - name: Release Summary
         shell: pwsh
