@@ -363,19 +363,33 @@ jobs:
         shell: pwsh
         run: |
           # Explicitly remove any versioned README files before creating release
+          # This must run AFTER all other steps to catch any files created during the workflow
+          Write-Host "🧹 Final cleanup of versioned README files..." -ForegroundColor Cyan
           $versionedReadmes = Get-ChildItem -Path "." -Filter "README-*.md" -File -ErrorAction SilentlyContinue
           if ($versionedReadmes) {
             foreach ($file in $versionedReadmes) {
               Remove-Item -Path $file.FullName -Force
-              Write-Host "🗑️  Removed: $($file.Name)" -ForegroundColor Gray
+              Write-Host "  🗑️  Removed: $($file.Name)" -ForegroundColor Gray
             }
+            Write-Host "  ✅ Cleaned up $($versionedReadmes.Count) versioned README file(s)" -ForegroundColor Green
+          } else {
+            Write-Host "  ✓ No versioned README files found" -ForegroundColor Green
           }
           # Verify only README.md exists
           $readmeFiles = Get-ChildItem -Path "." -Filter "README*.md" -File -ErrorAction SilentlyContinue
-          Write-Host "📄 README files in workspace:" -ForegroundColor Cyan
+          Write-Host "`n📄 Final README files in workspace:" -ForegroundColor Cyan
           foreach ($file in $readmeFiles) {
-            Write-Host "  - $($file.Name)" -ForegroundColor $(if ($file.Name -eq "README.md") { "Green" } else { "Yellow" })
+            $color = if ($file.Name -eq "README.md") { "Green" } else { "Red" }
+            Write-Host "  - $($file.Name)" -ForegroundColor $color
+            if ($file.Name -ne "README.md") {
+              Write-Host "    ⚠️  WARNING: Unexpected README file found!" -ForegroundColor Red
+            }
           }
+          if (($readmeFiles | Where-Object { $_.Name -ne "README.md" }).Count -gt 0) {
+            Write-Host "`n❌ ERROR: Versioned README files still exist after cleanup!" -ForegroundColor Red
+            exit 1
+          }
+          Write-Host "`n✅ Cleanup verified - only README.md exists" -ForegroundColor Green
       
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
