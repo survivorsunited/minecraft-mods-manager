@@ -1,3 +1,7 @@
+---
+alwaysApply: true
+---
+
 # Test Rule: Data Isolation
 
 ## CRITICAL: Test Data Independence
