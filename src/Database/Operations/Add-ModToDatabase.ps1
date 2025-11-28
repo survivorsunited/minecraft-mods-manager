@@ -78,6 +78,11 @@ function Add-ModToDatabase {
                 $AddModId = $matches[1]
             } elseif ($AddModUrl -match "curseforge\.com/minecraft/mc-mods/([^/]+)") {
                 $AddModId = $matches[1]
+            } elseif ($AddModUrl -match "github\.com[/:]([^/]+)/([^/]+?)(?:\.git)?/?$") {
+                # For GitHub URLs, use owner/repo as ID
+                $owner = $matches[1]
+                $repo = $matches[2]
+                $AddModId = "$owner/$repo"
             } elseif ($AddModUrl -match "maven\.fabricmc\.net") {
                 # For Fabric installer URLs, extract version from filename first
                 $installerVersion = ""
@@ -309,6 +314,7 @@ function Add-ModToDatabase {
 
         # Determine source/host based on URL or ID pattern
         # Priority: Fabric installer (maven.fabricmc.net) -> direct
+        # Then: explicit GitHub URL -> github
         # Then: explicit CurseForge URL -> curseforge
         # Otherwise: numeric ID implies CurseForge -> curseforge
         # Fallback: modrinth
@@ -317,6 +323,13 @@ function Add-ModToDatabase {
         if ($isFabricInstaller) {
             $apiSource = "direct"
             $providerHost = "direct"
+        } elseif ($AddModUrl -and $AddModUrl -match "github\.com") {
+            $apiSource = "github"
+            $providerHost = "github"
+        } elseif ($AddModId -and $AddModId -match '^[^/]+/[^/]+$') {
+            # owner/repo format implies GitHub
+            $apiSource = "github"
+            $providerHost = "github"
         } elseif ($AddModUrl -and $AddModUrl -match "curseforge\.com") {
             $apiSource = "curseforge"
             $providerHost = "curseforge"

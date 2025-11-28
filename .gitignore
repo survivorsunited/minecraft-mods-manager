@@ -66,3 +66,5 @@ nonexistent-folder/
 test-*/
 config/
 apiresponse/
+
+temp/*

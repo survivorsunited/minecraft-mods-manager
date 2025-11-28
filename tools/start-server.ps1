@@ -188,7 +188,7 @@ if ($NoAutoRestart) {
 $continueRunning = $true
 while ($continueRunning) {
     $Timestamp = (Get-Date).ToString("yyyy-MM-dd_HH-mm-ss")
-    $LogFile = "$LogDir/console-$Timestamp.log"
+    $LogFile = Join-Path $LogDir "console-$Timestamp.log"
     
     # Build the launch arguments array
     $LaunchArgs = $JavaOpts + @("-jar", $JarFile, "--nogui")

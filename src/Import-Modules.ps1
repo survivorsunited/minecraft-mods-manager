@@ -54,6 +54,8 @@
 . "$PSScriptRoot\Provider\CurseForge\Resolve-CurseForgeProjectId.ps1"
 . "$PSScriptRoot\Provider\CurseForge\Get-CurseForgeFileInfo.ps1"
 . "$PSScriptRoot\Provider\CurseForge\Validate-CurseForgeModVersion.ps1"
+. "$PSScriptRoot\Provider\GitHub\Get-GitHubProjectInfo.ps1"
+. "$PSScriptRoot\Provider\GitHub\Validate-GitHubModVersion.ps1"
 . "$PSScriptRoot\Provider\Mojang\Get-MojangServerInfo.ps1"
 . "$PSScriptRoot\Provider\Mojang\Get-MojangVersions.ps1"
 . "$PSScriptRoot\Provider\Fabric\Get-FabricLoaderInfo.ps1"

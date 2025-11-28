@@ -70,11 +70,17 @@ function Validate-ModVersion {
                     $provider = $row.Host.ToLower()
                 } elseif ($row -and $row.Url -match 'curseforge\.com') {
                     $provider = 'curseforge'
+                } elseif ($row -and $row.Url -match 'github\.com') {
+                    $provider = 'github'
                 }
             } catch { }
         } else {
             # Fallback inference: numeric IDs are typically CurseForge
-            if ($ModId -match '^[0-9]+$') { $provider = 'curseforge' }
+            if ($ModId -match '^[0-9]+$') { 
+                $provider = 'curseforge' 
+            } elseif ($ModId -match 'github\.com') {
+                $provider = 'github'
+            }
         }
         
         # Route to appropriate provider function
@@ -211,6 +217,36 @@ function Validate-ModVersion {
                         IssuesUrl = $result.IssuesUrl
                         SourceUrl = $result.SourceUrl
                         WikiUrl = $result.WikiUrl
+                        ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                    }
+                } else {
+                    return @{
+                        Exists = $false
+                        Error = $result.Error
+                        ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
+                    }
+                }
+            }
+            "github" {
+                $result = Validate-GitHubModVersion -ModID $ModId -Version $Version -Loader $Loader -GameVersion $GameVersion -CsvPath $CsvPath -Quiet:$Quiet
+                if ($result.Success) {
+                    return @{
+                        Exists = $true
+                        LatestVersion = $result.Version
+                        VersionUrl = $result.DownloadUrl
+                        LatestVersionUrl = $result.DownloadUrl
+                        LatestGameVersion = if ($result.LatestGameVersion) { $result.LatestGameVersion } else { $GameVersion }
+                        CurrentDependencies = $result.Dependencies
+                        LatestDependencies = $result.Dependencies
+                        Jar = $result.Jar
+                        Title = $result.Title
+                        ProjectDescription = $result.ProjectDescription
+                        IconUrl = $result.IconUrl
+                        IssuesUrl = $result.IssuesUrl
+                        SourceUrl = $result.SourceUrl
+                        WikiUrl = $result.WikiUrl
+                        ClientSide = $result.ClientSide
+                        ServerSide = $result.ServerSide
                         ResponseFile = Join-Path $ResponseFolder "$ModId-$Version.json"
                     }
                 } else {
