@@ -707,8 +707,28 @@ if ($ValidateMod -and $ModID) {
                     $nextRes = Validate-ModVersion -ModId $ModID -Version "latest" -Loader $loader -GameVersion $nextGameVersion -ResponseFolder $ApiResponseFolder -CsvPath $effectiveModListPath
                 } catch { $nextRes = $null }
                 if ($nextRes -and $nextRes.Exists) {
-                    $mod.NextVersion = $nextRes.LatestVersion
-                    $mod.NextVersionUrl = if ($nextRes.VersionUrl -and $nextRes.VersionUrl.Trim() -ne "") { $nextRes.VersionUrl } else { $nextRes.LatestVersionUrl }
+                    # Only set Next fields if the validation result matches the requested next game version
+                    # For GitHub mods, check if the JAR filename contains the next game version
+                    $matchesNextGameVersion = $true
+                    if ($mod.Host -eq "github" -and $nextRes.Jar) {
+                        # Check if JAR filename contains the next game version
+                        if ($nextRes.Jar -notmatch $nextGameVersion.Replace('.', '\.')) {
+                            $matchesNextGameVersion = $false
+                        }
+                    }
+                    
+                    if ($matchesNextGameVersion) {
+                        $mod.NextVersion = $nextRes.LatestVersion
+                        $mod.NextVersionUrl = if ($nextRes.VersionUrl -and $nextRes.VersionUrl.Trim() -ne "") { $nextRes.VersionUrl } else { $nextRes.LatestVersionUrl }
+                    } else {
+                        # JAR doesn't match next game version, clear Next fields
+                        $mod.NextVersion = ""
+                        $mod.NextVersionUrl = ""
+                    }
+                } else {
+                    # No version found for next game version, clear Next fields
+                    $mod.NextVersion = ""
+                    $mod.NextVersionUrl = ""
                 }
             }
         } catch { }

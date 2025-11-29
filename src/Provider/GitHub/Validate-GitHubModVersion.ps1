@@ -213,28 +213,35 @@ function Validate-GitHubModVersion {
         }
         
         # If full pattern match fails, try pattern without game version: *-<version>.jar
+        # BUT only if we're not specifically looking for a game version (i.e., GameVersion was not provided or is empty)
         if (-not $jarAsset) {
-            $versionOnlyPattern = ".*-$versionPattern\.jar$"
-            foreach ($asset in $matchingRelease.assets) {
-                if ($asset.name -match $versionOnlyPattern) {
-                    $jarAsset = $asset
-                    break
+            # Only fall back to version-only pattern if GameVersion wasn't explicitly requested
+            # If GameVersion was provided, we must find a JAR matching that specific game version
+            if ([string]::IsNullOrEmpty($GameVersion) -or $GameVersion -eq "latest" -or $GameVersion -eq "current") {
+                $versionOnlyPattern = ".*-$versionPattern\.jar$"
+                foreach ($asset in $matchingRelease.assets) {
+                    if ($asset.name -match $versionOnlyPattern) {
+                        $jarAsset = $asset
+                        break
+                    }
                 }
             }
         }
         
-        # If pattern match fails, try to find any .jar file
+        # If pattern match fails and we still don't have a JAR, only fall back to any JAR if GameVersion wasn't explicitly requested
         if (-not $jarAsset) {
-            $jarAsset = $matchingRelease.assets | Where-Object { $_.name -match '\.jar$' } | Select-Object -First 1
+            if ([string]::IsNullOrEmpty($GameVersion) -or $GameVersion -eq "latest" -or $GameVersion -eq "current") {
+                $jarAsset = $matchingRelease.assets | Where-Object { $_.name -match '\.jar$' } | Select-Object -First 1
+            }
         }
         
         if (-not $jarAsset) {
             if (-not $Quiet) { 
-                Write-Host "DEBUG: No JAR file found in release $($matchingRelease.tag_name)" -ForegroundColor Red 
+                Write-Host "DEBUG: No JAR file found for game version $effectiveGameVersion in release $($matchingRelease.tag_name)" -ForegroundColor Red 
                 $availableAssets = ($matchingRelease.assets | ForEach-Object { $_.name }) -join ', '
                 Write-Host "Available assets: $availableAssets" -ForegroundColor Yellow
             }
-            return @{ Success = $false; Error = "No JAR file found in release $($matchingRelease.tag_name)" }
+            return @{ Success = $false; Error = "No JAR file found for game version $effectiveGameVersion in release $($matchingRelease.tag_name)" }
         }
         
         if (-not $Quiet) { 
