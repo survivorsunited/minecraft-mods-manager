@@ -139,7 +139,7 @@ function Show-Usage {
     Write-Log ""
     Write-Log "Available Test Files:" "White"
     # Dynamically list test files
-    $testFiles = Get-ChildItem -Path ".\tests" -File -Name | Where-Object { $_ -match '^\d{2}-.*\.ps1$' } | Sort-Object
+    $testFiles = Get-ChildItem -Path ".\tests" -File -Name | Where-Object { $_ -match '^\d{2,3}-.*\.ps1$' } | Sort-Object
     foreach ($file in $testFiles) {
         Write-Log "  $file" "Gray"
     }
@@ -185,7 +185,7 @@ function Cleanup-TestFiles {
 
 function Get-AllTestFiles {
     $testsPath = Join-Path -Path $OriginalScriptRoot -ChildPath "tests"
-    return Get-ChildItem -Path $testsPath -File -Name | Where-Object { $_ -match '^\d{2}-.*\.ps1$' } | Sort-Object
+    return Get-ChildItem -Path $testsPath -File -Name | Where-Object { $_ -match '^\d{2,3}-.*\.ps1$' } | Sort-Object
 }
 
 function Get-TestFilesToRun {
