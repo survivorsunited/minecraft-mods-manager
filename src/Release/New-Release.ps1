@@ -321,25 +321,56 @@ function New-Release {
             $fabricJar = Get-ChildItem -Path $serverVersionPath -Filter 'fabric-server*.jar' -File -ErrorAction SilentlyContinue | Select-Object -First 1
             if ($fabricJar) { Copy-Item -Path $fabricJar.FullName -Destination $releaseDir -Force; Write-Host "  ✓ Copied: $($fabricJar.Name)" -ForegroundColor Green } else { Write-Host "  ⚠️  Fabric launcher JAR not found" -ForegroundColor Yellow }
 
-            # Stage installer in install/ folder within release (and keep copy at root)
+            # Stage installer in install/ folder within release (only in install/, not root)
             $installerPath = Join-Path $serverVersionPath 'installer'
             if (Test-Path $installerPath) {
                 $installDir = Join-Path $releaseDir 'install'
                 if (-not (Test-Path $installDir)) { New-Item -ItemType Directory -Path $installDir -Force | Out-Null }
-                # Stage EXE installer
+                
+                # Get all installer files
                 $fabricInstallerExe = Get-ChildItem -Path $installerPath -Filter 'fabric-installer-*.exe' -File -ErrorAction SilentlyContinue | Select-Object -First 1
-                if ($fabricInstallerExe) {
-                    Copy-Item -Path $fabricInstallerExe.FullName -Destination $releaseDir -Force
-                    Copy-Item -Path $fabricInstallerExe.FullName -Destination (Join-Path $installDir $fabricInstallerExe.Name) -Force
-                    Write-Host "  ✓ Staged installer EXE: $($fabricInstallerExe.Name) (root and install/)" -ForegroundColor Green
-                } else { Write-Host "  ⚠️  Fabric installer EXE not found" -ForegroundColor Yellow }
-                # Stage JAR installer
                 $fabricInstallerJar = Get-ChildItem -Path $installerPath -Filter 'fabric-installer-*.jar' -File -ErrorAction SilentlyContinue | Select-Object -First 1
+                
+                # Extract versions from filenames
+                $exeVersion = $null
+                $jarVersion = $null
+                if ($fabricInstallerExe -and $fabricInstallerExe.Name -match 'fabric-installer-([\d.]+)\.exe') {
+                    $exeVersion = $matches[1]
+                }
+                if ($fabricInstallerJar -and $fabricInstallerJar.Name -match 'fabric-installer-([\d.]+)\.jar') {
+                    $jarVersion = $matches[1]
+                }
+                
+                # Verify versions match
+                if ($fabricInstallerExe -and $fabricInstallerJar) {
+                    if ($exeVersion -and $jarVersion -and $exeVersion -ne $jarVersion) {
+                        Write-Host "  ⚠️  Installer version mismatch: EXE=$exeVersion, JAR=$jarVersion" -ForegroundColor Yellow
+                        Write-Host "  ⚠️  Using JAR version ($jarVersion) as authoritative, updating EXE filename" -ForegroundColor Yellow
+                        # Use JAR version as authoritative and rename EXE if needed
+                        $correctExeName = "fabric-installer-$jarVersion.exe"
+                        $correctExePath = Join-Path $installDir $correctExeName
+                        Copy-Item -Path $fabricInstallerExe.FullName -Destination $correctExePath -Force
+                        Write-Host "  ✓ Staged installer EXE: $correctExeName (install/)" -ForegroundColor Green
+                    } else {
+                        # Versions match or couldn't determine - copy as-is
+                        Copy-Item -Path $fabricInstallerExe.FullName -Destination (Join-Path $installDir $fabricInstallerExe.Name) -Force
+                        Write-Host "  ✓ Staged installer EXE: $($fabricInstallerExe.Name) (install/)" -ForegroundColor Green
+                    }
+                } elseif ($fabricInstallerExe) {
+                    Write-Host "  ⚠️  Fabric installer EXE found but JAR missing" -ForegroundColor Yellow
+                    Copy-Item -Path $fabricInstallerExe.FullName -Destination (Join-Path $installDir $fabricInstallerExe.Name) -Force
+                    Write-Host "  ✓ Staged installer EXE: $($fabricInstallerExe.Name) (install/)" -ForegroundColor Green
+                } else {
+                    Write-Host "  ⚠️  Fabric installer EXE not found" -ForegroundColor Yellow
+                }
+                
+                # Stage JAR installer (only in install/, not root)
                 if ($fabricInstallerJar) {
-                    # Keep JAR only under install/
                     Copy-Item -Path $fabricInstallerJar.FullName -Destination (Join-Path $installDir $fabricInstallerJar.Name) -Force
                     Write-Host "  ✓ Staged installer JAR: $($fabricInstallerJar.Name) (install/)" -ForegroundColor Green
-                } else { Write-Host "  ⚠️  Fabric installer JAR not found" -ForegroundColor Yellow }
+                } else {
+                    Write-Host "  ⚠️  Fabric installer JAR not found" -ForegroundColor Yellow
+                }
             }
         }
 

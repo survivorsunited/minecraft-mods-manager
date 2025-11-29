@@ -257,6 +257,22 @@ if ($missing.Count -gt 0 -or $extra.Count -gt 0) {
     Write-Host "✓ Release files verified against DB expectations" -ForegroundColor Green
 }
 
+# Clean up build artifacts before packaging (these should not be in the release)
+Write-Host "🧹 Cleaning up build artifacts..." -ForegroundColor Cyan
+$buildArtifacts = @(
+    'expected-release-files.txt',
+    'actual-release-files.txt',
+    'verification-missing.txt',
+    'verification-extra.txt'
+)
+foreach ($artifact in $buildArtifacts) {
+    $artifactPath = Join-Path $releaseDir $artifact
+    if (Test-Path $artifactPath) {
+        Remove-Item -Path $artifactPath -Force -ErrorAction SilentlyContinue
+        Write-Host "  ✓ Removed: $artifact" -ForegroundColor Gray
+    }
+}
+
 # Run hash tool to generate README/hash and modpack.zip
 $hashScript = Join-Path $repoRoot 'tools/minecraft-mod-hash/hash.ps1'
 if (-not (Test-Path $hashScript)) { throw "hash.ps1 not found at $hashScript" }

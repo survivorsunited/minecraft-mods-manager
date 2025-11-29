@@ -51,10 +51,12 @@ function Copy-ModsToRelease {
     }
     
     # Create destination structure
+    # Note: Server mods go in main mods/ folder, not mods/server/ subfolder
+    # This keeps things simple as same mods get added on client and server
     New-Item -ItemType Directory -Path $DestinationPath -Force | Out-Null
     New-Item -ItemType Directory -Path (Join-Path $DestinationPath "optional") -Force | Out-Null
     New-Item -ItemType Directory -Path (Join-Path $DestinationPath "block") -Force | Out-Null
-    New-Item -ItemType Directory -Path (Join-Path $DestinationPath "server") -Force | Out-Null
+    # Server subfolder removed - server mods go in main mods/ folder
     
     # Read mod database
     $mods = Import-Csv -Path $CsvPath
@@ -173,15 +175,16 @@ function Copy-ModsToRelease {
         elseif ($nameKey -and $groupByName.ContainsKey($nameKey)) { $grp = $groupByName[$nameKey] }
         if (-not $grp) { $grp = "required" }
 
-    # If this JAR is expected to be server-only (per expected list), honor that ahead of classification
+    # Server-only mods now go in main mods/ folder (not mods/server/ subfolder)
+    # This keeps things simple as same mods get added on client and server
+    # If this JAR is expected to be server-only (per expected list), place it in main mods/ folder
     $base = Get-BaseName $jarFile.Name
-    if ($expectedServerSet.Contains($jarFile.Name) -or ($expectedServerBaseSet.Contains($base) -and -not $expectedExactBasesAvailable.Contains($base) -and -not $copiedBasesSet.Contains("server::" + $base))) {
-        $serverDestDir = Join-Path $DestinationPath 'server'
-        if (-not (Test-Path $serverDestDir)) { New-Item -ItemType Directory -Path $serverDestDir -Force | Out-Null }
-        $destination = Join-Path $serverDestDir $jarFile.Name
+    if ($expectedServerSet.Contains($jarFile.Name) -or ($expectedServerBaseSet.Contains($base) -and -not $expectedExactBasesAvailable.Contains($base) -and -not $copiedBasesSet.Contains($base))) {
+        # Place server mods in main mods/ folder, not mods/server/ subfolder
+        $destination = Join-Path $DestinationPath $jarFile.Name
         Copy-Item -Path $jarFile.FullName -Destination $destination -Force
-        Write-Host "  🛡️  Server-only: $($jarFile.Name)" -ForegroundColor DarkCyan
-        [void]$copiedBasesSet.Add("server::" + $base)
+        Write-Host "  🛡️  Server-only: $($jarFile.Name) (in mods/)" -ForegroundColor DarkCyan
+        [void]$copiedBasesSet.Add($base)
         $serverOnlyCount++
         continue
     }
@@ -199,22 +202,22 @@ function Copy-ModsToRelease {
     if ($type -in @('server','launcher','installer')) { $isServerOnly = $true }
 
         if ($isServerOnly) {
+            # Server-only mods go in main mods/ folder (not mods/server/ subfolder)
             # Only copy server-only files that are expected; allow relaxed-version fallback if the exact expected isn't available
-            $serverDestDir = Join-Path $DestinationPath 'server'
             $base = Get-BaseName $jarFile.Name
             $shouldCopyServer = $false
             if ($expectedServerSet.Contains($jarFile.Name)) {
                 $shouldCopyServer = $true
             } elseif ($expectedServerBaseSet.Contains($base) -and -not $expectedExactBasesAvailable.Contains($base)) {
                 # Exact expected server file not present in source; allow relaxed fallback
-                $shouldCopyServer = -not $copiedBasesSet.Contains("server::" + $base)
+                $shouldCopyServer = -not $copiedBasesSet.Contains($base)
             }
             if (-not $shouldCopyServer) { continue }
-            if (-not (Test-Path $serverDestDir)) { New-Item -ItemType Directory -Path $serverDestDir -Force | Out-Null }
-            $destination = Join-Path $serverDestDir $jarFile.Name
+            # Place server mods in main mods/ folder, not mods/server/ subfolder
+            $destination = Join-Path $DestinationPath $jarFile.Name
             Copy-Item -Path $jarFile.FullName -Destination $destination -Force
-            Write-Host "  🛡️  Server-only: $($jarFile.Name)" -ForegroundColor DarkCyan
-            [void]$copiedBasesSet.Add("server::" + $base)
+            Write-Host "  🛡️  Server-only: $($jarFile.Name) (in mods/)" -ForegroundColor DarkCyan
+            [void]$copiedBasesSet.Add($base)
             $serverOnlyCount++
             continue
         }
