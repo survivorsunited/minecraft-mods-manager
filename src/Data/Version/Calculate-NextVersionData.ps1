@@ -101,28 +101,82 @@ function Calculate-NextVersionData {
                 continue
             }
             
-            # If no available versions metadata, still populate sensible fallbacks for Next fields
+            # If no available versions metadata, still try to query API for next game version
             if ([string]::IsNullOrEmpty($mod.AvailableGameVersions)) {
                 $mod.NextGameVersion = $nextGameVersion
-
-                # Prefer Latest when it matches the calculated next game version; otherwise fallback to Current
-                if (-not [string]::IsNullOrEmpty($mod.LatestGameVersion) -and $mod.LatestGameVersion -eq $nextGameVersion -and -not [string]::IsNullOrEmpty($mod.LatestVersion)) {
-                    $mod.NextVersion = $mod.LatestVersion
-                    $mod.NextVersionUrl = $mod.LatestVersionUrl
-                    $updateSummary += [PSCustomObject]@{
-                        Name = $mod.Name
-                        Action = "No metadata (used latest)"
-                        NextVersion = $mod.NextVersion
-                        Supports = "Unknown (no AvailableGameVersions)"
+                
+                # Try to query API for the next game version
+                $isGitHub = ($mod.Host -eq "github" -or $mod.ApiSource -eq "github" -or $mod.Url -match "github\.com")
+                
+                if ($isGitHub) {
+                    # GitHub mod - query GitHub API
+                    $repositoryUrl = $mod.Url
+                    if (-not $repositoryUrl -and $mod.ID -match '^([^/]+)/([^/]+)$') {
+                        $repositoryUrl = "https://github.com/$($mod.ID)"
+                    }
+                    
+                    if ($repositoryUrl) {
+                        try {
+                            $githubModulePath = Join-Path $PSScriptRoot "..\Provider\GitHub\Validate-GitHubModVersion.ps1"
+                            if (Test-Path $githubModulePath) {
+                                . $githubModulePath
+                            }
+                            
+                            $nextValidation = Validate-GitHubModVersion -ModID $repositoryUrl -Version "latest" -Loader $mod.Loader -GameVersion $nextGameVersion -Quiet
+                            
+                            if ($nextValidation -and $nextValidation.Success) {
+                                $mod.NextVersion = $nextValidation.LatestVersion
+                                $mod.NextVersionUrl = $nextValidation.LatestVersionUrl
+                                
+                                $updateSummary += [PSCustomObject]@{
+                                    Name = $mod.Name
+                                    Action = "GitHub API (no metadata)"
+                                    NextVersion = $mod.NextVersion
+                                    Supports = "Yes (GitHub API)"
+                                }
+                            } else {
+                                # Fallback to current
+                                $mod.NextVersion = $mod.CurrentVersion
+                                $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                                $updateSummary += [PSCustomObject]@{
+                                    Name = $mod.Name
+                                    Action = "GitHub fallback (no metadata)"
+                                    NextVersion = $mod.NextVersion
+                                    Supports = "Unknown"
+                                }
+                            }
+                        } catch {
+                            # Fallback to current
+                            $mod.NextVersion = $mod.CurrentVersion
+                            $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                            $updateSummary += [PSCustomObject]@{
+                                Name = $mod.Name
+                                Action = "GitHub error (no metadata)"
+                                NextVersion = $mod.NextVersion
+                                Supports = "Unknown"
+                            }
+                        }
                     }
                 } else {
-                    $mod.NextVersion = $mod.CurrentVersion
-                    $mod.NextVersionUrl = $mod.CurrentVersionUrl
-                    $updateSummary += [PSCustomObject]@{
-                        Name = $mod.Name
-                        Action = "No metadata (used current)"
-                        NextVersion = $mod.NextVersion
-                        Supports = "Unknown (no AvailableGameVersions)"
+                    # Prefer Latest when it matches the calculated next game version; otherwise fallback to Current
+                    if (-not [string]::IsNullOrEmpty($mod.LatestGameVersion) -and $mod.LatestGameVersion -eq $nextGameVersion -and -not [string]::IsNullOrEmpty($mod.LatestVersion)) {
+                        $mod.NextVersion = $mod.LatestVersion
+                        $mod.NextVersionUrl = $mod.LatestVersionUrl
+                        $updateSummary += [PSCustomObject]@{
+                            Name = $mod.Name
+                            Action = "No metadata (used latest)"
+                            NextVersion = $mod.NextVersion
+                            Supports = "Unknown (no AvailableGameVersions)"
+                        }
+                    } else {
+                        $mod.NextVersion = $mod.CurrentVersion
+                        $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                        $updateSummary += [PSCustomObject]@{
+                            Name = $mod.Name
+                            Action = "No metadata (used current)"
+                            NextVersion = $mod.NextVersion
+                            Supports = "Unknown (no AvailableGameVersions)"
+                        }
                     }
                 }
 
@@ -144,44 +198,99 @@ function Calculate-NextVersionData {
                 try {
                     Write-Host "    Querying API for $($mod.Name) version $nextGameVersion..." -ForegroundColor Gray
                     
-                    $apiUrl = "https://api.modrinth.com/v2/project/$($mod.ID)/version?loaders=[`"fabric`"]&game_versions=[`"$nextGameVersion`"]"
-                    $headers = @{
-                        'Accept' = 'application/json'
-                        'User-Agent' = 'MinecraftModManager/1.0'
-                    }
+                    # Check if this is a GitHub mod
+                    $isGitHub = ($mod.Host -eq "github" -or $mod.ApiSource -eq "github" -or $mod.Url -match "github\.com")
                     
-                    $apiResponse = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get -TimeoutSec 30
-                    
-                    if ($apiResponse -and $apiResponse.Count -gt 0) {
-                        $nextVersion = $apiResponse[0]
-                        $mod.NextVersion = $nextVersion.version_number
-                        $mod.NextVersionUrl = $nextVersion.files[0].url
+                    if ($isGitHub) {
+                        # GitHub mod - use GitHub API
+                        $repositoryUrl = $mod.Url
+                        if (-not $repositoryUrl -and $mod.ID -match '^([^/]+)/([^/]+)$') {
+                            $repositoryUrl = "https://github.com/$($mod.ID)"
+                        }
                         
-                        Write-Host "      ✓ Found $($mod.Name) $nextGameVersion version: $($mod.NextVersion)" -ForegroundColor Green
-                        
-                        $updateSummary += [PSCustomObject]@{
-                            Name = $mod.Name
-                            Action = "API Updated"
-                            NextVersion = $mod.NextVersion
-                            Supports = "Yes (API verified)"
+                        if ($repositoryUrl) {
+                            # Import GitHub functions if available
+                            $githubModulePath = Join-Path $PSScriptRoot "..\Provider\GitHub\Validate-GitHubModVersion.ps1"
+                            if (Test-Path $githubModulePath) {
+                                . $githubModulePath
+                            }
+                            
+                            # Validate for next game version
+                            $nextValidation = Validate-GitHubModVersion -ModID $repositoryUrl -Version "latest" -Loader $mod.Loader -GameVersion $nextGameVersion -Quiet
+                            
+                            if ($nextValidation -and $nextValidation.Success) {
+                                $mod.NextVersion = $nextValidation.LatestVersion
+                                $mod.NextVersionUrl = $nextValidation.LatestVersionUrl
+                                
+                                Write-Host "      ✓ Found $($mod.Name) $nextGameVersion version: $($mod.NextVersion)" -ForegroundColor Green
+                                
+                                $updateSummary += [PSCustomObject]@{
+                                    Name = $mod.Name
+                                    Action = "GitHub API Updated"
+                                    NextVersion = $mod.NextVersion
+                                    Supports = "Yes (GitHub API verified)"
+                                }
+                            } else {
+                                # Fallback for GitHub
+                                if ($mod.LatestGameVersion -eq $nextGameVersion) {
+                                    $mod.NextVersion = $mod.LatestVersion
+                                    $mod.NextVersionUrl = $mod.LatestVersionUrl
+                                } else {
+                                    $mod.NextVersion = $mod.CurrentVersion
+                                    $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                                }
+                                
+                                Write-Host "      ⚠ GitHub API fallback: $($mod.NextVersion)" -ForegroundColor Yellow
+                                
+                                $updateSummary += [PSCustomObject]@{
+                                    Name = $mod.Name
+                                    Action = "GitHub Fallback"
+                                    NextVersion = $mod.NextVersion
+                                    Supports = "Yes (fallback)"
+                                }
+                            }
                         }
                     } else {
-                        # No API response, fallback to latest if it supports next game version
-                        if ($mod.LatestGameVersion -eq $nextGameVersion) {
-                            $mod.NextVersion = $mod.LatestVersion
-                            $mod.NextVersionUrl = $mod.LatestVersionUrl
-                        } else {
-                            $mod.NextVersion = $mod.CurrentVersion
-                            $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                        # Modrinth mod - use Modrinth API
+                        $apiUrl = "https://api.modrinth.com/v2/project/$($mod.ID)/version?loaders=[`"$($mod.Loader)`"]&game_versions=[`"$nextGameVersion`"]"
+                        $headers = @{
+                            'Accept' = 'application/json'
+                            'User-Agent' = 'MinecraftModManager/1.0'
                         }
                         
-                        Write-Host "      ⚠ No API response, using fallback: $($mod.NextVersion)" -ForegroundColor Yellow
+                        $apiResponse = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get -TimeoutSec 30
                         
-                        $updateSummary += [PSCustomObject]@{
-                            Name = $mod.Name
-                            Action = "Fallback"
-                            NextVersion = $mod.NextVersion
-                            Supports = "Yes (fallback)"
+                        if ($apiResponse -and $apiResponse.Count -gt 0) {
+                            $nextVersion = $apiResponse[0]
+                            $mod.NextVersion = $nextVersion.version_number
+                            $mod.NextVersionUrl = $nextVersion.files[0].url
+                            
+                            Write-Host "      ✓ Found $($mod.Name) $nextGameVersion version: $($mod.NextVersion)" -ForegroundColor Green
+                            
+                            $updateSummary += [PSCustomObject]@{
+                                Name = $mod.Name
+                                Action = "API Updated"
+                                NextVersion = $mod.NextVersion
+                                Supports = "Yes (API verified)"
+                            }
+                        } else {
+                            # No API response, fallback to latest if it supports next game version
+                            if ($mod.LatestGameVersion -eq $nextGameVersion) {
+                                $mod.NextVersion = $mod.LatestVersion
+                                $mod.NextVersionUrl = $mod.LatestVersionUrl
+                            } else {
+                                $mod.NextVersion = $mod.CurrentVersion
+                                $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                            }
+                            
+                            Write-Host "      ⚠ No API response, using fallback: $($mod.NextVersion)" -ForegroundColor Yellow
+                            
+                            $updateSummary += [PSCustomObject]@{
+                                Name = $mod.Name
+                                Action = "Fallback"
+                                NextVersion = $mod.NextVersion
+                                Supports = "Yes (fallback)"
+                            }
                         }
                     }
                 } catch {

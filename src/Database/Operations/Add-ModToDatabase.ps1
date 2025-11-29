@@ -181,6 +181,37 @@ function Add-ModToDatabase {
                         # else keep the provided/default type
                     }
                     
+                    # Extract category from Modrinth categories array
+                    if (-not $AddModCategory -and $projectInfo.categories) {
+                        # Map Modrinth categories to our Category field
+                        # Use the first category, or map common ones
+                        $modrinthCategory = $projectInfo.categories[0]
+                        $categoryMap = @{
+                            "storage" = "Storage"
+                            "technology" = "Technology"
+                            "adventure" = "Adventure"
+                            "magic" = "Magic"
+                            "decoration" = "Decoration"
+                            "library" = "Library"
+                            "food" = "Food"
+                            "equipment" = "Equipment"
+                            "misc" = "Miscellaneous"
+                            "optimization" = "Optimization"
+                            "worldgen" = "World Generation"
+                            "api" = "API"
+                            "cursed" = "Cursed"
+                            "fabric" = "Fabric"
+                            "forge" = "Forge"
+                        }
+                        if ($categoryMap.ContainsKey($modrinthCategory)) {
+                            $AddModCategory = $categoryMap[$modrinthCategory]
+                        } else {
+                            # Capitalize first letter as fallback
+                            $AddModCategory = (Get-Culture).TextInfo.ToTitleCase($modrinthCategory)
+                        }
+                        Write-Host "  Auto-detected category: $AddModCategory" -ForegroundColor Gray
+                    }
+                    
                     # Auto-detect best version for the specified game version if version is "latest"
                     if ($AddModVersion -eq "latest" -and $AddModGameVersion) {
                         try {
@@ -203,6 +234,144 @@ function Add-ModToDatabase {
                     $extractedName = $AddModId
                 }
                 Write-Host "  Warning: Could not fetch project info for type detection" -ForegroundColor Yellow
+            }
+        } elseif ($AddModUrl -and $AddModUrl -match "github\.com[/:]([^/]+)/([^/]+?)(?:\.git)?/?$") {
+            # For GitHub URLs, extract type from repo prefix and fetch project info
+            $owner = $matches[1]
+            $repo = $matches[2]
+            
+            # Extract type from repo prefix (e.g., "mod-bigger-ender-chests" → "mod")
+            if (-not $AddModType -or $AddModType -eq "mod") {
+                if ($repo -match '^(mod|shader|datapack|resourcepack|plugin)-') {
+                    $AddModType = $matches[1]
+                    Write-Host "  Auto-detected type from repo prefix: $AddModType" -ForegroundColor Gray
+                } else {
+                    $AddModType = "mod"  # Default fallback
+                    Write-Host "  Using default type: $AddModType" -ForegroundColor Gray
+                }
+            }
+            
+            # Only set version if not already extracted
+            if ([string]::IsNullOrEmpty($extractedVersion)) {
+                $extractedVersion = $AddModVersion
+            }
+            
+            # Fetch GitHub project info to populate metadata
+            try {
+                $projectInfo = Get-GitHubProjectInfo -RepositoryUrl $AddModUrl -UseCachedResponses $false
+                if ($projectInfo) {
+                    # Extract name if not provided
+                    if (-not $AddModName -and $projectInfo.name) {
+                        $extractedName = $projectInfo.name
+                        # Clean up name (remove prefix if present, capitalize)
+                        if ($extractedName -match '^(mod|shader|datapack|resourcepack|plugin)-(.+)') {
+                            $baseName = $matches[2]
+                            $extractedName = ($baseName -split '-' | ForEach-Object { 
+                                $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower() 
+                            }) -join ' '
+                        } else {
+                            # Capitalize first letter of each word
+                            $extractedName = ($extractedName -split '-' | ForEach-Object { 
+                                $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower() 
+                            }) -join ' '
+                        }
+                        Write-Host "  Extracted name from GitHub: $extractedName" -ForegroundColor Gray
+                    }
+                    
+                    # Extract description
+                    if (-not $AddModDescription -and $projectInfo.description) {
+                        $AddModDescription = $projectInfo.description
+                        Write-Host "  Extracted description from GitHub" -ForegroundColor Gray
+                    }
+                    
+                    # Extract category from GitHub topics or set default
+                    if (-not $AddModCategory) {
+                        $category = "Utility" # Default category for GitHub mods
+                        if ($projectInfo.topics) {
+                            # Check if any topic suggests a category
+                            $topicMap = @{
+                                "storage" = "Storage"
+                                "technology" = "Technology"
+                                "adventure" = "Adventure"
+                                "magic" = "Magic"
+                                "decoration" = "Decoration"
+                                "library" = "Library"
+                                "api" = "API"
+                                "optimization" = "Optimization"
+                                "worldgen" = "World Generation"
+                            }
+                            foreach ($topic in $projectInfo.topics) {
+                                $topicLower = $topic.ToLower()
+                                if ($topicMap.ContainsKey($topicLower)) {
+                                    $category = $topicMap[$topicLower]
+                                    break
+                                }
+                            }
+                        }
+                        $AddModCategory = $category
+                        Write-Host "  Auto-detected category: $AddModCategory" -ForegroundColor Gray
+                    }
+                    
+                    # Store metadata for later use in mod entry
+                    $avatarUrl = ""
+                    if ($projectInfo.owner) {
+                        if ($projectInfo.owner.PSObject.Properties['avatar_url']) {
+                            $avatarUrl = $projectInfo.owner.avatar_url
+                        }
+                    }
+                    
+                    $script:GitHubProjectInfo = @{
+                        IconUrl = $avatarUrl
+                        IssuesUrl = "$AddModUrl/issues"
+                        SourceUrl = $AddModUrl
+                        WikiUrl = if ($projectInfo.has_wiki) { "$AddModUrl/wiki" } else { "" }
+                        ProjectDescription = if ($projectInfo.description) { $projectInfo.description } else { "" }
+                    }
+                    
+                    # Update description if we got it from API
+                    if ($projectInfo.description -and -not $AddModDescription) {
+                        $AddModDescription = $projectInfo.description
+                    }
+                } else {
+                    Write-Host "  Warning: Could not fetch GitHub project info" -ForegroundColor Yellow
+                    $script:GitHubProjectInfo = @{
+                        IconUrl = ""
+                        IssuesUrl = "$AddModUrl/issues"
+                        SourceUrl = $AddModUrl
+                        WikiUrl = ""
+                        ProjectDescription = $AddModDescription
+                    }
+                }
+            } catch {
+                Write-Host "  Warning: Error fetching GitHub project info: $($_.Exception.Message)" -ForegroundColor Yellow
+                $script:GitHubProjectInfo = @{
+                    IconUrl = ""
+                    IssuesUrl = "$AddModUrl/issues"
+                    SourceUrl = $AddModUrl
+                    WikiUrl = ""
+                    ProjectDescription = $AddModDescription
+                }
+            }
+            
+            # Validate version to get JAR filename and URLs
+            if ($AddModVersion -in @("latest", "current") -or -not [string]::IsNullOrEmpty($extractedVersion)) {
+                try {
+                    $validationResult = Validate-ModVersion -ModId $AddModId -Version $extractedVersion -Loader $AddModLoader -GameVersion $AddModGameVersion -Quiet
+                    if ($validationResult -and $validationResult.Exists) {
+                        if (-not $AddModJar -and $validationResult.Jar) {
+                            $AddModJar = $validationResult.Jar
+                            Write-Host "  Auto-detected JAR filename: $AddModJar" -ForegroundColor Gray
+                        }
+                        # Store validation result for later use
+                        $script:GitHubValidationResult = $validationResult
+                    } else {
+                        Write-Host "  Warning: Could not validate version, proceeding with provided info" -ForegroundColor Yellow
+                        $script:GitHubValidationResult = $null
+                    }
+                } catch {
+                    Write-Host "  Warning: Error validating version: $($_.Exception.Message)" -ForegroundColor Yellow
+                    $script:GitHubValidationResult = $null
+                }
             }
         } elseif ($AddModUrl -and $AddModUrl -match "curseforge\.com") {
             # For CurseForge URLs, detect type from URL pattern first
@@ -241,6 +410,25 @@ function Add-ModToDatabase {
                     # Extract name if not provided
                     if (-not $AddModName -and $projectInfo.data.name) {
                         $extractedName = $projectInfo.data.name
+                    }
+                    
+                    # Extract category from CurseForge classId
+                    if (-not $AddModCategory -and $projectInfo.data.classId) {
+                        # CurseForge classId mapping: 6 = Mods, 12 = Resource Packs, 17 = Modpacks, etc.
+                        $classIdMap = @{
+                            6 = "Mod"
+                            12 = "Resource Pack"
+                            17 = "Modpack"
+                            4471 = "Addon"
+                            4546 = "Customization"
+                        }
+                        if ($classIdMap.ContainsKey($projectInfo.data.classId)) {
+                            $AddModCategory = $classIdMap[$projectInfo.data.classId]
+                        } else {
+                            # Default to "Mod" for unknown classIds
+                            $AddModCategory = "Mod"
+                        }
+                        Write-Host "  Auto-detected category: $AddModCategory (classId: $($projectInfo.data.classId))" -ForegroundColor Gray
                     }
                     
                     # Validate/refine type based on CurseForge category if available
@@ -339,6 +527,47 @@ function Add-ModToDatabase {
             $providerHost = "curseforge"
         }
 
+        # Prepare GitHub-specific metadata if available
+        $iconUrl = ""
+        $issuesUrl = ""
+        $sourceUrl = ""
+        $wikiUrl = ""
+        $projectDescription = $AddModDescription
+        $currentVersionUrl = ""
+        $latestVersionUrl = ""
+        $latestVersion = ""
+        $jar = $AddModJar
+        $latestGameVersion = ""
+        
+        if ($apiSource -eq "github" -and $script:GitHubProjectInfo) {
+            $iconUrl = $script:GitHubProjectInfo.IconUrl
+            $issuesUrl = $script:GitHubProjectInfo.IssuesUrl
+            $sourceUrl = $script:GitHubProjectInfo.SourceUrl
+            $wikiUrl = $script:GitHubProjectInfo.WikiUrl
+            if ($script:GitHubProjectInfo.ProjectDescription) {
+                $projectDescription = $script:GitHubProjectInfo.ProjectDescription
+            }
+        }
+        
+        # Use validation result if available (for GitHub and other providers)
+        if ($script:GitHubValidationResult) {
+            if ($script:GitHubValidationResult.VersionUrl) {
+                $currentVersionUrl = $script:GitHubValidationResult.VersionUrl
+            }
+            if ($script:GitHubValidationResult.LatestVersionUrl) {
+                $latestVersionUrl = $script:GitHubValidationResult.LatestVersionUrl
+            }
+            if ($script:GitHubValidationResult.LatestVersion) {
+                $latestVersion = $script:GitHubValidationResult.LatestVersion
+            }
+            if ($script:GitHubValidationResult.Jar -and -not $jar) {
+                $jar = $script:GitHubValidationResult.Jar
+            }
+            if ($script:GitHubValidationResult.LatestGameVersion) {
+                $latestGameVersion = $script:GitHubValidationResult.LatestGameVersion
+            }
+        }
+        
         # Create new mod entry
         $newMod = [PSCustomObject]@{
             Group = $AddModGroup
@@ -349,26 +578,26 @@ function Add-ModToDatabase {
             CurrentVersion = $extractedVersion
             Name = $extractedName
             Description = $AddModDescription
-            Jar = $AddModJar
+            Jar = $jar
             Url = $AddModUrl
             Category = $AddModCategory
-            CurrentVersionUrl = ""
+            CurrentVersionUrl = $currentVersionUrl
             NextVersion = ""
             NextVersionUrl = ""
             NextGameVersion = ""
-            LatestVersionUrl = ""
-            LatestVersion = ""
+            LatestVersionUrl = $latestVersionUrl
+            LatestVersion = $latestVersion
             ApiSource = $apiSource
             Host = $providerHost
-            IconUrl = ""
+            IconUrl = $iconUrl
             ClientSide = if ($isFabricInstaller) { "" } else { "optional" }
             ServerSide = if ($isFabricInstaller) { "" } else { "optional" }
             Title = $extractedName
-            ProjectDescription = $AddModDescription
-            IssuesUrl = ""
-            SourceUrl = ""
-            WikiUrl = ""
-            LatestGameVersion = ""
+            ProjectDescription = $projectDescription
+            IssuesUrl = $issuesUrl
+            SourceUrl = $sourceUrl
+            WikiUrl = $wikiUrl
+            LatestGameVersion = $latestGameVersion
             RecordHash = ""
             CurrentDependencies = ""
             LatestDependencies = ""

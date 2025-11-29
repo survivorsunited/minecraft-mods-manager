@@ -110,7 +110,18 @@ function Validate-GitHubModVersion {
         if ($Version -in @("current", "next", "latest") -or [string]::IsNullOrEmpty($Version)) {
             if ($Version -eq "latest" -or [string]::IsNullOrEmpty($Version)) {
                 # Get the latest release (first in list, sorted by published date)
-                $latestRelease = $releases | Sort-Object { [DateTime]::Parse($_.published_at) } -Descending | Select-Object -First 1
+                # Handle both ISO 8601 format and other formats
+                $latestRelease = $releases | Sort-Object { 
+                    try {
+                        [DateTime]::Parse($_.published_at)
+                    } catch {
+                        try {
+                            [DateTime]::ParseExact($_.published_at, "M/d/yyyy HH:mm:ss", $null)
+                        } catch {
+                            [DateTime]::MinValue
+                        }
+                    }
+                } -Descending | Select-Object -First 1
                 if ($latestRelease) {
                     $targetVersion = $latestRelease.tag_name -replace '^v', ''  # Remove 'v' prefix if present
                 } else {
@@ -139,9 +150,19 @@ function Validate-GitHubModVersion {
                             $targetVersion = $latestRelease.tag_name -replace '^v', ''
                         }
                     }
-                } else {
-                    # Fallback to latest
-                    $latestRelease = $releases | Sort-Object { [DateTime]::Parse($_.published_at) } -Descending | Select-Object -First 1
+                        } else {
+                            # Fallback to latest
+                            $latestRelease = $releases | Sort-Object { 
+                                try {
+                                    [DateTime]::Parse($_.published_at)
+                                } catch {
+                                    try {
+                                        [DateTime]::ParseExact($_.published_at, "M/d/yyyy HH:mm:ss", $null)
+                                    } catch {
+                                        [DateTime]::MinValue
+                                    }
+                                }
+                            } -Descending | Select-Object -First 1
                     if ($latestRelease) {
                         $targetVersion = $latestRelease.tag_name -replace '^v', ''
                     }
@@ -223,6 +244,7 @@ function Validate-GitHubModVersion {
         # Extract version from JAR filename if possible
         # Pattern: <name>-<version>-<game version>.jar
         $extractedVersion = $targetVersion
+        $extractedGameVersion = $effectiveGameVersion
         if ($jarAsset.name -match '.*-([\d\.]+(?:[-+][\w]+)?)-([\d\.]+)\.jar$') {
             # Matches full pattern with game version
             $extractedVersion = $matches[1]
@@ -233,6 +255,33 @@ function Validate-GitHubModVersion {
         } elseif ($jarAsset.name -match '.*-([\d\.]+(?:[-+][\w]+)?)\.jar$') {
             # Matches pattern without game version
             $extractedVersion = $matches[1]
+        }
+        
+        # Find the highest game version available in this release for LatestGameVersion
+        $allGameVersions = @()
+        $gameVersionJars = @{}  # Map game version to JAR asset
+        foreach ($asset in $matchingRelease.assets) {
+            if ($asset.name -match '\.jar$' -and $asset.name -match '.*-([\d\.]+(?:[-+][\w]+)?)-([\d\.]+)\.jar$') {
+                $gameVer = $matches[2]
+                if ($gameVer -match '^\d+\.\d+\.\d+$') {
+                    $allGameVersions += $gameVer
+                    $gameVersionJars[$gameVer] = $asset
+                }
+            }
+        }
+        
+        # Find highest game version (sort as versions, not strings)
+        $highestGameVersion = $effectiveGameVersion
+        $highestGameVersionJar = $jarAsset  # Default to current JAR
+        if ($allGameVersions.Count -gt 0) {
+            $sortedVersions = $allGameVersions | Sort-Object { [System.Version]$_ } -Descending
+            $highestGameVersion = $sortedVersions[0]
+            if ($gameVersionJars.ContainsKey($highestGameVersion)) {
+                $highestGameVersionJar = $gameVersionJars[$highestGameVersion]
+            }
+            if (-not $Quiet) {
+                Write-Host "DEBUG: Found game versions: $($allGameVersions -join ', '), highest: $highestGameVersion" -ForegroundColor Gray
+            }
         }
         
         # Generate response file if script variable is set
@@ -263,13 +312,13 @@ function Validate-GitHubModVersion {
             Exists = $true
             Version = $extractedVersion
             LatestVersion = $extractedVersion
-            VersionUrl = $jarAsset.browser_download_url
-            LatestVersionUrl = $jarAsset.browser_download_url
+            VersionUrl = $jarAsset.browser_download_url  # URL for requested game version
+            LatestVersionUrl = $highestGameVersionJar.browser_download_url  # URL for highest game version
             DownloadUrl = $jarAsset.browser_download_url
             Dependencies = ""  # GitHub releases don't provide dependency info
             FileSize = $jarAsset.size
             Jar = $jarAsset.name
-            LatestGameVersion = $effectiveGameVersion
+            LatestGameVersion = $highestGameVersion
             Title = $repoInfo.name
             ProjectDescription = $repoInfo.description
             IconUrl = ""

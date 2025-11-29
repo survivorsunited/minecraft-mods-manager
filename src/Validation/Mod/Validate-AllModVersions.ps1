@@ -416,6 +416,9 @@ function Validate-AllModVersions {
             # Find matching validation result
             $validationResult = $results | Where-Object { $_.ID -eq $currentMod.ID -and $_.Host -eq $currentMod.Host } | Select-Object -First 1
             
+            # Find matching Next version data from Calculate-NextVersionData
+            $nextData = $nextVersionResults | Where-Object { $_.ID -eq $currentMod.ID } | Select-Object -First 1
+            
             # REMOVED: Don't try to extract game version from JAR filenames - too error prone
             # CurrentGameVersion in DB is the SOURCE OF TRUTH
             # The validation result already queries API and validates against CurrentGameVersion
@@ -488,6 +491,13 @@ function Validate-AllModVersions {
                 $updatedMod.LatestDependenciesRequired = $validationResult.LatestDependenciesRequired ?? ""
                 $updatedMod.LatestDependenciesOptional = $validationResult.LatestDependenciesOptional ?? ""
                 
+                # Apply Next version data from Calculate-NextVersionData (preserves correct NextGameVersion)
+                if ($nextData) {
+                    if ($nextData.NextGameVersion) { $updatedMod.NextGameVersion = $nextData.NextGameVersion }
+                    if ($nextData.NextVersion) { $updatedMod.NextVersion = $nextData.NextVersion }
+                    if ($nextData.NextVersionUrl) { $updatedMod.NextVersionUrl = $nextData.NextVersionUrl }
+                }
+                
                 if ($newMods.Count -eq 0) {
                     $newMods = @($updatedMod)
                 } else {
@@ -495,7 +505,12 @@ function Validate-AllModVersions {
                 }
                 $updatedCount++
             } else {
-                # Keep existing mod as-is
+                # Keep existing mod as-is, but still apply Next data if available
+                if ($nextData) {
+                    $currentMod.NextGameVersion = $nextData.NextGameVersion ?? $currentMod.NextGameVersion
+                    $currentMod.NextVersion = $nextData.NextVersion ?? $currentMod.NextVersion
+                    $currentMod.NextVersionUrl = $nextData.NextVersionUrl ?? $currentMod.NextVersionUrl
+                }
                 if ($newMods.Count -eq 0) {
                     $newMods = @($currentMod)
                 } else {
@@ -625,6 +640,24 @@ function Validate-AllModVersions {
                     }
                 } catch {
                     # Silently continue if API call fails
+                }
+            } elseif ($mod.Type -eq "mod" -and $mod.Host -eq "github" -and $mod.ID) {
+                # Handle GitHub mods - ensure LatestVersionUrl points to highest game version
+                try {
+                    # Find the validation result for this mod
+                    $githubValidationResult = $results | Where-Object { $_.ID -eq $mod.ID -and $_.Host -eq "github" } | Select-Object -First 1
+                    if ($githubValidationResult -and $githubValidationResult.LatestGameVersion -and $githubValidationResult.LatestVersionUrl) {
+                        # Ensure LatestVersionUrl points to the highest game version JAR
+                        if ($mod.LatestVersionUrl -ne $githubValidationResult.LatestVersionUrl -or 
+                            $mod.LatestGameVersion -ne $githubValidationResult.LatestGameVersion) {
+                            $mod.LatestGameVersion = $githubValidationResult.LatestGameVersion
+                            $mod.LatestVersionUrl = $githubValidationResult.LatestVersionUrl
+                            Write-Host "   🔄 $($mod.Name): Updated LatestGameVersion to $($githubValidationResult.LatestGameVersion)" -ForegroundColor Yellow
+                            $apiUpdateCount++
+                        }
+                    }
+                } catch {
+                    Write-Host "   ❌ Error updating $($mod.Name) from GitHub: $($_.Exception.Message)" -ForegroundColor Red
                 }
             }
         }

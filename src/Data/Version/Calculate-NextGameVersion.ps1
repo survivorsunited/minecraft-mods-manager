@@ -62,29 +62,33 @@ function Calculate-NextGameVersion {
         # Combine and deduplicate versions
         $combinedVersions = ($allVersions + $downloadVersions) | Select-Object -Unique | Sort-Object { [version]$_ }
         
-        # Find the next version after majority
-        $majorityIndex = -1
-        for ($i = 0; $i -lt $combinedVersions.Count; $i++) {
-            if ($combinedVersions[$i] -eq $majorityVersion) {
-                $majorityIndex = $i
-                break
-            }
-        }
-        
-        if ($majorityIndex -eq -1) {
-            Write-Host "⚠️  Majority version $majorityVersion not found in available versions" -ForegroundColor Yellow
-            # Return the highest version as fallback
-            $nextVersion = $combinedVersions | Sort-Object { [version]$_ } -Descending | Select-Object -First 1
-            Write-Host "🎯 Using highest available version as next: $nextVersion" -ForegroundColor Yellow
-        } elseif ($majorityIndex + 1 -lt $combinedVersions.Count) {
-            # Return the next version after majority
-            $nextVersion = $combinedVersions[$majorityIndex + 1]
-            Write-Host "🎯 Next version after $majorityVersion is: $nextVersion" -ForegroundColor Green
+        # Calculate next version by incrementing patch version (CurrentGameVersion + 1)
+        # This ensures Next is always CurrentGameVersion + 1, not the highest available
+        if ($majorityVersion -match '^(\d+)\.(\d+)\.(\d+)$') {
+            $major = [int]$matches[1]
+            $minor = [int]$matches[2]
+            $patch = [int]$matches[3]
+            $nextPatch = $patch + 1
+            $nextVersion = "$major.$minor.$nextPatch"
+            Write-Host "🎯 Calculated next version: $nextVersion (from $majorityVersion + 1)" -ForegroundColor Green
         } else {
-            # Majority is already the highest version
-            Write-Host "ℹ️  $majorityVersion is already the highest available version" -ForegroundColor Blue
-            $nextVersion = $majorityVersion
-            Write-Host "🎯 Using majority version (already highest): $nextVersion" -ForegroundColor Blue
+            Write-Host "⚠️  Could not parse majority version format: $majorityVersion" -ForegroundColor Yellow
+            # Fallback: try to find next in available versions
+            $majorityIndex = -1
+            for ($i = 0; $i -lt $combinedVersions.Count; $i++) {
+                if ($combinedVersions[$i] -eq $majorityVersion) {
+                    $majorityIndex = $i
+                    break
+                }
+            }
+            
+            if ($majorityIndex -ge 0 -and $majorityIndex + 1 -lt $combinedVersions.Count) {
+                $nextVersion = $combinedVersions[$majorityIndex + 1]
+                Write-Host "🎯 Using next available version: $nextVersion" -ForegroundColor Yellow
+            } else {
+                $nextVersion = $majorityVersion
+                Write-Host "⚠️  Using majority version as fallback: $nextVersion" -ForegroundColor Yellow
+            }
         }
         
         # Check if next version has any mod support
