@@ -88,8 +88,9 @@ if ($zipExists) {
         $zipFile.Dispose()
         
         if ($readmeContent) {
-            # Check for single combined "All Mods" table
-            $hasAllModsSection = $readmeContent -match '### All Mods'
+            # Check for combined "All Mods" table (may have count in header like "### All Mods (42)")
+            $allModsMatches = [regex]::Matches($readmeContent, '### All Mods')
+            $hasAllModsSection = $allModsMatches.Count -eq 1
             Write-TestResult "README has single 'All Mods' section" $hasAllModsSection
             
             # Check for Category and Type columns in the combined table
