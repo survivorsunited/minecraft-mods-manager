@@ -1,5 +1,6 @@
 # 102-TestInstallerPlacement.ps1
-# Ensures 'installer' type artifacts are classified as server-only and placed under mods/server
+# Ensures 'installer' type artifacts are classified as server-only and placed in main mods/ folder
+# (Server mods go in main mods/ folder, not mods/server/ subfolder, to keep things simple)
 
 . "$PSScriptRoot\..\TestFramework.ps1"
 . "$PSScriptRoot\..\..\src\Release\Copy-ModsToRelease.ps1"
@@ -31,14 +32,15 @@ Set-Content -Path (Join-Path $downloadModsDir 'lithium-1.jar') -Value 'dummy' -E
 $ok = Copy-ModsToRelease -SourcePath $downloadModsDir -DestinationPath $releaseModsDir -CsvPath $csv -TargetGameVersion $version
 Write-TestResult "Copy-ModsToRelease executed" $ok
 
-$serverDir = Join-Path $releaseModsDir 'server'
 $rootJar = Join-Path $releaseModsDir 'fabric-installer-1.jar'
 $optJar = Join-Path (Join-Path $releaseModsDir 'optional') 'fabric-installer-1.jar'
+$serverDir = Join-Path $releaseModsDir 'server'
 $serverJar = Join-Path $serverDir 'fabric-installer-1.jar'
 
-Write-TestResult "Installer NOT in mods/ root" (-not (Test-Path $rootJar))
+# Installer should be in main mods/ folder (server mods go in main folder, not subfolder)
+Write-TestResult "Installer in mods/ root" (Test-Path $rootJar)
 Write-TestResult "Installer NOT in mods/optional" (-not (Test-Path $optJar))
-Write-TestResult "Installer in mods/server" (Test-Path $serverJar)
+Write-TestResult "Installer NOT in mods/server" (-not (Test-Path $serverJar))
 
 # Also ensure a normal mod goes to mods root
 Write-TestResult "Normal mod in mods/" (Test-Path (Join-Path $releaseModsDir 'lithium-1.jar'))

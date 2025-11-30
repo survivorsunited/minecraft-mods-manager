@@ -190,3 +190,4 @@ Write-TestResult "Type Extraction Tests" ($typeTestsPassed -eq $typeTests.Count)
 
 Show-TestSummary
 
+
