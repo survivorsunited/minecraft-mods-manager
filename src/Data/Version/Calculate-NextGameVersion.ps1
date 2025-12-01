@@ -74,19 +74,19 @@ function Calculate-NextGameVersion {
         } else {
             Write-Host "⚠️  Could not parse majority version format: $majorityVersion" -ForegroundColor Yellow
             # Fallback: try to find next in available versions
-            $majorityIndex = -1
-            for ($i = 0; $i -lt $combinedVersions.Count; $i++) {
-                if ($combinedVersions[$i] -eq $majorityVersion) {
-                    $majorityIndex = $i
-                    break
-                }
+        $majorityIndex = -1
+        for ($i = 0; $i -lt $combinedVersions.Count; $i++) {
+            if ($combinedVersions[$i] -eq $majorityVersion) {
+                $majorityIndex = $i
+                break
             }
-            
+        }
+        
             if ($majorityIndex -ge 0 -and $majorityIndex + 1 -lt $combinedVersions.Count) {
-                $nextVersion = $combinedVersions[$majorityIndex + 1]
+            $nextVersion = $combinedVersions[$majorityIndex + 1]
                 Write-Host "🎯 Using next available version: $nextVersion" -ForegroundColor Yellow
-            } else {
-                $nextVersion = $majorityVersion
+        } else {
+            $nextVersion = $majorityVersion
                 Write-Host "⚠️  Using majority version as fallback: $nextVersion" -ForegroundColor Yellow
             }
         }

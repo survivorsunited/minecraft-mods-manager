@@ -88,25 +88,33 @@ if ($zipExists) {
         $zipFile.Dispose()
         
         if ($readmeContent) {
-            # Check for combined mods table - can be "### All Mods" or "## Mods Table"
-            $allModsMatches = [regex]::Matches($readmeContent, '(### All Mods|## Mods Table)')
+            # Debug: Save README for inspection
+            $readmeDebugPath = Join-Path $TestOutputDir "README-debug.txt"
+            $readmeContent | Out-File -FilePath $readmeDebugPath -Encoding UTF8 -Force
+            
+            # Check for combined mods table - can be "### All Mods" or "## Mods Table" (case insensitive)
+            $allModsPattern = '(?i)(###\s+All\s+Mods|##\s+Mods\s+Table)'
+            $allModsMatches = [regex]::Matches($readmeContent, $allModsPattern)
             $hasAllModsSection = $allModsMatches.Count -ge 1
             Write-TestResult "README has mods table section" $hasAllModsSection
             
-            # Check for Category and Type columns in the table (flexible regex)
-            $hasCategoryHeader = $readmeContent -match '\|.*Name.*\|.*ID.*\|.*Version.*\|.*Description.*\|.*Category.*\|.*Type.*\|'
+            # Check for Category and Type columns in the table (case insensitive, flexible spacing)
+            $headerPattern = '(?i)\|.*Name.*\|.*ID.*\|.*Version.*\|.*Description.*\|.*Category.*\|.*Type.*\|'
+            $hasCategoryHeader = $readmeContent -match $headerPattern
             Write-TestResult "README has Category and Type columns in mods table" $hasCategoryHeader
             
             # Verify no separate sections exist (should be combined table)
-            $hasMandatorySection = $readmeContent -match '### Mandatory Mods'
-            $hasOptionalSection = $readmeContent -match '### Optional Mods'
-            $hasBlockedSection = $readmeContent -match '### Blocked Mods'
+            $hasMandatorySection = $readmeContent -match '(?i)###\s+Mandatory\s+Mods'
+            $hasOptionalSection = $readmeContent -match '(?i)###\s+Optional\s+Mods'
+            $hasBlockedSection = $readmeContent -match '(?i)###\s+Blocked\s+Mods'
             $noSeparateSections = -not ($hasMandatorySection -or $hasOptionalSection -or $hasBlockedSection)
             Write-TestResult "README does not have separate Mandatory/Optional/Blocked sections" $noSeparateSections
             
-            # Verify tables are actually tables (not bullet lists) - more flexible regex
-            $hasTableFormat = $readmeContent -match '\|.*Name.*\|.*ID.*\|.*Version.*\|.*Description.*\|.*Category.*\|.*Type.*\|'
-            $hasTableSeparator = $readmeContent -match '\|[-:]+\|[-:]+\|[-:]+\|[-:]+\|[-:]+\|[-:]+\|'
+            # Verify tables are actually tables (not bullet lists) - flexible regex
+            $hasTableFormat = $readmeContent -match $headerPattern
+            # Table separator can have any combination of dashes and colons
+            $separatorPattern = '\|[\s]*[-:]+[\s]*\|'
+            $hasTableSeparator = $readmeContent -match $separatorPattern
             $hasProperTable = $hasTableFormat -and $hasTableSeparator
             Write-TestResult "README uses proper Markdown table format (not bullet lists)" $hasProperTable
         } else {

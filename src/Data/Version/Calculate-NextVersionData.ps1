@@ -104,7 +104,7 @@ function Calculate-NextVersionData {
             # If no available versions metadata, still try to query API for next game version
             if ([string]::IsNullOrEmpty($mod.AvailableGameVersions)) {
                 $mod.NextGameVersion = $nextGameVersion
-                
+
                 # Try to query API for the next game version
                 $isGitHub = ($mod.Host -eq "github" -or $mod.ApiSource -eq "github" -or $mod.Url -match "github\.com")
                 
@@ -158,24 +158,24 @@ function Calculate-NextVersionData {
                         }
                     }
                 } else {
-                    # Prefer Latest when it matches the calculated next game version; otherwise fallback to Current
-                    if (-not [string]::IsNullOrEmpty($mod.LatestGameVersion) -and $mod.LatestGameVersion -eq $nextGameVersion -and -not [string]::IsNullOrEmpty($mod.LatestVersion)) {
-                        $mod.NextVersion = $mod.LatestVersion
-                        $mod.NextVersionUrl = $mod.LatestVersionUrl
-                        $updateSummary += [PSCustomObject]@{
-                            Name = $mod.Name
-                            Action = "No metadata (used latest)"
-                            NextVersion = $mod.NextVersion
-                            Supports = "Unknown (no AvailableGameVersions)"
-                        }
-                    } else {
-                        $mod.NextVersion = $mod.CurrentVersion
-                        $mod.NextVersionUrl = $mod.CurrentVersionUrl
-                        $updateSummary += [PSCustomObject]@{
-                            Name = $mod.Name
-                            Action = "No metadata (used current)"
-                            NextVersion = $mod.NextVersion
-                            Supports = "Unknown (no AvailableGameVersions)"
+                # Prefer Latest when it matches the calculated next game version; otherwise fallback to Current
+                if (-not [string]::IsNullOrEmpty($mod.LatestGameVersion) -and $mod.LatestGameVersion -eq $nextGameVersion -and -not [string]::IsNullOrEmpty($mod.LatestVersion)) {
+                    $mod.NextVersion = $mod.LatestVersion
+                    $mod.NextVersionUrl = $mod.LatestVersionUrl
+                    $updateSummary += [PSCustomObject]@{
+                        Name = $mod.Name
+                        Action = "No metadata (used latest)"
+                        NextVersion = $mod.NextVersion
+                        Supports = "Unknown (no AvailableGameVersions)"
+                    }
+                } else {
+                    $mod.NextVersion = $mod.CurrentVersion
+                    $mod.NextVersionUrl = $mod.CurrentVersionUrl
+                    $updateSummary += [PSCustomObject]@{
+                        Name = $mod.Name
+                        Action = "No metadata (used current)"
+                        NextVersion = $mod.NextVersion
+                        Supports = "Unknown (no AvailableGameVersions)"
                         }
                     }
                 }
@@ -253,43 +253,43 @@ function Calculate-NextVersionData {
                     } else {
                         # Modrinth mod - use Modrinth API
                         $apiUrl = "https://api.modrinth.com/v2/project/$($mod.ID)/version?loaders=[`"$($mod.Loader)`"]&game_versions=[`"$nextGameVersion`"]"
-                        $headers = @{
-                            'Accept' = 'application/json'
-                            'User-Agent' = 'MinecraftModManager/1.0'
+                    $headers = @{
+                        'Accept' = 'application/json'
+                        'User-Agent' = 'MinecraftModManager/1.0'
+                    }
+                    
+                    $apiResponse = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get -TimeoutSec 30
+                    
+                    if ($apiResponse -and $apiResponse.Count -gt 0) {
+                        $nextVersion = $apiResponse[0]
+                        $mod.NextVersion = $nextVersion.version_number
+                        $mod.NextVersionUrl = $nextVersion.files[0].url
+                        
+                        Write-Host "      ✓ Found $($mod.Name) $nextGameVersion version: $($mod.NextVersion)" -ForegroundColor Green
+                        
+                        $updateSummary += [PSCustomObject]@{
+                            Name = $mod.Name
+                            Action = "API Updated"
+                            NextVersion = $mod.NextVersion
+                            Supports = "Yes (API verified)"
+                        }
+                    } else {
+                        # No API response, fallback to latest if it supports next game version
+                        if ($mod.LatestGameVersion -eq $nextGameVersion) {
+                            $mod.NextVersion = $mod.LatestVersion
+                            $mod.NextVersionUrl = $mod.LatestVersionUrl
+                        } else {
+                            $mod.NextVersion = $mod.CurrentVersion
+                            $mod.NextVersionUrl = $mod.CurrentVersionUrl
                         }
                         
-                        $apiResponse = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get -TimeoutSec 30
+                        Write-Host "      ⚠ No API response, using fallback: $($mod.NextVersion)" -ForegroundColor Yellow
                         
-                        if ($apiResponse -and $apiResponse.Count -gt 0) {
-                            $nextVersion = $apiResponse[0]
-                            $mod.NextVersion = $nextVersion.version_number
-                            $mod.NextVersionUrl = $nextVersion.files[0].url
-                            
-                            Write-Host "      ✓ Found $($mod.Name) $nextGameVersion version: $($mod.NextVersion)" -ForegroundColor Green
-                            
-                            $updateSummary += [PSCustomObject]@{
-                                Name = $mod.Name
-                                Action = "API Updated"
-                                NextVersion = $mod.NextVersion
-                                Supports = "Yes (API verified)"
-                            }
-                        } else {
-                            # No API response, fallback to latest if it supports next game version
-                            if ($mod.LatestGameVersion -eq $nextGameVersion) {
-                                $mod.NextVersion = $mod.LatestVersion
-                                $mod.NextVersionUrl = $mod.LatestVersionUrl
-                            } else {
-                                $mod.NextVersion = $mod.CurrentVersion
-                                $mod.NextVersionUrl = $mod.CurrentVersionUrl
-                            }
-                            
-                            Write-Host "      ⚠ No API response, using fallback: $($mod.NextVersion)" -ForegroundColor Yellow
-                            
-                            $updateSummary += [PSCustomObject]@{
-                                Name = $mod.Name
-                                Action = "Fallback"
-                                NextVersion = $mod.NextVersion
-                                Supports = "Yes (fallback)"
+                        $updateSummary += [PSCustomObject]@{
+                            Name = $mod.Name
+                            Action = "Fallback"
+                            NextVersion = $mod.NextVersion
+                            Supports = "Yes (fallback)"
                             }
                         }
                     }

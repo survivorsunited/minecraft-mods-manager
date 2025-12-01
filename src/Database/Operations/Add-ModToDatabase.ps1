@@ -567,7 +567,7 @@ function Add-ModToDatabase {
                 $latestGameVersion = $script:GitHubValidationResult.LatestGameVersion
             }
         }
-        
+
         # Create new mod entry
         $newMod = [PSCustomObject]@{
             Group = $AddModGroup

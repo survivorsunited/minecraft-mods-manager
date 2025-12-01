@@ -59,9 +59,12 @@ $exp_1210 = @{ '1.21.8' = 0; '1.21.9' = 0; '1.21.10' = 1; '1.21.11' = 0; 'unknow
 
 function Assert-Counts($label, $actual, $expected) {
     foreach ($k in $expected.Keys) {
-        $ok = ($actual[$k] -eq $expected[$k])
         $actualValue = if ($actual.ContainsKey($k)) { $actual[$k] } else { 0 }
-        Write-TestResult "$label: $k = $($expected[$k])" $ok "Actual: $actualValue"
+        $expectedValue = $expected[$k]
+        $ok = ($actualValue -eq $expectedValue)
+        $message = "$label: $k = $expectedValue"
+        $details = "Actual: $actualValue"
+        Write-TestResult $message $ok $details
     }
 }
 
