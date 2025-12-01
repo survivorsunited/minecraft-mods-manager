@@ -264,15 +264,22 @@ function Validate-GitHubModVersion {
             $extractedVersion = $matches[1]
         }
         
-        # Find the highest game version available in this release for LatestGameVersion
-        $allGameVersions = @()
+        # Find the highest game version available across ALL releases for LatestGameVersion
+        # This ensures we get the true latest, not just the latest in the matching release
         $gameVersionJars = @{}  # Map game version to JAR asset
-        foreach ($asset in $matchingRelease.assets) {
-            if ($asset.name -match '\.jar$' -and $asset.name -match '.*-([\d\.]+(?:[-+][\w]+)?)-([\d\.]+)\.jar$') {
-                $gameVer = $matches[2]
-                if ($gameVer -match '^\d+\.\d+\.\d+$') {
-                    $allGameVersions += $gameVer
-                    $gameVersionJars[$gameVer] = $asset
+        
+        # Check all releases to find the highest game version
+        foreach ($release in $releases) {
+            foreach ($asset in $release.assets) {
+                if ($asset.name -match '\.jar$' -and $asset.name -match '.*-([\d\.]+(?:[-+][\w]+)?)-([\d\.]+)\.jar$') {
+                    $gameVer = $matches[2]
+                    if ($gameVer -match '^\d+\.\d+\.\d+$') {
+                        # Keep the first JAR we find for each game version (or overwrite if we find a newer one)
+                        # Since we iterate releases in order, this will prefer newer releases
+                        if (-not $gameVersionJars.ContainsKey($gameVer)) {
+                            $gameVersionJars[$gameVer] = $asset
+                        }
+                    }
                 }
             }
         }
@@ -280,14 +287,16 @@ function Validate-GitHubModVersion {
         # Find highest game version (sort as versions, not strings)
         $highestGameVersion = $effectiveGameVersion
         $highestGameVersionJar = $jarAsset  # Default to current JAR
-        if ($allGameVersions.Count -gt 0) {
+        if ($gameVersionJars.Count -gt 0) {
+            $allGameVersions = $gameVersionJars.Keys | ForEach-Object { $_ }
             $sortedVersions = $allGameVersions | Sort-Object { [System.Version]$_ } -Descending
             $highestGameVersion = $sortedVersions[0]
             if ($gameVersionJars.ContainsKey($highestGameVersion)) {
                 $highestGameVersionJar = $gameVersionJars[$highestGameVersion]
             }
             if (-not $Quiet) {
-                Write-Host "DEBUG: Found game versions: $($allGameVersions -join ', '), highest: $highestGameVersion" -ForegroundColor Gray
+                Write-Host "DEBUG: Found game versions across all releases: $($allGameVersions -join ', '), highest: $highestGameVersion" -ForegroundColor Gray
+                Write-Host "DEBUG: LatestVersionUrl points to: $($highestGameVersionJar.name)" -ForegroundColor Gray
             }
         }
         

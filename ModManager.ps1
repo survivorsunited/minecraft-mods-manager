@@ -697,9 +697,21 @@ if ($ValidateMod -and $ModID) {
         $mod.WikiUrl = $result.WikiUrl ?? $mod.WikiUrl
 
         # Also refresh Next* fields for this mod with a single-row operation (no full DB scan)
+        # Calculate NextGameVersion as CurrentGameVersion + 1 (not majority version + 1)
         try {
-            $nextInfo = Calculate-NextGameVersion -CsvPath $effectiveModListPath
-            $nextGameVersion = $nextInfo.NextVersion
+            $currentGameVersion = if ($mod.CurrentGameVersion) { $mod.CurrentGameVersion } else { $gameVersion }
+            if ($currentGameVersion -match '^(\d+)\.(\d+)\.(\d+)$') {
+                $major = [int]$matches[1]
+                $minor = [int]$matches[2]
+                $patch = [int]$matches[3]
+                $nextPatch = $patch + 1
+                $nextGameVersion = "$major.$minor.$nextPatch"
+                Write-Host "  Calculated NextGameVersion: $nextGameVersion (from $currentGameVersion + 1)" -ForegroundColor Gray
+            } else {
+                # Fallback to Calculate-NextGameVersion if version format is unexpected
+                $nextInfo = Calculate-NextGameVersion -CsvPath $effectiveModListPath
+                $nextGameVersion = $nextInfo.NextVersion
+            }
             if ($nextGameVersion) {
                 $mod.NextGameVersion = $nextGameVersion
                 $nextRes = $null
@@ -718,8 +730,8 @@ if ($ValidateMod -and $ModID) {
                     }
                     
                     if ($matchesNextGameVersion) {
-                        $mod.NextVersion = $nextRes.LatestVersion
-                        $mod.NextVersionUrl = if ($nextRes.VersionUrl -and $nextRes.VersionUrl.Trim() -ne "") { $nextRes.VersionUrl } else { $nextRes.LatestVersionUrl }
+                    $mod.NextVersion = $nextRes.LatestVersion
+                    $mod.NextVersionUrl = if ($nextRes.VersionUrl -and $nextRes.VersionUrl.Trim() -ne "") { $nextRes.VersionUrl } else { $nextRes.LatestVersionUrl }
                     } else {
                         # JAR doesn't match next game version, clear Next fields
                         $mod.NextVersion = ""
