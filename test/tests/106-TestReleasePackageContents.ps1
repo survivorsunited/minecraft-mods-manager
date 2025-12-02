@@ -93,9 +93,18 @@ if ($zipExists) {
             $readmeContent | Out-File -FilePath $readmeDebugPath -Encoding UTF8 -Force
             
             # Check for combined mods table - can be "### All Mods" or "## Mods Table" (case insensitive)
+            # Pattern allows for optional count in parentheses like "### All Mods (42)"
             $allModsPattern = '(?i)(###\s+All\s+Mods|##\s+Mods\s+Table)'
             $allModsMatches = [regex]::Matches($readmeContent, $allModsPattern)
             $hasAllModsSection = $allModsMatches.Count -ge 1
+            if (-not $hasAllModsSection) {
+                # Debug: Check what sections actually exist
+                $sectionMatches = [regex]::Matches($readmeContent, '(?i)^#{1,3}\s+.+', [System.Text.RegularExpressions.RegexOptions]::Multiline)
+                Write-Host "DEBUG: Found sections: $($sectionMatches.Count)" -ForegroundColor Yellow
+                foreach ($match in $sectionMatches) {
+                    Write-Host "  - $($match.Value)" -ForegroundColor Gray
+                }
+            }
             Write-TestResult "README has mods table section" $hasAllModsSection
             
             # Check for Category and Type columns in the table (case insensitive, flexible spacing)
