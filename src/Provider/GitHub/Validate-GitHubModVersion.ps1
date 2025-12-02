@@ -297,6 +297,7 @@ function Validate-GitHubModVersion {
             if (-not $Quiet) {
                 Write-Host "DEBUG: Found game versions across all releases: $($allGameVersions -join ', '), highest: $highestGameVersion" -ForegroundColor Gray
                 Write-Host "DEBUG: LatestVersionUrl points to: $($highestGameVersionJar.name)" -ForegroundColor Gray
+                Write-Host "DEBUG: LatestVersionUrl full URL: $($highestGameVersionJar.browser_download_url)" -ForegroundColor Gray
             }
         }
         

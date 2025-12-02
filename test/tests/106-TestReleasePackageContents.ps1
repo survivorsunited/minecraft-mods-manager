@@ -94,22 +94,36 @@ if ($zipExists) {
             
             # Check for combined mods table - can be "### All Mods" or "## Mods Table" (case insensitive)
             # Pattern allows for optional count in parentheses like "### All Mods (42)"
-            $allModsPattern = '(?i)(###\s+All\s+Mods|##\s+Mods\s+Table)'
+            # Use multiline mode to match across lines
+            $allModsPattern = '(?im)(^###\s+All\s+Mods|^##\s+Mods\s+Table)'
             $allModsMatches = [regex]::Matches($readmeContent, $allModsPattern)
             $hasAllModsSection = $allModsMatches.Count -ge 1
             if (-not $hasAllModsSection) {
                 # Debug: Check what sections actually exist
-                $sectionMatches = [regex]::Matches($readmeContent, '(?i)^#{1,3}\s+.+', [System.Text.RegularExpressions.RegexOptions]::Multiline)
+                $sectionMatches = [regex]::Matches($readmeContent, '(?im)^#{1,3}\s+.+', [System.Text.RegularExpressions.RegexOptions]::Multiline)
                 Write-Host "DEBUG: Found sections: $($sectionMatches.Count)" -ForegroundColor Yellow
                 foreach ($match in $sectionMatches) {
-                    Write-Host "  - $($match.Value)" -ForegroundColor Gray
+                    Write-Host "  - $($match.Value.Trim())" -ForegroundColor Gray
                 }
+                # Also check for the exact pattern we're looking for
+                Write-Host "DEBUG: Searching for pattern: $allModsPattern" -ForegroundColor Yellow
+                Write-Host "DEBUG: First 500 chars of README:" -ForegroundColor Yellow
+                Write-Host $readmeContent.Substring(0, [Math]::Min(500, $readmeContent.Length)) -ForegroundColor Gray
             }
             Write-TestResult "README has mods table section" $hasAllModsSection
             
             # Check for Category and Type columns in the table (case insensitive, flexible spacing)
-            $headerPattern = '(?i)\|.*Name.*\|.*ID.*\|.*Version.*\|.*Description.*\|.*Category.*\|.*Type.*\|'
+            # Use multiline mode and allow for flexible spacing
+            $headerPattern = '(?im)\|.*Name.*\|.*ID.*\|.*Version.*\|.*Description.*\|.*Category.*\|.*Type.*\|'
             $hasCategoryHeader = $readmeContent -match $headerPattern
+            if (-not $hasCategoryHeader) {
+                # Debug: Find what header lines actually exist
+                $headerLines = [regex]::Matches($readmeContent, '(?im)^\|.*\|', [System.Text.RegularExpressions.RegexOptions]::Multiline)
+                Write-Host "DEBUG: Found $($headerLines.Count) table header lines" -ForegroundColor Yellow
+                foreach ($match in $headerLines | Select-Object -First 3) {
+                    Write-Host "  - $($match.Value.Trim())" -ForegroundColor Gray
+                }
+            }
             Write-TestResult "README has Category and Type columns in mods table" $hasCategoryHeader
             
             # Verify no separate sections exist (should be combined table)
