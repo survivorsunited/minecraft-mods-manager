@@ -653,12 +653,21 @@ if ($ValidateMod -and $ModID) {
     
     # Load the mod list
     $mods = Import-Csv -Path $effectiveModListPath
-    $mod = $mods | Where-Object { $_.ID -eq $ModID } | Select-Object -First 1
+    # Find mod by index to get a reference, not a copy
+    $modIndex = -1
+    for ($i = 0; $i -lt $mods.Count; $i++) {
+        if ($mods[$i].ID -eq $ModID) {
+            $modIndex = $i
+            break
+        }
+    }
     
-    if (-not $mod) {
+    if ($modIndex -eq -1) {
         Write-Host "Error: Mod with ID '$ModID' not found in database" -ForegroundColor Red
         Exit-ModManager 1
     }
+    
+    $mod = $mods[$modIndex]
     
     # Validate just this one mod
     $loader = if ($mod.Loader) { $mod.Loader } else { "fabric" }

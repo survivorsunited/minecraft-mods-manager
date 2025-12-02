@@ -233,8 +233,8 @@ function Validate-ModVersion {
                     return @{
                         Exists = $true
                         LatestVersion = $result.Version
-                        VersionUrl = $result.DownloadUrl
-                        LatestVersionUrl = $result.DownloadUrl
+                        VersionUrl = $result.VersionUrl
+                        LatestVersionUrl = $result.LatestVersionUrl
                         LatestGameVersion = if ($result.LatestGameVersion) { $result.LatestGameVersion } else { $GameVersion }
                         CurrentDependencies = $result.Dependencies
                         LatestDependencies = $result.Dependencies
