@@ -79,7 +79,7 @@ if ($zipExists) {
         $readmeEntry = $zipFile.Entries | Where-Object { $_.FullName -eq "README.md" } | Select-Object -First 1
         if ($readmeEntry) {
             $stream = $readmeEntry.Open()
-            $reader = New-Object System.IO.StreamReader($stream)
+            $reader = New-Object System.IO.StreamReader($stream, [System.Text.Encoding]::UTF8)
             $readmeContent = $reader.ReadToEnd()
             $reader.Close()
             $stream.Close()
@@ -91,6 +91,9 @@ if ($zipExists) {
             # Debug: Save README for inspection
             $readmeDebugPath = Join-Path $TestOutputDir "README-debug.txt"
             $readmeContent | Out-File -FilePath $readmeDebugPath -Encoding UTF8 -Force
+            Write-Host "DEBUG: README length: $($readmeContent.Length) chars" -ForegroundColor Yellow
+            Write-Host "DEBUG: First 1000 chars of README:" -ForegroundColor Yellow
+            Write-Host $readmeContent.Substring(0, [Math]::Min(1000, $readmeContent.Length)) -ForegroundColor Gray
             
             # Check for combined mods table - can be "### All Mods" or "## Mods Table" (case insensitive)
             # Pattern allows for optional count in parentheses like "### All Mods (42)"
