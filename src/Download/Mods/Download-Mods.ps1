@@ -697,7 +697,7 @@ function Download-Mods {
                         $downloadedThisRun[$downloadPath] = $true
 
                         # If resolved from Modrinth API, attempt to fetch required dependencies (e.g., fabric-language-kotlin)
-                        if ($mod.Type -eq 'mod' -and $modHost -eq 'modrinth' -and $resolvedApiVersionObject -and $resolvedApiVersionObject.dependencies) {
+                        if ($mod.Type -eq 'mod' -and $modHost -eq 'modrinth' -and $resolvedApiVersionObject -and $resolvedApiVersionObject.dependencies -and $resolvedApiVersionObject.dependencies.Count -gt 0) {
                             foreach ($dep in $resolvedApiVersionObject.dependencies) {
                                 try {
                                     if ($dep.dependency_type -ne 'required') { continue }
@@ -720,6 +720,7 @@ function Download-Mods {
                                     }
                                     if (-not $depTarget) { continue }
 
+                                    if (-not $depTarget.files -or $depTarget.files.Count -eq 0) { continue }
                                     $depFile = $depTarget.files | Select-Object -First 1
                                     if (-not $depFile) { continue }
 
