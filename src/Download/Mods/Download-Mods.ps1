@@ -525,7 +525,12 @@ function Download-Mods {
                         $peekFileName = [System.IO.Path]::GetFileName([System.Web.HttpUtility]::UrlDecode($downloadUrl))
                         $mcToken = $null
                         $tokens = [System.Text.RegularExpressions.Regex]::Matches($peekFileName, '1\.\d+\.\d+') | ForEach-Object { $_.Value }
-                        if ($tokens -and $tokens.Count -gt 0) { $mcToken = $tokens[-1] }
+                        if ($tokens -and ($tokens -is [array]) -and $tokens.Count -gt 0) { 
+                            $mcToken = $tokens[-1] 
+                        } elseif ($tokens -and ($tokens -isnot [array])) {
+                            # Single match result, not an array
+                            $mcToken = $tokens
+                        }
                         if ($mcToken -and $mcToken -ne $TargetGameVersion) {
                             Write-Host "  🔁 $($mod.Name): Current URL appears for $mcToken, searching API for $TargetGameVersion..." -ForegroundColor Yellow
                             $allVersions = Invoke-RestMethodWithRetry -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -Method Get -ErrorAction SilentlyContinue
@@ -610,6 +615,14 @@ function Download-Mods {
                     $providerCacheFolder = Join-Path $cacheFolder $modHost
                     if (-not (Test-Path $providerCacheFolder)) {
                         New-Item -ItemType Directory -Path $providerCacheFolder -Force | Out-Null
+                    }
+                    
+                    # Ensure filename is set before creating cache path
+                    if (-not $filename) {
+                        $filename = [System.IO.Path]::GetFileName([System.Web.HttpUtility]::UrlDecode($downloadUrl))
+                        if (-not $filename -or $filename -eq "") {
+                            $filename = "$($mod.ID)-$downloadVersion.jar"
+                        }
                     }
                     
                     # Create cache path using URL hash for uniqueness
@@ -870,4 +883,8 @@ function Download-Mods {
     }
     catch {
         Write-Error "Failed to download mods: $($_.Exception.Message)"
-        ret
+        return 0
+    }
+}
+
+# Function is available for dot-sourcing 
