@@ -30,6 +30,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        submodules: true  # Clone minecraft-mod-hash submodule for hash.ps1
       
     - name: Install PowerShell (Linux)
       if: matrix.os == 'ubuntu-latest'

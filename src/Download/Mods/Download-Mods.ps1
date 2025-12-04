@@ -632,7 +632,8 @@ function Download-Mods {
                         # Try to get actual filename from Content-Disposition header or response URI
                         $actualFilename = $null
                         if ($webRequest.Headers -and $webRequest.Headers["Content-Disposition"]) {
-                            if ($webRequest.Headers["Content-Disposition"] -match 'filename="?([^"]+)"?') {
+                            $headerValue = $webRequest.Headers["Content-Disposition"]
+                            if ($headerValue -match 'filename="?([^"]+)"?') {
                                 $actualFilename = $matches[1]
                             }
                         }
@@ -869,8 +870,4 @@ function Download-Mods {
     }
     catch {
         Write-Error "Failed to download mods: $($_.Exception.Message)"
-        return 0
-    }
-}
-
-# Function is available for dot-sourcing 
+        ret
