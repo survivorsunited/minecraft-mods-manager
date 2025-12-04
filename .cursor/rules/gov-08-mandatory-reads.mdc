@@ -11,9 +11,8 @@ alwaysApply: true
 ### Step 1: Project Understanding (MANDATORY)
 **REQUIRED FILES TO READ:**
 1. **`README.md`** - Project overview, features, usage instructions
-2. **`CLAUDE.md`** - Claude-specific project memory and context
-3. **`TODO.md`** - Current project status and priorities
-4. **`modlist.csv`** - Current mod database structure and data
+2. **`TASK_LIST.md`** - Current project status and priorities
+3. **`modlist.csv`** - Current mod database structure and data
 
 ### Step 2: Governance Rules (MANDATORY)
 **REQUIRED FILES TO READ:**
@@ -70,8 +69,7 @@ Before starting ANY task, confirm you have:
 
 ### Project Understanding ✓
 - [ ] Read and understood README.md
-- [ ] Read and understood CLAUDE.md 
-- [ ] Read and understood TODO.md
+- [ ] Read and understood TASK_LIST.md 
 - [ ] Examined modlist.csv structure
 
 ### Governance Rules ✓
@@ -101,8 +99,8 @@ Before starting ANY task, confirm you have:
 
 ### Why This Order Matters:
 1. **README.md first** - Establishes basic project understanding
-2. **CLAUDE.md second** - Provides specific context and memory
-3. **TODO.md third** - Shows current priorities and status
+2. **TASK_LIST.md second** - Provides current priorities and status
+3. **modlist.csv third** - Shows the authoritative data set used in workflows
 4. **Governance rules** - Establishes how to work properly
 5. **Project rules** - Establishes technical requirements
 6. **Current context** - Understands immediate work environment
