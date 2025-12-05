@@ -31,25 +31,19 @@ function Invoke-TestMandatoryReadsCompliance {
     $projectRoot = Resolve-Path (Join-Path $PSScriptRoot "..\..")
     $rulePath = Join-Path $projectRoot ".cursor\rules\gov-08-mandatory-reads.mdc"
 
-    $script:TestResults.Total++
     if (-not (Test-Path $rulePath)) {
         Write-TestResult "Mandatory reads file exists" $false "Missing file at $rulePath"
-        $script:TestResults.Failed++
     }
     else {
         Write-TestResult "Mandatory reads file exists" $true "Validated file at $rulePath"
-        $script:TestResults.Passed++
 
         $ruleContent = Get-Content -Path $rulePath -Raw
         $hasDeprecatedRefs = $ruleContent -match "CLAUDE\.md" -or $ruleContent -match "TODO\.md"
 
-        $script:TestResults.Total++
         if ($hasDeprecatedRefs) {
             Write-TestResult "Deprecated references removed" $false "Found references to CLAUDE.md or TODO.md in $rulePath"
-            $script:TestResults.Failed++
         } else {
             Write-TestResult "Deprecated references removed" $true "No references to CLAUDE.md or TODO.md remain"
-            $script:TestResults.Passed++
         }
     }
 
