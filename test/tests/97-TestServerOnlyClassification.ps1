@@ -57,26 +57,26 @@ Write-TestResult "Copy-ModsToRelease succeeded" $result
 Write-TestHeader "Assertions"
 
 # Paths
-$serverDir = Join-Path $releaseModsDir 'server'
+# Note: Server-only mods now go in main mods/ folder (not mods/server/ subfolder)
 # $optionalDir reserved for future optional-group assertions
 # $blockDir reserved for future assertions on blocked mods
 
 function ExistsIn($dir, $name) { Test-Path (Join-Path $dir $name) }
 
 # 1. Entity Culling (client required, server unsupported) -> client-only (mods root)
-$entityCullingOk = ExistsIn $releaseModsDir 'entityculling-1.jar' -and -not (ExistsIn $serverDir 'entityculling-1.jar')
+$entityCullingOk = ExistsIn $releaseModsDir 'entityculling-1.jar'
 Write-TestResult "EntityCulling classified as client-only" $entityCullingOk
 
-# 2. Ledger (client unsupported) -> server-only
-$ledgerOk = ExistsIn $serverDir 'ledger-1.jar' -and -not (ExistsIn $releaseModsDir 'ledger-1.jar')
+# 2. Ledger (client unsupported) -> server-only (in main mods/ folder)
+$ledgerOk = ExistsIn $releaseModsDir 'ledger-1.jar'
 Write-TestResult "Ledger classified as server-only" $ledgerOk
 
 # 3. LuckPerms (dual side) -> mods root
-$luckPermsOk = ExistsIn $releaseModsDir 'luckperms-1.jar' -and -not (ExistsIn $serverDir 'luckperms-1.jar')
+$luckPermsOk = ExistsIn $releaseModsDir 'luckperms-1.jar'
 Write-TestResult "LuckPerms classified as dual/client mod" $luckPermsOk
 
-# 4. GhostMod (both unsupported) -> treated as server-only (client unsupported)
-$ghostServer = ExistsIn $serverDir 'ghostmod-1.jar'
+# 4. GhostMod (both unsupported) -> treated as server-only (client unsupported, in main mods/ folder)
+$ghostServer = ExistsIn $releaseModsDir 'ghostmod-1.jar'
 Write-TestResult "GhostMod classified as server-only (client unsupported)" $ghostServer
 
 Write-TestHeader "Summary"

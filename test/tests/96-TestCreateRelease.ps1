@@ -329,8 +329,17 @@ if ($releaseVersionExists) {
     
     if ($readmeExists) {
         $readmeContent = Get-Content $readmeFile.FullName -Raw -ErrorAction SilentlyContinue
-        $hasModList = ($readmeContent -match "Mod List|Included Mods")
+        if ($readmeContent) {
+            Write-Host "  README content preview (first 500 chars):" -ForegroundColor Gray
+            Write-Host "    $($readmeContent.Substring(0, [Math]::Min(500, $readmeContent.Length)))" -ForegroundColor DarkGray
+        }
+        $hasModList = ($readmeContent -and ($readmeContent -match "Mod List|Included Mods|## Mod List"))
         Write-TestResult "README contains mod list" $hasModList
+        if (-not $hasModList) {
+            Write-Host "  ⚠️  README exists but doesn't match expected pattern" -ForegroundColor Yellow
+        }
+    } else {
+        Write-Host "  ⚠️  README.md file not found in release directory" -ForegroundColor Yellow
     }
 }
 
