@@ -169,7 +169,8 @@ $serverOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath 
     -DownloadServer `
     -DownloadFolder $TestDownloadDir `
     -DatabaseFile $TestDbPath `
-    -GameVersion "1.21.8" 2>&1
+    -GameVersion "1.21.8" `
+    -UseCachedResponses 2>&1
 
 $serverDownloadSucceeded = ($LASTEXITCODE -eq 0)
 

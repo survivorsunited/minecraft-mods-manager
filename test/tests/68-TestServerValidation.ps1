@@ -100,7 +100,7 @@ Write-Host "  ✓ Test database ready for server validation" -ForegroundColor Gr
 Write-TestHeader "Test 2: Download Server Files"
 
 Write-Host "  Downloading server files to: $TestDownloadDir" -ForegroundColor Gray
-$serverDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -DatabaseFile $TestDbPath -TargetVersion "1.21.8" 2>&1
+$serverDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadServer -DownloadFolder $TestDownloadDir -DatabaseFile $TestDbPath -TargetVersion "1.21.8" -UseCachedResponses 2>&1
 
 # Check server download results
 $serverDownloadAttempted = ($serverDownloadOutput -match "Starting server files download process").Count -gt 0
@@ -172,7 +172,7 @@ try {
     
     Write-Host "  🚀 EXECUTING MOD DOWNLOAD WITH ENHANCED LOGGING..." -ForegroundColor Yellow
     
-    $modDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $TestDbPath -DownloadFolder $TestDownloadDir -TargetVersion "1.21.8" -ApiResponseFolder $script:TestApiResponseDir 2>&1
+    $modDownloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath -DownloadMods -DatabaseFile $TestDbPath -DownloadFolder $TestDownloadDir -TargetVersion "1.21.8" -ApiResponseFolder $script:TestApiResponseDir -UseCachedResponses 2>&1
     
     Stop-Transcript
     
