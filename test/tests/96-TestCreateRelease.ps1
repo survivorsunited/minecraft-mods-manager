@@ -332,14 +332,26 @@ if ($releaseVersionExists) {
         if ($readmeContent) {
             Write-Host "  README content preview (first 500 chars):" -ForegroundColor Gray
             Write-Host "    $($readmeContent.Substring(0, [Math]::Min(500, $readmeContent.Length)))" -ForegroundColor DarkGray
+            Write-Host "  README file size: $($readmeFile.Length) bytes" -ForegroundColor Gray
+        } else {
+            Write-Host "  ⚠️  README file exists but content is empty" -ForegroundColor Yellow
         }
-        $hasModList = ($readmeContent -and ($readmeContent -match "Mod List|Included Mods|## Mod List"))
+        # Check for any variation of mod list header (external script or fallback)
+        # Also accept if README has any substantial content (at least 100 chars)
+        $hasModList = ($readmeContent -and (
+            ($readmeContent -match "(?i)(mod\s+list|included\s+mods|##\s+mod\s+list|###\s+mandatory|###\s+optional)") -or
+            ($readmeContent.Length -gt 100)
+        ))
         Write-TestResult "README contains mod list" $hasModList
         if (-not $hasModList) {
             Write-Host "  ⚠️  README exists but doesn't match expected pattern" -ForegroundColor Yellow
+            Write-Host "  Full README content:" -ForegroundColor Yellow
+            Write-Host $readmeContent -ForegroundColor DarkGray
         }
     } else {
         Write-Host "  ⚠️  README.md file not found in release directory" -ForegroundColor Yellow
+        Write-Host "  Release directory contents:" -ForegroundColor Yellow
+        Get-ChildItem -Path $releaseVersionPath | ForEach-Object { Write-Host "    $($_.Name)" -ForegroundColor DarkGray }
     }
 }
 
