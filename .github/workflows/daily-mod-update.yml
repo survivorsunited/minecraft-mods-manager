@@ -162,6 +162,28 @@ jobs:
           Write-Host "" -ForegroundColor White
           Write-Host "💡 This is normal behavior when mods are up-to-date" -ForegroundColor Green
           Write-Host "" -ForegroundColor White
+
+      - name: Set release decision summary (why release will or won't run)
+        id: release_decision
+        shell: pwsh
+        run: |
+          $hasUpdates = "${{ steps.check_updates.outputs.has_updates }}"
+          $forceAll = "${{ github.event.inputs.force_all }}"
+          $willCreateReleases = ($hasUpdates -eq 'true') -or ($forceAll -eq 'true')
+          if ($willCreateReleases) {
+            $reason = "Database changed or force_all; release packages will be built"
+          } else {
+            $reason = "No modlist.csv changes (has_updates=false) and force_all not set; Create Release Packages and Publish Release will be skipped. To build anyway, re-run with 'Force create all versions' checked."
+          }
+          echo "has_updates=$hasUpdates" >> $env:GITHUB_OUTPUT
+          echo "will_create_releases=$willCreateReleases" >> $env:GITHUB_OUTPUT
+          echo "reason=$reason" >> $env:GITHUB_OUTPUT
+          # Write to step summary so it's visible in Actions UI
+          Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "### Release decision"
+          Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- **Mod database changes (has_updates):** $hasUpdates"
+          Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- **Force all (workflow input):** $forceAll"
+          Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- **Result:** $(if ($willCreateReleases) { 'Create Release Packages **will run**' } else { 'Create Release Packages **skipped** (no release will be published)' })"
+          Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- **Why:** $reason"
       
       - name: Commit Database Updates
         if: steps.check_updates.outputs.has_updates == 'true'

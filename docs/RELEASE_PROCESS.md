@@ -115,6 +115,16 @@ on:
 - After validating and updating the mod database, the pipeline refreshes **Next** and **Latest** version data only (`-UpdateNextOnly`, `-UpdateLatestOnly`) so Current stays unchanged.
 - It then builds release packages for the **Next** and **Latest** game versions (from the database). If server validation passes for those versions, the packages are included in the same GitHub Release as `modpack-next-{version}.zip` and `modpack-latest-{version}.zip`. This lets you test and ship Next/Latest when they are valid without changing the main (Current) release.
 
+**Why the daily run might not create a release**:
+1. **No database changes (`has_updates=false`)**  
+   The pipeline only runs **Create Release Packages** and **Publish Release** when `modlist.csv` has changed after validation (new mod versions, SyncLatestMinecraftVersion adding rows, etc.). If there are no changes, those jobs are skipped and no GitHub Release is created.  
+   - **What to do:** Re-run the workflow from the Actions tab and check **"Force create all versions"** to build and publish anyway.
+2. **Server validation failed for all enabled versions**  
+   If every matrix version (from `release-config.json`) fails server startup, no artifacts are uploaded and the release may be empty or only include Next/Latest packages.  
+   - **What to do:** Check the **Create Release Package for &lt;version&gt;** step logs for the failure (e.g. mod incompatibility, missing JAR).
+
+In the Actions run, the **update-database** job summary now includes a **Release decision** section stating whether Create Release Packages will run and why.
+
 ### Test Pipeline Release
 
 **File**: `.github/workflows/test.yml`
