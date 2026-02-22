@@ -111,6 +111,10 @@ on:
 - Creates timestamp-based tags: `release-YYYY.MM.DD-HHMMSS`
 - Marks as **pre-release** (development/testing)
 
+**Next and Latest version packages**:
+- After validating and updating the mod database, the pipeline refreshes **Next** and **Latest** version data only (`-UpdateNextOnly`, `-UpdateLatestOnly`) so Current stays unchanged.
+- It then builds release packages for the **Next** and **Latest** game versions (from the database). If server validation passes for those versions, the packages are included in the same GitHub Release as `modpack-next-{version}.zip` and `modpack-latest-{version}.zip`. This lets you test and ship Next/Latest when they are valid without changing the main (Current) release.
+
 ### Test Pipeline Release
 
 **File**: `.github/workflows/test.yml`

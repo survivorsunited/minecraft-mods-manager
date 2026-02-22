@@ -31,6 +31,8 @@ jobs:
     outputs:
       has_updates: ${{ steps.check_updates.outputs.has_updates }}
       versions_matrix: ${{ steps.set_matrix.outputs.matrix }}
+      next_game_version: ${{ steps.get_next_latest_versions.outputs.next_game_version }}
+      latest_game_version: ${{ steps.get_next_latest_versions.outputs.latest_game_version }}
     
     steps:
       - name: Checkout Repository
@@ -44,6 +46,30 @@ jobs:
         run: |
           Write-Host "🔍 Checking for mod updates..." -ForegroundColor Cyan
           .\ModManager.ps1 -ValidateAllModVersions -UpdateModList
+
+      - name: Refresh Next version data only
+        shell: pwsh
+        run: |
+          Write-Host "🔄 Refreshing Next version fields from APIs (Current/Latest unchanged)..." -ForegroundColor Cyan
+          .\ModManager.ps1 -ValidateAllModVersions -UpdateNextOnly
+
+      - name: Refresh Latest version data only
+        shell: pwsh
+        run: |
+          Write-Host "🔄 Refreshing Latest version fields from APIs (Current/Next unchanged)..." -ForegroundColor Cyan
+          .\ModManager.ps1 -ValidateAllModVersions -UpdateLatestOnly
+
+      - name: Get Next and Latest game versions
+        id: get_next_latest_versions
+        shell: pwsh
+        run: |
+          . .\src\Data\Version\Get-NextVersion.ps1
+          . .\src\Data\Version\Get-LatestVersion.ps1
+          $next = Get-NextVersion -CsvPath modlist.csv
+          $latest = Get-LatestVersion -CsvPath modlist.csv
+          if ($next) { echo "next_game_version=$next" >> $env:GITHUB_OUTPUT } else { echo "next_game_version=" >> $env:GITHUB_OUTPUT }
+          if ($latest) { echo "latest_game_version=$latest" >> $env:GITHUB_OUTPUT } else { echo "latest_game_version=" >> $env:GITHUB_OUTPUT }
+          Write-Host "Next game version: $next | Latest game version: $latest" -ForegroundColor Gray
 
       - name: Scan Database for Misclassified ZIP Mods
         shell: pwsh
@@ -315,6 +341,76 @@ jobs:
         run: |
           Write-Host "❌ Release package NOT created for version ${{ matrix.version }}" -ForegroundColor Red
           Write-Host "💡 Server validation failed - check logs for mod compatibility issues" -ForegroundColor Yellow
+
+  # Job 2b: Build and validate Next/Latest version packages (if valid, they are added to release)
+  create-next-latest-releases:
+    needs: update-database
+    if: |
+      (needs.update-database.outputs.has_updates == 'true' || github.event.inputs.force_all == 'true') &&
+      (needs.update-database.outputs.next_game_version != '' || needs.update-database.outputs.latest_game_version != '')
+    runs-on: windows-latest
+    timeout-minutes: 60
+    env:
+      CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+      MINECRAFT_SERVER_URL: ${{ secrets.MINECRAFT_SERVER_URL }}
+      FABRIC_SERVER_URL: ${{ secrets.FABRIC_SERVER_URL }}
+    
+    steps:
+      - name: Checkout Repository with Submodules
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          submodules: true
+
+      - name: Create Release Package for Next version
+        if: needs.update-database.outputs.next_game_version != ''
+        id: create_next
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $ver = "${{ needs.update-database.outputs.next_game_version }}"
+          Write-Host "🚀 Creating release package for Next version (Minecraft $ver)..." -ForegroundColor Cyan
+          .\ModManager.ps1 -CreateRelease -GameVersion $ver
+          if ($LASTEXITCODE -eq 0) {
+            echo "created=true" >> $env:GITHUB_OUTPUT
+            echo "version=$ver" >> $env:GITHUB_OUTPUT
+          } else {
+            echo "created=false" >> $env:GITHUB_OUTPUT
+          }
+
+      - name: Upload Next version release artifact
+        if: needs.update-database.outputs.next_game_version != '' && steps.create_next.outputs.created == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: modpack-next-${{ needs.update-database.outputs.next_game_version }}
+          path: releases/${{ needs.update-database.outputs.next_game_version }}/**
+          retention-days: 90
+          compression-level: 0
+
+      - name: Create Release Package for Latest version
+        if: needs.update-database.outputs.latest_game_version != ''
+        id: create_latest
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $ver = "${{ needs.update-database.outputs.latest_game_version }}"
+          Write-Host "🚀 Creating release package for Latest version (Minecraft $ver)..." -ForegroundColor Cyan
+          .\ModManager.ps1 -CreateRelease -GameVersion $ver
+          if ($LASTEXITCODE -eq 0) {
+            echo "created=true" >> $env:GITHUB_OUTPUT
+            echo "version=$ver" >> $env:GITHUB_OUTPUT
+          } else {
+            echo "created=false" >> $env:GITHUB_OUTPUT
+          }
+
+      - name: Upload Latest version release artifact
+        if: needs.update-database.outputs.latest_game_version != '' && steps.create_latest.outputs.created == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: modpack-latest-${{ needs.update-database.outputs.latest_game_version }}
+          path: releases/${{ needs.update-database.outputs.latest_game_version }}/**
+          retention-days: 90
+          compression-level: 0
   
   # Job 3: Create GitHub Release with artifacts
   publish-release:
@@ -416,6 +512,7 @@ jobs:
             echo "## 📋 Changes"
             echo "- Mod database updated: ${{ needs.update-database.outputs.has_updates }}"
             echo "- Server validation: Successful for packaged versions"
+            echo "- Next/Latest version packages (modpack-next-*, modpack-latest-*) included when validation passed"
             echo
             echo "## 🔑 Checksums"
             if [ -f release-hashes.txt ]; then
@@ -501,6 +598,8 @@ jobs:
           else
             echo "⚠️ **Release Creation:** Some versions failed server validation" >> $GITHUB_STEP_SUMMARY
           fi
+          echo "**Next/Latest packages:** Built and added to release when server validation passes (Next: ${{ needs.update-database.outputs.next_game_version }}, Latest: ${{ needs.update-database.outputs.latest_game_version }})" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ "${{ needs.publish-release.result }}" == "success" ]; then
             echo "" >> $GITHUB_STEP_SUMMARY
