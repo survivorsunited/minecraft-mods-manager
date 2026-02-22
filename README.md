@@ -1,5 +1,7 @@
 # Minecraft Mod Manager
 
+[![Daily Mod Update and Release Pipeline](https://github.com/survivorsunited/minecraft-mods-manager/actions/workflows/daily-mod-update.yml/badge.svg)](https://github.com/survivorsunited/minecraft-mods-manager/actions/workflows/daily-mod-update.yml)
+
 A powerful PowerShell script for managing Minecraft mods across multiple platforms (Modrinth and CurseForge) with automatic version validation, download management, and server compatibility testing.
 
 ## 🚀 Features
