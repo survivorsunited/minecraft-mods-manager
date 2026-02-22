@@ -10,7 +10,7 @@
     },
     {
       "version": "1.21.9",
-      "enabled": false,
+      "enabled": true,
       "description": "Future version",
       "env": {
         "JAVA_VERSION_MIN": "21"
@@ -18,7 +18,7 @@
     },
     {
       "version": "1.21.10",
-      "enabled": false,
+      "enabled": true,
       "description": "Next/Latest candidate; enable when ready for release",
       "env": {
         "JAVA_VERSION_MIN": "21"
