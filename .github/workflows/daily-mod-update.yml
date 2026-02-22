@@ -371,11 +371,10 @@ jobs:
           Write-Host "💡 Server validation failed - check logs for mod compatibility issues" -ForegroundColor Yellow
 
   # Job 2b: Build and validate Next/Latest version packages (if valid, they are added to release)
+  # Runs whenever we create releases so publish-release can wait for it and include Next/Latest artifacts
   create-next-latest-releases:
     needs: update-database
-    if: |
-      (needs.update-database.outputs.has_updates == 'true' || github.event.inputs.force_all == 'true') &&
-      (needs.update-database.outputs.next_game_version != '' || needs.update-database.outputs.latest_game_version != '')
+    if: needs.update-database.outputs.has_updates == 'true' || github.event.inputs.force_all == 'true'
     runs-on: windows-latest
     timeout-minutes: 60
     env:
@@ -440,9 +439,9 @@ jobs:
           retention-days: 90
           compression-level: 0
   
-  # Job 3: Create GitHub Release with artifacts
+  # Job 3: Create GitHub Release with artifacts (waits for both matrix and Next/Latest so all artifacts are available)
   publish-release:
-    needs: [update-database, create-releases]
+    needs: [update-database, create-releases, create-next-latest-releases]
     if: needs.create-releases.result == 'success'
     runs-on: ubuntu-latest
     permissions:
