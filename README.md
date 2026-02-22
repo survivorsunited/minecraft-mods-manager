@@ -343,6 +343,9 @@ Speed up validation by using previously cached API responses
 | `-Download` | Switch | Download all mods from database | `.\ModManager.ps1 -Download` |
 | `-UseLatestVersion` | Switch | Use latest versions instead of database versions | `.\ModManager.ps1 -Download -UseLatestVersion` |
 | `-ValidateAllModVersions` | Switch | Validate all mods and update database | `.\ModManager.ps1 -ValidateAllModVersions` |
+| `-UpdateModList` | Switch | With `-ValidateAllModVersions`: write validation results to modlist (Current, Next, Latest) | `.\ModManager.ps1 -ValidateAllModVersions -UpdateModList` |
+| `-UpdateNextOnly` | Switch | With `-ValidateAllModVersions`: refresh only Next version fields from APIs (safe for testing Next) | `.\ModManager.ps1 -ValidateAllModVersions -UpdateNextOnly` |
+| `-UpdateLatestOnly` | Switch | With `-ValidateAllModVersions`: refresh only Latest version fields from APIs (safe for testing Latest) | `.\ModManager.ps1 -ValidateAllModVersions -UpdateLatestOnly` |
 | `-RolloverMods` | Switch | Rollover mods to next/specified version | `.\ModManager.ps1 -RolloverMods -DryRun` |
 | `-RolloverToVersion` | String | Target version for rollover | `.\ModManager.ps1 -RolloverMods -RolloverToVersion "1.21.9"` |
 | `-DryRun` | Switch | Preview changes without modifying database | `.\ModManager.ps1 -RolloverMods -DryRun` |
@@ -492,6 +495,27 @@ The default `.\ModManager.ps1` command shows a comprehensive update summary:
 - **Update Detection**: Identifies mods with available updates
 - **Compatibility Check**: Shows which mods support newer game versions
 - **Error Tracking**: Reports validation issues
+
+## ⏰ Daily Mod Update and Release Pipeline
+
+The **Daily Mod Update and Release Pipeline** (`.github/workflows/daily-mod-update.yml`) runs on a schedule (2 AM UTC daily) to validate mod versions, update the database, and create release packages.
+
+### If the scheduled workflow is disabled
+
+GitHub disables scheduled workflows after **60 days of no repository activity**. To turn it back on:
+
+1. Open the repo on GitHub → **Actions** tab.
+2. In the left sidebar, click **Daily Mod Update and Release Pipeline**.
+3. If you see *"This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days"*, click **Enable workflow** (or **Re-enable**).
+
+### Run the pipeline manually
+
+You can run the same workflow on demand:
+
+1. **Actions** → **Daily Mod Update and Release Pipeline** → **Run workflow**.
+2. Optionally set **Force create all enabled versions** or **Comma-separated versions to process**, then run.
+
+Running it manually also counts as activity and helps keep the schedule enabled.
 
 ## 📁 File Structure
 

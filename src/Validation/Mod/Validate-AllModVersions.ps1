@@ -27,8 +27,20 @@
 .PARAMETER UpdateModList
     Whether to update the modlist with latest versions.
 
+.PARAMETER UpdateNextOnly
+    If set with UpdateModList, only NextVersion, NextVersionUrl, and NextGameVersion
+    are updated from APIs; Current and Latest fields are left unchanged.
+
+.PARAMETER UpdateLatestOnly
+    If set with UpdateModList, only LatestVersion, LatestVersionUrl, and LatestGameVersion
+    are updated from APIs; Current and Next fields are left unchanged.
+
 .EXAMPLE
     Validate-AllModVersions -CsvPath "modlist.csv" -UpdateModList
+.EXAMPLE
+    Validate-AllModVersions -CsvPath "modlist.csv" -UpdateModList -UpdateNextOnly
+.EXAMPLE
+    Validate-AllModVersions -CsvPath "modlist.csv" -UpdateModList -UpdateLatestOnly
 
 .NOTES
     - Validates all mods excluding installer, launcher, server types
@@ -41,7 +53,9 @@ function Validate-AllModVersions {
         [string]$DatabaseFile,
         [string]$ModListFile,
         [string]$ResponseFolder = $ApiResponseFolder,
-        [switch]$UpdateModList
+        [switch]$UpdateModList,
+        [switch]$UpdateNextOnly,
+        [switch]$UpdateLatestOnly
     )
     
     $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $CsvPath
@@ -393,8 +407,9 @@ function Validate-AllModVersions {
         }
     }
     
-    # Update modlist with latest versions if requested
-    if ($UpdateModList) {
+    # Update modlist with latest versions if requested (full update, or Next-only, or Latest-only)
+    $doUpdateList = $UpdateModList -or $UpdateNextOnly -or $UpdateLatestOnly
+    if ($doUpdateList) {
         # Load current modlist
         $currentMods = Get-ModList -CsvPath $effectiveModListPath
         if (-not $currentMods) {
@@ -423,8 +438,28 @@ function Validate-AllModVersions {
             # CurrentGameVersion in DB is the SOURCE OF TRUTH
             # The validation result already queries API and validates against CurrentGameVersion
             
-            if ($validationResult -and $validationResult.VersionExists) {
-                # Update with latest information
+            if ($UpdateNextOnly) {
+                # Update only Next* fields; leave Current and Latest unchanged
+                $updatedMod = $currentMod.PSObject.Copy()
+                if ($nextData) {
+                    if ($nextData.NextGameVersion) { $updatedMod.NextGameVersion = $nextData.NextGameVersion }
+                    if ($nextData.NextVersion) { $updatedMod.NextVersion = $nextData.NextVersion }
+                    if ($nextData.NextVersionUrl) { $updatedMod.NextVersionUrl = $nextData.NextVersionUrl }
+                }
+                if ($newMods.Count -eq 0) { $newMods = @($updatedMod) } else { $newMods += $updatedMod }
+                $updatedCount++
+            } elseif ($UpdateLatestOnly) {
+                # Update only Latest* fields from validation result
+                $updatedMod = $currentMod.PSObject.Copy()
+                if ($validationResult -and $validationResult.VersionExists) {
+                    $updatedMod.LatestVersion = $validationResult.LatestVersion ?? $currentMod.LatestVersion
+                    $updatedMod.LatestVersionUrl = $validationResult.LatestVersionUrl ?? $currentMod.LatestVersionUrl
+                    $updatedMod.LatestGameVersion = $validationResult.LatestGameVersion ?? $currentMod.LatestGameVersion
+                }
+                if ($newMods.Count -eq 0) { $newMods = @($updatedMod) } else { $newMods += $updatedMod }
+                $updatedCount++
+            } elseif ($validationResult -and $validationResult.VersionExists) {
+                # Full update: Current, Latest, and Next
                 $updatedMod = $currentMod.PSObject.Copy()
                 $updatedMod.LatestVersion = $validationResult.LatestVersion
                 $updatedMod.CurrentVersionUrl = $validationResult.VersionUrl
@@ -440,32 +475,22 @@ function Validate-AllModVersions {
                 $updatedMod.LatestGameVersion = $validationResult.LatestGameVersion
                 $updatedMod.CurrentDependencies = $validationResult.CurrentDependencies
                 $updatedMod.LatestDependencies = $validationResult.LatestDependencies
-                # Update mod in-place to preserve original column structure
                 $updatedMod = $currentMod.PSObject.Copy()
                 
-                # Update with validation results using appropriate column names
                 $isMigrated = $currentMod.PSObject.Properties.Name -contains "CurrentVersion"
                 
                 if ($isMigrated) {
                     $updatedMod.CurrentVersionUrl = $validationResult.VersionUrl
-                    
-                    # CRITICAL: Update Jar column to match the actual filename from URL
-                    # This prevents filename/URL mismatches that cause wrong versions to be downloaded
                     if ($validationResult.VersionUrl) {
                         $urlFilename = [System.IO.Path]::GetFileName($validationResult.VersionUrl)
                         if ($urlFilename -and $urlFilename -ne "") {
                             $updatedMod.Jar = $urlFilename
-                            
-                            # REMOVED: Don't try to parse game version from JAR filename
-                            # CurrentGameVersion in DB is the SOURCE OF TRUTH
-                            # JAR filename is just the artifact name from the API
                         }
                     }
                 } else {
                     $updatedMod.VersionUrl = $validationResult.VersionUrl
                 }
                 
-                # Common fields that exist in both structures
                 $updatedMod.LatestVersionUrl = $validationResult.LatestVersionUrl
                 $updatedMod.LatestVersion = $validationResult.LatestVersion
                 $updatedMod.LatestGameVersion = $validationResult.LatestGameVersion
@@ -479,7 +504,6 @@ function Validate-AllModVersions {
                 $updatedMod.WikiUrl = $validationResult.WikiUrl
                 $updatedMod.AvailableGameVersions = if ($validationResult.AvailableGameVersions) { ($validationResult.AvailableGameVersions -join ",") } else { $currentMod.AvailableGameVersions }
                 
-                # Update dependency fields using appropriate column names
                 if ($isMigrated) {
                     $updatedMod.CurrentDependenciesRequired = $validationResult.CurrentDependenciesRequired ?? ""
                     $updatedMod.CurrentDependenciesOptional = $validationResult.CurrentDependenciesOptional ?? ""
@@ -491,36 +515,30 @@ function Validate-AllModVersions {
                 $updatedMod.LatestDependenciesRequired = $validationResult.LatestDependenciesRequired ?? ""
                 $updatedMod.LatestDependenciesOptional = $validationResult.LatestDependenciesOptional ?? ""
                 
-                # Apply Next version data from Calculate-NextVersionData (preserves correct NextGameVersion)
                 if ($nextData) {
                     if ($nextData.NextGameVersion) { $updatedMod.NextGameVersion = $nextData.NextGameVersion }
                     if ($nextData.NextVersion) { $updatedMod.NextVersion = $nextData.NextVersion }
                     if ($nextData.NextVersionUrl) { $updatedMod.NextVersionUrl = $nextData.NextVersionUrl }
                 }
                 
-                if ($newMods.Count -eq 0) {
-                    $newMods = @($updatedMod)
-                } else {
-                    $newMods += $updatedMod
-                }
+                if ($newMods.Count -eq 0) { $newMods = @($updatedMod) } else { $newMods += $updatedMod }
                 $updatedCount++
             } else {
-                # Keep existing mod as-is, but still apply Next data if available
-                if ($nextData) {
+                # Keep existing mod as-is, but still apply Next data if available (full update path only)
+                if (-not $UpdateNextOnly -and -not $UpdateLatestOnly -and $nextData) {
                     $currentMod.NextGameVersion = $nextData.NextGameVersion ?? $currentMod.NextGameVersion
                     $currentMod.NextVersion = $nextData.NextVersion ?? $currentMod.NextVersion
                     $currentMod.NextVersionUrl = $nextData.NextVersionUrl ?? $currentMod.NextVersionUrl
                 }
-                if ($newMods.Count -eq 0) {
-                    $newMods = @($currentMod)
-                } else {
-                    $newMods += $currentMod
-                }
+                if ($newMods.Count -eq 0) { $newMods = @($currentMod) } else { $newMods += $currentMod }
             }
         }
         
         # CRITICAL: Query API for all Modrinth mods to ensure Latest/Next versions and URLs are correct
-        # This runs AFTER validation results to have the final say on Latest/Next fields
+        # When UpdateNextOnly or UpdateLatestOnly, only update those fields.
+        $updateCurrent = -not $UpdateNextOnly -and -not $UpdateLatestOnly
+        $updateLatest = -not $UpdateNextOnly
+        $updateNext = -not $UpdateLatestOnly
         Write-Host ""
         Write-Host "🔄 Updating Latest/Next versions from API..." -ForegroundColor Cyan
         $apiUpdateCount = 0
@@ -529,36 +547,39 @@ function Validate-AllModVersions {
                 try {
                     $allVersions = Invoke-RestMethodWithRetry -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -Method Get -TimeoutSec 30 -ErrorAction SilentlyContinue
                     if ($allVersions -and $allVersions.Count -gt 0) {
-                        # Get latest version (filter by loader first, then select first)
-                        $latestVersion = $allVersions | Where-Object { $_.loaders -contains $mod.Loader } | Select-Object -First 1
-                        if ($latestVersion) {
-                            $mod.LatestVersion = $latestVersion.version_number
-                            $mod.LatestGameVersion = $latestVersion.game_versions[0]
-                            $mod.LatestVersionUrl = $latestVersion.files[0].url
-                            
-                            # Verify LatestVersion is actually the newest for LatestGameVersion
-                            if ($mod.LatestGameVersion) {
-                                $latestGameVersionNewest = $allVersions | Where-Object { 
-                                    $_.loaders -contains $mod.Loader -and 
-                                    $_.game_versions -contains $mod.LatestGameVersion 
-                                } | Select-Object -First 1
+                        if ($updateLatest) {
+                            # Get latest version (filter by loader first, then select first)
+                            $latestVersion = $allVersions | Where-Object { $_.loaders -contains $mod.Loader } | Select-Object -First 1
+                            if ($latestVersion) {
+                                $mod.LatestVersion = $latestVersion.version_number
+                                $mod.LatestGameVersion = $latestVersion.game_versions[0]
+                                $mod.LatestVersionUrl = $latestVersion.files[0].url
                                 
-                                if ($latestGameVersionNewest -and $latestGameVersionNewest.version_number -ne $mod.LatestVersion) {
-                                    Write-Host "   🔄 $($mod.Name): Updating latest version for $($mod.LatestGameVersion) from $($mod.LatestVersion) to $($latestGameVersionNewest.version_number)" -ForegroundColor Yellow
-                                    $mod.LatestVersion = $latestGameVersionNewest.version_number
-                                    $mod.LatestVersionUrl = $latestGameVersionNewest.files[0].url
+                                if ($mod.LatestGameVersion) {
+                                    $latestGameVersionNewest = $allVersions | Where-Object { 
+                                        $_.loaders -contains $mod.Loader -and 
+                                        $_.game_versions -contains $mod.LatestGameVersion 
+                                    } | Select-Object -First 1
+                                    
+                                    if ($latestGameVersionNewest -and $latestGameVersionNewest.version_number -ne $mod.LatestVersion) {
+                                        Write-Host "   🔄 $($mod.Name): Updating latest version for $($mod.LatestGameVersion) from $($mod.LatestVersion) to $($latestGameVersionNewest.version_number)" -ForegroundColor Yellow
+                                        $mod.LatestVersion = $latestGameVersionNewest.version_number
+                                        $mod.LatestVersionUrl = $latestGameVersionNewest.files[0].url
+                                    }
                                 }
                             }
-                            
+                        }
+                        
+                        if ($updateCurrent) {
                             # Check if there's a newer version for the CURRENT game version
-                            if ($mod.CurrentGameVersion) {
+                            $latestVersion = $allVersions | Where-Object { $_.loaders -contains $mod.Loader } | Select-Object -First 1
+                            if ($latestVersion -and $mod.CurrentGameVersion) {
                                 $currentGameVersionLatest = $allVersions | Where-Object { 
                                     $_.loaders -contains $mod.Loader -and 
                                     $_.game_versions -contains $mod.CurrentGameVersion 
                                 } | Select-Object -First 1
                                 
                                 if ($currentGameVersionLatest -and $currentGameVersionLatest.version_number -ne $mod.CurrentVersion) {
-                                    # Update CurrentVersion to the latest for current game version
                                     Write-Host "   🔄 $($mod.Name): Updating current version for $($mod.CurrentGameVersion) from $($mod.CurrentVersion) to $($currentGameVersionLatest.version_number)" -ForegroundColor Yellow
                                     $mod.CurrentVersion = $currentGameVersionLatest.version_number
                                     $mod.CurrentVersionUrl = $currentGameVersionLatest.files[0].url
@@ -568,60 +589,55 @@ function Validate-AllModVersions {
                             }
                         }
                         
-                        # Get next version (1.21.6 if current is 1.21.5) - filter by loader AND game version
-                        if ($mod.CurrentGameVersion) {
-                            $currentGameVersionParts = $mod.CurrentGameVersion -split '\.'
-                            if ($currentGameVersionParts.Count -eq 3) {
-                                $nextPatch = [int]$currentGameVersionParts[2] + 1
-                                $nextGameVersion = "$($currentGameVersionParts[0]).$($currentGameVersionParts[1]).$nextPatch"
-                                $nextVersion = $allVersions | Where-Object { 
-                                    $_.game_versions -contains $nextGameVersion -and 
-                                    $_.loaders -contains $mod.Loader 
-                                } | Select-Object -First 1
-                                if ($nextVersion) {
-                                    $mod.NextVersion = $nextVersion.version_number
-                                    $mod.NextGameVersion = $nextGameVersion
-                                    $mod.NextVersionUrl = $nextVersion.files[0].url
-                                    
-                                    # Verify NextVersion is actually the newest for NextGameVersion
-                                    $nextGameVersionNewest = $allVersions | Where-Object { 
-                                        $_.loaders -contains $mod.Loader -and 
-                                        $_.game_versions -contains $nextGameVersion 
+                        if ($updateNext) {
+                            # Get next version (1.21.6 if current is 1.21.5) - filter by loader AND game version
+                            if ($mod.CurrentGameVersion) {
+                                $currentGameVersionParts = $mod.CurrentGameVersion -split '\.'
+                                if ($currentGameVersionParts.Count -eq 3) {
+                                    $nextPatch = [int]$currentGameVersionParts[2] + 1
+                                    $nextGameVersion = "$($currentGameVersionParts[0]).$($currentGameVersionParts[1]).$nextPatch"
+                                    $nextVersion = $allVersions | Where-Object { 
+                                        $_.game_versions -contains $nextGameVersion -and 
+                                        $_.loaders -contains $mod.Loader 
                                     } | Select-Object -First 1
-                                    
-                                    if ($nextGameVersionNewest -and $nextGameVersionNewest.version_number -ne $mod.NextVersion) {
-                                        Write-Host "   🔄 $($mod.Name): Updating next version for $nextGameVersion from $($mod.NextVersion) to $($nextGameVersionNewest.version_number)" -ForegroundColor Yellow
-                                        $mod.NextVersion = $nextGameVersionNewest.version_number
-                                        $mod.NextVersionUrl = $nextGameVersionNewest.files[0].url
+                                    if ($nextVersion) {
+                                        $mod.NextVersion = $nextVersion.version_number
+                                        $mod.NextGameVersion = $nextGameVersion
+                                        $mod.NextVersionUrl = $nextVersion.files[0].url
+                                        
+                                        $nextGameVersionNewest = $allVersions | Where-Object { 
+                                            $_.loaders -contains $mod.Loader -and 
+                                            $_.game_versions -contains $nextGameVersion 
+                                        } | Select-Object -First 1
+                                        
+                                        if ($nextGameVersionNewest -and $nextGameVersionNewest.version_number -ne $mod.NextVersion) {
+                                            Write-Host "   🔄 $($mod.Name): Updating next version for $nextGameVersion from $($mod.NextVersion) to $($nextGameVersionNewest.version_number)" -ForegroundColor Yellow
+                                            $mod.NextVersion = $nextGameVersionNewest.version_number
+                                            $mod.NextVersionUrl = $nextGameVersionNewest.files[0].url
+                                        }
+                                    } else {
+                                        Write-Host "   ⚠️  $($mod.Name): No matching $($mod.Loader) version found for $nextGameVersion" -ForegroundColor Yellow
                                     }
-                                } else {
-                                    Write-Host "   ⚠️  $($mod.Name): No matching $($mod.Loader) version found for $nextGameVersion" -ForegroundColor Yellow
                                 }
                             }
                         }
                         
-                        # Update Current version/JAR/URL to match CurrentGameVersion AND Loader
-                        # Query for best version that supports both the game version AND loader from DB
-                        if ($mod.CurrentGameVersion -and $mod.Loader) {
-                            # Find all versions matching game version and loader
+                        if ($updateCurrent -and $mod.CurrentGameVersion -and $mod.Loader) {
+                            # Update Current version/JAR/URL to match CurrentGameVersion AND Loader
                             $matchingVersions = $allVersions | Where-Object { 
                                 $_.game_versions -contains $mod.CurrentGameVersion -and
                                 $_.loaders -contains $mod.Loader
                             }
                             
-                            # Filter to find version where JAR filename matches loader
                             $currentVersionMatch = $null
                             foreach ($version in $matchingVersions) {
                                 $jarName = $version.files[0].filename
                                 $loaderMismatch = $false
-                                
-                                # Check if JAR filename contains wrong loader
                                 if ($mod.Loader -eq "fabric" -and $jarName -match "neoforge") {
                                     $loaderMismatch = $true
                                 } elseif ($mod.Loader -eq "neoforge" -and $jarName -match "-fabric-") {
                                     $loaderMismatch = $true
                                 }
-                                
                                 if (-not $loaderMismatch) {
                                     $currentVersionMatch = $version
                                     break
@@ -641,13 +657,11 @@ function Validate-AllModVersions {
                 } catch {
                     # Silently continue if API call fails
                 }
-            } elseif ($mod.Type -eq "mod" -and $mod.Host -eq "github" -and $mod.ID) {
+            } elseif ($updateLatest -and $mod.Type -eq "mod" -and $mod.Host -eq "github" -and $mod.ID) {
                 # Handle GitHub mods - ensure LatestVersionUrl points to highest game version
                 try {
-                    # Find the validation result for this mod
                     $githubValidationResult = $results | Where-Object { $_.ID -eq $mod.ID -and $_.Host -eq "github" } | Select-Object -First 1
                     if ($githubValidationResult -and $githubValidationResult.LatestGameVersion -and $githubValidationResult.LatestVersionUrl) {
-                        # Ensure LatestVersionUrl points to the highest game version JAR
                         if ($mod.LatestVersionUrl -ne $githubValidationResult.LatestVersionUrl -or 
                             $mod.LatestGameVersion -ne $githubValidationResult.LatestGameVersion) {
                             $mod.LatestGameVersion = $githubValidationResult.LatestGameVersion

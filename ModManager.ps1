@@ -13,6 +13,9 @@ param(
     [switch]$ValidateMod,
     [string]$ModID,
     [switch]$ValidateAllModVersions,
+    [switch]$UpdateModList,
+    [switch]$UpdateNextOnly,
+    [switch]$UpdateLatestOnly,
     [switch]$UpdateMods,
     [switch]$RolloverMods,
     [string]$RolloverToVersion,
@@ -627,10 +630,14 @@ if ($AddMod -or $AddModId -or $AddModUrl) {
 # Handle ValidateAllModVersions parameter
 if ($ValidateAllModVersions) {
     Write-Host "Starting mod validation process..." -ForegroundColor Yellow
-    # Use cache by default unless -Online is specified
-    $useCache = -not $Online
-    if ($UseCachedResponses) { $useCache = $true }  # Explicit -UseCachedResponses overrides
-    Validate-AllModVersions -CsvPath $effectiveModListPath -ResponseFolder $ApiResponseFolder -UseCachedResponses:$useCache | Out-Null
+    $validateParams = @{
+        CsvPath = $effectiveModListPath
+        ResponseFolder = $ApiResponseFolder
+    }
+    if ($UpdateModList) { $validateParams["UpdateModList"] = $true }
+    if ($UpdateNextOnly) { $validateParams["UpdateModList"] = $true; $validateParams["UpdateNextOnly"] = $true }
+    if ($UpdateLatestOnly) { $validateParams["UpdateModList"] = $true; $validateParams["UpdateLatestOnly"] = $true }
+    Validate-AllModVersions @validateParams | Out-Null
     Exit-ModManager 0
 }
 
