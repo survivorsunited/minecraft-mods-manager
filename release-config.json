@@ -26,7 +26,7 @@
     },
     {
       "version": "1.21.11",
-      "enabled": false,
+      "enabled": true,
       "description": "Future version; enable when ready for release",
       "env": {
         "JAVA_VERSION_MIN": "21"
