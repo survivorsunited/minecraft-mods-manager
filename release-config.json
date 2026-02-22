@@ -1,22 +1,36 @@
 {
-    "versions": [
-      {
-        "version": "1.21.8",
-        "enabled": true,
-        "description": "Tested and working with Fabric Loader 0.17.3",
-        "env": {
-          "JAVA_VERSION_MIN": "21"
-        }
-      },
-      {
-        "version": "1.21.9",
-        "enabled": false,
-        "description": "Future version",
-        "env": {
-          "JAVA_VERSION_MIN": "21"
-        }
+  "versions": [
+    {
+      "version": "1.21.8",
+      "enabled": true,
+      "description": "Tested and working with Fabric Loader 0.17.3",
+      "env": {
+        "JAVA_VERSION_MIN": "21"
       }
-    ]
-  }
-  
-  
+    },
+    {
+      "version": "1.21.9",
+      "enabled": false,
+      "description": "Future version",
+      "env": {
+        "JAVA_VERSION_MIN": "21"
+      }
+    },
+    {
+      "version": "1.21.10",
+      "enabled": false,
+      "description": "Next/Latest candidate; enable when ready for release",
+      "env": {
+        "JAVA_VERSION_MIN": "21"
+      }
+    },
+    {
+      "version": "1.21.11",
+      "enabled": false,
+      "description": "Future version; enable when ready for release",
+      "env": {
+        "JAVA_VERSION_MIN": "21"
+      }
+    }
+  ]
+}

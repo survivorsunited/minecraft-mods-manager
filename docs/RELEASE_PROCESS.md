@@ -145,7 +145,21 @@ on:
 }
 ```
 
-This file controls which Minecraft versions are included in releases.
+This file controls which Minecraft versions are included in releases. Versions 1.21.10 and 1.21.11 are included as disabled entries; enable when ready for release.
+
+### Database (modlist.csv) for release versions
+
+For each Minecraft version you enable in `release-config.json`, the pipeline needs **server**, **launcher**, and optionally **installer** rows in `modlist.csv` so that release packages can download the correct server JAR and Fabric launcher (and installer) for that version.
+
+**Current DB coverage (as of last review):**
+
+| Type      | Versions in DB                    | Notes |
+|-----------|-----------------------------------|-------|
+| **Server**   | 1.21.5, 1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10 | Add **1.21.11** when Mojang publish the server JAR. |
+| **Launcher** | 1.21.5, 1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10 | Add **1.21.11** when Fabric meta has loader for 1.21.11 (same pattern: `fabric-server-launcher-1.21.11`, URL from `https://meta.fabricmc.net/v2/versions/loader/1.21.11/...`). |
+| **Installer**| 1.21.5, 1.21.6 only               | Fabric often uses one installer EXE for many versions. Add rows for **1.21.9, 1.21.10, 1.21.11** only if you need version-specific installer entries (e.g. for release packaging). |
+
+When adding a new Minecraft version (e.g. 1.21.11): add a **server** row (Minecraft Server JAR from Mojang) and a **launcher** row (Fabric server launcher from Fabric meta). Add **installer** rows only if your workflow requires per-version installer entries.
 
 ## Release Artifacts
 
