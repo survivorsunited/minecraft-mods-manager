@@ -1,0 +1,27 @@
+---
+alwaysApply: true
+---
+
+# Project: modlist.csv — Protected Asset (Do Not Modify)
+
+## Critical rule
+
+**`modlist.csv` is the most important file in this project. Do not modify it.**
+
+- **Never** edit, overwrite, replace, or truncate `modlist.csv` unless the user **explicitly** asks you to make a specific change to it (e.g. "add row X", "fix column Y for mod Z").
+- **Do not** run `git checkout` on `modlist.csv`, write to it, or run scripts that alter it unless the user has clearly requested that.
+- **Do not** "restore", "fix", or "sync" `modlist.csv` as part of other tasks (e.g. release-config, docs, workflows). Leave it unchanged.
+- When in doubt: **read-only**. You may read `modlist.csv` to answer questions or inform other work; do not write to it.
+
+## Allowed without explicit user request
+
+- **Reading** `modlist.csv` (e.g. to inspect structure, row count, columns, or to compare with other data).
+- **Reporting** on its contents or suggesting changes in chat (without applying them).
+
+## Require explicit user request before doing
+
+- Any write, edit, or replacement of `modlist.csv`.
+- Running commands or scripts that modify `modlist.csv`.
+- Restoring or reverting `modlist.csv` from git or backup.
+
+This rule exists to prevent accidental loss of user data. Respect it strictly.

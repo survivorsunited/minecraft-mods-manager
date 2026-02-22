@@ -96,6 +96,7 @@ param(
     [int]$DiagnosticsLogLines,
     # Minecraft Version Sync
     [switch]$SyncMinecraftVersions,
+    [switch]$SyncLatestMinecraftVersion,
     [string]$MinecraftVersionChannel = "stable",
     [string]$MinecraftMinVersion = "1.21.8",
     # JDK Version Sync
@@ -814,6 +815,13 @@ if ($SyncMinecraftVersions) {
     Write-Host "Syncing Minecraft versions from mc-versions-api.net..." -ForegroundColor Yellow
     Sync-MinecraftVersions -CsvPath $effectiveModListPath -Channel $MinecraftVersionChannel -MinVersion $MinecraftMinVersion -DryRun:$DryRun
     Exit-ModManager 0
+}
+
+# Handle SyncLatestMinecraftVersion parameter
+if ($SyncLatestMinecraftVersion) {
+    Write-Host "Syncing latest Minecraft version (server, launcher, installer) to database..." -ForegroundColor Yellow
+    $syncOk = Sync-LatestMinecraftVersion -CsvPath $effectiveModListPath -DryRun:$DryRun
+    Exit-ModManager $(if ($syncOk) { 0 } else { 1 })
 }
 
 # Handle SyncJDKVersions parameter

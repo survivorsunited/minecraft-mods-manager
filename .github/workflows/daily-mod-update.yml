@@ -40,6 +40,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 2  # Need previous commit to compare
+
+      - name: Sync latest Minecraft version (server, launcher, installer)
+        shell: pwsh
+        run: |
+          Write-Host "🔄 Ensuring latest MC version has server, launcher, installer in DB..." -ForegroundColor Cyan
+          .\ModManager.ps1 -SyncLatestMinecraftVersion
       
       - name: Validate Mod Versions
         shell: pwsh

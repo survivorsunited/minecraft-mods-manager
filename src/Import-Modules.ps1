@@ -41,6 +41,7 @@
 . "$PSScriptRoot\Database\Operations\Update-ModUrlInDatabase.ps1"
 . "$PSScriptRoot\Database\Operations\Rollover-ModsToNextVersion.ps1"
 . "$PSScriptRoot\Database\Operations\Sync-MinecraftVersions.ps1"
+. "$PSScriptRoot\Database\Operations\Sync-LatestMinecraftVersion.ps1"
 . "$PSScriptRoot\Database\Operations\Sync-JDKVersions.ps1"
 . "$PSScriptRoot\Database\Maintenance\Reorder-CsvColumns.ps1"
 . "$PSScriptRoot\Database\Migration\Migrate-ToCurrentNextLatest.ps1"

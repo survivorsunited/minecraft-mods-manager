@@ -81,6 +81,14 @@ function Show-Help {
     Write-Host "    Example: .\ModManager.ps1 -SyncMinecraftVersions" -ForegroundColor Gray
     Write-Host "    Example: .\ModManager.ps1 -SyncMinecraftVersions -MinecraftMinVersion \"1.21.6\" -DryRun" -ForegroundColor Gray
     Write-Host ""
+    Write-Host "  SyncLatestMinecraftVersion [-DryRun]" -ForegroundColor White
+    Write-Host "    - Adds the latest Minecraft release version to the database if missing"
+    Write-Host "    - Adds server (Minecraft JAR), launcher (Fabric server), installer (EXE + JAR)"
+    Write-Host "    - Idempotent: only adds rows for the latest version that are not already present"
+    Write-Host "    - Use -DryRun to preview without modifying database"
+    Write-Host ""
+    Write-Host "    Example: .\ModManager.ps1 -SyncLatestMinecraftVersion" -ForegroundColor Gray
+    Write-Host ""
     Write-Host "  Rollover-Mods [-RolloverToVersion <version>] [-DryRun]" -ForegroundColor White
     Write-Host "    - Rolls over mods from Current to Next versions"
     Write-Host "    - Without -RolloverToVersion: Uses NextVersion data from database"
