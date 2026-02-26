@@ -63,9 +63,11 @@ function Copy-ModsToRelease {
 
     # Build expected file sets to avoid copying extras/duplicates
     $expectedList = Get-ExpectedReleaseFiles -Version $TargetGameVersion -CsvPath $CsvPath
+    Write-Host "  [RELEASE] Expected files for $TargetGameVersion : $($expectedList.Count) total" -ForegroundColor Gray
     $expectedModsSet = New-Object System.Collections.Generic.HashSet[string]
     $expectedModsBaseSet = New-Object System.Collections.Generic.HashSet[string]
     $expectedOptSet = New-Object System.Collections.Generic.HashSet[string]
+    $expectedOptBaseSet = New-Object System.Collections.Generic.HashSet[string]
     $expectedServerSet = New-Object System.Collections.Generic.HashSet[string]
     $expectedServerBaseSet = New-Object System.Collections.Generic.HashSet[string]
     function Get-BaseName([string]$fileName) {
@@ -79,7 +81,9 @@ function Copy-ModsToRelease {
             $expectedModsSet.Add($rel.Substring(5)) | Out-Null  # store filename
             $expectedModsBaseSet.Add((Get-BaseName ($rel.Substring(5)))) | Out-Null
         } elseif ($rel -like 'mods/optional/*') {
-            $expectedOptSet.Add($rel.Substring(14)) | Out-Null
+            $fn = $rel.Substring(14)
+            $expectedOptSet.Add($fn) | Out-Null
+            $expectedOptBaseSet.Add((Get-BaseName $fn)) | Out-Null
         } elseif ($rel -like 'mods/server/*') {
             $expectedServerSet.Add($rel.Substring(12)) | Out-Null
             $expectedServerBaseSet.Add((Get-BaseName ($rel.Substring(12)))) | Out-Null
@@ -150,11 +154,29 @@ function Copy-ModsToRelease {
     $sourceJars = Get-ChildItem -Path $SourcePath -Filter "*.jar" -File -ErrorAction SilentlyContinue
     
     if ($sourceJars.Count -eq 0) {
-        Write-Host "⚠️  No JAR files found in source path" -ForegroundColor Yellow
+        Write-Host "⚠️  No JAR files found in source path: $SourcePath" -ForegroundColor Yellow
         return $false
     }
     
     Write-Host "📊 Found $($sourceJars.Count) JAR files in source" -ForegroundColor Gray
+    # Debug: report expected mods (mods/ and mods/optional/) that are not in source by exact or base name
+    $sourceBaseSet = New-Object System.Collections.Generic.HashSet[string]
+    foreach ($s in $sourceJars) {
+        $b = (Get-BaseName $s.Name)
+        [void]$sourceBaseSet.Add($b)
+    }
+    $missingExpected = @()
+    foreach ($rel in $expectedList) {
+        if ($rel -notlike 'mods/*' -or $rel -like 'mods/server/*') { continue }
+        $fn = if ($rel -like 'mods/optional/*') { $rel.Substring(14) } elseif ($rel -like 'mods/block/*') { $rel.Substring(11) } else { $rel.Substring(5) }
+        $base = Get-BaseName $fn
+        $exactFound = $sourceJars | Where-Object { $_.Name -eq $fn } | Select-Object -First 1
+        $baseFound = $sourceBaseSet.Contains($base)
+        if (-not $exactFound -and -not $baseFound) { $missingExpected += $rel }
+    }
+    if ($missingExpected.Count -gt 0) {
+        Write-Host "  [RELEASE] Expected but not in source ($($missingExpected.Count)): $($missingExpected -join ', ')" -ForegroundColor Yellow
+    }
     
     $mandatoryCount = 0
     $optionalCount = 0
@@ -224,10 +246,29 @@ function Copy-ModsToRelease {
 
         switch ($grp) {
             "admin" {
-                if (-not $expectedOptSet.Contains($jarFile.Name)) { continue }
+                $base = Get-BaseName $jarFile.Name
+                $isExactOpt = $expectedOptSet.Contains($jarFile.Name)
+                $isBaseOpt = $expectedOptBaseSet.Contains($base)
+                if (-not $isExactOpt -and -not $isBaseOpt) { continue }
+                if (-not $isExactOpt -and $isBaseOpt -and $copiedBasesSet.Contains($base)) { continue }
                 $destination = Join-Path (Join-Path $DestinationPath "optional") $jarFile.Name
                 Copy-Item -Path $jarFile.FullName -Destination $destination -Force
-                Write-Host "  📦 Optional: $($jarFile.Name)" -ForegroundColor Yellow
+                if ($isExactOpt) { Write-Host "  📦 Optional: $($jarFile.Name)" -ForegroundColor Yellow }
+                else { Write-Host "  📦 Optional (relaxed): $($jarFile.Name)" -ForegroundColor DarkYellow }
+                [void]$copiedBasesSet.Add($base)
+                $optionalCount++
+            }
+            "optional" {
+                $base = Get-BaseName $jarFile.Name
+                $isExactOpt = $expectedOptSet.Contains($jarFile.Name)
+                $isBaseOpt = $expectedOptBaseSet.Contains($base)
+                if (-not $isExactOpt -and -not $isBaseOpt) { continue }
+                if (-not $isExactOpt -and $isBaseOpt -and $copiedBasesSet.Contains($base)) { continue }
+                $destination = Join-Path (Join-Path $DestinationPath "optional") $jarFile.Name
+                Copy-Item -Path $jarFile.FullName -Destination $destination -Force
+                if ($isExactOpt) { Write-Host "  📦 Optional: $($jarFile.Name)" -ForegroundColor Yellow }
+                else { Write-Host "  📦 Optional (relaxed): $($jarFile.Name)" -ForegroundColor DarkYellow }
+                [void]$copiedBasesSet.Add($base)
                 $optionalCount++
             }
             "block" {

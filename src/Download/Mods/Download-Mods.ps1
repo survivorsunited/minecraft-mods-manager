@@ -243,6 +243,10 @@ function Download-Mods {
                 # Get host from CSV, default to "modrinth" if not specified
                 $modHost = if (-not [string]::IsNullOrEmpty($mod.Host)) { $mod.Host } else { "modrinth" }
                 
+                if ($TargetGameVersion) {
+                    Write-Host "  [RELEASE] Processing: $($mod.Name) | Host=$modHost Type=$($mod.Type) Group=$($mod.Group)" -ForegroundColor DarkGray
+                }
+                
                 # Get game version - use target version when specified, otherwise use CSV game version
                 if ($TargetGameVersion) {
                     # When targeting a specific version, use that for all mods
@@ -377,6 +381,14 @@ function Download-Mods {
                         if ($modHost -eq "curseforge") {
                             $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                         }
+                    }
+                } elseif (-not $resolvedByApi -and $TargetGameVersion -and $mod.CurrentGameVersion -eq $TargetGameVersion -and $mod.CurrentVersionUrl) {
+                    # Target version matches CurrentGameVersion - use DB URL directly (avoids API calls e.g. for GitHub)
+                    $downloadUrl = $mod.CurrentVersionUrl
+                    $downloadVersion = $mod.CurrentVersion
+                    Write-Host "  [RELEASE] $($mod.Name): Using CurrentVersionUrl (TargetGameVersion=$TargetGameVersion, Host=$modHost)" -ForegroundColor Gray
+                    if ($modHost -eq "curseforge") {
+                        $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.CurrentVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                     }
                 } elseif (-not $resolvedByApi -and $UseLatestVersion -and $mod.LatestVersionUrl) {
                     $downloadUrl = $mod.LatestVersionUrl

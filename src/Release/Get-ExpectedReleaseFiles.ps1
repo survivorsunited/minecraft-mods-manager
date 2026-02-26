@@ -58,14 +58,17 @@ function Get-ExpectedReleaseFiles {
     }
 
     # Decide inclusion by version:
-    # - Prefer rows where CurrentGameVersion == $Version
-    # - Also include rows whose AvailableGameVersions contains the $Version (covers libs built for nearby patch)
+    # - Rows where CurrentGameVersion, NextGameVersion, or LatestGameVersion == $Version
+    # - Or AvailableGameVersions contains the $Version (covers libs built for nearby patch)
     $versionFilter = {
         param($r)
         $cur = Normalize $r.CurrentGameVersion
+        $next = Normalize $r.NextGameVersion
+        $latest = Normalize $r.LatestGameVersion
         $avail = Normalize $r.AvailableGameVersions
-        if ([string]::IsNullOrWhiteSpace($cur) -and [string]::IsNullOrWhiteSpace($avail)) { return $false }
         if ($cur -eq $Version) { return $true }
+        if (-not [string]::IsNullOrWhiteSpace($next) -and $next -eq $Version) { return $true }
+        if (-not [string]::IsNullOrWhiteSpace($latest) -and $latest -eq $Version) { return $true }
         if ($avail -and $avail -match [Regex]::Escape($Version)) { return $true }
         return $false
     }
