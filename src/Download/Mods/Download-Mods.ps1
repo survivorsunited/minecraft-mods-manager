@@ -457,6 +457,14 @@ function Download-Mods {
                 }
                 $downloadedThisRun[$mod.ID] = $true
                 
+                # Last-chance fallback: GitHub mods with TargetGameVersion matching CurrentGameVersion use DB URL (avoids API)
+                if (-not $downloadUrl -and $TargetGameVersion -and $modHost -eq 'github' -and $mod.CurrentGameVersion -eq $TargetGameVersion -and $mod.CurrentVersionUrl) {
+                    $downloadUrl = $mod.CurrentVersionUrl
+                    $downloadVersion = $mod.CurrentVersion
+                    if (-not $jarFilename -and $mod.Jar) { $jarFilename = $mod.Jar }
+                    if (-not $jarFilename -and $downloadUrl) { try { $jarFilename = [System.IO.Path]::GetFileName([System.Web.HttpUtility]::UrlDecode($downloadUrl)) } catch { } }
+                    Write-Host "  [RELEASE] $($mod.Name): Using CurrentVersionUrl (fallback, Host=github)" -ForegroundColor Gray
+                }
                 if (-not $downloadUrl) {
                     Write-Host "❌ $($mod.Name): No download URL available" -ForegroundColor Red
                     $errorCount++
