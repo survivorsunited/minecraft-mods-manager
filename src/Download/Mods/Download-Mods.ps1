@@ -664,11 +664,15 @@ function Download-Mods {
                         
                         # Try to get actual filename from Content-Disposition header or response URI
                         $actualFilename = $null
-                        if ($webRequest.Headers -and $webRequest.Headers["Content-Disposition"]) {
-                            $headerValue = $webRequest.Headers["Content-Disposition"]
-                            if ($headerValue -match 'filename="?([^"]+)"?') {
-                                $actualFilename = $matches[1]
+                        try {
+                            if ($webRequest.Headers -and $webRequest.Headers["Content-Disposition"]) {
+                                $headerValue = $webRequest.Headers["Content-Disposition"]
+                                if ($headerValue -match 'filename="?([^"]+)"?') {
+                                    if ($matches -and $matches.Count -gt 1) { $actualFilename = $matches[1] }
+                                }
                             }
+                        } catch {
+                            # Headers may be null or inaccessible on some responses (e.g. GitHub redirects)
                         }
                         if (-not $actualFilename -and $webRequest.BaseResponse -and $webRequest.BaseResponse.ResponseUri) {
                             $actualFilename = [System.IO.Path]::GetFileName($webRequest.BaseResponse.ResponseUri.AbsolutePath)
