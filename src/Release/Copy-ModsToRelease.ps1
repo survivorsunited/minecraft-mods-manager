@@ -89,6 +89,42 @@ function Copy-ModsToRelease {
             $expectedServerBaseSet.Add((Get-BaseName ($rel.Substring(12)))) | Out-Null
         }
     }
+    # Add mod IDs to expected base sets so JARs matched by fabric.mod.json id (e.g. xaeros_minimap) are recognized
+    # when expected path uses a different filename base (e.g. xaerominimap-fabric)
+    if ($TargetGameVersion) {
+    $versionFilterScript = {
+        param($r, $ver)
+        $cur = if ($r.CurrentGameVersion) { $r.CurrentGameVersion.Trim() } else { $null }
+        $next = if ($r.NextGameVersion) { $r.NextGameVersion.Trim() } else { $null }
+        $latest = if ($r.LatestGameVersion) { $r.LatestGameVersion.Trim() } else { $null }
+        $avail = if ($r.AvailableGameVersions) { $r.AvailableGameVersions.Trim() } else { $null }
+        if ($cur -eq $ver) { return $true }
+        if ($next -eq $ver) { return $true }
+        if ($latest -eq $ver) { return $true }
+        if ($avail -and $avail -match [Regex]::Escape($ver)) { return $true }
+        return $false
+    }
+    foreach ($m in $mods) {
+        if ((if ($m.Type) { $m.Type.Trim() } else { $null }) -ne 'mod') { continue }
+        $grp = if ($m.Group) { $m.Group.Trim().ToLower() } else { 'required' }
+        if ($grp -notin 'required','optional','admin') { continue }
+        if (-not (& $versionFilterScript $m $TargetGameVersion)) { continue }
+        $jar = if ($m.Jar) { $m.Jar.Trim() } else { $null }
+        if (-not $jar) { continue }
+        $rel = if ($grp -in 'optional','admin') { "mods/optional/$jar" } else { "mods/$jar" }
+        if ($expectedList -contains $rel) {
+            $idKey = if ($m.ID) { $m.ID.Trim().ToLower() } else { $null }
+            if ($idKey) {
+                [void]$expectedModsBaseSet.Add($idKey)
+                [void]$expectedModsBaseSet.Add($idKey.Replace('-','_'))
+                if ($grp -in 'optional','admin') {
+                    [void]$expectedOptBaseSet.Add($idKey)
+                    [void]$expectedOptBaseSet.Add($idKey.Replace('-','_'))
+                }
+            }
+        }
+    }
+    }
 
     # Calculate which exact expected mod filenames are actually available in source (to avoid copying relaxed duplicates when exact exists)
     $sourceJarNamesSet = New-Object System.Collections.Generic.HashSet[string]
