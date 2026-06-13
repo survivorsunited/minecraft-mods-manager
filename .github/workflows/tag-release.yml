@@ -227,11 +227,35 @@ jobs:
             $ver = $dir.Name
             Write-Host "  Processing $ver" -ForegroundColor Yellow
             $zipPath = "modpack-$ver.zip"
+            $modsPath = Join-Path $dir.FullName 'mods'
+            $modFiles = @()
+            if (Test-Path $modsPath) {
+              $modFiles = Get-ChildItem -Path $modsPath -Recurse -File -ErrorAction SilentlyContinue | Where-Object {
+                $_.Extension -in @('.jar', '.zip') -and $_.FullName -notmatch '[\\/]block[\\/]'
+              }
+            }
+            if ($modFiles.Count -eq 0) {
+              Write-Host "❌ Refusing to package $ver: release directory contains zero mod files" -ForegroundColor Red
+              Write-Host "   Checked: $modsPath" -ForegroundColor Yellow
+              exit 1
+            }
+            Write-Host "    ✓ Found $($modFiles.Count) mod file(s) under mods/" -ForegroundColor Green
             if (Test-Path $zipPath) {
               Remove-Item $zipPath -Force
             }
             Compress-Archive -Path "$($dir.FullName)\*" -DestinationPath $zipPath -Force
-            Write-Host "    ✓ Created $zipPath" -ForegroundColor Green
+            Add-Type -AssemblyName System.IO.Compression.FileSystem
+            $zipFile = [System.IO.Compression.ZipFile]::OpenRead((Resolve-Path $zipPath).Path)
+            try {
+              $zipModCount = ($zipFile.Entries | Where-Object { $_.FullName -match '(^|/)mods/.+\.(jar|zip)$' -and $_.FullName -notmatch '(^|/)mods/block/' }).Count
+            } finally {
+              $zipFile.Dispose()
+            }
+            if ($zipModCount -eq 0) {
+              Write-Host "❌ Packaged ZIP $zipPath contains zero mod files" -ForegroundColor Red
+              exit 1
+            }
+            Write-Host "    ✓ Created $zipPath with $zipModCount mod file(s)" -ForegroundColor Green
           }
           Write-Host "✅ Packaging complete" -ForegroundColor Green
       

@@ -224,6 +224,7 @@ try {
         -DownloadFolder $TestDownloadDir `
         -ReleasePath $TestReleaseDir `
         -GameVersion "1.21.8" 2>&1
+    $releaseExitCode = $LASTEXITCODE
     
     Stop-Transcript
     
@@ -234,6 +235,7 @@ try {
     Write-Host "    Message: $($_.Exception.Message)" -ForegroundColor Red
     Write-Host "    StackTrace: $($_.ScriptStackTrace)" -ForegroundColor Red
     $releaseOutput = @("EXCEPTION: $($_.Exception.Message)")
+    $releaseExitCode = 1
     
     # Try to stop transcript if it's running
     try { Stop-Transcript -ErrorAction SilentlyContinue } catch {}
@@ -244,9 +246,15 @@ Write-Host "  📊 RELEASE CREATION OUTPUT (last 20 lines):" -ForegroundColor Ye
 $releaseOutput | Select-Object -Last 20 | ForEach-Object { Write-Host "    $_" -ForegroundColor Gray }
 Write-Host ""
 
-$releaseCreated = ($LASTEXITCODE -eq 0)
-$validationFailed = (($releaseOutput -join "`n") -match "SERVER VALIDATION FAILED")
-Write-TestResult "CreateRelease executed successfully" $releaseCreated
+$releaseOutputText = $releaseOutput -join "`n"
+$validationFailed = ($releaseOutputText -match "SERVER VALIDATION FAILED")
+$packageBlocked = ($releaseOutputText -match "release package will not be created") -or (-not (Test-Path $TestReleaseDir))
+$releaseCreated = ($releaseExitCode -eq 0) -and (-not $validationFailed)
+if ($validationFailed) {
+    Write-TestResult "CreateRelease blocks invalid packages" $packageBlocked
+} else {
+    Write-TestResult "CreateRelease executed successfully" $releaseCreated
+}
 
 # Debug directory structure after release creation
 Write-Host "  🔍 POST-RELEASE DIRECTORY ANALYSIS:" -ForegroundColor Cyan

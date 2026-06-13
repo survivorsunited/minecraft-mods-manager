@@ -217,6 +217,17 @@ function New-Release {
     $organizeOk = Copy-ModsToRelease -SourcePath $sourceModsPath -DestinationPath $releaseModsPath -CsvPath $CsvPath -TargetGameVersion $targetVersion
     if (-not $organizeOk) { Write-Host "❌ Failed to organize mods for release" -ForegroundColor Red; return $false }
 
+    $releaseModFiles = Get-ChildItem -Path $releaseModsPath -Recurse -File -ErrorAction SilentlyContinue | Where-Object {
+        $_.Extension -in @('.jar', '.zip') -and $_.FullName -notmatch '[\\/]block[\\/]'
+    }
+    if ($releaseModFiles.Count -eq 0) {
+        Write-Host "❌ Release package contains zero mod files; refusing to create empty modpack" -ForegroundColor Red
+        Write-Host "   Source mods path: $sourceModsPath" -ForegroundColor Yellow
+        Write-Host "   Release mods path: $releaseModsPath" -ForegroundColor Yellow
+        return $false
+    }
+    Write-Host "✓ Release mod payload contains $($releaseModFiles.Count) file(s)" -ForegroundColor Green
+
     # Copy shaderpacks
     $sourceShaderpacks = Join-Path $downloadVersionPath 'shaderpacks'
     if (Test-Path $sourceShaderpacks) {

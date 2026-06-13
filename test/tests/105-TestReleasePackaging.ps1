@@ -154,8 +154,16 @@ Write-TestResult "New-Release has failed-validation branch" $failedValidationBlo
 Write-TestResult "Failed server validation returns false" ($failedValidationBody -match 'return\s+\$false')
 Write-TestResult "Failed server validation is not non-blocking" ($failedValidationBody -notmatch 'non-blocking|proceeding to package anyway')
 
-# Test 6: Build artifacts exclusion
-Write-TestHeader "Test 6: Build Artifacts Exclusion"
+# Test 6: Empty modpack releases are blocked
+Write-TestHeader "Test 6: Empty Modpack Guard"
+
+Write-TestResult "New-Release refuses zero-mod release payloads" ($newReleaseScript -match 'Release package contains zero mod files' -and $newReleaseScript -match 'refusing to create empty modpack')
+$tagReleaseWorkflow = Get-Content -Path (Join-Path $PSScriptRoot '..\..\.github\workflows\tag-release.yml') -Raw
+Write-TestResult "Tag release workflow refuses zero-mod release directories" ($tagReleaseWorkflow -match 'release directory contains zero mod files')
+Write-TestResult "Tag release workflow verifies packaged ZIP mod count" ($tagReleaseWorkflow -match 'Packaged ZIP .*contains zero mod files')
+
+# Test 7: Build artifacts exclusion
+Write-TestHeader "Test 7: Build Artifacts Exclusion"
 
 # Create build artifact files (should NOT be in release)
 $artifacts = @(
