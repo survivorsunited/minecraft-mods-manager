@@ -119,8 +119,43 @@ Write-TestResult "Server mods NOT in mods/server/ subfolder" ((-not (Test-Path $
 Write-TestResult "Server mods in main mods/ folder" ((Test-Path $luckpermsInMain) -or (Test-Path $fabricproxyInMain))
 Write-TestResult "Normal mod in mods/ folder" (Test-Path (Join-Path $releaseModsDir 'lithium-fabric-0.18.1+mc1.21.8.jar'))
 
-# Test 4: Build artifacts exclusion
-Write-TestHeader "Test 4: Build Artifacts Exclusion"
+# Test 4: Target-version dynamic downloads are not over-filtered by stale CSV expected list
+Write-TestHeader "Test 4: Target-Version Dynamic Downloads"
+
+$dynamicVersion = '1.21.11'
+$dynamicDownloadModsDir = Join-Path $testOutDir 'dynamic-download' 'mods'
+$dynamicReleaseModsDir = Join-Path $testOutDir 'dynamic-release' 'mods'
+$dynamicCsv = Join-Path $testOutDir 'dynamic-release-packaging.csv'
+New-Item -ItemType Directory -Path $dynamicDownloadModsDir -Force | Out-Null
+
+$dynamicRows = @(
+    [pscustomobject]@{
+        Group='required'; Type='mod'; CurrentGameVersion=$dynamicVersion; NextGameVersion=''; LatestGameVersion=$dynamicVersion; AvailableGameVersions='';
+        ID='known-mod'; Name='Known Mod'; Jar='known-mod-1.0.0.jar'; ClientSide='required'; ServerSide='required';
+        CurrentVersionUrl=''; NextVersionUrl=''; LatestVersionUrl=''; UrlDirect=''
+    }
+)
+$dynamicRows | Export-Csv -Path $dynamicCsv -NoTypeInformation -Encoding UTF8
+Set-Content -Path (Join-Path $dynamicDownloadModsDir 'known-mod-1.0.0.jar') -Value 'dummy' -Encoding UTF8
+Set-Content -Path (Join-Path $dynamicDownloadModsDir 'newly-resolved-mod-2.0.0.jar') -Value 'dummy' -Encoding UTF8
+
+$dynamicOk = Copy-ModsToRelease -SourcePath $dynamicDownloadModsDir -DestinationPath $dynamicReleaseModsDir -CsvPath $dynamicCsv -TargetGameVersion $dynamicVersion
+Write-TestResult "Dynamic target copy executed" $dynamicOk
+Write-TestResult "Expected CSV-listed mod copied" (Test-Path (Join-Path $dynamicReleaseModsDir 'known-mod-1.0.0.jar'))
+Write-TestResult "Dynamically resolved target mod copied" (Test-Path (Join-Path $dynamicReleaseModsDir 'newly-resolved-mod-2.0.0.jar'))
+
+# Test 5: Failed server validation blocks release packaging
+Write-TestHeader "Test 5: Failed Server Validation Blocks Release"
+
+$newReleaseScript = Get-Content -Path (Join-Path $PSScriptRoot '..\..\src\Release\New-Release.ps1') -Raw
+$failedValidationBlock = [regex]::Match($newReleaseScript, 'if \(-not \$serverResult\) \{(?<body>[\s\S]*?)\n\s*\} else \{')
+$failedValidationBody = if ($failedValidationBlock.Success) { $failedValidationBlock.Groups['body'].Value } else { '' }
+Write-TestResult "New-Release has failed-validation branch" $failedValidationBlock.Success
+Write-TestResult "Failed server validation returns false" ($failedValidationBody -match 'return\s+\$false')
+Write-TestResult "Failed server validation is not non-blocking" ($failedValidationBody -notmatch 'non-blocking|proceeding to package anyway')
+
+# Test 6: Build artifacts exclusion
+Write-TestHeader "Test 6: Build Artifacts Exclusion"
 
 # Create build artifact files (should NOT be in release)
 $artifacts = @(

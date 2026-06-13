@@ -245,6 +245,7 @@ $releaseOutput | Select-Object -Last 20 | ForEach-Object { Write-Host "    $_" -
 Write-Host ""
 
 $releaseCreated = ($LASTEXITCODE -eq 0)
+$validationFailed = (($releaseOutput -join "`n") -match "SERVER VALIDATION FAILED")
 Write-TestResult "CreateRelease executed successfully" $releaseCreated
 
 # Debug directory structure after release creation
@@ -262,7 +263,11 @@ Write-TestHeader "Test 4: Verify Release Directory Structure"
 
 $releaseVersionPath = Join-Path $TestReleaseDir "1.21.8"
 $releaseVersionExists = Test-Path $releaseVersionPath
-Write-TestResult "Release version directory created" $releaseVersionExists
+if ($validationFailed) {
+    Write-TestResult "Release package blocked when server validation fails" (-not $releaseVersionExists)
+} else {
+    Write-TestResult "Release version directory created" $releaseVersionExists
+}
 
 if ($releaseVersionExists) {
     # Check for mods directory

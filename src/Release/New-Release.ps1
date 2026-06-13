@@ -163,7 +163,7 @@ function New-Release {
     
     Write-Host "" -ForegroundColor White
     
-    # Step 3: VALIDATION GATE - Start server to verify compatibility (non-blocking)
+    # Step 3: VALIDATION GATE - Start server to verify compatibility
     Write-Host "🧪 Validating mods by starting server..." -ForegroundColor Yellow
     Write-Host "   This ensures all mods are compatible before creating release package" -ForegroundColor Gray
     Write-Host "" -ForegroundColor White
@@ -186,8 +186,9 @@ function New-Release {
 
     if (-not $serverResult) {
         Write-Host "" -ForegroundColor White
-        Write-Host "⚠️  SERVER VALIDATION FAILED - proceeding to package anyway (non-blocking)" -ForegroundColor Yellow
-        Write-Host "   A release will still be created so clients can update; investigate validation logs separately." -ForegroundColor DarkYellow
+        Write-Host "❌ SERVER VALIDATION FAILED - release package will not be created" -ForegroundColor Red
+        Write-Host "   Fix incompatible/missing mods or server startup errors before publishing." -ForegroundColor Yellow
+        return $false
     } else {
         Write-Host "" -ForegroundColor White
         Write-Host "✅ Server validation passed - proceeding with release creation" -ForegroundColor Green
