@@ -158,7 +158,10 @@ Write-TestResult "Failed server validation is not non-blocking" ($failedValidati
 Write-TestHeader "Test 6: Empty Modpack Guard"
 
 Write-TestResult "New-Release refuses zero-mod release payloads" ($newReleaseScript -match 'Release package contains zero mod files' -and $newReleaseScript -match 'refusing to create empty modpack')
+$modManagerScript = Get-Content -Path (Join-Path $PSScriptRoot '..\..\ModManager.ps1') -Raw
+Write-TestResult "ModManager treats false New-Release result as failure" ($modManagerScript -match '\$boolResults = @\(\$result \| Where-Object \{ \$_ -is \[bool\] \}\)' -and $modManagerScript -match 'Exit-ModManager 1')
 $tagReleaseWorkflow = Get-Content -Path (Join-Path $PSScriptRoot '..\..\.github\workflows\tag-release.yml') -Raw
+Write-TestResult "Tag release workflow refuses zero release directories" ($tagReleaseWorkflow -match 'No release directories found; refusing to publish an empty release')
 Write-TestResult "Tag release workflow refuses zero-mod release directories" ($tagReleaseWorkflow -match 'release directory contains zero mod files')
 Write-TestResult "Tag release workflow verifies packaged ZIP mod count" ($tagReleaseWorkflow -match 'Packaged ZIP .*contains zero mod files')
 

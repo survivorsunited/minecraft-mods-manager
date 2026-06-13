@@ -222,7 +222,11 @@ jobs:
         shell: pwsh
         run: |
           Write-Host "📦 Packaging modpacks..." -ForegroundColor Cyan
-          $releaseDirs = Get-ChildItem -Path "releases" -Directory
+          $releaseDirs = Get-ChildItem -Path "releases" -Directory -ErrorAction SilentlyContinue
+          if ($releaseDirs.Count -eq 0) {
+            Write-Host "❌ No release directories found; refusing to publish an empty release" -ForegroundColor Red
+            exit 1
+          }
           foreach ($dir in $releaseDirs) {
             $ver = $dir.Name
             Write-Host "  Processing $ver" -ForegroundColor Yellow

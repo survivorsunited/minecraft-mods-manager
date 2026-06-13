@@ -347,6 +347,11 @@ jobs:
       shell: bash
       run: |
         echo "📦 Packaging modpacks..."
+        release_count=$(find releases -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
+        if [ "$release_count" = "0" ]; then
+          echo "❌ No release directories found; refusing to publish an empty test release"
+          exit 1
+        fi
         for d in releases/*/; do
           [ -d "$d" ] || continue
           ver=$(basename "$d")
