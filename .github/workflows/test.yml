@@ -175,7 +175,8 @@ jobs:
           .\RunAllTests.ps1 -TestFiles $list
         } elseif ($env:TEST_FILES) {
           Write-Host "Running tests from TEST_FILES env: $env:TEST_FILES" -ForegroundColor Green
-          .\RunAllTests.ps1
+          $list = $env:TEST_FILES.Split(',') | ForEach-Object { $_.Trim() } | Where-Object { $_ }
+          .\RunAllTests.ps1 -TestFiles $list
         } else {
           Write-Host "Running full suite (no selection provided)" -ForegroundColor Yellow
           .\RunAllTests.ps1
