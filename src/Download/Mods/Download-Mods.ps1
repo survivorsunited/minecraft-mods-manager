@@ -416,6 +416,9 @@ function Download-Mods {
                     if ($modHost -eq "curseforge") {
                         $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.NextVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                     }
+                } elseif (-not $resolvedByApi -and $TargetGameVersion -and $mod.Type -in @("mod", "datapack", "shaderpack")) {
+                    Write-Host "  ⏭️  $($mod.Name): No compatible artifact found for $TargetGameVersion; skipping release payload" -ForegroundColor Yellow
+                    continue
                 } elseif (-not $resolvedByApi -and $mod.CurrentVersionUrl) {
                     $downloadUrl = $mod.CurrentVersionUrl
                     $downloadVersion = $mod.CurrentVersion
