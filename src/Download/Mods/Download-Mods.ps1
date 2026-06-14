@@ -307,6 +307,14 @@ function Download-Mods {
                     } catch {
                         Write-Host "  ⚠️  $($mod.Name): API resolution failed, will fall back to DB URLs" -ForegroundColor DarkYellow
                     }
+
+                    # In target-version release mode, Modrinth metadata is authoritative for mod
+                    # compatibility. If no file advertises the target game version, skip the mod
+                    # instead of falling back to a stale CSV URL that can crash server validation.
+                    if (-not $resolvedByApi) {
+                        Write-Host "  ⏭️  $($mod.Name): No Modrinth artifact found for $TargetGameVersion; skipping target release payload" -ForegroundColor Yellow
+                        continue
+                    }
                 }
 
                 # For system entries (installer, launcher, server), handle differently based on UseLatestVersion
