@@ -188,7 +188,7 @@ $notesOutput = Join-Path $notesRoot 'release-notes.md'
 $notesText = Get-Content -Path $notesOutput -Raw
 Write-TestResult "Release notes include per-version mod status section" ($notesText -match 'Working and Not-Released Mods by Version' -and $notesText -match "Minecraft $version")
 Write-TestResult "Release notes list working released mods" ($notesText -match 'Working Mod' -and $notesText -match 'Working/released entries: \*\*1\*\*')
-Write-TestResult "Release notes list blocked/not-released mods" ($notesText -match 'Broken Mod' -and $notesText -match 'blocked/not released for this version')
+Write-TestResult "Release notes list excluded/still-tracked mods" ($notesText -match 'Broken Mod' -and $notesText -match 'excluded from package for server validation; still tracked in the mod database for updates')
 
 # Test 8: Build artifacts exclusion
 Write-TestHeader "Test 8: Build Artifacts Exclusion"

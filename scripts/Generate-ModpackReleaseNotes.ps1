@@ -26,12 +26,16 @@ function Get-BaseModKey([string]$relativePath) {
     if ([string]::IsNullOrWhiteSpace($name)) { return $null }
     $match = [System.Text.RegularExpressions.Regex]::Match($name, '^(.*?)(?:[-_]?)(?=\d)')
     $base = if ($match.Success -and $match.Groups.Count -gt 1 -and $match.Groups[1].Value.Trim().Length -gt 0) { $match.Groups[1].Value.TrimEnd('-','_') } else { $name }
-    return $base.ToLowerInvariant()
+    $base = [System.Uri]::UnescapeDataString($base)
+    $base = [System.Text.RegularExpressions.Regex]::Replace($base.ToLowerInvariant(), '[^a-z0-9]+', '')
+    return $base
 }
 
 function Get-ArtifactFilenameFromRow($row, [string]$targetVersion) {
     $jar = Normalize-Text $row.Jar
-    if (-not [string]::IsNullOrWhiteSpace($jar)) { return $jar }
+    if (-not [string]::IsNullOrWhiteSpace($jar)) {
+        try { return [System.Uri]::UnescapeDataString($jar) } catch { return $jar }
+    }
 
     $urlCandidates = @()
     if ((Normalize-Text $row.CurrentGameVersion) -eq $targetVersion) { $urlCandidates += (Normalize-Text $row.CurrentVersionUrl) }
@@ -42,9 +46,12 @@ function Get-ArtifactFilenameFromRow($row, [string]$targetVersion) {
     foreach ($url in $urlCandidates) {
         if ([string]::IsNullOrWhiteSpace($url)) { continue }
         try {
-            $decoded = [System.Web.HttpUtility]::UrlDecode($url)
-            $name = [System.IO.Path]::GetFileName($decoded)
-            if (-not [string]::IsNullOrWhiteSpace($name)) { return $name }
+            $candidate = ($url -split '[?#]')[0]
+            $name = ($candidate -split '/|\\\\')[-1]
+            if (-not [string]::IsNullOrWhiteSpace($name)) {
+                $name = [System.Uri]::UnescapeDataString($name)
+                return $name
+            }
         } catch { }
     }
     return $null
@@ -152,7 +159,7 @@ foreach ($targetVersion in $Versions) {
         $exact = $actualSet.Contains($artifactPath)
         $relaxed = ($base -and $actualBaseSet.Contains($base))
         if ($group -eq 'block' -or $artifactPath -like 'mods/block/*') {
-            $notReleased.Add("- $label — blocked/not released for this version")
+            $notReleased.Add("- $label — excluded from package for server validation; still tracked in the mod database for updates")
         } elseif ($exact -or $relaxed) {
             $working.Add("- $label")
             if ($exact) { [void]$matchedActual.Add($artifactPath) }
@@ -177,13 +184,13 @@ foreach ($targetVersion in $Versions) {
     $notes.Add("### Minecraft $targetVersion")
     $notes.Add('')
     $notes.Add("- Working/released entries: **$($working.Count)**")
-    $notes.Add("- Not released / needs attention: **$($notReleased.Count)**")
+    $notes.Add("- Excluded from package / still tracked: **$($notReleased.Count)**")
     if ($additional.Count -gt 0) { $notes.Add("- Additional packaged files not matched to modlist rows: **$($additional.Count)**") }
     $notes.Add('')
     $notes.Add("#### Working / released ($($working.Count))")
     if ($working.Count -eq 0) { $notes.Add('- (none)') } else { foreach ($line in $working) { $notes.Add($line) } }
     $notes.Add('')
-    $notes.Add("#### Not released / needs attention ($($notReleased.Count))")
+    $notes.Add("#### Excluded from package / still tracked ($($notReleased.Count))")
     if ($notReleased.Count -eq 0) { $notes.Add('- (none)') } else { foreach ($line in $notReleased) { $notes.Add($line) } }
     if ($additional.Count -gt 0) {
         $notes.Add('')
@@ -208,7 +215,7 @@ $notes.Add('1. Download ``modpack-[version].zip`` for your Minecraft version')
 $notes.Add('2. Extract the ZIP file')
 $notes.Add('3. Install mods from the ``mods/`` directory to ``.minecraft/mods/``')
 $notes.Add('4. Optional mods are in ``mods/optional/``')
-$notes.Add('5. Mods listed under “Not released / needs attention” are intentionally not part of that version package until fixed')
+$notes.Add('5. Mods listed under “Excluded from package / still tracked” are intentionally not part of that version package, but remain in the database and continue to receive version metadata updates')
 $notes.Add('6. Check ``hash.txt`` for file verification')
 $notes.Add('7. See ``README.md`` for complete installation guide')
 $notes.Add('')
