@@ -130,17 +130,18 @@ function Download-JDK {
             # Windows ZIP file
             Expand-Archive -Path $downloadPath -DestinationPath $jdkBaseFolder -Force
             
-            # Find the extracted folder (usually has a version-specific name)
-            $extractedFolders = Get-ChildItem -Path $jdkBaseFolder -Directory | Where-Object { $_.Name -like "*jdk*$Version*" }
-            if ($extractedFolders) {
-                $extractedFolder = $extractedFolders[0].FullName
-                
-                # Rename to standard name if different
-                if ($extractedFolder -ne $jdkFolder) {
-                    if (Test-Path $jdkFolder) {
-                        Remove-Item -Path $jdkFolder -Recurse -Force
-                    }
-                    Move-Item -Path $extractedFolder -Destination $jdkFolder -Force
+            # Find and normalize the extracted Java home. macOS archives commonly
+            # extract as <jdk>.jdk/Contents/Home, while Windows/Linux archives use
+            # a top-level folder containing bin/.
+            $javaExecutableName = if ($Platform -eq 'windows') { 'java.exe' } else { 'java' }
+            $javaBin = Get-ChildItem -Path $jdkBaseFolder -Recurse -File -Filter $javaExecutableName -ErrorAction SilentlyContinue |
+                Where-Object { $_.FullName -match "[\\/]bin[\\/]$javaExecutableName$" } |
+                Select-Object -First 1
+            if ($javaBin) {
+                $extractedHome = Split-Path -Parent (Split-Path -Parent $javaBin.FullName)
+                if ($extractedHome -ne $jdkFolder) {
+                    if (Test-Path $jdkFolder) { Remove-Item -Path $jdkFolder -Recurse -Force }
+                    Move-Item -Path $extractedHome -Destination $jdkFolder -Force
                 }
             }
         } elseif ($fileName -match '\.(tar\.gz|tgz)$') {
@@ -148,15 +149,18 @@ function Download-JDK {
             if (Get-Command tar -ErrorAction SilentlyContinue) {
                 & tar -xzf $downloadPath -C $jdkBaseFolder
                 
-                # Find and rename extracted folder
-                $extractedFolders = Get-ChildItem -Path $jdkBaseFolder -Directory | Where-Object { $_.Name -like "*jdk*$Version*" }
-                if ($extractedFolders) {
-                    $extractedFolder = $extractedFolders[0].FullName
-                    if ($extractedFolder -ne $jdkFolder) {
-                        if (Test-Path $jdkFolder) {
-                            Remove-Item -Path $jdkFolder -Recurse -Force
-                        }
-                        Move-Item -Path $extractedFolder -Destination $jdkFolder -Force
+                # Find and normalize the extracted Java home. macOS archives commonly
+                # extract as <jdk>.jdk/Contents/Home, while Linux archives use a
+                # top-level folder containing bin/.
+                $javaExecutableName = if ($Platform -eq 'windows') { 'java.exe' } else { 'java' }
+                $javaBin = Get-ChildItem -Path $jdkBaseFolder -Recurse -File -Filter $javaExecutableName -ErrorAction SilentlyContinue |
+                    Where-Object { $_.FullName -match "[\\/]bin[\\/]$javaExecutableName$" } |
+                    Select-Object -First 1
+                if ($javaBin) {
+                    $extractedHome = Split-Path -Parent (Split-Path -Parent $javaBin.FullName)
+                    if ($extractedHome -ne $jdkFolder) {
+                        if (Test-Path $jdkFolder) { Remove-Item -Path $jdkFolder -Recurse -Force }
+                        Move-Item -Path $extractedHome -Destination $jdkFolder -Force
                     }
                 }
             } else {

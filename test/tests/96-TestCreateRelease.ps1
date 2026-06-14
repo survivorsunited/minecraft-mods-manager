@@ -19,10 +19,11 @@ $script:TestApiResponseDir = Join-Path $TestOutputDir "apiresponse"
 $TestDownloadDir = Join-Path $TestOutputDir "download"
 $TestReleaseDir = Join-Path $TestOutputDir "releases"
 $TestDbPath = Join-Path $TestOutputDir "release-test.csv"
+$TestGameVersion = "1.21.11"
 
 Write-TestHeader "Test Environment Setup"
 
-# Use real modlist.csv and filter to 1.21.8 only
+# Use real modlist.csv and filter to the current release test version only
 $mainModlistPath = Join-Path $PSScriptRoot "..\..\modlist.csv"
 if (-not (Test-Path $mainModlistPath)) {
     Write-Host "❌ Main modlist.csv not found at: $mainModlistPath" -ForegroundColor Red
@@ -31,42 +32,42 @@ if (-not (Test-Path $mainModlistPath)) {
     return $false
 }
 
-# Copy 1.21.8 entries AND server/launcher entries AND JDK entries from main database
+# Copy target-version entries AND server/launcher entries AND JDK entries from main database
 $allMods = Import-Csv -Path $mainModlistPath
-$mods1218 = $allMods | Where-Object { 
-    ($_.CurrentGameVersion -eq "1.21.8" -or $_.GameVersion -eq "1.21.8") -or 
-    ($_.Type -eq "server" -and $_.GameVersion -eq "1.21.8") -or
-    ($_.Type -eq "launcher" -and $_.GameVersion -eq "1.21.8") -or
+$testVersionRows = $allMods | Where-Object { 
+    ($_.CurrentGameVersion -eq $TestGameVersion -or $_.GameVersion -eq $TestGameVersion) -or 
+    ($_.Type -eq "server" -and $_.GameVersion -eq $TestGameVersion) -or
+    ($_.Type -eq "launcher" -and $_.GameVersion -eq $TestGameVersion) -or
     ($_.Type -eq "jdk")  # Include all JDK entries for auto-download
 }
 
-if ($mods1218.Count -eq 0) {
-    Write-Host "❌ No 1.21.8 mods found in database" -ForegroundColor Red
+if ($testVersionRows.Count -eq 0) {
+    Write-Host "❌ No $TestGameVersion mods found in database" -ForegroundColor Red
     Write-TestResult "Test Database Created" $false
     Show-TestSummary "CreateRelease Tests"
     return $false
 }
 
-$mods1218 | Export-Csv -Path $TestDbPath -NoTypeInformation -Encoding UTF8
+$testVersionRows | Export-Csv -Path $TestDbPath -NoTypeInformation -Encoding UTF8
 
 Write-Host ""
 Write-Host "  🔍 DEBUG: Test Database Analysis" -ForegroundColor Cyan
 Write-Host "    Database path: $TestDbPath" -ForegroundColor Gray
 Write-Host "    Database exists: $(Test-Path $TestDbPath)" -ForegroundColor Gray
-Write-Host "    Total entries: $($mods1218.Count)" -ForegroundColor Gray
+Write-Host "    Total entries: $($testVersionRows.Count)" -ForegroundColor Gray
 Write-Host ""
 
 # Analyze database content
 Write-Host "    📊 DATABASE BREAKDOWN:" -ForegroundColor Cyan
-$typeBreakdown = $mods1218 | Group-Object -Property Type
+$typeBreakdown = $testVersionRows | Group-Object -Property Type
 foreach ($typeGroup in $typeBreakdown) {
     Write-Host "      $($typeGroup.Name): $($typeGroup.Count)" -ForegroundColor Gray
 }
 Write-Host ""
 
 # Check for server/launcher entries
-$serverEntry = $mods1218 | Where-Object { $_.Type -eq "server" } | Select-Object -First 1
-$launcherEntry = $mods1218 | Where-Object { $_.Type -eq "launcher" } | Select-Object -First 1
+$serverEntry = $testVersionRows | Where-Object { $_.Type -eq "server" } | Select-Object -First 1
+$launcherEntry = $testVersionRows | Where-Object { $_.Type -eq "launcher" } | Select-Object -First 1
 
 Write-Host "    🔍 SERVER/LAUNCHER CHECK:" -ForegroundColor Cyan
 Write-Host "      Server entry exists: $($null -ne $serverEntry)" -ForegroundColor $(if ($serverEntry) { "Green" } else { "Red" })
@@ -84,7 +85,7 @@ if ($null -ne $launcherEntry) {
 }
 Write-Host ""
 
-Write-Host "  Created test database with $($mods1218.Count) mods for version 1.21.8" -ForegroundColor Gray
+Write-Host "  Created test database with $($testVersionRows.Count) mods for version $TestGameVersion" -ForegroundColor Gray
 Write-TestResult "Test Database Created" (Test-Path $TestDbPath)
 
 # Test 1: Download Mods for Release
@@ -106,7 +107,7 @@ Write-Host ""
 Write-Host "  📊 TEST CONFIGURATION:" -ForegroundColor Yellow
 Write-Host "    Database: $TestDbPath" -ForegroundColor Gray
 Write-Host "    Download Folder: $TestDownloadDir" -ForegroundColor Gray
-Write-Host "    Target Version: 1.21.8" -ForegroundColor Gray
+Write-Host "    Target Version: $TestGameVersion" -ForegroundColor Gray
 Write-Host "    Using Cached Responses: YES" -ForegroundColor Gray
 Write-Host "    API Response Folder: $script:TestApiResponseDir" -ForegroundColor Gray
 Write-Host ""
@@ -117,7 +118,7 @@ $downloadOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPat
     -DownloadMods `
     -DatabaseFile $TestDbPath `
     -DownloadFolder $TestDownloadDir `
-    -TargetVersion "1.21.8" `
+    -TargetVersion $TestGameVersion `
     -UseCachedResponses `
     -ApiResponseFolder $script:TestApiResponseDir 2>&1
 
@@ -136,7 +137,7 @@ Write-Host ""
 Write-TestResult "Download mods for testing" $downloadSucceeded
 
 # Verify mods directory exists
-$modsPath = Join-Path $TestDownloadDir "1.21.8" "mods"
+$modsPath = Join-Path $TestDownloadDir $TestGameVersion "mods"
 $modsExist = Test-Path $modsPath
 Write-TestResult "Mods directory created" $modsExist
 
@@ -162,14 +163,14 @@ Write-Host ""
 Write-Host "  🔍 DEBUG: Server Download Command" -ForegroundColor Cyan
 Write-Host "    DownloadFolder: $TestDownloadDir" -ForegroundColor Gray
 Write-Host "    DatabaseFile: $TestDbPath" -ForegroundColor Gray
-Write-Host "    GameVersion: 1.21.8" -ForegroundColor Gray
+Write-Host "    GameVersion: $TestGameVersion" -ForegroundColor Gray
 Write-Host ""
 
 $serverOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModManagerPath `
     -DownloadServer `
     -DownloadFolder $TestDownloadDir `
     -DatabaseFile $TestDbPath `
-    -GameVersion "1.21.8" `
+    -GameVersion $TestGameVersion `
     -UseCachedResponses 2>&1
 
 $serverDownloadSucceeded = ($LASTEXITCODE -eq 0)
@@ -188,7 +189,7 @@ if (-not $serverDownloadSucceeded) {
 Write-TestResult "Server files downloaded" $serverDownloadSucceeded
 
 # Verify server files exist
-$serverPath = Join-Path $TestDownloadDir "1.21.8"
+$serverPath = Join-Path $TestDownloadDir $TestGameVersion
 $minecraftJar = Get-ChildItem -Path $serverPath -Filter "minecraft_server*.jar" -File -ErrorAction SilentlyContinue | Select-Object -First 1
 $fabricJar = Get-ChildItem -Path $serverPath -Filter "fabric-server*.jar" -File -ErrorAction SilentlyContinue | Select-Object -First 1
 
@@ -204,11 +205,11 @@ Write-Host "    ModManagerPath: $ModManagerPath" -ForegroundColor Gray
 Write-Host "    TestDbPath: $TestDbPath" -ForegroundColor Gray
 Write-Host "    TestDownloadDir: $TestDownloadDir" -ForegroundColor Gray
 Write-Host "    TestReleaseDir: $TestReleaseDir" -ForegroundColor Gray
-Write-Host "    GameVersion: 1.21.8" -ForegroundColor Gray
+Write-Host "    GameVersion: $TestGameVersion" -ForegroundColor Gray
 Write-Host ""
 
 Write-Host "  📋 RELEASE CREATION COMMAND:" -ForegroundColor Cyan
-Write-Host "    Command: ModManager -CreateRelease -GameVersion 1.21.8" -ForegroundColor Gray
+Write-Host "    Command: ModManager -CreateRelease -GameVersion $TestGameVersion" -ForegroundColor Gray
 Write-Host ""
 
 try {
@@ -223,7 +224,7 @@ try {
         -DatabaseFile $TestDbPath `
         -DownloadFolder $TestDownloadDir `
         -ReleasePath $TestReleaseDir `
-        -GameVersion "1.21.8" 2>&1
+        -GameVersion $TestGameVersion 2>&1
     $releaseExitCode = $LASTEXITCODE
     
     Stop-Transcript
@@ -269,7 +270,7 @@ Write-Host ""
 # Test 4: Verify Release Directory Structure
 Write-TestHeader "Test 4: Verify Release Directory Structure"
 
-$releaseVersionPath = Join-Path $TestReleaseDir "1.21.8"
+$releaseVersionPath = Join-Path $TestReleaseDir $TestGameVersion
 $releaseVersionExists = Test-Path $releaseVersionPath
 if ($validationFailed) {
     Write-TestResult "Release package blocked when server validation fails" (-not $releaseVersionExists)
@@ -382,7 +383,7 @@ if ($releaseModsExist) {
     Write-TestResult "No server JAR in mods folder" (-not $hasServerInMods)
 }
 
-# Test 9: Skip Multi-Version (Focusing on 1.21.8 Only)
+# Test 9: Verify Mandatory vs Optional Separation
 Write-TestHeader "Test 9: Verify Mandatory vs Optional Separation"
 
 if ($releaseModsExist) {
@@ -430,7 +431,7 @@ $invalidReleaseOutput = & pwsh -NoProfile -ExecutionPolicy Bypass -File $ModMana
     -DatabaseFile $TestDbPath `
     -DownloadFolder "nonexistent-folder" `
     -ReleasePath $TestReleaseDir `
-    -GameVersion "1.21.8" 2>&1
+    -GameVersion $TestGameVersion 2>&1
 
 # Should handle gracefully (error or skip)
 $handledGracefully = $true  # Accept any non-crash behavior
