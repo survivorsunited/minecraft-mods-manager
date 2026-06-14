@@ -29,6 +29,12 @@ jobs:
         with:
           ref: ${{ github.ref }}
           submodules: true
+
+      - name: Set up Java 22 for server validation
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '22'
       
       - name: Extract Tag Information
         id: tag_info
