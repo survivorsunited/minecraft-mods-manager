@@ -26,32 +26,32 @@
     },
     {
       "version": "1.21.11",
-      "enabled": true,
-      "description": "Future version; enable when ready for release",
+      "enabled": false,
+      "description": "Future version; disabled until mod resolution passes release validation",
       "env": {
         "JAVA_VERSION_MIN": "21"
       }
     },
     {
       "version": "26.1",
-      "enabled": true,
-      "description": "Minecraft 26.1 candidate; requires Java 25 runtime",
+      "enabled": false,
+      "description": "Minecraft 26.1 candidate; disabled until Java 25 runtime and mod validation are ready",
       "env": {
         "JAVA_VERSION_MIN": "25"
       }
     },
     {
       "version": "26.1.1",
-      "enabled": true,
-      "description": "Minecraft 26.1.1 candidate; requires Java 25 runtime",
+      "enabled": false,
+      "description": "Minecraft 26.1.1 candidate; disabled until Java 25 runtime and mod validation are ready",
       "env": {
         "JAVA_VERSION_MIN": "25"
       }
     },
     {
       "version": "26.1.2",
-      "enabled": true,
-      "description": "Minecraft 26.1.2 candidate; requires Java 25 runtime",
+      "enabled": false,
+      "description": "Minecraft 26.1.2 candidate; disabled until Java 25 runtime and mod validation are ready",
       "env": {
         "JAVA_VERSION_MIN": "25"
       }
