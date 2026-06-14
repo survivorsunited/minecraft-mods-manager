@@ -5,7 +5,7 @@
       "enabled": true,
       "description": "Tested and working with Fabric Loader 0.17.3",
       "env": {
-        "JAVA_VERSION_MIN": "21"
+        "JAVA_VERSION_MIN": "22"
       }
     },
     {
@@ -30,6 +30,30 @@
       "description": "Future version; enable when ready for release",
       "env": {
         "JAVA_VERSION_MIN": "21"
+      }
+    },
+    {
+      "version": "26.1",
+      "enabled": true,
+      "description": "Minecraft 26.1 candidate; requires Java 25 runtime",
+      "env": {
+        "JAVA_VERSION_MIN": "25"
+      }
+    },
+    {
+      "version": "26.1.1",
+      "enabled": true,
+      "description": "Minecraft 26.1.1 candidate; requires Java 25 runtime",
+      "env": {
+        "JAVA_VERSION_MIN": "25"
+      }
+    },
+    {
+      "version": "26.1.2",
+      "enabled": true,
+      "description": "Minecraft 26.1.2 candidate; requires Java 25 runtime",
+      "env": {
+        "JAVA_VERSION_MIN": "25"
       }
     }
   ]

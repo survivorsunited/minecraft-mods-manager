@@ -280,8 +280,18 @@ function Download-Mods {
                     continue
                 }
                 
-                # If targeting a specific version and this is a Modrinth MOD, resolve from API FIRST to ensure the URL matches the target game version
-                if ($TargetGameVersion -and $modHost -eq 'modrinth' -and $mod.Type -eq 'mod' -and $mod.ID) {
+                # If the database already has an exact target-version URL, prefer it over provider API metadata.
+                # This supports manually verified direct mirrors / fixed provider URLs for releases that are missing
+                # or stale in the primary API response.
+                if ($TargetGameVersion -and $mod.CurrentGameVersion -eq $TargetGameVersion -and $mod.CurrentVersionUrl) {
+                    $downloadUrl = $mod.CurrentVersionUrl
+                    $downloadVersion = $mod.CurrentVersion
+                    $resolvedByApi = $true
+                    Write-Host "  ✅ $($mod.Name): Using DB CurrentVersionUrl for $TargetGameVersion ($downloadVersion)" -ForegroundColor Green
+                }
+
+                # If targeting a specific version and this is a Modrinth MOD, resolve from API when no exact DB URL was selected.
+                if (-not $resolvedByApi -and $TargetGameVersion -and $modHost -eq 'modrinth' -and $mod.Type -eq 'mod' -and $mod.ID) {
                     try {
                         $allVersions = Invoke-RestMethodWithRetry -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -Method Get -ErrorAction SilentlyContinue
                         $targetApiVersion = $allVersions | Where-Object { $_.game_versions -contains $TargetGameVersion -and $_.loaders -contains $loader } | Select-Object -First 1

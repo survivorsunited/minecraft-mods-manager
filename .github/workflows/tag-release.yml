@@ -326,66 +326,16 @@ jobs:
         id: release_notes
         shell: pwsh
         run: |
-          $TAG_NAME = "${{ steps.tag_info.outputs.tag_name }}"
-          $VERSION = "${{ steps.tag_info.outputs.version }}"
-          $TIMESTAMP = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss UTC")
-          
-          $includedFiles = Get-ChildItem -Path "." -Filter "modpack-*.zip" -File
-          
-          $notes = @"
-          # Minecraft Modpack Release - $TAG_NAME
-          
-          ## 📦 Included Packages
-          "@
-          
-          if ($includedFiles.Count -eq 0) {
-            $notes += "`n- (none)"
-          } else {
-            foreach ($f in $includedFiles) {
-              $notes += "`n- **$($f.Name)**"
-            }
-          }
-          
-          $notes += @"
-          
-          ## 📋 Release Information
-          - **Tag**: ``$TAG_NAME``
-          - **Version**: $VERSION
-          - **Created**: $TIMESTAMP
-          - **Type**: Stable Release
-          - **Validation**: Server startup tested for each packaged version
-          
-          ## 🔑 Checksums
-          "@
-          
-          if (Test-Path "release-hashes.txt") {
-            $notes += "`n``````"
-            $notes += (Get-Content "release-hashes.txt" -Raw)
-            $notes += "``````"
-          } else {
-            $notes += "`n(checksums unavailable)"
-          }
-          
-          $notes += @"
-          
-          ## 📥 Download Instructions
-          
-          1. Download ``modpack-[version].zip`` for your Minecraft version
-          2. Extract the ZIP file
-          3. Install mods from the ``mods/`` directory to ``.minecraft/mods/``
-          4. Optional mods are in ``mods/optional/``
-          5. Check ``hash.txt`` for file verification
-          6. See ``README.md`` for complete installation guide
-          
-          ## 🔗 InertiaAntiCheat Integration
-          
-          Use included ``hash.txt`` to configure InertiaAntiCheat server validation.
-          See ``README.md`` for details.
-          "@
-          
-          $notes | Out-File -FilePath "release-notes.md" -Encoding UTF8
-          Write-Host "Generated release-notes.md:" -ForegroundColor Cyan
-          Get-Content "release-notes.md"
+          $versionsJson = '${{ steps.set_versions.outputs.versions }}'
+          $versions = @($versionsJson | ConvertFrom-Json)
+          .\scripts\Generate-ModpackReleaseNotes.ps1 `
+            -TagName "${{ steps.tag_info.outputs.tag_name }}" `
+            -Version "${{ steps.tag_info.outputs.version }}" `
+            -CsvPath "modlist.csv" `
+            -ReleasePath "releases" `
+            -Versions $versions `
+            -ChecksumsPath "release-hashes.txt" `
+            -OutputPath "release-notes.md"
       
       - name: Clean Up Versioned README Files Before Release
         shell: pwsh
