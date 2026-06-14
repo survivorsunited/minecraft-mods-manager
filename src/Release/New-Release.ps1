@@ -4,6 +4,60 @@
 # This module handles the complete release package creation workflow.
 # =============================================================================
 
+function Repair-KnownReleaseJarIssues {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$DownloadFolder,
+
+        [Parameter(Mandatory=$true)]
+        [string]$TargetVersion
+    )
+
+    $modsPath = Join-Path (Join-Path $DownloadFolder $TargetVersion) 'mods'
+    if (-not (Test-Path $modsPath)) { return }
+
+    # Furnace Recycle's published 1.21.11 jar is correctly versioned, but includes
+    # one recipe that fails Mojang's 1.21.11 data loader (`minecraft:chain`).
+    # Remove only that broken recipe so the otherwise valid server-side mod can be
+    # validated and packaged. Leave upstream jars untouched for all other versions.
+    if ($TargetVersion -eq '1.21.11') {
+        $furnaceJar = Join-Path $modsPath 'furnacerecycle-1.21.11-2.6.jar'
+        if (Test-Path $furnaceJar) {
+            $badEntry = 'data/furnacerecycle/recipe/smelt_chain.json'
+            $tempJar = [System.IO.Path]::GetTempFileName()
+            try {
+                Remove-Item -Path $tempJar -Force -ErrorAction SilentlyContinue
+                $source = [System.IO.Compression.ZipFile]::OpenRead($furnaceJar)
+                try {
+                    $dest = [System.IO.Compression.ZipFile]::Open($tempJar, [System.IO.Compression.ZipArchiveMode]::Create)
+                    try {
+                        $removed = $false
+                        foreach ($entry in $source.Entries) {
+                            $entryName = $entry.FullName -replace '\\','/'
+                            if ($entryName -eq $badEntry) { $removed = $true; continue }
+                            $newEntry = $dest.CreateEntry($entry.FullName, [System.IO.Compression.CompressionLevel]::Optimal)
+                            $inStream = $entry.Open()
+                            try {
+                                $outStream = $newEntry.Open()
+                                try { $inStream.CopyTo($outStream) } finally { $outStream.Dispose() }
+                            } finally { $inStream.Dispose() }
+                        }
+                    } finally { $dest.Dispose() }
+                } finally { $source.Dispose() }
+
+                if ($removed) {
+                    Copy-Item -Path $tempJar -Destination $furnaceJar -Force
+                    Write-Host "  ✓ Patched Furnace Recycle 1.21.11 jar: removed invalid smelt_chain recipe" -ForegroundColor Green
+                }
+            } catch {
+                Write-Host "  ⚠️  Could not patch Furnace Recycle jar: $($_.Exception.Message)" -ForegroundColor Yellow
+            } finally {
+                Remove-Item -Path $tempJar -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 <#
 .SYNOPSIS
     Creates a complete release package for a specific Minecraft version.
@@ -154,6 +208,7 @@ function New-Release {
     # Step 1: Download mods for target version
     Write-Host "📦 Downloading mods for version $targetVersion..." -ForegroundColor Cyan
     Download-Mods -CsvPath $CsvPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -TargetGameVersion $targetVersion
+    Repair-KnownReleaseJarIssues -DownloadFolder $DownloadFolder -TargetVersion $targetVersion
     
     Write-Host "" -ForegroundColor White
     
