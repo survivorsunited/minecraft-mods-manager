@@ -71,21 +71,17 @@ function Validate-AllModVersions {
         [switch]$UseCachedResponses
     )
 
-    # Load GitHub direct URL validator at call time, after provider modules have been imported.
     try {
         $githubDirectWrapper = Join-Path $PSScriptRoot "..\..\Provider\GitHub\Validate-GitHubModVersionDirectUrls.ps1"
-        if (Test-Path $githubDirectWrapper) {
-            . $githubDirectWrapper
-        }
+        if (Test-Path $githubDirectWrapper) { . $githubDirectWrapper }
     } catch {
         Write-Host "Warning: could not load GitHub direct URL validator: $($_.Exception.Message)" -ForegroundColor Yellow
     }
 
     $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $CsvPath
 
-    if ($UpdateModList -or $UpdateNextOnly -or $UpdateLatestOnly) {
-        Repair-GitHubCurrentUrlsFromLatest -CsvPath $effectiveModListPath
-    }
+    $shouldUpdate = $UpdateModList -or $UpdateNextOnly -or $UpdateLatestOnly
+    if ($shouldUpdate) { Repair-GitHubCurrentUrlsFromLatest -CsvPath $effectiveModListPath }
 
     $releaseTargets = $null
     if (Get-Command Get-ReleaseVersionTargets -ErrorAction SilentlyContinue) {
@@ -99,12 +95,15 @@ function Validate-AllModVersions {
         Write-Host "Using cached responses when provider modules support them." -ForegroundColor Gray
     }
 
+    # Always run the legacy validator in read-only mode here. Its built-in update path
+    # still calculates Next as CurrentGameVersion + 1, which incorrectly targets 1.21.12.
+    # Release-config-driven updates are applied below instead.
     $params = @{
         CsvPath = $effectiveModListPath
         ResponseFolder = $ResponseFolder
-        UpdateModList = $UpdateModList
-        UpdateNextOnly = $UpdateNextOnly
-        UpdateLatestOnly = $UpdateLatestOnly
+        UpdateModList = $false
+        UpdateNextOnly = $false
+        UpdateLatestOnly = $false
     }
 
     $result = & $script:ValidateAllModVersionsOriginalCommand @params
