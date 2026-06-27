@@ -32,9 +32,9 @@
     {
       "version": "1.21.11",
       "enabled": true,
-      "description": "Current validated release target",
+      "description": "Current validated release target; Java 25 required by C2ME native math module",
       "env": {
-        "JAVA_VERSION_MIN": "21"
+        "JAVA_VERSION_MIN": "25"
       }
     },
     {
