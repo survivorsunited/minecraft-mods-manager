@@ -12,6 +12,53 @@ if (-not $script:ValidateAllModVersionsOriginalCommand) {
     $script:ValidateAllModVersionsOriginalCommand = ${function:Validate-AllModVersions}
 }
 
+function Repair-GitHubCurrentUrlsFromLatest {
+    param([string]$CsvPath)
+
+    if (-not (Test-Path $CsvPath)) { return }
+
+    try {
+        $mods = Import-Csv -Path $CsvPath
+        $changed = $false
+        $repairCount = 0
+
+        foreach ($mod in $mods) {
+            $isGitHub = ($mod.Host -eq "github" -or $mod.ApiSource -eq "github" -or $mod.Url -match "github\.com")
+            if (-not $isGitHub) { continue }
+            if ([string]::IsNullOrWhiteSpace($mod.CurrentGameVersion)) { continue }
+            if ($mod.LatestGameVersion -ne $mod.CurrentGameVersion) { continue }
+            if ([string]::IsNullOrWhiteSpace($mod.LatestVersionUrl)) { continue }
+            if ($mod.LatestVersionUrl -notmatch [regex]::Escape($mod.CurrentGameVersion)) { continue }
+            if ($mod.CurrentVersionUrl -eq $mod.LatestVersionUrl) { continue }
+
+            $oldUrl = $mod.CurrentVersionUrl
+            $mod.CurrentVersionUrl = $mod.LatestVersionUrl
+            if (-not [string]::IsNullOrWhiteSpace($mod.LatestVersion)) { $mod.CurrentVersion = $mod.LatestVersion }
+
+            try {
+                $decoded = [System.Web.HttpUtility]::UrlDecode($mod.CurrentVersionUrl)
+                $jar = [System.IO.Path]::GetFileName(($decoded -split '\?')[0])
+                if (-not [string]::IsNullOrWhiteSpace($jar)) { $mod.Jar = $jar }
+            } catch { }
+
+            try { $mod.RecordHash = Calculate-RecordHash -Record $mod } catch { }
+
+            Write-Host "Repaired GitHub current URL for $($mod.Name)" -ForegroundColor Green
+            Write-Host "  Old: $oldUrl" -ForegroundColor DarkGray
+            Write-Host "  New: $($mod.CurrentVersionUrl)" -ForegroundColor DarkGray
+            $changed = $true
+            $repairCount++
+        }
+
+        if ($changed) {
+            $mods | Export-Csv -Path $CsvPath -NoTypeInformation
+            Write-Host "Repaired $repairCount GitHub current URL(s) before validation." -ForegroundColor Green
+        }
+    } catch {
+        Write-Host "Warning: GitHub URL repair failed: $($_.Exception.Message)" -ForegroundColor Yellow
+    }
+}
+
 function Validate-AllModVersions {
     param(
         [string]$CsvPath = $ModListPath,
@@ -35,6 +82,10 @@ function Validate-AllModVersions {
     }
 
     $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $CsvPath
+
+    if ($UpdateModList -or $UpdateNextOnly -or $UpdateLatestOnly) {
+        Repair-GitHubCurrentUrlsFromLatest -CsvPath $effectiveModListPath
+    }
 
     $releaseTargets = $null
     if (Get-Command Get-ReleaseVersionTargets -ErrorAction SilentlyContinue) {
