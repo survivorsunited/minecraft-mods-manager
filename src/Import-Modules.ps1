@@ -70,6 +70,9 @@
 . "$PSScriptRoot\Provider\Minecraft\Get-MinecraftVersions.ps1"
 . "$PSScriptRoot\Provider\Adoptium\Get-AdoptiumJDK.ps1"
 
+# Patch modules
+. "$PSScriptRoot\Patches\Apply-ModPatches.ps1"
+
 # Download modules
 . "$PSScriptRoot\Download\Mods\Download-Mods.ps1"
 . "$PSScriptRoot\Download\Mods\Download-ModsDefaults.ps1"
