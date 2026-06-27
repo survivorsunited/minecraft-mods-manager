@@ -23,6 +23,7 @@
 . "$PSScriptRoot\Data\Version\Get-NextVersion.ps1"
 . "$PSScriptRoot\Data\Version\Get-LatestVersion.ps1"
 . "$PSScriptRoot\Data\Version\Get-MajorityLatestGameVersion.ps1"
+. "$PSScriptRoot\Data\Version\Get-ReleaseVersionTargets.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-LatestGameVersionFromAvailableVersions.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-NextGameVersion.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-NextVersionData.ps1"
