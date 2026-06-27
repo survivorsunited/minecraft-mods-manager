@@ -1,29 +1,9 @@
 # =============================================================================
 # Calculate Next Game Version Function
 # =============================================================================
-# This function calculates the "next" version after the majority version
-# for testing if the next version will work with current mods.
+# This function calculates the "next" version target for testing workflows.
 # =============================================================================
 
-<#
-.SYNOPSIS
-    Calculates the next game version for testing purposes.
-
-.DESCRIPTION
-    Determines the next Minecraft version after the majority version using known
-    versions in the database before falling back to legacy patch incrementing.
-
-.PARAMETER CsvPath
-    Path to the CSV file containing mod data.
-
-.EXAMPLE
-    Calculate-NextGameVersion -CsvPath "modlist.csv"
-
-.NOTES
-    - Gets the majority version first
-    - Prefers the next known version in the database, e.g. 1.21.11 -> 26.1
-    - Falls back to patch incrementing only when no known newer version exists
-#>
 function Calculate-NextGameVersion {
     param(
         [string]$CsvPath = "modlist.csv"
@@ -40,7 +20,6 @@ function Calculate-NextGameVersion {
 
     function Get-KnownGameVersions {
         param([array]$Rows)
-
         $versions = @()
         foreach ($row in $Rows) {
             foreach ($field in @('CurrentGameVersion', 'GameVersion', 'NextGameVersion', 'LatestGameVersion', 'AvailableGameVersions')) {
@@ -53,73 +32,68 @@ function Calculate-NextGameVersion {
                 }
             }
         }
-
         return $versions | Select-Object -Unique | Sort-Object { ConvertTo-SortableGameVersion $_ }
     }
 
     try {
-        # Get majority version first
+        $mods = Import-Csv -Path $CsvPath
         $majorityResult = Get-MajorityGameVersion -CsvPath $CsvPath
         $majorityVersion = $majorityResult.MajorityVersion
-        
         Write-Host "🔍 Current majority version: $majorityVersion" -ForegroundColor Cyan
-        
-        # Get all available versions from database
-        $mods = Import-Csv -Path $CsvPath
-        $allVersions = Get-KnownGameVersions -Rows $mods
-        
-        Write-Host "📋 Known versions in database: $($allVersions -join ', ')" -ForegroundColor Gray
-        
-        # Also check download folder for available versions
-        $downloadFolder = "download"
-        $downloadVersions = @()
-        if (Test-Path $downloadFolder) {
-            $downloadVersions = Get-ChildItem -Path $downloadFolder -Directory -ErrorAction SilentlyContinue | 
-                               Where-Object { $_.Name -match '^\d+(\.\d+){1,2}$' } |
-                               Select-Object -ExpandProperty Name
-            if ($downloadVersions.Count -gt 0) {
-                Write-Host "📁 Available versions in download: $($downloadVersions -join ', ')" -ForegroundColor Gray
-            }
-        }
-        
-        # Combine and deduplicate versions
-        $combinedVersions = ($allVersions + $downloadVersions) | Select-Object -Unique | Sort-Object { ConvertTo-SortableGameVersion $_ }
-        $majoritySortable = ConvertTo-SortableGameVersion $majorityVersion
-        $nextVersion = $null
 
-        if ($majoritySortable) {
-            foreach ($version in $combinedVersions) {
-                $sortable = ConvertTo-SortableGameVersion $version
-                if ($sortable -and $sortable -gt $majoritySortable) {
-                    $nextVersion = $version
-                    break
+        $releaseTargets = $null
+        if (Get-Command Get-ReleaseVersionTargets -ErrorAction SilentlyContinue) {
+            $releaseTargets = Get-ReleaseVersionTargets
+        }
+
+        if ($releaseTargets -and -not [string]::IsNullOrWhiteSpace($releaseTargets.Next)) {
+            $nextVersion = $releaseTargets.Next
+            Write-Host "🎯 Next version from release-config.json: $nextVersion" -ForegroundColor Green
+        } else {
+            $allVersions = Get-KnownGameVersions -Rows $mods
+            Write-Host "📋 Known versions in database: $($allVersions -join ', ')" -ForegroundColor Gray
+
+            $downloadFolder = "download"
+            $downloadVersions = @()
+            if (Test-Path $downloadFolder) {
+                $downloadVersions = Get-ChildItem -Path $downloadFolder -Directory -ErrorAction SilentlyContinue |
+                                   Where-Object { $_.Name -match '^\d+(\.\d+){1,2}$' } |
+                                   Select-Object -ExpandProperty Name
+            }
+
+            $combinedVersions = ($allVersions + $downloadVersions) | Select-Object -Unique | Sort-Object { ConvertTo-SortableGameVersion $_ }
+            $majoritySortable = ConvertTo-SortableGameVersion $majorityVersion
+            $nextVersion = $null
+
+            if ($majoritySortable) {
+                foreach ($version in $combinedVersions) {
+                    $sortable = ConvertTo-SortableGameVersion $version
+                    if ($sortable -and $sortable -gt $majoritySortable) {
+                        $nextVersion = $version
+                        break
+                    }
+                }
+            }
+
+            if (-not $nextVersion -and $majorityVersion -eq '1.21.11') {
+                $nextVersion = '26.1'
+                Write-Host "🎯 Using fallback known transition: 1.21.11 -> 26.1" -ForegroundColor Green
+            }
+
+            if (-not $nextVersion) {
+                if ($majorityVersion -match '^(\d+)\.(\d+)\.(\d+)$') {
+                    $major = [int]$matches[1]
+                    $minor = [int]$matches[2]
+                    $patch = [int]$matches[3]
+                    $nextVersion = "$major.$minor.$($patch + 1)"
+                    Write-Host "⚠️  No configured next version found; calculated fallback: $nextVersion" -ForegroundColor Yellow
+                } else {
+                    $nextVersion = $majorityVersion
+                    Write-Host "⚠️  Using majority version as fallback: $nextVersion" -ForegroundColor Yellow
                 }
             }
         }
 
-        # Explicit known boundary: Minecraft jumped from 1.21.11 to 26.1.
-        if (-not $nextVersion -and $majorityVersion -eq '1.21.11') {
-            $nextVersion = '26.1'
-            Write-Host "🎯 Using known next version transition: 1.21.11 -> 26.1" -ForegroundColor Green
-        }
-
-        # Legacy fallback only when we cannot find a known newer version.
-        if (-not $nextVersion) {
-            if ($majorityVersion -match '^(\d+)\.(\d+)\.(\d+)$') {
-                $major = [int]$matches[1]
-                $minor = [int]$matches[2]
-                $patch = [int]$matches[3]
-                $nextVersion = "$major.$minor.$($patch + 1)"
-                Write-Host "⚠️  No known newer version found; calculated fallback next version: $nextVersion" -ForegroundColor Yellow
-            } else {
-                $nextVersion = $majorityVersion
-                Write-Host "⚠️  Using majority version as fallback: $nextVersion" -ForegroundColor Yellow
-            }
-        } else {
-            Write-Host "🎯 Calculated next version from known versions: $nextVersion" -ForegroundColor Green
-        }
-        
-        # Check if next version has any mod support
         $nextVersionMods = $mods | Where-Object {
             $_.CurrentGameVersion -eq $nextVersion -or
             $_.GameVersion -eq $nextVersion -or
@@ -134,7 +108,8 @@ function Calculate-NextGameVersion {
             MajorityVersion = $majorityVersion
             ModCount = $modCount
             IsHighestVersion = ($nextVersion -eq $majorityVersion)
-            AvailableVersions = $combinedVersions
+            AvailableVersions = @()
+            ReleaseTargets = $releaseTargets
         }
         
         Write-Host "📊 Next version analysis:" -ForegroundColor Yellow
@@ -143,7 +118,6 @@ function Calculate-NextGameVersion {
         Write-Host "  - Is highest available: $($result.IsHighestVersion)" -ForegroundColor Gray
         
         return $result
-        
     } catch {
         Write-Host "❌ Error calculating next game version: $($_.Exception.Message)" -ForegroundColor Red
         return $null
