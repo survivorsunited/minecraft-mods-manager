@@ -6,12 +6,12 @@ on:
   workflow_dispatch:
     inputs:
       force_all:
-        description: 'Force create all enabled versions (ignore update check)'
+        description: 'Force create all enabled versions and publish as the latest release'
         required: false
         type: boolean
         default: false
       versions:
-        description: 'Comma-separated versions to process (override config, e.g., 1.21.5,1.21.8)'
+        description: 'Comma-separated versions to process (override config, e.g., 1.21.11)'
         required: false
         type: string
         default: ''
@@ -25,7 +25,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Job 1: Validate and update mod database
   update-database:
     runs-on: windows-latest
     outputs:
@@ -33,20 +32,20 @@ jobs:
       versions_matrix: ${{ steps.set_matrix.outputs.matrix }}
       next_game_version: ${{ steps.get_next_latest_versions.outputs.next_game_version }}
       latest_game_version: ${{ steps.get_next_latest_versions.outputs.latest_game_version }}
-    
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 2  # Need previous commit to compare
+          fetch-depth: 2
 
       - name: Sync latest Minecraft version (server, launcher, installer)
         shell: pwsh
         run: |
           Write-Host "🔄 Ensuring latest MC version has server, launcher, installer in DB..." -ForegroundColor Cyan
           .\ModManager.ps1 -SyncLatestMinecraftVersion
-      
+
       - name: Validate Mod Versions
         shell: pwsh
         run: |
@@ -89,14 +88,13 @@ jobs:
               $jar = if ($m.Jar) { $m.Jar } else { '(none)' }
               echo "::warning title=ZIP artifact under mod type::$($m.Name) [ID: $id] -> Jar: $jar"
             }
-            # Add to summary
             Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "### ZIP Artifacts Detected in Database (Type=mod)"
             $zipMods | ForEach-Object { Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- $($_.Name) (ID: $($_.ID)) Jar: $($_.Jar)" }
             Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ""
           } else {
             Write-Host "✅ No misclassified ZIP mods found in database" -ForegroundColor Green
           }
-      
+
       - name: Check for Database Changes
         id: check_updates
         shell: pwsh
@@ -104,36 +102,29 @@ jobs:
           git diff --quiet modlist.csv
           if ($LASTEXITCODE -ne 0) {
             Write-Host "📦 Mod updates detected in database" -ForegroundColor Green
-            
-            # Show what changed
             Write-Host "📊 Changes summary:" -ForegroundColor Cyan
             git diff --stat modlist.csv
-            
             echo "has_updates=true" >> $env:GITHUB_OUTPUT
           } else {
             Write-Host "✅ No mod updates found" -ForegroundColor Gray
             echo "has_updates=false" >> $env:GITHUB_OUTPUT
           }
-      
+
       - name: Read Enabled Versions from Config
         id: set_matrix
         shell: pwsh
         run: |
-          # Read optional override from workflow_dispatch input
           $override = "${{ github.event.inputs.versions }}"
 
           if ([string]::IsNullOrWhiteSpace($override)) {
-            # Use config file when no override provided
             $config = Get-Content release-config.json | ConvertFrom-Json
             $versions = $config.versions | Where-Object { $_.enabled -eq $true } | Select-Object -ExpandProperty version
             Write-Host "ℹ️  No versions override provided; using enabled versions from release-config.json" -ForegroundColor Yellow
           } else {
-            # Split comma-separated list and trim
             $versions = $override.Split(',') | ForEach-Object { $_.Trim() } | Where-Object { $_ }
             Write-Host "🔧 Using manual version override from dispatch input: $override" -ForegroundColor Cyan
           }
 
-          # Ensure output is always a JSON array (even for single item)
           if ($versions.Count -eq 1) {
             $matrixJson = "[$($versions | ConvertTo-Json -Compress)]"
           } else {
@@ -145,7 +136,7 @@ jobs:
           Write-Host "📋 Versions selected for release:" -ForegroundColor Cyan
           $versions | ForEach-Object { Write-Host "   - $_" -ForegroundColor Gray }
           Write-Host "📊 Matrix JSON: $matrixJson" -ForegroundColor Gray
-      
+
       - name: Log No Updates
         if: steps.check_updates.outputs.has_updates != 'true'
         shell: pwsh
@@ -155,15 +146,13 @@ jobs:
           Write-Host "ℹ️  NO MOD UPDATES DETECTED" -ForegroundColor Cyan
           Write-Host "ℹ️  ============================================" -ForegroundColor Cyan
           Write-Host "" -ForegroundColor White
-          Write-Host "📋 Workflow will skip:" -ForegroundColor Yellow
+          Write-Host "📋 Workflow will skip without manual force:" -ForegroundColor Yellow
           Write-Host "   • Commit Database Updates (no changes to commit)" -ForegroundColor Gray
-          Write-Host "   • Create Release Packages (database unchanged)" -ForegroundColor Gray
-          Write-Host "   • Publish Release (no new packages)" -ForegroundColor Gray
-          Write-Host "" -ForegroundColor White
-          Write-Host "💡 This is normal behavior when mods are up-to-date" -ForegroundColor Green
+          Write-Host "   • Create Release Packages (unless force_all=true)" -ForegroundColor Gray
+          Write-Host "   • Publish Release (unless force_all=true)" -ForegroundColor Gray
           Write-Host "" -ForegroundColor White
 
-      - name: Set release decision summary (why release will or won't run)
+      - name: Set release decision summary
         id: release_decision
         shell: pwsh
         run: |
@@ -171,20 +160,23 @@ jobs:
           $forceAll = "${{ github.event.inputs.force_all }}"
           $willCreateReleases = ($hasUpdates -eq 'true') -or ($forceAll -eq 'true')
           if ($willCreateReleases) {
-            $reason = "Database changed or force_all; release packages will be built"
+            if ($forceAll -eq 'true') {
+              $reason = "Manual force_all=true; release packages will be built and published as the latest GitHub Release"
+            } else {
+              $reason = "Database changed; release packages will be built as an automated pre-release"
+            }
           } else {
-            $reason = "No modlist.csv changes (has_updates=false) and force_all not set; Create Release Packages and Publish Release will be skipped. To build anyway, re-run with 'Force create all versions' checked."
+            $reason = "No modlist.csv changes (has_updates=false) and force_all not set; Create Release Packages and Publish Release will be skipped."
           }
           echo "has_updates=$hasUpdates" >> $env:GITHUB_OUTPUT
           echo "will_create_releases=$willCreateReleases" >> $env:GITHUB_OUTPUT
           echo "reason=$reason" >> $env:GITHUB_OUTPUT
-          # Write to step summary so it's visible in Actions UI
           Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "### Release decision"
           Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- **Mod database changes (has_updates):** $hasUpdates"
           Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- **Force all (workflow input):** $forceAll"
           Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- **Result:** $(if ($willCreateReleases) { 'Create Release Packages **will run**' } else { 'Create Release Packages **skipped** (no release will be published)' })"
           Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- **Why:** $reason"
-      
+
       - name: Commit Database Updates
         if: steps.check_updates.outputs.has_updates == 'true'
         shell: pwsh
@@ -196,15 +188,13 @@ jobs:
           git commit -m "chore: Daily mod update - $(Get-Date -Format 'yyyy-MM-dd')"
           git push
           Write-Host "✅ Database changes committed and pushed" -ForegroundColor Green
-  
-  # Job 2: Create release packages for enabled versions
+
   create-releases:
     needs: update-database
-    # Run if: updates detected OR manual force
     if: |
-      needs.update-database.outputs.has_updates == 'true' || 
+      needs.update-database.outputs.has_updates == 'true' ||
       github.event.inputs.force_all == 'true'
-    
+
     runs-on: windows-latest
     timeout-minutes: 120
     env:
@@ -214,42 +204,30 @@ jobs:
     strategy:
       matrix:
         version: ${{ fromJson(needs.update-database.outputs.versions_matrix) }}
-      fail-fast: false  # Continue even if one version fails
-      max-parallel: 3   # Limit parallel builds
-    
+      fail-fast: false
+      max-parallel: 3
+
     steps:
       - name: Checkout Repository with Submodules
         uses: actions/checkout@v4
         with:
-          ref: main  # Get latest with updated modlist.csv
-          submodules: true  # Clone minecraft-mod-hash submodule
+          ref: main
+          submodules: true
 
       - name: Set up Java 22 for server validation
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '22'
-      
+
       - name: Create Release Package for ${{ matrix.version }}
         id: create_release
         shell: pwsh
         continue-on-error: true
         run: |
           Write-Host "🚀 Creating release package for Minecraft ${{ matrix.version }}" -ForegroundColor Cyan
-          Write-Host "=================================================" -ForegroundColor Cyan
-          Write-Host ""
-          
-          # This will:
-          # 1. Download mods for the version
-          # 2. Download server files
-          # 3. Validate by starting the server
-          # 4. Organize mods (mandatory/optional)
-          # 5. Generate hashes and documentation
-          # 6. Create ZIP package
-          # 7. Exit 0 if successful, 1 if server validation fails
-          
           .\ModManager.ps1 -CreateRelease -GameVersion "${{ matrix.version }}"
-      
+
       - name: Check Release Creation Result
         id: check_result
         shell: pwsh
@@ -261,105 +239,7 @@ jobs:
             Write-Host "❌ Version ${{ matrix.version }}: Server validation failed - no release created" -ForegroundColor Red
             echo "created=false" >> $env:GITHUB_OUTPUT
           }
-      
-      - name: Cleanup Duplicate Modpack Files
-        if: steps.check_result.outputs.created == 'true'
-        shell: pwsh
-        run: |
-          $releasePath = "releases/${{ matrix.version }}"
-          $modpackFiles = Get-ChildItem -Path $releasePath -Filter "modpack.*" -File -ErrorAction SilentlyContinue
-          foreach ($file in $modpackFiles) {
-            Remove-Item -Path $file.FullName -Force
-            Write-Host "✓ Removed: $($file.Name)" -ForegroundColor Green
-          }
-          if ($modpackFiles.Count -gt 0) {
-            Write-Host "✓ Cleaned up $($modpackFiles.Count) modpack file(s)" -ForegroundColor Green
-          }
-      
-      - name: Copy Server JARs to Release
-        if: steps.check_result.outputs.created == 'true'
-        shell: pwsh
-        run: |
-          $version = "${{ matrix.version }}"
-          $serverPath = "download/$version"
-          $releasePath = "releases/$version"
-          
-          Write-Host "📦 Copying server JARs to release folder..." -ForegroundColor Cyan
-          
-          # Create release directory if it doesn't exist
-          if (-not (Test-Path $releasePath)) {
-            New-Item -ItemType Directory -Path $releasePath -Force | Out-Null
-            Write-Host "  ✓ Created release directory: $releasePath" -ForegroundColor Green
-          }
-          
-          # Copy Minecraft server JAR
-          $minecraftJar = Get-ChildItem -Path $serverPath -Filter "minecraft_server*.jar" -File -ErrorAction SilentlyContinue | Select-Object -First 1
-          if ($minecraftJar) {
-            Copy-Item -Path $minecraftJar.FullName -Destination $releasePath -Force
-            Write-Host "  ✓ Copied: $($minecraftJar.Name)" -ForegroundColor Green
-          } else {
-            Write-Host "  ⚠️  Warning: Minecraft server JAR not found" -ForegroundColor Yellow
-          }
-          
-          # Copy Fabric launcher JAR
-          $fabricJar = Get-ChildItem -Path $serverPath -Filter "fabric-server*.jar" -File -ErrorAction SilentlyContinue | Select-Object -First 1
-          if ($fabricJar) {
-            Copy-Item -Path $fabricJar.FullName -Destination $releasePath -Force
-            Write-Host "  ✓ Copied: $($fabricJar.Name)" -ForegroundColor Green
-          } else {
-            Write-Host "  ⚠️  Warning: Fabric launcher JAR not found" -ForegroundColor Yellow
-          }
-          
-          # Copy Fabric installer
-          $installerPath = Join-Path $serverPath "installer"
-          if (Test-Path $installerPath) {
-            $fabricInstaller = Get-ChildItem -Path $installerPath -Filter "fabric-installer-*.exe" -File -ErrorAction SilentlyContinue | Select-Object -First 1
-            if ($fabricInstaller) {
-              Copy-Item -Path $fabricInstaller.FullName -Destination $releasePath -Force
-              Write-Host "  ✓ Copied: $($fabricInstaller.Name)" -ForegroundColor Green
-            } else {
-              Write-Host "  ⚠️  Warning: Fabric installer not found" -ForegroundColor Yellow
-            }
-          } else {
-            Write-Host "  ⚠️  Warning: Installer directory not found" -ForegroundColor Yellow
-          }
 
-      - name: Verify Required Files (hash.txt, README.md)
-        if: steps.check_result.outputs.created == 'true'
-        shell: pwsh
-        run: |
-          $version = "${{ matrix.version }}"
-          $releasePath = "releases/$version"
-
-          $hashFile = Join-Path $releasePath 'hash.txt'
-          $readmeFile = Join-Path $releasePath 'README.md'
-
-          $missing = @()
-          if (-not (Test-Path $hashFile)) { $missing += 'hash.txt' }
-          if (-not (Test-Path $readmeFile)) { $missing += 'README.md' }
-
-          if ($missing.Count -eq 0) {
-            Write-Host "✅ Required files present: hash.txt, README.md" -ForegroundColor Green
-          } else {
-            Write-Host "⚠️  Missing required files: $($missing -join ', ') — generating minimal fallbacks" -ForegroundColor Yellow
-            if ($missing -contains 'hash.txt') {
-              "# Hashes placeholder — generated by workflow`n# Actual hashes should be provided by ModManager during release creation" | Out-File -FilePath $hashFile -Encoding UTF8 -Force
-            }
-            if ($missing -contains 'README.md') {
-              @(
-                "# Modpack ${version}",
-                "",
-                "This README was generated as a fallback by the CI workflow.",
-                "For full instructions, see the project's documentation.",
-                "",
-                "Contents:",
-                "- mods/ (mandatory)",
-                "- mods/optional/ (optional)",
-                "- server JARs (minecraft_server*, fabric-server*, installer)"
-              ) | Out-File -FilePath $readmeFile -Encoding UTF8 -Force
-            }
-          }
-      
       - name: Upload Release Artifact
         if: steps.check_result.outputs.created == 'true'
         uses: actions/upload-artifact@v4
@@ -367,8 +247,8 @@ jobs:
           name: modpack-${{ matrix.version }}
           path: releases/${{ matrix.version }}/**
           retention-days: 90
-          compression-level: 0  # Files already compressed in ZIP
-      
+          compression-level: 0
+
       - name: Log Validation Failure
         if: steps.check_result.outputs.created == 'false'
         shell: pwsh
@@ -376,8 +256,6 @@ jobs:
           Write-Host "❌ Release package NOT created for version ${{ matrix.version }}" -ForegroundColor Red
           Write-Host "💡 Server validation failed - check logs for mod compatibility issues" -ForegroundColor Yellow
 
-  # Job 2b: Build and validate Next/Latest version packages (if valid, they are added to release)
-  # Runs whenever we create releases so publish-release can wait for it and include Next/Latest artifacts
   create-next-latest-releases:
     needs: update-database
     if: needs.update-database.outputs.has_updates == 'true' || github.event.inputs.force_all == 'true'
@@ -387,7 +265,7 @@ jobs:
       CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
       MINECRAFT_SERVER_URL: ${{ secrets.MINECRAFT_SERVER_URL }}
       FABRIC_SERVER_URL: ${{ secrets.FABRIC_SERVER_URL }}
-    
+
     steps:
       - name: Checkout Repository with Submodules
         uses: actions/checkout@v4
@@ -450,8 +328,7 @@ jobs:
           path: releases/${{ needs.update-database.outputs.latest_game_version }}/**
           retention-days: 90
           compression-level: 0
-  
-  # Job 3: Create GitHub Release with artifacts (waits for both matrix and Next/Latest so all artifacts are available)
+
   publish-release:
     needs: [update-database, create-releases, create-next-latest-releases]
     if: needs.create-releases.result == 'success'
@@ -461,49 +338,49 @@ jobs:
     outputs:
       tag: ${{ steps.release_info.outputs.tag }}
       timestamp: ${{ steps.release_info.outputs.timestamp }}
-    
+      prerelease: ${{ steps.release_info.outputs.prerelease }}
+      make_latest: ${{ steps.release_info.outputs.make_latest }}
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      
+
       - name: Download All Artifacts
         uses: actions/download-artifact@v4
         with:
           path: artifacts/
-      
+
       - name: Package Release Files
         shell: bash
         run: |
+          set -e
+          shopt -s nullglob
           echo "📦 Creating versioned release packages..."
-          
-          # For each artifact directory (modpack-1.21.5, modpack-1.21.8, etc.)
-          for artifact_dir in artifacts/modpack-*/; do
-            if [ -d "$artifact_dir" ]; then
-              # Extract version from directory name (modpack-1.21.5 -> 1.21.5)
-              version=$(basename "$artifact_dir" | sed 's/modpack-//')
-              echo "  Processing version: $version"
-              
-              # Copy README.md to root as separate file (README.md is generated by hash.ps1 in releases/{version}/)
-              # Artifact structure: artifacts/modpack-{version}/ contains all files from releases/{version}/
-              readme_src="$artifact_dir/README.md"
-              readme_dest="README-${version}.md"
-              if [ -f "$readme_src" ]; then
-                cp "$readme_src" "$readme_dest"
-                echo "    ✓ Extracted README.md → $readme_dest"
-              else
-                echo "    ⚠️  Warning: README.md not found in artifact for $version"
-              fi
-              
-              # Create versioned zip from all files in the directory
-              cd "$artifact_dir"
-              zip -r "../../modpack-$version.zip" *
-              cd ../..
-              
-              echo "    ✓ Created modpack-$version.zip"
+          artifact_dirs=(artifacts/modpack-*/)
+          if [ ${#artifact_dirs[@]} -eq 0 ]; then
+            echo "❌ No modpack artifacts found; refusing to publish an empty release"
+            exit 1
+          fi
+
+          for artifact_dir in "${artifact_dirs[@]}"; do
+            [ -d "$artifact_dir" ] || continue
+            version=$(basename "$artifact_dir" | sed 's/modpack-//')
+            echo "  Processing version: $version"
+
+            readme_src="$artifact_dir/README.md"
+            readme_dest="README-${version}.md"
+            if [ -f "$readme_src" ]; then
+              cp "$readme_src" "$readme_dest"
+              echo "    ✓ Extracted README.md → $readme_dest"
+            else
+              echo "    ⚠️  Warning: README.md not found in artifact for $version"
             fi
+
+            cd "$artifact_dir"
+            zip -r "../../modpack-$version.zip" *
+            cd ../..
+            echo "    ✓ Created modpack-$version.zip"
           done
-          
-          echo "✅ All release packages created"
 
       - name: Generate Checksums
         shell: bash
@@ -512,30 +389,48 @@ jobs:
           shopt -s nullglob
           files=(modpack-*.zip)
           if [ ${#files[@]} -eq 0 ]; then
-            echo "No packaged ZIPs found; nothing to checksum."
-            exit 0
+            echo "❌ No packaged ZIPs found; nothing to checksum."
+            exit 1
           fi
           echo "📐 Computing SHA256 checksums..."
           sha256sum "${files[@]}" > release-hashes.txt
           echo "✓ Wrote release-hashes.txt"
-      
+
       - name: Generate Release Tag and Notes
         id: release_info
         shell: bash
         run: |
-          # Generate timestamp-based tag
+          set -e
           TIMESTAMP=$(date -u '+%Y.%m.%d-%H%M%S')
           TAG="release-${TIMESTAMP}"
+          FORCE_ALL="${{ github.event.inputs.force_all }}"
+
+          if [ "$FORCE_ALL" = "true" ]; then
+            PRERELEASE="false"
+            MAKE_LATEST="true"
+            RELEASE_NAME="Latest Modpack Release ${TIMESTAMP}"
+            RELEASE_BANNER="> ✅ **LATEST STABLE RELEASE**: This release was manually forced and marked as the latest GitHub Release."
+          else
+            PRERELEASE="true"
+            MAKE_LATEST="false"
+            RELEASE_NAME="Modpack Pre-Release ${TIMESTAMP}"
+            RELEASE_BANNER="> ⚠️ **PRE-RELEASE**: This is an automated development build."
+          fi
+
           echo "tag=${TAG}" >> $GITHUB_OUTPUT
           echo "timestamp=${TIMESTAMP}" >> $GITHUB_OUTPUT
-          
-          # Generate release notes
+          echo "prerelease=${PRERELEASE}" >> $GITHUB_OUTPUT
+          echo "make_latest=${MAKE_LATEST}" >> $GITHUB_OUTPUT
+          echo "release_name=${RELEASE_NAME}" >> $GITHUB_OUTPUT
+
           shopt -s nullglob
           INCLUDED_FILES=(modpack-*.zip)
 
           {
-            echo "> ⚠️ **PRE-RELEASE**: This is an automated development build."
-            echo "> For stable releases, see tagged releases (created from Git tags)."
+            echo "$RELEASE_BANNER"
+            if [ "$FORCE_ALL" != "true" ]; then
+              echo "> For stable releases, run this workflow manually with **Force create all versions** checked, or use a tag-based release."
+            fi
             echo
             echo "# Minecraft Modpack Release - ${TIMESTAMP}"
             echo
@@ -550,14 +445,15 @@ jobs:
             echo
             echo "## 📋 Changes"
             echo "- Mod database updated: ${{ needs.update-database.outputs.has_updates }}"
+            echo "- Manual force all: $FORCE_ALL"
             echo "- Server validation: Successful for packaged versions"
-            echo "- Next/Latest version packages (modpack-next-*, modpack-latest-*) included when validation passed"
+            echo "- Next/Latest version packages included when validation passed"
             echo
             echo "## 🔑 Checksums"
             if [ -f release-hashes.txt ]; then
-              echo '\n```'
+              echo '```'
               cat release-hashes.txt
-              echo '```\n'
+              echo '```'
             else
               echo "(checksums unavailable)"
             fi
@@ -569,41 +465,42 @@ jobs:
             echo "3. Install mods from the \`mods/\` directory to \`.minecraft/mods/\`"
             echo "4. Optional mods are in \`mods/optional/\`"
             echo "5. Check \`hash.txt\` for file verification"
-            echo "6. See \`README.md\` for complete installation guide"
+            echo "6. See \`README.md\` or \`README-[version].md\` for complete installation guide"
             echo
             echo "## ℹ️ Release Information"
             echo
             echo "- **Created**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
             echo "- **Workflow**: Daily Mod Update Pipeline"
             echo "- **Validation**: Server startup tested for each packaged version"
+            echo "- **GitHub latest release**: $MAKE_LATEST"
             echo
             echo "## 🔗 InertiaAntiCheat Integration"
             echo
             echo "Use included \`hash.txt\` to configure InertiaAntiCheat server validation."
-            echo "See \`README.md\` for details."
           } > release-notes.md
 
-          echo "Generated release-notes.md:" && cat release-notes.md
-      
+          echo "Generated release-notes.md:"
+          cat release-notes.md
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.release_info.outputs.tag }}
-          name: Modpack Release ${{ steps.release_info.outputs.timestamp }}
+          name: ${{ steps.release_info.outputs.release_name }}
           body_path: release-notes.md
           draft: false
-          prerelease: true  # Automated releases are pre-releases (tag-based releases are stable)
+          prerelease: ${{ steps.release_info.outputs.prerelease }}
+          make_latest: ${{ steps.release_info.outputs.make_latest }}
           files: |
             modpack-*.zip
             release-hashes.txt
             README-*.md
-  
-  # Job 4: Summary report
+
   summary:
     needs: [update-database, create-releases, publish-release]
     if: always()
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Generate Pipeline Summary
         shell: bash
@@ -614,41 +511,28 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Mod Updates Detected:** ${{ needs.update-database.outputs.has_updates }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
-          # Show why stages were skipped if no updates
-          if [ "${{ needs.update-database.outputs.has_updates }}" != "true" ]; then
-            echo "### ℹ️ No Updates Detected" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "The mod database is already up-to-date. The following stages were skipped:" >> $GITHUB_STEP_SUMMARY
-            echo "- ⏭️ **Create Release Packages** - No database changes to package" >> $GITHUB_STEP_SUMMARY
-            echo "- ⏭️ **Publish Release** - No new packages to publish" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "💡 This is expected behavior when all mods are at their latest versions." >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          echo "**Enabled Versions:** $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
+          echo "**Enabled/Selected Versions:** $(echo '${{ needs.update-database.outputs.versions_matrix }}' | jq -r '. | join(", ")')" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
-          if [ "${{ needs.create-releases.result }}" == "success" ]; then
+
+          if [ "${{ needs.create-releases.result }}" = "success" ]; then
             echo "✅ **Release Creation:** Completed successfully" >> $GITHUB_STEP_SUMMARY
-          elif [ "${{ needs.create-releases.result }}" == "skipped" ]; then
-            echo "⏭️ **Release Creation:** Skipped (no updates)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.create-releases.result }}" = "skipped" ]; then
+            echo "⏭️ **Release Creation:** Skipped" >> $GITHUB_STEP_SUMMARY
           else
             echo "⚠️ **Release Creation:** Some versions failed server validation" >> $GITHUB_STEP_SUMMARY
           fi
-          echo "**Next/Latest packages:** Built and added to release when server validation passes (Next: ${{ needs.update-database.outputs.next_game_version }}, Latest: ${{ needs.update-database.outputs.latest_game_version }})" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          if [ "${{ needs.publish-release.result }}" == "success" ]; then
+
+          if [ "${{ needs.publish-release.result }}" = "success" ]; then
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "✅ **GitHub Release:** Published successfully" >> $GITHUB_STEP_SUMMARY
             echo "🔗 **Release Tag:** \`${{ needs.publish-release.outputs.tag }}\`" >> $GITHUB_STEP_SUMMARY
             echo "🏷️ **Timestamp:** ${{ needs.publish-release.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
-          elif [ "${{ needs.publish-release.result }}" == "skipped" ]; then
+            echo "🚀 **Marked Latest:** ${{ needs.publish-release.outputs.make_latest }}" >> $GITHUB_STEP_SUMMARY
+            echo "🧪 **Pre-release:** ${{ needs.publish-release.outputs.prerelease }}" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.publish-release.result }}" = "skipped" ]; then
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "⏭️ **GitHub Release:** Skipped" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "❌ **GitHub Release:** Failed" >> $GITHUB_STEP_SUMMARY
           fi
-          
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Next Run:** Tomorrow at 2:00 AM UTC" >> $GITHUB_STEP_SUMMARY 
