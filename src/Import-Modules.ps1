@@ -66,6 +66,7 @@
 
 # Download modules
 . "$PSScriptRoot\Download\Mods\Download-Mods.ps1"
+. "$PSScriptRoot\Download\Mods\Download-ModsDefaults.ps1"
 . "$PSScriptRoot\Download\Modpack\Download-Modpack.ps1"
 . "$PSScriptRoot\Download\Server\Download-ServerFiles.ps1"
 . "$PSScriptRoot\Download\Server\Download-ServerFilesFromDatabase.ps1"
