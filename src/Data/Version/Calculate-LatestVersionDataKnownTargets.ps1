@@ -40,15 +40,6 @@ function Get-HighestVersionToken {
     }
 }
 
-function Get-FileNameFromUrl {
-    param([string]$Url)
-    if ([string]::IsNullOrWhiteSpace($Url)) { return "" }
-    try {
-        $decoded = [System.Web.HttpUtility]::UrlDecode($Url)
-        return [System.IO.Path]::GetFileName(($decoded -split '\?')[0])
-    } catch { return "" }
-}
-
 function Select-GitHubLatestCandidate {
     param(
         [pscustomobject]$Mod,
@@ -178,7 +169,7 @@ function Calculate-LatestVersionData {
         Write-Host "Updated: $updateCount" -ForegroundColor Green
         Write-Host "Skipped/fallback: $skipCount" -ForegroundColor Yellow
         Write-Host "Backup: $backupPath" -ForegroundColor Green
-        foreach ($key in $actionSummary.Keys) { Write-Host "   $key: $($actionSummary[$key])" -ForegroundColor Gray }
+        foreach ($key in $actionSummary.Keys) { Write-Host "   ${key}: $($actionSummary[$key])" -ForegroundColor Gray }
         return $true
     } catch {
         Write-Host "Failed to calculate latest version data: $($_.Exception.Message)" -ForegroundColor Red
