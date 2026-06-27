@@ -2,7 +2,7 @@
 # Download Mods Defaults Wrapper
 # =============================================================================
 # This wrapper keeps the public Download-Mods command safe and predictable:
-# - Plain -Download uses the DB current version instead of the hardcoded fallback.
+# - Plain -Download uses release-config.json targets.current before DB fallback.
 # - Relative paths and .cache are anchored to the project root.
 # =============================================================================
 
@@ -46,9 +46,19 @@ function Download-Mods {
 
     $effectiveTargetGameVersion = $TargetGameVersion
     if ([string]::IsNullOrWhiteSpace($effectiveTargetGameVersion) -and -not $UseLatestVersion -and -not $UseNextVersion) {
-        $effectiveTargetGameVersion = Get-CurrentVersion -CsvPath $effectiveCsvPath
-        if ($effectiveTargetGameVersion) {
-            Write-Host "🎯 Targeting current game version from database: $effectiveTargetGameVersion" -ForegroundColor Green
+        if (Get-Command Get-ReleaseVersionTargets -ErrorAction SilentlyContinue) {
+            $targets = Get-ReleaseVersionTargets
+            if ($targets -and -not [string]::IsNullOrWhiteSpace($targets.Current)) {
+                $effectiveTargetGameVersion = $targets.Current
+                Write-Host "🎯 Targeting current game version from release-config.json: $effectiveTargetGameVersion" -ForegroundColor Green
+            }
+        }
+
+        if ([string]::IsNullOrWhiteSpace($effectiveTargetGameVersion)) {
+            $effectiveTargetGameVersion = Get-CurrentVersion -CsvPath $effectiveCsvPath
+            if ($effectiveTargetGameVersion) {
+                Write-Host "🎯 Targeting current game version from database: $effectiveTargetGameVersion" -ForegroundColor Green
+            }
         }
     }
 
