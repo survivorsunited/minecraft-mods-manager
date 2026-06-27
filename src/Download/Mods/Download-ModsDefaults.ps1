@@ -4,6 +4,7 @@
 # This wrapper keeps the public Download-Mods command safe and predictable:
 # - Plain -Download uses release-config.json targets.current before DB fallback.
 # - Relative paths and .cache are anchored to the project root.
+# - GitHub release asset URLs are made safe for the legacy downloader's UrlDecode call.
 # =============================================================================
 
 if (-not $script:DownloadModsOriginalCommand) {
@@ -24,6 +25,57 @@ function Resolve-ModManagerProjectPath {
 
     if ([System.IO.Path]::IsPathRooted($Path)) { return $Path }
     return (Join-Path $ProjectRoot $Path)
+}
+
+function Protect-GitHubReleaseAssetUrl {
+    param([string]$Url)
+
+    if ([string]::IsNullOrWhiteSpace($Url)) { return $Url }
+    if ($Url -notmatch 'github\.com/.+/releases/download/.+') { return $Url }
+    if ($Url -notmatch '\+') { return $Url }
+
+    # The legacy downloader calls HttpUtility.UrlDecode before Invoke-WebRequest.
+    # A literal + is decoded to a space, so preserve it by storing %2B in the
+    # temporary download CSV. UrlDecode('%2B') becomes '+', not a space.
+    return ($Url -replace '\+', '%2B')
+}
+
+function New-DownloadSafeCsv {
+    param(
+        [string]$CsvPath,
+        [string]$ApiResponseFolder
+    )
+
+    if (-not (Test-Path $CsvPath)) { return $CsvPath }
+    if (-not (Test-Path $ApiResponseFolder)) { New-Item -ItemType Directory -Path $ApiResponseFolder -Force | Out-Null }
+
+    try {
+        $rows = Import-Csv -Path $CsvPath
+        $urlFields = @('Url', 'CurrentVersionUrl', 'NextVersionUrl', 'LatestVersionUrl', 'UrlDirect')
+        $changed = $false
+
+        foreach ($row in $rows) {
+            foreach ($field in $urlFields) {
+                if (-not ($row.PSObject.Properties.Name -contains $field)) { continue }
+                $oldValue = [string]$row.$field
+                $newValue = Protect-GitHubReleaseAssetUrl -Url $oldValue
+                if ($newValue -ne $oldValue) {
+                    $row.$field = $newValue
+                    $changed = $true
+                }
+            }
+        }
+
+        if (-not $changed) { return $CsvPath }
+
+        $safeCsvPath = Join-Path $ApiResponseFolder "download-safe-modlist.csv"
+        $rows | Export-Csv -Path $safeCsvPath -NoTypeInformation
+        Write-Host "🔧 Created download-safe CSV for GitHub release asset URLs: $safeCsvPath" -ForegroundColor Gray
+        return $safeCsvPath
+    } catch {
+        Write-Host "⚠️  Failed to create download-safe CSV: $($_.Exception.Message). Using original CSV." -ForegroundColor Yellow
+        return $CsvPath
+    }
 }
 
 function Download-Mods {
@@ -65,8 +117,10 @@ function Download-Mods {
     $cacheRoot = Join-Path $projectRoot ".cache"
     if (-not (Test-Path $cacheRoot)) { New-Item -ItemType Directory -Path $cacheRoot -Force | Out-Null }
 
+    $downloadCsvPath = New-DownloadSafeCsv -CsvPath $effectiveCsvPath -ApiResponseFolder $effectiveApiResponseFolder
+
     $params = @{
-        CsvPath = $effectiveCsvPath
+        CsvPath = $downloadCsvPath
         DownloadFolder = $effectiveDownloadFolder
         ApiResponseFolder = $effectiveApiResponseFolder
         ForceDownload = $ForceDownload
