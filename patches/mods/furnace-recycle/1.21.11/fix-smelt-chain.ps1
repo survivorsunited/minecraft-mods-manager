@@ -7,25 +7,8 @@ param(
 if ($TargetGameVersion -and $TargetGameVersion -ne "1.21.11") { return }
 if (-not (Test-Path $DownloadRoot)) { return }
 
-# Furnace Recycle ships smelt_chain.json in an older/incompatible recipe shape.
-# 1.21.11's ingredient parser rejects the old object shape { "item": "minecraft:chain" }.
-# Rewrite it using the accepted ingredient array shape instead.
-$fixedRecipeJson = @'
-{
-  "type": "minecraft:smelting",
-  "category": "misc",
-  "ingredient": [
-    "minecraft:chain"
-  ],
-  "result": {
-    "id": "minecraft:iron_nugget",
-    "count": 1
-  },
-  "experience": 0.1,
-  "cookingtime": 200
-}
-'@
-
+# Furnace Recycle ships smelt_chain.json with an incompatible recipe shape for 1.21.11.
+# Remove only this known bad recipe so the rest of Furnace Recycle can load.
 try {
     Add-Type -AssemblyName System.IO.Compression.FileSystem -ErrorAction SilentlyContinue
     $jars = Get-ChildItem -Path $DownloadRoot -Filter "furnacerecycle-*.jar" -Recurse -ErrorAction SilentlyContinue
@@ -34,46 +17,20 @@ try {
         $zip = $null
         try {
             $zip = [System.IO.Compression.ZipFile]::Open($jar.FullName, [System.IO.Compression.ZipArchiveMode]::Update)
-            $entryPaths = @(
-                "data/furnacerecycle/recipe/smelt_chain.json",
-                "data/furnacerecycle/recipes/smelt_chain.json"
-            )
+            $badEntries = @($zip.Entries | Where-Object {
+                $_.FullName -eq "data/furnacerecycle/recipe/smelt_chain.json" -or
+                $_.FullName -eq "data/furnacerecycle/recipes/smelt_chain.json"
+            })
 
-            $patched = $false
-            foreach ($entryPath in $entryPaths) {
-                $entry = $zip.GetEntry($entryPath)
-                if ($entry) {
-                    $entry.Delete()
-                    $newEntry = $zip.CreateEntry($entryPath)
-                    $stream = $newEntry.Open()
-                    try {
-                        $writer = New-Object System.IO.StreamWriter($stream, [System.Text.UTF8Encoding]::new($false))
-                        try { $writer.Write($fixedRecipeJson) } finally { $writer.Dispose() }
-                    } finally {
-                        $stream.Dispose()
-                    }
-                    Write-Host "    🧹 Furnace Recycle: rewrote recipe $entryPath using 1.21.11 ingredient array shape" -ForegroundColor Yellow
-                    $patched = $true
-                }
-            }
-
-            if (-not $patched) {
-                # If the upstream jar changes path slightly, add the fixed recipe at the modern path.
-                $entryPath = "data/furnacerecycle/recipe/smelt_chain.json"
-                $newEntry = $zip.CreateEntry($entryPath)
-                $stream = $newEntry.Open()
-                try {
-                    $writer = New-Object System.IO.StreamWriter($stream, [System.Text.UTF8Encoding]::new($false))
-                    try { $writer.Write($fixedRecipeJson) } finally { $writer.Dispose() }
-                } finally {
-                    $stream.Dispose()
-                }
-                Write-Host "    🧹 Furnace Recycle: added fixed recipe $entryPath using 1.21.11 ingredient array shape" -ForegroundColor Yellow
+            foreach ($entry in $badEntries) {
+                $entryName = $entry.FullName
+                $entry.Delete()
+                Write-Host "    🧹 Furnace Recycle: removed invalid recipe $entryName" -ForegroundColor Yellow
             }
         } finally {
             if ($zip) { $zip.Dispose() }
         }
     }
 } catch {
-    Write-Host "    ⚠️  Furnace Recycle recipe fix failed: $($_.Exception.Message)" -ForegroundColor Yellow
+    Write-Host "    ⚠️  Furnace Recycle patch failed: $($_.Exception.Message)" -ForegroundColor Yellow
 }
