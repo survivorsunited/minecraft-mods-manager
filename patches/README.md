@@ -11,7 +11,7 @@ patches/mods/<mod-id>/<minecraft-version>/<patch-name>.ps1
 Examples:
 
 ```text
-patches/mods/furnace-recycle/1.21.11/remove-smelt-chain.ps1
+patches/mods/furnace-recycle/1.21.11/fix-smelt-chain.ps1
 patches/mods/gens-recipes-plus/1.21.11/remove-invalid-resource-paths.ps1
 ```
 
@@ -19,7 +19,7 @@ patches/mods/gens-recipes-plus/1.21.11/remove-invalid-resource-paths.ps1
 
 A patch is a local fix-up applied after a mod jar is downloaded and before the server is started or validated.
 
-These scripts do not change the upstream mod, Modrinth, CurseForge, GitHub releases, or the source repository for the mod. They only clean the local downloaded copy used by this mod manager.
+These scripts do not change the upstream mod, Modrinth, CurseForge, GitHub releases, or the source repository for the mod. They only clean or rewrite the local downloaded copy used by this mod manager.
 
 ## Patch script contract
 
@@ -44,5 +44,5 @@ A patch script should:
 
 | Mod | Minecraft target | Patch | Reason |
 | --- | --- | --- | --- |
-| Furnace Recycle | 1.21.11 | remove-smelt-chain.ps1 | Removes a broken `smelt_chain.json` recipe that references an invalid chain item shape for 1.21.11. |
+| Furnace Recycle | 1.21.11 | fix-smelt-chain.ps1 | Rewrites the broken `smelt_chain.json` recipe as a valid chain smelting recipe instead of deleting it. |
 | Gen's Recipes Plus | 1.21.11 | remove-invalid-resource-paths.ps1 | Removes JSON resources with invalid paths such as spaces in the resource filename. |
