@@ -44,5 +44,5 @@ A patch script should:
 
 | Mod | Minecraft target | Patch | Reason |
 | --- | --- | --- | --- |
-| Furnace Recycle | 1.21.11 | fix-smelt-chain.ps1 | Rewrites the broken `smelt_chain.json` recipe as a valid chain smelting recipe instead of deleting it. |
+| Furnace Recycle | 1.21.11 | fix-smelt-chain.ps1 | Removes the broken `smelt_chain.json` recipe because tested 1.21.11 rewrite shapes still fail recipe parsing. |
 | Gen's Recipes Plus | 1.21.11 | remove-invalid-resource-paths.ps1 | Removes JSON resources with invalid paths such as spaces in the resource filename. |
