@@ -24,6 +24,16 @@ function Validate-AllModVersions {
         [switch]$UseCachedResponses
     )
 
+    # Load GitHub direct URL validator at call time, after provider modules have been imported.
+    try {
+        $githubDirectWrapper = Join-Path $PSScriptRoot "..\..\Provider\GitHub\Validate-GitHubModVersionDirectUrls.ps1"
+        if (Test-Path $githubDirectWrapper) {
+            . $githubDirectWrapper
+        }
+    } catch {
+        Write-Host "Warning: could not load GitHub direct URL validator: $($_.Exception.Message)" -ForegroundColor Yellow
+    }
+
     $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $CsvPath
 
     $releaseTargets = $null
