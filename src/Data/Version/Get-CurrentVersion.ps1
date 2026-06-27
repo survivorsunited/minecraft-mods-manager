@@ -1,37 +1,23 @@
 # =============================================================================
 # Get Current Version Function
 # =============================================================================
-# Returns the majority CurrentGameVersion from mods in the database
+# Returns the current game version target.
 # =============================================================================
 
-<#
-.SYNOPSIS
-    Gets the majority current game version from the modlist.
-
-.DESCRIPTION
-    Analyzes the CurrentGameVersion column to find the most common version
-    currently in use by mods.
-
-.PARAMETER CsvPath
-    Path to the CSV file containing mod data.
-
-.EXAMPLE
-    Get-CurrentVersion -CsvPath "modlist.csv"
-
-.NOTES
-    - Looks at CurrentGameVersion column only
-    - Excludes infrastructure types (server, launcher, installer)
-    - Returns the most common version or $null if none found
-#>
 function Get-CurrentVersion {
     param(
         [string]$CsvPath = "modlist.csv"
     )
     
     try {
+        if (Get-Command Get-ReleaseVersionTargets -ErrorAction SilentlyContinue) {
+            $targets = Get-ReleaseVersionTargets
+            if ($targets -and -not [string]::IsNullOrWhiteSpace($targets.Current)) {
+                return $targets.Current
+            }
+        }
+
         $mods = Import-Csv -Path $CsvPath
-        
-        # Get CurrentGameVersion from mods only (exclude infrastructure)
         $currentVersions = $mods | Where-Object { 
             $_.Type -eq "mod" -and 
             -not [string]::IsNullOrEmpty($_.CurrentGameVersion) 
@@ -42,9 +28,7 @@ function Get-CurrentVersion {
             return $null
         }
         
-        # Get the most common version
         $majorityVersion = ($currentVersions | Group-Object | Sort-Object Count -Descending | Select-Object -First 1).Name
-        
         return $majorityVersion
         
     } catch {
@@ -54,4 +38,3 @@ function Get-CurrentVersion {
 }
 
 # Function is available for dot-sourcing
-
