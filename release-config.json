@@ -1,7 +1,7 @@
 {
   "targets": {
     "current": "1.21.11",
-    "next": "26.1",
+    "next": "26.1.2",
     "latest": "26.2"
   },
   "versions": [
@@ -40,7 +40,7 @@
     {
       "version": "26.1",
       "enabled": false,
-      "description": "Next Minecraft candidate; disabled until Java 25 runtime and mod validation are ready",
+      "description": "Minecraft 26.1 candidate; disabled until Java 25 runtime and mod validation are ready",
       "env": {
         "JAVA_VERSION_MIN": "25"
       }
@@ -56,7 +56,7 @@
     {
       "version": "26.1.2",
       "enabled": false,
-      "description": "Minecraft 26.1.2 candidate; disabled until Java 25 runtime and mod validation are ready",
+      "description": "Next Minecraft candidate; disabled until Java 25 runtime and mod validation are ready",
       "env": {
         "JAVA_VERSION_MIN": "25"
       }
