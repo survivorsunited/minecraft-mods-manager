@@ -1,295 +1,200 @@
-# Release Process Documentation
+# Release Process
 
-## Overview
+This repository has three different release-like paths. Only one of them is the proper public GitHub Release process.
 
-This document describes the release process for the Minecraft Mods Manager modpack. The system uses a **tag-based release strategy** where:
+## The proper GitHub Release process
 
-- **Official Releases**: Only created when a Git tag is pushed (marked as stable releases)
-- **Pre-Releases**: All automated releases from workflows are marked as pre-release
+A proper stable GitHub Release is created by pushing a Git tag that matches one of these patterns:
 
-## Release Types
+```text
+v*
+release-*
+```
 
-### 1. Official Releases (Tag-Based)
+The tag triggers:
 
-**Trigger**: When a Git tag matching the pattern `v*` or `release-*` is pushed to the repository.
+```text
+.github/workflows/tag-release.yml
+```
 
-**Characteristics**:
-- Marked as **stable release** (not pre-release)
-- Uses the tag name as the release name
-- Includes all enabled modpack versions from `release-config.json`
-- Full validation and server startup testing
-- Published to GitHub Releases
+That workflow builds the enabled Minecraft versions from `release-config.json`, validates server startup, packages the modpack ZIP files, generates checksums and release notes, then publishes a stable GitHub Release.
 
-**Workflow**: `.github/workflows/tag-release.yml`
+## Current stable release target
 
-**How to Create**:
-```bash
-# 1. Ensure all tests pass
+The current public release target is controlled by `release-config.json`.
+
+At the moment:
+
+```text
+current = 1.21.11
+next    = 26.1.2
+latest  = 26.2
+```
+
+Only `1.21.11` is enabled for stable release packaging. The 1.21.11 target requires Java 25 because C2ME's native math module requires it.
+
+## Stable release command
+
+Use a clean semantic tag for the public release:
+
+```powershell
 git checkout main
 git pull
 
-# 2. Create and push a tag
-git tag -a v1.0.0 -m "Release version 1.0.0"
-git push origin v1.0.0
+git status
 
-# The tag-release workflow will automatically:
-# - Build all enabled versions
-# - Validate server startup
-# - Create GitHub Release with tag name
-# - Mark as stable (not pre-release)
+git tag -a v1.21.11 -m "Minecraft 1.21.11 stable modpack release"
+git push origin v1.21.11
 ```
 
-**Tag Naming Convention**:
-- Use semantic versioning: `v1.0.0`, `v1.1.0`, `v2.0.0`
-- Or date-based: `release-2025.11.18`
-- Must start with `v` or `release-`
+After the tag is pushed, watch the **Tag-Based Release** workflow in GitHub Actions.
 
-### 2. Pre-Releases (Automated)
+The workflow should publish a GitHub Release containing:
 
-**Triggers**:
-1. **Daily Mod Update Pipeline** (`.github/workflows/daily-mod-update.yml`)
-   - Runs daily at 2:00 AM UTC
-   - Creates pre-release when mod updates are detected
-   - Tag format: `release-YYYY.MM.DD-HHMMSS`
-
-2. **Test Pipeline** (`.github/workflows/test.yml`)
-   - Runs on push to `main`/`develop` branches
-   - Creates test pre-release after successful test suite
-   - Tag format: `test-release-{run_number}`
-
-**Characteristics**:
-- Marked as **pre-release** (unstable/development)
-- Automatically generated
-- May contain untested or experimental changes
-- Useful for testing and validation
-
-## Workflow Details
-
-### Tag-Based Release Workflow
-
-**File**: `.github/workflows/tag-release.yml`
-
-**Trigger**:
-```yaml
-on:
-  push:
-    tags:
-      - 'v*'
-      - 'release-*'
+```text
+modpack-*.zip
+release-hashes.txt
+README.md
 ```
 
-**Process**:
-1. Checkout code with submodules
-2. Read enabled versions from `release-config.json`
-3. For each enabled version:
-   - Download mods and server files
-   - Validate server startup
-   - Generate hash.txt and README.md
-   - Create modpack ZIP
-4. Package all versions
-5. Generate release notes
-6. Create GitHub Release:
-   - Tag: The pushed tag name
-   - Name: Extracted from tag
-   - **prerelease: false** (stable release)
-   - Files: All modpack ZIPs + checksums
+## Recommended pre-flight before tagging
 
-### Daily Mod Update Workflow
+Run these locally before creating the tag:
 
-**File**: `.github/workflows/daily-mod-update.yml`
+```powershell
+git checkout main
+git pull
 
-**Changes Required**:
-- Set `prerelease: true` in the `publish-release` job
-- Keep automatic tag generation for tracking
-- Add note in release notes that this is a pre-release
+# Do not let a local env var force the wrong Java requirement.
+Remove-Item Env:\JAVA_VERSION_MIN -ErrorAction SilentlyContinue
 
-**Current Behavior**:
-- Creates timestamp-based tags: `release-YYYY.MM.DD-HHMMSS`
-- Marks as stable release (needs change to pre-release)
+# Clean old test releases from GitHub first, if needed.
+.\tools\Remove-TestReleases.ps1
+.\tools\Remove-TestReleases.ps1 -Delete
 
-**Updated Behavior**:
-- Creates timestamp-based tags: `release-YYYY.MM.DD-HHMMSS`
-- Marks as **pre-release** (development/testing)
+# Refresh/repair metadata.
+.\ModManager.ps1 -UpdateMods -Online
 
-**Next and Latest version packages**:
-- After validating and updating the mod database, the pipeline refreshes **Next** and **Latest** version data only (`-UpdateNextOnly`, `-UpdateLatestOnly`) so Current stays unchanged.
-- It then builds release packages for the **Next** and **Latest** game versions (from the database). If server validation passes for those versions, the packages are included in the same GitHub Release as `modpack-next-{version}.zip` and `modpack-latest-{version}.zip`. This lets you test and ship Next/Latest when they are valid without changing the main (Current) release.
+# Re-download and apply mod patches.
+.\ModManager.ps1 -Download -ForceDownload -TargetVersion "1.21.11"
 
-**Why the daily run might not create a release**:
-1. **No database changes (`has_updates=false`)**  
-   The pipeline only runs **Create Release Packages** and **Publish Release** when `modlist.csv` has changed after validation (new mod versions, SyncLatestMinecraftVersion adding rows, etc.). If there are no changes, those jobs are skipped and no GitHub Release is created.  
-   - **What to do:** Re-run the workflow from the Actions tab and check **"Force create all versions"** to build and publish anyway.
-2. **Server validation failed for all enabled versions**  
-   If every matrix version (from `release-config.json`) fails server startup, no artifacts are uploaded and the release may be empty or only include Next/Latest packages.  
-   - **What to do:** Check the **Create Release Package for &lt;version&gt;** step logs for the failure (e.g. mod incompatibility, missing JAR).
+# Validate server startup.
+.\ModManager.ps1 -StartServer -TargetVersion "1.21.11"
 
-In the Actions run, the **update-database** job summary now includes a **Release decision** section stating whether Create Release Packages will run and why.
-
-### Test Pipeline Release
-
-**File**: `.github/workflows/test.yml`
-
-**Current Behavior**:
-- Already marks releases as `prerelease: true` ✅
-- Creates tags: `test-release-{run_number}`
-- No changes needed
-
-## Configuration
-
-### Release Configuration File
-
-**File**: `release-config.json`
-
-```json
-{
-  "versions": [
-    {
-      "version": "1.21.5",
-      "enabled": true
-    },
-    {
-      "version": "1.21.8",
-      "enabled": true
-    }
-  ]
-}
+# Optional local package smoke test.
+.\ModManager.ps1 -CreateRelease -GameVersion "1.21.11"
 ```
 
-This file controls which Minecraft versions are included in releases. Versions 1.21.10 and 1.21.11 are included as disabled entries; enable when ready for release.
+If those pass, tag and push.
 
-### Database (modlist.csv) for release versions
+## What local `-CreateRelease` does
 
-For each Minecraft version you enable in `release-config.json`, the pipeline needs **server**, **launcher**, and optionally **installer** rows in `modlist.csv` so that release packages can download the correct server JAR and Fabric launcher (and installer) for that version.
+This command:
 
-**Current DB coverage (as of last review):**
+```powershell
+.\ModManager.ps1 -CreateRelease -GameVersion "1.21.11"
+```
 
-| Type      | Versions in DB                    | Notes |
-|-----------|-----------------------------------|-------|
-| **Server**   | 1.21.5, 1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10 | Add **1.21.11** when Mojang publish the server JAR. |
-| **Launcher** | 1.21.5, 1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10 | Add **1.21.11** when Fabric meta has loader for 1.21.11 (same pattern: `fabric-server-launcher-1.21.11`, URL from `https://meta.fabricmc.net/v2/versions/loader/1.21.11/...`). |
-| **Installer**| 1.21.5, 1.21.6 only               | Fabric often uses one installer EXE for many versions. Add rows for **1.21.9, 1.21.10, 1.21.11** only if you need version-specific installer entries (e.g. for release packaging). |
+creates a local package under:
 
-When adding a new Minecraft version (e.g. 1.21.11): add a **server** row (Minecraft Server JAR from Mojang) and a **launcher** row (Fabric server launcher from Fabric meta). Add **installer** rows only if your workflow requires per-version installer entries.
+```text
+releases/1.21.11
+```
 
-## Release Artifacts
+It does **not** publish a GitHub Release by itself. It is used by the GitHub Actions workflows as the build step.
 
-Each release includes:
+## What the tag release workflow does
 
-1. **Modpack ZIP Files**: `modpack-{version}.zip`
-   - Contains all mods (mandatory and optional)
-   - Server JARs (Minecraft and Fabric)
-   - Fabric installer (EXE and JAR)
-   - `hash.txt` for file verification
-   - `README.md` with mod list and instructions
+The tag workflow:
 
-2. **Checksums File**: `release-hashes.txt`
-   - SHA256 hashes for all modpack ZIPs
-   - Used for download verification
+1. Checks out the tagged commit with submodules.
+2. Reads enabled versions from `release-config.json`.
+3. Runs `ModManager.ps1 -CreateRelease -GameVersion <version>` for each enabled version.
+4. Refuses to publish if the package has zero mod files.
+5. Creates `modpack-<version>.zip`.
+6. Generates `release-hashes.txt`.
+7. Generates release notes.
+8. Publishes a stable GitHub Release with `prerelease: false`.
 
-## Release Notes
+## Automated pre-releases
 
-### Tag-Based Releases
+These are not the proper stable release path:
 
-Release notes include:
-- Release version (from tag)
-- Included modpack versions
-- Installation instructions
-- Checksums for verification
-- InertiaAntiCheat integration notes
+### Daily Mod Update workflow
 
-### Pre-Releases
+```text
+.github/workflows/daily-mod-update.yml
+```
 
-Pre-release notes include:
-- Pre-release indicator
-- Source workflow (Daily Update or Test)
-- Included versions
-- Warning that this is a development build
+This runs on schedule or manually. It can publish automated development builds, but they are marked as pre-releases.
 
-## Best Practices
+It only publishes when:
 
-### Creating Official Releases
+```text
+modlist.csv changed
+```
 
-1. **Before Tagging**:
-   - Ensure all tests pass
-   - Review recent changes
-   - Verify mod compatibility
-   - Check `release-config.json` has correct enabled versions
+or when the workflow is manually run with:
 
-2. **Tagging**:
-   - Use semantic versioning: `v1.0.0`, `v1.1.0`, `v2.0.0`
-   - Include descriptive message: `git tag -a v1.0.0 -m "Initial stable release"`
-   - Push tag: `git push origin v1.0.0`
+```text
+Force create all versions = true
+```
 
-3. **After Tagging**:
-   - Monitor workflow execution
-   - Verify release artifacts
-   - Test downloaded modpacks
-   - Announce release if needed
+### Test workflow
 
-### Pre-Release Management
+```text
+.github/workflows/test.yml
+```
 
-- Pre-releases are automatically created
-- No manual intervention required
-- Use for testing and validation
-- Can be deleted if not needed (they're marked as pre-release)
+This can create `test-release-*` pre-releases after successful test runs on `main`. These are test artifacts only and can be deleted before publishing a stable release.
 
-## Workflow Comparison
+Use:
 
-| Feature | Tag Release | Daily Update | Test Release |
-|---------|-------------|--------------|--------------|
-| **Trigger** | Git tag push | Schedule/Manual | Push to main/develop |
-| **Pre-Release** | ❌ No (stable) | ✅ Yes | ✅ Yes |
-| **Tag Format** | `v*` or `release-*` | `release-YYYY.MM.DD-HHMMSS` | `test-release-{number}` |
-| **Validation** | Full (server startup) | Full (server startup) | Full (test suite) |
-| **Frequency** | Manual (on-demand) | Daily (if updates) | On every push |
-| **Purpose** | Official stable release | Automated updates | Testing/CI |
+```powershell
+.\tools\Remove-TestReleases.ps1
+.\tools\Remove-TestReleases.ps1 -Delete
+```
 
-## Migration Plan
+## Mod patch policy
 
-### Phase 1: Create Tag Release Workflow
-- [ ] Create `.github/workflows/tag-release.yml`
-- [ ] Test with a test tag
-- [ ] Verify stable release creation
+Local jar fix-ups live under:
 
-### Phase 2: Update Daily Update Workflow
-- [ ] Change `prerelease: false` to `prerelease: true`
-- [ ] Update release notes to indicate pre-release
-- [ ] Test workflow execution
+```text
+patches/mods/<mod-id>/<minecraft-version>/<patch-name>.ps1
+```
 
-### Phase 3: Documentation
-- [ ] Update this document with final details
-- [ ] Add release process to main README
-- [ ] Create release checklist
+For example:
 
-### Phase 4: Cleanup
-- [ ] Review existing releases
-- [ ] Mark old automated releases as pre-release if needed
-- [ ] Archive or delete unnecessary pre-releases
+```text
+patches/mods/furnace-recycle/1.21.11/fix-smelt-chain.ps1
+```
 
-## Troubleshooting
+The patch runner applies these after download. This keeps release-specific mod fixes visible and version-scoped.
 
-### Tag Release Not Triggering
+## Current known release patch
 
-1. **Check tag format**: Must start with `v` or `release-`
-2. **Verify workflow file**: Ensure `tag-release.yml` exists
-3. **Check permissions**: Workflow needs `contents: write`
-4. **Review workflow logs**: Check GitHub Actions for errors
+For 1.21.11, Furnace Recycle contains a broken `smelt_chain.json` recipe. The release patch removes only that recipe so the rest of the mod can load.
 
-### Pre-Release Still Marked as Stable
+## Checklist for a proper stable GitHub Release
 
-1. **Verify workflow file**: Check `prerelease: true` is set
-2. **Check workflow version**: Ensure using latest workflow
-3. **Review release creation**: Check GitHub Actions logs
+Before tagging:
 
-### Release Artifacts Missing
+- `release-config.json` has exactly the intended stable versions enabled.
+- The tag release workflow uses Java 25 for 1.21.11 validation.
+- `ModManager.ps1 -StartServer -TargetVersion "1.21.11"` passes locally.
+- Test releases have been cleaned from GitHub Releases if required.
+- `git status` is clean.
 
-1. **Check build logs**: Verify modpack creation succeeded
-2. **Verify file paths**: Ensure ZIP files are in correct location
-3. **Check file permissions**: Workflow needs write access
+Then create and push the tag:
 
-## Related Documentation
+```powershell
+git tag -a v1.21.11 -m "Minecraft 1.21.11 stable modpack release"
+git push origin v1.21.11
+```
 
-- [API Reference](API_REFERENCE.md)
-- [Modlist CSV Columns](MODLIST_CSV_COLUMNS.md)
-- [Latest Mods Testing](USECASE_LATEST_MODS_TESTING.md)
+After tagging:
 
+- Watch the **Tag-Based Release** workflow.
+- Confirm the GitHub Release is not marked as a pre-release.
+- Confirm `modpack-1.21.11.zip`, `release-hashes.txt`, and `README.md` are attached.
+- Download the ZIP and sanity-check the contents.
