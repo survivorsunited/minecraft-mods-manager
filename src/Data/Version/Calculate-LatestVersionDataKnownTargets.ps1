@@ -22,22 +22,33 @@ function Get-LatestKnownTargetVersion {
     return "26.2"
 }
 
+function Convert-StableGameVersion {
+    param([string]$Version)
+
+    if ([string]::IsNullOrWhiteSpace($Version)) { return $null }
+    $v = $Version.Trim()
+    if ($v -notmatch '^(\d+)\.(\d+)(?:\.(\d+))?$') { return $null }
+
+    $patch = if ($matches[3]) { $matches[3] } else { '0' }
+    try { return [version]"$($matches[1]).$($matches[2]).$patch" } catch { return $null }
+}
+
 function Get-HighestVersionToken {
     param([string]$AvailableGameVersions)
 
     if ([string]::IsNullOrWhiteSpace($AvailableGameVersions)) { return "" }
 
-    $versions = $AvailableGameVersions -split ',' |
-        ForEach-Object { $_.Trim() } |
-        Where-Object { $_ -match '^\d+(\.\d+){0,2}' }
-
-    if (-not $versions) { return "" }
-
-    try {
-        return ($versions | Sort-Object { [version](($_ -replace '[^0-9\.]','').Trim('.')) } | Select-Object -Last 1)
-    } catch {
-        return ($versions | Sort-Object | Select-Object -Last 1)
+    $stableVersions = @()
+    foreach ($token in ($AvailableGameVersions -split ',')) {
+        $v = $token.Trim()
+        $parsed = Convert-StableGameVersion -Version $v
+        if ($parsed) {
+            $stableVersions += [PSCustomObject]@{ Raw = $v; Parsed = $parsed }
+        }
     }
+
+    if ($stableVersions.Count -eq 0) { return "" }
+    return ($stableVersions | Sort-Object Parsed | Select-Object -Last 1).Raw
 }
 
 function Select-GitHubLatestCandidate {
@@ -59,7 +70,7 @@ function Select-GitHubLatestCandidate {
 
     $withVersionInUrl = $candidates | Where-Object {
         -not [string]::IsNullOrWhiteSpace($_.GameVersion) -and $_.Url -match [regex]::Escape($_.GameVersion)
-    } | Sort-Object { try { [version](($_.GameVersion -replace '[^0-9\.]','').Trim('.')) } catch { [version]'0.0' } } -Descending | Select-Object -First 1
+    } | Sort-Object { $parsed = Convert-StableGameVersion -Version $_.GameVersion; if ($parsed) { $parsed } else { [version]'0.0.0' } } -Descending | Select-Object -First 1
     if ($withVersionInUrl) { return $withVersionInUrl }
 
     return ($candidates | Select-Object -First 1)
