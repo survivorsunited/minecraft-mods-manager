@@ -6,6 +6,7 @@
 # - Relative paths and .cache are anchored to the project root.
 # - GitHub release asset URLs are made safe for the legacy downloader's UrlDecode call.
 # - Stale Modrinth URLs are cleared or replaced in the temporary download CSV.
+# - Known bad resource paths inside downloaded jars can be removed before validation.
 # =============================================================================
 
 if (-not $script:DownloadModsOriginalCommand) {
@@ -218,6 +219,45 @@ function New-DownloadSafeCsv {
     }
 }
 
+function Repair-RecipesPlusInvalidResourcePaths {
+    param(
+        [string]$DownloadFolder,
+        [string]$TargetGameVersion = ""
+    )
+
+    $searchRoot = $DownloadFolder
+    if (-not [string]::IsNullOrWhiteSpace($TargetGameVersion)) {
+        $candidateRoot = Join-Path $DownloadFolder $TargetGameVersion
+        if (Test-Path $candidateRoot) { $searchRoot = $candidateRoot }
+    }
+
+    if (-not (Test-Path $searchRoot)) { return }
+
+    try {
+        Add-Type -AssemblyName System.IO.Compression.FileSystem -ErrorAction SilentlyContinue
+        $jars = Get-ChildItem -Path $searchRoot -Filter "recipes-plus-*.jar" -Recurse -ErrorAction SilentlyContinue
+        foreach ($jar in $jars) {
+            $zip = $null
+            try {
+                $zip = [System.IO.Compression.ZipFile]::Open($jar.FullName, [System.IO.Compression.ZipArchiveMode]::Update)
+                $badEntries = @($zip.Entries | Where-Object {
+                    $_.FullName -like "*brown _brick_slab_from_stairs.json" -or
+                    ($_.FullName -like "*.json" -and $_.FullName -match '\s')
+                })
+                foreach ($entry in $badEntries) {
+                    $entryName = $entry.FullName
+                    $entry.Delete()
+                    Write-Host "🧹 Patched Recipes Plus jar: removed invalid resource path $entryName" -ForegroundColor Yellow
+                }
+            } finally {
+                if ($zip) { $zip.Dispose() }
+            }
+        }
+    } catch {
+        Write-Host "⚠️  Failed to patch Recipes Plus jar: $($_.Exception.Message)" -ForegroundColor Yellow
+    }
+}
+
 function Download-Mods {
     param(
         [string]$CsvPath = $ModListPath,
@@ -274,6 +314,7 @@ function Download-Mods {
     Push-Location $projectRoot
     try {
         & $script:DownloadModsOriginalCommand @params
+        Repair-RecipesPlusInvalidResourcePaths -DownloadFolder $effectiveDownloadFolder -TargetGameVersion $effectiveTargetGameVersion
     } finally {
         Pop-Location
     }
