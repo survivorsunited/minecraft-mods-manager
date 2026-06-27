@@ -1,5 +1,5 @@
 # Overrides Calculate-NextVersionData so NextGameVersion comes from the known version sequence.
-# This handles the 1.21.11 -> 26.1 transition.
+# This handles the 1.21.11 -> 26.1 / 26.1.2 transition.
 
 if (-not $script:CalculateNextVersionDataOriginalCommand) {
     $script:CalculateNextVersionDataOriginalCommand = ${function:Calculate-NextVersionData}
@@ -15,6 +15,18 @@ function Calculate-NextVersionData {
     try {
         Write-Host "Calculating Next Version Data" -ForegroundColor Cyan
         if (-not (Test-Path $CsvPath)) { throw "Database file not found: $CsvPath" }
+
+        try {
+            $modrinthRepairModule = Join-Path $PSScriptRoot "..\..\Database\Operations\Repair-StaleModrinthCurrentUrls.ps1"
+            if (Test-Path $modrinthRepairModule) {
+                . $modrinthRepairModule
+                if (-not $DryRun -and (Get-Command Repair-StaleModrinthCurrentUrls -ErrorAction SilentlyContinue)) {
+                    $null = Repair-StaleModrinthCurrentUrls -CsvPath $CsvPath
+                }
+            }
+        } catch {
+            Write-Host "Warning: Modrinth current URL repair failed: $($_.Exception.Message)" -ForegroundColor Yellow
+        }
 
         $mods = Import-Csv -Path $CsvPath
         $nextInfo = Calculate-NextGameVersion -CsvPath $CsvPath
