@@ -13,9 +13,11 @@ $recipe = @'
   "group": "iron_ingot",
   "experience": 0.1,
   "cookingtime": 200,
-  "ingredient": {
-    "tag": "minecraft:chains"
-  },
+  "ingredient": [
+    {
+      "tag": "minecraft:chains"
+    }
+  ],
   "result": {
     "id": "minecraft:iron_ingot",
     "count": 1
@@ -41,11 +43,11 @@ try {
             } finally {
                 $stream.Dispose()
             }
-            Write-Host "    🧪 Furnace Recycle: trying chains tag recipe shape for smelt_chain" -ForegroundColor Yellow
+            Write-Host "    🧪 Furnace Recycle: trying chains tag object inside ingredient array for smelt_chain" -ForegroundColor Yellow
         } finally {
             if ($zip) { $zip.Dispose() }
         }
     }
 } catch {
-    Write-Host "    ⚠️  Furnace Recycle chains tag test failed: $($_.Exception.Message)" -ForegroundColor Yellow
+    Write-Host "    ⚠️  Furnace Recycle chains tag array test failed: $($_.Exception.Message)" -ForegroundColor Yellow
 }
