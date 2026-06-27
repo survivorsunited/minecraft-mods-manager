@@ -1,10 +1,10 @@
 # =============================================================================
 # Validate All Mod Versions Known Targets Wrapper
 # =============================================================================
-# Keeps -UpdateMods aligned with the release target model:
-# - Current is whatever the DB says is current.
-# - Next is the next known game version from Calculate-NextGameVersion (1.21.11 -> 26.1).
-# - Latest defaults to 26.2.
+# Keeps -UpdateMods aligned with release-config.json:
+# - Current is the DB/release current target.
+# - Next is release-config targets.next.
+# - Latest is release-config targets.latest.
 # Also accepts -UseCachedResponses from the CLI so -UpdateMods does not fail on an unknown parameter.
 # =============================================================================
 
@@ -26,6 +26,14 @@ function Validate-AllModVersions {
 
     $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $CsvPath
 
+    $releaseTargets = $null
+    if (Get-Command Get-ReleaseVersionTargets -ErrorAction SilentlyContinue) {
+        $releaseTargets = Get-ReleaseVersionTargets
+        if ($releaseTargets) {
+            Write-Host "Release targets: Current=$($releaseTargets.Current), Next=$($releaseTargets.Next), Latest=$($releaseTargets.Latest)" -ForegroundColor Cyan
+        }
+    }
+
     if ($UseCachedResponses) {
         Write-Host "Using cached responses when provider modules support them." -ForegroundColor Gray
     }
@@ -41,13 +49,20 @@ function Validate-AllModVersions {
     $result = & $script:ValidateAllModVersionsOriginalCommand @params
 
     if ($UpdateModList -or $UpdateNextOnly) {
-        Write-Host "Refreshing Next* fields using known target version sequence..." -ForegroundColor Cyan
+        $nextLabel = if ($releaseTargets -and $releaseTargets.Next) { $releaseTargets.Next } else { "known target" }
+        Write-Host "Refreshing Next* fields for $nextLabel from release-config.json..." -ForegroundColor Cyan
         $null = Calculate-NextVersionData -CsvPath $effectiveModListPath
     }
 
     if ($UpdateModList -or $UpdateLatestOnly) {
-        Write-Host "Refreshing Latest* fields for target latest version 26.2..." -ForegroundColor Cyan
-        $null = Calculate-LatestVersionData -CsvPath $effectiveModListPath -TargetLatestVersion "26.2"
+        $latestTarget = if ($releaseTargets -and $releaseTargets.Latest) { $releaseTargets.Latest } else { "" }
+        $latestLabel = if ($latestTarget) { $latestTarget } else { "release-config latest" }
+        Write-Host "Refreshing Latest* fields for $latestLabel..." -ForegroundColor Cyan
+        if ($latestTarget) {
+            $null = Calculate-LatestVersionData -CsvPath $effectiveModListPath -TargetLatestVersion $latestTarget
+        } else {
+            $null = Calculate-LatestVersionData -CsvPath $effectiveModListPath
+        }
     }
 
     return $result
