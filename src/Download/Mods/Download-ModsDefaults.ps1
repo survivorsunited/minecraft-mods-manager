@@ -5,6 +5,7 @@
 # - Plain -Download uses release-config.json targets.current before DB fallback.
 # - Relative paths and .cache are anchored to the project root.
 # - GitHub release asset URLs are made safe for the legacy downloader's UrlDecode call.
+# - Stale Modrinth URLs are cleared in the temporary download CSV so API resolution is used.
 # =============================================================================
 
 if (-not $script:DownloadModsOriginalCommand) {
@@ -34,10 +35,43 @@ function Protect-GitHubReleaseAssetUrl {
     if ($Url -notmatch 'github\.com/.+/releases/download/.+') { return $Url }
     if ($Url -notmatch '\+') { return $Url }
 
-    # The legacy downloader calls HttpUtility.UrlDecode before Invoke-WebRequest.
-    # A literal + is decoded to a space, so preserve it by storing %2B in the
-    # temporary download CSV. UrlDecode('%2B') becomes '+', not a space.
     return ($Url -replace '\+', '%2B')
+}
+
+function Get-UrlFileNameSafe {
+    param([string]$Url)
+    if ([string]::IsNullOrWhiteSpace($Url)) { return "" }
+    try {
+        $decoded = [System.Web.HttpUtility]::UrlDecode($Url)
+        return [System.IO.Path]::GetFileName(($decoded -split '\?')[0])
+    } catch { return "" }
+}
+
+function Clear-StaleModrinthUrl {
+    param(
+        [pscustomobject]$Row,
+        [string]$UrlField,
+        [string]$GameVersionField
+    )
+
+    if ($Row.Host -ne 'modrinth') { return $false }
+    if (-not ($Row.PSObject.Properties.Name -contains $UrlField)) { return $false }
+    if (-not ($Row.PSObject.Properties.Name -contains $GameVersionField)) { return $false }
+
+    $url = [string]$Row.$UrlField
+    $gameVersion = [string]$Row.$GameVersionField
+    if ([string]::IsNullOrWhiteSpace($url) -or [string]::IsNullOrWhiteSpace($gameVersion)) { return $false }
+    if ($url -notmatch 'cdn\.modrinth\.com/.+\.jar') { return $false }
+
+    $fileName = Get-UrlFileNameSafe -Url $url
+    if ([string]::IsNullOrWhiteSpace($fileName)) { return $false }
+
+    if ($fileName -notmatch [regex]::Escape($gameVersion)) {
+        $Row.$UrlField = ""
+        return $true
+    }
+
+    return $false
 }
 
 function New-DownloadSafeCsv {
@@ -53,6 +87,7 @@ function New-DownloadSafeCsv {
         $rows = Import-Csv -Path $CsvPath
         $urlFields = @('Url', 'CurrentVersionUrl', 'NextVersionUrl', 'LatestVersionUrl', 'UrlDirect')
         $changed = $false
+        $staleCount = 0
 
         foreach ($row in $rows) {
             foreach ($field in $urlFields) {
@@ -64,13 +99,18 @@ function New-DownloadSafeCsv {
                     $changed = $true
                 }
             }
+
+            if (Clear-StaleModrinthUrl -Row $row -UrlField 'CurrentVersionUrl' -GameVersionField 'CurrentGameVersion') { $changed = $true; $staleCount++ }
+            if (Clear-StaleModrinthUrl -Row $row -UrlField 'NextVersionUrl' -GameVersionField 'NextGameVersion') { $changed = $true; $staleCount++ }
+            if (Clear-StaleModrinthUrl -Row $row -UrlField 'LatestVersionUrl' -GameVersionField 'LatestGameVersion') { $changed = $true; $staleCount++ }
         }
 
         if (-not $changed) { return $CsvPath }
 
         $safeCsvPath = Join-Path $ApiResponseFolder "download-safe-modlist.csv"
         $rows | Export-Csv -Path $safeCsvPath -NoTypeInformation
-        Write-Host "🔧 Created download-safe CSV for GitHub release asset URLs: $safeCsvPath" -ForegroundColor Gray
+        Write-Host "🔧 Created download-safe CSV: $safeCsvPath" -ForegroundColor Gray
+        if ($staleCount -gt 0) { Write-Host "🔧 Cleared $staleCount stale Modrinth URL(s) in download-safe CSV so API resolution can pick the right file." -ForegroundColor Gray }
         return $safeCsvPath
     } catch {
         Write-Host "⚠️  Failed to create download-safe CSV: $($_.Exception.Message). Using original CSV." -ForegroundColor Yellow
