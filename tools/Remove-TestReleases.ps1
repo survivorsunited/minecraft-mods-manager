@@ -78,7 +78,20 @@ Write-Host "Match pattern: $Pattern" -ForegroundColor Cyan
 Write-Host "Mode: $(if ($Delete) { 'DELETE' } else { 'DRY RUN' })" -ForegroundColor Cyan
 Write-Host ""
 
-$json = gh release list --repo $Repo --limit $Limit --json tagName,name,isDraft,isPrerelease,publishedAt,createdAt,url
+# Keep this field list compatible with current gh release list output.
+# Do not request url/html_url here; many gh versions do not expose those fields for release list.
+$fields = "tagName,name,isDraft,isPrerelease,publishedAt,createdAt"
+$ghOutput = & gh release list --repo $Repo --limit $Limit --json $fields 2>&1
+if ($LASTEXITCODE -ne 0) {
+    throw "Failed to list releases from $Repo. gh output:`n$($ghOutput -join "`n")"
+}
+
+$json = ($ghOutput -join "`n").Trim()
+if ([string]::IsNullOrWhiteSpace($json)) {
+    Write-Host "No releases found." -ForegroundColor Yellow
+    exit 0
+}
+
 $releases = @($json | ConvertFrom-Json)
 
 if ($releases.Count -eq 0) {
@@ -101,7 +114,7 @@ if ($matches.Count -eq 0) {
 
 Write-Host "Matched $($matches.Count) test release(s):" -ForegroundColor Yellow
 $matches |
-    Select-Object tagName, name, isDraft, isPrerelease, publishedAt, url |
+    Select-Object tagName, name, isDraft, isPrerelease, publishedAt |
     Format-Table -AutoSize
 
 if (-not $Delete) {
