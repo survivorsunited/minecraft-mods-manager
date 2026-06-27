@@ -78,6 +78,13 @@ function Validate-AllModVersions {
         Write-Host "Warning: could not load GitHub direct URL validator: $($_.Exception.Message)" -ForegroundColor Yellow
     }
 
+    try {
+        $curseForgeDirectWrapper = Join-Path $PSScriptRoot "..\..\Provider\CurseForge\Validate-CurseForgeModVersionDirectUrls.ps1"
+        if (Test-Path $curseForgeDirectWrapper) { . $curseForgeDirectWrapper }
+    } catch {
+        Write-Host "Warning: could not load CurseForge direct URL validator: $($_.Exception.Message)" -ForegroundColor Yellow
+    }
+
     $effectiveModListPath = Get-EffectiveModListPath -DatabaseFile $DatabaseFile -ModListFile $ModListFile -ModListPath $CsvPath
 
     $shouldUpdate = $UpdateModList -or $UpdateNextOnly -or $UpdateLatestOnly
