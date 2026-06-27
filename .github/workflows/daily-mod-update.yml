@@ -223,6 +223,12 @@ jobs:
         with:
           ref: main  # Get latest with updated modlist.csv
           submodules: true  # Clone minecraft-mod-hash submodule
+
+      - name: Set up Java 22 for server validation
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '22'
       
       - name: Create Release Package for ${{ matrix.version }}
         id: create_release
@@ -388,6 +394,12 @@ jobs:
         with:
           ref: main
           submodules: true
+
+      - name: Set up Java 22 for server validation
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '22'
 
       - name: Create Release Package for Next version
         if: needs.update-database.outputs.next_game_version != ''

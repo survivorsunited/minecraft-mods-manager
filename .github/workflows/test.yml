@@ -32,6 +32,12 @@ jobs:
       uses: actions/checkout@v4
       with:
         submodules: true  # Clone minecraft-mod-hash submodule for hash.ps1
+
+    - name: Set up Java 22 for server validation
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '22'
       
     - name: Install PowerShell (Linux)
       if: matrix.os == 'ubuntu-latest'
@@ -50,8 +56,14 @@ jobs:
     - name: Install PowerShell (macOS)
       if: matrix.os == 'macos-latest'
       run: |
-        # Install PowerShell using Homebrew
-        brew install --cask powershell
+        if command -v pwsh >/dev/null 2>&1; then
+          echo "PowerShell already available: $(pwsh --version)"
+        else
+          # GitHub-hosted macOS images usually include pwsh. If not, prefer the
+          # Homebrew formula; the legacy cask is no longer always available.
+          brew update
+          brew install powershell || brew install --cask powershell
+        fi
         
     - name: Display environment info
       shell: pwsh
@@ -169,7 +181,8 @@ jobs:
           .\RunAllTests.ps1 -TestFiles $list
         } elseif ($env:TEST_FILES) {
           Write-Host "Running tests from TEST_FILES env: $env:TEST_FILES" -ForegroundColor Green
-          .\RunAllTests.ps1
+          $list = $env:TEST_FILES.Split(',') | ForEach-Object { $_.Trim() } | Where-Object { $_ }
+          .\RunAllTests.ps1 -TestFiles $list
         } else {
           Write-Host "Running full suite (no selection provided)" -ForegroundColor Yellow
           .\RunAllTests.ps1
@@ -330,20 +343,40 @@ jobs:
         foreach ($v in $versions) {
           Write-Host "🚀 Creating test release package for $v" -ForegroundColor Cyan
           .\ModManager.ps1 -CreateRelease -GameVersion $v
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Test release package creation failed for $v" -ForegroundColor Red
+            exit 1
+          }
         }
 
     - name: Package Modpacks
       shell: bash
       run: |
         echo "📦 Packaging modpacks..."
+        release_count=$(find releases -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
+        if [ "$release_count" = "0" ]; then
+          echo "❌ No release directories found; refusing to publish an empty test release"
+          exit 1
+        fi
         for d in releases/*/; do
           [ -d "$d" ] || continue
           ver=$(basename "$d")
           echo "  Processing $ver"
+          mod_count=$(find "$d/mods" -type f \( -name '*.jar' -o -name '*.zip' \) ! -path '*/mods/block/*' 2>/dev/null | wc -l | tr -d ' ')
+          if [ "$mod_count" = "0" ]; then
+            echo "❌ Refusing to package $ver: release directory contains zero mod files"
+            echo "   Checked: $d/mods"
+            exit 1
+          fi
           cd "$d"
           zip -r "../../modpack-$ver.zip" *
           cd - >/dev/null
-          echo "    ✓ Created modpack-$ver.zip"
+          zip_mod_count=$(python3 -c "import zipfile; z='modpack-$ver.zip'; f=zipfile.ZipFile(z); print(sum(1 for n in f.namelist() if n.startswith('mods/') and n.lower().endswith(('.jar','.zip')) and not n.startswith('mods/block/'))); f.close()")
+          if [ "$zip_mod_count" = "0" ]; then
+            echo "❌ Packaged ZIP modpack-$ver.zip contains zero mod files"
+            exit 1
+          fi
+          echo "    ✓ Created modpack-$ver.zip with $zip_mod_count mod file(s)"
         done
         echo "✅ Packaging complete"
 

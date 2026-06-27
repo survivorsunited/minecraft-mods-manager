@@ -195,6 +195,17 @@ function Copy-ModsToRelease {
     }
     
     Write-Host "📊 Found $($sourceJars.Count) JAR files in source" -ForegroundColor Gray
+    # Target-version releases can include dynamically resolved files that are not yet
+    # reflected in modlist.csv (for example, a newly available 1.21.11 build found
+    # directly from Modrinth). In that case the CSV-derived expected list is a
+    # lower-bound sanity list, not a complete allow-list. If we keep treating it as
+    # an allow-list, the workflow can publish a tiny, apparently successful release
+    # containing only rows whose LatestGameVersion already equals the target.
+    $copyAllSourceForTarget = $false
+    if (-not [string]::IsNullOrWhiteSpace($TargetGameVersion) -and $sourceJars.Count -gt $expectedList.Count) {
+        $copyAllSourceForTarget = $true
+        Write-Host "  [RELEASE] Target-version dynamic package: copying all $($sourceJars.Count) downloaded source JARs; CSV expected list currently has $($expectedList.Count) entries." -ForegroundColor Yellow
+    }
     # Debug: report expected mods (mods/ and mods/optional/) that are not in source by exact or base name
     $sourceBaseSet = New-Object System.Collections.Generic.HashSet[string]
     foreach ($s in $sourceJars) {
@@ -270,6 +281,7 @@ function Copy-ModsToRelease {
                 # Exact expected server file not present in source; allow relaxed fallback
                 $shouldCopyServer = -not $copiedBasesSet.Contains($base)
             }
+            if ($copyAllSourceForTarget) { $shouldCopyServer = $true }
             if (-not $shouldCopyServer) { continue }
             # Place server mods in main mods/ folder, not mods/server/ subfolder
             $destination = Join-Path $DestinationPath $jarFile.Name
@@ -285,8 +297,8 @@ function Copy-ModsToRelease {
                 $base = Get-BaseName $jarFile.Name
                 $isExactOpt = $expectedOptSet.Contains($jarFile.Name)
                 $isBaseOpt = $expectedOptBaseSet.Contains($base)
-                if (-not $isExactOpt -and -not $isBaseOpt) { continue }
-                if (-not $isExactOpt -and $isBaseOpt -and $copiedBasesSet.Contains($base)) { continue }
+                if (-not $copyAllSourceForTarget -and -not $isExactOpt -and -not $isBaseOpt) { continue }
+                if (-not $copyAllSourceForTarget -and -not $isExactOpt -and $isBaseOpt -and $copiedBasesSet.Contains($base)) { continue }
                 $destination = Join-Path (Join-Path $DestinationPath "optional") $jarFile.Name
                 Copy-Item -Path $jarFile.FullName -Destination $destination -Force
                 if ($isExactOpt) { Write-Host "  📦 Optional: $($jarFile.Name)" -ForegroundColor Yellow }
@@ -298,8 +310,8 @@ function Copy-ModsToRelease {
                 $base = Get-BaseName $jarFile.Name
                 $isExactOpt = $expectedOptSet.Contains($jarFile.Name)
                 $isBaseOpt = $expectedOptBaseSet.Contains($base)
-                if (-not $isExactOpt -and -not $isBaseOpt) { continue }
-                if (-not $isExactOpt -and $isBaseOpt -and $copiedBasesSet.Contains($base)) { continue }
+                if (-not $copyAllSourceForTarget -and -not $isExactOpt -and -not $isBaseOpt) { continue }
+                if (-not $copyAllSourceForTarget -and -not $isExactOpt -and $isBaseOpt -and $copiedBasesSet.Contains($base)) { continue }
                 $destination = Join-Path (Join-Path $DestinationPath "optional") $jarFile.Name
                 Copy-Item -Path $jarFile.FullName -Destination $destination -Force
                 if ($isExactOpt) { Write-Host "  📦 Optional: $($jarFile.Name)" -ForegroundColor Yellow }
@@ -316,7 +328,7 @@ function Copy-ModsToRelease {
             default {
                 $base = Get-BaseName $jarFile.Name
                 $isExactExpected = $expectedModsSet.Contains($jarFile.Name)
-                if (-not $isExactExpected) {
+                if (-not $copyAllSourceForTarget -and -not $isExactExpected) {
                     # Allow relaxed-version only if base is expected AND an exact expected for this base is NOT available in source
                     if (-not $expectedModsBaseSet.Contains($base)) { continue }
                     if ($expectedExactBasesAvailable.Contains($base)) { continue }

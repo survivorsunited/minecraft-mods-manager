@@ -280,8 +280,18 @@ function Download-Mods {
                     continue
                 }
                 
-                # If targeting a specific version and this is a Modrinth MOD, resolve from API FIRST to ensure the URL matches the target game version
-                if ($TargetGameVersion -and $modHost -eq 'modrinth' -and $mod.Type -eq 'mod' -and $mod.ID) {
+                # If the database already has an exact target-version URL, prefer it over provider API metadata.
+                # This supports manually verified direct mirrors / fixed provider URLs for releases that are missing
+                # or stale in the primary API response.
+                if ($TargetGameVersion -and $mod.CurrentGameVersion -eq $TargetGameVersion -and $mod.CurrentVersionUrl) {
+                    $downloadUrl = $mod.CurrentVersionUrl
+                    $downloadVersion = $mod.CurrentVersion
+                    $resolvedByApi = $true
+                    Write-Host "  ✅ $($mod.Name): Using DB CurrentVersionUrl for $TargetGameVersion ($downloadVersion)" -ForegroundColor Green
+                }
+
+                # If targeting a specific version and this is a Modrinth MOD, resolve from API when no exact DB URL was selected.
+                if (-not $resolvedByApi -and $TargetGameVersion -and $modHost -eq 'modrinth' -and $mod.Type -eq 'mod' -and $mod.ID) {
                     try {
                         $allVersions = Invoke-RestMethodWithRetry -Uri "https://api.modrinth.com/v2/project/$($mod.ID)/version" -Method Get -ErrorAction SilentlyContinue
                         $targetApiVersion = $allVersions | Where-Object { $_.game_versions -contains $TargetGameVersion -and $_.loaders -contains $loader } | Select-Object -First 1
@@ -296,6 +306,14 @@ function Download-Mods {
                         }
                     } catch {
                         Write-Host "  ⚠️  $($mod.Name): API resolution failed, will fall back to DB URLs" -ForegroundColor DarkYellow
+                    }
+
+                    # In target-version release mode, Modrinth metadata is authoritative for mod
+                    # compatibility. If no file advertises the target game version, skip the mod
+                    # instead of falling back to a stale CSV URL that can crash server validation.
+                    if (-not $resolvedByApi) {
+                        Write-Host "  ⏭️  $($mod.Name): No Modrinth artifact found for $TargetGameVersion; skipping target release payload" -ForegroundColor Yellow
+                        continue
                     }
                 }
 
@@ -406,6 +424,9 @@ function Download-Mods {
                     if ($modHost -eq "curseforge") {
                         $result = Validate-CurseForgeModVersion -ModId $mod.ID -Version $mod.NextVersion -Loader $loader -ResponseFolder $ApiResponseFolder -Jar $jarFilename -ModUrl $mod.URL -Quiet
                     }
+                } elseif (-not $resolvedByApi -and $TargetGameVersion -and $mod.Type -in @("mod", "datapack", "shaderpack")) {
+                    Write-Host "  ⏭️  $($mod.Name): No compatible artifact found for $TargetGameVersion; skipping release payload" -ForegroundColor Yellow
+                    continue
                 } elseif (-not $resolvedByApi -and $mod.CurrentVersionUrl) {
                     $downloadUrl = $mod.CurrentVersionUrl
                     $downloadVersion = $mod.CurrentVersion

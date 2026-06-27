@@ -9,7 +9,7 @@ param(
 # Configuration: prefer bundled JDK in .cache folder; fallback to system Java if not available
 $JavaExe = $null
 
- 
+
 
 # No version gating: pick bundled or PATH java if available (no explicit path parameter)
 
@@ -46,10 +46,10 @@ if ($UseBundled) {
 
 if (-not $JavaExe -and $UseBundled -and (Test-Path $JdkCacheFolder)) {
     # Find JDK folders (prefer JDK 22 > 21, sorted descending by name)
-    $jdkFolders = Get-ChildItem $JdkCacheFolder -Directory | 
-        Where-Object { $_.Name -match "jdk-\d+" } | 
+    $jdkFolders = Get-ChildItem $JdkCacheFolder -Directory |
+        Where-Object { $_.Name -match "jdk-\d+" } |
         Sort-Object Name -Descending
-    
+
     foreach ($jdkFolder in $jdkFolders) {
         # Cross-platform Java executable detection
         $javaExt = if ($IsWindows -or $env:OS -match "Windows") { "java.exe" } else { "java" }
@@ -143,21 +143,24 @@ $LogDir = "logs"
 # Function to find Fabric server JAR
 function Find-FabricServerJar {
     $fabricJars = Get-ChildItem -Path "." -Filter "fabric-server*.jar" -ErrorAction SilentlyContinue
-    
+
     if ($fabricJars.Count -eq 0) {
         Write-Host "❌ No Fabric server JAR found in current directory" -ForegroundColor Red
         Write-Host "Expected pattern: fabric-server*.jar" -ForegroundColor Yellow
         Write-Host "Current directory: $(Get-Location)" -ForegroundColor Yellow
         return $null
     }
-    
+
+    $selectedJar = $fabricJars | Sort-Object {
+        if ($_.Name -match 'loader\.([0-9]+\.[0-9]+\.[0-9]+)') { [version]$Matches[1] } else { [version]'0.0.0' }
+    } -Descending | Select-Object -First 1
+
     if ($fabricJars.Count -gt 1) {
         Write-Host "⚠️  Multiple Fabric server JARs found:" -ForegroundColor Yellow
         $fabricJars | ForEach-Object { Write-Host "  - $($_.Name)" -ForegroundColor Gray }
-        Write-Host "Using the first one: $($fabricJars[0].Name)" -ForegroundColor Yellow
+        Write-Host "Using highest loader version: $($selectedJar.Name)" -ForegroundColor Yellow
     }
-    
-    $selectedJar = $fabricJars[0]
+
     Write-Host "✅ Found Fabric server JAR: $($selectedJar.Name)" -ForegroundColor Green
     return $selectedJar.Name
 }
@@ -189,7 +192,7 @@ $continueRunning = $true
 while ($continueRunning) {
     $Timestamp = (Get-Date).ToString("yyyy-MM-dd_HH-mm-ss")
     $LogFile = Join-Path $LogDir "console-$Timestamp.log"
-    
+
     # Build the launch arguments array
     $LaunchArgs = $JavaOpts + @("-jar", $JarFile, "--nogui")
 
@@ -204,28 +207,28 @@ while ($continueRunning) {
 "@ | Out-File -FilePath $LogFile -Encoding utf8
 
     Write-Host "`n🔄 Starting server... (Log: $LogFile)" -ForegroundColor Cyan
-    
+
     # Set console encoding for proper character handling
     [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-    
+
     # Run the server command directly (not via string command) with nogui flag
     # This ensures nogui is properly passed and prevents GUI error dialogs
     & $JavaExe @LaunchArgs 2>&1 | Tee-Object -FilePath $LogFile -Append
-    
+
     $exitCode = $LASTEXITCODE
-    
+
     if ($exitCode -eq 1) {
         # Read the log file to extract error information
         $logContent = Get-Content -Path $LogFile -Raw -ErrorAction SilentlyContinue
-        
+
         # Look for the solution message
         $solutionPattern = "A potential solution has been determined, this may resolve your problem:(.*?)--- Server exited with code"
         $solutionMatch = [regex]::Match($logContent, $solutionPattern, [System.Text.RegularExpressions.RegexOptions]::Singleline)
-        
+
         $terminateMsg = "`n--- Server exited with code $exitCode. Terminating due to error exit code. ---`n"
         Write-Host $terminateMsg -ForegroundColor Red
         $terminateMsg | Out-File -FilePath $LogFile -Encoding utf8 -Append
-        
+
         if ($solutionMatch.Success) {
             $solutionText = $solutionMatch.Groups[1].Value.Trim()
             Write-Host "❌ SERVER ERROR DETECTED:" -ForegroundColor Red
@@ -237,7 +240,7 @@ while ($continueRunning) {
         } else {
             Write-Host "❌ Server terminated due to exit code 1. Check logs for details." -ForegroundColor Red
         }
-        
+
         exit 1
     } else {
         if ($NoAutoRestart) {

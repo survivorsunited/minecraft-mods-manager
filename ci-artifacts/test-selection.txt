@@ -1,3 +1,2 @@
-# List of tests to run (one per line)
-# Example: 12-TestLatestWithServer.ps1
-# Leave this file empty to run the full test suite.
+96-TestCreateRelease.ps1
+105-TestReleasePackaging.ps1

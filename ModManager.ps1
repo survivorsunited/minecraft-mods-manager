@@ -859,8 +859,22 @@ if ($CreateRelease) {
     if ($NoAutoRestart) { $releaseParams.Add("NoAutoRestart", $true) }
     
     $result = New-Release @releaseParams
+
+    $success = $false
+    if ($result -is [bool]) {
+        $success = $result
+    } elseif ($result -is [array]) {
+        $boolResults = @($result | Where-Object { $_ -is [bool] })
+        if ($boolResults.Count -gt 0) {
+            $success = [bool]$boolResults[-1]
+        } else {
+            $success = [bool]$result
+        }
+    } else {
+        $success = [bool]$result
+    }
     
-    if ($result) {
+    if ($success) {
         Exit-ModManager 0
     } else {
         Exit-ModManager 1

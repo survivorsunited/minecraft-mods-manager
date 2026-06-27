@@ -119,8 +119,79 @@ Write-TestResult "Server mods NOT in mods/server/ subfolder" ((-not (Test-Path $
 Write-TestResult "Server mods in main mods/ folder" ((Test-Path $luckpermsInMain) -or (Test-Path $fabricproxyInMain))
 Write-TestResult "Normal mod in mods/ folder" (Test-Path (Join-Path $releaseModsDir 'lithium-fabric-0.18.1+mc1.21.8.jar'))
 
-# Test 4: Build artifacts exclusion
-Write-TestHeader "Test 4: Build Artifacts Exclusion"
+# Test 4: Target-version dynamic downloads are not over-filtered by stale CSV expected list
+Write-TestHeader "Test 4: Target-Version Dynamic Downloads"
+
+$dynamicVersion = '1.21.11'
+$dynamicDownloadModsDir = Join-Path $testOutDir 'dynamic-download' 'mods'
+$dynamicReleaseModsDir = Join-Path $testOutDir 'dynamic-release' 'mods'
+$dynamicCsv = Join-Path $testOutDir 'dynamic-release-packaging.csv'
+New-Item -ItemType Directory -Path $dynamicDownloadModsDir -Force | Out-Null
+
+$dynamicRows = @(
+    [pscustomobject]@{
+        Group='required'; Type='mod'; CurrentGameVersion=$dynamicVersion; NextGameVersion=''; LatestGameVersion=$dynamicVersion; AvailableGameVersions='';
+        ID='known-mod'; Name='Known Mod'; Jar='known-mod-1.0.0.jar'; ClientSide='required'; ServerSide='required';
+        CurrentVersionUrl=''; NextVersionUrl=''; LatestVersionUrl=''; UrlDirect=''
+    }
+)
+$dynamicRows | Export-Csv -Path $dynamicCsv -NoTypeInformation -Encoding UTF8
+Set-Content -Path (Join-Path $dynamicDownloadModsDir 'known-mod-1.0.0.jar') -Value 'dummy' -Encoding UTF8
+Set-Content -Path (Join-Path $dynamicDownloadModsDir 'newly-resolved-mod-2.0.0.jar') -Value 'dummy' -Encoding UTF8
+
+$dynamicOk = Copy-ModsToRelease -SourcePath $dynamicDownloadModsDir -DestinationPath $dynamicReleaseModsDir -CsvPath $dynamicCsv -TargetGameVersion $dynamicVersion
+Write-TestResult "Dynamic target copy executed" $dynamicOk
+Write-TestResult "Expected CSV-listed mod copied" (Test-Path (Join-Path $dynamicReleaseModsDir 'known-mod-1.0.0.jar'))
+Write-TestResult "Dynamically resolved target mod copied" (Test-Path (Join-Path $dynamicReleaseModsDir 'newly-resolved-mod-2.0.0.jar'))
+
+# Test 5: Failed server validation blocks release packaging
+Write-TestHeader "Test 5: Failed Server Validation Blocks Release"
+
+$newReleaseScript = Get-Content -Path (Join-Path $PSScriptRoot '..\..\src\Release\New-Release.ps1') -Raw
+$failedValidationBlock = [regex]::Match($newReleaseScript, 'if \(-not \$serverResult\) \{(?<body>[\s\S]*?)\n\s*\} else \{')
+$failedValidationBody = if ($failedValidationBlock.Success) { $failedValidationBlock.Groups['body'].Value } else { '' }
+Write-TestResult "New-Release has failed-validation branch" $failedValidationBlock.Success
+Write-TestResult "Failed server validation returns false" ($failedValidationBody -match 'return\s+\$false')
+Write-TestResult "Failed server validation is not non-blocking" ($failedValidationBody -notmatch 'non-blocking|proceeding to package anyway')
+
+# Test 6: Empty modpack releases are blocked
+Write-TestHeader "Test 6: Empty Modpack Guard"
+
+Write-TestResult "New-Release refuses zero-mod release payloads" ($newReleaseScript -match 'Release package contains zero mod files' -and $newReleaseScript -match 'refusing to create empty modpack')
+$modManagerScript = Get-Content -Path (Join-Path $PSScriptRoot '..\..\ModManager.ps1') -Raw
+Write-TestResult "ModManager treats false New-Release result as failure" ($modManagerScript -match '\$boolResults = @\(\$result \| Where-Object \{ \$_ -is \[bool\] \}\)' -and $modManagerScript -match 'Exit-ModManager 1')
+$tagReleaseWorkflow = Get-Content -Path (Join-Path $PSScriptRoot '..\..\.github\workflows\tag-release.yml') -Raw
+Write-TestResult "Tag release workflow refuses zero release directories" ($tagReleaseWorkflow -match 'No release directories found; refusing to publish an empty release')
+Write-TestResult "Tag release workflow refuses zero-mod release directories" ($tagReleaseWorkflow -match 'release directory contains zero mod files')
+Write-TestResult "Tag release workflow verifies packaged ZIP mod count" ($tagReleaseWorkflow -match 'Packaged ZIP .*contains zero mod files')
+
+# Test 7: Release notes show working and not-released mods per version
+Write-TestHeader "Test 7: Release Notes Mod Status"
+
+$notesRoot = Join-Path $testOutDir 'notes'
+$notesReleaseRoot = Join-Path $notesRoot 'releases'
+$notesVersionDir = Join-Path $notesReleaseRoot $version
+$notesModsDir = Join-Path $notesVersionDir 'mods'
+$notesBlockDir = Join-Path $notesModsDir 'block'
+New-Item -ItemType Directory -Path $notesModsDir -Force | Out-Null
+New-Item -ItemType Directory -Path $notesBlockDir -Force | Out-Null
+Set-Content -Path (Join-Path $notesModsDir 'working-mod-1.0.0.jar') -Value 'dummy' -Encoding UTF8
+Set-Content -Path (Join-Path $notesBlockDir 'broken-mod-1.0.0.jar') -Value 'dummy' -Encoding UTF8
+$notesCsv = Join-Path $notesRoot 'modlist.csv'
+$notesRows = @(
+    [pscustomobject]@{ Group='required'; Type='mod'; CurrentGameVersion=$version; NextGameVersion=''; LatestGameVersion=''; AvailableGameVersions=''; ID='working-mod'; Name='Working Mod'; CurrentVersion='1.0.0'; NextVersion=''; LatestVersion=''; Jar='working-mod-1.0.0.jar'; ClientSide='required'; ServerSide='required'; CurrentVersionUrl=''; NextVersionUrl=''; LatestVersionUrl=''; UrlDirect='' },
+    [pscustomobject]@{ Group='block'; Type='mod'; CurrentGameVersion=$version; NextGameVersion=''; LatestGameVersion=''; AvailableGameVersions=''; ID='broken-mod'; Name='Broken Mod'; CurrentVersion='1.0.0'; NextVersion=''; LatestVersion=''; Jar='broken-mod-1.0.0.jar'; ClientSide='required'; ServerSide='required'; CurrentVersionUrl=''; NextVersionUrl=''; LatestVersionUrl=''; UrlDirect='' }
+)
+$notesRows | Export-Csv -Path $notesCsv -NoTypeInformation -Encoding UTF8
+$notesOutput = Join-Path $notesRoot 'release-notes.md'
+& (Join-Path $PSScriptRoot '..\..\scripts\Generate-ModpackReleaseNotes.ps1') -TagName 'test' -Version 'test' -CsvPath $notesCsv -ReleasePath $notesReleaseRoot -Versions @($version) -OutputPath $notesOutput | Out-Null
+$notesText = Get-Content -Path $notesOutput -Raw
+Write-TestResult "Release notes include per-version mod status section" ($notesText -match 'Working and Not-Released Mods by Version' -and $notesText -match "Minecraft $version")
+Write-TestResult "Release notes list working released mods" ($notesText -match 'Working Mod' -and $notesText -match 'Working/released entries: \*\*1\*\*')
+Write-TestResult "Release notes list excluded/still-tracked mods" ($notesText -match 'Broken Mod' -and $notesText -match 'excluded from package for server validation; still tracked in the mod database for updates')
+
+# Test 8: Build artifacts exclusion
+Write-TestHeader "Test 8: Build Artifacts Exclusion"
 
 # Create build artifact files (should NOT be in release)
 $artifacts = @(

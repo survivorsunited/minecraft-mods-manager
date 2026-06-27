@@ -4,6 +4,60 @@
 # This module handles the complete release package creation workflow.
 # =============================================================================
 
+function Repair-KnownReleaseJarIssues {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$DownloadFolder,
+
+        [Parameter(Mandatory=$true)]
+        [string]$TargetVersion
+    )
+
+    $modsPath = Join-Path (Join-Path $DownloadFolder $TargetVersion) 'mods'
+    if (-not (Test-Path $modsPath)) { return }
+
+    # Furnace Recycle's published 1.21.11 jar is correctly versioned, but includes
+    # one recipe that fails Mojang's 1.21.11 data loader (`minecraft:chain`).
+    # Remove only that broken recipe so the otherwise valid server-side mod can be
+    # validated and packaged. Leave upstream jars untouched for all other versions.
+    if ($TargetVersion -eq '1.21.11') {
+        $furnaceJar = Join-Path $modsPath 'furnacerecycle-1.21.11-2.6.jar'
+        if (Test-Path $furnaceJar) {
+            $badEntry = 'data/furnacerecycle/recipe/smelt_chain.json'
+            $tempJar = [System.IO.Path]::GetTempFileName()
+            try {
+                Remove-Item -Path $tempJar -Force -ErrorAction SilentlyContinue
+                $source = [System.IO.Compression.ZipFile]::OpenRead($furnaceJar)
+                try {
+                    $dest = [System.IO.Compression.ZipFile]::Open($tempJar, [System.IO.Compression.ZipArchiveMode]::Create)
+                    try {
+                        $removed = $false
+                        foreach ($entry in $source.Entries) {
+                            $entryName = $entry.FullName -replace '\\','/'
+                            if ($entryName -eq $badEntry) { $removed = $true; continue }
+                            $newEntry = $dest.CreateEntry($entry.FullName, [System.IO.Compression.CompressionLevel]::Optimal)
+                            $inStream = $entry.Open()
+                            try {
+                                $outStream = $newEntry.Open()
+                                try { $inStream.CopyTo($outStream) } finally { $outStream.Dispose() }
+                            } finally { $inStream.Dispose() }
+                        }
+                    } finally { $dest.Dispose() }
+                } finally { $source.Dispose() }
+
+                if ($removed) {
+                    Copy-Item -Path $tempJar -Destination $furnaceJar -Force
+                    Write-Host "  ✓ Patched Furnace Recycle 1.21.11 jar: removed invalid smelt_chain recipe" -ForegroundColor Green
+                }
+            } catch {
+                Write-Host "  ⚠️  Could not patch Furnace Recycle jar: $($_.Exception.Message)" -ForegroundColor Yellow
+            } finally {
+                Remove-Item -Path $tempJar -Force -ErrorAction SilentlyContinue
+            }
+        }
+    }
+}
+
 <#
 .SYNOPSIS
     Creates a complete release package for a specific Minecraft version.
@@ -154,6 +208,7 @@ function New-Release {
     # Step 1: Download mods for target version
     Write-Host "📦 Downloading mods for version $targetVersion..." -ForegroundColor Cyan
     Download-Mods -CsvPath $CsvPath -DownloadFolder $DownloadFolder -ApiResponseFolder $ApiResponseFolder -TargetGameVersion $targetVersion
+    Repair-KnownReleaseJarIssues -DownloadFolder $DownloadFolder -TargetVersion $targetVersion
     
     Write-Host "" -ForegroundColor White
     
@@ -163,7 +218,7 @@ function New-Release {
     
     Write-Host "" -ForegroundColor White
     
-    # Step 3: VALIDATION GATE - Start server to verify compatibility (non-blocking)
+    # Step 3: VALIDATION GATE - Start server to verify compatibility
     Write-Host "🧪 Validating mods by starting server..." -ForegroundColor Yellow
     Write-Host "   This ensures all mods are compatible before creating release package" -ForegroundColor Gray
     Write-Host "" -ForegroundColor White
@@ -186,8 +241,9 @@ function New-Release {
 
     if (-not $serverResult) {
         Write-Host "" -ForegroundColor White
-        Write-Host "⚠️  SERVER VALIDATION FAILED - proceeding to package anyway (non-blocking)" -ForegroundColor Yellow
-        Write-Host "   A release will still be created so clients can update; investigate validation logs separately." -ForegroundColor DarkYellow
+        Write-Host "❌ SERVER VALIDATION FAILED - release package will not be created" -ForegroundColor Red
+        Write-Host "   Fix incompatible/missing mods or server startup errors before publishing." -ForegroundColor Yellow
+        return $false
     } else {
         Write-Host "" -ForegroundColor White
         Write-Host "✅ Server validation passed - proceeding with release creation" -ForegroundColor Green
@@ -215,6 +271,17 @@ function New-Release {
 
     $organizeOk = Copy-ModsToRelease -SourcePath $sourceModsPath -DestinationPath $releaseModsPath -CsvPath $CsvPath -TargetGameVersion $targetVersion
     if (-not $organizeOk) { Write-Host "❌ Failed to organize mods for release" -ForegroundColor Red; return $false }
+
+    $releaseModFiles = Get-ChildItem -Path $releaseModsPath -Recurse -File -ErrorAction SilentlyContinue | Where-Object {
+        $_.Extension -in @('.jar', '.zip') -and $_.FullName -notmatch '[\\/]block[\\/]'
+    }
+    if ($releaseModFiles.Count -eq 0) {
+        Write-Host "❌ Release package contains zero mod files; refusing to create empty modpack" -ForegroundColor Red
+        Write-Host "   Source mods path: $sourceModsPath" -ForegroundColor Yellow
+        Write-Host "   Release mods path: $releaseModsPath" -ForegroundColor Yellow
+        return $false
+    }
+    Write-Host "✓ Release mod payload contains $($releaseModFiles.Count) file(s)" -ForegroundColor Green
 
     # Copy shaderpacks
     $sourceShaderpacks = Join-Path $downloadVersionPath 'shaderpacks'
