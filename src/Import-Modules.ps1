@@ -28,6 +28,7 @@
 . "$PSScriptRoot\Data\Version\Calculate-NextVersionData.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-NextVersionDataKnownTargets.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-LatestVersionData.ps1"
+. "$PSScriptRoot\Data\Version\Calculate-LatestVersionDataKnownTargets.ps1"
 . "$PSScriptRoot\Data\Version\Filter-RelevantGameVersions.ps1"
 . "$PSScriptRoot\Data\Utility\Convert-DependenciesToJson.ps1"
 . "$PSScriptRoot\Data\Utility\Clean-SystemEntries.ps1"
