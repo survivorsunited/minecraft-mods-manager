@@ -33,6 +33,9 @@
 . "$PSScriptRoot\Data\Utility\Convert-DependenciesToJson.ps1"
 . "$PSScriptRoot\Data\Utility\Clean-SystemEntries.ps1"
 
+# Validation wrappers that depend on data-version modules
+. "$PSScriptRoot\Validation\Mod\Validate-AllModVersionsKnownTargets.ps1"
+
 # Database modules
 . "$PSScriptRoot\Database\CSV\Get-ModList.ps1"
 . "$PSScriptRoot\Database\CSV\Ensure-Columns.ps1"
