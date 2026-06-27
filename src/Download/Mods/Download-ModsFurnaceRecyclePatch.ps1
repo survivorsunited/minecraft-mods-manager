@@ -1,48 +1,8 @@
-# Final download wrapper for Furnace Recycle 1.21.11 compatibility.
-# The upstream jar contains data/furnacerecycle/recipe/smelt_chain.json with an item id
-# that no longer exists in 1.21.11. Remove only that known bad recipe before server validation.
+# Final download wrapper that applies local mod patch scripts after download.
+# Patch scripts live under patches/mods/<mod-id>/<minecraft-version>/*.ps1.
 
-if (-not $script:DownloadModsBeforeFurnaceRecyclePatch) {
-    $script:DownloadModsBeforeFurnaceRecyclePatch = ${function:Download-Mods}
-}
-
-function Remove-FurnaceRecycleSmeltChainRecipe {
-    param(
-        [string]$DownloadFolder,
-        [string]$TargetGameVersion = ""
-    )
-
-    $searchRoot = $DownloadFolder
-    if (-not [string]::IsNullOrWhiteSpace($TargetGameVersion)) {
-        $candidateRoot = Join-Path $DownloadFolder $TargetGameVersion
-        if (Test-Path $candidateRoot) { $searchRoot = $candidateRoot }
-    }
-
-    if (-not (Test-Path $searchRoot)) { return }
-
-    try {
-        Add-Type -AssemblyName System.IO.Compression.FileSystem -ErrorAction SilentlyContinue
-        $jars = Get-ChildItem -Path $searchRoot -Filter "furnacerecycle-*.jar" -Recurse -ErrorAction SilentlyContinue
-        foreach ($jar in $jars) {
-            $zip = $null
-            try {
-                $zip = [System.IO.Compression.ZipFile]::Open($jar.FullName, [System.IO.Compression.ZipArchiveMode]::Update)
-                $badEntries = @($zip.Entries | Where-Object {
-                    $_.FullName -eq "data/furnacerecycle/recipe/smelt_chain.json" -or
-                    $_.FullName -eq "data/furnacerecycle/recipes/smelt_chain.json"
-                })
-                foreach ($entry in $badEntries) {
-                    $entryName = $entry.FullName
-                    $entry.Delete()
-                    Write-Host "🧹 Patched Furnace Recycle jar: removed invalid recipe $entryName" -ForegroundColor Yellow
-                }
-            } finally {
-                if ($zip) { $zip.Dispose() }
-            }
-        }
-    } catch {
-        Write-Host "⚠️  Failed to patch Furnace Recycle jar: $($_.Exception.Message)" -ForegroundColor Yellow
-    }
+if (-not $script:DownloadModsBeforePatchRunner) {
+    $script:DownloadModsBeforePatchRunner = ${function:Download-Mods}
 }
 
 function Download-Mods {
@@ -68,7 +28,7 @@ function Download-Mods {
     if ($UseNextVersion) { $params.UseNextVersion = $true }
     if ($TargetGameVersion) { $params.TargetGameVersion = $TargetGameVersion }
 
-    & $script:DownloadModsBeforeFurnaceRecyclePatch @params
+    & $script:DownloadModsBeforePatchRunner @params
 
     $effectiveTargetGameVersion = $TargetGameVersion
     if ([string]::IsNullOrWhiteSpace($effectiveTargetGameVersion) -and -not $UseLatestVersion -and -not $UseNextVersion) {
@@ -78,5 +38,7 @@ function Download-Mods {
         }
     }
 
-    Remove-FurnaceRecycleSmeltChainRecipe -DownloadFolder $DownloadFolder -TargetGameVersion $effectiveTargetGameVersion
+    if (Get-Command Apply-ModPatches -ErrorAction SilentlyContinue) {
+        Apply-ModPatches -DownloadFolder $DownloadFolder -TargetGameVersion $effectiveTargetGameVersion -ModListPath $CsvPath
+    }
 }
