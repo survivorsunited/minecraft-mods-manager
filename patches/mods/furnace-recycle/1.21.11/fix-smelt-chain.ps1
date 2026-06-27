@@ -8,14 +8,15 @@ if ($TargetGameVersion -and $TargetGameVersion -ne "1.21.11") { return }
 if (-not (Test-Path $DownloadRoot)) { return }
 
 # Furnace Recycle ships smelt_chain.json in an older/incompatible recipe shape.
-# Replace it with a valid 1.21.11 smelting recipe rather than removing the recipe entirely.
+# 1.21.11's ingredient parser rejects the old object shape { "item": "minecraft:chain" }.
+# Rewrite it using the accepted ingredient array shape instead.
 $fixedRecipeJson = @'
 {
   "type": "minecraft:smelting",
   "category": "misc",
-  "ingredient": {
-    "item": "minecraft:chain"
-  },
+  "ingredient": [
+    "minecraft:chain"
+  ],
   "result": {
     "id": "minecraft:iron_nugget",
     "count": 1
@@ -51,7 +52,7 @@ try {
                     } finally {
                         $stream.Dispose()
                     }
-                    Write-Host "    🧹 Furnace Recycle: rewrote recipe $entryPath as a valid chain smelting recipe" -ForegroundColor Yellow
+                    Write-Host "    🧹 Furnace Recycle: rewrote recipe $entryPath using 1.21.11 ingredient array shape" -ForegroundColor Yellow
                     $patched = $true
                 }
             }
@@ -67,7 +68,7 @@ try {
                 } finally {
                     $stream.Dispose()
                 }
-                Write-Host "    🧹 Furnace Recycle: added fixed recipe $entryPath" -ForegroundColor Yellow
+                Write-Host "    🧹 Furnace Recycle: added fixed recipe $entryPath using 1.21.11 ingredient array shape" -ForegroundColor Yellow
             }
         } finally {
             if ($zip) { $zip.Dispose() }
