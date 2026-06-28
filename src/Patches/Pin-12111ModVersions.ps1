@@ -46,6 +46,13 @@ function Set-12111FabricLauncherPin {
     if ($Row.Title) { $Row.Title = 'Fabric Launcher 1.21.11' }
 }
 
+function Set-12111OptionalClientPin {
+    param($Row)
+    if ($Row.Group) { $Row.Group = 'optional' }
+    if ($Row.ClientSide) { $Row.ClientSide = 'optional' }
+    if ($Row.ServerSide) { $Row.ServerSide = 'unsupported' }
+}
+
 function Test-12111BasicStorageRow {
     param($Row)
     $id = if ($Row.ID) { $Row.ID.Trim().ToLowerInvariant() } else { '' }
@@ -74,6 +81,15 @@ function Test-12111FabricLauncherRow {
     return ($gameVersion -eq '1.21.11' -and $type -eq 'launcher' -and ($id -eq 'fabric-launcher' -or $id -eq 'fabric-server-launcher-1.21.11' -or $jar -like 'fabric-server-mc.1.21.11-loader*.jar'))
 }
 
+function Test-12111SyncmaticaRow {
+    param($Row)
+    $id = if ($Row.ID) { $Row.ID.Trim().ToLowerInvariant() } else { '' }
+    $name = if ($Row.Name) { $Row.Name.Trim().ToLowerInvariant() } else { '' }
+    $title = if ($Row.Title) { $Row.Title.Trim().ToLowerInvariant() } else { '' }
+    $jar = if ($Row.Jar) { $Row.Jar.Trim().ToLowerInvariant() } else { '' }
+    return ($id -eq 'syncmatica' -or $name -eq 'syncmatica' -or $title -eq 'syncmatica' -or $jar -like 'syncmatica-*')
+}
+
 function Get-ModList {
     param([string]$CsvPath = $ModListPath)
     $rows = @(& $script:OriginalGetModListBefore12111Pins -CsvPath $CsvPath)
@@ -81,6 +97,7 @@ function Get-ModList {
         if (Test-12111BasicStorageRow -Row $row) { Set-12111BasicStoragePin -Row $row }
         if (Test-12111SodiumRow -Row $row) { Set-12111SodiumPin -Row $row }
         if (Test-12111FabricLauncherRow -Row $row) { Set-12111FabricLauncherPin -Row $row }
+        if (Test-12111SyncmaticaRow -Row $row) { Set-12111OptionalClientPin -Row $row }
     }
     return $rows
 }
