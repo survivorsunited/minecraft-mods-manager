@@ -273,6 +273,7 @@ jobs:
           echo "✅ Packaged ${zip_name} with ${mod_count} mod file(s)"
 
       - name: Generate release notes
+        id: notes
         shell: bash
         run: |
           set -euo pipefail
@@ -298,12 +299,12 @@ jobs:
             echo
             echo "Tag: ${tag}"
           } > release-notes.md
-          echo "RELEASE_TAG=${tag}" >> "$GITHUB_ENV"
+          echo "tag=${tag}" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ env.RELEASE_TAG }}
+          tag_name: ${{ steps.notes.outputs.tag }}
           name: Minecraft ${{ env.GAME_VERSION }} validated release
           body_path: release-notes.md
           draft: false
