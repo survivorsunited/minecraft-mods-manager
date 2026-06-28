@@ -41,6 +41,21 @@ function Set-12111SodiumPin {
     $Row.ApiSource = 'modrinth'
 }
 
+function Set-12111FabricLauncherPin {
+    param([Parameter(Mandatory = $true)]$Row)
+
+    $url = 'https://meta.fabricmc.net/v2/versions/loader/1.21.11/0.19.3/1.1.1/server/jar'
+    $Row.CurrentGameVersion = '1.21.11'
+    $Row.CurrentVersion = '0.19.3'
+    $Row.CurrentVersionUrl = $url
+    $Row.Jar = 'fabric-server-mc.1.21.11-loader.0.19.3.jar'
+    $Row.Url = $url
+    $Row.Host = 'fabric'
+    $Row.ApiSource = 'fabric'
+    if ($Row.Name) { $Row.Name = 'Fabric Server Launcher' }
+    if ($Row.Title) { $Row.Title = 'Fabric Launcher 1.21.11' }
+}
+
 function Test-12111BasicStorageRow {
     param([Parameter(Mandatory = $true)]$Row)
 
@@ -77,6 +92,25 @@ function Test-12111SodiumRow {
     )
 }
 
+function Test-12111FabricLauncherRow {
+    param([Parameter(Mandatory = $true)]$Row)
+
+    $id = if ($Row.ID) { $Row.ID.Trim().ToLowerInvariant() } else { '' }
+    $type = if ($Row.Type) { $Row.Type.Trim().ToLowerInvariant() } else { '' }
+    $gameVersion = if ($Row.CurrentGameVersion) { $Row.CurrentGameVersion.Trim() } else { '' }
+    $jar = if ($Row.Jar) { $Row.Jar.Trim().ToLowerInvariant() } else { '' }
+
+    return (
+        $gameVersion -eq '1.21.11' -and
+        $type -eq 'launcher' -and
+        (
+            $id -eq 'fabric-launcher' -or
+            $id -eq 'fabric-server-launcher-1.21.11' -or
+            $jar -like 'fabric-server-mc.1.21.11-loader.*.jar'
+        )
+    )
+}
+
 function Get-ModList {
     param([string]$CsvPath = $ModListPath)
 
@@ -88,6 +122,9 @@ function Get-ModList {
         }
         if (Test-12111SodiumRow -Row $row) {
             Set-12111SodiumPin -Row $row
+        }
+        if (Test-12111FabricLauncherRow -Row $row) {
+            Set-12111FabricLauncherPin -Row $row
         }
     }
 
