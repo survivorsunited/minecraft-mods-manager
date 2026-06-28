@@ -1,37 +1,23 @@
 # =============================================================================
 # Get Next Version Function
 # =============================================================================
-# Returns the majority NextGameVersion from mods in the database
+# Returns the next game version target.
 # =============================================================================
 
-<#
-.SYNOPSIS
-    Gets the majority next game version from the modlist.
-
-.DESCRIPTION
-    Analyzes the NextGameVersion column to find the most common next version
-    available for mods.
-
-.PARAMETER CsvPath
-    Path to the CSV file containing mod data.
-
-.EXAMPLE
-    Get-NextVersion -CsvPath "modlist.csv"
-
-.NOTES
-    - Looks at NextGameVersion column only
-    - Excludes infrastructure types (server, launcher, installer)
-    - Returns the most common version or $null if none found
-#>
 function Get-NextVersion {
     param(
         [string]$CsvPath = "modlist.csv"
     )
     
     try {
+        if (Get-Command Get-ReleaseVersionTargets -ErrorAction SilentlyContinue) {
+            $targets = Get-ReleaseVersionTargets
+            if ($targets -and -not [string]::IsNullOrWhiteSpace($targets.Next)) {
+                return $targets.Next
+            }
+        }
+
         $mods = Import-Csv -Path $CsvPath
-        
-        # Get NextGameVersion from mods only (exclude infrastructure)
         $nextVersions = $mods | Where-Object { 
             $_.Type -eq "mod" -and 
             -not [string]::IsNullOrEmpty($_.NextGameVersion) 
@@ -42,9 +28,7 @@ function Get-NextVersion {
             return $null
         }
         
-        # Get the most common version
         $majorityVersion = ($nextVersions | Group-Object | Sort-Object Count -Descending | Select-Object -First 1).Name
-        
         return $majorityVersion
         
     } catch {
@@ -54,4 +38,3 @@ function Get-NextVersion {
 }
 
 # Function is available for dot-sourcing
-

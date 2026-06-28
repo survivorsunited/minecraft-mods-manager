@@ -23,13 +23,19 @@
 . "$PSScriptRoot\Data\Version\Get-NextVersion.ps1"
 . "$PSScriptRoot\Data\Version\Get-LatestVersion.ps1"
 . "$PSScriptRoot\Data\Version\Get-MajorityLatestGameVersion.ps1"
+. "$PSScriptRoot\Data\Version\Get-ReleaseVersionTargets.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-LatestGameVersionFromAvailableVersions.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-NextGameVersion.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-NextVersionData.ps1"
+. "$PSScriptRoot\Data\Version\Calculate-NextVersionDataKnownTargets.ps1"
 . "$PSScriptRoot\Data\Version\Calculate-LatestVersionData.ps1"
+. "$PSScriptRoot\Data\Version\Calculate-LatestVersionDataKnownTargets.ps1"
 . "$PSScriptRoot\Data\Version\Filter-RelevantGameVersions.ps1"
 . "$PSScriptRoot\Data\Utility\Convert-DependenciesToJson.ps1"
 . "$PSScriptRoot\Data\Utility\Clean-SystemEntries.ps1"
+
+# Validation wrappers that depend on data-version modules
+. "$PSScriptRoot\Validation\Mod\Validate-AllModVersionsKnownTargets.ps1"
 
 # Database modules
 . "$PSScriptRoot\Database\CSV\Get-ModList.ps1"
@@ -64,8 +70,13 @@
 . "$PSScriptRoot\Provider\Minecraft\Get-MinecraftVersions.ps1"
 . "$PSScriptRoot\Provider\Adoptium\Get-AdoptiumJDK.ps1"
 
+# Patch modules
+. "$PSScriptRoot\Patches\Apply-ModPatches.ps1"
+
 # Download modules
 . "$PSScriptRoot\Download\Mods\Download-Mods.ps1"
+. "$PSScriptRoot\Download\Mods\Download-ModsDefaults.ps1"
+. "$PSScriptRoot\Download\Mods\Download-ModsFurnaceRecyclePatch.ps1"
 . "$PSScriptRoot\Download\Modpack\Download-Modpack.ps1"
 . "$PSScriptRoot\Download\Server\Download-ServerFiles.ps1"
 . "$PSScriptRoot\Download\Server\Download-ServerFilesFromDatabase.ps1"

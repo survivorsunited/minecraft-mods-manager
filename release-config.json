@@ -1,4 +1,9 @@
 {
+  "targets": {
+    "current": "1.21.11",
+    "next": "26.1.2",
+    "latest": "26.2"
+  },
   "versions": [
     {
       "version": "1.21.8",
@@ -27,9 +32,9 @@
     {
       "version": "1.21.11",
       "enabled": true,
-      "description": "Latest validated release target",
+      "description": "Current validated release target; Java 25 required by C2ME native math module",
       "env": {
-        "JAVA_VERSION_MIN": "21"
+        "JAVA_VERSION_MIN": "25"
       }
     },
     {
@@ -51,7 +56,15 @@
     {
       "version": "26.1.2",
       "enabled": false,
-      "description": "Minecraft 26.1.2 candidate; disabled until Java 25 runtime and mod validation are ready",
+      "description": "Next Minecraft candidate; disabled until Java 25 runtime and mod validation are ready",
+      "env": {
+        "JAVA_VERSION_MIN": "25"
+      }
+    },
+    {
+      "version": "26.2",
+      "enabled": false,
+      "description": "Latest Minecraft candidate used for Latest* metadata; disabled until Java 25 runtime and mod validation are ready",
       "env": {
         "JAVA_VERSION_MIN": "25"
       }
