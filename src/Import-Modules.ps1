@@ -73,6 +73,7 @@
 # Patch modules that can wrap database/provider behaviour before downloads
 . "$PSScriptRoot\Patches\Apply-ModPatches.ps1"
 . "$PSScriptRoot\Patches\Fix-AddGitHubModToDatabase.ps1"
+. "$PSScriptRoot\Patches\Pin-12111ModVersions.ps1"
 
 # Download modules
 . "$PSScriptRoot\Download\Mods\Download-Mods.ps1"
