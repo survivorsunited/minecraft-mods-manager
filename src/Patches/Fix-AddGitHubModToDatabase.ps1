@@ -9,6 +9,59 @@ if (-not $script:OriginalAddModToDatabase -and (Get-Command Add-ModToDatabase -E
     $script:OriginalAddModToDatabase = ${function:Add-ModToDatabase}
 }
 
+if (-not $script:OriginalValidateGitHubModVersion -and (Get-Command Validate-GitHubModVersion -ErrorAction SilentlyContinue)) {
+    $script:OriginalValidateGitHubModVersion = ${function:Validate-GitHubModVersion}
+}
+
+function Resolve-GitHubModIdFromCsv {
+    param(
+        [string]$ModID,
+        [string]$CsvPath
+    )
+
+    if ([string]::IsNullOrWhiteSpace($CsvPath) -or -not (Test-Path $CsvPath)) { return $ModID }
+    if ($ModID -match 'github\.com') { return $ModID }
+    if ($ModID -match '^[^/\s]+/[^/\s]+$') { return $ModID }
+
+    try {
+        $row = Import-Csv -Path $CsvPath | Where-Object { $_.ID -eq $ModID } | Select-Object -First 1
+        if ($row -and $row.Url -and $row.Url -match 'github\.com') {
+            return $row.Url
+        }
+    } catch { }
+
+    return $ModID
+}
+
+function Validate-GitHubModVersion {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ModID,
+        [Parameter(Mandatory=$true)]
+        [string]$Version,
+        [Parameter(Mandatory=$true)]
+        [string]$Loader,
+        [string]$GameVersion = "",
+        [bool]$UseCachedResponses = $false,
+        [string]$CsvPath = $null,
+        [switch]$Quiet = $false
+    )
+
+    $resolvedModId = Resolve-GitHubModIdFromCsv -ModID $ModID -CsvPath $CsvPath
+
+    $call = @{
+        ModID = $resolvedModId
+        Version = $Version
+        Loader = $Loader
+        GameVersion = $GameVersion
+        UseCachedResponses = $UseCachedResponses
+        CsvPath = $CsvPath
+    }
+    if ($Quiet) { $call.Quiet = $true }
+
+    return & $script:OriginalValidateGitHubModVersion @call
+}
+
 function Get-AddGitHubRepoUrl {
     param([string]$Url)
 
