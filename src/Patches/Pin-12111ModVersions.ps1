@@ -48,7 +48,7 @@ function Set-12111FabricLauncherPin {
     $Row.CurrentGameVersion = '1.21.11'
     $Row.CurrentVersion = '0.19.3'
     $Row.CurrentVersionUrl = $url
-    $Row.Jar = 'fabric-server-mc.1.21.11-loader.0.19.3.jar'
+    $Row.Jar = 'fabric-server-mc.1.21.11-loader.0.19.3-launcher.1.1.1.jar'
     $Row.Url = $url
     $Row.Host = 'fabric'
     $Row.ApiSource = 'fabric'
@@ -106,7 +106,7 @@ function Test-12111FabricLauncherRow {
         (
             $id -eq 'fabric-launcher' -or
             $id -eq 'fabric-server-launcher-1.21.11' -or
-            $jar -like 'fabric-server-mc.1.21.11-loader.*.jar'
+            $jar -like 'fabric-server-mc.1.21.11-loader*.jar'
         )
     )
 }
