@@ -1,0 +1,83 @@
+name: Release 1.21.11 Now
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - src/Patches/Pin-12111ModVersions.ps1
+      - src/Import-Modules.ps1
+      - .github/workflows/release-12111-now.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: release-12111-now-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release-12111:
+    runs-on: windows-latest
+    timeout-minutes: 120
+    env:
+      CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+      MINECRAFT_SERVER_URL: ${{ secrets.MINECRAFT_SERVER_URL }}
+      FABRIC_SERVER_URL: ${{ secrets.FABRIC_SERVER_URL }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          submodules: true
+
+      - name: Set up Java 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Create 1.21.11 release package
+        shell: pwsh
+        run: |
+          .\ModManager.ps1 -CreateRelease -GameVersion "1.21.11"
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "Release creation failed" -ForegroundColor Red
+            exit 1
+          }
+
+      - name: Package release files
+        shell: pwsh
+        run: |
+          $releasePath = "releases/1.21.11"
+          if (-not (Test-Path $releasePath)) {
+            throw "Missing release folder: $releasePath"
+          }
+
+          Compress-Archive -Path "$releasePath/*" -DestinationPath "modpack-1.21.11.zip" -Force
+          Get-FileHash -Algorithm SHA256 "modpack-1.21.11.zip" | ForEach-Object { "$($_.Hash.ToLower())  $($_.Path | Split-Path -Leaf)" } | Out-File -FilePath "release-hashes.txt" -Encoding utf8
+
+          $readme = Join-Path $releasePath "README.md"
+          if (Test-Path $readme) {
+            Copy-Item $readme "README-1.21.11.md" -Force
+          }
+
+      - name: Publish latest 1.21.11 release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: release-1.21.11-${{ github.run_number }}
+          name: Latest 1.21.11 Modpack Release ${{ github.run_number }}
+          body: |
+            Latest 1.21.11 modpack release.
+
+            Includes pinned Sodium 0.8.12 and Basic Storage 2.0.20 for Minecraft 1.21.11.
+          draft: false
+          prerelease: false
+          make_latest: true
+          files: |
+            modpack-1.21.11.zip
+            release-hashes.txt
+            README-1.21.11.md
