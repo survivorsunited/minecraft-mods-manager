@@ -105,7 +105,4 @@
 . "$PSScriptRoot\Release\Reconcile-ExpectedVsCache.ps1"
 . "$PSScriptRoot\Release\New-Release.ps1"
 
-# Patch modules that need release functions loaded
-. "$PSScriptRoot\Patches\Exclude-IrisFrom12111Release.ps1"
-
 Write-Host "✅ All modular functions imported successfully" -ForegroundColor Green
