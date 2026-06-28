@@ -39,6 +39,21 @@ function New-DatapacksAsModsCsvForDownload {
     return $tempCsv
 }
 
+function Remove-LegacyDatapackDownloadFolder {
+    param(
+        [string]$DownloadFolder,
+        [string]$TargetGameVersion
+    )
+
+    if ([string]::IsNullOrWhiteSpace($DownloadFolder) -or [string]::IsNullOrWhiteSpace($TargetGameVersion)) { return }
+
+    $legacyPath = Join-Path (Join-Path $DownloadFolder $TargetGameVersion) 'datapacks'
+    if (Test-Path $legacyPath) {
+        Remove-Item -Path $legacyPath -Recurse -Force -ErrorAction SilentlyContinue
+        Write-Host "🧹 Removed legacy datapack download folder: $legacyPath" -ForegroundColor DarkYellow
+    }
+}
+
 function Download-Mods {
     param(
         [string]$CsvPath = $ModListPath,
@@ -73,7 +88,13 @@ function Download-Mods {
         if ($ApiResponseFolder) { $params.ApiResponseFolder = $ApiResponseFolder }
         if ($SkipServerFiles) { $params.SkipServerFiles = $true }
 
-        return & $script:OriginalDownloadMods @params
+        $result = & $script:OriginalDownloadMods @params
+
+        if ($tempCsvPath -and $TargetGameVersion) {
+            Remove-LegacyDatapackDownloadFolder -DownloadFolder $DownloadFolder -TargetGameVersion $TargetGameVersion
+        }
+
+        return $result
     }
     finally {
         if ($tempCsvPath -and (Test-Path $tempCsvPath)) {
