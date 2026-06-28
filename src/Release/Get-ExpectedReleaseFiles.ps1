@@ -73,19 +73,18 @@ function Get-ExpectedReleaseFiles {
         return $false
     }
 
-    # Groups of interest (for mods)
+    # Groups of interest (for mods/datapacks)
     # Treat 'admin' like optional for packaging purposes
     $desiredGroups = @('required','optional','admin')
     if ($IncludeBlocked) { $desiredGroups += 'block' }
 
-    # Filter rows
+    # Filter rows. SurvivorsUnited packages Type=datapack artifacts with mods.
     $mods = $rows | Where-Object {
-        (Normalize $_.Type) -eq 'mod' -and
+        (Normalize $_.Type) -in @('mod', 'datapack') -and
         $desiredGroups -contains ((Normalize $_.Group) ?? 'required') -and
         (& $versionFilter $_)
     }
     $shaderpacks = $rows | Where-Object { (Normalize $_.Type) -eq 'shaderpack' -and (& $versionFilter $_) }
-    $datapacks = $rows | Where-Object { (Normalize $_.Type) -eq 'datapack' -and (& $versionFilter $_) }
 
     $seen = New-Object System.Collections.Generic.HashSet[string]
     $expected = @()
@@ -93,13 +92,13 @@ function Get-ExpectedReleaseFiles {
     foreach ($m in $mods) {
         $jar = Get-ArtifactFilename -row $m
         if ([string]::IsNullOrWhiteSpace($jar)) { continue }
-        # Guard: a mod with a ZIP artifact is misclassified; exclude from expected list
-        if ([System.IO.Path]::GetExtension($jar).ToLower() -eq '.zip') { continue }
+        # Mod/datapack artifacts are expected in mods/. ZIP artifacts are allowed
+        # here because Type=datapack rows may use .zip names even though they are
+        # packaged alongside mods for this server.
         $grp = (Normalize $m.Group)
         if ([string]::IsNullOrWhiteSpace($grp)) { $grp = 'required' }
         # Determine if this is server-only (don't expect it in root mods folder)
-    $clientSide = (Normalize $m.ClientSide)
-    # $serverSide previously used in older logic; retained classification no longer needs it
+        $clientSide = (Normalize $m.ClientSide)
         $type = (Normalize $m.Type)
         # Simplified and aligned server-only logic:
         # - server-only when client_side == 'unsupported'
@@ -138,24 +137,6 @@ function Get-ExpectedReleaseFiles {
         $zipName = Get-ArtifactFilename -row $s
         if ([string]::IsNullOrWhiteSpace($zipName)) { continue }
         $rel = "shaderpacks/$zipName"
-        if ($seen.Add($rel)) { $expected += $rel }
-    }
-
-    foreach ($d in $datapacks) {
-        $dpName = Normalize $d.Jar
-        if ([string]::IsNullOrWhiteSpace($dpName)) { continue }
-        $ext = [System.IO.Path]::GetExtension($dpName).ToLower()
-        if ($ext -eq '.jar') {
-            $grp = (Normalize $d.Group)
-            if ([string]::IsNullOrWhiteSpace($grp)) { $grp = 'required' }
-            switch ($grp.ToLower()) {
-                'optional' { $rel = "mods/optional/$dpName" }
-                'block'    { $rel = "mods/block/$dpName" }
-                default    { $rel = "mods/$dpName" }
-            }
-        } else {
-            $rel = "datapacks/$dpName"
-        }
         if ($seen.Add($rel)) { $expected += $rel }
     }
 
