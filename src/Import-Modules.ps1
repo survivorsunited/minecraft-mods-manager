@@ -72,6 +72,7 @@
 
 # Patch modules
 . "$PSScriptRoot\Patches\Apply-ModPatches.ps1"
+. "$PSScriptRoot\Patches\Fix-AddGitHubModToDatabase.ps1"
 
 # Download modules
 . "$PSScriptRoot\Download\Mods\Download-Mods.ps1"
@@ -101,4 +102,4 @@
 . "$PSScriptRoot\Release\Reconcile-ExpectedVsCache.ps1"
 . "$PSScriptRoot\Release\New-Release.ps1"
 
-Write-Host "✅ All modular functions imported successfully" -ForegroundColor Green 
+Write-Host "✅ All modular functions imported successfully" -ForegroundColor Green
