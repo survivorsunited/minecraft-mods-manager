@@ -1,0 +1,300 @@
+---
+alwaysApply: true
+---
+
+# Project Identity: SurvivorsUnited Minecraft Mods Manager
+
+## Read this first
+
+This repository is the control plane for the SurvivorsUnited Minecraft server modpack and release process.
+
+Always treat this project as an operational server-management tool, not a generic mod downloader. The goal is to keep the SurvivorsUnited server playable, reproducible, validated, and releasable.
+
+## Organisation and repositories
+
+- GitHub organisation: `survivorsunited`
+- Main manager repository: `survivorsunited/minecraft-mods-manager`
+- Main entry point: `ModManager.ps1`
+- Primary database: `modlist.csv`
+- Release target configuration: `release-config.json`
+- Cursor rules live in `.cursor/rules/`
+
+The manager repository controls a mixed mod ecosystem:
+
+1. External provider mods from Modrinth and CurseForge.
+2. First-party or maintained mods in the `survivorsunited` GitHub organisation.
+3. Forked or imported external mods that now live under `survivorsunited`.
+4. Direct infrastructure artefacts such as Minecraft server jars, Fabric launchers, Fabric installers, and JDK packages.
+
+Examples of SurvivorsUnited-owned or organisation-hosted mod repositories include:
+
+- `survivorsunited/mod-basic-storage`
+- `survivorsunited/mod-bigger-ender-chests`
+- `survivorsunited/mod-Sandstone-Recycling`
+- `survivorsunited/mod-diamond-recycling`
+- `survivorsunited/mod-CustomPortals`
+- `survivorsunited/mods-su-compostables`
+- `survivorsunited/mods-su-clumps`
+
+Do not assume every mod is external just because it is a Minecraft mod. Check whether it lives under `survivorsunited` first when the URL, ID, or name suggests it might.
+
+## Source of truth rules
+
+Before doing meaningful work, inspect these files instead of guessing:
+
+1. `release-config.json` for current, next, latest, enabled versions, and Java requirements.
+2. `modlist.csv` for active mods, providers, URLs, side compatibility, dependency fields, and release rows.
+3. `ModManager.ps1` for the CLI surface and dispatch logic.
+4. `src/Provider/Common.ps1` for provider routing.
+5. Provider folders under `src/Provider/` for provider-specific behaviour.
+6. `src/Download/Mods/Download-Mods.ps1` for release payload selection.
+7. `src/Release/New-Release.ps1` for release validation and packaging.
+8. `.github/workflows/daily-mod-update.yml` for the automated update and release pipeline.
+9. `test/tests/` for expected behaviours and regression coverage.
+
+README and older Cursor rules may be stale. Prefer code, config, tests, and current workflow files over older prose.
+
+## Current operating model
+
+`modlist.csv` is not just a list of mods. It is the package database for the server and release process. Rows may represent:
+
+- `mod`
+- `datapack`
+- `shaderpack`
+- `server`
+- `launcher`
+- `installer`
+- `jdk`
+
+Important fields include:
+
+- `Group`
+- `Type`
+- `CurrentGameVersion`
+- `ID`
+- `Loader`
+- `CurrentVersion`
+- `Name`
+- `Jar`
+- `Url`
+- `CurrentVersionUrl`
+- `NextVersion`
+- `NextVersionUrl`
+- `NextGameVersion`
+- `LatestVersion`
+- `LatestVersionUrl`
+- `LatestGameVersion`
+- `Host`
+- `ApiSource`
+- `ClientSide`
+- `ServerSide`
+- `AvailableGameVersions`
+- `RecordHash`
+
+Provider routing is driven primarily by `ApiSource`, `Host`, URL, and ID shape. Do not casually change these fields.
+
+## Release target rules
+
+`release-config.json` is the authority for target versions.
+
+Do not infer current, next, or latest by scanning random version strings when release-config already defines them.
+
+At the time this identity was added, the intended operating target was:
+
+- Current: `1.21.11`
+- Next: `26.1.2`
+- Latest metadata target: `26.2`
+
+Always verify this against `release-config.json` before changing releases or workflows.
+
+If `release-config.json` says a version requires a specific Java version, workflows and local validation must honour that. Do not hardcode an older Java runtime in GitHub Actions when the release config says a newer runtime is required.
+
+## First-party GitHub mod rules
+
+GitHub-hosted mods are first-class provider entries, not generic direct downloads.
+
+A SurvivorsUnited GitHub mod should usually have:
+
+- `ID`: `owner/repo`, for example `survivorsunited/mod-bigger-ender-chests`
+- `Url`: canonical repository URL, for example `https://github.com/survivorsunited/mod-bigger-ender-chests`
+- `Host`: `github`
+- `ApiSource`: `github`
+- `CurrentVersionUrl`: exact release asset download URL when known
+- `Jar`: exact asset filename
+
+Never allow a parseable GitHub mod URL to become a generated `system-*` ID.
+
+GitHub URL parsing must support:
+
+- Repository URL: `https://github.com/owner/repo`
+- Git URL: `https://github.com/owner/repo.git`
+- Release tag URL: `https://github.com/owner/repo/releases/tag/<tag>`
+- Release asset URL: `https://github.com/owner/repo/releases/download/<tag>/<asset.jar>`
+
+For GitHub release asset URLs, preserve both forms:
+
+- Canonical repo URL goes into `Url`.
+- Exact asset URL goes into `CurrentVersionUrl`.
+
+If the asset filename includes a Minecraft version, parse it and use it for `CurrentGameVersion` unless the caller explicitly supplied a different game version.
+
+Example asset:
+
+```text
+https://github.com/survivorsunited/mod-bigger-ender-chests/releases/download/v2026.2.25/biggerenderchests-1.1.0-1.21.11.jar
+```
+
+Expected interpretation:
+
+```text
+ID: survivorsunited/mod-bigger-ender-chests
+Url: https://github.com/survivorsunited/mod-bigger-ender-chests
+CurrentVersionUrl: original release asset URL
+Jar: biggerenderchests-1.1.0-1.21.11.jar
+CurrentVersion: 1.1.0
+CurrentGameVersion: 1.21.11
+Host: github
+ApiSource: github
+```
+
+Do not assume the GitHub release tag is the same as the mod version. Some release tags may be date/build tags while the mod version is inside the JAR filename.
+
+## Provider expectations
+
+Supported provider families include:
+
+- Modrinth
+- CurseForge
+- GitHub
+- Mojang
+- Fabric
+- Direct
+- Adoptium/JDK
+
+Provider-specific code should stay provider-specific. Shared routing belongs in `src/Provider/Common.ps1` or small helper functions, not scattered conditionals everywhere.
+
+When adding provider support, add tests that cover:
+
+1. URL parsing.
+2. ID normalisation.
+3. Metadata population.
+4. Version URL selection.
+5. Download behaviour.
+6. Release packaging behaviour when relevant.
+
+## Add-mod expectations
+
+Adding a mod should result in a complete, usable database row. The row should not require a later full-database scan just to become coherent.
+
+After adding a mod, expected populated fields include at minimum:
+
+- `Group`
+- `Type`
+- `CurrentGameVersion`
+- `ID`
+- `Loader`
+- `CurrentVersion`
+- `Name`
+- `Jar` when applicable
+- `Url`
+- `CurrentVersionUrl` when a download URL is known
+- `Host`
+- `ApiSource`
+- `Title`
+- `RecordHash`
+
+Bad add-mod outputs include:
+
+- `ID` starts with `system-` for a known provider URL.
+- `CurrentGameVersion` silently falls back to an old default.
+- GitHub asset URL is stored only as `Url` without canonical repo URL.
+- `Host` and `ApiSource` do not match the real provider.
+- Missing `Jar` when a direct asset filename is present.
+
+## Release and validation expectations
+
+A release is not ready just because downloads completed.
+
+A release is ready only when:
+
+1. The database is coherent.
+2. Required server and launcher rows exist for the target Minecraft version.
+3. Required mods have compatible artefacts for the target version or are intentionally skipped/blocklisted.
+4. Downloads are present in the correct version folders.
+5. The server starts successfully during validation.
+6. The release package contains non-empty mod payloads.
+7. Hashes and release README files are generated.
+
+Use these commands as the normal release sanity path:
+
+```powershell
+.\ModManager.ps1 -TestDatabase
+.\ModManager.ps1 -ValidateAllModVersions -UpdateModList
+.\ModManager.ps1 -CreateRelease -GameVersion "<target-version>"
+```
+
+For single mod debugging:
+
+```powershell
+.\ModManager.ps1 -ValidateMod -ModID "<id>"
+```
+
+For download debugging:
+
+```powershell
+.\ModManager.ps1 -Download -TargetVersion "<target-version>" -ForceDownload
+```
+
+## Testing standards
+
+Regression fixes must include or update tests in `test/tests/`.
+
+Prefer focused tests over broad fragile tests. For provider bugs, add test coverage for the exact provider shape that failed.
+
+For the GitHub release asset URL bug, tests should cover a URL like:
+
+```text
+https://github.com/survivorsunited/mod-bigger-ender-chests/releases/download/v2026.2.25/biggerenderchests-1.1.0-1.21.11.jar
+```
+
+Expected test assertions:
+
+- ID is `survivorsunited/mod-bigger-ender-chests`.
+- Host is `github`.
+- ApiSource is `github`.
+- Url is canonical repo URL.
+- CurrentVersionUrl is the original asset URL.
+- Jar is `biggerenderchests-1.1.0-1.21.11.jar`.
+- CurrentVersion is `1.1.0`.
+- CurrentGameVersion is `1.21.11`.
+- No `system-*` ID is created.
+
+## Known foot-guns
+
+Watch these carefully:
+
+1. `system-*` IDs from parseable provider URLs.
+2. Stale default game versions in parameter defaults.
+3. Release config requiring a newer Java runtime than the workflow installs.
+4. Missing server/launcher rows for a target Minecraft version.
+5. GitHub release tags that do not match mod versions.
+6. ZIP shaderpacks accidentally treated as mods.
+7. Fallback to stale CSV URLs for target-version releases.
+8. Docs claiming behaviour that code no longer implements.
+9. Tests that only cover repository URLs but not release asset URLs.
+10. Current, next, and latest logic drifting away from `release-config.json`.
+
+## How to help Max on this project
+
+Max usually wants direct execution, not a long discovery phase.
+
+When asked to review or fix the project:
+
+1. Start from this identity file.
+2. Read the relevant code/config quickly.
+3. State the likely issue plainly.
+4. Make a concrete repo change when the request asks to add or fix something.
+5. Add or update tests when changing behaviour.
+6. Keep the explanation practical: what changed, why it matters, how to run it.
+
+Do not spend time re-discovering that the org is `survivorsunited`, that the main repo is `minecraft-mods-manager`, or that the repo manages the SurvivorsUnited server modpack. Treat those as fixed project identity facts.
