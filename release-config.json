@@ -1,4 +1,9 @@
 {
+  "release": {
+    "tag": "v1.21.11.1",
+    "name": "SurvivorsUnited 1.21.11.1",
+    "description": "Minecraft 1.21.11 release with Iris excluded due to Sodium compatibility crash"
+  },
   "targets": {
     "current": "1.21.11",
     "next": "26.1.2",
