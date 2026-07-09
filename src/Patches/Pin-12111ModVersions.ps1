@@ -4,13 +4,13 @@ if (-not $script:OriginalGetModListBefore12111Pins -and (Get-Command Get-ModList
 
 function Set-12111BasicStoragePin {
     param($Row)
-    $url = 'https://github.com/survivorsunited/mod-basic-storage/releases/download/2.0.28/basic-storage-2.0.28+1.21.11.jar'
+    $url = 'https://github.com/survivorsunited/mod-basic-storage/releases/download/2.0.29/basic-storage-2.0.29+1.21.11.jar'
     $Row.CurrentGameVersion = '1.21.11'
-    $Row.CurrentVersion = '2.0.28'
+    $Row.CurrentVersion = '2.0.29'
     $Row.CurrentVersionUrl = $url
-    $Row.Jar = 'basic-storage-2.0.28+1.21.11.jar'
+    $Row.Jar = 'basic-storage-2.0.29+1.21.11.jar'
     $Row.LatestGameVersion = '1.21.11'
-    $Row.LatestVersion = '2.0.28'
+    $Row.LatestVersion = '2.0.29'
     $Row.LatestVersionUrl = $url
     $Row.Url = 'https://github.com/survivorsunited/mod-basic-storage'
     $Row.Host = 'github'
@@ -96,7 +96,7 @@ function Get-ModList {
     foreach ($row in $rows) {
         if (Test-12111BasicStorageRow -Row $row) { Set-12111BasicStoragePin -Row $row }
         if (Test-12111SodiumRow -Row $row) { Set-12111SodiumPin -Row $row }
-        if (Test-12111FabricLauncherRow -Row $row) { Set-12111FabricLauncherPin -Row $row }
+        if (Test-12111FabricLauncherRow -Row $row) { Set-12111FabricPin -Row $row }
         if (Test-12111SyncmaticaRow -Row $row) { Set-12111OptionalClientPin -Row $row }
     }
     return $rows
