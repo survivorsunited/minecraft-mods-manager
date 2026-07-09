@@ -4,13 +4,13 @@ if (-not $script:OriginalGetModListBefore12111Pins -and (Get-Command Get-ModList
 
 function Set-12111BasicStoragePin {
     param($Row)
-    $url = 'https://github.com/survivorsunited/mod-basic-storage/releases/download/2.0.33/basic-storage-2.0.33+1.21.11.jar'
+    $url = 'https://github.com/survivorsunited/mod-basic-storage/releases/download/2.0.34/basic-storage-2.0.34+1.21.11.jar'
     $Row.CurrentGameVersion = '1.21.11'
-    $Row.CurrentVersion = '2.0.33'
+    $Row.CurrentVersion = '2.0.34'
     $Row.CurrentVersionUrl = $url
-    $Row.Jar = 'basic-storage-2.0.33+1.21.11.jar'
+    $Row.Jar = 'basic-storage-2.0.34+1.21.11.jar'
     $Row.LatestGameVersion = '1.21.11'
-    $Row.LatestVersion = '2.0.33'
+    $Row.LatestVersion = '2.0.34'
     $Row.LatestVersionUrl = $url
     $Row.Url = 'https://github.com/survivorsunited/mod-basic-storage'
     $Row.Host = 'github'
