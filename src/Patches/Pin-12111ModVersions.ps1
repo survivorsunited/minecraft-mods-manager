@@ -96,7 +96,7 @@ function Get-ModList {
     foreach ($row in $rows) {
         if (Test-12111BasicStorageRow -Row $row) { Set-12111BasicStoragePin -Row $row }
         if (Test-12111SodiumRow -Row $row) { Set-12111SodiumPin -Row $row }
-        if (Test-12111FabricLauncherRow -Row $row) { Set-12111FabricPin -Row $row }
+        if (Test-12111FabricLauncherRow -Row $row) { Set-12111FabricLauncherPin -Row $row }
         if (Test-12111SyncmaticaRow -Row $row) { Set-12111OptionalClientPin -Row $row }
     }
     return $rows
