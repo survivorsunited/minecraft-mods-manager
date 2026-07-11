@@ -70,8 +70,10 @@
 . "$PSScriptRoot\Provider\Minecraft\Get-MinecraftVersions.ps1"
 . "$PSScriptRoot\Provider\Adoptium\Get-AdoptiumJDK.ps1"
 
-# Patch modules
+# Patch modules that can wrap database/provider behaviour before downloads
 . "$PSScriptRoot\Patches\Apply-ModPatches.ps1"
+. "$PSScriptRoot\Patches\Fix-AddGitHubModToDatabase.ps1"
+. "$PSScriptRoot\Patches\Pin-12111ModVersions.ps1"
 
 # Download modules
 . "$PSScriptRoot\Download\Mods\Download-Mods.ps1"
@@ -83,6 +85,9 @@
 . "$PSScriptRoot\Download\Server\Start-MinecraftServer.ps1"
 . "$PSScriptRoot\Download\Server\Clear-ServerFiles.ps1"
 . "$PSScriptRoot\Download\JDK\Download-JDK.ps1"
+
+# Patch modules that wrap download behaviour after download functions are loaded
+. "$PSScriptRoot\Patches\Force-DatapacksIntoModsFolder.ps1"
 
 # File utility modules
 . "$PSScriptRoot\File\Get-BackupPath.ps1"
@@ -101,4 +106,4 @@
 . "$PSScriptRoot\Release\Reconcile-ExpectedVsCache.ps1"
 . "$PSScriptRoot\Release\New-Release.ps1"
 
-Write-Host "✅ All modular functions imported successfully" -ForegroundColor Green 
+Write-Host "✅ All modular functions imported successfully" -ForegroundColor Green
