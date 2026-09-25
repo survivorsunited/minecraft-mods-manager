@@ -5,10 +5,10 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main, develop ]
-  workflow_dispatch: # Allow manual triggering
+  workflow_dispatch:
     inputs:
       testFiles:
-        description: 'Comma-separated test files to run (e.g., 17-TestErrorHandling.ps1,68-TestServerValidation.ps1,96-TestCreateRelease.ps1). Leave empty to run all.'
+        description: 'Comma-separated test files to run (e.g. 17-TestErrorHandling.ps1,68-TestServerValidation.ps1,96-TestCreateRelease.ps1). Leave empty to run all.'
         required: false
         default: ''
 
@@ -17,431 +17,250 @@ permissions:
   actions: read
   packages: write
 
+env:
+  JAVA_VERSION: '25'
+
 jobs:
   test:
     name: Run Test Suite
     runs-on: ${{ matrix.os }}
-    
+
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-      fail-fast: false # Continue running other OS tests even if one fails
-    
+      fail-fast: false
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        submodules: true  # Clone minecraft-mod-hash submodule for hash.ps1
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
 
-    - name: Set up Java 22 for server validation
-      uses: actions/setup-java@v4
-      with:
-        distribution: temurin
-        java-version: '22'
-      
-    - name: Install PowerShell (Linux)
-      if: matrix.os == 'ubuntu-latest'
-      run: |
-        # Download the Microsoft repository GPG keys
-        wget -q "https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb"
-        sudo dpkg -i packages-microsoft-prod.deb
-        rm packages-microsoft-prod.deb
-        
-        # Update the list of packages
-        sudo apt-get update
-        
-        # Install PowerShell
-        sudo apt-get install -y powershell
-        
-    - name: Install PowerShell (macOS)
-      if: matrix.os == 'macos-latest'
-      run: |
-        if command -v pwsh >/dev/null 2>&1; then
-          echo "PowerShell already available: $(pwsh --version)"
-        else
-          # GitHub-hosted macOS images usually include pwsh. If not, prefer the
-          # Homebrew formula; the legacy cask is no longer always available.
-          brew update
-          brew install powershell || brew install --cask powershell
-        fi
-        
-    - name: Display environment info
-      shell: pwsh
-      run: |
-        Write-Host "PowerShell Version:"
-        $PSVersionTable.PSVersion
-        
-        Write-Host "`nOperating System:"
-        if ($IsWindows) { "Windows" }
-        elseif ($IsLinux) { "Linux" }
-        elseif ($IsMacOS) { "macOS" }
-        
-        Write-Host "`nCurrent Directory:"
-        Get-Location
-        
-    - name: Install dependencies (Windows)
-      if: matrix.os == 'windows-latest'
-      shell: pwsh
-      run: |
-        # Windows-specific setup
-        Write-Host "Setting up Windows environment..."
-        
-        # Ensure PowerShell execution policy allows script execution
-        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-        
-        Write-Host "Windows environment setup complete"
-        
-    - name: Install dependencies (Linux)
-      if: matrix.os == 'ubuntu-latest'
-      shell: pwsh
-      run: |
-        # Linux-specific setup
-        Write-Host "Setting up Linux environment..."
-        
-        # Install any required packages
-        sudo apt-get update
-        sudo apt-get install -y curl wget unzip
-        
-        Write-Host "Linux environment setup complete"
-        
-    - name: Install dependencies (macOS)
-      if: matrix.os == 'macos-latest'
-      shell: pwsh
-      run: |
-        # macOS-specific setup
-        Write-Host "Setting up macOS environment..."
-        
-        # Install any required packages via Homebrew if needed
-        if (Get-Command brew -ErrorAction SilentlyContinue) {
-          Write-Host "Homebrew is available"
-        } else {
-          Write-Host "Homebrew not found, skipping package installation"
-        }
-        
-        Write-Host "macOS environment setup complete"
+      - name: Set up Java ${{ env.JAVA_VERSION }} for server validation
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+          check-latest: true
 
-    - name: Resolve test selection (optional)
-      shell: pwsh
-      run: |
-        # Detect ci-artifacts/test-selection.txt and expose as TEST_FILES for the runner
-        if (Test-Path 'ci-artifacts/test-selection.txt') {
-          $list = Get-Content 'ci-artifacts/test-selection.txt' | ForEach-Object { $_.Trim() } | Where-Object { $_ -and ($_ -notmatch '^#') }
-          if ($list -and $list.Count -gt 0) {
-            Write-Host "Detected test-selection.txt: $($list -join ', ')" -ForegroundColor Green
-            $joined = ($list -join ',')
-            "TEST_FILES=$joined" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
-          } else {
-            Write-Host "test-selection.txt is present but empty; will run full suite" -ForegroundColor Yellow
+      - name: Install PowerShell (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        shell: bash
+        run: |
+          set -e
+          if command -v pwsh >/dev/null 2>&1; then
+            echo "PowerShell already available: $(pwsh --version)"
+            exit 0
+          fi
+          . /etc/os-release
+          wget -q "https://packages.microsoft.com/config/ubuntu/${VERSION_ID}/packages-microsoft-prod.deb"
+          sudo dpkg -i packages-microsoft-prod.deb
+          rm packages-microsoft-prod.deb
+          sudo apt-get update
+          sudo apt-get install -y powershell
+
+      - name: Install PowerShell (macOS)
+        if: matrix.os == 'macos-latest'
+        shell: bash
+        run: |
+          set -e
+          if command -v pwsh >/dev/null 2>&1; then
+            echo "PowerShell already available: $(pwsh --version)"
+          else
+            brew update
+            brew install powershell || brew install --cask powershell
+          fi
+
+      - name: Display environment info
+        shell: pwsh
+        run: |
+          Write-Host "PowerShell Version:"
+          $PSVersionTable.PSVersion
+          Write-Host "`nJava Version:"
+          java -version
+          Write-Host "`nOperating System:"
+          if ($IsWindows) { "Windows" }
+          elseif ($IsLinux) { "Linux" }
+          elseif ($IsMacOS) { "macOS" }
+          Write-Host "`nCurrent Directory:"
+          Get-Location
+
+      - name: Install dependencies (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        shell: pwsh
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl wget unzip zip
+
+      - name: Install dependencies (macOS)
+        if: matrix.os == 'macos-latest'
+        shell: pwsh
+        run: |
+          if (Get-Command brew -ErrorAction SilentlyContinue) {
+            Write-Host "Homebrew is available"
           }
-        } else {
-          Write-Host "No ci-artifacts/test-selection.txt found; will run full suite" -ForegroundColor Yellow
-        }
-        
-    - name: Run test suite
-      shell: pwsh
-      env:
-        CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
-        MINECRAFT_SERVER_URL: ${{ secrets.MINECRAFT_SERVER_URL }}
-        FABRIC_SERVER_URL: ${{ secrets.FABRIC_SERVER_URL }}
-        TEST_FILES: ${{ env.TEST_FILES }}
-      run: |
-        $ErrorActionPreference = 'Stop'
-        Write-Host "============================================================================" -ForegroundColor Cyan
-        Write-Host "TEST SUITE EXECUTION - DETAILED LOGGING" -ForegroundColor Cyan
-        Write-Host "============================================================================" -ForegroundColor Cyan
-        Write-Host ""
-        Write-Host "📊 ENVIRONMENT STATUS:" -ForegroundColor Yellow
-        Write-Host "  OS: ${{ matrix.os }}"
-        Write-Host "  PowerShell: $($PSVersionTable.PSVersion)"
-        Write-Host "  Working Directory: $(Get-Location)"
-        Write-Host "  Timestamp: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-        Write-Host ""
-        Write-Host "🔑 API KEY STATUS:" -ForegroundColor Yellow
-        if ($env:CURSEFORGE_API_KEY) {
-          Write-Host "  API key present (length: $($env:CURSEFORGE_API_KEY.Length))" -ForegroundColor Green
-        } else {
-          Write-Host "  API key missing" -ForegroundColor Red
-        }
-        Write-Host "📁 FILE SYSTEM CHECK:" -ForegroundColor Yellow
-        Write-Host "  Test dir: $(Test-Path 'test')"
-        Write-Host "  RunAllTests.ps1: $(Test-Path 'test/RunAllTests.ps1')"
-        Write-Host "  ModManager.ps1: $(Test-Path 'ModManager.ps1')"
-        Write-Host "  ci-artifacts selection file: $(Test-Path 'ci-artifacts/test-selection.txt')"
-        Write-Host "  TEST_FILES env: '$env:TEST_FILES'"
-        Write-Host ""
-        Write-Host "============================================================================" -ForegroundColor Cyan
-        Write-Host "STARTING TEST EXECUTION" -ForegroundColor Cyan
-        Write-Host "============================================================================" -ForegroundColor Cyan
-        Write-Host ""
-        Set-Location test
-        $testFilesInput = '${{ github.event.inputs.testFiles }}'
-        if ($testFilesInput -and $testFilesInput.Trim() -ne '') {
-          Write-Host "Running workflow input tests: $testFilesInput" -ForegroundColor Green
-          $list = $testFilesInput.Split(',') | ForEach-Object { $_.Trim() } | Where-Object { $_ }
-          .\RunAllTests.ps1 -TestFiles $list
-        } elseif ($env:TEST_FILES) {
-          Write-Host "Running tests from TEST_FILES env: $env:TEST_FILES" -ForegroundColor Green
-          $list = $env:TEST_FILES.Split(',') | ForEach-Object { $_.Trim() } | Where-Object { $_ }
-          .\RunAllTests.ps1 -TestFiles $list
-        } else {
-          Write-Host "Running full suite (no selection provided)" -ForegroundColor Yellow
-          .\RunAllTests.ps1
-        }
-        $code = $LASTEXITCODE
-        Write-Host "============================================================================" -ForegroundColor Cyan
-        Write-Host "TEST EXECUTION COMPLETED (ExitCode=$code)" -ForegroundColor Cyan
-        Write-Host "============================================================================" -ForegroundColor Cyan
-        if ($code -ne 0) { exit $code }
-        
-    - name: Generate test summary report
-      if: always()
-      shell: pwsh
-      run: |
-        # Change to test directory and generate summary
-        Set-Location test
-        .\GenerateTestSummary.ps1 -OS "${{ matrix.os }}" -OutputFile "../test-summary-${{ matrix.os }}.md"
-        
-    - name: Generate comprehensive test results
-      if: always()
-      shell: pwsh
-      run: |
-        # Change to test directory and generate comprehensive results
-        Set-Location test
-        .\GenerateTestResults.ps1 -OS "${{ matrix.os }}" -OutputDir "../test-results-${{ matrix.os }}"
-        
-    - name: Upload test logs
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-logs-${{ matrix.os }}
-        path: |
-          test/test-output/test-run-*.log
-          test/test-output/*/*.log
-        retention-days: 30
-        
-    - name: Upload test output directories
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-output-${{ matrix.os }}
-        path: |
-          test/test-output/
-          test/output-*/
-        retention-days: 30
-        
-    - name: Upload test summary report
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-summary-${{ matrix.os }}
-        path: |
-          test-summary-${{ matrix.os }}.md
-          test-results-${{ matrix.os }}/
-          test/test-output/*/test-report.txt
-          test/test-output/*/*-test-report.txt
-        retention-days: 30
-        
-    - name: Upload test results CSV
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-results-csv-${{ matrix.os }}
-        path: |
-          test-results-${{ matrix.os }}/*.csv
-          test/test-output/*/run-test-cli.csv
-          test/output-*/run-test-cli.csv
-        retention-days: 30
-        
-    - name: Upload test results JSON
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-results-json-${{ matrix.os }}
-        path: |
-          test-results-${{ matrix.os }}/*.json
-        retention-days: 30
-        
-    - name: Upload mod download results
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: mod-download-results-${{ matrix.os }}
-        path: |
-          test/apiresponse/mod-download-results.csv
-          test/test-output/*/modlist.csv
-        retention-days: 30
-        
-    - name: Upload server startup logs
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: server-logs-${{ matrix.os }}
-        path: |
-          test/test-output/*/Server_*.log
-          test/test-output/*/server.log
-          test/test-output/*/logs/
-        retention-days: 30
-        
-    - name: Upload test artifacts (comprehensive)
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: all-test-artifacts-${{ matrix.os }}
-        path: |
-          test/test-output/
-          test/output-*/
-          test/apiresponse/
-          test-summary-${{ matrix.os }}.md
-          test-results-${{ matrix.os }}/
-        retention-days: 30
-        if-no-files-found: warn
-        
-    - name: Create test completion report
-      if: always()
-      shell: pwsh
-      run: |
-        # Create a simple completion report
-        Set-Location test
-        .\CreateCompletionReport.ps1 -OS "${{ matrix.os }}" -OutputFile "../test-completion-${{ matrix.os }}.txt"
 
-  release:
-    name: Create Release
+      - name: Resolve test selection (optional)
+        shell: pwsh
+        run: |
+          if (Test-Path 'ci-artifacts/test-selection.txt') {
+            $list = Get-Content 'ci-artifacts/test-selection.txt' | ForEach-Object { $_.Trim() } | Where-Object { $_ -and ($_ -notmatch '^#') }
+            if ($list -and $list.Count -gt 0) {
+              Write-Host "Detected test-selection.txt: $($list -join ', ')" -ForegroundColor Green
+              "TEST_FILES=$($list -join ',')" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+            } else {
+              Write-Host "test-selection.txt is present but empty; will run full suite" -ForegroundColor Yellow
+            }
+          } else {
+            Write-Host "No ci-artifacts/test-selection.txt found; will run full suite" -ForegroundColor Yellow
+          }
+
+      - name: Run test suite
+        shell: pwsh
+        env:
+          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+          MINECRAFT_SERVER_URL: ${{ secrets.MINECRAFT_SERVER_URL }}
+          FABRIC_SERVER_URL: ${{ secrets.FABRIC_SERVER_URL }}
+          TEST_FILES: ${{ env.TEST_FILES }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Write-Host "============================================================================" -ForegroundColor Cyan
+          Write-Host "TEST SUITE EXECUTION" -ForegroundColor Cyan
+          Write-Host "============================================================================" -ForegroundColor Cyan
+          Write-Host "OS: ${{ matrix.os }}" -ForegroundColor Gray
+          Write-Host "PowerShell: $($PSVersionTable.PSVersion)" -ForegroundColor Gray
+          Write-Host "Java: $env:JAVA_HOME" -ForegroundColor Gray
+          Write-Host "TEST_FILES env: '$env:TEST_FILES'" -ForegroundColor Gray
+
+          Set-Location test
+          $testFilesInput = '${{ github.event.inputs.testFiles }}'
+          if ($testFilesInput -and $testFilesInput.Trim() -ne '') {
+            Write-Host "Running workflow input tests: $testFilesInput" -ForegroundColor Green
+            $list = $testFilesInput.Split(',') | ForEach-Object { $_.Trim() } | Where-Object { $_ }
+            .\RunAllTests.ps1 -TestFiles $list
+          } elseif ($env:TEST_FILES) {
+            Write-Host "Running tests from TEST_FILES env: $env:TEST_FILES" -ForegroundColor Green
+            $list = $env:TEST_FILES.Split(',') | ForEach-Object { $_.Trim() } | Where-Object { $_ }
+            .\RunAllTests.ps1 -TestFiles $list
+          } else {
+            Write-Host "Running full suite (no selection provided)" -ForegroundColor Yellow
+            .\RunAllTests.ps1
+          }
+
+          $code = $LASTEXITCODE
+          Write-Host "TEST EXECUTION COMPLETED (ExitCode=$code)" -ForegroundColor Cyan
+          if ($code -ne 0) { exit $code }
+
+      - name: Generate test summary report
+        if: always()
+        shell: pwsh
+        run: |
+          Set-Location test
+          .\GenerateTestSummary.ps1 -OS "${{ matrix.os }}" -OutputFile "../test-summary-${{ matrix.os }}.md"
+
+      - name: Generate comprehensive test results
+        if: always()
+        shell: pwsh
+        run: |
+          Set-Location test
+          .\GenerateTestResults.ps1 -OS "${{ matrix.os }}" -OutputDir "../test-results-${{ matrix.os }}"
+
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: all-test-artifacts-${{ matrix.os }}
+          path: |
+            test/test-output/
+            test/output-*/
+            test/apiresponse/
+            test-summary-${{ matrix.os }}.md
+            test-results-${{ matrix.os }}/
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Upload server startup logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: server-logs-${{ matrix.os }}
+          path: |
+            test/test-output/*/Server_*.log
+            test/test-output/*/server.log
+            test/test-output/*/logs/
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Create test completion report
+        if: always()
+        shell: pwsh
+        run: |
+          Set-Location test
+          .\CreateCompletionReport.ps1 -OS "${{ matrix.os }}" -OutputFile "../test-completion-${{ matrix.os }}.txt"
+
+  release-smoke:
+    name: Create Release Smoke Test
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     if: github.ref == 'refs/heads/main' && needs.test.result == 'success'
-    
+
     permissions:
       contents: write
       actions: read
       packages: write
-    
+
     steps:
-    - name: Checkout code (with submodules)
-      uses: actions/checkout@v4
-      with:
-        submodules: true
+      - name: Checkout code with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: true
 
-    - name: Read Enabled Versions from Config
-      id: set_versions
-      shell: pwsh
-      run: |
-        $config = Get-Content release-config.json | ConvertFrom-Json
-        $enabledVersions = $config.versions | Where-Object { $_.enabled -eq $true } | Select-Object -ExpandProperty version
-        if ($enabledVersions.Count -eq 1) {
-          $matrixJson = "[$($enabledVersions | ConvertTo-Json -Compress)]"
-        } else {
-          $matrixJson = $enabledVersions | ConvertTo-Json -Compress
-        }
-        echo "versions=$matrixJson" >> $env:GITHUB_OUTPUT
-        Write-Host "Enabled versions: $($enabledVersions -join ', ')" -ForegroundColor Cyan
+      - name: Set up Java ${{ env.JAVA_VERSION }} for release smoke test
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+          check-latest: true
 
-    - name: Create Release Packages (All Enabled Versions)
-      shell: pwsh
-      run: |
-        $versionsJson = '${{ steps.set_versions.outputs.versions }}'
-        $versions = ($versionsJson | ConvertFrom-Json)
-        foreach ($v in $versions) {
-          Write-Host "🚀 Creating test release package for $v" -ForegroundColor Cyan
-          .\ModManager.ps1 -CreateRelease -GameVersion $v
-          if ($LASTEXITCODE -ne 0) {
-            Write-Host "❌ Test release package creation failed for $v" -ForegroundColor Red
-            exit 1
+      - name: Create release packages for enabled versions
+        shell: pwsh
+        env:
+          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+          MINECRAFT_SERVER_URL: ${{ secrets.MINECRAFT_SERVER_URL }}
+          FABRIC_SERVER_URL: ${{ secrets.FABRIC_SERVER_URL }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $config = Get-Content release-config.json -Raw | ConvertFrom-Json
+          $versions = @($config.versions | Where-Object { $_.enabled -eq $true } | Select-Object -ExpandProperty version)
+          if ($versions.Count -eq 0) { throw 'No enabled versions in release-config.json' }
+          foreach ($v in $versions) {
+            Write-Host "🚀 Creating release smoke package for $v" -ForegroundColor Cyan
+            .\ModManager.ps1 -CreateRelease -GameVersion $v
+            if ($LASTEXITCODE -ne 0) { throw "Release smoke package failed for $v" }
           }
-        }
 
-    - name: Package Modpacks
-      shell: bash
-      run: |
-        echo "📦 Packaging modpacks..."
-        release_count=$(find releases -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
-        if [ "$release_count" = "0" ]; then
-          echo "❌ No release directories found; refusing to publish an empty test release"
-          exit 1
-        fi
-        for d in releases/*/; do
-          [ -d "$d" ] || continue
-          ver=$(basename "$d")
-          echo "  Processing $ver"
-          mod_count=$(find "$d/mods" -type f \( -name '*.jar' -o -name '*.zip' \) ! -path '*/mods/block/*' 2>/dev/null | wc -l | tr -d ' ')
-          if [ "$mod_count" = "0" ]; then
-            echo "❌ Refusing to package $ver: release directory contains zero mod files"
-            echo "   Checked: $d/mods"
-            exit 1
-          fi
-          cd "$d"
-          zip -r "../../modpack-$ver.zip" *
-          cd - >/dev/null
-          zip_mod_count=$(python3 -c "import zipfile; z='modpack-$ver.zip'; f=zipfile.ZipFile(z); print(sum(1 for n in f.namelist() if n.startswith('mods/') and n.lower().endswith(('.jar','.zip')) and not n.startswith('mods/block/'))); f.close()")
-          if [ "$zip_mod_count" = "0" ]; then
-            echo "❌ Packaged ZIP modpack-$ver.zip contains zero mod files"
-            exit 1
-          fi
-          echo "    ✓ Created modpack-$ver.zip with $zip_mod_count mod file(s)"
-        done
-        echo "✅ Packaging complete"
+      - name: Assert smoke release payloads
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $releaseDirs = @(Get-ChildItem -Path releases -Directory -ErrorAction SilentlyContinue)
+          if ($releaseDirs.Count -eq 0) { throw 'No release directories found' }
+          foreach ($dir in $releaseDirs) {
+            $modsDir = Join-Path $dir.FullName 'mods'
+            $mods = @()
+            if (Test-Path $modsDir) {
+              $mods = @(Get-ChildItem -Path $modsDir -Recurse -File | Where-Object { $_.Extension -in @('.jar', '.zip') -and $_.FullName -notmatch '[\\/]block[\\/]' })
+            }
+            if ($mods.Count -eq 0) { throw "Release $($dir.Name) contains zero mod files" }
+            foreach ($required in @('README.md', 'hash.txt')) {
+              if (-not (Test-Path (Join-Path $dir.FullName $required))) { throw "Release $($dir.Name) missing $required" }
+            }
+          }
 
-    - name: Generate Test Release Notes
-      id: notes
-      shell: bash
-      run: |
-        TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
-        echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
-        echo "# Test Release" > RELEASE_NOTES.md
-        echo "" >> RELEASE_NOTES.md
-        echo "Generated from test pipeline after successful suite." >> RELEASE_NOTES.md
-        echo "" >> RELEASE_NOTES.md
-        echo "## Included Versions" >> RELEASE_NOTES.md
-        echo '${{ steps.set_versions.outputs.versions }}' | jq -r '.[] | "- modpack-" + . + ".zip"' >> RELEASE_NOTES.md
-        echo "" >> RELEASE_NOTES.md
-        echo "## Hash & README" >> RELEASE_NOTES.md
-        echo "Each version folder contains hash.txt and README.md (fallback generator used if external tool missing)." >> RELEASE_NOTES.md
-        echo "" >> RELEASE_NOTES.md
-        cat RELEASE_NOTES.md
-
-    - name: Upload Release Artifacts (Raw Folders)
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-release-folders
-        path: releases/**/*
-        retention-days: 14
-
-    - name: Upload Packaged Modpacks
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-modpacks
-        path: modpack-*.zip
-        retention-days: 30
-
-    - name: Collect README Files for Release Artifacts
-      shell: bash
-      run: |
-        echo "📄 Collecting README.md files from release directories..."
-        for d in releases/*/; do
-          [ -d "$d" ] || continue
-          ver=$(basename "$d")
-          readme_src="$d/README.md"
-          readme_dest="README-${ver}.md"
-          
-          if [ -f "$readme_src" ]; then
-            cp "$readme_src" "$readme_dest"
-            echo "  ✓ Copied README.md for version $ver → $readme_dest"
-          else
-            echo "  ⚠️  Warning: README.md not found for version $ver"
-          fi
-        done
-        echo "✅ README collection complete"
-
-    - name: Publish Test Release
-      uses: softprops/action-gh-release@v2
-      with:
-        tag_name: test-release-${{ github.run_number }}
-        name: Test Release ${{ steps.notes.outputs.timestamp }}
-        body_path: RELEASE_NOTES.md
-        draft: false
-        prerelease: true
-        files: |
-          modpack-*.zip
-          README-*.md
-        generate_release_notes: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload release smoke artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-smoke-artifacts
+          path: releases/**/*
+          retention-days: 14
+          if-no-files-found: error

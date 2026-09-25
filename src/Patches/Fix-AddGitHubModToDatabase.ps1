@@ -1,5 +1,5 @@
 # =============================================================================
-# GitHub Add-Mod Database Path
+# GitHub Add-Mod Database Patch
 # =============================================================================
 # Handles GitHub repo URLs and direct GitHub release JAR URLs before the generic
 # Add-ModToDatabase flow can fall back to system-* or Modrinth.
@@ -101,7 +101,9 @@ function Add-GitHubModRowToDatabase {
     )
 
     $repoUrl = Get-AddGitHubRepoUrl -Url $AddModUrl
-    $validationTarget = if ($AddModUrl -match '/releases/download/.+\.jar') { $AddModUrl } else { $repoUrl }
+    $repoId = Get-AddGitHubFallbackId -Url $AddModUrl
+    $isReleaseAssetUrl = $AddModUrl -match '/releases/download/.+\.jar(?:[?#].*)?$'
+    $validationTarget = if ($isReleaseAssetUrl) { $AddModUrl } else { $repoUrl }
     if (-not $validationTarget) { return $null }
 
     $result = Validate-GitHubModVersion -ModID $validationTarget -Version $AddModVersion -Loader $AddModLoader -GameVersion $AddModGameVersion -Quiet
@@ -110,12 +112,32 @@ function Add-GitHubModRowToDatabase {
         return $null
     }
 
-    if (-not $AddModId) { $AddModId = if ($result.ModId) { $result.ModId } else { Get-AddGitHubFallbackId -Url $AddModUrl } }
+    if (-not $repoId -and $result.SourceUrl) { $repoId = Get-AddGitHubFallbackId -Url $result.SourceUrl }
+    if (-not $repoUrl -and $result.SourceUrl) { $repoUrl = Get-AddGitHubRepoUrl -Url $result.SourceUrl }
+
+    # Critical: every parseable GitHub URL must remain owner/repo, never system-* or filename-id.
+    if (-not $AddModId) {
+        if ($repoId) {
+            $AddModId = $repoId
+        } elseif ($result.ModId -and $result.ModId -match '^[^/\s]+/[^/\s]+$') {
+            $AddModId = $result.ModId
+        } else {
+            $AddModId = Get-AddGitHubFallbackId -Url $AddModUrl
+        }
+    }
+
+    if (-not $repoUrl -and $AddModId -match '^[^/\s]+/[^/\s]+$') {
+        $repoUrl = "https://github.com/$AddModId"
+    }
+
+    $canonicalUrl = if ($repoUrl) { $repoUrl } else { $AddModUrl }
+    $currentVersionUrl = if ($result.VersionUrl) { $result.VersionUrl } elseif ($isReleaseAssetUrl) { $AddModUrl } else { "" }
+    $latestVersionUrl = if ($result.LatestVersionUrl) { $result.LatestVersionUrl } else { $currentVersionUrl }
+
     if (-not $AddModName) { $AddModName = if ($result.Title) { $result.Title } else { $AddModId } }
     if (-not $AddModDescription -and $result.ProjectDescription) { $AddModDescription = $result.ProjectDescription }
     if (-not $AddModJar -and $result.Jar) { $AddModJar = $result.Jar }
     if (-not $AddModCategory) { $AddModCategory = "Utility" }
-    if (-not $repoUrl -and $result.SourceUrl) { $repoUrl = $result.SourceUrl }
 
     if ($result.Version) { $AddModVersion = $result.Version }
     if ($result.CurrentGameVersion) { $AddModGameVersion = $result.CurrentGameVersion }
@@ -141,13 +163,13 @@ function Add-GitHubModRowToDatabase {
         Name = $AddModName
         Description = $AddModDescription
         Jar = $AddModJar
-        Url = $AddModUrl
+        Url = $canonicalUrl
         Category = $AddModCategory
-        CurrentVersionUrl = $result.VersionUrl
+        CurrentVersionUrl = $currentVersionUrl
         NextVersion = ""
         NextVersionUrl = ""
         NextGameVersion = ""
-        LatestVersionUrl = $result.LatestVersionUrl
+        LatestVersionUrl = $latestVersionUrl
         LatestVersion = $result.LatestVersion
         ApiSource = "github"
         Host = "github"
@@ -156,8 +178,8 @@ function Add-GitHubModRowToDatabase {
         ServerSide = "optional"
         Title = $AddModName
         ProjectDescription = if ($result.ProjectDescription) { $result.ProjectDescription } else { $AddModDescription }
-        IssuesUrl = $result.IssuesUrl
-        SourceUrl = if ($result.SourceUrl) { $result.SourceUrl } else { $repoUrl }
+        IssuesUrl = if ($repoUrl) { "$repoUrl/issues" } else { $result.IssuesUrl }
+        SourceUrl = if ($repoUrl) { $repoUrl } else { $result.SourceUrl }
         WikiUrl = $result.WikiUrl
         LatestGameVersion = $result.LatestGameVersion
         RecordHash = ""
