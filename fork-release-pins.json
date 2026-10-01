@@ -1,0 +1,23 @@
+{
+  "minecraft": "1.21.11",
+  "mods": [
+    {
+      "pattern": "Amecs-Reborn-*.jar",
+      "file": "Amecs-Reborn-2.0.3+mc1.21.11.jar",
+      "sha256": "04ffbd0d50a02d6bd1bdd0db467944c41dc16ca5d57cf785716084374d03ae4e",
+      "release": "https://github.com/survivorsunited/mod-Amecs-Reborn/releases/tag/v2.0.3-mc1.21.11"
+    },
+    {
+      "pattern": "custom-portals-*.jar",
+      "file": "custom-portals-4.0.33+1.21.11.jar",
+      "sha256": "e4046e5fe88609c87dfa34bb4d93e539a75f51267ce8bd2f92cbc798760eece2",
+      "release": "https://github.com/survivorsunited/mod-CustomPortals/releases/tag/4.0.33"
+    },
+    {
+      "pattern": "basic-storage-*.jar",
+      "file": "basic-storage-2.0.38+1.21.11.jar",
+      "sha256": "5aaed18e79c7ab32b20af6e7cd780e993c1101c23a097deab4cd027742a4a313",
+      "release": "https://github.com/survivorsunited/mod-basic-storage/releases/tag/2.0.38"
+    }
+  ]
+}

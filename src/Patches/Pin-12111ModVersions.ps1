@@ -4,7 +4,7 @@ if (-not $script:OriginalGetModListBefore12111Pins -and (Get-Command Get-ModList
 
 function Set-12111BasicStoragePin {
     param($Row)
-    $url = 'https://github.com/survivorsunited/mod-basic-storage/releases/download/2.0.38/basic-storage-2.0.38+1.21.11.jar'
+    $url = 'https://github.com/survivorsunited/mod-basic-storage/releases/download/2.0.38/basic-storage-2.0.38%2B1.21.11.jar'
     $Row.CurrentGameVersion = '1.21.11'
     $Row.CurrentVersion = '2.0.38'
     $Row.CurrentVersionUrl = $url
@@ -34,11 +34,11 @@ function Set-12111SodiumPin {
 
 function Set-12111FabricLauncherPin {
     param($Row)
-    $url = 'https://meta.fabricmc.net/v2/versions/loader/1.21.11/0.19.3/1.1.1/server/jar'
+    $url = 'https://meta.fabricmc.net/v2/versions/loader/1.21.11/0.19.5/1.1.1/server/jar'
     $Row.CurrentGameVersion = '1.21.11'
-    $Row.CurrentVersion = '0.19.3'
+    $Row.CurrentVersion = '0.19.5'
     $Row.CurrentVersionUrl = $url
-    $Row.Jar = 'fabric-server-mc.1.21.11-loader.0.19.3-launcher.1.1.1.jar'
+    $Row.Jar = 'fabric-server-mc.1.21.11-loader.0.19.5-launcher.1.1.1.jar'
     $Row.Url = $url
     $Row.Host = 'fabric'
     $Row.ApiSource = 'fabric'

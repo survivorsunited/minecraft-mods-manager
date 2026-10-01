@@ -30,11 +30,11 @@ jobs:
           ref: ${{ github.ref }}
           submodules: true
 
-      - name: Set up Java 22 for server validation
+      - name: Set up Java 25 for server validation
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '22'
+          java-version: '25'
       
       - name: Extract Tag Information
         id: tag_info
@@ -105,6 +105,9 @@ jobs:
               exit 1
             }
             
+            if ($v -eq '1.21.11') {
+              .\scripts\Validate-ForkReleasePayload.ps1 -ReleasePath "releases/$v"
+            }
             Write-Host "✅ Release package created for version $v" -ForegroundColor Green
             Write-Host ""
           }
@@ -426,4 +429,3 @@ jobs:
           **Included Versions**: $versionsList
           "@
           $summary | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append -Encoding UTF8
-

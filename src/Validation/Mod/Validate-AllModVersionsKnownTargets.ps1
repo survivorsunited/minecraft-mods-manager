@@ -36,7 +36,7 @@ function Repair-GitHubCurrentUrlsFromLatest {
             if (-not [string]::IsNullOrWhiteSpace($mod.LatestVersion)) { $mod.CurrentVersion = $mod.LatestVersion }
 
             try {
-                $decoded = [System.Web.HttpUtility]::UrlDecode($mod.CurrentVersionUrl)
+                $decoded = [System.Uri]::UnescapeDataString($mod.CurrentVersionUrl)
                 $jar = [System.IO.Path]::GetFileName(($decoded -split '\?')[0])
                 if (-not [string]::IsNullOrWhiteSpace($jar)) { $mod.Jar = $jar }
             } catch { }

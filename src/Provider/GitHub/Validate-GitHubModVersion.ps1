@@ -99,8 +99,12 @@ function Get-GitHubJarMetadataFromFileName {
     param([string]$FileName)
 
     if ([string]::IsNullOrWhiteSpace($FileName)) { return $null }
-    $name = [System.IO.Path]::GetFileName($FileName)
+    $name = [System.IO.Path]::GetFileName([System.Uri]::UnescapeDataString($FileName))
     if ($name -notmatch "(?i)\.jar$") { return $null }
+
+    if ($name -match "^(?<id>.+?)-(?<modVersion>\d+(?:\.\d+){1,3})(?:\+mc|\+)(?<mcVersion>1\.\d+(?:\.\d+)?)\.jar$") {
+        return [pscustomobject]@{ Id = $matches.id; Name = ConvertTo-GitHubDisplayName $matches.id; Version = $matches.modVersion; GameVersion = $matches.mcVersion; FileName = $name }
+    }
 
     if ($name -match "^(?<id>.+?)-(?<modVersion>\d+(?:\.\d+){1,3}(?:[-+][A-Za-z0-9_.-]+)?)-(?<mcVersion>1\.\d+(?:\.\d+)?)\.jar$") {
         return [pscustomobject]@{
@@ -265,8 +269,13 @@ function Validate-GitHubModVersion {
         }
 
         if ($Version -and $Version -notin @("latest", "current", "*")) {
-            $versionCandidates = @($candidates | Where-Object { $_.Version -eq $Version })
-            if ($versionCandidates.Count -gt 0) { $candidates = $versionCandidates }
+            $versionCandidates = @($candidates | Where-Object {
+                $_.Version -eq $Version -or "$($_.Version)+$($_.GameVersion)" -eq $Version -or "$($_.Version)+mc$($_.GameVersion)" -eq $Version
+            })
+            if ($versionCandidates.Count -eq 0) {
+                return New-GitHubValidationResponse -Success $false -Error "Requested version $Version is unavailable for $effectiveGameVersion"
+            }
+            $candidates = $versionCandidates
         }
 
         if ($candidates.Count -eq 0) {
