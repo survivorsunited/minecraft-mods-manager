@@ -33,6 +33,27 @@
     - Handles different mod types (mods, shaderpacks, installers, etc.)
     - Creates detailed download reports
 #>
+function Get-DownloadResponseFilename {
+    param($Response)
+
+    # PowerShell exposes header values as arrays. Array -match does not update
+    # $Matches and can reuse captures from an unrelated version match.
+    foreach ($header in @($Response.Headers['Content-Disposition'])) {
+        $disposition = $null
+        if ([System.Net.Http.Headers.ContentDispositionHeaderValue]::TryParse([string]$header, [ref]$disposition)) {
+            $name = $disposition.FileNameStar
+            if (!$name) { $name = $disposition.FileName }
+            if ($name) {
+                $name = [Uri]::UnescapeDataString($name.Trim('"'))
+                if ($name -eq [IO.Path]::GetFileName($name) -and $name -notmatch '[/\\]' -and $name -notin @('.', '..')) {
+                    return $name
+                }
+            }
+        }
+    }
+    return $null
+}
+
 function Download-Mods {
     param(
         [string]$CsvPath = $ModListPath,
@@ -483,7 +504,7 @@ function Download-Mods {
                     $downloadUrl = $mod.CurrentVersionUrl
                     $downloadVersion = $mod.CurrentVersion
                     if (-not $jarFilename -and $mod.Jar) { $jarFilename = $mod.Jar }
-                    if (-not $jarFilename -and $downloadUrl) { try { $jarFilename = [System.IO.Path]::GetFileName([System.Web.HttpUtility]::UrlDecode($downloadUrl)) } catch { } }
+                    if (-not $jarFilename -and $downloadUrl) { try { $jarFilename = [System.IO.Path]::GetFileName([Uri]::UnescapeDataString($downloadUrl)) } catch { } }
                     Write-Host "  [RELEASE] $($mod.Name): Using CurrentVersionUrl (fallback, Host=github)" -ForegroundColor Gray
                 }
                 if (-not $downloadUrl) {
@@ -563,7 +584,7 @@ function Download-Mods {
                 if (-not $resolvedByApi -and $TargetGameVersion -and $mod.Type -eq 'mod' -and $modHost -eq 'modrinth' -and $downloadUrl) {
                     try {
                         # Peek at the filename the current URL would yield
-                        $peekFileName = [System.IO.Path]::GetFileName([System.Web.HttpUtility]::UrlDecode($downloadUrl))
+                        $peekFileName = [System.IO.Path]::GetFileName([Uri]::UnescapeDataString($downloadUrl))
                         $mcToken = $null
                         $tokens = [System.Text.RegularExpressions.Regex]::Matches($peekFileName, '1\.\d+\.\d+') | ForEach-Object { $_.Value }
                         if ($tokens -and ($tokens -is [array]) -and $tokens.Count -gt 0) { 
@@ -607,7 +628,7 @@ function Download-Mods {
                     $filename = $jarFilename
                 } else {
                     # Extract filename from URL or use mod ID (decode URL first to get clean filename)
-                    $decodedUrl = [System.Web.HttpUtility]::UrlDecode($downloadUrl)
+                    $decodedUrl = [Uri]::UnescapeDataString($downloadUrl)
                     $filename = [System.IO.Path]::GetFileName($decodedUrl)
                     if (-not $filename -or $filename -eq "") {
                         $filename = "$($mod.ID)-$downloadVersion.jar"
@@ -660,7 +681,7 @@ function Download-Mods {
                     
                     # Ensure filename is set before creating cache path
                     if (-not $filename) {
-                        $filename = [System.IO.Path]::GetFileName([System.Web.HttpUtility]::UrlDecode($downloadUrl))
+                        $filename = [System.IO.Path]::GetFileName([Uri]::UnescapeDataString($downloadUrl))
                         if (-not $filename -or $filename -eq "") {
                             $filename = "$($mod.ID)-$downloadVersion.jar"
                         }
@@ -676,8 +697,8 @@ function Download-Mods {
                         Write-Host "  ✓ Using cached file" -ForegroundColor Gray
                         Copy-Item -Path $cachePath -Destination $downloadPath -Force
                     } else {
-                        # Decode URL if it contains encoded characters
-                        $decodedUrl = [System.Web.HttpUtility]::UrlDecode($downloadUrl)
+                        # Keep URL escaping intact for the HTTP request.
+                        $decodedUrl = $downloadUrl
                         
                         # Download to cache first and get actual filename from response
                         Write-Host "  💾 Downloading to cache..." -ForegroundColor Gray
@@ -687,10 +708,7 @@ function Download-Mods {
                         $actualFilename = $null
                         try {
                             if ($webRequest.Headers -and $webRequest.Headers["Content-Disposition"]) {
-                                $headerValue = $webRequest.Headers["Content-Disposition"]
-                                if ($headerValue -match 'filename="?([^"]+)"?') {
-                                    if ($matches -and $matches.Count -gt 1) { $actualFilename = $matches[1] }
-                                }
+                                $actualFilename = Get-DownloadResponseFilename -Response $webRequest
                             }
                         } catch {
                             # Headers may be null or inaccessible on some responses (e.g. GitHub redirects)
@@ -811,7 +829,7 @@ function Download-Mods {
                                         Write-Host "    ✓ Using cached file" -ForegroundColor Gray
                                         Copy-Item -Path $depCachePath -Destination $depPath -Force
                                     } else {
-                                        $decodedDepUrl = [System.Web.HttpUtility]::UrlDecode($depUrl)
+                                        $decodedDepUrl = $depUrl
                                         Write-Host "    💾 Downloading to cache..." -ForegroundColor Gray
                                         $depResponse = Invoke-WebRequest -Uri $decodedDepUrl -UseBasicParsing
                                         [System.IO.File]::WriteAllBytes($depCachePath, $depResponse.Content)
@@ -932,4 +950,4 @@ function Download-Mods {
     }
 }
 
-# Function is available for dot-sourcing 
+# Function is available for dot-sourcing

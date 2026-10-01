@@ -88,4 +88,20 @@ Write-TestResult 'Fork JAR survives target-version release organization' $true
     if ($row.CurrentVersion -ne '0.19.5') { throw 'Effective launcher pin does not meet Kotlin loader requirement' }
     Write-TestResult 'Effective Fabric pin meets Kotlin loader requirement' $true
 }
+. "$PSScriptRoot/../../src/Download/Mods/Download-Mods.ps1"
+foreach ($header in @(
+    'attachment; filename=custom-portals-4.0.33+1.21.11.jar',
+    'attachment; filename="custom-portals-4.0.33+1.21.11.jar"',
+    "attachment; filename*=UTF-8''custom-portals-4.0.33%2B1.21.11.jar"
+)) {
+    # Reproduce the stale version capture present in a real download loop.
+    '1.21.11' -match '(1\.\d+\.\d+)' | Out-Null
+    $response = [pscustomobject]@{Headers=@{'Content-Disposition'=[string[]]@($header)}}
+    if ((Get-DownloadResponseFilename $response) -cne 'custom-portals-4.0.33+1.21.11.jar') { throw 'Array-valued download header reused a stale version capture' }
+    Write-TestResult "GitHub response filename parsed: $header" $true
+}
+foreach ($header in @('invalid header', 'attachment; filename="../escape.jar"')) {
+    if (Get-DownloadResponseFilename ([pscustomobject]@{Headers=@{'Content-Disposition'=[string[]]@($header)}})) { throw 'Unsafe or invalid response filename accepted' }
+    Write-TestResult "Unsafe response filename ignored: $header" $true
+}
 Show-TestSummary
