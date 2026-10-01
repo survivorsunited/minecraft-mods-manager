@@ -77,9 +77,12 @@ Write-TestResult 'Fork JAR survives target-version release organization' $true
     function Get-ModList {}
     . "$PSScriptRoot/../../src/Patches/Pin-12111ModVersions.ps1"
     $row = Import-Csv "$PSScriptRoot/../../modlist.csv" | Where-Object ID -eq 'survivorsunited/mod-basic-storage'
+    $databaseJar = $row.Jar
     Set-12111BasicStoragePin $row
     if ($row.CurrentVersionUrl -notmatch '%2B') { throw 'Effective Basic Storage pin bypasses safe URL encoding' }
     Write-TestResult 'Effective Basic Storage pin uses safe asset URL' $true
+    if ($databaseJar -cne $row.Jar) { throw 'Database Basic Storage filename differs from effective download pin' }
+    Write-TestResult 'Basic Storage database matches effective release pin' $true
     $row = Import-Csv "$PSScriptRoot/../../modlist.csv" | Where-Object {$_.ID -eq 'fabric-launcher' -and $_.CurrentGameVersion -eq '1.21.11'}
     Set-12111FabricLauncherPin $row
     if ($row.CurrentVersion -ne '0.19.5') { throw 'Effective launcher pin does not meet Kotlin loader requirement' }
