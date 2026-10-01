@@ -73,4 +73,16 @@ Import-Csv "$PSScriptRoot/../../modlist.csv" | Where-Object ID -eq 'survivorsuni
 $copyResult = Copy-ModsToRelease -SourcePath "$payload/mods" -DestinationPath "$payload/release/mods" -CsvPath $copyDb -TargetGameVersion '1.21.11'
 if (!$copyResult -or !(Test-Path "$payload/release/mods/custom-portals-4.0.33+1.21.11.jar")) { throw 'Fork JAR was omitted during release organization' }
 Write-TestResult 'Fork JAR survives target-version release organization' $true
+& {
+    function Get-ModList {}
+    . "$PSScriptRoot/../../src/Patches/Pin-12111ModVersions.ps1"
+    $row = Import-Csv "$PSScriptRoot/../../modlist.csv" | Where-Object ID -eq 'survivorsunited/mod-basic-storage'
+    Set-12111BasicStoragePin $row
+    if ($row.CurrentVersionUrl -notmatch '%2B') { throw 'Effective Basic Storage pin bypasses safe URL encoding' }
+    Write-TestResult 'Effective Basic Storage pin uses safe asset URL' $true
+    $row = Import-Csv "$PSScriptRoot/../../modlist.csv" | Where-Object {$_.ID -eq 'fabric-launcher' -and $_.CurrentGameVersion -eq '1.21.11'}
+    Set-12111FabricLauncherPin $row
+    if ($row.CurrentVersion -ne '0.19.5') { throw 'Effective launcher pin does not meet Kotlin loader requirement' }
+    Write-TestResult 'Effective Fabric pin meets Kotlin loader requirement' $true
+}
 Show-TestSummary
