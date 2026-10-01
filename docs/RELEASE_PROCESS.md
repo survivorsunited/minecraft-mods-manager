@@ -33,6 +33,8 @@ latest  = 26.2
 
 Only `1.21.11` is enabled for stable release packaging. The 1.21.11 target requires Java 25 because C2ME's native math module requires it.
 
+The 1.21.11 pack includes Survivors United's Amecs Reborn 2.0.3 and Custom Portals 4.0.33. Their immutable release references and SHA256 checksums are in `fork-release-pins.json`. The tag workflow checks both files after package creation and refuses publication if either is missing, duplicated, or differs from its published checksum. Controlling remains optional; Amecs includes its own controls search when Controlling is absent.
+
 ## Stable release command
 
 Use a clean semantic tag for the public release:

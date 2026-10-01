@@ -105,7 +105,8 @@ function Copy-ModsToRelease {
         return $false
     }
     foreach ($m in $mods) {
-        if ((if ($m.Type) { $m.Type.Trim() } else { $null }) -ne 'mod') { continue }
+        $modType = if ($m.Type) { $m.Type.Trim() } else { $null }
+        if ($modType -ne 'mod') { continue }
         $grp = if ($m.Group) { $m.Group.Trim().ToLower() } else { 'required' }
         if ($grp -notin 'required','optional','admin') { continue }
         if (-not (& $versionFilterScript $m $TargetGameVersion)) { continue }

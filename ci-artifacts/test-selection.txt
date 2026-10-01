@@ -1,2 +1,3 @@
 96-TestCreateRelease.ps1
 105-TestReleasePackaging.ps1
+109-TestForkReleaseAssets.ps1
