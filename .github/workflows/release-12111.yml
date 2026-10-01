@@ -1,0 +1,333 @@
+name: Validated Minecraft 1.21.11 Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      game_version:
+        description: 'Minecraft version to validate and release'
+        required: true
+        type: string
+        default: '1.21.11'
+      publish_release:
+        description: 'Publish a GitHub Release after validation succeeds'
+        required: true
+        type: boolean
+        default: true
+  schedule:
+    - cron: '0 3 * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: validated-minecraft-release-${{ github.ref }}-${{ github.event.inputs.game_version || '1.21.11' }}
+  cancel-in-progress: false
+
+env:
+  DEFAULT_GAME_VERSION: '1.21.11'
+  JAVA_VERSION: '25'
+
+jobs:
+  release-readiness:
+    name: Release readiness
+    runs-on: windows-latest
+    timeout-minutes: 30
+    outputs:
+      game_version: ${{ steps.resolve.outputs.game_version }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Resolve release target
+        id: resolve
+        shell: pwsh
+        run: |
+          $version = "${{ github.event.inputs.game_version }}"
+          if ([string]::IsNullOrWhiteSpace($version)) { $version = $env:DEFAULT_GAME_VERSION }
+          "GAME_VERSION=$version" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          "game_version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          Write-Host "🎯 Release target: $version" -ForegroundColor Cyan
+
+      - name: Set up Java ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+          check-latest: true
+
+      - name: Validate release configuration
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $config = Get-Content release-config.json -Raw | ConvertFrom-Json
+          $target = $config.versions | Where-Object { $_.version -eq $env:GAME_VERSION } | Select-Object -First 1
+          if (-not $target) {
+            Write-Host "❌ $env:GAME_VERSION is not present in release-config.json" -ForegroundColor Red
+            exit 1
+          }
+          if ($target.enabled -ne $true) {
+            Write-Host "❌ $env:GAME_VERSION is present but not enabled in release-config.json" -ForegroundColor Red
+            exit 1
+          }
+          $javaMin = [int]$target.env.JAVA_VERSION_MIN
+          $javaActual = [int]$env:JAVA_VERSION
+          if ($javaActual -lt $javaMin) {
+            Write-Host "❌ Java $javaActual is too old for $env:GAME_VERSION; config requires Java $javaMin" -ForegroundColor Red
+            exit 1
+          }
+          Write-Host "✅ release-config.json enables $env:GAME_VERSION and requires Java $javaMin" -ForegroundColor Green
+          java -version
+
+      - name: Database lint
+        shell: pwsh
+        env:
+          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          .\ModManager.ps1 -TestDatabase -GitHubActions
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Strict release database gates
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $db = @(Import-Csv modlist.csv)
+          if ($db.Count -eq 0) {
+            Write-Host "❌ modlist.csv is empty" -ForegroundColor Red
+            exit 1
+          }
+
+          $badGitHubRows = @($db | Where-Object {
+            $id = [string]$_.ID
+            $url = [string]$_.Url
+            $currentUrl = [string]$_.CurrentVersionUrl
+            $hasReleaseAsset = ($url -match '^https://github\.com/[^/]+/[^/]+/releases/download/') -or ($currentUrl -match '^https://github\.com/[^/]+/[^/]+/releases/download/')
+            $hasReleaseAsset -and ($id -match '^system-' -or $id -notmatch '^[^/\s]+/[^/\s]+$' -or $url -match '/releases/download/')
+          })
+          if ($badGitHubRows.Count -gt 0) {
+            Write-Host "❌ GitHub release asset rows must use owner/repo ID and canonical repo Url" -ForegroundColor Red
+            foreach ($row in $badGitHubRows) {
+              Write-Host "   - ID=$($row.ID) Url=$($row.Url) CurrentVersionUrl=$($row.CurrentVersionUrl)" -ForegroundColor Red
+            }
+            exit 1
+          }
+
+          $serverRows = @($db | Where-Object { $_.Type -eq 'server' -and ($_.CurrentGameVersion -eq $env:GAME_VERSION -or $_.GameVersion -eq $env:GAME_VERSION) })
+          $launcherRows = @($db | Where-Object { $_.Type -eq 'launcher' -and ($_.CurrentGameVersion -eq $env:GAME_VERSION -or $_.GameVersion -eq $env:GAME_VERSION) })
+          if ($serverRows.Count -eq 0) {
+            Write-Host "❌ No Minecraft server row found for $env:GAME_VERSION" -ForegroundColor Red
+            exit 1
+          }
+          if ($launcherRows.Count -eq 0) {
+            Write-Host "❌ No Fabric launcher row found for $env:GAME_VERSION" -ForegroundColor Red
+            exit 1
+          }
+
+          $requiredMods = @($db | Where-Object { $_.Group -eq 'required' -and $_.Type -eq 'mod' -and $_.CurrentGameVersion -eq $env:GAME_VERSION })
+          if ($requiredMods.Count -eq 0) {
+            Write-Host "❌ No required mod rows found for $env:GAME_VERSION" -ForegroundColor Red
+            exit 1
+          }
+
+          Write-Host "✅ Strict DB gates passed for $env:GAME_VERSION" -ForegroundColor Green
+          Write-Host "   Required mods: $($requiredMods.Count)" -ForegroundColor Gray
+          Write-Host "   Server rows: $($serverRows.Count)" -ForegroundColor Gray
+          Write-Host "   Launcher rows: $($launcherRows.Count)" -ForegroundColor Gray
+
+  build-release:
+    name: Build and validate release
+    needs: release-readiness
+    runs-on: windows-latest
+    timeout-minutes: 150
+    env:
+      GAME_VERSION: ${{ needs.release-readiness.outputs.game_version }}
+      CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+      MINECRAFT_SERVER_URL: ${{ secrets.MINECRAFT_SERVER_URL }}
+      FABRIC_SERVER_URL: ${{ secrets.FABRIC_SERVER_URL }}
+
+    steps:
+      - name: Checkout repository with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Set up Java ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+          check-latest: true
+
+      - name: Create validated release package
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Write-Host "🚀 Creating validated release for Minecraft $env:GAME_VERSION" -ForegroundColor Cyan
+          .\ModManager.ps1 -CreateRelease -GameVersion $env:GAME_VERSION
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ CreateRelease failed for $env:GAME_VERSION" -ForegroundColor Red
+            exit $LASTEXITCODE
+          }
+
+      - name: Assert release payload
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $releaseDir = Join-Path 'releases' $env:GAME_VERSION
+          if (-not (Test-Path $releaseDir)) {
+            Write-Host "❌ Release directory was not created: $releaseDir" -ForegroundColor Red
+            exit 1
+          }
+
+          $modsDir = Join-Path $releaseDir 'mods'
+          $modFiles = @()
+          if (Test-Path $modsDir) {
+            $modFiles = @(Get-ChildItem -Path $modsDir -Recurse -File -ErrorAction SilentlyContinue | Where-Object {
+              $_.Extension -in @('.jar', '.zip') -and $_.FullName -notmatch '[\\/]block[\\/]'
+            })
+          }
+          if ($modFiles.Count -eq 0) {
+            Write-Host "❌ Release contains zero mod files" -ForegroundColor Red
+            exit 1
+          }
+
+          $requiredFiles = @('README.md', 'hash.txt')
+          foreach ($file in $requiredFiles) {
+            $path = Join-Path $releaseDir $file
+            if (-not (Test-Path $path)) {
+              Write-Host "❌ Missing release file: $file" -ForegroundColor Red
+              exit 1
+            }
+          }
+
+          $zipFiles = @(Get-ChildItem -Path $releaseDir -Filter '*.zip' -File -ErrorAction SilentlyContinue)
+          if ($zipFiles.Count -eq 0) {
+            Write-Host "❌ No ZIP was generated in $releaseDir" -ForegroundColor Red
+            exit 1
+          }
+
+          $minecraftJar = @(Get-ChildItem -Path $releaseDir -Filter 'minecraft_server*.jar' -File -ErrorAction SilentlyContinue)
+          $fabricJar = @(Get-ChildItem -Path $releaseDir -Filter 'fabric-server*.jar' -File -ErrorAction SilentlyContinue)
+          if ($minecraftJar.Count -eq 0) {
+            Write-Host "❌ Minecraft server JAR missing from release root" -ForegroundColor Red
+            exit 1
+          }
+          if ($fabricJar.Count -eq 0) {
+            Write-Host "❌ Fabric server launcher JAR missing from release root" -ForegroundColor Red
+            exit 1
+          }
+
+          Write-Host "✅ Release payload verified" -ForegroundColor Green
+          Write-Host "   Mods: $($modFiles.Count)" -ForegroundColor Gray
+          Write-Host "   ZIPs: $($zipFiles.Count)" -ForegroundColor Gray
+          Write-Host "   Minecraft server: $($minecraftJar[0].Name)" -ForegroundColor Gray
+          Write-Host "   Fabric launcher: $($fabricJar[0].Name)" -ForegroundColor Gray
+
+      - name: Upload validated release folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: minecraft-${{ env.GAME_VERSION }}-validated-release
+          path: releases/${{ env.GAME_VERSION }}/**
+          retention-days: 90
+          compression-level: 0
+
+  publish-release:
+    name: Publish GitHub Release
+    needs: [release-readiness, build-release]
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.publish_release == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GAME_VERSION: ${{ needs.release-readiness.outputs.game_version }}
+
+    steps:
+      - name: Download validated release folder
+        uses: actions/download-artifact@v4
+        with:
+          name: minecraft-${{ env.GAME_VERSION }}-validated-release
+          path: release-payload/
+
+      - name: Package release assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          mod_count=$(find release-payload/mods -type f \( -name '*.jar' -o -name '*.zip' \) ! -path '*/mods/block/*' 2>/dev/null | wc -l | tr -d ' ')
+          if [ "$mod_count" = "0" ]; then
+            echo "❌ Refusing to publish: release payload contains zero mod files"
+            exit 1
+          fi
+          if [ ! -f release-payload/README.md ] || [ ! -f release-payload/hash.txt ]; then
+            echo "❌ Refusing to publish: README.md or hash.txt missing"
+            exit 1
+          fi
+          zip_name="minecraft-${GAME_VERSION}-validated-release.zip"
+          (cd release-payload && zip -r "../${zip_name}" .)
+          sha256sum "${zip_name}" > release-hashes.txt
+          cp release-payload/README.md "README-${GAME_VERSION}.md"
+          echo "✅ Packaged ${zip_name} with ${mod_count} mod file(s)"
+
+      - name: Generate release notes
+        id: notes
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="minecraft-${GAME_VERSION}-${{ github.run_number }}"
+          {
+            echo "# Minecraft ${GAME_VERSION} validated release"
+            echo
+            echo "> Built with Java ${{ env.JAVA_VERSION }} and blocked unless server validation passed."
+            echo
+            echo "## Release gates"
+            echo "- release-config.json target enabled"
+            echo "- database lint passed"
+            echo "- GitHub release asset URLs canonicalised to owner/repo rows"
+            echo "- required server and Fabric launcher rows present"
+            echo "- mods downloaded into the correct release folders"
+            echo "- server startup validation passed"
+            echo "- README.md, hash.txt, server jars and ZIP package generated"
+            echo
+            echo "## Checksums"
+            echo '```'
+            cat release-hashes.txt
+            echo '```'
+            echo
+            echo "Tag: ${tag}"
+          } > release-notes.md
+          echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.notes.outputs.tag }}
+          name: Minecraft ${{ env.GAME_VERSION }} validated release
+          body_path: release-notes.md
+          draft: false
+          prerelease: false
+          make_latest: true
+          files: |
+            minecraft-${{ env.GAME_VERSION }}-validated-release.zip
+            release-hashes.txt
+            README-${{ env.GAME_VERSION }}.md
+
+  summary:
+    name: Release summary
+    needs: [release-readiness, build-release, publish-release]
+    if: always()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Write summary
+        shell: bash
+        run: |
+          echo "## Validated Minecraft Release" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Target: ${{ needs.release-readiness.outputs.game_version }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Readiness: ${{ needs.release-readiness.result }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Build and validation: ${{ needs.build-release.result }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Publish: ${{ needs.publish-release.result }}" >> "$GITHUB_STEP_SUMMARY"
