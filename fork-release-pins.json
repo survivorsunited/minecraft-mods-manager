@@ -30,6 +30,12 @@
       "file": "CreativeCore_FABRIC_v2.14.11_mc1.21.11.jar",
       "sha256": "a8e759b023b2de920022d32d1e09bd3c6c9ad32546ccc114f1951100c58984d8",
       "release": "https://modrinth.com/mod/creativecore/version/jyLHWJlj"
+    },
+    {
+      "pattern": "cardinal-components-api-*.jar",
+      "file": "cardinal-components-api-7.3.2.jar",
+      "sha256": "c8ac0218f76d59bf6908b0dcd74c0953a710d8aa35efa3b1ed966aee7aa75a02",
+      "release": "https://modrinth.com/mod/cardinal-components-api/version/HZMLTuxY"
     }
   ]
 }

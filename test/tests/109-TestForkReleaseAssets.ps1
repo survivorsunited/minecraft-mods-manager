@@ -104,4 +104,23 @@ foreach ($header in @('invalid header', 'attachment; filename="../escape.jar"'))
     if (Get-DownloadResponseFilename ([pscustomobject]@{Headers=@{'Content-Disposition'=[string[]]@($header)}})) { throw 'Unsafe or invalid response filename accepted' }
     Write-TestResult "Unsafe response filename ignored: $header" $true
 }
+# The standalone CCA bundle aligns BLAST entity 7.3.0 with Custom Portals base/world 7.3.2.
+$cca = @(Import-Csv "$PSScriptRoot/../../modlist.csv" | Where-Object ID -eq 'cardinal-components-api')
+if ($cca.Count -ne 1 -or $cca[0].Group -ne 'required' -or $cca[0].CurrentVersion -ne '7.3.2' -or $cca[0].CurrentGameVersion -ne '1.21.11' -or $cca[0].ClientSide -ne 'required' -or $cca[0].ServerSide -ne 'required') { throw 'CCA compatibility library must be required on both sides for 1.21.11' }
+$ccaPins = @( (Get-Content "$PSScriptRoot/../../fork-release-pins.json" -Raw | ConvertFrom-Json).mods | Where-Object pattern -eq 'cardinal-components-api-*.jar')
+if ($ccaPins.Count -ne 1 -or $ccaPins[0].file -ne $cca[0].Jar -or $cca[0].CurrentVersionUrl -notmatch '/HZMLTuxY/') { throw 'CCA database and checksum pin must select the validated complete bundle' }
+Write-TestResult 'CCA complete 7.3.2 bundle required and checksum pinned' $true
+. "$PSScriptRoot/../../src/Validation/Hash/Calculate-RecordHash.ps1"
+if ($cca[0].RecordHash -ne (Calculate-RecordHash $cca[0])) { throw 'CCA record hash mismatch' }
+Write-TestResult 'CCA CSV record integrity passes' $true
+$ccaFile = Join-Path $payload ('mods/' + $cca[0].Jar)
+[IO.File]::WriteAllText($ccaFile, 'CCA test artifact')
+$ccaTestPin = Join-Path $payload 'cca-pins.json'
+@{mods=@(@{pattern=$ccaPins[0].pattern; file=$ccaPins[0].file; sha256=(Get-FileHash $ccaFile).Hash})} | ConvertTo-Json -Depth 4 | Set-Content $ccaTestPin
+& $validator -ReleasePath $payload -PinsPath $ccaTestPin
+Remove-Item -LiteralPath $ccaFile
+$rejected=$false
+try { & $validator -ReleasePath $payload -PinsPath $ccaTestPin } catch { $rejected=$true }
+if (!$rejected) { throw 'Release accepted missing CCA compatibility library' }
+Write-TestResult 'Missing CCA bundle rejects release' $true
 Show-TestSummary
