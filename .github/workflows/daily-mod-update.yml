@@ -496,6 +496,26 @@ jobs:
             release-hashes.txt
             README-*.md
 
+
+  notify-site:
+    needs: publish-release
+    if: needs.publish-release.result == 'success' && needs.publish-release.outputs.prerelease == 'false'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger site sync for published stable release
+        env:
+          GH_TOKEN: ${{ secrets.SITE_SYNC_TOKEN }}
+          RELEASE_TAG: ${{ needs.publish-release.outputs.tag }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Configure SITE_SYNC_TOKEN with Contents: write access to survivorsunited/survivorsunited.org"
+            exit 1
+          fi
+          jq -n --arg tag "$RELEASE_TAG" '{event_type:"modpack-release-published",client_payload:{tag:$tag}}' |
+            gh api --method POST repos/survivorsunited/survivorsunited.org/dispatches --input -
+          echo "Triggered site sync for $RELEASE_TAG"
+
+
   summary:
     needs: [update-database, create-releases, publish-release]
     if: always()
